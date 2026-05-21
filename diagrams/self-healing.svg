@@ -30,8 +30,17 @@
     <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0,0 L10,5 L0,10 Z" fill="#3fb950"/>
     </marker>
-    <marker id="arw2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <marker id="arw-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#58a6ff"/>
+    </marker>
+    <marker id="arw-yellow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d29922"/>
+    </marker>
+    <marker id="arw-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0,0 L10,5 L0,10 Z" fill="#f85149"/>
+    </marker>
+    <marker id="arw-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#bc8cff"/>
     </marker>
   </defs>
 
@@ -39,65 +48,78 @@
 
   <text x="400" y="36" text-anchor="middle" fill="#3fb950" font-size="16" font-weight="bold">Ciclo de Autocura (Self-Healing Loop) v4.2.1</text>
   <text x="400" y="54" text-anchor="middle" fill="#8b949e" font-size="10">MCP self-healer · Monitoramento · Diagnóstico · Reparo Automático · CJK Zero-Tolerance</text>
- 
+
   <!-- Center: Health Monitor -->
-  <circle cx="400" cy="330" r="60" fill="url(#g1)" opacity="0.15" stroke="#3fb950" stroke-width="2"/>
-  <circle cx="400" cy="330" r="40" fill="url(#g1)" opacity="0.3"/>
-  <text x="400" y="324" text-anchor="middle" fill="#3fb950" font-size="11" font-weight="bold">Health</text>
-  <text x="400" y="340" text-anchor="middle" fill="#3fb950" font-size="11" font-weight="bold">Monitor</text>
-  <text x="400" y="356" text-anchor="middle" fill="#8b949e" font-size="8">verde: 100%</text>
- 
+  <circle cx="400" cy="310" r="60" fill="url(#g1)" opacity="0.15" stroke="#3fb950" stroke-width="2"/>
+  <circle cx="400" cy="310" r="40" fill="url(#g1)" opacity="0.3"/>
+  <text x="400" y="304" text-anchor="middle" fill="#3fb950" font-size="11" font-weight="bold">Health</text>
+  <text x="400" y="320" text-anchor="middle" fill="#3fb950" font-size="11" font-weight="bold">Monitor</text>
+  <text x="400" y="336" text-anchor="middle" fill="#8b949e" font-size="8">96/100</text>
+
   <!-- Phase 1: Monitor -->
-  <rect x="290" y="80" width="220" height="50" rx="10" fill="url(#g1)" opacity="0.8" filter="url(#shadow)"/>
-  <text x="400" y="104" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">1. MONITORAR</text>
-  <text x="400" y="120" text-anchor="middle" fill="#c9d1d9" font-size="9">Varredura contínua do ecossistema</text>
-  <line x1="400" y1="130" x2="400" y2="170" stroke="#3fb950" stroke-width="2" marker-end="url(#arw)"/>
- 
+  <rect x="290" y="75" width="220" height="50" rx="10" fill="url(#g1)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="400" y="99" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">1. MONITORAR</text>
+  <text x="400" y="115" text-anchor="middle" fill="#c9d1d9" font-size="9">Varredura contínua do ecossistema</text>
+
   <!-- Phase 2: Detect -->
-  <rect x="560" y="170" width="220" height="50" rx="10" fill="url(#g2)" opacity="0.8" filter="url(#shadow)"/>
-  <text x="670" y="194" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">2. DETECTAR</text>
-  <text x="670" y="210" text-anchor="middle" fill="#c9d1d9" font-size="9">Anomalias: CJK, syntax, oversize</text>
-  <line x1="555" y1="195" x2="530" y2="195" stroke="#58a6ff" stroke-width="2" marker-end="url(#arw)"/>
- 
+  <rect x="560" y="165" width="220" height="50" rx="10" fill="url(#g2)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="670" y="189" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">2. DETECTAR</text>
+  <text x="670" y="205" text-anchor="middle" fill="#c9d1d9" font-size="9">Anomalias: CJK, syntax, oversize</text>
+
   <!-- Phase 3: Diagnose -->
-  <rect x="560" y="310" width="220" height="50" rx="10" fill="url(#g3)" opacity="0.8" filter="url(#shadow)"/>
-  <text x="670" y="334" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">3. DIAGNOSTICAR</text>
-  <text x="670" y="350" text-anchor="middle" fill="#c9d1d9" font-size="9">Classificação por severidade</text>
-  <line x1="555" y1="335" x2="530" y2="335" stroke="#d29922" stroke-width="2" marker-end="url(#arw)"/>
- 
+  <rect x="560" y="285" width="220" height="50" rx="10" fill="url(#g3)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="670" y="309" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">3. DIAGNOSTICAR</text>
+  <text x="670" y="325" text-anchor="middle" fill="#c9d1d9" font-size="9">Classificação por severidade</text>
+
   <!-- Phase 4: Repair -->
-  <rect x="560" y="450" width="220" height="50" rx="10" fill="url(#g4)" opacity="0.8" filter="url(#shadow)"/>
-  <text x="670" y="474" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">4. REPARAR</text>
-  <text x="670" y="490" text-anchor="middle" fill="#c9d1d9" font-size="9">Correção automática</text>
-  <line x1="555" y1="475" x2="530" y2="475" stroke="#f85149" stroke-width="2" marker-end="url(#arw)"/>
- 
+  <rect x="560" y="405" width="220" height="50" rx="10" fill="url(#g4)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="670" y="429" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">4. REPARAR</text>
+  <text x="670" y="445" text-anchor="middle" fill="#c9d1d9" font-size="9">Correção automática</text>
+
   <!-- Phase 5: Verify -->
-  <rect x="290" y="540" width="220" height="50" rx="10" fill="url(#g5)" opacity="0.8" filter="url(#shadow)"/>
-  <text x="400" y="564" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">5. VERIFICAR</text>
-  <text x="400" y="580" text-anchor="middle" fill="#c9d1d9" font-size="9">Re-varredura pós-reparo</text>
- 
-  <!-- Connection lines forming loop -->
-  <path d="M510,105 Q760,105 760,170" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#arw)"/>
-  <path d="M760,220 Q760,310 760,310" fill="none" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arw)"/>
-  <path d="M760,360 Q760,450 760,450" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#arw)"/>
-  <path d="M760,500 Q760,565 510,565" fill="none" stroke="#f85149" stroke-width="1.5" marker-end="url(#arw2)"/>
-  <path d="M290,565 Q150,565 150,460 Q150,220 290,220" fill="none" stroke="#bc8cff" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arw)"/>
- 
+  <rect x="290" y="505" width="220" height="50" rx="10" fill="url(#g5)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="400" y="529" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">5. VERIFICAR</text>
+  <text x="400" y="545" text-anchor="middle" fill="#c9d1d9" font-size="9">Re-varredura pós-reparo</text>
+
+  <!-- Connection arrows forming the loop -->
+  <!-- 1→2: MONITORAR right edge → DETECTAR top-left -->
+  <path d="M510,100 Q740,100 740,165" fill="none" stroke="#3fb950" stroke-width="2" marker-end="url(#arw)"/>
+  <!-- 2→3: DETECTAR bottom → DIAGNOSTICAR top -->
+  <path d="M740,215 L740,285" fill="none" stroke="#58a6ff" stroke-width="2" marker-end="url(#arw-blue)"/>
+  <!-- 3→4: DIAGNOSTICAR bottom → REPARAR top -->
+  <path d="M740,335 L740,405" fill="none" stroke="#d29922" stroke-width="2" marker-end="url(#arw-yellow)"/>
+  <!-- 4→5: REPARAR bottom → VERIFICAR right edge -->
+  <path d="M740,455 Q740,530 510,530" fill="none" stroke="#f85149" stroke-width="2" marker-end="url(#arw-red)"/>
+  <!-- 5→1: VERIFICAR left edge → MONITORAR left edge (loop-back) -->
+  <path d="M290,530 Q120,530 120,310 Q120,100 290,100" fill="none" stroke="#bc8cff" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arw-purple)"/>
+
+  <!-- Spokes: Health Monitor ↔ each phase -->
+  <line x1="400" y1="250" x2="400" y2="125" stroke="#3fb950" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+  <line x1="460" y1="310" x2="560" y2="190" stroke="#58a6ff" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+  <line x1="460" y1="310" x2="560" y2="310" stroke="#d29922" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+  <line x1="460" y1="310" x2="560" y2="430" stroke="#f85149" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+  <line x1="400" y1="370" x2="400" y2="505" stroke="#bc8cff" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
+
   <!-- Metric boxes -->
-  <rect x="30" y="170" width="180" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-  <text x="50" y="192" fill="#8b949e" font-size="9" font-weight="bold">Métricas v4.2.1</text>
-  <circle cx="58" cy="207" r="5" fill="#3fb950"/>
-  <text x="70" y="211" fill="#c9d1d9" font-size="9">Skills 104 · 12 categorias</text>
-  <circle cx="58" cy="223" r="5" fill="#d29922"/>
-  <text x="70" y="227" fill="#c9d1d9" font-size="9">MCPs ativos: 40/40</text>
-  <circle cx="58" cy="239" r="5" fill="#3fb950"/>
-  <text x="70" y="243" fill="#c9d1d9" font-size="9">CJK leaks: 0 (corrector)</text>
+  <rect x="30" y="160" width="180" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="50" y="182" fill="#8b949e" font-size="9" font-weight="bold">Métricas v4.2.1</text>
+  <circle cx="58" cy="197" r="5" fill="#3fb950"/>
+  <text x="70" y="201" fill="#c9d1d9" font-size="9">Skills 104 · 12 categorias</text>
+  <circle cx="58" cy="213" r="5" fill="#3fb950"/>
+  <text x="70" y="217" fill="#c9d1d9" font-size="9">MCPs ativos: 40/40</text>
+  <circle cx="58" cy="229" r="5" fill="#3fb950"/>
+  <text x="70" y="233" fill="#c9d1d9" font-size="9">CJK leaks: 0 (corrector)</text>
 
-  <rect x="30" y="380" width="180" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-  <text x="50" y="402" fill="#8b949e" font-size="9" font-weight="bold">Ações de Reparo</text>
-  <text x="50" y="420" fill="#c9d1d9" font-size="9">• Remover CJK leaks</text>
-  <text x="50" y="436" fill="#c9d1d9" font-size="9">• Adicionar frontmatter</text>
-  <text x="50" y="452" fill="#c9d1d9" font-size="9">• Extrair progressive disclosure</text>
+  <rect x="30" y="370" width="180" height="80" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="50" y="392" fill="#8b949e" font-size="9" font-weight="bold">Ações de Reparo</text>
+  <text x="50" y="410" fill="#c9d1d9" font-size="9">• Remover CJK leaks</text>
+  <text x="50" y="426" fill="#c9d1d9" font-size="9">• Adicionar frontmatter</text>
+  <text x="50" y="442" fill="#c9d1d9" font-size="9">• Extrair progressive disclosure</text>
 
-  <text x="400" y="638" text-anchor="middle" fill="#484f58" font-size="9">Referências: Yazdanparast (2024) · Psaier & Dustdar (2011) · Lakshmi & Azad (2025)</text>
+  <!-- Health Score badge -->
+  <rect x="30" y="490" width="180" height="40" rx="6" fill="#161b22" stroke="#3fb950" stroke-width="1"/>
+  <text x="120" y="510" text-anchor="middle" fill="#3fb950" font-size="10" font-weight="bold">Health Score: 96/100</text>
+  <text x="120" y="524" text-anchor="middle" fill="#8b949e" font-size="8">self_healer.py · Nexus evo-7</text>
+
+  <text x="400" y="600" text-anchor="middle" fill="#484f58" font-size="9">Referências: Yazdanparast (2024) · Psaier &amp; Dustdar (2011) · Lakshmi &amp; Azad (2025)</text>
 </svg>

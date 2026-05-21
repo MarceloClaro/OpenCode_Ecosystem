@@ -47,7 +47,7 @@
   <text x="65" y="148" fill="#8b949e" font-size="9">Fluxo básico padrão.</text>
   <text x="65" y="164" fill="#8b949e" font-size="9">Referência: Lewis et al. (2020)</text>
   <text x="65" y="182" fill="#484f58" font-size="8">ACL 2020 · 10.18653/v1/2020.emnlp-main.432</text>
-  <text x="65" y="200" fill="#8b949e" font-size="9">🟢 CONFIRMADO</text>
+  <circle cx="72" cy="196" r="4" fill="#3fb950"/><text x="82" y="200" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- Memory RAG -->
   <rect x="390" y="80" width="310" height="140" rx="8" fill="#1f6feb" opacity="0.08" stroke="#58a6ff" stroke-width="1" filter="url(#shadow)"/>
@@ -58,7 +58,7 @@
   <text x="405" y="148" fill="#8b949e" font-size="9">RAG com memória Redis para sessões.</text>
   <text x="405" y="164" fill="#8b949e" font-size="9">Referência: Zhong et al. (2024)</text>
   <text x="405" y="182" fill="#484f58" font-size="8">arXiv:2405.14367 · MemGPT</text>
-  <text x="405" y="200" fill="#8b949e" font-size="9">🟢 CONFIRMADO</text>
+  <circle cx="412" cy="196" r="4" fill="#3fb950"/><text x="422" y="200" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- Agentic RAG -->
   <rect x="730" y="80" width="310" height="140" rx="8" fill="#9e6a03" opacity="0.08" stroke="#d29922" stroke-width="1" filter="url(#shadow)"/>
@@ -69,7 +69,7 @@
   <text x="745" y="148" fill="#8b949e" font-size="9">RAG com roteamento dinâmico de fontes.</text>
   <text x="745" y="164" fill="#8b949e" font-size="9">Referência: Gradientsys (2025)</text>
   <text x="745" y="182" fill="#484f58" font-size="8">arXiv:2507.06520 · ReAct loop</text>
-  <text x="745" y="200" fill="#8b949e" font-size="9">🟢 CONFIRMADO</text>
+  <circle cx="752" cy="196" r="4" fill="#3fb950"/><text x="762" y="200" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- Graph RAG -->
   <rect x="50" y="240" width="310" height="140" rx="8" fill="#8b2f97" opacity="0.08" stroke="#bc8cff" stroke-width="1" filter="url(#shadow)"/>
@@ -80,7 +80,7 @@
   <text x="65" y="308" fill="#8b949e" font-size="9">RAG com grafo de conhecimento.</text>
   <text x="65" y="324" fill="#8b949e" font-size="9">Referência: Edge et al. (2024)</text>
   <text x="65" y="342" fill="#484f58" font-size="8">Microsoft Research · arXiv:2404.16130</text>
-  <text x="65" y="360" fill="#8b949e" font-size="9">🟢 CONFIRMADO</text>
+  <circle cx="72" cy="356" r="4" fill="#3fb950"/><text x="82" y="360" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- Hybrid RAG -->
   <rect x="390" y="240" width="310" height="140" rx="8" fill="#da3633" opacity="0.08" stroke="#f85149" stroke-width="1" filter="url(#shadow)"/>
@@ -91,7 +91,7 @@
   <text x="405" y="308" fill="#8b949e" font-size="9">RAG híbrido vetorial + grafo.</text>
   <text x="405" y="324" fill="#8b949e" font-size="9">Referência: Wang et al. (2025)</text>
   <text x="405" y="342" fill="#484f58" font-size="8">arXiv:2501.00309 · GraphRAG Survey</text>
-  <text x="405" y="360" fill="#8b949e" font-size="9">🟢 CONFIRMADO</text>
+  <circle cx="412" cy="356" r="4" fill="#3fb950"/><text x="422" y="360" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- CRAG -->
   <rect x="730" y="240" width="310" height="140" rx="8" fill="#238636" opacity="0.08" stroke="#3fb950" stroke-width="1" filter="url(#shadow)"/>
@@ -102,7 +102,7 @@
   <text x="745" y="308" fill="#8b949e" font-size="9">RAG com validação de qualidade.</text>
   <text x="745" y="324" fill="#8b949e" font-size="9">Referência: Yan et al. (2024)</text>
   <text x="745" y="342" fill="#484f58" font-size="8">arXiv:2401.15884 · ICLR 2024</text>
-  <text x="745" y="360" fill="#8b949e" font-size="9">🟢 CONFIRMADO</text>
+  <circle cx="752" cy="356" r="4" fill="#3fb950"/><text x="762" y="360" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- Adaptive RAG -->
   <rect x="50" y="400" width="310" height="140" rx="8" fill="#1f6feb" opacity="0.08" stroke="#58a6ff" stroke-width="1" filter="url(#shadow)"/>
@@ -113,7 +113,7 @@
   <text x="65" y="468" fill="#8b949e" font-size="9">Estratégia adaptativa conforme carga.</text>
   <text x="65" y="484" fill="#8b949e" font-size="9">Referência: Jeong et al. (2024)</text>
   <text x="65" y="502" fill="#484f58" font-size="8">arXiv:2403.14403 · Adaptive-RAG</text>
-  <text x="65" y="520" fill="#8b949e" font-size="9">🟢 CONFIRMADO</text>
+  <circle cx="72" cy="516" r="4" fill="#3fb950"/><text x="82" y="520" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- Fusion RAG -->
   <rect x="390" y="400" width="310" height="140" rx="8" fill="#9e6a03" opacity="0.08" stroke="#d29922" stroke-width="1" filter="url(#shadow)"/>
@@ -124,7 +124,7 @@
   <text x="405" y="468" fill="#8b949e" font-size="9">RAG-Fusion com Reciprocal Rank Fusion.</text>
   <text x="405" y="484" fill="#8b949e" font-size="9">Referência: Radev et al. (2024)</text>
   <text x="405" y="502" fill="#484f58" font-size="8">arXiv:2402.03367 · RAG-Fusion</text>
-  <text x="405" y="520" fill="#8b949e" font-size="9">🟢 CONFIRMADO</text>
+  <circle cx="412" cy="516" r="4" fill="#3fb950"/><text x="422" y="520" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- HyDE -->
   <rect x="730" y="400" width="310" height="140" rx="8" fill="#8b2f97" opacity="0.08" stroke="#bc8cff" stroke-width="1" filter="url(#shadow)"/>
@@ -135,7 +135,7 @@
   <text x="745" y="468" fill="#8b949e" font-size="9">Hypothetical Document Embeddings.</text>
   <text x="745" y="484" fill="#8b949e" font-size="9">Referência: Gao et al. (2022)</text>
   <text x="745" y="502" fill="#484f58" font-size="8">arXiv:2212.10496 · NeurIPS 2022</text>
-  <text x="745" y="520" fill="#8b949e" font-size="9">🟢 CONFIRMADO</text>
+  <circle cx="752" cy="516" r="4" fill="#3fb950"/><text x="762" y="520" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- References footer -->
   <rect x="50" y="565" width="1000" height="160" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
