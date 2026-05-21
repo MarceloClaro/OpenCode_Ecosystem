@@ -27,9 +27,38 @@
 
 ---
 
+## Início Rápido
+
+1. **Instalar pré-requisitos:** Node.js 25, Bun 1.3, Python 3.12
+2. **Clonar:** `git clone https://github.com/MarceloClaro/OpenCode_Ecosystem.git`
+3. **Instalar dependências:** `bun install`
+4. **Executar:** Use `/artigo` para gerar artigo Qualis A1, `/reversa` para engenharia reversa, `/quantum` para computação quântica
+
+> Guia completo de instalação: [GETTING_STARTED.md](GETTING_STARTED.md)
+
+---
+
+## Para quem é este projeto
+
+| Perfil | Como usar | Comando principal |
+|--------|-----------|-------------------|
+| Pesquisador acadêmico | Gerar artigos Qualis A1 com peer-review simulado | `/artigo` |
+| Desenvolvedor | Engenharia reversa + autocura de ecossistemas | `/reversa` |
+| Estudante de quantum | Experimentos QML com 50 qubits | `/quantum` |
+| Contribuidor | Adicionar agentes, skills ou MCPs | Ver [CONTRIBUTING.md](CONTRIBUTING.md) |
+
+---
+
 ## Resumo
 
-O **OpenCode Ecosystem** é uma plataforma de inteligência artificial multiagente, autônoma e evolutiva, integrada ao OpenCode (OpenAI Codex CLI). Composta por **125 agentes especializados**, **40 servidores MCP**, **104 skills** e aproximadamente **114.000 linhas de código Python**, a arquitetura operacionaliza de forma unificada:
+O **OpenCode Ecosystem** é uma plataforma de inteligência artificial multiagente, autônoma e evolutiva, integrada ao OpenCode CLI. Unifica produção acadêmica Qualis A1, debate multiagente com Teoria dos Jogos, validação estatística, computação quântica e autocura autônoma — tudo com modelo gratuito (200K ctx) e arquitetura que aprende a cada ciclo.
+
+> **Repositório:** `C:\Users\marce\.config\opencode`  
+> **Modelo base:** `opencode/big-pickle` — OpenCode Zen, 200K tokens de contexto, 128K tokens de saída
+
+### Detalhes Técnicos
+
+Composta por **125 agentes especializados**, **40 servidores MCP**, **104 skills** e aproximadamente **114.000 linhas de código Python**, a arquitetura operacionaliza de forma unificada:
 
 - **Simulação MiroFish/BettaFish** — Pipeline multiagente com OASIS Profile Gen, Agent Forum (38 raciocínios + Teoria dos Jogos), Config Generator (BRAZIL_TIMEZONE), Graph Builder e Report Agent
 - **PhD Auditor (P18)** — NashSolver generalizado, StatisticalRigor (Cohen's d, Bonferroni, Power Analysis), QualisA1Auditor (score 0-100, 7 critérios), SensitivityAnalyzer, IMRADFormatter
@@ -39,14 +68,10 @@ O **OpenCode Ecosystem** é uma plataforma de inteligência artificial multiagen
 - **Computação quântica aplicada** — VQC 50-qubit, QML HAM10000 (89,52% acurácia)
 - **Engenharia reversa de sistemas** — Reversa Framework v1.2.22 (confiança 100%)
 
-> **Repositório:** `C:\Users\marce\.config\opencode`  
-> **Modelo base:** `opencode/big-pickle` — OpenCode Zen, 200K tokens de contexto, 128K tokens de saída
-
 ---
 
 ## Índice
 
-- [Diagramas Técnicos — 7 SVGs](#diagramas-técnicos--7-svgs)
 - [Arquitetura Geral](#arquitetura-geral)
 - [Simulação MiroFish/BettaFish + PhD Auditor](#simulação-mirofishbettafish--phd-auditor)
 - [Injeção de Dependência (DI)](#injeção-de-dependência-di)
@@ -60,190 +85,12 @@ O **OpenCode Ecosystem** é uma plataforma de inteligência artificial multiagen
 - [Reversa Framework](#reversa-framework)
 - [Métricas Agregadas](#métricas-agregadas)
 - [Comandos Rápidos](#comandos-rápidos)
+- [Diagramas Técnicos — 7 SVGs](#diagramas-técnicos--7-svgs)
+- [Documentação](#documentação)
 
 ---
 
-## Diagramas Técnicos — 7 SVGs
-
-O OpenCode Ecosystem v4.2.1 documenta sua arquitetura por meio de **7 diagramas SVG interativos** localizados em `diagrams/`. Cada SVG é gerado e mantido automaticamente pelo pipeline de engenharia reversa (Reversa Framework v1.2.22) e reflete o estado real do ecossistema em produção.
-
-### Por que SVG e não PNG/Mermaid?
-
-| Critério | SVG (este projeto) | Mermaid | PNG estático |
-|---------|-------------------|---------|-------------|
-| Renderização nativa GitHub | ✅ | ✅ (limitado) | ✅ |
-| Escalabilidade vetorial | ✅ infinita | ❌ (raster) | ❌ |
-| Gradientes e glassmorphism | ✅ | ❌ | ✅ (fixo) |
-| Atualização programática | ✅ (texto puro) | ✅ | ❌ |
-| Animações CSS/SMIL | ✅ | ❌ | ❌ |
-| Complexidade de layout | Alta (livre) | Média (gramática) | Alta (fixo) |
-
----
-
-### SVG 1 — `architecture-overview.svg`
-
-<img src="diagrams/architecture-overview.svg" alt="Arquitetura Geral v4.2.1" width="100%"/>
-
-**Aplicação:** Mapa mestre do ecossistema. Apresenta as **6 camadas arquiteturais** (L1-Infra → L6-Orquestração) com contagens reais de todos os componentes v4.2.1.
-
-**Processos representados:**
-- Fluxo descendente de camadas: Orquestração → Agentes → MCP → Skills → Dados → Infra
-- L5: 125 agentes (core 56 + criação 49 + SEEKER 12 + Reversa 7 + corretor 1)
-- L4: 40 servidores MCP (38 local + 2 remoto)
-- L3: 104 skills em 12 categorias incluindo P14-P18 MiroFish/BettaFish
-- L2: Quantum (81 arqs), DOCLing, Mem0, Basis Research
-- Barra de stats: 125 agentes · 40 MCPs · 104 Skills · 38 Raciocínios · 81 arqs Quantum
-
-**Diferença vs similares:** LangChain e AutoGen exibem grafos de execução planos. Este diagrama mostra **hierarquia de 6 camadas com métricas auditadas** — cada número é verificado no código-fonte e atualizado automaticamente.
-
----
-
-### SVG 2 — `agent-orchestration.svg`
-
-<img src="diagrams/agent-orchestration.svg" alt="Orquestração de Agentes v4.2.1" width="100%"/>
-
-**Aplicação:** Documenta o padrão hierarchical multi-agent com ReAct loop e AutoEvolve.
-
-**Processos representados:**
-- Orquestrador Central (big-pickle, 200K ctx) distribui para 4 sub-agentes especializados
-- Camada MCP com 40 servidores (JSON-RPC sobre stdio)
-- Ciclo ReAct: THOUGHT → ACTION → OBSERVATION → REPEAT (loop até conclusão)
-- Pipeline AutoEvolve: PLAN → ACT → REFLECT → EXTRACT → EVOLVE → `evolution/`
-- MiroFish/BettaFish P14-P18 integrado no estágio EVOLVE
-
-**Diferença vs similares:** CrewAI usa grafos fixos de agentes. O OpenCode usa **ReAct dinâmico + AutoEvolve**: o orquestrador gera novas skills em tempo de execução baseado em padrões de sucesso, criando um sistema que melhora a cada ciclo.
-
----
-
-### SVG 3 — `academic-pipeline.svg`
-
-<img src="diagrams/academic-pipeline.svg" alt="Pipeline Acadêmico MASWOS v4.2.1" width="100%"/>
-
-**Aplicação:** Visualiza o pipeline MASWOS de 8 estágios para produção de artigos Qualis A1.
-
-**Processos representados:**
-- S01 SEEKER: pesquisa paralela em arXiv, PubMed, OpenAlex, CORE, Semantic Scholar
-- S02-S04: Estrutura, Escrita (49 agentes), Formatação ABNT/LaTeX
-- S05-S06: Banca (5 revisores) + Orientação (4 doutores) — iteração até score ≥ 95
-- S07: AUTO_SCORE_QUALIS.py (10 critérios ponderados)
-- Diamond de decisão: score ≥ 95? Se não → loopback para S06
-- S08: Export LaTeX/PDF com 46 anotações TSAC auditáveis
-- Corretor CJK (`ptbr_corrector.py`) e PhD Auditor (Nash+Bonferroni+Qualis)
-
-**Diferença vs similares:** GPT-Academic e Elicit geram texto linear. O MASWOS aplica **peer-review simulado com 5 revisores + 4 orientadores + loopback iterativo + auditoria estatística** — nenhum framework open-source replica esse nível de verificação.
-
----
-
-### SVG 4 — `mcp-architecture.svg`
-
-<img src="diagrams/mcp-architecture.svg" alt="Arquitetura MCP v4.2.1" width="100%"/>
-
-**Aplicação:** Documenta a implementação do protocolo MCP (Anthropic, 2024) com 40 servidores.
-
-**Processos representados:**
-- Processo Host (OpenCode CLI) contém Agente + Clientes MCP
-- Sessões JSON-RPC 1:1 entre cliente e servidor (stdio local / HTTP remoto)
-- 3 zonas: Segurança Local (FS, SQLite, PDF), Busca (WebSearch, Context7, gh_grep), Remota (☁️)
-- Lazy init: servidores só iniciam na primeira chamada de ferramenta
-
-**Diferença vs similares:** Ferramentas como Cursor e Windsurf usam MCPs de forma monolítica. O OpenCode implementa **40 servidores com lazy init + Container DI**, permitindo adicionar ou remover servidores sem reinicializar o agente.
-
----
-
-### SVG 5 — `rag-strategies.svg`
-
-<img src="diagrams/rag-strategies.svg" alt="9 Estratégias RAG v4.2.1" width="100%"/>
-
-**Aplicação:** Catálogo das 9 estratégias RAG implementadas no servidor `maswos-rag`.
-
-**Processos representados (9 estratégias):**
-
-| # | Estratégia | Fluxo | Referência |
-|---|-----------|-------|------------|
-| ① | Vanilla RAG | Query → Embed → Retrieve → Generate | Lewis et al., NeurIPS 2020 |
-| ② | Memory RAG | + Redis session memory | Zhong et al., arXiv 2405.14367 |
-| ③ | Agentic RAG | + Agent routing dinâmico | Gradientsys, arXiv 2507.06520 |
-| ④ | Graph RAG | + Knowledge Graph KG retrieval | Edge et al., Microsoft 2024 |
-| ⑤ | Hybrid RAG | Vector + Graph fusion | Wang et al., arXiv 2501.00309 |
-| ⑥ | CRAG | Corrective eval → {Correct┃Incorrect┃Ambíguo} | Yan et al., ICLR 2024 |
-| ⑦ | Adaptive RAG | Seleção de estratégia por tipo de query | Jeong et al., arXiv 2403.14403 |
-| ⑧ | Fusion RAG | Multi-Query → Reciprocal Rank Fusion | Radev et al., arXiv 2402.03367 |
-| ⑨ | HyDE | Hypothetical Document Embeddings | Gao et al., NeurIPS 2022 |
-
-**Diferença vs similares:** LlamaIndex e LangChain oferecem RAG modular, mas requerem configuração manual por caso. O `maswos-rag` seleciona automaticamente a estratégia via Adaptive RAG (⑦) baseado no tipo de consulta, combinando Graph+Vector+Correction em um único servidor MCP.
-
----
-
-### SVG 6 — `self-healing.svg`
-
-<img src="diagrams/self-healing.svg" alt="Ciclo de Autocura v4.2.1" width="100%"/>
-
-**Aplicação:** Visualiza o ciclo contínuo de saúde e reparo automático do ecossistema.
-
-**Processos representados:**
-1. **MONITORAR** — varredura contínua: 104 skills, 40 MCPs, CJK leaks, syntax errors
-2. **DETECTAR** — anomalias: caracteres CJK, YAML inválido, skills oversize, MCPs inativos
-3. **DIAGNOSTICAR** — classificação por severidade (crítico/aviso/info)
-4. **REPARAR** — correção automática: remove CJK, corrige frontmatter, progressive disclosure
-5. **VERIFICAR** — re-varredura pós-reparo para confirmar resolução
-
-**Métricas v4.2.1:** 104 skills · 12 categorias · 40 MCPs ativos · CJK leaks = 0 (zero-tolerance)
-
-**Diferença vs similares:** AutoGen e CrewAI não possuem monitoramento de saúde do ecossistema. O OpenCode implementa um **MCP dedicado (`self-healer`) + script Python (`self_healer.py`)** que opera de forma autônoma, detectando e corrigindo problemas sem intervenção humana.
-
----
-
-### SVG 7 — `mirofish-phd-auditor.svg` *(NOVO v4.2.1)*
-
-<img src="diagrams/mirofish-phd-auditor.svg" alt="Pipeline MiroFish/BettaFish + PhD Auditor P14-P18" width="100%"/>
-
-**Aplicação:** Documenta o pipeline P14-P18 completo — a camada de simulação multiagente com rigor científico Qualis A1 — exclusiva do OpenCode Ecosystem v4.2.1.
-
-**Processos representados:**
-
-| Fase | Componente | Função |
-|------|-----------|--------|
-| P14 | Agent Forum (OASIS) | Debate multiagente estruturado · 38 tipos de raciocínio · 8 perfis |
-| P15 | DocIR | Recuperação de 50 métricas reais (World Bank/WHO/FAO/UNESCO) |
-| P16 | ANP | Ponderação multi-critério Analytic Network Process |
-| P17 | Meta-Writer | Síntese em LaTeX/IMRAD · TSAC anti-AI · 87 palavras banidas |
-| P18 | PhD Auditor | NashSolver · StatisticalRigor (Cohen+Bonferroni) · QualisA1Auditor |
-
-**38 tipos de raciocínio em 6 categorias:**
-- Lógico (5): Dedutivo, Indutivo, Abdutivo, Analógico, Hipotético-Dedutivo
-- Dialético (5): Socrático, Hegeliano, Tese-Antítese, Crítica, Refutação
-- Teoria dos Jogos (10): Nash, Minimax, Dominância, Stackelberg, Pareto, Bayesiano, Evolutivo, Cooperativo, Assimétrico, Sinalização
-- Decisão (5): Multi-critério, Bayesiano, Árvore, Fuzzy, Heurístico
-- Estratégico (5): SWOT, Cenário, Roadmap, Competitivo, Blue Ocean
-- Inovação (8): TRIZ, Design Thinking, Lateral, Biomimética, Disruptivo, Frugal, Combinatorial, Ágil
-
-**11 componentes MiroFish/BettaFish:** OASIS · Forum · Config · Graph · Report · Nash · Stats · Qualis · Sensitivity · IMRAD · Debate
-
-**Diferença vs similares:** Nenhum framework open-source combina simulação de debate multiagente com validação estatística acadêmica (Cohen's κ, Bonferroni, Power Analysis, Nash Equilibrium) num único pipeline. GPT-4 research tools, Semantic Scholar e ResearchRabbit fazem busca/sumarização — mas **não auditam, debatem nem validam estatisticamente** o conteúdo gerado.
-
----
-
-### Por que o OpenCode tem vantagem sobre similares?
-
-| Capacidade | OpenCode Ecosystem v4.2.1 | LangChain | AutoGen | CrewAI | Cursor/Copilot |
-|-----------|------------------------|-----------|---------|--------|----------------|
-| Agentes especializados | **125** | Configurável | Configurável | ~10-20 | Não |
-| Pipeline acadêmico Qualis A1 | **✅ 8 estágios** | ❌ | ❌ | ❌ | ❌ |
-| PhD Auditor (Nash+Bonferroni) | **✅** | ❌ | ❌ | ❌ | ❌ |
-| RAG multi-estratégia (9) | **✅ auto-select** | Manual | Manual | Manual | ❌ |
-| Self-Healing autônomo | **✅ MCP dedicado** | ❌ | ❌ | ❌ | ❌ |
-| AutoEvolve (gera skills) | **✅ PLAN→EVOLVE** | ❌ | ❌ | ❌ | ❌ |
-| Quantum Computing (50 qubits) | **✅ 89.52% acc** | ❌ | ❌ | ❌ | ❌ |
-| MCP Servers nativos | **40 servidores** | Plugin-based | ❌ | ❌ | Limitado |
-| Zero-tolerance CJK + PT-BR | **✅ corrector.py** | ❌ | ❌ | ❌ | ❌ |
-| Engenharia Reversa autônoma | **✅ 9 agentes** | ❌ | ❌ | ❌ | ❌ |
-| Modelo gratuito 200K ctx | **✅ big-pickle** | API paga | API paga | API paga | Assinatura |
-
-> **Vantagem-chave:** O OpenCode Ecosystem é o único framework que **combina produção acadêmica Qualis A1 + debate multiagente com Teoria dos Jogos + validação estatística + quantum computing + autocura autônoma** num ecossistema unificado, com modelo gratuito (200K ctx) e arquitetura evolutiva que aprende a cada ciclo.
-
----
-
-
+## Arquitetura Geral
 
 O ecossistema é estruturado em **6 camadas arquiteturais hierárquicas**, do runtime de infraestrutura até a orquestração meta-granular, com **Injeção de Dependência (DI)** transversal a todas as camadas:
 
@@ -256,8 +103,6 @@ O ecossistema é estruturado em **6 camadas arquiteturais hierárquicas**, do ru
 | **L2** | Dados | SQLite, Mem0, Quantum (81 arqs), DOCLing | Ollama, SQLite |
 | **L1** | Infra | Node.js 25, Bun 1.3, Python 3.12 | Win32 |
 | **DI** | Container | 11 serviços + 3 plugins TS + bridge CommandRegistry | Container, from_container() |
-
----
 
 ---
 
@@ -572,6 +417,199 @@ Scout → Archaeologist → Detective → Architect → Writer → Reviewer
 | `/plan` | writing-plans + sequential-thinking MCP |
 | `/auto` | openagent + todos os 17 MCPs |
 | `/ticket` | Jira ticket manager via CommandRegistry bridge |
+
+---
+
+## Diagramas Técnicos — 7 SVGs
+
+O OpenCode Ecosystem v4.2.1 documenta sua arquitetura por meio de **7 diagramas SVG interativos** localizados em `diagrams/`. Cada SVG é gerado e mantido automaticamente pelo pipeline de engenharia reversa (Reversa Framework v1.2.22) e reflete o estado real do ecossistema em produção.
+
+### Por que SVG e não PNG/Mermaid?
+
+| Critério | SVG (este projeto) | Mermaid | PNG estático |
+|---------|-------------------|---------|-------------|
+| Renderização nativa GitHub | ✅ | ✅ (limitado) | ✅ |
+| Escalabilidade vetorial | ✅ infinita | ❌ (raster) | ❌ |
+| Gradientes e glassmorphism | ✅ | ❌ | ✅ (fixo) |
+| Atualização programática | ✅ (texto puro) | ✅ | ❌ |
+| Animações CSS/SMIL | ✅ | ❌ | ❌ |
+| Complexidade de layout | Alta (livre) | Média (gramática) | Alta (fixo) |
+
+---
+
+### SVG 1 — `architecture-overview.svg`
+
+<img src="diagrams/architecture-overview.svg" alt="Arquitetura Geral v4.2.1" width="100%"/>
+
+**Aplicação:** Mapa mestre do ecossistema. Apresenta as **6 camadas arquiteturais** (L1-Infra → L6-Orquestração) com contagens reais de todos os componentes v4.2.1.
+
+**Processos representados:**
+- Fluxo descendente de camadas: Orquestração → Agentes → MCP → Skills → Dados → Infra
+- L5: 125 agentes (core 56 + criação 49 + SEEKER 12 + Reversa 7 + corretor 1)
+- L4: 40 servidores MCP (38 local + 2 remoto)
+- L3: 104 skills em 12 categorias incluindo P14-P18 MiroFish/BettaFish
+- L2: Quantum (81 arqs), DOCLing, Mem0, Basis Research
+- Barra de stats: 125 agentes · 40 MCPs · 104 Skills · 38 Raciocínios · 81 arqs Quantum
+
+**Diferença vs similares:** LangChain e AutoGen exibem grafos de execução planos. Este diagrama mostra **hierarquia de 6 camadas com métricas auditadas** — cada número é verificado no código-fonte e atualizado automaticamente.
+
+---
+
+### SVG 2 — `agent-orchestration.svg`
+
+<img src="diagrams/agent-orchestration.svg" alt="Orquestração de Agentes v4.2.1" width="100%"/>
+
+**Aplicação:** Documenta o padrão hierarchical multi-agent com ReAct loop e AutoEvolve.
+
+**Processos representados:**
+- Orquestrador Central (big-pickle, 200K ctx) distribui para 4 sub-agentes especializados
+- Camada MCP com 40 servidores (JSON-RPC sobre stdio)
+- Ciclo ReAct: THOUGHT → ACTION → OBSERVATION → REPEAT (loop até conclusão)
+- Pipeline AutoEvolve: PLAN → ACT → REFLECT → EXTRACT → EVOLVE → `evolution/`
+- MiroFish/BettaFish P14-P18 integrado no estágio EVOLVE
+
+**Diferença vs similares:** CrewAI usa grafos fixos de agentes. O OpenCode usa **ReAct dinâmico + AutoEvolve**: o orquestrador gera novas skills em tempo de execução baseado em padrões de sucesso, criando um sistema que melhora a cada ciclo.
+
+---
+
+### SVG 3 — `academic-pipeline.svg`
+
+<img src="diagrams/academic-pipeline.svg" alt="Pipeline Acadêmico MASWOS v4.2.1" width="100%"/>
+
+**Aplicação:** Visualiza o pipeline MASWOS de 8 estágios para produção de artigos Qualis A1.
+
+**Processos representados:**
+- S01 SEEKER: pesquisa paralela em arXiv, PubMed, OpenAlex, CORE, Semantic Scholar
+- S02-S04: Estrutura, Escrita (49 agentes), Formatação ABNT/LaTeX
+- S05-S06: Banca (5 revisores) + Orientação (4 doutores) — iteração até score ≥ 95
+- S07: AUTO_SCORE_QUALIS.py (10 critérios ponderados)
+- Diamond de decisão: score ≥ 95? Se não → loopback para S06
+- S08: Export LaTeX/PDF com 46 anotações TSAC auditáveis
+- Corretor CJK (`ptbr_corrector.py`) e PhD Auditor (Nash+Bonferroni+Qualis)
+
+**Diferença vs similares:** GPT-Academic e Elicit geram texto linear. O MASWOS aplica **peer-review simulado com 5 revisores + 4 orientadores + loopback iterativo + auditoria estatística** — nenhum framework open-source replica esse nível de verificação.
+
+---
+
+### SVG 4 — `mcp-architecture.svg`
+
+<img src="diagrams/mcp-architecture.svg" alt="Arquitetura MCP v4.2.1" width="100%"/>
+
+**Aplicação:** Documenta a implementação do protocolo MCP (Anthropic, 2024) com 40 servidores.
+
+**Processos representados:**
+- Processo Host (OpenCode CLI) contém Agente + Clientes MCP
+- Sessões JSON-RPC 1:1 entre cliente e servidor (stdio local / HTTP remoto)
+- 3 zonas: Segurança Local (FS, SQLite, PDF), Busca (WebSearch, Context7, gh_grep), Remota (☁️)
+- Lazy init: servidores só iniciam na primeira chamada de ferramenta
+
+**Diferença vs similares:** Ferramentas como Cursor e Windsurf usam MCPs de forma monolítica. O OpenCode implementa **40 servidores com lazy init + Container DI**, permitindo adicionar ou remover servidores sem reinicializar o agente.
+
+---
+
+### SVG 5 — `rag-strategies.svg`
+
+<img src="diagrams/rag-strategies.svg" alt="9 Estratégias RAG v4.2.1" width="100%"/>
+
+**Aplicação:** Catálogo das 9 estratégias RAG implementadas no servidor `maswos-rag`.
+
+**Processos representados (9 estratégias):**
+
+| # | Estratégia | Fluxo | Referência |
+|---|-----------|-------|------------|
+| ① | Vanilla RAG | Query → Embed → Retrieve → Generate | Lewis et al., NeurIPS 2020 |
+| ② | Memory RAG | + Redis session memory | Zhong et al., arXiv 2405.14367 |
+| ③ | Agentic RAG | + Agent routing dinâmico | Gradientsys, arXiv 2507.06520 |
+| ④ | Graph RAG | + Knowledge Graph KG retrieval | Edge et al., Microsoft 2024 |
+| ⑤ | Hybrid RAG | Vector + Graph fusion | Wang et al., arXiv 2501.00309 |
+| ⑥ | CRAG | Corrective eval → {Correct┃Incorrect┃Ambíguo} | Yan et al., ICLR 2024 |
+| ⑦ | Adaptive RAG | Seleção de estratégia por tipo de query | Jeong et al., arXiv 2403.14403 |
+| ⑧ | Fusion RAG | Multi-Query → Reciprocal Rank Fusion | Radev et al., arXiv 2402.03367 |
+| ⑨ | HyDE | Hypothetical Document Embeddings | Gao et al., NeurIPS 2022 |
+
+**Diferença vs similares:** LlamaIndex e LangChain oferecem RAG modular, mas requerem configuração manual por caso. O `maswos-rag` seleciona automaticamente a estratégia via Adaptive RAG (⑦) baseado no tipo de consulta, combinando Graph+Vector+Correction em um único servidor MCP.
+
+---
+
+### SVG 6 — `self-healing.svg`
+
+<img src="diagrams/self-healing.svg" alt="Ciclo de Autocura v4.2.1" width="100%"/>
+
+**Aplicação:** Visualiza o ciclo contínuo de saúde e reparo automático do ecossistema.
+
+**Processos representados:**
+1. **MONITORAR** — varredura contínua: 104 skills, 40 MCPs, CJK leaks, syntax errors
+2. **DETECTAR** — anomalias: caracteres CJK, YAML inválido, skills oversize, MCPs inativos
+3. **DIAGNOSTICAR** — classificação por severidade (crítico/aviso/info)
+4. **REPARAR** — correção automática: remove CJK, corrige frontmatter, progressive disclosure
+5. **VERIFICAR** — re-varredura pós-reparo para confirmar resolução
+
+**Métricas v4.2.1:** 104 skills · 12 categorias · 40 MCPs ativos · CJK leaks = 0 (zero-tolerance)
+
+**Diferença vs similares:** AutoGen e CrewAI não possuem monitoramento de saúde do ecossistema. O OpenCode implementa um **MCP dedicado (`self-healer`) + script Python (`self_healer.py`)** que opera de forma autônoma, detectando e corrigindo problemas sem intervenção humana.
+
+---
+
+### SVG 7 — `mirofish-phd-auditor.svg` *(NOVO v4.2.1)*
+
+<img src="diagrams/mirofish-phd-auditor.svg" alt="Pipeline MiroFish/BettaFish + PhD Auditor P14-P18" width="100%"/>
+
+**Aplicação:** Documenta o pipeline P14-P18 completo — a camada de simulação multiagente com rigor científico Qualis A1 — exclusiva do OpenCode Ecosystem v4.2.1.
+
+**Processos representados:**
+
+| Fase | Componente | Função |
+|------|-----------|--------|
+| P14 | Agent Forum (OASIS) | Debate multiagente estruturado · 38 tipos de raciocínio · 8 perfis |
+| P15 | DocIR | Recuperação de 50 métricas reais (World Bank/WHO/FAO/UNESCO) |
+| P16 | ANP | Ponderação multi-critério Analytic Network Process |
+| P17 | Meta-Writer | Síntese em LaTeX/IMRAD · TSAC anti-AI · 87 palavras banidas |
+| P18 | PhD Auditor | NashSolver · StatisticalRigor (Cohen+Bonferroni) · QualisA1Auditor |
+
+**38 tipos de raciocínio em 6 categorias:**
+- Lógico (5): Dedutivo, Indutivo, Abdutivo, Analógico, Hipotético-Dedutivo
+- Dialético (5): Socrático, Hegeliano, Tese-Antítese, Crítica, Refutação
+- Teoria dos Jogos (10): Nash, Minimax, Dominância, Stackelberg, Pareto, Bayesiano, Evolutivo, Cooperativo, Assimétrico, Sinalização
+- Decisão (5): Multi-critério, Bayesiano, Árvore, Fuzzy, Heurístico
+- Estratégico (5): SWOT, Cenário, Roadmap, Competitivo, Blue Ocean
+- Inovação (8): TRIZ, Design Thinking, Lateral, Biomimética, Disruptivo, Frugal, Combinatorial, Ágil
+
+**11 componentes MiroFish/BettaFish:** OASIS · Forum · Config · Graph · Report · Nash · Stats · Qualis · Sensitivity · IMRAD · Debate
+
+**Diferença vs similares:** Nenhum framework open-source combina simulação de debate multiagente com validação estatística acadêmica (Cohen's κ, Bonferroni, Power Analysis, Nash Equilibrium) num único pipeline. GPT-4 research tools, Semantic Scholar e ResearchRabbit fazem busca/sumarização — mas **não auditam, debatem nem validam estatisticamente** o conteúdo gerado.
+
+---
+
+### Por que o OpenCode tem vantagem sobre similares?
+
+| Capacidade | OpenCode Ecosystem v4.2.1 | LangChain | AutoGen | CrewAI | Cursor/Copilot |
+|-----------|------------------------|-----------|---------|--------|----------------|
+| Agentes especializados | **125** | Configurável | Configurável | ~10-20 | Não |
+| Pipeline acadêmico Qualis A1 | **✅ 8 estágios** | ❌ | ❌ | ❌ | ❌ |
+| PhD Auditor (Nash+Bonferroni) | **✅** | ❌ | ❌ | ❌ | ❌ |
+| RAG multi-estratégia (9) | **✅ auto-select** | Manual | Manual | Manual | ❌ |
+| Self-Healing autônomo | **✅ MCP dedicado** | ❌ | ❌ | ❌ | ❌ |
+| AutoEvolve (gera skills) | **✅ PLAN→EVOLVE** | ❌ | ❌ | ❌ | ❌ |
+| Quantum Computing (50 qubits) | **✅ 89.52% acc** | ❌ | ❌ | ❌ | ❌ |
+| MCP Servers nativos | **40 servidores** | Plugin-based | ❌ | ❌ | Limitado |
+| Zero-tolerance CJK + PT-BR | **✅ corrector.py** | ❌ | ❌ | ❌ | ❌ |
+| Engenharia Reversa autônoma | **✅ 9 agentes** | ❌ | ❌ | ❌ | ❌ |
+| Modelo gratuito 200K ctx | **✅ big-pickle** | API paga | API paga | API paga | Assinatura |
+
+> **Vantagem-chave:** O OpenCode Ecosystem é o único framework que **combina produção acadêmica Qualis A1 + debate multiagente com Teoria dos Jogos + validação estatística + quantum computing + autocura autônoma** num ecossistema unificado, com modelo gratuito (200K ctx) e arquitetura evolutiva que aprende a cada ciclo.
+
+---
+
+## Documentação
+
+| Documento | Descrição |
+|-----------|-----------|
+| [GETTING_STARTED.md](GETTING_STARTED.md) | Guia de instalação e primeiros passos |
+| [TUTORIALS.md](TUTORIALS.md) | Tutoriais práticos detalhados *(em breve)* |
+| [GLOSSARY.md](GLOSSARY.md) | Glossário de termos técnicos *(em breve)* |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Guia para contribuidores |
+| [ROADMAP.md](ROADMAP.md) | Visão futura do projeto |
+| [AGENTS_PTBR.md](AGENTS_PTBR.md) | Documentação de agentes em PT-BR *(em breve)* |
 
 ---
 
