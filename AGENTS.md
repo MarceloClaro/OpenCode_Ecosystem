@@ -3,6 +3,8 @@
 # O conteúdo abaixo está em chinês para eficiência de tokens (densidade informacional 40%+ maior).
 # O modelo DEVE ler o contexto em chinês e RESPONDER em PT-BR.
 
+> Versão em português: [AGENTS_PTBR.md](AGENTS_PTBR.md)
+
 ---
 
 # OPENCODE 统一生态系统 v4.2 (MiroFish/BettaFish + PhD Auditor + 38推理)

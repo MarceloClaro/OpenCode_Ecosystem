@@ -1,30 +1,33 @@
 # Primeiros Passos — OpenCode Ecosystem v4.2.1
 
-Bem-vindo ao **OpenCode Ecosystem**, uma plataforma de inteligência artificial multiagente, autônoma e evolutiva, integrada ao OpenCode CLI. Este guia o conduzirá desde a instalação até a execução dos primeiros comandos.
+> **Tempo estimado:** 10–15 minutos para instalação e primeiro uso.
 
 ---
 
 ## Para quem é este guia
 
-| Perfil | Objetivo |
-|--------|----------|
-| **Pesquisador acadêmico** | Gerar artigos com score Qualis A1 (≥ 95/100) utilizando peer-review simulado com 49 agentes |
-| **Desenvolvedor** | Executar engenharia reversa de sistemas, explorar a arquitetura multiagente e contribuir com novos agentes, skills ou MCPs |
-| **Estudante de computação quântica** | Realizar experimentos QML com até 50 qubits (VQC, HAM10000, ZNE/PEC) |
-| **Estudante ou entusiasta de IA** | Compreender e explorar um ecossistema com 125 agentes, 40 MCPs e 104 skills |
+Este guia destina-se a:
+
+- **Pesquisadores acadêmicos** — que desejam gerar artigos Qualis A1 com peer-review simulado e auditoria estatística.
+- **Desenvolvedores de IA** — interessados em arquiteturas multiagente, engenharia reversa automatizada e integração de MCPs.
+- **Estudantes de computação quântica** — que buscam experimentar com VQC de 50 qubits, QML em dados médicos e mitigação de erros (ZNE/PEC).
+
+Nenhum conhecimento prévio sobre o OpenCode Ecosystem é necessário. Este documento guiará você desde a instalação até a execução dos primeiros comandos.
 
 ---
 
 ## Pré-requisitos
 
-| Requisito | Versão mínima | Instalação |
-|-----------|:------------:|------------|
-| **Node.js** | v25+ | [nodejs.org/download](https://nodejs.org/en/download/) |
-| **Bun** | 1.3+ | [bun.sh](https://bun.sh/) — `curl -fsSL https://bun.sh/install \| bash` |
-| **Python** | 3.12+ | [python.org/downloads](https://www.python.org/downloads/) |
-| **OpenCode CLI** | 1.14+ | [github.com/nicepkg/opencode](https://github.com/nicepkg/opencode) — `npm i -g @anthropic-ai/opencode` |
-| **Sistema operacional** | Windows 11 | Sistema principal de desenvolvimento. Linux e macOS são compatíveis, porém não oficialmente testados |
-| **Modelo** | big-pickle | Gratuito — OpenCode Zen, 200K tokens de contexto, 128K tokens de saída. Configurado automaticamente pelo OpenCode CLI |
+Antes de iniciar, verifique se o seu ambiente atende aos seguintes requisitos:
+
+| Componente | Versão Mínima | Observação |
+|------------|:-------------:|-----------|
+| **Node.js** | v25+ | Runtime JavaScript necessário para o OpenCode CLI |
+| **Bun** | 1.3+ | Gerenciador de pacotes e runtime utilizado pelo projeto |
+| **Python** | 3.12+ | Necessário para os agentes, scripts Nexus e módulos quânticos |
+| **OpenCode CLI** | 1.14+ | Interface de linha de comando do OpenCode |
+| **Sistema Operacional** | Windows 11 (principal) | Linux e macOS também são suportados (experimental) |
+| **Modelo** | `big-pickle` | OpenCode Zen — 200K tokens de contexto, 128K de saída, **gratuito** |
 
 ---
 
@@ -37,9 +40,9 @@ git clone https://github.com/MarceloClaro/OpenCode_Ecosystem.git
 cd OpenCode_Ecosystem
 ```
 
-### 2. Instalar dependências Node.js
+### 2. Instalar dependências
 
-O `package.json` declara as dependências `@opencode-ai/plugin` e `@types/bun`. Instale-as com o Bun:
+O projeto utiliza o Bun como gerenciador de pacotes. As dependências incluem `@opencode-ai/plugin` e `@types/bun`:
 
 ```bash
 bun install
@@ -47,105 +50,78 @@ bun install
 
 ### 3. Configurar o OpenCode CLI
 
-Após instalar o OpenCode CLI globalmente, configure o workspace:
+Certifique-se de que o OpenCode CLI (versão 1.14+) esteja instalado e acessível no `PATH`. Consulte a [documentação oficial do OpenCode](https://opencode.ai) para instruções de instalação.
 
 ```bash
-opencode init
+opencode --version
+# Saída esperada: 1.14.x ou superior
 ```
 
-O workspace padrão será criado em `~/.config/opencode` (Linux/macOS) ou `C:\Users\<usuario>\.config\opencode` (Windows).
+### 4. Verificar o modelo `big-pickle`
 
-### 4. Verificar o modelo big-pickle
-
-O modelo `opencode/big-pickle` é gratuito e deve estar disponível automaticamente. Verifique com:
+O modelo padrão do ecossistema é o `big-pickle` (OpenCode Zen), que é gratuito e oferece 200K tokens de contexto com 128K tokens de saída. Verifique a disponibilidade:
 
 ```bash
 opencode models
+# O modelo big-pickle deve aparecer na lista
 ```
-
-Confirme que `big-pickle` aparece na lista com 200K de contexto e 128K de saída.
 
 ---
 
 ## Comandos de Verificação
 
-Execute os comandos abaixo para confirmar que todos os pré-requisitos estão corretamente instalados:
+Execute os comandos abaixo para confirmar que seu ambiente está corretamente configurado:
 
-| Comando | Saída esperada |
+| Comando | Saída Esperada |
 |---------|---------------|
 | `node --version` | `v25.x.x` |
 | `bun --version` | `1.3.x` |
 | `python --version` | `Python 3.12.x` |
-| `opencode --version` | `1.14.x` |
-
-Se algum comando retornar erro ou versão inferior à mínima, consulte a seção [Solução de Problemas Comuns](#solução-de-problemas-comuns).
+| `opencode --version` | `1.14.x` ou superior |
 
 ---
 
-## Primeiros Passos — 3 Exemplos Simples
+## Primeiros Passos — 3 Exemplos
 
-### Exemplo 1: Gerar um artigo acadêmico
+### Exemplo 1: Gerar artigo acadêmico Qualis A1
 
 ```
 /artigo
 ```
 
-**O que acontece:**
-1. O comando aciona o pipeline **MASWOS** (Multi-Agent Scientific Writing and Orchestration System)
-2. O **SEEKER** realiza pesquisa autônoma em 10+ fontes acadêmicas (arXiv, PubMed, OpenAlex, CORE, Semantic Scholar)
-3. **49 agentes especializados** (A00–A45 + scheduler) executam 8 estágios: pesquisa → estrutura → escrita → formatação ABNT → revisão por banca de 5 → correção por 4 orientadores doutores → scoring → exportação LaTeX/PDF
-4. O **manus-evolve** aprende padrões de sucesso e gera novas skills em `evolution/`
-5. Resultado: artigo com score **≥ 95/100** segundo critérios Qualis A1 da CAPES
+Este comando aciona o pipeline completo de produção acadêmica:
 
-### Exemplo 2: Executar engenharia reversa
+1. **SEEKER** — pesquisa autônoma em 10+ fontes (arXiv, PubMed, OpenAlex, CORE, Semantic Scholar)
+2. **MASWOS** — 49 agentes especializados em 8 estágios de escrita
+3. **Banca** — 5 revisores + 4 orientadores em iteração até score ≥ 95/100
+4. **AUTO_SCORE_QUALIS.py** — avaliação automática com 10 critérios ponderados
+5. **Export** — LaTeX/PDF com 46 anotações TSAC auditáveis
+
+**Resultado:** artigo de 35+ páginas em formato ABNT, com citações verificáveis e score Qualis A1.
+
+### Exemplo 2: Engenharia reversa de sistemas
 
 ```
 /reversa
 ```
 
-**O que acontece:**
-1. O **Reversa Framework v1.2.22** aciona um pipeline de **9 agentes especializados**:
-   - `scout` → mapeia superfície do sistema (`surface.json`, `modules.json`)
-   - `archaeologist` → analisa AST e dependências
-   - `detective` → gera UML e fluxos de domínio
-   - `architect` → produz diagramas C4 e ADRs
-   - `writer` → gera 12 SDDs (Software Design Documents)
-   - `reviewer`, `visor`, `data-master`, `design-system` → refinam e validam
-2. Resultado: **67 artefatos** com confiança **100/100**
+Aciona um pipeline de 9 agentes especializados em engenharia reversa:
 
-### Exemplo 3: Explorar o ecossistema
+```
+Scout → Archaeologist → Detective → Architect → Writer → Reviewer
+                                    ↓
+                        Visor → Data Master → Design System
+```
+
+**Resultado:** 7 SVGs de arquitetura, mapas de dependência, ADRs e SDDs gerados automaticamente.
+
+### Exemplo 3: Modo autônomo com todos os MCPs
 
 ```
 /auto
 ```
 
-**O que acontece:**
-1. O comando aciona o **openagent** juntamente com todos os MCPs disponíveis (40 registrados, 17 ativos)
-2. O sistema opera em modo autônomo, utilizando busca (DuckDuckGo, GitHub, Context7), execução de código, análise de PDF, raciocínio sequencial e memória
-3. Os MCPs inicializam sob demanda (**lazy init**) — apenas os servidores necessários para cada tarefa são carregados na primeira chamada
-
----
-
-## Outros Comandos Úteis
-
-| Comando | Descrição |
-|---------|-----------|
-| `/quantum` | Executa experimentos de computação quântica (VQC 50 qubits, QML HAM10000) |
-| `/evolve` | Aciona o AutoEvolve: PLAN → ACT → REFLECT → EXTRACT → EVOLVE |
-| `/plan` | Utiliza a skill `writing-plans` com o MCP `sequential-thinking` |
-
----
-
-## Próximos Passos
-
-| Documento | Descrição |
-|-----------|-----------|
-| [README.md](README.md) | Documentação técnica completa do ecossistema |
-| [TUTORIALS.md](TUTORIALS.md) | Tutoriais práticos detalhados *(em breve)* |
-| [GLOSSARY.md](GLOSSARY.md) | Glossário de termos técnicos *(em breve)* |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Guia para contribuidores |
-| [ROADMAP.md](ROADMAP.md) | Visão futura do projeto |
-| [AGENTS_PTBR.md](AGENTS_PTBR.md) | Documentação de agentes em português brasileiro *(em breve)* |
+Ativa o agente `openagent` com acesso a todos os 40 MCPs (servidores de contexto), permitindo execução autônoma de tarefas complexas que combinam pesquisa, código, dados e análise.
 
 ---
 
@@ -153,62 +129,60 @@ Se algum comando retornar erro ou versão inferior à mínima, consulte a seçã
 
 ### Erro de versão do Node.js
 
-**Sintoma:** `node --version` retorna versão inferior a 25.
+**Sintoma:** `Error: Unsupported Node.js version`
 
-**Solução:** Atualize o Node.js para a versão 25+ via [nodejs.org/download](https://nodejs.org/en/download/) ou utilize um gerenciador de versões:
+**Solução:** Atualize o Node.js para v25 ou superior. Utilize o `nvm` para gerenciar versões:
 
 ```bash
-# Com nvm (Linux/macOS)
 nvm install 25
 nvm use 25
-
-# Com Volta (recomendado para Windows)
-volta install node@25
 ```
 
-### Python não encontrado
+### Modelo `big-pickle` não disponível
 
-**Sintoma:** `python --version` retorna erro "command not found".
+**Sintoma:** `Model not found` ao executar comandos
 
-**Solução:**
-1. Verifique se o Python 3.12+ está instalado: [python.org/downloads](https://www.python.org/downloads/)
-2. No Windows, durante a instalação, marque a opção **"Add Python to PATH"**
-3. No Linux, utilize `python3 --version` (o comando pode ser `python3` em vez de `python`)
-
-### Modelo big-pickle não disponível
-
-**Sintoma:** O modelo `big-pickle` não aparece ao executar `opencode models`.
-
-**Solução:**
-1. Verifique se o OpenCode CLI está na versão 1.14+: `opencode --version`
-2. Atualize o CLI: `npm update -g @anthropic-ai/opencode`
-3. O modelo `big-pickle` (OpenCode Zen) é gratuito e não requer chave de API
+**Solução:** Verifique a conexão com a internet e execute `opencode models` para listar os modelos disponíveis. O `big-pickle` é gratuito e deve estar disponível automaticamente.
 
 ### MCPs não inicializando
 
-**Sintoma:** Ferramentas MCP não respondem ou retornam erro de conexão.
+**Sintoma:** Servidores MCP não respondem nas primeiras interações
 
-**Solução:**
-1. Os MCPs utilizam **lazy init** — só inicializam na primeira chamada de ferramenta. Aguarde a primeira execução
-2. Verifique o arquivo `opencode.json` na raiz do projeto para confirmar as configurações dos servidores
-3. Para MCPs locais (38 de 40), confirme que as dependências do servidor estão instaladas
-4. Execute `/auto` para forçar a inicialização de todos os MCPs disponíveis
+**Explicação:** Os MCPs utilizam **lazy init** — eles só inicializam na primeira chamada de ferramenta, não durante a inicialização do sistema. Isso é comportamento esperado e reduz o tempo de startup.
 
-### Erro ao executar `bun install`
+**Solução:** Execute um comando que utilize o MCP desejado (por exemplo, `/artigo` para MCPs acadêmicos) e aguarde a inicialização automática.
 
-**Sintoma:** Falha na instalação das dependências Node.js.
+### Erro `bun install` — dependências não instaladas
 
-**Solução:**
-1. Confirme que o Bun está na versão 1.3+: `bun --version`
-2. Limpe o cache e reinstale: `bun install --force`
-3. Se necessário, remova `node_modules/` e `bun.lockb` antes de reinstalar
+**Sintoma:** Falha ao instalar dependências
+
+**Solução:** Verifique se o Bun está na versão 1.3+ e se o `package.json` está presente na raiz do projeto:
+
+```bash
+bun --version
+ls package.json
+bun install
+```
+
+---
+
+## Próximos Passos
+
+Agora que o ambiente está configurado, explore a documentação complementar:
+
+| Documento | Descrição |
+|-----------|-----------|
+| [README.md](README.md) | Visão geral completa do ecossistema |
+| [TUTORIALS.md](TUTORIALS.md) | Tutoriais práticos detalhados |
+| [GLOSSARY.md](GLOSSARY.md) | Glossário de termos técnicos |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Guia para contribuidores |
+| [ROADMAP.md](ROADMAP.md) | Visão futura do projeto |
+| [AGENTS_PTBR.md](AGENTS_PTBR.md) | Documentação de agentes em PT-BR |
 
 ---
 
 <div align="center">
 
-**OpenCode Ecosystem v4.2.1** — Primeiros Passos
-
-*Dúvidas? Abra uma issue no [repositório](https://github.com/MarceloClaro/OpenCode_Ecosystem/issues).*
+**OpenCode Ecosystem v4.2.1** · Documentação em Português Brasileiro
 
 </div>

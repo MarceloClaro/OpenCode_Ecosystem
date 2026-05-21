@@ -25,40 +25,34 @@
 
 </div>
 
----
+## ⚡ Quick Start
 
-## Início Rápido
-
-1. **Instalar pré-requisitos:** Node.js 25, Bun 1.3, Python 3.12
+1. **Pré-requisitos:** Node.js 25, Bun 1.3, Python 3.12
 2. **Clonar:** `git clone https://github.com/MarceloClaro/OpenCode_Ecosystem.git`
-3. **Instalar dependências:** `bun install`
-4. **Executar:** Use `/artigo` para gerar artigo Qualis A1, `/reversa` para engenharia reversa, `/quantum` para computação quântica
+3. **Instalar:** `bun install`
+4. **Usar:** `/artigo` (artigo Qualis A1), `/reversa` (engenharia reversa), `/quantum` (computação quântica)
 
-> Guia completo de instalação: [GETTING_STARTED.md](GETTING_STARTED.md)
-
----
+> 📖 Guia completo: [GETTING_STARTED.md](GETTING_STARTED.md)
 
 ## Para quem é este projeto
 
-| Perfil | Como usar | Comando principal |
-|--------|-----------|-------------------|
-| Pesquisador acadêmico | Gerar artigos Qualis A1 com peer-review simulado | `/artigo` |
-| Desenvolvedor | Engenharia reversa + autocura de ecossistemas | `/reversa` |
-| Estudante de quantum | Experimentos QML com 50 qubits | `/quantum` |
-| Contribuidor | Adicionar agentes, skills ou MCPs | Ver [CONTRIBUTING.md](CONTRIBUTING.md) |
+| Perfil | Como usar | Comando |
+|--------|-----------|---------|
+| Pesquisador acadêmico | Artigos Qualis A1 com peer-review simulado | `/artigo` |
+| Desenvolvedor | Engenharia reversa + autocura | `/reversa` |
+| Estudante de quantum | Experimentos QML 50 qubits | `/quantum` |
+| Contribuidor | Adicionar agentes, skills, MCPs | Ver [CONTRIBUTING.md](CONTRIBUTING.md) |
 
 ---
 
 ## Resumo
 
-O **OpenCode Ecosystem** é uma plataforma de inteligência artificial multiagente, autônoma e evolutiva, integrada ao OpenCode CLI. Unifica produção acadêmica Qualis A1, debate multiagente com Teoria dos Jogos, validação estatística, computação quântica e autocura autônoma — tudo com modelo gratuito (200K ctx) e arquitetura que aprende a cada ciclo.
+O **OpenCode Ecosystem** é uma plataforma de IA multiagente autônoma e evolutiva. Gera artigos acadêmicos Qualis A1, executa engenharia reversa de sistemas, realiza computação quântica e evolui automaticamente — tudo integrado ao OpenCode CLI com modelo gratuito (200K tokens de contexto).
 
 > **Repositório:** `C:\Users\marce\.config\opencode`  
 > **Modelo base:** `opencode/big-pickle` — OpenCode Zen, 200K tokens de contexto, 128K tokens de saída
 
-### Detalhes Técnicos
-
-Composta por **125 agentes especializados**, **40 servidores MCP**, **104 skills** e aproximadamente **114.000 linhas de código Python**, a arquitetura operacionaliza de forma unificada:
+### Capacidades Detalhadas
 
 - **Simulação MiroFish/BettaFish** — Pipeline multiagente com OASIS Profile Gen, Agent Forum (38 raciocínios + Teoria dos Jogos), Config Generator (BRAZIL_TIMEZONE), Graph Builder e Report Agent
 - **PhD Auditor (P18)** — NashSolver generalizado, StatisticalRigor (Cohen's d, Bonferroni, Power Analysis), QualisA1Auditor (score 0-100, 7 critérios), SensitivityAnalyzer, IMRADFormatter
@@ -86,7 +80,7 @@ Composta por **125 agentes especializados**, **40 servidores MCP**, **104 skills
 - [Métricas Agregadas](#métricas-agregadas)
 - [Comandos Rápidos](#comandos-rápidos)
 - [Diagramas Técnicos — 7 SVGs](#diagramas-técnicos--7-svgs)
-- [Documentação](#documentação)
+- [Documentação](#-documentação)
 
 ---
 
@@ -103,6 +97,8 @@ O ecossistema é estruturado em **6 camadas arquiteturais hierárquicas**, do ru
 | **L2** | Dados | SQLite, Mem0, Quantum (81 arqs), DOCLing | Ollama, SQLite |
 | **L1** | Infra | Node.js 25, Bun 1.3, Python 3.12 | Win32 |
 | **DI** | Container | 11 serviços + 3 plugins TS + bridge CommandRegistry | Container, from_container() |
+
+---
 
 ---
 
@@ -600,19 +596,6 @@ O OpenCode Ecosystem v4.2.1 documenta sua arquitetura por meio de **7 diagramas 
 
 ---
 
-## Documentação
-
-| Documento | Descrição |
-|-----------|-----------|
-| [GETTING_STARTED.md](GETTING_STARTED.md) | Guia de instalação e primeiros passos |
-| [TUTORIALS.md](TUTORIALS.md) | Tutoriais práticos detalhados *(em breve)* |
-| [GLOSSARY.md](GLOSSARY.md) | Glossário de termos técnicos *(em breve)* |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Guia para contribuidores |
-| [ROADMAP.md](ROADMAP.md) | Visão futura do projeto |
-| [AGENTS_PTBR.md](AGENTS_PTBR.md) | Documentação de agentes em PT-BR *(em breve)* |
-
----
-
 ## Notas Técnicas
 
 1. **DI Migration (Fases 1–7)** — Container central com 11 serviços, bridge Python ⟷ TS via `CommandRegistry` (14 comandos) e `PluginManager` (3 plugins). 88/88 testes passando, 100% backward compat.
@@ -623,6 +606,19 @@ O OpenCode Ecosystem v4.2.1 documenta sua arquitetura por meio de **7 diagramas 
 6. **Auditoria Qualis A1** — 10 critérios ponderados + banca de 5 revisores + 4 orientadores, loopback iterativo até score ≥ 95/100.
 7. **DecisionNode** — Registro de decisões arquiteturais com busca semântica via embeddings (Ollama), prevenindo duplicação e mantendo histórico de depreciação.
 8. **Compilação e Estabilização PDF/LaTeX** — Correção estrutural de numeração ABNT (mapeamento nativo para `\chapter` via `--top-level-division=chapter`), tratamento de exceções de layout (`\tightlist` via `\providecommand`, altura de cabeçalho `\headheight=15pt` e prevenção de colisões de hyperlinks via roman/arabic), e tabelas multidimensionais de 7 colunas autoajustadas via `\scriptsize` + `\tabcolsep=3pt` local.
+
+---
+
+## 📚 Documentação
+
+| Documento | Descrição |
+|-----------|-----------|
+| [GETTING_STARTED.md](GETTING_STARTED.md) | Guia de instalação e primeiros passos |
+| [TUTORIALS.md](TUTORIALS.md) | Tutoriais práticos detalhados |
+| [GLOSSARY.md](GLOSSARY.md) | Glossário de termos técnicos |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Guia para contribuidores |
+| [ROADMAP.md](ROADMAP.md) | Visão futura do projeto |
+| [AGENTS_PTBR.md](AGENTS_PTBR.md) | Documentação de agentes em PT-BR |
 
 ---
 

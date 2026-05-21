@@ -1,107 +1,105 @@
 # Roadmap — OpenCode Ecosystem
 
-Este documento apresenta o histórico de versões, os ciclos de evolução completados e as metas futuras do **OpenCode Ecosystem**.
+> Visão de evolução do projeto: de onde viemos, onde estamos e para onde vamos.
 
 ---
 
-## Histórico de Versões Principais
+## Histórico de Versões
 
-| Versão | Marco principal | Destaques |
+| Versão | Marco Principal | Destaques |
 |:------:|----------------|-----------|
-| **v3.5** | Sincronização v3.5 | Detector CJK + `ptbr_corrector.py` + token efficiency (+40% densidade) |
-| **v4.0** | Integração MiroFish/BettaFish | Pipeline P14-P18 + PhD Auditor + nexus-phd-strategist |
-| **v4.2** | P14-P18 completo | 38 tipos de raciocínio + Teoria dos Jogos (10 estratégias) + Agent Forum |
-| **v4.2.1** | Documentação e estabilização | 7 SVGs de arquitetura + DI Migration Fases 1-7 (88/88 testes) + 125 agentes |
+| **v3.5** | Sincronização + CJK Zero-Tolerance | Sync orchestrator, `ptbr_corrector.py`, detecção e remoção de caracteres CJK, token efficiency (+40% densidade) |
+| **v4.0** | MiroFish/BettaFish + PhD Auditor | Pipeline P14-P18 completo, Agent Forum com 38 raciocínios, NashSolver, StatisticalRigor, QualisA1Auditor, integração com nexus-phd-strategist |
+| **v4.2** | P14-P18 + 38 Raciocínios | 10 estratégias de Teoria dos Jogos, BRAZIL_TIMEZONE (UTC-3), 50 indicadores reais (World Bank/WHO/FAO/UNESCO), SensitivityAnalyzer, IMRADFormatter |
+| **v4.2.1** | 7 SVGs + DI Migration | 7 diagramas SVG interativos, Injeção de Dependência (Fases 1–7, 88/88 testes), Container com 11 serviços, bridge Python ⟷ TypeScript |
 
 ---
 
-## Ciclos de Evolução Completados
+## Ciclos de Evolução Completados (AutoEvolve)
 
-O plugin **manus-evolve.ts** executa o ciclo autônomo **PLAN → ACT → REFLECT → EXTRACT → EVOLVE**, gerando novas skills em `evolution/` a partir de padrões de sucesso. Abaixo, os 8 ciclos completados:
+O plugin `manus-evolve.ts` executa o ciclo autônomo **PLAN → ACT → REFLECT → EXTRACT → EVOLVE**, gerando novas skills a cada iteração. A tabela abaixo documenta todos os ciclos completados:
 
-| Ciclo | Skill principal gerada | Score | Principais conquistas |
-|:-----:|----------------------|:-----:|----------------------|
-| **evo-1** | Cross-validation + World Bank API | 85/100 | Educação r=-0.03; P&D privado r=+0.73 |
-| **evo-2** | Pipeline de artigo 35 páginas ABNT | 90/100 | Serviços de alta tecnologia r=+0.95 (preditor mais forte) |
-| **evo-3** | TSAC: 46 citações auditáveis | 95/100 | 46 anotações TSAC anti-IA auditáveis |
-| **evo-4** | Sci-Hub MCP + arXiv multi-source | 88/100 | Integração multi-fonte para pesquisa acadêmica |
-| **evo-5** | Pearson CV em 27 indicadores | 92/100 | Cross-validation com 27 indicadores socioeconômicos |
-| **evo-6** | Iterative Correction Loop v2.0 | 95/100 | Banca + orientadores + corretores: 86,5 → 92,7 (+7,1%) |
-| **evo-7** | Sync v3.5 + detector CJK | 96/100 | Zero tolerância CJK; contexto chinês → saída PT-BR |
-| **evo-8** | Progressive disclosure + observabilidade | 98/100 | Skills ≤ 2.500B + health monitoring contínuo |
+| Ciclo | Skill Principal Gerada | Score | Insight Principal |
+|:-----:|----------------------|:-----:|-------------------|
+| evo-1 | Cross-validation quantitativa + World Bank API | 85/100 | Educação r=-0,03; P&D privado r=+0,73 |
+| evo-2 | Pipeline de artigo acadêmico 35 páginas ABNT | 90/100 | Serviços de alta tecnologia r=+0,95 (preditor mais forte) |
+| evo-3 | TSAC: 46 citações auditáveis + Sci-Hub pipeline | 92/100 | 46 anotações TSAC verificáveis por pares |
+| evo-4 | Sci-Hub MCP + arXiv multi-source | 88/100 | Fontes múltiplas melhoram cobertura bibliográfica |
+| evo-5 | Pearson Cross-Validation em 27 indicadores | 92/100 | Validação cruzada com 5 categorias de anomalias |
+| evo-6 | Iterative Correction Loop v2.0 | 95/100 | Banca (5 revisores) + orientadores (4 doutores) + corretores: 86,5 → 92,7 |
+| evo-7 | Sync v3.5 + detector CJK + token efficiency | 96/100 | Zero-tolerance CJK; contexto em chinês, output em PT-BR |
+| evo-8 | Progressive disclosure + observabilidade | 98/100 | SKILL.md ≤ 2.500B; health score 96/100 |
 
 **Progressão geral:** 85 → 98 (+15,3%) · Média: 91,1/100
 
 ---
 
-## Estado Atual (v4.2.1)
+## Curto Prazo (Próximas Versões)
 
-| Indicador | Valor |
-|-----------|:-----:|
-| Agentes especializados | 125 |
-| MCP Servers | 40 (38 local + 2 remoto) |
-| Skills | 104 em 12 categorias |
-| Tipos de raciocínio | 38 em 6 categorias |
-| Estratégias de Teoria dos Jogos | 10 |
-| Estratégias RAG | 9 (auto-select via Adaptive RAG) |
-| Container DI — serviços registrados | 11 (8 core + 3 plugins TS) |
-| Testes DI passando | 88/88 |
-| Health score Nexus | 96/100 |
-| Confiança Reversa Framework | 100/100 |
-| Linhas de código Python | ~114.000 |
+### Expansão de Plataformas
+- **Linux e macOS:** suporte oficial completo (atualmente o Windows 11 é a plataforma principal)
+- Adaptação de paths e scripts para ambientes Unix
+- Testes de integração em múltiplos sistemas operacionais
 
----
+### Cobertura de Testes > 95%
+- Expandir suite de testes além dos 88/88 DI + 378/391 legado
+- Adicionar testes de integração para pipelines completos (artigo, reversa, quantum)
+- Cobertura de código com relatórios automatizados
 
-## Metas de Curto Prazo
+### Mais Fontes para o SEEKER
+- Integrar novas fontes acadêmicas (IEEE Xplore, SpringerLink, Google Scholar)
+- Expandir `concept_map.json` com novos domínios de pesquisa
+- Melhorar a cobertura de fontes para áreas específicas (engenharia, ciências sociais)
 
-| Meta | Descrição | Prioridade |
-|------|-----------|:----------:|
-| Suporte multiplataforma | Expandir oficialmente para Linux e macOS, além do Windows 11 | Alta |
-| Cobertura de testes > 95% | Aumentar a cobertura dos testes legado (atualmente 378/391) e adicionar testes para módulos não cobertos | Alta |
-| Mais fontes SEEKER | Adicionar fontes acadêmicas adicionais ao pipeline de pesquisa (Google Scholar, IEEE, Scopus) | Média |
-| Internacionalização (EN, ES) | Suporte a inglês e espanhol na saída dos agentes, além do PT-BR | Média |
-| Documentação expandida | Criar TUTORIALS.md, GLOSSARY.md e AGENTS_PTBR.md | Alta |
+### Internacionalização (i18n)
+- Suporte a múltiplos idiomas de saída (além de PT-BR)
+- Tradução automática de documentação
+- Corretor linguístico para outros idiomas
 
 ---
 
-## Metas de Médio Prazo
+## Médio Prazo (6–12 Meses)
 
-| Meta | Descrição | Prioridade |
-|------|-----------|:----------:|
-| 150+ agentes | Expandir o catálogo de agentes especializados para cobrir novos domínios | Média |
-| 50+ MCPs | Adicionar novos servidores MCP para integração com mais ferramentas e APIs | Média |
-| Mais backends quânticos | Integrar com IBM Quantum, Amazon Braket e simuladores adicionais além do MPS | Média |
-| API REST | Expor uma API REST para acesso externo ao ecossistema, permitindo integração com aplicações terceiras | Alta |
-| Dashboard de monitoramento | Interface visual para acompanhar saúde do ecossistema, ciclos de evolução e métricas em tempo real | Média |
+### Escala de Agentes e MCPs
+- **150+ agentes** especializados (atualmente 125)
+- **50+ servidores MCP** (atualmente 40)
+- Novos agentes para domínios verticais: saúde, finanças, engenharia civil
+
+### Backends Quânticos Adicionais
+- Integração com IBM Qiskit Runtime
+- Suporte a Amazon Braket
+- Simuladores com ruído personalizado para validação experimental
+
+### API REST
+- Expor funcionalidades do ecossistema via API REST/GraphQL
+- Endpoints para execução de pipelines (artigo, reversa, quantum)
+- Dashboard web para monitoramento de saúde do ecossistema
+
+### Melhorias no Pipeline Acadêmico
+- Suporte a mais formatos de citação (APA, Vancouver, Chicago)
+- Integração com sistemas de submissão de periódicos
+- Templates para conferências específicas (ACM, IEEE, Springer)
 
 ---
 
-## Metas de Longo Prazo
+## Longo Prazo (12+ Meses)
 
-| Meta | Descrição | Prioridade |
-|------|-----------|:----------:|
-| Cloud deployment | Possibilitar a execução do ecossistema em ambientes cloud (AWS, GCP, Azure) com orquestração distribuída | Alta |
-| Marketplace de skills | Plataforma para compartilhamento e distribuição de skills entre usuários e organizações | Média |
-| Colaboração multiusuário | Suporte a múltiplos usuários trabalhando simultaneamente no mesmo ecossistema em tempo real | Média |
-| Certificação acadêmica | Integração com plataformas de publicação para submissão automática de artigos Qualis A1 | Baixa |
-| Agentes autônomos de longa duração | Agentes que operam continuamente em background, monitorando e evoluindo o ecossistema sem intervenção | Média |
+### Ecossistema Distribuído
+- Execução de agentes em múltiplos nós
+- Orquestração distribuída com Nexus NMA
+- Balanceamento de carga entre servidores MCP
 
----
-
-## Como Contribuir para o Roadmap
-
-Sugestões e contribuições são bem-vindas. Para propor uma nova meta ou funcionalidade:
-
-1. Abra uma [issue](https://github.com/MarceloClaro/OpenCode_Ecosystem/issues) descrevendo a proposta
-2. Consulte o [CONTRIBUTING.md](CONTRIBUTING.md) para o processo de contribuição
-3. Submeta um PR com a implementação, se aplicável
+### Aprendizado Contínuo
+- AutoEvolve com memória persistente entre sessões
+- Transfer learning entre pipelines
+- Benchmarks automatizados de qualidade
 
 ---
 
 <div align="center">
 
-**OpenCode Ecosystem v4.2.1** — Roadmap
+**OpenCode Ecosystem v4.2.1** · Roadmap
 
-*Atualizado em 2026-05-21 · BRAZIL_TIMEZONE UTC-3*
+*Última atualização: 2026-05-21*
 
 </div>

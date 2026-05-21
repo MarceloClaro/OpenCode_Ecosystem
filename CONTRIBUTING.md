@@ -1,185 +1,193 @@
-# Contribuindo para o OpenCode Ecosystem
+# Guia para Contribuidores — OpenCode Ecosystem v4.2.1
 
-Agradecemos o seu interesse em contribuir com o **OpenCode Ecosystem v4.2.1**. Este guia abrange o fluxo completo de contribuição — desde a configuração do ambiente até a submissão de Pull Requests — para todos os tipos de contribuição: agentes, skills, MCPs, correções e melhorias.
+Agradecemos o seu interesse em contribuir com o OpenCode Ecosystem. Este guia descreve os procedimentos para configurar o ambiente, entender a estrutura do projeto e submeter contribuições de qualidade.
 
 ---
 
-## Como Configurar o Ambiente de Desenvolvimento
+## Como Configurar o Ambiente
 
-1. **Fork e clone** o repositório:
-   ```bash
-   git clone https://github.com/<seu-usuario>/OpenCode_Ecosystem.git
-   cd OpenCode_Ecosystem
-   ```
+### 1. Fork e Clone
 
-2. **Instalar pré-requisitos** — consulte o [GETTING_STARTED.md](GETTING_STARTED.md) para instruções detalhadas:
-   - Node.js v25+
-   - Bun 1.3+
-   - Python 3.12+
-   - OpenCode CLI 1.14+
+```bash
+# Fork o repositório no GitHub, depois clone:
+git clone https://github.com/<seu-usuario>/OpenCode_Ecosystem.git
+cd OpenCode_Ecosystem
+```
 
-3. **Instalar dependências Node.js:**
-   ```bash
-   bun install
-   ```
+### 2. Instalar Dependências
 
-4. **Executar testes:**
-   ```bash
-   python -m pytest tests/ -v
-   ```
-   Referência de cobertura:
-   - **88/88** testes DI passando (Fases 5-7)
-   - **378/391** testes legado (13 falhas pré-existentes não relacionadas ao DI)
+```bash
+# Dependências Node.js / TypeScript (plugins e OpenCode CLI)
+bun install
+
+# Dependências Python (agentes, Nexus, módulo quântico)
+pip install -r requirements.txt  # se disponível
+```
+
+### 3. Verificar Ambiente
+
+```bash
+node --version     # v25+
+bun --version      # 1.3+
+python --version   # 3.12+
+opencode --version # 1.14+
+```
+
+### 4. Executar Testes
+
+O ecossistema possui 88/88 testes de DI (Fases 5–7) e 378/391 testes legado:
+
+```bash
+python -m pytest tests/ -v
+```
 
 ---
 
 ## Estrutura do Projeto
 
-| Diretório | Função | Conteúdo |
-|-----------|--------|----------|
-| `agents/` | Definições de agentes | 125 agentes em arquivos `.md` (core 56 + criação 49 + SEEKER 12 + Reversa 7 + corretor 1) |
-| `skills/` | Skills organizadas por categoria | 104 skills em 12 categorias com YAML frontmatter |
-| `nexus/` | Orquestrador NMA v6.2 | 63 scripts Python — sync barriers, meta-orquestração, autocura |
-| `quantum/` | Módulo de computação quântica | 81 arquivos — VQC 50 qubits, QML HAM10000, ZNE/PEC |
-| `criador-artigo/` | Pipeline MASWOS | 49 agentes especializados para artigos Qualis A1 |
-| `basis-research/` | SEEKER | 10 agentes de pesquisa + argument tree + 10+ fontes acadêmicas |
-| `core/` | Infraestrutura central | Container DI com 11 serviços + bridge Python ⟷ TypeScript |
-| `commands/` e `command/` | Comandos slash | 14 comandos registrados via CommandRegistry |
+| Diretório | Função | Arquivos Principais |
+|-----------|--------|-------------------|
+| `agents/` | 125 agentes especializados em Markdown | Definições de agentes (core 56 + criação 49 + SEEKER 12 + Reversa 7 + corretor 1) |
+| `skills/` | 104 skills com progressive disclosure | `SKILL.md` (≤2.500B) + `references/*.md` |
+| `nexus/` | Orquestrador multiagente Nexus NMA v6.2 | 63 scripts Python, `sync_orchestrator.py`, `self_healer.py` |
+| `quantum/` | Módulo de computação quântica | 81 arquivos: VQC, QML, ZNE/PEC |
+| `criador-artigo/` | Pipeline MASWOS — 49 agentes para artigos Qualis A1 | Agentes A00–A45, templates, referências |
+| `basis-research/` | SEEKER — pesquisa científica autônoma | 10 agentes Python, argument tree engine |
+| `core/` | Infraestrutura core do ecossistema | Container DI, managers, bridges |
+| `commands/` | Definições de comandos slash | Markdown com frontmatter YAML |
+| `command/` | Implementação de comandos | 14 arquivos `.md` para `CommandRegistry` |
 | `plugins/` | Plugins TypeScript | `manus-evolve.ts`, `ecosystem-sync.ts`, `bernstein-sync.ts` |
-| `diagrams/` | Diagramas de arquitetura | 7 SVGs gerados pelo Reversa Framework |
-| `evolution/` | Skills geradas pelo AutoEvolve | Skills criadas automaticamente pelos ciclos evo-1 a evo-8 |
-| `.reversa/` | Artefatos de engenharia reversa | 67 artefatos — AST, UML, C4, ADRs, SDDs |
+| `diagrams/` | 7 SVGs de arquitetura | Gerados automaticamente pelo Reversa Framework |
+| `evolution/` | Skills geradas automaticamente pelo AutoEvolve | Output do ciclo PLAN→ACT→REFLECT→EXTRACT→EVOLVE |
+| `.reversa/` | Artefatos de engenharia reversa | `DI_MIGRATION.md`, ADRs, SDDs |
 
 ---
 
 ## Padrões de Código
 
 ### Python
-- **Versão:** Python 3.12+
-- **Docstrings:** obrigatórias em todas as funções públicas
-- **Type hints:** encorajados, mas não obrigatórios
-- **Estilo:** seguir o padrão existente no módulo que está sendo modificado
-- **Testes:** executar `python -m pytest tests/ -v` antes e depois de alterações
 
-### Skills
-- Formato: YAML frontmatter + corpo Markdown
-- Tamanho máximo: **2.500 bytes** por `SKILL.md` (progressive disclosure)
-- Conteúdo estendido deve residir em `references/*.md`
-- Referência: consulte `skills/SKILL_TEMPLATE.md` como modelo
+- **Versão mínima:** Python 3.12+
+- **Docstrings:** obrigatórias em todas as funções e classes públicas
+- **Type hints:** fortemente recomendados
+- **Estilo:** seguir as convenções existentes no módulo que está sendo editado
+- **Testes:** todo código novo deve incluir testes unitários
 
-### Agentes
-- Cada agente é um arquivo `.md` em `agents/` seguindo o formato padrão
-- Incluir descrição, capabilities e instruções de uso
+### Skills (YAML/Markdown)
 
-### Saída e Idioma
-- Toda saída ao usuário deve ser em **português brasileiro formal**
-- **Zero tolerância** a caracteres CJK na saída — o `ptbr_corrector.py` deve ser executado antes de cada entrega
-- Localização do corretor: `criador-artigo/banca/ptbr_corrector.py`
+- Cada `SKILL.md` deve conter **no máximo 2.500 bytes** (frontmatter YAML + conteúdo resumido)
+- Conteúdo estendido deve residir em `references/*.md` (progressive disclosure)
+- Frontmatter YAML obrigatório com campos: `name`, `description`, `trigger`, `version`
 
-### Injeção de Dependência
-- Novos componentes devem seguir o **Pattern A** (`from_container()` factory) quando possível
-- Componentes existentes suportam o **Pattern B** (`container=` opcional no construtor)
-- Compatibilidade retroativa: todos os construtores devem funcionar sem container
+### Idioma
+
+- **Toda documentação e output ao usuário:** português brasileiro formal
+- **Zero CJK:** nenhum caractere chinês, japonês ou coreano deve aparecer em arquivos de saída
+- **Variáveis, paths e código:** manter na língua original (inglês)
+- Executar `criador-artigo/banca/ptbr_corrector.py` antes de submeter documentação
+
+### TypeScript/JavaScript
+
+- Compatível com Bun 1.3+
+- Seguir padrões dos plugins existentes em `plugins/`
 
 ---
 
-## Como Adicionar um Novo Agente
+## Como Adicionar Novo Agente
 
-1. **Criar arquivo `.md`** em `agents/` seguindo o template dos agentes existentes
-2. **Definir** nome, descrição, capabilities e instruções de uso
-3. **Registrar no Container DI** se o agente requer integração com serviços core:
+1. **Criar arquivo** em `agents/` com o nome do agente (ex: `agents/meu-agente.md`)
+2. **Definir o agente** seguindo o template dos agentes existentes (frontmatter YAML + instruções)
+3. **Registrar no Container DI** se o agente necessitar de serviços do ecossistema:
    ```python
    from core import Container
    container = Container.instance()
-   container.register("meu_agente", MeuAgente.from_container(container))
+   # Utilizar container.resolve("service_name") para acessar serviços
    ```
-4. **Testar integração** executando os testes do módulo relevante
+4. **Documentar** o agente no `AGENTS_PTBR.md` com estatísticas atualizadas
 
 ---
 
-## Como Adicionar uma Nova Skill
+## Como Adicionar Nova Skill
 
-1. **Criar pasta** em `skills/<categoria>/` (ex.: `skills/research/minha-skill/`)
-2. **Criar `SKILL.md`** com frontmatter YAML:
+1. **Criar diretório** em `skills/<categoria>/` (ex: `skills/research/minha-skill/`)
+2. **Criar `SKILL.md`** com frontmatter YAML (máximo 2.500 bytes):
    ```yaml
    ---
    name: minha-skill
-   category: research
+   description: Descrição concisa da skill
    trigger: /minha-skill
-   description: Descrição breve da skill
    version: 1.0.0
+   category: research
    ---
    ```
-3. **Respeitar o limite de 2.500 bytes** no `SKILL.md`
-4. **Adicionar `references/*.md`** para conteúdo estendido (progressive disclosure)
-5. **Referenciar** `skills/SKILL_TEMPLATE.md` como modelo de estrutura
+3. **Criar `references/*.md`** para conteúdo estendido (progressive disclosure)
+4. **Verificar tamanho:** `wc -c skills/<categoria>/minha-skill/SKILL.md` deve retornar ≤ 2.500
 
 ---
 
-## Como Adicionar um Novo MCP Server
+## Como Adicionar Novo MCP
 
-1. **Definir** a configuração do servidor em `opencode.json`:
+1. **Definir configuração** em `opencode.json`:
    ```json
    {
      "mcpServers": {
-       "meu-servidor": {
-         "command": "node",
-         "args": ["caminho/para/servidor.js"],
-         "type": "stdio"
+       "meu-mcp": {
+         "command": "npx",
+         "args": ["-y", "@meu-pacote/mcp-server"],
+         "env": {}
        }
      }
    }
    ```
-2. **Implementar** o protocolo JSON-RPC (stdio para servidores locais, HTTP para remotos)
-3. **Registrar no Container DI** se necessário:
+2. **Protocolo:** implementar JSON-RPC sobre stdio (local) ou HTTP (remoto)
+3. **Registrar no DI** se necessário:
    ```python
-   container.register("mcp.meu-servidor", servidor_meta)
+   # O MCP será descoberto automaticamente via lazy init
+   # Registrar no Container apenas se houver integração com outros serviços
    ```
-4. **Lazy init:** o servidor deve inicializar apenas na primeira chamada de ferramenta — não no startup do ecossistema
+4. **Lazy init:** os MCPs inicializam automaticamente na primeira chamada de ferramenta — não é necessário código de inicialização explícito
+5. **Documentar** o novo MCP no README.md na seção "MCP Servers"
 
 ---
 
-## Processo de Pull Request
+## Pull Request
+
+### Processo
 
 1. **Criar branch** a partir de `main`:
    ```bash
    git checkout -b feature/minha-contribuicao
    ```
-2. **Fazer alterações** seguindo os padrões de código descritos acima
+2. **Implementar alterações** seguindo os padrões de código descritos acima
 3. **Executar testes:**
    ```bash
    python -m pytest tests/ -v
    ```
-4. **Verificar** que não há caracteres CJK na saída:
+4. **Verificar CJK** (se alterou documentação):
    ```bash
    python criador-artigo/banca/ptbr_corrector.py
    ```
-5. **Commitar** com mensagem clara e descritiva
-6. **Submeter PR** com descrição detalhada do que foi alterado e por quê
-7. **Aguardar review** dos maintainers
+5. **Commit** com mensagem descritiva em português ou inglês
+6. **Submeter PR** com descrição clara do que foi alterado e por quê
 
 ### Checklist do PR
 
 - [ ] Testes passando (`python -m pytest tests/ -v`)
-- [ ] Sem caracteres CJK na saída
+- [ ] Sem caracteres CJK em arquivos de saída
+- [ ] Skills dentro do limite de 2.500B
 - [ ] Documentação atualizada (se aplicável)
-- [ ] Código segue os padrões existentes do módulo
-- [ ] Compatibilidade retroativa mantida (se alterando APIs existentes)
+- [ ] Código segue os padrões do módulo editado
 
 ---
 
-## Código de Conduta
+## Dúvidas?
 
-Ao contribuir com o OpenCode Ecosystem, comprometemo-nos com os seguintes princípios:
-
-- **Respeito:** tratar todos os participantes com cortesia e consideração
-- **Inclusão:** acolher contribuições independentemente de experiência, identidade ou origem
-- **Foco técnico:** manter discussões centradas em aspectos técnicos e construtivos
-- **Transparência:** documentar decisões e justificativas de forma clara
-- **Qualidade:** priorizar código bem testado, documentado e compatível com a arquitetura existente
+Abra uma issue no repositório. Toda contribuição é bem-vinda.
 
 ---
 
-## Dúvidas
+<div align="center">
 
-Abra uma [issue](https://github.com/MarceloClaro/OpenCode_Ecosystem/issues) no repositório. Estamos disponíveis para auxiliar.
+**OpenCode Ecosystem v4.2.1** · Guia para Contribuidores
+
+</div>
