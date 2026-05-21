@@ -126,7 +126,7 @@ Diferente de chatbots tradicionais que usam um único modelo, aqui cada agente t
 
 O **MCP** é um protocolo padronizado (criado pela Anthropic em 2024) que permite a agentes de IA acessar ferramentas externas de forma segura e estruturada. Funciona assim: o agente precisa buscar informação na web? Ele envia uma requisição JSON-RPC para o MCP Server `websearch`. Precisa ler um arquivo? Usa o MCP Server `filesystem`. Precisa executar código Python? Usa o `code-runner`.
 
-O OpenCode Ecosystem possui **40 servidores MCP** (38 locais + 2 remotos), que são as "mãos" dos agentes — os meios pelos quais eles interagem com o mundo exterior. Todos usam **lazy init**: só inicializam quando o agente faz a primeira chamada, evitando desperdício de recursos.
+O OpenCode Ecosystem possui **40 servidores MCP registrados** (38 locais + 2 remotos), dos quais **17 ficam ativos** em uma sessão típica. Os demais são carregados sob demanda. Eles são as "mãos" dos agentes — os meios pelos quais interagem com o mundo exterior. Todos usam **lazy init**: só inicializam quando o agente faz a primeira chamada, evitando desperdício de recursos.
 
 ### Skills
 
@@ -160,7 +160,7 @@ Estes são os comandos que o usuário pode executar diretamente no OpenCode CLI.
 | `/quantum` | Realiza experimentos de computação quântica com VQC de até 50 qubits | quantum-nexus-phd + code-runner + pdf + sequential-thinking |
 | `/evolve` | Aciona o motor de evolução autônoma que gera novas skills a partir de padrões de sucesso | AutoEvolve: PLAN → ACT → REFLECT → EXTRACT → EVOLVE |
 | `/plan` | Cria planos estruturados de escrita ou desenvolvimento | writing-plans skill + sequential-thinking MCP |
-| `/auto` | Modo autônomo total — o sistema decide quais agentes e MCPs utilizar | openagent + todos os 17 MCPs ativos |
+| `/auto` | Modo autônomo total — o sistema decide quais agentes e MCPs utilizar | openagent + todos os MCPs ativos (17 de 40 registrados) |
 | `/ticket` | Gerencia tickets Jira via bridge CommandRegistry | Jira ticket manager via CommandRegistry bridge |
 
 ---
@@ -316,7 +316,7 @@ Scout → Archaeologist → Detective → Architect → Writer → Reviewer
 
 ## Módulo Quantum
 
-O módulo de computação quântica, localizado em `quantum/`, contém **81 arquivos** (~10.088 linhas de Python) com infraestrutura para experimentos quânticos aplicados. O foco principal é o uso de **Variational Quantum Circuits (VQC)** e **Quantum Machine Learning (QML)** para classificação de dados reais.
+O módulo de computação quântica, localizado em `quantum/`, contém **81 arquivos** (40 scripts Python com ~10.088 linhas, além de referências acadêmicas, templates e saídas de validação) com infraestrutura para experimentos quânticos aplicados. O foco principal é o uso de **Variational Quantum Circuits (VQC)** e **Quantum Machine Learning (QML)** para classificação de dados reais.
 
 ### O que foi implementado?
 
@@ -651,7 +651,7 @@ PLAN → ACT → REFLECT → EXTRACT → EVOLVE
 
 | Indicador | Valor | Status |
 |-----------|:-----:|:------:|
-| MCPs ativos | 17/17 | 🟢 |
+| MCPs ativos (de 40 registrados) | 17/17 | 🟢 |
 | Container services registered | 11 (8 core + 3 plugin) | 🟢 |
 | Bridge commands (Python ⟷ TS) | 14/14 | 🟢 |
 | Skills dentro do limite | 72/74 | 🟢 |
