@@ -133,7 +133,7 @@
 
   <rect x="550" y="400" width="220" height="80" rx="6" fill="#9e6a03" opacity="0.15" stroke="#d29922" stroke-width="1"/>
   <text x="660" y="420" text-anchor="middle" fill="#d29922" font-size="10" font-weight="bold">Banca de Revisão</text>
-  <text x="560" y="438" fill="#8b949e" fontSize="9">• 5 revisores</text>
+  <text x="560" y="438" fill="#8b949e" font-size="9">• 5 revisores</text>
   <text x="560" y="453" fill="#8b949e" font-size="9">• 4 orientadores</text>
   <text x="560" y="468" fill="#8b949e" font-size="9">• Correção iterativa</text>
 
@@ -147,5 +147,5 @@
   <text x="70" y="510" fill="#484f58" font-size="8">Referências: SEEKER (10 agentes, 10+ fontes) · Genesis-Writer (42 arqs) · Corretor CJK (ptbr_corrector.py) · MiroFish/BettaFish P14-P18</text>
   <text x="70" y="525" fill="#484f58" font-size="8">Criador-Artigo v4.2.1 (MASWOS): ~145+ arquivos · Auto Score Qualis A1 · TSAC anti-AI · PhD Auditor (Nash+Bonferroni+Qualis)</text>
 
-  <text x="550" y="640" text-anchor="middle" fill="#484f58" font-size="9">Basearado em: Framework MASWOS V5 NEXUS · SEEKER Research · Genesis-Writer · Qualis A1 Audit Module</text>
+  <text x="550" y="640" text-anchor="middle" fill="#484f58" font-size="9">Baseado em: Framework MASWOS V5 NEXUS · SEEKER Research · Genesis-Writer · Qualis A1 Audit Module</text>
 </svg>

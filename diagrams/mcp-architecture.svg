@@ -65,10 +65,19 @@
 
   <!-- Security boundary -->
   <rect x="80" y="260" width="280" height="84" rx="6" fill="none" stroke="#d29922" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="100" y="278" fill="#d29922" font-size="9">🔒 Zona de Segurança — Local</text>
+  <text x="100" y="278" fill="#d29922" font-size="9">Zona de Segurança — Local</text>
 
   <rect x="410" y="260" width="280" height="84" rx="6" fill="none" stroke="#d29922" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="430" y="278" fill="#d29922" font-size="9">🔒 Zona de Segurança — Local</text>
+  <text x="430" y="278" fill="#d29922" font-size="9">Zona de Segurança — Local</text>
+
+  <!-- Security zone for Domain -->
+  <rect x="740" y="260" width="280" height="84" rx="6" fill="none" stroke="#d29922" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="760" y="278" fill="#d29922" font-size="9">Zona de Segurança — Local</text>
+
+  <!-- Client → Server connection arrows -->
+  <line x1="220" y1="250" x2="220" y2="284" stroke="#30363d" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="250" x2="550" y2="284" stroke="#30363d" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="880" y1="250" x2="880" y2="284" stroke="#30363d" stroke-width="1.5" marker-end="url(#arrow)"/>
 
   <!-- Servers -->
   <rect x="100" y="290" width="240" height="44" rx="8" fill="url(#server)" opacity="0.8" filter="url(#shadow)"/>
@@ -111,7 +120,7 @@
 
   <!-- External / Remote zone -->
   <rect x="80" y="460" width="940" height="100" rx="6" fill="none" stroke="#bc8cff" stroke-width="1.5" stroke-dasharray="4,4"/>
-  <text x="100" y="480" fill="#bc8cff" font-size="10">☁️ Zona Remota (Internet)</text>
+  <text x="100" y="480" fill="#bc8cff" font-size="10">Zona Remota (Internet)</text>
 
   <rect x="120" y="498" width="200" height="44" rx="8" fill="url(#ext)" opacity="0.8"/>
   <text x="220" y="520" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Context7 API</text>
