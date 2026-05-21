@@ -80,10 +80,11 @@ O **OpenCode Ecosystem** é uma plataforma de IA multiagente autônoma e evoluti
 - [Métricas Agregadas](#métricas-agregadas)
 - [Comandos Rápidos](#comandos-rápidos)
 - [Diagramas Técnicos — 7 SVGs](#diagramas-técnicos--7-svgs)
+- [Documentação](#-documentação)
 
 ---
 
-
+## Arquitetura Geral
 
 O ecossistema é estruturado em **6 camadas arquiteturais hierárquicas**, do runtime de infraestrutura até a orquestração meta-granular, com **Injeção de Dependência (DI)** transversal a todas as camadas:
 
