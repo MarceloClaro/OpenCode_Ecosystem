@@ -96,7 +96,8 @@ O conteúdo deste README está organizado em uma **sequência progressiva**: pri
 **Parte IV — Referência**
 - [Métricas Agregadas](#métricas-agregadas)
 - [Comparativo com Outros Frameworks](#comparativo-com-outros-frameworks)
-- [Diagramas Técnicos — 7 SVGs](#diagramas-técnicos--7-svgs)
+- [Classificação Técnica](#classificação-técnica)
+- [Diagramas Técnicos — 10 SVGs](#diagramas-técnicos--10-svgs)
 - [Notas Técnicas](#notas-técnicas)
 - [Documentação](#documentação)
 
@@ -684,9 +685,76 @@ PLAN → ACT → REFLECT → EXTRACT → EVOLVE
 
 ---
 
-## Diagramas Técnicos — 7 SVGs
+## Classificação Técnica
 
-O ecossistema documenta sua arquitetura por meio de **7 diagramas SVG interativos** localizados em `diagrams/`. Cada SVG é gerado e mantido automaticamente pelo Reversa Framework v1.2.22 e reflete o estado real do ecossistema em produção.
+O OpenCode Ecosystem é classificado como uma **Plataforma Multiagente Evolutiva com Orquestração Hierárquica** — uma categoria distinta dos frameworks tradicionais de IA (single-agent, configurable swarms ou fixed-role crews). Esta seção documenta o posicionamento taxonômico, os padrões arquiteturais e a classificação individual de cada subsistema.
+
+### Posicionamento Taxonômico
+
+<details>
+<summary><strong>Taxonomia — Posição entre frameworks de IA</strong></summary>
+
+<img src="diagrams/classification-taxonomy.svg" alt="Taxonomia — Classificação Técnica" width="100%"/>
+
+O diagrama posiciona o OpenCode Ecosystem na árvore taxonômica de frameworks de IA:
+- **Single-Agent:** Cursor, Copilot, ChatGPT, Claude (1 modelo, sem coordenação)
+- **Multi-Agent → Configurable Swarms:** LangChain, AutoGen (agentes genéricos, configuração manual)
+- **Multi-Agent → Fixed-Role Crews:** CrewAI (papéis fixos, coordenação flat)
+- **Multi-Agent → Evolutionary Orchestrated:** **OpenCode Ecosystem** (orquestração hierárquica 6L + evolução autônoma)
+
+**Diferenciadores exclusivos:** Orquestração Hierárquica (6 camadas vs. flat), Evolução Autônoma (AutoEvolve vs. estática), PhD Auditor (Nash + Bonferroni — exclusivo), Debate com Teoria dos Jogos (10 estratégias — exclusivo).
+
+</details>
+
+### 10 Padrões Arquiteturais
+
+<details>
+<summary><strong>Padrões arquiteturais mapeados por camada (L1–L6 + DI)</strong></summary>
+
+<img src="diagrams/architectural-patterns.svg" alt="10 Padrões Arquiteturais" width="100%"/>
+
+| # | Padrão | Camadas | Descrição |
+|---|--------|---------|-----------|
+| 1 | Layered Architecture | L6 | 6 camadas hierárquicas L1 (Infra) → L6 (Orquestração) |
+| 2 | Dependency Injection | DI | Container singleton, 11 serviços, `from_container()` |
+| 3 | Event-Driven Architecture | L5, L2 | `event_bus` (IEventBus), pub/sub desacoplado |
+| 4 | Pipeline Pattern | L6, L3 | P1–P18, MASWOS 8 estágios, AutoEvolve |
+| 5 | Client-Host-Server | L4 | MCP (Anthropic, 2024), 40 servidores, JSON-RPC |
+| 6 | Progressive Disclosure | L3 | SKILL.md ≤ 2.500B + references/*.md |
+| 7 | Self-Healing | L6 | Monitor → Detectar → Diagnosticar → Reparar |
+| 8 | Bridge Pattern | DI | Python ↔ TypeScript, 14 cmds, 3 plugins |
+| 9 | Quality Gate | L5 | G0 (100%) → GR (85%) → GE (90%) → GF (95%) |
+| 10 | Transformer Network | L5 | Rede isonômica auto-organizável |
+
+</details>
+
+### Classificação por Subsistema
+
+<details>
+<summary><strong>10 subsistemas com classificação técnica individual</strong></summary>
+
+<img src="diagrams/subsystem-classification.svg" alt="Classificação por Subsistema" width="100%"/>
+
+| Subsistema | Classificação Técnica | Escala |
+|------------|----------------------|--------|
+| Nexus NMA v6.2 | Meta-Granular Orchestrator | 120+ sync barriers, 500+ constraints |
+| MASWOS | Multi-Agent Scientific Writing OS | 49 agentes, 8 estágios |
+| SEEKER | Autonomous Research Agent Swarm | 12 agentes, 10+ fontes |
+| MiroFish/BettaFish | Agent-Based Simulation Framework | 18 padrões, 38 raciocínios |
+| PhD Auditor | Statistical Validation Engine | Nash, Cohen's d, Bonferroni |
+| AutoEvolve | Autonomous Skill Evolution Engine | 7 gerações, score 85→98 |
+| Self-Healing | Autonomous Recovery System | 96/100, zero-tolerance CJK |
+| DI Container | Inversion of Control Container | 11 serviços, 14 cmds bridge |
+| Quantum Nexus | Quantum ML Research Platform | 50 qubits, 89.52% acc |
+| Reversa Framework | Autonomous Reverse Engineering | 7 agentes, 67 artefatos |
+
+</details>
+
+---
+
+## Diagramas Técnicos — 10 SVGs
+
+O ecossistema documenta sua arquitetura por meio de **10 diagramas SVG interativos** localizados em `diagrams/`. Cada SVG é gerado e mantido automaticamente pelo Reversa Framework v1.2.22 e reflete o estado real do ecossistema em produção.
 
 **Por que SVG?** Diferente de PNGs (fixos) ou Mermaid (limitado em layout), SVGs oferecem escalabilidade vetorial infinita, suporte a gradientes e glassmorphism, animações CSS/SMIL e atualização programática — ideais para documentação técnica de alta complexidade.
 
@@ -750,6 +818,33 @@ Visualiza o ciclo Monitorar → Detectar → Diagnosticar → Reparar → Verifi
 <img src="diagrams/mirofish-phd-auditor.svg" alt="Pipeline MiroFish/BettaFish + PhD Auditor P14-P18" width="100%"/>
 
 Documenta o pipeline P14-P18: Agent Forum (38 raciocínios, 8 perfis) → DocIR (50 métricas reais) → ANP → Meta-Writer (LaTeX/IMRAD) → PhD Auditor (Nash+Cohen+Bonferroni+Qualis). Os 11 componentes MiroFish/BettaFish e as 6 categorias de raciocínio são detalhados.
+
+</details>
+
+<details>
+<summary><strong>SVG 8 — classification-taxonomy.svg</strong> — Árvore taxonômica hierárquica (NOVO v4.2.1)</summary>
+
+<img src="diagrams/classification-taxonomy.svg" alt="Taxonomia — Classificação Técnica" width="100%"/>
+
+Posiciona o OpenCode Ecosystem entre os frameworks de IA existentes: Single-Agent (Cursor, Copilot, ChatGPT) vs. Multi-Agent (Configurable Swarms, Fixed-Role Crews, Evolutionary Orchestrated). Destaca os diferenciadores exclusivos: orquestração hierárquica 6L, evolução autônoma, PhD Auditor e debate com Teoria dos Jogos.
+
+</details>
+
+<details>
+<summary><strong>SVG 9 — architectural-patterns.svg</strong> — 10 padrões arquiteturais por camada (NOVO v4.2.1)</summary>
+
+<img src="diagrams/architectural-patterns.svg" alt="10 Padrões Arquiteturais" width="100%"/>
+
+Mapeia os 10 padrões arquiteturais (Layered, DI, Event-Driven, Pipeline, Client-Host-Server, Progressive Disclosure, Self-Healing, Bridge, Quality Gate, Transformer Network) às camadas L1–L6 + DI. Inclui o fluxo Quality Gate (G0→GR→GE→GF) e a stack tecnológica completa.
+
+</details>
+
+<details>
+<summary><strong>SVG 10 — subsystem-classification.svg</strong> — Classificação por subsistema (NOVO v4.2.1)</summary>
+
+<img src="diagrams/subsystem-classification.svg" alt="Classificação por Subsistema" width="100%"/>
+
+Mapa radial dos 10 subsistemas com classificação técnica individual: Nexus NMA (Meta-Granular Orchestrator), MASWOS (Multi-Agent Scientific Writing OS), SEEKER (Autonomous Research Agent Swarm), MiroFish/BettaFish (Agent-Based Simulation), PhD Auditor (Statistical Validation Engine), AutoEvolve (Skill Evolution Engine), Self-Healing (Autonomous Recovery), DI Container (IoC), Quantum Nexus (QML Platform) e Reversa Framework (Reverse Engineering).
 
 </details>
 

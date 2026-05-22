@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="l6c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#238636"/>
+      <stop offset="100%" stop-color="#3fb950"/>
+    </linearGradient>
+    <linearGradient id="l5c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f6feb"/>
+      <stop offset="100%" stop-color="#58a6ff"/>
+    </linearGradient>
+    <linearGradient id="l4c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9e6a03"/>
+      <stop offset="100%" stop-color="#d29922"/>
+    </linearGradient>
+    <linearGradient id="l3c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#bc8c00"/>
+      <stop offset="100%" stop-color="#e3b341"/>
+    </linearGradient>
+    <linearGradient id="l2c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b2f97"/>
+      <stop offset="100%" stop-color="#bc8cff"/>
+    </linearGradient>
+    <linearGradient id="l1c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#21262d"/>
+      <stop offset="100%" stop-color="#484f58"/>
+    </linearGradient>
+    <linearGradient id="dic" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#da3633"/>
+      <stop offset="100%" stop-color="#f85149"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)" rx="8"/>
+
+  <!-- Title -->
+  <text x="600" y="36" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="bold">10 Padrões Arquiteturais — OpenCode Ecosystem v4.2.1</text>
+  <text x="600" y="56" text-anchor="middle" fill="#8b949e" font-size="10">Mapeamento de padrões por camada · Layered Architecture L1–L6 + Container DI</text>
+
+  <!-- LEFT SIDE: Pattern boxes (2 columns of 5) -->
+  <!-- Column 1 -->
+  <rect x="30" y="80" width="260" height="58" rx="8" fill="url(#l6c)" opacity="0.7" filter="url(#shadow)"/>
+  <text x="42" y="102" fill="#fff" font-size="11" font-weight="bold">1. Layered Architecture</text>
+  <text x="42" y="118" fill="#c9d1d9" font-size="8">6 camadas hierárquicas L1 (Infra) → L6 (Orq.)</text>
+  <text x="42" y="130" fill="#8b949e" font-size="7">Cada camada depende das inferiores</text>
+
+  <rect x="30" y="150" width="260" height="58" rx="8" fill="url(#dic)" opacity="0.7" filter="url(#shadow)"/>
+  <text x="42" y="172" fill="#fff" font-size="11" font-weight="bold">2. Dependency Injection (IoC)</text>
+  <text x="42" y="188" fill="#c9d1d9" font-size="8">Container singleton · 11 serviços · from_container()</text>
+  <text x="42" y="200" fill="#8b949e" font-size="7">Transversal a todas as camadas</text>
+
+  <rect x="30" y="220" width="260" height="58" rx="8" fill="url(#l5c)" opacity="0.7" filter="url(#shadow)"/>
+  <text x="42" y="242" fill="#fff" font-size="11" font-weight="bold">3. Event-Driven Architecture</text>
+  <text x="42" y="258" fill="#c9d1d9" font-size="8">event_bus (IEventBus) · pub/sub</text>
+  <text x="42" y="270" fill="#8b949e" font-size="7">Comunicação desacoplada entre componentes</text>
+
+  <rect x="30" y="290" width="260" height="58" rx="8" fill="url(#l6c)" opacity="0.7" filter="url(#shadow)"/>
+  <text x="42" y="312" fill="#fff" font-size="11" font-weight="bold">4. Pipeline Pattern</text>
+  <text x="42" y="328" fill="#c9d1d9" font-size="8">P1–P18 · MASWOS 8 estágios · AutoEvolve</text>
+  <text x="42" y="340" fill="#8b949e" font-size="7">Estágios sequenciais com gates de qualidade</text>
+
+  <rect x="30" y="360" width="260" height="58" rx="8" fill="url(#l4c)" opacity="0.7" filter="url(#shadow)"/>
+  <text x="42" y="382" fill="#fff" font-size="11" font-weight="bold">5. Client-Host-Server</text>
+  <text x="42" y="398" fill="#c9d1d9" font-size="8">MCP (Anthropic, 2024) · 40 servidores</text>
+  <text x="42" y="410" fill="#8b949e" font-size="7">JSON-RPC 1:1 sobre stdio/HTTP</text>
+
+  <!-- Column 2 -->
+  <rect x="310" y="80" width="260" height="58" rx="8" fill="url(#l3c)" opacity="0.7" filter="url(#shadow)"/>
+  <text x="322" y="102" fill="#fff" font-size="11" font-weight="bold">6. Progressive Disclosure</text>
+  <text x="322" y="118" fill="#c9d1d9" font-size="8">SKILL.md ≤ 2.500B + references/*.md</text>
+  <text x="322" y="130" fill="#8b949e" font-size="7">Conteúdo denso revelado sob demanda</text>
+
+  <rect x="310" y="150" width="260" height="58" rx="8" fill="url(#l6c)" opacity="0.7" filter="url(#shadow)"/>
+  <text x="322" y="172" fill="#fff" font-size="11" font-weight="bold">7. Self-Healing</text>
+  <text x="322" y="188" fill="#c9d1d9" font-size="8">Monitor → Detectar → Diagnosticar → Reparar</text>
+  <text x="322" y="200" fill="#8b949e" font-size="7">Ciclo autônomo de autocura · 96/100</text>
+
+  <rect x="310" y="220" width="260" height="58" rx="8" fill="url(#dic)" opacity="0.7" filter="url(#shadow)"/>
+  <text x="322" y="242" fill="#fff" font-size="11" font-weight="bold">8. Bridge Pattern</text>
+  <text x="322" y="258" fill="#c9d1d9" font-size="8">Python ↔ TypeScript · CommandRegistry</text>
+  <text x="322" y="270" fill="#8b949e" font-size="7">14 cmds + PluginManager (3 plugins)</text>
+
+  <rect x="310" y="290" width="260" height="58" rx="8" fill="url(#l5c)" opacity="0.7" filter="url(#shadow)"/>
+  <text x="322" y="312" fill="#fff" font-size="11" font-weight="bold">9. Quality Gate</text>
+  <text x="322" y="328" fill="#c9d1d9" font-size="8">G0 (100%) → GR (85%) → GE (90%) → GF (95%)</text>
+  <text x="322" y="340" fill="#8b949e" font-size="7">4 portões de validação progressiva</text>
+
+  <rect x="310" y="360" width="260" height="58" rx="8" fill="url(#l5c)" opacity="0.7" filter="url(#shadow)"/>
+  <text x="322" y="382" fill="#fff" font-size="11" font-weight="bold">10. Transformer Network</text>
+  <text x="322" y="398" fill="#c9d1d9" font-size="8">Rede isonômica auto-organizável</text>
+  <text x="322" y="410" fill="#8b949e" font-size="7">Análise → Config → Execução → Síntese</text>
+
+  <!-- RIGHT SIDE: Layer stack -->
+  <rect x="640" y="80" width="530" height="340" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="905" y="100" text-anchor="middle" fill="#8b949e" font-size="11" font-weight="bold">CAMADAS DO ECOSSISTEMA</text>
+
+  <!-- L6 -->
+  <rect x="660" y="112" width="490" height="36" rx="6" fill="url(#l6c)" opacity="0.6"/>
+  <text x="680" y="134" fill="#fff" font-size="10" font-weight="bold">L6 — Orquestração</text>
+  <text x="900" y="134" text-anchor="middle" fill="#c9d1d9" font-size="8">Nexus NMA v6.2 · Reversa · Evo Loop</text>
+  <text x="1130" y="134" text-anchor="end" fill="#3fb950" font-size="8" font-weight="bold">1 4 7</text>
+
+  <!-- L5 -->
+  <rect x="660" y="156" width="490" height="36" rx="6" fill="url(#l5c)" opacity="0.6"/>
+  <text x="680" y="178" fill="#fff" font-size="10" font-weight="bold">L5 — Agentes (125)</text>
+  <text x="900" y="178" text-anchor="middle" fill="#c9d1d9" font-size="8">Core 56 · Criação 49 · SEEKER 12 · Reversa 7</text>
+  <text x="1130" y="178" text-anchor="end" fill="#58a6ff" font-size="8" font-weight="bold">3 9 10</text>
+
+  <!-- L4 -->
+  <rect x="660" y="200" width="490" height="36" rx="6" fill="url(#l4c)" opacity="0.6"/>
+  <text x="680" y="222" fill="#fff" font-size="10" font-weight="bold">L4 — MCP Servers (40)</text>
+  <text x="900" y="222" text-anchor="middle" fill="#c9d1d9" font-size="8">38 Local + 2 Remote · JSON-RPC · stdio</text>
+  <text x="1130" y="222" text-anchor="end" fill="#d29922" font-size="8" font-weight="bold">5</text>
+
+  <!-- L3 -->
+  <rect x="660" y="244" width="490" height="36" rx="6" fill="url(#l3c)" opacity="0.6"/>
+  <text x="680" y="266" fill="#fff" font-size="10" font-weight="bold">L3 — Skills (104)</text>
+  <text x="900" y="266" text-anchor="middle" fill="#c9d1d9" font-size="8">12 categorias · P14-P18 MiroFish · PhD Auditor</text>
+  <text x="1130" y="266" text-anchor="end" fill="#e3b341" font-size="8" font-weight="bold">4 6</text>
+
+  <!-- L2 -->
+  <rect x="660" y="288" width="490" height="36" rx="6" fill="url(#l2c)" opacity="0.6"/>
+  <text x="680" y="310" fill="#fff" font-size="10" font-weight="bold">L2 — Dados e Memória</text>
+  <text x="900" y="310" text-anchor="middle" fill="#c9d1d9" font-size="8">SQLite · Mem0 · Quantum · DOCLing</text>
+  <text x="1130" y="310" text-anchor="end" fill="#bc8cff" font-size="8" font-weight="bold">3</text>
+
+  <!-- L1 -->
+  <rect x="660" y="332" width="490" height="36" rx="6" fill="url(#l1c)" opacity="0.6"/>
+  <text x="680" y="354" fill="#fff" font-size="10" font-weight="bold">L1 — Infraestrutura</text>
+  <text x="900" y="354" text-anchor="middle" fill="#c9d1d9" font-size="8">Node.js 25 · Bun 1.3 · Python 3.12</text>
+  <text x="1130" y="354" text-anchor="end" fill="#8b949e" font-size="8" font-weight="bold">—</text>
+
+  <!-- DI -->
+  <rect x="660" y="380" width="490" height="30" rx="6" fill="url(#dic)" opacity="0.5" stroke="#f85149" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="680" y="400" fill="#f85149" font-size="10" font-weight="bold">DI — Container Transversal</text>
+  <text x="900" y="400" text-anchor="middle" fill="#c9d1d9" font-size="8">11 serviços + 3 plugins TS + bridge</text>
+  <text x="1130" y="400" text-anchor="end" fill="#f85149" font-size="8" font-weight="bold">2 8</text>
+
+  <!-- Connection lines from patterns to layers -->
+  <line x1="290" y1="109" x2="660" y2="130" stroke="#3fb950" stroke-width="1" opacity="0.4"/>
+  <line x1="290" y1="179" x2="660" y2="395" stroke="#f85149" stroke-width="1" opacity="0.4"/>
+  <line x1="290" y1="249" x2="660" y2="174" stroke="#58a6ff" stroke-width="1" opacity="0.4"/>
+  <line x1="290" y1="319" x2="660" y2="130" stroke="#3fb950" stroke-width="1" opacity="0.4"/>
+  <line x1="290" y1="389" x2="660" y2="218" stroke="#d29922" stroke-width="1" opacity="0.4"/>
+  <line x1="570" y1="109" x2="660" y2="262" stroke="#e3b341" stroke-width="1" opacity="0.4"/>
+  <line x1="570" y1="179" x2="660" y2="130" stroke="#3fb950" stroke-width="1" opacity="0.4"/>
+  <line x1="570" y1="249" x2="660" y2="395" stroke="#f85149" stroke-width="1" opacity="0.4"/>
+  <line x1="570" y1="319" x2="660" y2="174" stroke="#58a6ff" stroke-width="1" opacity="0.4"/>
+  <line x1="570" y1="389" x2="660" y2="174" stroke="#58a6ff" stroke-width="1" opacity="0.4"/>
+
+  <!-- Legend -->
+  <rect x="30" y="440" width="1140" height="30" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="50" y="460" fill="#8b949e" font-size="9">Legenda: Os números à direita de cada camada indicam quais padrões (1–10) se manifestam nela. Ex: L6 usa Layered (1), Pipeline (4) e Self-Healing (7).</text>
+
+  <!-- Quality Gate flow at bottom -->
+  <rect x="30" y="490" width="1140" height="110" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="600" y="514" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="bold">Fluxo Quality Gate (Padrão 9) — Validação Progressiva</text>
+
+  <rect x="80" y="530" width="200" height="50" rx="8" fill="#238636" opacity="0.6" filter="url(#shadow)"/>
+  <text x="180" y="552" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">G0 — Intent Detection</text>
+  <text x="180" y="570" text-anchor="middle" fill="#c9d1d9" font-size="9">Threshold: 100%</text>
+
+  <line x1="280" y1="555" x2="320" y2="555" stroke="#3fb950" stroke-width="2"/>
+  <polygon points="318,549 328,555 318,561" fill="#3fb950"/>
+
+  <rect x="330" y="530" width="200" height="50" rx="8" fill="#1f6feb" opacity="0.6" filter="url(#shadow)"/>
+  <text x="430" y="552" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">GR — Routing</text>
+  <text x="430" y="570" text-anchor="middle" fill="#c9d1d9" font-size="9">Threshold: 85%</text>
+
+  <line x1="530" y1="555" x2="570" y2="555" stroke="#58a6ff" stroke-width="2"/>
+  <polygon points="568,549 578,555 568,561" fill="#58a6ff"/>
+
+  <rect x="580" y="530" width="200" height="50" rx="8" fill="#9e6a03" opacity="0.6" filter="url(#shadow)"/>
+  <text x="680" y="552" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">GE — Execution</text>
+  <text x="680" y="570" text-anchor="middle" fill="#c9d1d9" font-size="9">Threshold: 90%</text>
+
+  <line x1="780" y1="555" x2="820" y2="555" stroke="#d29922" stroke-width="2"/>
+  <polygon points="818,549 828,555 818,561" fill="#d29922"/>
+
+  <rect x="830" y="530" width="200" height="50" rx="8" fill="#da3633" opacity="0.6" filter="url(#shadow)"/>
+  <text x="930" y="552" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">GF — Final Output</text>
+  <text x="930" y="570" text-anchor="middle" fill="#c9d1d9" font-size="9">Threshold: 95%</text>
+
+  <!-- Stack bar at bottom -->
+  <rect x="30" y="620" width="1140" height="160" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="600" y="644" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="bold">Stack Tecnológica por Camada</text>
+
+  <rect x="50" y="658" width="160" height="50" rx="6" fill="#21262d" stroke="#484f58" stroke-width="1"/>
+  <text x="130" y="678" text-anchor="middle" fill="#8b949e" font-size="9" font-weight="bold">Runtime</text>
+  <text x="130" y="696" text-anchor="middle" fill="#c9d1d9" font-size="8">Node.js 25 · Bun 1.3</text>
+  <text x="130" y="706" text-anchor="middle" fill="#c9d1d9" font-size="8">Python 3.12 · Win32</text>
+
+  <rect x="225" y="658" width="160" height="50" rx="6" fill="#21262d" stroke="#484f58" stroke-width="1"/>
+  <text x="305" y="678" text-anchor="middle" fill="#8b949e" font-size="9" font-weight="bold">Comunicação</text>
+  <text x="305" y="696" text-anchor="middle" fill="#c9d1d9" font-size="8">JSON-RPC · stdio</text>
+  <text x="305" y="706" text-anchor="middle" fill="#c9d1d9" font-size="8">HTTP · MCP SDK</text>
+
+  <rect x="400" y="658" width="160" height="50" rx="6" fill="#21262d" stroke="#484f58" stroke-width="1"/>
+  <text x="480" y="678" text-anchor="middle" fill="#8b949e" font-size="9" font-weight="bold">Dados</text>
+  <text x="480" y="696" text-anchor="middle" fill="#c9d1d9" font-size="8">SQLite · Mem0</text>
+  <text x="480" y="706" text-anchor="middle" fill="#c9d1d9" font-size="8">Ollama · PDF</text>
+
+  <rect x="575" y="658" width="160" height="50" rx="6" fill="#21262d" stroke="#484f58" stroke-width="1"/>
+  <text x="655" y="678" text-anchor="middle" fill="#8b949e" font-size="9" font-weight="bold">Configuração</text>
+  <text x="655" y="696" text-anchor="middle" fill="#c9d1d9" font-size="8">YAML · Markdown</text>
+  <text x="655" y="706" text-anchor="middle" fill="#c9d1d9" font-size="8">JSON · frontmatter</text>
+
+  <rect x="750" y="658" width="160" height="50" rx="6" fill="#21262d" stroke="#484f58" stroke-width="1"/>
+  <text x="830" y="678" text-anchor="middle" fill="#8b949e" font-size="9" font-weight="bold">Plugins</text>
+  <text x="830" y="696" text-anchor="middle" fill="#c9d1d9" font-size="8">manus-evolve.ts</text>
+  <text x="830" y="706" text-anchor="middle" fill="#c9d1d9" font-size="8">ecosystem-sync.ts</text>
+
+  <rect x="925" y="658" width="225" height="50" rx="6" fill="#21262d" stroke="#484f58" stroke-width="1"/>
+  <text x="1037" y="678" text-anchor="middle" fill="#8b949e" font-size="9" font-weight="bold">Modelo Base</text>
+  <text x="1037" y="696" text-anchor="middle" fill="#c9d1d9" font-size="8">opencode/big-pickle</text>
+  <text x="1037" y="706" text-anchor="middle" fill="#c9d1d9" font-size="8">200K ctx · 128K out · gratuito</text>
+
+  <text x="600" y="740" text-anchor="middle" fill="#8b949e" font-size="9">Classificação: Arquitetura de Agentes, MCPs e Skills com DI + MiroFish/BettaFish + PhD Auditor</text>
+
+  <!-- Stats bar -->
+  <rect x="30" y="770" width="1140" height="22" rx="4" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="100" y="785" fill="#8b949e" font-size="8">10 Padrões</text>
+  <text x="270" y="785" fill="#8b949e" font-size="8">6+1 Camadas</text>
+  <text x="450" y="785" fill="#8b949e" font-size="8">4 Quality Gates</text>
+  <text x="650" y="785" fill="#8b949e" font-size="8">11 Serviços DI</text>
+  <text x="850" y="785" fill="#8b949e" font-size="8">3 Plugins TS</text>
+  <text x="1040" y="785" fill="#8b949e" font-size="8">14 Bridge Cmds</text>
+</svg>
