@@ -91,7 +91,7 @@
   <!-- 4→5: REPARAR bottom → VERIFICAR right edge -->
   <path d="M740,455 Q740,530 510,530" fill="none" stroke="#f85149" stroke-width="2" marker-end="url(#arw-red)"/>
   <!-- 5→1: VERIFICAR left edge → MONITORAR left edge (loop-back) -->
-  <path d="M290,530 Q120,530 120,310 Q120,100 290,100" fill="none" stroke="#bc8cff" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arw-purple)"/>
+  <path d="M290,530 Q240,530 240,315 Q240,100 290,100" fill="none" stroke="#bc8cff" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arw-purple)"/>
 
   <!-- Spokes: Health Monitor ↔ each phase -->
   <line x1="400" y1="250" x2="400" y2="125" stroke="#3fb950" stroke-width="1" opacity="0.4" stroke-dasharray="3,3"/>
