@@ -57,7 +57,7 @@ python -m pytest tests/ -v
 | `commands/` | Definições de comandos slash | Markdown com frontmatter YAML |
 | `command/` | Implementação de comandos | 14 arquivos `.md` para `CommandRegistry` |
 | `plugins/` | Plugins TypeScript | `manus-evolve.ts`, `ecosystem-sync.ts`, `bernstein-sync.ts` |
-| `diagrams/` | 7 SVGs de arquitetura | Gerados automaticamente pelo Reversa Framework |
+| `diagrams/` | 10 SVGs de arquitetura | Gerados automaticamente pelo Reversa Framework |
 | `evolution/` | Skills geradas automaticamente pelo AutoEvolve | Output do ciclo PLAN→ACT→REFLECT→EXTRACT→EVOLVE |
 | `.reversa/` | Artefatos de engenharia reversa | `DI_MIGRATION.md`, ADRs, SDDs |
 
