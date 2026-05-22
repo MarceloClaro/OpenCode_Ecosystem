@@ -757,7 +757,7 @@ Os diferenciadores técnicos em relação aos demais frameworks são:
 | Estratégias Teoria dos Jogos | **10** |
 | Estratégias RAG | **9** (auto-select) |
 | Serviços DI | **11** + 3 plugins TS |
-| Linhas Python | **~114.000** |
+| Linhas Python | **~109.660** |
 | Quality Gates | **4** (G0 → GR → GE → GF) |
 | Health Score | **96/100** |
 
