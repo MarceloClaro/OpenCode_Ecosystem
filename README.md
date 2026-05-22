@@ -95,8 +95,8 @@ O conteúdo deste README está organizado em uma **sequência progressiva**: pri
 
 **Parte IV — Referência**
 - [Métricas Agregadas](#métricas-agregadas)
-- [Comparativo com Outros Frameworks](#comparativo-com-outros-frameworks)
 - [Classificação Técnica](#classificação-técnica)
+- [Comparativo com Outros Frameworks](#comparativo-com-outros-frameworks)
 - [Diagramas Técnicos — 10 SVGs](#diagramas-técnicos--10-svgs)
 - [Notas Técnicas](#notas-técnicas)
 - [Documentação](#documentação)
@@ -118,7 +118,7 @@ Um **agente** é uma unidade autônoma de inteligência artificial especializada
 | **Core** | 56 | Agentes de propósito geral — code-review, reasoning, orchestration |
 | **Criador de Artigos (MASWOS)** | 49 | Agentes especializados na produção acadêmica — pesquisa, escrita, revisão, formatação |
 | **SEEKER** | 12 | Agentes de pesquisa científica autônoma — busca, análise, síntese de evidências |
-| **Reversa** | 7 | Agentes de engenharia reversa — mapeamento, análise AST, documentação |
+| **Reversa** | 9 | Agentes de engenharia reversa — mapeamento, análise AST, documentação |
 | **Corretor** | 1 | Detector e corretor de caracteres CJK na saída (`ptbr_corrector.py`) |
 
 Diferente de chatbots tradicionais que usam um único modelo, aqui cada agente tem um papel definido e colabora com outros agentes dentro de pipelines orquestrados.
@@ -665,6 +665,106 @@ PLAN → ACT → REFLECT → EXTRACT → EVOLVE
 
 ---
 
+## Classificação Técnica
+
+Esta seção formaliza a classificação técnica do OpenCode Ecosystem, útil para posicioná-lo em relação a taxonomias acadêmicas de sistemas multiagente e para compreender quais padrões arquiteturais sustentam o ecossistema.
+
+### Classificação Primária
+
+| Dimensão | Classificação |
+|---|---|
+| **Tipo de sistema** | Plataforma Multiagente Evolutiva (Multi-Agent Evolutionary Platform) |
+| **Paradigma arquitetural** | Arquitetura em Camadas (Layered Architecture) — 6 camadas (L1–L6) + Container DI transversal |
+| **Padrão de coordenação** | Hierarchical Multi-Agent Orchestration com ReAct Loop (THOUGHT → ACTION → OBSERVATION → REPEAT) |
+| **Classificação interna** | Arquitetura de Agentes, MCPs e Skills com DI + MiroFish/BettaFish + PhD Auditor |
+
+### Padrões Arquiteturais Aplicados
+
+O ecossistema combina 10 padrões arquiteturais reconhecidos, cada um responsável por um aspecto específico do funcionamento:
+
+| Padrão | Onde se manifesta |
+|---|---|
+| **Layered Architecture** | 6 camadas hierárquicas L1 (Infra) → L6 (Orquestração) |
+| **Dependency Injection (IoC)** | Container singleton com 11 serviços + 3 plugins TS, pattern `from_container()` |
+| **Event-Driven Architecture** | `event_bus` (IEventBus) para comunicação pub/sub entre componentes |
+| **Pipeline Pattern** | P1–P18 (Entity NER → PhD Auditor), MASWOS 8 estágios, AutoEvolve PLAN→EVOLVE |
+| **Client-Host-Server** | Protocolo MCP (Anthropic, 2024) com 40 servidores, JSON-RPC 1:1 |
+| **Progressive Disclosure** | Skills `SKILL.md` ≤ 2.500B + `references/*.md` para conteúdo denso |
+| **Self-Healing** | Ciclo autônomo: Monitor → Detectar → Diagnosticar → Reparar → Verificar |
+| **Bridge Pattern** | Python ↔ TypeScript via `CommandRegistry` (14 cmds) + `PluginManager` (3 plugins) |
+| **Quality Gate** | G0 (Intent Detection 100%) → GR (Routing 85%) → GE (Execution 90%) → GF (Final 95%) |
+| **Transformer Network** | Rede isonômica auto-organizável com 4 fases (Análise → Config → Execução → Síntese) |
+
+### Classificação por Subsistema
+
+Cada subsistema possui sua própria classificação técnica, refletindo a especialização funcional:
+
+| Subsistema | Classificação Técnica | Escala |
+|---|---|---|
+| **Nexus NMA v6.2** | Meta-Granular Orchestrator (6 camadas internas L0–L5) | 120+ sync barriers, 500+ constraints |
+| **MASWOS** | Multi-Agent Scientific Writing Operating System | 49 agentes, 8 estágios, Qualis A1 |
+| **SEEKER** | Autonomous Research Agent Swarm | 12 agentes paralelos, 10+ fontes acadêmicas |
+| **MiroFish/BettaFish** | Agent-Based Simulation Framework (P1–P18) | 18 padrões arquiteturais, 38 raciocínios |
+| **PhD Auditor (P18)** | Statistical Validation Engine | NashSolver, Cohen's d, Bonferroni, Power Analysis |
+| **AutoEvolve** | Evolutionary Skill Generation Loop | PLAN→ACT→REFLECT→EXTRACT→EVOLVE, 8 ciclos |
+| **MCP Layer** | Tool Integration Protocol Layer | 40 servidores, lazy init, stdio/HTTP |
+| **RAG Engine** | Adaptive Multi-Strategy RAG | 9 estratégias (Vanilla → HyDE), auto-select |
+| **Quantum Module** | Variational Quantum Computing (VQC) | 50 qubits, 89.52% acc, QML |
+| **Reversa Framework** | Autonomous Reverse Engineering Pipeline | 9 agentes, 67 artefatos, v1.2.22 |
+
+### Taxonomia em Relação a Frameworks Existentes
+
+O OpenCode Ecosystem ocupa uma posição distinta na taxonomia de frameworks de IA:
+
+```
+AI Agent Frameworks
+├── Single-Agent (Cursor, Copilot)
+├── Multi-Agent
+│   ├── Configurable Swarms (LangChain, AutoGen)
+│   ├── Fixed-Role Crews (CrewAI)
+│   └── Evolutionary Orchestrated Ecosystems
+│       └── OpenCode Ecosystem v4.2.1
+│           125 agentes · 6 camadas · DI + AutoEvolve + PhD Auditor
+```
+
+Os diferenciadores técnicos em relação aos demais frameworks são:
+
+- **Orquestração hierárquica** (vs. coordenação flat de CrewAI)
+- **Evolução autônoma** (vs. configuração estática de LangChain/AutoGen)
+- **Validação estatística rigorosa** — PhD Auditor com NashSolver + Bonferroni (exclusivo)
+- **Debate multiagente com Teoria dos Jogos** — 10 estratégias, 38 raciocínios (exclusivo)
+
+### Stack Tecnológica
+
+| Camada | Tecnologias |
+|---|---|
+| **Runtime** | Node.js 25, Bun 1.3, Python 3.12, Win32 |
+| **Comunicação** | JSON-RPC, stdio, HTTP, MCP SDK (Anthropic) |
+| **Dados** | SQLite, Mem0, Ollama (embeddings), PDF |
+| **Configuração** | YAML frontmatter, Markdown, JSON |
+| **Plugins** | TypeScript (`manus-evolve.ts`, `ecosystem-sync.ts`, `bernstein-sync.ts`) |
+| **Modelo base** | `opencode/big-pickle` — 200K ctx, 128K out (gratuito) |
+
+### Métricas Quantitativas de Classificação
+
+| Métrica | Valor |
+|---|---|
+| Agentes | **125** (5 categorias) |
+| MCP Servers | **40** (38 local + 2 remote) |
+| Skills | **104** (12 categorias) |
+| Padrões arquiteturais (P1–P18) | **18** + P19 sync |
+| Tipos de raciocínio | **38** (6 categorias) |
+| Estratégias Teoria dos Jogos | **10** |
+| Estratégias RAG | **9** (auto-select) |
+| Serviços DI | **11** + 3 plugins TS |
+| Linhas Python | **~109.660** |
+| Quality Gates | **4** (G0 → GR → GE → GF) |
+| Health Score | **96/100** |
+
+> **Classificação em uma frase:** O OpenCode Ecosystem v4.2.1 é uma plataforma multiagente evolutiva com orquestração hierárquica de 6 camadas, injeção de dependência centralizada, 18 padrões arquiteturais (P1–P18), debate com Teoria dos Jogos e validação estatística PhD-level, voltada para produção acadêmica Qualis A1, pesquisa científica autônoma e engenharia reversa de sistemas.
+
+---
+
 ## Comparativo com Outros Frameworks
 
 | Capacidade | OpenCode Ecosystem v4.2.1 | LangChain | AutoGen | CrewAI | Cursor/Copilot |
@@ -682,73 +782,6 @@ PLAN → ACT → REFLECT → EXTRACT → EVOLVE
 | Modelo gratuito 200K ctx | **big-pickle** | API paga | API paga | API paga | Assinatura |
 
 > **Síntese:** O OpenCode Ecosystem é o único framework que combina **produção acadêmica Qualis A1 + debate multiagente com Teoria dos Jogos + validação estatística + quantum computing + autocura autônoma** num ecossistema unificado, com modelo gratuito (200K ctx) e arquitetura evolutiva que melhora a cada ciclo.
-
----
-
-## Classificação Técnica
-
-O OpenCode Ecosystem é classificado como uma **Plataforma Multiagente Evolutiva com Orquestração Hierárquica** — uma categoria distinta dos frameworks tradicionais de IA (single-agent, configurable swarms ou fixed-role crews). Esta seção documenta o posicionamento taxonômico, os padrões arquiteturais e a classificação individual de cada subsistema.
-
-### Posicionamento Taxonômico
-
-<details>
-<summary><strong>Taxonomia — Posição entre frameworks de IA</strong></summary>
-
-<img src="diagrams/classification-taxonomy.svg" alt="Taxonomia — Classificação Técnica" width="100%"/>
-
-O diagrama posiciona o OpenCode Ecosystem na árvore taxonômica de frameworks de IA:
-- **Single-Agent:** Cursor, Copilot, ChatGPT, Claude (1 modelo, sem coordenação)
-- **Multi-Agent → Configurable Swarms:** LangChain, AutoGen (agentes genéricos, configuração manual)
-- **Multi-Agent → Fixed-Role Crews:** CrewAI (papéis fixos, coordenação flat)
-- **Multi-Agent → Evolutionary Orchestrated:** **OpenCode Ecosystem** (orquestração hierárquica 6L + evolução autônoma)
-
-**Diferenciadores exclusivos:** Orquestração Hierárquica (6 camadas vs. flat), Evolução Autônoma (AutoEvolve vs. estática), PhD Auditor (Nash + Bonferroni — exclusivo), Debate com Teoria dos Jogos (10 estratégias — exclusivo).
-
-</details>
-
-### 10 Padrões Arquiteturais
-
-<details>
-<summary><strong>Padrões arquiteturais mapeados por camada (L1–L6 + DI)</strong></summary>
-
-<img src="diagrams/architectural-patterns.svg" alt="10 Padrões Arquiteturais" width="100%"/>
-
-| # | Padrão | Camadas | Descrição |
-|---|--------|---------|-----------|
-| 1 | Layered Architecture | L6 | 6 camadas hierárquicas L1 (Infra) → L6 (Orquestração) |
-| 2 | Dependency Injection | DI | Container singleton, 11 serviços, `from_container()` |
-| 3 | Event-Driven Architecture | L5, L2 | `event_bus` (IEventBus), pub/sub desacoplado |
-| 4 | Pipeline Pattern | L6, L3 | P1–P18, MASWOS 8 estágios, AutoEvolve |
-| 5 | Client-Host-Server | L4 | MCP (Anthropic, 2024), 40 servidores, JSON-RPC |
-| 6 | Progressive Disclosure | L3 | SKILL.md ≤ 2.500B + references/*.md |
-| 7 | Self-Healing | L6 | Monitor → Detectar → Diagnosticar → Reparar |
-| 8 | Bridge Pattern | DI | Python ↔ TypeScript, 14 cmds, 3 plugins |
-| 9 | Quality Gate | L5 | G0 (100%) → GR (85%) → GE (90%) → GF (95%) |
-| 10 | Transformer Network | L5 | Rede isonômica auto-organizável |
-
-</details>
-
-### Classificação por Subsistema
-
-<details>
-<summary><strong>10 subsistemas com classificação técnica individual</strong></summary>
-
-<img src="diagrams/subsystem-classification.svg" alt="Classificação por Subsistema" width="100%"/>
-
-| Subsistema | Classificação Técnica | Escala |
-|------------|----------------------|--------|
-| Nexus NMA v6.2 | Meta-Granular Orchestrator | 120+ sync barriers, 500+ constraints |
-| MASWOS | Multi-Agent Scientific Writing OS | 49 agentes, 8 estágios |
-| SEEKER | Autonomous Research Agent Swarm | 12 agentes, 10+ fontes |
-| MiroFish/BettaFish | Agent-Based Simulation Framework | 18 padrões, 38 raciocínios |
-| PhD Auditor | Statistical Validation Engine | Nash, Cohen's d, Bonferroni |
-| AutoEvolve | Autonomous Skill Evolution Engine | 8 gerações, score 85→98 |
-| Self-Healing | Autonomous Recovery System | 96/100, zero-tolerance CJK |
-| DI Container | Inversion of Control Container | 11 serviços, 14 cmds bridge |
-| Quantum Nexus | Quantum ML Research Platform | 50 qubits, 89.52% acc |
-| Reversa Framework | Autonomous Reverse Engineering | 7 agentes, 67 artefatos |
-
-</details>
 
 ---
 
