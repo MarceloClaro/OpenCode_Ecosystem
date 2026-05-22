@@ -118,7 +118,7 @@ Um **agente** é uma unidade autônoma de inteligência artificial especializada
 | **Core** | 56 | Agentes de propósito geral — code-review, reasoning, orchestration |
 | **Criador de Artigos (MASWOS)** | 49 | Agentes especializados na produção acadêmica — pesquisa, escrita, revisão, formatação |
 | **SEEKER** | 12 | Agentes de pesquisa científica autônoma — busca, análise, síntese de evidências |
-| **Reversa** | 7 | Agentes de engenharia reversa — mapeamento, análise AST, documentação |
+| **Reversa** | 9 | Agentes de engenharia reversa — mapeamento, análise AST, documentação |
 | **Corretor** | 1 | Detector e corretor de caracteres CJK na saída (`ptbr_corrector.py`) |
 
 Diferente de chatbots tradicionais que usam um único modelo, aqui cada agente tem um papel definido e colabora com outros agentes dentro de pipelines orquestrados.
