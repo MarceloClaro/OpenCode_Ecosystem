@@ -742,7 +742,7 @@ O diagrama posiciona o OpenCode Ecosystem na árvore taxonômica de frameworks d
 | SEEKER | Autonomous Research Agent Swarm | 12 agentes, 10+ fontes |
 | MiroFish/BettaFish | Agent-Based Simulation Framework | 18 padrões, 38 raciocínios |
 | PhD Auditor | Statistical Validation Engine | Nash, Cohen's d, Bonferroni |
-| AutoEvolve | Autonomous Skill Evolution Engine | 7 gerações, score 85→98 |
+| AutoEvolve | Autonomous Skill Evolution Engine | 8 gerações, score 85→98 |
 | Self-Healing | Autonomous Recovery System | 96/100, zero-tolerance CJK |
 | DI Container | Inversion of Control Container | 11 serviços, 14 cmds bridge |
 | Quantum Nexus | Quantum ML Research Platform | 50 qubits, 89.52% acc |

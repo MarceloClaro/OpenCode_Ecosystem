@@ -126,7 +126,7 @@
   <text x="65" y="448" fill="#3fb950" font-size="9" font-weight="bold">Output:</text>
   <text x="115" y="448" fill="#c9d1d9" font-size="9">Skills geradas em evolution/</text>
   <text x="65" y="464" fill="#3fb950" font-size="9" font-weight="bold">Ciclos:</text>
-  <text x="110" y="464" fill="#c9d1d9" font-size="9">7 gerações · score 85→98</text>
+  <text x="110" y="464" fill="#c9d1d9" font-size="9">8 gerações · score 85→98</text>
 
   <!-- Subsystem 7: Self-Healing (bottom center-left) -->
   <line x1="575" y1="435" x2="400" y2="560" stroke="#30363d" stroke-width="1.5" marker-end="url(#arw)"/>
