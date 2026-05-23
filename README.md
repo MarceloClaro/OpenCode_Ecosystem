@@ -901,11 +901,13 @@ Mapa radial dos 10 subsistemas com classificação técnica individual: Nexus NM
 | Documento | Descrição |
 |-----------|-----------|
 | [GETTING_STARTED.md](GETTING_STARTED.md) | Guia de instalação e primeiros passos |
+| [PROJECTS.md](PROJECTS.md) | Painel didático e detalhado de projetos (Kanban) |
 | [TUTORIALS.md](TUTORIALS.md) | Tutoriais práticos detalhados |
 | [GLOSSARY.md](GLOSSARY.md) | Glossário de termos técnicos |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Guia para contribuidores |
 | [ROADMAP.md](ROADMAP.md) | Visão futura do projeto |
 | [AGENTS_PTBR.md](AGENTS_PTBR.md) | Documentação de agentes em PT-BR |
+
 
 ---
 
