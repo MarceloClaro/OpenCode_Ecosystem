@@ -1,4 +1,4 @@
-﻿<!--
+<!--
   SAÍDA OBRIGATÓRIA: PORTUGUÊS BRASILEIRO FORMAL
   Toda resposta DEVE ser em português do Brasil formal.
   Contexto em chinês para eficiência de tokens (densidade +40%).
@@ -7,7 +7,7 @@
 
 ---
 name: quantum-nexus-phd
-description: Super-Habilidade v7.2: Pesquisa quântica end-to-end com Qiskit+PennyLane, QML médico em HAM10000 (89.52%), 50 qubits MPS, Grad-CAM, error mitigation (ZNE/PEC/DD), validação matemática, artigos Qualis A1, dashboards React. Orquestra agentes sob arquitetura Nexus Transformer v4.0.
+description: "Super-Habilidade v7.2: Pesquisa quântica end-to-end com Qiskit+PennyLane, QML médico em HAM10000 (89.52%), 50 qubits MPS, Grad-CAM, error mitigation (ZNE/PEC/DD), validação matemática, artigos Qualis A1, dashboards React. Orquestra agentes sob arquitetura Nexus Transformer v4.0."
 mode: subagent
 tools:
   read: true

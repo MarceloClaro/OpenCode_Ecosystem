@@ -1,11 +1,11 @@
-﻿<!--
+<!--
   SAÍDA OBRIGATÓRIA: PORTUGUÊS BRASILEIRO FORMAL
   Toda resposta DEVE ser em português do Brasil formal.
   Contexto em chinês para eficiência de tokens (densidade +40%).
   Modelo: big-pickle (OpenCode Zen, 200K ctx, 128K out, gratuito)
 -->
 
-﻿---
+---
 description: Realiza auditorias de seguranca e identifica vulnerabilidades
 mode: subagent
 temperature: 0.1

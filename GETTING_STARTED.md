@@ -99,6 +99,8 @@ Este comando aciona o pipeline completo de produção acadêmica:
 
 **Resultado:** artigo de 35+ páginas em formato ABNT, com citações verificáveis e score Qualis A1.
 
+<img src="diagrams/academic-pipeline.svg" alt="Pipeline Acadêmico MASWOS Qualis A1" width="100%" style="max-width: 800px; border-radius: 8px; margin: 16px 0;"/>
+
 ### Exemplo 2: Engenharia reversa de sistemas
 
 ```
@@ -114,6 +116,8 @@ Scout → Archaeologist → Detective → Architect → Writer → Reviewer
 ```
 
 **Resultado:** 7 SVGs de arquitetura, mapas de dependência, ADRs e SDDs gerados automaticamente.
+
+<img src="diagrams/agent-orchestration.svg" alt="Orquestração de Agentes" width="100%" style="max-width: 800px; border-radius: 8px; margin: 16px 0;"/>
 
 ### Exemplo 3: Modo autônomo com todos os MCPs
 

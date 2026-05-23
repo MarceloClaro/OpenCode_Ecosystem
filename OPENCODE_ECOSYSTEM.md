@@ -26,9 +26,9 @@ O **OpenCode Ecosystem** é uma arquitetura multiagente evolutiva integrada ao O
 
 ---
 
-## Diagramas Técnicos — 7 SVGs (v4.2.1)
+## Diagramas Técnicos — 10 SVGs (v4.2.1)
 
-O ecossistema documenta sua arquitetura por meio de **7 diagramas SVG** em `diagrams/`, gerados e mantidos pelo Reversa Framework v1.2.22. SVGs são preferidos sobre PNG/Mermaid por oferecerem escalabilidade vetorial infinita, gradientes, glassmorphism e atualização programática via texto puro.
+O ecossistema documenta sua arquitetura por meio de **10 diagramas SVG** em `diagrams/`, gerados e mantidos pelo Reversa Framework v1.2.22. SVGs são preferidos sobre PNG/Mermaid por oferecerem escalabilidade vetorial infinita, gradientes, glassmorphism e atualização programática via texto puro.
 
 | # | Arquivo | Propósito | Processos-chave |
 |---|---------|-----------|------------------|
@@ -38,7 +38,11 @@ O ecossistema documenta sua arquitetura por meio de **7 diagramas SVG** em `diag
 | 4 | `mcp-architecture.svg` | Protocolo MCP | 40 servidores · Client-Host-Server · lazy init |
 | 5 | `rag-strategies.svg` | 9 estratégias RAG | Vanilla→HyDE · Adaptive auto-select · Graph+Vector |
 | 6 | `self-healing.svg` | Autocura autônoma | Monitor→Detectar→Diagnosticar→Reparar→Verificar |
-| 7 | `mirofish-phd-auditor.svg` | **NOVO** Pipeline P14-P18 | 38 raciocínios · Nash · Cohen · Bonferroni · Qualis A1 |
+| 7 | `mirofish-phd-auditor.svg` | Pipeline P14-P18 | 38 raciocínios · Nash · Cohen · Bonferroni · Qualis A1 |
+| 8 | `classification-taxonomy.svg` | Árvore taxonômica | Posiciona o ecossistema vs. frameworks existentes |
+| 9 | `architectural-patterns.svg` | 10 padrões arquiteturais | Mapeamento dos padrões às camadas L1–L6 + DI |
+| 10| `subsystem-classification.svg` | Classificação por subsistema | Mapa radial dos 10 subsistemas com classificação individual |
+
 
 ### SVG 7 em Detalhe — `mirofish-phd-auditor.svg`
 
@@ -80,6 +84,8 @@ Este diagrama é exclusivo do OpenCode v4.2.1 e representa o pipeline mais compl
 | Modelo gratuito 200K ctx | **✅ big-pickle** | API paga | API paga | API paga | Assinatura |
 
 > **Vantagem-chave:** Único framework que une produção Qualis A1 + debate multiagente com Teoria dos Jogos + validação estatística + quantum computing + autocura autônoma, com modelo gratuito de 200K contexto e arquitetura que aprende a cada ciclo evolutivo.
+
+<img src="diagrams/classification-taxonomy.svg" alt="Taxonomia — Classificação Técnica" width="100%" style="max-width: 850px; border-radius: 8px; margin: 16px 0;"/>
 
 ---
 
@@ -151,6 +157,8 @@ Este diagrama é exclusivo do OpenCode v4.2.1 e representa o pipeline mais compl
 ```
 
 <img src="diagrams/architecture-overview.svg" alt="Arquitetura do Ecossistema OpenCode" width="100%" style="max-width: 900px; border-radius: 8px; margin: 16px 0;">
+
+<img src="diagrams/architectural-patterns.svg" alt="10 Padrões Arquiteturais" width="100%" style="max-width: 900px; border-radius: 8px; margin: 16px 0;">
 
 ---
 
@@ -805,6 +813,8 @@ Sistema de memória técnica integrado ao ecossistema para registrar, buscar sem
 ---
 
 ## Métricas Detalhadas por Submódulo
+
+<img src="diagrams/subsystem-classification.svg" alt="Classificação por Subsistema" width="100%" style="max-width: 850px; border-radius: 8px; margin: 16px 0;">
 
 ### MCP Servers — Métricas de Infraestrutura
 
