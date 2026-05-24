@@ -35,8 +35,9 @@ O plugin `manus-evolve.ts` executa o ciclo autônomo **PLAN → ACT → REFLECT 
 | **evo-10** | **PyPI Scout + Ecosystem Hooks v1.0 (Round 8)** | **95/100** | Catálogo curado 22+ bibliotecas, CLI 7 comandos, 5 hooks fundamentais, 7 bibliotecas instaladas |
 | **evo-11** | **DataOrchestrator + Expansão Multi-Domínio (Round 9)** | **97/100** | 6 novos domínios, 5 novos hooks, DataOrchestrator NL, 5 bibliotecas, artigo ABNT |
 | **evo-12** | **Auditoria Caixa Branca + Refinamento UX (Rounds 10-12)** | **95/100** | 9 componentes auditoria, ResearcherScore, BudgetAlert, AuditDashboard HTML, PipelineIntegration |
+| **evo-13** | **Reasoning Orchestrator v9.0 + Teoria dos Jogos (Round 13)** | **96/100** | 68 tipos de raciocínio (58 base + 10 Game Theory), bridge AuditSystem, 11 categorias, integração Nash/Harsanyi/Shapley |
 
-**Progressão geral:** 85 → 95 (+11,8%) · Média: 93/100
+**Progressão geral:** 85 → 96 (+12,9%) · Média: 93/100
 
 ---
 

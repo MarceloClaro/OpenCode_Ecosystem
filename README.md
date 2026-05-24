@@ -23,7 +23,7 @@
 <br/>
 
 > **Versão:** 4.2.3 · **Atualizado:** 2026-05-24 · **Modelo:** `opencode/big-pickle` (200K ctx, 128K out)  
-> **Novo:** DataOrchestrator (NL → 8 domínios) · PyPI Scout (22+ bib. curadas) · 10 Ecosystem Hooks · 30+ bibliotecas
+> **Novo:** Reasoning Orchestrator v9.0 (68 tipos + 10 Game Theory) · DataOrchestrator (NL → 8 domínios) · Auditoria Caixa Branca (9 componentes) · PyPI Scout (22+ bib. curadas)
 
 </div>
 
