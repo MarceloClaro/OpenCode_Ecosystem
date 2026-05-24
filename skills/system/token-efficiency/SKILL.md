@@ -34,3 +34,9 @@ Maximizar eficiencia de tokens mantendo saida em portugues brasileiro formal.
 |------|---------|
 | `reference.md` | Detailed principles, compression patterns, workflow |
 | `reference/linguistic-corrector.md` | PT-BR corrector pipeline, commands, metrics |
+
+## Skills Complementares
+
+| Skill | Relação |
+|-------|---------|
+| `skills/juridico/edicao-cirurgica` | **Escopo universal** — retorna apenas o delta modificado, nunca reescreve o artefato inteiro. Principal técnica de economia de tokens em edições iterativas. |

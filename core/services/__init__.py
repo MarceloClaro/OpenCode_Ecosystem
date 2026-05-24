@@ -1,4 +1,4 @@
-﻿"""
+"""
 core/services/ — Pacote de Serviços do Core.
 
 Este pacote contém a camada de serviços do OpenCode.

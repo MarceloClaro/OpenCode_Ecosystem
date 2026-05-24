@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "problema": "Computador não liga, luz vermelha piscando",
+    "solucao": "Verificar fonte de alimentação. Testar cabo de força. Se persistir, verificar placa-mãe."
+  },
+  {
+    "id": "2",
+    "problema": "Computador liga mas tela fica preta",
+    "solucao": "Verificar conexão do monitor. Testar cabo HDMI/VGA. Verificar placa de vídeo."
+  },
+  {
+    "id": "3",
+    "problema": "Computador muito lento, travando frequentemente",
+    "solucao": "Verificar uso de memória RAM e disco. Executar limpeza de disco. Verificar vírus."
+  },
+  {
+    "id": "4",
+    "problema": "Não consigo acessar internet, página de erro",
+    "solucao": "Verificar conexão de rede. Reiniciar roteador. Testar em outro dispositivo."
+  },
+  {
+    "id": "5",
+    "problema": "Impressora não reconhecida pelo computador",
+    "solucao": "Verificar conexão USB/cabo. Instalar drivers atualizados. Reiniciar serviços de impressão."
+  },
+  {
+    "id": "0f31736e-1b0b-4b8c-a71f-b7de1c5e0e17",
+    "problema": "O mouse não está funcionando no computador",
+    "solucao": "Resposta resumida do resultado mais relevante (https://www.avg.com/pt/signal/computer-mouse-not-working):\nCertifique-se de que o mouse está corretamente conectado ao computador e que a fonte de alimentação está funcionando. Tente conectar o mouse a uma porta USB diferente ou, se for sem fio, verifique a conexão Bluetooth. Atualizar os drivers do mouse também pode resolver o problema.\n\nPrincipais links:\nO que fazer se o mouse do computador não estiver funcionando - https://www.avg.com/pt/signal/computer-mouse-not-working\nMeu mouse não está funcionando corretamente - Microsoft Q&A - https://learn.microsoft.com/pt-br/answers/questions/4009032/meu-mouse-n-o-est-funcionando-corretamente\nMOUSE NOT WORKING or STOPPED WORKING on your PC or ... - https://www.youtube.com/watch?v=BgP5eEakN1I\nMouse não funciona no notebook ou PC? Veja o que fazer para ... - https://www.techtudo.com.br/dicas-e-tutoriais/2017/10/windows-nao-reconhece-o-mouse-veja-como-resolver-o-problema-no-pc.ghtml\nPor que seu mouse está quebrado ou não funciona e como corrigi-lo - https://www.avast.com/pt-br/c-mouse-not-working",
+    "fonte": "web",
+    "data_adicao": "8b720816"
+  }
+]

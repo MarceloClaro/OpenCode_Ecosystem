@@ -1,4 +1,4 @@
-﻿import pandas as pd, numpy as np, os, sys, json, warnings, hashlib
+import pandas as pd, numpy as np, os, sys, json, warnings, hashlib
 from datetime import datetime
 
 # ========== CONFIG REPRODUTIVEL ==========

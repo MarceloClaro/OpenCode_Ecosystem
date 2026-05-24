@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """TSAC Cross-File Audit - verifica consistencia de notas entre os 3 arquivos."""
 import re, os
 from collections import Counter

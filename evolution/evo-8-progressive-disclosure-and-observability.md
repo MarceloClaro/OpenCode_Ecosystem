@@ -1,4 +1,4 @@
-﻿---
+---
 name: evo-8-progressive-disclosure-and-observability
 description: "Skill auto-gerada pelo Manus Evolve v2.0 - Round 8. Padroes: Progressive disclosure design, agent observability, cross-ecosystem skill patterns, encoding integrity verification. Score: 98/100"
 evolved: true

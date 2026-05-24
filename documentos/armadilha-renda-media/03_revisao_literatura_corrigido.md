@@ -1,4 +1,4 @@
-﻿# 2 REVISAO DA LITERATURA
+# 2 REVISAO DA LITERATURA
 ## 2.1 A Armadilha da Renda Media: Definicao e Mecanismos
 O conceito de armadilha da renda media foi formalizado por Gill e Kharas (2007, p. 17-19) ao analisarem as trajetorias de crescimento das economias do Leste Asiatico. Os autores identificaram que, das 101 economias classificadas como de renda media em 1960, apenas 13 haviam alcancado o status de renda alta até 2008. As demais permaneceram estagnadas ou regrediram.[^1]
 Paises de renda media enfrentam uma compressao estrutural: não conseguem competir com economias de renda baixa em custos trabalhistas, nem com economias de renda alta em inovacao tecnologica (GILL; KHARAS, 2007, p. 5).[^2]

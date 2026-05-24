@@ -1,0 +1,22 @@
+\babel@toc {brazil}{}\relax 
+\contentsline {section}{\numberline {1}Caracterizacao do rGO Extraido}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Espectroscopia Raman}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}XPS -- Deconvolucao C 1s}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}AFM -- Espessura das Folhas}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}DRX}{3}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Dados Brutos -- Etapa 1 (Injecao)}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Flexao -- Modulo de Elasticidade}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Flexao -- Tensao Maxima}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Impacto Izod}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}DSC}{3}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}TGA}{3}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Dados Brutos -- Etapa 2 (Rotomoldagem)}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Flexao -- Modulo de Elasticidade}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Flexao -- Tensao Maxima}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Impacto por Queda de Dardo (Staircase)}{3}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}DMA}{3}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Parametros de Processamento}{3}{section.4}%
+\contentsline {section}{\numberline {5}Inventario de Ciclo de Vida (LCA)}{3}{section.5}%
+\contentsline {section}{\numberline {6}Matriz de Correlacao Cruzada}{3}{section.6}%
+\contentsline {section}{\numberline {7}Dados de Otimizacao}{3}{section.7}%
+\contentsline {section}{\numberline {8}Declaracao de Disponibilidade}{3}{section.8}%

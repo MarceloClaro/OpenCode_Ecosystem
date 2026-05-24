@@ -1,4 +1,4 @@
-﻿"""
+"""
 Gera todas as figuras do artigo ARM+IAG:
 1. Feature Importance (RF + Permutation)
 2. Classificacao (Logistic Regression vs Random Forest)

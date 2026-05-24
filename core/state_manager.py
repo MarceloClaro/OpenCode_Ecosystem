@@ -1,4 +1,4 @@
-﻿"""
+"""
 core/state_manager.py — Proxy Unificado de Gerenciamento de Estado.
 
 Oferece uma interface única que combina:

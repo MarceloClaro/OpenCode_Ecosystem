@@ -1,0 +1,3 @@
+Comando para registrar o bot no Telegram
+
+curl -Method Post -Uri "https://api.telegram.org/bot<TOKEN TELEGRAM do seu BOT>/setWebhook" -Headers @{"Content-type"="application/json"} -Body '{"url": "<URL do projeto Vercel>/api/webhook"}'

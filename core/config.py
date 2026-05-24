@@ -163,6 +163,11 @@ class OpenCodeSettings(BaseSettings):
         return self.ECO_ROOT / "plugins"
 
     @property
+    def STATE_DIR(self) -> Path:
+        """Diretório de estados persistentes (JSON files)."""
+        return self.EVOLVE_DIR / "state"
+
+    @property
     def CORE_DIR(self) -> Path:
         return self.ECO_ROOT / "core"
 
@@ -183,7 +188,7 @@ class OpenCodeSettings(BaseSettings):
     def ensure_dirs(self) -> None:
         """Garante que diretórios essenciais existam."""
         for d in [self.EVOLVE_DIR, self.SKILLS_DIR, self.NEXUS_DIR,
-                  self.NEXUS_SCRIPTS, self.CORE_DIR, self.CACHE_DIR]:
+                  self.NEXUS_SCRIPTS, self.CORE_DIR, self.CACHE_DIR, self.STATE_DIR]:
             d.mkdir(parents=True, exist_ok=True)
 
 

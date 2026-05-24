@@ -1,4 +1,4 @@
-﻿"""
+"""
 core/errors.py — Hierarquia de Exceções do Ecossistema OpenCode.
 
 Todas as exceções do sistema herdam de OpenCodeError, permitindo

@@ -1,0 +1,557 @@
+[
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um serviço de pós-venda?",
+    "output": "Sim, oferecemos serviço de pós-venda para garantir a satisfação do cliente após a compra. Entre em contato com nossa equipe para obter mais informações sobre garantia, reparos e devoluções."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Quais são os horários de funcionamento da loja?",
+    "output": "Nossos horários de funcionamento são de [horário de abertura] a [horário de fechamento] de [dias da semana]. Estamos abertos também aos [dias da semana] das [horário de abertura] às [horário de fechamento]."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês aceitam cartão de crédito?",
+    "output": "Sim, aceitamos as principais bandeiras de cartão de crédito, incluindo Visa, Mastercard, Elo e American Express."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem entrega?",
+    "output": "Sim, oferecemos opções de entrega para [regiões atendidas]. Você pode calcular o frete e escolher a melhor opção no carrinho de compras."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Onde posso encontrar a loja?",
+    "output": "Nossa loja está localizada em [endereço completo], [cidade, estado]."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm estacionamento?",
+    "output": "Sim, oferecemos estacionamento gratuito para nossos clientes."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um site?",
+    "output": "Sim, nosso site é [endereço do site]. Lá você pode encontrar informações sobre nossos produtos, ofertas e serviços."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem descontos para estudantes?",
+    "output": "Sim, oferecemos descontos para estudantes com apresentação de carteirinha válida."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de fidelidade?",
+    "output": "Sim, temos um programa de fidelidade que oferece vantagens exclusivas aos clientes cadastrados."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm [produto específico]?",
+    "output": "Para saber se temos [produto específico] em estoque, por favor consulte nosso site ou entre em contato com nossa equipe."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Qual é o preço de [produto específico]?",
+    "output": "O preço de [produto específico] é [valor]. O preço pode variar de acordo com a disponibilidade e promoções."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês aceitam vale presente?",
+    "output": "Sim, aceitamos vale presente. Por favor, consulte as condições de uso na embalagem do vale presente."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um número de telefone para contato?",
+    "output": "Nosso número de telefone é [número de telefone]."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Como posso falar com um atendente?",
+    "output": "Você pode falar com um atendente através do nosso número de telefone [número de telefone] ou através do nosso chat online."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de garantia?",
+    "output": "Sim, oferecemos garantia de [prazo] para nossos produtos. Para mais informações, consulte os termos e condições de garantia."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Onde posso encontrar mais informações sobre [assunto específico]?",
+    "output": "Para encontrar mais informações sobre [assunto específico], você pode acessar nosso site em [endereço do site] ou entrar em contato com nossa equipe."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Qual é a política de devolução?",
+    "output": "A nossa política de devolução é [descrição da política de devolução]. Para mais informações, consulte os termos e condições."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas?",
+    "output": "Sim, temos um programa de recompensas que permite acumular pontos para trocar por descontos e produtos."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Como posso acompanhar o status do meu pedido?",
+    "output": "Você pode acompanhar o status do seu pedido através do site, utilizando o número do seu pedido."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de treinamento?",
+    "output": "Sim, oferecemos cursos e treinamentos sobre [assuntos relacionados aos produtos]. Para mais informações, consulte nossa página de cursos."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Como posso me cadastrar no programa de fidelidade?",
+    "output": "Você pode se cadastrar no nosso programa de fidelidade no site ou em nossa loja."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm [tipo de produto específico]?",
+    "output": "Sim, trabalhamos com [tipo de produto específico]. Você pode encontrar mais informações em nossa seção de [tipo de produto específico]."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Qual é o prazo de entrega?",
+    "output": "O prazo de entrega varia de acordo com a região e a forma de entrega escolhida. Você pode consultar o prazo de entrega estimado no carrinho de compras."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm algum cupom de desconto?",
+    "output": "Para encontrar os cupons de desconto disponíveis, acesse nosso site ou siga nossas redes sociais."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de suporte técnico?",
+    "output": "Sim, oferecemos suporte técnico para nossos produtos. Entre em contato com nossa equipe para obter assistência."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de afiliados?",
+    "output": "Sim, temos um programa de afiliados que permite ganhar comissões por indicar nossos produtos."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Como posso saber se o produto está disponível em estoque?",
+    "output": "Você pode verificar a disponibilidade do produto em nosso site ou entrar em contato com nossa equipe."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recrutamento?",
+    "output": "Sim, estamos sempre buscando novos talentos. Visite nossa página de carreiras para saber mais sobre as vagas disponíveis."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de seguro?",
+    "output": "Sim, oferecemos seguro para [tipos de produtos] contra danos e roubo."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Qual é o valor mínimo para compra?",
+    "output": "Não há valor mínimo para compra em nossa loja."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de chat?",
+    "output": "Sim, você pode conversar com um atendente através do nosso chat online."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de desconto para compras acima de determinado valor?",
+    "output": "Sim, oferecemos desconto para compras acima de [valor]."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Como posso saber quais são as promoções do momento?",
+    "output": "Acesse nosso site ou siga nossas redes sociais para ficar por dentro das promoções."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de privacidade?",
+    "output": "Sim, nossa política de privacidade está disponível em nosso site."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um aplicativo?",
+    "output": "Sim, nosso aplicativo está disponível para download na [loja de aplicativos]."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Qual é o prazo para reembolso?",
+    "output": "O prazo para reembolso é de [prazo]."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um número de atendimento ao cliente?",
+    "output": "Sim, nosso número de atendimento ao cliente é [número de telefone]."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Como posso entrar em contato com vocês?",
+    "output": "Você pode entrar em contato conosco por telefone, email, chat ou através das redes sociais."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de rastreamento de pedidos?",
+    "output": "Sim, você pode rastrear seu pedido através do site."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de serviço de personalização?",
+    "output": "Sim, oferecemos serviço de personalização para [tipos de produtos]."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de avaliação de produtos?",
+    "output": "Sim, você pode avaliar os produtos em nosso site."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos danificados?",
+    "output": "Sim, oferecemos devolução para produtos danificados. Consulte nossa política de devolução para mais informações."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de desconto para compras em atacado?",
+    "output": "Sim, oferecemos desconto para compras em atacado. Entre em contato com nossa equipe para saber mais."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de incentivos para funcionários?",
+    "output": "Sim, oferecemos um programa de incentivos para funcionários."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de feedback de clientes?",
+    "output": "Sim, você pode deixar seu feedback em nosso site ou através de uma pesquisa online."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de serviço de instalação?",
+    "output": "Sim, oferecemos serviço de instalação para [tipos de produtos]."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um serviço de conserto?",
+    "output": "Sim, oferecemos serviço de conserto para [tipos de produtos]."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras recorrentes?",
+    "output": "Sim, oferecemos um programa de recompensas para compras recorrentes."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de privacidade para informações dos clientes?",
+    "output": "Sim, nossa política de privacidade está disponível em nosso site."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de chat ao vivo?",
+    "output": "Sim, você pode conversar com um atendente através do nosso chat ao vivo."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de atendimento 24 horas?",
+    "output": "Sim, nosso sistema de atendimento está disponível 24 horas por dia, 7 dias por semana."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos com defeito?",
+    "output": "Sim, oferecemos devolução para produtos com defeito. Consulte nossa política de devolução para mais informações."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de envio de SMS?",
+    "output": "Sim, você pode optar por receber notificações por SMS."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de serviço de entrega rápida?",
+    "output": "Sim, oferecemos serviço de entrega rápida para algumas regiões."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de descontos para clientes VIP?",
+    "output": "Sim, oferecemos um programa de descontos para clientes VIP."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras online?",
+    "output": "Sim, oferecemos um programa de recompensas para compras online."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos usados?",
+    "output": "Sim, oferecemos devolução para produtos usados, dentro de determinadas condições. Consulte nossa política de devolução para mais informações."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras em loja?",
+    "output": "Sim, oferecemos um programa de recompensas para compras em loja."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de avaliação de atendimento?",
+    "output": "Sim, você pode avaliar o atendimento em nosso site ou através de uma pesquisa online."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de agendamento de serviços?",
+    "output": "Sim, você pode agendar serviços através do nosso site ou entrando em contato com nossa equipe."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras de produtos específicos?",
+    "output": "Sim, oferecemos um programa de recompensas para compras de produtos específicos."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de pesquisa por produtos?",
+    "output": "Sim, você pode pesquisar por produtos em nosso site."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos com danos estéticos?",
+    "output": "Sim, oferecemos devolução para produtos com danos estéticos, dentro de determinadas condições. Consulte nossa política de devolução para mais informações."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de envio de email?",
+    "output": "Sim, você pode entrar em contato conosco através do nosso email."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de serviço de coleta e entrega?",
+    "output": "Sim, oferecemos serviço de coleta e entrega para algumas regiões."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de descontos para clientes corporativos?",
+    "output": "Sim, oferecemos um programa de descontos para clientes corporativos."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras em diferentes categorias de produtos?",
+    "output": "Sim, oferecemos um programa de recompensas para compras em diferentes categorias de produtos."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos com garantia vencida?",
+    "output": "Sim, oferecemos devolução para produtos com garantia vencida, dentro de determinadas condições. Consulte nossa política de devolução para mais informações."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de pagamento online?",
+    "output": "Sim, você pode efetuar o pagamento online em nosso site."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de serviço de personalização de produtos?",
+    "output": "Sim, oferecemos serviço de personalização de produtos para algumas categorias."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras em datas comemorativas?",
+    "output": "Sim, oferecemos um programa de recompensas para compras em datas comemorativas."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos comprados em promoção?",
+    "output": "Sim, oferecemos devolução para produtos comprados em promoção, dentro de determinadas condições. Consulte nossa política de devolução para mais informações."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de envio de notificações?",
+    "output": "Sim, você pode optar por receber notificações por email ou SMS."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de serviço de entrega agendada?",
+    "output": "Sim, oferecemos serviço de entrega agendada para algumas regiões."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de descontos para compras de produtos em conjunto?",
+    "output": "Sim, oferecemos um programa de descontos para compras de produtos em conjunto."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras de produtos com pontuação de fidelidade?",
+    "output": "Sim, oferecemos um programa de recompensas para compras de produtos com pontuação de fidelidade."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos que não atendem as expectativas?",
+    "output": "Sim, oferecemos devolução para produtos que não atendem as expectativas, dentro de determinadas condições. Consulte nossa política de devolução para mais informações."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de login com redes sociais?",
+    "output": "Sim, você pode fazer login em nosso site com suas contas de redes sociais."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de serviço de entrega internacional?",
+    "output": "Sim, oferecemos serviço de entrega internacional para alguns países."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de descontos para compras de produtos em pré-venda?",
+    "output": "Sim, oferecemos um programa de descontos para compras de produtos em pré-venda."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras de produtos com desconto?",
+    "output": "Sim, oferecemos um programa de recompensas para compras de produtos com desconto."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos com defeito de fabricação?",
+    "output": "Sim, oferecemos devolução para produtos com defeito de fabricação. Consulte nossa política de devolução para mais informações."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de pagamento por boleto bancário?",
+    "output": "Sim, você pode efetuar o pagamento por boleto bancário em nosso site."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de serviço de personalização de embalagens?",
+    "output": "Sim, oferecemos serviço de personalização de embalagens para algumas categorias."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras em eventos especiais?",
+    "output": "Sim, oferecemos um programa de recompensas para compras em eventos especiais."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos com a embalagem danificada?",
+    "output": "Sim, oferecemos devolução para produtos com a embalagem danificada, dentro de determinadas condições. Consulte nossa política de devolução para mais informações."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de atendimento multilíngue?",
+    "output": "Sim, nosso sistema de atendimento está disponível em [idiomas]."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de serviço de entrega em horários específicos?",
+    "output": "Sim, oferecemos serviço de entrega em horários específicos para algumas regiões."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de descontos para compras de produtos em oferta?",
+    "output": "Sim, oferecemos um programa de descontos para compras de produtos em oferta."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras de produtos com avaliação alta?",
+    "output": "Sim, oferecemos um programa de recompensas para compras de produtos com avaliação alta."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos com a etiqueta removida?",
+    "output": "Sim, oferecemos devolução para produtos com a etiqueta removida, dentro de determinadas condições. Consulte nossa política de devolução para mais informações."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de pagamento por cartão de débito?",
+    "output": "Sim, você pode efetuar o pagamento por cartão de débito em nosso site."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de serviço de personalização de produtos com monogramas?",
+    "output": "Sim, oferecemos serviço de personalização de produtos com monogramas para algumas categorias."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras de produtos com frete grátis?",
+    "output": "Sim, oferecemos um programa de recompensas para compras de produtos com frete grátis."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos com a embalagem original danificada?",
+    "output": "Sim, oferecemos devolução para produtos com a embalagem original danificada, dentro de determinadas condições. Consulte nossa política de devolução para mais informações."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de pagamento por PIX?",
+    "output": "Sim, você pode efetuar o pagamento por PIX em nosso site."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de serviço de personalização de produtos com mensagens?",
+    "output": "Sim, oferecemos serviço de personalização de produtos com mensagens para algumas categorias."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras de produtos com desconto de fidelidade?",
+    "output": "Sim, oferecemos um programa de recompensas para compras de produtos com desconto de fidelidade."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos com a etiqueta de segurança removida?",
+    "output": "Sim, oferecemos devolução para produtos com a etiqueta de segurança removida, dentro de determinadas condições. Consulte nossa política de devolução para mais informações."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de pagamento por transferência bancária?",
+    "output": "Sim, você pode efetuar o pagamento por transferência bancária em nosso site."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de serviço de personalização de produtos com imagens?",
+    "output": "Sim, oferecemos serviço de personalização de produtos com imagens para algumas categorias."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras de produtos com garantia estendida?",
+    "output": "Sim, oferecemos um programa de recompensas para compras de produtos com garantia estendida."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos com a embalagem original danificada?",
+    "output": "Sim, oferecemos devolução para produtos com a embalagem original danificada, dentro de determinadas condições. Consulte nossa política de devolução para mais informações."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de pagamento por PayPal?",
+    "output": "Sim, você pode efetuar o pagamento por PayPal em nosso site."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de serviço de personalização de produtos com logos?",
+    "output": "Sim, oferecemos serviço de personalização de produtos com logos para algumas categorias."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras de produtos com desconto de aniversário?",
+    "output": "Sim, oferecemos um programa de recompensas para compras de produtos com desconto de aniversário."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos com a etiqueta de segurança violada?",
+    "output": "Sim, oferecemos devolução para produtos com a etiqueta de segurança violada, dentro de determinadas condições. Consulte nossa política de devolução para mais informações."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um sistema de pagamento por Apple Pay?",
+    "output": "Sim, você pode efetuar o pagamento por Apple Pay em nosso site."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês oferecem algum tipo de serviço de personalização de produtos com datas?",
+    "output": "Sim, oferecemos serviço de personalização de produtos com datas para algumas categorias."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm um programa de recompensas para compras de produtos com frete grátis?",
+    "output": "Sim, oferecemos um programa de recompensas para compras de produtos com frete grátis."
+  },
+  {
+    "instruction": "Você é um assistente do serviço de atendimento ao cliente que deve responder as perguntas dos clientes",
+    "input": "Vocês têm uma política de devolução para produtos com a embalagem original violada?",
+    "output": "Sim, oferecemos devolução para produtos com a embalagem original violada, dentro de determinadas condições. Consulte nossa política de devolução para mais informações."
+  }
+]

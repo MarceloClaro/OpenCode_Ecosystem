@@ -1,4 +1,4 @@
-﻿"""
+"""
 core/services/evolution.py — Serviço de Evolução (AutoEvolve).
 
 Gerencia o pipeline evolutivo: PLAN → ACT → CORRECT → REFLECT → EVOLVE.

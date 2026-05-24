@@ -1,4 +1,4 @@
-﻿"""
+"""
 core/rest_client.py — Cliente HTTP com Retry, Timeout, Logging e DI.
 
 Wrapper padronizado sobre ``httpx`` com exponential backoff,

@@ -1,4 +1,4 @@
-﻿---
+---
 name: agent-observability-monitor
 description: "Monitoramento e observabilidade de agentes no ecossistema OpenCode. Health checks, tracking de performance por ferramenta, metricas de sessao, thresholds de alerta. Inspirado em monte-carlo-data/mc-agent-toolkit."
 ---

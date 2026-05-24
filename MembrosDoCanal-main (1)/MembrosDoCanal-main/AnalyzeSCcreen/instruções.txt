@@ -1,0 +1,7 @@
+1. crie um ambiente virtual
+python -m venve myenv
+2. ative o ambiente virtual
+.\myenv\Scripts\activate 
+3. instale as denpedencias do arquivo requiremnts.txt
+pip install -r requirements.txt
+

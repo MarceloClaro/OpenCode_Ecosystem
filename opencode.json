@@ -11,7 +11,8 @@
   "plugin": [
     "plugins/ecosystem-sync.ts",
     "plugins/manus-evolve.ts",
-    "plugins/bernstein-sync.ts"
+    "plugins/bernstein-sync.ts",
+    "plugins/antigravity-bridge.ts"
   ],
   "mcp": {
     "filesystem": {
@@ -520,6 +521,22 @@
         "maswos",
         "rag",
         "retrieval"
+      ]
+    },
+    "antigravity-mcp": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "python",
+        "nexus/antigravity_mcp_server.py"
+      ],
+      "timeout": 60000,
+      "tags": [
+        "antigravity",
+        "bridge",
+        "orchestration",
+        "ai",
+        "external"
       ]
     }
   },

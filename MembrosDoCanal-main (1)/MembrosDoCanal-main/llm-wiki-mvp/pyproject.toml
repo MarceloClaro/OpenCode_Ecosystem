@@ -1,0 +1,24 @@
+[project]
+name = "llm-wiki-mvp"
+version = "0.1.0"
+description = "MVP de uma ferramenta LLM Wiki — alternativa ao RAG tradicional para acumular conhecimento ao longo do tempo"
+requires-python = ">=3.10"
+
+dependencies = [
+    "streamlit>=1.40.0",
+    "ollama>=0.4.0",
+    "pypdf>=5.0.0",
+    "pyyaml>=6.0",
+    "sentence-transformers>=3.0.0",
+    "numpy>=1.26.0",
+    "pyvis>=0.3.2",
+    "python-frontmatter>=1.1.0",
+    "pydantic>=2.9.0",
+]
+
+[project.scripts]
+llm-wiki = "app:main"
+
+[tool.setuptools]
+py-modules = ["app"]
+packages = ["src", "src.ui"]

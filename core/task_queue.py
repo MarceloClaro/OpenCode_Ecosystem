@@ -1,4 +1,4 @@
-﻿"""
+"""
 core/task_queue.py — Fila de Tarefas Assíncronas com Prioridade e DI.
 
 Gerencia execução concorrente de tarefas com suporte a:

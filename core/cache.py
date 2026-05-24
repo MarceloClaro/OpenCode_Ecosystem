@@ -1,4 +1,4 @@
-﻿"""
+"""
 core/cache.py — Cache Layer com TTL, LRU Eviction, Estatísticas e DI.
 
 Thread-safe. Suporta TTL por entrada, evicção LRU automática no limite

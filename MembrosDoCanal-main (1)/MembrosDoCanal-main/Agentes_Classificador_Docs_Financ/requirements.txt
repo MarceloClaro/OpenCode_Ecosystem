@@ -1,0 +1,5 @@
+streamlit
+ollama
+markitdown[all]
+sqlalchemy
+pillow

@@ -45,6 +45,24 @@
 
 ---
 
+## ⚠️ DIRETIVA GLOBAL — SISTEMA DE 3 NÍVEIS DE PUBLICAÇÃO (3-TIER PUBLISHABLE SYSTEM)
+
+> A partir da V3, o ecossistema processa demandas em três malhas de profundidade distintas.
+> **Todo agente, template e validador DEVE adaptar sua verbosidade, uso de tokens, rigor analítico
+> e chamadas de subprocessos ao Nível de Publicação escolhido pelo Usuário Principal
+> (Editor-Chefe Hominídeo) na abertura da Fase 1.**
+
+| Nível | Alvo | Agentes Ativos | Política de Tokens |
+|:---:|---|:---:|---|
+| 🥇 **1 — Magnum / Tese / Qualis A1** | Teses, livros, State-of-the-Art (+100 páginas) | **45** (cascata total, A0–A45) | **Nenhuma economia** — rigor máximo, Loop A44/A45 até 10/10 |
+| 🥈 **2 — Standard Paper / Q1-Q2** | Artigos de periódico (15–30 páginas) | **~20** (Núcleo Analítico Fast-Track) | Eficiência de tempo exigida; sem anexos massivos |
+| 🥉 **3 — Short Communication / Congresso** | Resumos expandidos, Policy Briefs (5–10 páginas) | **≤ 10** (Pipeline Expresso) | Economia máxima; IMRAD condensado; sem blind-review pesado |
+
+> **Instrução de ativação:** A0 (Editor-Chefe PhD) registra o Nível em `decisao_editor_fase_1.md`
+> antes de qualquer outra ação. Este arquivo é lido por todos os agentes antes de iniciar sua etapa.
+
+---
+
 ## ═══════════════════════════════════════════════════════════════
 ## FASE 1 — DIAGNÓSTICO E DEFINIÇÃO (ECOSSISTEMA V4)
 ## ═══════════════════════════════════════════════════════════════

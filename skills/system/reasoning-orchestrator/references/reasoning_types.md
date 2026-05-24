@@ -1,4 +1,4 @@
-# Catalogo Meta-Granular: 58 Tipos de Raciocinio (Nexus v6.0)
+# Catalogo Meta-Granular: 59 Tipos de Raciocinio (Nexus v6.1)
 
 ## 1. Logica e Estrutura (Fundamentacao)
 1. **Dedutivo** (L2): Derivacao logica pura.
@@ -6,6 +6,7 @@
 3. **Abdutivo** (L3): Inferencia da melhor explicacao.
 4. **Silogistico** (L1): Validacao formal de argumentos.
 5. **Analogico** (L2): Transferencia de dominio.
+59. **Especificacao Formal Z** (L4): Prova matematica de pre e pos-condicoes e Schema Calculus.
 
 ## 2. Sistemas e Arquitetura (Engenharia)
 6. **Sistemico** (L3): Interdependencias complexas.

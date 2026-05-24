@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+requests
+sqlalchemy
+openai
+fastembed
+fastapi_mcp
+requests
+mcp-use
+

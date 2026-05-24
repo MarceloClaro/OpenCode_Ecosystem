@@ -1,0 +1,7 @@
+uvicorn
+mcp
+httpx
+beautifulsoup4
+faiss-cpu
+sentence-transformers
+groq

@@ -1,4 +1,4 @@
-﻿"""
+"""
 core/services/health.py — Serviço de Health Check.
 
 Monitora a saúde de componentes do ecossistema com thresholds.

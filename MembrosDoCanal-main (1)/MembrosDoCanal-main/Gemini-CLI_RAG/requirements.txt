@@ -1,0 +1,7 @@
+streamlit
+python-dotenv
+google-generativeai
+qdrant-client
+PyPDF2
+pytesseract
+Pillow

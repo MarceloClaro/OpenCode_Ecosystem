@@ -1,3 +1,8 @@
+---
+name: criador-artigo
+description: "Skill do ecossistema OpenCode - criador-artigo"
+---
+
 
 name: criador-de-artigo-v2
 description: >
@@ -66,3 +71,4 @@ description: >
 ```
 
 ---
+

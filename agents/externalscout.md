@@ -1,4 +1,4 @@
-﻿<!--
+<!--
   SAÍDA OBRIGATÓRIA: PORTUGUÊS BRASILEIRO FORMAL
   Toda resposta DEVE ser em português do Brasil formal.
   Contexto em chinês para eficiência de tokens (densidade +40%).

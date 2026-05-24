@@ -1,21 +1,3 @@
-
-name: academic-ml-pipeline
-description: "Pipeline ML completo para análise acadêmica: correlação bootstrap, classificação ARM, detecção de anomalias, clusterização, feature importance e integração com artigo científico"
-user-invocable: true
-license: MIT
-compatibility: OpenCode, Claude Code
-metadata:
-  author: OpenCode Ecosystem v4.1
-  version: "1.1.0"
-  ecossistema: opencode
-  categoria: pesquisa-academica
-  round: 11
-  learning-session: "artigo-ARM-IAG-262-observacoes"
-  v3-features: "knowledge_complexity, export_sophistication, product_density"
-  v3-date: "2026-05-14"
-allowed-tools: Read Edit Write Bash Python Code-Runner
----
-
 ---
 name: academic-ml-pipeline
 description: "Pipeline ML completo para análise acadêmica: correlação bootstrap, classificação ARM, detecção de anomalias, clusterização, feature importance e integração com artigo científico"
@@ -60,3 +42,4 @@ Pipeline integrado que conecta análise quantitativa → geração de figuras �
 - Hausmann, R., Hidalgo, C. A., et al. (2014). *The Atlas of Economic Complexity*. MIT Press.
 - Hausmann, R., Hwang, J., & Rodrik, D. (2007). What you export matters. *Journal of Economic Growth*, 12(1), 1-25.
 - Hidalgo, C. A., Klinger, B., Barabási, A. L., & Hausmann, R. (2007). The product space conditions the development of nations. *Science*, 317(5837), 482-487.
+

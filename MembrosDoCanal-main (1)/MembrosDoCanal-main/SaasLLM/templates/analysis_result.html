@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Análise</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1rem;
+            color: #555;
+        }
+        strong {
+            color: #333;
+        }
+        .compatibility {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007BFF;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .details {
+            margin-top: 20px;
+        }
+        ul {
+            margin: 10px 0;
+            padding: 0 20px;
+            list-style: disc;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resultado da Análise</h1>
+        <p><strong>Nome:</strong> {{ candidate.name }}</p>
+        <p><strong>E-mail:</strong> {{ candidate.email }}</p>
+        <p><strong>Vaga:</strong> {{ job.title }}</p>
+        <div class="compatibility">
+            Compatibilidade: {{ compatibility_score }}%
+        </div>
+        <div class="details">
+            <h2>Detalhes:</h2>
+            <p>{{ analysis_details|safe }}</p> <!-- Use |safe para renderizar HTML formatado -->
+        </div>
+        <a href="{{ url_for('dashboard') }}">Voltar ao Painel</a>
+    </div>
+</body>
+</html>

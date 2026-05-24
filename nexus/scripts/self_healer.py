@@ -1,4 +1,4 @@
-﻿"""self_healer.py - Sistema de auto-cura autonomo do ecossistema.
+"""self_healer.py - Sistema de auto-cura autonomo do ecossistema.
 
 Detecta e corrige automaticamente anomalias comuns sem intervencao humana.
 v2.1: Migrado para core.config + core.state + core.events.
@@ -18,6 +18,11 @@ import subprocess
 from pathlib import Path
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError
+
+# Garante que o workspace esta no path para importar core
+WORKSPACE = Path(__file__).parent.parent.parent.resolve()
+if str(WORKSPACE) not in sys.path:
+    sys.path.insert(0, str(WORKSPACE))
 
 from core.config import settings
 from core import initialize_core

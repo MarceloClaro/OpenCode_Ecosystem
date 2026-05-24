@@ -1,3 +1,8 @@
+---
+name: bugfix
+description: "Skill do ecossistema OpenCode - bugfix"
+---
+
 
 name: bugfix
 description: Protocolo sistemático de triage de bugs. Use ao receber report ou comportamento inesperado. Segue a sequência reproduzir→localizar→reduzir→corrigir→guardar→verificar.
@@ -41,3 +46,4 @@ Se em qualquer etapa acontecer algo inesperado:
 - Se o bug revelou uma lacuna de conhecimento: adicione entrada em `lessons.md`
 - Se o fix exigiu uma decisão arquitetural: registre em `decisions.md`
 - Se o padrão de fix for reutilizável em outros projetos: use a skill `/publish-pattern`
+

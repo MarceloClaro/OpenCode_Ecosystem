@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 SYNC ORCHESTRATOR v4.0 - Orquestracao Cross-Plugin + Dynamic Scoring + Auto-Healing
 
@@ -29,6 +29,11 @@ from pathlib import Path
 from dataclasses import dataclass, field, asdict
 from datetime import datetime
 from typing import Optional
+
+# Garante que o workspace esta no path para importar core
+BASE_DIR = Path(__file__).parent.parent.parent.resolve()
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
 
 from core.config import settings
 from core import initialize_core
@@ -397,12 +402,15 @@ class ConflictDetector:
         return conflicts
 
 class HealthEngine:
+    def __init__(self):
+        self.ds: Optional["DynamicScoringEngine"] = None
+
     def compute(self, components, conflicts, matrix_entries, token_eff, dyn_scores=None):
         if not components: return 0.0
         total = 0
         for c in components:
             base = c.score
-            if dyn_scores and c.name in dyn_scores and dyn_scores[c.name] != 85.0 and self.ds.scores.get(c.name) is not None and self.ds.scores[c.name].usage_count > 0:
+            if dyn_scores and c.name in dyn_scores and dyn_scores[c.name] != 85.0 and self.ds is not None and self.ds.scores.get(c.name) is not None and self.ds.scores[c.name].usage_count > 0:
                 base = (base * 0.5) + (dyn_scores[c.name] * 0.5)
             total += base
         avg = total / len(components)
@@ -420,11 +428,22 @@ class SyncOrchestrator:
         self.discovery = ComponentDiscovery(base_dir)
         self.cv = CrossValidationEngine()
         self.cd = ConflictDetector()
-        self.he = HealthEngine()
         self.ds = DynamicScoringEngine()
+        self.he = HealthEngine()
+        self.he.ds = self.ds
         self.ah = AutoHealingEngine()
 
     def run_full_sync(self):
+        # [Z-SCHEMA PRE-CONDITION]
+        z_verified = False
+        try:
+            from nexus.scripts.z_validator import ZValidator, ZViolationError
+            c = Container.instance()
+            ZValidator.check_precondition("Sync_Barrier_Pre", ZValidator.validate_ecosystem_health, c)
+            z_verified = True
+        except Exception as e:
+            print(f"\n[Z-SCHEMA WARNING] A avaliacao formal de pre-condicao alertou: {e}")
+
         state = SyncState(timestamp=datetime.now().isoformat(), version="4.0.0")
         agents = self.discovery.discover_agents()
         skills = self.discovery.discover_skills()
@@ -470,6 +489,17 @@ class SyncOrchestrator:
         state.health_score = self.he.compute(all_c, state.conflicts, len(state.cross_validation_matrix), state.token_efficiency, dyn)
         state.auto_healing_log = self.ah.diagnose(all_c, state.conflicts, state.health_score)
         state.recommendations = self._recs(state)
+
+        # [Z-SCHEMA POST-CONDITION]
+        if z_verified:
+            try:
+                from nexus.scripts.z_validator import ZValidator
+                # Invariante Z: O estado sincronizado nunca pode ser negativo ou violar limites físicos
+                ZValidator.check_postcondition("Sync_Barrier_Post", state, lambda s: 0.0 <= s.health_score <= 100.0)
+            except Exception as e:
+                print(f"[Z-SCHEMA WARNING] Falha na avaliacao de pos-condicao matematica: {e}")
+                state.recommendations.append(f"Z-Violation: {e}")
+
         return state
 
     def _recs(self, state):
@@ -527,6 +557,43 @@ class SyncOrchestrator:
         for r in state.recommendations: print(f"    - {r}")
         print(f"{'='*60}")
 
+def _run_zrm_consciousness():
+    """Executa ciclo autonomo da consciencia ZRM sobre o estado atual do ecossistema."""
+    try:
+        from nexus.scripts.zrm_consciousness import ZRMConsciousness, integrate_with_orchestrator
+        container = Container.instance()
+
+        if not container.is_registered('zrm_consciousness'):
+            zc = integrate_with_orchestrator(container)
+
+        zc = container.resolve('zrm_consciousness')
+        eco = _sm().get("ecosystem-state", default={})
+        if eco and isinstance(eco, dict):
+            result = zc.autonomous_cycle(eco)
+            v = result.get("verification", {})
+            diag = result.get("diagnosis", {})
+            suggs = result.get("suggestions", [])
+            learns = result.get("learnings", [])
+
+            print(f"\n{'='*60}")
+            print(f"  ZRM CONSCIOUSNESS - Verificacao Formal Autonoma")
+            print(f"{'='*60}")
+            print(f"  Schemas: {len(ZRMConsciousness.ECOSYSTEM_SCHEMAS)} | Checks: {v.get('total',0)} | OK: {v.get('passed',0)} | Fail: {v.get('failed',0)}")
+            print(f"  Diagnostico: {diag.get('status','?').upper()}")
+            if suggs:
+                for s in suggs[:3]:
+                    print(f"  > {s[:60]}")
+            if learns:
+                for l in learns[:2]:
+                    print(f"  * {l[:60]}")
+            print(f"{'='*60}")
+        else:
+            print(f"\n[ZRM CONSCIOUSNESS] Estado indisponivel (executado antes do sync?)")
+    except Exception as e:
+        import traceback
+        print(f"\n[ZRM CONSCIOUSNESS] Erro: {e}")
+        print(traceback.format_exc())
+
 def main():
     initialize_core()
     import argparse
@@ -555,6 +622,8 @@ def main():
     if args.run or args.report or args.json:
         state = orch.run_full_sync()
         orch.save_state(state)
+        # [ZRM CONSCIOUSNESS] Ciclo autonomo de raciocinio formal sobre processos e resultados
+        _run_zrm_consciousness()
         if args.json: print(json.dumps(asdict(state), ensure_ascii=False, indent=2))
         else: orch.print_report(state)
     elif args.check:

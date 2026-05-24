@@ -1,3 +1,8 @@
+---
+name: project-adopt
+description: "Skill do ecossistema OpenCode - project-adopt"
+---
+
 
 name: project-adopt
 description: Onboarding para projetos existentes que recebem a estrutura Claude Code pela primeira vez. Descobre convenções do codebase antes de perguntar qualquer coisa.
@@ -51,4 +56,5 @@ Toolkit de hardening e auditoria de segurança para Linux.
 ## Stack
 Bash. Gum para TUI. AppArmor (perfis), Firejail (sandboxes).
 Deploy: scripts locais. Distro-aware via distro.conf por módulo.
+
 

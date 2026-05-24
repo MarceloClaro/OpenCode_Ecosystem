@@ -1,0 +1,5 @@
+fastapi
+fastapi-mcp
+mcp-use
+PyMuPDF
+requests

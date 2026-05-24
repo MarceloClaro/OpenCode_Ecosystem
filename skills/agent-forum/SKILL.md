@@ -1,3 +1,8 @@
+---
+name: agent-forum
+description: "Skill do ecossistema OpenCode - agent-forum"
+---
+
 # P14 — Agent Forum / Debate Moderator
 
 ## Visão Geral
@@ -125,3 +130,4 @@ report = forum.get_transcript()
 - 🟢 **CONFIRMADO** — Extraído diretamente do código BettaFish (monitor.py, llm_host.py)
 - 🟡 **INFERIDO** — Generalização do protocolo para ecossistema Reversa
 - 🔴 **LACUNA** — Integração com P10/P11 não testada em runtime
+

@@ -1,3 +1,8 @@
+---
+name: project-seal
+description: "Skill do ecossistema OpenCode - project-seal"
+---
+
 
 name: project-seal
 description: Fecha o setup inicial do projeto — commita specs, documentação e configuração após project-init + primeira spec. Roda uma vez, logo após a primeira spec ser criada e revisada.

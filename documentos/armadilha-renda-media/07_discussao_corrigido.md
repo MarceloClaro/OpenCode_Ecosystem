@@ -1,4 +1,4 @@
-﻿# 5 DISCUSSAO
+# 5 DISCUSSAO
 ## 5.1 educação: Condicao Necessaria, mas Insuficiente
 Os resultados da análise quantitativa corroboram a hipotese central deste estudo: a educação e condicao necessaria, mas não suficiente, para romper a armadilha da renda media. Quatro evidencias sustentam essa conclusão.
 Primeiro, a correlacao entre gasto educacional como percentual do PIB e PIB per capita e praticamente nula (r = -0,0273). Esse achado não implica que a educação seja irrelevante para o desenvolvimento. Paises com populacao analfabeta ou com baixissima escolaridade, como era o caso da Coreia do Sul em 1960 e ainda e o caso de partes da Africa Subsaariana, não podem sequer iniciar um processo de desenvolvimento sustentado (HANUSHEK; WOESSMANN, 2015, p. 39-42).[^26] A implicacao correta e que, uma vez superado um patamar minimo de capital humano, a quantidade adicional de investimento educacional deixa de discriminar paises de renda media e renda alta. O Brasil superou esse patamar minimo, mas não realizou a transicao seguinte.

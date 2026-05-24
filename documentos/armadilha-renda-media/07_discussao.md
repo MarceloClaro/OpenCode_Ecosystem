@@ -1,4 +1,4 @@
-﻿# 5 DISCUSSAO
+# 5 DISCUSSAO
 
 ## 5.1 Educacao: Condicao Necessaria, mas Insuficiente
 

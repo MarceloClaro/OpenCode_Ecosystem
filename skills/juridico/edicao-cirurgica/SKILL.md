@@ -1,3 +1,8 @@
+---
+name: edicao-cirurgica
+description: "Skill do ecossistema OpenCode - edicao-cirurgica"
+---
+
 
 name: edicao-cirurgica
 description: >
@@ -30,3 +35,4 @@ Quando o artefato **não está no container** (repositório local do usuário, w
 
 > *Detalhes em `references/regras-artefato.md`*
 ---
+

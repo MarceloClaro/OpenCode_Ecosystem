@@ -1,3 +1,8 @@
+---
+name: academic-export-abnt
+description: "Skill do ecossistema OpenCode - academic-export-abnt"
+---
+
 
 name: academic-export-abnt
 description: "Exportação de artigos acadêmicos markdown para PDF (LaTeX/pdflatex), DOCX (template ABNT python-docx) e HTML standalone com figuras embutidas, seguindo normas ABNT NBR 14724/6023/6028"

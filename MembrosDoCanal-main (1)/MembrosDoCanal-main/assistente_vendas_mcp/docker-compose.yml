@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  assistente-vendas-mcp:
+    build: .
+    container_name: assistente-vendas-mcp
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./database:/app/database
+    environment:
+      - ENV=production

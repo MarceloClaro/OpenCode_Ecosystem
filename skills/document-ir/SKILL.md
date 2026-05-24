@@ -1,3 +1,8 @@
+---
+name: document-ir
+description: "Skill do ecossistema OpenCode - document-ir"
+---
+
 # P15 — Document IR Report Pipeline
 
 Skill de pipeline de relatório documentado em 7 estágios, com 16 tipos de bloco
@@ -223,3 +228,4 @@ Mistura LLM + template:
 | QCFail | Logar falha com bloco + regra |
 | RenderUnsupported | Fallback para markdown |
 | LLMUnavailable | Usar modo template |
+

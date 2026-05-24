@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>WebMCP Demo — To-do</title>
+
+    <style>
+      :root{
+        --bg:#070b14;
+        --card:#0c1326;
+        --card2:#0b162f;
+        --text:#eaf0ff;
+        --muted:#a9b6d6;
+        --border:rgba(255,255,255,.10);
+        --shadow:0 18px 60px rgba(0,0,0,.55);
+        --radius:18px;
+
+        --primary:#6366f1;
+        --primary2:#4f46e5;
+
+        --ui:#22c55e;      /* UI badge */
+        --agent:#38bdf8;   /* AGENT badge */
+        --danger:#ef4444;
+      }
+
+      *{ box-sizing:border-box; }
+      body{
+        margin:0;
+        min-height:100vh;
+        display:grid;
+        place-items:center;
+        padding:28px;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+        background:
+          radial-gradient(900px 500px at 20% 10%, rgba(99,102,241,.22), transparent 60%),
+          radial-gradient(900px 500px at 80% 20%, rgba(56,189,248,.16), transparent 55%),
+          var(--bg);
+        color:var(--text);
+      }
+
+      .wrap{
+        width:min(980px, 100%);
+        display:grid;
+        gap:14px;
+      }
+
+      header{
+        background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+        border:1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding:16px 18px;
+        backdrop-filter: blur(10px);
+      }
+      h1{
+        margin:0 0 6px;
+        font-size: clamp(20px, 2.4vw, 28px);
+        letter-spacing:-0.02em;
+      }
+      .sub{
+        margin:0;
+        color:var(--muted);
+        line-height:1.45;
+        font-size:14px;
+      }
+
+      .panel{
+        background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+        border:1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding:18px;
+        backdrop-filter: blur(10px);
+      }
+
+      .topbar{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:12px;
+        flex-wrap:wrap;
+        margin-bottom:12px;
+      }
+
+      .pill{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        padding:10px 12px;
+        border-radius: 999px;
+        border:1px solid var(--border);
+        background: rgba(255,255,255,.06);
+        color:var(--muted);
+        font-size:13px;
+      }
+
+      .row{
+        display:flex;
+        gap:12px;
+        flex-wrap:wrap;
+        align-items:stretch;
+      }
+
+      .input{
+        flex: 1 1 360px;
+        display:flex;
+        align-items:center;
+        gap:10px;
+        padding:12px 12px;
+        border-radius: 14px;
+        border:1px solid rgba(255,255,255,.12);
+        background: rgba(10, 16, 30, .65);
+        color: var(--text);
+        outline:none;
+        transition: border-color .15s ease, box-shadow .15s ease;
+      }
+      .input:focus-within{
+        border-color: rgba(99,102,241,.65);
+        box-shadow: 0 0 0 4px rgba(99,102,241,.25);
+      }
+      .input input{
+        width:100%;
+        border:0;
+        outline:none;
+        background:transparent;
+        color:inherit;
+        font-size:14px;
+      }
+      .input input::placeholder{ color: rgba(169,182,214,.65); }
+
+      .btn{
+        border:0;
+        border-radius: 14px;
+        padding:12px 14px;
+        cursor:pointer;
+        font-weight:800;
+        color:white;
+        background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.02)), var(--primary);
+        transition: transform .08s ease, filter .15s ease, background .15s ease;
+        white-space:nowrap;
+      }
+      .btn:hover{
+        background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.02)), var(--primary2);
+        filter:brightness(1.05);
+        transform: translateY(-1px);
+      }
+      .btn:active{ transform: translateY(0) scale(.99); }
+
+      .toast{
+        display:none;
+        margin-top:12px;
+        padding:10px 12px;
+        border-radius: 14px;
+        border:1px solid rgba(255,255,255,.10);
+        background: rgba(99,102,241,.12);
+        color: rgba(234,240,255,.92);
+        font-size:13px;
+        line-height:1.4;
+      }
+
+      .list{
+        list-style:none;
+        padding:0;
+        margin:16px 0 0;
+        display:grid;
+        gap:10px;
+      }
+
+      .item{
+        display:flex;
+        align-items:flex-start;
+        justify-content:space-between;
+        gap:12px;
+        padding:12px 12px;
+        border-radius: 14px;
+        border:1px solid rgba(255,255,255,.10);
+        background: rgba(10, 16, 30, .35);
+      }
+
+      .left{
+        display:flex;
+        flex-direction:column;
+        gap:6px;
+        min-width: 0;
+      }
+
+      .text{
+        font-size:14px;
+        line-height:1.35;
+        word-break:break-word;
+      }
+
+      .meta{
+        display:flex;
+        gap:8px;
+        align-items:center;
+        flex-wrap:wrap;
+      }
+
+      .badge{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        padding:4px 10px;
+        border-radius:999px;
+        font-size:12px;
+        border:1px solid rgba(255,255,255,.10);
+        background: rgba(255,255,255,.06);
+        color: rgba(234,240,255,.92);
+      }
+      .badge[data-source="UI"]{
+        border-color: rgba(34,197,94,.35);
+        background: rgba(34,197,94,.12);
+      }
+      .badge[data-source="AGENT"]{
+        border-color: rgba(56,189,248,.35);
+        background: rgba(56,189,248,.12);
+      }
+
+      .remove{
+        border:1px solid rgba(255,255,255,.12);
+        background: rgba(255,255,255,.06);
+        color: rgba(234,240,255,.92);
+        border-radius: 12px;
+        padding:10px 12px;
+        cursor:pointer;
+        transition: transform .08s ease, filter .15s ease, border-color .15s ease;
+      }
+      .remove:hover{
+        border-color: rgba(239,68,68,.55);
+        filter: brightness(1.05);
+        transform: translateY(-1px);
+      }
+      .remove:active{ transform: translateY(0) scale(.99); }
+
+      .empty{
+        margin-top: 14px;
+        padding:14px 14px;
+        border-radius: 14px;
+        border:1px dashed rgba(255,255,255,.18);
+        background: rgba(255,255,255,.04);
+        color: rgba(169,182,214,.95);
+        font-size:13px;
+        line-height:1.45;
+      }
+
+      .kbd{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        padding:2px 8px;
+        border-radius: 999px;
+        border:1px solid rgba(255,255,255,.14);
+        background: rgba(0,0,0,.25);
+        color: rgba(234,240,255,.92);
+        font-size:12px;
+        margin-left:6px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>WebMCP Demo — To-do</h1>
+        <p class="sub">
+          UI humana + tool WebMCP (<b>add-todo</b>) com human-in-the-loop.
+        </p>
+      </header>
+
+      <section class="panel">
+        <div class="topbar">
+          <div class="pill">
+            <span id="count">0</span> tarefas
+            <span class="kbd">Enter</span> para adicionar
+          </div>
+          <button class="btn" id="clearAllBtn" type="button" title="Remove todas as tarefas">
+            Limpar tudo
+          </button>
+        </div>
+
+        <div class="row">
+          <div class="input">
+            <span style="opacity:.85;">📝</span>
+            <input id="todoText" placeholder="Digite uma tarefa..." autocomplete="off" />
+          </div>
+          <button class="btn" id="addBtn">Adicionar</button>
+        </div>
+
+        <div id="status" class="toast" aria-live="polite"></div>
+
+        <div id="empty" class="empty" style="display:none;">
+          Nenhuma tarefa ainda. Adicione uma tarefa pela UI ou chame a tool <b>add-todo</b> via agente.
+        </div>
+
+        <ul id="list" class="list"></ul>
+      </section>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

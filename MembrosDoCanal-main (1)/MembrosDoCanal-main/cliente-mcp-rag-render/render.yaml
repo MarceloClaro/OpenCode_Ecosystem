@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: agente-mcp-streamlit
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run agente_rag_app3.py --server.port=10000 --server.enableCORS=false
+    envVars:
+      - key: GROQ_API_KEY
+        value:    # ou deixe em branco e configure via painel do Render

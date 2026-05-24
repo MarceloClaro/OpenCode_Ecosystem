@@ -1,3 +1,8 @@
+---
+name: descobrir-e-instalar-mcp
+description: "Skill do ecossistema OpenCode - descobrir-e-instalar-mcp"
+---
+
 
 name: descobrir-e-instalar-mcp
 description: >-

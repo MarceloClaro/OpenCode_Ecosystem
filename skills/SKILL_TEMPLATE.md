@@ -1,4 +1,4 @@
-﻿---
+---
 name: skill-name
 description: Brief description of what this skill does (max 120 chars)
 version: 1.0.0

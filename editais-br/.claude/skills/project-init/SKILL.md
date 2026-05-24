@@ -1,3 +1,8 @@
+---
+name: project-init
+description: "Skill do ecossistema OpenCode - project-init"
+---
+
 
 name: project-init
 description: Onboarding da primeira sessão para projetos novos. Execute automaticamente quando MEMORY.md não tiver contexto. Entrevista o desenvolvedor e configura todos os arquivos de memória.
@@ -51,4 +56,5 @@ API REST para gestão de pedidos B2B. Processamento de ~50k req/dia.
 
 ## Stack
 Node.js + Fastify + PostgreSQL + Redis. Deploy na Railway. PNPM obrigatório.
+
 

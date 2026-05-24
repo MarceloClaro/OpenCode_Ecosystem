@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Vagas</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        input, textarea, button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        input:focus, textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        ul li strong {
+            color: #333;
+        }
+        ul li form {
+            display: inline;
+        }
+        ul li button {
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciar Vagas</h1>       
+
+        <section>
+            <h2>Criar Nova Vaga</h2>
+            <form action="{{ url_for('manage_jobs') }}" method="POST">
+                <input type="text" name="title" placeholder="Vaga Título" required>
+                <textarea name="description" placeholder="Vaga Descrição" rows="4" required></textarea>
+                <button type="submit">Adicionar Vaga</button>
+            </form>
+        </section>
+
+        <h2>Lista de Vagas</h2>
+        <ul>
+            {% for job in jobs %}
+            <li>
+                <div>
+                    <strong>{{ job.title }}</strong> - {{ job.description }}
+                </div>
+                <form action="/delete_job" method="POST">
+                    <input type="hidden" name="job_id" value="{{ job.id }}">
+                    <button type="submit">Excluir</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('dashboard') }}">Voltar ao Painel</a>   
+    </div>
+</body>
+</html>

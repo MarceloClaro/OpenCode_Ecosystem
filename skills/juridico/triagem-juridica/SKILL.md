@@ -1,3 +1,8 @@
+---
+name: triagem-juridica
+description: "Skill do ecossistema OpenCode - triagem-juridica"
+---
+
 
 name: triagem-juridica
 description: >
@@ -74,3 +79,4 @@ Documentos necessarios: [lista]
 - Usar websearch para verificar urgencia de prazos (ex: "prazo contestacao [vara] [comarca]")
 - Usar Wikipedia para identificar conceitos juridicos desconhecidos
 - Usar fetch para consultar site do TJ para jurisprudencia rapida
+

@@ -1,0 +1,9 @@
+Para usar certos modelos LLM (como o Gemma), você precisa criar um arquivo .env contendo a linha `ACCESS_TOKEN=<seu token do hugging face>
+
+Para saber como obter o ACCESS_TOKEN, recomendo assistir a minha vídeo aula (https://youtu.be/4kylEzGgveA), onde explico 
+
+o código e mostro como obter o ACCESS_TOKEN.
+
+Abra um terminal PowerShell, acesse o diretório llm-chatbot-rag, e instale as dependências com o comando: pip install -r requirements.txt
+
+Para executar o chatbot, acesse o diretório src e execute o comando: streamlit run main.py

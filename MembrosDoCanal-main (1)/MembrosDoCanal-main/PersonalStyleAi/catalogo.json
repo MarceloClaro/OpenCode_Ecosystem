@@ -1,0 +1,147 @@
+{
+    "itens_masculinos": [
+      {
+        "nome": "Camisa Polo",
+        "tipo": "Camisa",
+        "cor": "Azul",
+        "tamanho": "M",
+        "preco": 39.99
+      },
+      {
+        "nome": "Calça Jeans",
+        "tipo": "Calça",
+        "cor": "Preto",
+        "tamanho": "32",
+        "preco": 49.99
+      },
+      {
+        "nome": "Blazer",
+        "tipo": "Blazer",
+        "cor": "Cinza",
+        "tamanho": "L",
+        "preco": 89.99
+      },
+      {
+        "nome": "Moletom",
+        "tipo": "Moletom",
+        "cor": "Verde",
+        "tamanho": "XL",
+        "preco": 34.99
+      },
+      {
+        "nome": "Camiseta Estampada",
+        "tipo": "Camiseta",
+        "cor": "Branco",
+        "tamanho": "L",
+        "preco": 19.99
+      },
+      {
+        "nome": "Jaqueta de Couro",
+        "tipo": "Jaqueta",
+        "cor": "Marrom",
+        "tamanho": "XL",
+        "preco": 119.99
+      },
+      {
+        "nome": "Bermuda Cargo",
+        "tipo": "Bermuda",
+        "cor": "Cáqui",
+        "tamanho": "34",
+        "preco": 29.99
+      },
+      {
+        "nome": "Camisa Social",
+        "tipo": "Camisa",
+        "cor": "Branco",
+        "tamanho": "L",
+        "preco": 44.99
+      },
+      {
+        "nome": "Sapato Social",
+        "tipo": "Sapato",
+        "cor": "Preto",
+        "tamanho": "42",
+        "preco": 69.99
+      },
+      {
+        "nome": "Regata Esportiva",
+        "tipo": "Regata",
+        "cor": "Azul",
+        "tamanho": "M",
+        "preco": 14.99
+      }
+    ],
+    "itens_femininos": [
+      {
+        "nome": "Vestido Floral",
+        "tipo": "Vestido",
+        "cor": "Floral",
+        "tamanho": "P",
+        "preco": 59.99
+      },
+      {
+        "nome": "Saia Midi",
+        "tipo": "Saia",
+        "cor": "Vermelho",
+        "tamanho": "S",
+        "preco": 29.99
+      },
+      {
+        "nome": "Blusa de Algodão",
+        "tipo": "Blusa",
+        "cor": "Branco",
+        "tamanho": "M",
+        "preco": 24.99
+      },
+      {
+        "nome": "Calça Legging",
+        "tipo": "Calça",
+        "cor": "Preto",
+        "tamanho": "M",
+        "preco": 19.99
+      },
+      {
+        "nome": "Jaqueta Jeans",
+        "tipo": "Jaqueta",
+        "cor": "Azul",
+        "tamanho": "S",
+        "preco": 49.99
+      },
+      {
+        "nome": "Camisa Social",
+        "tipo": "Camisa",
+        "cor": "Rosa",
+        "tamanho": "M",
+        "preco": 34.99
+      },
+      {
+        "nome": "Sapato de Salto",
+        "tipo": "Sapato",
+        "cor": "Preto",
+        "tamanho": "38",
+        "preco": 59.99
+      },
+      {
+        "nome": "Macacão",
+        "tipo": "Macacão",
+        "cor": "Verde",
+        "tamanho": "M",
+        "preco": 69.99
+      },
+      {
+        "nome": "Blusa de Tricô",
+        "tipo": "Blusa",
+        "cor": "Cinza",
+        "tamanho": "P",
+        "preco": 39.99
+      },
+      {
+        "nome": "Shorts Jeans",
+        "tipo": "Shorts",
+        "cor": "Azul",
+        "tamanho": "M",
+        "preco": 24.99
+      }
+    ]
+  }
+  

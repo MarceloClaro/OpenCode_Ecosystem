@@ -1,0 +1,6 @@
+fastmcp
+stripe
+pydantic
+streamlit
+mcp-use
+langchain-openai

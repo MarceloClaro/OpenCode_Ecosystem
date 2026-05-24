@@ -1,0 +1,5 @@
+google-adk
+streamlit
+ollama
+sqlalchemy
+pillow

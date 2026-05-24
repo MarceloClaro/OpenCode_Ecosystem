@@ -1,0 +1,5 @@
+vanna
+streamlit
+python-dotenv
+ollama
+chromadb 

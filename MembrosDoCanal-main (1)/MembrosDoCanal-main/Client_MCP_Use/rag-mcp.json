@@ -1,0 +1,7 @@
+{
+    "mcpServers": {
+      "http": {
+                "url": "https://mcp-server-rag-groq.onrender.com/sse"
+            }
+    }
+  }

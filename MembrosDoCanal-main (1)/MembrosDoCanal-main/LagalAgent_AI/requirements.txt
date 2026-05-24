@@ -1,0 +1,12 @@
+llama-index
+llama-index-llms-openai
+llama-index-tools-mcp
+fastapi
+uvicorn
+sqlalchemy
+mcp
+db-sqlite3
+Llama-index-llms-google-genai
+llama-index-utils-workflow
+llama-index-tools-google
+streamlit

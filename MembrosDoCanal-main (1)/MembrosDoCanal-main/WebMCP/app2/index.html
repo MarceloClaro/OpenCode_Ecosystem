@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MVP — Reserva do Salão (WebMCP)</title>
+  <style>
+    :root{
+      --bg:#070b14;
+      --card:#0c1326;
+      --text:#eaf0ff;
+      --muted:#a9b6d6;
+      --border:rgba(255,255,255,.10);
+      --shadow:0 18px 60px rgba(0,0,0,.55);
+      --radius:16px;
+      --primary:#6366f1;
+      --primary2:#4f46e5;
+      --ok:#22c55e;
+      --warn:#f59e0b;
+      --err:#ef4444;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0; min-height:100vh; display:grid; place-items:center; padding:28px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(99,102,241,.22), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(56,189,248,.16), transparent 55%),
+        var(--bg);
+      color:var(--text);
+    }
+    .wrap{ width:min(920px, 100%); display:grid; gap:14px; }
+    header, .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:16px 18px;
+      backdrop-filter: blur(10px);
+    }
+    h1{ margin:0 0 6px; font-size: clamp(18px, 2.6vw, 26px); letter-spacing:-0.02em; }
+    p{ margin:0; color:var(--muted); line-height:1.45; font-size:14px; }
+    code{ background:rgba(255,255,255,.07); padding:2px 6px; border-radius:8px; }
+
+    form{
+      margin-top:12px;
+      display:grid;
+      gap:12px;
+      padding:16px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(10, 16, 30, .35);
+    }
+    .row2{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media (max-width: 720px){ .row2{ grid-template-columns:1fr; } }
+    label{ display:grid; gap:8px; font-size:13px; color:var(--muted); }
+    input, select, textarea{
+      width:100%;
+      padding:11px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(10, 16, 30, .65);
+      color: var(--text);
+      outline:none;
+      transition: border-color .15s ease, box-shadow .15s ease;
+      font-size:14px;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(99,102,241,.65);
+      box-shadow: 0 0 0 4px rgba(99,102,241,.25);
+    }
+    .btn{
+      border:0;
+      border-radius: 12px;
+      padding:10px 12px;
+      cursor:pointer;
+      font-weight:800;
+      color:white;
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.02)), var(--primary);
+      transition: transform .08s ease, filter .15s ease, background .15s ease;
+    }
+    .btn:hover{
+      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.02)), var(--primary2);
+      filter:brightness(1.05);
+      transform: translateY(-1px);
+    }
+    .btn:active{ transform: translateY(0) scale(.99); }
+
+    .pill{
+      padding:10px 12px;
+      border-radius: 12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      font-size:13px;
+      line-height:1.4;
+      white-space:pre-wrap;
+    }
+    .ok{ border-color: rgba(34,197,94,.35); background: rgba(34,197,94,.10); }
+    .warn{ border-color: rgba(245,158,11,.35); background: rgba(245,158,11,.10); }
+    .err{ border-color: rgba(239,68,68,.35); background: rgba(239,68,68,.10); }
+
+    /* UX (se suportado no seu Chrome beta) */
+    form:tool-form-active{
+      outline: 3px solid rgba(99,102,241,.60);
+      box-shadow: 0 0 0 7px rgba(99,102,241,.14);
+    }
+    button:tool-submit-active{
+      outline: 3px solid rgba(34,197,94,.55);
+      transform: scale(1.02);
+    }
+
+    pre{
+      margin:0;
+      white-space:pre-wrap;
+      word-break:break-word;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size:12px;
+      color: rgba(234,240,255,.92);
+      background: rgba(0,0,0,.25);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 12px;
+      padding: 10px 12px;
+      min-height: 180px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>MVP — Reservar Salão (WebMCP)</h1>
+      <p>
+        Form declarativo virando tool com <code>toolname</code>, <code>tooldescription</code> e <code>toolautosubmit</code>.
+        O handler retorna JSON para o agente via <code>respondWith()</code>.
+      </p>
+    </header>
+
+    <section class="card">
+      <div id="env" class="pill warn"></div>
+
+      <form
+        id="reserveForm"
+        toolname="reserve_saloon"
+        tooldescription="Reserve the condominium party room (salão). Inputs: date (YYYY-MM-DD), time (HH:MM), durationMinutes, chairs. Returns reservationId and status or structured validation errors."
+        toolautosubmit
+        novalidate
+      >
+        <div class="row2">
+          <label>
+            Data (YYYY-MM-DD)
+            <input id="date" name="date" placeholder="2026-02-22" required />
+          </label>
+
+          <label>
+            Hora (HH:MM)
+            <input id="time" name="time" placeholder="18:00" required />
+          </label>
+        </div>
+
+        <div class="row2">
+          <label>
+            Duração (min)
+            <input id="durationMinutes" name="durationMinutes" type="number" min="30" step="30" value="120" required />
+          </label>
+
+          <label>
+            Cadeiras (qtd)
+            <input id="chairs" name="chairs" type="number" min="0" step="1" value="0" required />
+          </label>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
+          <div style="font-size:12px; color:rgba(169,182,214,.85);">
+            Humano: clique Reservar • Agente: <code>agentInvoked</code> + <code>respondWith()</code>.
+          </div>
+          <button id="submitBtn" class="btn" type="submit">Reservar</button>
+        </div>
+
+        <div id="status" class="pill"></div>
+      </form>
+
+      <div style="margin-top:12px;">
+        <div style="font-size:13px; color:rgba(169,182,214,.9); margin-bottom:8px;">
+          Log (debug)
+        </div>
+        <pre id="log"></pre>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const form = document.getElementById("reserveForm");
+    const statusEl = document.getElementById("status");
+    const logEl = document.getElementById("log");
+    const envEl = document.getElementById("env");
+
+    function log(title, data) {
+      const block = { time: new Date().toLocaleTimeString(), title, data };
+      logEl.textContent = JSON.stringify(block, null, 2) + "\n\n" + logEl.textContent;
+    }
+
+    function setStatus(kind, text) {
+      statusEl.className = "pill " + (kind || "");
+      statusEl.textContent = text || "";
+    }
+
+    // "Backend fake": agenda ocupada (exemplo)
+    // Chave: "YYYY-MM-DD HH:MM"
+    const booked = new Set([
+      "2026-02-22 18:00"
+    ]);
+
+    function readPayload() {
+      const fd = new FormData(form);
+      return {
+        date: String(fd.get("date") || "").trim(),
+        time: String(fd.get("time") || "").trim(),
+        durationMinutes: Number(fd.get("durationMinutes") || 0),
+        chairs: Number(fd.get("chairs") || 0),
+      };
+    }
+
+    function validate(p) {
+      const errors = {};
+
+      // date YYYY-MM-DD
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(p.date)) {
+        errors.date = "Use YYYY-MM-DD (ex: 2026-02-22).";
+      }
+
+      // time HH:MM
+      if (!/^\d{2}:\d{2}$/.test(p.time)) {
+        errors.time = "Use HH:MM (ex: 18:00).";
+      }
+
+      if (!Number.isFinite(p.durationMinutes) || p.durationMinutes < 30) {
+        errors.durationMinutes = "Min duration is 30 minutes.";
+      }
+
+      if (!Number.isFinite(p.chairs) || p.chairs < 0) {
+        errors.chairs = "Chairs must be >= 0.";
+      }
+
+      // regra simples: máximo 40 cadeiras
+      if (p.chairs > 40) {
+        errors.chairs = "Max chairs is 40.";
+      }
+
+      return errors;
+    }
+
+    function reservationId() {
+      const now = Date.now().toString(36).toUpperCase();
+      const rnd = Math.random().toString(36).slice(2, 7).toUpperCase();
+      return `RSV-${now}-${rnd}`;
+    }
+
+    // Eventos UX (se suportados)
+    form.addEventListener("toolactivated", (e) => {
+      log("EVENT: toolactivated", { detail: e.detail ?? null });
+      setStatus("warn", "toolactivated: agente invocou a tool (campos podem ter sido pré-preenchidos).");
+    });
+
+    form.addEventListener("toolcancel", (e) => {
+      log("EVENT: toolcancel", { detail: e.detail ?? null });
+      setStatus("warn", "toolcancel: invocação cancelada.");
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const agentInvoked = !!event.agentInvoked;
+      const payload = readPayload();
+      const errors = validate(payload);
+
+      log("SUBMIT", { agentInvoked, payload });
+
+      let result;
+
+      // disponibilidade (backend fake)
+      const key = `${payload.date} ${payload.time}`;
+      const slotTaken = booked.has(key);
+
+      if (Object.keys(errors).length > 0) {
+        result = { ok: false, errors, code: "VALIDATION_ERROR" };
+        setStatus("err", "Erro de validação:\n" + JSON.stringify(result, null, 2));
+      } else if (slotTaken) {
+        result = {
+          ok: false,
+          errors: { availability: "Este horário já está reservado. Tente outro." },
+          code: "NOT_AVAILABLE"
+        };
+        setStatus("err", "Indisponível:\n" + JSON.stringify(result, null, 2));
+      } else {
+        const id = reservationId();
+        booked.add(key);
+
+        result = {
+          ok: true,
+          reservationId: id,
+          status: "CONFIRMED",
+          summary: {
+            date: payload.date,
+            time: payload.time,
+            durationMinutes: payload.durationMinutes,
+            chairs: payload.chairs
+          }
+        };
+
+        setStatus("ok", "Reserva confirmada!\n" + JSON.stringify(result, null, 2));
+      }
+
+      // responde ao agente (se suportado)
+      if (typeof event.respondWith === "function") {
+        event.respondWith(Promise.resolve(result));
+        log("respondWith()", result);
+      } else {
+        log("respondWith() NOT AVAILABLE", {});
+      }
+
+      // limpeza:
+      // humano pode resetar
+      // agente não deve resetar (evita cancelamento)
+      if (!agentInvoked && result.ok) {
+        form.reset();
+      } else if (agentInvoked && result.ok) {
+        // limpeza manual opcional
+        form.elements.date.value = "";
+        form.elements.time.value = "";
+        form.elements.durationMinutes.value = "120";
+        form.elements.chairs.value = "0";
+      }
+    });
+
+    // Diagnóstico do ambiente
+    const env = {
+      toolautosubmit: form.hasAttribute("toolautosubmit"),
+      agentInvokedProp: ("agentInvoked" in SubmitEvent.prototype),
+      respondWithProp: ("respondWith" in SubmitEvent.prototype),
+      pseudoToolForm: (() => { try { return CSS.supports("selector(form:tool-form-active)"); } catch { return false; } })(),
+      pseudoToolSubmit: (() => { try { return CSS.supports("selector(button:tool-submit-active)"); } catch { return false; } })(),
+      modelContext: ("modelContext" in navigator)
+    };
+    envEl.className = "pill " + ((env.agentInvokedProp && env.respondWithProp) ? "ok" : "warn");
+    envEl.textContent =
+      "Env:\n" + JSON.stringify(env, null, 2) +
+      "\n\nDica: invoque a tool 'reserve_saloon' via seu Agent/Inspector.";
+
+    setStatus("", "Pronto. Aguardando…");
+    log("READY", env);
+  </script>
+</body>
+</html>

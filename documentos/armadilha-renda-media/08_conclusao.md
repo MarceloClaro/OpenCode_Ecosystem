@@ -1,4 +1,4 @@
-﻿# 6 CONCLUSAO
+# 6 CONCLUSAO
 
 Este estudo investigou se a educacao constitui o unico mecanismo capaz de retirar o Brasil da armadilha da renda media. A analise quantitativa cross-nacional com dados de 10 paises e 27 indicadores, extraidos do Banco Mundial (2022), UNESCO (2022), OIT (2022) e OCDE (2022), produziu cinco conclusoes principais.
 

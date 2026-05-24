@@ -1,3 +1,8 @@
+---
+name: followup-advocacia
+description: "Skill do ecossistema OpenCode - followup-advocacia"
+---
+
 
 name: followup-advocacia
 description: >
@@ -84,3 +89,4 @@ PROXIMA SEMANA:
 | ALTO | Prazo < 5 dias | Alerta hoje |
 | MEDIO | Prazo < 15 dias | Agendar revisao |
 | BAIXO | Prazo > 15 dias | Revisao semanal |
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+        header {
+            background-color: #007BFF;
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+        nav {
+            margin: 20px;
+            text-align: center;
+        }
+        nav a {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            background-color: #0056b3;
+        }
+        main {
+            text-align: center;
+            margin: 50px;
+        }
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        form {
+            margin: 20px 0;
+        }
+        form input, form textarea, form button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 16px;
+        }
+        form button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Seja bem-vindo, {{ current_user.email }}</h1>
+    </header>
+    
+    <main>
+        <nav>
+            <a href="{{ url_for('manage_jobs') }}">Gerenciar Vagas</a>
+            <a href="{{ url_for('upload_resume') }}">Upload Curriculum</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav> 
+        <P>&nbsp;&nbsp;</P>
+        
+        <section>            
+            <h2>Vagas Disponíveis</h2>
+            <ul>
+            {% for job in jobs %}
+                <li>
+                    <strong>{{ job.title }}</strong>: {{ job.description }}
+                    <h2>Lista de Candidatos</h2>
+                    <ul>
+                        {% for resume in job.resumes %}
+                        <li>
+                            <strong>{{ resume.name }}</strong> 
+                            (<a href="{{ url_for('analyze_resume', resume_id=resume.id) }}">Analisar</a>)
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+            </ul>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SaaS AI Recruitment Platform</p>
+    </footer>
+</body>
+</html>

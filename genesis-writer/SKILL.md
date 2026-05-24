@@ -1,3 +1,8 @@
+---
+name: genesis-writer
+description: "Skill do ecossistema OpenCode - genesis-writer"
+---
+
 
 name: genesis-writer
 description: "Skill do ecossistema OpenCode - genesis-writer"

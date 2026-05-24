@@ -1,3 +1,8 @@
+---
+name: pesquisa-jurisprudencia
+description: "Skill do ecossistema OpenCode - pesquisa-jurisprudencia"
+---
+
 
 name: pesquisa-jurisprudencia
 description: >
@@ -70,3 +75,4 @@ EMENTA: [trecho integral da ementa exatamente como no tribunal]
 | Responsabilidade civil | TJSP + "responsabilidade civil" + "dano moral" |
 | Horas extras | TRT + "horas extras" + "intervalo" |
 | Contrato bancario | STJ + "contrato bancario" + "clausula abusiva" |
+

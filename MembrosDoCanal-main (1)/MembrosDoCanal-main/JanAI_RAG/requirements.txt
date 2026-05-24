@@ -1,0 +1,6 @@
+streamlit
+langchain
+langchain_community
+qdrant-client
+pypdf
+python-dotenv

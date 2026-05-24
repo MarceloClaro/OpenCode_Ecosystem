@@ -1,4 +1,4 @@
-﻿"""
+"""
 core/validators.py — Validação de Inputs e Schemas.
 
 Funções reutilizáveis para validar identificadores, caminhos,

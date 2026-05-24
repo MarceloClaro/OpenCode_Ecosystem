@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assinatura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #777;
+            font-size: 14px;
+        }
+        footer a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Complete sua Assinatura</h1>
+        <p>Para acessar o painel e começar a usar todos os recursos, conclua a assinatura abaixo.</p>
+        <button id="checkout-button">Concluir Assinatura</button>
+    </div>
+    <footer>
+        <p>Voltar ao <a href="{{ url_for('home') }}">início</a></p>
+    </footer>
+    <script>
+        // Inicialize o Stripe com sua chave pública
+        const stripe = Stripe('pk_test_51QOPhbDt6WnwV6ivmwvbhEYKqOeBq5B2c');
+
+        // Adiciona evento ao botão
+        const checkoutButton = document.getElementById('checkout-button');
+        checkoutButton.addEventListener('click', function () {
+            stripe.redirectToCheckout({
+                lineItems: [{
+                    price: 'price_1QOiLADt6WnwV6ivc0RjBkOd', // Substitua pelo ID do preço no Stripe
+                    quantity: 1
+                }],
+                mode: 'subscription',
+                successUrl: 'https://dc3c-179-222-26-116.ngrok-free.app/success', // Rota ajustada
+                cancelUrl: 'https://dc3c-179-222-26-116.ngrok-free.app/cancel'
+            }).then(function (result) {
+                if (result.error) {
+                    alert(result.error.message);
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

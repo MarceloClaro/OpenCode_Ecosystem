@@ -1,0 +1,1087 @@
+[
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Bom dia",
+    "output": "Ihot'ok."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'boa tarde'?",
+    "output": "Heika'at."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Boa noite",
+    "output": "Wantym."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Até já!",
+    "output": "Meiko ira'yn aru."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Até amanhã",
+    "output": "Mogki'ite ira'yn aru."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Olá!",
+    "output": "Hay."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Muito obrigado",
+    "output": "Waku sese."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Com licença",
+    "output": "Meke arekosap."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "De nada",
+    "output": "Yt kat hap'i."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Tudo bem?",
+    "output": "Waku?"
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Bem-vindo!",
+    "output": "Waku sese eriot!"
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'cabeça'?",
+    "output": "Akag."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'cabelo'?",
+    "output": "Asap."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Ape'?",
+    "output": "Ape, a parte de trás do corpo."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Ampy, wehã pê?",
+    "output": "Ampy, nariz."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'orelha'?",
+    "output": "Ahape."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'ombro'?",
+    "output": "Anti'ypy."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Ikag'?",
+    "output": "Ikag, osso."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Jaig, wehã pê?",
+    "output": "Jaig, dente."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'perna'?",
+    "output": "Kag'oktu."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'peito'?",
+    "output": "Moti'a."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Mu'uja'?",
+    "output": "Mu'uja, dedo."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "My'a, wehã pê?",
+    "output": "My'a, fígado."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'joelho'?",
+    "output": "My'akag'a."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'mão'?",
+    "output": "Mo."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'My'?",
+    "output": "My, pé."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Myawa, wehã pê?",
+    "output": "Myawa, sola do pé."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'cotovelo'?",
+    "output": "Mopy'akag'a."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'umbigo'?",
+    "output": "Myrum'a."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Nywa'?",
+    "output": "Nywa, queixo."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Sempe, wehã pê?",
+    "output": "Sempe, beiço."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'nádegas'?",
+    "output": "Setu'a."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'olho'?",
+    "output": "Seha."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Sewa'?",
+    "output": "Sewa, rosto."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Segku, wehã pê?",
+    "output": "Segku, língua."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'boca'?",
+    "output": "Wẽ."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'bochecha'?",
+    "output": "Wegkot'a."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Watu'a'?",
+    "output": "Watu'a, testa."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Yke, wehã pê?",
+    "output": "Yke, braço."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'cutia'?",
+    "output": "Akuri."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'cachorro do mato'?",
+    "output": "Awahuru."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Awyky'?",
+    "output": "Awyky, guariba."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Awyato, wehã pê?",
+    "output": "Awyato, onça."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'preguiça'?",
+    "output": "Ariukere."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'rato'?",
+    "output": "Hapiri."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Himpa'?",
+    "output": "Himpa, tamanduá bandeira."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Hanu'án, wehã pê?",
+    "output": "Hanu'án, macaco prego."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'jacaré'?",
+    "output": "Iakare."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'cobra'?",
+    "output": "Moi."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Pay'?",
+    "output": "Pay, paca."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Sahu, wehã pê?",
+    "output": "Sahu, tatu."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'anta'?",
+    "output": "Wewato."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'jabuti'?",
+    "output": "Wawori."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Ytý wato'?",
+    "output": "Ytý wato, veado grande."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Ytý hít, wehã pê?",
+    "output": "Ytý hít, veado pequeno."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'papagaio'?",
+    "output": "Ahut."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'beija-flor'?",
+    "output": "Hyt'i."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Hanún'?",
+    "output": "Hanún, arara."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Hywi wato, wehã pê?",
+    "output": "Hywi wato, gavião real."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'tucano'?",
+    "output": "Jugkan."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'jacú'?",
+    "output": "Myju."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Pykasu'?",
+    "output": "Pykasu, pombo."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Pirikítu, wehã pê?",
+    "output": "Pirikítu, periquito."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'pica-pau'?",
+    "output": "Samã."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'pássaro'?",
+    "output": "Weita."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Urukut'?",
+    "output": "Urukut, coruja."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Úre, wehã pê?",
+    "output": "Úre, jacamim."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'inambú'?",
+    "output": "Urit'i."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'passarinho'?",
+    "output": "Weita hít."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Wiawu'?",
+    "output": "Wiawu, mutum."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'abelha'?",
+    "output": "Awi'a."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'barata'?",
+    "output": "Ape'i."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Gap'?",
+    "output": "Gap, caba."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Gyp, wehã pê?",
+    "output": "Gyp, piolho."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'pulga'?",
+    "output": "Jug."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'aranha'?",
+    "output": "Kia."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Kíwa'?",
+    "output": "Kíwa, tapecuim."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Karawót, wehã pê?",
+    "output": "Karawót, cigarra."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'vaga-lume'?",
+    "output": "Mantéru."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'borboleta'?",
+    "output": "Morope'i."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Mokag'?",
+    "output": "Mokag, louva-a-deus."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Pohit, wehã pê?",
+    "output": "Pohit, gafanhoto."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'escorpião'?",
+    "output": "Sapót."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'formiga'?",
+    "output": "Sári."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Sahai'?",
+    "output": "Sahai, saúva-taia."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Úwi, wehã pê?",
+    "output": "Úwi, minhoca."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'lagarto'?",
+    "output": "Ut."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'maruim'?",
+    "output": "Upi'u."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'We'ehog'?",
+    "output": "We'ehog, maniwara."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Wanti'u, wehã pê?",
+    "output": "Wanti'u, carapanã."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'tucandeira'?",
+    "output": "Watyama."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'mucuim'?",
+    "output": "Wáru'i."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'cachorro'?",
+    "output": "Aware."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'porco'?",
+    "output": "Hamaut asuwai."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Pisana'?",
+    "output": "Pisana, gato."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Piku-piku, wehã pê?",
+    "output": "Piku-piku, pinto."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'galinha'?",
+    "output": "Waipaka wáry'i."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'galo'?",
+    "output": "Waipaka pa'aiat."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Wewato ahup'?",
+    "output": "Wewato ahup, boi."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Ypéka, wehã pê?",
+    "output": "Ypéka, pato."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'vovô'?",
+    "output": "Ase'i."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'tia'?",
+    "output": "Api'i."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Hamû'?",
+    "output": "Hamû, tio."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Hary, wehã pê?",
+    "output": "Hary, vovó."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'neto'?",
+    "output": "Hemiariru."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'neta'?",
+    "output": "Hemiarira."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Isaig'?",
+    "output": "Isaig, menino adolescente."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Hirokat, wehã pê?",
+    "output": "Hirokat, criança."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'mulher'?",
+    "output": "Haryporia."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'homem'?",
+    "output": "Ihaignia."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Kurum hít'?",
+    "output": "Kurum hít, menino."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Kurum iwasu, wehã pê?",
+    "output": "Kurum iwasu, moço."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'moça'?",
+    "output": "Makuptia."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'filho'?",
+    "output": "Mempyt."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Ny'?",
+    "output": "Ny, mãe."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Pi'a, wehã pê?",
+    "output": "Pi'a, mulher."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'menina'?",
+    "output": "Pi'ã hít."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'pai'?",
+    "output": "Ywót."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'preto'?",
+    "output": "Hún."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'cinza'?",
+    "output": "Hún'ok."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Ihup'ok'?",
+    "output": "Ihup'ok, marrom."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Ihup, wehã pê?",
+    "output": "Ihup, vermelho."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'branco'?",
+    "output": "Ikytsig."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'amarelo'?",
+    "output": "Ika'ay."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Ihyrýp'?",
+    "output": "Ihyrýp, azul."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Ihyrýp ga'apy, wehã pê?",
+    "output": "Ihyrýp ga'apy, verde."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'fogo'?",
+    "output": "Aria."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'remo'?",
+    "output": "Apukuita."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Awyhap'?",
+    "output": "Awyhap, machado."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Go, wehã pê?",
+    "output": "Go, roça."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'dança'?",
+    "output": "Hairu."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'chocalho'?",
+    "output": "Já'ampe."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Kuiru'a'?",
+    "output": "Kuiru'a, jamarú (tipo de balde)."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Kui'a, wehã pê?",
+    "output": "Kui'a, cuia."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'faca'?",
+    "output": "Kyse."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'terçado'?",
+    "output": "Kyse'yp."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Kamunti'?",
+    "output": "Kamunti, pote."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Kuriwu, wehã pê?",
+    "output": "Kuriwu, jamaxin (tipo de mochila)."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'pimenta'?",
+    "output": "Musé."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'beijú'?",
+    "output": "Man."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Manî'?",
+    "output": "Manî, mandioca."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Muká, wehã pê?",
+    "output": "Muká, espingarda."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'goma de tapioca'?",
+    "output": "Mani'ay."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'cacique'?",
+    "output": "Morékuat."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Pinã'?",
+    "output": "Pinã, anzol."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Paigni, wehã pê?",
+    "output": "Paigni, pajé."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'peneira'?",
+    "output": "Panene."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'fumo'?",
+    "output": "Súhu."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Sapo'?",
+    "output": "Sapo, guaraná ralado."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Táwa, wehã pê?",
+    "output": "Táwa, comunidade."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'timbó'?",
+    "output": "Úku."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'flecha'?",
+    "output": "Úwa."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Waranã'?",
+    "output": "Waranã, guaraná."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Wegku'a, wehã pê?",
+    "output": "Wegku'a, pilão."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'panela'?",
+    "output": "Wa'a."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'paneiro'?",
+    "output": "Yrysakag."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Yni'?",
+    "output": "Yni, rede."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Yhape, wehã pê?",
+    "output": "Yhape, colher de pau."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'canoa'?",
+    "output": "Yara."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'milho'?",
+    "output": "Awati."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'bacaba'?",
+    "output": "Hawuhu'i."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Kásu'?",
+    "output": "Kásu, cajú."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Miriti, wehã pê?",
+    "output": "Miriti, buriti."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'ingá'?",
+    "output": "Mokiu."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'manga'?",
+    "output": "Magka."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Nanã'?",
+    "output": "Nanã, abacaxi."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Pakua, wehã pê?",
+    "output": "Pakua, banana."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'laranja'?",
+    "output": "Sasym."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'açaí'?",
+    "output": "Wasa'i."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Waiawa'?",
+    "output": "Waiawa, goiaba."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Wiriwa, wehã pê?",
+    "output": "Wiriwa, beribá."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'sol'?",
+    "output": "Át."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'cará'?",
+    "output": "Awai'a."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Ahiag'?",
+    "output": "Ahiag, diabo."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Amyap, wehã pê?",
+    "output": "Amyap, banco."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'floresta'?",
+    "output": "Ga'apy."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'Jesus'?",
+    "output": "Iesui."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Ja'agkap'?",
+    "output": "Ja'agkap, imagem."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Morékuat, wehã pê?",
+    "output": "Morékuat, autoridade."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'remédio'?",
+    "output": "Mohag."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'pedra'?",
+    "output": "Nu."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Nem'?",
+    "output": "Nem, podre."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Pa'i, wehã pê?",
+    "output": "Pa'i, pastor ou padre."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'professor'?",
+    "output": "Puruwei."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'professora'?",
+    "output": "Puruweira."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Surara'?",
+    "output": "Surara, soldado."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Seko, wehã pê?",
+    "output": "Seko, costume."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'Deus'?",
+    "output": "Tupana."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'estrela'?",
+    "output": "Waikiru."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Wáty'?",
+    "output": "Wáty, lua."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Wá'yp, wehã pê?",
+    "output": "Wá'yp, arco-íris."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a palavra para 'água'?",
+    "output": "Y'y."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'nuvem'?",
+    "output": "Ywyhig."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como digo 'Quero comida'?",
+    "output": "Atiky'esat mi'u."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como posso dizer 'Estou feliz'?",
+    "output": "Arehum."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Traduza 'Você é lindo'.",
+    "output": "En ekahu."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Etiky'esat?'?",
+    "output": "Etiky'esat?, significa 'Você quer?'."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'Muito gostoso'?",
+    "output": "Hé kahato."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'Te amo'?",
+    "output": "Moroky'e."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Moroky'esat'?",
+    "output": "Moroky'esat, te quero."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Netap ikahu, wehã pê?",
+    "output": "Netap ikahu, casa bonita."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a frase para 'Deus nos abençoe'?",
+    "output": "Tupana aihúwa."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'Quem é você?'?",
+    "output": "Uweig en?"
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Uhesý'at'?",
+    "output": "Uhesý'at, estou com fome."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Uhéra, wehã pê?",
+    "output": "Uhéra, estou cansado."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual a frase para 'Quem é seu professor?'?",
+    "output": "Uweig épuruwei?"
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como se diz 'Você é muito legal'?",
+    "output": "Waku kahato apo en."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "O que significa 'Waku sése eriot!'?",
+    "output": "Waku sése eriot!, seja muito bem-vindo(a)!"
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Waku?",
+    "output": "Waku. Ewywo?"
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Como vai?",
+    "output": "Aikotaig?"
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Aikotaig?",
+    "output": "Waku. Ewywo?"
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Qual o seu nome?",
+    "output": "Kat e eset?"
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Kat e eset?",
+    "output": "Uhet Chatbot. Ewat?"
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "De onde você é?",
+    "output": "Ajumpiat en?"
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Ajumpiat en?",
+    "output": "Ta'i ywyhig'i piat."
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Obrigado!",
+    "output": "Waku sese!"
+  },
+  {
+    "instruction": "Você é um chatbot que fala a língua Sateré-Mawé. Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta.",
+    "input": "Waku sese!",
+    "output": "Yt kat hap'i."
+  }
+]

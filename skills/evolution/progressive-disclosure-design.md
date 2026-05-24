@@ -1,4 +1,4 @@
-﻿---
+---
 name: progressive-disclosure-design
 description: "Design de skills com progressive disclosure: entrypoint magro (<2.5kt), carregamento sob demanda de aprofundamentos, token budget controlado. Inspirado em samber/cc-skills e agent-skills.io."
 ---

@@ -1,0 +1,23 @@
+2026/05/18-14:38:53.957 816c Reusing MANIFEST C:\Users\marce\.config\opencode\.reversa\whatsapp_profile\Default\Local Storage\leveldb/MANIFEST-000001
+2026/05/18-14:38:53.968 816c Recovering log #8
+2026/05/18-14:38:53.985 816c Reusing old log C:\Users\marce\.config\opencode\.reversa\whatsapp_profile\Default\Local Storage\leveldb/000008.log 
+2026/05/18-14:39:54.010 816c Level-0 table #11: started
+2026/05/18-14:39:54.025 816c Level-0 table #11: 14699 bytes OK
+2026/05/18-14:39:54.030 816c Delete type=0 #8
+2026/05/18-15:39:05.004 12020 Level-0 table #13: started
+2026/05/18-15:39:05.024 12020 Level-0 table #13: 14412 bytes OK
+2026/05/18-15:39:05.028 12020 Delete type=0 #10
+2026/05/18-16:45:08.754 12020 Level-0 table #15: started
+2026/05/18-16:45:08.789 12020 Level-0 table #15: 13245 bytes OK
+2026/05/18-16:45:08.792 12020 Delete type=0 #12
+2026/05/18-16:45:08.792 12020 Compacting 4@0 + 0@1 files
+2026/05/18-16:45:08.801 12020 Generated table #16@0: 62 keys, 4550 bytes
+2026/05/18-16:45:08.801 12020 Compacted 4@0 + 0@1 files => 4550 bytes
+2026/05/18-16:45:08.804 12020 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/05/18-16:45:08.805 12020 Delete type=2 #7
+2026/05/18-16:45:08.805 12020 Delete type=2 #11
+2026/05/18-16:45:08.805 12020 Delete type=2 #13
+2026/05/18-16:45:08.805 12020 Delete type=2 #15
+2026/05/18-17:44:54.626 12020 Level-0 table #18: started
+2026/05/18-17:44:54.636 12020 Level-0 table #18: 14326 bytes OK
+2026/05/18-17:44:54.640 12020 Delete type=0 #14

@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: green;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 2rem;
+}
+
+section#home {
+    background-color: #ffffff; /* Add a background color if needed */
+    text-align: center;
+    margin-top: 0; /* Remove margin */
+    padding-top: 0; /* Remove padding */
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    margin-top: 0; /* Remove margin */
+    border-radius: 10px;
+}
+
+section#menu, section#sobre, section#contato {
+    background-color: #f4f4f4;
+    margin: 20px 0;
+}
+
+footer {
+    background-color: #d32f2f;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label, form input, form textarea {
+    margin-bottom: 10px;
+}
+
+form button {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}

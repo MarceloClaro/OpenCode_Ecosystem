@@ -1,0 +1,174 @@
+// Array que guarda todas as tarefas (to-dos) em memória (não persiste ao recarregar a página)
+const todos = [];
+
+// Função responsável por “desenhar” (renderizar) a lista de tarefas na tela
+function render() {
+  // Busca no HTML o elemento <ul> (ou <ol>) que tem id="list"
+  const ul = document.getElementById("list");
+
+  // Limpa todo o conteúdo atual da lista (remove <li> anteriores)
+  ul.innerHTML = "";
+
+  // Percorre cada tarefa armazenada no array todos
+  for (const t of todos) {
+    // Cria um novo elemento <li> (um item de lista)
+    const li = document.createElement("li");
+
+    // Define o texto do <li> como o texto da tarefa (t.text)
+    li.textContent = t.text;
+
+    // Se existir a propriedade "source" (ex.: "UI", "AGENT"), adiciona um “badge”
+    if (t.source) {
+      // Cria um elemento <span> para ser o badge (etiqueta)
+      const badge = document.createElement("span");
+
+      // Define a classe CSS do <span> para "badge" (para estilização no CSS)
+      badge.className = "badge";
+
+      // Define o texto do badge como a origem da tarefa (ex.: UI / AGENT)
+      badge.textContent = t.source;
+
+      // Anexa o <span> (badge) dentro do <li>
+      li.appendChild(badge);
+    }
+
+    // Anexa o <li> recém-criado dentro do <ul> (lista na tela)
+    ul.appendChild(li);
+  }
+}
+
+// Função que adiciona uma tarefa nova no array e atualiza a UI
+function addTodo(text, source = "UI") {
+  // Converte qualquer entrada para string, evita null/undefined, e remove espaços no começo/fim
+  const clean = String(text || "").trim();
+
+  // Se após limpar a string ela estiver vazia, não faz nada (evita tarefa em branco)
+  if (!clean) return;
+
+  // Adiciona um objeto no array todos com o texto e a origem (UI por padrão)
+  todos.push({ text: clean, source });
+
+  // Re-renderiza a lista na tela para mostrar a nova tarefa
+  render();
+}
+
+// UI normal (humano clicando)
+
+// Busca o botão com id="addBtn" e adiciona um listener de clique
+document.getElementById("addBtn").addEventListener("click", () => {
+  // Quando clicar, lê o valor do input id="todoText" e adiciona como tarefa (origem "UI")
+  addTodo(document.getElementById("todoText").value, "UI");
+
+  // Limpa o input depois de adicionar a tarefa
+  document.getElementById("todoText").value = "";
+});
+
+// --- WebMCP tool registration (proposal) ---
+
+// Função que registra tools WebMCP para um agente de IA conseguir chamar ações da página
+function registerWebMcpTools() {
+  // Busca o elemento de status (ex.: uma div/alerta) que mostra mensagens ao usuário
+  const status = document.getElementById("status");
+
+  // Feature-detect: verifica se o navegador possui navigator.modelContext (API proposta do WebMCP)
+  if (!("modelContext" in window.navigator)) {
+    // Se não existir, exibe o bloco de status
+    status.style.display = "block";
+
+    // Mostra um aviso dizendo que WebMCP não está disponível, mas a UI normal continua funcionando
+    status.textContent =
+      "WebMCP não está disponível neste navegador/ambiente. " +
+      "A página funciona via UI normal, mas não registrará tools para agentes.";
+
+    // Sai da função (não tenta registrar tool)
+    return;
+  }
+
+  // Se a API existir, registra o “contexto” com a lista de tools disponíveis
+  window.navigator.modelContext.provideContext({
+    // Lista de tools expostas para o agente
+    tools: [
+      {
+        // Nome único da tool (o agente usa isso para chamar)
+        name: "add-todo",
+
+        // Descrição humana do que a tool faz
+        description: "Adiciona uma tarefa (to-do) na lista exibida na página.",
+
+        // Schema JSON que descreve os argumentos esperados pela tool
+        inputSchema: {
+          // Tipo do input: objeto
+          type: "object",
+
+          // Campos permitidos no objeto de entrada
+          properties: {
+            // Campo "text" deve ser string; descrição ajuda o agente a preencher corretamente
+            text: { type: "string", description: "Texto da tarefa" }
+          },
+
+          // Campos obrigatórios
+          required: ["text"]
+        },
+
+        // Função executada quando o agente chama a tool
+        // Recebe: (args, ctxOrAgent)
+        // - args: objeto com os argumentos (aqui: { text })
+        // - ctxOrAgent: dependendo do runtime, pode ser o agent direto OU um contexto que contém { agent }
+        async execute({ text }, ctxOrAgent) {
+            // Alguns runtimes passam o "agent" diretamente como segundo argumento.
+            // Outros passam um objeto de contexto, onde o agent está em ctxOrAgent.agent.
+            // Aqui escolhemos o agent de forma compatível com ambos:
+            const agent = ctxOrAgent?.requestUserInteraction
+                ? ctxOrAgent              // se ctxOrAgent já tem requestUserInteraction, ele é o agent
+                : ctxOrAgent?.agent;      // senão, tenta pegar o agent dentro do contexto
+
+            // Define uma função "requestUI" para garantir o human-in-the-loop.
+            // Se existir agent.requestUserInteraction, usamos ela (fluxo nativo do WebMCP).
+            // Se não existir (agent undefined ou sem suporte), fazemos fallback executando a função direto.
+            const requestUI = agent?.requestUserInteraction
+                ? (fn) => agent.requestUserInteraction(fn) // usa o mecanismo do runtime (pausa e pede interação)
+                : async (fn) => await fn();                 // fallback: roda direto (sem infraestrutura do runtime)
+
+            // Pede confirmação do usuário antes de adicionar a tarefa.
+            // Em runtimes WebMCP, isso pode abrir UI de aprovação; no fallback, usa confirm() normal.
+            const confirmed = await requestUI(async () => {
+                // confirm() é um popup do navegador que retorna true (OK) ou false (Cancelar)
+                return confirm(`Adicionar a tarefa?\n\n"${text}"`);
+            });
+
+            // Se o usuário não confirmou, aborta a execução lançando erro
+            if (!confirmed) {
+                throw new Error("Ação cancelada pelo usuário.");
+            }
+
+            // Se confirmou, adiciona a tarefa com origem "AGENT"
+            addTodo(text, "AGENT");
+
+            // Retorna um resultado estruturado para o agente (conteúdo em texto)
+            return {
+                content: [
+                  {
+                    type: "text",
+                    text: `OK! Tarefa adicionada: "${text}". Total: ${todos.length}.`
+                  }
+                ]
+            };
+        }
+      }
+    ]
+  });
+
+  // Mostra o status na tela informando que a tool foi registrada com sucesso
+  status.style.display = "block";
+
+  // Mensagem final para o usuário
+  status.textContent =
+    'Tool registrada: "add-todo". Um agente conectado pode chamar essa tool.';
+}
+
+// Chama a função que registra a tool assim que o script carrega
+registerWebMcpTools();
+
+// Renderiza a lista inicialmente (vazia no começo)
+render();
+

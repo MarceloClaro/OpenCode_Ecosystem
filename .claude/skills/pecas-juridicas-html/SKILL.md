@@ -1,3 +1,8 @@
+---
+name: pecas-juridicas-html
+description: "Skill do ecossistema OpenCode - pecas-juridicas-html"
+---
+
 
 name: pecas-juridicas-html
 description: >

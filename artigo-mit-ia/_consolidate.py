@@ -1,4 +1,4 @@
-﻿import re, os
+import re, os
 
 base = 'C:/Users/marce/.config/opencode/artigo-mit-ia'
 f1 = os.path.join(base, '01-introducao-referencial_corrigido.md')

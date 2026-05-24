@@ -1,0 +1,118 @@
+\babel@toc {brazil}{}\relax 
+\contentsline {section}{\numberline {1}Introducao}{13}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Contextualizacao}{13}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Nanocompositos Polimericos: Panorama e Evolucao}{13}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Grafeno e Derivados: Producao e Propriedades}{14}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Compatibilizacao Interfacial: Mecanismos Quimicos}{14}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Estado da Arte e Lacuna Cientifica}{15}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Questoes Cientificas e Hipotese}{15}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Objetivos}{15}{subsection.1.7}%
+\contentsline {section}{\numberline {2}Materiais e Metodos}{16}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Selecao e Caracterizacao das Materias-Primas}{16}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Matriz Polimerica: PELBD ML3602U}{16}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Nanocarga: Masterbatch Grapheox 212 (1\% rGO em PEBD)}{16}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Agente Compatibilizante: PP-g-MA Orevac CA100}{17}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Caracterizacao dos Materiais Recebidos}{17}{subsubsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.2}Extracao e Caracterizacao Multimodal do rGO}{18}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Tecnicas de Caracterizacao e suas Justificativas}{18}{subsubsection.2.2.1}%
+\contentsline {paragraph}{Espectroscopia Raman.}{18}{section*.7}%
+\contentsline {paragraph}{Espectroscopia no Infravermelho por Transformada de Fourier (FTIR).}{18}{section*.8}%
+\contentsline {paragraph}{Difracao de Raios-X (DRX).}{18}{section*.9}%
+\contentsline {paragraph}{Microscopia Eletronica de Transmissao (TEM) e Microscopia de Forca Atomica (AFM).}{19}{section*.10}%
+\contentsline {paragraph}{Espectroscopia de Fotoeletrons Excitados por Raios-X (XPS).}{19}{section*.11}%
+\contentsline {paragraph}{Analise Termogravimetrica (TGA).}{19}{section*.12}%
+\contentsline {subsection}{\numberline {2.3}Delineamento Experimental}{19}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Justificativa Estatistica e Poder Experimental}{20}{subsubsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.4}Processamento}{21}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Extrusao Dupla-Rosca: Fundamentos da Mistura Dispersiva}{22}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Reometria Capilar e Oscilatoria: Caracterizacao Reologica como Ferramenta Preditiva}{22}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Injecao, Micronizacao e Rotomoldagem}{23}{subsubsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.5}Caracterizacao e Metodos Estatisticos}{23}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Propriedades Mecanicas}{23}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Propriedades Termicas}{24}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Microscopia}{24}{subsubsection.2.5.3}%
+\contentsline {subsubsection}{\numberline {2.5.4}Metodos Estatisticos}{24}{subsubsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.6}Caracterizacao das Amostras}{24}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Preparacao de Corpos de Prova e Condicionamento}{24}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Calibracao e Verificacao dos Equipamentos}{25}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Preparacao Metalografica e Analise Microestrutural}{25}{subsubsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.7}Analise Estatistica Expandida}{25}{subsection.2.7}%
+\contentsline {subsubsection}{\numberline {2.7.1}Fundamentos e Equacoes dos Testes}{26}{subsubsection.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.2}Analise de Poder a Priori}{26}{subsubsection.2.7.2}%
+\contentsline {subsubsection}{\numberline {2.7.3}Algoritmo Bootstrap BCa e Fundamentacao}{26}{subsubsection.2.7.3}%
+\contentsline {subsubsection}{\numberline {2.7.4}Metodo PCR com Decomposicao SVD Completa}{26}{subsubsection.2.7.4}%
+\contentsline {subsubsection}{\numberline {2.7.5}Controle de Erro Tipo I em Comparacoes Multiplas}{26}{subsubsection.2.7.5}%
+\contentsline {subsection}{\numberline {2.8}Fundamentos da Otimizacao via Teoria dos Jogos}{27}{subsection.2.8}%
+\contentsline {subsubsection}{\numberline {2.8.1}Dominancia e Fronteira de Pareto}{27}{subsubsection.2.8.1}%
+\contentsline {subsubsection}{\numberline {2.8.2}Valor de Shapley e Decomposicao de Contribuicoes}{27}{subsubsection.2.8.2}%
+\contentsline {subsubsection}{\numberline {2.8.3}Equilibrio de Nash Custo-Desempenho}{27}{subsubsection.2.8.3}%
+\contentsline {subsubsection}{\numberline {2.8.4}Estrategia Minimax sob Incerteza}{28}{subsubsection.2.8.4}%
+\contentsline {subsubsection}{\numberline {2.8.5}Otimizacao Bayesiana e Funcao de Aquisicao}{28}{subsubsection.2.8.5}%
+\contentsline {section}{\numberline {3}Caracterizacao Multimodal do rGO}{28}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Espectroscopia Raman}{28}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}FTIR e XPS}{28}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}TEM, AFM e DRX}{29}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Comparacao com a Literatura e Implicacoes para Modelagem}{29}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Resultados da Etapa 1 -- Triagem Fatorial}{30}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Efeito Isolado do PP-g-MA}{30}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Resultados Completos de DSC e Cristalizacao}{30}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}ANOVA Fatorial e Sinergia Nao-Monotonica}{31}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Modelagem Langmuir e Analogia Ising}{32}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Derivacao Completa do Modelo de Langmuir Modificado}{32}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Interpretacao Fisica dos Parametros e Implicacoes para Formulacao}{33}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Analogia Formal com o Modelo de Ising}{33}{subsubsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.4}Anomalia Termica de Concentracao Critica}{35}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Modelo de Percolacao Termica com Equacoes Completas}{35}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Determinacao de $\phi _c$ e o Enigma do Fator 10}{36}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Correlacao com Condutividade Termica e Implicacoes}{36}{subsubsection.4.4.3}%
+\contentsline {section}{\numberline {5}Resultados da Etapa 2 -- Validacao em Rotomoldagem}{36}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Efeito de Reducao de Variancia (VRA)}{36}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Prova 1 -- Brown-Forsythe e Bootstrap BCa}{37}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Prova 2 -- Teste $t$ para Diferenca de Medias}{37}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}Prova 3 -- Bootstrap de Robustez com Subamostragem}{37}{subsubsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.4}Mecanismos do VRA: Nucleacao, Condutividade e Restricao}{37}{subsubsection.5.1.4}%
+\contentsline {subsubsection}{\numberline {5.1.5}Implicacoes para o Controle Estatistico de Processo}{38}{subsubsection.5.1.5}%
+\contentsline {subsection}{\numberline {5.2}Mecanismo do VRA}{39}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Impacto por Queda de Dardo}{39}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Metodo Staircase e Equacoes de Dixon-Mood}{39}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Transicao Fragil-Ductil e Mecanismos de Tenacificacao}{40}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Analise Detalhada de Fratura e Transicao Fragil-Ductil}{40}{subsubsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.4}Matriz de Correlacao Cruzada 12$\times $12}{41}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Estrutura da Matriz e Correlacoes Significativas}{41}{subsubsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.5}DMA e Modelo de Halpin-Tsai}{43}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Analise Completa das Transicoes Viscoelasticas}{43}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Derivacao Completa do Modelo de Halpin-Tsai 3D}{43}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.3}MEV Comparativo das Superficies de Fratura}{44}{subsubsection.5.5.3}%
+\contentsline {subsubsection}{\numberline {5.5.4}ANOVA dos Resultados da Etapa 2 e Confirmacao do VRA}{44}{subsubsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.6}Modelo Preditivo PCR}{45}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.6.1}Metodologia Completa e Equacoes}{45}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.2}Interpretacao dos Coeficientes e Hierarquia de Importancia}{45}{subsubsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.3}Digital Twin e Perspectivas de Automacao}{45}{subsubsection.5.6.3}%
+\contentsline {section}{\numberline {6}Otimizacao Multiobjetivo e Analise de Ciclo de Vida}{46}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Fronteira de Pareto e Otimizacao Multiobjetivo}{46}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Dominancia de Pareto com Tabela de Dominancia}{46}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Valor de Shapley com Derivacao Axiomatica}{46}{subsubsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.3}Equilibrio de Nash com Analise de Sensibilidade Completa}{46}{subsubsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.4}Estrategia Minimax com Discussao de Wald (1945)}{47}{subsubsection.6.1.4}%
+\contentsline {subsubsection}{\numberline {6.1.5}Otimizacao Bayesiana com Equacao Completa de EI}{47}{subsubsection.6.1.5}%
+\contentsline {subsection}{\numberline {6.2}Analise de Sensibilidade e Robustez da Decisao}{48}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Analise de Ciclo de Vida e Viabilidade Economica}{49}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}Inventario e Fatores de Emissao}{49}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}Downgauging e Cenario com Reducao de Espessura}{49}{subsubsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3}Analise de Sensibilidade $\pm $30\% e Monte Carlo}{49}{subsubsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.4}Cinco Categorias de Impacto ReCiPe 2016}{49}{subsubsection.6.3.4}%
+\contentsline {subsubsection}{\numberline {6.3.5}Viabilidade Economica e Payback}{50}{subsubsection.6.3.5}%
+\contentsline {subsubsection}{\numberline {6.3.6}Analise de Ciclo de Vida Completa (ISO 14040/14044)}{50}{subsubsection.6.3.6}%
+\contentsline {section}{\numberline {7}Conclusoes}{51}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Implicacoes Cientificas}{52}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Implicacoes Industriais}{52}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Trabalhos Futuros}{53}{subsection.7.3}%
+\contentsline {section}{\numberline {A}Dados Suplementares}{56}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Propriedades Mecanicas Completas da Etapa 1}{56}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Parametros de Processamento por Formulacao}{56}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Coeficientes Completos do Modelo PCR}{57}{subsection.A.3}%
+\contentsline {section}{\numberline {B}Matriz SWOT do Artigo Revisado}{57}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}Forcas (Strengths)}{57}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.2}Fraquezas (Weaknesses)}{57}{subsection.B.2}%
+\contentsline {subsection}{\numberline {B.3}Oportunidades (Opportunities)}{58}{subsection.B.3}%
+\contentsline {subsection}{\numberline {B.4}Ameacas (Threats)}{58}{subsection.B.4}%

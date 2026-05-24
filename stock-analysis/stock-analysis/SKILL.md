@@ -1,3 +1,8 @@
+---
+name: stock-analysis
+description: "Skill do ecossistema OpenCode - stock-analysis"
+---
+
 
 name: stock-analysis
 description: "Analyze stocks and companies using financial market data. Get company profiles, technical insights, price charts, insider holdings, and SEC filings for comprehensive stock research."

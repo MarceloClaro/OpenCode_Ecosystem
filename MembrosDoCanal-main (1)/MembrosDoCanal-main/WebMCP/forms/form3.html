@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Form (Step 2 + toolautosubmit)</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #111a2e;
+      --text: #e8eefc;
+      --muted: #a9b6d6;
+      --border: rgba(255,255,255,.10);
+      --focus: rgba(99, 102, 241, .45);
+      --btn: #6366f1;
+      --btn-hover: #4f46e5;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 14px;
+      --ok: rgba(34,197,94,.18);
+      --warn: rgba(245,158,11,.18);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(900px 500px at 20% 10%, rgba(99,102,241,.22), transparent 60%),
+                  radial-gradient(900px 500px at 80% 20%, rgba(56,189,248,.16), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+    }
+
+    .wrap { width: min(720px, 100%); }
+
+    header { margin-bottom: 14px; }
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(22px, 3vw, 30px);
+      letter-spacing: -0.02em;
+    }
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 14px;
+    }
+
+    form {
+      margin-top: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      backdrop-filter: blur(10px);
+      position: relative;
+    }
+
+    /* ✅ WebMCP UX (se o seu Chrome beta suportar) */
+    form:tool-form-active {
+      outline: 3px solid rgba(99,102,241,.60);
+      box-shadow: 0 0 0 7px rgba(99,102,241,.14), var(--shadow);
+    }
+    button:tool-submit-active {
+      outline: 3px solid rgba(34,197,94,.55);
+      transform: scale(1.02);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field { display: grid; gap: 8px; }
+    label {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(10, 16, 30, .65);
+      color: var(--text);
+      outline: none;
+      transition: border-color .15s ease, box-shadow .15s ease, transform .05s ease;
+    }
+
+    input::placeholder, textarea::placeholder { color: rgba(169,182,214,.65); }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: rgba(99,102,241,.65);
+      box-shadow: 0 0 0 4px var(--focus);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .actions {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: rgba(169,182,214,.85);
+    }
+
+    button[type="submit"] {
+      border: 0;
+      border-radius: 12px;
+      padding: 11px 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.02)), var(--btn);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .08s ease, background .15s ease, filter .15s ease;
+    }
+    button[type="submit"]:hover {
+      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.02)), var(--btn-hover);
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+    button[type="submit"]:active { transform: translateY(0px) scale(.99); }
+
+    .banner {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      color: rgba(232,238,252,.92);
+      font-size: 13px;
+      line-height: 1.4;
+      white-space: pre-wrap;
+    }
+    .banner.ok { background: var(--ok); }
+    .banner.warn { background: var(--warn); }
+
+    /* Responsivo */
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+      form { padding: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Contact request</h1>
+      <p>
+        Step 2 (declarative tool). Com <code>toolautosubmit</code>, quando um agente invocar esta tool,
+        o navegador pode pré-preencher e enviar automaticamente.
+      </p>
+    </header>
+
+    <!-- ✅ Ajuste principal: toolautosubmit no form -->
+    <form
+      id="contactForm"
+      toolname="submit_contact_request"
+      tooldescription="Submits a contact request with the user's name, email, priority, and message. Returns a confirmation with a reference number."
+      toolautosubmit
+      novalidate
+    >
+      <div class="grid">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" required minlength="2" placeholder="Your name" />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required placeholder="you@company.com" />
+        </div>
+      </div>
+
+      <div class="grid" style="margin-top:14px;">
+        <div class="field">
+          <label for="priority">Priority</label>
+          <select id="priority" name="priority">
+            <option value="Low">Low</option>
+            <option value="Normal" selected>Normal</option>
+            <option value="Urgent">Urgent</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required minlength="10" placeholder="How can we help?"></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="hint">Tip: Use “Urgent” only for time-sensitive issues.</div>
+        <button id="sendBtn" type="submit">Send</button>
+      </div>
+
+      <div id="status" class="banner warn">Status: waiting…</div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const statusEl = document.getElementById("status");
+    const sendBtn = document.getElementById("sendBtn");
+
+    function setStatus(kind, text) {
+      statusEl.className = "banner " + kind;
+      statusEl.textContent = text;
+    }
+
+    function readPayload() {
+      const fd = new FormData(form);
+      return {
+        name: String(fd.get("name") || ""),
+        email: String(fd.get("email") || ""),
+        priority: String(fd.get("priority") || "Normal"),
+        message: String(fd.get("message") || "")
+      };
+    }
+
+    function validate(payload) {
+      const errors = {};
+      if (!payload.name || payload.name.trim().length < 2) errors.name = "Name must have at least 2 characters.";
+      if (!payload.email || !payload.email.includes("@")) errors.email = "Email looks invalid.";
+      if (!payload.message || payload.message.trim().length < 10) errors.message = "Message must have at least 10 characters.";
+      return errors;
+    }
+
+    function generateReference() {
+      const now = Date.now().toString(36).toUpperCase();
+      const rnd = Math.random().toString(36).slice(2, 7).toUpperCase();
+      return `REF-${now}-${rnd}`;
+    }
+
+    // ✅ UX signals: eventos declarativos (se suportados)
+    form.addEventListener("toolactivated", () => {
+      setStatus("warn",
+        "toolactivated: o agente invocou a tool.\n" +
+        "Se toolautosubmit estiver ativo, o navegador pode submeter automaticamente."
+      );
+    });
+
+    form.addEventListener("toolcancel", () => {
+      setStatus("warn", "toolcancel: a invocação da tool foi cancelada (reset/cancel).");
+    });
+
+    // ✅ Handler para humanos e agentes (respondWith + agentInvoked)
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const payload = readPayload();
+      const errors = validate(payload);
+      const agentInvoked = !!event.agentInvoked;
+
+      const result = Object.keys(errors).length > 0
+        ? { ok: false, errors }
+        : { ok: true, reference: generateReference() };
+
+      // responde ao agente com resultado estruturado
+      if (typeof event.respondWith === "function") {
+        event.respondWith(Promise.resolve(result));
+      }
+
+      // feedback na UI
+      if (!result.ok) {
+        setStatus("warn",
+          `SUBMIT (${agentInvoked ? "agent" : "human"}): validation failed\n` +
+          JSON.stringify(result, null, 2)
+        );
+        return;
+      }
+
+      setStatus("ok",
+        `SUBMIT (${agentInvoked ? "agent" : "human"}): success\n` +
+        JSON.stringify(result, null, 2)
+      );
+
+      // ⚠️ Importante: não usar form.reset() quando submit veio do agente (evita cancelamento)
+      if (!agentInvoked) {
+        form.reset();
+      } else {
+        // limpeza manual opcional (sem reset)
+        form.elements.name.value = "";
+        form.elements.email.value = "";
+        form.elements.priority.value = "Normal";
+        form.elements.message.value = "";
+      }
+    });
+
+    // Diagnóstico rápido para entender se seu build tem os sinais UX
+    (() => {
+      const env = {
+        toolautosubmit: form.hasAttribute("toolautosubmit"),
+        agentInvokedProp: ("agentInvoked" in SubmitEvent.prototype),
+        respondWithProp: ("respondWith" in SubmitEvent.prototype),
+        pseudoToolForm: (() => { try { return CSS.supports("selector(form:tool-form-active)"); } catch { return false; } })(),
+        pseudoToolSubmit: (() => { try { return CSS.supports("selector(button:tool-submit-active)"); } catch { return false; } })(),
+      };
+
+      setStatus("warn",
+        "Ready.\n" +
+        "Invoke submit_contact_request via your agent/inspector to see prefill + autosubmit (if supported).\n\n" +
+        JSON.stringify(env, null, 2)
+      );
+    })();
+  </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """ANALISE QUANTITATIVA - ARM x IAG (DADOS REAIS WDI v2)"""
 
 import numpy as np, pandas as pd, warnings, json, time

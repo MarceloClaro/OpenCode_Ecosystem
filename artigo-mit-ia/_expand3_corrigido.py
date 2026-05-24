@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 from pathlib import Path
 d = Path(r'C:\Users\marce\.config\opencode\artigo-mit-ia')
 # ===== FILE 2 expansion (+2000 words) =====

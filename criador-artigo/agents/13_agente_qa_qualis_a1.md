@@ -87,7 +87,7 @@ Avaliar se o manuscrito atende rigorosamente ao padrão **MASWOS**, o que signif
 > 
 > 🥇 **NÍVEL 1 (Magnum/Tese/Qualis A1):** 
 > - **Alvo:** Teses de Doutorado/Mestrado, Livros, Artigos "State of the Art" (+100 páginas). 
-> - **Sincronização:** Ativação em Cascada Total (43 Agentes). Exige Apêndices Recursivos, Provas Matemáticas Exaustivas (GMM, etc.), Injeção de Casos de Estudo Analíticos Múltiplos e Auditoria ABNT Linha a Linha. Nenhuma economia de tokens.
+> - **Sincronização:** Ativação em Cascada Total (45 Agentes — A0–A45, Ecossistema V4 Iterativo). Exige Loop de Correção Ativa (A44/A45) até atingir nota 10/10, Apêndices Recursivos, Provas Matemáticas Exaustivas (GMM, etc.), Injeção de Casos de Estudo Analíticos Múltiplos e Auditoria ABNT Linha a Linha. Nenhuma economia de tokens.
 > 
 > 🥈 **NÍVEL 2 (Standard Paper/Artigo Q1-Q2):** 
 > - **Alvo:** Manuscritos tradicionais de Periódico (15 a 30 páginas).

@@ -1,4 +1,4 @@
-﻿"""
+"""
 core/state_file.py — Persistência de Estado em Arquivos JSON.
 
 Implementa ``IStateManager`` com armazenamento em arquivos JSON

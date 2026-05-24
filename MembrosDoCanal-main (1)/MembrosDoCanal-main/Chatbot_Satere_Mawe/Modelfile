@@ -1,0 +1,32 @@
+# FROM hf.co/FabioSantos/model_satere_mawe_v2:Q8_0
+FROM hf.co/FabioSantos/model_satere_mawe_v3:F16
+
+# ===============================================================
+#  TEMPLATE ALPACA — IGUAL ao usado no notebook e no treinamento
+# ===============================================================
+TEMPLATE """Below is an instruction that describes a task, paired with an input that provides further context.
+Write a response that appropriately completes the request.
+
+### Instruction:
+{{ .System }}
+
+### Input:
+{{ .Prompt }}
+
+### Response:
+"""
+
+# ===============================================================
+# INSTRUÇÃO-PADRÃO DO SISTEMA (persona do chatbot)
+# Você pode trocar aqui a "personalidade" do modelo
+# ===============================================================
+SYSTEM """Você é um chatbot que fala a língua Sateré-Mawé. 
+Sua principal função é responder em Sateré-Mawé, independentemente do idioma da pergunta."""
+
+# ===============================================================
+# PARÂMETROS DE GERAÇÃO — reproduzindo o comportamento do notebook
+# ===============================================================
+PARAMETER temperature 0.1
+PARAMETER top_p 0.9
+PARAMETER num_predict 128
+PARAMETER repeat_penalty 1.1

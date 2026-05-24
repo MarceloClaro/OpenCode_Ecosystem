@@ -1,4 +1,4 @@
-﻿# 2 REVISAO DA LITERATURA
+# 2 REVISAO DA LITERATURA
 
 ## 2.1 A Armadilha da Renda Media: Definicao e Mecanismos
 

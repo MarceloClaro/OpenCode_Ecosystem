@@ -1,3 +1,8 @@
+---
+name: gerador-contratos
+description: "Skill do ecossistema OpenCode - gerador-contratos"
+---
+
 
 name: gerador-contratos
 description: >
@@ -69,4 +74,5 @@ Escala: 100%
 - [ ] Clausula de rescisao presente
 - [ ] Clausula de foro competente incluida
 - [ ] Assinatura com espaco para 2 vias
+
 

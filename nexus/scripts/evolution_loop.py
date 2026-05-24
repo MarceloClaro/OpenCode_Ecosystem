@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 EVOLUTION LOOP v5.0 - Feedback Loop Real + Aprendizado Continuo
 Conecta todos os modulos do ecossistema em ciclo fechado:
@@ -29,6 +29,11 @@ from pathlib import Path
 from datetime import datetime
 from typing import Any, Optional
 from dataclasses import dataclass, field
+
+# Garante que o workspace esta no path para importar core
+BASE_DIR = Path(__file__).parent.parent.parent.resolve()
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
 
 from core.config import settings
 from core import initialize_core

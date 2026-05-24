@@ -1,4 +1,4 @@
-﻿"""
+"""
 core/plugin_manager.py — Gerenciamento de Plugins com DI.
 
 Descoberta, carregamento, registro e ciclo de vida de plugins.

@@ -1,4 +1,4 @@
-﻿import re
+import re
 base = 'C:/Users/marce/.config/opencode/artigo-mit-ia'
 with open(base + '/ARTIGO_COMPLETO.md', 'r', encoding='utf-8') as f:
     text = f.read()

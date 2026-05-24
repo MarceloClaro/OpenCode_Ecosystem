@@ -1,4 +1,4 @@
-﻿"""
+"""
 core/agent_manager.py — Gerenciamento do Ciclo de Vida de Agentes com DI.
 
 Registro, criação, execução e monitoramento de agentes.

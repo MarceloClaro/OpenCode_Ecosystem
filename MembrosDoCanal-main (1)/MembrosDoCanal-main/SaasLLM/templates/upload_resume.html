@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envio de Currículo</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        input, select, button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        input:focus, select:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Envie Curriculum do Candidato</h1>
+        <form action="/submit_resume" method="POST" enctype="multipart/form-data">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+            <label for="job_id">Selecione a Vaga:</label>
+            <select id="job_id" name="job_id" required>
+                <option value="" disabled selected>Selecione uma vaga</option>
+                {% for job in jobs %}
+                <option value="{{ job.id }}">{{ job.title }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="resume">Currículo (PDF):</label>
+            <input type="file" id="resume" name="resume" accept=".pdf" required>
+
+            <button type="submit">Enviar</button>
+        </form> 
+        <a href="{{ url_for('dashboard') }}">Voltar ao Painel</a>       
+    </div>
+    
+</body>
+</html>
+
