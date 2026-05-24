@@ -1,28 +1,28 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/OpenCode_Ecosystem-v4.2.1-6366f1?style=for-the-badge&logo=openai&logoColor=white" alt="version"/>
+<img src="https://img.shields.io/badge/OpenCode_Ecosystem-v4.2.3-6366f1?style=for-the-badge&logo=openai&logoColor=white" alt="version"/>
 
-# OpenCode Ecosystem v4.2.1
+# OpenCode Ecosystem v4.2.3
 
-### Arquitetura Multiagente Evolutiva + Simulação MiroFish/BettaFish + PhD Auditor
+### Arquitetura Multiagente Evolutiva + DataOrchestrator + MiroFish/BettaFish + PhD Auditor
 
 <br/>
 
 [![Agentes](https://img.shields.io/badge/Agentes-125-6366f1?style=flat-square)](agents/)
 [![MCPs](https://img.shields.io/badge/MCP_Servers-41-0ea5e9?style=flat-square)](opencode.json)
-[![Skills](https://img.shields.io/badge/Skills-105-10b981?style=flat-square)](skills/)
+[![Skills](https://img.shields.io/badge/Skills-106-10b981?style=flat-square)](skills/)
+[![Hooks](https://img.shields.io/badge/Ecosystem_Hooks-10-a855f7?style=flat-square)](skills/system/pypi-scout/ecosystem_hooks.py)
+[![Domínios](https://img.shields.io/badge/Data_Domains-8-f59e0b?style=flat-square)](skills/system/pypi-scout/data_orchestrator.py)
 [![Raciocínios](https://img.shields.io/badge/Racioc%C3%ADnios-38_tipos-f59e0b?style=flat-square)](skills/agent-forum)
-[![Teoria dos Jogos](https://img.shields.io/badge/Game_Theory-10_estrat%C3%A9gias-ef4444?style=flat-square)](skills/agent-forum/scripts/debate_strategies.py)
 [![Qualis](https://img.shields.io/badge/Qualis_A1-Auditor_%E2%89%A580%2F100-10b981?style=flat-square)](skills/agent-forum/scripts/phd_auditor.py)
 [![DI Migration](https://img.shields.io/badge/DI_Migration-Fases_1%E2%80%937_%E2%9C%85-22c55e?style=flat-square)](.reversa/DI_MIGRATION.md)
-[![BRAZIL_TZ](https://img.shields.io/badge/Timezone-BRAZIL_UTC--3-8b5cf6?style=flat-square)](skills/config-generator)
-[![Antigravity](https://img.shields.io/badge/Antigravity-Bridge_v1.0-a855f7?style=flat-square)](skills/agent-forum/antigravity-integration/SKILL.md)
+[![CJK](https://img.shields.io/badge/CJK_Leaks-0-22c55e?style=flat-square)]()
 [![Status](https://img.shields.io/badge/Status-Produ%C3%A7%C3%A3o-22c55e?style=flat-square)]()
 
 <br/>
 
-> **Versão:** 4.2.1 · **Autor:** Reversa Framework v1.2.22 + Nexus PhD Strategist · **Atualizado:** 2026-05-24  
-> **Classificação:** Arquitetura Multiagente + MiroFish/BettaFish + PhD Auditor + Antigravity Bridge · **Modelo:** `opencode/big-pickle` (200K ctx, 128K out)
+> **Versão:** 4.2.3 · **Atualizado:** 2026-05-24 · **Modelo:** `opencode/big-pickle` (200K ctx, 128K out)  
+> **Novo:** DataOrchestrator (NL → 8 domínios) · PyPI Scout (22+ bib. curadas) · 10 Ecosystem Hooks · 30+ bibliotecas
 
 </div>
 

@@ -12,6 +12,8 @@
 | **v4.0** | MiroFish/BettaFish + PhD Auditor | Pipeline P14-P18 completo, Agent Forum com 38 raciocínios, NashSolver, StatisticalRigor, QualisA1Auditor, integração com nexus-phd-strategist |
 | **v4.2** | P14-P18 + 38 Raciocínios | 10 estratégias de Teoria dos Jogos, BRAZIL_TIMEZONE (UTC-3), 50 indicadores reais (World Bank/WHO/FAO/UNESCO), SensitivityAnalyzer, IMRADFormatter |
 | **v4.2.1** | 7 SVGs + DI Migration | 7 diagramas SVG interativos, Injeção de Dependência (Fases 1–7, 88/88 testes), Container com 11 serviços, bridge Python ⟷ TypeScript |
+| **v4.2.2** | Antigravity Bridge + Skills Refinement | Plugin `antigravity-bridge.ts` registrado no Container (4 plugins TS), skill `antigravity-integration` indexada no registry (105 skills), MCP `antigravity-mcp` (41 total), 6 capacidades exclusivas Google DeepMind |
+| **v4.2.3** | 🆕 PyPI Scout + DataOrchestrator + Multi-Domain Hooks | PyPI Scout (22+ bib. curadas, matriz de afinidade 5 pipelines, CLI 7 comandos), DataOrchestrator (NL → 8 domínios, 592 linhas), 10 Ecosystem Hooks v2.0 (R8:5 + R9:5), 30+ bibliotecas instaladas, 12 novas bibs (yfinance, ccxt, fredapi, biopython, etc.), 20+ fontes Qualis A1, artigo LaTeX ABNT 12 páginas, 3 fluxogramas SVG |
 
 ---
 
@@ -29,8 +31,11 @@ O plugin `manus-evolve.ts` executa o ciclo autônomo **PLAN → ACT → REFLECT 
 | evo-6 | Iterative Correction Loop v2.0 | 95/100 | Banca (5 revisores) + orientadores (4 doutores) + corretores: 86,5 → 92,7 |
 | evo-7 | Sync v3.5 + detector CJK + token efficiency | 96/100 | Zero-tolerance CJK; contexto em chinês, output em PT-BR |
 | evo-8 | Progressive disclosure + observabilidade | 98/100 | SKILL.md ≤ 2.500B; health score 96/100 |
+| **evo-9** | **Antigravity Bridge v1.0 + SKILL indexada** | **98/100** | Pontão bidirecional OpenCode⇔Antigravity; skill `antigravity-integration` no registry; `references/antigravity-bridge-reference.md` com progressive disclosure; IESDS + Nash Generalizado N>2 adicionados à Teoria dos Jogos |
+| **evo-10** | **PyPI Scout + Ecosystem Hooks v1.0 (Round 8)** | **95/100** | Catálogo curado 22+ bibliotecas, CLI 7 comandos, 5 hooks fundamentais (SeekerMultiSource, WorldBankAnalyzer, PDFProcessor, MCPScoutBridge, HTTPXClient), 7 bibliotecas instaladas (wbgapi, scholarly, arxiv, semanticscholar, pypdf, mcp, httpx), matriz de afinidade 5 pipelines, 0 CJK leaks |
+| **evo-11** | **DataOrchestrator + Expansão Multi-Domínio (Round 9)** | **97/100** | 6 novos domínios (Geo, Finance, Crypto, BioMed, Health, Qualis A1), 5 novos hooks (GeoAnalyzer, FinanceAnalyzer, MarketSpeculator, BioMedAnalyzer, QualisDatasetHub), DataOrchestrator com query em linguagem natural, 5 novas bibliotecas (yfinance, ccxt, fredapi, biopython, pandas-market-calendars), artigo LaTeX ABNT 12 páginas, 3 fluxogramas SVG |
 
-**Progressão geral:** 85 → 98 (+15,3%) · Média: 91,1/100
+**Progressão geral:** 85 → 97 (+14,1%) · Média: 93/100
 
 ---
 
@@ -98,8 +103,8 @@ O plugin `manus-evolve.ts` executa o ciclo autônomo **PLAN → ACT → REFLECT 
 
 <div align="center">
 
-**OpenCode Ecosystem v4.2.1** · Roadmap
+**OpenCode Ecosystem v4.2.2** · Roadmap
 
-*Última atualização: 2026-05-21*
+*Última atualização: 2026-05-24*
 
 </div>

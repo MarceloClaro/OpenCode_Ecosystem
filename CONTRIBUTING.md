@@ -1,4 +1,4 @@
-# Guia para Contribuidores — OpenCode Ecosystem v4.2.1
+# Guia para Contribuidores — OpenCode Ecosystem v4.2.3
 
 Agradecemos o seu interesse em contribuir com o OpenCode Ecosystem. Este guia descreve os procedimentos para configurar o ambiente, entender a estrutura do projeto e submeter contribuições de qualidade.
 
@@ -180,6 +180,34 @@ python -m pytest tests/ -v
 
 ---
 
+## 🆕 Contribuindo com a Camada de Dados (DataOrchestrator)
+
+### Adicionar Novo Domínio de Dados
+
+1. Registrar palavras-chave em `DataSourceRegistry.KEYWORD_MAP`
+2. Implementar um handler `_handle_novo_dominio` em `DataOrchestrator`
+3. Criar hook em `ecosystem_hooks.py`
+4. Adicionar entrada em `HOOKS_REGISTRY`
+5. Atualizar `opencode_catalog.json` com bibliotecas do novo domínio
+6. Testar: `orch.query("sua query de teste")`
+
+### Adicionar Nova Biblioteca ao Catálogo
+
+```bash
+python skills/system/pypi-scout/pypi_scout.py search nome_da_biblioteca
+# Se a biblioteca for relevante, editar opencode_catalog.json
+```
+
+### Padrões de Código
+
+- Type hints em todas as funções (`mypy --strict`)
+- Docstrings Google-style
+- Handlers retornam `DataResult` (nunca `None` ou `dict` puro)
+- Usar `importlib` com try/except para imports opcionais
+- Testar com `python -m pytest skills/system/pypi-scout/`
+
+---
+
 ## Dúvidas?
 
 Abra uma issue no repositório. Toda contribuição é bem-vinda.
@@ -188,6 +216,6 @@ Abra uma issue no repositório. Toda contribuição é bem-vinda.
 
 <div align="center">
 
-**OpenCode Ecosystem v4.2.1** · Guia para Contribuidores
+**OpenCode Ecosystem v4.2.3** · Guia para Contribuidores
 
 </div>

@@ -1,4 +1,4 @@
-# OpenCode Ecosystem — Painel de Projetos (GitHub Projects)
+# OpenCode Ecosystem — Painel de Projetos (v4.2.3)
 
 Este documento apresenta o planejamento, o status de desenvolvimento e a rastreabilidade das tarefas do **OpenCode Ecosystem v4.2.1**, estruturado na forma de um painel **Kanban de Projetos**. Cada seção é detalhada didaticamente, associando as atividades aos agentes, skills e diagramas arquiteturais correspondentes.
 
@@ -26,9 +26,11 @@ O ecossistema é guiado por uma arquitetura de 6 camadas que conecta desde a inf
 
 | 📥 Backlog (Futuro) | 📋 A Fazer (To Do) | ⚙️ Em Progresso | 🔍 Em Revisão (Quality) | ✅ Concluído (Done) |
 | :--- | :--- | :--- | :--- | :--- |
-| [VQC-100] Expansão para VQC de 100 Qubits | [TS-BRIDGE-02] Roteamento Dinâmico de Eventos no EventBus | [CORR-03] Otimização da velocidade de processamento do Corrector CJK | [AUD-05] Validação de NashSolver N-Dimensional com 50 indicadores | [DI-MIG-01] Migração Completa do Container DI (Fases 1-7) |
-| [RAG-EXP-03] Armazenamento de Vetores com Clusterização Dinâmica | [DOC-08] Tradução Integrada de Skills Legadas para PT-BR | [MISH-02] Otimização de reconexões SSE no MiroFish Local | [QUAL-A1-09] Auditoria Estatística Cohen's d e Bonferroni no MASWOS | [SAN-BOM-02] Limpeza estrutural de arquivos de Agentes (BOM/YAML) |
-| [AGENT-LAW-01] Geração Autônoma de Petições com RAG Jurídico | [CLI-05] Interface Gráfica Interativa para o Terminal | [EVO-LOOP-04] Mecanismo de Ejeção de Skills Inativas no AutoEvolve | [HEAL-03] Teste de Resiliência e Autocura com Injeção de Falhas | [DIAG-10] Geração e Validação de 10 Diagramas Arquiteturais SVGs |
+| [DATA-ORCH-01] Expansão para dados de Saúde e Genômica | [MISH-02] Otimização de reconexões SSE no MiroFish Local | [CORR-03] Otimização da velocidade de processamento do Corrector CJK | [AUD-05] Validação de NashSolver N-Dimensional com 50 indicadores | [DI-MIG-01] Migração Completa do Container DI (Fases 1-7) |
+| [VQC-100] Expansão para VQC de 100 Qubits | [TS-BRIDGE-02] Roteamento Dinâmico de Eventos no EventBus | [EVO-LOOP-04] Mecanismo de Ejeção de Skills Inativas no AutoEvolve | [QUAL-A1-09] Auditoria Estatística Cohen's d e Bonferroni no MASWOS | [SAN-BOM-02] Limpeza estrutural de arquivos de Agentes (BOM/YAML) |
+| [AGENT-LAW-01] Geração Autônoma de Petições com RAG Jurídico | [CLI-05] Interface Gráfica Interativa para o Terminal | [LLM-PARSER-01] Substituir parser de keywords por LLM local | [HEAL-03] Teste de Resiliência e Autocura com Injeção de Falhas | [DIAG-10] Geração e Validação de 10 Diagramas Arquiteturais SVGs |
+| | | | | **[PYPI-SCOUT-01]** PyPI Scout + Catálogo Curado ✅ |
+| | | | | **[DATA-ORCH-00]** DataOrchestrator + 10 Hooks ✅ |
 
 ---
 

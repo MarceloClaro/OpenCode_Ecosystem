@@ -1,8 +1,50 @@
-# Tutoriais — OpenCode Ecosystem v4.2.1
+# Tutoriais — OpenCode Ecosystem v4.2.3
 
 > Tutoriais práticos com passo-a-passo para as principais funcionalidades do ecossistema.
 
 **Pré-requisito:** ambiente configurado conforme o [GETTING_STARTED.md](GETTING_STARTED.md).
+
+---
+
+## 🆕 Tutorial 0: Consultar Dados com Linguagem Natural (DataOrchestrator)
+
+### Objetivo
+
+Consultar qualquer fonte de dados do ecossistema usando linguagem natural, sem precisar conhecer APIs ou bibliotecas.
+
+### Comando
+
+```python
+from data_orchestrator import DataOrchestrator
+orch = DataOrchestrator()
+
+# Qualquer pergunta em português:
+resultado = orch.query("PIB do Brasil em 2023")
+resultado = orch.query("preço da ação da Apple")
+resultado = orch.query("artigos sobre inteligência artificial")
+resultado = orch.query("top criptomoedas por volume")
+resultado = orch.query("coordenadas de São Paulo")
+```
+
+### Domínios Suportados
+
+| Query Exemplo | Domínio | Fonte |
+|--------------|---------|-------|
+| "PIB do Brasil" | economic | World Bank WDI |
+| "preço da ação AAPL" | finance | Yahoo Finance |
+| "coordenadas de SP" | geo | Nominatim/Geopy |
+| "artigos sobre ML" | academic | arXiv + Google Scholar |
+| "top criptomoedas" | crypto | CCXT (Binance) |
+| "dados covid Brasil" | health | Worldometers |
+
+### CLI Interativa
+
+```bash
+python skills/system/pypi-scout/data_orchestrator.py
+> PIB do Brasil
+> preco da acao PETR4.SA
+> artigos sobre deep learning
+```
 
 ---
 
@@ -347,6 +389,6 @@ O comando `/auto` ativa o agente `openagent` com acesso a **todos** os MCPs simu
 
 <div align="center">
 
-**OpenCode Ecosystem v4.2.1** · Tutoriais Práticos
+**OpenCode Ecosystem v4.2.3** · Tutoriais Práticos
 
 </div>

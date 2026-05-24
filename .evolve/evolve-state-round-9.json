@@ -1,0 +1,53 @@
+{
+  "$schema": "https://opencode-ecosystem.org/schemas/evolve-state-v1.0",
+  "round": 9,
+  "timestamp": "2026-05-24T16:00:00-03:00",
+  "pipeline": "SENSE → DISCOVER → INSTALL → VERIFY → EVOLVE → LEARN",
+  "trigger": "Expansão multi-domínio: Geo, Bio, Finance, Crypto, Health, Qualis A1",
+  "parent_skill": "pypi-scout",
+  "expansion_domains": {
+    "geo": {
+      "hook": "GeoAnalyzer",
+      "libraries": ["geopandas (1.1.3)", "geopy (2.4.1)", "folium (0.20.0)"],
+      "test_result": "Rio de Janeiro: (-22.91, -43.21)"
+    },
+    "finance": {
+      "hook": "FinanceAnalyzer",
+      "libraries": ["yfinance (installed)", "fredapi (installed)", "pandas-market-calendars (installed)"],
+      "test_result": "AAPL: $308.82, Technology"
+    },
+    "crypto_speculative": {
+      "hook": "MarketSpeculator",
+      "libraries": ["ccxt (installed)"],
+      "test_result": "20 exchanges via CCXT"
+    },
+    "biomed": {
+      "hook": "BioMedAnalyzer",
+      "libraries": ["biopython (installed)", "covid (available)", "pysus (DATASUS)"],
+      "test_result": "PubMed search working"
+    },
+    "qualis_a1": {
+      "hook": "QualisDatasetHub",
+      "libraries": ["datasets (HuggingFace)", "openalex API"],
+      "test_result": "4 areas x 5 sources = 20 datasets Qualis A1"
+    }
+  },
+  "new_installed_libraries": {
+    "yfinance": {"version": "latest", "domain": "finance"},
+    "ccxt": {"version": "latest", "domain": "crypto"},
+    "fredapi": {"version": "latest", "domain": "finance"},
+    "pandas-market-calendars": {"version": "latest", "domain": "finance"},
+    "biopython": {"version": "latest", "domain": "biomed"}
+  },
+  "hooks_total": 10,
+  "hooks_by_round": {
+    "round_8": ["SeekerMultiSource", "WorldBankAnalyzer", "PDFProcessor", "MCPScoutBridge", "HTTPXClient"],
+    "round_9": ["GeoAnalyzer", "FinanceAnalyzer", "MarketSpeculator", "BioMedAnalyzer", "QualisDatasetHub"]
+  },
+  "qualis_a1_sources": {
+    "computer_science": ["arXiv", "Semantic Scholar", "OpenAlex", "HuggingFace Datasets", "Papers With Code"],
+    "economics": ["FRED", "World Bank WDI", "IMF Data", "OECD Data", "BIS Statistics"],
+    "health": ["PubMed/NCBI", "DATASUS", "WHO GHO", "CDC Wonder", "MIMIC-III/IV"],
+    "geography": ["IBGE", "Natural Earth", "OpenStreetMap", "NASA SEDAC", "GADM"]
+  }
+}

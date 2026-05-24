@@ -1,0 +1,294 @@
+{
+  "$schema": "https://opencode-ecosystem.org/schemas/pypi-catalog-v1.0",
+  "version": "1.0.0",
+  "generated_at": "2026-05-24T00:00:00-03:00",
+  "total_packages": 24,
+  "categories": {
+    "artigos_academicos": {
+      "label": "Artigos Acadêmicos e Publicações",
+      "description": "Bibliotecas para busca, download e análise de artigos científicos",
+      "packages": [
+        {
+          "name": "scihub-cn",
+          "version": "latest",
+          "description": "Sci-Hub downloader com CLI — suporta DOI, bibtex, URL, e busca por palavras-chave. Download assíncrono em lote.",
+          "install": "pip install scihub-cn",
+          "docs_url": "https://github.com/Ckend/scihub-cn",
+          "affinity": {"SEEKER": 0.95, "MASWOS": 0.90, "Reversa": 0.60},
+          "requires_python": ">=3.6",
+          "license": "MIT",
+          "ecosystem_integration": "busca_artigos_pipeline"
+        },
+        {
+          "name": "scihub",
+          "version": "0.0.1",
+          "description": "API não-oficial para sci-hub.cc. Busca e download de papers via URL/DOI. Retorna dados binários PDF.",
+          "install": "pip install scihub",
+          "docs_url": "https://github.com/alejandrogallo/python-scihub",
+          "affinity": {"SEEKER": 0.90, "MASWOS": 0.80},
+          "requires_python": ">=3.3",
+          "license": "GPLv3",
+          "note": "Versão antiga (2018). Prefira scihub-cn para funcionalidades atuais."
+        },
+        {
+          "name": "scholarly",
+          "version": "latest",
+          "description": "Google Scholar API não-oficial — busca autores, publicações, citações. Anti-bot com proxies.",
+          "install": "pip install scholarly",
+          "docs_url": "https://scholarly.readthedocs.io/",
+          "affinity": {"SEEKER": 0.95, "MASWOS": 0.90, "PhD_Auditor": 0.85},
+          "requires_python": ">=3.8",
+          "license": "MIT",
+          "ecosystem_integration": "google_scholar_pipeline"
+        },
+        {
+          "name": "arxiv",
+          "version": "latest",
+          "description": "Wrapper oficial da arXiv API. Busca por query, ID, autor. Download PDF e source tarball.",
+          "install": "pip install arxiv",
+          "docs_url": "https://lukasschwab.me/arxiv.py/",
+          "affinity": {"SEEKER": 0.95, "MASWOS": 0.88, "PhD_Auditor": 0.80},
+          "requires_python": ">=3.10",
+          "license": "MIT",
+          "ecosystem_integration": "arxiv_search_pipeline"
+        },
+        {
+          "name": "semanticscholar",
+          "version": "0.12.0",
+          "description": "Semantic Scholar API client — Academic Graph, citações, recomendações. Tipado e assíncrono.",
+          "install": "pip install semanticscholar",
+          "docs_url": "https://semanticscholar.readthedocs.io/",
+          "affinity": {"SEEKER": 0.95, "MASWOS": 0.90, "PhD_Auditor": 0.88},
+          "requires_python": ">=3.10",
+          "license": "MIT",
+          "ecosystem_integration": "semantic_scholar_pipeline"
+        },
+        {
+          "name": "openalex",
+          "version": "0.1.0",
+          "description": "OpenAlex API client — dados abertos de +250M publicações. Pydantic tipado. Gratuito e open-source.",
+          "install": "pip install openalex",
+          "docs_url": "https://github.com/j6k4m8/openalex",
+          "affinity": {"SEEKER": 0.92, "MASWOS": 0.85, "PhD_Auditor": 0.90},
+          "requires_python": ">=3.11",
+          "license": "MIT",
+          "ecosystem_integration": "openalex_pipeline"
+        },
+        {
+          "name": "crossrefapi",
+          "version": "1.7.0",
+          "description": "Crossref API completa — busca de DOI, metadata, citações, referências cruzadas.",
+          "install": "pip install crossrefapi",
+          "docs_url": "https://pypi.org/project/crossrefapi/",
+          "affinity": {"SEEKER": 0.85, "MASWOS": 0.82, "artiGO": 0.88},
+          "requires_python": ">=3.10",
+          "license": "MIT",
+          "ecosystem_integration": "crossref_pipeline"
+        },
+        {
+          "name": "pypdf",
+          "version": "latest",
+          "description": "Manipulação de PDFs — extração de texto, split, merge, criptografia, metadados. Essencial para pipeline de artigos.",
+          "install": "pip install pypdf",
+          "docs_url": "https://pypdf.readthedocs.io/",
+          "affinity": {"SEEKER": 0.75, "MASWOS": 0.90, "Reversa": 0.60},
+          "requires_python": ">=3.9",
+          "license": "BSD-3",
+          "ecosystem_integration": "pdf_processing_pipeline"
+        }
+      ]
+    },
+    "dados_mundiais": {
+      "label": "Dados Mundiais (Banco Mundial, ONU, WHO, OCDE)",
+      "description": "APIs para dados socioeconômicos globais de organizações internacionais",
+      "packages": [
+        {
+          "name": "wbgapi",
+          "version": "latest",
+          "description": "World Bank Data API — acesso pythonico completo a WDI, Doing Business, Debt Statistics, Gender, +3000 indicadores.",
+          "install": "pip install wbgapi",
+          "docs_url": "https://github.com/tgherzog/wbgapi",
+          "affinity": {"data_analysis": 0.95, "MASWOS": 0.80, "PhD_Auditor": 0.85},
+          "requires_python": ">=3.7",
+          "license": "MIT",
+          "ecosystem_integration": "world_bank_data_pipeline"
+        },
+        {
+          "name": "pandas-datareader",
+          "version": "0.10.0",
+          "description": "Acesso remoto a dados financeiros/econômicos — FRED, World Bank, OECD, Eurostat, Yahoo, Google Finance.",
+          "install": "pip install pandas-datareader",
+          "docs_url": "https://pydata.github.io/pandas-datareader/",
+          "affinity": {"data_analysis": 0.95, "PhD_Auditor": 0.80},
+          "requires_python": ">=3.6",
+          "license": "BSD",
+          "ecosystem_integration": "economic_data_pipeline"
+        },
+        {
+          "name": "sdg-indicators",
+          "version": "latest",
+          "description": "UN Sustainable Development Goals (SDG) Global Database — indicadores ODS da ONU.",
+          "install": "pip install sdg-indicators",
+          "docs_url": "https://pypi.org/project/sdg-indicators/",
+          "affinity": {"data_analysis": 0.88, "MASWOS": 0.75},
+          "requires_python": ">=3.8",
+          "license": "MIT",
+          "ecosystem_integration": "sdg_un_pipeline"
+        }
+      ]
+    },
+    "mcp_ecosystem": {
+      "label": "MCP — Model Context Protocol",
+      "description": "SDKs, servidores e ferramentas para o protocolo MCP (Anthropic)",
+      "packages": [
+        {
+          "name": "mcp",
+          "version": "latest",
+          "description": "SDK oficial Python do Model Context Protocol (Anthropic). FastMCP, transports (stdio/SSE/HTTP), tools, resources, prompts.",
+          "install": "pip install \"mcp[cli]\"",
+          "docs_url": "https://modelcontextprotocol.github.io/python-sdk/",
+          "affinity": {"MCP_server": 1.0, "OpenCode_Core": 0.98, "autoevolve": 0.90},
+          "requires_python": ">=3.10",
+          "license": "MIT",
+          "ecosystem_integration": "mcp_core_pipeline"
+        },
+        {
+          "name": "openai-agents-mcp",
+          "version": "latest",
+          "description": "MCP adapter para OpenAI Agents SDK — conecta agentes OpenAI a servidores MCP.",
+          "install": "pip install openai-agents-mcp",
+          "docs_url": "https://pypi.org/project/openai-agents-mcp/",
+          "affinity": {"MCP_server": 0.90, "OpenCode_Core": 0.70},
+          "requires_python": ">=3.10",
+          "license": "MIT"
+        },
+        {
+          "name": "langchain-mcp-adapters",
+          "version": "latest",
+          "description": "Adaptadores MCP para LangChain — conecta chains LangChain a servidores MCP.",
+          "install": "pip install langchain-mcp-adapters",
+          "docs_url": "https://pypi.org/project/langchain-mcp-adapters/",
+          "affinity": {"MCP_server": 0.85, "OpenCode_Core": 0.75},
+          "requires_python": ">=3.10",
+          "license": "MIT"
+        }
+      ]
+    },
+    "dados_cientificos": {
+      "label": "Dados Científicos e Bioinformática",
+      "description": "Bibliotecas para análise de dados científicos e biológicos",
+      "packages": [
+        {
+          "name": "biopython",
+          "version": "latest",
+          "description": "Ferramentas de bioinformática — NCBI BLAST, PubMed/Entrez, UniProt, PDB, Swiss-Prot. +25 anos de desenvolvimento.",
+          "install": "pip install biopython",
+          "docs_url": "https://biopython.org",
+          "affinity": {"SEEKER": 0.80, "MASWOS": 0.75},
+          "requires_python": ">=3.10",
+          "license": "Biopython License Agreement",
+          "ecosystem_integration": "bioinformatics_pipeline"
+        }
+      ]
+    },
+    "infra_ferramentas": {
+      "label": "Infraestrutura e Ferramentas CLI",
+      "description": "Bibliotecas de suporte para CLI, processamento e infraestrutura do ecossistema",
+      "packages": [
+        {
+          "name": "click",
+          "version": "latest",
+          "description": "Framework para criação de CLIs elegantes com composable commands. Usado por Flask, Celery, e milhares de projetos.",
+          "install": "pip install click",
+          "docs_url": "https://click.palletsprojects.com/",
+          "affinity": {"CLI_tools": 1.0, "OpenCode_Core": 0.95},
+          "requires_python": ">=3.8",
+          "license": "BSD-3",
+          "ecosystem_integration": "cli_framework"
+        },
+        {
+          "name": "rich",
+          "version": "latest",
+          "description": "Rich text e formatação para terminal — tabelas, progress bars, syntax highlighting, markdown, layouts.",
+          "install": "pip install rich",
+          "docs_url": "https://rich.readthedocs.io/",
+          "affinity": {"CLI_tools": 0.98, "OpenCode_Core": 0.92},
+          "requires_python": ">=3.8",
+          "license": "MIT",
+          "ecosystem_integration": "terminal_ux"
+        },
+        {
+          "name": "httpx",
+          "version": "latest",
+          "description": "Cliente HTTP assíncrono moderno — sucessor de requests com async/await, HTTP/2, conexões persistentes.",
+          "install": "pip install httpx",
+          "docs_url": "https://www.python-httpx.org/",
+          "affinity": {"SEEKER": 0.90, "OpenCode_Core": 0.88},
+          "requires_python": ">=3.8",
+          "license": "BSD-3",
+          "ecosystem_integration": "http_client"
+        }
+      ]
+    },
+    "alternative_sources": {
+      "label": "Fontes Alternativas (não PyPI)",
+      "description": "APIs e bibliotecas disponíveis via GitHub ou outros canais",
+      "packages": [
+        {
+          "name": "who-data (WHO API)",
+          "source": "github",
+          "description": "Dados da OMS — GHObservatory, causas de morte, cobertura vacinal. Acessível via requests + API REST.",
+          "docs_url": "https://www.who.int/data/gho/info/gho-odata-api",
+          "affinity": {"data_analysis": 0.85, "MASWOS": 0.75},
+          "note": "Utilizar requests/httpx diretamente contra https://ghoapi.azureedge.net/api/"
+        },
+        {
+          "name": "unstats (UN Data API)",
+          "source": "github",
+          "description": "UN Comtrade, UNData, SDG indicators via UN API. Dados de comércio global, população, desenvolvimento.",
+          "docs_url": "https://data.un.org/Host.aspx?Content=API",
+          "affinity": {"data_analysis": 0.85, "MASWOS": 0.78},
+          "note": "API REST: https://data.un.org/ws/rest/"
+        },
+        {
+          "name": "pubmed-parser",
+          "source": "github",
+          "description": "Parser de XML PubMed/Medline para extração de abstracts, autores, MeSH terms.",
+          "docs_url": "https://github.com/titipata/pubmed_parser",
+          "affinity": {"SEEKER": 0.88, "MASWOS": 0.82},
+          "note": "pip install git+https://github.com/titipata/pubmed_parser.git"
+        },
+        {
+          "name": "pymed",
+          "source": "github",
+          "description": "PubMed/NCBI E-utilities API wrapper. Busca artigos por query, exporta metadata e abstracts.",
+          "docs_url": "https://github.com/gijswobben/pymed",
+          "affinity": {"SEEKER": 0.90, "MASWOS": 0.85},
+          "note": "pip install pymed"
+        }
+      ]
+    }
+  },
+  "affinity_matrix": {
+    "SEEKER": {
+      "top_packages": ["scholarly", "arxiv", "semanticscholar", "scihub-cn", "openalex"],
+      "description": "Pipeline de pesquisa bibliográfica"
+    },
+    "MASWOS": {
+      "top_packages": ["scihub-cn", "scholarly", "semanticscholar", "pypdf", "arxiv"],
+      "description": "Pipeline de criação de artigos científicos"
+    },
+    "PhD_Auditor": {
+      "top_packages": ["semanticscholar", "openalex", "crossrefapi", "wbgapi"],
+      "description": "Auditoria estatística e validação Qualis"
+    },
+    "data_analysis": {
+      "top_packages": ["wbgapi", "pandas-datareader", "sdg-indicators"],
+      "description": "Análise de dados socioeconômicos"
+    },
+    "MCP_server": {
+      "top_packages": ["mcp", "openai-agents-mcp", "langchain-mcp-adapters"],
+      "description": "Servidores e clientes MCP"
+    }
+  }
+}

@@ -1,10 +1,10 @@
 ---
 title: "OpenCode Ecosystem — Documentação Técnica da Arquitetura"
-version: "4.2.1"
+version: "4.2.3"
 agent_count: 125
-mcp_count: 40
-skill_count: 104
-python_lines: 114000
+mcp_count: 41
+skill_count: 106
+python_lines: 120000
 reasoning_types: 38
 game_theory_strategies: 10
 debate_profiles: 8
@@ -12,15 +12,22 @@ simulation_indicators: 50
 di_migration: "Fases 1-7 ✅"
 container_services: 11
 commands_bridge: 14
-ts_plugins_bridge: 3
-last_updated: "2026-05-21"
-classification: "Arquitetura de Agentes, MCPs e Skills com DI + MiroFish/BettaFish + PhD Auditor"
+ts_plugins_bridge: 4
+data_domains: 8
+ecosystem_hooks: 10
+installed_libraries: 30
+affinity_pipelines: 5
+qualis_a1_sources: 20
+last_updated: "2026-05-24"
+classification: "Arquitetura de Agentes, MCPs e Skills com DI + MiroFish/BettaFish + PhD Auditor + DataOrchestrator"
 author: "Reversa Framework v1.2.22 + Nexus PhD Strategist"
 ---
 
-# OpenCode Ecosystem v4.2.1
+# OpenCode Ecosystem v4.2.3
 
-O **OpenCode Ecosystem** é uma arquitetura multiagente evolutiva integrada ao OpenCode (OpenAI Codex CLI), composta por **125 agentes**, **40 servidores MCP**, **104 skills especializadas** (12 categorias), **11 serviços em Container DI** e aproximadamente **114.000 linhas de código Python**. O ecossistema operacionaliza produção acadêmica Qualis A1, pesquisa científica autônoma, simulação MiroFish/BettaFish com 38 raciocínios + Teoria dos Jogos, computação quântica (81 arqs, 89.52% acc) e engenharia reversa de sistemas legados — tudo orquestrado por um Container central de Injeção de Dependência.
+O **OpenCode Ecosystem** é uma arquitetura multiagente evolutiva integrada ao OpenCode (OpenAI Codex CLI), composta por **125 agentes**, **41 servidores MCP**, **106 skills especializadas** (13 categorias), **11 serviços em Container DI**, **10 Ecosystem Hooks** (8 domínios de dados) e aproximadamente **120.000 linhas de código Python**. O ecossistema operacionaliza produção acadêmica Qualis A1, pesquisa científica autônoma, simulação MiroFish/BettaFish com 38 raciocínios + Teoria dos Jogos, computação quântica (81 arqs, 89.52% acc), engenharia reversa de sistemas legados, e **acesso universal a dados via DataOrchestrator** — tudo orquestrado por um Container central de Injeção de Dependência.
+
+> **NOVO v4.2.3**: PyPI Scout (catálogo curado 22+ bibliotecas, matriz de afinidade 5 pipelines), DataOrchestrator (query em linguagem natural → 8 domínios), 10 Ecosystem Hooks (Geo, Finance, Crypto, BioMed, Academic, Economic, Health, PDF), 30+ bibliotecas instaladas, 20+ fontes Qualis A1.
 
 > Repositório: `C:\Users\marce\.config\opencode` · Modelo: `opencode/big-pickle` (200K ctx, 128K out)
 
@@ -81,14 +88,74 @@ Este diagrama é exclusivo do OpenCode v4.2.1 e representa o pipeline mais compl
 | Quantum 50 qubits (89.52%) | **✅** | ❌ | ❌ | ❌ | ❌ |
 | 40 MCP Servers nativos | **✅** | Plugin | ❌ | ❌ | Limitado |
 | CJK zero-tolerance PT-BR | **✅** | ❌ | ❌ | ❌ | ❌ |
+| DataOrchestrator (NL→8 domínios) | **✅** | ❌ | ❌ | ❌ | ❌ |
+| PyPI Scout (22+ bib. curadas) | **✅** | ❌ | ❌ | ❌ | ❌ |
 | Modelo gratuito 200K ctx | **✅ big-pickle** | API paga | API paga | API paga | Assinatura |
 
-> **Vantagem-chave:** Único framework que une produção Qualis A1 + debate multiagente com Teoria dos Jogos + validação estatística + quantum computing + autocura autônoma, com modelo gratuito de 200K contexto e arquitetura que aprende a cada ciclo evolutivo.
+> **Vantagem-chave:** Único framework que une produção Qualis A1 + debate multiagente com Teoria dos Jogos + validação estatística + quantum computing + autocura autônoma + DataOrchestrator multi-domínio, com modelo gratuito de 200K contexto e arquitetura que aprende a cada ciclo evolutivo.
 
 <img src="diagrams/classification-taxonomy.svg" alt="Taxonomia — Classificação Técnica" width="100%" style="max-width: 850px; border-radius: 8px; margin: 16px 0;"/>
 
 ---
 
+## 🆕 Camada de Dados Universal — DataOrchestrator (v4.2.3)
+
+O ecossistema incorpora uma **camada de acesso universal a dados** que permite a qualquer pesquisador consultar **8 domínios** de dados usando **linguagem natural**, sem precisar conhecer APIs, bibliotecas ou indicadores técnicos. A arquitetura opera em 3 camadas:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  PESQUISADOR  "PIB do Brasil 2023"                         │
+│       │                                                     │
+│       ▼                                                     │
+│  🧠 DataOrchestrator (data_orchestrator.py, 592 linhas)     │
+│     ├── QueryIntent: 80+ keywords → 8 domínios              │
+│     ├── DataSourceRegistry: auto-discovery de 30+ bibs      │
+│     ├── FallbackChain: fonte primária → secundária          │
+│     └── DataResult: formato unificado                       │
+│       │                                                     │
+│       ▼                                                     │
+│  🔌 Ecosystem Hooks (ecosystem_hooks.py v2.0, 10 hooks)     │
+│     ├── R8: SeekerMultiSource, WorldBank, PDF, MCP, HTTPX   │
+│     └── R9: Geo, Finance, Crypto, BioMed, Qualis A1         │
+│       │                                                     │
+│       ▼                                                     │
+│  📚 Bibliotecas Python (30+ instaladas)                     │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Domínios de Dados Disponíveis
+
+| Domínio | Hook | Bibliotecas | Fontes |
+|---------|------|-------------|--------|
+| **Geo** | GeoAnalyzer | geopandas, geopy, folium | Nominatim, Natural Earth, IBGE |
+| **Finance** | FinanceAnalyzer | yfinance, fredapi, pandas-market-calendars | Yahoo Finance, FRED (800K+ series), 50+ exchanges |
+| **Crypto** | MarketSpeculator | ccxt | 110+ exchanges (Binance, Coinbase, etc.) |
+| **BioMed** | BioMedAnalyzer | biopython, pysus, covid | PubMed/NCBI (36M+), DATASUS, Worldometers |
+| **Academic** | SeekerMultiSource | arxiv, scholarly, semanticscholar | arXiv (2.4M+), Semantic Scholar (200M+), Google Scholar |
+| **Economic** | WorldBankAnalyzer | wbgapi, pandas-datareader | World Bank WDI (1.400+), FRED, OECD |
+| **Health** | BioMedAnalyzer | pysus, covid | DATASUS, WHO GHO, CDC Wonder |
+| **PDF** | PDFProcessor | pypdf | Extração de texto, metadados |
+
+### Matriz de Afinidade (Bibliotecas → Pipelines)
+
+| Biblioteca | SEEKER | MASWOS | PhD Auditor | Data Analysis | MCP Server |
+|-----------|:------:|:------:|:-----------:|:------------:|:----------:|
+| scholarly | **95%** | 90% | — | — | — |
+| arxiv | **95%** | 88% | — | — | — |
+| semanticscholar | **95%** | 90% | 88% | — | — |
+| scihub-cn | **95%** | 90% | — | — | — |
+| openalex | 92% | 85% | **90%** | — | — |
+| pypdf | — | **90%** | — | — | — |
+| wbgapi | — | 80% | 85% | **95%** | — |
+| mcp | — | — | — | — | **100%** |
+| yfinance | — | — | — | 90% | — |
+| ccxt | — | — | — | 95% | — |
+
+### PyPI Scout — Descoberta Inteligente de Bibliotecas
+
+O **PyPI Scout** (`pypi_scout.py`, 350 linhas) é a ferramenta canônica de descoberta de bibliotecas Python no ecossistema. Catálogo curado com **22+ bibliotecas** em **6 categorias**, métricas de afinidade para **5 pipelines** e CLI com **7 comandos** (`search`, `catalog`, `category`, `install`, `recommend`, `diff`, `help`).
+
+---
 
 ## Arquitetura do Ecossistema
 

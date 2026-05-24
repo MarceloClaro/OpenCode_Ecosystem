@@ -1,4 +1,4 @@
-# Glossário — OpenCode Ecosystem v4.2.1
+# Glossário — OpenCode Ecosystem v4.2.3
 
 > Definições dos termos técnicos utilizados no ecossistema. Organizado em ordem alfabética.
 
@@ -8,7 +8,75 @@
 
 ### AutoEvolve
 
-Engine de evolução autônoma do ecossistema. Executa o ciclo **PLAN → ACT → REFLECT → EXTRACT → EVOLVE**, gerando novas skills em `evolution/` a partir de padrões de sucesso identificados em ciclos anteriores. Implementado em `plugins/manus-evolve.ts`. Já completou 8 ciclos com progressão de score de 85 → 98/100.
+Engine de evolução autônoma do ecossistema. Executa o ciclo **PLAN → ACT → REFLECT → EXTRACT → EVOLVE**, gerando novas skills em `evolution/` a partir de padrões de sucesso. Implementado em `plugins/manus-evolve.ts`. Já completou **11 ciclos** com progressão de score de 85 → 97/100.
+
+### Antigravity Bridge
+
+Ponte bidirecional entre o OpenCode Ecosystem e o **Antigravity** (Google DeepMind Advanced Agentic Coding). Expõe 6 capacidades exclusivas: `generate_image`, `browser_subagent`, `search_web`, `read_url_content`, `parallel_subagents`, `artifact_creation`.
+
+---
+
+## C
+
+### Container DI
+
+Container central de Injeção de Dependência. Registra 11 serviços (8 core + 4 plugins TS). Os 4 plugins TS são: `plugin.manus-evolve`, `plugin.ecosystem-sync`, `plugin.bernstein-sync` e `plugin.antigravity-bridge`.
+
+---
+
+## D
+
+### DataOrchestrator 🆕
+
+Camada universal de acesso a dados do ecossistema (`data_orchestrator.py`, 592 linhas). Permite consultas em **linguagem natural** roteadas automaticamente para a fonte de dados correta entre **8 domínios**: Geo, Finance, Crypto, BioMed, Academic, Economic, Health, PDF. Arquitetura de 3 camadas: QueryIntent (parser 80+ keywords) → DataSourceRegistry (auto-discovery 30+ bibliotecas) → Ecosystem Hooks (10 hooks). Implementado no Round 9 do `/evolve`.
+
+### DataSourceRegistry 🆕
+
+Componente do DataOrchestrator responsável por **auto-discovery** das bibliotecas disponíveis no ambiente Python. Verifica 8 domínios e 30+ bibliotecas via `importlib`, detectando quais domínios estão operacionais sem configuração manual.
+
+---
+
+## E
+
+### Ecosystem Hooks 🆕
+
+Camada de integração entre bibliotecas Python e pipelines do ecossistema (`ecosystem_hooks.py`, v2.0, ~700 linhas). Composta por **10 hooks** organizados em duas rodadas evolutivas: Round 8 (SeekerMultiSource, WorldBankAnalyzer, PDFProcessor, MCPScoutBridge, HTTPXClient) e Round 9 (GeoAnalyzer, FinanceAnalyzer, MarketSpeculator, BioMedAnalyzer, QualisDatasetHub).
+
+---
+
+## M
+
+### Matriz de Afinidade 🆕
+
+Mapeamento da relevância funcional (0--100%) de cada biblioteca Python para cada pipeline do ecossistema (SEEKER, MASWOS, PhD Auditor, data\_analysis, MCP\_server). Armazenada em `opencode_catalog.json`. Afinidades máximas: mcp→MCP\_server (100%), wbgapi→data\_analysis (95%), scholarly→SEEKER (95%), arxiv→SEEKER (95%).
+
+---
+
+## P
+
+### PyPI Scout 🆕
+
+Ferramenta canônica de descoberta de bibliotecas Python no ecossistema (`pypi_scout.py`, 350 linhas). Catálogo curado com 22+ bibliotecas em 6 categorias, métricas de afinidade para 5 pipelines, CLI com 7 comandos (`search`, `catalog`, `category`, `install`, `recommend`, `diff`, `help`). Substitui o PyPISearcher v3.0. Skill registrada como `pypi-scout`.
+
+---
+
+## Q
+
+### QueryIntent 🆕
+
+Parser de intenção do DataOrchestrator. Converte consultas em linguagem natural para intenções estruturadas (domínio, entidade, métrica) utilizando 80+ palavras-chave mapeadas para 8 domínios. Extrai automaticamente entidade e métrica da consulta, atribuindo pontuação de confiança (0--100%).
+
+## A
+
+### AutoEvolve
+
+Engine de evolução autônoma do ecossistema. Executa o ciclo **PLAN → ACT → REFLECT → EXTRACT → EVOLVE**, gerando novas skills em `evolution/` a partir de padrões de sucesso identificados em ciclos anteriores. Implementado em `plugins/manus-evolve.ts`. Já completou 9 ciclos com progressão de score de 85 → 98/100.
+
+---
+
+### Antigravity Bridge
+
+Ponte bidirecional entre o **OpenCode Ecosystem v4.2** e o **Antigravity** (Google DeepMind Advanced Agentic Coding). Composta por três artefatos: `plugins/antigravity-bridge.ts` (plugin TypeScript registrado no Container DI), `nexus/antigravity_mcp_server.py` (servidor MCP com 7 ferramentas JSON-RPC) e `agents/antigravity-orchestrator.md` (agente roteador com fallback). Indexada como skill em `skills/agent-forum/antigravity-integration/SKILL.md` (v1.0). Expos 6 capacidades exclusivas: `generate_image`, `browser_subagent`, `search_web`, `read_url_content`, `parallel_subagents`, `artifact_creation`. Health score monitorado em `.evolve/antigravity-bridge-state.json`.
 
 ---
 
@@ -24,7 +92,7 @@ Modelo de linguagem padrão do OpenCode Ecosystem. Também conhecido como **Open
 
 ### Container DI
 
-Container central de **Injeção de Dependência** do ecossistema. Registra **11 serviços** (8 core + 3 plugins TypeScript) e oferece acesso via padrão singleton. Os 8 serviços core são: `state_manager`, `event_bus`, `agent_manager`, `plugin_manager`, `skill_manager`, `cache`, `task_queue` e `command_registry`. Os 3 plugins TS são: `plugin.manus-evolve`, `plugin.ecosystem-sync` e `plugin.bernstein-sync`.
+Container central de **Injeção de Dependência** do ecossistema. Registra **11 serviços** (8 core + 4 plugins TypeScript) e oferece acesso via padrão singleton. Os 8 serviços core são: `state_manager`, `event_bus`, `agent_manager`, `plugin_manager`, `skill_manager`, `cache`, `task_queue` e `command_registry`. Os **4 plugins TS** são: `plugin.manus-evolve`, `plugin.ecosystem-sync`, `plugin.bernstein-sync` e **`plugin.antigravity-bridge`** (v1.0, 2026-05-24).
 
 ---
 
@@ -52,7 +120,7 @@ Padrão de inicialização utilizado pelos servidores MCP. Os MCPs **só inicial
 
 ### MCP (Model Context Protocol)
 
-**Model Context Protocol** — Protocolo criado pela Anthropic (2024) que define comunicação padronizada entre agentes de IA e servidores de contexto via **JSON-RPC**. No OpenCode Ecosystem, **40 servidores MCP** (38 locais via stdio + 2 remotos via HTTP) fornecem ferramentas, recursos e prompts ao agente orquestrador. Cada servidor opera em sessão 1:1 com o cliente MCP.
+**Model Context Protocol** — Protocolo criado pela Anthropic (2024) que define comunicação padronizada entre agentes de IA e servidores de contexto via **JSON-RPC**. No OpenCode Ecosystem, **41 servidores MCP** (38 locais via stdio + 2 remotos via HTTP + 1 Antigravity MCP) fornecem ferramentas, recursos e prompts ao agente orquestrador. Cada servidor opera em sessão 1:1 com o cliente MCP.
 
 ### MiroFish / BettaFish
 
@@ -110,6 +178,6 @@ Sistema de **pesquisa científica autônoma** implementado em `basis-research/`.
 
 <div align="center">
 
-**OpenCode Ecosystem v4.2.1** · Glossário de Termos Técnicos
+**OpenCode Ecosystem v4.2.3** · Glossário de Termos Técnicos
 
 </div>

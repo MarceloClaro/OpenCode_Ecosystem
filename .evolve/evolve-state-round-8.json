@@ -1,0 +1,44 @@
+{
+  "$schema": "https://opencode-ecosystem.org/schemas/evolve-state-v1.0",
+  "round": 8,
+  "timestamp": "2026-05-24T15:07:00-03:00",
+  "pipeline": "SENSE → DISCOVER → INSTALL → VERIFY → EVOLVE → LEARN",
+  "trigger": "/evolve pypi-scout",
+  "parent_skill": "pypi-scout",
+  "generated_artifacts": [
+    "skills/system/pypi-scout/pypi_scout.py",
+    "skills/system/pypi-scout/opencode_catalog.json",
+    "skills/system/pypi-scout/SKILL.md",
+    "skills/system/pypi-scout/ecosystem_hooks.py"
+  ],
+  "installed_libraries": {
+    "wbgapi": {"version": "1.0.14", "pipeline": "data_analysis", "affinity": 0.95},
+    "scholarly": {"version": "1.7.11", "pipeline": "SEEKER", "affinity": 0.95},
+    "arxiv": {"version": "3.0.0", "pipeline": "SEEKER", "affinity": 0.95},
+    "semanticscholar": {"version": "0.12.0", "pipeline": "SEEKER", "affinity": 0.95},
+    "pypdf": {"version": "6.9.1", "pipeline": "MASWOS", "affinity": 0.90},
+    "mcp": {"version": "1.26.0", "pipeline": "MCP_server", "affinity": 1.00},
+    "httpx": {"version": "0.28.1", "pipeline": "OpenCode_Core", "affinity": 0.88}
+  },
+  "ecosystem_hooks": [
+    "SeekerMultiSource (arXiv + Semantic Scholar + Google Scholar)",
+    "WorldBankAnalyzer (WDI indicators + country comparison)",
+    "PDFProcessor (text extraction + metadata)",
+    "MCPScoutBridge (MCP package discovery + catalog)",
+    "HTTPXClient (async HTTP for ecosystem)"
+  ],
+  "registry_update": {
+    "skills_before": 43,
+    "skills_after": 44,
+    "system_category_before": 7,
+    "system_category_after": 8,
+    "cjk_leaks": 0,
+    "decision_updated": "architectu-002"
+  },
+  "health": {
+    "imports_ok": 7,
+    "imports_total": 7,
+    "cjk_clean": true,
+    "registry_valid": true
+  }
+}

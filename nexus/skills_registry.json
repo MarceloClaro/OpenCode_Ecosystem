@@ -1,12 +1,12 @@
 {
   "version": "1.0.0",
-  "timestamp": "2026-05-16T16:58:42.578569",
+  "timestamp": "2026-05-24T11:58:36.995947+00:00",
   "workspace": "C:\\Users\\marce\\.config\\opencode",
   "summary": {
-    "total_skills": 43,
+    "total_skills": 44,
     "oversize_count": 23,
-    "healthy_count": 20,
-    "total_bytes": 250914,
+    "healthy_count": 21,
+    "total_bytes": 286457,
     "categories": {
       "dotclaude-edicao-cirurgica": {
         "total": 1,
@@ -84,9 +84,9 @@
         "bytes": 15618
       },
       "system": {
-        "total": 7,
+        "total": 8,
         "oversize": 1,
-        "bytes": 13231
+        "bytes": 48774
       },
       "workflows": {
         "total": 1,
@@ -702,6 +702,20 @@
       "oversize_by": 3448,
       "md5": "5e29f0840285612c7cb303b041936ac3",
       "last_checked": "2026-05-16T16:58:42.578569"
+    },
+    {
+      "name": "pypi-scout",
+      "path": "skills\\system\\pypi-scout\\SKILL.md",
+      "category": "system",
+      "bytes": 3162,
+      "has_frontmatter": false,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": false,
+      "oversize_by": 0,
+      "md5": "d98b2fc9202d445cfbd42dc3592f5247",
+      "last_checked": "2026-05-24T11:58:36.995947+00:00"
     }
   ]
 }
