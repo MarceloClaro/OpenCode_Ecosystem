@@ -1028,6 +1028,68 @@ Sistema de memória técnica integrado ao ecossistema para registrar, buscar sem
 
 ---
 
+## 🔬 Sistema de Auditoria Acadêmica Caixa Branca (v4.2.3)
+
+O ecossistema incorpora um **sistema completo de auditoria acadêmica** que registra **todas** as interações do pesquisador com rastreabilidade minuciosa — cada afirmação é vinculada a uma evidência, cada evidência a uma fonte verificável, cada decisão do pipeline é registrada em log imutável.
+
+### Arquitetura de Auditoria (9 componentes)
+
+```
+┌────────────────────────────────────────────────────────────────┐
+│  PESQUISADOR (query em linguagem natural)                      │
+│       │                                                        │
+│       ▼                                                        │
+│  📡 AuditInstrumentor (auto-instrumentação transparente)        │
+│     └── Intercepta TODAS as queries → logging automático       │
+│       │                                                        │
+│       ▼                                                        │
+│  📝 InteractionLogger (JSONL imutável, hash SHA-256)           │
+│  🔬 AcademicAuditTrail (parágrafo → evidência → DOI)           │
+│  💰 TokenEconomyMonitor (3 níveis: 500K/200K/50K tokens)       │
+│  🎯 ResearcherScore (score 0-100, 6 critérios ponderados)      │
+│  ⚠️ BudgetAlert (alertas info/warning/critical)                │
+│  🔍 AuditSearch (busca/filtro/comparação de sessões)           │
+│  📊 AuditDashboard (HTML interativo em tempo real)             │
+│  🔗 PipelineIntegration (SEEKER→MASWOS→Auditoria)              │
+│       │                                                        │
+│       ▼                                                        │
+│  💾 .evolve/audit-logs/   .evolve/audit-trails/                │
+│  💾 .evolve/token-monitor/  .evolve/audit-refinements/         │
+└────────────────────────────────────────────────────────────────┘
+```
+
+### ResearcherScore — Critérios de Qualidade
+
+| Critério | Peso | Ideal |
+|----------|:---:|-------|
+| Densidade de evidências | 25% | ≥ 2 evidências/parágrafo |
+| Fontes verificadas (DOI) | 20% | 100% DOIs confirmados |
+| TSAC compliance (87 palavras) | 20% | 0 violações |
+| Diversidade de fontes | 15% | Fontes únicas ≥ parágrafos |
+| Cobertura multi-domínio | 10% | 8 domínios acessados |
+| Peer review | 10% | 100% parágrafos revisados |
+
+**Grades**: A (≥90) · B (≥75) · C (≥60) · D (≥40) · F (<40)
+
+### Estratégias de Economia de Tokens
+
+| Estratégia | Economia Estimada |
+|-----------|------------------:|
+| Contexto em chinês (+40% densidade) | ~40% do input |
+| Progressive disclosure (SKILL.md ≤ 2.500B) | ~25% do input |
+| MCP Lazy Init | ~10% do input |
+| Edição cirúrgica (apenas delta) | ~30% do output |
+| **Total estimado por sessão** | **~75% de redução** |
+
+### Protocolo TSAC (87 palavras banidas)
+
+O sistema detecta automaticamente 87 palavras e expressões banidas (ex: "crucial", "essencialmente", "notavelmente", "fundamentalmente"), garantindo naturalidade do texto e prevenindo padrões típicos de IA.
+
+> **Skills**: `academic-audit` (6 arquivos, ~1.900 linhas) — registrada como 45ª skill do ecossistema.  
+> **Arquivos**: `skills/system/academic-audit/` — interaction_logger, academic_audit_trail, token_economy_monitor, audit_instrumentor, audit_refinements.
+
+---
+
 ## Métricas Agregadas
 
 ### Linhas de Código Python
@@ -1042,7 +1104,8 @@ Sistema de memória técnica integrado ao ecossistema para registrar, buscar sem
 | Artigo MIT-IA | 46 | ~5.678 | 5,2% |
 | Tests | 24 | ~3.996 | 3,7% |
 | Core | 21 | ~3.805 | 3,5% |
-| Skills (python) | 11 | ~2.268 | 2,1% |
+| Skills (python) | 15 | ~4.500 | 3,8% |
+| **TOTAL** | **~386** | **~120.000** | **100%** |
 | Criador-Artigo | 7 | ~2.186 | 2,0% |
 | DI (command_registry) | 1 | ~480 | 0,4% |
 | Outros | 10+ | ~689 | 0,6% |

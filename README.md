@@ -13,6 +13,7 @@
 [![Skills](https://img.shields.io/badge/Skills-106-10b981?style=flat-square)](skills/)
 [![Hooks](https://img.shields.io/badge/Ecosystem_Hooks-10-a855f7?style=flat-square)](skills/system/pypi-scout/ecosystem_hooks.py)
 [![Domínios](https://img.shields.io/badge/Data_Domains-8-f59e0b?style=flat-square)](skills/system/pypi-scout/data_orchestrator.py)
+[![Auditoria](https://img.shields.io/badge/Audit_System-9_componentes-ef4444?style=flat-square)](skills/system/academic-audit/)
 [![Raciocínios](https://img.shields.io/badge/Racioc%C3%ADnios-38_tipos-f59e0b?style=flat-square)](skills/agent-forum)
 [![Qualis](https://img.shields.io/badge/Qualis_A1-Auditor_%E2%89%A580%2F100-10b981?style=flat-square)](skills/agent-forum/scripts/phd_auditor.py)
 [![DI Migration](https://img.shields.io/badge/DI_Migration-Fases_1%E2%80%937_%E2%9C%85-22c55e?style=flat-square)](.reversa/DI_MIGRATION.md)

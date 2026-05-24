@@ -32,10 +32,11 @@ O plugin `manus-evolve.ts` executa o ciclo autônomo **PLAN → ACT → REFLECT 
 | evo-7 | Sync v3.5 + detector CJK + token efficiency | 96/100 | Zero-tolerance CJK; contexto em chinês, output em PT-BR |
 | evo-8 | Progressive disclosure + observabilidade | 98/100 | SKILL.md ≤ 2.500B; health score 96/100 |
 | **evo-9** | **Antigravity Bridge v1.0 + SKILL indexada** | **98/100** | Pontão bidirecional OpenCode⇔Antigravity; skill `antigravity-integration` no registry; `references/antigravity-bridge-reference.md` com progressive disclosure; IESDS + Nash Generalizado N>2 adicionados à Teoria dos Jogos |
-| **evo-10** | **PyPI Scout + Ecosystem Hooks v1.0 (Round 8)** | **95/100** | Catálogo curado 22+ bibliotecas, CLI 7 comandos, 5 hooks fundamentais (SeekerMultiSource, WorldBankAnalyzer, PDFProcessor, MCPScoutBridge, HTTPXClient), 7 bibliotecas instaladas (wbgapi, scholarly, arxiv, semanticscholar, pypdf, mcp, httpx), matriz de afinidade 5 pipelines, 0 CJK leaks |
-| **evo-11** | **DataOrchestrator + Expansão Multi-Domínio (Round 9)** | **97/100** | 6 novos domínios (Geo, Finance, Crypto, BioMed, Health, Qualis A1), 5 novos hooks (GeoAnalyzer, FinanceAnalyzer, MarketSpeculator, BioMedAnalyzer, QualisDatasetHub), DataOrchestrator com query em linguagem natural, 5 novas bibliotecas (yfinance, ccxt, fredapi, biopython, pandas-market-calendars), artigo LaTeX ABNT 12 páginas, 3 fluxogramas SVG |
+| **evo-10** | **PyPI Scout + Ecosystem Hooks v1.0 (Round 8)** | **95/100** | Catálogo curado 22+ bibliotecas, CLI 7 comandos, 5 hooks fundamentais, 7 bibliotecas instaladas |
+| **evo-11** | **DataOrchestrator + Expansão Multi-Domínio (Round 9)** | **97/100** | 6 novos domínios, 5 novos hooks, DataOrchestrator NL, 5 bibliotecas, artigo ABNT |
+| **evo-12** | **Auditoria Caixa Branca + Refinamento UX (Rounds 10-12)** | **95/100** | 9 componentes auditoria, ResearcherScore, BudgetAlert, AuditDashboard HTML, PipelineIntegration |
 
-**Progressão geral:** 85 → 97 (+14,1%) · Média: 93/100
+**Progressão geral:** 85 → 95 (+11,8%) · Média: 93/100
 
 ---
 
