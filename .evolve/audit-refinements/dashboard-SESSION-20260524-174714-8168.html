@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audit Dashboard — SESSION-20260524-174714-8168</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',Arial,sans-serif; background:#f5f6fa; color:#2c3e50; }
+.header { background:linear-gradient(135deg,#2c3e50,#34495e); color:white; padding:24px 32px; }
+.header h1 { font-size:22px; }
+.header .meta { font-size:12px; opacity:.7; margin-top:4px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; padding:24px; }
+.card { background:white; border-radius:12px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,.08); }
+.card h3 { font-size:14px; color:#7f8c8d; margin-bottom:12px; text-transform:uppercase; letter-spacing:.5px; }
+.score-big { font-size:48px; font-weight:bold; text-align:center; }
+.score-f { color:#e74c3c; }
+.metric-row { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #ecf0f1; font-size:13px; }
+.metric-row:last-child { border-bottom:none; }
+.metric-val { font-weight:bold; }
+.alert { padding:10px 14px; border-radius:8px; margin:6px 0; font-size:12px; }
+.alert-critical { background:#fde8e8; color:#c0392b; border-left:4px solid #e74c3c; }
+.alert-warning { background:#fef9e7; color:#b7950b; border-left:4px solid #f39c12; }
+.alert-info { background:#eaf2f8; color:#2980b9; border-left:4px solid #3498db; }
+.progress-bar { height:8px; background:#ecf0f1; border-radius:4px; margin:8px 0; overflow:hidden; }
+.progress-fill { height:100%; border-radius:4px; transition:width .3s; }
+.table { width:100%; border-collapse:collapse; font-size:12px; }
+.table th { text-align:left; padding:8px; background:#f8f9fa; border-bottom:2px solid #dee2e6; }
+.table td { padding:8px; border-bottom:1px solid #ecf0f1; }
+.footer { text-align:center; padding:16px; font-size:11px; color:#95a5a6; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🔬 Audit Dashboard</h1>
+  <div class="meta">
+    Sessão: SESSION-20260524-174714-8168 | Paradigma: Pragmatista (mista) | Nível: 2
+    <br>Gerado: 24/05/2026 17:47 (UTC-3)
+  </div>
+</div>
+
+<div class="grid">
+  <!-- Score Card -->
+  <div class="card">
+    <h3>🎯 Score de Qualidade</h3>
+    <div class="score-big score-f">34</div>
+    <div style="text-align:center;font-size:14px;color:#7f8c8d;">Grade: F</div>
+    <div style="margin-top:12px;">
+      <div class="metric-row"><span>evidence_density</span><span class="metric-val">21%</span></div><div class="metric-row"><span>verified_sources</span><span class="metric-val">0%</span></div><div class="metric-row"><span>tsac_compliance</span><span class="metric-val">83%</span></div><div class="metric-row"><span>source_diversity</span><span class="metric-val">42%</span></div><div class="metric-row"><span>domain_coverage</span><span class="metric-val">12%</span></div><div class="metric-row"><span>peer_review</span><span class="metric-val">50%</span></div>
+    </div>
+  </div>
+
+  <!-- Token Budget Card -->
+  <div class="card">
+    <h3>💰 Orçamento de Tokens</h3>
+    <div style="font-size:13px;margin-bottom:8px;">
+      5,000 / 200,000 tokens
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width:2.5%;background:#27ae60;"></div>
+    </div>
+    <div style="font-size:11px;color:#7f8c8d;">2.5% utilizado</div>
+    <div class="metric-row"><span>Entrada</span><span class="metric-val">3,500</span></div>
+    <div class="metric-row"><span>Saída</span><span class="metric-val">1,500</span></div>
+    <div class="metric-row"><span>Eficiência (out/in)</span><span class="metric-val">0.43</span></div>
+    <div class="metric-row"><span>Economia estimada</span><span class="metric-val">2,625</span></div>
+  </div>
+
+  <!-- Alertas -->
+  <div class="card">
+    <h3>⚠️ Alertas (0)</h3>
+    <div style="color:#27ae60;font-size:13px;">✅ Nenhum alerta ativo</div>
+  </div>
+
+  <!-- Resumo -->
+  <div class="card">
+    <h3>📊 Resumo da Sessão</h3>
+    <div class="metric-row"><span>Parágrafos</span><span class="metric-val">6</span></div>
+    <div class="metric-row"><span>Evidências</span><span class="metric-val">5</span></div>
+    <div class="metric-row"><span>Fontes únicas</span><span class="metric-val">5</span></div>
+    <div class="metric-row"><span>Parágrafos limpos (TSAC)</span><span class="metric-val">5</span></div>
+    <div class="metric-row"><span>Revisados por pares</span><span class="metric-val">3</span></div>
+    <div class="metric-row"><span>Interações</span><span class="metric-val">5</span></div>
+  </div>
+</div>
+
+<!-- Evidências -->
+<div style="padding:0 24px 24px;">
+  <div class="card">
+    <h3>🔗 Mapa de Evidências</h3>
+    <table class="table">
+      <tr><th>Parágrafo</th><th>Fonte</th><th>Tipo</th><th>Verificada</th></tr>
+      <tr><td>P00</td><td style="font-family:monospace;font-size:11px;">10.1234/doi-0000</td><td>doi</td><td>⚠️</td></tr><tr><td>P01</td><td style="font-family:monospace;font-size:11px;">10.1234/doi-0001</td><td>doi</td><td>⚠️</td></tr><tr><td>P02</td><td style="font-family:monospace;font-size:11px;">10.1234/doi-0002</td><td>doi</td><td>⚠️</td></tr><tr><td>P03</td><td style="font-family:monospace;font-size:11px;">10.1234/doi-0003</td><td>doi</td><td>⚠️</td></tr><tr><td>P04</td><td style="font-family:monospace;font-size:11px;">10.1234/doi-0004</td><td>doi</td><td>⚠️</td></tr>
+    </table>
+    <div style="color:#7f8c8d;font-size:12px;margin-top:8px;">Total: 5 evidências</div>
+  </div>
+</div>
+
+<div class="footer">
+  OpenCode Ecosystem v4.2.3 — Academic Audit System — 2026
+</div>
+
+</body>
+</html>
