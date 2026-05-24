@@ -1,6 +1,8 @@
 # 9 Estratégias RAG — MASWOS V5 NEXUS
 
-Módulo RAG avançado com 9 estratégias de recuperação, orquestrado via MCP (`maswos-rag` em `http://localhost:3003/mcp`).
+Módulo RAG avançado com 9 estratégias de recuperação genuínas e não-simuladas, orquestrado via MCP (`maswos-rag` com suporte opcional a Server-Sent Events via `--sse` em `http://127.0.0.1:3003/sse`).
+
+> **Importante:** O motor interno utiliza extração dinâmica de documentos do repositório (diretório `documentos/`) e implementa cálculos rigorosos de proximidade semântica por meio de um vetor TF-IDF local de 256 dimensões construído sob demanda, descontinuando completamente dados simulados (mock data).
 
 ## Estratégias
 

@@ -9,19 +9,20 @@
 <br/>
 
 [![Agentes](https://img.shields.io/badge/Agentes-125-6366f1?style=flat-square)](agents/)
-[![MCPs](https://img.shields.io/badge/MCP_Servers-40-0ea5e9?style=flat-square)](opencode.json)
-[![Skills](https://img.shields.io/badge/Skills-104-10b981?style=flat-square)](skills/)
-[![Raciocínios](https://img.shields.io/badge/Raciocínios-38_tipos-f59e0b?style=flat-square)](skills/agent-forum)
-[![Teoria dos Jogos](https://img.shields.io/badge/Game_Theory-10_estratégias-ef4444?style=flat-square)](skills/agent-forum/scripts/debate_strategies.py)
+[![MCPs](https://img.shields.io/badge/MCP_Servers-41-0ea5e9?style=flat-square)](opencode.json)
+[![Skills](https://img.shields.io/badge/Skills-105-10b981?style=flat-square)](skills/)
+[![Raciocínios](https://img.shields.io/badge/Racioc%C3%ADnios-38_tipos-f59e0b?style=flat-square)](skills/agent-forum)
+[![Teoria dos Jogos](https://img.shields.io/badge/Game_Theory-10_estrat%C3%A9gias-ef4444?style=flat-square)](skills/agent-forum/scripts/debate_strategies.py)
 [![Qualis](https://img.shields.io/badge/Qualis_A1-Auditor_%E2%89%A580%2F100-10b981?style=flat-square)](skills/agent-forum/scripts/phd_auditor.py)
-[![DI Migration](https://img.shields.io/badge/DI_Migration-Fases_1–7_✅-22c55e?style=flat-square)](.reversa/DI_MIGRATION.md)
+[![DI Migration](https://img.shields.io/badge/DI_Migration-Fases_1%E2%80%937_%E2%9C%85-22c55e?style=flat-square)](.reversa/DI_MIGRATION.md)
 [![BRAZIL_TZ](https://img.shields.io/badge/Timezone-BRAZIL_UTC--3-8b5cf6?style=flat-square)](skills/config-generator)
-[![Status](https://img.shields.io/badge/Status-Produção-22c55e?style=flat-square)]()
+[![Antigravity](https://img.shields.io/badge/Antigravity-Bridge_v1.0-a855f7?style=flat-square)](skills/agent-forum/antigravity-integration/SKILL.md)
+[![Status](https://img.shields.io/badge/Status-Produ%C3%A7%C3%A3o-22c55e?style=flat-square)]()
 
 <br/>
 
-> **Versão:** 4.2.1 · **Autor:** Reversa Framework v1.2.22 + Nexus PhD Strategist · **Atualizado:** 2026-05-21  
-> **Classificação:** Arquitetura Multiagente + MiroFish/BettaFish + PhD Auditor · **Modelo:** `opencode/big-pickle` (200K ctx, 128K out)
+> **Versão:** 4.2.1 · **Autor:** Reversa Framework v1.2.22 + Nexus PhD Strategist · **Atualizado:** 2026-05-24  
+> **Classificação:** Arquitetura Multiagente + MiroFish/BettaFish + PhD Auditor + Antigravity Bridge · **Modelo:** `opencode/big-pickle` (200K ctx, 128K out)
 
 </div>
 
@@ -133,7 +134,7 @@ O OpenCode Ecosystem possui **40 servidores MCP registrados** (38 locais + 2 rem
 
 Uma **skill** é um conjunto de instruções reutilizáveis que define *como* realizar uma tarefa complexa. Cada skill é um arquivo `SKILL.md` com cabeçalho YAML (frontmatter) e corpo em Markdown, limitado a **2.500 bytes** (para otimização de contexto). Conteúdo adicional reside em `references/*.md` — um padrão chamado **progressive disclosure**.
 
-O ecossistema possui **104 skills** em 12 categorias, desde ferramentas de desenvolvimento (`mcp-builder`, `test-driven-dev`) até produção acadêmica (`academic-export-abnt`) e domínio jurídico (`gerador-contratos`, `pecas-juridicas-html`).
+O ecossistema possui **105 skills** em 12 categorias, desde ferramentas de desenvolvimento (`mcp-builder`, `test-driven-dev`) até produção acadêmica (`academic-export-abnt`), domínio jurídico (`gerador-contratos`) e integração com sistemas externos (`antigravity-integration`).
 
 ### Orquestração (Nexus)
 
@@ -498,7 +499,9 @@ O **Model Context Protocol (MCP)** é o mecanismo pelo qual os agentes interagem
 
 <img src="diagrams/rag-strategies.svg" alt="9 Estratégias RAG do MASWOS" width="100%"/>
 
-O servidor `maswos-rag` implementa **9 estratégias de Retrieval-Augmented Generation (RAG)** — técnicas que combinam busca de informação com geração de texto. Em vez de obrigar o usuário a escolher qual estratégia usar, o sistema seleciona automaticamente a mais adequada para cada tipo de consulta via **Adaptive RAG**.
+O servidor `maswos-rag` (agora **100% funcional e não-simulado**) implementa **9 estratégias de Retrieval-Augmented Generation (RAG)** nativas. O motor ingere recursivamente arquivos reais (`.md` e `.txt`) da pasta `documentos/`, aplica particionamento (chunking) dinâmico, e vetoriza o conteúdo usando um motor TF-IDF aprimorado de 256 dimensões local.
+
+Em vez de obrigar o usuário a escolher qual estratégia usar, o sistema pode selecionar automaticamente a mais adequada para cada tipo de consulta via **Agentic/Adaptive RAG**, agora suportando também conexão assíncrona HTTP (**SSE**).
 
 | # | Estratégia | Como funciona | Referência acadêmica |
 |---|-----------|---------------|---------------------|
@@ -525,9 +528,12 @@ As **104 skills** do ecossistema estão organizadas em 12 categorias e seguem o 
 | research | 3 | `academic-export-abnt`, `academic-ml-pipeline`, `editais-br` |
 | tooling | 18 | `mcp-builder`, `agentic-mcp` |
 | superpowers | 10 | `writing-plans`, `test-driven-dev` |
-| Outras | 1+ | `frontend-philosophy`, `plan-protocol`, ... |
+| **agent-forum** | **1 (+1 nova)** | `agent-forum`, **`antigravity-integration`** (v1.0, 2026-05-24) |
+| Outras | 60+ | `frontend-philosophy`, `plan-protocol`, `maswos-v5-nexus`, ... |
 
-**Status de saúde:** 43/45 dentro do limite de 2.500B · 1 borderline (2.781B) · 1 oversize estrutural (nexus/SKILL.md)
+**Antigravity Integration (nova):** `skills/agent-forum/antigravity-integration/SKILL.md` — ponte bidirecional OpenCode ⇔ Antigravity (Google DeepMind). Expoe 6 capacidades exclusivas: `generate_image`, `browser_subagent`, `search_web`, `read_url_content`, `parallel_subagents`, `artifact_creation`. Referencia tecnica completa em `references/antigravity-bridge-reference.md`.
+
+**Status de saúde:** 44/46 dentro do limite de 2.500B · 1 borderline (2.781B) · 1 oversize estrutural (nexus/SKILL.md)
 
 **Como descobrir skills:** Cada skill possui um campo `trigger` no frontmatter YAML que define quando ela deve ser ativada. O `SkillManager` (integrado ao Container DI) é responsável por descobrir e carregar skills relevantes para cada tarefa.
 
@@ -548,14 +554,15 @@ Container (singleton)
 ├── state_manager       → IStateManager         ← gerencia estado global
 ├── event_bus           → IEventBus              ← comunicação entre componentes
 ├── agent_manager       → AgentManager           ← gerencia os 125 agentes
-├── plugin_manager      → PluginManager          ← gerencia os 3 plugins TS
-├── skill_manager       → SkillManager           ← gerencia as 104 skills
+├── plugin_manager      → PluginManager          ← gerencia os 4 plugins TS
+├── skill_manager       → SkillManager           ← gerencia as 105 skills
 ├── cache               → TTLCache               ← cache com tempo de vida
 ├── task_queue          → TaskQueue              ← fila de tarefas assíncronas
 ├── command_registry    → CommandRegistry        ← ponte para 14 comandos slash
 ├── plugin.manus-evolve         → PluginMeta     ← motor de evolução (TypeScript)
 ├── plugin.ecosystem-sync       → PluginMeta     ← sincronização do ecossistema (TypeScript)
-└── plugin.bernstein-sync       → PluginMeta     ← sincronização Bernstein (TypeScript)
+├── plugin.bernstein-sync       → PluginMeta     ← sincronização Bernstein (TypeScript)
+└── plugin.antigravity-bridge   → PluginMeta     ← ponte OpenCode↔Antigravity (TypeScript, v1.0)
 ```
 
 ### Bridge Python ⟷ TypeScript
@@ -565,9 +572,9 @@ O ecossistema mistura Python (para lógica de IA e dados) e TypeScript (para plu
 | Bridge | O que faz | Quantidade |
 |--------|-----------|:----------:|
 | `CommandRegistry` | Lê 14 comandos de `command/*.md` e espelha o TRIGGER_MAP do TypeScript | 14 comandos |
-| `PluginManager.discover_ts_plugins()` | Descobre plugins TypeScript e os registra como metadados (sem executar código TS no Python) | 3 plugins |
-| `register_in_container()` | Registra cada plugin como `plugin.<nome>` no Container | 3 chaves |
-| `health_summary()` | Gera painel de saúde mostrando o estado de todos os plugins | 3+ plugins |
+| `PluginManager.discover_ts_plugins()` | Descobre plugins TypeScript e os registra como metadados | 4 plugins |
+| `register_in_container()` | Registra cada plugin como `plugin.<nome>` no Container | 4 chaves |
+| `health_summary()` | Gera painel de saúde mostrando o estado de todos os plugins | 4+ plugins |
 
 **Testes:** 88/88 passando (54 das Fases 5+6 + 34 da Fase 7) · 378/391 testes legado preservados  
 **Compatibilidade retroativa:** 100% — `PluginManager()`, `MCPRouter()` e `CommandRegistry()` funcionam sem container
