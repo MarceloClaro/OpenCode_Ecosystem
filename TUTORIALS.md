@@ -48,7 +48,7 @@ python skills/system/pypi-scout/data_orchestrator.py
 
 ---
 
-## Tutorial 1: Gerar Artigo Acadêmico Qualis A1
+## 🆕 Tutorial 0-B: Auditoria Acadêmica Automática
 
 ### Objetivo
 

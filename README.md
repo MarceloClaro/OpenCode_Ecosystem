@@ -41,7 +41,8 @@ O **OpenCode Ecosystem** é uma plataforma de inteligência artificial que coord
 2. **Debate multiagente com Teoria dos Jogos** — Os agentes não apenas executam tarefas; eles **debatem** entre si usando 38 tipos de raciocínio (lógico, dialético, bayesiano) e 10 estratégias de Teoria dos Jogos (Nash, Minimax, Pareto), garantindo que conclusões sejam robustas.
 3. **Evolução autônoma** — O ecossistema **aprende** a cada uso: o motor AutoEvolve gera automaticamente novas skills a partir de padrões de sucesso, melhorando continuamente sem intervenção humana.
 4. **Autocura** — Um sistema de monitoramento contínuo detecta e corrige problemas automaticamente (skills corrompidas, configurações inválidas, vazamentos de caracteres CJK).
-5. **Modelo gratuito** — Opera com o modelo `big-pickle` (OpenCode Zen), que oferece 200K tokens de contexto e 128K de saída, sem custo.
+5. **Auditoria acadêmica caixa branca** — Toda interação do pesquisador é registrada em logs imutáveis (JSONL com hash SHA-256), cada afirmação é vinculada a uma evidência rastreável, e um dashboard HTML interativo permite auditoria em tempo real.
+6. **Modelo gratuito** — Opera com o modelo `big-pickle` (OpenCode Zen), que oferece 200K tokens de contexto e 128K de saída, sem custo.
 
 > **Modelo base:** `opencode/big-pickle` — OpenCode Zen, 200K tokens de contexto, 128K tokens de saída  
 > **Workspace:** `C:\Users\marce\.config\opencode`
@@ -81,6 +82,8 @@ O conteúdo deste README está organizado em uma **sequência progressiva**: pri
 
 **Parte II — Módulos e Funcionalidades**
 - [Pipeline Acadêmico Qualis A1](#pipeline-acadêmico-qualis-a1)
+- [Camada de Dados Universal — DataOrchestrator](#camada-de-dados-universal--dataorchestrator)
+- [Sistema de Auditoria Acadêmica](#sistema-de-auditoria-acadêmica)
 - [Engenharia Reversa — Reversa Framework](#engenharia-reversa--reversa-framework)
 - [Módulo Quantum](#módulo-quantum)
 - [Simulação MiroFish/BettaFish + PhD Auditor](#simulação-mirofishbettafish--phd-auditor)
@@ -287,6 +290,73 @@ A produção de um artigo acadêmico de qualidade Qualis A1 normalmente exige se
 | Auto Score Qualis inicial → final | 74 → **95/100** (+28,4%) |
 | Limiar Qualis A1 | ≥ 95/100 |
 | Tempo médio por pipeline | ~10–20 s (automação completa) |
+
+---
+
+## 🆕 Camada de Dados Universal — DataOrchestrator
+
+O ecossistema incorpora uma **camada de acesso universal a dados** que permite consultar **8 domínios** usando **linguagem natural** — sem precisar conhecer APIs, bibliotecas ou indicadores técnicos.
+
+```
+"PIB do Brasil" → WorldBankAnalyzer → wbgapi → NY.GDP.PCAP.CD
+"preço da ação AAPL" → FinanceAnalyzer → yfinance → $308.82
+"artigos sobre IA" → SeekerMultiSource → arXiv → 3 papers
+"top criptomoedas" → MarketSpeculator → ccxt → Binance top 5
+```
+
+### Arquitetura em 3 Camadas
+
+| Camada | Componente | Função |
+|--------|-----------|--------|
+| **Interface** | Query em linguagem natural | Zero conhecimento técnico necessário |
+| **Roteamento** | DataOrchestrator (592 linhas) | 80+ keywords → 8 domínios, auto-discovery, fallback |
+| **Execução** | 10 Ecosystem Hooks + 30+ bibliotecas | Geo, Finance, Crypto, BioMed, Academic, Economic, Health, PDF |
+
+### Exemplo de Uso
+
+```python
+from data_orchestrator import DataOrchestrator
+orch = DataOrchestrator()
+resultado = orch.query("PIB do Brasil em 2023")
+# → domain=economic, source=WorldBankAnalyzer, data={...}
+```
+
+> **Arquivo**: `skills/system/pypi-scout/data_orchestrator.py`  
+> **Hooks**: `skills/system/pypi-scout/ecosystem_hooks.py` (10 hooks, v2.0)
+
+---
+
+## 🆕 Sistema de Auditoria Acadêmica Caixa Branca
+
+Sistema completo de **auditoria acadêmica** que registra **todas** as interações do pesquisador com **rastreabilidade minuciosa** — cada afirmação é vinculada a uma evidência, cada evidência a uma fonte verificável (DOI/arXiv), cada decisão do pipeline é registrada em log imutável (JSONL com hash SHA-256).
+
+### 9 Componentes
+
+| Componente | Função |
+|-----------|--------|
+| **InteractionLogger** | Logging imutável JSONL, hash SHA-256, thread-safe |
+| **AcademicAuditTrail** | Trilha: parágrafo → evidência → DOI, TSAC (87 palavras) |
+| **TokenEconomyMonitor** | 3 níveis de orçamento (500K/200K/50K tokens) |
+| **AuditInstrumentor** | Auto-instrumentação do DataOrchestrator |
+| **ResearcherScore** | Score 0-100 (6 critérios ponderados) |
+| **BudgetAlert** | Alertas proativos (info/warning/critical) |
+| **AuditDashboard** | Dashboard HTML interativo em tempo real |
+| **AuditSearch** | Busca/filtro/comparação de sessões |
+| **PipelineIntegration** | Integração SEEKER → MASWOS → Auditoria |
+
+### Exemplo de Uso
+
+```python
+from audit_instrumentor import AuditInstrumentor
+from data_orchestrator import DataOrchestrator
+
+orch = DataOrchestrator()
+orch = AuditInstrumentor.wrap(orch, paradigm="Positivista", level=2)
+# Todas as queries são automaticamente logadas com auditoria completa!
+result = orch.query("artigos sobre deep learning")
+```
+
+> **Arquivos**: `skills/system/academic-audit/` (6 arquivos, ~1.900 linhas)
 
 ---
 

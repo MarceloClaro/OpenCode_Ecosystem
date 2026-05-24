@@ -158,6 +158,10 @@ Padrão de organização de skills do ecossistema. Cada `SKILL.md` contém no m�
 
 Padrão de raciocínio dos agentes: **THOUGHT → ACTION → OBSERVATION → REPEAT**. O agente pensa sobre o problema, executa uma ação, observa o resultado e repete o ciclo até alcançar a conclusão. Utilizado como loop principal de execução do orquestrador central.
 
+### ResearcherScore 🆕
+
+Sistema de pontuação de qualidade da sessão de pesquisa (0-100). Avalia 6 critérios ponderados: densidade de evidências (25%), fontes verificadas (20%), TSAC compliance (20%), diversidade de fontes (15%), cobertura multi-domínio (10%) e peer review (10%). Grades: A (≥90), B (≥75), C (≥60), D (≥40), F (<40).
+
 ---
 
 ## S
