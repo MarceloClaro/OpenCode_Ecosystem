@@ -1,0 +1,76 @@
+{
+  "versao": "1.0",
+  "criado_em": "2026-05-09T21:17:00.000000",
+  "ultima_atualizacao": "2026-05-09T21:17:00.000000",
+  "ecossistema": {
+    "scripts_python": 139,
+    "linhas_python": 46765,
+    "skills": 9,
+    "plugins_typescript": 2,
+    "agentes": 81,
+    "evals": 9,
+    "mcps": 17,
+    "agentes_detalhados": {
+      "basis_research_agent": 12,
+      "basis_research_core": 12,
+      "system_agent_definitions": 57
+    }
+  },
+  "evolucao": {
+    "ciclos_executados": 2,
+    "ciclo_atual_conhecimento": 6,
+    "score_medio_outcomes": 85.0,
+    "total_outcomes": 4,
+    "total_learnings": 5,
+    "total_snapshots_historicos": 16
+  },
+  "bridge": {
+    "health_geral": 100,
+    "componentes_saudaveis": 8,
+    "ultimo_health_check": "2026-05-09T21:04:11"
+  },
+  "qualidade": {
+    "cjk_leaks": 0,
+    "frontmatter_ok": 9,
+    "skills_under_2500b": 9,
+    "scripts_sem_entrypoint": 35,
+    "scripts_com_main": 100,
+    "anomalias": 0,
+    "recomendacoes_ativas": 3,
+    "bom_fixes_aplicados": 28,
+    "bom_fixes_detalhe": "25 Python + 3 JSON corrigidos no evolution loop"
+  },
+  "ciclos_evolucao": [
+    {
+      "id": "cycle-1778371266",
+      "status": "completed",
+      "fases": 6,
+      "health": 99.8,
+      "score": 85.0,
+      "duracao_ms": 58930,
+      "bom_fixes": 28
+    },
+    {
+      "id": "cycle-1778371402",
+      "status": "completed",
+      "fases": 6,
+      "health": 99.8,
+      "score": 85.0,
+      "duracao_ms": 17722,
+      "bom_fixes": 0
+    }
+  ],
+  "learnings": [
+    "2 ciclos de evolucao executados com sucesso, score medio 85.0",
+    "2 diagnostico(s) multi-perspectiva realizados",
+    "Ecossistema possui 9 skills, 139 scripts, 81 agentes, 2 plugins",
+    "Zero CJK leaks detectados - corretor linguistico operacional",
+    "35 scripts sem entrypoint - maioria bibliotecas puras (decisao arquitetural)"
+  ],
+  "fontes_dados": {
+    "total_fontes": 38,
+    "dominios": 6,
+    "internacionais": 10,
+    "editais_curados": 36
+  }
+}

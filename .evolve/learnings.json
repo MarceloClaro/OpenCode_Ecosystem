@@ -1,0 +1,139 @@
+{
+  "learnings": [
+    {
+      "timestamp": "2026-05-09T21:16:37.283267",
+      "categoria": "ciclo_evolucao",
+      "aprendizado": "2 ciclos de evolucao executados com sucesso, score medio 85.0",
+      "fonte": "outcomes.json",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-05-09T21:16:37.284264",
+      "categoria": "diagnostico",
+      "aprendizado": "2 diagnostico(s) multi-perspectiva realizados",
+      "fonte": "outcomes.json",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-05-09T21:16:37.284264",
+      "categoria": "ecossistema",
+      "aprendizado": "Ecossistema possui 9 skills, 139 scripts, 81 agentes, 2 plugins",
+      "fonte": "ecosystem_scanner",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-05-09T21:16:37.284264",
+      "categoria": "qualidade",
+      "aprendizado": "Zero CJK leaks detectados - corretor linguistico operacional",
+      "fonte": "ecosystem_scanner",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-05-09T21:16:37.284264",
+      "categoria": "arquitetura",
+      "aprendizado": "35 scripts sem entrypoint - maioria bibliotecas puras (decisao arquitetural)",
+      "fonte": "ecosystem_scanner",
+      "confianca": 0.8
+    },
+    {
+      "timestamp": "2026-05-14T17:00:00Z",
+      "categoria": "ciclo_evolucao",
+      "aprendizado": "Round 11 concluido: 2 novas skills academic-ml-pipeline e academic-export-abnt criadas, score 95/100",
+      "fonte": "evolution-cycle.json",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-05-14T17:00:00Z",
+      "categoria": "ml_pipeline",
+      "aprendizado": "Pipeline ML 6 etapas validado: 262 obs, 11 features, seed 42, AUC=0.707, RF 87.4%, 27 anomalias",
+      "fonte": "sessao_real_artigo_ARM_IAG",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-05-14T17:00:00Z",
+      "categoria": "exportacao",
+      "aprendizado": "Exportacao ABNT multi-formato consolidada: PDF (pdflatex), DOCX (template python-docx), HTML (standalone)",
+      "fonte": "skill_academic_export_abnt",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-05-14T17:00:00Z",
+      "categoria": "arquitetura",
+      "aprendizado": "Fase 8 (Exportacao Multi-Formato) integrada ao MASWOS via executor.py comando export",
+      "fonte": "executor.py",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-05-14T17:00:00Z",
+      "categoria": "qualidade",
+      "aprendizado": "Template ABNT python-docx gerado programaticamente - margens 3/2cm, Times 12pt, 1.5 espacamento",
+      "fonte": "templates/gerar_template_abnt.py",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-05-14T17:00:00Z",
+      "categoria": "ecossistema",
+      "aprendizado": "ECOSYSTEM_BRIDGE.md atualizado com Fase 8 e SB7.1 - bridge completa entre ML e exportacao",
+      "fonte": "criador-artigo/ECOSYSTEM_BRIDGE.md",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-05-14T17:00:00Z",
+      "categoria": "ecossistema",
+      "aprendizado": "Zero overlap entre academic-ml-pipeline e editais-br - dominios distintos (ML vs fomento)",
+      "fonte": "analise_comparativa",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-05-14T17:00:00Z",
+      "categoria": "qualidade",
+      "aprendizado": "Feature catalog das 11 features documentado em references/feature_catalog.md com fontes WDI/Oxford/FMI",
+      "fonte": "skill_academic_ml_pipeline",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-05-14T20:34:00Z",
+      "categoria": "ciclo_evolucao",
+      "aprendizado": "Round 12 concluido: v2->v3 do artigo ARM-IAG com medidas de complexidade economica (Secao 4.3.8), 3 novas features, 10 figuras, 3 exportacoes PDF/DOCX/HTML",
+      "fonte": "evolution-cycle.json",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-05-14T20:34:00Z",
+      "categoria": "ml_pipeline",
+      "aprendizado": "3 novas features de complexidade economica: knowledge_complexity (ECI), export_sophistication (EXPY), product_density - 17 referencias no artigo",
+      "fonte": "ARTIGO_COMPLETO_CORRIGIDO.md",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-05-14T20:34:00Z",
+      "categoria": "exportacao",
+      "aprendizado": "Exportacao v3: PDF 71 paginas/3.1MB, DOCX 2.8MB, HTML 4.3MB - 10 figuras (7 originais + 3 novas de complexidade)",
+      "fonte": "exportar-final.sh",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-05-14T20:34:00Z",
+      "categoria": "qualidade",
+      "aprendizado": "Fix encoding: UTF-8 BOM removido de ARTIGO_COMPLETO_CORRIGIDO.md; xelatex com inputenc antes de fontspec para emoji compatibilidade",
+      "fonte": "preambulo.sty",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-05-14T20:34:00Z",
+      "categoria": "insight",
+      "aprendizado": "Export_sophistication (EXPY) e o mais forte preditor de renda entre as 3 features de complexidade - correlacao com PIBpc superior a knowledge_complexity",
+      "fonte": "ml_pipeline/outputs/figuras/fig9_product_density_income.png",
+      "confianca": 0.85
+    },
+    {
+      "timestamp": "2026-05-14T20:34:00Z",
+      "categoria": "ecossistema",
+      "aprendizado": "Figuras v3 estao em ml_pipeline/outputs/figuras/ (nao em Figuras/) - fig8_feature_importance_v3.png, fig9_product_density_income.png, fig10_knowledge_complexity_scatter.png",
+      "fonte": "ml_pipeline/outputs/figuras",
+      "confianca": 0.95
+    }
+  ],
+  "total_records": 19,
+  "last_updated": "2026-05-14T20:34:00Z"
+}

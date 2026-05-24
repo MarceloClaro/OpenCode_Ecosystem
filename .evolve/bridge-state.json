@@ -1,0 +1,109 @@
+{
+  "overall_health": 100.0,
+  "last_sync": "2026-05-15T20:36:38.784305+00:00",
+  "components": {
+    "editais-local": {
+      "score": 100,
+      "status": "healthy",
+      "checks": {
+        "db": true,
+        "cli": true,
+        "frontend": true,
+        "embeddings": true
+      },
+      "exists": true,
+      "last_check": "2026-05-15T20:36:38.760218+00:00",
+      "error": null
+    },
+    "basis-research": {
+      "score": 100,
+      "status": "healthy",
+      "checks": {
+        "main": true,
+        "agents": true,
+        "db": true,
+        "tools": true
+      },
+      "exists": true,
+      "last_check": "2026-05-15T20:36:38.768337+00:00",
+      "error": null
+    },
+    "criador-artigo": {
+      "score": 100,
+      "status": "healthy",
+      "checks": {
+        "agents": true,
+        "banca": true,
+        "corretor": true,
+        "bridge": true
+      },
+      "exists": true,
+      "last_check": "2026-05-15T20:36:38.770350+00:00",
+      "error": null
+    },
+    "nexus": {
+      "score": 100,
+      "status": "healthy",
+      "checks": {
+        "scripts": true,
+        "orchestrator": true,
+        "references": true
+      },
+      "exists": true,
+      "last_check": "2026-05-15T20:36:38.770350+00:00",
+      "error": null
+    },
+    "evolution": {
+      "score": 100,
+      "status": "healthy",
+      "checks": {
+        "skills": true,
+        "nexus-bridge": true,
+        "evolution-cycle": true
+      },
+      "exists": true,
+      "last_check": "2026-05-15T20:36:38.770350+00:00",
+      "error": null
+    },
+    "quantum": {
+      "score": 100,
+      "status": "healthy",
+      "checks": {
+        "scripts": true,
+        "outputs": true,
+        "references": true,
+        "frontend": true
+      },
+      "exists": true,
+      "last_check": "2026-05-15T20:36:38.770350+00:00",
+      "error": null
+    },
+    "plugins": {
+      "score": 100,
+      "status": "healthy",
+      "checks": {
+        "ecosystem-sync": true,
+        "manus-evolve": true,
+        "ecosystem-bridge-py": true
+      },
+      "exists": true,
+      "last_check": "2026-05-15T20:36:38.770350+00:00",
+      "error": null
+    },
+    "skills": {
+      "score": 100,
+      "status": "healthy",
+      "checks": {
+        "categories": true,
+        "total": true,
+        "evolution-skills": true,
+        "system-skills": true
+      },
+      "exists": true,
+      "last_check": "2026-05-15T20:36:38.784305+00:00",
+      "error": null
+    }
+  },
+  "pipeline_history": [],
+  "version": "1.0.0"
+}

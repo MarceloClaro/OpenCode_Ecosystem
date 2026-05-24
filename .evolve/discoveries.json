@@ -1,0 +1,23 @@
+﻿{
+  "version": "1.0.0",
+  "last_scan": "2026-05-12T12:00:00Z",
+  "discovered": [
+    {"name": "addyosmani/agent-skills", "stars": 28300, "status": "installed"},
+    {"name": "nexu-io/open-design", "stars": 25700, "status": "installed"},
+    {"name": "jimliu/baoyu-skills", "stars": 17100, "status": "installed"},
+    {"name": "farmage/opencode-skills", "stars": 18, "status": "installed"},
+    {"name": "opencode-skills-main", "skills": 26, "status": "installed"},
+    {"name": "quantum-nexus-phd", "status": "installed"},
+    {"name": "quantum-medical-project", "skills": 7, "status": "installed"},
+    {"name": "mcp-use", "stars": 0, "status": "pending", "source": "npm registry", "description": "Fullstack MCP framework for building, managing and discovering MCP servers"},
+    {"name": "awesome-claude", "stars": 0, "status": "pending", "source": "github search", "description": "Curated list of Claude AI tools, SDKs, and integrations"},
+    {"name": "ask-user-questions-mcp", "stars": 0, "status": "pending", "source": "mcpick discovery", "description": "MCP server for interactive user Q&A during agent sessions"}
+  ],
+  "installed": [
+    "addyosmani", "open-design", "baoyu-skills", "farmage",
+    "opencode-skills-main", "quantum-nexus-phd", "quantum-medical-imaging",
+    "qml-gradcam", "quantum-dashboard", "qualis-a1-paper",
+    "error-mitigation-hybrid", "mcpick"
+  ],
+  "skipped": []
+}

@@ -651,7 +651,7 @@
       "name": "reasoning-orchestrator",
       "path": "skills\\system\\reasoning-orchestrator\\SKILL.md",
       "category": "system",
-      "bytes": 1985,
+      "bytes": 3427,
       "has_frontmatter": true,
       "has_name": true,
       "has_description": true,
@@ -659,7 +659,7 @@
       "is_oversize": false,
       "oversize_by": 0,
       "md5": "779a10ad9b26dd9d6d1734649b72499e",
-      "last_checked": "2026-05-16T16:58:42.574543"
+      "last_checked": "2026-05-24T18:00:00Z"
     },
     {
       "name": "token-efficiency",

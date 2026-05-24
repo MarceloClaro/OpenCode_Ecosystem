@@ -1,0 +1,54 @@
+{
+  "query": "large language model reasoning 2024",
+  "timestamp": "2026-05-24T15:15:00-03:00",
+  "sources": {
+    "arxiv": [
+      {
+        "title": "Making Large Language Models Better Reasoners with Alignment",
+        "year": 2023,
+        "citations": 0,
+        "doi": null,
+        "source": "arxiv"
+      },
+      {
+        "title": "Large Language Models Reasoning Abilities Under Non-Ideal Conditions After RL-Fine-Tuning",
+        "year": 2025,
+        "citations": 0,
+        "doi": null,
+        "source": "arxiv"
+      },
+      {
+        "title": "Double Multi-Head Attention Multimodal System for Odyssey 2024 Speech Emotion Recognition Challenge",
+        "year": 2024,
+        "citations": 0,
+        "doi": "10.21437/odyssey.2024-38",
+        "source": "arxiv"
+      }
+    ],
+    "semanticscholar": [],
+    "scholarly": [
+      {
+        "title": "Towards reasoning era: A survey of long chain-of-thought for reasoning large language models",
+        "year": 2026,
+        "citations": 490,
+        "doi": "",
+        "source": "scholarly"
+      },
+      {
+        "title": "Unveiling causal reasoning in large language models: Reality or mirage?",
+        "year": 2024,
+        "citations": 114,
+        "doi": "",
+        "source": "scholarly"
+      },
+      {
+        "title": "Meta reasoning for large language models",
+        "year": 2024,
+        "citations": 45,
+        "doi": "",
+        "source": "scholarly"
+      }
+    ]
+  },
+  "total": 6
+}

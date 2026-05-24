@@ -1,0 +1,50 @@
+{
+  "outcomes": [
+    {
+      "timestamp": "2026-05-09T21:01:10.583429",
+      "component": "social_diagnosis",
+      "action": "multi_agent_diagnosis",
+      "success": true,
+      "score": 85.0,
+      "duration_ms": 19.02627944946289,
+      "context_summary": "Diagnosed 4 perspectives",
+      "error": "",
+      "learnings": []
+    },
+    {
+      "timestamp": "2026-05-09T21:02:05.757986",
+      "component": "evolution_loop",
+      "action": "cycle_cycle-1778371266",
+      "success": true,
+      "score": 85.0,
+      "duration_ms": 58930.21011352539,
+      "context_summary": "Phase: integrate, Actions: 6",
+      "error": "",
+      "learnings": []
+    },
+    {
+      "timestamp": "2026-05-09T21:03:26.226914",
+      "component": "social_diagnosis",
+      "action": "multi_agent_diagnosis",
+      "success": true,
+      "score": 85.0,
+      "duration_ms": 83.36043357849121,
+      "context_summary": "Diagnosed 4 perspectives",
+      "error": "",
+      "learnings": []
+    },
+    {
+      "timestamp": "2026-05-09T21:03:39.955142",
+      "component": "evolution_loop",
+      "action": "cycle_cycle-1778371402",
+      "success": true,
+      "score": 85.0,
+      "duration_ms": 17721.662759780884,
+      "context_summary": "Phase: integrate, Actions: 6",
+      "error": "",
+      "learnings": []
+    }
+  ],
+  "total_records": 4,
+  "last_updated": "2026-05-09T21:03:39.955692"
+}

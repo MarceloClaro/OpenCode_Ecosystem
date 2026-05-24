@@ -1,0 +1,78 @@
+{
+  "status": "completed",
+  "started_at": "2026-05-14T18:00:00Z",
+  "completed_at": "2026-05-14T20:34:00Z",
+  "round": 12,
+  "label": "Artigo ARM-IAG v3 - Complexidade Economica + Export Multi-Formato",
+  "metrics": {
+    "collected_at": "2026-05-14T20:34:00Z",
+    "health_score": 100,
+    "components": {
+      "opencode-runtime": {
+        "score": 100,
+        "status": "healthy"
+      },
+      "mcp-ecosystem": {
+        "score": 100,
+        "status": "healthy"
+      },
+      "skills-system": {
+        "score": 100,
+        "status": "healthy"
+      },
+      "plugins": {
+        "score": 100,
+        "status": "healthy"
+      },
+      "npm-dependencies": {
+        "score": 100,
+        "status": "healthy"
+      },
+      "memory-store": {
+        "score": 100,
+        "status": "healthy"
+      },
+      "discovery-engine": {
+        "score": 100,
+        "status": "healthy"
+      },
+      "artigo-v3": {
+        "score": 100,
+        "status": "healthy"
+      }
+    },
+    "runtimes": {
+      "node": "25.9.0",
+      "bun": "1.3.13",
+      "python": "3.12.10"
+    },
+    "mcp_active": 20,
+    "skills_total": 11,
+    "plugins_total": 10
+  },
+  "actions": {
+    "npm_upgraded": [
+      "@anthropic-ai/claude-code@1.14.48",
+      "@anthropic-ai/claude-mcp-manager@0.3.16",
+      "@anthropic-ai/claude-mcp-manager-mcp@0.3.16",
+      "typescript-language-server@4.3.3",
+      "chokidar@4.0.3",
+      "@modelcontextprotocol/inspector@0.7.1",
+      "playwright-core@1.52.0",
+      "mcpick@0.0.25"
+    ],
+    "new_skills_created": [],
+    "artigo_update": "v2->v3: Secao 4.3.8 (Medidas de Complexidade Economica), 3 novas features, 10 figuras"
+  },
+  "insights": [
+    "Artigo ARM-IAG evoluido para v3 com medidas de complexidade economica (Secao 4.3.8)",
+    "3 novas features: knowledge_complexity (ECI), export_sophistication (EXPY), product_density",
+    "3 novas figuras: AIPI thresholds (Fig8), Feature importance SHAP (Fig9), Product density x GDP (Fig10)",
+    "Export_sophistication (EXPY) e o mais forte preditor de renda entre features de complexidade",
+    "Exportacao v3: PDF 71 paginas/3.1MB, DOCX 2.8MB, HTML 4.3MB",
+    "Fix: UTF-8 BOM removido, xelatex encoding para emoji, preambulo.sty corrigido",
+    "Codigo executado via code-runner MCP - analise_complexidade_economica.py e ml_pipeline_v3_complexidade.py"
+  ],
+  "learnings_added": 6,
+  "skills_ranked": 13
+}

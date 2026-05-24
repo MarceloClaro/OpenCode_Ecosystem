@@ -1,0 +1,50 @@
+{
+  "artigo-qualis-a1-95": {
+    "usage_count": 1,
+    "success_count": 1,
+    "error_count": 0,
+    "avg_response_ms": 0.0,
+    "last_used": "2026-05-07T00:09:37.635253",
+    "computed_score": 100
+  },
+  "reversa-sync-v4.0": {
+    "usage_count": 1,
+    "success_count": 1,
+    "error_count": 0,
+    "avg_response_ms": 0.0,
+    "last_used": "2026-05-07T00:34:19.724061",
+    "computed_score": 100
+  },
+  "agentes-header-sync-v4.0": {
+    "usage_count": 1,
+    "success_count": 1,
+    "error_count": 0,
+    "avg_response_ms": 0.0,
+    "last_used": "2026-05-07T00:37:58.974528",
+    "computed_score": 100
+  },
+  "quantum-project-integration-v4.0": {
+    "usage_count": 1,
+    "success_count": 1,
+    "error_count": 0,
+    "avg_response_ms": 0.0,
+    "last_used": "2026-05-07T00:49:58.491775",
+    "computed_score": 100
+  },
+  "genesis-writer-integration-v4.0": {
+    "usage_count": 1,
+    "success_count": 1,
+    "error_count": 0,
+    "avg_response_ms": 0.0,
+    "last_used": "2026-05-07T03:53:56.558074",
+    "computed_score": 100
+  },
+  "basis-research-verification-v4.0": {
+    "usage_count": 1,
+    "success_count": 1,
+    "error_count": 0,
+    "avg_response_ms": 0.0,
+    "last_used": "2026-05-07T05:11:22.776666",
+    "computed_score": 100
+  }
+}
