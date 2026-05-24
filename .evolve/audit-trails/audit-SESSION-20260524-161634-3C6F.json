@@ -1,0 +1,35 @@
+{
+  "session_id": "SESSION-20260524-161634-3C6F",
+  "paradigm": "Pragmatista (mista)",
+  "timestamp": "2026-05-24T16:16:34.680544+00:00",
+  "summary": {
+    "paragraphs": 2,
+    "sources": 3,
+    "total_evidence": 3
+  },
+  "citation_map": {
+    "10.1038/s41524-017-0032-0": [
+      "P01"
+    ],
+    "arXiv:2301.12345": [
+      "P01"
+    ],
+    "10.1596/978-1-4648-1328-8": [
+      "P02"
+    ]
+  },
+  "paragraphs": {
+    "P01": {
+      "tsac_score": 0,
+      "tsac_violations": [],
+      "evidence_count": 2,
+      "peer_reviewed": true
+    },
+    "P02": {
+      "tsac_score": 0,
+      "tsac_violations": [],
+      "evidence_count": 1,
+      "peer_reviewed": false
+    }
+  }
+}
