@@ -31,7 +31,14 @@ class TFIDFEmbedding:
     def tokenize(self, text: str) -> list:
         text = re.sub(r'[^a-zA-Zá-úÁ-Ú0-9\s]', ' ', text.lower())
         tokens = text.split()
-        stopwords = {"o", "a", "os", "as", "e", "de", "do", "da", "em", "um", "uma", "para", "com", "na", "no"}
+        stopwords = {
+            "o", "a", "os", "as", "e", "de", "do", "da", "em", "um", "uma", "para", 
+            "com", "na", "no", "que", "se", "por", "dos", "das", "nos", "nas", "ao", 
+            "aos", "como", "mas", "ou", "mais", "foi", "sua", "seu", "suas", "seus", 
+            "esta", "este", "estas", "estes", "isso", "isto", "aquilo", "uns", "umas",
+            "pelo", "pela", "qual", "quais", "quem", "quando", "onde", "porque",
+            "sobre", "entre", "também", "são", "ser", "tem", "ter", "está", "estão"
+        }
         return [t for t in tokens if len(t) > 2 and t not in stopwords]
 
     def fit(self, documents: list):
@@ -64,7 +71,9 @@ class TFIDFEmbedding:
         embedding = [0.0] * self.dim
         for i, word in enumerate(self.vocabulary):
             if word in tf:
-                embedding[i] = tf[word] * self.idf.get(word, 1.0)
+                # Sublinear TF (1 + log(tf)) para evitar dominância de palavras repetidas
+                sublinear_tf = 1 + math.log(tf[word])
+                embedding[i] = sublinear_tf * self.idf.get(word, 1.0)
         norm = math.sqrt(sum(v**2 for v in embedding))
         if norm > 0:
             embedding = [v / norm for v in embedding]
@@ -82,13 +91,43 @@ _similarity_threshold = 0.05
 
 # ── Indexação de Documentos Reais (Não Simulado) ──
 def chunk_text(text: str, max_words=150) -> list:
-    words = text.split()
-    return [" ".join(words[i:i+max_words]) for i in range(0, len(words), max_words)]
+    # Divisão primária por parágrafos para manter coesão semântica
+    paragraphs = [p.strip() for p in re.split(r'\n\s*\n', text) if p.strip()]
+    chunks = []
+    current_chunk = []
+    current_length = 0
+    
+    for p in paragraphs:
+        words = p.split()
+        if current_length + len(words) > max_words and current_chunk:
+            chunks.append(" ".join(current_chunk))
+            current_chunk = []
+            current_length = 0
+        
+        # Se um parágrafo for colossal (excede o max_words), quebra forçada
+        if len(words) > max_words:
+            for i in range(0, len(words), max_words):
+                chunks.append(" ".join(words[i:i+max_words]))
+        else:
+            current_chunk.extend(words)
+            current_length += len(words)
+            
+    if current_chunk:
+        chunks.append(" ".join(current_chunk))
+    return chunks
 
 def extract_entities(text: str) -> list:
-    # Simulação real de extração de NER baseada em maiúsculas (Graph RAG base)
-    words = re.findall(r'\b[A-Z][A-Za-zÀ-ÿ]{3,}\b', text)
-    return list(set([w.lower() for w in words]))
+    # 1. Entidades compostas com inicial maiúscula (Ex: OpenCode Ecosystem)
+    compound = re.findall(r'\b(?:[A-ZÀ-Ÿ][a-zà-ÿ]+(?:\s+[A-ZÀ-Ÿ][a-zà-ÿ]+)+)\b', text)
+    # 2. Acrônimos ou tecnologias em maiúsculas (Ex: RAG, TF-IDF, JSON, API)
+    acronyms = re.findall(r'\b[A-Z]{2,}(?:-[A-Z]+)*\b', text)
+    # 3. Entidades simples capitalizadas (mínimo 4 letras)
+    simple = re.findall(r'\b[A-ZÀ-Ÿ][a-zà-ÿ]{3,}\b', text)
+    
+    entities = set(compound + acronyms + simple)
+    # Filtrar stopwords capitalizadas de início de frase
+    false_positives = {"Para", "Como", "Este", "Esta", "Quando", "Onde", "Mas", "Por", "Que", "Qual", "Sobre", "Além"}
+    return list(set([e.lower() for e in entities if e not in false_positives]))
 
 def index_real_documents():
     db = vector_db()
