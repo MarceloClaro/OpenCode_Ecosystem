@@ -1,12 +1,12 @@
 {
   "version": "1.0.0",
-  "timestamp": "2026-05-24T11:58:36.995947+00:00",
+  "timestamp": "2026-05-24T17:34:18.984040+00:00",
   "workspace": "C:\\Users\\marce\\.config\\opencode",
   "summary": {
-    "total_skills": 44,
+    "total_skills": 45,
     "oversize_count": 23,
-    "healthy_count": 21,
-    "total_bytes": 286457,
+    "healthy_count": 22,
+    "total_bytes": 388666,
     "categories": {
       "dotclaude-edicao-cirurgica": {
         "total": 1,
@@ -84,9 +84,9 @@
         "bytes": 15618
       },
       "system": {
-        "total": 8,
+        "total": 9,
         "oversize": 1,
-        "bytes": 48774
+        "bytes": 150983
       },
       "workflows": {
         "total": 1,
@@ -716,6 +716,20 @@
       "oversize_by": 0,
       "md5": "d98b2fc9202d445cfbd42dc3592f5247",
       "last_checked": "2026-05-24T11:58:36.995947+00:00"
+    },
+    {
+      "name": "academic-audit",
+      "path": "skills\\system\\academic-audit\\SKILL.md",
+      "category": "system",
+      "bytes": 2924,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": false,
+      "oversize_by": 0,
+      "md5": "ca38f0232b889bf1e2906c90c79aee10",
+      "last_checked": "2026-05-24T17:34:18.984040+00:00"
     }
   ]
 }
