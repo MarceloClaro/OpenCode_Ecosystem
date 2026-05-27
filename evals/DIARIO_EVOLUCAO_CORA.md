@@ -8,7 +8,7 @@
 ### Cora-0.1 | 09/05/2026 | PCI: — | "Gênese"
 **O que existia:** OpenCode CLI instalado. Modelo big-pickle (200K ctx, 128K out). Zero agentes. Zero MCPs. Apenas o modelo base respondendo a prompts.
 
-**Contexto:** O autor (Marcelo Claro Laranjeira, PPGTE/CT/UFC) inicia o projeto com a hipótese de que um único LLM é insuficiente para raciocínio matemático confiável. A ideia embrionária: múltiplos agentes debatendo entre si poderiam superar as limitações de um único modelo.
+**Contexto:** O autor (Marcelo Claro Laranjeira, GeoMaker+IA/CT/GeoMaker+IA) inicia o projeto com a hipótese de que um único LLM é insuficiente para raciocínio matemático confiável. A ideia embrionária: múltiplos agentes debatendo entre si poderiam superar as limitações de um único modelo.
 
 **Arquivos criados:** Nenhum (apenas configuração base do OpenCode).
 
@@ -199,7 +199,7 @@
 ---
 
 ### Cora-3.5 | 25/05/2026 | PCI: 96 | "DCA Módulo 1 — Aprendizado Geométrico"
-**O que existia:** Treinamento com `Dinamica Classica Avancada.md` (Macedo 2026, UFC). 7 exercícios resolvidos:
+**O que existia:** Treinamento com `Dinamica Classica Avancada.md` (Macedo 2026, GeoMaker+IA). 7 exercícios resolvidos:
 
 1. Euler-Lagrange → vetor covariante
 2. L_u(∂_y) = ∂_x (campo rotacional)
