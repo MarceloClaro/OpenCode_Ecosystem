@@ -1,8 +1,8 @@
 # =====================================================================
-# REASONING AGENT FRAMEWORK v2.0
-# Base class for all 68 reasoning types across 12 categories
+# REASONING AGENT FRAMEWORK v2.1
+# Base class for all 208 reasoning types across 26 categories
 # =====================================================================
-# Each agent implements a specific reasoning type (R01-R68)
+# Each agent implements a specific reasoning type (R01-R208)
 # and participates in the ReasoningOrchestrator v11 pipeline
 # =====================================================================
 from abc import ABC, abstractmethod
@@ -351,6 +351,21 @@ REASONING_REGISTRY = {
     "R198": {"name": "Memetica-Transmissao-Cultural", "category": "XXIV", "domain": "anthropology"},
     "R199": {"name": "Polarizacao-Grupo-Deliberacao", "category": "XXIV", "domain": "sociology"},
     "R200": {"name": "Resiliencia-Comunitaria", "category": "XXIV", "domain": "sociology"},
+    # === Category XXV: Cross-Domain Generated (Creative Leap, R201-R204) ===
+    "R201": {"name": "Cross-Domain Deduction", "category": "XXV", "domain": "all"},
+    "R202": {"name": "Dimensional Verification", "category": "XXV", "domain": "all"},
+    "R203": {"name": "Symmetry-Guided Reasoning", "category": "XXV", "domain": "all"},
+    "R204": {"name": "Symmetry+Dimensional Hybrid", "category": "XXV", "domain": "all"},
+    # === Category XXVI: Geometric Reasoning (DCA Modulo 1, R205-R208) ===
+    "R205": {"name": "Local-Exactness Probe", "category": "XXVI", "domain": "geometry"},
+    "R206": {"name": "Topological-Singularity Detector", "category": "XXVI", "domain": "geometry"},
+    "R207": {"name": "Kaehler-Identity Reasoning", "category": "XXVI", "domain": "geometry"},
+    "R208": {"name": "Canonical-Example Strategy", "category": "XXVI", "domain": "all"},
+    # === Category XXVII: Perturbation Theory (candidates from DCA Listas, R209-R212) ===
+    "R209": {"name": "Homological-Equation Solver", "category": "XXVII", "domain": "mechanics"},
+    "R210": {"name": "Lax-Pair Detector", "category": "XXVII", "domain": "integrable_systems"},
+    "R211": {"name": "Separability-Test", "category": "XXVII", "domain": "mechanics"},
+    "R212": {"name": "Runge-Lenz Generalizer", "category": "XXVII", "domain": "mechanics"},
 }
 
 def get_agents_for_domain(domain: str) -> list[str]:

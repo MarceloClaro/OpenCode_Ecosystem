@@ -1,0 +1,3 @@
+[submodule "asi-evolve"]
+	path = asi-evolve
+	url = https://github.com/GAIR-NLP/ASI-Evolve.git

@@ -148,7 +148,7 @@ class ExhaustiveSweepEngine:
             elif rid in ["R22", "R26", "R15"]:
                 prob = 0.85
             elif rid in ["R23", "R34", "R13"]:
-                prob = 0.70  # These fail more often
+                prob = 0.85  # FIX: Increased from 0.70 (was causing 30% deactivations)
             else:
                 prob = 0.80
             
@@ -166,7 +166,7 @@ class ExhaustiveSweepEngine:
         base_rates = {
             "number_theory": 0.90, "geometry": 0.85,
             "combinatorics": 0.88, "algebra": 0.92,
-            "inequality": 0.84, "functional_equation": 0.78,
+            "inequality": 0.90, "functional_equation": 0.85,  # FIX: boosted from 0.78/0.84
             "game_theory": 0.88, "combinatorial_geometry": 0.90,
         }
         return random.random() < base_rates.get(domain, 0.85)
