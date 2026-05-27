@@ -26,7 +26,14 @@ class AutonomousGapFixer:
         self.vfile = AGENTS_DIR / "micro_versions.json"
         if self.vfile.exists():
             with open(self.vfile) as f:
-                self.micro_versions = json.load(f)
+                data = json.load(f)
+                # Handle both list and dict formats
+                if isinstance(data, list):
+                    self.micro_versions = data
+                elif isinstance(data, dict) and "fixes" in data:
+                    self.micro_versions = data["fixes"]
+                else:
+                    self.micro_versions = [data] if data else []
         self.fixes_applied = []
     
     def detect_gaps(self):
@@ -36,8 +43,9 @@ class AutonomousGapFixer:
         try:
             result = subprocess.run(
                 ["python", str(AGENTS_DIR / "exhaustive_sweep.py")],
-                capture_output=True, text=True, timeout=120,
-                cwd=str(OPencode_root)
+                capture_output=True, text=True, timeout=300,
+                cwd=str(OPencode_root),
+                env={**os.environ, "PYTHONIOENCODING": "utf-8"}
             )
             output = result.stdout + result.stderr
         except Exception as e:
