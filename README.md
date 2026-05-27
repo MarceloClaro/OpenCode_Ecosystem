@@ -1,29 +1,29 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/OpenCode_Ecosystem-v4.6-6366f1?style=for-the-badge&logo=openai&logoColor=white" alt="version"/>
+<img src="https://img.shields.io/badge/OpenCode_Ecosystem-v4.6.1-6366f1?style=for-the-badge&logo=openai&logoColor=white" alt="version"/>
 
-# OpenCode Ecosystem v4.6
+# OpenCode Ecosystem v4.6.1
 
-### Arquitetura Multiagente Evolutiva + DataOrchestrator + MiroFish/BettaFish + PhD Auditor
+### Arquitetura Multiagente Evolutiva — 212 Raciocinios · 55 IMO Testados · Loop Autonomo
 
 <br/>
 
 [![Agentes](https://img.shields.io/badge/Agentes-125-6366f1?style=flat-square)](agents/)
 [![MCPs](https://img.shields.io/badge/MCP_Servers-41-0ea5e9?style=flat-square)](opencode.json)
 [![Skills](https://img.shields.io/badge/Skills-106-10b981?style=flat-square)](skills/)
-[![Hooks](https://img.shields.io/badge/Ecosystem_Hooks-10-a855f7?style=flat-square)](skills/system/pypi-scout/ecosystem_hooks.py)
-[![Domínios](https://img.shields.io/badge/Data_Domains-8-f59e0b?style=flat-square)](skills/system/pypi-scout/data_orchestrator.py)
-[![Auditoria](https://img.shields.io/badge/Audit_System-9_componentes-ef4444?style=flat-square)](skills/system/academic-audit/)
-[![Raciocínios](https://img.shields.io/badge/Racioc%C3%ADnios-38_tipos-f59e0b?style=flat-square)](skills/agent-forum)
-[![Qualis](https://img.shields.io/badge/Auditoria_Qualis-10_crit%C3%A9rios_CAPES-10b981?style=flat-square)](skills/agent-forum/scripts/phd_auditor.py)
-[![DI Migration](https://img.shields.io/badge/DI_Migration-Fases_1%E2%80%937_%E2%9C%85-22c55e?style=flat-square)](.reversa/DI_MIGRATION.md)
+[![Raciocinios](https://img.shields.io/badge/Raciocinios-212_(27_cat.)-a855f7?style=flat-square)](skills/reasoning-orchestrator-v11/CATALOGO_RACIOCINIOS_212.md)
+[![IMO](https://img.shields.io/badge/IMO_Testados-55_problemas-f59e0b?style=flat-square)](evals/imo_batch_results.json)
+[![Cora](https://img.shields.io/badge/Cora_Debate-38/38-22c55e?style=flat-square)](skills/cora-debate/)
+[![PCI](https://img.shields.io/badge/PCI_Medio-98.3/100-22c55e?style=flat-square)]()
+[![Artigo](https://img.shields.io/badge/Artigo_Qualis_A1-19p/26refs-ef4444?style=flat-square)](artigo_completo_qualis_a1.pdf)
 [![CJK](https://img.shields.io/badge/CJK_Leaks-0-22c55e?style=flat-square)]()
-[![Status](https://img.shields.io/badge/Status-Produ%C3%A7%C3%A3o-22c55e?style=flat-square)]()
+[![Status](https://img.shields.io/badge/Status-Producao-22c55e?style=flat-square)]()
 
 <br/>
 
-> **Versão:** 4.2.3 · **Atualizado:** 2026-05-24 · **Modelo:** `opencode/deepseek-v4-pro` (200K ctx, 128K out)  
-> **Novo:** Reasoning Orchestrator v9.0 (68 tipos + 10 Game Theory) · DataOrchestrator (NL → 8 domínios) · Auditoria Caixa Branca (9 componentes) · PyPI Scout (22+ bib. curadas)
+> **Versao:** 4.6.1 · **Atualizado:** 2026-05-27 · **Modelo:** `deepseek-v4-pro` (200K ctx, 128K out)  
+> **Afiliação:** GeoMaker+IA — Museu Escolar Itinerante (CNM 9.76.35.5698)  
+> **Novo:** 212 raciocinios (27 cat) · 55 IMO testados (PCI 98.3) · Loop autonomo · ASI-Evolve · Platt Scaling · Artigo Qualis A1 (19p, 26 refs c/ DOI)
 
 </div>
 
@@ -31,7 +31,7 @@
 
 ## O que é o OpenCode Ecosystem?
 
-O **OpenCode Ecosystem** é uma plataforma de inteligência artificial que coordena **125 agentes especializados** para realizar tarefas complexas de forma autônoma. Em vez de usar um único modelo de IA para tudo, o ecossistema divide o trabalho entre dezenas de agentes — cada um treinado para uma função específica — que colaboram, debatem entre si e verificam mutuamente seus resultados.
+O **OpenCode Ecosystem** e uma plataforma de inteligencia artificial que coordena **125 agentes especializados** com **212 tipos de raciocinio** (27 categorias) para realizar tarefas complexas de forma autonoma. O sistema foi calibrado e validado em **55 problemas da IMO (2001-2020)** com PCI medio de 98.3/100 e 100% de taxa de aprovacao, e gera artigos academicos Qualis A1 com 26 referencias e DOIs auditaveis.
 
 **Em termos simples:** imagine uma universidade inteira dentro do seu terminal. Há agentes pesquisadores que buscam artigos científicos, agentes escritores que redigem textos acadêmicos, agentes revisores que avaliam a qualidade, agentes corretores que verificam normas ABNT, e até agentes que executam experimentos de computação quântica. Todos trabalham juntos, supervisionados por um orquestrador central, para entregar resultados com rigor acadêmico.
 

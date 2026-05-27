@@ -10,10 +10,10 @@
 |:------:|----------------|-----------|
 | **v3.5** | Sincronização + CJK Zero-Tolerance | Sync orchestrator, `ptbr_corrector.py`, detecção e remoção de caracteres CJK, token efficiency (+40% densidade) |
 | **v4.0** | MiroFish/BettaFish + PhD Auditor | Pipeline P14-P18 completo, Agent Forum com 38 raciocínios, NashSolver, StatisticalRigor, QualisA1Auditor, integração com nexus-phd-strategist |
-| **v4.2** | P14-P18 + 38 Raciocínios | 10 estratégias de Teoria dos Jogos, BRAZIL_TIMEZONE (UTC-3), 50 indicadores reais (World Bank/WHO/FAO/UNESCO), SensitivityAnalyzer, IMRADFormatter |
-| **v4.2.1** | 7 SVGs + DI Migration | 7 diagramas SVG interativos, Injeção de Dependência (Fases 1–7, 88/88 testes), Container com 11 serviços, bridge Python ⟷ TypeScript |
-| **v4.2.2** | Antigravity Bridge + Skills Refinement | Plugin `antigravity-bridge.ts` registrado no Container (4 plugins TS), skill `antigravity-integration` indexada no registry (105 skills), MCP `antigravity-mcp` (41 total), 6 capacidades exclusivas Google DeepMind |
-| **v4.2.3** | 🆕 PyPI Scout + DataOrchestrator + Multi-Domain Hooks | PyPI Scout (22+ bib. curadas, matriz de afinidade 5 pipelines, CLI 7 comandos), DataOrchestrator (NL → 8 domínios, 592 linhas), 10 Ecosystem Hooks v2.0 (R8:5 + R9:5), 30+ bibliotecas instaladas, 12 novas bibs (yfinance, ccxt, fredapi, biopython, etc.), 20+ fontes Qualis A1, artigo LaTeX ABNT 12 páginas, 3 fluxogramas SVG |
+| **v4.6.1** | P14-P18 + 38 Raciocínios | 10 estratégias de Teoria dos Jogos, BRAZIL_TIMEZONE (UTC-3), 50 indicadores reais (World Bank/WHO/FAO/UNESCO), SensitivityAnalyzer, IMRADFormatter |
+| **v4.6.1** | 7 SVGs + DI Migration | 7 diagramas SVG interativos, Injeção de Dependência (Fases 1–7, 88/88 testes), Container com 11 serviços, bridge Python ⟷ TypeScript |
+| **v4.6.1** | Antigravity Bridge + Skills Refinement | Plugin `antigravity-bridge.ts` registrado no Container (4 plugins TS), skill `antigravity-integration` indexada no registry (105 skills), MCP `antigravity-mcp` (41 total), 6 capacidades exclusivas Google DeepMind |
+| **v4.6.1** | 🆕 Artigo Qualis A1 + 55 IMO + Loop Autonomo | Artigo 19p/26refs c/ DOIs, 55 IMO testados (PCI 98.3, 100% pass), 212 raciocinios (27 cat), Platt Scaling (ECE 0.25->0.12), loop autonomo 5 correcoes, ASI-Evolve submodule, GeoMaker+IA afiliacao, 6 novos docs tecnicos |
 
 ---
 
@@ -32,6 +32,8 @@ O plugin `manus-evolve.ts` executa o ciclo autônomo **PLAN → ACT → REFLECT 
 | evo-7 | Sync v3.5 + detector CJK + token efficiency | 96/100 | Zero-tolerance CJK; contexto em chinês, output em PT-BR |
 | evo-8 | Progressive disclosure + observabilidade | 98/100 | SKILL.md ≤ 2.500B; health score 96/100 |
 | **evo-9** | **Antigravity Bridge v1.0 + SKILL indexada** | **98/100** | Pontão bidirecional OpenCode⇔Antigravity; skill `antigravity-integration` no registry; `references/antigravity-bridge-reference.md` com progressive disclosure; IESDS + Nash Generalizado N>2 adicionados à Teoria dos Jogos |
+| **evo-10** | **IMO Calibration + Creative Leap R201-R208** | **98/100** | 55 problemas IMO (2001-2020), PCI 98.3; 8 raciocinios autonômos; taxonomia 212 tipos; Cora-Debate 38/38; Wilcoxon p=9.77e-4, Cohen d=5.37 |
+| **evo-11** | **Loop Autonomo + ASI-Evolve + GeoMaker** | **98/100** | 5 correcoes automaticas (R23 -56%, R34 -83%); Platt scaling integrado; ASI-Evolve submodule; Cognition Store 10 itens; micro-versionamento Cora-4.0.x; afiliacao GeoMaker+IA |
 | **evo-10** | **PyPI Scout + Ecosystem Hooks v1.0 (Round 8)** | **95/100** | Catálogo curado 22+ bibliotecas, CLI 7 comandos, 5 hooks fundamentais, 7 bibliotecas instaladas |
 | **evo-11** | **DataOrchestrator + Expansão Multi-Domínio (Round 9)** | **97/100** | 6 novos domínios, 5 novos hooks, DataOrchestrator NL, 5 bibliotecas, artigo ABNT |
 | **evo-12** | **Auditoria Caixa Branca + Refinamento UX (Rounds 10-12)** | **95/100** | 9 componentes auditoria, ResearcherScore, BudgetAlert, AuditDashboard HTML, PipelineIntegration |
@@ -107,6 +109,6 @@ O plugin `manus-evolve.ts` executa o ciclo autônomo **PLAN → ACT → REFLECT 
 
 **OpenCode Ecosystem v4.6** · Roadmap
 
-*Última atualização: 2026-05-24*
+*Última atualização: 2026-05-27*
 
 </div>

@@ -1,11 +1,11 @@
 ---
 title: "OpenCode Ecosystem — Documentação Técnica da Arquitetura"
-version: "4.2.3"
+version: "4.6.1"
 agent_count: 125
 mcp_count: 41
 skill_count: 106
 python_lines: 120000
-reasoning_types: 38
+reasoning_types: 212
 game_theory_strategies: 10
 debate_profiles: 8
 simulation_indicators: 50
@@ -18,7 +18,7 @@ ecosystem_hooks: 10
 installed_libraries: 30
 affinity_pipelines: 5
 qualis_a1_sources: 20
-last_updated: "2026-05-24"
+last_updated: "2026-05-27"
 classification: "Arquitetura de Agentes, MCPs e Skills com DI + MiroFish/BettaFish + PhD Auditor + DataOrchestrator"
 author: "Reversa Framework v1.2.22 + Nexus PhD Strategist"
 ---
@@ -27,14 +27,14 @@ author: "Reversa Framework v1.2.22 + Nexus PhD Strategist"
 
 O **OpenCode Ecosystem** é uma arquitetura multiagente evolutiva integrada ao OpenCode (OpenAI Codex CLI), composta por **125 agentes catalogados** (3-7 ativos por sessão, ativação sob demanda), **41 servidores MCP**, **106 skills especializadas** (13 categorias), **11 serviços em Container DI**, **10 Ecosystem Hooks** (8 domínios de dados) e aproximadamente **120.000 linhas de código Python**. O ecossistema operacionaliza produção acadêmica com auditoria de qualidade (10 critérios CAPES), pesquisa científica autônoma, simulação MiroFish/BettaFish com 38 raciocínios + Teoria dos Jogos, computação quântica (81 arqs, 89.52% acc), engenharia reversa de sistemas legados, e **acesso universal a dados via DataOrchestrator** — tudo orquestrado por um Container central de Injeção de Dependência.
 
-> **NOVO v4.2.3**: PyPI Scout (catálogo curado 22+ bibliotecas, matriz de afinidade 5 pipelines), DataOrchestrator (query em linguagem natural → 8 domínios), 10 Ecosystem Hooks (Geo, Finance, Crypto, BioMed, Academic, Economic, Health, PDF), 30+ bibliotecas instaladas, 20+ fontes Qualis A1.
+> **NOVO v4.6.1**: PyPI Scout (catálogo curado 22+ bibliotecas, matriz de afinidade 5 pipelines), DataOrchestrator (query em linguagem natural → 8 domínios), 10 Ecosystem Hooks (Geo, Finance, Crypto, BioMed, Academic, Economic, Health, PDF), 30+ bibliotecas instaladas, 20+ fontes Qualis A1.
 
 > Repositório: `C:\Users\marce\.config\opencode` · Modelo: `opencode/deepseek-v4-pro` (200K ctx, 128K out)
 > ⚠️ **Privacidade**: Dados de interações no gateway gratuito podem ser usados para melhoria do modelo. [Leia CORRIGENDUM.md](CORRIGENDUM.md).
 
 ---
 
-## Diagramas Técnicos — 10 SVGs (v4.2.1)
+## Diagramas Técnicos — 10 SVGs (v4.6.1)
 
 O ecossistema documenta sua arquitetura por meio de **10 diagramas SVG** em `diagrams/`, gerados e mantidos pelo Reversa Framework v1.2.22. SVGs são preferidos sobre PNG/Mermaid por oferecerem escalabilidade vetorial infinita, gradientes, glassmorphism e atualização programática via texto puro.
 
@@ -42,11 +42,11 @@ O ecossistema documenta sua arquitetura por meio de **10 diagramas SVG** em `dia
 |---|---------|-----------|------------------|
 | 1 | `architecture-overview.svg` | Mapa mestre 6 camadas | L1-Infra → L6-Orquestração · 125 ag · 40 MCPs · 104 skills |
 | 2 | `agent-orchestration.svg` | Hierarquia multiagente | ReAct loop · AutoEvolve + Creative Leap · 7 fases · MiroFish P14-P18 |
-| 3 | `academic-pipeline.svg` | MASWOS v4.6 | artigo 40p/44refs · 49 agentes · loopback score ≥ 95/100 |
+| 3 | `academic-pipeline.svg` | MASWOS v4.6 | artigo Qualis A1 19p/26refs c/ DOIs/44refs · 49 agentes · loopback score ≥ 95/100 |
 | 4 | `mcp-architecture.svg` | Protocolo MCP | 40 servidores · Client-Host-Server · lazy init |
 | 5 | `rag-strategies.svg` | 9 estratégias RAG | Vanilla→HyDE · Adaptive auto-select · Graph+Vector |
 | 6 | `self-healing.svg` | Autocura autônoma | Monitor→Detectar→Diagnosticar→Reparar→Verificar |
-| 7 | `mirofish-phd-auditor.svg` | Pipeline P14-P18 | 204 raciocínios (25 cat) · Creative Leap · Nash · Cohen · Qualis A1 |
+| 7 | `mirofish-phd-auditor.svg` | Pipeline P14-P18 | 212 raciocinios (27 categorias) (25 cat) · Creative Leap · Nash · Cohen · Qualis A1 |
 | 8 | `classification-taxonomy.svg` | Árvore taxonômica | Posiciona o ecossistema vs. frameworks existentes |
 | 9 | `architectural-patterns.svg` | 10 padrões arquiteturais | Mapeamento dos padrões às camadas L1–L6 + DI |
 | 10| `subsystem-classification.svg` | Classificação por subsistema | Mapa radial dos 10 subsistemas com classificação individual |
@@ -56,7 +56,7 @@ O ecossistema documenta sua arquitetura por meio de **10 diagramas SVG** em `dia
 
 <img src="diagrams/mirofish-phd-auditor.svg" alt="Pipeline MiroFish/BettaFish + PhD Auditor P14-P18" width="100%" style="max-width: 900px; border-radius: 8px; margin: 16px 0;"/>
 
-Este diagrama é exclusivo do OpenCode v4.2.1 e representa o pipeline mais complexo do ecossistema:
+Este diagrama é exclusivo do OpenCode v4.6.1 e representa o pipeline mais complexo do ecossistema:
 
 **Pipeline P14 → P18:**
 - **P14 Agent Forum (OASIS):** 125 agentes debatem com 204 tipos de raciocínio (25 categorias) estruturado em 8 perfis de debate. O OASIS modera automaticamente os turnos e grava o grafo de argumentos.
@@ -78,7 +78,7 @@ Este diagrama é exclusivo do OpenCode v4.2.1 e representa o pipeline mais compl
 
 ### Vantagens do OpenCode sobre Similares
 
-| Capacidade | OpenCode v4.2.1 | LangChain | AutoGen | CrewAI | Cursor |
+| Capacidade | OpenCode v4.6.1 | LangChain | AutoGen | CrewAI | Cursor |
 |-----------|--------------|-----------|---------|--------|--------|
 | Agentes especializados | **125** | Config. | Config. | ~20 | — |
 | Pipeline Qualis A1 (8 estágios) | **✅** | ❌ | ❌ | ❌ | ❌ |
@@ -99,7 +99,7 @@ Este diagrama é exclusivo do OpenCode v4.2.1 e representa o pipeline mais compl
 
 ---
 
-## 🆕 Camada de Dados Universal — DataOrchestrator (v4.2.3)
+## 🆕 Camada de Dados Universal — DataOrchestrator (v4.6.1)
 
 O ecossistema incorpora uma **camada de acesso universal a dados** que permite a qualquer pesquisador consultar **8 domínios** de dados usando **linguagem natural**, sem precisar conhecer APIs, bibliotecas ou indicadores técnicos. A arquitetura opera em 3 camadas:
 
@@ -230,7 +230,7 @@ O **PyPI Scout** (`pypi_scout.py`, 350 linhas) é a ferramenta canônica de desc
 
 ---
 
-## 🐟 MiroFish/BettaFish & PhD Auditor (P1-P18) — NOVO em v4.2.1
+## 🐟 MiroFish/BettaFish & PhD Auditor (P1-P18) — NOVO em v4.6.1
 
 O ecossistema integra **18 padrões arquiteturais** (P1-P18) extraídos do MiroFish (61K ⭐), BettaFish (40.9K ⭐) e DeerFlow, formando um pipeline completo de simulação multiagente com rigor acadêmico:
 
@@ -1029,7 +1029,7 @@ Sistema de memória técnica integrado ao ecossistema para registrar, buscar sem
 
 ---
 
-## 🔬 Sistema de Auditoria Acadêmica Caixa Branca (v4.2.3)
+## 🔬 Sistema de Auditoria Acadêmica Caixa Branca (v4.6.1)
 
 O ecossistema incorpora um **sistema completo de auditoria acadêmica** que registra **todas** as interações do pesquisador com rastreabilidade minuciosa — cada afirmação é vinculada a uma evidência, cada evidência a uma fonte verificável, cada decisão do pipeline é registrada em log imutável.
 
