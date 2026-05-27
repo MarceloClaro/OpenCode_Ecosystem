@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-05-27T18:38:24",
+  "cora_version": "4.6.2",
+  "ollama_installed": true,
+  "ollama_running": true,
+  "models": {
+    "mistral:7b": "INSTALLED",
+    "phi3:mini": "INSTALLED",
+    "qwen2.5-coder:7b": "INSTALLED"
+  },
+  "bridge_configured": true,
+  "integration_tested": true,
+  "total_models": 3,
+  "installed_models": 3,
+  "autonomy_level": "FULL"
+}
