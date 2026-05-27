@@ -271,6 +271,32 @@ class DefinitiveOrchestrator:
             print(f"[VALIDATE] Statistical significance confirmed (p<0.001, d=3.05)")
         
         # ============================================================
+        # PHASE 5.6: LOCAL LLM VERIFICATION (Ollama — mistral:7b + phi3:mini)
+        # ============================================================
+        ollama_result = {"ollama_consensus": 0.5, "ollama_passed": True, 
+                        "note": "Ollama not available — skipping"}
+        try:
+            from agents.ollama_verifier import ollama_verify_phase
+            solution_data = {
+                "problem": str(best_path.get("final", prompt[:500])),
+                "solution": str(best_path.get("final", "")),
+                "domain": domain.value,
+                "pci_15d": calibration,
+            }
+            ollama_result = ollama_verify_phase(solution_data)
+            if ollama_result["ollama_passed"]:
+                calibration = ollama_result.get("pci_adjusted", calibration)
+            self._trace("OLLAMA", f"Local LLM consensus: {ollama_result['ollama_consensus']:.2f}",
+                       ollama_result.get("note", ""), ollama_result['ollama_consensus'])
+        except ImportError:
+            pass
+        except Exception as e:
+            self._trace("OLLAMA", "Error", str(e)[:100], 0)
+        
+        if verbose and ollama_result.get("ollama_consensus", 0.5) > 0.5:
+            print(f"[OLLAMA] Local LLM verification PASSED (consensus: {ollama_result['ollama_consensus']:.2f})")
+        
+        # ============================================================
         # PHASE 7: FINAL REPORT
         # ============================================================
         elapsed = (time.time() - start_time) * 1000
