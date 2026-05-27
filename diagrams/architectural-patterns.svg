@@ -40,7 +40,7 @@
   <rect width="1200" height="800" fill="url(#bg)" rx="8"/>
 
   <!-- Title -->
-  <text x="600" y="36" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="bold">10 Padrões Arquiteturais — OpenCode Ecosystem v4.6</text>
+  <text x="600" y="36" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="bold">10 Padrões Arquiteturais — OpenCode Ecosystem v4.6.1</text>
   <text x="600" y="56" text-anchor="middle" fill="#8b949e" font-size="10">Mapeamento de padrões por camada · Layered Architecture L1–L6 + Container DI</text>
 
   <!-- LEFT SIDE: Pattern boxes (2 columns of 5) -->
@@ -62,7 +62,7 @@
 
   <rect x="30" y="290" width="260" height="58" rx="8" fill="url(#l6c)" opacity="0.7" filter="url(#shadow)"/>
   <text x="42" y="312" fill="#fff" font-size="11" font-weight="bold">4. Pipeline Pattern</text>
-  <text x="42" y="328" fill="#c9d1d9" font-size="8">P1–P18 · MASWOS 8 estágios · AutoEvolve + Creative Leap</text>
+  <text x="42" y="328" fill="#c9d1d9" font-size="8">P1–P18 · MASWOS 8 estágios · AutoEvolve + ASI-Evolve + Creative Leap</text>
   <text x="42" y="340" fill="#8b949e" font-size="7">Estágios sequenciais com gates de qualidade</text>
 
   <rect x="30" y="360" width="260" height="58" rx="8" fill="url(#l4c)" opacity="0.7" filter="url(#shadow)"/>

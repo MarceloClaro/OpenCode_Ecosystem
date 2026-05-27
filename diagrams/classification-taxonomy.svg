@@ -44,7 +44,7 @@
   <rect width="1100" height="700" fill="url(#bg)" rx="8"/>
 
   <!-- Title -->
-  <text x="550" y="36" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="bold">Taxonomia — Classificação Técnica do OpenCode Ecosystem v4.6</text>
+  <text x="550" y="36" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="bold">Taxonomia — Classificação Técnica do OpenCode Ecosystem v4.6.1</text>
   <text x="550" y="56" text-anchor="middle" fill="#8b949e" font-size="10">Posicionamento entre frameworks de IA · Plataforma Multiagente Evolutiva</text>
 
   <!-- Level 0: Root -->
@@ -121,7 +121,7 @@
   <rect x="440" y="440" width="620" height="110" rx="12" fill="#238636" opacity="0.1" stroke="#3fb950" stroke-width="2" filter="url(#glow)"/>
   <rect x="440" y="440" width="620" height="110" rx="12" fill="none" stroke="#56d364" stroke-width="1" stroke-dasharray="6,3"/>
 
-  <text x="750" y="468" text-anchor="middle" fill="#3fb950" font-size="14" font-weight="bold">OpenCode Ecosystem v4.6</text>
+  <text x="750" y="468" text-anchor="middle" fill="#3fb950" font-size="14" font-weight="bold">OpenCode Ecosystem v4.6.1</text>
   <text x="750" y="488" text-anchor="middle" fill="#c9d1d9" font-size="10">Plataforma Multiagente Evolutiva com Orquestração Hierárquica</text>
 
   <!-- Feature badges inside highlight -->
@@ -135,16 +135,16 @@
   <text x="745" y="516" text-anchor="middle" fill="#fff" font-size="8" font-weight="bold">DI Container</text>
 
   <rect x="810" y="500" width="110" height="24" rx="4" fill="#238636" opacity="0.6"/>
-  <text x="865" y="516" text-anchor="middle" fill="#fff" font-size="8" font-weight="bold">AutoEvolve + Creative Leap</text>
+  <text x="865" y="516" text-anchor="middle" fill="#fff" font-size="8" font-weight="bold">AutoEvolve + ASI-Evolve + Creative Leap</text>
 
   <rect x="930" y="500" width="110" height="24" rx="4" fill="#238636" opacity="0.6"/>
   <text x="985" y="516" text-anchor="middle" fill="#fff" font-size="8" font-weight="bold">PhD Auditor</text>
 
   <rect x="460" y="528" width="150" height="18" rx="3" fill="#238636" opacity="0.3"/>
-  <text x="535" y="541" text-anchor="middle" fill="#8b949e" font-size="7">204 Raciocínios (25 categorias)</text>
+  <text x="535" y="541" text-anchor="middle" fill="#8b949e" font-size="7">212 Raciocinios (25 categorias)</text>
 
   <rect x="620" y="528" width="150" height="18" rx="3" fill="#238636" opacity="0.3"/>
-  <text x="695" y="541" text-anchor="middle" fill="#8b949e" font-size="7">Qualis A1 · Artigo 40p/44refs · Contrap</text>
+  <text x="695" y="541" text-anchor="middle" fill="#8b949e" font-size="7">Qualis A1 · 55 IMO · Artigo 40p/44refs · Contrap</text>
 
   <rect x="780" y="528" width="150" height="18" rx="3" fill="#238636" opacity="0.3"/>
   <text x="855" y="541" text-anchor="middle" fill="#8b949e" font-size="7">40 MCPs · 104 Skills · 9 RAG</text>
@@ -163,7 +163,7 @@
   <text x="665" y="632" text-anchor="middle" fill="#3fb950" font-size="9">PhD Auditor (Nash + Bonferroni)</text>
 
   <rect x="800" y="614" width="240" height="28" rx="4" fill="#238636" opacity="0.15" stroke="#3fb950" stroke-width="1"/>
-  <text x="920" y="632" text-anchor="middle" fill="#3fb950" font-size="9">204 Raciocínios (25 categorias)</text>
+  <text x="920" y="632" text-anchor="middle" fill="#3fb950" font-size="9">212 Raciocinios (25 categorias)</text>
 
   <text x="175" y="660" text-anchor="middle" fill="#484f58" font-size="7">vs. flat (CrewAI)</text>
   <text x="415" y="660" text-anchor="middle" fill="#484f58" font-size="7">vs. estática (LangChain/AutoGen)</text>

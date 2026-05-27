@@ -39,14 +39,14 @@
   <rect width="1200" height="750" fill="url(#bg)" rx="8"/>
 
   <!-- Title -->
-  <text x="600" y="36" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="bold">Classificação por Subsistema — OpenCode Ecosystem v4.6</text>
+  <text x="600" y="36" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="bold">Classificação por Subsistema — OpenCode Ecosystem v4.6.1</text>
   <text x="600" y="56" text-anchor="middle" fill="#8b949e" font-size="10">10 subsistemas · Classificação técnica individual · Métricas de escala</text>
 
   <!-- Central hub -->
   <circle cx="600" cy="390" r="50" fill="#161b22" stroke="#58a6ff" stroke-width="2" opacity="0.9"/>
   <text x="600" y="384" text-anchor="middle" fill="#58a6ff" font-size="10" font-weight="bold">OpenCode</text>
   <text x="600" y="398" text-anchor="middle" fill="#58a6ff" font-size="10" font-weight="bold">Ecosystem</text>
-  <text x="600" y="412" text-anchor="middle" fill="#8b949e" font-size="8">v4.6</text>
+  <text x="600" y="412" text-anchor="middle" fill="#8b949e" font-size="8">v4.6.1</text>
 
   <!-- Subsystem 1: Nexus NMA (top center) -->
   <line x1="600" y1="340" x2="600" y2="190" stroke="#30363d" stroke-width="1.5" marker-end="url(#arw)"/>
@@ -114,11 +114,11 @@
   <text x="905" y="298" fill="#f85149" font-size="9" font-weight="bold">Correções:</text>
   <text x="965" y="298" fill="#c9d1d9" font-size="9">Bonferroni · Power Analysis</text>
 
-  <!-- Subsystem 6: AutoEvolve + Creative Leap (bottom left) -->
+  <!-- Subsystem 6: AutoEvolve + ASI-Evolve + Creative Leap (bottom left) -->
   <line x1="560" y1="425" x2="290" y2="500" stroke="#30363d" stroke-width="1.5" marker-end="url(#arw)"/>
   <rect x="50" y="370" width="260" height="105" rx="10" fill="url(#g-green)" opacity="0.15" stroke="#3fb950" stroke-width="1.5" filter="url(#shadow)"/>
   <rect x="50" y="370" width="260" height="28" rx="10" fill="url(#g-green)" opacity="0.6"/>
-  <text x="180" y="390" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">AutoEvolve + Creative Leap (Manus Evolve)</text>
+  <text x="180" y="390" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">AutoEvolve + ASI-Evolve + Creative Leap (Manus Evolve)</text>
   <text x="65" y="416" fill="#3fb950" font-size="9" font-weight="bold">Tipo:</text>
   <text x="100" y="416" fill="#c9d1d9" font-size="9">Autonomous Skill Evolution Engine</text>
   <text x="65" y="432" fill="#3fb950" font-size="9" font-weight="bold">Pipeline:</text>
