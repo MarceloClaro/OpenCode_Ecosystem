@@ -95,9 +95,10 @@ class DomainPatternBase:
         ProblemDomain.GEOMETRY: {
             "keywords": ["triangle", "circle", "angle", "point", "line", "parallel",
                         "perpendicular", "cyclic", "tangent", "midpoint", "homothety"],
-            "reasoning": ["R04","R10","R14","R17","R34"],
-            "strategies": ["invariant", "direct", "contradiction"],
-            "improvements": ["symmetry_hunt", "decompose", "extremal_case"],
+            "reasoning": ["R04","R08","R10","R14","R17","R22","R23","R26","R34","R205","R208"],  # FIX: 5->11
+            "strategies": ["invariant", "direct", "contradiction", "reduction"],
+            "improvements": ["symmetry_hunt", "decompose", "extremal_case", "invariant_search"],
+            "r205_boost": True,  # Darboux/local-exactness for geometric reasoning
         },
         ProblemDomain.COMBINATORICS: {
             "keywords": ["sequence", "permutation", "subset", "pigeonhole", "count",

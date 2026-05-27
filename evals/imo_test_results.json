@@ -1,0 +1,68 @@
+[
+  {
+    "year": 2020,
+    "problem": 1,
+    "domain": "geometry",
+    "pci": 96,
+    "strategy": "invariant",
+    "agents": 9,
+    "time_ms": 196.70915603637695,
+    "matched_official": false,
+    "notes": "Keyword match: 29%"
+  },
+  {
+    "year": 2020,
+    "problem": 2,
+    "domain": "inequality",
+    "pci": 99,
+    "strategy": "invariant",
+    "agents": 10,
+    "time_ms": 304.2783737182617,
+    "matched_official": false,
+    "notes": "Keyword match: 22%"
+  },
+  {
+    "year": 2020,
+    "problem": 3,
+    "domain": "combinatorics",
+    "pci": 99,
+    "strategy": "invariant",
+    "agents": 15,
+    "time_ms": 160.40611267089844,
+    "matched_official": false,
+    "notes": "Keyword match: 22%"
+  },
+  {
+    "year": 2020,
+    "problem": 4,
+    "domain": "functional_equation",
+    "pci": 99,
+    "strategy": "invariant",
+    "agents": 12,
+    "time_ms": 149.9629020690918,
+    "matched_official": true,
+    "notes": "Keyword match: 44%"
+  },
+  {
+    "year": 2020,
+    "problem": 5,
+    "domain": "functional_equation",
+    "pci": 99,
+    "strategy": "invariant",
+    "agents": 12,
+    "time_ms": 155.45248985290527,
+    "matched_official": true,
+    "notes": "Keyword match: 31%"
+  },
+  {
+    "year": 2020,
+    "problem": 6,
+    "domain": "combinatorial_geometry",
+    "pci": 99,
+    "strategy": "reduction",
+    "agents": 17,
+    "time_ms": 159.45124626159668,
+    "matched_official": false,
+    "notes": "Keyword match: 10%"
+  }
+]

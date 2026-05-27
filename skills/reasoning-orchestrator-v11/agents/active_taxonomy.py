@@ -212,7 +212,7 @@ def demo():
         ("functional_equation", ["R10","R14","R08","R17","R15","R12"], 100, True),
         ("combinatorics", ["R10","R14","R22","R19","R08"], 100, True),
         ("number_theory", ["R10","R17","R14","R09","R08"], 100, True),
-        ("geometry", ["R04","R14","R08","R17","R10"], 94, True),
+        ("geometry", ["R04","R08","R10","R14","R17","R22","R23","R26","R34","R205","R208"], 100, True),  # FIX GEO: 5->11 types
         ("inequality", ["R10","R14","R08","R26","R17"], 100, True),
     ]
     

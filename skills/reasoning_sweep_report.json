@@ -1,6 +1,6 @@
 {
   "accuracy": 0.9069387755102041,
-  "ece": 0.2517014061390496,
+  "ece": 0.2505707645933253,
   "critical_gaps": [],
   "recommendations": [
     "PRIORITY: Improve invariant detection (R14) and stress testing (R26)",
@@ -10,60 +10,60 @@
     "number_theory": {
       "total": 200,
       "correct": 200,
-      "activated": 181
+      "activated": 182
     },
     "geometry": {
       "total": 125,
       "correct": 100,
-      "activated": 122
+      "activated": 112
     },
     "combinatorics": {
       "total": 200,
       "correct": 184,
-      "activated": 179
+      "activated": 174
     },
     "algebra": {
       "total": 125,
       "correct": 115,
-      "activated": 118
+      "activated": 116
     },
     "inequality": {
       "total": 100,
       "correct": 84,
-      "activated": 92
+      "activated": 99
     },
     "functional_equation": {
       "total": 150,
       "correct": 126,
-      "activated": 142
+      "activated": 136
     },
     "game_theory": {
       "total": 125,
       "correct": 110,
-      "activated": 103
+      "activated": 108
     },
     "combinatorial_geometry": {
       "total": 200,
       "correct": 192,
-      "activated": 181
+      "activated": 180
     }
   },
   "by_reasoning": {
     "R08": {
       "success_rate": 0.92,
-      "activation_rate": 0.91
+      "activation_rate": 0.93
     },
     "R10": {
       "success_rate": 0.895,
-      "activation_rate": 0.975
+      "activation_rate": 0.985
     },
     "R12": {
       "success_rate": 0.96,
-      "activation_rate": 0.9
+      "activation_rate": 0.76
     },
     "R14": {
       "success_rate": 0.8971428571428571,
-      "activation_rate": 0.9885714285714285
+      "activation_rate": 0.9828571428571429
     },
     "R15": {
       "success_rate": 0.96,
@@ -75,35 +75,35 @@
     },
     "R22": {
       "success_rate": 0.92,
-      "activation_rate": 0.9333333333333333
+      "activation_rate": 0.8533333333333334
     },
     "R23": {
       "success_rate": 0.92,
-      "activation_rate": 0.86
+      "activation_rate": 0.88
     },
     "R04": {
       "success_rate": 0.88,
-      "activation_rate": 0.88
+      "activation_rate": 0.74
     },
     "R17": {
       "success_rate": 0.88,
-      "activation_rate": 0.9085714285714286
+      "activation_rate": 0.9142857142857143
     },
     "R26": {
       "success_rate": 0.88,
-      "activation_rate": 0.8133333333333334
+      "activation_rate": 0.88
     },
     "R29": {
       "success_rate": 0.92,
-      "activation_rate": 0.8
+      "activation_rate": 0.76
     },
     "R34": {
       "success_rate": 0.84,
-      "activation_rate": 0.96
+      "activation_rate": 0.88
     },
     "R48": {
       "success_rate": 0.88,
-      "activation_rate": 0.76
+      "activation_rate": 0.84
     },
     "R13": {
       "success_rate": 0.96,

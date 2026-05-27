@@ -81,13 +81,16 @@ class ProblemClassifier:
                            "centroid", "bisector", "altitude", "median", "translate", "rotate",
                            "reflect", "similar", "congruent", "homothety", "inversion"],
                 "agents": ["notation-agent", "abstraction-agent", "modular-agent",
-                          "constructor-agent", "stresstest-agent",
-                          "lemmatracker-refined", "deductivechain-agent",
-                          "backwardchain-agent", "generalization-agent",
-                          "translation-agent"],  // FIX R04: added translation-agent
-                "reasoning": ["R04","R10","R14","R17","R34"],
-                "improvements": ["symmetry_hunt", "decompose", "extremal_case"],
-                "r04_boost": True,  // FIX R04: Translation critical for geometry
+                           "constructor-agent", "stresstest-agent",
+                           "lemmatracker-refined", "deductivechain-agent",
+                           "backwardchain-agent", "generalization-agent",
+                           "translation-agent", "contradiction-refined", "reductio-agent",
+                           "crossref-agent", "invariant-agent"],  // FIX GEO: +5 agents
+                "reasoning": ["R04","R08","R10","R14","R17","R22","R23","R26","R34","R205","R208"],  // FIX GEO: 5->11 reasoning types
+                "improvements": ["symmetry_hunt", "decompose", "extremal_case", "invariant_search"],
+                "r04_boost": True,   // FIX R04: Translation critical for geometry
+                "r23_boost": True,   // FIX: Contradiction useful for geometry proofs
+                "r205_boost": True,  // FIX: Darboux/local-exactness for geometric reasoning
             },
             ProblemDomain.FUNCTIONAL_EQUATION: {
                 "keywords": ["function", "f(x)", "f(y)", "for all", "satisfies",

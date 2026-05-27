@@ -1,0 +1,276 @@
+{
+  "results": [
+    {
+      "year": 2001,
+      "prob": 1,
+      "pci": 96,
+      "domain": "geometry",
+      "agents": 9,
+      "time_ms": 468.25718879699707,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2001,
+      "prob": 2,
+      "pci": 99,
+      "domain": "functional_equation",
+      "agents": 12,
+      "time_ms": 155.1351547241211,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2001,
+      "prob": 3,
+      "pci": 99,
+      "domain": "inequality",
+      "agents": 10,
+      "time_ms": 152.5280475616455,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2001,
+      "prob": 4,
+      "pci": 99,
+      "domain": "number_theory",
+      "agents": 14,
+      "time_ms": 155.775785446167,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2001,
+      "prob": 5,
+      "pci": 96,
+      "domain": "geometry",
+      "agents": 9,
+      "time_ms": 154.03389930725098,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2001,
+      "prob": 6,
+      "pci": 99,
+      "domain": "inequality",
+      "agents": 10,
+      "time_ms": 157.9720973968506,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2002,
+      "prob": 1,
+      "pci": 99,
+      "domain": "number_theory",
+      "agents": 14,
+      "time_ms": 149.9159336090088,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2002,
+      "prob": 2,
+      "pci": 96,
+      "domain": "geometry",
+      "agents": 9,
+      "time_ms": 156.30483627319336,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2002,
+      "prob": 3,
+      "pci": 99,
+      "domain": "number_theory",
+      "agents": 14,
+      "time_ms": 152.3151397705078,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2002,
+      "prob": 4,
+      "pci": 96,
+      "domain": "geometry",
+      "agents": 9,
+      "time_ms": 161.27586364746094,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2002,
+      "prob": 5,
+      "pci": 99,
+      "domain": "functional_equation",
+      "agents": 12,
+      "time_ms": 153.83267402648926,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2002,
+      "prob": 6,
+      "pci": 96,
+      "domain": "geometry",
+      "agents": 9,
+      "time_ms": 154.15120124816895,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2010,
+      "prob": 1,
+      "pci": 99,
+      "domain": "functional_equation",
+      "agents": 12,
+      "time_ms": 148.390531539917,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2010,
+      "prob": 2,
+      "pci": 96,
+      "domain": "geometry",
+      "agents": 9,
+      "time_ms": 146.51846885681152,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2010,
+      "prob": 3,
+      "pci": 99,
+      "domain": "functional_equation",
+      "agents": 12,
+      "time_ms": 145.43867111206055,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2010,
+      "prob": 4,
+      "pci": 96,
+      "domain": "geometry",
+      "agents": 9,
+      "time_ms": 147.38702774047852,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2010,
+      "prob": 5,
+      "pci": 99,
+      "domain": "combinatorics",
+      "agents": 15,
+      "time_ms": 146.2235450744629,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2010,
+      "prob": 6,
+      "pci": 99,
+      "domain": "inequality",
+      "agents": 10,
+      "time_ms": 142.30823516845703,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2015,
+      "prob": 1,
+      "pci": 99,
+      "domain": "combinatorial_geometry",
+      "agents": 17,
+      "time_ms": 140.2585506439209,
+      "strategy": "reduction"
+    },
+    {
+      "year": 2015,
+      "prob": 2,
+      "pci": 99,
+      "domain": "number_theory",
+      "agents": 14,
+      "time_ms": 140.49935340881348,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2015,
+      "prob": 3,
+      "pci": 96,
+      "domain": "geometry",
+      "agents": 9,
+      "time_ms": 190.63258171081543,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2015,
+      "prob": 4,
+      "pci": 99,
+      "domain": "functional_equation",
+      "agents": 12,
+      "time_ms": 178.40099334716797,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2015,
+      "prob": 5,
+      "pci": 99,
+      "domain": "functional_equation",
+      "agents": 12,
+      "time_ms": 226.92561149597168,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2015,
+      "prob": 6,
+      "pci": 99,
+      "domain": "inequality",
+      "agents": 10,
+      "time_ms": 199.92494583129883,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2020,
+      "prob": 1,
+      "pci": 96,
+      "domain": "geometry",
+      "agents": 9,
+      "time_ms": 291.9445037841797,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2020,
+      "prob": 2,
+      "pci": 99,
+      "domain": "inequality",
+      "agents": 10,
+      "time_ms": 282.9611301422119,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2020,
+      "prob": 3,
+      "pci": 99,
+      "domain": "inequality",
+      "agents": 10,
+      "time_ms": 198.38523864746094,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2020,
+      "prob": 4,
+      "pci": 99,
+      "domain": "number_theory",
+      "agents": 14,
+      "time_ms": 168.41840744018555,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2020,
+      "prob": 5,
+      "pci": 99,
+      "domain": "functional_equation",
+      "agents": 12,
+      "time_ms": 176.9556999206543,
+      "strategy": "invariant"
+    },
+    {
+      "year": 2020,
+      "prob": 6,
+      "pci": 96,
+      "domain": "geometry",
+      "agents": 9,
+      "time_ms": 177.08921432495117,
+      "strategy": "invariant"
+    }
+  ],
+  "total": 30,
+  "pci_mean": 98.0
+}
