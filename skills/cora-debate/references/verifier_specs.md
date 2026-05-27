@@ -137,3 +137,113 @@ sol = "exp(x)"         # y = e^x
 - Requer SymPy >= 1.12
 - Nao resolve EDPs nao-lineares
 - Falha em solucoes implicitas
+
+**Refinamento EVO-8 (v2.0)**:
+- Metodo primario: `sympy.checkodesol` para verificacao formal
+- Fallback: substituicao simbolica direta
+
+---
+
+## V7: Verificador de Rastreabilidade Bibliografica (DOI)
+
+**Objetivo**: Verificar que afirmacoes factuais em textos academicos possuem respaldo em DOI verificavel.
+
+**Metodo**:
+1. Extrair todos os DOIs do texto via regex (`10.\d{4,}/...`)
+2. Identificar padroes de afirmacao factual sem DOI proximo (ate 200 caracteres)
+3. Validar formato dos DOIs fornecidos
+
+**Padroes de afirmacao detectados**:
+- "Estudos mostram que..."
+- "Conforme a literatura..."
+- "Evidencias sugerem..."
+- "E comprovado que..."
+
+**Exemplo**:
+```
+Input:  "Estudos mostram que IA melhora educacao."
+Output: ALERTA - afirmacao factual sem DOI de respaldo
+```
+
+**Criterios de aprovacao**:
+- Zero afirmacoes factuais sem DOI de respaldo proximo
+- Todos os DOIs fornecidos no formato valido
+
+**Integracao com ecossistema**: Conecta-se ao CT-006 do pipeline TDD academico (EVO-8).
+
+---
+
+## V8: Verificador de Anonimato/Privacidade
+
+**Objetivo**: Detectar identificadores diretos e indiretos em documentos que exigem anonimato (anteprojetos, artigos para revisao cega).
+
+**Metodo**:
+1. Busca por identificadores diretos: nomes proprios compostos, CPF, RG, e-mail
+2. Busca por identificadores indiretos: perfis GitHub, metricas especificas (N estrelas + M forks), mencao de autoria
+3. Busca por nomes de produtos publicos que permitem busca reversa do autor
+
+**Protocolo EVO-8**: Identificadores indiretos sao tao perigosos quanto nomes. Qualquer combinacao que permita busca reversa em 30 segundos e considerada violacao.
+
+**Exemplo**:
+```
+Input:  "A plataforma OpenCode (17 estrelas, 7 forks) foi desenvolvida por..."
+Output: ALERTA - nome_produto_publico + metricas GitHub = identificacao indireta
+```
+
+**Severidades**:
+- ALTA: nome proprio, CPF, e-mail, perfil GitHub, metricas unicas
+- MEDIA: nome de produto publico (sugestao: substituir por descricao generica)
+
+**Integracao**: Conecta-se ao CT-001 do pipeline TDD academico e a ADR security-001 (EVO-8).
+
+---
+
+## V9: Verificador de Conformidade Normativa (LGPD/Etica)
+
+**Objetivo**: Verificar conformidade de textos academicos com a LGPD (Lei 13.709/2018) e a Resolucao PRPPG/UFC nº 39/2025.
+
+**Frameworks suportados**:
+- `lgpd`: Lei Geral de Protecao de Dados Pessoais
+- `etica_pesquisa`: Resolucao PRPPG/UFC 39/2025 (uso de IA na pesquisa)
+
+**Checks LGPD**:
+| ID | Verificacao | Art. LGPD |
+|----|-------------|-----------|
+| dados_pessoais_processamento | Dados pessoais mencionados com protecao? | Art. 6º, 7º |
+| dados_sensiveis | Dados sensiveis com consentimento/CEP? | Art. 11 |
+| transferencia_internacional | Transferencia para nuvem/externo com garantias? | Art. 33 |
+| direitos_titular | Direitos do titular (acesso, exclusao) mencionados? | Art. 17-21 |
+
+**Checks Etica em Pesquisa**:
+| ID | Verificacao | Norma |
+|----|-------------|-------|
+| declaracao_ia | Uso de IA declarado? | Res. 39/2025 |
+| plagio_ia | IA como assistente (nao autora)? | Res. 39/2025 |
+| reprodutibilidade | Resultados auditaveis/reprodutiveis? | Res. 39/2025 |
+| consentimento_participantes | TCLE e CEP para participantes? | Res. 39/2025 |
+
+**Metodo**: Para cada check, busca trigger pattern no texto. Se trigger presente mas safeguard ausente, dispara ALERTA.
+
+**Exemplo**:
+```
+Input:  "Dados pessoais serao enviados para nuvem OpenAI."
+Output: ALERTA - transferencia_internacional sem garantias (Art. 33 LGPD)
+```
+
+**Integracao**: Conecta-se ao CT-009 do pipeline TDD academico (declaracao de IA) e ao Modulo D do guia pratico (LGPD).
+
+---
+
+## Resumo de Versoes (EVO-8)
+
+| Verificador | v1.0 | v2.0 (EVO-8) |
+|------------|------|---------------|
+| V1 | Analise dimensional basica (10 unidades) | +40 unidades, +equivalencias |
+| V2 | SymPy simplify | Mantido estavel |
+| V3 | Random search [-100,100] | SymPy solve + grid search + random fallback |
+| V4 | Shapiro-Wilk, Pearson r | +Bootstrap CI, +Mann-Whitney, +Cohen's d, +one-sample t-test |
+| V5 | Tolerancia IEEE 754 | Mantido estavel |
+| V6 | Substituicao manual | checkodesol + substituicao fallback |
+| V7 | — | **[NOVO]** Rastreabilidade DOI |
+| V8 | — | **[NOVO]** Anonimato/Privacidade |
+| V9 | — | **[NOVO]** Conformidade LGPD/Etica |

@@ -149,5 +149,80 @@
       "heldout_problems": 5,
       "ollama_approved": false
     }
+  },
+  {
+    "version": "4.0.12",
+    "timestamp": "2026-05-27T20:56:17.047756",
+    "type": "high_ece",
+    "description": "Auto-fix for high_ece",
+    "confidence": 85,
+    "metrics": {},
+    "details": {
+      "type": "high_ece",
+      "metric": "ece",
+      "current": 0.2549,
+      "target": 0.15,
+      "priority": "HIGH"
+    }
+  },
+  {
+    "version": "4.0.13",
+    "timestamp": "2026-05-27T20:56:20.074085",
+    "type": "high_ece",
+    "description": "Auto-fix for high_ece",
+    "confidence": 85,
+    "metrics": {},
+    "details": {
+      "type": "high_ece",
+      "metric": "ece",
+      "current": 0.2623,
+      "target": 0.15,
+      "priority": "HIGH"
+    }
+  },
+  {
+    "version": "4.0.14",
+    "timestamp": "2026-05-27T20:56:23.099242",
+    "type": "high_ece",
+    "description": "Auto-fix for high_ece",
+    "confidence": 85,
+    "metrics": {},
+    "details": {
+      "type": "high_ece",
+      "metric": "ece",
+      "current": 0.2655,
+      "target": 0.15,
+      "priority": "HIGH"
+    }
+  },
+  {
+    "version": "4.0.15",
+    "timestamp": "2026-05-27T20:56:26.119604",
+    "type": "high_ece",
+    "description": "Auto-fix for high_ece",
+    "confidence": 85,
+    "metrics": {},
+    "details": {
+      "type": "high_ece",
+      "metric": "ece",
+      "current": 0.2672,
+      "target": 0.15,
+      "priority": "HIGH"
+    }
+  },
+  {
+    "version": "4.0.16",
+    "timestamp": "2026-05-27T20:56:29.621314",
+    "type": "high_ece",
+    "description": "Auto-fix for high_ece",
+    "confidence": 85,
+    "metrics": {},
+    "details": {
+      "type": "high_ece",
+      "metric": "ece",
+      "current": 0.26,
+      "target": 0.15,
+      "priority": "HIGH"
+    }
   }
 ]

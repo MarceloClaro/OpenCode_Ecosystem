@@ -116,7 +116,7 @@ test("V6: Placeholder (executou sem erro)", "error" not in r6 or "SymPy" in r6.g
 
 # List verifiers
 r_list = handler.handle_list({})
-test("List verifiers: 6 disponiveis", r_list.get("count") == 6,
+test("List verifiers: 9 disponiveis (V1-V9 EVO-8)", r_list.get("count") == 9,
      f"count={r_list.get('count')}")
 
 # Health

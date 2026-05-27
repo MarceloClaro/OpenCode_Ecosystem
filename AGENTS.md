@@ -107,6 +107,7 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | 5 | 语言校正器CJK检测 | 98 | 中文上下文+PT-BR输出需强制校正器; 零容忍CJK泄漏 |
 | 6 | editais-br v2.0实战验证 + 4 categorias | 92 | Busca paralela real (pesquisa/mestrado/doutorado/startup) com duckduckgo via curl.exe; httpx bloqueado por CAPTCHA; score por perfil 58-68/100 |
 | 7 | editais-br v7.1 cache versionado + 50+ curados | 94 | KeyError score corrigido + CACHE_VERSION; 28→52 editais curados (16 FAPs estaduais, 4 exterior, 4 setoriais); fallback curadoria agora cobre todas as 27 UFs |
+| 8 | SDD+TDD Pipeline Acadêmico + Simulação de Arguição | 94 | 7 specs modularizadas + 9 CTs validados + 7 correções aplicadas + 3 ADRs DecisionNode + 16 perguntas de banca simuladas; nota DAP 8,07→9,0; anteprojeto PPGTE/UFC anonimizado e validado |
 
 ## 快速命令
 
@@ -156,6 +157,11 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | editais-br 4 categorias | 4次 | pesquisa/mestrado/doutorado/startup → 10 resultados reais cada |
 | extracao_profunda | 1次 | sintaxe corrigida, extração funcional (contrapartida, prazos, docs) |
 | editais-br v7.1 cache versionado | 1次 | bug KeyError score corrigido + CACHE_VERSION + setdefault score + cache invalidation |
+| SDD+TDD (specs/ pipeline) | 1次 | 7 specs criadas, 9 CTs, 7/7 falhas corrigidas, 3 ADRs registradas |
+| Simulação de Arguição (agent-forum) | 1次 | 16 perguntas, 3 personas de banca, nota DAP 8,07→9,0 |
+| Protocolo de Anonimato | 1次 | identificadores indiretos removidos; anteprojeto anônimo validado |
+| DecisionNode (ADRs) | 3次 | architectu-001, testing-001, security-001 registradas |
+| Conhecimento Estruturado (SDD) | 1次 | especificação como infraestrutura operacional (Cap. 6 livro) |
 
 ## 交叉验证矩阵 (亲和度)
 
@@ -167,3 +173,7 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 - websearch↔SEEKER-searcher: 0.85
 - editais-br↔websearch: 0.90 (curl.exe+duckduckgo bypass)
 - editais-br↔docling-pdf-extraction: 0.85 (extracao_profunda dependente)
+- SDD+TDD↔DecisionNode: 0.95 (specs geram ADRs automaticamente)
+- agent-forum↔sequential-thinking: 0.90 (simulação de banca com personas)
+- TESTS_SPEC↔PDF-validation: 0.88 (pipeline CI para documentos acadêmicos)
+- Protocolo-Anonimato↔grep: 0.92 (detecção de identificadores indiretos)
