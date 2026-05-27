@@ -103,7 +103,7 @@ ANTES (v4.2.2)                           DEPOIS (v4.2.3)
 |---------|---------|-------------------|
 | `artigo_evolucao_standalone.tex` | LaTeX ABNT | 12 páginas |
 | `artigo_evolucao_standalone.pdf` | PDF compilado | 117KB |
-| `fluxograma_evolve_pipeline.svg` | SVG | Pipeline 6 estágios |
+| `fluxograma_evolve_pipeline.svg` | SVG | Pipeline 7 fases |
 | `fluxograma_data_orchestrator.svg` | SVG | Arquitetura 3 camadas |
 | `fluxograma_matriz_afinidade.svg` | SVG | 13×5 grid |
 | `OPENCODE_ECOSYSTEM.md` | Markdown | +Camada Dados + Auditoria |

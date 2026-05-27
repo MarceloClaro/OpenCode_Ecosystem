@@ -214,9 +214,9 @@ ollama ps
 1. **qwen3.6:latest (23 GB)** — Remova! Consome 23 GB de disco e é inviável em CPU. Use `ollama rm qwen3.6:latest`
 2. **qwen2.5-coder:7b (4.7 GB)** — Mantenha! Já instalado e funcional para código
 3. **Sem GPU** — Prefira modelos de 3B-4B parâmetros (2-3 GB). Modelos 7B+ serão muito lentos
-4. **Contexto** — CPU-only limita o contexto a 4K-8K tokens. O big-pickle oferece 200K — considere isso ao migrar
-5. **Híbrido** — Use LLM local para tarefas simples e big-pickle (nuvem gratuita) para tarefas complexas
+4. **Contexto** — CPU-only limita o contexto a 4K-8K tokens. O deepseek-v4-pro oferece 200K — considere isso ao migrar
+5. **Híbrido** — Use LLM local para tarefas simples e deepseek-v4-pro (nuvem gratuita) para tarefas complexas
 
 ---
 
-> **Conclusão**: Seu PC está pronto para rodar OpenCode com LLMs locais! Instale `llama3.2:3b` e configure o provider Ollama. Para tarefas que exigem contexto grande (200K), mantenha o big-pickle como fallback.
+> **Conclusão**: Seu PC está pronto para rodar OpenCode com LLMs locais! Instale `llama3.2:3b` e configure o provider Ollama. Para tarefas que exigem contexto grande (200K), mantenha o deepseek-v4-pro como fallback.

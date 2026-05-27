@@ -2,7 +2,7 @@
 name: dataset-search
 description: "Busca de datasets abertos em múltiplas fontes: catálogo curado local (200 datasets), data.gov CKAN API, HuggingFace Datasets Hub. Filtros por categoria, cloud, vintage e tema semântico. Use quando precisar de: 'buscar dataset', 'dados abertos', 'dataset público', 'data.gov', 'repositório de dados', 'HuggingFace dataset', 'fonte de dados para pesquisa'."
 version: "1.1.0"
-author: "OpenCode Ecosystem v4.2.2"
+author: "OpenCode Ecosystem v4.6"
 category: research
 updated_at: "2026-05-24"
 allowed-tools: Read Edit Write Bash

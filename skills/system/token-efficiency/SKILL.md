@@ -1,6 +1,6 @@
 ---
 name: token-efficiency
-description: "Otimizacao de tokens para ecossistema OpenCode - Chines + PT-BR + big-pickle"
+description: "Otimizacao de tokens para ecossistema OpenCode - Chines + PT-BR + deepseek-v4-pro"
 user-invocable: true
 license: MIT
 compatibility: OpenCode, Claude Code, Cursor, Gemini CLI
@@ -24,7 +24,7 @@ Maximizar eficiencia de tokens mantendo saida em portugues brasileiro formal.
 |---|-----------|----------|
 | 1 | Contexto em chines simplificado | 30-40% |
 | 2 | Saida obrigatoria PT-BR formal | - |
-| 3 | Modelo big-pickle (200K ctx, gratuito) | -100% custo |
+| 3 | Modelo deepseek-v4-pro (200K ctx, gratuito) | -100% custo |
 | 4 | Tabelas vs paragrafos | 25-35% |
 | 5 | Referencia vs copia | 50-70% |
 

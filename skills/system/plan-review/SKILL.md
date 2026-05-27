@@ -8,14 +8,15 @@ metadata:
   author: OpenCode Ecosystem
   version: "2.1.0"
   openclaw:
-        emoji: "📋"
+    emoji: "📋"
     homepage: https://github.com/anomalyco/opencode
 allowed-tools: Read Edit Write Glob Grep Bash Task SequentialThinking AskUserQuestion
 ---
 
 # Plan Review
 
-## TL;DR  
+## TL;DR
+
 Systematic plan review focused on 3 quality categories: Citation Quality, Completeness, and Actionability. Structure is pre-validated by `plan_save`—focus on whether the plan provides actionable implementation guidance.
 
 ## When to Use
@@ -27,11 +28,10 @@ Systematic plan review focused on 3 quality categories: Citation Quality, Comple
 
 ---
 
-
 ## Quick Reference Files
 
 | File | Content |
-|------|---------|
+| --- | --- |
 | `reference/plan-review-checklist.md` | Plan Review Checklist |
 | `reference/severity-classification.md` | Severity Classification |
 | `reference/output-format.md` | Output Format |

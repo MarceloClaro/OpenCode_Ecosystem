@@ -12,7 +12,7 @@
 - **Bun:** 1.3
 - **OpenCode CLI:** 1.14
 - **Espaço de trabalho:** `C:\Users\marce\.config\opencode`
-- **Modelo:** big-pickle (OpenCode Zen, 200K tokens de contexto, 128K tokens de saída, gratuito)
+- **Modelo:** deepseek-v4-pro (OpenCode Zen, 200K tokens de contexto, 128K tokens de saída, gratuito)
 
 ---
 
@@ -69,7 +69,7 @@
 | Nexus | 40 | Multiagente/barreiras de sincronização/tipos de raciocínio |
 | MiroFish/BettaFish | 11 | OASIS + Forum + Config + Graph + Report + Nash + Stats + Qualis + Sensitivity + IMRAD + Debate |
 | Tipos de Raciocínio | 38 | 6 categorias (Lógico 5 + Dialético 5 + Teoria dos Jogos 10 + Decisão 5 + Estratégico 5 + Inovação 8) |
-| Criador de Artigos | 91 | MASWOS v4.2 + bridges + auto-score |
+| Criador de Artigos | 91 | MASWOS v4.6 + bridges + auto-score |
 | SEEKER | 78 | 10 agentes + argument tree + 10+ fontes acadêmicas |
 | Evolução | 9 | 6 ciclos geracionais + editais-br v7.1 em produção + cache versionado + correção KeyError |
 | Corretor | 1 | ptbr_corrector.py (detecção CJK + gramática PT-BR) |
@@ -220,6 +220,6 @@ Maiores afinidades entre componentes:
 
 <div align="center">
 
-**OpenCode Ecosystem v4.2.1** · Documentação de Agentes em Português Brasileiro
+**OpenCode Ecosystem v4.6** · Documentação de Agentes em Português Brasileiro
 
 </div>

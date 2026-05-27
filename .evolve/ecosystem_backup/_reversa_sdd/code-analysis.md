@@ -3,7 +3,7 @@
 > **Gerado por:** reversa-archaeologist  
 > **Data:** 2026-05-10  
 > **Nível de documentação:** detalhado  
-> **Modelo:** big-pickle (OpenCode Zen, 200K ctx, 128K out)  
+> **Modelo:** deepseek-v4-pro (OpenCode Zen, 200K ctx, 128K out)  
 
 ---
 
@@ -404,7 +404,7 @@ Skills de Sistema identificadas:
 - code-philosophy: 5 Leis da Defesa Elegante
 - code-review: Metodologia com classificação de gravidade
 - reasoning-orchestrator: Nexus v6.0, 58 tipos de raciocínio
-- token-efficiency: Otimização chinês + PT-BR + big-pickle
+- token-efficiency: Otimização chinês + PT-BR + deepseek-v4-pro
 
 ---
 

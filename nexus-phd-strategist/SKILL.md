@@ -1,6 +1,6 @@
 ---
 name: nexus-phd-strategist
-description: Skill para orquestração de análises de nível PhD, integrando Teoria dos Jogos, 38 tipos de raciocínio e auditoria Qualis A1. Use para elevar a qualidade de artigos científicos, detectar anomalias em dados complexos e garantir rigor metodológico extremo para aprovação em bancas internacionais.
+description: Skill para orquestração de análises de nível PhD, integrando Teoria dos Jogos, 204 tipos de raciocínio (25 categorias) e auditoria Qualis A1. Use para elevar a qualidade de artigos científicos, detectar anomalias em dados complexos e garantir rigor metodológico extremo para aprovação em bancas internacionais.
 ---
 
 # Nexus PhD Strategist
@@ -49,7 +49,7 @@ Antes de entregar o resultado ao usuário, atue como uma banca revisora implacá
 
 ## Recursos Inclusos
 
-- `references/reasoning_types.md`: Definição dos 38 tipos de raciocínio.
+- `references/reasoning_types.md`: Definição dos 204 tipos de raciocínio (25 categorias).
 - `references/qualis_a1_standards.md`: Critérios estatísticos e metodológicos para publicações top-tier.
 - `scripts/game_theory_analyzer.py`: Script Python para cálculo de Equilíbrios de Nash.
 - `templates/qualis_a1_article_template.md`: Estrutura base para redação científica.

@@ -17,7 +17,7 @@ allowed-tools: Read Edit Write Glob Grep Bash Pdf Docling
   SAIDA OBRIGATORIA: PORTUGUES BRASILEIRO FORMAL
   Toda resposta DEVE ser em portugues do Brasil formal.
   Contexto em chines para eficiencia de tokens (densidade +40%%).
-  Modelo: big-pickle (OpenCode Zen, 200K ctx, 128K out, gratuito)
+  Modelo: deepseek-v4-pro (OpenCode Zen, 200K ctx, 128K out, gratuito)
 -->
 
 # docling-pdf-extraction

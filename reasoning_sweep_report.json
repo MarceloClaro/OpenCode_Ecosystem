@@ -1,0 +1,114 @@
+{
+  "accuracy": 0.9020408163265307,
+  "ece": 0.25057557366749567,
+  "critical_gaps": [],
+  "recommendations": [
+    "INVESTIGATE: R13 deactivated in 8/25 cases",
+    "PRIORITY: Improve invariant detection (R14) and stress testing (R26)",
+    "PRIORITY: Reduce deactivation rate of R23 (contradiction) and R13 (reduction)"
+  ],
+  "by_domain": {
+    "number_theory": {
+      "total": 200,
+      "correct": 200,
+      "activated": 176
+    },
+    "geometry": {
+      "total": 125,
+      "correct": 100,
+      "activated": 120
+    },
+    "combinatorics": {
+      "total": 200,
+      "correct": 184,
+      "activated": 182
+    },
+    "algebra": {
+      "total": 125,
+      "correct": 115,
+      "activated": 113
+    },
+    "inequality": {
+      "total": 100,
+      "correct": 84,
+      "activated": 96
+    },
+    "functional_equation": {
+      "total": 150,
+      "correct": 120,
+      "activated": 130
+    },
+    "game_theory": {
+      "total": 125,
+      "correct": 110,
+      "activated": 113
+    },
+    "combinatorial_geometry": {
+      "total": 200,
+      "correct": 192,
+      "activated": 180
+    }
+  },
+  "by_reasoning": {
+    "R08": {
+      "success_rate": 0.92,
+      "activation_rate": 0.91
+    },
+    "R10": {
+      "success_rate": 0.89,
+      "activation_rate": 0.985
+    },
+    "R12": {
+      "success_rate": 0.96,
+      "activation_rate": 0.9
+    },
+    "R14": {
+      "success_rate": 0.8914285714285715,
+      "activation_rate": 0.9657142857142857
+    },
+    "R15": {
+      "success_rate": 0.96,
+      "activation_rate": 0.8266666666666667
+    },
+    "R19": {
+      "success_rate": 0.94,
+      "activation_rate": 0.93
+    },
+    "R22": {
+      "success_rate": 0.9066666666666666,
+      "activation_rate": 0.9066666666666666
+    },
+    "R23": {
+      "success_rate": 0.9,
+      "activation_rate": 0.72
+    },
+    "R04": {
+      "success_rate": 0.88,
+      "activation_rate": 0.9
+    },
+    "R17": {
+      "success_rate": 0.8742857142857143,
+      "activation_rate": 0.92
+    },
+    "R26": {
+      "success_rate": 0.88,
+      "activation_rate": 0.8933333333333333
+    },
+    "R29": {
+      "success_rate": 0.92,
+      "activation_rate": 0.8
+    },
+    "R34": {
+      "success_rate": 0.8,
+      "activation_rate": 0.76
+    },
+    "R48": {
+      "success_rate": 0.88,
+      "activation_rate": 0.8
+    },
+    "R13": {
+      "success_rate": 0.96,
+      "activation_rate": 0.68
+    }
+  }
+}

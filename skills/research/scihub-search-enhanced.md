@@ -2,9 +2,9 @@
 name: scihub-search-enhanced
 description: "Pipeline de busca acadêmica multi-estratégia: CrossRef → Unpaywall (OA) → Sci-Hub → CORE → arXiv. Use quando precisar de: DOI validation, PDF download, citação ABNT automática, batch de artigos, busca por palavras-chave em fontes abertas. Gatilhos: 'baixar artigo', 'buscar DOI', 'citação ABNT', 'acesso aberto', 'PDF artigo', 'sci-hub', 'scihub'."
 version: "2.0.0"
-author: "OpenCode Ecosystem v4.2.2"
+author: "OpenCode Ecosystem v4.6"
 category: research
-compatibility: big-pickle
+compatibility: deepseek-v4-pro
 updated_at: "2026-05-24"
 allowed-tools: Read Edit Write Bash
 ---

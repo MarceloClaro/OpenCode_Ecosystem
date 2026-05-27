@@ -5,7 +5,7 @@ user-invocable: true
 license: MIT
 compatibility: OpenCode, Claude Code
 metadata:
-  author: OpenCode Ecosystem v4.2.1
+  author: OpenCode Ecosystem v4.6
   version: "1.0.0"
   ecossistema: opencode
   categoria: agent-forum
@@ -18,7 +18,7 @@ allowed-tools: Read Edit Write Bash
 
 # Skill: Integração Antigravity v1.0
 
-Ponte bidirecional entre o **OpenCode Ecosystem v4.2** e o **Antigravity** (Google DeepMind Advanced Agentic Coding). Permite que o OpenCode orquestre capacidades exclusivas do Antigravity de forma transparente, auditável e com fallback automático.
+Ponte bidirecional entre o **OpenCode Ecosystem v4.6** e o **Antigravity** (Google DeepMind Advanced Agentic Coding). Permite que o OpenCode orquestre capacidades exclusivas do Antigravity de forma transparente, auditável e com fallback automático.
 
 ## Componentes
 
@@ -60,7 +60,7 @@ task(
   description="Gerar diagrama visual do pipeline MASWOS",
   prompt="""
     Tipo: image
-    Descrição: Diagrama de arquitetura MASWOS v4.2, 49 agentes em fluxo sequencial
+    Descrição: Diagrama de arquitetura MASWOS v4.6, 49 agentes em fluxo sequencial
     Estilo: academic (para inclusão em artigo LaTeX)
   """
 )

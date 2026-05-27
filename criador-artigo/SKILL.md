@@ -6,7 +6,7 @@ description: "Skill do ecossistema OpenCode - criador-artigo"
 
 name: criador-de-artigo-v2
 description: >
-  Cria artigos científicos completos (mínimo 110 páginas, Qualis A1) com rigor ABNT/APA/Vancouver/IMRAD.
+  Criacao de artigos cientificos completos com rigor ABNT/APA/Vancouver/IMRAD e auditoria de qualidade CAPES.
   Incorpora Harness Engineering (Claude Code Architecture) para gerenciamento de contexto, permissões e orquestração de agentes.
   Produz textos minuciosos, autodidáticos, lógicos e coesos, com pontuação 10/10 em bancas nacionais e internacionais.
   Inclui protocolo de Citações Auditáveis de Alta Densidade (DOI, trecho original, tradução, fichamento crítico contextualizado).
@@ -16,7 +16,7 @@ description: >
 ---
 name: criador-de-artigo-v2
 description: >
-  Cria artigos científicos completos (mínimo 110 páginas, Qualis A1) com rigor ABNT/APA/Vancouver/IMRAD.
+  Criacao de artigos cientificos completos com rigor ABNT/APA/Vancouver/IMRAD e auditoria de qualidade CAPES.
   Incorpora Harness Engineering (Claude Code Architecture) para gerenciamento de contexto, permissões e orquestração de agentes.
   Produz textos minuciosos, autodidáticos, lógicos e coesos, com pontuação 10/10 em bancas nacionais e internacionais.
   Inclui protocolo de Citações Auditáveis de Alta Densidade (DOI, trecho original, tradução, fichamento crítico contextualizado).

@@ -105,7 +105,7 @@ O plugin `manus-evolve.ts` executa o ciclo autônomo **PLAN → ACT → REFLECT 
 
 <div align="center">
 
-**OpenCode Ecosystem v4.2.2** · Roadmap
+**OpenCode Ecosystem v4.6** · Roadmap
 
 *Última atualização: 2026-05-24*
 

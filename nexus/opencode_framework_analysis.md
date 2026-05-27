@@ -139,7 +139,7 @@ C:\Users\marce\.config\opencode\
 | `evolution_loop.py` | 750 | Feedback loop 6 fases (DETECT→INTEGRATE) |
 | `sync_orchestrator.py` | 586 | Orquestração de 900 componentes |
 | `meta_learning_engine.py` | 582 | Meta-learning (Few-shot, Zero-shot, AutoML) |
-| `micro_reasoning_types.py` | 724 | 38 tipos de raciocínio |
+| `micro_reasoning_types.py` | 724 | 204 tipos de raciocínio (25 categorias) |
 | `evolution_engine.py` | 299 | Motor de evolução com learning |
 | `self_healer.py` | 254 | Auto-cura (CJK, frontmatter, syntax) |
 | `ecosystem_config.py` | 131 | Config centralizada + state helpers |

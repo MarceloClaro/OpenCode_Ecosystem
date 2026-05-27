@@ -20,7 +20,7 @@ tags:
 
 ## Visão Geral
 
-Esta skill implementa a ponte bidirecional entre o **OpenCode Ecosystem v4.2** e o
+Esta skill implementa a ponte bidirecional entre o **OpenCode Ecosystem v4.6** e o
 **Antigravity** (Google DeepMind Advanced Agentic Coding), permitindo que o OpenCode
 orquestre capacidades exclusivas do Antigravity de forma transparente e auditável.
 
@@ -64,7 +64,7 @@ task(
   prompt="""
     Delegar ao Antigravity:
     Tipo: image
-    Descrição: Diagrama de arquitetura do pipeline MASWOS v4.2,
+    Descrição: Diagrama de arquitetura do pipeline MASWOS v4.6,
     mostrando os 49 agentes em fluxo sequencial com setas coloridas
     Estilo: academic (para inclusão em artigo LaTeX)
   """

@@ -2,7 +2,7 @@
   SAÍDA OBRIGATÓRIA: PORTUGUÊS BRASILEIRO FORMAL
   Toda resposta DEVE ser em português do Brasil formal.
   Contexto em chinês para eficiência de tokens (densidade +40%%).
-  Modelo: big-pickle (OpenCode Zen, 200K ctx, 128K out, gratuito)
+  Modelo: deepseek-v4-pro (OpenCode Zen, 200K ctx, 128K out, gratuito)
 -->
 
 # 核查清单 — 10/10 · ≥95页 · Qualis A1 · 巴西与国际评审委员会

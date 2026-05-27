@@ -1,0 +1,161 @@
+[
+  {
+    "id": "IMO-2025-P1",
+    "domain": "combinatorial_geometry",
+    "pci": 100,
+    "strategy": "reduction",
+    "agents": 17,
+    "reasoning": [
+      "R04",
+      "R08",
+      "R10",
+      "R13",
+      "R14"
+    ],
+    "confidence": 1.0,
+    "matched": true
+  },
+  {
+    "id": "IMO-2024-P1",
+    "domain": "number_theory",
+    "pci": 100,
+    "strategy": "invariant",
+    "agents": 14,
+    "reasoning": [
+      "R08",
+      "R10",
+      "R12",
+      "R14",
+      "R15"
+    ],
+    "confidence": 1.0,
+    "matched": true
+  },
+  {
+    "id": "IMO-2024-P2",
+    "domain": "number_theory",
+    "pci": 100,
+    "strategy": "invariant",
+    "agents": 14,
+    "reasoning": [
+      "R08",
+      "R10",
+      "R12",
+      "R14",
+      "R15"
+    ],
+    "confidence": 1.0,
+    "matched": true
+  },
+  {
+    "id": "IMO-2024-P6",
+    "domain": "functional_equation",
+    "pci": 100,
+    "strategy": "invariant",
+    "agents": 12,
+    "reasoning": [
+      "R10",
+      "R14",
+      "R17",
+      "R22",
+      "R23"
+    ],
+    "confidence": 1.0,
+    "matched": true
+  },
+  {
+    "id": "IMO-2002-P1",
+    "domain": "number_theory",
+    "pci": 100,
+    "strategy": "invariant",
+    "agents": 14,
+    "reasoning": [
+      "R08",
+      "R10",
+      "R12",
+      "R14",
+      "R15"
+    ],
+    "confidence": 1.0,
+    "matched": true
+  },
+  {
+    "id": "IMO-2019-P1",
+    "domain": "functional_equation",
+    "pci": 100,
+    "strategy": "invariant",
+    "agents": 12,
+    "reasoning": [
+      "R10",
+      "R14",
+      "R17",
+      "R22",
+      "R23"
+    ],
+    "confidence": 1.0,
+    "matched": true
+  },
+  {
+    "id": "IMO-2015-P2",
+    "domain": "combinatorics",
+    "pci": 100,
+    "strategy": "invariant",
+    "agents": 14,
+    "reasoning": [
+      "R08",
+      "R10",
+      "R12",
+      "R14",
+      "R15"
+    ],
+    "confidence": 1.0,
+    "matched": true
+  },
+  {
+    "id": "IMO-2013-P1",
+    "domain": "number_theory",
+    "pci": 100,
+    "strategy": "invariant",
+    "agents": 14,
+    "reasoning": [
+      "R08",
+      "R10",
+      "R12",
+      "R14",
+      "R15"
+    ],
+    "confidence": 1.0,
+    "matched": true
+  },
+  {
+    "id": "IMO-2001-P1",
+    "domain": "geometry",
+    "pci": 94,
+    "strategy": "invariant",
+    "agents": 9,
+    "reasoning": [
+      "R04",
+      "R10",
+      "R14",
+      "R17",
+      "R34"
+    ],
+    "confidence": 0.94,
+    "matched": true
+  },
+  {
+    "id": "IMO-2001-P2",
+    "domain": "inequality",
+    "pci": 100,
+    "strategy": "invariant",
+    "agents": 10,
+    "reasoning": [
+      "R10",
+      "R14",
+      "R17",
+      "R26"
+    ],
+    "confidence": 1.0,
+    "matched": true
+  }
+]

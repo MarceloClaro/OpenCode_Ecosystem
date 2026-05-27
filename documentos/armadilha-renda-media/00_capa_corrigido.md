@@ -1,7 +1,7 @@
 # A Armadilha da Renda Media no Brasil: educação como Condicao Necessaria mas Insuficiente para o Desenvolvimento
 ## Uma análise Quantitativa Cross-Nacional com Dados do Banco Mundial e UNESCO (1990-2022)
 ---
-**Ecossistema OpenCode, SEEKER + Criador Artigo v2 + MASWOS v4.2**
+**Ecossistema OpenCode, SEEKER + Criador Artigo v2 + MASWOS v4.6**
 **Qualis A1 · ABNT NBR 6023:2025**
 Brasil · 2026
 ---

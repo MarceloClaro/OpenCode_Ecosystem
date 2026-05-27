@@ -1,6 +1,6 @@
 <!-- SAÍDA OBRIGATÓRIA: PORTUGUÊS BRASILEIRO FORMAL -->
 <!-- Contexto em chinês para eficiência de tokens. Responda em PT-BR formal. -->
-<!-- Modelo: big-pickle -->
+<!-- Modelo: deepseek-v4-pro -->
 
 ---
 name: baoyu-skills

@@ -5,7 +5,7 @@ description: >
   de estado, valida dependências entre fases e mantém persistência
   das etapas do pipeline de engenharia reversa.
 role: orchestration
-model: big-pickle
+model: deepseek-v4-pro
 tools:
   read: true
   write: true

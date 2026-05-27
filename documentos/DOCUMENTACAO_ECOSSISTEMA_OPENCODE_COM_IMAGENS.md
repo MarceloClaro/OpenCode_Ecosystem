@@ -1,6 +1,6 @@
 # Documentacao do Ecossistema OpenCode
 
-**Versao:** 3.5 | **Ciclo:** 8 | **Modelo:** big-pickle (OpenCode Zen)
+**Versao:** 3.5 | **Ciclo:** 8 | **Modelo:** deepseek-v4-pro (OpenCode Zen)
 **Atualizado em:** 2026-05-15 | **Health Score:** 100/100
 ---
 
@@ -326,7 +326,7 @@ A integracao SEEKER-editais-br via editais_hook.py permite que resultados de pes
 
 ## 8. Criador de Artigo (MASWOS)
 
-### 8.1 Arquitetura MASWOS v4.2
+### 8.1 Arquitetura MASWOS v4.6
 
 ![diagram](./DOCUMENTACAO_ECOSSISTEMA_OPENCODE_COM_IMAGENS-17.png)
 
@@ -479,7 +479,7 @@ Os setes ciclos de evolucao documentados (Ciclos 1-7+) demonstram a capacidade d
 
 O pipeline de Token Efficiency implementa a estrategia de codificacao de contexto em chines simplificado com saida obrigatoria em portugues brasileiro formal, seguindo principios de otimizacao de tokens em modelos transformer (Vaswani et al., 2017). A escolha do chines como lingua de contexto baseia-se em sua alta densidade informacional: caracteres chineses individuais carregam significados que requereriam multiplos tokens em linguas ocidentais, resultando em economia de ate 40% no comprimento da sequencia de entrada (Devlin et al., 2019).
 
-O modelo big-pickle (OpenCode Zen) com contexto de 200K tokens e saida de 128K tokens opera sob constraints de eficiencia onde cada token economizado no contexto libera capacidade computacional para raciocinio mais profundo. Esta arquitetura segue o principio de eficiencia de atencao descrito por Child et al. (2019) para transformers de longa sequencia, onde a complexidade quadratica da atencao O(n) torna a reducao de tokens critica para desempenho.
+O modelo deepseek-v4-pro (OpenCode Zen) com contexto de 200K tokens e saida de 128K tokens opera sob constraints de eficiencia onde cada token economizado no contexto libera capacidade computacional para raciocinio mais profundo. Esta arquitetura segue o principio de eficiencia de atencao descrito por Child et al. (2019) para transformers de longa sequencia, onde a complexidade quadratica da atencao O(n) torna a reducao de tokens critica para desempenho.
 
 O ptbr_corrector.py (359 linhas) implementa deteccao de 16 faixas Unicode CJK utilizando a especificacao Unicode 15.0 (The Unicode Consortium, 2022), incluindo:
 
@@ -618,4 +618,4 @@ A cobertura de 27 UFs via 52 editais curados, integração com 12 areas de class
 20. Vaswani, A., et al. (2017). Attention is All You Need. NeurIPS 2017.
 
 ---
-*Documentacao gerada em 2026-05-15 pelo ecossistema OpenCode v3.5 | Modelo: big-pickle (OpenCode Zen)*
+*Documentacao gerada em 2026-05-15 pelo ecossistema OpenCode v3.5 | Modelo: deepseek-v4-pro (OpenCode Zen)*

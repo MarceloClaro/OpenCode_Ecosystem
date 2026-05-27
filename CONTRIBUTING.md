@@ -1,4 +1,4 @@
-# Guia para Contribuidores — OpenCode Ecosystem v4.2.3
+# Guia para Contribuidores — OpenCode Ecosystem v4.6
 
 Agradecemos o seu interesse em contribuir com o OpenCode Ecosystem. Este guia descreve os procedimentos para configurar o ambiente, entender a estrutura do projeto e submeter contribuições de qualidade.
 
@@ -27,7 +27,7 @@ pip install -r requirements.txt  # se disponível
 ### 3. Verificar Ambiente
 
 ```bash
-node --version     # v25+
+node --version     # v22+ (LTS ate abril 2027)
 bun --version      # 1.3+
 python --version   # 3.12+
 opencode --version # 1.14+
@@ -51,7 +51,7 @@ python -m pytest tests/ -v
 | `skills/` | 104 skills com progressive disclosure | `SKILL.md` (≤2.500B) + `references/*.md` |
 | `nexus/` | Orquestrador multiagente Nexus NMA v6.2 | 63 scripts Python, `sync_orchestrator.py`, `self_healer.py` |
 | `quantum/` | Módulo de computação quântica | 81 arquivos: VQC, QML, ZNE/PEC |
-| `criador-artigo/` | Pipeline MASWOS — 49 agentes para artigos Qualis A1 | Agentes A00–A45, templates, referências |
+| `criador-artigo/` | Pipeline MASWOS — 49 agentes para artigos academicos | Agentes A00-A45, templates, referencias |
 | `basis-research/` | SEEKER — pesquisa científica autônoma | 10 agentes Python, argument tree engine |
 | `core/` | Infraestrutura core do ecossistema | Container DI, managers, bridges |
 | `commands/` | Definições de comandos slash | Markdown com frontmatter YAML |
@@ -216,6 +216,6 @@ Abra uma issue no repositório. Toda contribuição é bem-vinda.
 
 <div align="center">
 
-**OpenCode Ecosystem v4.2.3** · Guia para Contribuidores
+**OpenCode Ecosystem v4.6** · Guia para Contribuidores
 
 </div>

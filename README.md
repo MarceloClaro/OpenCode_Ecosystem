@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/OpenCode_Ecosystem-v4.2.3-6366f1?style=for-the-badge&logo=openai&logoColor=white" alt="version"/>
+<img src="https://img.shields.io/badge/OpenCode_Ecosystem-v4.6-6366f1?style=for-the-badge&logo=openai&logoColor=white" alt="version"/>
 
-# OpenCode Ecosystem v4.2.3
+# OpenCode Ecosystem v4.6
 
 ### Arquitetura Multiagente Evolutiva + DataOrchestrator + MiroFish/BettaFish + PhD Auditor
 
@@ -15,14 +15,14 @@
 [![Domínios](https://img.shields.io/badge/Data_Domains-8-f59e0b?style=flat-square)](skills/system/pypi-scout/data_orchestrator.py)
 [![Auditoria](https://img.shields.io/badge/Audit_System-9_componentes-ef4444?style=flat-square)](skills/system/academic-audit/)
 [![Raciocínios](https://img.shields.io/badge/Racioc%C3%ADnios-38_tipos-f59e0b?style=flat-square)](skills/agent-forum)
-[![Qualis](https://img.shields.io/badge/Qualis_A1-Auditor_%E2%89%A580%2F100-10b981?style=flat-square)](skills/agent-forum/scripts/phd_auditor.py)
+[![Qualis](https://img.shields.io/badge/Auditoria_Qualis-10_crit%C3%A9rios_CAPES-10b981?style=flat-square)](skills/agent-forum/scripts/phd_auditor.py)
 [![DI Migration](https://img.shields.io/badge/DI_Migration-Fases_1%E2%80%937_%E2%9C%85-22c55e?style=flat-square)](.reversa/DI_MIGRATION.md)
 [![CJK](https://img.shields.io/badge/CJK_Leaks-0-22c55e?style=flat-square)]()
 [![Status](https://img.shields.io/badge/Status-Produ%C3%A7%C3%A3o-22c55e?style=flat-square)]()
 
 <br/>
 
-> **Versão:** 4.2.3 · **Atualizado:** 2026-05-24 · **Modelo:** `opencode/big-pickle` (200K ctx, 128K out)  
+> **Versão:** 4.2.3 · **Atualizado:** 2026-05-24 · **Modelo:** `opencode/deepseek-v4-pro` (200K ctx, 128K out)  
 > **Novo:** Reasoning Orchestrator v9.0 (68 tipos + 10 Game Theory) · DataOrchestrator (NL → 8 domínios) · Auditoria Caixa Branca (9 componentes) · PyPI Scout (22+ bib. curadas)
 
 </div>
@@ -37,24 +37,24 @@ O **OpenCode Ecosystem** é uma plataforma de inteligência artificial que coord
 
 **O que distingue este projeto de outros frameworks de IA (como LangChain, AutoGen ou CrewAI)?**
 
-1. **Produção acadêmica verificável** — O único framework open-source capaz de gerar artigos com score Qualis A1 (≥ 95/100), utilizando peer-review simulado com 5 revisores e 4 orientadores doutores.
-2. **Debate multiagente com Teoria dos Jogos** — Os agentes não apenas executam tarefas; eles **debatem** entre si usando 38 tipos de raciocínio (lógico, dialético, bayesiano) e 10 estratégias de Teoria dos Jogos (Nash, Minimax, Pareto), garantindo que conclusões sejam robustas.
-3. **Evolução autônoma** — O ecossistema **aprende** a cada uso: o motor AutoEvolve gera automaticamente novas skills a partir de padrões de sucesso, melhorando continuamente sem intervenção humana.
+1. **Produção acadêmica com auditoria de qualidade** — Pipeline de geração de artigos com auditoria interna baseada em 10 critérios inspirados nos parâmetros Qualis/CAPES (fator de impacto, indexação, revisão por pares, originalidade, rigor metodológico). Score $\geq$ 95/100 indica que o artigo *atenderia* aos critérios de qualidade para submissão a periódicos de alto impacto — mas **não substitui** a revisão por pares real nem a classificação da CAPES. [Leia o CORRIGENDUM](CORRIGENDUM.md).
+2. **Debate multiagente com verificadores simbólicos** — Agentes debatem entre si usando 204 tipos de raciocínio (25 categorias) e 10 estratégias de Teoria dos Jogos. O módulo **Cora-Debate (P19)** implementa 4 debatedores com temperaturas distintas (evitando câmara de eco), seleção adaptativa via Q-Score UCB1, self-consistency K=7 e 6 verificadores simbólicos externos (dimensional, algébrico, contraexemplos, estatístico, numérico, PDE).
+3. **Evolução assistida** — O motor AutoEvolve gera e versiona automaticamente novas skills a partir de padrões de sucesso, com audit trail completo (`.evolve/ecosystem-observability.jsonl`). **Ressalva importante**: a validação externa das melhorias (benchmarks independentes) está no roadmap para Q3 2026. Atualmente, supervisão humana é recomendada para validar ciclos de evolução. [Leia o CORRIGENDUM](CORRIGENDUM.md).
 4. **Autocura** — Um sistema de monitoramento contínuo detecta e corrige problemas automaticamente (skills corrompidas, configurações inválidas, vazamentos de caracteres CJK).
 5. **Auditoria acadêmica caixa branca** — Toda interação do pesquisador é registrada em logs imutáveis (JSONL com hash SHA-256), cada afirmação é vinculada a uma evidência rastreável, e um dashboard HTML interativo permite auditoria em tempo real.
-6. **Modelo gratuito** — Opera com o modelo `big-pickle` (OpenCode Zen), que oferece 200K tokens de contexto e 128K de saída, sem custo.
+6. **Modelo gratuito com ressalva de privacidade** — Opera com o modelo `deepseek-v4-pro` (OpenCode Zen, 200K contexto, 128K saída). ⚠️ **Aviso**: durante o período gratuito, dados de interações podem ser usados para melhoria do modelo pelo provedor. Para código proprietário ou dados sensíveis, considere execução local. [Leia o CORRIGENDUM](CORRIGENDUM.md).
 
-> **Modelo base:** `opencode/big-pickle` — OpenCode Zen, 200K tokens de contexto, 128K tokens de saída  
+> **Modelo base:** `opencode/deepseek-v4-pro` — OpenCode Zen, 200K tokens de contexto, 128K tokens de saída  
 > **Workspace:** `C:\Users\marce\.config\opencode`
 
 ---
 
 ## Início Rápido
 
-1. **Instalar pré-requisitos:** Node.js 25, Bun 1.3, Python 3.12
+1. **Instalar pré-requisitos:** Node.js 22 LTS, Bun 1.3, Python 3.12
 2. **Clonar:** `git clone https://github.com/MarceloClaro/OpenCode_Ecosystem.git`
 3. **Instalar dependências:** `bun install`
-4. **Executar:** Use `/artigo` para gerar artigo Qualis A1, `/reversa` para engenharia reversa, `/quantum` para computação quântica
+4. **Executar:** Use `/artigo` para gerar artigo com auditoria academica, `/reversa` para engenharia reversa, `/quantum` para computacao quantica
 
 > Guia completo de instalação: [GETTING_STARTED.md](GETTING_STARTED.md)
 
@@ -64,7 +64,7 @@ O **OpenCode Ecosystem** é uma plataforma de inteligência artificial que coord
 
 | Perfil | Como usar | Comando |
 |--------|-----------|---------|
-| **Pesquisador acadêmico** | Gerar artigos Qualis A1 com peer-review simulado, pesquisa autônoma em 10+ fontes | `/artigo` |
+| **Pesquisador acadêmico** | Gerar artigos com auditoria de qualidade (parametros CAPES), pesquisa autonoma em 10+ fontes | `/artigo` |
 | **Desenvolvedor** | Executar engenharia reversa completa de sistemas, com 67 artefatos gerados | `/reversa` |
 | **Estudante de computação quântica** | Realizar experimentos QML com até 50 qubits (acurácia 89,52% em HAM10000) | `/quantum` |
 | **Contribuidor** | Adicionar novos agentes, skills ou servidores MCP ao ecossistema | Ver [CONTRIBUTING.md](CONTRIBUTING.md) |
@@ -81,7 +81,7 @@ O conteúdo deste README está organizado em uma **sequência progressiva**: pri
 - [Como Funciona — Fluxo de Trabalho](#como-funciona--fluxo-de-trabalho)
 
 **Parte II — Módulos e Funcionalidades**
-- [Pipeline Acadêmico Qualis A1](#pipeline-acadêmico-qualis-a1)
+- [Pipeline Academico com Auditoria CAPES](#pipeline-academico-com-auditoria-capes)
 - [Camada de Dados Universal — DataOrchestrator](#camada-de-dados-universal--dataorchestrator)
 - [Sistema de Auditoria Acadêmica](#sistema-de-auditoria-acadêmica)
 - [Engenharia Reversa — Reversa Framework](#engenharia-reversa--reversa-framework)
@@ -161,7 +161,7 @@ Estes são os comandos que o usuário pode executar diretamente no OpenCode CLI.
 
 | Comando | O que faz | Pipeline acionado |
 |---------|-----------|-------------------|
-| `/artigo` | Gera um artigo acadêmico com score Qualis A1 (≥ 95/100), incluindo pesquisa, escrita, revisão e formatação ABNT | SEEKER (pesquisa) → 49 agentes MASWOS (escrita) → manus-evolve (aprendizado) |
+| `/artigo` | Gera um artigo academico com auditoria de qualidade (10 criterios CAPES), incluindo pesquisa, escrita, revisao e formatacao ABNT | SEEKER (pesquisa) -> 49 agentes MASWOS (escrita) -> manus-evolve (aprendizado) |
 | `/reversa` | Executa engenharia reversa completa de um sistema, gerando 67 artefatos documentais | 9 agentes sequenciais: scout → archaeologist → detective → architect → writer → reviewer → visor → data-master → design-system |
 | `/quantum` | Realiza experimentos de computação quântica com VQC de até 50 qubits | quantum-nexus-phd + code-runner + pdf + sequential-thinking |
 | `/evolve` | Aciona o motor de evolução autônoma que gera novas skills a partir de padrões de sucesso | AutoEvolve: PLAN → ACT → REFLECT → EXTRACT → EVOLVE |
@@ -208,7 +208,7 @@ Para entender como todas as peças se encaixam, considere o que acontece quando 
                              ▼
 ┌──────────────────────────────────────────────────────────────────────────┐
 │  4. DEBATE E AUDITORIA (MiroFish/BettaFish + PhD Auditor)                │
-│     Agent Forum conduz debate multiagente com 38 tipos de raciocínio.    │
+│     Agent Forum conduz debate multiagente com 204 tipos de raciocínio (25 categorias).    │
 │     PhD Auditor valida: NashSolver + Cohen's d + Bonferroni + Power      │
 │     Analysis. QualisA1Auditor atribui score 0-100 em 7 critérios.        │
 └────────────────────────────┬─────────────────────────────────────────────┘
@@ -217,7 +217,7 @@ Para entender como todas as peças se encaixam, considere o que acontece quando 
 ┌──────────────────────────────────────────────────────────────────────────┐
 │  5. LOOP DE QUALIDADE                                                    │
 │     Se score < 95/100: volta ao estágio 3 para correção iterativa.       │
-│     Ciclo repete até atingir ≥ 95/100 (limiar Qualis A1 CAPES).          │
+│     Ciclo repete ate atingir >= 95/100 (limiar de qualidade CAPES).          │
 │     Progressão típica: 74 → 95/100 (+28,4%).                            │
 └────────────────────────────┬─────────────────────────────────────────────┘
                              │
@@ -232,7 +232,7 @@ Para entender como todas as peças se encaixam, considere o que acontece quando 
                              ▼
 ┌──────────────────────────────────────────────────────────────────────────┐
 │  7. RESULTADO                                                            │
-│     Artigo Qualis A1 em LaTeX/PDF com 46 anotações TSAC auditáveis,      │
+│     Artigo em LaTeX/PDF com 46 anotacoes TSAC auditaveis,      │
 │     formatação ABNT NBR 6023, score ≥ 95/100.                            │
 │     Tempo médio: ~10-20 segundos (automação completa).                   │
 └──────────────────────────────────────────────────────────────────────────┘
@@ -246,15 +246,15 @@ Este mesmo padrão — **orquestração → execução paralela → validação 
 
 Esta seção detalha cada módulo principal do ecossistema. A ordem segue a relevância prática: primeiro os módulos que o usuário interage diretamente, depois os que operam em segundo plano.
 
-## Pipeline Acadêmico Qualis A1
+## Pipeline Academico com Auditoria CAPES
 
-<img src="diagrams/academic-pipeline.svg" alt="Pipeline Acadêmico MASWOS Qualis A1" width="100%"/>
+<img src="diagrams/academic-pipeline.svg" alt="Pipeline Academico MASWOS com Auditoria CAPES" width="100%"/>
 
-O pipeline **MASWOS** (Multi-Agent Scientific Writing and Orchestration System) é a funcionalidade central do ecossistema. Ele automatiza completamente a produção de artigos científicos, desde a pesquisa bibliográfica até a exportação em LaTeX/PDF, atingindo o score mínimo de **95/100** exigido pela classificação **Qualis A1** da CAPES.
+O pipeline **MASWOS** (Multi-Agent Scientific Writing and Orchestration System) e a funcionalidade central do ecossistema. Ele automatiza completamente a producao de artigos cientificos, desde a pesquisa bibliografica ate a exportacao em LaTeX/PDF, com auditoria interna baseada em 10 criterios inspirados nos parametros Qualis/CAPES (fator de impacto, indexacao, revisao por pares, originalidade, rigor metodologico).
 
 ### Por que isso é relevante?
 
-A produção de um artigo acadêmico de qualidade Qualis A1 normalmente exige semanas de trabalho: pesquisa bibliográfica, redação, formatação, revisão por pares e correções iterativas. O MASWOS comprime esse processo em **8 estágios automatizados** que levam aproximadamente **10-20 segundos**.
+A producao de um artigo academico com qualidade para submissao a periodicos de alto impacto normalmente exige semanas de trabalho: pesquisa bibliografica, redacao, formatacao, revisao por pares e correcoes iterativas. O MASWOS comprime esse processo em **8 estagios automatizados** que levam aproximadamente **10-20 segundos**.
 
 ### Os 8 estágios do pipeline
 
@@ -288,7 +288,7 @@ A produção de um artigo acadêmico de qualidade Qualis A1 normalmente exige se
 | Referências acadêmicas (Qualis A1, ABNT) | 14 |
 | Board Score inicial → final | 86,5 → 92,7/100 (+7,1%) |
 | Auto Score Qualis inicial → final | 74 → **95/100** (+28,4%) |
-| Limiar Qualis A1 | ≥ 95/100 |
+| Limiar de qualidade CAPES | >= 95/100 |
 | Tempo médio por pipeline | ~10–20 s (automação completa) |
 
 ---
@@ -436,9 +436,9 @@ O pipeline é dividido em 18 padrões arquiteturais, organizados em 3 faixas fun
 | **P10-P13** | Graph Memory Updater · Process Lifecycle · FS-IPC · Config Generator | **Runtime** — Gerenciam a memória, o ciclo de vida dos processos e a configuração (incluindo BRAZIL_TIMEZONE UTC-3) |
 | **P14-P18** | Agent Forum · Document IR · ANP · MiddlewareChain · PhD Auditor | **Debate e Auditoria** — Onde os agentes debatem entre si e os resultados são auditados estatisticamente |
 
-### 38 tipos de raciocínio
+### 204 tipos de raciocínio (25 categorias)
 
-Os debates entre agentes utilizam **38 tipos de raciocínio**, organizados em 6 categorias:
+Os debates entre agentes utilizam **204 tipos de raciocínio (25 categorias)**, organizados em 6 categorias:
 
 - **Lógico (5):** Dedutivo, Indutivo, Abdutivo, Analógico, Hipotético-Dedutivo
 - **Dialético (5):** Socrático, Hegeliano, Tese-Antítese, Crítica, Refutação
@@ -479,7 +479,7 @@ Esta seção explica a arquitetura interna que sustenta todas as funcionalidades
 
 ## Arquitetura Geral — 6 Camadas
 
-<img src="diagrams/architecture-overview.svg" alt="Arquitetura Geral v4.2.1" width="100%"/>
+<img src="diagrams/architecture-overview.svg" alt="Arquitetura Geral v4.6" width="100%"/>
 
 O ecossistema é organizado em **6 camadas hierárquicas**, da infraestrutura de runtime (L1) até a orquestração meta-granular (L6). Cada camada depende das inferiores e fornece serviços às superiores. Transversalmente, o **Container de Injeção de Dependência (DI)** conecta todas as camadas.
 
@@ -490,7 +490,7 @@ O ecossistema é organizado em **6 camadas hierárquicas**, da infraestrutura de
 | **L4** | MCP | Proveem ferramentas externas aos agentes | **40 servidores** (38 local + 2 remote) | MCP SDK, stdio/HTTP |
 | **L3** | Skills | Definem instruções reutilizáveis para tarefas complexas | **104 skills** · 12 categorias · P14-P18 MiroFish/BettaFish | YAML, Markdown |
 | **L2** | Dados | Armazenam e processam dados | SQLite, Mem0, Quantum (81 arqs), DOCLing | Ollama, SQLite |
-| **L1** | Infra | Runtime base | Node.js 25, Bun 1.3, Python 3.12 | Win32 |
+| **L1** | Infra | Runtime base | Node.js 22 LTS, Bun 1.3, Python 3.12 | Win32 |
 | **DI** | Container | Conecta todos os serviços via injeção de dependência | 11 serviços + 3 plugins TS + bridge CommandRegistry | Container, from_container() |
 
 **Leitura do diagrama:** Uma requisição do usuário entra pela L6 (orquestrador), que seleciona agentes na L5. Esses agentes usam ferramentas MCP da L4 e consultam skills da L3. Os dados são acessados na L2, e tudo roda sobre a infraestrutura da L1.
@@ -765,7 +765,7 @@ O ecossistema combina 10 padrões arquiteturais reconhecidos, cada um responsáv
 | **Layered Architecture** | 6 camadas hierárquicas L1 (Infra) → L6 (Orquestração) |
 | **Dependency Injection (IoC)** | Container singleton com 11 serviços + 3 plugins TS, pattern `from_container()` |
 | **Event-Driven Architecture** | `event_bus` (IEventBus) para comunicação pub/sub entre componentes |
-| **Pipeline Pattern** | P1–P18 (Entity NER → PhD Auditor), MASWOS 8 estágios, AutoEvolve PLAN→EVOLVE |
+| **Pipeline Pattern** | P1–P18 (Entity NER → PhD Auditor), MASWOS 8 estágios, AutoEvolve + Creative Leap · 7 fases |
 | **Client-Host-Server** | Protocolo MCP (Anthropic, 2024) com 40 servidores, JSON-RPC 1:1 |
 | **Progressive Disclosure** | Skills `SKILL.md` ≤ 2.500B + `references/*.md` para conteúdo denso |
 | **Self-Healing** | Ciclo autônomo: Monitor → Detectar → Diagnosticar → Reparar → Verificar |
@@ -801,7 +801,7 @@ AI Agent Frameworks
 │   ├── Configurable Swarms (LangChain, AutoGen)
 │   ├── Fixed-Role Crews (CrewAI)
 │   └── Evolutionary Orchestrated Ecosystems
-│       └── OpenCode Ecosystem v4.2.1
+│       └── OpenCode Ecosystem v4.6
 │           125 agentes · 6 camadas · DI + AutoEvolve + PhD Auditor
 ```
 
@@ -816,12 +816,12 @@ Os diferenciadores técnicos em relação aos demais frameworks são:
 
 | Camada | Tecnologias |
 |---|---|
-| **Runtime** | Node.js 25, Bun 1.3, Python 3.12, Win32 |
+| **Runtime** | Node.js 22 LTS, Bun 1.3, Python 3.12, Win32 |
 | **Comunicação** | JSON-RPC, stdio, HTTP, MCP SDK (Anthropic) |
 | **Dados** | SQLite, Mem0, Ollama (embeddings), PDF |
 | **Configuração** | YAML frontmatter, Markdown, JSON |
 | **Plugins** | TypeScript (`manus-evolve.ts`, `ecosystem-sync.ts`, `bernstein-sync.ts`) |
-| **Modelo base** | `opencode/big-pickle` — 200K ctx, 128K out (gratuito) |
+| **Modelo base** | `opencode/deepseek-v4-pro` — 200K ctx, 128K out (gratuito) |
 
 ### Métricas Quantitativas de Classificação
 
@@ -839,13 +839,13 @@ Os diferenciadores técnicos em relação aos demais frameworks são:
 | Quality Gates | **4** (G0 → GR → GE → GF) |
 | Health Score | **96/100** |
 
-> **Classificação em uma frase:** O OpenCode Ecosystem v4.2.1 é uma plataforma multiagente evolutiva com orquestração hierárquica de 6 camadas, injeção de dependência centralizada, 18 padrões arquiteturais (P1–P18), debate com Teoria dos Jogos e validação estatística PhD-level, voltada para produção acadêmica Qualis A1, pesquisa científica autônoma e engenharia reversa de sistemas.
+> **Classificação em uma frase:** O OpenCode Ecosystem v4.6 é uma plataforma multiagente evolutiva com orquestração hierárquica de 6 camadas, injeção de dependência centralizada, 18 padrões arquiteturais (P1–P18), debate com Teoria dos Jogos e validação estatística PhD-level, voltada para produção acadêmica Qualis A1, pesquisa científica autônoma e engenharia reversa de sistemas.
 
 ---
 
 ## Comparativo com Outros Frameworks
 
-| Capacidade | OpenCode Ecosystem v4.2.1 | LangChain | AutoGen | CrewAI | Cursor/Copilot |
+| Capacidade | OpenCode Ecosystem v4.6 | LangChain | AutoGen | CrewAI | Cursor/Copilot |
 |-----------|------------------------|-----------|---------|--------|----------------|
 | Agentes especializados | **125** | Configurável | Configurável | ~10-20 | Não |
 | Pipeline acadêmico Qualis A1 | **8 estágios** | — | — | — | — |
@@ -857,7 +857,7 @@ Os diferenciadores técnicos em relação aos demais frameworks são:
 | MCP Servers nativos | **40 servidores** | Plugin-based | — | — | Limitado |
 | Zero-tolerance CJK + PT-BR | **corrector.py** | — | — | — | — |
 | Engenharia Reversa autônoma | **9 agentes** | — | — | — | — |
-| Modelo gratuito 200K ctx | **big-pickle** | API paga | API paga | API paga | Assinatura |
+| Modelo gratuito 200K ctx | **deepseek-v4-pro** | API paga | API paga | API paga | Assinatura |
 
 > **Síntese:** O OpenCode Ecosystem é o único framework que combina **produção acadêmica Qualis A1 + debate multiagente com Teoria dos Jogos + validação estatística + quantum computing + autocura autônoma** num ecossistema unificado, com modelo gratuito (200K ctx) e arquitetura evolutiva que melhora a cada ciclo.
 
@@ -872,7 +872,7 @@ O ecossistema documenta sua arquitetura por meio de **10 diagramas SVG interativ
 <details>
 <summary><strong>SVG 1 — architecture-overview.svg</strong> — Mapa mestre do ecossistema (6 camadas L1→L6)</summary>
 
-<img src="diagrams/architecture-overview.svg" alt="Arquitetura Geral v4.2.1" width="100%"/>
+<img src="diagrams/architecture-overview.svg" alt="Arquitetura Geral v4.6" width="100%"/>
 
 Apresenta as 6 camadas arquiteturais com contagens reais: 125 agentes, 40 MCPs, 104 skills, 38 raciocínios, 81 arquivos quantum. Cada número é verificado no código-fonte e atualizado automaticamente.
 
@@ -881,16 +881,16 @@ Apresenta as 6 camadas arquiteturais com contagens reais: 125 agentes, 40 MCPs, 
 <details>
 <summary><strong>SVG 2 — agent-orchestration.svg</strong> — Padrão hierarchical multi-agent com ReAct loop</summary>
 
-<img src="diagrams/agent-orchestration.svg" alt="Orquestração de Agentes v4.2.1" width="100%"/>
+<img src="diagrams/agent-orchestration.svg" alt="Orquestração de Agentes v4.6 (7 fases)" width="100%"/>
 
-Documenta como o orquestrador central (big-pickle, 200K ctx) distribui trabalho para sub-agentes, o ciclo ReAct (THOUGHT → ACTION → OBSERVATION → REPEAT) e o pipeline AutoEvolve integrado ao estágio EVOLVE.
+Documenta como o orquestrador central (deepseek-v4-pro, 200K ctx) distribui trabalho para sub-agentes, o ciclo ReAct (THOUGHT → ACTION → OBSERVATION → REPEAT) e o pipeline AutoEvolve integrado ao estágio EVOLVE.
 
 </details>
 
 <details>
 <summary><strong>SVG 3 — academic-pipeline.svg</strong> — Pipeline MASWOS de 8 estágios</summary>
 
-<img src="diagrams/academic-pipeline.svg" alt="Pipeline Acadêmico MASWOS v4.2.1" width="100%"/>
+<img src="diagrams/academic-pipeline.svg" alt="Pipeline Acadêmico MASWOS v4.6" width="100%"/>
 
 Visualiza os 8 estágios do MASWOS: SEEKER → Estrutura → Escrita → Formatação → Banca → Orientação → Score → Export, incluindo o loopback quando score < 95 e a integração com o PhD Auditor.
 
@@ -899,7 +899,7 @@ Visualiza os 8 estágios do MASWOS: SEEKER → Estrutura → Escrita → Formata
 <details>
 <summary><strong>SVG 4 — mcp-architecture.svg</strong> — Protocolo MCP com 40 servidores</summary>
 
-<img src="diagrams/mcp-architecture.svg" alt="Arquitetura MCP v4.2.1" width="100%"/>
+<img src="diagrams/mcp-architecture.svg" alt="Arquitetura MCP v4.6" width="100%"/>
 
 Documenta a implementação do MCP (Anthropic, 2024): processo Host, sessões JSON-RPC 1:1, 3 zonas (Segurança Local, Busca, Remota) e o padrão lazy init.
 
@@ -908,7 +908,7 @@ Documenta a implementação do MCP (Anthropic, 2024): processo Host, sessões JS
 <details>
 <summary><strong>SVG 5 — rag-strategies.svg</strong> — Catálogo das 9 estratégias RAG</summary>
 
-<img src="diagrams/rag-strategies.svg" alt="9 Estratégias RAG v4.2.1" width="100%"/>
+<img src="diagrams/rag-strategies.svg" alt="9 Estratégias RAG v4.6" width="100%"/>
 
 Detalha as 9 estratégias: Vanilla, Memory, Agentic, Graph, Hybrid, CRAG, Adaptive, Fusion e HyDE, com suas referências acadêmicas e fluxos de dados.
 
@@ -917,14 +917,14 @@ Detalha as 9 estratégias: Vanilla, Memory, Agentic, Graph, Hybrid, CRAG, Adapti
 <details>
 <summary><strong>SVG 6 — self-healing.svg</strong> — Ciclo de autocura em 5 etapas</summary>
 
-<img src="diagrams/self-healing.svg" alt="Ciclo de Autocura v4.2.1" width="100%"/>
+<img src="diagrams/self-healing.svg" alt="Ciclo de Autocura v4.6" width="100%"/>
 
 Visualiza o ciclo Monitorar → Detectar → Diagnosticar → Reparar → Verificar, com métricas de 104 skills, 40 MCPs e zero-tolerance CJK.
 
 </details>
 
 <details>
-<summary><strong>SVG 7 — mirofish-phd-auditor.svg</strong> — Pipeline P14-P18 completo (NOVO v4.2.1)</summary>
+<summary><strong>SVG 7 — mirofish-phd-auditor.svg</strong> — Pipeline P14-P18 completo (ATUALIZADO v4.6)</summary>
 
 <img src="diagrams/mirofish-phd-auditor.svg" alt="Pipeline MiroFish/BettaFish + PhD Auditor P14-P18" width="100%"/>
 
@@ -933,7 +933,7 @@ Documenta o pipeline P14-P18: Agent Forum (38 raciocínios, 8 perfis) → DocIR 
 </details>
 
 <details>
-<summary><strong>SVG 8 — classification-taxonomy.svg</strong> — Árvore taxonômica hierárquica (NOVO v4.2.1)</summary>
+<summary><strong>SVG 8 — classification-taxonomy.svg</strong> — Árvore taxonômica hierárquica (ATUALIZADO v4.6)</summary>
 
 <img src="diagrams/classification-taxonomy.svg" alt="Taxonomia — Classificação Técnica" width="100%"/>
 
@@ -942,7 +942,7 @@ Posiciona o OpenCode Ecosystem entre os frameworks de IA existentes: Single-Agen
 </details>
 
 <details>
-<summary><strong>SVG 9 — architectural-patterns.svg</strong> — 10 padrões arquiteturais por camada (NOVO v4.2.1)</summary>
+<summary><strong>SVG 9 — architectural-patterns.svg</strong> — 10 padrões arquiteturais por camada (ATUALIZADO v4.6)</summary>
 
 <img src="diagrams/architectural-patterns.svg" alt="10 Padrões Arquiteturais" width="100%"/>
 
@@ -951,7 +951,7 @@ Mapeia os 10 padrões arquiteturais (Layered, DI, Event-Driven, Pipeline, Client
 </details>
 
 <details>
-<summary><strong>SVG 10 — subsystem-classification.svg</strong> — Classificação por subsistema (NOVO v4.2.1)</summary>
+<summary><strong>SVG 10 — subsystem-classification.svg</strong> — Classificação por subsistema (ATUALIZADO v4.6)</summary>
 
 <img src="diagrams/subsystem-classification.svg" alt="Classificação por Subsistema" width="100%"/>
 
@@ -985,16 +985,22 @@ Mapa radial dos 10 subsistemas com classificação técnica individual: Nexus NM
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Guia para contribuidores |
 | [ROADMAP.md](ROADMAP.md) | Visão futura do projeto |
 | [AGENTS_PTBR.md](AGENTS_PTBR.md) | Documentação de agentes em PT-BR |
+| [CORRIGENDUM.md](CORRIGENDUM.md) | ⚠️ Correções factuais e transparência (leia antes de usar) |
+| [PRIVACY.md](PRIVACY.md) | 🔒 Política de privacidade e uso de dados |
+| [TECHNICAL_WHITEPAPER.md](TECHNICAL_WHITEPAPER.md) | 📄 Whitepaper técnico com 28 citações auditáveis |
+| [DOSSIER_PROOF_VERIFICATION.md](DOSSIER_PROOF_VERIFICATION.md) | 🔬 Dossiê: arquitetura de verificação formal de provas (P20-P23) |
+| [TAXONOMIA_RACIOCINIOS.md](TAXONOMIA_RACIOCINIOS.md) | 🧠 34 raciocínios matemático-científicos (7 categorias, 34 refs) |
+| [TAXONOMIA_RACIOCINIOS_AMPLIADA.md](TAXONOMIA_RACIOCINIOS_AMPLIADA.md) | 🌐 68 raciocínios em 12 domínios (matemática, jurídico, clínico, econômico, engenharia, filosófico) |
 
 
 ---
 
 <div align="center">
 
-**OpenCode Ecosystem v4.2.1**
+**OpenCode Ecosystem v4.6**
 
-125 agentes · 40 MCPs · 104 skills · 38 raciocínios · MiroFish/BettaFish · PhD Auditor · 81 arqs Quantum
+125 agentes catalogados · 41 MCPs · 106 skills · 38 raciocínios · MiroFish/BettaFish · PhD Auditor · Cora-Debate (P19)
 
-*Documentação atualizada automaticamente — 2026-05-21 · BRAZIL_TIMEZONE UTC-3*
+*Documentação atualizada — 2026-05-25 · BRAZIL_TIMEZONE UTC-3 · [CORRIGENDUM.md](CORRIGENDUM.md)*
 
 </div>

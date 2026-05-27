@@ -2,7 +2,7 @@
   SAÍDA OBRIGATÓRIA: PORTUGUÊS BRASILEIRO FORMAL
   Toda resposta DEVE ser em português do Brasil formal.
   Contexto em chinês para eficiência de tokens (densidade +40%%).
-  Modelo: big-pickle (OpenCode Zen, 200K ctx, 128K out, gratuito)
+  Modelo: deepseek-v4-pro (OpenCode Zen, 200K ctx, 128K out, gratuito)
 -->
 
 # TMA v5.0 MICRO - Arquitetura Granular Completa
@@ -284,7 +284,7 @@ class MicroSyncBarrier:
 
 ### Engenharia de Software
 - Cada operação de código validada
-- 38 tipos de raciocínio aplicáveis
+- 204 tipos de raciocínio (25 categorias) aplicáveis
 - Feedback granular por operação
 - Otimização contínua
 

@@ -4,7 +4,7 @@ description: "Skill auto-gerada - Round 4: Iterative Correction Loop + SEEKER + 
 evolved: true
 round: 4
 source: "manus-evolve-plugin"
-model: "big-pickle"
+model: "deepseek-v4-pro"
 ---
 
 # evo-6-iterative-correction-mastery

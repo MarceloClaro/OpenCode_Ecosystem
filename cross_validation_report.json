@@ -1,0 +1,89 @@
+{
+  "sample_size": 12,
+  "correctness": {
+    "old": "3/12 (25%)",
+    "new": "12/12 (100%)",
+    "improvement": "+9 problems"
+  },
+  "score_improvement": {
+    "mean": 27.3,
+    "median": 24,
+    "min": 19,
+    "max": 51,
+    "old_avg": 53.4,
+    "new_avg": 80.8
+  },
+  "statistical_tests": {
+    "wilcoxon": {
+      "statistic": 78.0,
+      "p_value": "2.44e-04",
+      "significant_at_001": "True",
+      "interpretation": "Highly significant (p < 0.001) \u2014 strong evidence of improvement"
+    },
+    "cohens_d": {
+      "value": 3.05,
+      "interpretation": "Very large effect \u2014 dramatic improvement",
+      "magnitude": "very large"
+    },
+    "mcnemar": {
+      "statistic": 7.1111,
+      "p_value": "0.0077"
+    }
+  },
+  "confidence_calibration": {
+    "ece_old": 0.3692,
+    "ece_new": 0.1925,
+    "ece_improvement": 0.1767,
+    "interpretation": "Lower ECE = better calibration"
+  },
+  "domain_breakdown": {
+    "combinatorial_geometry": {
+      "avg_old": 34.0,
+      "avg_new": 85.0,
+      "improvement": 51.0,
+      "problems": 1
+    },
+    "number_theory": {
+      "avg_old": 60.4,
+      "avg_new": 86.8,
+      "improvement": 26.4,
+      "problems": 5
+    },
+    "functional_equation": {
+      "avg_old": 57.5,
+      "avg_new": 79.0,
+      "improvement": 21.5,
+      "problems": 2
+    },
+    "geometry": {
+      "avg_old": 50.0,
+      "avg_new": 75.0,
+      "improvement": 25.0,
+      "problems": 1
+    },
+    "combinatorics": {
+      "avg_old": 48.0,
+      "avg_new": 72.0,
+      "improvement": 24.0,
+      "problems": 1
+    },
+    "game_theory": {
+      "avg_old": 40.0,
+      "avg_new": 70.0,
+      "improvement": 30.0,
+      "problems": 1
+    },
+    "inequality": {
+      "avg_old": 52.0,
+      "avg_new": 75.0,
+      "improvement": 23.0,
+      "problems": 1
+    }
+  },
+  "failure_analysis": {
+    "old_failures": 9,
+    "new_failures": 0,
+    "failures_resolved": 9,
+    "persistent_failures": []
+  }
+}

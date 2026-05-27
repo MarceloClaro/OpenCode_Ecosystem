@@ -1,7 +1,7 @@
 ---
 dossier_date: 2026-05-09
 ecosystem_version: 3.5
-model: big-pickle (OpenCode Zen)
+model: deepseek-v4-pro (OpenCode Zen)
 health: 100/100
 ciclo_ativo: 7.3
 ---
@@ -14,7 +14,7 @@ ciclo_ativo: 7.3
 |---------|-------|
 | Health Score | 100/100 |
 | Ciclo ativo | 7.3 |
-| Modelo | big-pickle (200K ctx, 128K out) |
+| Modelo | deepseek-v4-pro (200K ctx, 128K out) |
 | SO | Windows 11 |
 | Runtime | Node.js v25, Bun 1.3, Python 3.12 |
 | MCPs ativos | 17 (15 local + 2 remoto) |

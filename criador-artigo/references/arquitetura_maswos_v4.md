@@ -2,7 +2,7 @@
   SAÍDA OBRIGATÓRIA: PORTUGUÊS BRASILEIRO FORMAL
   Toda resposta DEVE ser em português do Brasil formal.
   Contexto em chinês para eficiência de tokens (densidade +40%%).
-  Modelo: big-pickle (OpenCode Zen, 200K ctx, 128K out, gratuito)
+  Modelo: deepseek-v4-pro (OpenCode Zen, 200K ctx, 128K out, gratuito)
 -->
 
 # MASWOS V4 - Arquitetura de Ecossistema Integrado (Módulos de Pesquisa, Validação, Correção e Avaliação)

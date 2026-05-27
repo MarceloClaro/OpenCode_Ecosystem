@@ -1,0 +1,58 @@
+{
+  "pci": 30,
+  "verdict": "PCI: 30/100 — REJEITADO — Confianca insuficiente",
+  "agent_results": {
+    "notation-agent": {
+      "conclusion": "Nenhum padrao de notacao identificado automaticamente.",
+      "confidence": 0.2,
+      "type": "R03"
+    },
+    "lemmatracker-refined": {
+      "conclusion": "Grafo de lemas vazio.",
+      "confidence": 0.0,
+      "type": "R31"
+    },
+    "deductivechain-agent": {
+      "conclusion": "Nenhum passo dedutivo para verificar.",
+      "confidence": 0.0,
+      "type": "R08"
+    },
+    "contradiction-refined": {
+      "conclusion": "Nenhuma contradicao detectada nos 3 metodos.",
+      "confidence": 0.55,
+      "type": "R24"
+    },
+    "contraexemplo-agent": {
+      "conclusion": "Nenhum contraexemplo encontrado no espaco de busca.",
+      "confidence": 0.4,
+      "type": "R22"
+    },
+    "crossref-agent": {
+      "conclusion": "Consistente com 2 fontes externas.",
+      "confidence": 0.85,
+      "type": "R28"
+    },
+    "proofhealth-agent": {
+      "conclusion": "PCI: 30/100 — REJEITADO — Confianca insuficiente",
+      "confidence": 0.3,
+      "type": "R31+R32+R33"
+    }
+  },
+  "errors": [],
+  "warnings": [
+    "abstraction-agent: dependencias nao satisfeitas — pulando",
+    "modular-agent: dependencias nao satisfeitas — pulando",
+    "inductor-agent: dependencias nao satisfeitas — pulando",
+    "basecase-agent: dependencias nao satisfeitas — pulando",
+    "induction-agent: dependencias nao satisfeitas — pulando",
+    "backwardchain-agent: dependencias nao satisfeitas — pulando",
+    "quantificational-agent: dependencias nao satisfeitas — pulando",
+    "constructor-agent: dependencias nao satisfeitas — pulando",
+    "stresstest-agent: dependencias nao satisfeitas — pulando",
+    "reductio-agent: dependencias nao satisfeitas — pulando",
+    "exhaustive-agent: dependencias nao satisfeitas — pulando",
+    "enumeration-agent: dependencias nao satisfeitas — pulando",
+    "generalization-agent: dependencias nao satisfeitas — pulando"
+  ],
+  "timestamp": "2026-05-25T21:45:54"
+}

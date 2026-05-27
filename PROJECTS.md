@@ -1,6 +1,6 @@
 # OpenCode Ecosystem — Painel de Projetos (v4.2.3)
 
-Este documento apresenta o planejamento, o status de desenvolvimento e a rastreabilidade das tarefas do **OpenCode Ecosystem v4.2.1**, estruturado na forma de um painel **Kanban de Projetos**. Cada seção é detalhada didaticamente, associando as atividades aos agentes, skills e diagramas arquiteturais correspondentes.
+Este documento apresenta o planejamento, o status de desenvolvimento e a rastreabilidade das tarefas do **OpenCode Ecosystem v4.6**, estruturado na forma de um painel **Kanban de Projetos**. Cada seção é detalhada didaticamente, associando as atividades aos agentes, skills e diagramas arquiteturais correspondentes.
 
 ---
 

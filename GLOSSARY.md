@@ -1,4 +1,4 @@
-# Glossário — OpenCode Ecosystem v4.2.3
+# Glossário — OpenCode Ecosystem v4.6
 
 > Definições dos termos técnicos utilizados no ecossistema. Organizado em ordem alfabética.
 
@@ -76,13 +76,13 @@ Engine de evolução autônoma do ecossistema. Executa o ciclo **PLAN → ACT �
 
 ### Antigravity Bridge
 
-Ponte bidirecional entre o **OpenCode Ecosystem v4.2** e o **Antigravity** (Google DeepMind Advanced Agentic Coding). Composta por três artefatos: `plugins/antigravity-bridge.ts` (plugin TypeScript registrado no Container DI), `nexus/antigravity_mcp_server.py` (servidor MCP com 7 ferramentas JSON-RPC) e `agents/antigravity-orchestrator.md` (agente roteador com fallback). Indexada como skill em `skills/agent-forum/antigravity-integration/SKILL.md` (v1.0). Expos 6 capacidades exclusivas: `generate_image`, `browser_subagent`, `search_web`, `read_url_content`, `parallel_subagents`, `artifact_creation`. Health score monitorado em `.evolve/antigravity-bridge-state.json`.
+Ponte bidirecional entre o **OpenCode Ecosystem v4.6** e o **Antigravity** (Google DeepMind Advanced Agentic Coding). Composta por três artefatos: `plugins/antigravity-bridge.ts` (plugin TypeScript registrado no Container DI), `nexus/antigravity_mcp_server.py` (servidor MCP com 7 ferramentas JSON-RPC) e `agents/antigravity-orchestrator.md` (agente roteador com fallback). Indexada como skill em `skills/agent-forum/antigravity-integration/SKILL.md` (v1.0). Expos 6 capacidades exclusivas: `generate_image`, `browser_subagent`, `search_web`, `read_url_content`, `parallel_subagents`, `artifact_creation`. Health score monitorado em `.evolve/antigravity-bridge-state.json`.
 
 ---
 
 ## B
 
-### big-pickle
+### deepseek-v4-pro
 
 Modelo de linguagem padrão do OpenCode Ecosystem. Também conhecido como **OpenCode Zen**. Características: 200K tokens de contexto, 128K tokens de saída, **gratuito**. Utilizado como orquestrador central de todos os agentes do ecossistema.
 
@@ -116,7 +116,7 @@ Padrão de inicialização utilizado pelos servidores MCP. Os MCPs **só inicial
 
 ### MASWOS
 
-**Multi-Agent System Writing Orchestration System** — Sistema de orquestração multiagente para produção de artigos acadêmicos. Utiliza **49 agentes especializados** distribuídos em 8 estágios sequenciais: pesquisa (SEEKER) → estrutura → escrita → formatação → revisão (banca de 5) → correção (4 orientadores) → score (AUTO_SCORE_QUALIS.py) → exportação (LaTeX/PDF). Produz artigos com score ≥ 95/100 segundo critérios Qualis A1 da CAPES.
+**Multi-Agent System Writing Orchestration System** — Sistema de orquestracao multiagente para producao de artigos academicos. Utiliza **49 agentes especializados** distribuidos em 8 estagios sequenciais: pesquisa (SEEKER) -> estrutura -> escrita -> formatacao -> revisao (banca de 5) -> correcao (4 orientadores) -> auditoria (AUTO_SCORE_QUALIS.py, 10 criterios CAPES) -> exportacao (LaTeX/PDF). Produz artigos com pontuacao >= 95/100 segundo criterios de qualidade academica.
 
 ### MCP (Model Context Protocol)
 
@@ -124,7 +124,7 @@ Padrão de inicialização utilizado pelos servidores MCP. Os MCPs **só inicial
 
 ### MiroFish / BettaFish
 
-Pipeline de **simulação multiagente** adaptado de frameworks de inteligência de enxame (MiroFish, 61K estrelas) e análise multiagente (BettaFish, 40.9K estrelas). No ecossistema, implementa os padrões P14-P18 com 11 componentes: OASIS, Forum, Config, Graph, Report, Nash, Stats, Qualis, Sensitivity, IMRAD e Debate. Integra 38 tipos de raciocínio e 10 estratégias de Teoria dos Jogos.
+Pipeline de **simulação multiagente** adaptado de frameworks de inteligência de enxame (MiroFish, 61K estrelas) e análise multiagente (BettaFish, 40.9K estrelas). No ecossistema, implementa os padrões P14-P18 com 11 componentes: OASIS, Forum, Config, Graph, Report, Nash, Stats, Qualis, Sensitivity, IMRAD e Debate. Integra 204 tipos de raciocínio (25 categorias) e 10 estratégias de Teoria dos Jogos.
 
 ---
 
@@ -140,7 +140,7 @@ Pipeline de **simulação multiagente** adaptado de frameworks de inteligência 
 
 ### PhD Auditor
 
-Componente **P18** do pipeline MiroFish/BettaFish. Implementa auditoria acadêmica de rigor científico com 5 módulos: **NashSolver** (equilíbrio de Nash generalizado), **StatisticalRigor** (Cohen's d, Bonferroni, Power Analysis), **QualisA1Auditor** (score 0-100 com 7 critérios), **SensitivityAnalyzer** e **IMRADFormatter**. Garante que os artigos produzidos atendam aos padrões Qualis A1.
+Componente **P18** do pipeline MiroFish/BettaFish. Implementa auditoria academica de rigor cientifico com 5 modulos: **NashSolver** (equilibrio de Nash generalizado), **StatisticalRigor** (Cohen's d, Bonferroni, Power Analysis), **QualisA1Auditor** (score 0-100 com 7 criterios), **SensitivityAnalyzer** e **IMRADFormatter**. Garante que os artigos produzidos atendam aos padroes de qualidade para submissao a periodicos de alto impacto.
 
 ### Progressive Disclosure
 
@@ -182,6 +182,6 @@ Sistema de **pesquisa científica autônoma** implementado em `basis-research/`.
 
 <div align="center">
 
-**OpenCode Ecosystem v4.2.3** · Glossário de Termos Técnicos
+**OpenCode Ecosystem v4.6** · Glossário de Termos Técnicos
 
 </div>

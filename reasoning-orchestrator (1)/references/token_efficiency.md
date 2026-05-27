@@ -24,7 +24,7 @@ O ecossistema adapta o uso de tokens ao objetivo:
 Servidores MCP do tipo local auto-iniciam apenas na primeira chamada de ferramenta, sem overhead de inicialização.
 
 ## 6. Modelo Gratuito com Contexto Gigante (OpenCode Zen)
-O sistema usa o modelo `big-pickle` (OpenCode Zen) que é gratuito e oferece:
+O sistema usa o modelo `deepseek-v4-pro` (OpenCode Zen) que é gratuito e oferece:
 - 200K tokens de contexto
 - 128K tokens de saída
 

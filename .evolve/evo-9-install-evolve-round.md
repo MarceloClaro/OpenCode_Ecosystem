@@ -1,6 +1,6 @@
 ﻿<!-- SAIDA OBRIGATORIA: PORTUGUES BRASILEIRO FORMAL -->
 <!-- Contexto em chines para eficiencia de tokens -->
-<!-- Modelo: big-pickle -->
+<!-- Modelo: deepseek-v4-pro -->
 
 # Round 9: Instalacao em Massa + Evolucao editais-local
 

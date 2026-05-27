@@ -11,7 +11,7 @@ description: >-
   Suporta configuracao em opencode.json com fallback Python/pip.
 version: 1.0.0
 author: ecosystem
-compatibility: big-pickle
+compatibility: deepseek-v4-pro
 ---
 
 ---
@@ -22,7 +22,7 @@ description: >-
   Suporta configuracao em opencode.json com fallback Python/pip.
 version: 1.0.0
 author: ecosystem
-compatibility: big-pickle
+compatibility: deepseek-v4-pro
 ---
 
 # descobrir-e-instalar-mcp

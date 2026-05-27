@@ -3,7 +3,7 @@
 # Referencia Rapida - Token Efficiency
 
 ## Modelo
-- **ID**: big-pickle
+- **ID**: deepseek-v4-pro
 - **Provider**: opencode (Zen)
 - **URL**: https://opencode.ai/zen/v1/chat/completions
 - **Specs**: 200K ctx, 128K out, free, reasoning, tool-calling
@@ -28,7 +28,7 @@
 ## Headers Obrigatorios
 Todos os arquivos de sistema DEVEM conter:
 - Mandate PT-BR formal
-- Referencia ao modelo big-pickle
+- Referencia ao modelo deepseek-v4-pro
 - Nota de eficiencia de tokens (se aplicavel)
 
 ## Arquivos por Categoria (210 total)
@@ -65,7 +65,7 @@ Maximizar eficiencia de tokens mantendo saida em portugues brasileiro formal.
 - Nao usar emojis, girias, ou linguagem informal
 - Manter termos tecnicos em ingles quando padrao da industria
 
-### 3. Modelo big-pickle
+### 3. Modelo deepseek-v4-pro
 - Provedor: OpenCode Zen (https://opencode.ai/zen/v1/chat/completions)
 - Contexto: 200K tokens | Saida: 128K tokens | Custo: Gratuito
 - Reasoning: Sim | Tool Calling: Sim
@@ -83,7 +83,7 @@ Maximizar eficiencia de tokens mantendo saida em portugues brasileiro formal.
 ### 5. Workflow Otimizado
 ```
 1. carregar contexto (chines, denso) → ~60% tokens
-2. processar/inferir (big-pickle) → reasoning nativo
+2. processar/inferir (deepseek-v4-pro) → reasoning nativo
 3. formatar saida (PT-BR formal) → obrigatorio
 4. validar/converter (se necessario) → automatico
 ```
@@ -111,7 +111,7 @@ Maximizar eficiencia de tokens mantendo saida em portugues brasileiro formal.
   SAÍDA OBRIGATÓRIA: PORTUGUÊS BRASILEIRO FORMAL
   Toda resposta DEVE ser em português do Brasil formal.
   Contexto em chinês para eficiência de tokens (densidade +40%).
-  Modelo: big-pickle (OpenCode Zen, 200K ctx, 128K out, gratuito)
+  Modelo: deepseek-v4-pro (OpenCode Zen, 200K ctx, 128K out, gratuito)
 -->
 ```
 
@@ -124,7 +124,7 @@ Maximizar eficiencia de tokens mantendo saida em portugues brasileiro formal.
 
 # Contexto em chinês para eficiência de tokens (densidade +40%).
 
-# Modelo: big-pickle (OpenCode Zen, 200K ctx, 128K out, gratuito)
+# Modelo: deepseek-v4-pro (OpenCode Zen, 200K ctx, 128K out, gratuito)
 ```
 
 

@@ -12,7 +12,8 @@
     "plugins/ecosystem-sync.ts",
     "plugins/manus-evolve.ts",
     "plugins/bernstein-sync.ts",
-    "plugins/antigravity-bridge.ts"
+    "plugins/antigravity-bridge.ts",
+    "plugins/cora-qscore.ts"
   ],
   "mcp": {
     "filesystem": {
@@ -209,7 +210,7 @@
     },
     "shell-server": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "uvx",
         "mcp-shell-server"
@@ -223,7 +224,7 @@
     },
     "run-python": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "uvx",
         "mcp-run-python"
@@ -372,7 +373,7 @@
     },
     "scihub": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "python",
         "-m",
@@ -465,7 +466,7 @@
     },
     "self-healer": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "python",
         "nexus/mcp_self_healer.py"
@@ -486,7 +487,7 @@
     },
     "maswos-juridico": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "python",
         "skills/maswos-v5-nexus/servers/juridico_server.py"
@@ -499,7 +500,7 @@
     },
     "maswos-mcp": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "python",
         "skills/maswos-v5-nexus/servers/maswos_server.py"
@@ -512,7 +513,7 @@
     },
     "maswos-rag": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "python",
         "skills/maswos-v5-nexus/servers/rag_server.py"
@@ -525,7 +526,7 @@
     },
     "antigravity-mcp": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "python",
         "nexus/antigravity_mcp_server.py"
@@ -537,6 +538,23 @@
         "orchestration",
         "ai",
         "external"
+      ]
+    },
+    "cora-verifier": {
+      "type": "local",
+      "enabled": false,
+      "command": [
+        "python",
+        "skills/cora-debate/servers/cora_verifier.py"
+      ],
+      "timeout": 30000,
+      "tags": [
+        "cora",
+        "verification",
+        "symbolic",
+        "debate",
+        "mathematics",
+        "science"
       ]
     }
   },

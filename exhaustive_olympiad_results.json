@@ -1,0 +1,248 @@
+{
+  "results": [
+    {
+      "id": "IMO-2025-P1",
+      "pci": 100,
+      "strategy": "reduction",
+      "status": "OK"
+    },
+    {
+      "id": "IMO-2024-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IMO-2024-P2",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IMO-2024-P6",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IMO-2023-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IMO-2022-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IMO-2021-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IMO-2020-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IMO-2019-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IMO-2018-P1",
+      "pci": 94,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IMO-2017-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IMO-2016-P1",
+      "pci": 94,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IMO-2015-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IMO-2014-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IMO-2013-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IPhO-2023-P1",
+      "pci": 93,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IPhO-2022-P1",
+      "pci": 96,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IPhO-2021-P1",
+      "pci": 94,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IPhO-2020-P1",
+      "pci": 93,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IPhO-2019-P1",
+      "pci": 93,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "QUANTUM-001",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "QUANTUM-002",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "QUANTUM-003",
+      "pci": 93,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IChO-2023-P1",
+      "pci": 96,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IChO-2022-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IChO-2021-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IChO-2020-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IOI-2023-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IOI-2022-P1",
+      "pci": 93,
+      "strategy": "invariant",
+      "status": "OK"
+    },
+    {
+      "id": "IOI-2021-P1",
+      "pci": 100,
+      "strategy": "invariant",
+      "status": "OK"
+    }
+  ],
+  "olympiad_stats": {
+    "IMO": {
+      "total": 15,
+      "avg_pci": 99.2
+    },
+    "IPhO": {
+      "total": 5,
+      "avg_pci": 93.8
+    },
+    "QUANTUM": {
+      "total": 3,
+      "avg_pci": 97.66666666666667
+    },
+    "IChO": {
+      "total": 4,
+      "avg_pci": 99.0
+    },
+    "IOI": {
+      "total": 3,
+      "avg_pci": 97.66666666666667
+    }
+  },
+  "domain_stats": {
+    "combinatorial_geometry": {
+      "total": 1,
+      "avg_pci": 100.0
+    },
+    "number_theory": {
+      "total": 6,
+      "avg_pci": 100.0
+    },
+    "functional_equation": {
+      "total": 2,
+      "avg_pci": 100.0
+    },
+    "algebra": {
+      "total": 2,
+      "avg_pci": 100.0
+    },
+    "geometry": {
+      "total": 3,
+      "avg_pci": 96.0
+    },
+    "combinatorics": {
+      "total": 1,
+      "avg_pci": 100.0
+    },
+    "physics": {
+      "total": 5,
+      "avg_pci": 93.8
+    },
+    "quantum_physics": {
+      "total": 3,
+      "avg_pci": 97.66666666666667
+    },
+    "chemistry": {
+      "total": 4,
+      "avg_pci": 99.0
+    },
+    "cs_algorithms": {
+      "total": 3,
+      "avg_pci": 97.66666666666667
+    }
+  }
+}

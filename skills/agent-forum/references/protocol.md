@@ -103,7 +103,7 @@ Wrapper do LLM. Gera discursos nos modos:
 |-----------|------|--------|-----------|
 | `topic` | str | — | Topico do debate |
 | `agents` | list[str] | — | Nomes dos agentes participantes |
-| `moderator_model` | str | `opencode/big-pickle` | Modelo LLM do moderador |
+| `moderator_model` | str | `opencode/deepseek-v4-pro` | Modelo LLM do moderador |
 | `moderator_temperature` | float | 0.6 | Temperatura do LLM |
 | `buffer_size` | int | 5 | Speeches por rodada antes do moderador |
 | `max_rounds` | int | 10 | Maximo de rodadas de discussao |

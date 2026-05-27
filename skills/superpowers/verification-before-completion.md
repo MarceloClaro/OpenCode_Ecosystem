@@ -1,7 +1,7 @@
 <!-- SAÍDA OBRIGATÓRIA: PORTUGUÊS BRASILEIRO FORMAL -->
 <!-- Toda resposta ao usuário DEVE ser em português do Brasil formal. -->
 <!-- Contexto em chinês para eficiência de tokens. Responda em PT-BR formal. -->
-<!-- Modelo: big-pickle -->
+<!-- Modelo: deepseek-v4-pro -->
 
 ---
 name: verification-before-completion
@@ -10,7 +10,7 @@ version: 1.0.0
 author: ecosystem
 category: superpowers
 inspired_by: deer-flow 2.0 / opencode
-compatibility: big-pickle
+compatibility: deepseek-v4-pro
 migrated_at: 2026-05-07 06:10:30
 ---
 

@@ -5,7 +5,7 @@ description: >
   em multiplas etapas com fallback heuristico. Conhece o padrao P13
   (Step-by-step LLM Config Generator) e suas 4 etapas: tempo, eventos,
   agentes em lote e plataforma.
-model: opencode/big-pickle
+model: opencode/deepseek-v4-pro
 skills:
   - config-generator
   - python-pro

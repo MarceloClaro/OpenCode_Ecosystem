@@ -1,0 +1,180 @@
+{
+  "test_config": {
+    "total_problems": 120,
+    "year_range": "2001-2020",
+    "problems_per_year": 6,
+    "total_years": 20,
+    "elapsed_seconds": 0.0
+  },
+  "accuracy": {
+    "overall": 84.2,
+    "correct": 101,
+    "total": 120,
+    "failures": 19
+  },
+  "domain_performance": {
+    "algebra": {
+      "total": 19,
+      "correct": 17,
+      "accuracy": 89.47368421052632,
+      "avg_score": 69.26315789473684,
+      "avg_time_ms": 171.47368421052633
+    },
+    "combinatorics": {
+      "total": 20,
+      "correct": 18,
+      "accuracy": 90.0,
+      "avg_score": 68.35,
+      "avg_time_ms": 168.4
+    },
+    "functional_equation": {
+      "total": 12,
+      "correct": 8,
+      "accuracy": 66.66666666666666,
+      "avg_score": 57.833333333333336,
+      "avg_time_ms": 197.25
+    },
+    "geometry": {
+      "total": 29,
+      "correct": 24,
+      "accuracy": 82.75862068965517,
+      "avg_score": 64.86206896551724,
+      "avg_time_ms": 166.27586206896552
+    },
+    "inequality": {
+      "total": 19,
+      "correct": 15,
+      "accuracy": 78.94736842105263,
+      "avg_score": 65.6842105263158,
+      "avg_time_ms": 171.57894736842104
+    },
+    "number_theory": {
+      "total": 21,
+      "correct": 19,
+      "accuracy": 90.47619047619048,
+      "avg_score": 73.85714285714286,
+      "avg_time_ms": 196.52380952380952
+    }
+  },
+  "difficulty_performance": {
+    "3": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 100.0,
+      "avg_score": 90.0
+    },
+    "4": {
+      "total": 17,
+      "correct": 16,
+      "accuracy": 94.11764705882352,
+      "avg_score": 77.29411764705883
+    },
+    "5": {
+      "total": 25,
+      "correct": 23,
+      "accuracy": 92.0,
+      "avg_score": 71.92
+    },
+    "6": {
+      "total": 27,
+      "correct": 25,
+      "accuracy": 92.5925925925926,
+      "avg_score": 67.4074074074074
+    },
+    "7": {
+      "total": 22,
+      "correct": 18,
+      "accuracy": 81.81818181818183,
+      "avg_score": 62.40909090909091
+    },
+    "8": {
+      "total": 25,
+      "correct": 15,
+      "accuracy": 60.0,
+      "avg_score": 58.08
+    },
+    "9": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 100.0,
+      "avg_score": 60.0
+    }
+  },
+  "failure_analysis": {
+    "total_failures": 19,
+    "modes": {
+      "high_difficulty": 10,
+      "other": 5,
+      "geometry_challenge": 2,
+      "functional_equation_challenge": 2
+    },
+    "worst_domains": [
+      [
+        "functional_equation",
+        {
+          "total": 12,
+          "correct": 8,
+          "accuracy": 66.66666666666666,
+          "avg_score": 57.833333333333336,
+          "avg_time_ms": 197.25
+        }
+      ],
+      [
+        "inequality",
+        {
+          "total": 19,
+          "correct": 15,
+          "accuracy": 78.94736842105263,
+          "avg_score": 65.6842105263158,
+          "avg_time_ms": 171.57894736842104
+        }
+      ],
+      [
+        "geometry",
+        {
+          "total": 29,
+          "correct": 24,
+          "accuracy": 82.75862068965517,
+          "avg_score": 64.86206896551724,
+          "avg_time_ms": 166.27586206896552
+        }
+      ]
+    ],
+    "worst_difficulties": [
+      [
+        "8",
+        {
+          "total": 25,
+          "correct": 15,
+          "accuracy": 60.0,
+          "avg_score": 58.08
+        }
+      ],
+      [
+        "7",
+        {
+          "total": 22,
+          "correct": 18,
+          "accuracy": 81.81818181818183,
+          "avg_score": 62.40909090909091
+        }
+      ],
+      [
+        "5",
+        {
+          "total": 25,
+          "correct": 23,
+          "accuracy": 92.0,
+          "avg_score": 71.92
+        }
+      ]
+    ]
+  },
+  "resource_metrics": {
+    "avg_time_per_problem_ms": 176.7,
+    "total_processing_time_sec": 21.2,
+    "throughput_problems_per_sec": 77744.28,
+    "estimated_for_400_problems_min": 0.0
+  },
+  "stress_verdict": "WARNING \u2014 Significant degradation at scale, review failure modes"
+}

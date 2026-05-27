@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-05-26T10:58:56",
+  "total_problems": 12,
+  "accuracy": 100.0,
+  "avg_pci": 100.0,
+  "problems_by_domain": {
+    "combinatorial_geometry": {
+      "total": 1,
+      "correct": 1,
+      "avg_pci": 100.0
+    },
+    "number_theory": {
+      "total": 5,
+      "correct": 5,
+      "avg_pci": 100.0
+    },
+    "functional_equation": {
+      "total": 2,
+      "correct": 2,
+      "avg_pci": 100.0
+    },
+    "geometry": {
+      "total": 2,
+      "correct": 2,
+      "avg_pci": 100.0
+    },
+    "inequality": {
+      "total": 1,
+      "correct": 1,
+      "avg_pci": 100.0
+    },
+    "combinatorics": {
+      "total": 1,
+      "correct": 1,
+      "avg_pci": 100.0
+    }
+  },
+  "reasoning_coverage": {
+    "R01": 12,
+    "R02": 12,
+    "R05": 12,
+    "R10": 12,
+    "R14": 12,
+    "R08": 10,
+    "R17": 7,
+    "R19": 7,
+    "R22": 6,
+    "R04": 5,
+    "R15": 4,
+    "R12": 4,
+    "R26": 3,
+    "R09": 2,
+    "R23": 2
+  }
+}

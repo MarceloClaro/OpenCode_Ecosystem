@@ -7,12 +7,12 @@
 
 ---
 
-# OPENCODE 统一生态系统 v4.2 (MiroFish/BettaFish + PhD Auditor + 38推理)
+# OPENCODE 统一生态系统 v4.2 (MiroFish/BettaFish + PhD Auditor + 204 raciocínios (25 cat))
 
 ## 环境
 - Windows 11, Node.js v25, Bun 1.3, OpenCode CLI 1.14
 - 工作区: C:\Users\marce\.config\opencode
-- 模型: big-pickle (OpenCode Zen, 200K上下文, 128K输出, 免费)
+- 模型: deepseek-v4-pro (OpenCode Zen, 200K上下文, 128K输出, 免费)
 
 ## ⚠️ 输出校正 (v3.5 新增)
 - 每次交付前必须运行 ptbr_corrector.py 检测/清除CJK字符
@@ -34,7 +34,7 @@
 │                    │                                     │
 │   P18-PhD Auditor (Nash + Cohen + Bonferroni + Qualis)   │
 │   MiroFish/BettaFish: OASIS + Forum + Config + Graph    │
-│   BRAZIL_TIMEZONE (UTC-3) · 38推理 · 10博弈论            │
+│   BRAZIL_TIMEZONE (UTC-3) · 204 raciocínios (25 cat) · 10博弈论            │
 │                                                          │
 │  插件(15) ◄──► 命令(14) ◄──► LSP(1) ◄──► 校正器(1)      │
 │                                                          │
@@ -57,19 +57,19 @@
 | Nexus | 40 | 多智能体/同步屏障/推理类型 |
 | MiroFish/BettaFish | 11 | OASIS+Forum+Config+Graph+Report+Nash+Stats+Qualis+Sensitivity+IMRAD+Debate |
 | 推理类型 | 38 | 6分类 (逻辑5+辩证5+博弈论10+决策5+战略5+创新8) |
-| 文章创建器 | 91 | MASWOS v4.2+桥接+自动评分 |
+| 文章创建器 | 91 | MASWOS v4.6+桥接+自动评分 |
 | SEEKER | 78 | 10智能体+论证树+10+学术来源 |
 | 进化 | 9 | 6代ciclos + editais-br v7.1实战 + cache versionado + KeyError fix |
 | 校正器 | 1 | ptbr_corrector.py (CJK检测+PT-BR语法) |
 
 ## MiroFish/BettaFish 集成 (v4.2 新增)
-`skills/agent-forum/` — P14-P18完整管道: Agent Forum(多智能体辩论) → Debate Strategies(38推理+6策略+8配置) → PhD Auditor(NashSolver+StatisticalRigor+QualisA1Auditor+SensitivityAnalyzer+IMRADFormatter). 集成nexus-phd-strategist. BRAZIL_TIMEZONE(UTC-3)替换CHINA_TIMEZONE. 50指标真实数据仿真(World Bank/WHO/FAO/UNESCO).
+`skills/agent-forum/` — P14-P18完整管道: Agent Forum(多智能体辩论) → Debate Strategies(204 raciocínios (25 cat)+6策略+8配置) → PhD Auditor(NashSolver+StatisticalRigor+QualisA1Auditor+SensitivityAnalyzer+IMRADFormatter). 集成nexus-phd-strategist. BRAZIL_TIMEZONE(UTC-3)替换CHINA_TIMEZONE. 50指标真实数据仿真(World Bank/WHO/FAO/UNESCO).
 
 ## 量子Nexus v7.2
 `quantum/` — 81文件: 21学术引用, 26 Python/Rust脚本, 7验证输出, QML医学HAM10000(89.52%), 50量子比特MPS, Grad-CAM, ZNE/PEC误差缓解, Qualis A1.
 
 ## Nexus多智能体 v6.2
-`nexus/` — 40文件: 18架构引用, 20 Python脚本, 元粒度编排6层(L0-L6), 120+同步屏障, 500+验证约束, 38推理子类型, 120反馈点, Qualis A1审计.
+`nexus/` — 40文件: 18架构引用, 20 Python脚本, 元粒度编排6层(L0-L6), 120+同步屏障, 500+验证约束, 204 raciocínios (25 cat)子类型, 120反馈点, Qualis A1审计.
 
 ## Manus Evolve v1.0 (PlanAct自主引擎)
 `plugins/manus-evolve.ts` — 自主进化引擎. 管道: PLAN→ACT→REFLECT→EXTRACT→EVOLVE. 每轮在`evolution/`生成新技能. 从成功模式学习, 自动审批可信工具.

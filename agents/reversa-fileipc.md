@@ -5,7 +5,7 @@ description: >
   a troca de mensagens entre processos usando o protocolo File IPC,
   permitindo comunicação assíncrona sem dependências externas.
 role: communication
-model: big-pickle
+model: deepseek-v4-pro
 tools:
   read: true
   write: true

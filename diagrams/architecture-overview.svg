@@ -46,7 +46,7 @@
   <!-- Title -->
   <rect x="0" y="0" width="1200" height="56" fill="url(#hdr)" rx="8"/>
   <rect x="0" y="40" width="1200" height="16" fill="url(#hdr)"/>
-  <text x="600" y="36" text-anchor="middle" fill="#fff" font-size="20" font-weight="bold">Arquitetura do OpenCode Ecosystem v4.2.1 — 6 Camadas + MiroFish/BettaFish</text>
+  <text x="600" y="36" text-anchor="middle" fill="#fff" font-size="20" font-weight="bold">Arquitetura do OpenCode Ecosystem v4.6 — 6 Camadas + MiroFish/BettaFish</text>
 
   <!-- Layer 6 - Orchestration -->
   <rect x="30" y="70" width="1140" height="110" rx="6" fill="url(#l6)" opacity="0.15" filter="url(#shadow)"/>
@@ -164,7 +164,7 @@
   <text x="50" y="538" fill="#8b949e" font-size="9">12 categorias</text>
   <text x="50" y="554" fill="#8b949e" font-size="9">P14-P18 MiroFish</text>
   <text x="50" y="570" fill="#8b949e" font-size="9">BettaFish integrado</text>
-  <text x="50" y="586" fill="#8b949e" font-size="9">38 tipos raciocínio</text>
+  <text x="50" y="586" fill="#8b949e" font-size="9">204 tipos (25 cat)</text>
 
   <rect x="210" y="502" width="130" height="40" rx="6" fill="#bc8c00" opacity="0.8"/>
   <text x="275" y="520" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Sistema (6)</text>
@@ -253,7 +253,7 @@
   <text x="80" y="884" fill="#8b949e" font-size="9">125 Agentes</text>
   <text x="260" y="884" fill="#8b949e" font-size="9">40 MCPs</text>
   <text x="420" y="884" fill="#8b949e" font-size="9">104 Skills</text>
-  <text x="580" y="884" fill="#8b949e" font-size="9">38 Tipos Raciocínio</text>
+  <text x="580" y="884" fill="#8b949e" font-size="9">204 Raciocínios (25 cat) · 125 Agentes (7 fases)</text>
   <text x="790" y="884" fill="#8b949e" font-size="9">81 arqs Quantum</text>
-  <text x="990" y="884" fill="#8b949e" font-size="9">v4.2.1 · 200K ctx</text>
+  <text x="990" y="884" fill="#8b949e" font-size="9">v4.6 · 200K ctx</text>
 </svg>

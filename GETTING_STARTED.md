@@ -1,4 +1,4 @@
-# Primeiros Passos — OpenCode Ecosystem v4.2.1
+# Primeiros Passos — OpenCode Ecosystem v4.6
 
 > **Tempo estimado:** 10–15 minutos para instalação e primeiro uso.
 
@@ -8,7 +8,7 @@
 
 Este guia destina-se a:
 
-- **Pesquisadores acadêmicos** — que desejam gerar artigos Qualis A1 com peer-review simulado e auditoria estatística.
+- **Pesquisadores acadêmicos** — que desejam gerar artigos com auditoria de qualidade (10 critérios CAPES) e debate multiagente com verificadores simbólicos.
 - **Desenvolvedores de IA** — interessados em arquiteturas multiagente, engenharia reversa automatizada e integração de MCPs.
 - **Estudantes de computação quântica** — que buscam experimentar com VQC de 50 qubits, QML em dados médicos e mitigação de erros (ZNE/PEC).
 
@@ -22,12 +22,12 @@ Antes de iniciar, verifique se o seu ambiente atende aos seguintes requisitos:
 
 | Componente | Versão Mínima | Observação |
 |------------|:-------------:|-----------|
-| **Node.js** | v25+ | Runtime JavaScript necessário para o OpenCode CLI |
+| **Node.js** | v22+ (LTS) | Runtime JavaScript necessário para o OpenCode CLI |
 | **Bun** | 1.3+ | Gerenciador de pacotes e runtime utilizado pelo projeto |
 | **Python** | 3.12+ | Necessário para os agentes, scripts Nexus e módulos quânticos |
 | **OpenCode CLI** | 1.14+ | Interface de linha de comando do OpenCode |
 | **Sistema Operacional** | Windows 11 (principal) | Linux e macOS também são suportados (experimental) |
-| **Modelo** | `big-pickle` | OpenCode Zen — 200K tokens de contexto, 128K de saída, **gratuito** |
+| **Modelo** | `deepseek-v4-pro` | OpenCode Zen — 200K contexto, 128K saída, gratuito (⚠️ [veja aviso de privacidade](PRIVACY.md)) |
 
 ---
 
@@ -57,13 +57,13 @@ opencode --version
 # Saída esperada: 1.14.x ou superior
 ```
 
-### 4. Verificar o modelo `big-pickle`
+### 4. Verificar o modelo `deepseek-v4-pro`
 
-O modelo padrão do ecossistema é o `big-pickle` (OpenCode Zen), que é gratuito e oferece 200K tokens de contexto com 128K tokens de saída. Verifique a disponibilidade:
+O modelo padrão do ecossistema é o `deepseek-v4-pro` (OpenCode Zen), que é gratuito e oferece 200K tokens de contexto com 128K tokens de saída. Verifique a disponibilidade:
 
 ```bash
 opencode models
-# O modelo big-pickle deve aparecer na lista
+# O modelo deepseek-v4-pro deve aparecer na lista
 ```
 
 ---
@@ -83,7 +83,7 @@ Execute os comandos abaixo para confirmar que seu ambiente está corretamente co
 
 ## Primeiros Passos — 3 Exemplos
 
-### Exemplo 1: Gerar artigo acadêmico Qualis A1
+### Exemplo 1: Gerar artigo academico com auditoria CAPES
 
 ```
 /artigo
@@ -97,7 +97,7 @@ Este comando aciona o pipeline completo de produção acadêmica:
 4. **AUTO_SCORE_QUALIS.py** — avaliação automática com 10 critérios ponderados
 5. **Export** — LaTeX/PDF com 46 anotações TSAC auditáveis
 
-**Resultado:** artigo de 35+ páginas em formato ABNT, com citações verificáveis e score Qualis A1.
+**Resultado:** artigo de 35+ paginas em formato ABNT, com citacoes verificaveis e auditoria baseada em 10 criterios CAPES.
 
 <img src="diagrams/academic-pipeline.svg" alt="Pipeline Acadêmico MASWOS Qualis A1" width="100%" style="max-width: 800px; border-radius: 8px; margin: 16px 0;"/>
 
@@ -142,11 +142,11 @@ nvm install 25
 nvm use 25
 ```
 
-### Modelo `big-pickle` não disponível
+### Modelo `deepseek-v4-pro` não disponível
 
 **Sintoma:** `Model not found` ao executar comandos
 
-**Solução:** Verifique a conexão com a internet e execute `opencode models` para listar os modelos disponíveis. O `big-pickle` é gratuito e deve estar disponível automaticamente.
+**Solução:** Verifique a conexão com a internet e execute `opencode models` para listar os modelos disponíveis. O `deepseek-v4-pro` é gratuito e deve estar disponível automaticamente.
 
 ### MCPs não inicializando
 
@@ -189,6 +189,6 @@ Agora que o ambiente está configurado, explore a documentação complementar:
 
 <div align="center">
 
-**OpenCode Ecosystem v4.2.1** · Documentação em Português Brasileiro
+**OpenCode Ecosystem v4.6** · Documentação em Português Brasileiro
 
 </div>

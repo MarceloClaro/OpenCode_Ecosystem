@@ -17,7 +17,7 @@ Consolidar a sincronia autonoma do ecossistema OpenCode com integracao de corret
 - **ptbr_corrector.py**: Detector/removedor de 17 blocos Unicode CJK + corretor ortografico PT-BR (50+ regras); scan caractere-a-caractere com preservacao de code blocks
 - **sync_orchestrator.py**: Orchestrator Python com 4 engines — SyncOrchestrator, CrossValidationEngine (25+ regras de afinidade), ConflictDetector (redundancia intencional documentada), HealthEngine (score com penalty/bonus)
 - **linguistic-corrector.md**: Agente de correcao linguistica integrado ao pipeline de saida
-- **210 arquivos**: Headers padronizados com contexto chines + mandate PT-BR + referencia big-pickle
+- **210 arquivos**: Headers padronizados com contexto chines + mandate PT-BR + referencia deepseek-v4-pro
 - **AGENTS.md**: Arquitetura unificada com mapa de componentes e fluxo de correcao
 
 ## Reflexoes & Aprendizados

@@ -1,6 +1,6 @@
 # Documentação Completa do Ecossistema OpenCode
 
-> **Versão:** 3.5 | **Ciclo:** 8 | **Modelo:** big-pickle (OpenCode Zen)
+> **Versão:** 3.5 | **Ciclo:** 8 | **Modelo:** deepseek-v4-pro (OpenCode Zen)
 > **Atualizado em:** 2026-05-09
 
 ---
@@ -160,7 +160,7 @@ python scripts/extracao_profunda.py edital.pdf
 | **plan-protocol** | Protocolo de planos com citações, versões e rastreabilidade |
 | **plan-review** | Critérios para revisão de planos (completude, viabilidade, riscos) |
 | **reasoning-orchestrator** | Meta-orquestração de 58 tipos de raciocínio, profundidade L1-L4, matriz de interseção |
-| **token-efficiency** | Regras de compressão: chinês para contexto, PT-BR para saída, big-pickle |
+| **token-efficiency** | Regras de compressão: chinês para contexto, PT-BR para saída, deepseek-v4-pro |
 | **frontend-philosophy** | 5 Pilares da UI Intencional: hierarquia visual, consistência, feedback, acessibilidade, performance |
 
 ---
@@ -413,7 +413,7 @@ nexus/scripts/
 │   ├── meta_orchestrator.py      — Orquestrador de camadas L0-L6
 │   ├── meta_learning_engine.py   — Meta-aprendizado entre ciclos
 │   ├── autonomous_reasoning_framework.py
-│   └── micro_reasoning_types.py  — 38 tipos de raciocínio
+│   └── micro_reasoning_types.py  — 204 tipos de raciocínio (25 categorias)
 ├── sincronização:
 │   ├── micro_sync_barriers.py    — 120+ barreiras
 │   ├── micro_validation.py       — 500+ constraints

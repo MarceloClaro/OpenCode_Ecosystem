@@ -28,7 +28,7 @@ Evoluir o ecossistema OpenCode com padroes descobertos em ecossistemas externos 
 
 ## Reflexoes & Aprendizados
 - Ecossistemas externos de skills (samber/cc-skills) validam nossa abordagem de skills atomicas com carga sob demanda - nosso modelo de 74 skills em 12 categorias esta alinhado com o estado-da-arte
-- Progressive disclosure design reduz tokens carregados em ~60% vs monolitos - essencial para sessoes longas com big-pickle (200K ctx)
+- Progressive disclosure design reduz tokens carregados em ~60% vs monolitos - essencial para sessoes longas com deepseek-v4-pro (200K ctx)
 - Observabilidade de agentes e uma lacuna no ecossistema OpenCode - nao ha tracking de quality score por sessao, tempo de resposta por ferramenta, ou taxa de erro por agente
 - mc-agent-toolkit da Monte Carlo mostra que health monitoring em agentes segue padroes de observabilidade classica (logs, metrics, traces) adaptados para LLM workflows
 - Encoding verification mostrou que AGENTS.md esta em UTF-8 valido - o "?" visto em terminais Windows e artifact de exibicao (codepage), nao corrupcao real

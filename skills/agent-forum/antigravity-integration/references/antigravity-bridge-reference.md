@@ -29,7 +29,7 @@ OpenCode → AntiBridgePlugin (TS) → MCP Server (Python) → Agente Orquestrad
 **Exemplo:**
 ```python
 result = await mcp.call_tool("antigravity_generate_image", {
-    "description": "Diagrama MASWOS v4.2, 49 agentes, 8 estágios sequenciais, estilo acadêmico vetorial",
+    "description": "Diagrama MASWOS v4.6, 49 agentes, 8 estágios sequenciais, estilo acadêmico vetorial",
     "style": "academic_diagram",
     "context": "Artigo Qualis A1"
 })

@@ -1,0 +1,44 @@
+{
+  "number_theory": {
+    "strategy": "invariant",
+    "score": 85,
+    "paths": 4,
+    "agents": 14
+  },
+  "combinatorial_geometry": {
+    "strategy": "invariant",
+    "score": 85,
+    "paths": 4,
+    "agents": 17
+  },
+  "geometry": {
+    "strategy": "invariant",
+    "score": 85,
+    "paths": 4,
+    "agents": 9
+  },
+  "functional_equation": {
+    "strategy": "invariant",
+    "score": 85,
+    "paths": 4,
+    "agents": 11
+  },
+  "inequality": {
+    "strategy": "invariant",
+    "score": 85,
+    "paths": 3,
+    "agents": 9
+  },
+  "combinatorics": {
+    "strategy": "invariant",
+    "score": 85,
+    "paths": 4,
+    "agents": 10
+  },
+  "game_theory": {
+    "strategy": "invariant",
+    "score": 85,
+    "paths": 4,
+    "agents": 10
+  }
+}

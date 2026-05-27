@@ -23,13 +23,14 @@ classification: "Arquitetura de Agentes, MCPs e Skills com DI + MiroFish/BettaFi
 author: "Reversa Framework v1.2.22 + Nexus PhD Strategist"
 ---
 
-# OpenCode Ecosystem v4.2.3
+# OpenCode Ecosystem v4.6
 
-O **OpenCode Ecosystem** é uma arquitetura multiagente evolutiva integrada ao OpenCode (OpenAI Codex CLI), composta por **125 agentes**, **41 servidores MCP**, **106 skills especializadas** (13 categorias), **11 serviços em Container DI**, **10 Ecosystem Hooks** (8 domínios de dados) e aproximadamente **120.000 linhas de código Python**. O ecossistema operacionaliza produção acadêmica Qualis A1, pesquisa científica autônoma, simulação MiroFish/BettaFish com 38 raciocínios + Teoria dos Jogos, computação quântica (81 arqs, 89.52% acc), engenharia reversa de sistemas legados, e **acesso universal a dados via DataOrchestrator** — tudo orquestrado por um Container central de Injeção de Dependência.
+O **OpenCode Ecosystem** é uma arquitetura multiagente evolutiva integrada ao OpenCode (OpenAI Codex CLI), composta por **125 agentes catalogados** (3-7 ativos por sessão, ativação sob demanda), **41 servidores MCP**, **106 skills especializadas** (13 categorias), **11 serviços em Container DI**, **10 Ecosystem Hooks** (8 domínios de dados) e aproximadamente **120.000 linhas de código Python**. O ecossistema operacionaliza produção acadêmica com auditoria de qualidade (10 critérios CAPES), pesquisa científica autônoma, simulação MiroFish/BettaFish com 38 raciocínios + Teoria dos Jogos, computação quântica (81 arqs, 89.52% acc), engenharia reversa de sistemas legados, e **acesso universal a dados via DataOrchestrator** — tudo orquestrado por um Container central de Injeção de Dependência.
 
 > **NOVO v4.2.3**: PyPI Scout (catálogo curado 22+ bibliotecas, matriz de afinidade 5 pipelines), DataOrchestrator (query em linguagem natural → 8 domínios), 10 Ecosystem Hooks (Geo, Finance, Crypto, BioMed, Academic, Economic, Health, PDF), 30+ bibliotecas instaladas, 20+ fontes Qualis A1.
 
-> Repositório: `C:\Users\marce\.config\opencode` · Modelo: `opencode/big-pickle` (200K ctx, 128K out)
+> Repositório: `C:\Users\marce\.config\opencode` · Modelo: `opencode/deepseek-v4-pro` (200K ctx, 128K out)
+> ⚠️ **Privacidade**: Dados de interações no gateway gratuito podem ser usados para melhoria do modelo. [Leia CORRIGENDUM.md](CORRIGENDUM.md).
 
 ---
 
@@ -40,12 +41,12 @@ O ecossistema documenta sua arquitetura por meio de **10 diagramas SVG** em `dia
 | # | Arquivo | Propósito | Processos-chave |
 |---|---------|-----------|------------------|
 | 1 | `architecture-overview.svg` | Mapa mestre 6 camadas | L1-Infra → L6-Orquestração · 125 ag · 40 MCPs · 104 skills |
-| 2 | `agent-orchestration.svg` | Hierarquia multiagente | ReAct loop · AutoEvolve PLAN→EVOLVE · MiroFish P14-P18 |
-| 3 | `academic-pipeline.svg` | MASWOS v4.2.1 | 8 estágios · 49 agentes · loopback score ≥ 95/100 |
+| 2 | `agent-orchestration.svg` | Hierarquia multiagente | ReAct loop · AutoEvolve + Creative Leap · 7 fases · MiroFish P14-P18 |
+| 3 | `academic-pipeline.svg` | MASWOS v4.6 | artigo 40p/44refs · 49 agentes · loopback score ≥ 95/100 |
 | 4 | `mcp-architecture.svg` | Protocolo MCP | 40 servidores · Client-Host-Server · lazy init |
 | 5 | `rag-strategies.svg` | 9 estratégias RAG | Vanilla→HyDE · Adaptive auto-select · Graph+Vector |
 | 6 | `self-healing.svg` | Autocura autônoma | Monitor→Detectar→Diagnosticar→Reparar→Verificar |
-| 7 | `mirofish-phd-auditor.svg` | Pipeline P14-P18 | 38 raciocínios · Nash · Cohen · Bonferroni · Qualis A1 |
+| 7 | `mirofish-phd-auditor.svg` | Pipeline P14-P18 | 204 raciocínios (25 cat) · Creative Leap · Nash · Cohen · Qualis A1 |
 | 8 | `classification-taxonomy.svg` | Árvore taxonômica | Posiciona o ecossistema vs. frameworks existentes |
 | 9 | `architectural-patterns.svg` | 10 padrões arquiteturais | Mapeamento dos padrões às camadas L1–L6 + DI |
 | 10| `subsystem-classification.svg` | Classificação por subsistema | Mapa radial dos 10 subsistemas com classificação individual |
@@ -58,7 +59,7 @@ O ecossistema documenta sua arquitetura por meio de **10 diagramas SVG** em `dia
 Este diagrama é exclusivo do OpenCode v4.2.1 e representa o pipeline mais complexo do ecossistema:
 
 **Pipeline P14 → P18:**
-- **P14 Agent Forum (OASIS):** 125 agentes debatem com 38 tipos de raciocínio estruturado em 8 perfis de debate. O OASIS modera automaticamente os turnos e grava o grafo de argumentos.
+- **P14 Agent Forum (OASIS):** 125 agentes debatem com 204 tipos de raciocínio (25 categorias) estruturado em 8 perfis de debate. O OASIS modera automaticamente os turnos e grava o grafo de argumentos.
 - **P15 DocIR:** Recuperação de 50 métricas reais (PIB, PISA, AI Readiness, saneamento, etc.) de World Bank, WHO, FAO, UNESCO, IBGE com correlações Pearson (ex: Internet×AI Readiness r=0.998).
 - **P16 ANP:** Analytic Network Process — ponderação multi-critério dos argumentos do debate para priorizar teses com maior sustentação estatística.
 - **P17 Meta-Writer:** Síntese do debate em formato LaTeX/IMRAD com TSAC anti-AI (87 palavras banidas, 46 anotações auditáveis).
@@ -90,7 +91,7 @@ Este diagrama é exclusivo do OpenCode v4.2.1 e representa o pipeline mais compl
 | CJK zero-tolerance PT-BR | **✅** | ❌ | ❌ | ❌ | ❌ |
 | DataOrchestrator (NL→8 domínios) | **✅** | ❌ | ❌ | ❌ | ❌ |
 | PyPI Scout (22+ bib. curadas) | **✅** | ❌ | ❌ | ❌ | ❌ |
-| Modelo gratuito 200K ctx | **✅ big-pickle** | API paga | API paga | API paga | Assinatura |
+| Modelo gratuito 200K ctx | **✅ deepseek-v4-pro** | API paga | API paga | API paga | Assinatura |
 
 > **Vantagem-chave:** Único framework que une produção Qualis A1 + debate multiagente com Teoria dos Jogos + validação estatística + quantum computing + autocura autônoma + DataOrchestrator multi-domínio, com modelo gratuito de 200K contexto e arquitetura que aprende a cada ciclo evolutivo.
 
@@ -161,7 +162,7 @@ O **PyPI Scout** (`pypi_scout.py`, 350 linhas) é a ferramenta canônica de desc
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│                     OPENCODE ECOSYSTEM v4.2.1 — P1-P18 Pipeline                 │
+│                     OPENCODE ECOSYSTEM v4.6 — P1-P18 Pipeline + 204 Raciocínios                 │
 │                                                                        │
 │  ┌──────────────────────────────────────────────────────────────────┐  │
 │  │                       CAMADA DE ORQUESTRAÇÃO                     │  │
@@ -306,7 +307,7 @@ Fontes: World Bank, WHO, FAO, UNESCO, SIPRI, ILO, ITU, OECD, IBGE, INPE
 | **L4 — MCP** | Protocolo de comunicação ferramenta-agente | 40 servidores (38 local, 2 remote) | MCP SDK, stdio |
 | **L3 — Skills** | Diretrizes de domínio para agentes | 104 skills (P1-P18: Entity NER→PhD Auditor, oasis-profile-gen, debate-strategies, phd-auditor) | YAML, Markdown |
 | **L2 — Dados** | Armazenamento, memória e persistência | SQLite, Mem0, Quantum, DOCLing | SQLite, Ollama, PDF |
-| **L1 — Infra** | Runtime e sistema de arquivos | Node.js 25, Bun 1.3, Python 3.12 | Win32, Docker |
+| **L1 — Infra** | Runtime e sistema de arquivos | Node.js 22 LTS, Bun 1.3, Python 3.12 | Win32, Docker |
 | **DI** | Injeção de Dependência transversal | Container 11 serviços, 2 bridges (CommandRegistry + PluginManager) | Python, Container pattern |
 
 ---
@@ -811,7 +812,7 @@ Sistema de memória técnica integrado ao ecossistema para registrar, buscar sem
 
 - **MASWOS agents**: 00 a 45, especialistas em produção acadêmica
 - **Funções**: pesquisa, escrita, formatação ABNT, referências, revisão, correção
-- **Output**: artigos Qualis A1 em LaTeX/PDF com média ≥ 95/100
+- **Output**: artigos em LaTeX/PDF com auditoria baseada em 10 criterios CAPES (media >= 95/100)
 
 ### SEEKER (12 agentes)
 
@@ -838,7 +839,7 @@ Sistema de memória técnica integrado ao ecossistema para registrar, buscar sem
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "opencode/big-pickle",
+  "model": "opencode/deepseek-v4-pro",
   "autoupdate": true,
   "compaction": { "auto": true, "prune": true, "reserved": 10000 },
   "mcp": { ... 17 entries (15 local, 2 remote) ... },
@@ -849,7 +850,7 @@ Sistema de memória técnica integrado ao ecossistema para registrar, buscar sem
 
 | Chave | Valor |
 |-------|-------|
-| `model` | `opencode/big-pickle` (200K ctx, 128K out) |
+| `model` | `opencode/deepseek-v4-pro` (200K ctx, 128K out) |
 | `autoupdate` | `true` |
 | `compaction.auto` | `true` |
 | `compaction.prune` | `true` |
@@ -1016,7 +1017,7 @@ Sistema de memória técnica integrado ao ecossistema para registrar, buscar sem
 
 | Métrica | Valor |
 |---------|:-----:|
-| Modelo principal | opencode/big-pickle |
+| Modelo principal | opencode/deepseek-v4-pro |
 | Contexto máximo | 200K tokens |
 | Output máximo | 128K tokens |
 | Autoupdate | true |
@@ -1172,7 +1173,7 @@ O ciclo **Monitorar → Detectar → Diagnosticar → Reparar → Verificar** op
 
 ---
 
-> **OpenCode Ecosystem v4.2.1** — 125 agentes · 40 MCPs · 104 skills · 11 Container DI services · ~114.000 linhas Python
+> **OpenCode Ecosystem v4.6** — 125 agentes · 40 MCPs · 104 skills · 11 Container DI services · ~114.000 linhas Python
 >
 > Documentação gerada pelo Reversa Framework v1.2.22 em 2026-05-21.
-> Repositório: `C:\Users\marce\.config\opencode` | Modelo: `opencode/big-pickle`
+> Repositório: `C:\Users\marce\.config\opencode` | Modelo: `opencode/deepseek-v4-pro`

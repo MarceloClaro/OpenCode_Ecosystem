@@ -1,6 +1,6 @@
 # Taxonomia de 38 Tipos de Raciocínio PhD Nexarista
 
-Esta referência detalha os 38 tipos de raciocínio integrados na Skill `nexus-phd-strategist`, organizados em 6 categorias fundamentais para análise de alto impacto.
+Esta referência detalha os 204 tipos de raciocínio (25 categorias) integrados na Skill `nexus-phd-strategist`, organizados em 6 categorias fundamentais para análise de alto impacto.
 
 ## 1. Lógica Clássica (5)
 - **DEDUCTIVE**: Inferência de conclusões necessárias a partir de premissas gerais.

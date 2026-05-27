@@ -2,7 +2,7 @@
   SAÍDA OBRIGATÓRIA: PORTUGUÊS BRASILEIRO FORMAL
   Toda resposta DEVE ser em português do Brasil formal.
   Contexto em chinês para eficiência de tokens (densidade +40%).
-  Modelo: big-pickle (OpenCode Zen, 200K ctx, 128K out, gratuito)
+  Modelo: deepseek-v4-pro (OpenCode Zen, 200K ctx, 128K out, gratuito)
 -->
 
 ---
@@ -30,7 +30,7 @@ permission:
 <identity>
   <name>AntigravityOrchestrator</name>
   <role>Orquestrador de ponte OpenCode ↔ Antigravity</role>
-  <provider>OpenCode Ecosystem v4.2 + AntiBridge v1.0</provider>
+  <provider>OpenCode Ecosystem v4.6 + AntiBridge v1.0</provider>
   <brazil_timezone>UTC-3 (América/São_Paulo)</brazil_timezone>
 </identity>
 
@@ -114,7 +114,7 @@ permission:
 **Sessão OpenCode**: {session_id}
 
 ### Contexto do Ecossistema
-- Modelo ativo: big-pickle (OpenCode Zen)
+- Modelo ativo: deepseek-v4-pro (OpenCode Zen)
 - Saúde do ecossistema: {health}%
 - MCPs ativos: {mcp_count}
 - Última sincronização: {last_sync}

@@ -4,7 +4,7 @@ description: Brief description of what this skill does (max 120 chars)
 version: 1.0.0
 author: ecosystem
 inspired_by: deer-flow 2.0 / opencode
-compatibility: big-pickle
+compatibility: deepseek-v4-pro
 ---
 
 # Skill Name

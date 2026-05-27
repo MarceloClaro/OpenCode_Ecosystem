@@ -1,4 +1,4 @@
-# Tutoriais — OpenCode Ecosystem v4.2.3
+# Tutoriais — OpenCode Ecosystem v4.6
 
 > Tutoriais práticos com passo-a-passo para as principais funcionalidades do ecossistema.
 
@@ -52,7 +52,7 @@ python skills/system/pypi-scout/data_orchestrator.py
 
 ### Objetivo
 
-Produzir um artigo acadêmico completo, com score ≥ 95/100 segundo critérios Qualis A1 da CAPES, utilizando o pipeline MASWOS com 49 agentes especializados.
+Produzir um artigo academico completo, com pontuacao >= 95/100 segundo criterios de qualidade academica (parametros CAPES), utilizando o pipeline MASWOS com 49 agentes especializados.
 
 ### Comando
 
@@ -116,7 +116,7 @@ O comando `/artigo` aciona a seguinte sequência automatizada:
 
 - Artigo de **35+ páginas** em formato ABNT
 - **46 citações** com anotações TSAC auditáveis
-- Score Qualis A1: **≥ 95/100**
+- Auditoria CAPES: **>= 95/100**
 - Formato: LaTeX e PDF
 - Métricas de execução: Board Score 86,5 → 92,7 (+7,1%), Auto Score 74 → 95 (+28,4%)
 
@@ -389,6 +389,6 @@ O comando `/auto` ativa o agente `openagent` com acesso a **todos** os MCPs simu
 
 <div align="center">
 
-**OpenCode Ecosystem v4.2.3** · Tutoriais Práticos
+**OpenCode Ecosystem v4.6** · Tutoriais Práticos
 
 </div>

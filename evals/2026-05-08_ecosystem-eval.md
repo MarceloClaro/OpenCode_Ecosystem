@@ -107,7 +107,7 @@ Score composto: **1.92**
 | -- | --------- |
 | T1 | Contexto em chines simplificado (economia 30-40%) |
 | T2 | Saida obrigatoria PT-BR formal |
-| T3 | Modelo big-pickle (200K ctx, gratuito) |
+| T3 | Modelo deepseek-v4-pro (200K ctx, gratuito) |
 | T4 | Tabelas vs paragrafos (economia 25-35%) |
 | T5 | Referencia vs copia (economia 50-70%) |
 | T6 | ptbr_corrector.py integrado no pipeline |

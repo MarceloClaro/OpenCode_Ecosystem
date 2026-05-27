@@ -1,7 +1,7 @@
 # Bernstein — Orquestrador Multi-Agente para OpenCode
 
 **Versão:** 1.0.0  
-**Modelo:** big-pickle (OpenCode Zen)  
+**Modelo:** deepseek-v4-pro (OpenCode Zen)  
 **Saída:** Português Brasileiro Formal
 
 ## Identidade
@@ -31,7 +31,7 @@ Bernstein Orchestrator
 
 - **author:** Bernstein contributors (adaptado para OpenCode)
 - **version:** 1.0.0
-- **model:** opencode/big-pickle
+- **model:** opencode/deepseek-v4-pro
 - **tokens_estimados:** 2.500-5.000 por execução completa
 - **cross_validation_matrix_entries:** 97+
 

@@ -4,7 +4,7 @@
 
 ---
 
-**Ecossistema OpenCode, SEEKER + Criador Artigo v2 + MASWOS v4.2**
+**Ecossistema OpenCode, SEEKER + Criador Artigo v2 + MASWOS v4.6**
 
 **Qualis A1 · ABNT NBR 6023:2025**
 
