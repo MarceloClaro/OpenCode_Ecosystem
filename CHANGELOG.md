@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.0.0] - 2026-05-27
+### Added
+- Taxonomia universal: 350 tipos de raciocinio em 35 categorias (I-XXXV), 335 referencias
+- 11 novas categorias: Quantico-Informacionais, Cibernetico-Organizacionais, Geometrico-Topologicos, Linguistico-Semanticos, Psicometrico-Avaliativos, Climatico-Ambientais, Etico-Normativos Avancados, Esportivo-Performaticos, Musical-Acusticos, Culinario-Gastronomicos, Metafisico-Ontologicos
+- 150 novos tipos de raciocinio (R201-R350)
+- Integracao multimodal visao+texto (skill multimodal-vision): Vision Router com 3 providers (GPT-4o, Gemini 2.5 Pro, Claude Sonnet), 8 Visual Reasoning Types (VR01-VR08), pipeline 4 estagios
+- Publicacao open-source: LICENSE (MIT), README.md, CONTRIBUTING.md, .gitignore, GitHub Actions CI (lint+test+LaTeX+artifacts)
+- Validacao clinica em arteterapia decolonial (skill clinical-art-therapy): pipeline 8 estagios, framework 6 dimensoes, protocolo etico CEP/TCLE/LGPD, TCC integrado (Nadielle Darc)
+- Cora-Debate V7: 7 sub-verificadores formais para codigo-fonte (V7a Syntax AST, V7b Logic Prover/Hoare, V7c Type Safety, V7d Resource Bounds/Big-O, V7e Security Patterns/OWASP, V7f Test Coverage, V7g Invariant Checker)
+- Score composto V7 0-100 com pesos por sub-verificador
+- TDD Academic v2.0 validado: 25/25 testes (100%), relatorios JSON+MD
+- Anteprojeto PPGTE validado: PDF compilado (9 pgs, 161KB), apendice TDD inserido
+- Dissertacao compilada: 30 pgs, 381KB, PDF via MiKTeX
+
+### Changed
+- Taxonomia: 212 -> 350 tipos (+65%), 27 -> 35 categorias (+30%)
+- Cora-Debate: v1.0.0 -> v1.1.0, V1-V6 -> V1-V7 (7 verificadores, 21 sub-verificadores)
+- SKILL.md Cora-Debate: 211 -> 306 linhas (+95 linhas)
+- Documentacao: CHANGELOG.md, README.md, CONTRIBUTING.md para publicacao aberta
+- CI/CD: GitHub Actions adicionado ao workflow de desenvolvimento
+
+### Fixed
+- LaTeX: Unicode █ (U+2588) em Gantt chart corrigido com comando \ganttbar
+- LaTeX: \wedge fora de math mode corrigido para $F^{*}$
+- LaTeX: \multirow pacote ausente adicionado
+- KeyError score no editais-br v7.1: setdefault + CACHE_VERSION
+
 ## [v4.6.1] - 2026-05-27
 ### Added
 - Artigo Qualis A1 completo (19 paginas, 26 referencias com DOIs auditaveis)
