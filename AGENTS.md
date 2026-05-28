@@ -163,6 +163,17 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | DecisionNode (ADRs) | 3次 | architectu-001, testing-001, security-001 registradas |
 | Conhecimento Estruturado (SDD) | 1次 | especificação como infraestrutura operacional (Cap. 6 livro) |
 
+## 工程学科文档 (v4.7 新增 — Engenharia de Software com Agentes Inteligentes)
+
+| 文档 | 路径 | 内容 |
+|------|------|------|
+| ENGENHARIA_DE_SOFTWARE.md | `docs/ENGENHARIA_DE_SOFTWARE.md` | SDD, TDD, CI/CD, SWEBOK, Git Safety, ADR, Arquitetura |
+| SPEC_COVERAGE.md | `docs/SPEC_COVERAGE.md` | 186/186 componentes documentados (100% cobertura) |
+| Cyberpunk Architecture SVG | `diagrams/cyberpunk-engineering-architecture.svg` | Diagrama cyberpunk da arquitetura de ES |
+| Cyberpunk SDD+TDD SVG | `diagrams/cyberpunk-sdd-tdd-pipeline.svg` | Pipeline SDD+TDD estilo cyberpunk |
+
+Disciplinas aplicadas: SDD (Spec-Driven), TDD (Test-Driven), CI/CD (5 gates), SWEBOK (4 categorias), Git Safety (commit-before-AI), ADR (5 decisões), 3-Layer Architecture (MCP→Skill→Agent).
+
 ## 交叉验证矩阵 (亲和度)
 
 最高亲和度:
