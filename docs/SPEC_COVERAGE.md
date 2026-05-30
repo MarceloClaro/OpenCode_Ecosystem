@@ -1,18 +1,18 @@
 ---
-title: "Cobertura de Especificação — 186/186 Componentes"
-version: "4.6"
+title: "Cobertura de Especificação — 11 SPECs Ativas"
+version: "4.6.1"
 coverage_pct: 100
-total_components: 186
+total_components: 190
 last_verified: "2026-05-30"
 ---
 
-# Cobertura de Especificação — 100% (186/186)
+# Cobertura de Especificação — 11 SPECs (190/190 Componentes)
 
 ## Sumário Executivo
 
-Todos os 186 componentes do OpenCode Ecosystem v4.6 estão documentados e rastreados. Cada componente possui:
-- **Especificação** formal (SPEC-001 a SPEC-007)
-- **Critérios de Teste** (CTs) validados
+Todos os 190 componentes do OpenCode Ecosystem v4.6.1 estao documentados e rastreados. Cada componente possui:
+- **Especificacao** formal (SPEC-001 a SPEC-011)
+- **Criterios de Teste** (CTs) validados
 - **TDD** com cobertura de testes ≥ 96%
 - **ADR** registrada via DecisionNode
 
@@ -50,10 +50,14 @@ Todos os 186 componentes do OpenCode Ecosystem v4.6 estão documentados e rastre
 | Nexus Scripts | 63 | 63 | 100% | SPEC-001 |
 | Quantum Scripts | 26 | 26 | 100% | SPEC-004 |
 | Diagramas | 10 | 10 | 100% | SPEC-001 |
-| Documentação | 14 | 14 | 100% | SPEC-001 |
+| Documentacao | 14 | 14 | 100% | SPEC-001 |
 | CI/CD | 2 | 2 | 100% | SPEC-001 |
+| SPEC-008 Anti-Circularidade | 4 | 4 | 100% | SPEC-008 |
+| SPEC-009 D1 Matematica | 4 | 4 | 100% | SPEC-009 |
+| SPEC-010 D2 Fisica | 4 | 4 | 100% | SPEC-010 |
+| SPEC-011 D9 Metodologia | 4 | 4 | 100% | SPEC-011 |
 | | | | | |
-| **TOTAL** | **186** | **186** | **100%** | **7 Specs** |
+| **TOTAL** | **190** | **190** | **100%** | **11 Specs** |
 
 ---
 
@@ -166,14 +170,50 @@ Todos os 186 componentes do OpenCode Ecosystem v4.6 estão documentados e rastre
 | bernstein-sync.ts | Plugin | 5/5 | ✅ |
 | antigravity-bridge.ts | Plugin | 5/5 | ✅ |
 | 18 skills system | Skills | 5/5 cada | ✅ |
-| evo-1 a evo-8 | Evolution | 5/5 | ✅ |
+| evo-1 a evo-17 | Evolution | 5/5 | ✅ |
+
+### SPEC-008: Triangulacao Anti-Circularidade (4 componentes)
+
+| Componente | Tipo | CTs | Status |
+|------------|------|:---:|:------:|
+| TRIANGULACAO_ANTI_CIRCULARIDADE.md | Fundacional | 5/5 | ✅ |
+| SPEC_008_ANTI_CIRCULARIDADE.md | SDD | 9/9 | ✅ |
+| test_anticircularidade.py | TDD (pytest) | 14/14 | ✅ |
+| dissertacao_exp_triangulacao.tex | Dissertacao | 5/5 | ✅ |
+
+### SPEC-009: D1 Matematica (4 componentes)
+
+| Componente | Tipo | CTs | Status |
+|------------|------|:---:|:------:|
+| SPEC_009_D1_MATEMATICA.md | SDD | 5/5 | ✅ |
+| test_d1_matematica.py | TDD (pytest) | 12/12 | ✅ |
+| Pitagoras, Gauss, Fibonacci... | CTs | 8/8 | ✅ |
+| Documentacao integrada | Docs | 3/3 | ✅ |
+
+### SPEC-010: D2 Fisica (4 componentes)
+
+| Componente | Tipo | CTs | Status |
+|------------|------|:---:|:------:|
+| SPEC_010_D2_FISICA.md | SDD | 5/5 | ✅ |
+| test_d2_fisica.py | TDD (pytest) | 8/8 | ✅ |
+| MRU, Queda Livre, Hooke... | CTs | 8/8 | ✅ |
+| Documentacao integrada | Docs | 3/3 | ✅ |
+
+### SPEC-011: D9 Metodologia (4 componentes)
+
+| Componente | Tipo | CTs | Status |
+|------------|------|:---:|:------:|
+| SPEC_011_D9_METODOLOGIA.md | SDD | 5/5 | ✅ |
+| test_d9_metodologia.py | TDD (pytest) | 15/15 | ✅ |
+| ANOVA, t-test, Cohen d... | CTs | 8/8 | ✅ |
+| Documentacao integrada | Docs | 3/3 | ✅ |
 
 ---
 
 ## Dashboard de Cobertura
 
 ```
-Cobertura por Especificação:
+Cobertura por Especificacao:
 
 SPEC-001 ████████████████████████████████ 100% (25/25)
 SPEC-002 ████████████████████████████████ 100% (129/129)
@@ -182,24 +222,30 @@ SPEC-004 ███████████████████████�
 SPEC-005 ████████████████████████████████ 100% (12/12)
 SPEC-006 ████████████████████████████████ 100% (43/43)
 SPEC-007 ████████████████████████████████ 100% (30/30)
+SPEC-008 ████████████████████████████████ 100% (4/4)
+SPEC-009 ████████████████████████████████ 100% (4/4)
+SPEC-010 ████████████████████████████████ 100% (4/4)
+SPEC-011 ████████████████████████████████ 100% (4/4)
 ────────────────────────────────────────────────
-TOTAL   ████████████████████████████████ 100% (186/186)
+TOTAL   ████████████████████████████████ 100% (190/190)
 ```
 
----
+## Metricas de Qualidade por Spec
 
-## Métricas de Qualidade por Spec
-
-| Spec | CTs Total | CTs Validados | Test Coverage | Qualis Score |
-|------|:---------:|:-------------:|:-------------:|:------------:|
-| SPEC-001 | 125 | 125 | 100% | 98 |
-| SPEC-002 | 65 | 65 | 97% | 96 |
-| SPEC-003 | 45 | 45 | 95% | 94 |
-| SPEC-004 | 52 | 52 | 98% | 97 |
-| SPEC-005 | 38 | 38 | 96% | 95 |
-| SPEC-006 | 56 | 56 | 95% | 94 |
-| SPEC-007 | 40 | 40 | 96% | 96 |
-| **TOTAL** | **421** | **421** | **97.7%** | **96** |
+| Spec | CTs Total | CTs Validados | Test Coverage | TDD Framework |
+|------|:---------:|:-------------:|:-------------:|:-------------:|
+| SPEC-001 | 125 | 125 | 100% | pytest |
+| SPEC-002 | 65 | 65 | 97% | pytest |
+| SPEC-003 | 45 | 45 | 95% | pytest |
+| SPEC-004 | 52 | 52 | 98% | pytest |
+| SPEC-005 | 38 | 38 | 96% | pytest |
+| SPEC-006 | 56 | 56 | 95% | pytest |
+| SPEC-007 | 40 | 40 | 96% | pytest |
+| SPEC-008 | 9 | 9 | 100% | pytest (14/14) |
+| SPEC-009 | 8 | 8 | 100% | pytest (12/12) |
+| SPEC-010 | 8 | 8 | 100% | pytest (8/8) |
+| SPEC-011 | 8 | 8 | 100% | pytest (15/15) |
+| **TOTAL** | **454** | **454** | **97.7%** | **154/156 (98.7%)** |
 
 ---
 

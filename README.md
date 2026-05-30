@@ -4,7 +4,7 @@
 
 ### Multi-Agent AI Platform for Assisted Scientific Research
 
-**Ultima atualizacao: 2026-05-30** · 17 Ciclos de Desenvolvimento · 79 Agentes · 38 MCPs · 104 Skills
+**Ultima atualizacao: 2026-05-30** · 17 Iteracoes · 79 Agentes · 38 MCPs · 104 Skills · **CORA-Score 3.04 (M4)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.12+](https://img.shields.io/badge/Python-3.12+-blue.svg)](https://www.python.org/)
@@ -12,7 +12,8 @@
 [![Agents](https://img.shields.io/badge/Agents-79-6366f1?style=flat-square)](agents/)
 [![MCPs](https://img.shields.io/badge/MCP_Servers-38-0ea5e9?style=flat-square)](opencode.json)
 [![Skills](https://img.shields.io/badge/Skills-104-10b981?style=flat-square)](skills/)
-[![Tests](https://img.shields.io/badge/Testes-557_passando-22c55e?style=flat-square)](tests/)
+[![Tests](https://img.shields.io/badge/Testes-154/156-22c55e?style=flat-square)](https://github.com/MarceloClaro/CORA-Eval-Dissertacao)
+[![CORA-Score](https://img.shields.io/badge/CORA--Score-3.04_M4-e11d48?style=flat-square)](https://github.com/MarceloClaro/CORA-Eval-Dissertacao)
 
 </div>
 
@@ -25,6 +26,40 @@ O **OpenCode Ecosystem** e uma plataforma multi-agente para pesquisa cientifica 
 A arquitetura de 6 camadas com injecao de dependencia suporta um pipeline academico que vai da busca autonoma em fontes academicas (arXiv, PubMed, OpenAlex, Semantic Scholar, CORE, Sci-Hub) ate a geracao de artigos com exportacao LaTeX/PDF, passando por revisao simulada por pares e verificacao formal multi-agente.
 
 Este projeto e um trabalho em andamento. Muitos componentes estao em estagio experimental e as metricas reportadas sao auto-avaliadas pelo proprio sistema, nao por auditores externos.
+
+---
+
+## CORA-Eval — Maturidade Cientifica
+
+O ecossistema e validado pelo **CORA-Eval**, benchmark de 150 tarefas em 10
+dimensoes × 4 niveis (Basico a Pesquisa). Resultados da execucao real:
+
+| Metrica | Valor |
+|---------|:-----:|
+| CORA-Score bruto | **3.04** (Pesquisa, M4) `[auto-reportado]` |
+| Validacao externa (Project Euler + Rosalind) | **34/34 (100%)** |
+| Testes internos (11 suites) | **154/156 (98.7%)** |
+| Calibracao V1-V7 (F1 medio) | **95.5%** (466 testes) |
+| Cross-Validation K=10 | **CV=2.2%** |
+| Dimensoes em N4 (Pesquisa) | **5** (D1, D2, D3, D7, D10) |
+
+> **Repositorio:** [CORA-Eval-Dissertacao](https://github.com/MarceloClaro/CORA-Eval-Dissertacao)
+
+### SPECs Ativas (11)
+
+| SPEC | Descricao | CTs | TDD |
+|:----:|-----------|:---:|:---:|
+| SPEC-001 | Orchestration Pipeline | 9 | ✅ |
+| SPEC-002 | Academic Output (MASWOS) | 9 | ✅ |
+| SPEC-003 | MCP Integration | 9 | ✅ |
+| SPEC-004 | Quantum Computing | 8 | ✅ |
+| SPEC-005 | Reverse Engineering | 8 | ✅ |
+| SPEC-006 | Data Orchestration | 9 | ✅ |
+| SPEC-007 | Evolution Engine | 8 | ✅ |
+| SPEC-008 | Triangulacao Anti-Circularidade | 9 | 14/14 ✅ |
+| SPEC-009 | D1 — Raciocinio Matematico | 8 | 12/12 ✅ |
+| SPEC-010 | D2 — Modelagem Fisica | 8 | 8/8 ✅ |
+| SPEC-011 | D9 — Metodologia Experimental | 8 | 15/15 ✅ |
 
 ---
 
@@ -298,6 +333,9 @@ O ciclo de desenvolvimento do ecossistema e incremental: cada iteracao adiciona 
 | [Doc. Tecnica Completa](OPENCODE_ECOSYSTEM.md) | 1.289 linhas de documentacao |
 | [Referencias](REFERENCIAS.md) | 50 referencias com DOIs reais e verificaveis (13 categorias) |
 | [Integridade e Auditabilidade](INTEGRIDADE.md) | Principio obrigatorio — 8 raciocinios, 5 faces, 25 regras |
+| [Avaliacao de Maturidade](https://github.com/MarceloClaro/CORA-Eval-Dissertacao/blob/main/AVALIACAO_MATURIDADE_20260530.md) | Resultados da execucao real — 154/156 testes (98.7%) |
+| [Triangulacao Anti-Circularidade](https://github.com/MarceloClaro/CORA-Eval-Dissertacao/blob/main/TRIANGULACAO_ANTI_CIRCULARIDADE.md) | Framework SPEC-008 — 15 refs com DOI |
+| [Dissertacao CORA-Eval](https://github.com/MarceloClaro/CORA-Eval-Dissertacao) | Repositorio completo — artigos, TDD, avaliacoes, PDF 142p |
 
 ---
 

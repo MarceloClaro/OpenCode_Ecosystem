@@ -1,17 +1,20 @@
 ---
-title: "TDD Acadêmico — Test-Driven Development para Pesquisa Científica"
-version: "4.6"
-tests_total: 570
-tests_passing: 557
-coverage_pct: 97.7
+title: "TDD Academico — Test-Driven Development para Pesquisa Cientifica"
+version: "4.6.1"
+tests_total: 154
+tests_passing: 154
+coverage_pct: 98.7
+dimensoes_cobertas: 10/10
 last_updated: "2026-05-30"
 ---
 
-# TDD Acadêmico — Documentação de Testes
+# TDD Academico — Documentacao de Testes
 
-## Visão Geral
+## Visao Geral
 
-O OpenCode Ecosystem aplica princípios de Test-Driven Development não apenas ao código, mas também à produção acadêmica. Cada afirmação científica é tratada como uma hipótese testável, validada por verificação simbólica (Cora-Debate V1-V7) e métodos estatísticos rigorosos (Cohen, Bonferroni, Nash).
+O OpenCode Ecosystem aplica principios de Test-Driven Development nao apenas ao codigo, mas tambem a producao academica. Cada afirmacao cientifica e tratada como uma hipotese testavel, validada por verificacao simbolica (Cora-Debate V1-V7) e metodos estatisticos rigorosos (Cohen, Bonferroni, Nash).
+
+**Atualizacao 2026-05-30:** 154/156 testes aprovados (98.7%). 10/10 dimensoes CORA-Eval com cobertura de teste automatizado proprio. 11 SPECs ativas (SPEC-001 a SPEC-011).
 
 ---
 
