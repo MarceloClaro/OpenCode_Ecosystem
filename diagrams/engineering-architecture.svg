@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" width="900" height="700">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="l1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#818cf8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="l2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="l3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="l4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f87171;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="l5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="l6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="700" fill="url(#bg)"/>
+  
+  <text x="450" y="35" text-anchor="middle" fill="#f0f0f0" font-family="sans-serif" font-size="22" font-weight="bold">OpenCode Ecosystem v4.6 — Engenharia de Software com Agentes Inteligentes</text>
+  <text x="450" y="55" text-anchor="middle" fill="#888" font-family="monospace" font-size="11">186/186 Componentes Documentados · 97.7% Cobertura de Testes · Qualis A1 96/100</text>
+
+  <!-- L1: MCP / Infra -->
+  <rect x="20" y="75" width="860" height="75" rx="8" fill="url(#l1)" opacity="0.15"/>
+  <rect x="20" y="75" width="860" height="75" rx="8" fill="none" stroke="url(#l1)" stroke-width="1.5"/>
+  <text x="45" y="100" fill="#818cf8" font-family="monospace" font-size="12" font-weight="bold">L1 — MCP / INFRAESTRUTURA</text>
+  <rect x="45" y="108" width="100" height="30" rx="4" fill="url(#l1)" opacity="0.3"/>
+  <text x="95" y="128" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">filesystem</text>
+  <rect x="155" y="108" width="100" height="30" rx="4" fill="url(#l1)" opacity="0.3"/>
+  <text x="205" y="128" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">github</text>
+  <rect x="265" y="108" width="100" height="30" rx="4" fill="url(#l1)" opacity="0.3"/>
+  <text x="315" y="128" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">sqlite</text>
+  <rect x="375" y="108" width="120" height="30" rx="4" fill="url(#l1)" opacity="0.3"/>
+  <text x="435" y="128" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">code-runner</text>
+  <rect x="505" y="108" width="120" height="30" rx="4" fill="url(#l1)" opacity="0.3"/>
+  <text x="565" y="128" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">sequential-think</text>
+  <rect x="635" y="108" width="100" height="30" rx="4" fill="url(#l1)" opacity="0.3"/>
+  <text x="685" y="128" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">websearch</text>
+  <rect x="745" y="108" width="120" height="30" rx="4" fill="url(#l1)" opacity="0.3"/>
+  <text x="805" y="128" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">playwright</text>
+
+  <!-- Arrow L1→L2 -->
+  <line x1="450" y1="150" x2="450" y2="170" stroke="#666" stroke-width="1"/>
+
+  <!-- L2: Skills -->
+  <rect x="20" y="175" width="860" height="75" rx="8" fill="url(#l2)" opacity="0.15"/>
+  <rect x="20" y="175" width="860" height="75" rx="8" fill="none" stroke="url(#l2)" stroke-width="1.5"/>
+  <text x="45" y="200" fill="#34d399" font-family="monospace" font-size="12" font-weight="bold">L2 — SKILLS</text>
+  <rect x="45" y="208" width="110" height="30" rx="4" fill="url(#l2)" opacity="0.3"/>
+  <text x="100" y="228" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">agent-forum</text>
+  <rect x="165" y="208" width="110" height="30" rx="4" fill="url(#l2)" opacity="0.3"/>
+  <text x="220" y="228" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">cora-debate</text>
+  <rect x="285" y="208" width="120" height="30" rx="4" fill="url(#l2)" opacity="0.3"/>
+  <text x="345" y="228" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">reasoning-orch</text>
+  <rect x="415" y="208" width="120" height="30" rx="4" fill="url(#l2)" opacity="0.3"/>
+  <text x="475" y="228" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">academic-export</text>
+  <rect x="545" y="208" width="110" height="30" rx="4" fill="url(#l2)" opacity="0.3"/>
+  <text x="600" y="228" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">code-review</text>
+  <rect x="665" y="208" width="100" height="30" rx="4" fill="url(#l2)" opacity="0.3"/>
+  <text x="715" y="228" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">editais-br</text>
+  <rect x="775" y="208" width="90" height="30" rx="4" fill="url(#l2)" opacity="0.3"/>
+  <text x="820" y="228" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">decisionnode</text>
+
+  <!-- Arrow L2→L3 -->
+  <line x1="450" y1="250" x2="450" y2="270" stroke="#666" stroke-width="1"/>
+
+  <!-- L3: Agents -->
+  <rect x="20" y="275" width="860" height="75" rx="8" fill="url(#l3)" opacity="0.15"/>
+  <rect x="20" y="275" width="860" height="75" rx="8" fill="none" stroke="url(#l3)" stroke-width="1.5"/>
+  <text x="45" y="300" fill="#fbbf24" font-family="monospace" font-size="12" font-weight="bold">L3 — AGENTES</text>
+  <rect x="45" y="308" width="95" height="30" rx="4" fill="url(#l3)" opacity="0.3"/>
+  <text x="92" y="328" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">Core (56)</text>
+  <rect x="150" y="308" width="110" height="30" rx="4" fill="url(#l3)" opacity="0.3"/>
+  <text x="205" y="328" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">MASWOS (49)</text>
+  <rect x="270" y="308" width="105" height="30" rx="4" fill="url(#l3)" opacity="0.3"/>
+  <text x="322" y="328" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">SEEKER (12)</text>
+  <rect x="385" y="308" width="105" height="30" rx="4" fill="url(#l3)" opacity="0.3"/>
+  <text x="437" y="328" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">Reversa (7)</text>
+  <rect x="500" y="308" width="105" height="30" rx="4" fill="url(#l3)" opacity="0.3"/>
+  <text x="552" y="328" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">Corretor (1)</text>
+  <rect x="615" y="308" width="120" height="30" rx="4" fill="url(#l6)" opacity="0.5"/>
+  <text x="675" y="328" text-anchor="middle" fill="#fff" font-family="monospace" font-size="10">AutoEvolve</text>
+  <rect x="745" y="308" width="120" height="30" rx="4" fill="url(#l4)" opacity="0.5"/>
+  <text x="805" y="328" text-anchor="middle" fill="#fff" font-family="monospace" font-size="10">PhD Auditor</text>
+
+  <!-- Arrow L3→L4 -->
+  <line x1="450" y1="350" x2="450" y2="370" stroke="#666" stroke-width="1"/>
+
+  <!-- L4: Reasoning -->
+  <rect x="20" y="375" width="860" height="75" rx="8" fill="url(#l4)" opacity="0.15"/>
+  <rect x="20" y="375" width="860" height="75" rx="8" fill="none" stroke="url(#l4)" stroke-width="1.5"/>
+  <text x="45" y="400" fill="#f87171" font-family="monospace" font-size="12" font-weight="bold">L4 — RACIOCÍNIO</text>
+  <rect x="45" y="408" width="110" height="30" rx="4" fill="url(#l4)" opacity="0.3"/>
+  <text x="100" y="428" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">Lógico (5)</text>
+  <rect x="165" y="408" width="120" height="30" rx="4" fill="url(#l4)" opacity="0.3"/>
+  <text x="225" y="428" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">Dialético (5)</text>
+  <rect x="295" y="408" width="140" height="30" rx="4" fill="url(#l4)" opacity="0.3"/>
+  <text x="365" y="428" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">Teoria Jogos (10)</text>
+  <rect x="445" y="408" width="115" height="30" rx="4" fill="url(#l4)" opacity="0.3"/>
+  <text x="502" y="428" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">Decisão (5)</text>
+  <rect x="570" y="408" width="130" height="30" rx="4" fill="url(#l4)" opacity="0.3"/>
+  <text x="635" y="428" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">Estratégico (5)</text>
+  <rect x="710" y="408" width="115" height="30" rx="4" fill="url(#l4)" opacity="0.3"/>
+  <text x="767" y="428" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">Inovação (8)</text>
+
+  <!-- Arrow L4→L5 -->
+  <line x1="450" y1="450" x2="450" y2="470" stroke="#666" stroke-width="1"/>
+
+  <!-- L5: Verification -->
+  <rect x="20" y="475" width="860" height="75" rx="8" fill="url(#l5)" opacity="0.15"/>
+  <rect x="20" y="475" width="860" height="75" rx="8" fill="none" stroke="url(#l5)" stroke-width="1.5"/>
+  <text x="45" y="500" fill="#a78bfa" font-family="monospace" font-size="12" font-weight="bold">L5 — VERIFICAÇÃO</text>
+  <rect x="45" y="508" width="150" height="30" rx="4" fill="url(#l5)" opacity="0.3"/>
+  <text x="120" y="528" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">Cora-Debate V1-V7</text>
+  <rect x="210" y="508" width="130" height="30" rx="4" fill="url(#l5)" opacity="0.3"/>
+  <text x="275" y="528" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">Nash Solver</text>
+  <rect x="355" y="508" width="160" height="30" rx="4" fill="url(#l5)" opacity="0.3"/>
+  <text x="435" y="528" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">Statistical Rigor</text>
+  <rect x="530" y="508" width="160" height="30" rx="4" fill="url(#l5)" opacity="0.3"/>
+  <text x="610" y="528" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">Qualis A1 Auditor</text>
+  <rect x="705" y="508" width="160" height="30" rx="4" fill="url(#l5)" opacity="0.3"/>
+  <text x="785" y="528" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="10">Sensitivity Anal.</text>
+
+  <!-- Arrow L5→L6 -->
+  <line x1="450" y1="550" x2="450" y2="570" stroke="#666" stroke-width="1"/>
+
+  <!-- L6: Orchestration -->
+  <rect x="20" y="575" width="860" height="65" rx="8" fill="url(#l6)" opacity="0.15"/>
+  <rect x="20" y="575" width="860" height="65" rx="8" fill="none" stroke="url(#l6)" stroke-width="1.5"/>
+  <text x="45" y="598" fill="#22d3ee" font-family="monospace" font-size="12" font-weight="bold">L6 — ORQUESTRAÇÃO</text>
+  <rect x="45" y="605" width="140" height="28" rx="4" fill="url(#l6)" opacity="0.3"/>
+  <text x="115" y="624" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="9">Nexus NMA v6.2</text>
+  <rect x="200" y="605" width="140" height="28" rx="4" fill="url(#l6)" opacity="0.3"/>
+  <text x="270" y="624" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="9">Reversa v1.2.22</text>
+  <rect x="355" y="605" width="100" height="28" rx="4" fill="url(#l6)" opacity="0.3"/>
+  <text x="405" y="624" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="9">Evo Loop</text>
+  <rect x="470" y="605" width="140" height="28" rx="4" fill="url(#l6)" opacity="0.3"/>
+  <text x="540" y="624" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="9">DI Container (11)</text>
+  <rect x="625" y="605" width="120" height="28" rx="4" fill="url(#l6)" opacity="0.3"/>
+  <text x="685" y="624" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="9">CI/CD 5 Gates</text>
+  <rect x="760" y="605" width="105" height="28" rx="4" fill="url(#l6)" opacity="0.3"/>
+  <text x="812" y="624" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="9">Self-Healing</text>
+
+  <!-- Right sidebar: metrics -->
+  <rect x="20" y="655" width="860" height="35" rx="6" fill="#111" opacity="0.5"/>
+  <text x="55" y="677" fill="#818cf8" font-family="monospace" font-size="10">125 Agentes</text>
+  <text x="195" y="677" fill="#34d399" font-family="monospace" font-size="10">104 Skills</text>
+  <text x="335" y="677" fill="#fbbf24" font-family="monospace" font-size="10">40 MCPs</text>
+  <text x="465" y="677" fill="#f87171" font-family="monospace" font-size="10">350+ Raciocínios</text>
+  <text x="625" y="677" fill="#a78bfa" font-family="monospace" font-size="10">97.7% Cobertura</text>
+  <text x="785" y="677" fill="#22d3ee" font-family="monospace" font-size="10">Qualis A1 96</text>
+</svg>
