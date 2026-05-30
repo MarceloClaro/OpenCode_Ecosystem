@@ -1,0 +1,151 @@
+﻿{
+  "version": "1.0.0",
+  "project": "opencode",
+  "generated_by": "reversa-archaeologist",
+  "generated_at": "2026-05-10T01:55:00Z",
+  "modules": [
+    {
+      "name": "opencode-core",
+      "path": "core/",
+      "type": "runtime",
+      "language": "Python",
+      "purpose": "Runtime principal do ecossistema — configuração, estado e eventos",
+      "files": ["__init__.py", "config.py", "state.py", "events.py"],
+      "key_algorithms": ["Settings via Pydantic v2", "StateManager singleton + SQLite WAL", "EventBus async"],
+      "dependencies": ["pydantic", "sqlite3"],
+      "status": "production"
+    },
+    {
+      "name": "basis-research-seeker",
+      "path": "basis-research/",
+      "type": "pipeline",
+      "language": "Python",
+      "purpose": "Pipeline de pesquisa acadêmica com 12 agentes especializados",
+      "files": ["main.py", "core/llm.py", "core/database.py", "core/argument_tree.py", "config.json"],
+      "key_algorithms": ["LLM Router Claude→Ollama", "Argument Tree com validação", "Search Pipeline 4 eixos paralelos"],
+      "dependencies": ["anthropic", "ollama", "sqlite3"],
+      "status": "production"
+    },
+    {
+      "name": "criador-artigo-maswos",
+      "path": "criador-artigo/",
+      "type": "pipeline",
+      "language": "Python",
+      "purpose": "Orquestrador de 49 agentes para produção de artigos Qualis A1",
+      "files": ["executor.py", "auto_score_qualis.py", "seeker_bridge.py", "SKILL.md", "banca/ptbr_corrector.py"],
+      "key_algorithms": ["auto_score_qualis (10 critérios)", "iterative_correction_loop (Board→Advisors→Correctors)", "ptbr_corrector (17 blocos CJK, 50+ regras PT-BR)"],
+      "dependencies": ["python-pptx", "pandoc", "sqlite3"],
+      "status": "production"
+    },
+    {
+      "name": "docling",
+      "path": "docling/",
+      "type": "library",
+      "language": "Python",
+      "purpose": "Extração de PDF via classes abstratas (ABCs)",
+      "files": ["docling/backend/pdf_backend.py"],
+      "key_algorithms": ["PdfPageBackend (get_text, get_tables, get_images)", "PdfDocumentBackend (len, getitem, metadata)"],
+      "dependencies": ["abc"],
+      "status": "incomplete"
+    },
+    {
+      "name": "agents",
+      "path": "agents/",
+      "type": "definitions",
+      "language": "Markdown",
+      "purpose": "Definições dos agentes do ecossistema (9 reversa + outros)",
+      "files": ["reversa-archaeologist.md", "reversa-scout.md", "reversa-detective.md", "reversa-architect.md", "reversa-writer.md", "reversa-reviewer.md", "reversa-visor.md", "reversa-data-master.md", "reversa-design-system.md"],
+      "key_algorithms": [],
+      "dependencies": [],
+      "status": "production"
+    },
+    {
+      "name": "commands",
+      "path": "command/",
+      "type": "definitions",
+      "language": "Markdown",
+      "purpose": "Slash commands do ecossistema (/reversa, /evolve, etc.)",
+      "files": ["reversa.md", "evolve.md"],
+      "key_algorithms": [],
+      "dependencies": [],
+      "status": "production"
+    },
+    {
+      "name": "plugins",
+      "path": "plugins/",
+      "type": "engine",
+      "language": "TypeScript",
+      "purpose": "Motores de sincronia cross-component e evolução autônoma",
+      "files": ["ecosystem-sync.ts", "manus-evolve.ts"],
+      "key_algorithms": ["CrossValidationEngine (172 regras afinidade)", "DynamicScoring (pesos sucesso/erro)", "AutoHealing (4 níveis)", "PlanAct Pipeline (PLAN→ACT→CORRECT→REFLECT→EXTRACT→EVOLVE→NEXUS)"],
+      "dependencies": ["fs/promises", "path"],
+      "status": "production"
+    },
+    {
+      "name": "nexus",
+      "path": "nexus/",
+      "type": "orchestrator",
+      "language": "Python",
+      "purpose": "Orquestração multi-agente com 6 camadas, 120+ sync barriers, 38 tipos de raciocínio",
+      "files": ["SKILL.md", "scripts/sync_orchestrator.py", "scripts/context_offload.py", "scripts/ecosystem_bridge.py", "scripts/evolution_engine.py", "scripts/evolution_cycle.py", "scripts/self_healer.py", "scripts/auto_swarm_builder.py", "scripts/micro_reasoning_types.py", "scripts/meta_orchestrator.py", "scripts/ecosystem_scanner.py", "scripts/agent_metamorphosis.py", "scripts/knowledge_graphs.py", "scripts/validation_suite.py", "scripts/mcp_router.py", "scripts/pdf_rag/", "dashboard_server.py"],
+      "key_algorithms": ["ComponentDiscovery (auto-varredura)", "DynamicScoringEngine", "CrossValidationEngine", "AutoHealingEngine", "ConflictDetector", "ContextOffload (FS + compressão + summarization)"],
+      "dependencies": ["core.config", "core.state", "core.events", "json", "re"],
+      "status": "production"
+    },
+    {
+      "name": "quantum",
+      "path": "quantum/",
+      "type": "hybrid",
+      "language": "Python/TypeScript",
+      "purpose": "Classificador quântico variacional com frontend React",
+      "files": ["quantum_vqc.py", "frontend/App.tsx", "frontend/hooks/*"],
+      "key_algorithms": ["VQC 50 qubits 6 layers", "ZNE (noise_factors [1,3,5])", "PEC (100 amostras depolarizing)", "Amplitude Encoding"],
+      "dependencies": ["pennylane", "numpy", "react", "typescript"],
+      "status": "production"
+    },
+    {
+      "name": "evolution",
+      "path": "evolution/",
+      "type": "documentation",
+      "language": "Markdown",
+      "purpose": "Registro de 8 rounds de evolução autônoma do ecossistema",
+      "files": ["evo-1.md", "evo-2.md", "evo-3.md", "evo-4.md", "evo-5.md", "evo-6.md", "evo-7.md", "evo-8.md"],
+      "key_algorithms": [],
+      "dependencies": [],
+      "status": "production"
+    },
+    {
+      "name": "skills",
+      "path": "skills/",
+      "type": "definitions",
+      "language": "Markdown",
+      "purpose": "Definições de habilidades do ecossistema (74 declaradas, 13 confirmadas)",
+      "files": ["content/*.md", "docling-pdf-extraction/SKILL.md", "evolution/*.md", "frontend/frontend-philosophy/*", "system/*/SKILL.md"],
+      "key_algorithms": [],
+      "dependencies": [],
+      "status": "production"
+    },
+    {
+      "name": "editais-br",
+      "path": "C:\\Users\\marce\\editais-local\\",
+      "type": "application",
+      "language": "Python",
+      "purpose": "Buscador e classificador de editais de fomento brasileiros (52 curados)",
+      "files": ["api/main.py", "api/routers/*", "api/schemas/*", "extractors/*.py", "pipeline/orchestrator.py", "pipeline/deduplicator.py", "worker/*.py", "agents/*.py", "templates/*.html"],
+      "key_algorithms": ["Scoring por perfil (pesquisa/mestrado/doutorado/startup)", "Classificação 25 sub-dimensões", "Busca duckduckgo via curl.exe", "Cache versionado", "Extração profunda (contrapartida, prazos, docs)"],
+      "dependencies": ["fastapi", "celery", "sqlalchemy", "alembic", "docker"],
+      "status": "production"
+    }
+  ],
+  "summary": {
+    "total_modules": 12,
+    "total_declared_agents": 118,
+    "total_declared_skills": 76,
+    "total_declared_mcps": 17,
+    "total_declared_plugins": 12,
+    "total_declared_commands": 14,
+    "total_ecosystem_files": 865,
+    "evolution_rounds": 8,
+    "highest_evolution_score": 98
+  }
+}

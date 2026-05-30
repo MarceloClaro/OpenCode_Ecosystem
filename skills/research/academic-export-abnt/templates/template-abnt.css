@@ -1,0 +1,84 @@
+/* Template ABNT para exportação HTML de artigos acadêmicos */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    margin: 3cm 2cm 2cm 3cm;
+    color: #000;
+    background: #fff;
+    text-align: justify;
+    max-width: 800px;
+}
+
+h1 { font-size: 14pt; font-weight: bold; margin-top: 24pt; margin-bottom: 12pt; }
+h2 { font-size: 13pt; font-weight: bold; margin-top: 18pt; margin-bottom: 6pt; }
+h3 { font-size: 12pt; font-weight: bold; margin-top: 12pt; margin-bottom: 3pt; }
+
+p { margin: 0 0 6pt 0; text-indent: 1.25cm; }
+p:first-of-type { text-indent: 0; }
+
+/* Capa e elementos pré-textuais */
+.title { font-size: 16pt; font-weight: bold; text-align: center; margin: 36pt 0; }
+.subtitle { font-size: 14pt; text-align: center; margin: 12pt 0; }
+.author { font-size: 12pt; text-align: center; margin: 18pt 0; }
+.abstract { font-size: 11pt; margin: 12pt 2cm; text-align: justify; }
+
+/* Citações longas (ABNT NBR 10520) */
+blockquote {
+    font-size: 10pt;
+    margin: 6pt 0 6pt 4cm;
+    line-height: 1.0;
+    font-style: italic;
+}
+
+/* Tabelas */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12pt 0;
+    font-size: 11pt;
+}
+table, th, td { border: 1px solid #000; }
+th, td { padding: 4pt 8pt; text-align: left; }
+th { background: #f0f0f0; font-weight: bold; }
+
+/* Figuras */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 12pt auto;
+}
+.figure-caption {
+    font-size: 10pt;
+    text-align: center;
+    margin: 6pt 0 12pt 0;
+    font-weight: bold;
+}
+
+/* Cabeçalho e rodapé */
+@page {
+    margin-top: 3cm;
+    margin-bottom: 2cm;
+    margin-left: 3cm;
+    margin-right: 2cm;
+    @top-right { content: counter(page); font-size: 10pt; }
+}
+
+/* Código */
+pre, code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10pt;
+    background: #f5f5f5;
+    padding: 2pt 4pt;
+}
+pre {
+    padding: 8pt;
+    margin: 6pt 0;
+    border: 1px solid #ccc;
+    overflow-x: auto;
+}
+
+/* Referências */
+.references { font-size: 10pt; line-height: 1.2; }
+.references p { text-indent: 0; margin: 0 0 3pt 0; }

@@ -1,0 +1,55 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Python sources
+*.py text diff=python
+*.pyw text
+
+# Shell scripts
+*.ps1 text
+*.sh text eol=lf
+
+# Configuration
+*.json text
+*.toml text
+*.yml text
+*.yaml text
+*.ini text
+
+# Documentation
+*.md text
+*.tex text
+*.txt text
+*.rst text
+
+# Web
+*.html text
+*.css text
+*.js text
+*.ts text
+*.jsx text diff=javascript
+*.tsx text
+
+# LaTeX
+*.bib text
+*.cls text
+*.sty text
+
+# SVG - treat as text
+*.svg text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.db binary
+*.sqlite binary
+
+# Git
+*.gitignore text
+.gitattributes text

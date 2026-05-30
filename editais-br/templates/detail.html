@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}{{ edital.titulo }} — editais-br{% endblock %}
+{% block content %}
+
+<a href="/" style="color:#1a1a2e;text-decoration:none;">← Voltar</a>
+
+<div class="card" style="margin-top:1rem;">
+    <h1 style="margin-bottom:0.5rem;">{{ edital.titulo }}</h1>
+    <p style="color:#666;">{{ edital.financiador or 'Financiador não informado' }}</p>
+
+    <dl class="detail-grid" style="margin-top:1.5rem;">
+        <div>
+            <dt>Status</dt>
+            <dd>
+                {% set s = edital.status or '' %}
+                {% if 'abertas' in s %}
+                    <span class="badge badge-green">{{ s }}</span>
+                {% elif 'em_breve' in s %}
+                    <span class="badge badge-yellow">{{ s }}</span>
+                {% elif 'encerrado' in s %}
+                    <span class="badge badge-red">{{ s }}</span>
+                {% else %}
+                    {{ s or 'N/A' }}
+                {% endif %}
+            </dd>
+        </div>
+        <div>
+            <dt>URL Original</dt>
+            <dd><a href="{{ edital.url_original }}" target="_blank">{{ edital.url_original[:60] }}...</a></dd>
+        </div>
+        <div>
+            <dt>Valor</dt>
+            <dd>
+                {% if edital.valor_min or edital.valor_max %}
+                    {{ edital.moeda }} {{ "%.2f"|format(edital.valor_min or 0) }} — {{ "%.2f"|format(edital.valor_max or 0) }}
+                {% else %}Não informado{% endif %}
+            </dd>
+        </div>
+        <div>
+            <dt>Datas</dt>
+            <dd>{{ edital.data_abertura or '?' }} → {{ edital.data_encerramento or '?' }}</dd>
+        </div>
+        <div>
+            <dt>Eixos Temáticos</dt>
+            <dd>
+                {% for eixo in (edital.eixos_tematicos or []) %}
+                    <span class="tag">{{ eixo }}</span>
+                {% else %}—{% endfor %}
+            </dd>
+        </div>
+        <div>
+            <dt>Perfil Elegível</dt>
+            <dd>
+                {% for p in (edital.perfil_elegivel or []) %}
+                    <span class="tag">{{ p }}</span>
+                {% else %}—{% endfor %}
+            </dd>
+        </div>
+        <div>
+            <dt>Mecanismo</dt>
+            <dd>{{ edital.mecanismo_financiamento or '—' }}</dd>
+        </div>
+        <div>
+            <dt>TRL</dt>
+            <dd>
+                {% if edital.nivel_trl_min or edital.nivel_trl_max %}
+                    {{ edital.nivel_trl_min or 1 }} — {{ edital.nivel_trl_max or 9 }}
+                {% else %}—{% endif %}
+            </dd>
+        </div>
+        <div>
+            <dt>Complexidade</dt>
+            <dd>{{ edital.score_complexidade or '—' }}/5</dd>
+        </div>
+        <div>
+            <dt>Contrapartida</dt>
+            <dd>{{ 'Sim' if edital.contrapartida_exigida else 'Não' }}</dd>
+        </div>
+    </dl>
+</div>
+
+{% if edital.resumo %}
+<div class="card">
+    <h3 style="margin-bottom:0.5rem;">📝 Resumo</h3>
+    <p>{{ edital.resumo }}</p>
+</div>
+{% endif %}
+
+{% if edital.raw_text %}
+<div class="card">
+    <h3 style="margin-bottom:0.5rem;">📄 Conteúdo Completo do Edital</h3>
+    <div style="background:#fafafa;padding:1.5rem;border-radius:4px;max-height:600px;overflow-y:auto;font-size:0.9rem;line-height:1.6;white-space:pre-wrap;font-family:system-ui,-apple-system,sans-serif;">{{ edital.raw_text }}</div>
+</div>
+{% endif %}
+
+{% if edital.requisitos_json %}
+<div class="card">
+    <h3 style="margin-bottom:0.5rem;">📊 Dados Estruturados (JSON)</h3>
+    <pre style="background:#f5f5f5;padding:1rem;border-radius:4px;overflow-x:auto;font-size:0.85rem;">{{ edital.requisitos_json | tojson(indent=2) }}</pre>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% if editais %}
+{% for e in editais %}
+<div class="card result-card" style="cursor:pointer" onclick="window.location='/edital/{{ e.id }}'">
+    <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:0.5rem;">
+        <div style="flex:1;min-width:250px;">
+            <h4 style="margin-bottom:0.25rem;font-size:1rem;">📄 {{ e.titulo }}</h4>
+            {% if e.resumo %}<p style="color:#777;font-size:0.85rem;margin-bottom:0.25rem;">{{ e.resumo[:120] }}{% if e.resumo|length > 120 %}...{% endif %}</p>{% endif %}
+            <div style="margin-top:0.3rem;">
+                {% for tema in (e.eixos_tematicos or [])[:4] %}
+                <span class="tag">{{ tema }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div style="text-align:right;min-width:140px;">
+            <div style="font-weight:700;font-size:1.05rem;color:var(--primary);">
+                {% if e.valor_min or e.valor_max %}
+                    {{ e.moeda }} {{ "%.0f"|format(e.valor_min or 0) }} — {{ "%.0f"|format(e.valor_max or 0) }}
+                {% else %}{{ e.financiador or '' }}{% endif %}
+            </div>
+            {% set s = e.status or '' %}
+            {% if 'abertas' in s %}
+                <span class="badge badge-green">🟢 {{ s }}</span>
+            {% elif 'em_breve' in s %}
+                <span class="badge badge-yellow">🟡 {{ s }}</span>
+            {% elif 'encerrado' in s %}
+                <span class="badge badge-red">🔴 {{ s }}</span>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+<p style="color:#999;font-size:0.82rem;margin-top:1rem;">{{ editais|length }} edital(is)</p>
+{% else %}
+<div class="card" style="text-align:center;padding:3rem;">
+    <p style="font-size:2rem;">📭</p>
+    <p>Nenhum edital encontrado com esses filtros.</p>
+    <p style="color:#999;font-size:0.85rem;">Use a busca acima para encontrar editais em tempo real.</p>
+</div>
+{% endif %}

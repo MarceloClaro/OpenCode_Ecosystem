@@ -1,0 +1,12 @@
+{
+  "query": "default_chain_test",
+  "phases": [],
+  "node_results": {},
+  "artifacts": {},
+  "dag": {},
+  "metadata": {},
+  "is_completed": false,
+  "checkpoint_path": "",
+  "created_at": "2026-05-17T03:09:36.635582",
+  "updated_at": "2026-05-17T03:09:36.635582"
+}

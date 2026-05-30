@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "description": "Scores dos 52 editais por perfil de proponente (0-100). Top 2 por perfil marcados para workers A e B.",
+    "profiles": ["pesquisa", "mestrado", "doutorado", "startup"],
+    "scoring_criteria": {
+      "pesquisa": "Adequação a pesquisadores doutores: valor do projeto, tempo de execução, exigência de produção científica, abrangência multidisciplinar",
+      "mestrado": "Adequação a estudantes de mestrado: valor da bolsa, duração, requisitos de ingresso, possibilidade de vínculo com programa de pós",
+      "doutorado": "Adequação a doutorandos: valor da bolsa, duração, exigências acadêmicas, prestígio da agência",
+      "startup": "Adequação a startups e empresas de base tecnológica: valor do aporte, TRL exigido, contrapartida, prazo de execução, setor-alvo"
+    }
+  },
+  "scores": [
+    {"id": "FAPEMIG-001-2026", "nome": "Demanda Universal FAPEMIG A/B/C", "pesquisa": 95, "mestrado": 40, "doutorado": 55, "startup": 25, "top_pesquisa": true, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEMIG-002-2026", "nome": "Fortalecimento EPAMIG", "pesquisa": 65, "mestrado": 30, "doutorado": 35, "startup": 10, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "CNPQ-012-2026", "nome": "Programa PCI", "pesquisa": 88, "mestrado": 45, "doutorado": 55, "startup": 20, "top_pesquisa": true, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "CNPQ-002-2026", "nome": "PROSUL Pepe Mujica", "pesquisa": 82, "mestrado": 25, "doutorado": 40, "startup": 15, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "CAPES-004-2026", "nome": "Brasil-China Beihang", "pesquisa": 35, "mestrado": 78, "doutorado": 85, "startup": 10, "top_pesquisa": false, "top_mestrado": true, "top_doutorado": true, "top_startup": false},
+    {"id": "FAPESP-25-2026", "nome": "FAPESP-FDCT Macau", "pesquisa": 72, "mestrado": 20, "doutorado": 35, "startup": 30, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPESP-24-2026", "nome": "FAPESP-CONFAP-ERC", "pesquisa": 78, "mestrado": 15, "doutorado": 30, "startup": 20, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPESP-20-2026", "nome": "PROPASP Alemanha-SP", "pesquisa": 70, "mestrado": 30, "doutorado": 45, "startup": 15, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPESP-03-2026", "nome": "Bioeconomia Amazônica", "pesquisa": 76, "mestrado": 20, "doutorado": 35, "startup": 40, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPESP-01-2026", "nome": "IIDTAC Desafios Globais", "pesquisa": 74, "mestrado": 20, "doutorado": 30, "startup": 35, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPERJ-01-2026", "nome": "Demanda Espontânea FAPERJ", "pesquisa": 80, "mestrado": 25, "doutorado": 40, "startup": 20, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPERJ-02-2026", "nome": "Inovação Segurança Pública", "pesquisa": 60, "mestrado": 20, "doutorado": 30, "startup": 45, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPERJ-04-2026", "nome": "Bolsa Nota 10 Mestrado/Doutorado", "pesquisa": 20, "mestrado": 92, "doutorado": 90, "startup": 5, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPERJ-03-2026", "nome": "Apoio à Editoração", "pesquisa": 45, "mestrado": 25, "doutorado": 35, "startup": 5, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEG-09-2026", "nome": "Diplomacia Científica", "pesquisa": 72, "mestrado": 30, "doutorado": 45, "startup": 10, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEG-08-2026", "nome": "Auxílio à Pesquisa FAPEG", "pesquisa": 78, "mestrado": 35, "doutorado": 50, "startup": 15, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEG-07-2026", "nome": "Chamada Cerrado Agtechs", "pesquisa": 62, "mestrado": 25, "doutorado": 35, "startup": 82, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEG-05-2026", "nome": "Apoio a Eventos", "pesquisa": 50, "mestrado": 45, "doutorado": 55, "startup": 10, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPESPA-001-2026", "nome": "Pesquisa na Amazônia", "pesquisa": 70, "mestrado": 30, "doutorado": 40, "startup": 20, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPESQ-001-2026", "nome": "Universal FAPESQ", "pesquisa": 65, "mestrado": 35, "doutorado": 45, "startup": 15, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FACEPE-001-2026", "nome": "Universal FACEPE", "pesquisa": 72, "mestrado": 30, "doutorado": 45, "startup": 15, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEPI-001-2026", "nome": "Universal FAPEPI", "pesquisa": 55, "mestrado": 35, "doutorado": 45, "startup": 10, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPES-001-2026", "nome": "Universal FAPES", "pesquisa": 68, "mestrado": 35, "doutorado": 45, "startup": 15, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPDF-001-2026", "nome": "Demanda Espontânea FAPDF", "pesquisa": 76, "mestrado": 30, "doutorado": 45, "startup": 15, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPERGS-001-2026", "nome": "Universal FAPERGS", "pesquisa": 74, "mestrado": 35, "doutorado": 50, "startup": 15, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPESC-001-2026", "nome": "Universal FAPESC", "pesquisa": 70, "mestrado": 35, "doutorado": 45, "startup": 15, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPAC-001-2026", "nome": "Programa Pesquisa FAPAC", "pesquisa": 45, "mestrado": 30, "doutorado": 35, "startup": 10, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEAL-001-2026", "nome": "Universal FAPEAL", "pesquisa": 50, "mestrado": 35, "doutorado": 40, "startup": 12, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEAM-001-2026", "nome": "Pesquisa Amazônia FAPEAM", "pesquisa": 72, "mestrado": 30, "doutorado": 40, "startup": 20, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FUNCAP-001-2026", "nome": "Universal FUNCAP", "pesquisa": 70, "mestrado": 35, "doutorado": 45, "startup": 15, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEMA-001-2026", "nome": "Universal FAPEMA", "pesquisa": 55, "mestrado": 35, "doutorado": 40, "startup": 10, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FUNDECT-001-2026", "nome": "Universal FUNDECT", "pesquisa": 58, "mestrado": 35, "doutorado": 40, "startup": 12, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPT-001-2026", "nome": "Programa Pesquisa FAPT", "pesquisa": 42, "mestrado": 30, "doutorado": 35, "startup": 8, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEPI-002-2026", "nome": "Bolsa Mestrado/Doutorado FAPEPI", "pesquisa": 15, "mestrado": 72, "doutorado": 70, "startup": 5, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEMA-002-2026", "nome": "Bolsa Mestrado/Doutorado FAPEMA", "pesquisa": 15, "mestrado": 68, "doutorado": 65, "startup": 5, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FINEP-INOVACRED-2026", "nome": "Finep Inovacred 4.0", "pesquisa": 20, "mestrado": 5, "doutorado": 10, "startup": 90, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": true},
+    {"id": "FINEP-SUBVENCAO-2026", "nome": "Subvenção Econômica FINEP", "pesquisa": 35, "mestrado": 5, "doutorado": 10, "startup": 88, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "BNDES-FUNTEC-2026", "nome": "FUNTEC BNDES", "pesquisa": 45, "mestrado": 5, "doutorado": 10, "startup": 85, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "BNDES-GARAGEM-2026", "nome": "BNDES Garagem", "pesquisa": 10, "mestrado": 15, "doutorado": 10, "startup": 92, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": true},
+    {"id": "EMBRAPII-2026", "nome": "Matchfunding EMBRAPII", "pesquisa": 30, "mestrado": 10, "doutorado": 15, "startup": 85, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "SEBRAE-CAPITAL-SEMENTE-2026", "nome": "Capital Semente SEBRAE", "pesquisa": 15, "mestrado": 10, "doutorado": 10, "startup": 84, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "INOVATIVA-2026", "nome": "InovAtiva Brasil", "pesquisa": 10, "mestrado": 20, "doutorado": 15, "startup": 86, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "SECULT-GO-PNAB-2026", "nome": "PNAB Goiás", "pesquisa": 20, "mestrado": 10, "doutorado": 10, "startup": 25, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FUNDO-BRASIL-2026", "nome": "Fundo Brasil Direitos Humanos", "pesquisa": 35, "mestrado": 20, "doutorado": 25, "startup": 55, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "ICS-2026", "nome": "Grantmaking iCS", "pesquisa": 50, "mestrado": 10, "doutorado": 15, "startup": 60, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "HORIZON-EUROPE-2026", "nome": "Horizon Europe", "pesquisa": 75, "mestrado": 10, "doutorado": 30, "startup": 50, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "PLATAFORMA-LATITUDE-2026", "nome": "Plataforma Latitude", "pesquisa": 50, "mestrado": 15, "doutorado": 25, "startup": 45, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "IAF-2026", "nome": "IAF Grants", "pesquisa": 25, "mestrado": 10, "doutorado": 15, "startup": 35, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPESPA-002-2026", "nome": "Bolsas Amazônia FAPESPA", "pesquisa": 10, "mestrado": 65, "doutorado": 62, "startup": 5, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEMIG-BOLSA-2026", "nome": "Bolsas FAPEMIG", "pesquisa": 15, "mestrado": 82, "doutorado": 80, "startup": 5, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPERJ-BOLSA-2026", "nome": "Bolsas FAPERJ", "pesquisa": 15, "mestrado": 85, "doutorado": 83, "startup": 5, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPESP-PIPE-2026", "nome": "PIPE FAPESP", "pesquisa": 45, "mestrado": 10, "doutorado": 15, "startup": 95, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": true},
+    {"id": "FAPESP-PITE-2026", "nome": "PITE FAPESP", "pesquisa": 68, "mestrado": 10, "doutorado": 20, "startup": 75, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "CNPQ-BOLSA-PRODUTIVIDADE-2026", "nome": "Bolsa Produtividade CNPq", "pesquisa": 92, "mestrado": 10, "doutorado": 20, "startup": 5, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "APEX-2026", "nome": "Internacionalização APEX", "pesquisa": 15, "mestrado": 5, "doutorado": 10, "startup": 55, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEG-STARTUP-2026", "nome": "Startup FAPEG", "pesquisa": 15, "mestrado": 10, "doutorado": 10, "startup": 72, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "CNPQ-PIEMP-2026", "nome": "PIEMP CNPq", "pesquisa": 10, "mestrado": 50, "doutorado": 5, "startup": 40, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPAC-002-2026", "nome": "Inovação FAPAC", "pesquisa": 15, "mestrado": 10, "doutorado": 10, "startup": 55, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEMIG-STARTUP-2026", "nome": "Startup FAPEMIG", "pesquisa": 20, "mestrado": 10, "doutorado": 15, "startup": 78, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPEAL-STARTUP-2026", "nome": "Startup FAPEAL", "pesquisa": 10, "mestrado": 10, "doutorado": 10, "startup": 58, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "WELLCOME-BR-2026", "nome": "Wellcome Trust Brasil", "pesquisa": 75, "mestrado": 10, "doutorado": 30, "startup": 25, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPERJ-STARTUP-2026", "nome": "Startup FAPERJ", "pesquisa": 15, "mestrado": 10, "doutorado": 10, "startup": 72, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "ERC-CONFAP-2026", "nome": "ERC-CONFAP", "pesquisa": 72, "mestrado": 10, "doutorado": 40, "startup": 10, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "SECULT-GO-FAC-2026", "nome": "FAC Goiás", "pesquisa": 15, "mestrado": 10, "doutorado": 10, "startup": 20, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPESQ-BOLSA-2026", "nome": "Bolsas FAPESQ", "pesquisa": 10, "mestrado": 65, "doutorado": 62, "startup": 5, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPESP-INICIACAO-2026", "nome": "IC FAPESP", "pesquisa": 10, "mestrado": 30, "doutorado": 10, "startup": 5, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "FAPESQ-STARTUP-2026", "nome": "Startup FAPESQ", "pesquisa": 10, "mestrado": 10, "doutorado": 10, "startup": 62, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false},
+    {"id": "BNDES-FUST-2026", "nome": "FUST Conectividade", "pesquisa": 20, "mestrado": 5, "doutorado": 5, "startup": 65, "top_pesquisa": false, "top_mestrado": false, "top_doutorado": false, "top_startup": false}
+  ],
+  "top_2_per_profile": {
+    "pesquisa": [
+      {"rank": 1, "id": "FAPEMIG-001-2026", "nome": "Demanda Universal FAPEMIG", "score": 95},
+      {"rank": 2, "id": "CNPQ-BOLSA-PRODUTIVIDADE-2026", "nome": "Bolsa Produtividade CNPq", "score": 92}
+    ],
+    "mestrado": [
+      {"rank": 1, "id": "FAPERJ-04-2026", "nome": "Bolsa Nota 10 FAPERJ", "score": 92},
+      {"rank": 2, "id": "FAPERJ-BOLSA-2026", "nome": "Bolsas FAPERJ", "score": 85}
+    ],
+    "doutorado": [
+      {"rank": 1, "id": "CAPES-004-2026", "nome": "Brasil-China Beihang", "score": 85},
+      {"rank": 2, "id": "FAPERJ-BOLSA-2026", "nome": "Bolsas FAPERJ", "score": 83}
+    ],
+    "startup": [
+      {"rank": 1, "id": "FAPESP-PIPE-2026", "nome": "PIPE FAPESP", "score": 95},
+      {"rank": 2, "id": "BNDES-GARAGEM-2026", "nome": "BNDES Garagem", "score": 92}
+    ]
+  },
+  "worker_A_editais": ["FAPEMIG-001-2026", "CNPQ-BOLSA-PRODUTIVIDADE-2026", "FAPERJ-04-2026", "FAPERJ-BOLSA-2026"],
+  "worker_B_editais": ["CAPES-004-2026", "FAPESP-PIPE-2026", "BNDES-GARAGEM-2026"]
+}

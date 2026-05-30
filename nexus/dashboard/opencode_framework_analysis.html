@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenCode → Framework de Produção: Análise de Viabilidade</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #fff;
+    color: #1a1a2e;
+    line-height: 1.7;
+    font-size: 11pt;
+    padding: 40px 50px;
+    max-width: 210mm;
+    margin: 0 auto;
+  }
+
+  @media print {
+    body { padding: 20px 30px; font-size: 10pt; }
+    .page-break { page-break-before: always; }
+    h2 { page-break-after: avoid; }
+    table { page-break-inside: avoid; }
+  }
+
+  h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #0f0f23;
+    margin-bottom: 8px;
+    border-bottom: 3px solid #4361ee;
+    padding-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #4361ee;
+    margin: 28px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid #e0e0e0;
+  }
+
+  h3 {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #2d3436;
+    margin: 18px 0 10px;
+  }
+
+  .subtitle {
+    font-size: 0.95em;
+    color: #636e72;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .verdict {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border-left: 4px solid #2e7d32;
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0 24px;
+    font-size: 0.95em;
+  }
+  .verdict strong { color: #1b5e20; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 20px;
+    font-size: 0.88em;
+  }
+
+  th {
+    background: #f8f9fa;
+    color: #2d3436;
+    font-weight: 600;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 2px solid #dee2e6;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #f1f3f5;
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td { background: #fafbfc; }
+  tr:hover td { background: #f0f4ff; }
+
+  code {
+    background: #f1f3f5;
+    color: #e74c3c;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 0.88em;
+    font-family: 'Cascadia Code', 'Fira Code', monospace;
+  }
+
+  .priority-critica { color: #e74c3c; font-weight: 600; }
+  .priority-alta { color: #f39c12; font-weight: 600; }
+  .priority-media { color: #e67e22; font-weight: 500; }
+  .priority-baixa { color: #27ae60; font-weight: 500; }
+
+  .tree {
+    background: #2d3436;
+    color: #dfe6e9;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-family: 'Cascadia Code', 'Fira Code', monospace;
+    font-size: 0.82em;
+    line-height: 1.6;
+    margin: 12px 0 20px;
+    white-space: pre;
+    overflow-x: auto;
+  }
+
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  .checklist li {
+    padding: 4px 0;
+    padding-left: 24px;
+    position: relative;
+  }
+  .checklist li::before {
+    content: "☐";
+    position: absolute;
+    left: 0;
+    color: #4361ee;
+  }
+
+  .note {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 14px 0;
+    font-size: 0.9em;
+  }
+  .note-important {
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+  }
+  .note-tip {
+    background: #e8f5e9;
+    border-left: 4px solid #4caf50;
+  }
+
+  .note strong { display: block; margin-bottom: 4px; }
+
+  .cmd {
+    background: #263238;
+    color: #80cbc4;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-family: 'Cascadia Code', 'Fira Code', monospace;
+    font-size: 0.85em;
+    margin: 10px 0;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 24px 0;
+  }
+
+  .check { color: #27ae60; }
+  .star { color: #f39c12; }
+
+  .arch-diagram {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 16px 0;
+    text-align: center;
+  }
+
+  .arch-layer {
+    border: 2px solid;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 8px auto;
+    max-width: 500px;
+    text-align: center;
+    font-size: 0.88em;
+  }
+  .layer1 { border-color: #e74c3c; background: #fef0ef; }
+  .layer2 { border-color: #3498db; background: #eef6fc; }
+  .layer3 { border-color: #2ecc71; background: #edfcf3; }
+  .layer4 { border-color: #9b59b6; background: #f5eef8; }
+
+  .layer-title {
+    font-weight: 700;
+    font-size: 0.9em;
+    margin-bottom: 6px;
+  }
+  .layer-items {
+    font-size: 0.82em;
+    color: #555;
+  }
+
+  .arrow {
+    text-align: center;
+    font-size: 1.2em;
+    color: #aaa;
+    margin: 2px 0;
+  }
+
+  .footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.8em;
+    color: #999;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h1>OpenCode → Framework de Produção</h1>
+<p class="subtitle">Análise de Viabilidade e Plano de Transformação</p>
+
+<div class="verdict">
+  <strong>Veredicto: SIM, é viável — mas exige refatoração estrutural significativa.</strong><br>
+  O ecossistema atual já possui ~80% dos primitivos necessários, porém em formato prototipal.
+</div>
+
+<hr>
+
+<h2>1. Radiografia do Estado Atual</h2>
+
+<h3>O que já existe (pontos fortes)</h3>
+
+<table>
+  <tr><th>Capacidade</th><th>Módulo Atual</th><th>Maturidade</th></tr>
+  <tr><td><strong>Auto-cura</strong></td><td><code>self_healer.py</code> (254 linhas)</td><td><span class="star">★★★</span> Funcional</td></tr>
+  <tr><td><strong>Feedback Loop</strong></td><td><code>evolution_loop.py</code> (750 linhas)</td><td><span class="star">★★★★</span> Robusto</td></tr>
+  <tr><td><strong>Orquestração</strong></td><td><code>sync_orchestrator.py</code> (586 linhas)</td><td><span class="star">★★★★</span> Robusto</td></tr>
+  <tr><td><strong>Scoring Dinâmico</strong></td><td><code>DynamicScoringEngine</code> (inline)</td><td><span class="star">★★★</span> Funcional</td></tr>
+  <tr><td><strong>Meta-learning</strong></td><td><code>meta_learning_engine.py</code> (582 linhas)</td><td><span class="star">★★</span> Conceitual</td></tr>
+  <tr><td><strong>Evolução autônoma</strong></td><td><code>manus-evolve.ts</code> (413 linhas)</td><td><span class="star">★★★★</span> Produção</td></tr>
+  <tr><td><strong>Dashboard</strong></td><td><code>dashboard_server.py</code> (850 linhas)</td><td><span class="star">★★★</span> Funcional</td></tr>
+  <tr><td><strong>Config centralizada</strong></td><td><code>ecosystem_config.py</code> (131 linhas)</td><td><span class="star">★★★</span> Funcional</td></tr>
+  <tr><td><strong>Discovery</strong></td><td><code>ComponentDiscovery</code> (inline)</td><td><span class="star">★★★</span> Funcional</td></tr>
+  <tr><td><strong>Cross-validation</strong></td><td><code>CrossValidationEngine</code> (inline)</td><td><span class="star">★★★</span> Funcional</td></tr>
+</table>
+
+<h3>O que falta para produção</h3>
+
+<table>
+  <tr><th>Lacuna</th><th>Impacto</th><th>Prioridade</th></tr>
+  <tr><td><strong>Sem process supervisor</strong> — scripts rodam e morrem</td><td>Sem resiliência</td><td class="priority-critica">🔴 Crítica</td></tr>
+  <tr><td><strong>Sem message bus</strong> — componentes acoplados por import</td><td>Escalabilidade zero</td><td class="priority-critica">🔴 Crítica</td></tr>
+  <tr><td><strong>Dashboard stdlib</strong> — 1 requisição/vez, sem WebSocket</td><td>Performance</td><td class="priority-alta">🟡 Alta</td></tr>
+  <tr><td><strong>Sem métricas Prometheus/OpenTelemetry</strong></td><td>Observabilidade</td><td class="priority-alta">🟡 Alta</td></tr>
+  <tr><td><strong>Estado em JSON files</strong> — sem transações, sem lock</td><td>Corrupção de dados</td><td class="priority-alta">🟡 Alta</td></tr>
+  <tr><td><strong>Código duplicado</strong> — <code>load_state</code>/<code>save_state</code> em 4+ arquivos</td><td>Manutenção</td><td class="priority-media">🟠 Média</td></tr>
+  <tr><td><strong>Sem testes em CI</strong> — testes existem mas não rodam</td><td>Confiabilidade</td><td class="priority-media">🟠 Média</td></tr>
+  <tr><td><strong>Sem versionamento semântico</strong></td><td>Rastreabilidade</td><td class="priority-baixa">🟢 Baixa</td></tr>
+</table>
+
+<hr>
+
+<h2>2. Arquitetura Proposta: OpenCode Production Framework (OPF)</h2>
+
+<div class="arch-diagram">
+  <div class="arch-layer layer1">
+    <div class="layer-title">Camada 1 — Supervisor</div>
+    <div class="layer-items">PM2 ou NSSM (auto-restart, logs centralizados)</div>
+  </div>
+  <div class="arrow">▼</div>
+  <div class="arch-layer layer2">
+    <div class="layer-title">Camada 2 — Core Runtime</div>
+    <div class="layer-items">Event Bus (asyncio) &nbsp;|&nbsp; State Manager (SQLite WAL) &nbsp;|&nbsp; Telemetry (OpenTelemetry)</div>
+  </div>
+  <div class="arrow">▼</div>
+  <div class="arch-layer layer3">
+    <div class="layer-title">Camada 3 — Serviços Autônomos</div>
+    <div class="layer-items">Sync Orchestrator &nbsp;|&nbsp; Evolution Loop &nbsp;|&nbsp; Self Healer &nbsp;|&nbsp; Meta-Learning &nbsp;|&nbsp; Dashboard (FastAPI)</div>
+  </div>
+  <div class="arrow">▼</div>
+  <div class="arch-layer layer4">
+    <div class="layer-title">Camada 4 — Plugins & Skills</div>
+    <div class="layer-items">Manus Evolve &nbsp;|&nbsp; Ecosystem Sync &nbsp;|&nbsp; 74 Skills &nbsp;|&nbsp; 118 Agentes</div>
+  </div>
+</div>
+
+<hr>
+
+<div class="page-break"></div>
+
+<h2>3. Plano de Implementação em 5 Fases</h2>
+
+<h3>Fase 1: Fundação (Semana 1-2)</h3>
+<p><strong>Objetivo:</strong> Substituir JSON files por SQLite e eliminar duplicação</p>
+
+<div class="tree">opencode/
+├── core/                          # NOVO: runtime centralizado
+│   ├── __init__.py
+│   ├── config.py                  # Refatorar ecosystem_config.py
+│   ├── state.py                   # SQLite state manager (substitui JSON)
+│   ├── events.py                  # Event bus local (asyncio.Queue)
+│   ├── telemetry.py               # Métricas e spans
+│   └── logging.py                 # Logging estruturado (structlog)
+├── services/                      # NOVO: serviços de longa duração
+│   ├── orchestrator.py            # Refatorar sync_orchestrator.py
+│   ├── healer.py                  # Refatorar self_healer.py
+│   ├── evolution.py               # Refatorar evolution_loop.py
+│   └── dashboard/                 # Refatorar dashboard_server.py
+│       ├── app.py                 # FastAPI + WebSocket
+│       ├── static/                # HTML/CSS/JS separados
+│       └── api/
+├── nexus/                         # Manter: scripts existentes
+├── plugins/                       # Manter: TypeScript plugins
+├── skills/                        # Manter: 74 skills
+└── pyproject.toml                 # NOVO: gestão de dependências</div>
+
+<p><strong>Entregas:</strong></p>
+<ul class="checklist">
+  <li><code>core/state.py</code> — SQLite com WAL mode, migrações automáticas</li>
+  <li><code>core/events.py</code> — Event bus local com <code>asyncio.Queue</code></li>
+  <li><code>core/config.py</code> — Pydantic settings (validação de schema)</li>
+  <li>Migrar <code>ecosystem_config.py</code> para <code>core/config.py</code></li>
+</ul>
+
+<h3>Fase 2: Serviços (Semana 3-4)</h3>
+<p><strong>Objetivo:</strong> Transformar scripts em serviços de longa duração</p>
+<ul class="checklist">
+  <li><code>services/orchestrator.py</code> — loop infinito com heartbeat</li>
+  <li><code>services/healer.py</code> — watchdog com intervalo configurável</li>
+  <li><code>services/evolution.py</code> — ciclos programados com backoff</li>
+  <li><code>Procfile</code> ou <code>ecosystem.config.js</code> (PM2)</li>
+</ul>
+
+<h3>Fase 3: Dashboard de Produção (Semana 5-6)</h3>
+<p><strong>Objetivo:</strong> Dashboard real-time com FastAPI + WebSocket</p>
+<ul class="checklist">
+  <li>FastAPI backend com <code>/ws</code> endpoint</li>
+  <li>Frontend com SSE ou WebSocket (métricas em tempo real)</li>
+  <li>Gráficos de tendência (Chart.js mantido)</li>
+  <li>Alertas visuais por threshold</li>
+</ul>
+
+<h3>Fase 4: Observabilidade (Semana 7-8)</h3>
+<p><strong>Objetivo:</strong> Métricas, traces e alertas</p>
+<ul class="checklist">
+  <li>OpenTelemetry spans em cada serviço</li>
+  <li>Prometheus metrics endpoint (<code>/metrics</code>)</li>
+  <li>Health check endpoint (<code>/healthz</code>)</li>
+  <li>Alertas por email/webhook quando health &lt; 70</li>
+</ul>
+
+<h3>Fase 5: Autorregulação Inteligente (Semana 9-10)</h3>
+<p><strong>Objetivo:</strong> Feedback loop fechado com ML real</p>
+<ul class="checklist">
+  <li>Detector de anomalias baseado em Z-score</li>
+  <li>Predição de degradação (regressão linear em séries temporais)</li>
+  <li>Auto-scaling de intervalos de check baseado em carga</li>
+  <li>Geração autônoma de skills com validação A/B</li>
+</ul>
+
+<hr>
+
+<h2>4. Comparação: Estado Atual vs. Framework de Produção</h2>
+
+<table>
+  <tr><th>Aspecto</th><th>Atual</th><th>Framework Proposto</th></tr>
+  <tr><td><strong>Servidor HTTP</strong></td><td><code>http.server</code> stdlib</td><td>FastAPI + Uvicorn (async)</td></tr>
+  <tr><td><strong>Estado</strong></td><td>JSON files (~2MB gzip)</td><td>SQLite WAL (ACID, concurrent)</td></tr>
+  <tr><td><strong>Comunicação</strong></td><td><code>import</code> direto</td><td>Event bus (async pub/sub)</td></tr>
+  <tr><td><strong>Supervisor</strong></td><td>Nenhum (manual)</td><td>PM2/NSSM (auto-restart)</td></tr>
+  <tr><td><strong>Métricas</strong></td><td>Log files</td><td>OpenTelemetry + Prometheus</td></tr>
+  <tr><td><strong>Dashboard</strong></td><td>1 req/vez, polling 30s</td><td>WebSocket real-time</td></tr>
+  <tr><td><strong>Auto-healing</strong></td><td>Script manual</td><td>Serviço contínuo com watchdog</td></tr>
+  <tr><td><strong>Testes</strong></td><td>Existem, não rodam</td><td>pytest + CI/CD</td></tr>
+  <tr><td><strong>Deploy</strong></td><td><code>python script.py</code></td><td><code>pm2 start ecosystem.config.js</code></td></tr>
+</table>
+
+<hr>
+
+<h2>5. Estimativa de Esforço</h2>
+
+<table>
+  <tr><th>Fase</th><th>Complexidade</th><th>Horas Estimadas</th><th>Dependências</th></tr>
+  <tr><td>1. Fundação</td><td>Média</td><td>20-30h</td><td>Python 3.12, pydantic, structlog</td></tr>
+  <tr><td>2. Serviços</td><td>Alta</td><td>30-40h</td><td>Fase 1</td></tr>
+  <tr><td>3. Dashboard</td><td>Média</td><td>15-20h</td><td>FastAPI, uvicorn</td></tr>
+  <tr><td>4. Observabilidade</td><td>Média</td><td>15-20h</td><td>opentelemetry-sdk</td></tr>
+  <tr><td>5. Autorregulação</td><td>Alta</td><td>25-35h</td><td>scipy, scikit-learn</td></tr>
+  <tr><td><strong>Total</strong></td><td>—</td><td><strong>105-145h</strong></td><td>—</td></tr>
+</table>
+
+<hr>
+
+<h2>6. Dependências Mínimas</h2>
+
+<div class="cmd">pip install fastapi uvicorn[standard] pydantic structlog opentelemetry-sdk prometheus-client scipy</div>
+
+<div class="note note-important">
+  <strong>⚠️ Importante</strong>
+  O ecossistema atual <strong>já funciona</strong>. A transformação é incremental — cada fase entrega valor isoladamente. Não é necessário parar tudo para refatorar.
+</div>
+
+<div class="note note-tip">
+  <strong>💡 Dica</strong>
+  A Fase 1 (Fundação) é a mais crítica: elimina 90% da dívida técnica. As demais fases podem ser executadas em qualquer ordem.
+</div>
+
+<hr>
+
+<h2>7. Resposta Direta</h2>
+
+<p><strong>Sim, o <code>C:\Users\marce\.config\opencode</code> pode se tornar um framework de produção.</strong> Os primitivos essenciais já existem:</p>
+
+<table>
+  <tr><th></th><th>Capacidade</th><th>Módulo Existente</th></tr>
+  <tr><td><span class="check">✅</span></td><td><strong>Monitoria de desempenho</strong></td><td><code>DynamicScoringEngine</code> + <code>SessionMetrics</code></td></tr>
+  <tr><td><span class="check">✅</span></td><td><strong>Autorregulação</strong></td><td><code>AutoHealingEngine</code> + <code>SelfHealer</code></td></tr>
+  <tr><td><span class="check">✅</span></td><td><strong>Evolução</strong></td><td><code>FeedbackLoopEngine</code> + <code>ManusEvolve</code></td></tr>
+  <tr><td><span class="check">✅</span></td><td><strong>Dashboard</strong></td><td>Chart.js + API REST</td></tr>
+</table>
+
+<p style="margin-top: 16px;">Os <strong>3 upgrades estruturais</strong> necessários:</p>
+<ol style="margin: 10px 0 0 20px;">
+  <li><strong>SQLite</strong> no lugar de JSON — transações ACID, concorrência, sem corrupção</li>
+  <li><strong>Event bus</strong> no lugar de imports — desacoplamento, escalabilidade</li>
+  <li><strong>Process supervisor</strong> — resiliência, auto-restart, logs centralizados</li>
+</ol>
+
+<div class="footer">
+  OpenCode Ecosystem Analysis v1.0 — Gerado em 09/05/2026<br>
+  Documento técnico de planejamento — Framework de Produção com Autorregulação Inteligente
+</div>
+
+</body>
+</html>

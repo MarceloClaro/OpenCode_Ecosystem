@@ -1,0 +1,128 @@
+{
+  "project_name": "opencode",
+  "project_path": "C:\\Users\\marce\\.config\\opencode",
+  "total_files": 600,
+  "total_dirs": 120,
+  "languages": {
+    "principal": "Python/TypeScript/Markdown",
+    "detalhado": {
+      "Python": 250,
+      "TypeScript": 40,
+      "Markdown": 160,
+      "JSON": 30,
+      "TOML": 8,
+      "YAML": 25,
+      "Shell": 5,
+      "C++": 5,
+      "JavaScript": 10,
+      "Rust": 5
+    }
+  },
+  "modules": [
+    {
+      "name": "opencode-core",
+      "path": "core/",
+      "linguagem": "Python",
+      "tipo": "lib",
+      "entry_points": ["core/__init__.py", "core/config.py", "core/state.py", "core/events.py"]
+    },
+    {
+      "name": "basis-research (SEEKER)",
+      "path": "basis-research/",
+      "linguagem": "Python",
+      "tipo": "app",
+      "entry_points": ["basis-research/main.py"]
+    },
+    {
+      "name": "criador-artigo (MASWOS)",
+      "path": "criador-artigo/",
+      "linguagem": "Python/Markdown",
+      "tipo": "app",
+      "entry_points": ["criador-artigo/executor.py", "criador-artigo/auto_score_qualis.py", "criador-artigo/seeker_bridge.py"]
+    },
+    {
+      "name": "docling (PDF extraction)",
+      "path": "docling/",
+      "linguagem": "Python",
+      "tipo": "lib",
+      "entry_points": ["docling/docling/"]
+    },
+    {
+      "name": "agents (agent definitions)",
+      "path": "agents/",
+      "linguagem": "Markdown",
+      "tipo": "config",
+      "entry_points": []
+    },
+    {
+      "name": "commands (slash commands)",
+      "path": "command/",
+      "linguagem": "Markdown",
+      "tipo": "config",
+      "entry_points": []
+    },
+    {
+      "name": "plugins",
+      "path": "plugins/",
+      "linguagem": "TypeScript",
+      "tipo": "lib",
+      "entry_points": []
+    },
+    {
+      "name": "nexus (multi-agent orchestration)",
+      "path": "nexus/",
+      "linguagem": "Python",
+      "tipo": "lib",
+      "entry_points": []
+    },
+    {
+      "name": "quantum (quantum computing)",
+      "path": "quantum/",
+      "linguagem": "Python/Rust",
+      "tipo": "lib",
+      "entry_points": []
+    },
+    {
+      "name": "evolution (evolution engine)",
+      "path": "evolution/",
+      "linguagem": "Python/Markdown",
+      "tipo": "app",
+      "entry_points": []
+    },
+    {
+      "name": "skills",
+      "path": "skills/",
+      "linguagem": "Markdown",
+      "tipo": "config",
+      "entry_points": []
+    },
+    {
+      "name": "editais-br (grant search)",
+      "path": "editais-br/",
+      "linguagem": "Python",
+      "tipo": "app",
+      "entry_points": []
+    }
+  ],
+  "package_managers": ["bun (npm)", "pip"],
+  "dependencies": {
+    "principais": ["@opencode-ai/plugin", "torch", "transformers", "fastapi", "pydantic"],
+    "dev": []
+  },
+  "integrations": {
+    "databases": ["SQLite (editais.db, pipeline.db, state.db)"],
+    "external_apis": ["arXiv", "OpenAlex", "Semantic Scholar", "PubMed", "CORE", "DuckDuckGo"],
+    "message_queues": [],
+    "cache": ["file-based JSON cache"]
+  },
+  "cicd": ["docling/.github/workflows/ci.yml", "docling/.github/workflows/cd.yml"],
+  "observations": [
+    "Projeto e o ecossistema OpenCode completo (CLI + agentes + skills + MCPs)",
+    "Nao e um 'sistema legado' tradicional - e um meta-framework de IA",
+    "Possui 118 agentes definidos, 74 skills, 17 MCPs integrados",
+    "Criador-artigo tem pipeline academico completo com 49 agentes especializados",
+    "SEEKER e motor de pesquisa academica com 10 agentes",
+    "Evolucao autonoma via Manus Evolve (PlanAct engine)",
+    "Quantum nexus para computacao quantica aplicada a ML"
+  ]
+}

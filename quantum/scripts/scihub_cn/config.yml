@@ -1,0 +1,6 @@
+output: ./files
+#proxy:
+#  ip: 127.0.0.1
+#  port: 7890
+search-engine: baidu_xueshu
+limit: 10

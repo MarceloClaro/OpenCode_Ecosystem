@@ -1,0 +1,162 @@
+#!/usr/bin/env python3
+"""Cria CURATED_EDITAIS.json com base na lista curada de 52+ editais brasileiros."""
+
+import json, os, re
+
+skill_dir = r'C:\Users\marce\.config\opencode\skills\research\editais-br'
+out_dir = os.path.join(skill_dir, 'curated')
+os.makedirs(out_dir, exist_ok=True)
+
+EDITAIS_CURADOS = [
+    # ===== CNPq =====
+    {'id': 'CNPq-001', 'nome': 'Chamada Universal CNPq', 'agencia': 'CNPq', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 30.000 a R$ 200.000', 'nota': 'Faixa A (R$30k), B (R$60k), C (R$200k). Midpoint usado.'},
+    {'id': 'CNPq-002', 'nome': 'Bolsa Produtividade CNPq (PQ)', 'agencia': 'CNPq', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 900/mes a R$ 1.800/mes + R$ 12.000 a R$ 30.000 auxilio', 'nota': 'R$1.350/mes bolsa x 12m + R$21k auxilio. Anual.'},
+    {'id': 'CNPq-003', 'nome': 'INCT - Institutos Nacionais', 'agencia': 'CNPq', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 500.000 a R$ 2.000.000', 'nota': 'Midpoint R$1.250.000.'},
+    {'id': 'CNPq-004', 'nome': 'Bolsa CNPq Mestrado', 'agencia': 'CNPq', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.500/mes', 'nota': '24 meses de bolsa.'},
+    {'id': 'CNPq-005', 'nome': 'Bolsa CNPq Doutorado', 'agencia': 'CNPq', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 2.200/mes', 'nota': '48 meses de bolsa.'},
+    {'id': 'CNPq-006', 'nome': 'CNPq SWE Doutorado Sanduiche', 'agencia': 'CNPq', 'categoria': 'internacional',
+     'valor_declarado': 'US$ 1.300/mes', 'nota': '12 meses. Convertido a R$5,00/US$.'},
+    # ===== CAPES =====
+    {'id': 'CAPES-001', 'nome': 'Bolsa CAPES Demanda Social Mestrado', 'agencia': 'CAPES', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.500/mes', 'nota': '24 meses de bolsa.'},
+    {'id': 'CAPES-002', 'nome': 'Bolsa CAPES Demanda Social Doutorado', 'agencia': 'CAPES', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 2.200/mes', 'nota': '48 meses de bolsa.'},
+    {'id': 'CAPES-003', 'nome': 'PROEX CAPES', 'agencia': 'CAPES', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.500/mes a R$ 2.200/mes', 'nota': 'Mestrado 24m (R$1.500) + Doutorado 48m (R$2.200). Midpoint anual.'},
+    {'id': 'CAPES-004', 'nome': 'PNPD CAPES Pos-Doutorado', 'agencia': 'CAPES', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 5.200/mes', 'nota': '12 meses, renovavel. 1 ano considerado.'},
+    {'id': 'CAPES-005', 'nome': 'Bolsa PROSUC CAPES', 'agencia': 'CAPES', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.500/mes', 'nota': '24 meses de bolsa.'},
+    {'id': 'CAPES-006', 'nome': 'CAPES PRINT Internacionalizacao', 'agencia': 'CAPES', 'categoria': 'internacional',
+     'valor_declarado': 'R$ 5.000/mes', 'nota': '12 meses no exterior.'},
+    {'id': 'CAPES-007', 'nome': 'CAPES Fulbright Doutorado', 'agencia': 'CAPES', 'categoria': 'internacional',
+     'valor_declarado': 'US$ 1.600/mes', 'nota': '48 meses. Convertido R$5,00/US$.'},
+    {'id': 'CAPES-008', 'nome': 'Bolsa CAPES Doutorado Pleno Exterior', 'agencia': 'CAPES', 'categoria': 'internacional',
+     'valor_declarado': 'US$ 1.300/mes', 'nota': '48 meses. Convertido R$5,00/US$.'},
+    # ===== FINEP =====
+    {'id': 'FINEP-001', 'nome': 'Chamada FINEP Inovacao', 'agencia': 'FINEP', 'categoria': 'auxilio',
+     'valor_declarado': 'R$ 500.000 a R$ 10.000.000', 'nota': 'Midpoint R$5.250.000.'},
+    {'id': 'FINEP-002', 'nome': 'Subvencao Economica FINEP', 'agencia': 'FINEP', 'categoria': 'auxilio',
+     'valor_declarado': 'R$ 500.000 a R$ 5.000.000', 'nota': 'Midpoint R$2.750.000.'},
+    {'id': 'FINEP-003', 'nome': 'FINEP Startup', 'agencia': 'FINEP', 'categoria': 'startup',
+     'valor_declarado': 'R$ 200.000 a R$ 1.000.000', 'nota': 'Midpoint R$600.000.'},
+    # ===== FAPESP =====
+    {'id': 'FAPESP-001', 'nome': 'Jovem Pesquisador FAPESP', 'agencia': 'FAPESP', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 100.000 a R$ 400.000', 'nota': 'Midpoint R$250.000.'},
+    {'id': 'FAPESP-002', 'nome': 'Projeto Tematico FAPESP', 'agencia': 'FAPESP', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 500.000 a R$ 5.000.000', 'nota': 'Midpoint R$2.750.000.'},
+    {'id': 'FAPESP-003', 'nome': 'FAPESP PIPE', 'agencia': 'FAPESP', 'categoria': 'startup',
+     'valor_declarado': 'R$ 200.000 a R$ 1.000.000', 'nota': 'Midpoint R$600.000.'},
+    # ===== FAPERJ =====
+    {'id': 'FAPERJ-001', 'nome': 'Auxilio Pesquisa FAPERJ', 'agencia': 'FAPERJ', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 30.000 a R$ 100.000', 'nota': 'Midpoint R$65.000.'},
+    # ===== FAPEMIG =====
+    {'id': 'FAPEMIG-001', 'nome': 'Demanda Universal FAPEMIG', 'agencia': 'FAPEMIG', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 20.000 a R$ 100.000', 'nota': 'Midpoint R$60.000.'},
+    # ===== Nordeste FAPs =====
+    {'id': 'FAPESB-001', 'nome': 'Edital Universal FAPESB', 'agencia': 'FAPESB', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 15.000 a R$ 80.000', 'nota': 'Midpoint R$47.500.'},
+    {'id': 'FAPESB-002', 'nome': 'Bolsa FAPESB Mestrado/Doutorado', 'agencia': 'FAPESB', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.200/mes a R$ 2.000/mes', 'nota': 'Mestrado 24m (R$1.200) + Doutorado 48m (R$2.000). Midpoint anual.'},
+    {'id': 'FUNCAP-001', 'nome': 'Edital Universal FUNCAP', 'agencia': 'FUNCAP', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 15.000 a R$ 80.000', 'nota': 'Midpoint R$47.500.'},
+    {'id': 'FUNCAP-002', 'nome': 'Bolsa FUNCAP Mestrado/Doutorado', 'agencia': 'FUNCAP', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.200/mes a R$ 2.000/mes', 'nota': 'Mestrado 24m (R$1.200) + Doutorado 48m (R$2.000). Midpoint anual.'},
+    {'id': 'FACEPE-001', 'nome': 'Edital Universal FACEPE', 'agencia': 'FACEPE', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 20.000 a R$ 100.000', 'nota': 'Midpoint R$60.000.'},
+    {'id': 'FACEPE-002', 'nome': 'Bolsa FACEPE Mestrado/Doutorado', 'agencia': 'FACEPE', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.200/mes a R$ 2.000/mes', 'nota': 'Mestrado 24m (R$1.200) + Doutorado 48m (R$2.000). Midpoint anual.'},
+    {'id': 'FAPEMA-001', 'nome': 'Edital Universal FAPEMA', 'agencia': 'FAPEMA', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 15.000 a R$ 60.000', 'nota': 'Midpoint R$37.500.'},
+    {'id': 'FAPEMA-002', 'nome': 'Bolsa FAPEMA Mestrado/Doutorado', 'agencia': 'FAPEMA', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.200/mes a R$ 2.000/mes', 'nota': 'Mestrado 24m (R$1.200) + Doutorado 48m (R$2.000). Midpoint anual.'},
+    {'id': 'FAPESQ-001', 'nome': 'Edital Universal FAPESQ', 'agencia': 'FAPESQ', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 15.000 a R$ 60.000', 'nota': 'Midpoint R$37.500.'},
+    {'id': 'FAPESQ-002', 'nome': 'Bolsa FAPESQ Mestrado/Doutorado', 'agencia': 'FAPESQ', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.200/mes a R$ 2.000/mes', 'nota': 'Mestrado 24m (R$1.200) + Doutorado 48m (R$2.000). Midpoint anual.'},
+    {'id': 'FAPEPI-001', 'nome': 'Edital Universal FAPEPI', 'agencia': 'FAPEPI', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 10.000 a R$ 50.000', 'nota': 'Midpoint R$30.000.'},
+    {'id': 'FAPITEC-001', 'nome': 'Edital Universal FAPITEC', 'agencia': 'FAPITEC', 'categoria': 'startup',
+     'valor_declarado': 'R$ 50.000 a R$ 200.000', 'nota': 'Midpoint R$125.000.'},
+    # ===== Norte FAPs =====
+    {'id': 'FAPEAM-001', 'nome': 'Edital Universal FAPEAM', 'agencia': 'FAPEAM', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 20.000 a R$ 100.000', 'nota': 'Midpoint R$60.000.'},
+    {'id': 'FAPEAM-002', 'nome': 'Bolsa FAPEAM Mestrado/Doutorado', 'agencia': 'FAPEAM', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.500/mes a R$ 2.200/mes', 'nota': 'Mestrado 24m (R$1.500) + Doutorado 48m (R$2.200). Midpoint anual.'},
+    {'id': 'FAPAC-001', 'nome': 'Edital Universal FAPAC', 'agencia': 'FAPAC', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 10.000 a R$ 40.000', 'nota': 'Midpoint R$25.000.'},
+    {'id': 'FAPT-001', 'nome': 'Edital Universal FAPT', 'agencia': 'FAPT', 'categoria': 'inovacao',
+     'valor_declarado': 'R$ 10.000 a R$ 50.000', 'nota': 'Midpoint R$30.000.'},
+    {'id': 'FAPERO-001', 'nome': 'Edital Universal FAPERO', 'agencia': 'FAPERO', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 10.000 a R$ 40.000', 'nota': 'Midpoint R$25.000.'},
+    {'id': 'FAPERO-002', 'nome': 'Bolsa FAPERO Mestrado/Doutorado', 'agencia': 'FAPERO', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.200/mes a R$ 2.000/mes', 'nota': 'Mestrado 24m (R$1.200) + Doutorado 48m (R$2.000). Midpoint anual.'},
+    # ===== Centro-Oeste FAPs =====
+    {'id': 'FAPDF-001', 'nome': 'Edital Universal FAPDF', 'agencia': 'FAPDF', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 20.000 a R$ 150.000', 'nota': 'Midpoint R$85.000.'},
+    {'id': 'FAPDF-002', 'nome': 'Bolsa FAPDF Mestrado/Doutorado', 'agencia': 'FAPDF', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.500/mes a R$ 2.200/mes', 'nota': 'Mestrado 24m (R$1.500) + Doutorado 48m (R$2.200). Midpoint anual.'},
+    {'id': 'FUNDECT-001', 'nome': 'Edital Universal FUNDECT', 'agencia': 'FUNDECT', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 15.000 a R$ 60.000', 'nota': 'Midpoint R$37.500.'},
+    {'id': 'FUNDECT-002', 'nome': 'Bolsa FUNDECT Mestrado/Doutorado', 'agencia': 'FUNDECT', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.200/mes a R$ 2.000/mes', 'nota': 'Mestrado 24m (R$1.200) + Doutorado 48m (R$2.000). Midpoint anual.'},
+    {'id': 'FAPEMAT-001', 'nome': 'Edital Universal FAPEMAT', 'agencia': 'FAPEMAT', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 15.000 a R$ 50.000', 'nota': 'Midpoint R$32.500.'},
+    # ===== Sudeste FAPs (outras) =====
+    {'id': 'FAPES-001', 'nome': 'Edital Universal FAPES', 'agencia': 'FAPES', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 15.000 a R$ 60.000', 'nota': 'Midpoint R$37.500.'},
+    {'id': 'FAPES-002', 'nome': 'Bolsa FAPES Mestrado/Doutorado', 'agencia': 'FAPES', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.200/mes a R$ 2.000/mes', 'nota': 'Mestrado 24m (R$1.200) + Doutorado 48m (R$2.000). Midpoint anual.'},
+    # ===== Sul FAPs =====
+    {'id': 'FAPERGS-001', 'nome': 'Edital Universal FAPERGS', 'agencia': 'FAPERGS', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 20.000 a R$ 100.000', 'nota': 'Midpoint R$60.000.'},
+    {'id': 'FAPERGS-002', 'nome': 'Bolsa FAPERGS Mestrado/Doutorado', 'agencia': 'FAPERGS', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.500/mes a R$ 2.200/mes', 'nota': 'Mestrado 24m (R$1.500) + Doutorado 48m (R$2.200). Midpoint anual.'},
+    {'id': 'FAPESC-001', 'nome': 'Edital Universal FAPESC', 'agencia': 'FAPESC', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 20.000 a R$ 80.000', 'nota': 'Midpoint R$50.000.'},
+    {'id': 'FAPESC-002', 'nome': 'Bolsa FAPESC Mestrado/Doutorado', 'agencia': 'FAPESC', 'categoria': 'bolsa',
+     'valor_declarado': 'R$ 1.200/mes a R$ 2.000/mes', 'nota': 'Mestrado 24m (R$1.200) + Doutorado 48m (R$2.000). Midpoint anual.'},
+    # ===== Inovacao / Startup =====
+    {'id': 'INOV-001', 'nome': 'InovAtiva Brasil', 'agencia': 'MCTI/SEBRAE', 'categoria': 'startup',
+     'valor_declarado': 'R$ 15.000 a R$ 150.000', 'nota': 'Aceleracao + capital semente. Midpoint R$82.500.'},
+    {'id': 'INOV-002', 'nome': 'BNDES Garagem', 'agencia': 'BNDES', 'categoria': 'startup',
+     'valor_declarado': 'R$ 25.000', 'nota': 'Valor fixo para pre-aceleracao.'},
+    {'id': 'INOV-003', 'nome': 'EMBRAPII', 'agencia': 'EMBRAPII', 'categoria': 'inovacao',
+     'valor_declarado': 'R$ 100.000 a R$ 500.000', 'nota': 'Midpoint R$300.000.'},
+    {'id': 'INOV-004', 'nome': 'SEBRAE Inovacao', 'agencia': 'SEBRAE', 'categoria': 'startup',
+     'valor_declarado': 'R$ 10.000 a R$ 100.000', 'nota': 'Midpoint R$55.000.'},
+    {'id': 'INOV-005', 'nome': 'Lei do Bem P&D', 'agencia': 'MCTI', 'categoria': 'inovacao',
+     'valor_declarado': 'a definir', 'nota': 'Incentivo fiscal proporcional ao IR. Valor depende do investimento da empresa.'},
+    # ===== Cultura =====
+    {'id': 'CULT-001', 'nome': 'Lei Rouanet', 'agencia': 'Minc', 'categoria': 'cultura',
+     'valor_declarado': 'R$ 100.000 a R$ 5.000.000', 'nota': 'Midpoint R$2.550.000 via incentivo fiscal.'},
+    {'id': 'CULT-002', 'nome': 'Fundo Setorial Audiovisual', 'agencia': 'ANCINE', 'categoria': 'cultura',
+     'valor_declarado': 'R$ 100.000 a R$ 2.000.000', 'nota': 'Midpoint R$1.050.000.'},
+    # ===== Social =====
+    {'id': 'SOCIAL-001', 'nome': 'Prosas Editais', 'agencia': 'Prosas', 'categoria': 'social',
+     'valor_declarado': 'R$ 20.000 a R$ 500.000', 'nota': 'Midpoint R$260.000. Plataforma multi-edital.'},
+    {'id': 'SOCIAL-002', 'nome': 'Fundacao Banco do Brasil', 'agencia': 'FBB', 'categoria': 'social',
+     'valor_declarado': 'R$ 50.000 a R$ 300.000', 'nota': 'Midpoint R$175.000.'},
+    # ===== Setorial =====
+    {'id': 'SET-001', 'nome': 'Embrapa Chamada de Projetos', 'agencia': 'Embrapa', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 50.000 a R$ 500.000', 'nota': 'Midpoint R$275.000.'},
+    {'id': 'SET-002', 'nome': 'Fiocruz Edital de Pesquisa', 'agencia': 'Fiocruz', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 30.000 a R$ 200.000', 'nota': 'Midpoint R$115.000.'},
+    {'id': 'SET-003', 'nome': 'Petrobras Conexoes Inovacao', 'agencia': 'Petrobras', 'categoria': 'inovacao',
+     'valor_declarado': 'R$ 100.000 a R$ 1.000.000', 'nota': 'Midpoint R$550.000.'},
+    {'id': 'SET-004', 'nome': 'Vale Fundo Amapa Inovacao', 'agencia': 'Vale', 'categoria': 'startup',
+     'valor_declarado': 'R$ 50.000 a R$ 200.000', 'nota': 'Midpoint R$125.000.'},
+    # ===== Saude =====
+    {'id': 'SAUDE-001', 'nome': 'Pesquisa Inovativa SUS', 'agencia': 'MS/Saúde', 'categoria': 'pesquisa',
+     'valor_declarado': 'R$ 50.000 a R$ 500.000', 'nota': 'Midpoint R$275.000.'},
+]
+
+out_path = os.path.join(out_dir, 'CURATED_EDITAIS.json')
+with open(out_path, 'w', encoding='utf-8') as f:
+    json.dump(EDITAIS_CURADOS, f, ensure_ascii=False, indent=2)
+print(f'{out_path} criado com {len(EDITAIS_CURADOS)} editais')

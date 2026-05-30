@@ -1,0 +1,22 @@
+[package]
+name = "quantum-rust-app"
+version = "0.1.0"
+edition = "2024"
+description = "High-performance quantum simulation project in Rust"
+
+[dependencies]
+# Computação numérica e complexa
+num-complex = "0.4"
+ndarray = "0.15"
+rand = "0.8"
+
+# Simulação Quântica
+qip = "0.1" # Simulador quântico puro Rust
+
+# Integração Python (opcional)
+# pyo3 = { version = "0.20", features = ["extension-module"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1

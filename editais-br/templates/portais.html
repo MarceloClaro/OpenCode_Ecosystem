@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Portais — editais-br{% endblock %}
+{% block content %}
+
+<h2 style="margin-bottom:1rem;">📡 Portais Monitorados</h2>
+
+{% if portais %}
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>URL</th>
+            <th>Modo</th>
+            <th>Intervalo</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for p in portais %}
+        <tr>
+            <td><strong>{{ p.nome }}</strong></td>
+            <td><a href="{{ p.base_url }}" target="_blank" style="color:#666;">{{ p.base_url[:50] }}...</a></td>
+            <td><span class="tag">{{ p.mode }}</span></td>
+            <td>{{ p.crawl_interval_hours }}h</td>
+            <td>
+                {% if p.ativo %}
+                    <span class="badge badge-green">Ativo</span>
+                {% else %}
+                    <span class="badge badge-red">Inativo</span>
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="card" style="text-align:center;padding:3rem;">
+    <p>Nenhum portal cadastrado.</p>
+</div>
+{% endif %}
+
+{% endblock %}

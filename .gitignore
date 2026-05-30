@@ -1,0 +1,134 @@
+# Dependências
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Lock files
+package-lock.json
+bun.lock
+
+# Estado local (regenerável)
+.evolve/
+.evidence/
+.evolve/
+.evolve/ecosystem-state.json.gz
+.evolve/state.db
+.evolve/state.db-wal
+.evolve/state.db-shm
+.evolve/ecosystem-observability.jsonl
+.evolve/bridge.log
+.evolve/evolve.log
+_reversa_sdd/
+
+# Banco de dados local
+database.db
+database.db-shm
+database.db-wal
+data/
+
+# Temporários
+.tmp/
+temp/
+*.tmp
+*.log
+
+# Arquivos temporários do pytest (AppData/Temp)
+pytest-alt/
+pytest-*/
+**/pytest-alt/
+**/pytest-*/
+UsersmarceAppDataLocalTemp*/
+
+# Artefatos de sessão
+.opencodeignore
+smart-title.jsonc
+pytest.ini
+
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# Runtime databases
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+*.sqlite
+
+# Session logs (regenerável)
+*.jsonl
+
+# Navegador (Chrome/WhatsApp profile - dados locais)
+.reversa/whatsapp_profile/
+
+# Mensagens temporárias
+message-msg_*.png
+
+# Dados gerados por pipeline
+artigo-mit-ia/**/output/
+evals/*.md
+
+# Diretórios duplicados/cópias (não fazer parte do repo)
+MembrosDoCanal-main*/
+MembrosDoCanal-main (1)/
+OpenCode_Ecosystem-main/
+OpenCode_Ecosystem-main (1)/
+
+# Diretórios de terceiros
+nano/
+stock-analysis/
+whatsapp-mcp/
+
+# Estado do ecossistema (regenerável)
+.reversa/*.db
+.reversa/*.jsonl
+.reversa/*.json.gz
+.reversa/citation_cache.db
+.reversa/code-graph.db
+.reversa/data_cache.db
+.reversa/maswos_agents.db
+.reversa/mcp_health.json
+.reversa/mirofish_version.json
+.reversa/mirofish_sync_report.json
+.reversa/omen_logs.db
+.reversa/pipeline.db
+.reversa/profiles.db
+.reversa/rag_cache.db
+.reversa/rag_vector.db
+.reversa/sim_*.db
+.reversa/state.json
+.reversa/test_report.json
+.reversa/test_check.db
+
+# Playwright
+.playwright-mcp/
+
+# PDF artifacts (keep source, not generated)
+*.pdf
+*.synctex.gz
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+
+# Large data files
+*.zip
+*.tar.gz
+*.gz
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

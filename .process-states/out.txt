@@ -1,0 +1,34 @@
+=== P11 TEST ===
+STARTED: status=running, pid=47704
+STATUS: {
+  "process_id": "test-p11",
+  "status": "completed",
+  "pid": 47704,
+  "started_at": "2026-05-17T01:23:21.602513",
+  "completed_at": "2026-05-17T01:23:22.900582",
+  "current_step": 5,
+  "total_steps": 5,
+  "progress_percent": 100.0,
+  "error": null,
+  "log_path": "C:\\Users\\marce\\.config\\opencode\\.process-logs\\test-p11\\test-p11.log",
+  "sub_status": {
+    "demo": true
+  }
+}
+ACTIONS found: 0
+TIMELINE events: 13
+  [2026-05-17T01:23:21] started 
+  [2026-05-17T01:23:24] round_end 1
+  [2026-05-17T01:23:24] progress [PROGRESS:1/5]
+  [2026-05-17T01:23:24] round_end 2
+  [2026-05-17T01:23:24] progress [PROGRESS:2/5]
+  [2026-05-17T01:23:24] round_end 3
+  [2026-05-17T01:23:24] progress [PROGRESS:3/5]
+  [2026-05-17T01:23:24] round_end 4
+  [2026-05-17T01:23:24] progress [PROGRESS:4/5]
+  [2026-05-17T01:23:24] round_end 5
+  [2026-05-17T01:23:24] progress [PROGRESS:5/5]
+  [2026-05-17T01:23:24] simulation_end demo
+  [2026-05-17T01:23:22] completed 
+AGENT STATS: total_actions=0, by_type={}
+P11 TEST PASSED

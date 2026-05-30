@@ -1,0 +1,59 @@
+graph TD
+    subgraph L0 [L0: Input & Meta-Coordination]
+        A01[Orquestrador Mestre A0.1] --> A04[Harness de Veracidade A0.4]
+        A04 --> A03[Porteiro de Permissões A0.3]
+    end
+
+    subgraph L1 [L1: Knowledge & Domain Discovery]
+        A15[Motor de Descoberta A1.5] --> A12[Compressor de Contexto A1.2]
+        A12 --> A13[Task Graph A1.3]
+    end
+
+    subgraph L2 [L2: Autonomous Reasoning]
+        A22[Seletor de Raciocínio A2.2] --> A26[Metodologia-Agente Mapper A2.6]
+        A26 --> A25[Auto-Reflexor A2.5]
+    end
+
+    subgraph L3 [L3: Fractional Execution]
+        A37[Fracionador de Conteúdo A3.7] --> A36[Micro Sync Barriers A3.6]
+        A36 --> A35[Isolador de Worktree A3.5]
+    end
+
+    subgraph L4 [L4: Specialization & Generation]
+        A41[MASWOS Writing Agents A4.1-A4.9]
+        A411[Agentes Estatística & ML A4.11-A4.12]
+        A413[Busca Bibliográfica A4.13]
+    end
+
+    subgraph L5 [L5: Scientific Audit & Validation]
+        A51[Validador de Constraints A5.1]
+        A57[Statistical & ML Audit A5.7-A5.8]
+        A59[Citation Impact Auditor A5.9]
+    end
+
+    subgraph L6 [L6: Observability & Feedback]
+        A65[Simulador de Banca A6.5]
+        A64[Motor de Meta-Aprendizado A6.4]
+        A63[Micro Feedback Loop A6.3]
+    end
+
+    subgraph L7 [L7: Output & Deliverables]
+        A71[Integrador Final A7.1]
+        A73[Audit Trail Generator A7.3]
+        A72[Report Generator A7.2]
+    end
+
+    L0 --> L1
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 --> L6
+    L6 --> L4
+    L5 --> L7
+    L6 --> L7
+
+    style L0 fill:#f9f,stroke:#333,stroke-width:2px
+    style L5 fill:#f66,stroke:#333,stroke-width:4px
+    style L3 fill:#6f6,stroke:#333,stroke-width:2px
+    style L7 fill:#66f,stroke:#333,stroke-width:2px

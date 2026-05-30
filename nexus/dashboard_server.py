@@ -1,0 +1,849 @@
+"""dashboard_server.py v2.0 — Dashboard web do ecossistema OpenCode.
+
+Servidor HTTP auto-contido (stdlib apenas) que expoe dados do ecossistema
+como API REST e serve interface web com graficos Chart.js.
+
+Uso:
+    python nexus/dashboard_server.py              # http://localhost:8081
+    python nexus/dashboard_server.py --porta 9090
+    python nexus/dashboard_server.py --gerar-only  # Gera HTML estatico
+
+v2.0: Graficos de tendencia Chart.js, cards de dominio internacional,
+      metricas do extrator de dados publicos e mcp-brasil.
+"""
+
+import json, os, re, sys, subprocess
+from pathlib import Path
+from datetime import datetime
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+WORKSPACE = Path(__file__).parent.parent.resolve()
+CACHE_DIR = WORKSPACE / "cache"
+EVALS_DIR = WORKSPACE / "evals"
+EVOLVE_DIR = WORKSPACE / ".evolve"
+HTML_PATH = Path(__file__).parent / "dashboard" / "index.html"
+
+
+def carregar_json(rel_path: str) -> dict | list | None:
+    p = WORKSPACE / rel_path
+    if p.exists():
+        try:
+            return json.loads(p.read_text(encoding="utf-8"))
+        except: pass
+    return None
+
+
+def contar_scripts_python() -> dict:
+    """Contagem rapida de scripts Python no workspace."""
+    py_files = list(WORKSPACE.rglob("*.py"))
+    total = len(py_files)
+    total_lines = 0
+    for f in py_files:
+        try: total_lines += len(f.read_text(encoding="utf-8").splitlines())
+        except: pass
+    return {"total": total, "linhas": total_lines}
+
+
+def coletar_dados() -> dict:
+    manifest = carregar_json("cache/ecosystem_manifest.json") or {}
+    history = carregar_json("cache/ecosystem_history.json") or {"snapshots": []}
+    knowledge = carregar_json("cache/evolution_knowledge.json") or {}
+    manus = carregar_json(".evolve/manus-state.json") or {}
+    agentes_md = carregar_json("nexus/agentes.json") or {}
+
+    # Metricas de saude
+    health = {}
+    if isinstance(manifest, dict):
+        h = manifest.get("health", {})
+        tots = manifest.get("totals", {})
+        health = {
+            "skills": tots.get("skills", 0),
+            "scripts": tots.get("scripts", 0),
+            "plugins": tots.get("plugins", 0),
+            "agents": tots.get("agents", 0),
+            "evals": tots.get("evals", 0),
+            "total_lines_py": tots.get("total_lines_py", 0),
+            "anomalies": len(manifest.get("anomalies", [])),
+            "recommendations": len(manifest.get("recommendations", [])),
+            "frontmatter_ok": h.get("frontmatter_ok", 0),
+            "cjk_leaks": h.get("cjk_leaks", 0),
+            "scripts_needing_entrypoint": h.get("scripts_needing_entrypoint", 0),
+            "scripts_with_main": h.get("scripts_with_main", 0),
+            "timestamp": manifest.get("timestamp", ""),
+        }
+    else:
+        py = contar_scripts_python()
+        health = {
+            "skills": len(list(WORKSPACE.rglob("**/SKILL.md"))),
+            "scripts": py["total"],
+            "plugins": len(list(WORKSPACE.rglob("plugins/*.ts"))),
+            "agents": 24,
+            "evals": 5,
+            "total_lines_py": py["linhas"],
+            "anomalies": 0,
+            "recommendations": 0,
+            "frontmatter_ok": 0,
+            "cjk_leaks": 0,
+            "scripts_needing_entrypoint": 0,
+            "scripts_with_main": 0,
+            "timestamp": datetime.now().isoformat(),
+        }
+
+    # Rounds de evolucao
+    rounds = []
+    for r in manus.get("rounds", []):
+        rounds.append({
+            "round": r.get("round", 0), "score": r.get("score", 0),
+            "actions": len(r.get("actions", [])),
+            "skills": len(r.get("extractedSkills", [])),
+            "learnings": len(r.get("learnings", [])),
+            "timestamp": r.get("timestamp", ""),
+        })
+
+    nexus_reports = manus.get("nexusReports", [])
+    snapshots = history.get("snapshots", [])
+
+    # Recomendacoes
+    recommendations = []
+    if isinstance(manifest, dict):
+        for r in manifest.get("recommendations", []):
+            recommendations.append(r)
+
+    # === DETALHAMENTO DOS COMPONENTES ===
+
+    # Skills detalhadas
+    skills_detalhes = []
+    if isinstance(manifest, dict):
+        for s in manifest.get("components", {}).get("skills", []):
+            swot = gerar_swot_skill(s["name"])
+            skills_detalhes.append({
+                "nome": s["name"],
+                "caminho": s["path"],
+                "tamanho_bytes": s["bytes"],
+                "tamanho_kb": round(s["bytes"] / 1024, 1),
+                "linhas": s["lines"],
+                "scripts": len(s["scripts"]),
+                "frontmatter_ok": s["frontmatter"] and s.get("has_name", False) and s.get("has_description", False),
+                "cjk_leak": s.get("cjk_leak", False),
+                "scripts_lista": s.get("scripts", []),
+                "swot": swot,
+            })
+
+    # Plugins detalhados
+    plugins_detalhes = []
+    if isinstance(manifest, dict):
+        for p in manifest.get("components", {}).get("plugins", []):
+            plugins_detalhes.append({
+                "nome": p["name"],
+                "caminho": p["path"],
+                "bytes": p["bytes"],
+                "linhas": p["lines"],
+                "hash": p.get("hash", ""),
+            })
+
+    # Agentes (SEEKER) detalhados
+    agentes_detalhes = []
+    if isinstance(manifest, dict):
+        for a in manifest.get("components", {}).get("agents", []):
+            tipo = a.get("type", "desconhecido")
+            funcoes_count = a.get("functions", 0)
+            nome_agente = a["name"]
+            # Determinar funcao do agente com base no nome
+            funcao = _descrever_agente(nome_agente, tipo)
+            agentes_detalhes.append({
+                "nome": nome_agente,
+                "tipo": tipo,
+                "funcoes": funcoes_count,
+                "caminho": a["path"],
+                "funcao": funcao,
+            })
+
+    # MCPs (definidos no AGENTS.md)
+    mcps = [
+        {"categoria": "Busca", "mcps": [
+            {"nome": "websearch", "descricao": "Busca na web via DuckDuckGo", "funcao": "Encontra informacoes atualizadas na internet"},
+            {"nome": "gh_grep", "descricao": "Busca codigo no GitHub", "funcao": "Encontra exemplos de codigo reais em repositorios publicos"},
+            {"nome": "context7", "descricao": "Documentacao de bibliotecas", "funcao": "Consulta documentacao oficial de frameworks e APIs"},
+            {"nome": "scihub", "descricao": "Busca artigos academicos", "funcao": "Acessa papers cientificos por DOI, titulo ou palavra-chave"},
+        ]},
+        {"categoria": "Navegador", "mcps": [
+            {"nome": "playwright", "descricao": "Automacao de navegador", "funcao": "Navega em sites, clica, preenche formularios, tira screenshots"},
+            {"nome": "chrome-devtools", "descricao": "Ferramentas do Chrome", "funcao": "Inspeciona elementos, rede, console, desempenho de paginas web"},
+        ]},
+        {"categoria": "Codigo", "mcps": [
+            {"nome": "eslint", "descricao": "Analise estatica de codigo", "funcao": "Verifica qualidade e padroes do codigo JavaScript/TypeScript"},
+            {"nome": "diff", "descricao": "Comparacao de textos", "funcao": "Mostra diferencas entre versoes de arquivos"},
+            {"nome": "code-runner", "descricao": "Execucao de codigo", "funcao": "Roda snippets em varias linguagens (Python, JS, etc)"},
+        ]},
+        {"categoria": "Dados", "mcps": [
+            {"nome": "sqlite", "descricao": "Banco de dados SQLite", "funcao": "Executa consultas SQL em bancos de dados locais"},
+            {"nome": "fetch", "descricao": "Requisicoes HTTP", "funcao": "Obtem conteudo de URLs (HTML, JSON, texto, PDFs, videos)"},
+            {"nome": "pdf", "descricao": "Manipulacao de PDF", "funcao": "Le, extrai texto, adiciona marcas d'agua, conta paginas"},
+            {"nome": "time", "descricao": "Data e hora", "funcao": "Obtem data/hora atual e informacoes de fuso horario"},
+        ]},
+        {"categoria": "Raciocinio", "mcps": [
+            {"nome": "sequential-thinking", "descricao": "Raciocinio estruturado", "funcao": "Divide problemas complexos em etapas logicas e revisa hipoteses"},
+            {"nome": "memory", "descricao": "Memoria persistente", "funcao": "Grafo de conhecimento para lembrar informacoes entre sessoes"},
+        ]},
+        {"categoria": "Infraestrutura", "mcps": [
+            {"nome": "filesystem", "descricao": "Sistema de arquivos", "funcao": "Le, escreve, move e gerencia arquivos e diretorios"},
+            {"nome": "github", "descricao": "API do GitHub", "funcao": "Gerencia repositorios, issues, PRs, commits e arquivos"},
+        ]},
+    ]
+
+    # Legendas explicativas para leigos
+    legendas = {
+        "skill": {
+            "titulo": "O que sao Skills?",
+            "explicacao": "Skills sao manuais de instrucao que ensinam o assistente AI a realizar tarefas especificas. Cada skill contem um arquivo SKILL.md com regras, exemplos e fluxos de trabalho. Pense como um 'livro de receitas' para o AI: ele le a skill e sabe exatamente como executar aquela tarefa.",
+            "como_funciona": "Quando voce pede algo relacionado a uma skill, o AI carrega automaticamente as instrucoes daquela skill e segue o passo-a-passo definido.",
+        },
+        "plugin": {
+            "titulo": "O que sao Plugins?",
+            "explicacao": "Plugins sao programas em TypeScript que adicionam capacidades especiais ao ecossistema. Eles automatizam fluxos complexos, como o ciclo de evolucao autonoma (Manus Evolve) ou a sincronizacao entre componentes.",
+            "como_funciona": "Plugins sao executados automaticamente em segundo plano ou acionados por comandos como /evolve.",
+        },
+        "mcp": {
+            "titulo": "O que sao MCPs?",
+            "explicacao": "MCPs (Model Context Protocols) sao ferramentas que o assistente AI pode usar para interagir com o mundo externo: buscar informacoes na web, executar codigo, manipular arquivos, acessar bancos de dados e muito mais.",
+            "como_funciona": "Cada MCP e como um 'aplicativo' que o AI pode chamar quando precisa. Por exemplo, o MCP websearch permite pesquisar no Google; o MCP sqlite permite consultar bancos de dados.",
+        },
+        "agente": {
+            "titulo": "O que sao Agentes?",
+            "explicacao": "Agentes sao sub-programas especializados que executam tarefas especificas dentro de um fluxo maior. Cada agente tem uma funcao unica: pesquisar (Social), analisar (Gaper), escrever (Scribe), verificar fatos (Rude), etc.",
+            "como_funciona": "Os agentes trabalham em sequencia como uma linha de montagem: um agente passa o resultado para o proximo, cada um adicionando sua contribuicao ate o produto final ficar pronto.",
+        },
+        "swot": {
+            "titulo": "O que e analise SWOT?",
+            "explicacao": "SWOT e uma sigla para Forcas (Strengths), Fraquezas (Weaknesses), Oportunidades (Opportunities) e Ameacas (Threats). E como um 'raio-X' de cada componente: mostra o que ele faz bem, o que pode melhorar, onde pode crescer e quais riscos enfrenta.",
+            "como_funciona": "Para cada componente do ecossistema, avaliamos esses 4 aspectos para entender seu valor e seus desafios.",
+        },
+        "limites": {
+            "titulo": "Limites do Ecossistema",
+            "explicacao": "Cada componente tem limites de capacidade, escopo ou disponibilidade. Conhecer esses limites ajuda a usar cada ferramenta de forma adequada e evitar frustracoes.",
+            "como_funciona": "Os limites sao atualizados automaticamente pelo scanner do ecossistema e refletem o estado real de cada componente.",
+        },
+    }
+
+    return {
+        "health": health,
+        "rounds": rounds,
+        "nexus_reports": nexus_reports,
+        "snapshots": snapshots,
+        "recommendations": recommendations,
+        "knowledge": {
+            "ciclos_analisados": knowledge.get("ciclos_analisados", 0),
+            "ultima_analise": knowledge.get("ultima_analise", ""),
+        },
+        "manus": {
+            "total_skills": manus.get("totalSkillsGenerated", 0),
+            "evolution_score": manus.get("evolutionScore", 0),
+            "total_rounds": len(manus.get("rounds", [])),
+            "version": manus.get("version", "?"),
+        },
+        "extrator": {
+            "versao": "2.1",
+            "fontes": 38,
+            "dominios": 6,
+            "tem_internacional": True,
+            "fontes_internacionais": ["FMI", "ONU", "OCDE", "OMS", "BRICS", "UNCTAD", "FAO", "OIT", "UNESCO", "ADB"],
+        },
+        "skills_detalhes": skills_detalhes,
+        "plugins_detalhes": plugins_detalhes,
+        "agentes_detalhes": agentes_detalhes,
+        "mcps": mcps,
+        "legendas": legendas,
+    }
+
+
+def gerar_swot_skill(nome: str) -> dict:
+    """Gera analise SWOT contextual para cada skill."""
+    swots = {
+        "editais-br": {
+            "forcas": "Busca em 52 editais curados, 25 sub-dimensoes de classificacao, scoring 0-100 por perfil, cache versionado, fallback offline",
+            "fraquezas": "SKILL.md proximo do limite de 2.5KB, DuckDuckGo bloqueia ~50% das requisicoes, CAPES/CNPq offline (404)",
+            "oportunidades": "Integracao com CAPES e CNPq Lattes quando portais retornarem, expansao para 70+ fontes",
+            "ameacas": "Portais governamentais mudam APIs sem aviso, bloqueios anti-bot",
+        },
+        "docling-pdf-extraction": {
+            "forcas": "Extracao OCR avancada (IBM Docling), fallback pdfplumber rapido (<5s por documento), wrapper no nexus",
+            "fraquezas": "Docling OCR lento (>10min), requer instalacao de dependencias pesadas",
+            "oportunidades": "Suporte a mais formatos de documento, pipeline OCR em lote",
+            "ameacas": "Dependencia de biblioteca externa pesada, possiveis mudancas de API",
+        },
+        "reasoning-orchestrator": {
+            "forcas": "58 tipos de raciocinio mapeados, 6 niveis de profundidade (L1-L6), matriz de intersecao",
+            "fraquezas": "Alta complexidade conceitual, requer entendimento profundo para usar",
+            "oportunidades": "Integracao com mais agentes do ecossistema",
+            "ameacas": "Pode ser preterido por abordagens mais simples",
+        },
+        "code-review": {
+            "forcas": "Classificacao de gravidade, limites de confianca, metodologia abrangente",
+            "fraquezas": "Revisao manual, nao automatizada",
+            "oportunidades": "Integracao com CI/CD para revisao automatica",
+            "ameacas": "Ferramentas de revisao automatizada podem substituir",
+        },
+        "plan-protocol": {
+            "forcas": "Diretrizes claras para planos de implementacao com citacoes obrigatorias",
+            "fraquezas": "Pode ser rigido demais para projetos pequenos",
+            "oportunidades": "Template para geracao automatica de planos",
+            "ameacas": "Times podem ignorar o protocolo se for muito burocratico",
+        },
+        "plan-review": {
+            "forcas": "Criterios objetivos para revisao de planos contra padroes de qualidade",
+            "fraquezas": "Requer planos bem formatados para funcionar",
+            "oportunidades": "Integracao com plan-protocol para ciclo completo",
+            "ameacas": "Planos mal escritos podem escapar da revisao",
+        },
+        "code-philosophy": {
+            "forcas": "5 Leis da Defesa Elegante para codigo defensivo, principios solidos",
+            "fraquezas": "Filosofia abstrata, dificil de aplicar mecanicamente",
+            "oportunidades": "Exemplos praticos de aplicacao das 5 Leis",
+            "ameacas": "Pode ser ignorada por devs focados em entrega rapida",
+        },
+        "frontend-philosophy": {
+            "forcas": "5 Pilares da UI Intencional, foco em experiencia do usuario",
+            "fraquezas": "Especifica para frontend, nao aplicavel a backend",
+            "oportunidades": "Guia de componentes reais seguindo os pilares",
+            "ameacas": "Tendencias de design podem mudar",
+        },
+        "token-efficiency": {
+            "forcas": "Otimizacao de tokens usando chines para armazenamento (+40% densidade), saida PT-BR obrigatoria",
+            "fraquezas": "Requer corretor CJK apos cada entrega, processo extra de qualidade",
+            "oportunidades": "Reducao de custos com tokens, suporte a mais idiomas",
+            "ameacas": "Modelos podem ter desempenho variavel com chines no contexto",
+        },
+    }
+    return swots.get(nome, {
+        "forcas": "Integrado ao ecossistema, segue padroes de qualidade",
+        "fraquezas": "Documentacao limitada ou escopo restrito",
+        "oportunidades": "Expansao de funcionalidades e integracoes",
+        "ameacas": "Mudancas no ecossistema podem exigir adaptacao",
+    })
+
+
+def _descrever_agente(nome: str, tipo: str) -> str:
+    """Descreve a funcao de cada agente de forma leiga."""
+    descricoes = {
+        "breaks": "Faz pausas estrategicas no pipeline para evitar erros e permitir revisao",
+        "gaper": "Identifica lacunas no conhecimento, como um detetive procurando pistas faltantes",
+        "grounder": "Busca as origens intelectuais do problema, encontrando livros e artigos fundamentais",
+        "historian": "Cria uma linha do tempo do problema, mostrando como ele evoluiu",
+        "rude": "Avalia se as propostas sao viaveis na pratica, como um 'pessimista realista'",
+        "scribe": "Organiza e formata os resultados finais em documentos prontos para leitura",
+        "social": "Pesquisa fontes academicas e da web, como um bibliotecario digital",
+        "synthesizer": "Junta todas as pecas em uma narrativa coerente, como um editor de revista",
+        "theorist": "Propoe abordagens e solucoes concretas, como um consultor tecnico",
+        "thinker": "Abre novas direcoes a partir da sintese, pensando 'e se...?'",
+        "vision": "Extrai consequencias logicas e implicacoes, como um futurista",
+        "argument_tree": "Constroi uma arvore de argumentos que cresce a cada etapa da pesquisa",
+        "concept_mapper": "Mapeia conceitos e suas conexoes, como um mapa mental",
+        "context": "Monta o resumo do que ja foi descoberto para cada agente",
+        "database": "Gerencia o banco de dados SQLite que armazena todo o progresso",
+        "keys": "Gerencia chaves de API de forma segura",
+        "llm": "Roteia requisicoes para modelos de linguagem (Claude, etc)",
+        "rate_limiter": "Controla a velocidade das requisicoes para nao sobrecarregar servidores",
+        "references": "Gera referencias bibliograficas no formato APA",
+        "utils": "Funcoes uteis compartilhadas (logs, IDs, config)",
+    }
+    return descricoes.get(nome, f"Modulo de {tipo}: processamento auxiliar no ecossistema")
+
+
+# =============================================================================
+# HTML TEMPLATE COM CHART.JS
+# =============================================================================
+
+HTML_TEMPLATE = r"""<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenCode Ecosystem Dashboard v2</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0d1117; color: #c9d1d9; padding: 20px; }
+  h1 { color: #58a6ff; font-size: 1.5em; margin-bottom: 5px; }
+  .subtitle { color: #8b949e; font-size: 0.9em; margin-bottom: 20px; }
+  h2 { color: #8b949e; font-size: 1.1em; margin: 20px 0 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; text-align: center; }
+  .card .value { font-size: 1.8em; font-weight: 600; color: #f0f6fc; }
+  .card .label { font-size: 0.75em; color: #8b949e; margin-top: 4px; }
+  .card .sub { font-size: 0.65em; color: #6e7681; margin-top: 2px; }
+  .card.green .value { color: #3fb950; }
+  .card.red .value { color: #f85149; }
+  .card.yellow .value { color: #d29922; }
+  .card.blue .value { color: #58a6ff; }
+  .card.purple .value { color: #bc8cff; }
+  .card.orange .value { color: #f0883e; }
+
+  .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+  .chart-box { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+  .chart-box h3 { color: #8b949e; font-size: 0.85em; margin-bottom: 10px; text-transform: uppercase; }
+  .chart-box canvas { width: 100% !important; max-height: 250px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 20px; font-size: 0.85em; }
+  th { text-align: left; padding: 8px 12px; background: #21262d; color: #8b949e; border-bottom: 1px solid #30363d; }
+  td { padding: 8px 12px; border-bottom: 1px solid #21262d; }
+  tr:hover td { background: #161b22; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75em; font-weight: 500; }
+  .tag-alta { background: #f8514922; color: #f85149; }
+  .tag-media { background: #d2992222; color: #d29922; }
+  .tag-baixa { background: #58a6ff22; color: #58a6ff; }
+  .tag-success { background: #3fb95022; color: #3fb950; }
+  .tag-info { background: #bc8cff22; color: #bc8cff; }
+  .refresh { text-align: right; margin-bottom: 10px; }
+  .refresh button { background: #21262d; border: 1px solid #30363d; color: #c9d1d9; padding: 6px 16px; border-radius: 6px; cursor: pointer; font-size: 0.85em; }
+  .refresh button:hover { background: #30363d; }
+  .timestamp { color: #8b949e; font-size: 0.8em; }
+  .bar-container { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+  .bar { height: 16px; border-radius: 4px; min-width: 4px; }
+  .bar-green { background: #3fb950; }
+  .bar-yellow { background: #d29922; }
+  .bar-red { background: #f85149; }
+  .bar-blue { background: #58a6ff; }
+  .skill-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .skill-card h3 { color: #58a6ff; font-size: 1em; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .skill-table td:first-child { font-weight: 600; color: #8b949e; width: 160px; }
+  .skill-table td:nth-child(2) { width: 120px; }
+  .skill-table td:nth-child(3) { color: #6e7681; font-size: 0.85em; }
+  .legenda-box { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 12px 16px; margin: 8px 0; font-size: 0.85em; color: #8b949e; }
+  .legenda-box summary { cursor: pointer; color: #58a6ff; }
+  .legenda-box p { margin: 6px 0; }
+  .swot-box { margin: 8px 0; }
+  .swot-box summary { cursor: pointer; color: #d29922; font-size: 0.85em; }
+  .swot-table { width: 100%; margin: 8px 0; }
+  .swot-table th { width: 140px; padding: 6px 10px; font-size: 0.8em; text-transform: uppercase; }
+  .swot-table td { font-size: 0.82em; padding: 6px 10px; }
+  .swot-forca { background: #3fb95022; color: #3fb950; }
+  .swot-fraqueza { background: #f8514922; color: #f85149; }
+  .swot-oportunidade { background: #58a6ff22; color: #58a6ff; }
+  .swot-ameaca { background: #d2992222; color: #d29922; }
+  details { margin: 4px 0; }
+  summary { padding: 4px 0; }
+  @media (max-width: 800px) { .charts-grid { grid-template-columns: 1fr; } .stats { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 600px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+<div class="refresh">
+  <span class="timestamp" id="ts"></span>
+  <button onclick="carregar()">Atualizar</button>
+</div>
+<h1>&#9670; OpenCode Ecosystem Dashboard v2</h1>
+<div class="subtitle" id="subtitle"></div>
+
+<div class="stats" id="cards"></div>
+
+<div class="charts-grid" id="chartContainer">
+  <div class="chart-box"><h3>Scripts Python</h3><canvas id="chartScripts"></canvas></div>
+  <div class="chart-box"><h3>Linhas de Codigo</h3><canvas id="chartLines"></canvas></div>
+  <div class="chart-box"><h3>Anomalias</h3><canvas id="chartAnomalies"></canvas></div>
+  <div class="chart-box"><h3>Recomendacoes</h3><canvas id="chartRecs"></canvas></div>
+</div>
+
+<div id="tables"></div>
+
+<script>
+// Variaveis globais dos graficos
+let charts = {}
+
+function initChart(canvasId, type, labels, datasets, options) {
+  const ctx = document.getElementById(canvasId)?.getContext('2d')
+  if (!ctx) return null
+  if (charts[canvasId]) { charts[canvasId].destroy() }
+  const cfg = {
+    type: type,
+    data: { labels: labels, datasets: datasets },
+    options: Object.assign({
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { backgroundColor: '#21262d', titleColor: '#f0f6fc', bodyColor: '#c9d1d9', borderColor: '#30363d', borderWidth: 1, cornerRadius: 6 }
+      },
+      scales: {
+        x: { ticks: { color: '#8b949e', maxTicksLimit: 6, font: { size: 10 } }, grid: { color: '#21262d' } },
+        y: { ticks: { color: '#8b949e', font: { size: 10 } }, grid: { color: '#21262d' } }
+      }
+    }, options || {})
+  }
+  charts[canvasId] = new Chart(ctx, cfg)
+  return charts[canvasId]
+}
+
+function updateCharts(d) {
+  const snaps = d.snapshots || []
+  if (snaps.length === 0) {
+    document.getElementById('chartContainer').style.display = 'none'
+    return
+  }
+  document.getElementById('chartContainer').style.display = 'grid'
+
+  const labels = snaps.map(s => { const t = s.timestamp || ''; return t.length > 10 ? t.substring(5, 16) : t })
+  const color = (i, max) => {
+    const colors = ['#58a6ff', '#3fb950', '#d29922', '#f85149', '#bc8cff', '#f0883e']
+    return colors[i % colors.length]
+  }
+
+  // Scripts chart
+  const scriptVals = snaps.map(s => s.totals?.scripts ?? 0)
+  initChart('chartScripts', 'line', labels, [{
+    label: 'Scripts', data: scriptVals,
+    borderColor: '#58a6ff', backgroundColor: '#58a6ff22',
+    fill: true, tension: 0.3, pointRadius: 4, pointHoverRadius: 6,
+    borderWidth: 2
+  }], { plugins: { legend: { display: true, labels: { color: '#8b949e' } } } })
+
+  // Lines chart
+  const linesVals = snaps.map(s => s.totals?.total_lines_py ?? 0)
+  initChart('chartLines', 'line', labels, [{
+    label: 'Linhas', data: linesVals,
+    borderColor: '#3fb950', backgroundColor: '#3fb95022',
+    fill: true, tension: 0.3, pointRadius: 4, pointHoverRadius: 6,
+    borderWidth: 2
+  }], { plugins: { legend: { display: true, labels: { color: '#8b949e' } } },
+       scales: { y: { ticks: { callback: v => (v/1000).toFixed(1)+'k' } } } })
+
+  // Anomalies chart (bar)
+  const anomVals = snaps.map(s => s.anomalies ?? 0)
+  initChart('chartAnomalies', 'bar', labels, [{
+    label: 'Anomalias', data: anomVals,
+    backgroundColor: anomVals.map(v => v > 0 ? '#f8514977' : '#3fb95077'),
+    borderColor: anomVals.map(v => v > 0 ? '#f85149' : '#3fb950'),
+    borderWidth: 1, borderRadius: 4
+  }], { plugins: { legend: { display: true, labels: { color: '#8b949e' } } } })
+
+  // Recommendations chart (bar)
+  const recsVals = snaps.map(s => s.recommendations ?? 0)
+  initChart('chartRecs', 'bar', labels, [{
+    label: 'Recomendacoes', data: recsVals,
+    backgroundColor: '#d2992277', borderColor: '#d29922',
+    borderWidth: 1, borderRadius: 4
+  }], { plugins: { legend: { display: true, labels: { color: '#8b949e' } } } })
+}
+
+async function carregar() {
+  try {
+    const r = await fetch('/api/dados')
+    const d = await r.json()
+    const h = d.health || {}
+    const ext = d.extrator || {}
+
+    const ts = h.timestamp ? new Date(h.timestamp).toLocaleString('pt-BR') : new Date().toLocaleString('pt-BR')
+    document.getElementById('ts').textContent = 'Ultima atualizacao: ' + ts
+    document.getElementById('subtitle').textContent =
+      `Extrator v${ext.verso || '?'} | ${ext.fontes || 0} fontes em ${ext.dominios || 0} dominios` +
+      (ext.tem_internacional ? ' | Inclui FMI, ONU, OCDE, OMS, BRICS' : '')
+
+    // Cards
+    document.getElementById('cards').innerHTML = `
+      <div class="card blue"><div class="value">${h.skills ?? '?'}</div><div class="label">Skills</div></div>
+      <div class="card blue"><div class="value">${h.scripts ?? '?'}</div><div class="label">Scripts Python</div></div>
+      <div class="card blue"><div class="value">${h.plugins ?? '?'}</div><div class="label">Plugins</div></div>
+      <div class="card purple"><div class="value">${h.agents ?? '?'}</div><div class="label">Agentes SEEKER</div></div>
+      <div class="card blue"><div class="value">${(h.total_lines_py ?? 0).toLocaleString()}</div><div class="label">Linhas Python</div></div>
+      <div class="card ${(h.anomalies ?? 0) > 0 ? 'red' : 'green'}"><div class="value">${h.anomalies ?? 0}</div><div class="label">Anomalias</div></div>
+      <div class="card purple"><div class="value">${ext.fontes || 30}</div><div class="label">Fontes Extrator</div></div>
+      <div class="card orange"><div class="value">${ext.dominios || 6}</div><div class="label">Dominios</div></div>
+    `
+
+    // Graficos
+    updateCharts(d)
+
+    // Tabelas
+    let html = ''
+
+    // Rounds
+    if (d.rounds && d.rounds.length > 0) {
+      html += '<h2>Rounds de Evolucao</h2><table><tr><th>Round</th><th>Score</th><th>Acoes</th><th>Padroes</th><th>Timestamp</th></tr>' +
+        d.rounds.map(r => `<tr><td>${r.round}</td><td><div class="tag ${r.score >= 70 ? 'tag-success' : r.score >= 40 ? 'tag-media' : 'tag-alta'}">${r.score}/100</div></td><td>${r.actions}</td><td>${r.skills}</td><td>${new Date(r.timestamp).toLocaleString('pt-BR')}</td></tr>`).join('') +
+        '</table>'
+    }
+
+    // Nexus reports
+    if (d.nexus_reports && d.nexus_reports.length > 0) {
+      html += '<h2>Relatorios Nexus</h2><table><tr><th>Data</th><th>Anomalias</th><th>Fixes</th></tr>' +
+        d.nexus_reports.map(n => `<tr><td>${new Date(n.scanTime).toLocaleString('pt-BR')}</td><td>${n.anomalies}</td><td>${n.fixes}</td></tr>`).join('') +
+        '</table>'
+    }
+
+    // Recommendations
+    if (d.recommendations && d.recommendations.length > 0) {
+      html += '<h2>Recomendacoes</h2><table><tr><th>Area</th><th>Acão</th><th>Impacto</th></tr>' +
+        d.recommendations.map(r => `<tr><td><span class="tag tag-${r.area === 'expansao' ? 'baixa' : 'media'}">${r.area}</span></td><td>${r.acao}</td><td>${r.impacto}</td></tr>`).join('') +
+        '</table>'
+    }
+
+    // Extrator v2.0 info
+    html += '<h2>Extrator de Dados Publicos v2.0</h2>' +
+      '<table><tr><th>Dominio</th><th>Fontes</th></tr>' +
+      '<tr><td>Financeiro</td><td>BCB/SGS, Tesouro, CVM, BNDES, SICONFI, BCB Estatisticas</td></tr>' +
+      '<tr><td>Ambiental</td><td>INPE Queimadas, PRODES, ANA, MapBiomas, ICMBio, Clima</td></tr>' +
+      '<tr><td>Geografico</td><td>IBGE Malhas, Localidades, CPRM, INPE Satelite</td></tr>' +
+      '<tr><td>Economico</td><td>IBGE/SIDRA, IPEADATA, dados.gov.br, Banco Mundial, RAIS</td></tr>' +
+      '<tr><td>Institucional</td><td>Camara, Senado, TSE, DATASUS, ANS, ANATEL, ANEEL</td></tr>' +
+      '<tr><td class="tag-info" style="font-weight:600">Internacional</td><td><strong>FMI, ONU, OCDE, OMS, BRICS, UNCTAD</strong></td></tr>' +
+      '</table>'
+
+    // ============================================================
+    // MANUS EVOLVE
+    // ============================================================
+    if (d.manus) {
+      html += '<h2>Manus Evolve</h2>'
+      html += '<div class="legenda-box"><strong>O que e Manus Evolve?</strong> E o motor de evolucao autonoma do ecossistema. Ele executa ciclos de: PLANEJAR > AGIR > REFLETIR > EXTRAIR > EVOLUIR. A cada ciclo, aprende padroes, gera novas skills e melhora o ecossistema automaticamente.</div>'
+      html += '<table><tr><th>Metrica</th><th>Valor</th><th>Significado</th></tr>' +
+        `<tr><td>Versao</td><td>${d.manus.version}</td><td>Versao do motor de evolucao</td></tr>` +
+        `<tr><td>Total Rounds</td><td>${d.manus.total_rounds}</td><td>Quantos ciclos de evolucao foram executados</td></tr>` +
+        `<tr><td>Skills Geradas</td><td>${d.manus.total_skills}</td><td>Quantas novas skills foram criadas pelo Motor Evolve</td></tr>` +
+        `<tr><td>Evolution Score</td><td>${d.manus.evolution_score}/100</td><td>Pontuacao geral de saude do ecossistema (quanto maior, melhor)</td></tr>` +
+        `<tr><td>Ciclos Analisados (Engine)</td><td>${d.knowledge?.ciclos_analisados ?? 0}</td><td>Quantas analises o motor de evolucao ja realizou</td></tr>` +
+        `<tr><td>Ultima Analise</td><td>${d.knowledge?.ultima_analise || 'Nunca'}</td><td>Quando foi a ultima vez que o motor analisou o ecossistema</td></tr>` +
+        '</table>'
+    }
+
+    // ============================================================
+    // LEGENDAS EXPLICATIVAS
+    // ============================================================
+    if (d.legendas) {
+      html += '<h2>Guia do Ecossistema (para leigos)</h2>'
+      const legendas = d.legendas
+      for (const [key, val] of Object.entries(legendas)) {
+        html += '<div class="legenda-box">'
+        html += '<details>'
+        html += '<summary><strong>' + val.titulo + '</strong></summary>'
+        html += '<p>' + val.explicacao + '</p>'
+        html += '<p><em>' + val.como_funciona + '</em></p>'
+        html += '</details>'
+        html += '</div>'
+      }
+    }
+
+    // ============================================================
+    // SKILLS DETALHADAS
+    // ============================================================
+    if (d.skills_detalhes && d.skills_detalhes.length > 0) {
+      html += '<h2>Skills Detalhadas</h2>'
+      html += '<div class="legenda-box"><strong>Skills</strong> sao manuais de instrucao para o AI. Cada skill ensina o assistente a fazer uma tarefa especifica (revisar codigo, buscar editais, extrair PDFs, etc). Abaixo, detalhes de cada skill com analise SWOT (Forcas, Fraquezas, Oportunidades, Ameacas).</div>'
+      for (const sk of d.skills_detalhes) {
+        const fmOk = sk.frontmatter_ok ? 'Sim' : 'Nao'
+        html += '<div class="skill-card">'
+        html += '<h3>' + sk.nome + '</h3>'
+        html += '<table class="skill-table">'
+        html += '<tr><td>Tamanho</td><td>' + sk.tamanho_kb + ' KB (' + sk.tamanho_bytes + ' bytes)</td><td>Quanto espaco a skill ocupa</td></tr>'
+        html += '<tr><td>Linhas</td><td>' + sk.linhas + '</td><td>Quantidade de linhas de instrucao</td></tr>'
+        html += '<tr><td>Scripts Vinculados</td><td>' + sk.scripts + '</td><td>Programas Python que a skill usa</td></tr>'
+        html += '<tr><td>Frontmatter OK</td><td>' + fmOk + '</td><td>Se a skill tem cabecalho padrao (nome, descricao)</td></tr>'
+        html += '<tr><td>Vazamento CJK</td><td>' + (sk.cjk_leak ? 'Sim' : 'Nao') + '</td><td>Se contem caracteres chineses indevidos</td></tr>'
+        html += '<tr><td>Caminho</td><td><code>' + sk.caminho + '</code></td><td>Localizacao no sistema de arquivos</td></tr>'
+        if (sk.scripts_lista && sk.scripts_lista.length > 0) {
+          html += '<tr><td>Scripts</td><td><code>' + sk.scripts_lista.join('<br>') + '</code></td><td>Programas auxiliares da skill</td></tr>'
+        }
+        html += '</table>'
+        // SWOT
+        if (sk.swot) {
+          html += '<div class="swot-box">'
+          html += '<details>'
+          html += '<summary><strong>Analise SWOT</strong> (clique para expandir)</summary>'
+          html += '<table class="swot-table">'
+          html += '<tr><th class="swot-forca">Forcas (S)</th><td>' + sk.swot.forcas + '</td></tr>'
+          html += '<tr><th class="swot-fraqueza">Fraquezas (W)</th><td>' + sk.swot.fraquezas + '</td></tr>'
+          html += '<tr><th class="swot-oportunidade">Oportunidades (O)</th><td>' + sk.swot.oportunidades + '</td></tr>'
+          html += '<tr><th class="swot-ameaca">Ameacas (T)</th><td>' + sk.swot.ameacas + '</td></tr>'
+          html += '</table>'
+          html += '</details>'
+          html += '</div>'
+        }
+        html += '</div>'
+      }
+    }
+
+    // ============================================================
+    // PLUGINS DETALHADOS
+    // ============================================================
+    if (d.plugins_detalhes && d.plugins_detalhes.length > 0) {
+      html += '<h2>Plugins Detalhados</h2>'
+      html += '<div class="legenda-box"><strong>Plugins</strong> sao programas em TypeScript que automatizam fluxos complexos. Eles rodam em segundo plano e sao ativados por comandos como /evolve.</div>'
+      html += '<table><tr><th>Plugin</th><th>Bytes</th><th>Linhas</th><th>Funcao</th></tr>'
+      for (const pl of d.plugins_detalhes) {
+        let funcao = ''
+        if (pl.nome === 'manus-evolve') funcao = 'Motor de evolucao autonoma: PLANEJAR > AGIR > REFLETIR > EXTRAIR > EVOLUIR'
+        else if (pl.nome === 'ecosystem-sync') funcao = 'Sincronizacao do ecossistema: valida, cruza dados e gera relatorio de saude'
+        else funcao = 'Plugin auxiliar do ecossistema'
+        html += '<tr><td><strong>' + pl.nome + '</strong></td><td>' + (pl.bytes/1024).toFixed(1) + ' KB</td><td>' + pl.linhas + '</td><td>' + funcao + '</td></tr>'
+      }
+      html += '</table>'
+
+      // SWOT PLUGINS
+      html += '<div class="swot-box">'
+      html += '<details>'
+      html += '<summary><strong>SWOT dos Plugins</strong></summary>'
+      html += '<table class="swot-table">'
+      html += '<tr><th class="swot-forca">Forcas</th><td>Automatizacao de fluxos complexos, ciclo evolutivo completo, codigo compacto (412-473 linhas)</td></tr>'
+      html += '<tr><th class="swot-fraqueza">Fraquezas</th><td>Dependem de TypeScript/Bun, logs de erro podem ser cripticos, estado salvo em JSON sujeito a corrupcao</td></tr>'
+      html += '<tr><th class="swot-oportunidade">Oportunidades</th><td>Novos plugins para tarefas especificas (dashboard, deploy, backup), watchdog mais robusto</td></tr>'
+      html += '<tr><th class="swot-ameaca">Ameacas</th><td>Mudancas no runtime Bun podem quebrar plugins, complexidade crescente pode tornar manutencao dificil</td></tr>'
+      html += '</table>'
+      html += '</details>'
+      html += '</div>'
+    }
+
+    // ============================================================
+    // MCPs
+    // ============================================================
+    if (d.mcps && d.mcps.length > 0) {
+      html += '<h2>MCPs (Ferramentas do Assistente AI)</h2>'
+      html += '<div class="legenda-box"><strong>MCPs (Model Context Protocol)</strong> sao ferramentas que o assistente AI pode usar para interagir com o mundo externo. Cada MCP e como um 'aplicativo' especializado: um para buscar na web, outro para executar codigo, outro para manipular arquivos, etc.</div>'
+      for (const cat of d.mcps) {
+        html += '<h3 style="margin-top:10px;color:#58a6ff">' + cat.categoria + '</h3>'
+        html += '<table><tr><th>MCP</th><th>Descricao</th><th>Para que serve</th></tr>'
+        for (const m of cat.mcps) {
+          html += '<tr><td><strong>' + m.nome + '</strong></td><td>' + m.descricao + '</td><td>' + m.funcao + '</td></tr>'
+        }
+        html += '</table>'
+      }
+
+      // SWOT MCPS
+      html += '<div class="swot-box">'
+      html += '<details>'
+      html += '<summary><strong>SWOT dos MCPs</strong></summary>'
+      html += '<table class="swot-table">'
+      html += '<tr><th class="swot-forca">Forcas</th><td>17 MCPs cobrindo busca, navegador, codigo, dados, raciocinio e infraestrutura; maioria nao requer chave de API; integracao nativa com o AI</td></tr>'
+      html += '<tr><th class="swot-fraqueza">Fraquezas</th><td>Dependem de conexao com internet (websearch, github); alguns requerem instalacao local (playwright, chrome-devtools); rate limits em APIs externas</td></tr>'
+      html += '<tr><th class="swot-oportunidade">Oportunidades</th><td>Adicionar MCPs para novas fontes de dados (LinkedIn, Twitter, databases SQL); integracao com mais APIs brasileiras via mcp-brasil</td></tr>'
+      html += '<tr><th class="swot-ameaca">Ameacas</th><td>APIs externas podem mudar ou ficar indisponiveis; bloqueios anti-bot (como DuckDuckGo); custo de chamadas de API</td></tr>'
+      html += '</table>'
+      html += '</details>'
+      html += '</div>'
+    }
+
+    // ============================================================
+    // AGENTES DETALHADOS
+    // ============================================================
+    if (d.agentes_detalhes && d.agentes_detalhes.length > 0) {
+      html += '<h2>Agentes do Ecossistema</h2>'
+      html += '<div class="legenda-box"><strong>Agentes</strong> sao sub-programas especializados que trabalham em equipe como uma linha de montagem. Cada um tem uma funcao unica e passa o resultado para o proximo. O conjunto forma o pipeline de pesquisa SEEKER: da busca inicial ao documento final.</div>'
+      html += '<table><tr><th>Agente</th><th>Tipo</th><th>Funcoes</th><th>O que faz (para leigos)</th></tr>'
+      for (const ag of d.agentes_detalhes) {
+        html += '<tr><td><strong>' + ag.nome + '</strong></td><td>' + ag.tipo + '</td><td>' + ag.funcoes + '</td><td>' + ag.funcao + '</td></tr>'
+      }
+      html += '</table>'
+
+      // SWOT AGENTES
+      html += '<div class="swot-box">'
+      html += '<details>'
+      html += '<summary><strong>SWOT dos Agentes</strong></summary>'
+      html += '<table class="swot-table">'
+      html += '<tr><th class="swot-forca">Forcas</th><td>Pipeline completo de pesquisa em 11 etapas; cada agente especializado em uma tarefa; resultados passam por revisao e validacao</td></tr>'
+      html += '<tr><th class="swot-fraqueza">Fraquezas</th><td>Pipeline sequencial (lento); depende de API Claude para funcionar; alguns agentes tem apenas 2 funcoes (escopo limitado)</td></tr>'
+      html += '<tr><th class="swot-oportunidade">Oportunidades</th><td>Execucao paralela de agentes independentes; adicionar novos agentes para tarefas especificas; integracao com MCPs para enriquecer resultados</td></tr>'
+      html += '<tr><th class="swot-ameaca">Ameacas</th><td>Custo de API Claude pode ser alto; agentes muito especializados podem ficar obsoletos; pipeline sequencial e ponto unico de falha</td></tr>'
+      html += '</table>'
+      html += '</details>'
+      html += '</div>'
+    }
+
+    // ============================================================
+    // LIMITES DO ECOSSISTEMA
+    // ============================================================
+    html += '<h2>Limites e Restricoes</h2>'
+    html += '<div class="legenda-box"><strong>Limites</strong> sao restricoes conhecidas de cada componente. Conhece-los ajuda a usar as ferramentas de forma adequada.</div>'
+    html += '<table><tr><th>Componente</th><th>Limite</th><th>Impacto</th></tr>'
+    html += '<tr><td>Skills</td><td>SKILL.md max 2.5KB</td><td>Skills muito grandes nao carregam corretamente no contexto do AI</td></tr>'
+    html += '<tr><td>Editais-br</td><td>DuckDuckGo bloqueia ~50% das req</td><td>Fallback offline com 52 editais curados garante resultados</td></tr>'
+    html += '<tr><td>Docling PDF</td><td>OCR lento (>10min/doc)</td><td>Usar pdfplumber como primario (<5s), docling como fallback</td></tr>'
+    html += '<tr><td>MCPs websearch</td><td>Rate limit, CAPTCHAs</td><td>Alternar entre DuckDuckGo, Bing e fontes diretas</td></tr>'
+    html += '<tr><td>APIs Gov</td><td>CAPES/CNPq 404, portais instaveis</td><td>Usar cache local e fallbacks offline</td></tr>'
+    html += '<tr><td>APIs Internacionais</td><td>ADB 403, FAO 521, OIT 404, UNESCO 404</td><td>Fallback para datasets de referencia conhecidos</td></tr>'
+    html += '<tr><td>Extrator v2.1</td><td>38 fontes, 6 dominios</td><td>Expansao planejada para 50+ fontes</td></tr>'
+    html += '<tr><td>Dashboard</td><td>Servidor HTTP stdlib (1 req/vez)</td><td>Nao usar para alto trafego; gerar HTML estatico para distribuicao</td></tr>'
+    html += '</table>'
+
+    document.getElementById('tables').innerHTML = html
+  } catch(e) {
+    document.getElementById('cards').innerHTML = `<div class="card red"><div class="value">Erro</div><div class="label">${e.message}</div></div>`
+  }
+}
+
+carregar()
+setInterval(carregar, 30000)
+</script>
+</body>
+</html>
+"""
+
+
+# =============================================================================
+# HTTP HANDLER
+# =============================================================================
+
+class DashboardHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        if self.path in ("/", "/index.html"):
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(HTML_TEMPLATE.encode("utf-8"))
+        elif self.path == "/api/dados":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            dados = coletar_dados()
+            self.wfile.write(json.dumps(dados, ensure_ascii=False).encode("utf-8"))
+        elif self.path == "/api/scan":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.end_headers()
+            r = subprocess.run(
+                [sys.executable, str(WORKSPACE / "nexus/scripts/ecosystem_scanner.py"), "--scan"],
+                capture_output=True, text=True, timeout=30)
+            self.wfile.write(json.dumps({
+                "status": "ok" if r.returncode == 0 else "erro",
+                "output": r.stdout.strip(),
+                "error": r.stderr.strip()[:200] if r.stderr else "",
+            }, ensure_ascii=False).encode("utf-8"))
+        else:
+            self.send_response(404)
+            self.end_headers()
+            self.wfile.write(b"404")
+
+
+def gerar_html_estatico():
+    """Gera versao estatica do dashboard com dados inline."""
+    dados = coletar_dados()
+    html = HTML_TEMPLATE.replace(
+        "async function carregar()",
+        "async function carregar() {\n  // Modo estatico\n"
+        f"  const d = {json.dumps(dados, ensure_ascii=False)}\n"
+        "  return render(d)\n"
+        "}\n\nasync function render(d)",
+    )
+    HTML_PATH.parent.mkdir(parents=True, exist_ok=True)
+    HTML_PATH.write_text(html, encoding="utf-8")
+    print(f"[dashboard v2] HTML estatico salvo em {HTML_PATH}")
+    print(f"[dashboard v2] Abra no navegador: file:///{HTML_PATH.as_posix()}")
+
+
+def main():
+    import argparse
+    p = argparse.ArgumentParser(description="Dashboard do ecossistema v2.0")
+    p.add_argument("--porta", type=int, default=8081, help="Porta HTTP")
+    p.add_argument("--gerar-only", action="store_true", help="So gera HTML estatico")
+    args = p.parse_args()
+
+    if args.gerar_only:
+        return gerar_html_estatico()
+
+    server = HTTPServer(("0.0.0.0", args.porta), DashboardHandler)
+    print(f"[dashboard v2] Servidor em http://localhost:{args.porta}")
+    print(f"[dashboard v2] Graficos Chart.js via CDN")
+    print(f"[dashboard v2] Pressione Ctrl+C para parar")
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\n[dashboard] Servidor parado")
+
+
+if __name__ == "__main__":
+    main()

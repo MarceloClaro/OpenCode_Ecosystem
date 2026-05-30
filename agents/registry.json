@@ -1,0 +1,1181 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-05-15",
+  "total_agents": 57,
+  "parsed_with_frontmatter": 50,
+  "categories": {
+    "analysis": {
+      "count": 5,
+      "agents": [
+        "codebase-analyzer",
+        "codebase-locator",
+        "codebase-pattern-finder",
+        "thoughts-analyzer",
+        "thoughts-locator"
+      ]
+    },
+    "architecture": {
+      "count": 2,
+      "agents": [
+        "architect",
+        "ArchitectureAnalyzer"
+      ]
+    },
+    "coder": {
+      "count": 2,
+      "agents": [
+        "CoderAgent",
+        "OpenCoder"
+      ]
+    },
+    "context": {
+      "count": 3,
+      "agents": [
+        "ContextManager",
+        "Context Retriever",
+        "ContextScout"
+      ]
+    },
+    "corrector": {
+      "count": 1,
+      "agents": [
+        "linguistic-corrector"
+      ]
+    },
+    "debug": {
+      "count": 1,
+      "agents": [
+        "debugger"
+      ]
+    },
+    "devops": {
+      "count": 2,
+      "agents": [
+        "BuildAgent",
+        "OpenDevopsSpecialist"
+      ]
+    },
+    "documentation": {
+      "count": 5,
+      "agents": [
+        "ADRManager",
+        "OpenCopywriter",
+        "docs-writer",
+        "DocWriter",
+        "OpenTechnicalWriter"
+      ]
+    },
+    "evaluation": {
+      "count": 1,
+      "agents": [
+        "Eval Runner"
+      ]
+    },
+    "evolution": {
+      "count": 1,
+      "agents": [
+        "autoevolve"
+      ]
+    },
+    "execution": {
+      "count": 2,
+      "agents": [
+        "BatchExecutor",
+        "optimizer"
+      ]
+    },
+    "frontend": {
+      "count": 2,
+      "agents": [
+        "OpenFrontendSpecialist",
+        "web-developer"
+      ]
+    },
+    "git": {
+      "count": 1,
+      "agents": [
+        "git-manager"
+      ]
+    },
+    "image": {
+      "count": 1,
+      "agents": [
+        "Image Specialist"
+      ]
+    },
+    "management": {
+      "count": 4,
+      "agents": [
+        "ContractManager",
+        "PrioritizationEngine",
+        "StoryMapper",
+        "TaskManager"
+      ]
+    },
+    "orchestration": {
+      "count": 1,
+      "agents": [
+        "StageOrchestrator"
+      ]
+    },
+    "orchestrator": {
+      "count": 1,
+      "agents": [
+        "OpenAgent"
+      ]
+    },
+    "quantum": {
+      "count": 1,
+      "agents": [
+        "quantum-nexus-phd"
+      ]
+    },
+    "research": {
+      "count": 1,
+      "agents": [
+        "web-search-researcher"
+      ]
+    },
+    "reversa": {
+      "count": 10,
+      "agents": [
+        "reversa-archaeologist",
+        "reversa-architect",
+        "reversa-data-master",
+        "reversa-design-system",
+        "reversa-detective",
+        "reversa-reviewer",
+        "reversa-scout",
+        "reversa-visor",
+        "reversa-writer",
+        "reversa"
+      ]
+    },
+    "review": {
+      "count": 2,
+      "agents": [
+        "code-reviewer",
+        "CodeReviewer"
+      ]
+    },
+    "scout": {
+      "count": 1,
+      "agents": [
+        "ExternalScout"
+      ]
+    },
+    "security": {
+      "count": 1,
+      "agents": [
+        "security-auditor"
+      ]
+    },
+    "test": {
+      "count": 1,
+      "agents": [
+        "TestEngineer"
+      ]
+    },
+    "utility": {
+      "count": 1,
+      "agents": [
+        "Simple Responder"
+      ]
+    },
+    "workspace": {
+      "count": 4,
+      "agents": [
+        "ws-coder",
+        "ws-researcher",
+        "ws-reviewer",
+        "ws-scribe"
+      ]
+    }
+  },
+  "agents": [
+    {
+      "name": "ADRManager",
+      "file": "adr-manager.md",
+      "description": "Architecture Decision Record specialist capturing decisions, context, alternatives, and consequences in lightweight ADR format",
+      "mode": "subagent",
+      "category": "documentation",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "architect",
+      "file": "architect.md",
+      "description": "",
+      "mode": "inferred",
+      "category": "architecture",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": false
+    },
+    {
+      "name": "ArchitectureAnalyzer",
+      "file": "architecture-analyzer.md",
+      "description": "DDD-driven architecture analyzer identifying bounded contexts, module boundaries, and domain relationships for multi-stage orchestration",
+      "mode": "subagent",
+      "category": "architecture",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "autoevolve",
+      "file": "autoevolve.md",
+      "description": "AutoEvolve — engine de evolução autônoma do ecossistema OpenCode. Descobre novas skills, auto-instala, monitora saúde, aprende com sessões passadas e evolui continuamente sem intervenção humana.",
+      "mode": "subagent",
+      "category": "evolution",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "read",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "edit"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "BatchExecutor",
+      "file": "batch-executor.md",
+      "description": "Execute multiple tasks in parallel batches, managing simultaneous CoderAgent delegations and tracking batch completion",
+      "mode": "subagent",
+      "category": "execution",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "BuildAgent",
+      "file": "build-agent.md",
+      "description": "Type check and build validation agent",
+      "mode": "subagent",
+      "category": "devops",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "code-reviewer",
+      "file": "code-reviewer.md",
+      "description": "Revisa codigo para qualidade, seguranca e melhores praticas",
+      "mode": "subagent",
+      "category": "review",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "write"
+      ],
+      "tools_readonly": [
+        "bash",
+        "edit",
+        "write"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "codebase-analyzer",
+      "file": "codebase-analyzer.md",
+      "description": "Analyzes codebase implementation details. Call the codebase-analyzer agent when you need to find detailed information about specific components.",
+      "mode": "subagent",
+      "category": "analysis",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "list",
+        "patch",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "bash",
+        "edit",
+        "patch",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "codebase-locator",
+      "file": "codebase-locator.md",
+      "description": "Locates files, directories, and components relevant to a feature or task. Call `codebase-locator` with human language prompt describing what you're looking for. Basically a \"Super Grep/Glob/LS tool\" —",
+      "mode": "subagent",
+      "category": "analysis",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "list",
+        "patch",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "bash",
+        "edit",
+        "patch",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "codebase-pattern-finder",
+      "file": "codebase-pattern-finder.md",
+      "description": "codebase-pattern-finder is a useful subagent_type for finding similar implementations, usage examples, or existing patterns that can be modeled after. It will give you concrete code examples based on ",
+      "mode": "subagent",
+      "category": "analysis",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "list",
+        "patch",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "bash",
+        "edit",
+        "patch",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "CoderAgent",
+      "file": "coder-agent.md",
+      "description": "Executes coding subtasks in sequence, ensuring completion as specified",
+      "mode": "subagent",
+      "category": "coder",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "ContextManager",
+      "file": "context-manager.md",
+      "description": "Context organization and lifecycle management specialist - discovers, catalogs, validates, and maintains project context structure with dependency tracking",
+      "mode": "subagent",
+      "category": "context",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "Context Retriever",
+      "file": "context-retriever.md",
+      "description": "Generic context search and retrieval specialist for finding relevant context files, standards, and guides in any repository",
+      "mode": "subagent",
+      "category": "context",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "ContextScout",
+      "file": "contextscout.md",
+      "description": "Discovers and recommends context files from .opencode/context/ ranked by priority. Suggests ExternalScout when a framework/library is mentioned but not found internally.",
+      "mode": "subagent",
+      "category": "context",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "ContractManager",
+      "file": "contract-manager.md",
+      "description": "API contract management specialist enabling parallel development through contract-first design with OpenAPI/Swagger support",
+      "mode": "subagent",
+      "category": "management",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "OpenCopywriter",
+      "file": "copywriter.md",
+      "description": "Expert in persuasive writing, marketing copy, and brand messaging",
+      "mode": "primary",
+      "category": "documentation",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "debugger",
+      "file": "debugger.md",
+      "description": "",
+      "mode": "inferred",
+      "category": "debug",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": false
+    },
+    {
+      "name": "OpenDevopsSpecialist",
+      "file": "devops-specialist.md",
+      "description": "DevOps specialist subagent - CI/CD, infrastructure as code, deployment automation",
+      "mode": "subagent",
+      "category": "devops",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "docs-writer",
+      "file": "docs-writer.md",
+      "description": "",
+      "mode": "inferred",
+      "category": "documentation",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": false
+    },
+    {
+      "name": "DocWriter",
+      "file": "documentation.md",
+      "description": "Documentation authoring agent",
+      "mode": "subagent",
+      "category": "documentation",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "Eval Runner",
+      "file": "eval-runner.md",
+      "description": "Test harness for evaluation framework - DO NOT USE DIRECTLY",
+      "mode": "subagent",
+      "category": "evaluation",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "ExternalScout",
+      "file": "externalscout.md",
+      "description": "Fetches live, version-specific documentation for external libraries and frameworks using Context7 and other sources. Filters, sorts, and returns relevant documentation.",
+      "mode": "subagent",
+      "category": "scout",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "OpenFrontendSpecialist",
+      "file": "frontend-specialist.md",
+      "description": "Frontend UI design specialist - subagent for design systems, themes, animations",
+      "mode": "subagent",
+      "category": "frontend",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "git-manager",
+      "file": "git-manager.md",
+      "description": "Gerencia git - commits atomicos, PRs, mensagens convencionais",
+      "mode": "subagent",
+      "category": "git",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "write"
+      ],
+      "tools_readonly": [
+        "edit",
+        "write"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "Image Specialist",
+      "file": "image-specialist.md",
+      "description": "Specialized agent for image editing and analysis using Gemini AI tools",
+      "mode": "subagent",
+      "category": "image",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "linguistic-corrector",
+      "file": "linguistic-corrector.md",
+      "description": "",
+      "mode": "inferred",
+      "category": "corrector",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": false
+    },
+    {
+      "name": "OpenAgent",
+      "file": "openagent.md",
+      "description": "Universal agent for answering queries, executing tasks, and coordinating workflows across any domain",
+      "mode": "primary",
+      "category": "orchestrator",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "OpenCoder",
+      "file": "opencoder.md",
+      "description": "Orchestration agent for complex coding, architecture, and multi-file refactoring",
+      "mode": "primary",
+      "category": "coder",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "optimizer",
+      "file": "optimizer.md",
+      "description": "",
+      "mode": "inferred",
+      "category": "execution",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": false
+    },
+    {
+      "name": "PrioritizationEngine",
+      "file": "prioritization-engine.md",
+      "description": "Scores and prioritizes backlog items using RICE/WSJF frameworks with MVP/post-MVP release slicing",
+      "mode": "subagent",
+      "category": "management",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "quantum-nexus-phd",
+      "file": "quantum-nexus-phd.md",
+      "description": "",
+      "mode": "inferred",
+      "category": "quantum",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": false
+    },
+    {
+      "name": "reversa-archaeologist",
+      "file": "reversa-archaeologist.md",
+      "description": "Analisa profundamente o código do projeto legado módulo a módulo — extrai algoritmos, fluxos de controle, estruturas de dados e dicionário de dados. Use na fase de escavação de uma análise de engenhar",
+      "mode": "subagent",
+      "category": "reversa",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "edit",
+        "todoread",
+        "todowrite",
+        "webfetch"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "reversa-architect",
+      "file": "reversa-architect.md",
+      "description": "Sintetiza a análise do projeto legado em documentação arquitetural completa — diagramas C4, ERD completo, mapa de integrações e Spec Impact Matrix. Use na fase de interpretação após o reversa-detectiv",
+      "mode": "subagent",
+      "category": "reversa",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "edit",
+        "todoread",
+        "todowrite",
+        "webfetch"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "reversa-data-master",
+      "file": "reversa-data-master.md",
+      "description": "Documenta completamente o banco de dados do projeto legado — tabelas, relacionamentos, constraints, triggers, procedures e ERD completo. Use quando DDL, migrations, modelos ORM ou acesso ao banco esti",
+      "mode": "subagent",
+      "category": "reversa",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "edit",
+        "todoread",
+        "todowrite",
+        "webfetch"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "reversa-design-system",
+      "file": "reversa-design-system.md",
+      "description": "Extrai e documenta o sistema de design do projeto legado — paleta de cores, tipografia, espaçamentos, tokens e componentes a partir de CSS, arquivos de tema e screenshots.",
+      "mode": "subagent",
+      "category": "reversa",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "edit",
+        "todoread",
+        "todowrite",
+        "webfetch"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "reversa-detective",
+      "file": "reversa-detective.md",
+      "description": "Extrai conhecimento de negócio implícito do projeto legado — regras de negócio, ADRs retroativos via Git, máquinas de estado e matriz de permissões. Use na fase de interpretação de uma análise de enge",
+      "mode": "subagent",
+      "category": "reversa",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "edit",
+        "todoread",
+        "todowrite",
+        "webfetch"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "reversa-reviewer",
+      "file": "reversa-reviewer.md",
+      "description": "Revisa criticamente as especificações geradas pelo reversa-writer — encontra inconsistências, reclassifica confiança e gera perguntas para validação humana. Use na fase de revisão de uma análise de en",
+      "mode": "subagent",
+      "category": "reversa",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "edit",
+        "todoread",
+        "todowrite",
+        "webfetch"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "reversa-scout",
+      "file": "reversa-scout.md",
+      "description": "Mapeia a superfície do projeto legado — estrutura de pastas, linguagens, frameworks, dependências e entry points. Use no início de uma análise de engenharia reversa para criar o inventário inicial do ",
+      "mode": "subagent",
+      "category": "reversa",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "edit",
+        "todoread",
+        "todowrite",
+        "webfetch"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "reversa-visor",
+      "file": "reversa-visor.md",
+      "description": "Documenta a interface do sistema legado a partir de screenshots — extrai componentes, layouts, fluxos de navegação e estados de tela. Use quando screenshots do sistema estiverem disponíveis.",
+      "mode": "subagent",
+      "category": "reversa",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "edit",
+        "todoread",
+        "todowrite",
+        "webfetch"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "reversa-writer",
+      "file": "reversa-writer.md",
+      "description": "Gera especificações executáveis do sistema legado como contratos operacionais, em formato de pasta-por-unit com requirements.md, design.md e tasks.md. Use na fase de geração de uma análise de engenhar",
+      "mode": "subagent",
+      "category": "reversa",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "edit",
+        "todoread",
+        "todowrite",
+        "webfetch"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "reversa",
+      "file": "reversa.md",
+      "description": "Ponto de entrada principal do Reversa. Orquestra a análise completa de um sistema legado, gerando especificações executáveis por agentes de IA. Use quando o usuário digitar \"/reversa\", \"reversa\", \"ini",
+      "mode": "subagent",
+      "category": "reversa",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "edit",
+        "todoread",
+        "todowrite",
+        "webfetch"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "CodeReviewer",
+      "file": "reviewer.md",
+      "description": "Code review, security, and quality assurance agent",
+      "mode": "subagent",
+      "category": "review",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "security-auditor",
+      "file": "security-auditor.md",
+      "description": "",
+      "mode": "inferred",
+      "category": "security",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": false
+    },
+    {
+      "name": "Simple Responder",
+      "file": "simple-responder.md",
+      "description": "Test agent that responds with 'AWESOME TESTING' - for eval framework testing",
+      "mode": "subagent",
+      "category": "utility",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "StageOrchestrator",
+      "file": "stage-orchestrator.md",
+      "description": "Multi-stage workflow orchestrator managing stage transitions, gating rules, validation, and rollback for complex feature development",
+      "mode": "subagent",
+      "category": "orchestration",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "StoryMapper",
+      "file": "story-mapper.md",
+      "description": "User journey mapping specialist transforming user needs into epics, stories, and vertical slices with bounded context alignment",
+      "mode": "subagent",
+      "category": "management",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "TaskManager",
+      "file": "task-manager.md",
+      "description": "JSON-driven task breakdown specialist transforming complex features into atomic, verifiable subtasks with dependency tracking and CLI integration",
+      "mode": "subagent",
+      "category": "management",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "OpenTechnicalWriter",
+      "file": "technical-writer.md",
+      "description": "Expert in documentation, API docs, and technical communication",
+      "mode": "primary",
+      "category": "documentation",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "TestEngineer",
+      "file": "test-engineer.md",
+      "description": "Test authoring and TDD agent",
+      "mode": "subagent",
+      "category": "test",
+      "has_permissions": true,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "thoughts-analyzer",
+      "file": "thoughts-analyzer.md",
+      "description": "The research equivalent of codebase-analyzer. Use this subagent_type when wanting to deep dive on a research topic. Not commonly needed otherwise.",
+      "mode": "subagent",
+      "category": "analysis",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "list",
+        "patch",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "bash",
+        "edit",
+        "patch",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "thoughts-locator",
+      "file": "thoughts-locator.md",
+      "description": "Discovers relevant documents in thoughts/ directory (We use this for all sorts of metadata storage!). This is really only relevant/needed when you're in a reseaching mood and need to figure out if we ",
+      "mode": "subagent",
+      "category": "analysis",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "list",
+        "patch",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "bash",
+        "edit",
+        "patch",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "web-developer",
+      "file": "web-developer.md",
+      "description": "Develops Web UI components.",
+      "mode": "all",
+      "category": "frontend",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "web-search-researcher",
+      "file": "web-search-researcher.md",
+      "description": "Used to perform web searches from a URL and analyze the contents based on a query.",
+      "mode": "subagent",
+      "category": "research",
+      "has_permissions": false,
+      "tools_available": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "list",
+        "patch",
+        "read",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "tools_readonly": [
+        "bash",
+        "edit",
+        "patch",
+        "todoread",
+        "todowrite",
+        "webfetch",
+        "write"
+      ],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "ws-coder",
+      "file": "ws-coder.md",
+      "description": "Technical implementation specialist for writing and modifying code",
+      "mode": "subagent",
+      "category": "workspace",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "ws-researcher",
+      "file": "ws-researcher.md",
+      "description": "Knowledge architect for external research and documentation",
+      "mode": "subagent",
+      "category": "workspace",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "ws-reviewer",
+      "file": "ws-reviewer.md",
+      "description": "Expert code reviewer for security, performance, and philosophy compliance",
+      "mode": "subagent",
+      "category": "workspace",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    },
+    {
+      "name": "ws-scribe",
+      "file": "ws-scribe.md",
+      "description": "Human-facing content specialist for documentation and prose",
+      "mode": "subagent",
+      "category": "workspace",
+      "has_permissions": false,
+      "tools_available": [],
+      "tools_readonly": [],
+      "frontmatter_parsed": true
+    }
+  ],
+  "validation": {
+    "valid": 50,
+    "inferred": 7,
+    "errors": 7,
+    "frontmatter_errors": [
+      {
+        "file": "architect.md",
+        "error": "No YAML frontmatter"
+      },
+      {
+        "file": "debugger.md",
+        "error": "No YAML frontmatter"
+      },
+      {
+        "file": "docs-writer.md",
+        "error": "No YAML frontmatter"
+      },
+      {
+        "file": "linguistic-corrector.md",
+        "error": "No YAML frontmatter"
+      },
+      {
+        "file": "optimizer.md",
+        "error": "No YAML frontmatter"
+      },
+      {
+        "file": "quantum-nexus-phd.md",
+        "error": "YAML error: mapping values are not allowed here\n  in \"<unicode string>\", line 2, column 35:\n    description: Super-Habilidade v7.2: Pesquisa quântica end-to-end c ... \n                                      ^"
+      },
+      {
+        "file": "security-auditor.md",
+        "error": "No YAML frontmatter"
+      }
+    ],
+    "no_frontmatter": [
+      {
+        "file": "architect.md",
+        "error": "No YAML frontmatter"
+      },
+      {
+        "file": "debugger.md",
+        "error": "No YAML frontmatter"
+      },
+      {
+        "file": "docs-writer.md",
+        "error": "No YAML frontmatter"
+      },
+      {
+        "file": "linguistic-corrector.md",
+        "error": "No YAML frontmatter"
+      },
+      {
+        "file": "optimizer.md",
+        "error": "No YAML frontmatter"
+      },
+      {
+        "file": "security-auditor.md",
+        "error": "No YAML frontmatter"
+      }
+    ]
+  }
+}
