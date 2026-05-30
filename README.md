@@ -334,7 +334,7 @@ opencode run /evolve    # Evolucao autonoma
 
 MIT License — veja [LICENSE](LICENSE).
 
-Copyright (c) 2026 Marcelo Claro Laranjeira.
+Copyright (c) 2026 Marcelo Claro Laranjeira — [ORCID: 0000-0001-8996-2887](https://orcid.org/0000-0001-8996-2887).
 
 ---
 
@@ -343,6 +343,7 @@ Copyright (c) 2026 Marcelo Claro Laranjeira.
 ```bibtex
 @software{OpenCode_Ecosystem2026,
   author = {Marcelo Claro Laranjeira},
+  orcid = {0000-0001-8996-2887},
   title = {OpenCode Ecosystem: Multi-Agent AI Platform for Assisted Scientific Research},
   year = {2026},
   version = {4.6.1},
@@ -357,5 +358,7 @@ Copyright (c) 2026 Marcelo Claro Laranjeira.
 **OpenCode Ecosystem v4.6.1** · 17 Iteracoes de Desenvolvimento · 79 Agentes · 38 MCPs · 104 Skills
 
 Trabalho em andamento — metricas auto-reportadas
+
+Autor: Marcelo Claro Laranjeira — [ORCID: 0000-0001-8996-2887](https://orcid.org/0000-0001-8996-2887)
 
 </div>

@@ -200,4 +200,6 @@ grep -r "excelente\|revolucionario\|incrivel\|melhor" README.md docs/  # Superla
 
 *"Toda afirmacao deve ser verificavel. Sem verificabilidade, nao ha ciencia."*
 
+Autor: Marcelo Claro Laranjeira — [ORCID: 0000-0001-8996-2887](https://orcid.org/0000-0001-8996-2887)
+
 </div>
