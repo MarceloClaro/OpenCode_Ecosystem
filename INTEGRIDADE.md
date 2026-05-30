@@ -204,4 +204,6 @@ Autor: Marcelo Claro Laranjeira — [ORCID: 0000-0001-8996-2887](https://orcid.o
 
 Professor / Pedagogo — Secretaria de Educacao, Prefeitura Municipal de Crateus, Ceara, Brasil
 
+Contato: marceloclaro@gmail.com
+
 </div>

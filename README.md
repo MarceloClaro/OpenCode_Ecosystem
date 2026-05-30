@@ -334,7 +334,7 @@ opencode run /evolve    # Evolucao autonoma
 
 MIT License — veja [LICENSE](LICENSE).
 
-Copyright (c) 2026 Marcelo Claro Laranjeira — Prefeitura Municipal de Crateus/CE — [ORCID: 0000-0001-8996-2887](https://orcid.org/0000-0001-8996-2887).
+Copyright (c) 2026 Marcelo Claro Laranjeira · marceloclaro@gmail.com · Prefeitura Municipal de Crateus/CE — [ORCID: 0000-0001-8996-2887](https://orcid.org/0000-0001-8996-2887).
 
 ---
 
@@ -363,5 +363,7 @@ Trabalho em andamento — metricas auto-reportadas
 Autor: Marcelo Claro Laranjeira — [ORCID: 0000-0001-8996-2887](https://orcid.org/0000-0001-8996-2887)
 
 Professor / Pedagogo — Secretaria de Educacao, Prefeitura Municipal de Crateus, Ceara, Brasil
+
+Contato: marceloclaro@gmail.com | +55 (88) 981587145
 
 </div>
