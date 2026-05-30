@@ -202,4 +202,6 @@ grep -r "excelente\|revolucionario\|incrivel\|melhor" README.md docs/  # Superla
 
 Autor: Marcelo Claro Laranjeira — [ORCID: 0000-0001-8996-2887](https://orcid.org/0000-0001-8996-2887)
 
+Professor / Pedagogo — Secretaria de Educacao, Prefeitura Municipal de Crateus, Ceara, Brasil
+
 </div>

@@ -334,7 +334,7 @@ opencode run /evolve    # Evolucao autonoma
 
 MIT License — veja [LICENSE](LICENSE).
 
-Copyright (c) 2026 Marcelo Claro Laranjeira — [ORCID: 0000-0001-8996-2887](https://orcid.org/0000-0001-8996-2887).
+Copyright (c) 2026 Marcelo Claro Laranjeira — Prefeitura Municipal de Crateus/CE — [ORCID: 0000-0001-8996-2887](https://orcid.org/0000-0001-8996-2887).
 
 ---
 
@@ -344,6 +344,7 @@ Copyright (c) 2026 Marcelo Claro Laranjeira — [ORCID: 0000-0001-8996-2887](htt
 @software{OpenCode_Ecosystem2026,
   author = {Marcelo Claro Laranjeira},
   orcid = {0000-0001-8996-2887},
+  affiliation = {Secretaria de Educacao, Prefeitura Municipal de Crateus, Ceara, Brasil},
   title = {OpenCode Ecosystem: Multi-Agent AI Platform for Assisted Scientific Research},
   year = {2026},
   version = {4.6.1},
@@ -360,5 +361,7 @@ Copyright (c) 2026 Marcelo Claro Laranjeira — [ORCID: 0000-0001-8996-2887](htt
 Trabalho em andamento — metricas auto-reportadas
 
 Autor: Marcelo Claro Laranjeira — [ORCID: 0000-0001-8996-2887](https://orcid.org/0000-0001-8996-2887)
+
+Professor / Pedagogo — Secretaria de Educacao, Prefeitura Municipal de Crateus, Ceara, Brasil
 
 </div>
