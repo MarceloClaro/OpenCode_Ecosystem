@@ -1,0 +1,404 @@
+{
+  "metadata": {
+    "sistema": "TDDAcademic v2.0 (OOP)",
+    "data": "2026-05-27T22:50:17.249767",
+    "total_testes": 25,
+    "passes": 25,
+    "failures": 0,
+    "taxa_aprovacao": 100.0
+  },
+  "specs": {
+    "PCI-001": {
+      "total": 5,
+      "pass": 5,
+      "fail": 0,
+      "taxa": 100.0,
+      "testes": [
+        {
+          "spec": "PCI-001",
+          "ca": "CA1",
+          "desc": "PCI bruto 95, geometria, 0 blocos -> aprox. 5.01",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "PCI-001",
+          "ca": "CA2",
+          "desc": "PCI calibrado nunca ultrapassa 10.0",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "PCI-001",
+          "ca": "CA3",
+          "desc": "PCI calibrado nunca eh negativo",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "PCI-001",
+          "ca": "CA4",
+          "desc": "Dominio 'numerico' sempre penaliza mais que 'geral'",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "PCI-001",
+          "ca": "CA5",
+          "desc": "Bonus por codigo so se bloco REAL existe",
+          "status": "PASS",
+          "error": ""
+        }
+      ]
+    },
+    "CODE-001": {
+      "total": 5,
+      "pass": 5,
+      "fail": 0,
+      "taxa": 100.0,
+      "testes": [
+        {
+          "spec": "CODE-001",
+          "ca": "CA1",
+          "desc": "Frase 'Codigo Python com RK45 confirma' sem bloco -> rejeitado",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "CODE-001",
+          "ca": "CA2",
+          "desc": "Solucao puramente analitica sem gatilhos -> aprovado",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "CODE-001",
+          "ca": "CA3",
+          "desc": "Codigo em arquivo externo -> aprovado",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "CODE-001",
+          "ca": "CA4",
+          "desc": "Falso positivo zero para texto matematico puro",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "CODE-001",
+          "ca": "CA5",
+          "desc": "Mensagem de rejeicao aponta o gatilho",
+          "status": "PASS",
+          "error": ""
+        }
+      ]
+    },
+    "ANTISYM-001": {
+      "total": 5,
+      "pass": 5,
+      "fail": 0,
+      "taxa": 100.0,
+      "testes": [
+        {
+          "spec": "ANTISYM-001",
+          "ca": "CA1",
+          "desc": "Detecta +b dx^dy onde deveria ser -b dx^dy",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "ANTISYM-001",
+          "ca": "CA2",
+          "desc": "Nao dispara falso positivo para pulback correto",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "ANTISYM-001",
+          "ca": "CA3",
+          "desc": "Nao dispara falso positivo para su(2)",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "ANTISYM-001",
+          "ca": "CA4",
+          "desc": "Pontuacao < 0.5 dispara alerta",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "ANTISYM-001",
+          "ca": "CA5",
+          "desc": "Zero falso positivo em n-formas com n>1",
+          "status": "PASS",
+          "error": ""
+        }
+      ]
+    },
+    "NARR-001": {
+      "total": 5,
+      "pass": 5,
+      "fail": 0,
+      "taxa": 100.0,
+      "testes": [
+        {
+          "spec": "NARR-001",
+          "ca": "CA1",
+          "desc": "100% dos padroes N-01 a N-10 sao detectados",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "NARR-001",
+          "ca": "CA2",
+          "desc": "'o codigo confirma' sem bloco -> pendente",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "NARR-001",
+          "ca": "CA3",
+          "desc": "Expressoes 'obtem-se' viaveis",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "NARR-001",
+          "ca": "CA4",
+          "desc": "'e claro que' sempre dispara verificacao",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "NARR-001",
+          "ca": "CA5",
+          "desc": "Taxa de narracao calculada corretamente",
+          "status": "PASS",
+          "error": ""
+        }
+      ]
+    },
+    "CORA-001": {
+      "total": 5,
+      "pass": 5,
+      "fail": 0,
+      "taxa": 100.0,
+      "testes": [
+        {
+          "spec": "CORA-001",
+          "ca": "CA1",
+          "desc": "V4 detecta {J1,J2}=+J0 em contexto su(1,1)",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "CORA-001",
+          "ca": "CA2",
+          "desc": "V4 aceita [J1,J2]=+J3 em contexto su(2)",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "CORA-001",
+          "ca": "CA3",
+          "desc": "V4 rejeita [H,E]=-2E onde deveria ser +2E (sl2r)",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "CORA-001",
+          "ca": "CA4",
+          "desc": "V5 sugere algebra alternativa correta quando violacao e consistente com outra algebra",
+          "status": "PASS",
+          "error": ""
+        },
+        {
+          "spec": "CORA-001",
+          "ca": "CA5",
+          "desc": "V6 verifica conectivos logicos",
+          "status": "PASS",
+          "error": ""
+        }
+      ]
+    }
+  },
+  "resultados": [
+    {
+      "spec": "PCI-001",
+      "ca": "CA1",
+      "desc": "PCI bruto 95, geometria, 0 blocos -> aprox. 5.01",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "PCI-001",
+      "ca": "CA2",
+      "desc": "PCI calibrado nunca ultrapassa 10.0",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "PCI-001",
+      "ca": "CA3",
+      "desc": "PCI calibrado nunca eh negativo",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "PCI-001",
+      "ca": "CA4",
+      "desc": "Dominio 'numerico' sempre penaliza mais que 'geral'",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "PCI-001",
+      "ca": "CA5",
+      "desc": "Bonus por codigo so se bloco REAL existe",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "CODE-001",
+      "ca": "CA1",
+      "desc": "Frase 'Codigo Python com RK45 confirma' sem bloco -> rejeitado",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "CODE-001",
+      "ca": "CA2",
+      "desc": "Solucao puramente analitica sem gatilhos -> aprovado",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "CODE-001",
+      "ca": "CA3",
+      "desc": "Codigo em arquivo externo -> aprovado",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "CODE-001",
+      "ca": "CA4",
+      "desc": "Falso positivo zero para texto matematico puro",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "CODE-001",
+      "ca": "CA5",
+      "desc": "Mensagem de rejeicao aponta o gatilho",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "ANTISYM-001",
+      "ca": "CA1",
+      "desc": "Detecta +b dx^dy onde deveria ser -b dx^dy",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "ANTISYM-001",
+      "ca": "CA2",
+      "desc": "Nao dispara falso positivo para pulback correto",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "ANTISYM-001",
+      "ca": "CA3",
+      "desc": "Nao dispara falso positivo para su(2)",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "ANTISYM-001",
+      "ca": "CA4",
+      "desc": "Pontuacao < 0.5 dispara alerta",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "ANTISYM-001",
+      "ca": "CA5",
+      "desc": "Zero falso positivo em n-formas com n>1",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "NARR-001",
+      "ca": "CA1",
+      "desc": "100% dos padroes N-01 a N-10 sao detectados",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "NARR-001",
+      "ca": "CA2",
+      "desc": "'o codigo confirma' sem bloco -> pendente",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "NARR-001",
+      "ca": "CA3",
+      "desc": "Expressoes 'obtem-se' viaveis",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "NARR-001",
+      "ca": "CA4",
+      "desc": "'e claro que' sempre dispara verificacao",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "NARR-001",
+      "ca": "CA5",
+      "desc": "Taxa de narracao calculada corretamente",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "CORA-001",
+      "ca": "CA1",
+      "desc": "V4 detecta {J1,J2}=+J0 em contexto su(1,1)",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "CORA-001",
+      "ca": "CA2",
+      "desc": "V4 aceita [J1,J2]=+J3 em contexto su(2)",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "CORA-001",
+      "ca": "CA3",
+      "desc": "V4 rejeita [H,E]=-2E onde deveria ser +2E (sl2r)",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "CORA-001",
+      "ca": "CA4",
+      "desc": "V5 sugere algebra alternativa correta quando violacao e consistente com outra algebra",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "spec": "CORA-001",
+      "ca": "CA5",
+      "desc": "V6 verifica conectivos logicos",
+      "status": "PASS",
+      "error": ""
+    }
+  ]
+}

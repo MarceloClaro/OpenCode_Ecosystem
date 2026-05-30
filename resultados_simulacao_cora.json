@@ -1,0 +1,949 @@
+{
+  "configuracao": {
+    "n_problemas": 100,
+    "dominios": [
+      "algebra",
+      "physics",
+      "statistics",
+      "demonstrations"
+    ],
+    "K_self_consistency": 7,
+    "num_agentes": 4,
+    "num_rodadas": 6,
+    "seed": 42
+  },
+  "resultados_original": {
+    "acuracia_global": 0.65,
+    "acuracia_por_dominio": {
+      "algebra": 0.88,
+      "physics": 0.76,
+      "statistics": 0.6,
+      "demonstrations": 0.36
+    },
+    "ece": 0.23316385710149623,
+    "diversidade": 0.16781217302087387,
+    "confianca_media": 0.8416331229864489
+  },
+  "resultados_cora": {
+    "acuracia_global": 0.99,
+    "acuracia_por_dominio": {
+      "algebra": 1.0,
+      "physics": 0.96,
+      "statistics": 1.0,
+      "demonstrations": 1.0
+    },
+    "ece": 0.20003630768741504,
+    "diversidade": 0.4296471483474334,
+    "confianca_media": 0.789963692312585,
+    "verificacoes_total": 21030,
+    "erros_detectados": 0,
+    "scratchpad_entries": 2
+  },
+  "analise_estatistica": {
+    "wilcoxon_p": 3.0287780239390827e-07,
+    "pearson_r_div_acc": 0.14666518698664516,
+    "cohens_d": 3.417128571881321
+  },
+  "detalhes": [
+    {
+      "id": 0,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.7845439731348867,
+      "cora_confianca": 0.7937614445858098,
+      "cora_diversidade": 0.39442240914104143
+    },
+    {
+      "id": 1,
+      "dominio": "algebra",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7393169666876,
+      "cora_confianca": 0.799780205437511,
+      "cora_diversidade": 0.05759430952163713
+    },
+    {
+      "id": 2,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9099242335486946,
+      "cora_confianca": 0.8024194133074432,
+      "cora_diversidade": 0.10991052812927776
+    },
+    {
+      "id": 3,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8952993617578661,
+      "cora_confianca": 0.8038047090587757,
+      "cora_diversidade": 0.37215264445262153
+    },
+    {
+      "id": 4,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.969175831615352,
+      "cora_confianca": 0.7763001164701053,
+      "cora_diversidade": 0.03522747223151469
+    },
+    {
+      "id": 5,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.7516116682350825,
+      "cora_confianca": 0.7981911170961954,
+      "cora_diversidade": 0.0
+    },
+    {
+      "id": 6,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9495661775216592,
+      "cora_confianca": 0.7920502340287666,
+      "cora_diversidade": 6.073068347108745e-07
+    },
+    {
+      "id": 7,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8391226837753717,
+      "cora_confianca": 0.7851688248224932,
+      "cora_diversidade": 0.03124173154292561
+    },
+    {
+      "id": 8,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.7820643645426372,
+      "cora_confianca": 0.7831204812210916,
+      "cora_diversidade": 0.013600160000662814
+    },
+    {
+      "id": 9,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9738061183154031,
+      "cora_confianca": 0.7842960706056573,
+      "cora_diversidade": 0.06865547377120503
+    },
+    {
+      "id": 10,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8528152482733664,
+      "cora_confianca": 0.7960711225667348,
+      "cora_diversidade": 0.039687119742437924
+    },
+    {
+      "id": 11,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9406181476119773,
+      "cora_confianca": 0.788936890524603,
+      "cora_diversidade": 0.09492160105585733
+    },
+    {
+      "id": 12,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.907069783165355,
+      "cora_confianca": 0.7749196586441344,
+      "cora_diversidade": 0.015810373913287996
+    },
+    {
+      "id": 13,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.7763949683889204,
+      "cora_confianca": 0.7973857367819155,
+      "cora_diversidade": 0.06478076515417365
+    },
+    {
+      "id": 14,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8087005717390645,
+      "cora_confianca": 0.7866473432658662,
+      "cora_diversidade": 0.03030464528147524
+    },
+    {
+      "id": 15,
+      "dominio": "algebra",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.9294369307736985,
+      "cora_confianca": 0.7765025525091288,
+      "cora_diversidade": 0.39002849579216664
+    },
+    {
+      "id": 16,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9693853809695672,
+      "cora_confianca": 0.7984152970541551,
+      "cora_diversidade": 6.288067035033889e-07
+    },
+    {
+      "id": 17,
+      "dominio": "algebra",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.8530789578958771,
+      "cora_confianca": 0.7804654308339362,
+      "cora_diversidade": 0.42706918005265415
+    },
+    {
+      "id": 18,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.7825844272390132,
+      "cora_confianca": 0.7880647304331599,
+      "cora_diversidade": 5.85138142324996e-07
+    },
+    {
+      "id": 19,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8325204300372632,
+      "cora_confianca": 0.7999557924064186,
+      "cora_diversidade": 0.5012590453982254
+    },
+    {
+      "id": 20,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9027291107574069,
+      "cora_confianca": 0.7914149166189273,
+      "cora_diversidade": 5.561069902757431e-07
+    },
+    {
+      "id": 21,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8426572671742777,
+      "cora_confianca": 0.7942389635094932,
+      "cora_diversidade": 0.4438840869765628
+    },
+    {
+      "id": 22,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8267598754645784,
+      "cora_confianca": 0.7830677054133222,
+      "cora_diversidade": 5.602151598404229e-07
+    },
+    {
+      "id": 23,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8632186162198222,
+      "cora_confianca": 0.7653183793865258,
+      "cora_diversidade": 6.462656383388034e-07
+    },
+    {
+      "id": 24,
+      "dominio": "algebra",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.751494997172633,
+      "cora_confianca": 0.8072269342449041,
+      "cora_diversidade": 5.377841680341091e-07
+    },
+    {
+      "id": 25,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8297061891638168,
+      "cora_confianca": 0.7857412450725275,
+      "cora_diversidade": 0.5170754972914867
+    },
+    {
+      "id": 26,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8808489678885804,
+      "cora_confianca": 0.761927157086833,
+      "cora_diversidade": 0.5702247493312598
+    },
+    {
+      "id": 27,
+      "dominio": "physics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7378454858950623,
+      "cora_confianca": 0.781798712705154,
+      "cora_diversidade": 0.46707085234216705
+    },
+    {
+      "id": 28,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8240254846459248,
+      "cora_confianca": 0.7985829902081495,
+      "cora_diversidade": 0.4901756730716809
+    },
+    {
+      "id": 29,
+      "dominio": "physics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.9299442973597825,
+      "cora_confianca": 0.7945191591413865,
+      "cora_diversidade": 0.5659926851382961
+    },
+    {
+      "id": 30,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8439274765516559,
+      "cora_confianca": 0.7753763186990336,
+      "cora_diversidade": 0.06374078838518768
+    },
+    {
+      "id": 31,
+      "dominio": "physics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7074013045923606,
+      "cora_confianca": 0.774147106708485,
+      "cora_diversidade": 0.6577437121700065
+    },
+    {
+      "id": 32,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": false,
+      "original_confianca": 0.8595034592445074,
+      "cora_confianca": 0.7925578522607512,
+      "cora_diversidade": 0.07077965505214419
+    },
+    {
+      "id": 33,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.755958644599914,
+      "cora_confianca": 0.7925391234301673,
+      "cora_diversidade": 0.5118919057858244
+    },
+    {
+      "id": 34,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.7959358198312818,
+      "cora_confianca": 0.7861044904894599,
+      "cora_diversidade": 0.29466569216177346
+    },
+    {
+      "id": 35,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9591897724091082,
+      "cora_confianca": 0.8048094513890812,
+      "cora_diversidade": 0.6052701044832955
+    },
+    {
+      "id": 36,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8791465297682036,
+      "cora_confianca": 0.864571253348191,
+      "cora_diversidade": 0.08564333465037452
+    },
+    {
+      "id": 37,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.7994518891665361,
+      "cora_confianca": 0.8187912521945154,
+      "cora_diversidade": 0.43845042950138235
+    },
+    {
+      "id": 38,
+      "dominio": "physics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.9149078394435326,
+      "cora_confianca": 0.824312569953134,
+      "cora_diversidade": 0.3917155518969478
+    },
+    {
+      "id": 39,
+      "dominio": "physics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.8012747751156672,
+      "cora_confianca": 0.7950228379639134,
+      "cora_diversidade": 0.649277557654724
+    },
+    {
+      "id": 40,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9216860314470317,
+      "cora_confianca": 0.8042267129303932,
+      "cora_diversidade": 0.4649939304555682
+    },
+    {
+      "id": 41,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.7769540508756991,
+      "cora_confianca": 0.7915197533369788,
+      "cora_diversidade": 0.49462420123391654
+    },
+    {
+      "id": 42,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8924085857831393,
+      "cora_confianca": 0.7831192979570755,
+      "cora_diversidade": 2.136157093179424e-10
+    },
+    {
+      "id": 43,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9118372451270129,
+      "cora_confianca": 0.7679697264592373,
+      "cora_diversidade": 0.11509892182219217
+    },
+    {
+      "id": 44,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8597318212834106,
+      "cora_confianca": 0.791680798799782,
+      "cora_diversidade": 0.2958931576613288
+    },
+    {
+      "id": 45,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8694087024546652,
+      "cora_confianca": 0.7779897295004762,
+      "cora_diversidade": 0.5325808188854292
+    },
+    {
+      "id": 46,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8679205848337702,
+      "cora_confianca": 0.7808983373648551,
+      "cora_diversidade": 0.421433423022423
+    },
+    {
+      "id": 47,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8926753102448909,
+      "cora_confianca": 0.7863804990077287,
+      "cora_diversidade": 0.5476638235469289
+    },
+    {
+      "id": 48,
+      "dominio": "physics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7291286126799348,
+      "cora_confianca": 0.8105649247268235,
+      "cora_diversidade": 0.5327767309019343
+    },
+    {
+      "id": 49,
+      "dominio": "physics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8942535679735932,
+      "cora_confianca": 0.8161330297701672,
+      "cora_diversidade": 0.48389266830871347
+    },
+    {
+      "id": 50,
+      "dominio": "statistics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.923652919335749,
+      "cora_confianca": 0.7919538192665485,
+      "cora_diversidade": 0.5958856120402114
+    },
+    {
+      "id": 51,
+      "dominio": "statistics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7760239695030051,
+      "cora_confianca": 0.7929389038204329,
+      "cora_diversidade": 0.37094517525270987
+    },
+    {
+      "id": 52,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.7718935473900677,
+      "cora_confianca": 0.7883685530096056,
+      "cora_diversidade": 0.5584803165632825
+    },
+    {
+      "id": 53,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8426553152778121,
+      "cora_confianca": 0.7811695650047678,
+      "cora_diversidade": 0.5974104119842774
+    },
+    {
+      "id": 54,
+      "dominio": "statistics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7956307116378507,
+      "cora_confianca": 0.8086863807836062,
+      "cora_diversidade": 0.657474086783558
+    },
+    {
+      "id": 55,
+      "dominio": "statistics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7763165068307625,
+      "cora_confianca": 0.7637300247793071,
+      "cora_diversidade": 0.5788084856033291
+    },
+    {
+      "id": 56,
+      "dominio": "statistics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.767916451982031,
+      "cora_confianca": 0.8088096062588522,
+      "cora_diversidade": 0.573696030127075
+    },
+    {
+      "id": 57,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8295929150682261,
+      "cora_confianca": 0.7956964429682687,
+      "cora_diversidade": 0.5142303676676594
+    },
+    {
+      "id": 58,
+      "dominio": "statistics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.8475485865774739,
+      "cora_confianca": 0.7765632022166744,
+      "cora_diversidade": 0.6226071931606688
+    },
+    {
+      "id": 59,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8553568209231872,
+      "cora_confianca": 0.7935836752729332,
+      "cora_diversidade": 0.5432014224955108
+    },
+    {
+      "id": 60,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8273193957016298,
+      "cora_confianca": 0.7850253004893274,
+      "cora_diversidade": 0.6173864063912127
+    },
+    {
+      "id": 61,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9419724872174331,
+      "cora_confianca": 0.7872296821188578,
+      "cora_diversidade": 0.5060204606632991
+    },
+    {
+      "id": 62,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9318823143055119,
+      "cora_confianca": 0.7846084549566148,
+      "cora_diversidade": 0.5577784830691269
+    },
+    {
+      "id": 63,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8489254661564953,
+      "cora_confianca": 0.785090840541766,
+      "cora_diversidade": 0.5619676451675281
+    },
+    {
+      "id": 64,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.83938154647948,
+      "cora_confianca": 0.8015566353092183,
+      "cora_diversidade": 0.6201248761897779
+    },
+    {
+      "id": 65,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.7745030964956784,
+      "cora_confianca": 0.7756336818334457,
+      "cora_diversidade": 0.5877553030007053
+    },
+    {
+      "id": 66,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9187003246245479,
+      "cora_confianca": 0.7926118868378959,
+      "cora_diversidade": 0.6127305426133696
+    },
+    {
+      "id": 67,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.815122419444006,
+      "cora_confianca": 0.7722973980982101,
+      "cora_diversidade": 0.11856872438444417
+    },
+    {
+      "id": 68,
+      "dominio": "statistics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.9371154351461322,
+      "cora_confianca": 0.787884641111814,
+      "cora_diversidade": 0.6345242683528202
+    },
+    {
+      "id": 69,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8059628458042757,
+      "cora_confianca": 0.7778411452589631,
+      "cora_diversidade": 0.4807351301706017
+    },
+    {
+      "id": 70,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9838212790747427,
+      "cora_confianca": 0.7810198017537909,
+      "cora_diversidade": 0.5548415804823802
+    },
+    {
+      "id": 71,
+      "dominio": "statistics",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9488346770171117,
+      "cora_confianca": 0.7886197019118845,
+      "cora_diversidade": 0.6108618835732518
+    },
+    {
+      "id": 72,
+      "dominio": "statistics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.8789240337858737,
+      "cora_confianca": 0.7959008586547438,
+      "cora_diversidade": 0.6619563915871799
+    },
+    {
+      "id": 73,
+      "dominio": "statistics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.8697922665369565,
+      "cora_confianca": 0.7861150449255444,
+      "cora_diversidade": 0.6401221280357112
+    },
+    {
+      "id": 74,
+      "dominio": "statistics",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7450717348005185,
+      "cora_confianca": 0.7844347959567612,
+      "cora_diversidade": 0.6084190236948425
+    },
+    {
+      "id": 75,
+      "dominio": "demonstrations",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8209910523369877,
+      "cora_confianca": 0.7779554990663362,
+      "cora_diversidade": 0.49567845351477746
+    },
+    {
+      "id": 76,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7975182175608131,
+      "cora_confianca": 0.785605663088596,
+      "cora_diversidade": 0.553091647341892
+    },
+    {
+      "id": 77,
+      "dominio": "demonstrations",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.7718340629071139,
+      "cora_confianca": 0.7668524208409614,
+      "cora_diversidade": 0.6577512444639471
+    },
+    {
+      "id": 78,
+      "dominio": "demonstrations",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.75866570006114,
+      "cora_confianca": 0.793256244239484,
+      "cora_diversidade": 0.6596171248544243
+    },
+    {
+      "id": 79,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.9466243383562744,
+      "cora_confianca": 0.7817609714516877,
+      "cora_diversidade": 0.5660799884345974
+    },
+    {
+      "id": 80,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7161898452758491,
+      "cora_confianca": 0.77111717011992,
+      "cora_diversidade": 0.5984780218277179
+    },
+    {
+      "id": 81,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.9251977420777145,
+      "cora_confianca": 0.7628357931427033,
+      "cora_diversidade": 0.6245743997600333
+    },
+    {
+      "id": 82,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.8157381872053184,
+      "cora_confianca": 0.7817121766679036,
+      "cora_diversidade": 0.5838644110252259
+    },
+    {
+      "id": 83,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.8698715392398215,
+      "cora_confianca": 0.7945071347177463,
+      "cora_diversidade": 0.6101318445333243
+    },
+    {
+      "id": 84,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7318686102642312,
+      "cora_confianca": 0.800546185235222,
+      "cora_diversidade": 0.6195562151375782
+    },
+    {
+      "id": 85,
+      "dominio": "demonstrations",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.7476326718483947,
+      "cora_confianca": 0.7946509032131716,
+      "cora_diversidade": 1.0
+    },
+    {
+      "id": 86,
+      "dominio": "demonstrations",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.7849722943933838,
+      "cora_confianca": 0.7642928589812895,
+      "cora_diversidade": 0.623888223596479
+    },
+    {
+      "id": 87,
+      "dominio": "demonstrations",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.7620099667365515,
+      "cora_confianca": 0.8116599429904514,
+      "cora_diversidade": 0.5325796769634699
+    },
+    {
+      "id": 88,
+      "dominio": "demonstrations",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8236053401151046,
+      "cora_confianca": 0.7864898199143826,
+      "cora_diversidade": 0.49137951267741675
+    },
+    {
+      "id": 89,
+      "dominio": "demonstrations",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.9007859600626076,
+      "cora_confianca": 0.8251038206333772,
+      "cora_diversidade": 1.0
+    },
+    {
+      "id": 90,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7869906519304646,
+      "cora_confianca": 0.7879791338926048,
+      "cora_diversidade": 0.530574732513461
+    },
+    {
+      "id": 91,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.8048136389452772,
+      "cora_confianca": 0.7885799209774932,
+      "cora_diversidade": 0.6125813322984657
+    },
+    {
+      "id": 92,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.8647346848032279,
+      "cora_confianca": 0.797123916893776,
+      "cora_diversidade": 0.6062166897578717
+    },
+    {
+      "id": 93,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7331427007545666,
+      "cora_confianca": 0.7863095283819937,
+      "cora_diversidade": 0.6694949955261896
+    },
+    {
+      "id": 94,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.8892654337498864,
+      "cora_confianca": 0.7979705645648782,
+      "cora_diversidade": 0.6608214307436757
+    },
+    {
+      "id": 95,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.8954953815044125,
+      "cora_confianca": 0.8017189676102698,
+      "cora_diversidade": 0.6238644634062454
+    },
+    {
+      "id": 96,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7645502458790359,
+      "cora_confianca": 0.7820204675450422,
+      "cora_diversidade": 0.629142636211607
+    },
+    {
+      "id": 97,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.8803087951245163,
+      "cora_confianca": 0.7791518171114671,
+      "cora_diversidade": 0.5350627739428719
+    },
+    {
+      "id": 98,
+      "dominio": "demonstrations",
+      "original_acertou": true,
+      "cora_acertou": true,
+      "original_confianca": 0.8167463139379988,
+      "cora_confianca": 0.7732878322386427,
+      "cora_diversidade": 0.6074637494095907
+    },
+    {
+      "id": 99,
+      "dominio": "demonstrations",
+      "original_acertou": false,
+      "cora_acertou": true,
+      "original_confianca": 0.7308733160611752,
+      "cora_confianca": 0.8077020332678888,
+      "cora_diversidade": 0.5270592889979796
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+# ============================================================
+# .gitignore — Antiprojeto UFC (PPGTE/UFC)
+# ============================================================
+
+# Dependencias e build
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+node_modules/
+*.egg
+
+# LaTeX auxiliares
+*.aux
+*.log
+*.toc
+*.out
+*.synctex*
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.run.xml
+*.spl
+
+# Python
+*.pyc
+.venv/
+venv/
+
+# Banco de dados local
+*.db-shm
+*.db-wal
+*.db-journal
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema operacional
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Arquivos grandes (>10MB)
+# (PDFs compilados sao regeneraveis via LaTeX, mantidos no repo para conveniencia)
+# Se necessario, descomente:
+# *.pdf
+
+# Sessoes efemeras
+nexus/context_offload/
+
+# OpenCode_Ecosystem tem seu proprio repo (submodule ou clone)
+# NAO commitar o conteudo diretamente
+OpenCode_Ecosystem/

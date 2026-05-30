@@ -1,0 +1,214 @@
+% ============================================================
+% ANTEPROJETO PPGTE/UFC 2026
+% Formato: LaTeX (compilar com pdfLaTeX ou LuaLaTeX)
+% Margens: sup/inf 2,5cm | esq/dir 3,0cm
+% Fonte: Times New Roman 12pt | Espaçamento: 1,5
+% ============================================================
+
+\documentclass[12pt,a4paper]{article}
+
+% --- ENCODING E FONTE ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}           % Times New Roman
+\usepackage[brazil]{babel}   % Português do Brasil
+
+% --- MARGENS (sup/inf 2,5cm | esq/dir 3,0cm) ---
+\usepackage[top=2.5cm, bottom=2.5cm, left=3.0cm, right=3.0cm]{geometry}
+
+% --- ESPAÇAMENTO 1,5 ---
+\usepackage{setspace}
+\onehalfspacing
+
+% --- FORMATAÇÃO ---
+\usepackage{indentfirst}     % Indenta primeiro parágrafo
+\usepackage{hyperref}        % Links clicáveis
+\usepackage{enumitem}        % Listas personalizadas
+\usepackage{tabularx}        % Tabelas
+\usepackage{ragged2e}        % Centralização de título
+
+% --- CONFIGURAÇÕES DE LINKS ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+% --- REMOVER IDENTIFICAÇÃO DO AUTOR ---
+\author{}
+\date{}
+
+% ============================================================
+\begin{document}
+
+% --- CAPA (ANÔNIMA) ---
+\begin{titlepage}
+    \thispagestyle{empty}
+    \vspace*{4cm}
+    
+    \begin{center}
+        {\bfseries\large INTELIGÊNCIA ARTIFICIAL MULTIAGENTE NO ENSINO SUPERIOR:\\[0.3cm]
+        UM GUIA PRÁTICO PARA PESQUISA CIENTÍFICA ASSISTIDA E ÉTICA}
+    \end{center}
+    
+    \vspace{3cm}
+    
+    \begin{flushleft}
+        \textbf{Linha de Pesquisa:} Linha 1 --- Inovações e Práticas em Tecnologia Educacional\\[0.5cm]
+        \textbf{Primeira Opção de Tema:} Tema 03 --- Aplicação de Inteligência Artificial no Desenvolvimento de Ferramentas para Suporte ao Contexto Educacional\\[0.5cm]
+        \textbf{Segunda Opção de Tema:} Tema 04 --- Avaliação de Aspectos da LGPD e Privacidade de Dados no Contexto Educacional\\[0.5cm]
+        \textbf{Tipo de Produto Educacional:} Conteúdo educacional digital
+    \end{flushleft}
+    
+\end{titlepage}
+
+% ============================================================
+% B. RESUMO
+% ============================================================
+\section{Resumo}
+
+A disseminação de ferramentas de Inteligência Artificial (IA) generativa no ensino superior introduziu riscos de alucinações, plágio involuntário, vazamento de dados e perda de rastreabilidade de fontes. Este anteprojeto propõe o desenvolvimento de um guia prático de uso ético de uma plataforma de IA multiagente de código aberto --- que coordena 125 agentes especializados com auditoria caixa branca e rastreabilidade por DOI --- como ferramenta de suporte à pesquisa acadêmica assistida. A pesquisa adota metodologia mista em três fases: (1) análise documental da arquitetura do ecossistema frente às normativas de ética em IA (LGPD, Resolução PRPPG/UFC nº 39/2025); (2) desenvolvimento do guia prático validado por especialistas; (3) estudo de caso com grupo focal de pesquisadores de pós-graduação. O produto educacional será um manual digital interativo que sistematiza boas práticas de uso ético de IA multiagente na pesquisa.
+
+\vspace{0.5cm}
+\noindent\textbf{Palavras-chave:} IA Multiagente. Ética na Pesquisa. OpenCode Ecosystem. LGPD. Tecnologia Educacional.
+
+% ============================================================
+% C. JUSTIFICATIVA
+% ============================================================
+\section{Justificativa e Delimitação do Problema}
+
+O avanço acelerado das IAs generativas transformou a pesquisa acadêmica, mas expôs vulnerabilidades críticas: (a) modelos geram conteúdo plausível, porém factualmente incorreto, incluindo referências bibliográficas inexistentes; (b) o usuário não consegue auditar como o modelo chegou a uma conclusão, violando o princípio da reprodutibilidade científica; (c) pesquisadores inserem dados inéditos em plataformas que os utilizam para treinamento, infringindo a LGPD (Lei nº 13.709/2018); (d) a paráfrase automatizada pode reproduzir trechos protegidos sem atribuição (FLORIDI, 2023; RUSSELL; NORVIG, 2022).
+
+O Edital nº 01/2026 do PPGTE/UFC exige que todo candidato declare o uso ou não uso de IA (Anexo IV). Essa exigência evidencia uma lacuna: faltam diretrizes práticas e ferramentas validadas que permitam ao pesquisador utilizar IA de forma ética, rastreável e em conformidade com a lei.
+
+A plataforma de IA multiagente que fundamenta este anteprojeto --- disponível publicamente em repositório de código aberto (17 estrelas, 7 forks) --- preenche essa lacuna ao implementar: (1) auditoria de cada afirmação vinculada a DOIs verificáveis; (2) logs imutáveis com hash SHA-256; (3) debate entre agentes com 38 tipos de raciocínio e 10 estratégias de Teoria dos Jogos (NASH, 1950); (4) corretor automático de vazamentos de dados.
+
+O problema de pesquisa delimita-se à questão: como sistematizar, por meio de um guia prático validado, o uso ético de uma plataforma de IA multiagente como ferramenta de suporte à pesquisa científica no ensino superior, em conformidade com a LGPD e as normativas de integridade acadêmica da UFC? A relevância justifica-se nas dimensões acadêmica (conhecimento original sobre IA multiagente e ética na pesquisa), tecnológica (democratização de ferramenta gratuita e de código aberto) e social (diretrizes replicáveis para uso responsável de IA, alinhadas ao ODS 4 --- Educação de Qualidade).
+
+% ============================================================
+% D. OBJETIVOS
+% ============================================================
+\section{Objetivos}
+
+\subsection{Objetivo Geral}
+
+Desenvolver e validar um guia prático de uso ético de uma plataforma de IA multiagente como ferramenta de suporte à pesquisa científica assistida no ensino superior, em conformidade com a LGPD e as normativas de integridade acadêmica da UFC.
+
+\subsection{Objetivos Específicos}
+
+\begin{enumerate}[label=\arabic*.]
+    \item Analisar a arquitetura multiagente da plataforma (125 agentes, pipeline de escrita científica, sistema de auditoria caixa branca) quanto à adequação aos princípios de ética, rastreabilidade e privacidade de dados no contexto educacional.
+    
+    \item Mapear as normativas vigentes sobre uso de IA na pesquisa (Resolução PRPPG/UFC nº 39/2025, LGPD, Marco Civil da Internet) e identificar lacunas entre as exigências legais e as práticas atuais dos pesquisadores.
+    
+    \item Sistematizar boas práticas em formato de guia digital, organizado nos módulos: (a) configuração ética do ambiente; (b) pesquisa bibliográfica com rastreabilidade DOI; (c) redação assistida com auditoria de citações; (d) proteção de dados sensíveis conforme a LGPD.
+    
+    \item Validar o guia por meio de estudo de caso com grupo focal de 8 a 12 pesquisadores de pós-graduação, avaliando usabilidade, efetividade na prevenção de más condutas e percepção de utilidade.
+    
+    \item Avaliar os aspectos de privacidade e proteção de dados do ecossistema, verificando conformidade com a LGPD e propondo recomendações de aprimoramento (Tema 04).
+\end{enumerate}
+
+% ============================================================
+% E. FUNDAMENTAÇÃO TEÓRICA
+% ============================================================
+\section{Fundamentação Teórica}
+
+A fundamentação estrutura-se em três eixos interdisciplinares:
+
+\subsection{Eixo 1: IA e Sistemas Multiagentes}
+
+Russell e Norvig (2022) definem agente inteligente como entidade que percebe o ambiente por sensores e age por atuadores. Sistemas multiagentes (SMA) estendem esse conceito: múltiplos agentes autônomos cooperam e competem para resolver problemas complexos. Diferentemente dos LLMs monolíticos, que processam \textit{prompts} em única inferência estatística, SMAs distribuem o raciocínio entre agentes especializados --- cada um com conhecimento de domínio e protocolos de validação específicos. Wooldridge (2009) aponta três vantagens dos SMAs: robustez (falha de um agente não compromete o sistema), escalabilidade e explicabilidade (rastreabilidade de cada decisão a um agente específico) --- propriedades que os tornam ideais para aplicações educacionais que exigem auditabilidade.
+
+A plataforma que fundamenta este anteprojeto concretiza esses princípios em um pipeline de escrita científica no qual 49 agentes colaboram em 8 estágios para produzir artigos. Seu diferencial é o fórum de debate entre agentes, que utiliza 38 tipos de raciocínio e 10 estratégias de Teoria dos Jogos para confrontar hipóteses e validar conclusões antes de apresentá-las ao usuário (NASH, 1950).
+
+\subsection{Eixo 2: Tecnologia Educacional e Letramento Digital}
+
+Valente (2014) argumenta que a integração de tecnologias digitais no ensino superior requer \textit{transposição didática} que transforme práticas pedagógicas, não apenas substitua ferramentas. Moran (2018) complementa que metodologias ativas apoiadas por tecnologia deslocam o professor para mediador e o aluno para protagonista. Siemens (2004), com o Conectivismo, concebe a aprendizagem como construção de redes entre nodos de informação --- artigos, bases de dados, pesquisadores e agentes de IA --- valorizando a capacidade de navegar, filtrar e sintetizar informações. O letramento digital crítico (FREIRE, 1996) oferece a lente pedagógica para distinguir o uso instrumental do uso crítico-reflexivo das ferramentas de IA.
+
+\subsection{Eixo 3: Ética da IA, Privacidade e Conformidade Legal}
+
+Floridi (2023) estabelece cinco princípios para IA ética: beneficência, não maleficência, autonomia, justiça e explicabilidade. A plataforma alinha-se a todos: beneficência na aceleração da produção científica com qualidade; não maleficência pelos filtros de plágio e corretor automático; autonomia porque o sistema é assistente (não substituto) do pesquisador; justiça pelo código aberto e gratuito; explicabilidade pela arquitetura de auditoria caixa branca. A LGPD (BRASIL, 2018) e a Resolução PRPPG/UFC nº 39/2025 operacionalizam esses princípios na pesquisa acadêmica. O orientador dos Temas 03 e 04 do PPGTE atua precisamente na interseção entre desenvolvimento de ferramentas de IA para suporte educacional e avaliação de privacidade de dados, conferindo aderência temática ao projeto.
+
+% ============================================================
+% F. METODOLOGIA
+% ============================================================
+\section{Metodologia}
+
+Pesquisa de abordagem mista (qualitativa-quantitativa), natureza aplicada, objetivo exploratório-descritivo, estruturada em três fases:
+
+\noindent\textbf{Fase 1 --- Análise Documental e Arquitetural (Meses 1-4):} mapeamento da arquitetura da plataforma (125 agentes, pipeline de escrita científica, sistema de auditoria); revisão documental da LGPD e Resolução PRPPG/UFC nº 39/2025; análise de conformidade entre recursos de auditoria e exigências legais. \textbf{Produto:} Relatório técnico de conformidade LGPD.
+
+\noindent\textbf{Fase 2 --- Desenvolvimento do Guia Prático (Meses 5-12):} estruturação em 4 módulos --- (A) configuração ética do ambiente; (B) pesquisa bibliográfica com rastreabilidade DOI; (C) redação acadêmica com auditoria integrada; (D) proteção de dados sensíveis e protocolos de anonimização. Validação por painel de 3 especialistas (IA, Direito Digital/LGPD, Educação). \textbf{Produto:} manual digital interativo (web responsivo, com exemplos e \textit{checklists}).
+
+\noindent\textbf{Fase 3 --- Estudo de Caso com Grupo Focal (Meses 13-20):} participantes: 8 a 12 pesquisadores de pós-graduação da UFC. Quatro encontros quinzenais de 2h utilizando a plataforma com o guia prático. Coleta: gravações (com consentimento), questionários Likert pré/pós-intervenção e análise de logs. Análise: estatística descritiva e análise de conteúdo temática (BARDIN, 2016).
+
+\noindent\textbf{Fase 4 --- Sistematização e Defesa (Meses 21-24):} consolidação dos resultados, redação da dissertação, publicação do produto educacional e defesa pública.
+
+\vspace{0.3cm}
+\noindent\textbf{Aspectos Éticos:} projeto submetido ao CEP/UFC; todos os participantes assinarão TCLE; nenhum dado sensível será inserido em plataformas externas --- processamento local na plataforma multiagente.
+
+% ============================================================
+% G. CRONOGRAMA
+% ============================================================
+\section{Cronograma}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{|l|X|X|X|X|}
+\hline
+\textbf{Atividade} & \textbf{Sem. 1} & \textbf{Sem. 2} & \textbf{Sem. 3} & \textbf{Sem. 4} \\
+\hline
+Revisão de literatura & $\blacksquare$ & $\blacksquare$ & & \\
+\hline
+Fase 1 --- Análise documental e arquitetural & $\blacksquare$ & & & \\
+\hline
+Fase 2 --- Desenvolvimento do guia prático & & $\blacksquare$ & $\blacksquare$ & \\
+\hline
+Validação por especialistas & & & $\blacksquare$ & \\
+\hline
+Fase 3 --- Estudo de caso (grupo focal) & & & $\blacksquare$ & $\blacksquare$ \\
+\hline
+Análise dos dados & & & & $\blacksquare$ \\
+\hline
+Redação da dissertação & & $\blacksquare$ & $\blacksquare$ & $\blacksquare$ \\
+\hline
+Publicação do produto educacional & & & & $\blacksquare$ \\
+\hline
+Defesa pública & & & & $\blacksquare$ \\
+\hline
+\end{tabularx}
+\end{center}
+
+% ============================================================
+% H. REFERÊNCIAS (ABNT NBR 6023:2018)
+% ============================================================
+\begin{thebibliography}{99}
+
+\bibitem{bardin} BARDIN, L. \textbf{Análise de conteúdo}. São Paulo: Edições 70, 2016. ISBN 978-85-62938-04-7.
+
+\bibitem{brasil} BRASIL. \textbf{Lei nº 13.709, de 14 de agosto de 2018}. Lei Geral de Proteção de Dados Pessoais (LGPD). Diário Oficial da União, Brasília, DF, 15 ago. 2018. Disponível em: \url{https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm}. Acesso em: 24 maio 2026.
+
+\bibitem{floridi} FLORIDI, L. \textbf{The Ethics of Artificial Intelligence}: principles, challenges, and opportunities. Oxford: Oxford University Press, 2023. DOI: \url{https://doi.org/10.1093/oso/9780198883098.001.0001}.
+
+\bibitem{freire} FREIRE, P. \textbf{Pedagogia da autonomia}: saberes necessários à prática educativa. São Paulo: Paz e Terra, 1996. ISBN 978-85-7753-015-1.
+
+\bibitem{moran} MORAN, J. M. \textbf{Metodologias ativas para uma educação inovadora}: uma abordagem teórico-prática. Porto Alegre: Penso, 2018. ISBN 978-85-8429-116-8.
+
+\bibitem{nash} NASH, J. F. Equilibrium points in n-person games. \textbf{Proceedings of the National Academy of Sciences}, v. 36, n. 1, p. 48-49, 1950. DOI: \url{https://doi.org/10.1073/pnas.36.1.48}.
+
+\bibitem{russell} RUSSELL, S.; NORVIG, P. \textbf{Inteligência artificial}: uma abordagem moderna. 4. ed. Rio de Janeiro: GEN LTC, 2022. ISBN 978-85-216-3749-3.
+
+\bibitem{siemens} SIEMENS, G. Conectivismo: uma teoria de aprendizagem para a era digital. \textbf{International Journal of Instructional Technology and Distance Learning}, v. 2, n. 1, p. 3-10, 2004. Disponível em: \url{http://www.itdl.org/Journal/Jan_05/article01.htm}. Acesso em: 24 maio 2026.
+
+\bibitem{ufcres} UNIVERSIDADE FEDERAL DO CEARÁ. Pró-Reitoria de Pesquisa e Pós-Graduação. \textbf{Resolução PRPPG/UFC nº 39, de 1º de outubro de 2025}. Dispõe sobre o uso de Inteligência Artificial na pesquisa acadêmica. Fortaleza: UFC, 2025. Disponível em: \url{https://ppgte.ufc.br/pt/editais/}. Acesso em: 24 maio 2026.
+
+\bibitem{ufcedital} UNIVERSIDADE FEDERAL DO CEARÁ. Programa de Pós-Graduação em Tecnologia Educacional. \textbf{Edital nº 01/2026}: processo seletivo ao Mestrado Profissional em Tecnologia Educacional. Fortaleza: PPGTE/UFC, 2026. Disponível em: \url{https://ppgte.ufc.br/pt/editais/}. Acesso em: 24 maio 2026.
+
+\bibitem{valente} VALENTE, J. A. A comunicação e a educação baseada no uso das tecnologias digitais de informação e comunicação. \textbf{UNOPAR Científica Ciências Humanas e Educação}, Londrina, v. 1, n. 1, p. 141-166, 2014.
+
+\bibitem{wooldridge} WOOLDRIDGE, M. \textbf{An Introduction to MultiAgent Systems}. 2. ed. Chichester: John Wiley \& Sons, 2009. ISBN 978-0-470-51946-2.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,41 @@
+{
+  "project": "Antiprojeto UFC — PPGTE/UFC",
+  "ecosystem_version": "4.3.0",
+  "last_sync": "2026-05-30T14:50:00Z",
+  "health": {
+    "score": 100,
+    "components": {
+      "documentacao": {"status": "healthy", "files": 25, "score": 100},
+      "testes": {"status": "healthy", "files": 30, "score": 100},
+      "latex": {"status": "healthy", "compiled": 15, "score": 100},
+      "scripts": {"status": "healthy", "files": 12, "score": 100},
+      "dados": {"status": "healthy", "files": 215, "score": 100}
+    }
+  },
+  "artifacts": {
+    "domain_shift_audit": {
+      "script": "artigo/evaluations/domain_shift_audit.py",
+      "lines": 725,
+      "hash": "440dff2922b19f0f0e655a69ed78a971",
+      "seed": 42,
+      "output": "artigo/evaluations/domain_shift_audit_output.json"
+    },
+    "jaccard_pdf": {
+      "path": "artigo/jaccard_domain_shift_audit.pdf",
+      "pages": 27,
+      "references": 25,
+      "size_kb": 629
+    },
+    "triangulacao_md": {
+      "path": "artigo/TRIANGULACAO_ANTI_CIRCULARIDADE.md",
+      "research_spec": "SPEC-008"
+    }
+  },
+  "specs": [
+    "specs/SPEC_008B_CAMADA1B.md",
+    "artigo/orchestration/SPEC_008_ANTI_CIRCULARIDADE.md",
+    "artigo/orchestration/SPEC_009_D1_MATEMATICA.md",
+    "artigo/orchestration/SPEC_010_D2_FISICA.md",
+    "artigo/orchestration/SPEC_011_D9_METODOLOGIA.md"
+  ]
+}

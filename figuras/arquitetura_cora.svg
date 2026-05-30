@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 780" font-family="'Times New Roman', Times, serif">
+  <defs>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c0392b"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#27ae60"/>
+    </marker>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2c3e50"/>
+      <stop offset="100%" style="stop-color:#3498db"/>
+    </linearGradient>
+    <linearGradient id="verifierGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ecf0f1"/>
+      <stop offset="100%" style="stop-color:#dfe6e9"/>
+    </linearGradient>
+    <filter id="shadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="1" dy="1" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+    <filter id="shadowLight" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0.5" dy="0.5" stdDeviation="1" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <!-- Título -->
+  <rect x="0" y="0" width="900" height="45" rx="0" fill="url(#headerGrad)"/>
+  <text x="450" y="29" text-anchor="middle" fill="#fff" font-size="17" font-weight="bold" letter-spacing="1">ARQUITETURA CORA — CICLO DE VERIFICAÇÃO-REFINAMENTO</text>
+
+  <!-- ====== FASE 1: GERADOR CRIATIVO ====== -->
+  <rect x="60" y="62" width="780" height="60" rx="6" fill="#e8f8f5" stroke="#1abc9c" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="450" y="83" text-anchor="middle" font-size="14" font-weight="bold" fill="#0e6655">FASE 1 — GERADOR CRIATIVO</text>
+  <text x="450" y="103" text-anchor="middle" font-size="12" fill="#148f77">LLM (T = 1,2 · sem guardrails inline · exploração livre do espaço de transformações matemáticas)</text>
+
+  <!-- Seta 1 → 2 -->
+  <line x1="450" y1="122" x2="450" y2="148" stroke="#555" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- ====== FASE 2: EXTRATOR ====== -->
+  <rect x="200" y="150" width="500" height="50" rx="6" fill="#fef9e7" stroke="#f39c12" stroke-width="1.5" filter="url(#shadowLight)"/>
+  <text x="450" y="170" text-anchor="middle" font-size="13" font-weight="bold" fill="#7d6608">FASE 2 — EXTRATOR DE AFIRMAÇÕES FORMAIS</text>
+  <text x="450" y="189" text-anchor="middle" font-size="11" fill="#9a7d0a">Parser LaTeX → AST simbólico (SymPy + análise dimensional + identificação de estruturas algébricas)</text>
+
+  <!-- Seta 2 → 3 -->
+  <line x1="450" y1="200" x2="450" y2="226" stroke="#555" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- Divisão para verificadores -->
+  <line x1="450" y1="226" x2="450" y2="226" stroke="none"/>
+  <line x1="450" y1="228" x2="90" y2="258" stroke="#aaa" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="450" y1="228" x2="810" y2="258" stroke="#aaa" stroke-width="1.2" stroke-dasharray="4,3"/>
+
+  <!-- ====== FASE 3: VERIFICADORES (6 colunas) ====== -->
+  <!-- Verificador 1 -->
+  <rect x="15" y="260" width="135" height="52" rx="5" fill="url(#verifierGrad)" stroke="#7f8c8d" stroke-width="1" filter="url(#shadowLight)"/>
+  <text x="82" y="280" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">V1: Dimensional</text>
+  <text x="82" y="296" text-anchor="middle" font-size="10" fill="#555">SymPy + Tabela SI</text>
+  <text x="82" y="309" text-anchor="middle" font-size="9" fill="#888">[kg] ≡ [m·s⁻²]?</text>
+
+  <!-- Verificador 2 -->
+  <rect x="163" y="260" width="135" height="52" rx="5" fill="url(#verifierGrad)" stroke="#7f8c8d" stroke-width="1" filter="url(#shadowLight)"/>
+  <text x="230" y="280" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">V2: Álgebra</text>
+  <text x="230" y="296" text-anchor="middle" font-size="10" fill="#555">Lean 4 · Typechecking</text>
+  <text x="230" y="309" text-anchor="middle" font-size="9" fill="#888">Grupo? Anel? Corpo?</text>
+
+  <!-- Verificador 3 -->
+  <rect x="311" y="260" width="135" height="52" rx="5" fill="url(#verifierGrad)" stroke="#7f8c8d" stroke-width="1" filter="url(#shadowLight)"/>
+  <text x="378" y="280" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">V3: Contraexemplo</text>
+  <text x="378" y="296" text-anchor="middle" font-size="10" fill="#555">Z3 · SMT Solver</text>
+  <text x="378" y="309" text-anchor="middle" font-size="9" fill="#888">∃x: ¬φ(x) ?</text>
+
+  <!-- Verificador 4 -->
+  <rect x="459" y="260" width="135" height="52" rx="5" fill="url(#verifierGrad)" stroke="#7f8c8d" stroke-width="1" filter="url(#shadowLight)"/>
+  <text x="526" y="280" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">V4: Estatística</text>
+  <text x="526" y="296" text-anchor="middle" font-size="10" fill="#555">SciPy · Bootstrap</text>
+  <text x="526" y="309" text-anchor="middle" font-size="9" fill="#888">i.i.d.? Dist. correta?</text>
+
+  <!-- Verificador 5 -->
+  <rect x="607" y="260" width="135" height="52" rx="5" fill="url(#verifierGrad)" stroke="#7f8c8d" stroke-width="1" filter="url(#shadowLight)"/>
+  <text x="674" y="280" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">V5: Numérico</text>
+  <text x="674" y="296" text-anchor="middle" font-size="10" fill="#555">JAX · cond(A)</text>
+  <text x="674" y="309" text-anchor="middle" font-size="9" fill="#888">Estável? Conv.?</text>
+
+  <!-- Verificador 6 -->
+  <rect x="755" y="260" width="130" height="52" rx="5" fill="url(#verifierGrad)" stroke="#7f8c8d" stroke-width="1" filter="url(#shadowLight)"/>
+  <text x="820" y="280" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">V6: PDE</text>
+  <text x="820" y="296" text-anchor="middle" font-size="10" fill="#555">FEniCS</text>
+  <text x="820" y="309" text-anchor="middle" font-size="9" fill="#888">BC satisfeitas?</text>
+
+  <!-- Setas de convergência dos verificadores -->
+  <line x1="82" y1="312" x2="82" y2="340" stroke="#27ae60" stroke-width="1.2"/>
+  <line x1="230" y1="312" x2="230" y2="340" stroke="#27ae60" stroke-width="1.2"/>
+  <line x1="378" y1="312" x2="378" y2="340" stroke="#27ae60" stroke-width="1.2"/>
+  <line x1="526" y1="312" x2="526" y2="340" stroke="#27ae60" stroke-width="1.2"/>
+  <line x1="674" y1="312" x2="674" y2="340" stroke="#27ae60" stroke-width="1.2"/>
+  <line x1="820" y1="312" x2="820" y2="340" stroke="#27ae60" stroke-width="1.2"/>
+
+  <!-- Barra de junção -->
+  <rect x="30" y="338" width="840" height="6" rx="3" fill="#2c3e50"/>
+
+  <!-- Seta para diagnóstico -->
+  <line x1="450" y1="344" x2="450" y2="368" stroke="#555" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- ====== FASE 4: DIAGNOSTICADOR ====== -->
+  <rect x="150" y="370" width="600" height="52" rx="6" fill="#fdedec" stroke="#e74c3c" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="450" y="390" text-anchor="middle" font-size="13" font-weight="bold" fill="#922b21">FASE 4 — DIAGNOSTICADOR DE ERRO</text>
+  <text x="450" y="410" text-anchor="middle" font-size="11" fill="#b03a2e">Classifica falha: τ ∈ {Invariante, Fechamento, Dimensional, Isomorfismo, Generalização} · severidade δ ∈ ℝ⁺</text>
+
+  <!-- Seta para realimentação -->
+  <line x1="450" y1="422" x2="450" y2="448" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="468" y="440" font-size="10" fill="#c0392b" font-style="italic">erro(k,τ,δ)</text>
+
+  <!-- ====== FASE 5: REALIMENTAÇÃO ====== -->
+  <rect x="150" y="450" width="600" height="50" rx="6" fill="#eaf2f8" stroke="#2980b9" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="450" y="470" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a5276">FASE 5 — REALIMENTAÇÃO CORRETIVA</text>
+  <text x="450" y="489" text-anchor="middle" font-size="11" fill="#2471a3">Erro localizado (k, τ, δ) + contexto da cadeia → Prompt corretivo para o LLM</text>
+
+  <!-- Seta de volta ao gerador (loop) -->
+  <path d="M 150 475 L 60 475 L 60 92 L 60 45" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="8,4" marker-end="url(#arrowRed)"/>
+  <text x="20" y="280" font-size="11" fill="#c0392b" font-weight="bold" text-anchor="middle" transform="rotate(-90, 20, 280)">LOOP DE REFINAMENTO (T→0,8)</text>
+
+  <!-- Seta para sintetizador (caminho verde de sucesso) -->
+  <line x1="450" y1="500" x2="450" y2="530" stroke="#27ae60" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="468" y="520" font-size="10" fill="#27ae60" font-style="italic">E = ∅ (sem erros)</text>
+
+  <!-- ====== FASE 6: SINTETIZADOR ====== -->
+  <rect x="100" y="532" width="700" height="55" rx="6" fill="#d5f5e3" stroke="#27ae60" stroke-width="2" filter="url(#shadow)"/>
+  <text x="450" y="553" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e8449">FASE 6 — SINTETIZADOR FINAL</text>
+  <text x="450" y="575" text-anchor="middle" font-size="11" fill="#239b56">IMRAD · provas verificadas · trilha de auditoria com hash SHA-256 · DOIs rastreáveis</text>
+
+  <!-- ====== SUBESPECIALISTAS (lateral direita) ====== -->
+  <rect x="795" y="590" width="0" height="0" fill="none"/> <!-- anchor -->
+
+  <!-- 4 subespecialistas como boxes compactos abaixo -->
+  <rect x="15" y="610" width="205" height="78" rx="5" fill="#f4ecf7" stroke="#8e44ad" stroke-width="1" filter="url(#shadowLight)"/>
+  <text x="117" y="630" text-anchor="middle" font-size="12" font-weight="bold" fill="#6c3483">FÍSICA TEÓRICA</text>
+  <text x="117" y="647" text-anchor="middle" font-size="10" fill="#7d3c98">Análise Dimensional</text>
+  <text x="117" y="661" text-anchor="middle" font-size="10" fill="#7d3c98">Leis de Conservação</text>
+  <text x="117" y="675" text-anchor="middle" font-size="10" fill="#7d3c98">Invariância · Simetrias</text>
+
+  <rect x="235" y="610" width="205" height="78" rx="5" fill="#ebdef0" stroke="#8e44ad" stroke-width="1" filter="url(#shadowLight)"/>
+  <text x="337" y="630" text-anchor="middle" font-size="12" font-weight="bold" fill="#6c3483">MATEMÁTICA PURA</text>
+  <text x="337" y="647" text-anchor="middle" font-size="10" fill="#7d3c98">Fechamento Algébrico</text>
+  <text x="337" y="661" text-anchor="middle" font-size="10" fill="#7d3c98">Contraexemplo (Z3)</text>
+  <text x="337" y="675" text-anchor="middle" font-size="10" fill="#7d3c98">Indução · Topologia</text>
+
+  <rect x="455" y="610" width="205" height="78" rx="5" fill="#e8daef" stroke="#8e44ad" stroke-width="1" filter="url(#shadowLight)"/>
+  <text x="557" y="630" text-anchor="middle" font-size="12" font-weight="bold" fill="#6c3483">ESTATÍSTICA AVANÇADA</text>
+  <text x="557" y="647" text-anchor="middle" font-size="10" fill="#7d3c98">Suposições Distribucionais</text>
+  <text x="557" y="661" text-anchor="middle" font-size="10" fill="#7d3c98">Independência · i.i.d.</text>
+  <text x="557" y="675" text-anchor="middle" font-size="10" fill="#7d3c98">Teoria Assintótica</text>
+
+  <rect x="675" y="610" width="210" height="78" rx="5" fill="#e5e7e9" stroke="#7f8c8d" stroke-width="1" filter="url(#shadowLight)"/>
+  <text x="780" y="630" text-anchor="middle" font-size="12" font-weight="bold" fill="#4d5656">COMPUTAÇÃO CIENTÍFICA</text>
+  <text x="780" y="647" text-anchor="middle" font-size="10" fill="#5d6d7e">Estabilidade Numérica</text>
+  <text x="780" y="661" text-anchor="middle" font-size="10" fill="#5d6d7e">Consistência · Ordem</text>
+  <text x="780" y="675" text-anchor="middle" font-size="10" fill="#5d6d7e">Otimização · KKT</text>
+
+  <!-- Linha de conexão dos especialistas ao extrator -->
+  <line x1="117" y1="610" x2="250" y2="200" stroke="#8e44ad" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+  <line x1="337" y1="610" x2="350" y2="200" stroke="#8e44ad" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+  <line x1="557" y1="610" x2="550" y2="200" stroke="#8e44ad" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+  <line x1="780" y1="610" x2="650" y2="200" stroke="#7f8c8d" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+
+  <!-- Legenda -->
+  <rect x="15" y="708" width="870" height="60" rx="4" fill="#f8f9fa" stroke="#dee2e6" stroke-width="0.8"/>
+  <text x="30" y="728" font-size="11" font-weight="bold" fill="#2c3e50">LEGENDA:</text>
+  <rect x="120" y="717" width="12" height="12" rx="2" fill="#27ae60"/>
+  <text x="137" y="728" font-size="10" fill="#555">Fluxo de sucesso (sem erros)</text>
+  <rect x="300" y="717" width="12" height="12" rx="2" fill="#c0392b"/>
+  <text x="317" y="728" font-size="10" fill="#555">Realimentação de erro (loop corretivo)</text>
+  <rect x="520" y="717" width="12" height="12" rx="2" fill="#f4ecf7" stroke="#8e44ad" stroke-width="0.8"/>
+  <text x="537" y="728" font-size="10" fill="#555">Subespecialistas de domínio</text>
+  <rect x="720" y="717" width="12" height="12" rx="2" fill="#555"/>
+  <text x="737" y="728" font-size="10" fill="#555">Fluxo principal de dados</text>
+
+  <rect x="15" y="742" width="870" height="1" fill="#dee2e6"/>
+  <text x="450" y="758" text-anchor="middle" font-size="10" fill="#999">Fonte: Elaboração própria (2026). Inspirado em Silver et al. (2016), Jiang et al. (2023) e Liang et al. (2024).</text>
+</svg>

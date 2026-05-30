@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 750" font-family="'Times New Roman', Times, serif">
+  <defs>
+    <marker id="arrowDown" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2c3e50"/>
+    </marker>
+    <marker id="arrowCora" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8e44ad"/>
+    </marker>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a5276"/>
+      <stop offset="100%" style="stop-color:#2e86c1"/>
+    </linearGradient>
+    <linearGradient id="coraGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6c3483"/>
+      <stop offset="100%" style="stop-color:#a569bd"/>
+    </linearGradient>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="1" dy="1" stdDeviation="2" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadowCora" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="1" dy="1" stdDeviation="2.5" flood-opacity="0.2" flood-color="#6c3483"/>
+    </filter>
+  </defs>
+
+  <!-- Título -->
+  <rect x="0" y="0" width="820" height="42" rx="0" fill="url(#headerGrad)"/>
+  <text x="410" y="27" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold" letter-spacing="1">INTEGRAÇÃO CORA ↔ OPENCODE v4.2 — PIPELINE ACADÊMICO MULTIAGENTE</text>
+
+  <!-- ====== ECOSSISTEMA OPENCODE (sidebar esquerda) ====== -->
+  <rect x="15" y="60" width="210" height="670" rx="6" fill="#eaf2f8" stroke="#2e86c1" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="120" y="82" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a5276">ECOSSISTEMA OPENCODE</text>
+  <line x1="35" y1="92" x2="205" y2="92" stroke="#aed6f1" stroke-width="1"/>
+
+  <text x="120" y="115" text-anchor="middle" font-size="11" font-weight="bold" fill="#2471a3">Infraestrutura</text>
+  <text x="35" y="133" font-size="10" fill="#2c3e50">125 agentes especializados</text>
+  <text x="35" y="149" font-size="10" fill="#2c3e50">40 MCPs (busca, execução)</text>
+  <text x="35" y="165" font-size="10" fill="#2c3e50">104 skills (12 categorias)</text>
+  <text x="35" y="181" font-size="10" fill="#2c3e50">6 camadas (L0–L6)</text>
+  <text x="35" y="197" font-size="10" fill="#2c3e50">38 tipos de raciocínio</text>
+
+  <line x1="35" y1="210" x2="205" y2="210" stroke="#aed6f1" stroke-width="0.8"/>
+  <text x="120" y="228" text-anchor="middle" font-size="11" font-weight="bold" fill="#2471a3">MCPs Relevantes</text>
+  <text x="35" y="246" font-size="10" fill="#555">SEEKER (10+ fontes acad.)</text>
+  <text x="35" y="262" font-size="10" fill="#555">Sci-Hub (DOI → PDF)</text>
+  <text x="35" y="278" font-size="10" fill="#555">Code Runner (Python)</text>
+  <text x="35" y="294" font-size="10" fill="#555">Sequential Thinking</text>
+  <text x="35" y="310" font-size="10" fill="#555">Playwright (browser)</text>
+  <text x="35" y="326" font-size="10" fill="#555">Memory (grafo de conhecimento)</text>
+
+  <line x1="35" y1="340" x2="205" y2="340" stroke="#aed6f1" stroke-width="0.8"/>
+  <text x="120" y="358" text-anchor="middle" font-size="11" font-weight="bold" fill="#2471a3">Skills de Auditoria</text>
+  <text x="35" y="376" font-size="10" fill="#555">PhD Auditor (Nash, Cohen)</text>
+  <text x="35" y="392" font-size="10" fill="#555">Academic ML Pipeline</text>
+  <text x="35" y="408" font-size="10" fill="#555">Agent Forum (debate)</text>
+  <text x="35" y="424" font-size="10" fill="#555">DocIR (template engine)</text>
+
+  <!-- Conectores da sidebar ao pipeline -->
+  <!-- Pontos de conexão no lado direito da sidebar -->
+  <circle cx="225" cy="115" r="4" fill="#2e86c1"/>
+  <circle cx="225" cy="248" r="4" fill="#2e86c1"/>
+  <circle cx="225" cy="362" r="4" fill="#2e86c1"/>
+
+  <!-- ====== PIPELINE MASWOS (9 estágios - coluna central direita) ====== -->
+
+  <!-- Estágio 1 -->
+  <rect x="250" y="60" width="555" height="44" rx="5" fill="#d6eaf8" stroke="#2980b9" stroke-width="1" filter="url(#shadow)"/>
+  <text x="527" y="78" text-anchor="middle" font-size="12" font-weight="bold" fill="#154360">1. PESQUISA BIBLIOGRÁFICA</text>
+  <text x="527" y="94" text-anchor="middle" font-size="10" fill="#1a5276">SEEKER (arXiv, OpenAlex, PubMed, CORE) + Sci-Hub DOI resolver + websearch DuckDuckGo</text>
+
+  <line x1="527" y1="104" x2="527" y2="118" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- Estágio 2 -->
+  <rect x="250" y="120" width="555" height="44" rx="5" fill="#d6eaf8" stroke="#2980b9" stroke-width="1" filter="url(#shadow)"/>
+  <text x="527" y="138" text-anchor="middle" font-size="12" font-weight="bold" fill="#154360">2. PLANEJAMENTO ESTRUTURAL</text>
+  <text x="527" y="154" text-anchor="middle" font-size="10" fill="#1a5276">Sequential Thinking (MCP) + 38 tipos de raciocínio + 10 estratégias de Teoria dos Jogos</text>
+
+  <line x1="527" y1="164" x2="527" y2="178" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- Estágio 3 -->
+  <rect x="250" y="180" width="555" height="44" rx="5" fill="#d6eaf8" stroke="#2980b9" stroke-width="1" filter="url(#shadow)"/>
+  <text x="527" y="198" text-anchor="middle" font-size="12" font-weight="bold" fill="#154360">3. REDAÇÃO COLABORATIVA</text>
+  <text x="527" y="214" text-anchor="middle" font-size="10" fill="#1a5276">49 agentes MASWOS · debate multiagente (Agent Forum) · IMRAD estruturado</text>
+
+  <!-- Divisor: "ANTES" vs "DEPOIS" de Cora -->
+  <rect x="245" y="232" width="565" height="1" fill="#7f8c8d" stroke-dasharray="6,4"/>
+  <text x="527" y="248" text-anchor="middle" font-size="10" fill="#7f8c8d" font-style="italic">— inserção da camada Cora —</text>
+
+  <line x1="527" y1="255" x2="527" y2="268" stroke="#8e44ad" stroke-width="2" marker-end="url(#arrowCora)"/>
+
+  <!-- Estágio 4 (NOVO - CORA) -->
+  <rect x="250" y="270" width="555" height="52" rx="5" fill="#f4ecf7" stroke="#8e44ad" stroke-width="1.8" filter="url(#shadowCora)"/>
+  <text x="527" y="290" text-anchor="middle" font-size="12" font-weight="bold" fill="#6c3483">4. VERIFICAÇÃO CIENTÍFICA CORA [NOVO]</text>
+  <text x="527" y="310" text-anchor="middle" font-size="10" fill="#7d3c98">4 subespecialistas: Física Teórica · Matemática Pura · Estatística · Computação Científica</text>
+
+  <!-- Ícones dos verificadores dentro do estágio 4 -->
+  <rect x="260" y="318" width="100" height="16" rx="3" fill="#d2b4de"/>
+  <text x="310" y="330" text-anchor="middle" font-size="8" fill="#4a235a">SymPy + SI</text>
+  <rect x="368" y="318" width="60" height="16" rx="3" fill="#d2b4de"/>
+  <text x="398" y="330" text-anchor="middle" font-size="8" fill="#4a235a">Lean 4</text>
+  <rect x="436" y="318" width="60" height="16" rx="3" fill="#d2b4de"/>
+  <text x="466" y="330" text-anchor="middle" font-size="8" fill="#4a235a">Z3 SMT</text>
+  <rect x="504" y="318" width="70" height="16" rx="3" fill="#d2b4de"/>
+  <text x="539" y="330" text-anchor="middle" font-size="8" fill="#4a235a">SciPy Boot</text>
+  <rect x="582" y="318" width="70" height="16" rx="3" fill="#d2b4de"/>
+  <text x="617" y="330" text-anchor="middle" font-size="8" fill="#4a235a">JAX cond</text>
+  <rect x="660" y="318" width="70" height="16" rx="3" fill="#d2b4de"/>
+  <text x="695" y="330" text-anchor="middle" font-size="8" fill="#4a235a">FEniCS</text>
+
+  <line x1="527" y1="338" x2="527" y2="352" stroke="#8e44ad" stroke-width="2" marker-end="url(#arrowCora)"/>
+
+  <!-- Estágio 5 (NOVO - CORA) -->
+  <rect x="250" y="354" width="555" height="52" rx="5" fill="#f4ecf7" stroke="#8e44ad" stroke-width="1.8" filter="url(#shadowCora)"/>
+  <text x="527" y="374" text-anchor="middle" font-size="12" font-weight="bold" fill="#6c3483">5. REFINAMENTO CORA [NOVO]</text>
+  <text x="527" y="394" text-anchor="middle" font-size="10" fill="#7d3c98">LLM recebe relatório de erros (k, τ, δ) → reescreve seções afetadas → T decresce 1.2→0.8</text>
+
+  <!-- Divisor: fim da camada Cora -->
+  <rect x="245" y="414" width="565" height="1" fill="#7f8c8d" stroke-dasharray="6,4"/>
+  <text x="527" y="430" text-anchor="middle" font-size="10" fill="#7f8c8d" font-style="italic">— retorno ao pipeline convencional —</text>
+
+  <line x1="527" y1="437" x2="527" y2="450" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- Estágio 6 -->
+  <rect x="250" y="452" width="555" height="44" rx="5" fill="#d6eaf8" stroke="#2980b9" stroke-width="1" filter="url(#shadow)"/>
+  <text x="527" y="470" text-anchor="middle" font-size="12" font-weight="bold" fill="#154360">6. REVISÃO POR PARES SIMULADA</text>
+  <text x="527" y="486" text-anchor="middle" font-size="10" fill="#1a5276">5 revisores · Nash equilibrium · Cohen's d · Bonferroni correction · IMRAD compliance</text>
+
+  <line x1="527" y1="496" x2="527" y2="510" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- Estágio 7 -->
+  <rect x="250" y="512" width="555" height="44" rx="5" fill="#d6eaf8" stroke="#2980b9" stroke-width="1" filter="url(#shadow)"/>
+  <text x="527" y="530" text-anchor="middle" font-size="12" font-weight="bold" fill="#154360">7. CORREÇÃO MULTIMODAL</text>
+  <text x="527" y="546" text-anchor="middle" font-size="10" fill="#1a5276">6 motores: gramática PT-BR · ABNT NBR 10520 · citações DOI · antiplágio · TSAC · corretor CJK</text>
+
+  <line x1="527" y1="556" x2="527" y2="570" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- Estágio 8 -->
+  <rect x="250" y="572" width="555" height="44" rx="5" fill="#d6eaf8" stroke="#2980b9" stroke-width="1" filter="url(#shadow)"/>
+  <text x="527" y="590" text-anchor="middle" font-size="12" font-weight="bold" fill="#154360">8. PONTUAÇÃO QUALIS A1</text>
+  <text x="527" y="606" text-anchor="middle" font-size="10" fill="#1a5276">10 critérios · pesos bayesianos · auto-score ≥ 95/100 · validação cruzada Pearson</text>
+
+  <line x1="527" y1="616" x2="527" y2="630" stroke="#2c3e50" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+  <!-- Estágio 9 -->
+  <rect x="250" y="632" width="555" height="44" rx="5" fill="#d5f5e3" stroke="#27ae60" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="527" y="650" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e8449">9. EXPORTAÇÃO FINAL</text>
+  <text x="527" y="666" text-anchor="middle" font-size="10" fill="#239b56">LaTeX ABNT · PDF/A archival · trilha de auditoria SHA-256 · DOI references verificados</text>
+
+  <!-- ====== TRILHA DE AUDITORIA (rodapé) ====== -->
+  <rect x="15" y="695" width="790" height="45" rx="5" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+  <text x="410" y="714" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c3e50">TRILHA DE AUDITORIA</text>
+  <text x="410" y="730" text-anchor="middle" font-size="10" fill="#555">SHA-256 hash chain · DOIs verificáveis (CrossRef/OpenAlex) · Log de verificação Cora imutável · Conformidade LGPD · Reproducibilidade total</text>
+
+  <!-- Conexões da sidebar ao pipeline -->
+  <path d="M 226 115 L 245 115 L 245 82 L 250 82" fill="none" stroke="#2e86c1" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.5"/>
+  <path d="M 226 248 L 245 248 L 245 142 L 250 142" fill="none" stroke="#2e86c1" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.5"/>
+  <path d="M 226 362 L 245 362 L 245 202 L 250 202" fill="none" stroke="#2e86c1" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.5"/>
+
+  <!-- Fonte -->
+  <text x="410" y="748" text-anchor="middle" font-size="9" fill="#999">Fonte: Elaboração própria (2026).</text>
+</svg>

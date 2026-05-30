@@ -1,0 +1,486 @@
+﻿% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  brazilian,
+  12pt,
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\newcommand{\ganttbar}{\rule{0.55em}{1.15ex}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off]{babel}
+\else
+\usepackage[bidi=default,shorthands=off]{babel}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdflang={pt-BR},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+INTELIGÊNCIA ARTIFICIAL MULTIAGENTE NO ENSINO SUPERIOR:UM GUIA PRÁTICO
+PARA PESQUISA CIENTÍFICA ASSISTIDA E ÉTICA
+
+\textbf{Linha de Pesquisa:} Linha 1: Inovações e Práticas em Tecnologia
+Educacional
+
+\textbf{Primeira Opção de Tema:} Tema 03: Aplicação de Inteligência
+Artificial no Desenvolvimento de Ferramentas para Suporte ao Contexto
+Educacional
+
+\textbf{Segunda Opção de Tema:} Tema 04: Avaliação de Aspectos da LGPD e
+Privacidade de Dados no Contexto Educacional
+
+\textbf{Tipo de Produto Educacional:} Conteúdo educacional digital
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{RESUMO}\label{resumo}
+
+A disseminação de ferramentas de Inteligência Artificial (IA) generativa
+no ensino superior introduziu riscos de alucinações, plágio
+involuntário, vazamento de dados e perda de rastreabilidade de fontes.
+Este anteprojeto propõe o desenvolvimento de um guia prático de uso
+ético de uma plataforma de IA multiagente de código aberto, que coordena
+125 agentes especializados com auditoria caixa branca e rastreabilidade
+por Digital Object Identifier (DOI), como ferramenta de suporte à
+pesquisa acadêmica assistida. A pesquisa adota metodologia mista em três
+fases: (1) análise documental da arquitetura do ecossistema frente às
+normativas de ética em IA (Lei Geral de Proteção de Dados Pessoais,
+LGPD, Lei nº 13.709/2018; Resolução PRPPG/UFC nº 39/2025); (2)
+desenvolvimento do guia prático validado por especialistas; (3) estudo
+de caso com grupo focal de pesquisadores de pós-graduação. O produto
+educacional será um manual digital interativo que sistematiza boas
+práticas de uso ético de IA multiagente na pesquisa.
+
+\textbf{Palavras-chave:} IA Multiagente. Ética na Pesquisa. Código
+Aberto. LGPD. Tecnologia Educacional.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{JUSTIFICATIVA E DELIMITAÇÃO DO
+PROBLEMA}\label{justificativa-e-delimitauxe7uxe3o-do-problema}
+
+O avanço acelerado das IAs generativas transformou a pesquisa acadêmica,
+mas expôs vulnerabilidades críticas: (a) modelos geram conteúdo
+plausível, porém factualmente incorreto, incluindo referências
+bibliográficas inexistentes; (b) o usuário não consegue auditar como o
+modelo chegou a uma conclusão, violando o princípio da reprodutibilidade
+científica; (c) pesquisadores inserem dados inéditos em plataformas que
+os utilizam para treinamento, infringindo a LGPD (Lei nº 13.709/2018);
+(d) a paráfrase automatizada pode reproduzir trechos protegidos sem
+atribuição (FLORIDI, 2023; RUSSELL; NORVIG, 2022).
+
+O Edital nº 01/2026 do PPGTE/UFC exige que todo candidato declare o uso
+ou não uso de IA (Anexo IV). Essa exigência evidencia uma lacuna: faltam
+diretrizes práticas e ferramentas validadas que permitam ao pesquisador
+utilizar IA de forma ética, rastreável e em conformidade com a lei.
+
+A plataforma de IA multiagente que fundamenta este anteprojeto,
+disponível publicamente em repositório de código aberto, preenche essa
+lacuna ao implementar: (1) auditoria de cada afirmação vinculada a DOIs
+verificáveis; (2) logs imutáveis com hash SHA-256; (3) debate entre
+agentes com 38 tipos de raciocínio e 10 estratégias de Teoria dos Jogos
+(NASH, 1950); (4) corretor automático de vazamentos de dados.
+
+O problema de pesquisa delimita-se à questão: como sistematizar, por
+meio de um guia prático validado, o uso ético de uma plataforma de IA
+multiagente como ferramenta de suporte à pesquisa científica no ensino
+superior, em conformidade com a LGPD e as normativas de integridade
+acadêmica da UFC? A relevância justifica-se nas dimensões acadêmica
+(conhecimento original sobre IA multiagente e ética na pesquisa),
+tecnológica (democratização de ferramenta gratuita e de código aberto) e
+social (diretrizes replicáveis para uso responsável de IA, alinhadas aos
+Objetivos de Desenvolvimento Sustentável (ODS) 4: Educação de
+Qualidade).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{OBJETIVOS}\label{objetivos}
+
+\subsubsection{Objetivo Geral}\label{objetivo-geral}
+
+Desenvolver e validar um guia prático de uso ético de uma plataforma de
+IA multiagente como ferramenta de suporte à pesquisa científica
+assistida no ensino superior, em conformidade com a LGPD e as normativas
+de integridade acadêmica da UFC.
+
+\subsubsection{Objetivos Específicos}\label{objetivos-especuxedficos}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Analisar a arquitetura multiagente da plataforma (125 agentes,
+  pipeline de escrita científica, sistema de auditoria caixa branca)
+  quanto à adequação aos princípios de ética, rastreabilidade e
+  privacidade de dados no contexto educacional.
+\item
+  Mapear as normativas vigentes sobre uso de IA na pesquisa (Resolução
+  PRPPG/UFC nº 39/2025, LGPD, Marco Civil da Internet) e identificar
+  lacunas entre as exigências legais e as práticas atuais dos
+  pesquisadores.
+\item
+  Sistematizar boas práticas em formato de guia digital, organizado nos
+  módulos: (a) configuração ética do ambiente; (b) pesquisa
+  bibliográfica com rastreabilidade DOI; (c) redação assistida com
+  auditoria de citações; (d) proteção de dados sensíveis conforme a
+  LGPD.
+\item
+  Validar o guia por meio de estudo de caso com grupo focal de 8 a 12
+  pesquisadores de pós-graduação, avaliando usabilidade, efetividade na
+  prevenção de más condutas e percepção de utilidade.
+\item
+  Avaliar os aspectos de privacidade e proteção de dados do ecossistema,
+  verificando conformidade com a LGPD e propondo recomendações de
+  aprimoramento (Tema 04).
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{FUNDAMENTAÇÃO TEÓRICA}\label{fundamentauxe7uxe3o-teuxf3rica}
+
+A fundamentação estrutura-se em três eixos interdisciplinares:
+
+\subsubsection{Eixo 1: IA e Sistemas
+Multiagentes}\label{eixo-1-ia-e-sistemas-multiagentes}
+
+Russell e Norvig (2022) definem agente inteligente como entidade que
+percebe o ambiente por sensores e age por atuadores. Sistemas
+multiagentes (SMA) estendem esse conceito: múltiplos agentes autônomos
+cooperam e competem para resolver problemas complexos. Diferentemente
+dos Large Language Models (LLMs) monolíticos, que processam
+\emph{prompts} em única inferência estatística, SMAs distribuem o
+raciocínio entre agentes especializados, cada um com conhecimento de
+domínio e protocolos de validação específicos. Wooldridge (2009) aponta
+três vantagens dos SMAs: robustez (falha de um agente não compromete o
+sistema), escalabilidade e explicabilidade (rastreabilidade de cada
+decisão a um agente específico); propriedades que os tornam ideais para
+aplicações educacionais que exigem auditabilidade.
+
+A plataforma que fundamenta este anteprojeto concretiza esses princípios
+em um pipeline de escrita científica no qual 49 agentes colaboram em 8
+estágios para produzir artigos. Seu diferencial é o fórum de debate
+entre agentes, que utiliza 38 tipos de raciocínio e 10 estratégias de
+Teoria dos Jogos para confrontar hipóteses e validar conclusões antes de
+apresentá-las ao usuário (NASH, 1950).
+
+\subsubsection{Eixo 2: Tecnologia Educacional e Letramento
+Digital}\label{eixo-2-tecnologia-educacional-e-letramento-digital}
+
+Valente (2014) argumenta que a integração de tecnologias digitais no
+ensino superior requer \emph{transposição didática} que transforme
+práticas pedagógicas, não apenas substitua ferramentas. Moran (2018)
+complementa que metodologias ativas apoiadas por tecnologia deslocam o
+professor para mediador e o aluno para protagonista. Siemens (2004), com
+o Conectivismo, concebe a aprendizagem como construção de redes entre
+nodos de informação: artigos, bases de dados, pesquisadores e agentes de
+IA, valorizando a capacidade de navegar, filtrar e sintetizar
+informações. O letramento digital crítico (FREIRE, 1996) oferece a lente
+pedagógica para distinguir o uso instrumental do uso crítico-reflexivo
+das ferramentas de IA.
+
+\subsubsection{Eixo 3: Ética da IA, Privacidade e Conformidade
+Legal}\label{eixo-3-uxe9tica-da-ia-privacidade-e-conformidade-legal}
+
+Floridi (2023) estabelece cinco princípios para IA ética: beneficência,
+não maleficência, autonomia, justiça e explicabilidade. A plataforma
+alinha-se a todos: beneficência na aceleração da produção científica com
+qualidade; não maleficência pelos filtros de plágio e corretor
+automático; autonomia porque o sistema é assistente (não substituto) do
+pesquisador; justiça pelo código aberto e gratuito; explicabilidade pela
+arquitetura de auditoria caixa branca. A LGPD (BRASIL, 2018) e a
+Resolução PRPPG/UFC nº 39/2025 operacionalizam esses princípios na
+pesquisa acadêmica. O orientador dos Temas 03 e 04 do PPGTE atua
+precisamente na interseção entre desenvolvimento de ferramentas de IA
+para suporte educacional e avaliação de privacidade de dados, conferindo
+aderência temática ao projeto.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{METODOLOGIA}\label{metodologia}
+
+Pesquisa de abordagem mista (qualitativa-quantitativa), natureza
+aplicada, objetivo exploratório-descritivo, estruturada em três fases:
+
+\textbf{Fase 1: Análise Documental e Arquitetural (Meses 1-4):}
+mapeamento da arquitetura da plataforma (125 agentes, pipeline de
+escrita científica, sistema de auditoria); revisão documental da LGPD e
+Resolução PRPPG/UFC nº 39/2025; análise de conformidade entre recursos
+de auditoria e exigências legais. Produto: Relatório técnico de
+conformidade LGPD.
+
+\textbf{Fase 2: Desenvolvimento do Guia Prático (Meses 5-12):}
+estruturação em 4 módulos: (A) configuração ética do ambiente; (B)
+pesquisa bibliográfica com rastreabilidade DOI; (C) redação acadêmica
+com auditoria integrada; (D) proteção de dados sensíveis e protocolos de
+anonimização. Validação por painel de 3 especialistas (IA, Direito
+Digital/LGPD, Educação). Produto: manual digital interativo (web
+responsivo, com exemplos e checklists).
+
+\textbf{Fase 3: Estudo de Caso com Grupo Focal (Meses 13-20):}
+participantes: 8 a 12 pesquisadores de pós-graduação da UFC. Quatro
+encontros quinzenais de 2h utilizando a plataforma com o guia prático.
+Coleta: gravações (com consentimento), questionários Likert
+pré/pós-intervenção e análise de logs. Análise: estatística descritiva e
+análise de conteúdo temática (BARDIN, 2016).
+
+\textbf{Fase 4: Sistematização e Defesa (Meses 21-24):} consolidação dos
+resultados, redação da dissertação, publicação do produto educacional e
+defesa pública.
+
+\textbf{Aspectos Éticos:} projeto submetido ao Comitê de Ética em
+Pesquisa (CEP) da UFC; todos os participantes assinarão Termo de
+Consentimento Livre e Esclarecido (TCLE); nenhum dado sensível será
+inserido em plataformas externas; processamento local na plataforma
+multiagente.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{CRONOGRAMA}\label{cronograma}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lcccc@{}}
+\toprule\noalign{}
+Atividade & Sem. 1 & Sem. 2 & Sem. 3 & Sem. 4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Revisão de literatura & \ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{} & \ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{} & & \\
+Fase 1: Análise documental e arquitetural & \ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{} & & & \\
+Fase 2: Desenvolvimento do guia prático & & \ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{} & \ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{} & \\
+Validação por especialistas & & & \ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{} & \\
+Fase 3: Estudo de caso (grupo focal) & & & \ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{} & \ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{} \\
+Análise dos dados & & & & \ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{} \\
+Redação da dissertação & & \ganttbar{}\ganttbar{} & \ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{} & \ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{} \\
+Publicação do produto educacional & & & & \ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{} \\
+Defesa pública & & & & \ganttbar{}\ganttbar{}\ganttbar{}\ganttbar{} \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{REFERÊNCIAS}\label{referuxeancias}
+
+BARDIN, L. \textbf{Análise de conteúdo}. São Paulo: Edições 70, 2016.
+ISBN 978-85-62938-04-7.
+
+BRASIL. \textbf{Lei nº 13.709, de 14 de agosto de 2018}. Lei Geral de
+Proteção de Dados Pessoais (LGPD). Diário Oficial da União, Brasília,
+DF, 15 ago. 2018. Disponível em:
+https://www.planalto.gov.br/ccivil\_03/\_ato2015-2018/2018/lei/l13709.htm.
+Acesso em: 24 maio 2026.
+
+FLORIDI, L. \textbf{The Ethics of Artificial Intelligence}: principles,
+challenges, and opportunities. Oxford: Oxford University Press, 2023.
+DOI: https://doi.org/10.1093/oso/9780198883098.001.0001.
+
+FREIRE, P. \textbf{Pedagogia da autonomia}: saberes necessários à
+prática educativa. São Paulo: Paz e Terra, 1996. ISBN 978-85-7753-015-1.
+
+MORAN, J. M. \textbf{Metodologias ativas para uma educação inovadora}:
+uma abordagem teórico-prática. Porto Alegre: Penso, 2018. ISBN
+978-85-8429-116-8.
+
+NASH, J. F. Equilibrium points in n-person games. \textbf{Proceedings of
+the National Academy of Sciences}, v. 36, n.~1, p.~48-49, 1950. DOI:
+https://doi.org/10.1073/pnas.36.1.48.
+
+RUSSELL, S.; NORVIG, P. \textbf{Inteligência artificial}: uma abordagem
+moderna. 4. ed.~Rio de Janeiro: GEN LTC, 2022. ISBN 978-85-216-3749-3.
+
+SIEMENS, G. Conectivismo: uma teoria de aprendizagem para a era digital.
+\textbf{International Journal of Instructional Technology and Distance
+Learning}, v. 2, n.~1, p.~3-10, 2004. Disponível em:
+http://www.itdl.org/Journal/Jan\_05/article01.htm. Acesso em: 24 maio
+2026.
+
+UNIVERSIDADE FEDERAL DO CEARÁ. Pró-Reitoria de Pesquisa e Pós-Graduação.
+\textbf{Resolução PRPPG/UFC nº 39, de 1º de outubro de 2025}. Dispõe
+sobre o uso de Inteligência Artificial na pesquisa acadêmica. Fortaleza:
+UFC, 2025. Disponível em: https://ppgte.ufc.br/pt/editais/. Acesso em:
+24 maio 2026.
+
+UNIVERSIDADE FEDERAL DO CEARÁ. Programa de Pós-Graduação em Tecnologia
+Educacional. \textbf{Edital nº 01/2026}: processo seletivo ao Mestrado
+Profissional em Tecnologia Educacional. Fortaleza: PPGTE/UFC, 2026.
+Disponível em: https://ppgte.ufc.br/pt/editais/. Acesso em: 24 maio
+2026.
+
+VALENTE, J. A. A comunicação e a educação baseada no uso das tecnologias
+digitais de informação e comunicação. \textbf{UNOPAR Científica Ciências
+Humanas e Educação}, Londrina, v. 1, n.~1, p.~141-166, 2014.
+
+WOOLDRIDGE, M. \textbf{An Introduction to MultiAgent Systems}. 2.
+ed.~Chichester: John Wiley \& Sons, 2009. ISBN 978-0-470-51946-2.
+
+
+
+% ======================================================================
+% APÊNDICE: Validação TDD das SPECs (Meta-Avaliação DCA)
+% ======================================================================
+\newpage
+\section*{Apêndice: Validação TDD das SPECs da Meta-Avaliação DCA}
+\addcontentsline{toc}{section}{Apêndice: Validação TDD das SPECs}
+
+O sistema \textbf{TDDAcademic v2.0} implementa validação automatizada das 5 Especificações Técnicas extraídas da Meta-Avaliação DCA, utilizando desenvolvimento orientado a testes (TDD) com arquitetura orientada a objetos.
+
+\subsection*{Arquitetura do Sistema}
+\addcontentsline{toc}{subsection}{Arquitetura do Sistema}
+
+\begin{itemize}
+    \item \textbf{SpecValidator} (ABC): Classe abstrata com Template Method \texttt{validar()}
+    \item \textbf{PciValidator}: Calibração do Process Confidence Index (SPEC-PCI-001)
+    \item \textbf{CodeValidator}: Verificador de obrigatoriedade de código (SPEC-CODE-001)
+    \item \textbf{AntisymValidator}: Verificador de antisimetria do produto exterior (SPEC-ANTISYM-001)
+    \item \textbf{NarrValidator}: Conversor de narração para demonstração (SPEC-NARR-001)
+    \item \textbf{CoraValidator}: Expansão do escopo do Cora-Debate (SPEC-CORA-001)
+    \item \textbf{TestRunner}: Orquestrador com Factory Method
+    \item \textbf{TestReport}: Relatório com saída JSON e Markdown
+\end{itemize}
+
+Design Patterns: Template Method, Factory Method, Strategy, Composite, Value Object.
+
+\subsection*{Resultados da Execução}
+\addcontentsline{toc}{subsection}{Resultados da Execução}
+
+\begin{longtable}[]{@{}lllc@{}}
+\toprule
+SPEC & Descrição & Testes & Taxa \\
+\midrule
+\endhead
+PCI-001 & Calibração do PCI & 5/5 & 100\% \\
+CODE-001 & Obrigatoriedade de Código & 5/5 & 100\% \\
+ANTISYM-001 & Antisimetria do Produto Exterior & 5/5 & 100\% \\
+NARR-001 & Narração $\rightarrow$ Demonstração & 5/5 & 100\% \\
+CORA-001 & Expansão do Cora-Debate & 5/5 & 100\% \\
+\midrule
+\textbf{Total} & & \textbf{25/25} & \textbf{100\%} \\
+\bottomrule
+\end{longtable}
+
+\subsection*{Lições Aprendidas}
+\addcontentsline{toc}{subsection}{Lições Aprendidas}
+
+\begin{enumerate}
+    \item \textbf{Regex flexível:} Comutadores LaTeX aceitam \texttt{{[}{]}}, \texttt{\{\}}, \texttt{\textbackslash{[}\textbackslash{]}} com/sem escaping
+    \item \textbf{Normalização:} Subscritos \texttt{J\_1} e \texttt{J1} são normalizados antes da comparação
+    \item \textbf{Pullback Hénon:} Erro clássico (+b em vez de -b) detectado por contexto $F^{*}$
+    \item \textbf{Falsos positivos:} Texto matemático puro (Stokes, Laplace) não dispara CODE-001
+    \item \textbf{Sinal vs. magnitude:} Violação de sinal é mais comum que violação de magnitude em álgebras de Lie
+\end{enumerate}
+
+\subsection*{Como Executar}
+\addcontentsline{toc}{subsection}{Como Executar}
+
+\begin{verbatim}
+python tdd_academic_validator.py
+\end{verbatim}
+
+Arquivos gerados: \texttt{relatorio\_tdd\_specs.json}, \texttt{relatorio\_tdd\_specs.md}.
+
+
+% ======================================================================
+% APÊNDICE B: Análise do Mapa Taxonômico (150 Questões)
+% ======================================================================
+\newpage
+\section*{Apêndice B: Análise do Mapa Taxonômico --- 150 Questões}
+\addcontentsline{toc}{section}{Apêndice B: Análise do Mapa Taxonômico}
+
+Este apêndice apresenta o mapeamento taxonômico completo de 150 questões
+(60 EUF + 90 ENA) segundo a Taxonomia 350 de Raciocínios Científicos e a
+Taxonomia de Bloom. A análise inclui:
+\begin{itemize}
+  \item Classificação de 32 tipos de raciocínio (R-codes) em 5 categorias
+    taxonômicas (Lógico-Dedutivos, Analítico-Estruturais,
+    Econômico-Decisórios, Físico-Matemáticos e Lógica Matemática
+    Avançada);
+  \item Distribuição de Bloom (Aplicar/Analisar) por exame, por área
+    e por R-code;
+  \item Correlações estatísticas ($\chi^2$ e V de Cramer) entre área,
+    R-code e nível de Bloom;
+  \item Comparação entre os perfis taxonômicos da EUF (Física) e do
+    ENA (Matemática).
+\end{itemize}
+
+O relatório completo em PDF encontra-se no arquivo:
+\texttt{dados\_entrada/mestrado/analise\_mapa\_taxonomico.pdf}
+
+\vspace{0.3cm}
+\noindent\textbf{Resultados Principais:}
+\begin{itemize}
+  \item V de Cramer Área $\times$ R-code = 0,770 (associação muito forte);
+  \item V de Cramer Bloom $\times$ R-code = 0,602 (associação forte);
+  \item V de Cramer Área $\times$ Bloom = 0,232 (associação fraca);
+  \item EUF: domínio da Cat.~XIII (Físico-Matemáticos, 86,7\%);
+  \item ENA: domínio da Cat.~I (Lógico-Dedutivos, 67,8\%);
+  \item Bloom total (150 questões): Aplicar = 87 (58\%), Analisar = 63 (42\%).
+\end{itemize}
+
+\vspace{0.3cm}
+\noindent\textbf{Arquivos:}
+\begin{itemize}
+  \item \texttt{analise\_mapa\_taxonomico.pdf}: relatório completo (15 páginas)
+  \item \texttt{analise\_mapa\_taxonomico.tex}: código-fonte LaTeX
+  \item \texttt{dataset\_completo.json}: dados de 150 questões
+  \item \texttt{comparativo\_euf.html}: dashboard interativo (60 EUF)
+\end{itemize}
+
+\end{document}
+

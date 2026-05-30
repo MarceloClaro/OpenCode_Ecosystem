@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 750" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="specGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2332"/>
+      <stop offset="100%" stop-color="#0d1520"/>
+    </linearGradient>
+    <linearGradient id="agentGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d1b3a"/>
+      <stop offset="100%" stop-color="#1a0f24"/>
+    </linearGradient>
+    <linearGradient id="testGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a3320"/>
+      <stop offset="100%" stop-color="#0d1a10"/>
+    </linearGradient>
+    <linearGradient id="resultGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#332a1a"/>
+      <stop offset="100%" stop-color="#1a150d"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1100" height="750" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="550" y="42" text-anchor="middle" fill="#58a6ff" font-size="22" font-weight="bold">Orquestração SDD+TDD — Anteprojeto PPGTE/UFC 2026</text>
+  <line x1="100" y1="55" x2="1000" y2="55" stroke="#30363d" stroke-width="1"/>
+
+  <!-- ====== LAYER 1: SPECS (top) ====== -->
+  <rect x="30" y="70" width="1040" height="135" rx="10" fill="url(#specGrad)" stroke="#1f6feb" stroke-width="1.5"/>
+  <text x="50" y="93" fill="#58a6ff" font-size="14" font-weight="bold">CAMADA 1 — SPEC (Fonte da Verdade)</text>
+
+  <!-- Spec files -->
+  <rect x="50" y="105" width="145" height="42" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="122" y="123" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="bold">PRD.md</text>
+  <text x="122" y="138" text-anchor="middle" fill="#8b949e" font-size="9">Visão do Produto</text>
+
+  <rect x="210" y="105" width="145" height="42" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="282" y="123" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="bold">RULES.md</text>
+  <text x="282" y="138" text-anchor="middle" fill="#8b949e" font-size="9">Regras Invariantes</text>
+
+  <rect x="370" y="105" width="145" height="42" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="442" y="123" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="bold">ARCHITECTURE.md</text>
+  <text x="442" y="138" text-anchor="middle" fill="#8b949e" font-size="9">Decisões + ADRs</text>
+
+  <rect x="530" y="105" width="145" height="42" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="602" y="123" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="bold">API_SPEC.md</text>
+  <text x="602" y="138" text-anchor="middle" fill="#8b949e" font-size="9">Contratos</text>
+
+  <rect x="690" y="105" width="145" height="42" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="762" y="123" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="bold">TESTS_SPEC.md</text>
+  <text x="762" y="138" text-anchor="middle" fill="#8b949e" font-size="9">Validações</text>
+
+  <rect x="850" y="105" width="145" height="42" rx="6" fill="#0d1117" stroke="#f0883e" stroke-width="1.5"/>
+  <text x="922" y="123" text-anchor="middle" fill="#e6edf3" font-size="11" font-weight="bold">AGENTS.md</text>
+  <text x="922" y="138" text-anchor="middle" fill="#d29922" font-size="9">Regras dos Agentes</text>
+
+  <!-- Spec layer description -->
+  <text x="550" y="172" text-anchor="middle" fill="#8b949e" font-size="11" font-style="italic">A spec é o ativo durável. O código (e o texto) é artefato transitório. Cada arquivo tem responsabilidade única.</text>
+  <line x1="320" y1="177" x2="460" y2="177" stroke="#30363d"/>
+  <line x1="640" y1="177" x2="780" y2="177" stroke="#30363d"/>
+
+  <!-- ====== ARROWS L1 → L2 ====== -->
+  <defs>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#58a6ff"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#3fb950"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#bc8cff"/>
+    </marker>
+  </defs>
+
+  <line x1="250" y1="205" x2="250" y2="235" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <line x1="550" y1="205" x2="550" y2="235" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <line x1="850" y1="205" x2="850" y2="235" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- ====== LAYER 2: AGENTS (middle-left) ====== -->
+  <rect x="30" y="240" width="680" height="210" rx="10" fill="url(#agentGrad)" stroke="#bc8cff" stroke-width="1.5"/>
+  <text x="50" y="263" fill="#bc8cff" font-size="14" font-weight="bold">CAMADA 2 — ORQUESTRAÇÃO DE AGENTES (Pipeline de 7 fases)</text>
+
+  <!-- Agent sequence -->
+  <rect x="50" y="278" width="145" height="55" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="122" y="296" text-anchor="middle" fill="#f0883e" font-size="11" font-weight="bold">① Product Agent</text>
+  <text x="122" y="312" text-anchor="middle" fill="#8b949e" font-size="9">feature-forge</text>
+  <text x="122" y="325" text-anchor="middle" fill="#8b949e" font-size="9">→ PRD.md</text>
+
+  <rect x="210" y="278" width="145" height="55" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="282" y="296" text-anchor="middle" fill="#f0883e" font-size="11" font-weight="bold">② Domain Analyst</text>
+  <text x="282" y="312" text-anchor="middle" fill="#8b949e" font-size="9">spec-driven-dev</text>
+  <text x="282" y="325" text-anchor="middle" fill="#8b949e" font-size="9">→ RULES.md</text>
+
+  <rect x="370" y="278" width="145" height="55" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="442" y="296" text-anchor="middle" fill="#f0883e" font-size="11" font-weight="bold">③ Architect</text>
+  <text x="442" y="312" text-anchor="middle" fill="#8b949e" font-size="9">architecture-designer</text>
+  <text x="442" y="325" text-anchor="middle" fill="#8b949e" font-size="9">→ ARCHITECTURE.md</text>
+
+  <rect x="530" y="278" width="145" height="55" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="602" y="296" text-anchor="middle" fill="#f0883e" font-size="11" font-weight="bold">④ API Designer</text>
+  <text x="602" y="312" text-anchor="middle" fill="#8b949e" font-size="9">api-designer</text>
+  <text x="602" y="325" text-anchor="middle" fill="#8b949e" font-size="9">→ API_SPEC.md</text>
+
+  <!-- Row 2 -->
+  <rect x="50" y="348" width="145" height="55" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="122" y="366" text-anchor="middle" fill="#f0883e" font-size="11" font-weight="bold">⑤ Test Agent</text>
+  <text x="122" y="382" text-anchor="middle" fill="#8b949e" font-size="9">test-driven-dev</text>
+  <text x="122" y="395" text-anchor="middle" fill="#8b949e" font-size="9">→ TESTS_SPEC.md</text>
+
+  <rect x="210" y="348" width="145" height="55" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="282" y="366" text-anchor="middle" fill="#f0883e" font-size="11" font-weight="bold">⑥ Implementation</text>
+  <text x="282" y="382" text-anchor="middle" fill="#8b949e" font-size="9">coder-agent</text>
+  <text x="282" y="395" text-anchor="middle" fill="#8b949e" font-size="9">→ texto/codigo</text>
+
+  <rect x="370" y="348" width="145" height="55" rx="6" fill="#0d1117" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="442" y="366" text-anchor="middle" fill="#3fb950" font-size="11" font-weight="bold">⑦ Reviewer</text>
+  <text x="442" y="382" text-anchor="middle" fill="#8b949e" font-size="9">swarm-review</text>
+  <text x="442" y="395" text-anchor="middle" fill="#8b949e" font-size="9">→ relatório</text>
+
+  <!-- Additional agents below -->
+  <rect x="530" y="348" width="145" height="28" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="602" y="367" text-anchor="middle" fill="#d29922" font-size="10">planning-and-task-breakdown</text>
+
+  <rect x="530" y="382" width="145" height="28" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="602" y="401" text-anchor="middle" fill="#d29922" font-size="10">code-review-and-quality</text>
+
+  <rect x="530" y="416" width="145" height="28" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="602" y="435" text-anchor="middle" fill="#d29922" font-size="10">the-fool (devil's advocate)</text>
+
+  <!-- Agent layer note -->
+  <text x="370" y="445" text-anchor="middle" fill="#8b949e" font-size="10" font-style="italic">Cada agente ≡ uma Agent Skill. A ordem é restrita: NUNCA começar pelo programador (⑥).</text>
+
+  <!-- ====== LAYER 3: TDD VALIDATION (middle-right) ====== -->
+  <rect x="740" y="240" width="330" height="210" rx="10" fill="url(#testGrad)" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="760" y="263" fill="#3fb950" font-size="14" font-weight="bold">CAMADA 3 — TDD (Red→Green→Refactor)</text>
+
+  <!-- RED -->
+  <rect x="760" y="278" width="290" height="40" rx="6" fill="#da3633" opacity="0.25" stroke="#da3633"/>
+  <text x="780" y="295" fill="#f85149" font-size="12" font-weight="bold">RED — Escrever testes que falham</text>
+  <text x="780" y="311" fill="#8b949e" font-size="10">CT-001 (anonimato) → falha se nome presente</text>
+
+  <!-- GREEN -->
+  <rect x="760" y="328" width="290" height="40" rx="6" fill="#3fb950" opacity="0.15" stroke="#3fb950"/>
+  <text x="780" y="345" fill="#3fb950" font-size="12" font-weight="bold">GREEN — Corrigir até todos passarem</text>
+  <text x="780" y="361" fill="#8b949e" font-size="10">Remover marcas → CT-001 passa ✓</text>
+
+  <!-- REFACTOR -->
+  <rect x="760" y="378" width="290" height="40" rx="6" fill="#58a6ff" opacity="0.15" stroke="#58a6ff"/>
+  <text x="780" y="395" fill="#58a6ff" font-size="12" font-weight="bold">REFACTOR — Limpar mantendo verde</text>
+  <text x="780" y="411" fill="#8b949e" font-size="10">Melhorar fluência, eliminar repetições</text>
+
+  <!-- Tools -->
+  <rect x="760" y="430" width="138" height="14" rx="4" fill="#0d1117"/>
+  <text x="830" y="440" text-anchor="middle" fill="#8b949e" font-size="8">pytest + pandoc + code-runner</text>
+
+  <!-- ====== ARROWS L2+L3 → L4 ====== -->
+  <line x1="370" y1="450" x2="550" y2="500" stroke="#bc8cff" stroke-width="2" marker-end="url(#arrowPurple)"/>
+  <line x1="905" y1="450" x2="550" y2="500" stroke="#3fb950" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- ====== LAYER 4: RESULTS ====== -->
+  <rect x="30" y="505" width="1040" height="235" rx="10" fill="url(#resultGrad)" stroke="#f0883e" stroke-width="1.5"/>
+  <text x="50" y="528" fill="#f0883e" font-size="14" font-weight="bold">CAMADA 4 — RESULTADOS (Deliverables por Fase)</text>
+
+  <!-- FASE 0 -->
+  <rect x="50" y="545" width="230" height="85" rx="6" fill="#0d1117" stroke="#da3633" stroke-width="1.5"/>
+  <text x="165" y="563" text-anchor="middle" fill="#f85149" font-size="12" font-weight="bold">FASE 0 — Submissão</text>
+  <text x="165" y="580" text-anchor="middle" fill="#e6edf3" font-size="10">deadline: 01/06/2026</text>
+  <text x="165" y="597" text-anchor="middle" fill="#8b949e" font-size="9">Anteprojeto PDF anônimo</text>
+  <text x="165" y="612" text-anchor="middle" fill="#8b949e" font-size="9">Arquivo único ≤ 15MB</text>
+  <text x="165" y="625" text-anchor="middle" fill="#8b949e" font-size="9">Inscrição SIGAA</text>
+
+  <!-- FASE 1 -->
+  <rect x="300" y="545" width="230" height="85" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="415" y="563" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="bold">FASE 1 — Análise</text>
+  <text x="415" y="580" text-anchor="middle" fill="#e6edf3" font-size="10">Meses 1-4</text>
+  <text x="415" y="597" text-anchor="middle" fill="#8b949e" font-size="9">Mapeamento 125 agentes</text>
+  <text x="415" y="612" text-anchor="middle" fill="#8b949e" font-size="9">Conformidade LGPD</text>
+  <text x="415" y="625" text-anchor="middle" fill="#8b949e" font-size="9">Relatório técnico</text>
+
+  <!-- FASE 2 -->
+  <rect x="550" y="545" width="230" height="85" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="665" y="563" text-anchor="middle" fill="#bc8cff" font-size="12" font-weight="bold">FASE 2 — Guia</text>
+  <text x="665" y="580" text-anchor="middle" fill="#e6edf3" font-size="10">Meses 5-12</text>
+  <text x="665" y="597" text-anchor="middle" fill="#8b949e" font-size="9">4 módulos interativos</text>
+  <text x="665" y="612" text-anchor="middle" fill="#8b949e" font-size="9">Validação especialistas</text>
+  <text x="665" y="625" text-anchor="middle" fill="#8b949e" font-size="9">Produto educacional</text>
+
+  <!-- FASE 3 -->
+  <rect x="800" y="545" width="250" height="85" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="925" y="563" text-anchor="middle" fill="#d29922" font-size="12" font-weight="bold">FASE 3 — Estudo de Caso</text>
+  <text x="925" y="580" text-anchor="middle" fill="#e6edf3" font-size="10">Meses 13-20</text>
+  <text x="925" y="597" text-anchor="middle" fill="#8b949e" font-size="9">8-12 participantes</text>
+  <text x="925" y="612" text-anchor="middle" fill="#8b949e" font-size="9">4 encontros grupo focal</text>
+  <text x="925" y="625" text-anchor="middle" fill="#8b949e" font-size="9">Análise Bardin (2016)</text>
+
+  <!-- FASE 4 -->
+  <rect x="50" y="645" width="1000" height="45" rx="6" fill="#0d1117" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="550" y="663" text-anchor="middle" fill="#3fb950" font-size="12" font-weight="bold">FASE 4 — Sistematização e Defesa (Meses 21-24): Dissertação ABNT + Slide deck + Produto educacional publicado</text>
+
+  <!-- Legend -->
+  <rect x="850" y="700" width="14" height="14" rx="3" fill="#0d1117" stroke="#f0883e"/>
+  <text x="870" y="712" fill="#8b949e" font-size="10">Spec</text>
+  <rect x="930" y="700" width="14" height="14" rx="3" fill="#0d1117" stroke="#bc8cff"/>
+  <text x="950" y="712" fill="#8b949e" font-size="10">Agentes</text>
+  <rect x="1010" y="700" width="14" height="14" rx="3" fill="#0d1117" stroke="#3fb950"/>
+  <text x="1030" y="712" fill="#8b949e" font-size="10">Testes</text>
+</svg>

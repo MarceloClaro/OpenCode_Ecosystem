@@ -1,0 +1,75 @@
+======================================================================
+RELATORIO DO PIPELINE DE CORRECAO
+Arteterapia e Descolonizacao do Cuidado
+======================================================================
+
+Substituicoes aplicadas: 11
+Caracteres: original=91314 -> corrigido=91143
+
+----------------------------------------------------------------------
+DETALHAMENTO DAS 12 SUBSTITUICOES
+----------------------------------------------------------------------
+
+--- #1: abertura formulaica (IA marker: 'configura-se atualmente') ---
+ANTES:  O bem estar psicológico configura-se atualmente como um dos campos mais urgentes no âmbito  das políticas públicas, necessitando de um olhar integral 
+DEPOIS: O campo do bem-estar psicológico figura entre as prioridades contemporâneas das políticas públicas, exigindo uma abordagem integral que ultrapasse a d
+
+--- #2: abertura formulaica (IA marker: 'Em um contexto onde') ---
+ANTES:  Em um contexto onde as respostas terapêuticas convencionais tornam-se insuficientes a arteterapia surge como área de conhecimento e abordagem que cami
+DEPOIS: Quando as respostas terapêuticas tradicionais mostram seus limites, a arteterapia emerge como campo de conhecimento que transita entre a arte, a psico
+
+--- #3: marcador IA: 'É precisamente' ---
+ANTES:  É precisamente focando nessa distância que este estudo mobiliza a perspectiva decolonial.
+DEPOIS: É justamente a partir dessa lacuna que esta pesquisa recorre à perspectiva decolonial.
+
+--- #4: marcador IA: 'torna-se necessário' ---
+ANTES:  Tendo delimitado o problema central e os objetivos deste estudo, torna-se necessário mapear o estado atual do conhecimento sobre os campos teóricos qu
+DEPOIS: Uma vez circunscritos o problema e os objetivos, faz-se oportuno examinar o estado da arte dos campos teóricos que alicerçam esta investigação.
+
+--- #5: marcador IA: 'A literatura documenta' ---
+ANTES:  A literatura documenta que esses familiares, predominantemente mães, apresentam níveis de estresse expressivamente mais elevados do que cuidadores de 
+DEPOIS: Estudos indicam que esses familiares — em sua maioria mães — exibem níveis de estresse significativamente superiores aos de cuidadores de crianças neu
+
+--- #6: adjetivação dupla (IA marker: 'rico e complexo') ---
+ANTES:  mundo interior rico e complexo (Silveira, 1992, p. 21).
+DEPOIS: universo interior repleto de significados (Silveira, 1992, p. 21).
+
+--- #7: marcador IA: 'portanto' [NÃO ENCONTRADO] ---
+ANTES:  Articular a arteterapia de base...
+DEPOIS: Vincular a arteterapia de orientação niseana ao pensamento decolonial latino-americano (Quijano, 2000; Santos, 2019) não configura um artifício extern
+
+--- #8: paráfrase densa + reestruturação sintática [NÃO ENCONTRADO] ---
+ANTES:  A contribuição de Quijano (2000,...
+DEPOIS: O que torna a obra de Quijano (2000, p. 533) particularmente relevante para esta pesquisa é sua tese de que a colonialidade não se limita ao controle 
+
+--- #9: paráfrase de dado estatístico + reestruturação ---
+ANTES:  Dados da Organização Mundial da Saúde apontam que cerca de  970 milhões de pessoas carregam algum tipo de sofrimento mental, tendo como consequência, 
+DEPOIS: Segundo a Organização Mundial da Saúde, aproximadamente 970 milhões de pessoas em todo o mundo convivem com alguma forma de sofrimento mental, gerando
+
+--- #10: paráfrase de Santos + desparafrasear ---
+ANTES:  Boaventura de Sousa Santos denomina esse processo "epistemicídio": a destruição sistemática de formas de conhecimento que não se enquadram nos padrões
+DEPOIS: Boaventura de Sousa Santos batiza esse fenômeno de "epistemicídio" — o extermínio sistemático de saberes que não se ajustam aos cânones da modernidade
+
+--- #11: paráfrase densa + inversão sintática ---
+ANTES:  Kwek (2024), ao investigar intervenções comunitárias baseadas em artes entre migrantes em Cingapura, identificou que as atividades artísticas coletiva
+DEPOIS: Em estudo sobre intervenções comunitárias mediadas pela arte junto a migrantes em Cingapura, Kwek (2024) constatou que as atividades artísticas em gru
+
+----------------------------------------------------------------------
+TSAC-87: VERIFICACAO PRE vs POS CORRECAO
+----------------------------------------------------------------------
+Categoria                         Antes   Depois
+--------------------------------------------------
+abertura formulaica                   3        2
+advérbios modais                      5        5
+conectivos excessivos                 5        5
+voz passiva excessiva                 1        1
+neste contexto                        5        4
+--------------------------------------------------
+TOTAL                                19       17
+
+Reducao: 2 ocorrencias
+Reducao percentual: 10.5%
+
+----------------------------------------------------------------------
+.tex gerado: C:\Users\marce\OneDrive\Documentos\Antiprojeto UFC\tcc_arteterapia_corrigido.tex
+======================================================================

@@ -1,0 +1,241 @@
+% ============================================================
+% ANTEPROJETO PPGTE/UFC 2026
+% Padrão: ABNT NBR 14724:2024 (via abnTeX2)
+% Compilar: pdflatex + bibtex + pdflatex (x2)
+% ============================================================
+
+\documentclass[
+    12pt,
+    openany,
+    oneside,
+    a4paper,
+    brazilian
+]{abntex2}
+
+% --- PACOTES ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,tabularx,longtable,array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{times}
+\usepackage[alf]{abntex2cite}
+
+% --- CONFIGURAÇÕES HYPERREF ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue
+}
+
+% --- ESPAÇAMENTO ABNT (já configurado pelo abntex2) ---
+\OnehalfSpacing
+
+% --- ANONIMIZAÇÃO (processo seletivo) ---
+\titulo{Inteligência Artificial Multiagente no Ensino Superior: um Guia Prático para Pesquisa Científica Assistida e Ética}
+\autor{}
+\local{Fortaleza}
+\data{2026}
+\orientador{}
+\instituicao{Universidade Federal do Ceará -- UFC\\Programa de Pós-Graduação em Tecnologia Educacional -- PPGTE}
+
+\preambulo{Anteprojeto de pesquisa apresentado ao Programa de Pós-Graduação em Tecnologia Educacional (PPGTE) da Universidade Federal do Ceará (UFC) como requisito parcial ao processo seletivo 2026.}
+
+% --- INFORMAÇÕES ADICIONAIS ---
+\newcommand{\linhapesquisa}{Linha 1 --- Inovações e Práticas em Tecnologia Educacional}
+\newcommand{\temaum}{Tema 03 --- Aplicação de Inteligência Artificial no Desenvolvimento de Ferramentas para Suporte ao Contexto Educacional}
+\newcommand{\temadois}{Tema 04 --- Avaliação de Aspectos da LGPD e Privacidade de Dados no Contexto Educacional}
+\newcommand{\tipoproduto}{Conteúdo educacional digital}
+
+% ============================================================
+\begin{document}
+
+% --- CAPA ---
+\ifx\autor\empty
+    \begin{titlepage}
+        \thispagestyle{empty}
+        \begin{center}
+            \vspace*{4cm}
+            {\ABNTEXchapterfont\bfseries\large UNIVERSIDADE FEDERAL DO CEARÁ\\[0.3cm]
+            PROGRAMA DE PÓS-GRADUAÇÃO EM TECNOLOGIA EDUCACIONAL}
+            
+            \vspace{4cm}
+            
+            {\ABNTEXchapterfont\bfseries\LARGE INTELIGÊNCIA ARTIFICIAL MULTIAGENTE NO ENSINO SUPERIOR:\\[0.5cm]
+            UM GUIA PRÁTICO PARA PESQUISA CIENTÍFICA ASSISTIDA E ÉTICA}
+            
+            \vfill
+            
+            {\large Fortaleza\\2026}
+        \end{center}
+    \end{titlepage}
+\else
+    \imprimircapa
+\fi
+
+% --- FOLHA DE ROSTO ---
+\begin{folhaderosto}
+    \begin{center}
+        \vspace*{3cm}
+        {\ABNTEXchapterfont\bfseries\LARGE INTELIGÊNCIA ARTIFICIAL MULTIAGENTE NO ENSINO SUPERIOR:\\[0.5cm]
+        UM GUIA PRÁTICO PARA PESQUISA CIENTÍFICA ASSISTIDA E ÉTICA}
+        
+        \vspace{2cm}
+        
+        \hfill\begin{minipage}{0.5\textwidth}
+        \small
+        Anteprojeto de pesquisa apresentado ao Programa de Pós-Graduação em Tecnologia Educacional (PPGTE) da Universidade Federal do Ceará (UFC) como requisito parcial ao processo seletivo 2026.\\[1cm]
+        \textbf{Linha de Pesquisa:} \linhapesquisa\\[0.3cm]
+        \textbf{Primeira Opção de Tema:} \temaum\\[0.3cm]
+        \textbf{Segunda Opção de Tema:} \temadois\\[0.3cm]
+        \textbf{Tipo de Produto Educacional:} \tipoproduto
+        \end{minipage}
+        
+        \vfill
+        
+        {\large Fortaleza\\2026}
+    \end{center}
+\end{folhaderosto}
+
+% --- RESUMO ---
+\begin{resumo}
+A disseminação de ferramentas de Inteligência Artificial (IA) generativa no ensino superior introduziu riscos de alucinações, plágio involuntário, vazamento de dados e perda de rastreabilidade de fontes. Este anteprojeto propõe o desenvolvimento de um guia prático de uso ético de uma plataforma de IA multiagente de código aberto --- que coordena 125 agentes especializados com auditoria caixa branca e rastreabilidade por DOI --- como ferramenta de suporte à pesquisa acadêmica assistida. A pesquisa adota metodologia mista em três fases: (1) análise documental da arquitetura do ecossistema frente às normativas de ética em IA (LGPD, Resolução PRPPG/UFC nº 39/2025); (2) desenvolvimento do guia prático validado por especialistas; (3) estudo de caso com grupo focal de pesquisadores de pós-graduação. O produto educacional será um manual digital interativo que sistematiza boas práticas de uso ético de IA multiagente na pesquisa.
+
+\vspace{0.3cm}
+\noindent\textbf{Palavras-chave:} IA Multiagente. Ética na Pesquisa. OpenCode Ecosystem. LGPD. Tecnologia Educacional.
+\end{resumo}
+
+% --- SUMÁRIO ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents
+\clearpage
+
+% ============================================================
+% 1. JUSTIFICATIVA E DELIMITAÇÃO DO PROBLEMA
+% ============================================================
+\section{Justificativa e Delimitação do Problema}
+
+O avanço acelerado das IAs generativas transformou a pesquisa acadêmica, mas expôs vulnerabilidades críticas: (a) modelos geram conteúdo plausível, porém factualmente incorreto, incluindo referências bibliográficas inexistentes; (b) o usuário não consegue auditar como o modelo chegou a uma conclusão, violando o princípio da reprodutibilidade científica; (c) pesquisadores inserem dados inéditos em plataformas que os utilizam para treinamento, infringindo a LGPD (Lei nº 13.709/2018); (d) a paráfrase automatizada pode reproduzir trechos protegidos sem atribuição \cite{floridi2023, russell2022}.
+
+O Edital nº 01/2026 do PPGTE/UFC exige que todo candidato declare o uso ou não uso de IA (Anexo IV). Essa exigência evidencia uma lacuna: faltam diretrizes práticas e ferramentas validadas que permitam ao pesquisador utilizar IA de forma ética, rastreável e em conformidade com a lei.
+
+A plataforma de IA multiagente que fundamenta este anteprojeto --- disponível publicamente em repositório de código aberto --- preenche essa lacuna ao implementar: (1) auditoria de cada afirmação vinculada a DOIs verificáveis; (2) logs imutáveis com hash SHA-256; (3) debate entre agentes com 38 tipos de raciocínio e 10 estratégias de Teoria dos Jogos \cite{nash1950}; (4) corretor automático de vazamentos de dados.
+
+O problema de pesquisa delimita-se à questão: como sistematizar, por meio de um guia prático validado, o uso ético de uma plataforma de IA multiagente como ferramenta de suporte à pesquisa científica no ensino superior, em conformidade com a LGPD e as normativas de integridade acadêmica da UFC? A relevância justifica-se nas dimensões acadêmica (conhecimento original sobre IA multiagente e ética na pesquisa), tecnológica (democratização de ferramenta gratuita e de código aberto) e social (diretrizes replicáveis para uso responsável de IA, alinhadas ao ODS 4 --- Educação de Qualidade).
+
+% ============================================================
+% 2. OBJETIVOS
+% ============================================================
+\section{Objetivos}
+
+\subsection{Objetivo Geral}
+
+Desenvolver e validar um guia prático de uso ético de uma plataforma de IA multiagente como ferramenta de suporte à pesquisa científica assistida no ensino superior, em conformidade com a LGPD e as normativas de integridade acadêmica da UFC.
+
+\subsection{Objetivos Específicos}
+
+\begin{enumerate}[label=\arabic*.]
+    \item Analisar a arquitetura multiagente da plataforma (125 agentes, pipeline de escrita científica, sistema de auditoria caixa branca) quanto à adequação aos princípios de ética, rastreabilidade e privacidade de dados no contexto educacional.
+    
+    \item Mapear as normativas vigentes sobre uso de IA na pesquisa (Resolução PRPPG/UFC nº 39/2025, LGPD, Marco Civil da Internet) e identificar lacunas entre as exigências legais e as práticas atuais dos pesquisadores.
+    
+    \item Sistematizar boas práticas em formato de guia digital, organizado nos módulos: (a) configuração ética do ambiente; (b) pesquisa bibliográfica com rastreabilidade DOI; (c) redação assistida com auditoria de citações; (d) proteção de dados sensíveis conforme a LGPD.
+    
+    \item Validar o guia por meio de estudo de caso com grupo focal de 8 a 12 pesquisadores de pós-graduação, avaliando usabilidade, efetividade na prevenção de más condutas e percepção de utilidade.
+    
+    \item Avaliar os aspectos de privacidade e proteção de dados do ecossistema, verificando conformidade com a LGPD e propondo recomendações de aprimoramento (Tema 04).
+\end{enumerate}
+
+% ============================================================
+% 3. FUNDAMENTAÇÃO TEÓRICA
+% ============================================================
+\section{Fundamentação Teórica}
+
+A fundamentação estrutura-se em três eixos interdisciplinares:
+
+\subsection{Eixo 1: IA e Sistemas Multiagentes}
+
+\citeauthor{russell2022} definem agente inteligente como entidade que percebe o ambiente por sensores e age por atuadores. Sistemas multiagentes (SMA) estendem esse conceito: múltiplos agentes autônomos cooperam e competem para resolver problemas complexos. Diferentemente dos LLMs monolíticos, que processam \textit{prompts} em única inferência estatística, SMAs distribuem o raciocínio entre agentes especializados --- cada um com conhecimento de domínio e protocolos de validação específicos. \citeauthor{wooldridge2009} aponta três vantagens dos SMAs: robustez (falha de um agente não compromete o sistema), escalabilidade e explicabilidade (rastreabilidade de cada decisão a um agente específico) --- propriedades que os tornam ideais para aplicações educacionais que exigem auditabilidade \cite{wooldridge2009}.
+
+A plataforma que fundamenta este anteprojeto concretiza esses princípios em um pipeline de escrita científica no qual 49 agentes colaboram em 8 estágios para produzir artigos. Seu diferencial é o fórum de debate entre agentes, que utiliza 38 tipos de raciocínio e 10 estratégias de Teoria dos Jogos para confrontar hipóteses e validar conclusões antes de apresentá-las ao usuário \cite{nash1950}.
+
+\subsection{Eixo 2: Tecnologia Educacional e Letramento Digital}
+
+\citeauthor{valente2014} argumenta que a integração de tecnologias digitais no ensino superior requer \textit{transposição didática} que transforme práticas pedagógicas, não apenas substitua ferramentas \cite{valente2014}. \citeauthor{moran2018} complementa que metodologias ativas apoiadas por tecnologia deslocam o professor para mediador e o aluno para protagonista \cite{moran2018}. \citeauthor{siemens2004}, com o Conectivismo, concebe a aprendizagem como construção de redes entre nodos de informação --- artigos, bases de dados, pesquisadores e agentes de IA --- valorizando a capacidade de navegar, filtrar e sintetizar informações \cite{siemens2004}. O letramento digital crítico \cite{freire1996} oferece a lente pedagógica para distinguir o uso instrumental do uso crítico-reflexivo das ferramentas de IA.
+
+\subsection{Eixo 3: Ética da IA, Privacidade e Conformidade Legal}
+
+\citeauthor{floridi2023} estabelece cinco princípios para IA ética: beneficência, não maleficência, autonomia, justiça e explicabilidade \cite{floridi2023}. A plataforma alinha-se a todos: beneficência na aceleração da produção científica com qualidade; não maleficência pelos filtros de plágio e corretor automático; autonomia porque o sistema é assistente (não substituto) do pesquisador; justiça pelo código aberto e gratuito; explicabilidade pela arquitetura de auditoria caixa branca. A LGPD \cite{brasil2018} e a Resolução PRPPG/UFC nº 39/2025 \cite{ufc2025} operacionalizam esses princípios na pesquisa acadêmica.
+
+% ============================================================
+% 4. METODOLOGIA
+% ============================================================
+\section{Metodologia}
+
+Pesquisa de abordagem mista (qualitativa-quantitativa), natureza aplicada, objetivo exploratório-descritivo, estruturada em quatro fases:
+
+\subsection{Fase 1: Análise Documental e Arquitetural (Meses 1-4)}
+Mapeamento da arquitetura da plataforma (125 agentes, pipeline de escrita científica, sistema de auditoria); revisão documental da LGPD e Resolução PRPPG/UFC nº 39/2025; análise de conformidade entre recursos de auditoria e exigências legais.
+
+\noindent\textbf{Produto:} Relatório técnico de conformidade LGPD.
+
+\subsection{Fase 2: Desenvolvimento do Guia Prático (Meses 5-12)}
+Estruturação em 4 módulos: (A) configuração ética do ambiente; (B) pesquisa bibliográfica com rastreabilidade DOI; (C) redação acadêmica com auditoria integrada; (D) proteção de dados sensíveis e protocolos de anonimização. Validação por painel de 3 especialistas (IA, Direito Digital/LGPD, Educação).
+
+\noindent\textbf{Produto:} Manual digital interativo (web responsivo, com exemplos e \textit{checklists}).
+
+\subsection{Fase 3: Estudo de Caso com Grupo Focal (Meses 13-20)}
+Participantes: 8 a 12 pesquisadores de pós-graduação da UFC. Quatro encontros quinzenais de 2h utilizando a plataforma com o guia prático. Coleta: gravações (com consentimento), questionários Likert pré/pós-intervenção e análise de logs. Análise: estatística descritiva e análise de conteúdo temática \cite{bardin2016}.
+
+\noindent\textbf{Produto:} Análise qualitativa e quantitativa da intervenção.
+
+\subsection{Fase 4: Sistematização e Defesa (Meses 21-24)}
+Consolidação dos resultados, redação da dissertação, publicação do produto educacional e defesa pública.
+
+\noindent\textbf{Produto:} Dissertação e produto educacional publicados.
+
+\subsection{Aspectos Éticos}
+Projeto submetido ao CEP/UFC; todos os participantes assinarão TCLE; nenhum dado sensível será inserido em plataformas externas --- processamento local na plataforma multiagente.
+
+% ============================================================
+% 5. CRONOGRAMA
+% ============================================================
+\section{Cronograma}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{|l|X|X|X|X|}
+\hline
+\textbf{Atividade} & \textbf{Sem. 1} & \textbf{Sem. 2} & \textbf{Sem. 3} & \textbf{Sem. 4} \\
+\hline
+Revisão de literatura & $\blacksquare$ & $\blacksquare$ & & \\
+\hline
+Fase 1 --- Análise documental e arquitetural & $\blacksquare$ & & & \\
+\hline
+Fase 2 --- Desenvolvimento do guia prático & & $\blacksquare$ & $\blacksquare$ & \\
+\hline
+Validação por especialistas & & & $\blacksquare$ & \\
+\hline
+Fase 3 --- Estudo de caso (grupo focal) & & & $\blacksquare$ & $\blacksquare$ \\
+\hline
+Análise dos dados & & & & $\blacksquare$ \\
+\hline
+Redação da dissertação & & $\blacksquare$ & $\blacksquare$ & $\blacksquare$ \\
+\hline
+Publicação do produto educacional & & & & $\blacksquare$ \\
+\hline
+Defesa pública & & & & $\blacksquare$ \\
+\hline
+\end{tabularx}
+\end{center}
+
+% ============================================================
+% REFERÊNCIAS
+% ============================================================
+\bibliography{anteprojeto_abntex2}
+
+\end{document}
