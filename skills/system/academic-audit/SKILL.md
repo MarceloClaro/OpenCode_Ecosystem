@@ -1,3 +1,11 @@
+---
+name: academic-audit
+description: "Auditoria Academica Caixa Branca com rastreamento minucioso. Registra todas as interacoes com o ecossistema OpenCode, fornecendo rastreabilidade de cada afirmacao, evidencia e decisao. Compativel com protocolo TSAC (87 palavras banidas), padroes Qualis A1 e paradigmas epistemologicos multiplos."
+version: "1.0.0"
+category: system
+tags: [audit, logging, tsac, qualis-a1, traceability]
+status: active
+---
 # academic-audit: Auditoria Acadêmica Caixa Branca com Rastreamento Minucioso
 
 **Status**: v1.0.0 | **Categoria**: system | **Tipo**: Auditoria + Logging

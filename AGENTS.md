@@ -7,13 +7,7 @@
 
 ---
 
-# OPENCODE 统一生态系统 v4.6.1
-
-## ⚠️ 诚信与可审计性原则 (v1.0 新增 — 强制性)
-- **完整文件:** [INTEGRIDADE.md](INTEGRIDADE.md)
-- 核心规则: 所有断言必须可验证。任何数字必须能追溯到代码或外部源。
-- 8 项诚信推理 (R-I1 ~ R-I8): 经验验证 · 可证伪性 · 实测vs预测 · 可追溯性 · 独立验证 · 数据来源 · 置信度 · 自评偏差修正
-- 适用于: 分析 · 生产 · 文档 · 通信 · 演进
+# OPENCODE 统一生态系统 v4.2 (MiroFish/BettaFish + PhD Auditor + 204 raciocínios (25 cat))
 
 ## 环境
 - Windows 11, Node.js v25, Bun 1.3, OpenCode CLI 1.14
@@ -65,7 +59,7 @@
 | 推理类型 | 38 | 6分类 (逻辑5+辩证5+博弈论10+决策5+战略5+创新8) |
 | 文章创建器 | 91 | MASWOS v4.6+桥接+自动评分 |
 | SEEKER | 78 | 10智能体+论证树+10+学术来源 |
-| 进化 | 9 | 6代ciclos + editais-br v7.1实战 + cache versionado + KeyError fix |
+| 进化 | 11 | 6代ciclos + editais-br v7.1实战 + cache versionado + KeyError fix + Menu Adaptativo + CORA-Eval Benchmark |
 | 校正器 | 1 | ptbr_corrector.py (CJK检测+PT-BR语法) |
 
 ## MiroFish/BettaFish 集成 (v4.2 新增)
@@ -113,6 +107,10 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | 5 | 语言校正器CJK检测 | 98 | 中文上下文+PT-BR输出需强制校正器; 零容忍CJK泄漏 |
 | 6 | editais-br v2.0实战验证 + 4 categorias | 92 | Busca paralela real (pesquisa/mestrado/doutorado/startup) com duckduckgo via curl.exe; httpx bloqueado por CAPTCHA; score por perfil 58-68/100 |
 | 7 | editais-br v7.1 cache versionado + 50+ curados | 94 | KeyError score corrigido + CACHE_VERSION; 28→52 editais curados (16 FAPs estaduais, 4 exterior, 4 setoriais); fallback curadoria agora cobre todas as 27 UFs |
+| 8 | SDD+TDD Pipeline Acadêmico + Simulação de Arguição | 94 | 7 specs modularizadas + 9 CTs validados + 7 correções aplicadas + 3 ADRs DecisionNode + 16 perguntas de banca simuladas; nota DAP 8,07→9,0; anteprojeto PPGTE/UFC anonimizado e validado |
+| 9 | SDD+TDD AutoEvolve LaTeX Refino + Framework Docs | 96 | 4 overfulls eliminados + 1 underfull fix + 16/16 TDD + FRAMEWORK.md + SPEC atualizada + evolutions/ criado + tests/README.md + docstrings expandidas + 3 ADRs + fix_history catalog |
+| 10 | Menu Adaptativo + Plugin System + DiscoveryEngine | 96 | menu.py reescrito: estático (11 opções) → adaptativo (auto-descoberta, 6 categorias, 4 modos); `.menu_registry.json` plugin system; `_enter()` trata EOFError; encoding UTF-8 Windows |
+| 11 | CORA-Eval Benchmark p/ Ciências Exatas e da Natureza | 97 | 150 tarefas em 10 dimensões × 4 níveis (Básico→Pesquisa); rastreador Python com persistência JSON; integração Cora V1-V7; Q-Score UCB1 para seleção adaptativa; baseline CORA-Score 0.67 |
 
 ## 快速命令
 
@@ -162,6 +160,35 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | editais-br 4 categorias | 4次 | pesquisa/mestrado/doutorado/startup → 10 resultados reais cada |
 | extracao_profunda | 1次 | sintaxe corrigida, extração funcional (contrapartida, prazos, docs) |
 | editais-br v7.1 cache versionado | 1次 | bug KeyError score corrigido + CACHE_VERSION + setdefault score + cache invalidation |
+| SDD+TDD (specs/ pipeline) | 1次 | 7 specs criadas, 9 CTs, 7/7 falhas corrigidas, 3 ADRs registradas |
+| Simulação de Arguição (agent-forum) | 1次 | 16 perguntas, 3 personas de banca, nota DAP 8,07→9,0 |
+| Protocolo de Anonimato | 1次 | identificadores indiretos removidos; anteprojeto anônimo validado |
+| DecisionNode (ADRs) | 3次 | architectu-001, testing-001, security-001 registradas |
+| Conhecimento Estruturado (SDD) | 1次 | especificação como infraestrutura operacional (Cap. 6 livro) |
+| text shortening (overfull ≥3pt) | 3次 | 3/3 overfulls ≥3pt resolvidos (11.7pt, 5.8pt, 0.45pt) |
+| raggedright coluna (underfull) | 1次 | underfull badness 10000 → 0 em longtable |
+| FRAMEWORK.md (doc 2 níveis) | 1次 | SPEC_ORCHESTRATION.md + FRAMEWORK.md + fix_history catalog |
+| testes docstrings expandidas | 3次 | test_compile, test_structure, test_quality com RED/GREEN/fix |
+| evolutions/ LEARN insights | 1次 | diretório de insights + INDEX.md + tendências |
+| Menu Adaptativo (DiscoveryEngine) | 1次 | menu.py: 11 opções fixas → auto-descoberta dinâmica |
+| Plugin System (.menu_registry.json) | 1次 | comandos externos registrados sem editar menu.py |
+| 4 modos de execução | 4 modos | interativo, direto, --list, --quick |
+| _enter() EOFError handling | 1次 | resiliência em modo não-interativo (pipe/automation) |
+| CORA-Eval Benchmark Framework | 1次 | 150 tarefas × 10 dimensões × 4 níveis (Básico→Pesquisa) |
+| cora_benchmark_tracker.py | 1次 | rastreador evolutivo com persistência JSON + CORA-Score + CORA-V-Score |
+| Q-Score UCB1 (benchmark) | 1次 | seleção adaptativa de tarefas pendentes |
+| CORA-V-Score (verificadores) | 1次 | pontuação ponderada por verificadores V1-V7 ativos |
+
+## 工程学科文档 (v4.7 新增 — Engenharia de Software com Agentes Inteligentes)
+
+| 文档 | 路径 | 内容 |
+|------|------|------|
+| ENGENHARIA_DE_SOFTWARE.md | `docs/ENGENHARIA_DE_SOFTWARE.md` | SDD, TDD, CI/CD, SWEBOK, Git Safety, ADR, Arquitetura |
+| SPEC_COVERAGE.md | `docs/SPEC_COVERAGE.md` | 186/186 componentes documentados (100% cobertura) |
+| Cyberpunk Architecture SVG | `diagrams/cyberpunk-engineering-architecture.svg` | Diagrama cyberpunk da arquitetura de ES |
+| Cyberpunk SDD+TDD SVG | `diagrams/cyberpunk-sdd-tdd-pipeline.svg` | Pipeline SDD+TDD estilo cyberpunk |
+
+Disciplinas aplicadas: SDD (Spec-Driven), TDD (Test-Driven), CI/CD (5 gates), SWEBOK (4 categorias), Git Safety (commit-before-AI), ADR (5 decisões), 3-Layer Architecture (MCP→Skill→Agent).
 
 ## 交叉验证矩阵 (亲和度)
 
@@ -173,3 +200,9 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 - websearch↔SEEKER-searcher: 0.85
 - editais-br↔websearch: 0.90 (curl.exe+duckduckgo bypass)
 - editais-br↔docling-pdf-extraction: 0.85 (extracao_profunda dependente)
+- SDD+TDD↔DecisionNode: 0.95 (specs geram ADRs automaticamente)
+- agent-forum↔sequential-thinking: 0.90 (simulação de banca com personas)
+- TESTS_SPEC↔PDF-validation: 0.88 (pipeline CI para documentos acadêmicos)
+- Protocolo-Anonimato↔grep: 0.92 (detecção de identificadores indiretos)
+- CORA-Eval↔cora-debate: 0.95 (benchmark 150 tarefas × V1-V7 verificadores)
+- CORA-Eval↔code-runner: 0.90 (rastreador Python com persistência JSON)
