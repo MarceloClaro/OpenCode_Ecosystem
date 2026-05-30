@@ -1,7 +1,38 @@
-# Ecossistema Unificado OpenCode v4.2 (MiroFish/BettaFish + PhD Auditor + 38 Raciocínios)
+# Ecossistema Unificado OpenCode v4.6.1
 
-> **Idioma de saída obrigatório:** Português Brasileiro Formal.  
-> Este documento é a versão em PT-BR do [AGENTS.md](AGENTS.md).
+> **Idioma de saida obrigatorio:** Portugues Brasileiro Formal.  
+> Este documento e a versao em PT-BR do [AGENTS.md](AGENTS.md).
+
+---
+
+## Principio de Integridade e Auditabilidade (OBRIGATORIO — v1.0)
+
+> **Documento completo:** [INTEGRIDADE.md](INTEGRIDADE.md)
+
+**Regra fundamental:** Toda afirmacao deve ser verificavel. Nenhum numero pode ser apresentado sem que sua origem seja rastreavel contra o codigo ou fontes externas.
+
+### Regras de Aplicacao Imediata
+
+1. **Metricas verificaveis:** Todo numero citado em documentacao, resposta ou artigo DEVE ser verificavel contra arquivos no repositorio
+2. **Auto-avaliacao explicitada:** Scores gerados pelo proprio sistema (Qualis A1, Cora-Debate, confianca) DEVEM ser rotulados como `[auto-reportado]`
+3. **Origem de dados:** Toda tabela/metica DEVE indicar proveniencia (script, commit, fonte externa com data)
+4. **Superlativos proibidos:** "excelente", "revolucionario", "incrivel", "melhor" e similares sao proibidos em documentacao
+5. **Limitacoes visiveis:** Documentacao DEVE conter secao de limitacoes conhecidas
+6. **Falsificabilidade:** Afirmacoes devem ser estruturadas de forma que possam ser verificadas ou refutadas
+7. **Distincao medido-vs-projetado:** Separar explicitamente o que foi medido do que foi estimado ou auto-avaliado
+8. **Rastreabilidade:** Um terceiro deve conseguir reproduzir o caminho dos dados brutos ao resultado
+
+### 8 Raciocinios de Integridade
+| ID | Nome | Funcao |
+|:--:|------|--------|
+| R-I1 | Empirico-Verificacionista | Toda afirmacao ancorada em evidencia rastreavel |
+| R-I2 | Falsificabilidade | Afirmacoes estruturadas para serem refutaveis |
+| R-I3 | Distincao Medido-vs-Projetado | Separar medicoes de estimativas |
+| R-I4 | Rastreabilidade Forense | Caminho completo reproduzivel por terceiros |
+| R-I5 | Contraprova Independente | Resultados validados por metodo alternativo |
+| R-I6 | Origem de Dados (Provenance) | Metadados de origem em todo numero |
+| R-I7 | Nivel de Confianca Explicito | Toda afirmacao com confidence score |
+| R-I8 | Correcao por Vies de Auto-Avaliacao | Fator de correcao para metricas internas |
 
 ---
 

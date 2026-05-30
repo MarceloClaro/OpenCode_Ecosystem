@@ -7,7 +7,13 @@
 
 ---
 
-# OPENCODE 统一生态系统 v4.2 (MiroFish/BettaFish + PhD Auditor + 204 raciocínios (25 cat))
+# OPENCODE 统一生态系统 v4.6.1
+
+## ⚠️ 诚信与可审计性原则 (v1.0 新增 — 强制性)
+- **完整文件:** [INTEGRIDADE.md](INTEGRIDADE.md)
+- 核心规则: 所有断言必须可验证。任何数字必须能追溯到代码或外部源。
+- 8 项诚信推理 (R-I1 ~ R-I8): 经验验证 · 可证伪性 · 实测vs预测 · 可追溯性 · 独立验证 · 数据来源 · 置信度 · 自评偏差修正
+- 适用于: 分析 · 生产 · 文档 · 通信 · 演进
 
 ## 环境
 - Windows 11, Node.js v25, Bun 1.3, OpenCode CLI 1.14

@@ -296,6 +296,7 @@ O ciclo de desenvolvimento do ecossistema e incremental: cada iteracao adiciona 
 | [Projetos](PROJECTS.md) | Painel de projetos |
 | [Diagramas](diagrams/) | 11 diagramas SVG |
 | [Doc. Tecnica Completa](OPENCODE_ECOSYSTEM.md) | 1.289 linhas de documentacao |
+| [Integridade e Auditabilidade](INTEGRIDADE.md) | Principio obrigatorio — 8 raciocinios, 5 faces, 25 regras |
 
 ---
 
