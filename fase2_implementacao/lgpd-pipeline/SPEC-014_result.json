@@ -1,0 +1,127 @@
+{
+  "spec": "SPEC-014",
+  "timestamp": "2026-05-31T15:42:51.767623",
+  "score": {
+    "total_cts": 15,
+    "passed": 15,
+    "failed": 0,
+    "pass_rate": 100.0,
+    "layers": {
+      "L0": 20.0,
+      "L1": 20.0,
+      "L2": 20.0,
+      "L3": 20.0,
+      "L4": 20.0
+    },
+    "total_score": 100.0,
+    "max_score": 100,
+    "qualis_equivalent": "A1"
+  },
+  "results": [
+    {
+      "id": "CT001",
+      "label": "Mascaramento de dado sensivel",
+      "camada": "L0",
+      "status": "PASS",
+      "ms": 2.0
+    },
+    {
+      "id": "CT002",
+      "label": "Classificacao de sensibilidade",
+      "camada": "L0",
+      "status": "PASS",
+      "ms": 0.0
+    },
+    {
+      "id": "CT003",
+      "label": "Consentimento multiagente",
+      "camada": "L0",
+      "status": "PASS",
+      "ms": 0.0
+    },
+    {
+      "id": "CT004",
+      "label": "Pseudonimizacao SHA-256 + salt",
+      "camada": "L1",
+      "status": "PASS",
+      "ms": 0.0
+    },
+    {
+      "id": "CT005",
+      "label": "Criptografia AES-256-GCM",
+      "camada": "L1",
+      "status": "PASS",
+      "ms": 117.4
+    },
+    {
+      "id": "CT006",
+      "label": "k-anonymity (k=2) + verificacao",
+      "camada": "L1",
+      "status": "PASS",
+      "ms": 0.5
+    },
+    {
+      "id": "CT007",
+      "label": "Ciclo de consentimento (grant/check/revoke)",
+      "camada": "L2",
+      "status": "PASS",
+      "ms": 0.0
+    },
+    {
+      "id": "CT008",
+      "label": "Registro de auditoria",
+      "camada": "L2",
+      "status": "PASS",
+      "ms": 0.0
+    },
+    {
+      "id": "CT009",
+      "label": "Pipeline DPO com e sem consentimento",
+      "camada": "L2",
+      "status": "PASS",
+      "ms": 0.0
+    },
+    {
+      "id": "CT010",
+      "label": "Pipeline bridge com consentimento",
+      "camada": "L3",
+      "status": "PASS",
+      "ms": 1.0
+    },
+    {
+      "id": "CT011",
+      "label": "Anonimizacao integrada de dataset",
+      "camada": "L3",
+      "status": "PASS",
+      "ms": 0.0
+    },
+    {
+      "id": "CT012",
+      "label": "Relatorio de compliance consolidado",
+      "camada": "L3",
+      "status": "PASS",
+      "ms": 0.0
+    },
+    {
+      "id": "CT013",
+      "label": "Cenario real: coleta → consentimento → pseudo → auditoria",
+      "camada": "L4",
+      "status": "PASS",
+      "ms": 0.5
+    },
+    {
+      "id": "CT014",
+      "label": "Cenario real: negacao sem consentimento + auditoria",
+      "camada": "L4",
+      "status": "PASS",
+      "ms": 0.0
+    },
+    {
+      "id": "CT015",
+      "label": "Cenario real: anonimizacao k=3 + l-diversity",
+      "camada": "L4",
+      "status": "PASS",
+      "ms": 0.0
+    }
+  ]
+}

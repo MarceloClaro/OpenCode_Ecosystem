@@ -1,0 +1,207 @@
+% ============================================================
+% MONOGRAFIA — PPGTE/UFC 2026
+% Título: A Proteção da Personalidade Humana na Era da
+%         Inteligência Artificial: Contribuições da Encíclica
+%         Magnifica Humanitas para o Direito Contemporâneo
+% Padrão: ABNT NBR 14724:2024 (via abnTeX2)
+% Compilar: pdflatex + bibtex + pdflatex + pdflatex
+% ============================================================
+
+\documentclass[
+    12pt,
+    openany,
+    oneside,
+    a4paper,
+    brazilian
+]{abntex2}
+
+% --- PACOTES ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,tabularx,longtable,array}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{mathptmx}
+\usepackage[scaled=0.90]{helvet}
+\usepackage{courier}
+\usepackage{hyperref}
+\usepackage[alf]{abntex2cite}
+\usepackage{caption}
+\usepackage{xcolor}
+
+% --- CONFIGURAÇÕES HYPERREF ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue
+}
+
+% --- ESPAÇAMENTO ABNT ---
+\OnehalfSpacing
+
+% --- METADADOS DA MONOGRAFIA ---
+\titulo{A Proteção da Personalidade Humana na Era da Inteligência Artificial: Contribuições da Encíclica \textit{Magnifica Humanitas} para o Direito Contemporâneo}
+\autor{[Nome do Autor]}
+\local{Fortaleza}
+\data{2026}
+\orientador{[Nome do Orientador]}
+\instituicao{Universidade Federal do Ceará -- UFC\\Programa de Pós-Graduação em Tecnologia Educacional -- PPGTE}
+\preambulo{Monografia apresentada ao Programa de Pós-Graduação em Tecnologia Educacional (PPGTE) da Universidade Federal do Ceará (UFC) como requisito parcial à obtenção do título de Mestre em Tecnologia Educacional.}
+
+% ---- COMANDOS AUXILIARES ----
+\newcommand{\MH}{\textit{Magnifica Humanitas}}
+\newcommand{\MHn}[1]{\textit{Magnifica Humanitas},~§#1}
+\newcommand{\citecaps}[1]{\textsc{#1}}
+
+% --- AMBIENTE DE FICHAMENTO ---
+\newenvironment{fichamento}{%
+    \begin{list}{}{%
+        \setlength{\leftmargin}{2cm}
+        \setlength{\rightmargin}{2cm}
+        \setlength{\topsep}{0.5cm}
+        \setlength{\parsep}{0.3cm}
+    }
+    \item\relax
+}{%
+    \end{list}
+}
+
+% ============================================================
+\begin{document}
+
+% --- CAPA ---
+\imprimircapa
+
+% --- FOLHA DE ROSTO ---
+\imprimirfolhaderosto
+
+% --- FICHA CATALOGRÁFICA (INSERIR APÓS IMPRESSÃO) ---
+% \begin{fichacatalografica}
+%     \includegraphics[width=\textwidth]{ficha_catalografica.pdf}
+% \end{fichacatalografica}
+
+% --- FOLHA DE APROVAÇÃO (INSERIR APÓS DEFESA) ---
+% \begin{folhadeaprovacao}
+%     \begin{center}
+%         {\ABNTEXchapterfont\bfseries\large FOLHA DE APROVAÇÃO}
+%     \end{center}
+%     \vspace*{2cm}
+%     \noindent
+%     \begin{minipage}{\textwidth}
+%         \centering
+%         \textbf{\imprimirautor}\\[0.5cm]
+%         \textit{\imprimirtitulo}\\[0.5cm]
+%         \footnotesize Monografia apresentada ao PPGTE/UFC como requisito parcial à obtenção do título de Mestre em Tecnologia Educacional.
+%     \end{minipage}
+%     \vspace{1cm}
+% \end{folhadeaprovacao}
+
+% --- DEDICATÓRIA ---
+\begin{dedicatoria}
+    \vspace*{\fill}
+    \noindent
+    \textit{A todos os que buscam, na intersecção entre fé e razão, caminhos para que a técnica jamais se sobreponha à dignidade da pessoa humana.}
+    \vspace*{\fill}
+\end{dedicatoria}
+
+% --- AGRADECIMENTOS ---
+\begin{agradecimentos}
+    [Inserir agradecimentos]
+\end{agradecimentos}
+
+% --- EPÍGRAFE ---
+\begin{epigrafe}
+    \vspace*{\fill}
+    \begin{flushright}
+        \textit{``A técnica, longe de ser um fim em si mesma,}\\
+        \textit{encontra o seu sentido último no serviço}\\
+        \textit{à dignidade integral da pessoa humana.''}\\
+        \vspace{0.3cm}
+        \MH,~§\,42
+    \end{flushright}
+    \vspace*{\fill}
+\end{epigrafe}
+
+% --- RESUMO ---
+\begin{resumo}
+    A presente monografia investiga as contribuições da Encíclica \MH{} para a proteção da personalidade humana na era da inteligência artificial, à luz do direito contemporâneo brasileiro. O problema central consiste em determinar como os fundamentos antropológicos e éticos propostos pela Encíclica podem subsidiar a construção de um regime jurídico de proteção da personalidade diante dos desafios suscitados pelas tecnologias de IA. Adota-se metodologia jurídico-teórica, de natureza qualitativa, com abordagem hermenêutico-crítica, combinando pesquisa bibliográfica sistematizada e análise documental do texto integral da Encíclica, da legislação correlata (LGPD, Marco Civil da Internet, AI Act europeu, PL 2.338/2023) e da jurisprudência do STJ. A investigação estrutura-se em seis capítulos: introdução, fundamentos antropológicos e éticos do magistério pontifício, desafios da IA à personalidade humana, proteção jurídica da personalidade no direito brasileiro, contribuições da \MH{} para a regulação da IA, e conclusão. Os resultados indicam que a antropologia personalista da Encíclica --- centrada na dignidade ontológica, relacional e transcendental da pessoa --- oferece critérios normativos consistentes para orientar a regulação da IA, superando abordagens exclusivamente instrumentais ou tecnocráticas. Conclui-se que os princípios da subsidiariedade, solidariedade, transparência e responsabilidade, conforme reelaborados pela \MH{}, podem enriquecer significativamente o debate jurídico contemporâneo sobre governança algorítmica, proteção de dados e responsabilidade civil no ambiente digital.
+
+    \vspace{0.3cm}
+    \noindent
+    \textbf{Palavras-chave}: Direitos da personalidade. Inteligência artificial. Encíclica \MH. Dignidade humana. Proteção de dados. Regulação da IA.
+\end{resumo}
+
+% --- ABSTRACT ---
+\begin{resumo}[Abstract]
+    \begin{otherlanguage*}{english}
+        This monograph investigates the contributions of the Encyclical \MH{} to the protection of human personality in the age of artificial intelligence, in light of contemporary Brazilian law. The central problem is to determine how the anthropological and ethical foundations proposed by the Encyclical can support the construction of a legal framework for personality protection facing the challenges posed by AI technologies. The research adopts a legal-theoretical methodology, of qualitative nature, with a hermeneutic-critical approach, combining systematic bibliographic research and documentary analysis of the complete text of the Encyclical, related legislation (LGPD, Brazilian Internet Civil Rights Framework, European AI Act, Bill 2.338/2023) and STJ jurisprudence. The investigation is structured in six chapters: introduction, anthropological and ethical foundations of pontifical teaching, AI challenges to human personality, legal protection of personality in Brazilian law, contributions of \MH{} to AI regulation, and conclusion. The results indicate that the personalist anthropology of the Encyclical --- centered on the ontological, relational and transcendental dignity of the person --- offers consistent normative criteria to guide AI regulation, overcoming exclusively instrumental or technocratic approaches. It concludes that the principles of subsidiarity, solidarity, transparency and accountability, as re-elaborated by \MH{}, can significantly enrich the contemporary legal debate on algorithmic governance, data protection and civil liability in the digital environment.
+
+        \vspace{0.3cm}
+        \noindent
+        \textbf{Keywords}: Personality rights. Artificial intelligence. Encyclical \MH. Human dignity. Data protection. AI regulation.
+    \end{otherlanguage*}
+\end{resumo}
+
+% --- LISTA DE ILUSTRAÇÕES ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures
+\clearpage
+
+% --- LISTA DE TABELAS ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables
+\clearpage
+
+% --- LISTA DE ABREVIATURAS E SIGLAS ---
+\begin{siglas}
+    \item[ABNT] Associação Brasileira de Normas Técnicas
+    \item[AI Act] Regulamento (UE) 2024/1689 (Artificial Intelligence Act)
+    \item[CEP] Comitê de Ética em Pesquisa
+    \item[CF/88] Constituição da República Federativa do Brasil de 1988
+    \item[CNJ] Conselho Nacional de Justiça
+    \item[IA] Inteligência Artificial
+    \item[LGPD] Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018)
+    \item[Marco Civil] Marco Civil da Internet (Lei nº 12.965/2014)
+    \item[MH] \textit{Magnifica Humanitas}
+    \item[ODS] Objetivos de Desenvolvimento Sustentável
+    \item[PL] Projeto de Lei
+    \item[PPGTE] Programa de Pós-Graduação em Tecnologia Educacional
+    \item[STF] Supremo Tribunal Federal
+    \item[STJ] Superior Tribunal de Justiça
+    \item[TCLE] Termo de Consentimento Livre e Esclarecido
+    \item[UFC] Universidade Federal do Ceará
+    \item[UE] União Europeia
+\end{siglas}
+
+% --- SUMÁRIO ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents
+\clearpage
+
+% ============================================================
+% CAPÍTULOS
+% ============================================================
+\include{cap1-introducao}
+\include{cap2-fundamentos-antropologicos}
+\include{cap3-ia-desafios}
+\include{cap4-protecao-juridica}
+\include{cap5-contribuicoes-magnifica}
+\include{cap6-conclusao}
+
+% ============================================================
+% REFERÊNCIAS
+% ============================================================
+\bibliography{refs}
+
+% ============================================================
+% ANEXOS
+% ============================================================
+\begin{anexosenv}
+    \partanexos
+    \include{anexo-fichamentos}
+\end{anexosenv}
+
+\end{document}
