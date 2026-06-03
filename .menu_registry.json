@@ -1,107 +1,51 @@
 {
-  "project": "Antiprojeto UFC — PPGTE/UFC",
-  "ecosystem_ref": "OpenCode v4.3.0",
-  "version": "3.0",
-  "updated": "2026-05-30T15:05:00Z",
-  "commands": {
-    "audit": {
-      "domain-shift": {
-        "description": "Executa auditoria de domain shift (Camada 1B SPEC-008-B)",
-        "script": "artigo/evaluations/domain_shift_audit.py",
-        "runtime": "python",
-        "output": "artigo/evaluations/domain_shift_audit_output.json",
-        "category": "validacao"
-      },
-      "tdd-all": {
-        "description": "Executa todos os 58 testes TDD (5 suites SPEC-008/008-B/009/010/011)",
-        "script": "artigo/evaluations/tests/run_all_benchmarks.py",
-        "runtime": "python",
-        "category": "testes"
-      },
-      "anticircularidade": {
-        "description": "Suite TDD SPEC-008 (Triangulacao Anti-Circularidade, 14 CTs)",
-        "script": "artigo/evaluations/tests/test_anticircularidade.py",
-        "runtime": "python",
-        "category": "testes"
-      },
-      "camada1b": {
-        "description": "Suite TDD SPEC-008-B (Camada 1B Domain Shift, 9 CTs)",
-        "script": "artigo/evaluations/tests/test_domain_shift_camada1b.py",
-        "runtime": "python",
-        "category": "testes"
-      },
-      "d1-matematica": {
-        "description": "Suite TDD SPEC-009 (D1 Matematica, 14 CTs)",
-        "script": "artigo/evaluations/tests/test_d1_matematica.py",
-        "runtime": "python",
-        "category": "testes"
-      },
-      "d2-fisica": {
-        "description": "Suite TDD SPEC-010 (D2 Fisica, 8 CTs)",
-        "script": "artigo/evaluations/tests/test_d2_fisica.py",
-        "runtime": "python",
-        "category": "testes"
-      },
-      "d9-metodologia": {
-        "description": "Suite TDD SPEC-011 (D9 Metodologia, 12 CTs)",
-        "script": "artigo/evaluations/tests/test_d9_metodologia.py",
-        "runtime": "python",
-        "category": "testes"
-      }
+  "version": "5.0.0",
+  "description": "OpenCode Ecosystem Menu Registry — Adicione plugins de menu sem editar menu.py",
+  "plugins": [
+    {
+      "name": "qualis-navigator",
+      "key": "qualis_nav",
+      "label": "Qualis Target Navigator",
+      "description": "Navegador de periodicos com 7 fatores ponderados",
+      "menu": "academic",
+      "tags": ["qualis", "periodicos", "capes"],
+      "enabled": true
     },
-    "build": {
-      "jaccard-pdf": {
-        "description": "Compila documento Jaccard Domain Shift (27 laudas, 25 refs DOI)",
-        "script": "artigo/jaccard_domain_shift_audit.tex",
-        "runtime": "pdflatex",
-        "output": "artigo/jaccard_domain_shift_audit.pdf",
-        "category": "documentacao"
-      }
+    {
+      "name": "provider-factory",
+      "key": "provider_factory",
+      "label": "Provider Factory (Multi-LLM)",
+      "description": "Fallback automatico entre LLMs (Gemini, DeepSeek, Groq)",
+      "menu": "tools",
+      "tags": ["llm", "fallback", "multi-provider"],
+      "enabled": true
     },
-    "validate": {
-      "compile": {
-        "description": "Verifica compilacao de todos os .tex do projeto",
-        "script": "artigo/tests/test_compile.py",
-        "runtime": "python",
-        "category": "qualidade"
-      },
-      "structure": {
-        "description": "Verifica estrutura de todos os arquivos LaTeX",
-        "script": "artigo/tests/test_structure.py",
-        "runtime": "python",
-        "category": "qualidade"
-      },
-      "quality": {
-        "description": "Verifica qualidade (ABNT, TSAC, referencias)",
-        "script": "artigo/tests/test_quality.py",
-        "runtime": "python",
-        "category": "qualidade"
-      }
+    {
+      "name": "hot-reload-skills",
+      "key": "hot_reload",
+      "label": "Hot-Reload Skills",
+      "description": "Recarregar skills sem reiniciar (file watcher)",
+      "menu": "system",
+      "tags": ["hot-reload", "skills", "watcher"],
+      "enabled": true
+    },
+    {
+      "name": "aletheia-math",
+      "key": "aletheia_math",
+      "label": "Aletheia Math Research",
+      "description": "Pesquisa matematica autonoma com Generator-Verifier-Reviser",
+      "menu": "reasoning",
+      "tags": ["matematica", "prova", "aletheia"],
+      "enabled": true
+    },
+    {
+      "name": "example-plugin",
+      "key": "example",
+      "label": "Plugin Exemplo",
+      "description": "Modelo para novos plugins — desabilite para ocultar",
+      "menu": "tools",
+      "tags": ["exemplo"],
+      "enabled": false
     }
-  },
-  "skills": {
-    "local": [
-      "domain-shift-camada1b",
-      "spec-009-d1-matematica",
-      "spec-010-d2-fisica",
-      "spec-011-d9-metodologia"
-    ],
-    "external": [
-      "opencode/domain-shift-camada1b"
-    ]
-  },
-  "specs": [
-    "SPEC-008  (Triangulacao Anti-Circularidade, 14 CTs)",
-    "SPEC-008-B (Camada 1B: Decomposicao Institucional, 9 CTs)",
-    "SPEC-009  (D1: Raciocinio Matematico Formal, 14 CTs)",
-    "SPEC-010  (D2: Modelagem de Sistemas Fisicos, 8 CTs)",
-    "SPEC-011  (D9: Desenho Experimental e Metodologia, 12 CTs)"
-  ],
-  "tdd_summary": {
-    "total_suites": 5,
-    "total_tests": 58,
-    "passed": 58,
-    "failed": 0,
-    "last_run": "2026-05-30T15:05:00Z"
-  }
+  ]
 }
