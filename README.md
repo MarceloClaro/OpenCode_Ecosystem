@@ -11,10 +11,10 @@
 [![Agentes](https://img.shields.io/badge/Agentes-125-6366f1?style=flat-square)](agents/)
 [![MCPs](https://img.shields.io/badge/MCP_Servers-46-0ea5e9?style=flat-square)](opencode.json)
 [![Skills](https://img.shields.io/badge/Skills-150-10b981?style=flat-square)](skills/)
-[![TDD](https://img.shields.io/badge/TDD-156_suites-22c55e?style=flat-square)]()
-[![SDD](https://img.shields.io/badge/SDD-67_specs-0ea5e9?style=flat-square)](specs/)
+[![TDD](https://img.shields.io/badge/TDD-158_suites-22c55e?style=flat-square)]()
+[![SDD](https://img.shields.io/badge/SDD-105_specs-0ea5e9?style=flat-square)](specs/)
+[![YAML](https://img.shields.io/badge/Frontmatter-77.3%25-facc15?style=flat-square)]()
 [![Evolucoes](https://img.shields.io/badge/Evolucoes-14-c084fc?style=flat-square)](evolution/)
-[![GitHub](https://img.shields.io/badge/GitHub-v5.0.0-333?style=flat-square)](https://github.com/MarceloClaro/OpenCode_Ecosystem)
 [![Z3](https://img.shields.io/badge/Z3_Prover-4.16-8b5cf6?style=flat-square)]()
 [![Status](https://img.shields.io/badge/Status-Producao-22c55e?style=flat-square)]()
 

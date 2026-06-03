@@ -3,6 +3,9 @@ name: overview-juridico
 description: >
   Visao geral das skills juridicas instaladas no ecossistema OpenCode.
   Use para identificar qual skill aplicar a cada demanda.
+category: juridico
+version: "1.0.0"
+kind: prompt
 ---
 
 # Skills Juridicas — OpenCode Ecosystem

@@ -1,26 +1,9 @@
 ---
 name: gerador-contratos
 description: "Skill do ecossistema OpenCode - gerador-contratos"
----
-
-
-name: gerador-contratos
-description: >
-  Gerador de contratos juridicos em HTML otimizado para PDF, com identidade
-  visual profissional. Contratos sociais, procuraes, acordos, termos,
-  compromissos. Use quando usuario mencionar "gerar contrato", "redigir
-  acordo", "contrato social", "procurao", "termo de", "documento juridico
-  em PDF", "HTML de contrato".
----
-
----
-name: gerador-contratos
-description: >
-  Gerador de contratos juridicos em HTML otimizado para PDF, com identidade
-  visual profissional. Contratos sociais, procuraes, acordos, termos,
-  compromissos. Use quando usuario mencionar "gerar contrato", "redigir
-  acordo", "contrato social", "procurao", "termo de", "documento juridico
-  em PDF", "HTML de contrato".
+category: juridico
+version: "1.0.0"
+kind: prompt
 ---
 
 # Gerador de Contratos Juridicos HTML

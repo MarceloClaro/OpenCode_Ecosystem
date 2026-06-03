@@ -1,24 +1,9 @@
 ---
 name: pesquisa-jurisprudencia
 description: "Skill do ecossistema OpenCode - pesquisa-jurisprudencia"
----
-
-
-name: pesquisa-jurisprudencia
-description: >
-  Pesquisa jurisprudencial estruturada em bases brasileiras: STJ, STF, TJSP,
-  TRTs e outros tribunais. Use quando usuario mencionar "jurisprudencia",
-  "pesquisar decisao", "encontrar precedente", "STJ sobre", "TJ sobre",
-  "pesquisa de jurisprudencia", "buscar acordao", "pesquisar tema juridico".
----
-
----
-name: pesquisa-jurisprudencia
-description: >
-  Pesquisa jurisprudencial estruturada em bases brasileiras: STJ, STF, TJSP,
-  TRTs e outros tribunais. Use quando usuario mencionar "jurisprudencia",
-  "pesquisar decisao", "encontrar precedente", "STJ sobre", "TJ sobre",
-  "pesquisa de jurisprudencia", "buscar acordao", "pesquisar tema juridico".
+category: juridico
+version: "1.0.0"
+kind: prompt
 ---
 
 # Pesquisa Jurisprudencial — Brasil

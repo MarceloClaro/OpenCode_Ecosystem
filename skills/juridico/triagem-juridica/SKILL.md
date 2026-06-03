@@ -1,24 +1,9 @@
 ---
 name: triagem-juridica
 description: "Skill do ecossistema OpenCode - triagem-juridica"
----
-
-
-name: triagem-juridica
-description: >
-  Triagem jurídica de leads e consultas: classifica area do direito, avalia
-  urgencia, identifica dados essenciais e encaminhamento correto. Use quando
-  usuario mencionar "triar", "classificar consulta", "qualificar lead juridico",
-  "primeiro atendimento", "encaminhamento", "triagem de demanda" ou similar.
----
-
----
-name: triagem-juridica
-description: >
-  Triagem jurídica de leads e consultas: classifica area do direito, avalia
-  urgencia, identifica dados essenciais e encaminhamento correto. Use quando
-  usuario mencionar "triar", "classificar consulta", "qualificar lead juridico",
-  "primeiro atendimento", "encaminhamento", "triagem de demanda" ou similar.
+category: juridico
+version: "1.0.0"
+kind: prompt
 ---
 
 # Triagem Jurídica — Classificacao e Encaminhamento de Demandas

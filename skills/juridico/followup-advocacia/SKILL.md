@@ -1,24 +1,9 @@
 ---
 name: followup-advocacia
 description: "Skill do ecossistema OpenCode - followup-advocacia"
----
-
-
-name: followup-advocacia
-description: >
-  Rotina de follow-up para escritorio de advocacia: lembretes de prazos,
-  cadencia de contatos, pipeline de demandas e produtividade.
-  Use quando usuario mencionar "follow-up", "lembrete", "prazo", "pipeline",
-  "produtividade escritorio", "cadencia", "relatorio semanal", "rotina OAB".
----
-
----
-name: followup-advocacia
-description: >
-  Rotina de follow-up para escritorio de advocacia: lembretes de prazos,
-  cadencia de contatos, pipeline de demandas e produtividade.
-  Use quando usuario mencionar "follow-up", "lembrete", "prazo", "pipeline",
-  "produtividade escritorio", "cadencia", "relatorio semanal", "rotina OAB".
+category: juridico
+version: "1.0.0"
+kind: prompt
 ---
 
 # Follow-up Advocacia — Produtividade e Gestao de Demandas
