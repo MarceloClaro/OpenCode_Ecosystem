@@ -26,7 +26,7 @@
 ┌─────────────────────────────────────────────────────────┐
 │     交叉验证引擎 v5.0 + MiroFish/BettaFish + PhD审计      │
 │                                                          │
-│  MCPs(46) ◄──► 技能(91) ◄──► 智能体(125)                │
+│  MCPs(46) ◄──► 技能(150) ◄──► 智能体(125)                │
 │       │            │            │                        │
 │       └────────────┼────────────┘                        │
 │                    │                                     │
@@ -35,7 +35,7 @@
 │   P18-PhD Auditor (Nash + Cohen + Bonferroni + Qualis)   │
 │   MiroFish/BettaFish: OASIS + Forum + Config + Graph    │
 │   BRAZIL_TIMEZONE (UTC-3) · 212+ raciocínios (27 cat) · 10博弈论            │
-│   Science Skills(37) · Reasoning Engines(4: Z3+SymPy+Kanren+Critical)│
+│   Science Skills(38) · Reasoning Engines(4: Z3+SymPy+Kanren+Critical)│
 │                                                          │
 │  插件(15) ◄──► 命令(14) ◄──► LSP(1) ◄──► 校正器(1)      │
 │                                                          │
@@ -48,31 +48,31 @@
 
 | 类别 | 数量 | 状态 |
 |------|------|------|
-| MCPs | 46 | 42本地+4远程 (76% ativos) |
-| 技能 | 90 | 13类: system(9)+juridico(7)+research(5)+science(37)+reasoning(4)+... |
+| MCPs | 46 | 44本地+2远程 (50% ativos) |
+| 技能 | 150 | 13类: system(12)+juridico(7)+research(18)+science(38)+reasoning(4)+... |
 | 智能体 | 125 | 核心56+创作49+SEEKER12+Reversa18+语言校正器1 |
 | 插件 | 15 | 10npm+2本地(.ts)+3 bridge |
 | 命令 | 14 | 斜杠命令 |
 | LSP | 1 | TypeScript |
-| 量子 | 81 | 引用/脚本/输出/模板 |
-| Nexus | 40 | 多智能体/同步屏障/推理类型 |
+| 量子 | 146 | 引用/脚本/输出/模板 |
+| Nexus | 488 | 多智能体/同步屏障/推理类型 |
 | MiroFish/BettaFish | 11 | OASIS+Forum+Config+Graph+Report+Nash+Stats+Qualis+Sensitivity+IMRAD+Debate |
-| Science Skills | 37 | AlphaFold+PubMed+ChEMBL+UniProt+ClinVar+gnomAD+GTEx+PDB+PyMOL+... |
+| Science Skills | 38 | AlphaFold+PubMed+ChEMBL+UniProt+ClinVar+gnomAD+GTEx+PDB+PyMOL+... |
 | Reasoning Engines | 4 | Z3(形式検証)+SymPy(記号数学)+miniKanren(論理PK)+Critical(誤謬分析) |
 | 推理类型 | 212+ | 27分类 (逻辑5+辩证5+博弈论10+决策5+战略5+创新8) |
 | 文章创建器 | 91 | MASWOS v5.0+桥接+自动评分 |
 | SEEKER | 78 | 10智能体+论证树+10+学术来源 |
-| 进化 | 13 | 13代ciclos + editais-br v7.1实战 + SandeClaw + Science + Reasoning |
+| 进化 | 14 | 13代ciclos + editais-br v7.1实战 + SandeClaw + Science + Reasoning |
 | 校正器 | 1 | ptbr_corrector.py (CJK检测+PT-BR语法) |
 
 ## MiroFish/BettaFish 集成 (v5.0 更新)
 `skills/agent-forum/` — P14-P18完整管道: Agent Forum(多智能体辩论) → Debate Strategies(212+ raciocínios (27 cat)+6策略+8配置) → PhD Auditor(NashSolver+StatisticalRigor+QualisA1Auditor+SensitivityAnalyzer+IMRADFormatter). 集成nexus-phd-strategist. BRAZIL_TIMEZONE(UTC-3)替换CHINA_TIMEZONE. 50指标真实数据仿真(World Bank/WHO/FAO/UNESCO).
 
 ## 量子Nexus v7.2
-`quantum/` — 81文件: 21学术引用, 26 Python/Rust脚本, 7验证输出, QML医学HAM10000(89.52%), 50量子比特MPS, Grad-CAM, ZNE/PEC误差缓解, Qualis A1.
+`quantum/` — 146文件: 21学术引用, 26 Python/Rust脚本, 7验证输出, QML医学HAM10000(89.52%), 50量子比特MPS, Grad-CAM, ZNE/PEC误差缓解, Qualis A1.
 
 ## Nexus多智能体 v6.2
-`nexus/` — 40文件: 18架构引用, 20 Python脚本, 元粒度编排6层(L0-L6), 120+同步屏障, 500+验证约束, 204 raciocínios (25 cat)子类型, 120反馈点, Qualis A1审计.
+`nexus/` — 488文件: 18架构引用, 20 Python脚本, 元粒度编排6层(L0-L6), 120+同步屏障, 500+验证约束, 204 raciocínios (25 cat)子类型, 120反馈点, Qualis A1审计.
 
 ## Manus Evolve v1.0 (PlanAct自主引擎)
 `plugins/manus-evolve.ts` — 自主进化引擎. 管道: PLAN→ACT→REFLECT→EXTRACT→EVOLVE. 每轮在`evolution/`生成新技能. 从成功模式学习, 自动审批可信工具.
@@ -128,7 +128,7 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | `/quantum` | quantum-nexus-phd+code-runner+pdf+sequential-thinking |
 | `/artigo` | SEEKER+文章创建器+manus-evolve→Qualis A1 |
 
-## MCP功能分类 (17活跃)
+## MCP功能分类 (23活跃)
 
 | 功能 | MCP |
 |------|-----|

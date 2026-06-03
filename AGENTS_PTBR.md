@@ -32,7 +32,7 @@
 │  Motor de Validação Cruzada v5.0 + MiroFish/BettaFish   │
 │              + PhD Auditor + Science + Reasoning         │
 │                                                          │
-│  MCPs(46) ◄──► Skills(91) ◄──► Agentes(125)            │
+│  MCPs(46) ◄──► Skills(150) ◄──► Agentes(125)            │
 │       │            │              │                      │
 │       └────────────┼──────────────┘                      │
 │                    │                                     │
@@ -41,7 +41,7 @@
 │   P18-PhD Auditor (Nash + Cohen + Bonferroni + Qualis)   │
 │   MiroFish/BettaFish: OASIS + Forum + Config + Graph    │
 │   BRAZIL_TIMEZONE (UTC-3) · 212+ raciocínios · 10 Teoria │
-│   dos Jogos · 37 Science Skills · 4 Reasoning Engines    │
+│   dos Jogos · 38 Science Skills · 4 Reasoning Engines    │
 │                                                          │
 │  Plugins(15) ◄──► Comandos(14) ◄──► LSP(1) ◄──►        │
 │  Corretor(1)                                             │
@@ -59,21 +59,21 @@
 
 | Categoria | Quantidade | Estado |
 |-----------|:----------:|--------|
-| MCPs | 46 | 42 locais + 4 remotos (76% ativos) |
-| Skills | 90 | 13 categorias (system 9 + juridico 7 + research 5 + science 37 + reasoning 4 + ...) |
+| MCPs | 46 | 44 locais + 2 remotos (50% ativos) |
+| Skills | 150 | 13 categorias (system 12 + juridico 7 + research 18 + science 38 + reasoning 4 + ...) |
 | Agentes | 125 | Core 56 + Criacao 49 + SEEKER 12 + Reversa 18 + Corretor linguistico 1 |
 | Plugins | 15 | 10 npm + 2 locais (.ts) + 3 bridge |
 | Comandos | 14 | Comandos slash |
 | LSP | 1 | TypeScript |
-| Quantum | 81 | Referencias/scripts/outputs/templates |
-| Nexus | 40 | Multiagente/barreiras sincronizacao/tipos raciocinio |
+| Quantum | 146 | Referencias/scripts/outputs/templates |
+| Nexus | 488 | Multiagente/barreiras sincronizacao/tipos raciocinio |
 | MiroFish/BettaFish | 11 | OASIS + Forum + Config + Graph + Report + Nash + Stats + Qualis + Sensitivity + IMRAD + Debate |
-| Science Skills | 37 | AlphaFold + PubMed + ChEMBL + UniProt + ClinVar + gnomAD + GTEx + PDB + PyMOL + ... |
+| Science Skills | 38 | AlphaFold + PubMed + ChEMBL + UniProt + ClinVar + gnomAD + GTEx + PDB + PyMOL + ... |
 | Reasoning Engines | 4 | Z3 (verificacao formal) + SymPy (matematica simbolica) + miniKanren (logica) + Critical (falacias) |
 | Tipos de Raciocinio | 212+ | 27 categorias (Logico 5 + Dialetico 5 + Teoria Jogos 10 + Decisao 5 + Estrategico 5 + Inovacao 8) |
 | Criador de Artigos | 91 | MASWOS v5.0 + bridges + auto-score |
 | SEEKER | 78 | 10 agentes + argument tree + 10+ fontes academicas |
-| Evolucao | 13 | 13 ciclos + editais-br v7.1 + SandeClaw + Science + Reasoning |
+| Evolucao | 14 | 13 ciclos + editais-br v7.1 + SandeClaw + Science + Reasoning |
 | Corretor | 1 | ptbr_corrector.py (deteccao CJK + gramatica PT-BR) |
 
 ---
@@ -86,13 +86,13 @@
 
 ## Quantum Nexus v7.2
 
-`quantum/` — 81 arquivos: 21 referências acadêmicas, 26 scripts Python/Rust, 7 outputs de validação, QML médico HAM10000 (89,52% de acurácia), 50 qubits MPS, Grad-CAM, mitigação de erros ZNE/PEC, Qualis A1.
+`quantum/` — 146 arquivos: 21 referências acadêmicas, 26 scripts Python/Rust, 7 outputs de validação, QML médico HAM10000 (89,52% de acurácia), 50 qubits MPS, Grad-CAM, mitigação de erros ZNE/PEC, Qualis A1.
 
 ---
 
 ## Nexus Multiagente v6.2
 
-`nexus/` — 40 arquivos: 18 referências de arquitetura, 20 scripts Python, orquestração meta-granular em 6 camadas (L0-L6), 120+ barreiras de sincronização, 500+ restrições de validação, 38 subtipos de raciocínio, 120 pontos de feedback, auditoria Qualis A1.
+`nexus/` — 488 arquivos: 18 referências de arquitetura, 20 scripts Python, orquestração meta-granular em 6 camadas (L0-L6), 120+ barreiras de sincronização, 500+ restrições de validação, 38 subtipos de raciocínio, 120 pontos de feedback, auditoria Qualis A1.
 
 ---
 
@@ -166,7 +166,7 @@ SEEKER (pesquisa) → Criador de Artigos (49 agentes, 8 estágios)
 
 ---
 
-## Classificação Funcional dos MCPs (17 ativos)
+## Classificação Funcional dos MCPs (23 ativos)
 
 | Função | MCPs |
 |--------|------|

@@ -4,7 +4,7 @@
 
 # OpenCode Ecosystem v5.0.0
 
-### 37 Skills Cientificas · 4 Motores de Raciocinio · 10 Fontes Academicas · 5 MCPs de Artigos
+### 38 Skills Cientificas · 4 Motores de Raciocinio · 10 Fontes Academicas · 5 MCPs de Artigos
 
 <br/>
 
@@ -101,7 +101,7 @@ O conteúdo deste README está organizado em uma **sequência progressiva**: pri
 - [Métricas Agregadas](#métricas-agregadas)
 - [Classificação Técnica](#classificação-técnica)
 - [Comparativo com Outros Frameworks](#comparativo-com-outros-frameworks)
-- [Diagramas Técnicos — 10 SVGs](#diagramas-técnicos--10-svgs)
+- [Diagramas Técnicos — 14 SVGs](#diagramas-técnicos--14-svgs)
 - [Notas Técnicas](#notas-técnicas)
 - [Documentação](#documentação)
 
@@ -131,13 +131,13 @@ Diferente de chatbots tradicionais que usam um único modelo, aqui cada agente t
 
 O **MCP** é um protocolo padronizado (criado pela Anthropic em 2024) que permite a agentes de IA acessar ferramentas externas de forma segura e estruturada. Funciona assim: o agente precisa buscar informação na web? Ele envia uma requisição JSON-RPC para o MCP Server `websearch`. Precisa ler um arquivo? Usa o MCP Server `filesystem`. Precisa executar código Python? Usa o `code-runner`.
 
-O OpenCode Ecosystem possui **45 servidores MCP registrados** (38 locais + 2 remotos), dos quais **17 ficam ativos** em uma sessão típica. Os demais são carregados sob demanda. Eles são as "mãos" dos agentes — os meios pelos quais interagem com o mundo exterior. Todos usam **lazy init**: só inicializam quando o agente faz a primeira chamada, evitando desperdício de recursos.
+O OpenCode Ecosystem possui **46 servidores MCP registrados** (44 locais + 2 remotos), dos quais **23 ficam ativos** em uma sessão típica. Os demais são carregados sob demanda. Eles são as "mãos" dos agentes — os meios pelos quais interagem com o mundo exterior. Todos usam **lazy init**: só inicializam quando o agente faz a primeira chamada, evitando desperdício de recursos.
 
 ### Skills
 
 Uma **skill** é um conjunto de instruções reutilizáveis que define *como* realizar uma tarefa complexa. Cada skill é um arquivo `SKILL.md` com cabeçalho YAML (frontmatter) e corpo em Markdown, limitado a **2.500 bytes** (para otimização de contexto). Conteúdo adicional reside em `references/*.md` — um padrão chamado **progressive disclosure**.
 
-O ecossistema possui **90 skills** em 13 categorias, desde ferramentas de desenvolvimento (`mcp-builder`, `test-driven-dev`) até produção acadêmica (`academic-export-abnt`), domínio jurídico (`gerador-contratos`) e integração com sistemas externos (`antigravity-integration`).
+O ecossistema possui **150 skills** em 13 categorias, desde ferramentas de desenvolvimento (`mcp-builder`, `test-driven-dev`) até produção acadêmica (`academic-export-abnt`), domínio jurídico (`gerador-contratos`) e integração com sistemas externos (`antigravity-integration`).
 
 ### Orquestração (Nexus)
 
@@ -165,7 +165,7 @@ Estes são os comandos que o usuário pode executar diretamente no OpenCode CLI.
 | `/quantum` | Realiza experimentos de computação quântica com VQC de até 50 qubits | quantum-nexus-phd + code-runner + pdf + sequential-thinking |
 | `/evolve` | Aciona o motor de evolução autônoma que gera novas skills a partir de padrões de sucesso | AutoEvolve: PLAN → ACT → REFLECT → EXTRACT → EVOLVE |
 | `/plan` | Cria planos estruturados de escrita ou desenvolvimento | writing-plans skill + sequential-thinking MCP |
-| `/auto` | Modo autônomo total — o sistema decide quais agentes e MCPs utilizar | openagent + todos os MCPs ativos (34 de 45 registrados) |
+| `/auto` | Modo autônomo total — o sistema decide quais agentes e MCPs utilizar | openagent + todos os MCPs ativos (34 de 46 registrados) |
 | `/ticket` | Gerencia tickets Jira via bridge CommandRegistry | Jira ticket manager via CommandRegistry bridge |
 
 ---
@@ -388,7 +388,7 @@ Scout → Archaeologist → Detective → Architect → Writer → Reviewer
 
 ## Módulo Quantum
 
-O módulo de computação quântica, localizado em `quantum/`, contém **81 arquivos** (40 scripts Python com ~10.088 linhas, além de referências acadêmicas, templates e saídas de validação) com infraestrutura para experimentos quânticos aplicados. O foco principal é o uso de **Variational Quantum Circuits (VQC)** e **Quantum Machine Learning (QML)** para classificação de dados reais.
+O módulo de computação quântica, localizado em `quantum/`, contém **146 arquivos** (40 scripts Python com ~10.088 linhas, além de referências acadêmicas, templates e saídas de validação) com infraestrutura para experimentos quânticos aplicados. O foco principal é o uso de **Variational Quantum Circuits (VQC)** e **Quantum Machine Learning (QML)** para classificação de dados reais.
 
 ### O que foi implementado?
 
@@ -486,9 +486,9 @@ O ecossistema é organizado em **6 camadas hierárquicas**, da infraestrutura de
 |:------:|------|-----------|-------------|------------|
 | **L6** | Orquestração | Coordena todos os agentes e define o fluxo de execução | Nexus NMA v6.2, Reversa v1.2.22, Evo Loop | Python, JSON-RPC |
 | **L5** | Agentes | Executam as tarefas especializadas | **125 agentes** (core 56 + criação 49 + SEEKER 12 + Reversa 7 + corretor 1) | OpenCode Subagents |
-| **L4** | MCP | Proveem ferramentas externas aos agentes | **45 servidores** (41 local + 4 remote) | MCP SDK, stdio/HTTP |
-| **L3** | Skills | Definem instruções reutilizáveis para tarefas complexas | **90 skills** · 13 categorias · P14-P18 MiroFish/BettaFish | YAML, Markdown |
-| **L2** | Dados | Armazenam e processam dados | SQLite, Mem0, Quantum (81 arqs), DOCLing | Ollama, SQLite |
+| **L4** | MCP | Proveem ferramentas externas aos agentes | **46 servidores** (44 local + 2 remote) | MCP SDK, stdio/HTTP |
+| **L3** | Skills | Definem instruções reutilizáveis para tarefas complexas | **150 skills** · 13 categorias · P14-P18 MiroFish/BettaFish | YAML, Markdown |
+| **L2** | Dados | Armazenam e processam dados | SQLite, Mem0, Quantum (146 arqs), DOCLing | Ollama, SQLite |
 | **L1** | Infra | Runtime base | Node.js 22 LTS, Bun 1.3, Python 3.12 | Win32 |
 | **DI** | Container | Conecta todos os serviços via injeção de dependência | 11 serviços + 3 plugins TS + bridge CommandRegistry | Container, from_container() |
 
@@ -534,7 +534,7 @@ L5 — Evolução              → Registra padrões de sucesso para o ciclo Aut
 | `self_healer.py` | Monitora e repara problemas no ecossistema automaticamente | Sim |
 | `meta_orchestrator.py` | Meta-orquestração de nível L0 | N/A |
 | `evolution_loop.py` | Executa o loop evolutivo autônomo | Sim |
-| `mcp_router.py` | Roteia requisições entre os 45 servidores MCP | Sim |
+| `mcp_router.py` | Roteia requisições entre os 46 servidores MCP | Sim |
 | `context_offload.py` | Gerencia offload de contexto (55 sessões) | Sim |
 | `mcp_self_healer.py` | Servidor MCP dedicado à autocura | N/A |
 
@@ -550,7 +550,7 @@ O **Model Context Protocol (MCP)** é o mecanismo pelo qual os agentes interagem
 2. **Client** — Instâncias de conexão entre o agente e cada servidor MCP (sessões JSON-RPC 1:1)
 3. **Server** — Processos que expõem ferramentas específicas (leitura de arquivos, busca web, execução de código, etc.)
 
-### Os 45 servidores MCP organizados por função
+### Os 46 servidores MCP organizados por função
 
 | Categoria | Qt. | Servidores | Para que servem |
 |-----------|:--:|-----------|-----------------|
@@ -561,7 +561,7 @@ O **Model Context Protocol (MCP)** é o mecanismo pelo qual os agentes interagem
 | Domínio Acadêmico/Jurídico | 6 | `maswos-juridico`, `maswos-mcp`, `maswos-rag`, `scihub`, `youtube-transcript`, `biomcp` | Produção acadêmica, pesquisa científica, domínio jurídico |
 | Outros | 5 | `memory`, `github-search`, ... | Funcionalidades complementares |
 
-**Lazy init:** Todos os servidores usam inicialização sob demanda — só são carregados quando o agente faz a primeira chamada. Isso evita o desperdício de carregar 45 servidores quando a tarefa precisa de apenas 3 ou 4.
+**Lazy init:** Todos os servidores usam inicialização sob demanda — só são carregados quando o agente faz a primeira chamada. Isso evita o desperdício de carregar 46 servidores quando a tarefa precisa de apenas 3 ou 4.
 
 ---
 
@@ -589,18 +589,18 @@ Em vez de obrigar o usuário a escolher qual estratégia usar, o sistema pode se
 
 ## Skills Registry
 
-As **90 skills** do ecossistema estão organizadas em 13 categorias e seguem o padrão **progressive disclosure**: o arquivo `SKILL.md` contém no máximo 2.500 bytes (para otimizar o uso de tokens do modelo), enquanto o conteúdo completo reside em `references/*.md`.
+As **150 skills** do ecossistema estão organizadas em 13 categorias e seguem o padrão **progressive disclosure**: o arquivo `SKILL.md` contém no máximo 2.500 bytes (para otimizar o uso de tokens do modelo), enquanto o conteúdo completo reside em `references/*.md`.
 
 | categoria | Quantidade | Exemplos de skills |
 |-----------|:----------:|-------------------|
-| system | 9 | `code-review`, `reasoning-orchestrator`, `pypi-scout`, `provider-factory`, `hot-reload-skills`, `react-agent-loop` |
+| system | 12 | `code-review`, `reasoning-orchestrator`, `pypi-scout`, `provider-factory`, `hot-reload-skills`, `react-agent-loop` |
 | juridico | 7 | `edicao-cirurgica`, `pecas-juridicas-html`, `gerador-contratos` |
-| research | 5 | `academic-export-abnt`, `academic-ml-pipeline`, `editais-br`, `qualis-target-navigator` |
+| research | 18 | `academic-export-abnt`, `academic-ml-pipeline`, `editais-br`, `qualis-target-navigator` |
 | tooling | 18 | `mcp-builder`, `agentic-mcp` |
 | superpowers | 10 | `writing-plans`, `test-driven-dev` |
 | **agent-forum** | **1 (+1 nova)** | `agent-forum`, **`antigravity-integration`** (v1.0, 2026-05-24) |
 | reasoning | 4 | `formal-verification` (Z3), `symbolic-math` (SymPy), `logic-programming` (miniKanren), `critical-reasoning` |
-| science | 37 | AlphaFold, PubMed, ChEMBL, UniProt, ClinVar, gnomAD, GTEx, PDB, PyMOL...
+| science | 38 | AlphaFold, PubMed, ChEMBL, UniProt, ClinVar, gnomAD, GTEx, PDB, PyMOL...
 | Outras | 60+ | `frontend-philosophy`, `plan-protocol`, `maswos-v5-nexus`, ... |
 
 **Antigravity Integration (nova):** `skills/agent-forum/antigravity-integration/SKILL.md` — ponte bidirecional OpenCode ⇔ Antigravity (Google DeepMind). Expoe 6 capacidades exclusivas: `generate_image`, `browser_subagent`, `search_web`, `read_url_content`, `parallel_subagents`, `artifact_creation`. Referencia tecnica completa em `references/antigravity-bridge-reference.md`.
@@ -627,7 +627,7 @@ Container (singleton)
 ├── event_bus           → IEventBus              ← comunicação entre componentes
 ├── agent_manager       → AgentManager           ← gerencia os 125 agentes
 ├── plugin_manager      → PluginManager          ← gerencia os 4 plugins TS
-├── skill_manager       → SkillManager           ← gerencia as 90 skills
+├── skill_manager       → SkillManager           ← gerencia as 150 skills
 ├── cache               → TTLCache               ← cache com tempo de vida
 ├── task_queue          → TaskQueue              ← fila de tarefas assíncronas
 ├── command_registry    → CommandRegistry        ← ponte para 14 comandos slash
@@ -663,7 +663,7 @@ O sistema de autocura opera continuamente em segundo plano, monitorando e repara
 
 ### O ciclo de 5 etapas
 
-1. **MONITORAR** — Varredura contínua de todas as 90 skills, 45 MCPs, detecção de CJK leaks e erros de sintaxe
+1. **MONITORAR** — Varredura contínua de todas as 150 skills, 46 MCPs, detecção de CJK leaks e erros de sintaxe
 2. **DETECTAR** — Identificação de anomalias: caracteres CJK em saídas (proibidos), YAML inválido em skills, skills acima do limite de 2.500B, MCPs inativos
 3. **DIAGNOSTICAR** — Classificação por severidade: crítico (interrompe execução), aviso (degradação) ou informativo
 4. **REPARAR** — Correção automática: remoção de CJK, correção de frontmatter YAML, aplicação de progressive disclosure para reduzir tamanho
@@ -671,7 +671,7 @@ O sistema de autocura opera continuamente em segundo plano, monitorando e repara
 
 **Responsáveis pela autocura:** O MCP dedicado `self-healer` (acessível a qualquer agente) e o script Python `nexus/scripts/self_healer.py` (executado pelo Nexus).
 
-**Métricas atuais:** 95,6% das skills dentro do limite · 73% dos MCPs ativos (30/41) · Health score geral: **96/100**
+**Métricas atuais:** 95,6% das skills dentro do limite · 50% dos MCPs ativos (23/46) · Health score geral: **96/100**
 
 ---
 
@@ -736,10 +736,10 @@ PLAN → ACT → REFLECT → EXTRACT → EVOLVE
 
 | Indicador | Valor | Status |
 |-----------|:-----:|:------:|
-| MCPs ativos (de 45 registrados) | 34/45 (76%) | 🟡 |
+| MCPs ativos (de 46 registrados) | 23/46 (50%) | 🟡 |
 | Container services registered | 11 (8 core + 3 plugin) | 🟢 |
 | Bridge commands (Python ⟷ TS) | 14/14 | 🟢 |
-| Skills dentro do limite | 88/91 | 🟢 |
+| Skills dentro do limite | 88/150 | 🟢 |
 | Agentes registrados | 125 agentes registrados
 | Reversa confidence | 100/100 | 🟢 |
 | AutoEvolve gerações | 13 | 🟢 |
@@ -772,7 +772,7 @@ O ecossistema combina 10 padrões arquiteturais reconhecidos, cada um responsáv
 | **Dependency Injection (IoC)** | Container singleton com 11 serviços + 3 plugins TS, pattern `from_container()` |
 | **Event-Driven Architecture** | `event_bus` (IEventBus) para comunicação pub/sub entre componentes |
 | **Pipeline Pattern** | P1–P18 (Entity NER → PhD Auditor), MASWOS 8 estágios, AutoEvolve + Creative Leap · 7 fases |
-| **Client-Host-Server** | Protocolo MCP (Anthropic, 2024) com 45 servidores, JSON-RPC 1:1 |
+| **Client-Host-Server** | Protocolo MCP (Anthropic, 2024) com 46 servidores, JSON-RPC 1:1 |
 | **Progressive Disclosure** | Skills `SKILL.md` ≤ 2.500B + `references/*.md` para conteúdo denso |
 | **Self-Healing** | Ciclo autônomo: Monitor → Detectar → Diagnosticar → Reparar → Verificar |
 | **Bridge Pattern** | Python ↔ TypeScript via `CommandRegistry` (14 cmds) + `PluginManager` (3 plugins) |
@@ -791,7 +791,7 @@ Cada subsistema possui sua própria classificação técnica, refletindo a espec
 | **MiroFish/BettaFish** | Agent-Based Simulation Framework (P1–P18) | 18 padrões arquiteturais, 212+ raciocinios |
 | **PhD Auditor (P18)** | Statistical Validation Engine | NashSolver, Cohen's d, Bonferroni, Power Analysis |
 | **AutoEvolve** | Evolutionary Skill Generation Loop | PLAN→ACT→REFLECT→EXTRACT→EVOLVE, 8 ciclos |
-| **MCP Layer** | Tool Integration Protocol Layer | 45 servidores, lazy init, stdio/HTTP |
+| **MCP Layer** | Tool Integration Protocol Layer | 46 servidores, lazy init, stdio/HTTP |
 | **RAG Engine** | Adaptive Multi-Strategy RAG | 9 estratégias (Vanilla → HyDE), auto-select |
 | **Quantum Module** | Variational Quantum Computing (VQC) | 50 qubits, 89.52% acc, QML |
 | **Reversa Framework** | Autonomous Reverse Engineering Pipeline | 9 agentes, 67 artefatos, v1.2.22 |
@@ -834,8 +834,8 @@ Os diferenciadores técnicos em relação aos demais frameworks são:
 | Métrica | Valor |
 |---|---|
 | Agentes | **125** (5 categorias) |
-| MCP Servers | **40** (41 local + 4 remote) |
-| Skills | **91** (13 categorias) |
+| MCP Servers | **46** (44 local + 2 remote) |
+| Skills | **150** (13 categorias) |
 | Padrões arquiteturais (P1–P18) | **18** + P19 sync |
 | Tipos de raciocínio | **212+** (27 categorias) |
 | Estratégias Teoria dos Jogos | **10** |
@@ -860,7 +860,7 @@ Os diferenciadores técnicos em relação aos demais frameworks são:
 | Self-Healing autônomo | **MCP dedicado** | — | — | — | — |
 | AutoEvolve (gera skills) | **PLAN→EVOLVE** | — | — | — | — |
 | Quantum Computing (50 qubits) | **89.52% acc** | — | — | — | — |
-| MCP Servers nativos | **45 servidores** | Plugin-based | — | — | Limitado |
+| MCP Servers nativos | **46 servidores** | Plugin-based | — | — | Limitado |
 | Zero-tolerance CJK + PT-BR | **corrector.py** | — | — | — | — |
 | Engenharia Reversa autônoma | **9 agentes** | — | — | — | — |
 | Modelo gratuito 200K ctx | **deepseek-v4-pro** | API paga | API paga | API paga | Assinatura |
@@ -869,9 +869,9 @@ Os diferenciadores técnicos em relação aos demais frameworks são:
 
 ---
 
-## Diagramas Técnicos — 10 SVGs
+## Diagramas Técnicos — 14 SVGs
 
-O ecossistema documenta sua arquitetura por meio de **10 diagramas SVG interativos** localizados em `diagrams/`. Cada SVG é gerado e mantido automaticamente pelo Reversa Framework v1.2.22 e reflete o estado real do ecossistema em produção.
+O ecossistema documenta sua arquitetura por meio de **14 diagramas SVG interativos** localizados em `diagrams/`. Cada SVG é gerado e mantido automaticamente pelo Reversa Framework v1.2.22 e reflete o estado real do ecossistema em produção.
 
 **Por que SVG?** Diferente de PNGs (fixos) ou Mermaid (limitado em layout), SVGs oferecem escalabilidade vetorial infinita, suporte a gradientes e glassmorphism, animações CSS/SMIL e atualização programática — ideais para documentação técnica de alta complexidade.
 
@@ -880,7 +880,7 @@ O ecossistema documenta sua arquitetura por meio de **10 diagramas SVG interativ
 
 <img src="diagrams/architecture-overview.svg" alt="Arquitetura Geral v5.0" width="100%"/>
 
-Apresenta as 6 camadas arquiteturais com contagens reais: 125 agentes, 45 MCPs, 90 skills, 212+ raciocinios, 81 arquivos quantum. Cada número é verificado no código-fonte e atualizado automaticamente.
+Apresenta as 6 camadas arquiteturais com contagens reais: 125 agentes, 46 MCPs, 150 skills, 212+ raciocinios, 146 arquivos quantum. Cada número é verificado no código-fonte e atualizado automaticamente.
 
 </details>
 
@@ -903,7 +903,7 @@ Visualiza os 8 estágios do MASWOS: SEEKER → Estrutura → Escrita → Formata
 </details>
 
 <details>
-<summary><strong>SVG 4 — mcp-architecture.svg</strong> — Protocolo MCP com 45 servidores</summary>
+<summary><strong>SVG 4 — mcp-architecture.svg</strong> — Protocolo MCP com 46 servidores</summary>
 
 <img src="diagrams/mcp-architecture.svg" alt="Arquitetura MCP v5.0" width="100%"/>
 
@@ -925,7 +925,7 @@ Detalha as 9 estratégias: Vanilla, Memory, Agentic, Graph, Hybrid, CRAG, Adapti
 
 <img src="diagrams/self-healing.svg" alt="Ciclo de Autocura v5.0" width="100%"/>
 
-Visualiza o ciclo Monitorar → Detectar → Diagnosticar → Reparar → Verificar, com métricas de 90 skills, 45 MCPs e zero-tolerance CJK.
+Visualiza o ciclo Monitorar → Detectar → Diagnosticar → Reparar → Verificar, com métricas de 150 skills, 46 MCPs e zero-tolerance CJK.
 
 </details>
 
@@ -1010,7 +1010,7 @@ Mapa radial dos 10 subsistemas com classificação técnica individual: Nexus NM
 
 **OpenCode Ecosystem v5.0**
 
-125 agentes · 46 MCPs · 115 skills · 26 agency · 236 TDD · 14 evos
+125 agentes · 46 MCPs · 150 skills · 26 agency · 226 suites · 14 evos
 
 *Documentação atualizada — 2026-06-02 · BRAZIL_TIMEZONE UTC-3*
 

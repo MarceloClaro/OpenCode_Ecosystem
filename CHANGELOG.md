@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [v5.0.0] - 2026-06-02
 ### Added
 - Evo-12: MCP Expansion — 4 MCPs cientificos (latest-science, research-mcp, sura-papers, arxiv-mcp) = 10 fontes academicas unificadas
-- Evo-12: 28 skills de datasets (gnomAD, GTEx, dbSNP, Ensembl, PDB, STRING, PubChem, OpenFDA, etc.) — total 37 science skills
+- Evo-12: 28 skills de datasets (gnomAD, GTEx, dbSNP, Ensembl, PDB, STRING, PubChem, OpenFDA, etc.) — total 38 science skills
 - Evo-13: 4 Reasoning Engines — Z3 4.16 (prova formal), SymPy 1.14 (simbolico), miniKanren (logica relacional), Critical (15 falacias + vieses)
 - Evo-11: 9 skills cientificas core (AlphaFold, PubMed, ChEMBL, UniProt, FoldSeek, ClinVar, PyMOL, OpenAlex)
 - Evo-10: SandeClaw Integration — ProviderFactory (Multi-LLM fallback), Hot-Reload Skills, ReAct Agent Loop
@@ -13,11 +13,15 @@ All notable changes to this project will be documented in this file.
 - Evo-9: Qualis Target Navigator (7 fatores, 49 areas CAPES)
 
 ### Changed
-- Skills: 46 → 91 (+45)
-- MCPs: 41 → 45 (+4)
-- Science skills: 2 → 37
+- Skills: 46 → 150 (+104)
+- MCPs: 41 → 46 (+5)
+- Science skills: 2 → 38
 - Reasoning engines: 0 → 4
-- MCP health: 58% → 76%
+- TDD suites: 226
+- SDD specs: 162
+- Science: 38
+- Agency agents: 26
+- MCP health: 58% → 50%
 - README, AGENTS.md, AGENTS_PTBR.md atualizados para v5.0.0
 
 ## [v4.6.1] - 2026-05-27

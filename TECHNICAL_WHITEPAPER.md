@@ -1,7 +1,7 @@
 ---
 title: "OpenCode Ecosystem v5.0 — Technical Whitepaper"
 subtitle: "Arquitetura Multiagente com Verificacao Simbolica, Debate Multiagente e Evolucao Assistida"
-version: "1.1.0"
+version: "1.2.0"
 date: "2026-06-02"
 citations: 28
 references_auditable: true
@@ -289,4 +289,5 @@ com registro do que otimizar sem registro.
 ---
 
 > **Documento mantido por**: OpenCode Ecosystem AutoEvolve v1.0
-> **Ultima atualizacao**: 2026-05-25
+> **Ultima atualizacao**: 2026-06-02
+> **Metricas finais (v5.0.0)**: 150 skills, 226 TDD suites, 162 SDD specs

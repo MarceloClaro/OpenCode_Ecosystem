@@ -125,7 +125,7 @@ Scout → Archaeologist → Detective → Architect → Writer → Reviewer
 /auto
 ```
 
-Ativa o agente `openagent` com acesso a todos os 40 MCPs (servidores de contexto), permitindo execução autônoma de tarefas complexas que combinam pesquisa, código, dados e análise.
+Ativa o agente `openagent` com acesso a todos os 46 MCPs (servidores de contexto), permitindo execução autônoma de tarefas complexas que combinam pesquisa, código, dados e análise.
 
 ---
 
