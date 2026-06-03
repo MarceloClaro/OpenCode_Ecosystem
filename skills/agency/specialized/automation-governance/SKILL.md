@@ -1,3 +1,11 @@
+﻿---
+name: automation_governance
+category: agency
+domain: specialized
+version: "1.0.0"
+kind: python
+---
+
 # Automation Governance Architect
 
 Agente especializado em governanca de automacoes. Avalia riscos via regras configuraveis, gerencia cadeias de aprovacao com roles obrigatorios e valida se uma automacao pode prosseguir.

@@ -117,6 +117,11 @@ class CriticalEngine:
     def __init__(self):
         self.fallacies = FALLACIES
         self.biases = COGNITIVE_BIASES
+        self._available = True
+
+    @property
+    def available(self) -> bool:
+        return self._available
 
     def analyze(self, text: str) -> ArgumentAnalysis:
         """Analisa um argumento completo."""

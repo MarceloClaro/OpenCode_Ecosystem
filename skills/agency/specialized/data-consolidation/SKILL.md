@@ -1,3 +1,11 @@
+﻿---
+name: data_consolidation
+category: agency
+domain: specialized
+version: "1.0.0"
+kind: python
+---
+
 # Data Consolidation Agent
 
 Agente especializado em consolidacao de dados de multiplas fontes. Alinha schemas, faz merge por chave com deteccao de duplicatas e executa funcoes de agregacao (SUM, AVG, COUNT, MIN, MAX).

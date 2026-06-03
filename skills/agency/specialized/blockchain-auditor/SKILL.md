@@ -1,3 +1,11 @@
+﻿---
+name: blockchain_auditor
+category: agency
+domain: specialized
+version: "1.0.0"
+kind: python
+---
+
 # Blockchain Security Auditor
 
 Agente especializado em auditoria de seguranca de smart contracts. Detecta vulnerabilidades conhecidas (reentrancy, unchecked calls, overflow, tx.origin, timestamp), calcula risk scores e gera relatorios estruturados.

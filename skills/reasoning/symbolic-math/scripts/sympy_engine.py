@@ -45,7 +45,11 @@ class SymPyEngine:
             x = sp.Symbol('x')
             eq_str = equation.replace("=", "-(") + ")" if "=" in equation else equation
 
-            if "=" in equation:
+            if "==" in equation:
+                left, right = equation.split("==", 1)
+                eq = sp.sympify(f"({left.strip()}) - ({right.strip()})")
+                sols = sp.solve(eq, x)
+            elif "=" in equation:
                 left, right = equation.split("=", 1)
                 eq = sp.sympify(f"({left.strip()}) - ({right.strip()})")
                 sols = sp.solve(eq, x)

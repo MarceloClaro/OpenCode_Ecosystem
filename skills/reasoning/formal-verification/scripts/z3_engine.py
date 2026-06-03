@@ -63,7 +63,7 @@ class Z3Engine:
                 return ProofResult(
                     status="sat",
                     proof="Satisfativel",
-                    counterexample={str(d): str(m.evaluate(d)) for d in m.decls() if str(d) != 'Bool'},
+                    counterexample={str(d): str(m.evaluate(d())) for d in m.decls() if str(d) != 'Bool'},
                     time_ms=ms,
                 )
             return ProofResult(status=str(r), proof="", time_ms=ms)
@@ -100,7 +100,7 @@ class Z3Engine:
                 return ProofResult(
                     status="invalid",
                     proof="Contraexemplo encontrado",
-                    counterexample={str(d): str(m.evaluate(d)) for d in m.decls() if str(d) != 'Bool'},
+                    counterexample={str(d): str(m.evaluate(d())) for d in m.decls() if str(d) != 'Bool'},
                     time_ms=ms,
                 )
             return ProofResult(status=str(r), time_ms=ms)

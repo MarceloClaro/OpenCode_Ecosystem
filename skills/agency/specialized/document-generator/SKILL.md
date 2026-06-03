@@ -1,3 +1,11 @@
+﻿---
+name: document_generator
+category: agency
+domain: specialized
+version: "1.0.0"
+kind: python
+---
+
 # Document Generator
 
 Agente especializado em geracao de documentos via templates. Extrai variaveis de placeholders, preenche templates com substituicao e detecta variaveis faltantes antes da geracao.

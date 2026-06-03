@@ -1,3 +1,11 @@
+﻿---
+name: mcp_builder
+category: agency
+domain: specialized
+version: "1.0.0"
+kind: python
+---
+
 # MCP Builder
 
 Agente especializado em construcao de servidores MCP (Model Context Protocol). Valida schemas de ferramentas, registra tools com nomes unicos e formata respostas no padrao MCP.

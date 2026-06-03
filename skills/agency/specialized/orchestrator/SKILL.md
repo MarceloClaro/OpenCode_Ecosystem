@@ -1,3 +1,11 @@
+﻿---
+name: orchestrator
+category: agency
+domain: specialized
+version: "1.0.0"
+kind: python
+---
+
 # Agents Orchestrator
 
 Agente especializado em orquestracao autonoma de pipelines de desenvolvimento. Gerencia fluxos completos de trabalho com maquina de estados, logica de retry e controle de qualidade.
