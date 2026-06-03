@@ -165,7 +165,7 @@ Estes são os comandos que o usuário pode executar diretamente no OpenCode CLI.
 | `/quantum` | Realiza experimentos de computação quântica com VQC de até 50 qubits | quantum-nexus-phd + code-runner + pdf + sequential-thinking |
 | `/evolve` | Aciona o motor de evolução autônoma que gera novas skills a partir de padrões de sucesso | AutoEvolve: PLAN → ACT → REFLECT → EXTRACT → EVOLVE |
 | `/plan` | Cria planos estruturados de escrita ou desenvolvimento | writing-plans skill + sequential-thinking MCP |
-| `/auto` | Modo autônomo total — o sistema decide quais agentes e MCPs utilizar | openagent + todos os MCPs ativos (34 de 46 registrados) |
+| `/auto` | Modo autônomo total — o sistema decide quais agentes e MCPs utilizar | openagent + todos os MCPs ativos (23 de 46 registrados) |
 | `/ticket` | Gerencia tickets Jira via bridge CommandRegistry | Jira ticket manager via CommandRegistry bridge |
 
 ---

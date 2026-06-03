@@ -124,7 +124,7 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | `/evolve` | autoevolve+ecosystem-sync→发现并安装 |
 | `/reversa` | reversa-*智能体+filesystem+diff+github |
 | `/plan` | writing-plans技能+sequential-thinking MCP |
-| `/auto` | openagent+所有MCPs |
+| `/auto` | openagent+所有MCPs (23/46 ativos) |
 | `/quantum` | quantum-nexus-phd+code-runner+pdf+sequential-thinking |
 | `/artigo` | SEEKER+文章创建器+manus-evolve→Qualis A1 |
 
