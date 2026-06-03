@@ -1,0 +1,73 @@
+{
+  "phase": "D-V4",
+  "timestamp": "2026-05-30T18:55:58.025878",
+  "total_proofs": 3,
+  "tier_distribution": {
+    "A": 0,
+    "B": 1,
+    "C": 2,
+    "D": 0
+  },
+  "results": [
+    {
+      "problem_id": "A0004",
+      "domain": "combinatorics",
+      "tier": "C",
+      "overall_score": 6.23,
+      "dimensions": {
+        "hypothesis_clarity": 4.5,
+        "mathematical_insight": 7.0,
+        "proof_rigor": 8.1,
+        "case_analysis": 6.5,
+        "formal_correctness": 6.0,
+        "induction_validity": 6.0,
+        "tactic_usage": 6.5,
+        "lemma_usage": 7.0,
+        "edge_case_coverage": 4.5,
+        "overall_soundness": 6.23
+      },
+      "sorry_count": 2,
+      "timestamp": "2026-05-30T18:55:58.023864"
+    },
+    {
+      "problem_id": "B0014",
+      "domain": "number_theory",
+      "tier": "C",
+      "overall_score": 6.01,
+      "dimensions": {
+        "hypothesis_clarity": 4.5,
+        "mathematical_insight": 7.5,
+        "proof_rigor": 8.1,
+        "case_analysis": 5.0,
+        "formal_correctness": 6.0,
+        "induction_validity": 5.0,
+        "tactic_usage": 6.5,
+        "lemma_usage": 7.0,
+        "edge_case_coverage": 4.5,
+        "overall_soundness": 6.01
+      },
+      "sorry_count": 2,
+      "timestamp": "2026-05-30T18:55:58.023864"
+    },
+    {
+      "problem_id": "B0017",
+      "domain": "analysis",
+      "tier": "B",
+      "overall_score": 6.83,
+      "dimensions": {
+        "hypothesis_clarity": 8.5,
+        "mathematical_insight": 8.0,
+        "proof_rigor": 9.0,
+        "case_analysis": 5.0,
+        "formal_correctness": 9.0,
+        "induction_validity": 5.0,
+        "tactic_usage": 6.5,
+        "lemma_usage": 5.0,
+        "edge_case_coverage": 5.5,
+        "overall_soundness": 6.83
+      },
+      "sorry_count": 0,
+      "timestamp": "2026-05-30T18:55:58.024875"
+    }
+  ]
+}

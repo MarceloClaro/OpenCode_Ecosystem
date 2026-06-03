@@ -1,0 +1,36 @@
+{
+  "phase": "C-V4",
+  "timestamp": "2026-05-30T18:55:32.449200",
+  "total_proofs": 3,
+  "verified_count": 0,
+  "verification_rate": 0.0,
+  "results": [
+    {
+      "problem_id": "A0004",
+      "domain": "combinatorics",
+      "verification_status": "failed",
+      "lean_error": "temp\\A0004_verify.lean:1:34: error: unexpected token 'with'; expected ':'\n",
+      "sorry_count": 2,
+      "confidence": 0.55,
+      "timestamp": "2026-05-30T18:55:29.242930"
+    },
+    {
+      "problem_id": "B0014",
+      "domain": "number_theory",
+      "verification_status": "failed",
+      "lean_error": "temp\\B0014_verify.lean:1:27: error: unexpected token '>'; expected ':'\n",
+      "sorry_count": 2,
+      "confidence": 0.55,
+      "timestamp": "2026-05-30T18:55:30.711583"
+    },
+    {
+      "problem_id": "B0017",
+      "domain": "analysis",
+      "verification_status": "failed",
+      "lean_error": "temp\\B0017_verify.lean:1:19: error: unexpected token '->'; expected ')'\n",
+      "sorry_count": 0,
+      "confidence": 0.75,
+      "timestamp": "2026-05-30T18:55:32.449200"
+    }
+  ]
+}

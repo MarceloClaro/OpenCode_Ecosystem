@@ -1,0 +1,132 @@
+{
+  "benchmark": "Aletheia Phase 1 Benchmark",
+  "version": "1.0",
+  "created": "2026-05-30",
+  "description": "10-problem benchmark for Aletheia OpenCode native skill validation",
+  "total_problems": 10,
+  "problems": [
+    {
+      "id": "A0004",
+      "domain": "set_theory",
+      "difficulty": "intermediate",
+      "statement": "For any finite set S with n elements, the power set P(S) has cardinality 2^n",
+      "lean_statement": "theorem powerset_cardinality (S : Finset α) : S.powerset.card = 2 ^ S.card",
+      "categories": ["finite_sets", "cardinality", "combinatorics"],
+      "expected_phases": [1, 2, 3, 5, 6, 7],
+      "expected_sorry_count": 1
+    },
+    {
+      "id": "B0014",
+      "domain": "algebra",
+      "difficulty": "intermediate",
+      "statement": "Every finite group of prime order is cyclic",
+      "lean_statement": "theorem prime_order_cyclic (G : Type) [Group G] [Fintype G] (hp : Nat.Prime (Fintype.card G)) : IsCyclic G",
+      "categories": ["group_theory", "cyclic_groups", "prime_order"],
+      "expected_phases": [1, 2, 3, 4, 6, 7],
+      "expected_sorry_count": 1
+    },
+    {
+      "id": "B0017",
+      "domain": "algebra",
+      "difficulty": "hard",
+      "statement": "Every ideal in a principal ideal domain is principal",
+      "lean_statement": "theorem pid_ideals_principal (R : Type) [CommRing R] [IsPrincipalIdealRing R] (I : Ideal R) : ∃ a, I = Ideal.span {a}",
+      "categories": ["ring_theory", "ideal_theory", "principal_ideal_domain"],
+      "expected_phases": [1, 2, 3, 4, 5, 6, 7],
+      "expected_sorry_count": 2
+    },
+    {
+      "id": "E0019",
+      "domain": "analysis",
+      "difficulty": "hard",
+      "statement": "If f is continuous on [a,b], then f is uniformly continuous on [a,b] (Heine-Cantor)",
+      "lean_statement": "theorem continuous_compact_uniformly_continuous (f : ℝ → ℝ) (a b : ℝ) (hab : a < b) (hf : ContinuousOn f (Set.Icc a b)) : UniformContinuousOn f (Set.Icc a b)",
+      "categories": ["real_analysis", "continuity", "compactness", "uniform_continuity"],
+      "expected_phases": [1, 2, 3, 4, 5, 6, 7],
+      "expected_sorry_count": 2
+    },
+    {
+      "id": "E0020",
+      "domain": "analysis",
+      "difficulty": "intermediate",
+      "statement": "The limit of a convergent sequence of real numbers is unique",
+      "lean_statement": "theorem limit_unique (a : ℕ → ℝ) (x y : ℝ) (hx : Filter.Tendsto a Filter.atTop (𝓝 x)) (hy : Filter.Tendsto a Filter.atTop (𝓝 y)) : x = y",
+      "categories": ["real_analysis", "convergence", "limits", "uniqueness"],
+      "expected_phases": [1, 3, 5, 6, 7],
+      "expected_sorry_count": 1
+    },
+    {
+      "id": "E0025",
+      "domain": "analysis",
+      "difficulty": "intermediate",
+      "statement": "A function f is continuous at x₀ if and only if for all ε > 0, there exists δ > 0 such that |x - x₀| < δ implies |f(x) - f(x₀)| < ε",
+      "lean_statement": "theorem continuous_at_iff (f : ℝ → ℝ) (x₀ : ℝ) : ContinuousAt f x₀ ↔ ∀ ε > 0, ∃ δ > 0, ∀ x, |x - x₀| < δ → |f x - f x₀| < ε",
+      "categories": ["real_analysis", "continuity", "epsilon_delta"],
+      "expected_phases": [1, 3, 5, 6, 7],
+      "expected_sorry_count": 1
+    },
+    {
+      "id": "E0030",
+      "domain": "analysis",
+      "difficulty": "hard",
+      "statement": "The intermediate value theorem: if f is continuous on [a,b] and f(a) < k < f(b), then there exists c ∈ (a,b) such that f(c) = k",
+      "lean_statement": "theorem intermediate_value_theorem (f : ℝ → ℝ) (a b k : ℝ) (hab : a < b) (hf : ContinuousOn f (Set.Icc a b)) (hfab : f a < k ∧ k < f b) : ∃ c ∈ Set.Ioo a b, f c = k",
+      "categories": ["real_analysis", "continuity", "intermediate_value"],
+      "expected_phases": [1, 2, 3, 5, 6, 7],
+      "expected_sorry_count": 2
+    },
+    {
+      "id": "E0035",
+      "domain": "analysis",
+      "difficulty": "intermediate",
+      "statement": "The sum of a convergent series plus a convergent series is convergent",
+      "lean_statement": "theorem tsum_add (a b : ℕ → ℝ) (ha : Summable a) (hb : Summable b) : Summable (a + b) ∧ ∑' n, (a n + b n) = (∑' n, a n) + (∑' n, b n)",
+      "categories": ["real_analysis", "series", "summability"],
+      "expected_phases": [1, 2, 3, 6, 7],
+      "expected_sorry_count": 1
+    },
+    {
+      "id": "E0038",
+      "domain": "analysis",
+      "difficulty": "hard",
+      "statement": "Bolzano-Weierstrass: every bounded sequence in ℝ has a convergent subsequence",
+      "lean_statement": "theorem bolzano_weierstrass (a : ℕ → ℝ) (hbdd : BddAbove {x | ∃ n, a n = x} ∧ BddBelow {x | ∃ n, a n = x}) : ∃ (f : ℕ → ℕ) (x : ℝ), StrictMono f ∧ Filter.Tendsto (a ∘ f) Filter.atTop (𝓝 x)",
+      "categories": ["real_analysis", "sequences", "compactness", "convergence"],
+      "expected_phases": [1, 2, 3, 4, 5, 6, 7],
+      "expected_sorry_count": 2
+    },
+    {
+      "id": "E0045",
+      "domain": "number_theory",
+      "difficulty": "intermediate",
+      "statement": "By the Fundamental Theorem of Arithmetic, every integer n > 1 has a unique prime factorization",
+      "lean_statement": "theorem unique_prime_factorization (n : ℕ) (hn : n > 1) : ∃! (f : ℕ → ℕ), (∀ p, Nat.Prime p → n = ∏ p in Finset.filter Nat.Prime (Finset.range (n + 1)), p ^ f p) ∧ (∀ p, Nat.Prime p → f p > 0 → p ≤ n)",
+      "categories": ["number_theory", "prime_factorization", "fundamental_theorem"],
+      "expected_phases": [1, 2, 3, 5, 6, 7],
+      "expected_sorry_count": 1
+    }
+  ],
+  "metadata": {
+    "domains": {
+      "set_theory": 1,
+      "algebra": 2,
+      "analysis": 6,
+      "number_theory": 1
+    },
+    "difficulty_distribution": {
+      "easy": 0,
+      "intermediate": 6,
+      "hard": 4
+    },
+    "total_expected_sorry": 14,
+    "avg_expected_sorry": 1.4
+  },
+  "expected_results": {
+    "tier_a_count": 10,
+    "tier_b_count": 0,
+    "tier_c_count": 0,
+    "tier_d_count": 0,
+    "avg_score": 8.31,
+    "avg_verification_confidence": 0.85
+  }
+}

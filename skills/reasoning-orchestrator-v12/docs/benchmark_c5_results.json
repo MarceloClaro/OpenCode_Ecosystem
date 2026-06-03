@@ -1,0 +1,326 @@
+{
+  "benchmark": "C5 - Pipeline Integration Benchmark",
+  "timestamp": "2026-05-31T09:36:33",
+  "system": {
+    "platform": "Windows",
+    "python": "3.12.10",
+    "cpu_logical": 8
+  },
+  "raw_benchmark": [
+    {
+      "worker_count": 1,
+      "compute_scale": 0.5,
+      "num_chains": 4,
+      "sequential_ms": 2510.11,
+      "parallel_ms": 2947.05,
+      "speedup": 0.852,
+      "efficiency": 0.852,
+      "overhead_ms": 436.94,
+      "chain_times_seq": [
+        255.59,
+        500.14,
+        753.09,
+        1001.29
+      ],
+      "chain_times_par": [
+        251.23,
+        502.99,
+        750.64,
+        1000.84
+      ]
+    },
+    {
+      "worker_count": 2,
+      "compute_scale": 0.5,
+      "num_chains": 4,
+      "sequential_ms": 2504.64,
+      "parallel_ms": 1973.46,
+      "speedup": 1.269,
+      "efficiency": 0.635,
+      "overhead_ms": 721.14,
+      "chain_times_seq": [
+        251.56,
+        500.7,
+        750.41,
+        1001.97
+      ],
+      "chain_times_par": [
+        251.06,
+        500.48,
+        751.55,
+        1000.57
+      ]
+    },
+    {
+      "worker_count": 4,
+      "compute_scale": 0.5,
+      "num_chains": 4,
+      "sequential_ms": 2502.69,
+      "parallel_ms": 1748.1,
+      "speedup": 1.432,
+      "efficiency": 0.358,
+      "overhead_ms": 1122.43,
+      "chain_times_seq": [
+        251.46,
+        500.57,
+        750.29,
+        1000.37
+      ],
+      "chain_times_par": [
+        251.29,
+        500.6,
+        751.23,
+        1005.33
+      ]
+    },
+    {
+      "worker_count": 8,
+      "compute_scale": 0.5,
+      "num_chains": 4,
+      "sequential_ms": 2501.34,
+      "parallel_ms": 1628.17,
+      "speedup": 1.536,
+      "efficiency": 0.192,
+      "overhead_ms": 1315.5,
+      "chain_times_seq": [
+        250.36,
+        500.19,
+        750.27,
+        1000.52
+      ],
+      "chain_times_par": [
+        251.18,
+        501.28,
+        750.11,
+        1000.91
+      ]
+    },
+    {
+      "worker_count": 1,
+      "compute_scale": 1.0,
+      "num_chains": 4,
+      "sequential_ms": 5009.01,
+      "parallel_ms": 5445.33,
+      "speedup": 0.92,
+      "efficiency": 0.92,
+      "overhead_ms": 436.32,
+      "chain_times_seq": [
+        500.9,
+        1004.96,
+        1501.55,
+        2001.6
+      ],
+      "chain_times_par": [
+        500.84,
+        1000.82,
+        1500.72,
+        2000.57
+      ]
+    },
+    {
+      "worker_count": 2,
+      "compute_scale": 1.0,
+      "num_chains": 4,
+      "sequential_ms": 5005.04,
+      "parallel_ms": 3692.21,
+      "speedup": 1.356,
+      "efficiency": 0.678,
+      "overhead_ms": 1189.69,
+      "chain_times_seq": [
+        502.95,
+        1000.71,
+        1500.09,
+        2001.29
+      ],
+      "chain_times_par": [
+        500.27,
+        1000.57,
+        1500.8,
+        2000.66
+      ]
+    },
+    {
+      "worker_count": 4,
+      "compute_scale": 1.0,
+      "num_chains": 4,
+      "sequential_ms": 5005.79,
+      "parallel_ms": 3035.66,
+      "speedup": 1.649,
+      "efficiency": 0.412,
+      "overhead_ms": 1784.21,
+      "chain_times_seq": [
+        500.86,
+        1001.4,
+        1502.55,
+        2000.98
+      ],
+      "chain_times_par": [
+        502.13,
+        1006.18,
+        1500.21,
+        2000.84
+      ]
+    },
+    {
+      "worker_count": 8,
+      "compute_scale": 1.0,
+      "num_chains": 4,
+      "sequential_ms": 5007.7,
+      "parallel_ms": 2612.62,
+      "speedup": 1.917,
+      "efficiency": 0.24,
+      "overhead_ms": 1986.66,
+      "chain_times_seq": [
+        502.59,
+        1002.2,
+        1501.8,
+        2001.11
+      ],
+      "chain_times_par": [
+        500.09,
+        1000.57,
+        1500.9,
+        2002.03
+      ]
+    },
+    {
+      "worker_count": 1,
+      "compute_scale": 2.0,
+      "num_chains": 4,
+      "sequential_ms": 10002.13,
+      "parallel_ms": 10420.35,
+      "speedup": 0.96,
+      "efficiency": 0.96,
+      "overhead_ms": 418.22,
+      "chain_times_seq": [
+        1001.02,
+        2000.36,
+        3000.48,
+        4000.27
+      ],
+      "chain_times_par": [
+        1000.46,
+        2000.5,
+        3000.41,
+        4000.39
+      ]
+    },
+    {
+      "worker_count": 2,
+      "compute_scale": 2.0,
+      "num_chains": 4,
+      "sequential_ms": 10003.77,
+      "parallel_ms": 6528.14,
+      "speedup": 1.532,
+      "efficiency": 0.766,
+      "overhead_ms": 1526.25,
+      "chain_times_seq": [
+        1001.45,
+        2000.44,
+        3000.78,
+        4001.1
+      ],
+      "chain_times_par": [
+        1001.78,
+        2002.36,
+        3000.72,
+        4000.8
+      ]
+    },
+    {
+      "worker_count": 4,
+      "compute_scale": 2.0,
+      "num_chains": 4,
+      "sequential_ms": 10004.7,
+      "parallel_ms": 4601.41,
+      "speedup": 2.174,
+      "efficiency": 0.544,
+      "overhead_ms": 2100.24,
+      "chain_times_seq": [
+        1002.73,
+        2000.37,
+        3000.46,
+        4001.14
+      ],
+      "chain_times_par": [
+        1002.06,
+        2002.22,
+        3000.25,
+        4000.85
+      ]
+    },
+    {
+      "worker_count": 8,
+      "compute_scale": 2.0,
+      "num_chains": 4,
+      "sequential_ms": 10001.74,
+      "parallel_ms": 4570.08,
+      "speedup": 2.189,
+      "efficiency": 0.274,
+      "overhead_ms": 3319.86,
+      "chain_times_seq": [
+        1000.59,
+        2000.61,
+        3000.13,
+        4000.41
+      ],
+      "chain_times_par": [
+        1001.54,
+        2000.77,
+        3000.18,
+        4000.19
+      ]
+    }
+  ],
+  "strategy_selection": [
+    {
+      "problem": "Prove that sqrt(2) is irrational",
+      "domain": "general",
+      "complexity": "low",
+      "strategy": "best_of",
+      "expected": "weighted_vote",
+      "correct": false
+    },
+    {
+      "problem": "Implement a binary search tree in Python",
+      "domain": "code",
+      "complexity": "low",
+      "strategy": "weighted_vote",
+      "expected": "weighted_vote",
+      "correct": true
+    },
+    {
+      "problem": "Calculate the escape velocity from Earth",
+      "domain": "math",
+      "complexity": "low",
+      "strategy": "weighted_vote",
+      "expected": "weighted_vote",
+      "correct": true
+    },
+    {
+      "problem": "Debate the pros and cons of AI regulation",
+      "domain": "debate",
+      "complexity": "low",
+      "strategy": "debate",
+      "expected": "debate",
+      "correct": true
+    },
+    {
+      "problem": "Design a novel renewable energy system",
+      "domain": "physics",
+      "complexity": "low",
+      "strategy": "weighted_vote",
+      "expected": "ensemble",
+      "correct": false
+    },
+    {
+      "problem": "What is 2 + 2?",
+      "domain": "general",
+      "complexity": "low",
+      "strategy": "best_of",
+      "expected": "best_of",
+      "correct": true
+    }
+  ],
+  "pipeline_end_to_end": []
+}

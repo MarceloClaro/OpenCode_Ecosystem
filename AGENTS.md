@@ -7,7 +7,7 @@
 
 ---
 
-# OPENCODE 统一生态系统 v4.2 (MiroFish/BettaFish + PhD Auditor + 204 raciocínios (25 cat))
+# OPENCODE 统一生态系统 v5.0.0 (MiroFish/BettaFish + PhD Auditor + 212+ raciocínios (27 cat) + Science + Reasoning)
 
 ## 环境
 - Windows 11, Node.js v25, Bun 1.3, OpenCode CLI 1.14
@@ -20,13 +20,13 @@
 - 校正器位置: `criador-artigo/banca/ptbr_corrector.py`
 - 校正流程: 检测CJK → 移除 → 修正PT-BR拼写 → 验证 → 交付
 
-## 自主同步架构 v4.2
+## 自主同步架构 v5.0
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│     交叉验证引擎 v4.2 + MiroFish/BettaFish + PhD审计      │
+│     交叉验证引擎 v5.0 + MiroFish/BettaFish + PhD审计      │
 │                                                          │
-│  MCPs(40) ◄──► 技能(104) ◄──► 智能体(125)                │
+│  MCPs(46) ◄──► 技能(91) ◄──► 智能体(125)                │
 │       │            │            │                        │
 │       └────────────┼────────────┘                        │
 │                    │                                     │
@@ -34,12 +34,13 @@
 │                    │                                     │
 │   P18-PhD Auditor (Nash + Cohen + Bonferroni + Qualis)   │
 │   MiroFish/BettaFish: OASIS + Forum + Config + Graph    │
-│   BRAZIL_TIMEZONE (UTC-3) · 204 raciocínios (25 cat) · 10博弈论            │
+│   BRAZIL_TIMEZONE (UTC-3) · 212+ raciocínios (27 cat) · 10博弈论            │
+│   Science Skills(37) · Reasoning Engines(4: Z3+SymPy+Kanren+Critical)│
 │                                                          │
 │  插件(15) ◄──► 命令(14) ◄──► LSP(1) ◄──► 校正器(1)      │
 │                                                          │
 │  同步编排器: nexus/scripts/sync_orchestrator.py          │
-│  跨验证矩阵: 200+个亲和力连接 | 110+个组件                 │
+│  跨验证矩阵: 200+个亲和力连接 | 200+个组件                 │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -47,23 +48,25 @@
 
 | 类别 | 数量 | 状态 |
 |------|------|------|
-| MCPs | 40 | 38本地+2远程 |
-| 技能 | 104 | 12类 (+P14-P18 MiroFish/BettaFish) |
-| 智能体 | 125 | 核心56+创作49+SEEKER12+Reversa7+语言校正器1 |
+| MCPs | 46 | 42本地+4远程 (76% ativos) |
+| 技能 | 90 | 13类: system(9)+juridico(7)+research(5)+science(37)+reasoning(4)+... |
+| 智能体 | 125 | 核心56+创作49+SEEKER12+Reversa18+语言校正器1 |
 | 插件 | 15 | 10npm+2本地(.ts)+3 bridge |
 | 命令 | 14 | 斜杠命令 |
 | LSP | 1 | TypeScript |
 | 量子 | 81 | 引用/脚本/输出/模板 |
 | Nexus | 40 | 多智能体/同步屏障/推理类型 |
 | MiroFish/BettaFish | 11 | OASIS+Forum+Config+Graph+Report+Nash+Stats+Qualis+Sensitivity+IMRAD+Debate |
-| 推理类型 | 38 | 6分类 (逻辑5+辩证5+博弈论10+决策5+战略5+创新8) |
-| 文章创建器 | 91 | MASWOS v4.6+桥接+自动评分 |
+| Science Skills | 37 | AlphaFold+PubMed+ChEMBL+UniProt+ClinVar+gnomAD+GTEx+PDB+PyMOL+... |
+| Reasoning Engines | 4 | Z3(形式検証)+SymPy(記号数学)+miniKanren(論理PK)+Critical(誤謬分析) |
+| 推理类型 | 212+ | 27分类 (逻辑5+辩证5+博弈论10+决策5+战略5+创新8) |
+| 文章创建器 | 91 | MASWOS v5.0+桥接+自动评分 |
 | SEEKER | 78 | 10智能体+论证树+10+学术来源 |
-| 进化 | 9 | 6代ciclos + editais-br v7.1实战 + cache versionado + KeyError fix |
+| 进化 | 13 | 13代ciclos + editais-br v7.1实战 + SandeClaw + Science + Reasoning |
 | 校正器 | 1 | ptbr_corrector.py (CJK检测+PT-BR语法) |
 
-## MiroFish/BettaFish 集成 (v4.2 新增)
-`skills/agent-forum/` — P14-P18完整管道: Agent Forum(多智能体辩论) → Debate Strategies(204 raciocínios (25 cat)+6策略+8配置) → PhD Auditor(NashSolver+StatisticalRigor+QualisA1Auditor+SensitivityAnalyzer+IMRADFormatter). 集成nexus-phd-strategist. BRAZIL_TIMEZONE(UTC-3)替换CHINA_TIMEZONE. 50指标真实数据仿真(World Bank/WHO/FAO/UNESCO).
+## MiroFish/BettaFish 集成 (v5.0 更新)
+`skills/agent-forum/` — P14-P18完整管道: Agent Forum(多智能体辩论) → Debate Strategies(212+ raciocínios (27 cat)+6策略+8配置) → PhD Auditor(NashSolver+StatisticalRigor+QualisA1Auditor+SensitivityAnalyzer+IMRADFormatter). 集成nexus-phd-strategist. BRAZIL_TIMEZONE(UTC-3)替换CHINA_TIMEZONE. 50指标真实数据仿真(World Bank/WHO/FAO/UNESCO).
 
 ## 量子Nexus v7.2
 `quantum/` — 81文件: 21学术引用, 26 Python/Rust脚本, 7验证输出, QML医学HAM10000(89.52%), 50量子比特MPS, Grad-CAM, ZNE/PEC误差缓解, Qualis A1.
@@ -108,6 +111,11 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | 6 | editais-br v2.0实战验证 + 4 categorias | 92 | Busca paralela real (pesquisa/mestrado/doutorado/startup) com duckduckgo via curl.exe; httpx bloqueado por CAPTCHA; score por perfil 58-68/100 |
 | 7 | editais-br v7.1 cache versionado + 50+ curados | 94 | KeyError score corrigido + CACHE_VERSION; 28→52 editais curados (16 FAPs estaduais, 4 exterior, 4 setoriais); fallback curadoria agora cobre todas as 27 UFs |
 | 8 | SDD+TDD Pipeline Acadêmico + Simulação de Arguição | 94 | 7 specs modularizadas + 9 CTs validados + 7 correções aplicadas + 3 ADRs DecisionNode + 16 perguntas de banca simuladas; nota DAP 8,07→9,0; anteprojeto PPGTE/UFC anonimizado e validado |
+| 9 | SDD+TDD AutoEvolve LaTeX Refino + Framework Docs | 96 | 4 overfulls eliminados + 1 underfull fix + 16/16 TDD + FRAMEWORK.md + SPEC atualizada + evolutions/ criado + tests/README.md + docstrings expandidas + 3 ADRs + fix_history catalog |
+| 10 | Menu Adaptativo + Plugin System + DiscoveryEngine | 96 | menu.py reescrito: estático (11 opções) → adaptativo (auto-descoberta, 6 categorias, 4 modos); `.menu_registry.json` plugin system; `_enter()` trata EOFError; encoding UTF-8 Windows |
+| 11 | CORA-Eval Benchmark p/ Ciências Exatas e da Natureza | 97 | 150 tarefas em 10 dimensões × 4 níveis (Básico→Pesquisa); rastreador Python com persistência JSON; integração Cora V1-V7; Q-Score UCB1 para seleção adaptativa; baseline CORA-Score 0.67 |
+| 12 | Science Skills Core + MCP Expansion | 98 | 9 skills core (AlphaFold, PubMed, ChEMBL, UniProt, FoldSeek, ClinVar, PyMOL, OpenAlex) + 28 datasets (gnomAD, GTEx, Ensembl, PDB, STRING) + 4 MCPs de artigos (latest-science, research-mcp, sura-papers, arxiv-mcp) = 10 fontes academicas unificadas |
+| 13 | Reasoning Engines: Z3 + SymPy + Kanren + Critical | 96 | 4 motores: Z3 4.16 (prova formal), SymPy 1.14 (simbolico), miniKanren (logica relacional), Critical (15 falacias + vieses cognitivos) |
 
 ## 快速命令
 
@@ -162,8 +170,21 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | Protocolo de Anonimato | 1次 | identificadores indiretos removidos; anteprojeto anônimo validado |
 | DecisionNode (ADRs) | 3次 | architectu-001, testing-001, security-001 registradas |
 | Conhecimento Estruturado (SDD) | 1次 | especificação como infraestrutura operacional (Cap. 6 livro) |
+| text shortening (overfull ≥3pt) | 3次 | 3/3 overfulls ≥3pt resolvidos (11.7pt, 5.8pt, 0.45pt) |
+| raggedright coluna (underfull) | 1次 | underfull badness 10000 → 0 em longtable |
+| FRAMEWORK.md (doc 2 níveis) | 1次 | SPEC_ORCHESTRATION.md + FRAMEWORK.md + fix_history catalog |
+| testes docstrings expandidas | 3次 | test_compile, test_structure, test_quality com RED/GREEN/fix |
+| evolutions/ LEARN insights | 1次 | diretório de insights + INDEX.md + tendências |
+| Menu Adaptativo (DiscoveryEngine) | 1次 | menu.py: 11 opções fixas → auto-descoberta dinâmica |
+| Plugin System (.menu_registry.json) | 1次 | comandos externos registrados sem editar menu.py |
+| 4 modos de execução | 4 modos | interativo, direto, --list, --quick |
+| _enter() EOFError handling | 1次 | resiliência em modo não-interativo (pipe/automation) |
+| CORA-Eval Benchmark Framework | 1次 | 150 tarefas × 10 dimensões × 4 níveis (Básico→Pesquisa) |
+| cora_benchmark_tracker.py | 1次 | rastreador evolutivo com persistência JSON + CORA-Score + CORA-V-Score |
+| Q-Score UCB1 (benchmark) | 1次 | seleção adaptativa de tarefas pendentes |
+| CORA-V-Score (verificadores) | 1次 | pontuação ponderada por verificadores V1-V7 ativos |
 
-## 工程学科文档 (v4.7 新增 — Engenharia de Software com Agentes Inteligentes)
+## 工程学科文档 (v5.0 — Engenharia de Software com Agentes Inteligentes)
 
 | 文档 | 路径 | 内容 |
 |------|------|------|
@@ -188,3 +209,5 @@ Disciplinas aplicadas: SDD (Spec-Driven), TDD (Test-Driven), CI/CD (5 gates), SW
 - agent-forum↔sequential-thinking: 0.90 (simulação de banca com personas)
 - TESTS_SPEC↔PDF-validation: 0.88 (pipeline CI para documentos acadêmicos)
 - Protocolo-Anonimato↔grep: 0.92 (detecção de identificadores indiretos)
+- CORA-Eval↔cora-debate: 0.95 (benchmark 150 tarefas × V1-V7 verificadores)
+- CORA-Eval↔code-runner: 0.90 (rastreador Python com persistência JSON)

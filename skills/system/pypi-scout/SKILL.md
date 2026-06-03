@@ -1,3 +1,11 @@
+---
+name: pypi-scout
+description: "Buscador inteligente de bibliotecas Python para o ecossistema OpenCode. Busca, cataloga e instala bibliotecas do PyPI com curadoria de 24+ bibliotecas em 5 categorias e metricas de afinidade. Integra-se com SEEKER, MASWOS e PhD Auditor."
+version: "1.0.0"
+category: system
+tags: [pypi, python, discovery, curation, dependencies]
+status: active
+---
 # pypi-scout: Buscador Inteligente de Bibliotecas Python para o Ecossistema OpenCode
 
 **Status**: v1.0.0 | **Categoria**: system | **Tipo**: CLI tool

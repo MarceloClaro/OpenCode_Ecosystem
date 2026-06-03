@@ -1,0 +1,10 @@
+{
+  "problem_id": "A0004",
+  "domain": "combinatorics",
+  "statement": "Let a=(a₁,a₂,a₃) and b=(b₁,b₂,b₃) be triples. a <₂ b if aᵢ < bᵢ for ≥2 coordinates.",
+  "natural_proof": "Proof by combinatorial counting:\n\n1. **Setup**: Given Let a=(a₁,a₂,a₃) and b=(b₁,b₂,b₃) be triples. a <₂...\n   Count the total number of configurations.\n\n2. **Partition**: Group configurations by equivalence classes.\n\n3. **Size Analysis**: Determine the size of each equivalence class.\n\n4. **Pigeonhole**: Apply pigeonhole principle:\n   If n items in k pigeonholes, some pigeonhole has ≥ ⌈n/k⌉ items.\n\n5. **Conclusion**: The desired bound follows.\n\n(Full proof requires technical details on the specific problem structure)",
+  "lean_code": "-- Template: Combinatorics\n-- Problem: A0004\ntheorem main_theorem (n : ℕ) : P x := by\n  -- Combinatorial counting argument\n  have h1 : ∑ i in Finset.range n, i = n * (n - 1) / 2 := by\n    induction n with\n    | zero => simp\n    | succ n ih =>\n      simp [Finset.sum_range_succ, ih]\n      ring\n  -- Apply pigeonhole principle if needed\n  have h2 : h1 : True := by sorry\n  have h3 : h2 : True := by sorry\n  -- Conclude by combinatorial argument\n  exact h1.symm ▸ h2.symm ▸ h3.symm ▸ rfl",
+  "confidence": 0.55,
+  "template_used": "Combinatorics",
+  "timestamp": "2026-05-30T18:16:50.504296"
+}

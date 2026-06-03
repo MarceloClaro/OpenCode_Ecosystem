@@ -1,0 +1,66 @@
+[
+  {
+    "mode": "express",
+    "budget": 30,
+    "uniform_pci": 58.25,
+    "adaptive_pci": 58.96,
+    "improvement_pct": 1.22,
+    "phase_budgets": {
+      "1": 4.0,
+      "2": 4.0,
+      "3": 5.0,
+      "4": 4.0,
+      "5": 5.0,
+      "6": 5.0,
+      "7": 3.0
+    }
+  },
+  {
+    "mode": "standard",
+    "budget": 60,
+    "uniform_pci": 74.24,
+    "adaptive_pci": 75.27,
+    "improvement_pct": 1.39,
+    "phase_budgets": {
+      "1": 7.0,
+      "2": 9.0,
+      "3": 10.0,
+      "4": 9.0,
+      "5": 10.0,
+      "6": 9.0,
+      "7": 6.0
+    }
+  },
+  {
+    "mode": "magnum",
+    "budget": 100,
+    "uniform_pci": 88.77,
+    "adaptive_pci": 90.06,
+    "improvement_pct": 1.45,
+    "phase_budgets": {
+      "1": 12.0,
+      "2": 14.0,
+      "3": 17.0,
+      "4": 15.0,
+      "5": 17.0,
+      "6": 15.0,
+      "7": 10.0
+    }
+  },
+  {
+    "mode": "research",
+    "budget": 200,
+    "uniform_pci": 113.15,
+    "adaptive_pci": 114.86,
+    "improvement_pct": 1.51,
+    "phase_budgets": {
+      "1": 25.0,
+      "2": 28.0,
+      "3": 35.0,
+      "4": 31.0,
+      "5": 33.0,
+      "6": 29.0,
+      "7": 19.0
+    }
+  }
+]

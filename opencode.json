@@ -373,17 +373,84 @@
     },
     "scihub": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "python",
         "-m",
         "sci_hub_server"
       ],
-      "timeout": 15000,
+      "timeout": 30000,
       "tags": [
         "academic",
         "papers",
         "science"
+      ]
+    },
+    "latest-science": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@futurelab-studio/latest-science-mcp"
+      ],
+      "timeout": 30000,
+      "tags": [
+        "academic",
+        "papers",
+        "science",
+        "search"
+      ]
+    },
+    "research-mcp": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "researchmcp"
+      ],
+      "timeout": 30000,
+      "tags": [
+        "academic",
+        "papers",
+        "science",
+        "semantic-scholar",
+        "arxiv",
+        "pubmed"
+      ]
+    },
+    "sura-papers": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@sura_ai/papers"
+      ],
+      "timeout": 30000,
+      "tags": [
+        "academic",
+        "papers",
+        "doi",
+        "crossref",
+        "citation-graph"
+      ]
+    },
+    "arxiv-mcp": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@fre4x/arxiv"
+      ],
+      "timeout": 30000,
+      "tags": [
+        "academic",
+        "papers",
+        "arxiv",
+        "preprints"
       ]
     },
     "youtube-transcript": {
@@ -555,6 +622,21 @@
         "debate",
         "mathematics",
         "science"
+      ]
+    },
+    "scihub": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "sci-hub-mcp-server"
+      ],
+      "timeout": 120000,
+      "tags": [
+        "scihub",
+        "academic",
+        "research",
+        "papers",
+        "pdf"
       ]
     }
   },

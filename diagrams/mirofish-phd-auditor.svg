@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" font-family="Segoe UI, Arial, sans-serif">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" font-family="Segoe UI, Arial, sans-serif">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#0d1117"/>
@@ -41,156 +41,156 @@
   <!-- Header -->
   <rect x="0" y="0" width="1200" height="56" fill="url(#hdr)" rx="8"/>
   <rect x="0" y="40" width="1200" height="16" fill="url(#hdr)"/>
-  <text x="600" y="34" text-anchor="middle" fill="#fff" font-size="19" font-weight="bold">MiroFish/BettaFish + PhD Auditor — Pipeline P14–P18 (v4.6.1)</text>
+  <text x="600" y="34" text-anchor="middle" fill="#fff" font-size="19" font-weight="bold">MiroFish/BettaFish + PhD Auditor â€” Pipeline P14â€“P18 (v5.0.0)</text>
 
   <!-- Pipeline row labels -->
-  <text x="600" y="76" text-anchor="middle" fill="#8b949e" font-size="11">Agent Forum · Debate Strategies · 212 Raciocinios (25 cat) · NashSolver · Qualis A1 · 55 IMO · BRAZIL_TIMEZONE (UTC-3)</text>
+  <text x="600" y="76" text-anchor="middle" fill="#8b949e" font-size="11">Agent Forum Â· Debate Strategies Â· 212 Raciocinios (25 cat) Â· NashSolver Â· Qualis A1 Â· 55 IMO Â· BRAZIL_TIMEZONE (UTC-3)</text>
 
-  <!-- ── P14 Agent Forum ── -->
+  <!-- â”€â”€ P14 Agent Forum â”€â”€ -->
   <rect x="30" y="95" width="210" height="130" rx="8" fill="url(#gp14)" opacity="0.12" stroke="#58a6ff" stroke-width="1.5" filter="url(#shadow)"/>
   <rect x="30" y="95" width="210" height="30" rx="8" fill="url(#gp14)" opacity="0.4"/>
   <rect x="30" y="113" width="210" height="12" fill="url(#gp14)" opacity="0.4"/>
-  <text x="135" y="115" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">P14 — Agent Forum</text>
-  <text x="45" y="143" fill="#8b949e" font-size="9">• Multi-agente debate estruturado</text>
-  <text x="45" y="158" fill="#8b949e" font-size="9">• OASIS: moderação automática</text>
-  <text x="45" y="173" fill="#8b949e" font-size="9">• Forum: threading de argumentos</text>
-  <text x="45" y="188" fill="#8b949e" font-size="9">• Config: 8 configurações debate</text>
-  <text x="45" y="203" fill="#8b949e" font-size="9">• Graph: grafo de argumentos</text>
+  <text x="135" y="115" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">P14 â€” Agent Forum</text>
+  <text x="45" y="143" fill="#8b949e" font-size="9">â€¢ Multi-agente debate estruturado</text>
+  <text x="45" y="158" fill="#8b949e" font-size="9">â€¢ OASIS: moderaÃ§Ã£o automÃ¡tica</text>
+  <text x="45" y="173" fill="#8b949e" font-size="9">â€¢ Forum: threading de argumentos</text>
+  <text x="45" y="188" fill="#8b949e" font-size="9">â€¢ Config: 8 configuraÃ§Ãµes debate</text>
+  <text x="45" y="203" fill="#8b949e" font-size="9">â€¢ Graph: grafo de argumentos</text>
 
-  <!-- Arrow P14→P15 -->
+  <!-- Arrow P14â†’P15 -->
   <line x1="240" y1="160" x2="268" y2="160" stroke="#bc8cff" stroke-width="2" marker-end="url(#arw)"/>
 
-  <!-- ── P15 DocIR ── -->
+  <!-- â”€â”€ P15 DocIR â”€â”€ -->
   <rect x="270" y="95" width="210" height="130" rx="8" fill="url(#gp15)" opacity="0.12" stroke="#3fb950" stroke-width="1.5" filter="url(#shadow)"/>
   <rect x="270" y="95" width="210" height="30" rx="8" fill="url(#gp15)" opacity="0.4"/>
   <rect x="270" y="113" width="210" height="12" fill="url(#gp15)" opacity="0.4"/>
-  <text x="375" y="115" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">P15 — DocIR</text>
-  <text x="285" y="143" fill="#8b949e" font-size="9">• Recuperação documental inteligente</text>
-  <text x="285" y="158" fill="#8b949e" font-size="9">• 50 métricas: World Bank/WHO</text>
-  <text x="285" y="173" fill="#8b949e" font-size="9">• FAO/UNESCO dados reais</text>
-  <text x="285" y="188" fill="#8b949e" font-size="9">• Indexação semântica vetorial</text>
-  <text x="285" y="203" fill="#8b949e" font-size="9">• Retrieval cross-document</text>
+  <text x="375" y="115" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">P15 â€” DocIR</text>
+  <text x="285" y="143" fill="#8b949e" font-size="9">â€¢ RecuperaÃ§Ã£o documental inteligente</text>
+  <text x="285" y="158" fill="#8b949e" font-size="9">â€¢ 50 mÃ©tricas: World Bank/WHO</text>
+  <text x="285" y="173" fill="#8b949e" font-size="9">â€¢ FAO/UNESCO dados reais</text>
+  <text x="285" y="188" fill="#8b949e" font-size="9">â€¢ IndexaÃ§Ã£o semÃ¢ntica vetorial</text>
+  <text x="285" y="203" fill="#8b949e" font-size="9">â€¢ Retrieval cross-document</text>
 
-  <!-- Arrow P15→P16 -->
+  <!-- Arrow P15â†’P16 -->
   <line x1="480" y1="160" x2="508" y2="160" stroke="#bc8cff" stroke-width="2" marker-end="url(#arw)"/>
 
-  <!-- ── P16 ANP ── -->
+  <!-- â”€â”€ P16 ANP â”€â”€ -->
   <rect x="510" y="95" width="210" height="130" rx="8" fill="url(#gp16)" opacity="0.12" stroke="#d29922" stroke-width="1.5" filter="url(#shadow)"/>
   <rect x="510" y="95" width="210" height="30" rx="8" fill="url(#gp16)" opacity="0.4"/>
   <rect x="510" y="113" width="210" height="12" fill="url(#gp16)" opacity="0.4"/>
-  <text x="615" y="115" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">P16 — ANP</text>
-  <text x="525" y="143" fill="#8b949e" font-size="9">• Analytic Network Process</text>
-  <text x="525" y="158" fill="#8b949e" font-size="9">• Ponderação multi-critério</text>
-  <text x="525" y="173" fill="#8b949e" font-size="9">• Priorização de argumentos</text>
-  <text x="525" y="188" fill="#8b949e" font-size="9">• Matriz de dependências</text>
-  <text x="525" y="203" fill="#8b949e" font-size="9">• Score normalizado Qualis</text>
+  <text x="615" y="115" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">P16 â€” ANP</text>
+  <text x="525" y="143" fill="#8b949e" font-size="9">â€¢ Analytic Network Process</text>
+  <text x="525" y="158" fill="#8b949e" font-size="9">â€¢ PonderaÃ§Ã£o multi-critÃ©rio</text>
+  <text x="525" y="173" fill="#8b949e" font-size="9">â€¢ PriorizaÃ§Ã£o de argumentos</text>
+  <text x="525" y="188" fill="#8b949e" font-size="9">â€¢ Matriz de dependÃªncias</text>
+  <text x="525" y="203" fill="#8b949e" font-size="9">â€¢ Score normalizado Qualis</text>
 
-  <!-- Arrow P16→P17 -->
+  <!-- Arrow P16â†’P17 -->
   <line x1="720" y1="160" x2="748" y2="160" stroke="#bc8cff" stroke-width="2" marker-end="url(#arw)"/>
 
-  <!-- ── P17 MW ── -->
+  <!-- â”€â”€ P17 MW â”€â”€ -->
   <rect x="750" y="95" width="210" height="130" rx="8" fill="url(#gp17)" opacity="0.12" stroke="#f85149" stroke-width="1.5" filter="url(#shadow)"/>
   <rect x="750" y="95" width="210" height="30" rx="8" fill="url(#gp17)" opacity="0.4"/>
   <rect x="750" y="113" width="210" height="12" fill="url(#gp17)" opacity="0.4"/>
-  <text x="855" y="115" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">P17 — MW (Meta-Writer)</text>
-  <text x="765" y="143" fill="#8b949e" font-size="9">• Síntese de debate → texto</text>
-  <text x="765" y="158" fill="#8b949e" font-size="9">• IMRAD estruturação automática</text>
-  <text x="765" y="173" fill="#8b949e" font-size="9">• Anti-AI: 87 palavras banidas</text>
-  <text x="765" y="188" fill="#8b949e" font-size="9">• TSAC annotation: 46 notas</text>
-  <text x="765" y="203" fill="#8b949e" font-size="9">• Saída LaTeX/Markdown</text>
+  <text x="855" y="115" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">P17 â€” MW (Meta-Writer)</text>
+  <text x="765" y="143" fill="#8b949e" font-size="9">â€¢ SÃ­ntese de debate â†’ texto</text>
+  <text x="765" y="158" fill="#8b949e" font-size="9">â€¢ IMRAD estruturaÃ§Ã£o automÃ¡tica</text>
+  <text x="765" y="173" fill="#8b949e" font-size="9">â€¢ Anti-AI: 87 palavras banidas</text>
+  <text x="765" y="188" fill="#8b949e" font-size="9">â€¢ TSAC annotation: 46 notas</text>
+  <text x="765" y="203" fill="#8b949e" font-size="9">â€¢ SaÃ­da LaTeX/Markdown</text>
 
-  <!-- Arrow P17→P18 -->
+  <!-- Arrow P17â†’P18 -->
   <line x1="960" y1="160" x2="988" y2="160" stroke="#bc8cff" stroke-width="2" marker-end="url(#arw)"/>
 
-  <!-- ── P18 PhD Auditor ── -->
+  <!-- â”€â”€ P18 PhD Auditor â”€â”€ -->
   <rect x="990" y="95" width="180" height="130" rx="8" fill="url(#gp18)" opacity="0.18" stroke="#bc8cff" stroke-width="2" filter="url(#shadow)"/>
   <rect x="990" y="95" width="180" height="30" rx="8" fill="url(#gp18)" opacity="0.5"/>
   <rect x="990" y="113" width="180" height="12" fill="url(#gp18)" opacity="0.5"/>
-  <text x="1080" y="115" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">P18 — PhD Auditor</text>
-  <text x="1005" y="143" fill="#bc8cff" font-size="9">★ NashSolver</text>
-  <text x="1005" y="158" fill="#bc8cff" font-size="9">★ StatisticalRigor</text>
-  <text x="1005" y="173" fill="#bc8cff" font-size="9">★ QualisA1Auditor</text>
-  <text x="1005" y="188" fill="#bc8cff" font-size="9">★ SensitivityAnalyzer</text>
-  <text x="1005" y="203" fill="#bc8cff" font-size="9">★ IMRADFormatter</text>
+  <text x="1080" y="115" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">P18 â€” PhD Auditor</text>
+  <text x="1005" y="143" fill="#bc8cff" font-size="9">â˜… NashSolver</text>
+  <text x="1005" y="158" fill="#bc8cff" font-size="9">â˜… StatisticalRigor</text>
+  <text x="1005" y="173" fill="#bc8cff" font-size="9">â˜… QualisA1Auditor</text>
+  <text x="1005" y="188" fill="#bc8cff" font-size="9">â˜… SensitivityAnalyzer</text>
+  <text x="1005" y="203" fill="#bc8cff" font-size="9">â˜… IMRADFormatter</text>
 
-  <!-- ── Debate Strategies Block ── -->
+  <!-- â”€â”€ Debate Strategies Block â”€â”€ -->
   <rect x="30" y="250" width="570" height="170" rx="8" fill="#1f6feb" opacity="0.06" stroke="#58a6ff" stroke-width="1" stroke-dasharray="5,3"/>
-  <text x="50" y="273" fill="#58a6ff" font-size="12" font-weight="bold">Debate Strategies — 204 Tipos de Raciocínio · 25 Categorias · 8 Configurações</text>
+  <text x="50" y="273" fill="#58a6ff" font-size="12" font-weight="bold">Debate Strategies â€” 204 Tipos de RaciocÃ­nio Â· 25 Categorias Â· 8 ConfiguraÃ§Ãµes</text>
 
   <rect x="45" y="282" width="130" height="120" rx="6" fill="#1f6feb" opacity="0.15" stroke="#58a6ff" stroke-width="1"/>
-  <text x="110" y="300" text-anchor="middle" fill="#58a6ff" font-size="10" font-weight="bold">Lógico (5)</text>
-  <text x="55" y="316" fill="#8b949e" font-size="8">• Dedutivo</text>
-  <text x="55" y="330" fill="#8b949e" font-size="8">• Indutivo</text>
-  <text x="55" y="344" fill="#8b949e" font-size="8">• Abdutivo</text>
-  <text x="55" y="358" fill="#8b949e" font-size="8">• Analógico</text>
-  <text x="55" y="372" fill="#8b949e" font-size="8">• Hipotético-dedutivo</text>
+  <text x="110" y="300" text-anchor="middle" fill="#58a6ff" font-size="10" font-weight="bold">LÃ³gico (5)</text>
+  <text x="55" y="316" fill="#8b949e" font-size="8">â€¢ Dedutivo</text>
+  <text x="55" y="330" fill="#8b949e" font-size="8">â€¢ Indutivo</text>
+  <text x="55" y="344" fill="#8b949e" font-size="8">â€¢ Abdutivo</text>
+  <text x="55" y="358" fill="#8b949e" font-size="8">â€¢ AnalÃ³gico</text>
+  <text x="55" y="372" fill="#8b949e" font-size="8">â€¢ HipotÃ©tico-dedutivo</text>
 
   <rect x="185" y="282" width="130" height="120" rx="6" fill="#238636" opacity="0.15" stroke="#3fb950" stroke-width="1"/>
-  <text x="250" y="300" text-anchor="middle" fill="#3fb950" font-size="10" font-weight="bold">Dialético (5)</text>
-  <text x="195" y="316" fill="#8b949e" font-size="8">• Tese-Antítese</text>
-  <text x="195" y="330" fill="#8b949e" font-size="8">• Socrático</text>
-  <text x="195" y="344" fill="#8b949e" font-size="8">• Hegeliano</text>
-  <text x="195" y="358" fill="#8b949e" font-size="8">• Dialética crítica</text>
-  <text x="195" y="372" fill="#8b949e" font-size="8">• Refutação</text>
+  <text x="250" y="300" text-anchor="middle" fill="#3fb950" font-size="10" font-weight="bold">DialÃ©tico (5)</text>
+  <text x="195" y="316" fill="#8b949e" font-size="8">â€¢ Tese-AntÃ­tese</text>
+  <text x="195" y="330" fill="#8b949e" font-size="8">â€¢ SocrÃ¡tico</text>
+  <text x="195" y="344" fill="#8b949e" font-size="8">â€¢ Hegeliano</text>
+  <text x="195" y="358" fill="#8b949e" font-size="8">â€¢ DialÃ©tica crÃ­tica</text>
+  <text x="195" y="372" fill="#8b949e" font-size="8">â€¢ RefutaÃ§Ã£o</text>
 
   <rect x="325" y="282" width="130" height="120" rx="6" fill="#9e6a03" opacity="0.15" stroke="#d29922" stroke-width="1"/>
   <text x="390" y="300" text-anchor="middle" fill="#d29922" font-size="10" font-weight="bold">Teoria Jogos (10)</text>
-  <text x="335" y="316" fill="#8b949e" font-size="8">• Nash Equilibrium</text>
-  <text x="335" y="330" fill="#8b949e" font-size="8">• Minimax</text>
-  <text x="335" y="344" fill="#8b949e" font-size="8">• Dominância</text>
-  <text x="335" y="358" fill="#8b949e" font-size="8">• Stackelberg</text>
-  <text x="335" y="372" fill="#8b949e" font-size="8">• + 6 variantes</text>
+  <text x="335" y="316" fill="#8b949e" font-size="8">â€¢ Nash Equilibrium</text>
+  <text x="335" y="330" fill="#8b949e" font-size="8">â€¢ Minimax</text>
+  <text x="335" y="344" fill="#8b949e" font-size="8">â€¢ DominÃ¢ncia</text>
+  <text x="335" y="358" fill="#8b949e" font-size="8">â€¢ Stackelberg</text>
+  <text x="335" y="372" fill="#8b949e" font-size="8">â€¢ + 6 variantes</text>
 
   <rect x="465" y="282" width="120" height="120" rx="6" fill="#da3633" opacity="0.15" stroke="#f85149" stroke-width="1"/>
-  <text x="525" y="300" text-anchor="middle" fill="#f85149" font-size="10" font-weight="bold">Decisão (5)</text>
-  <text x="475" y="316" fill="#8b949e" font-size="8">• Multi-critério</text>
-  <text x="475" y="330" fill="#8b949e" font-size="8">• Bayesiano</text>
-  <text x="475" y="344" fill="#8b949e" font-size="8">• Árvore decisão</text>
-  <text x="475" y="358" fill="#8b949e" font-size="8">• Fuzzy logic</text>
-  <text x="475" y="372" fill="#8b949e" font-size="8">• Heurístico</text>
+  <text x="525" y="300" text-anchor="middle" fill="#f85149" font-size="10" font-weight="bold">DecisÃ£o (5)</text>
+  <text x="475" y="316" fill="#8b949e" font-size="8">â€¢ Multi-critÃ©rio</text>
+  <text x="475" y="330" fill="#8b949e" font-size="8">â€¢ Bayesiano</text>
+  <text x="475" y="344" fill="#8b949e" font-size="8">â€¢ Ãrvore decisÃ£o</text>
+  <text x="475" y="358" fill="#8b949e" font-size="8">â€¢ Fuzzy logic</text>
+  <text x="475" y="372" fill="#8b949e" font-size="8">â€¢ HeurÃ­stico</text>
 
-  <!-- ── PhD Auditor Detail Block ── -->
+  <!-- â”€â”€ PhD Auditor Detail Block â”€â”€ -->
   <rect x="615" y="250" width="555" height="170" rx="8" fill="#8b2f97" opacity="0.06" stroke="#bc8cff" stroke-width="1" stroke-dasharray="5,3"/>
-  <text x="635" y="273" fill="#bc8cff" font-size="12" font-weight="bold">PhD Auditor — Módulos de Validação Estatística Qualis A1</text>
+  <text x="635" y="273" fill="#bc8cff" font-size="12" font-weight="bold">PhD Auditor â€” MÃ³dulos de ValidaÃ§Ã£o EstatÃ­stica Qualis A1</text>
 
   <rect x="630" y="282" width="120" height="120" rx="6" fill="#8b2f97" opacity="0.2" stroke="#bc8cff" stroke-width="1"/>
   <text x="690" y="300" text-anchor="middle" fill="#bc8cff" font-size="10" font-weight="bold">NashSolver</text>
-  <text x="640" y="316" fill="#8b949e" font-size="8">• Equilíbrio Nash</text>
-  <text x="640" y="330" fill="#8b949e" font-size="8">• Teoria dos jogos</text>
-  <text x="640" y="344" fill="#8b949e" font-size="8">• Convergência</text>
-  <text x="640" y="358" fill="#8b949e" font-size="8">• Pareto ótimo</text>
-  <text x="640" y="372" fill="#8b949e" font-size="8">• Estratégia mista</text>
+  <text x="640" y="316" fill="#8b949e" font-size="8">â€¢ EquilÃ­brio Nash</text>
+  <text x="640" y="330" fill="#8b949e" font-size="8">â€¢ Teoria dos jogos</text>
+  <text x="640" y="344" fill="#8b949e" font-size="8">â€¢ ConvergÃªncia</text>
+  <text x="640" y="358" fill="#8b949e" font-size="8">â€¢ Pareto Ã³timo</text>
+  <text x="640" y="372" fill="#8b949e" font-size="8">â€¢ EstratÃ©gia mista</text>
 
   <rect x="760" y="282" width="120" height="120" rx="6" fill="#8b2f97" opacity="0.2" stroke="#bc8cff" stroke-width="1"/>
   <text x="820" y="300" text-anchor="middle" fill="#bc8cff" font-size="10" font-weight="bold">Statistical Rigor</text>
-  <text x="770" y="316" fill="#8b949e" font-size="8">• Cohen κ (kappa)</text>
-  <text x="770" y="330" fill="#8b949e" font-size="8">• Bonferroni corr.</text>
-  <text x="770" y="344" fill="#8b949e" font-size="8">• Pearson r</text>
-  <text x="770" y="358" fill="#8b949e" font-size="8">• p-value &lt; 0.05</text>
-  <text x="770" y="372" fill="#8b949e" font-size="8">• IC 95%</text>
+  <text x="770" y="316" fill="#8b949e" font-size="8">â€¢ Cohen Îº (kappa)</text>
+  <text x="770" y="330" fill="#8b949e" font-size="8">â€¢ Bonferroni corr.</text>
+  <text x="770" y="344" fill="#8b949e" font-size="8">â€¢ Pearson r</text>
+  <text x="770" y="358" fill="#8b949e" font-size="8">â€¢ p-value &lt; 0.05</text>
+  <text x="770" y="372" fill="#8b949e" font-size="8">â€¢ IC 95%</text>
 
   <rect x="890" y="282" width="130" height="120" rx="6" fill="#8b2f97" opacity="0.2" stroke="#bc8cff" stroke-width="1"/>
   <text x="955" y="300" text-anchor="middle" fill="#bc8cff" font-size="10" font-weight="bold">QualisA1Auditor</text>
-  <text x="900" y="316" fill="#8b949e" font-size="8">• 10 critérios ponderados</text>
-  <text x="900" y="330" fill="#8b949e" font-size="8">• Score mínimo: 95/100</text>
-  <text x="900" y="344" fill="#8b949e" font-size="8">• Peer review simulado</text>
-  <text x="900" y="358" fill="#8b949e" font-size="8">• ABNT + LaTeX</text>
-  <text x="900" y="372" fill="#8b949e" font-size="8">• Sensitivity + IMRAD</text>
+  <text x="900" y="316" fill="#8b949e" font-size="8">â€¢ 10 critÃ©rios ponderados</text>
+  <text x="900" y="330" fill="#8b949e" font-size="8">â€¢ Score mÃ­nimo: 95/100</text>
+  <text x="900" y="344" fill="#8b949e" font-size="8">â€¢ Peer review simulado</text>
+  <text x="900" y="358" fill="#8b949e" font-size="8">â€¢ ABNT + LaTeX</text>
+  <text x="900" y="372" fill="#8b949e" font-size="8">â€¢ Sensitivity + IMRAD</text>
 
-  <!-- ── Reasoning types remaining ── -->
+  <!-- â”€â”€ Reasoning types remaining â”€â”€ -->
   <rect x="30" y="440" width="1140" height="80" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-  <text x="50" y="462" fill="#e3b341" font-size="11" font-weight="bold">204 Tipos de Raciocínio — 25 Categorias (200 manuais + 4 autônomos R201-R204)</text>
-  <text x="50" y="482" fill="#8b949e" font-size="9">Lógico (5): Dedutivo · Indutivo · Abdutivo · Analógico · Hipotético-Dedutivo</text>
-  <text x="50" y="497" fill="#8b949e" font-size="9">Dialético (5): Socrático · Hegeliano · Tese-Antítese · Crítica · Refutação    |    Teoria dos Jogos (10): Nash · Minimax · Dominância · Stackelberg · Pareto · Bayesiano · Evolutivo · Cooperativo · Assimétrico · Sinalização</text>
-  <text x="50" y="512" fill="#8b949e" font-size="9">Decisão (5): Multi-critério · Bayesiano · Árvore · Fuzzy · Heurístico    |    Estratégico (5): SWOT · Scenario · Roadmap · Competitivo · Blue Ocean    |    Inovação (8): TRIZ · Design Thinking · Lateral · Biomimética · Disruptivo · Frugal · Combinatorial · Ágil</text>
+  <text x="50" y="462" fill="#e3b341" font-size="11" font-weight="bold">204 Tipos de RaciocÃ­nio â€” 25 Categorias (200 manuais + 4 autÃ´nomos R201-R204)</text>
+  <text x="50" y="482" fill="#8b949e" font-size="9">LÃ³gico (5): Dedutivo Â· Indutivo Â· Abdutivo Â· AnalÃ³gico Â· HipotÃ©tico-Dedutivo</text>
+  <text x="50" y="497" fill="#8b949e" font-size="9">DialÃ©tico (5): SocrÃ¡tico Â· Hegeliano Â· Tese-AntÃ­tese Â· CrÃ­tica Â· RefutaÃ§Ã£o    |    Teoria dos Jogos (10): Nash Â· Minimax Â· DominÃ¢ncia Â· Stackelberg Â· Pareto Â· Bayesiano Â· Evolutivo Â· Cooperativo Â· AssimÃ©trico Â· SinalizaÃ§Ã£o</text>
+  <text x="50" y="512" fill="#8b949e" font-size="9">DecisÃ£o (5): Multi-critÃ©rio Â· Bayesiano Â· Ãrvore Â· Fuzzy Â· HeurÃ­stico    |    EstratÃ©gico (5): SWOT Â· Scenario Â· Roadmap Â· Competitivo Â· Blue Ocean    |    InovaÃ§Ã£o (8): TRIZ Â· Design Thinking Â· Lateral Â· BiomimÃ©tica Â· Disruptivo Â· Frugal Â· Combinatorial Â· Ãgil</text>
 
-  <!-- ── MiroFish 11 components ── -->
+  <!-- â”€â”€ MiroFish 11 components â”€â”€ -->
   <rect x="30" y="540" width="1140" height="130" rx="8" fill="#8b2f97" opacity="0.05" stroke="#bc8cff" stroke-width="1"/>
-  <text x="50" y="562" fill="#bc8cff" font-size="12" font-weight="bold">MiroFish/BettaFish — 11 Componentes Integrados (skills/agent-forum/)</text>
+  <text x="50" y="562" fill="#bc8cff" font-size="12" font-weight="bold">MiroFish/BettaFish â€” 11 Componentes Integrados (skills/agent-forum/)</text>
 
   <rect x="45" y="572" width="140" height="50" rx="6" fill="#8b2f97" opacity="0.25"/>
   <text x="115" y="592" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">OASIS</text>
-  <text x="115" y="608" text-anchor="middle" fill="#8b949e" font-size="8">Moderação debate</text>
+  <text x="115" y="608" text-anchor="middle" fill="#8b949e" font-size="8">ModeraÃ§Ã£o debate</text>
 
   <rect x="195" y="572" width="140" height="50" rx="6" fill="#8b2f97" opacity="0.25"/>
   <text x="265" y="592" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Forum</text>
@@ -198,7 +198,7 @@
 
   <rect x="345" y="572" width="140" height="50" rx="6" fill="#8b2f97" opacity="0.25"/>
   <text x="415" y="592" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Config</text>
-  <text x="415" y="608" text-anchor="middle" fill="#8b949e" font-size="8">8 configurações</text>
+  <text x="415" y="608" text-anchor="middle" fill="#8b949e" font-size="8">8 configuraÃ§Ãµes</text>
 
   <rect x="495" y="572" width="140" height="50" rx="6" fill="#8b2f97" opacity="0.25"/>
   <text x="565" y="592" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Graph</text>
@@ -206,35 +206,35 @@
 
   <rect x="645" y="572" width="140" height="50" rx="6" fill="#8b2f97" opacity="0.25"/>
   <text x="715" y="592" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Report</text>
-  <text x="715" y="608" text-anchor="middle" fill="#8b949e" font-size="8">Relatório final</text>
+  <text x="715" y="608" text-anchor="middle" fill="#8b949e" font-size="8">RelatÃ³rio final</text>
 
   <rect x="795" y="572" width="140" height="50" rx="6" fill="#8b2f97" opacity="0.25"/>
   <text x="865" y="592" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Nash</text>
-  <text x="865" y="608" text-anchor="middle" fill="#8b949e" font-size="8">Equilíbrio jogos</text>
+  <text x="865" y="608" text-anchor="middle" fill="#8b949e" font-size="8">EquilÃ­brio jogos</text>
 
   <rect x="945" y="572" width="210" height="50" rx="6" fill="#8b2f97" opacity="0.25"/>
-  <text x="1050" y="592" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Stats · Qualis · Sens. · IMRAD · Debate</text>
-  <text x="1050" y="608" text-anchor="middle" fill="#8b949e" font-size="8">5 módulos PhD Auditor</text>
+  <text x="1050" y="592" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Stats Â· Qualis Â· Sens. Â· IMRAD Â· Debate</text>
+  <text x="1050" y="608" text-anchor="middle" fill="#8b949e" font-size="8">5 mÃ³dulos PhD Auditor</text>
 
   <!-- timezone badge -->
   <rect x="45" y="632" width="200" height="26" rx="4" fill="#238636" opacity="0.3" stroke="#3fb950" stroke-width="1"/>
   <text x="145" y="649" text-anchor="middle" fill="#3fb950" font-size="10">BRAZIL_TIMEZONE UTC-3</text>
 
   <rect x="255" y="632" width="220" height="26" rx="4" fill="#1f6feb" opacity="0.3" stroke="#58a6ff" stroke-width="1"/>
-  <text x="365" y="649" text-anchor="middle" fill="#58a6ff" font-size="10">50 métricas World Bank/WHO/FAO</text>
+  <text x="365" y="649" text-anchor="middle" fill="#58a6ff" font-size="10">50 mÃ©tricas World Bank/WHO/FAO</text>
 
   <rect x="485" y="632" width="200" height="26" rx="4" fill="#9e6a03" opacity="0.3" stroke="#d29922" stroke-width="1"/>
   <text x="585" y="649" text-anchor="middle" fill="#d29922" font-size="10">nexus-phd-strategist</text>
 
   <!-- Stats bar -->
   <rect x="30" y="690" width="1140" height="28" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-  <text x="80"  y="708" fill="#8b949e" font-size="9">Pipeline: P14→P15→P16→P17→P18</text>
-  <text x="340" y="708" fill="#8b949e" font-size="9">212 Raciocinios · 25 Cat.</text>
+  <text x="80"  y="708" fill="#8b949e" font-size="9">Pipeline: P14â†’P15â†’P16â†’P17â†’P18</text>
+  <text x="340" y="708" fill="#8b949e" font-size="9">212 Raciocinios Â· 25 Cat.</text>
   <text x="520" y="708" fill="#8b949e" font-size="9">11 Componentes MiroFish</text>
-  <text x="720" y="708" fill="#8b949e" font-size="9">NashSolver · Cohen · Bonferroni · Qualis A1</text>
-  <text x="990" y="708" fill="#8b949e" font-size="9">Score ≥ 95/100</text>
+  <text x="720" y="708" fill="#8b949e" font-size="9">NashSolver Â· Cohen Â· Bonferroni Â· Qualis A1</text>
+  <text x="990" y="708" fill="#8b949e" font-size="9">Score â‰¥ 95/100</text>
 
   <!-- footer refs -->
-  <text x="600" y="745" text-anchor="middle" fill="#484f58" font-size="9">Refs: Nash (1950) · Cohen (1960) · Bonferroni (1936) · IMRAD (ICMJE) · Qualis CAPES · BettaFish/MiroFish OpenCode v4.6.1</text>
-  <text x="600" y="760" text-anchor="middle" fill="#484f58" font-size="9">Integrado em: nexus-phd-strategist · skills/agent-forum/ · criador-artigo/banca/ · BRAZIL_TIMEZONE (UTC-3)</text>
+  <text x="600" y="745" text-anchor="middle" fill="#484f58" font-size="9">Refs: Nash (1950) Â· Cohen (1960) Â· Bonferroni (1936) Â· IMRAD (ICMJE) Â· Qualis CAPES Â· BettaFish/MiroFish OpenCode v5.0.0</text>
+  <text x="600" y="760" text-anchor="middle" fill="#484f58" font-size="9">Integrado em: nexus-phd-strategist Â· skills/agent-forum/ Â· criador-artigo/banca/ Â· BRAZIL_TIMEZONE (UTC-3)</text>
 </svg>

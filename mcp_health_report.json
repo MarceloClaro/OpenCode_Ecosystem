@@ -1,0 +1,378 @@
+{
+  "report": "MCP Health Check — OpenCode Ecosystem",
+  "generated": "2026-06-01",
+  "total_mcps": 42,
+  "healthy": 18,
+  "warnings": 23,
+  "errors": 1,
+  "details": [
+    {
+      "server": "filesystem",
+      "type": "local",
+      "enabled": true,
+      "status": "healthy",
+      "command": "npx -y @modelcontextprotocol/server-filesystem \"C:\\Users\\marce\"",
+      "check": "npx available, path C:\\Users\\marce exists"
+    },
+    {
+      "server": "code-runner",
+      "type": "local",
+      "enabled": true,
+      "command": "mcp-server-code-runner",
+      "status": "healthy",
+      "binary": "C:\\Users\\marce\\AppData\\Roaming\\npm\\mcp-server-code-runner.ps1"
+    },
+    {
+      "server": "mcp-python-interpreter",
+      "type": "local",
+      "enabled": true,
+      "command": "mcp-python-interpreter",
+      "status": "healthy",
+      "binary": "C:\\Users\\marce\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\mcp-python-interpreter.exe"
+    },
+    {
+      "server": "sqlite",
+      "type": "local",
+      "enabled": true,
+      "command": "mcp-server-sqlite",
+      "status": "healthy",
+      "binary": "C:\\Users\\marce\\AppData\\Roaming\\npm\\mcp-server-sqlite.ps1"
+    },
+    {
+      "server": "sequential-thinking",
+      "type": "local",
+      "enabled": true,
+      "command": "node C:/Users/marce/AppData/Roaming/npm/node_modules/@modelcontextprotocol/server-sequential-thinking/dist/index.js",
+      "status": "healthy",
+      "binary": "C:\\Users\\marce\\AppData\\Roaming\\npm\\node_modules\\@modelcontextprotocol\\server-sequential-thinking\\dist\\index.js"
+    },
+    {
+      "server": "websearch",
+      "type": "local",
+      "enabled": true,
+      "command": "mcp-fetch-server --duckduckgo",
+      "status": "healthy",
+      "binary": "C:\\Users\\marce\\AppData\\Roaming\\npm\\mcp-fetch-server.ps1"
+    },
+    {
+      "server": "fetch",
+      "type": "local",
+      "enabled": true,
+      "command": "mcp-fetch-server",
+      "status": "healthy",
+      "binary": "C:\\Users\\marce\\AppData\\Roaming\\npm\\mcp-fetch-server.ps1"
+    },
+    {
+      "server": "wikipedia",
+      "type": "local",
+      "enabled": false,
+      "command": "npx -y mcp-wikipedia",
+      "status": "warning",
+      "reason": "disabled"
+    },
+    {
+      "server": "context7",
+      "type": "remote",
+      "enabled": true,
+      "command": "URL-based remote",
+      "status": "healthy"
+    },
+    {
+      "server": "gh_grep",
+      "type": "remote",
+      "enabled": true,
+      "command": "URL-based remote",
+      "status": "healthy"
+    },
+    {
+      "server": "playwright",
+      "type": "local",
+      "enabled": true,
+      "command": "npx -y @playwright/mcp@latest --headless",
+      "status": "healthy",
+      "check": "npx available"
+    },
+    {
+      "server": "puppeteer",
+      "type": "local",
+      "enabled": false,
+      "command": "npx -y @modelcontextprotocol/server-puppeteer",
+      "status": "warning",
+      "reason": "disabled"
+    },
+    {
+      "server": "chrome-devtools",
+      "type": "local",
+      "enabled": false,
+      "command": "chrome-devtools-mcp",
+      "status": "warning",
+      "binary": "C:\\Users\\marce\\AppData\\Roaming\\npm\\chrome-devtools-mcp.ps1",
+      "reason": "disabled (binary exists)"
+    },
+    {
+      "server": "desktop-commander",
+      "type": "local",
+      "enabled": false,
+      "command": "npx -y @wonderwhy-er/desktop-commander",
+      "status": "warning",
+      "reason": "disabled"
+    },
+    {
+      "server": "eslint",
+      "type": "local",
+      "enabled": true,
+      "command": "npx -y @eslint/mcp",
+      "status": "healthy",
+      "check": "npx available"
+    },
+    {
+      "server": "diff",
+      "type": "local",
+      "enabled": true,
+      "command": "mcp-server-diff-typescript",
+      "status": "healthy",
+      "binary": "C:\\Users\\marce\\AppData\\Roaming\\npm\\mcp-server-diff-typescript.ps1"
+    },
+    {
+      "server": "shell-server",
+      "type": "local",
+      "enabled": false,
+      "command": "uvx mcp-shell-server",
+      "status": "warning",
+      "reason": "disabled (uvx available)"
+    },
+    {
+      "server": "run-python",
+      "type": "local",
+      "enabled": false,
+      "command": "uvx mcp-run-python",
+      "status": "warning",
+      "reason": "disabled (uvx available)"
+    },
+    {
+      "server": "node-sandbox",
+      "type": "local",
+      "enabled": true,
+      "command": "node-code-sandbox-mcp",
+      "status": "healthy",
+      "binary": "C:\\Users\\marce\\AppData\\Roaming\\npm\\node-code-sandbox-mcp.ps1"
+    },
+    {
+      "server": "memory",
+      "type": "local",
+      "enabled": true,
+      "command": "npx -y @modelcontextprotocol/server-memory",
+      "status": "healthy",
+      "check": "npx available"
+    },
+    {
+      "server": "mcp-server-commands",
+      "type": "local",
+      "enabled": false,
+      "command": "mcp-server-commands",
+      "status": "warning",
+      "binary": "C:\\Users\\marce\\AppData\\Roaming\\npm\\mcp-server-commands.ps1",
+      "reason": "disabled (binary exists)"
+    },
+    {
+      "server": "time",
+      "type": "local",
+      "enabled": true,
+      "command": "npx -y @mcpcentral/mcp-time",
+      "status": "healthy",
+      "check": "npx available"
+    },
+    {
+      "server": "github",
+      "type": "local",
+      "enabled": true,
+      "command": "npx -y @modelcontextprotocol/server-github",
+      "status": "error",
+      "reason": "GITHUB_TOKEN environment variable not set"
+    },
+    {
+      "server": "pdf",
+      "type": "local",
+      "enabled": true,
+      "command": "pdf-mcp-server",
+      "status": "healthy",
+      "binary": "C:\\Users\\marce\\AppData\\Roaming\\npm\\pdf-mcp-server.ps1"
+    },
+    {
+      "server": "biomcp",
+      "type": "local",
+      "enabled": false,
+      "command": "uvx biomcp",
+      "status": "warning",
+      "reason": "disabled (uvx available)"
+    },
+    {
+      "server": "biothings",
+      "type": "local",
+      "enabled": false,
+      "command": "uvx biothings-mcp",
+      "status": "warning",
+      "reason": "disabled (uvx available)"
+    },
+    {
+      "server": "gget",
+      "type": "local",
+      "enabled": false,
+      "command": "uvx gget-mcp",
+      "status": "warning",
+      "reason": "disabled (uvx available)"
+    },
+    {
+      "server": "opengenes",
+      "type": "local",
+      "enabled": false,
+      "command": "uvx opengenes-mcp",
+      "status": "warning",
+      "reason": "disabled (uvx available)"
+    },
+    {
+      "server": "youtube-transcript",
+      "type": "local",
+      "enabled": false,
+      "command": "npx -y mcp-server-youtube-transcript",
+      "status": "warning",
+      "reason": "disabled"
+    },
+    {
+      "server": "mermaid",
+      "type": "local",
+      "enabled": false,
+      "command": "npx -y @narasimhaponnada/mermaid-mcp-server",
+      "status": "warning",
+      "reason": "disabled"
+    },
+    {
+      "server": "mem0-mcp",
+      "type": "local",
+      "enabled": false,
+      "command": "mem0-mcp",
+      "status": "warning",
+      "binary": "C:\\Users\\marce\\AppData\\Roaming\\npm\\mem0-mcp.ps1",
+      "reason": "disabled (binary exists)"
+    },
+    {
+      "server": "hacker-news",
+      "type": "local",
+      "enabled": false,
+      "command": "npx -y mcp-hacker-news",
+      "status": "warning",
+      "reason": "disabled"
+    },
+    {
+      "server": "flowzap-mcp",
+      "type": "local",
+      "enabled": false,
+      "command": "npx -y flowzap-mcp",
+      "status": "warning",
+      "reason": "disabled"
+    },
+    {
+      "server": "astronomy-oracle",
+      "type": "local",
+      "enabled": false,
+      "command": "npx -y astronomy-oracle",
+      "status": "warning",
+      "reason": "disabled"
+    },
+    {
+      "server": "self-healer",
+      "type": "local",
+      "enabled": false,
+      "command": "python nexus/mcp_self_healer.py",
+      "status": "warning",
+      "check": "python available, script found at C:\\Users\\marce\\.config\\opencode\\nexus\\mcp_self_healer.py",
+      "reason": "disabled"
+    },
+    {
+      "server": "decisionnode",
+      "type": "local",
+      "enabled": true,
+      "command": "decide-mcp",
+      "status": "healthy",
+      "binary": "C:\\Users\\marce\\AppData\\Roaming\\npm\\decide-mcp.ps1"
+    },
+    {
+      "server": "maswos-juridico",
+      "type": "local",
+      "enabled": false,
+      "command": "python skills/maswos-v5-nexus/servers/juridico_server.py",
+      "status": "warning",
+      "check": "python available, script found",
+      "reason": "disabled"
+    },
+    {
+      "server": "maswos-mcp",
+      "type": "local",
+      "enabled": false,
+      "command": "python skills/maswos-v5-nexus/servers/maswos_server.py",
+      "status": "warning",
+      "check": "python available, script found",
+      "reason": "disabled"
+    },
+    {
+      "server": "maswos-rag",
+      "type": "local",
+      "enabled": false,
+      "command": "python skills/maswos-v5-nexus/servers/rag_server.py",
+      "status": "warning",
+      "check": "python available, script found",
+      "reason": "disabled"
+    },
+    {
+      "server": "antigravity-mcp",
+      "type": "local",
+      "enabled": false,
+      "command": "python nexus/antigravity_mcp_server.py",
+      "status": "warning",
+      "check": "python available, script found",
+      "reason": "disabled"
+    },
+    {
+      "server": "cora-verifier",
+      "type": "local",
+      "enabled": false,
+      "command": "python skills/cora-debate/servers/cora_verifier.py",
+      "status": "warning",
+      "check": "python available, script found",
+      "reason": "disabled"
+    },
+    {
+      "server": "scihub",
+      "type": "local",
+      "enabled": true,
+      "command": "sci-hub-mcp-server",
+      "status": "healthy",
+      "binary": "C:\\Users\\marce\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\sci-hub-mcp-server.exe",
+      "note": "Config has duplicate 'scihub' keys; second entry (line 560, enabled:true) overrides first (line 374, enabled:false)"
+    }
+  ],
+  "summary": {
+    "healthy_servers": [
+      "filesystem", "code-runner", "mcp-python-interpreter", "sqlite",
+      "sequential-thinking", "websearch", "fetch", "context7",
+      "gh_grep", "playwright", "eslint", "diff", "node-sandbox",
+      "memory", "time", "pdf", "decisionnode", "scihub"
+    ],
+    "warning_servers": [
+      "wikipedia", "puppeteer", "chrome-devtools", "desktop-commander",
+      "shell-server", "run-python", "mcp-server-commands", "biomcp",
+      "biothings", "gget", "opengenes", "youtube-transcript", "mermaid",
+      "mem0-mcp", "hacker-news", "flowzap-mcp", "astronomy-oracle",
+      "self-healer", "maswos-juridico", "maswos-mcp", "maswos-rag",
+      "antigravity-mcp", "cora-verifier"
+    ],
+    "error_servers": [
+      "github"
+    ],
+    "recommendations": [
+      "Set GITHUB_TOKEN environment variable for github MCP server to function",
+      "Review 23 disabled MCPs and decide if any should be enabled or removed",
+      "Resolve duplicate 'scihub' key in opencode.json (two entries, second overrides first)"
+    ]
+  }
+}

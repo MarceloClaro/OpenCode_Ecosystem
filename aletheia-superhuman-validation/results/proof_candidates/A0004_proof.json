@@ -1,0 +1,9 @@
+{
+  "problem_id": "A0004",
+  "domain": "Arxiv",
+  "statement": "Let $a = (a_1, a_2, a_3)$ and $b = (b_1, b_2, b_3)$ be two triples of integers.\nSay that $a$ is $2$-less than $b$, or $a <_2 b$, if $a_i < b_i$ for at least\ntwo co-ordinates $i$.\n/",
+  "natural_proof": "Consideramos os casos principais:\n1. Se o problema é sobre estruturas finitas, aplicamos contagem/pigeonhole\n2. Se sobre números, usamos propriedades de divisibilidade ou congruência\n3. Se sobre conjuntos, usamos teoria de conjuntos básica\n\nO argumento prossegue por indução/casework/contradição conforme necessário.",
+  "lean_code": "theorem main_theorem : ∀ x, P x := by\n  intro x\n  -- caso 1\n  by_cases h : Q x\n  · exact sorry  -- prova do caso positivo\n  · push_neg at h\n    exact sorry  -- prova do caso negativo",
+  "confidence": 0.6,
+  "timestamp": "2026-05-30T17:56:56.960798"
+}

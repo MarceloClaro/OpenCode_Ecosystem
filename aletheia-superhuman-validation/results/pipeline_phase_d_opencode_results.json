@@ -1,0 +1,233 @@
+{
+  "phase": "D-OpenCode",
+  "timestamp": "2026-05-30T19:05:43.561975",
+  "total_proofs": 10,
+  "tier_distribution": {
+    "A": 10,
+    "B": 0,
+    "C": 0,
+    "D": 0
+  },
+  "results": [
+    {
+      "problem_id": "A0004",
+      "domain": "combinatorics",
+      "tier": "A",
+      "overall_score": 8.28,
+      "dimensions": {
+        "hypothesis_clarity": 8.0,
+        "mathematical_insight": 7.0,
+        "proof_rigor": 7.83,
+        "case_analysis": 9.0,
+        "formal_correctness": 7.5,
+        "induction_validity": 9.5,
+        "tactic_usage": 8.9,
+        "lemma_usage": 8.5,
+        "edge_case_coverage": 8.3,
+        "overall_soundness": 8.28
+      },
+      "sorry_count": 1,
+      "confidence": 0.78,
+      "reasoning_phases_active": 5,
+      "timestamp": "2026-05-30T19:05:43.560937"
+    },
+    {
+      "problem_id": "B0014",
+      "domain": "number_theory",
+      "tier": "A",
+      "overall_score": 8.32,
+      "dimensions": {
+        "hypothesis_clarity": 8.0,
+        "mathematical_insight": 7.35,
+        "proof_rigor": 7.83,
+        "case_analysis": 9.0,
+        "formal_correctness": 7.5,
+        "induction_validity": 9.5,
+        "tactic_usage": 8.9,
+        "lemma_usage": 8.5,
+        "edge_case_coverage": 8.3,
+        "overall_soundness": 8.32
+      },
+      "sorry_count": 1,
+      "confidence": 0.78,
+      "reasoning_phases_active": 5,
+      "timestamp": "2026-05-30T19:05:43.560937"
+    },
+    {
+      "problem_id": "B0017",
+      "domain": "analysis",
+      "tier": "A",
+      "overall_score": 8.36,
+      "dimensions": {
+        "hypothesis_clarity": 8.0,
+        "mathematical_insight": 7.7,
+        "proof_rigor": 7.83,
+        "case_analysis": 9.0,
+        "formal_correctness": 7.5,
+        "induction_validity": 9.5,
+        "tactic_usage": 8.9,
+        "lemma_usage": 8.5,
+        "edge_case_coverage": 8.3,
+        "overall_soundness": 8.36
+      },
+      "sorry_count": 1,
+      "confidence": 0.78,
+      "reasoning_phases_active": 5,
+      "timestamp": "2026-05-30T19:05:43.560937"
+    },
+    {
+      "problem_id": "E0019",
+      "domain": "graph_theory",
+      "tier": "A",
+      "overall_score": 8.28,
+      "dimensions": {
+        "hypothesis_clarity": 8.0,
+        "mathematical_insight": 7.0,
+        "proof_rigor": 7.83,
+        "case_analysis": 9.0,
+        "formal_correctness": 7.5,
+        "induction_validity": 9.5,
+        "tactic_usage": 8.9,
+        "lemma_usage": 8.5,
+        "edge_case_coverage": 8.3,
+        "overall_soundness": 8.28
+      },
+      "sorry_count": 1,
+      "confidence": 0.78,
+      "reasoning_phases_active": 5,
+      "timestamp": "2026-05-30T19:05:43.560937"
+    },
+    {
+      "problem_id": "E0020",
+      "domain": "geometry",
+      "tier": "A",
+      "overall_score": 8.32,
+      "dimensions": {
+        "hypothesis_clarity": 8.0,
+        "mathematical_insight": 7.35,
+        "proof_rigor": 7.83,
+        "case_analysis": 9.0,
+        "formal_correctness": 7.5,
+        "induction_validity": 9.5,
+        "tactic_usage": 8.9,
+        "lemma_usage": 8.5,
+        "edge_case_coverage": 8.3,
+        "overall_soundness": 8.32
+      },
+      "sorry_count": 1,
+      "confidence": 0.78,
+      "reasoning_phases_active": 5,
+      "timestamp": "2026-05-30T19:05:43.560937"
+    },
+    {
+      "problem_id": "E0025",
+      "domain": "induction",
+      "tier": "A",
+      "overall_score": 8.28,
+      "dimensions": {
+        "hypothesis_clarity": 8.0,
+        "mathematical_insight": 7.0,
+        "proof_rigor": 7.83,
+        "case_analysis": 9.0,
+        "formal_correctness": 7.5,
+        "induction_validity": 9.5,
+        "tactic_usage": 8.9,
+        "lemma_usage": 8.5,
+        "edge_case_coverage": 8.3,
+        "overall_soundness": 8.28
+      },
+      "sorry_count": 1,
+      "confidence": 0.78,
+      "reasoning_phases_active": 5,
+      "timestamp": "2026-05-30T19:05:43.560937"
+    },
+    {
+      "problem_id": "E0030",
+      "domain": "finite_case",
+      "tier": "A",
+      "overall_score": 8.24,
+      "dimensions": {
+        "hypothesis_clarity": 8.0,
+        "mathematical_insight": 6.65,
+        "proof_rigor": 7.83,
+        "case_analysis": 9.0,
+        "formal_correctness": 7.5,
+        "induction_validity": 9.5,
+        "tactic_usage": 8.9,
+        "lemma_usage": 8.5,
+        "edge_case_coverage": 8.3,
+        "overall_soundness": 8.24
+      },
+      "sorry_count": 1,
+      "confidence": 0.78,
+      "reasoning_phases_active": 5,
+      "timestamp": "2026-05-30T19:05:43.560937"
+    },
+    {
+      "problem_id": "E0035",
+      "domain": "algebra",
+      "tier": "A",
+      "overall_score": 8.32,
+      "dimensions": {
+        "hypothesis_clarity": 8.0,
+        "mathematical_insight": 7.35,
+        "proof_rigor": 7.83,
+        "case_analysis": 9.0,
+        "formal_correctness": 7.5,
+        "induction_validity": 9.5,
+        "tactic_usage": 8.9,
+        "lemma_usage": 8.5,
+        "edge_case_coverage": 8.3,
+        "overall_soundness": 8.32
+      },
+      "sorry_count": 1,
+      "confidence": 0.78,
+      "reasoning_phases_active": 5,
+      "timestamp": "2026-05-30T19:05:43.560937"
+    },
+    {
+      "problem_id": "E0038",
+      "domain": "logic",
+      "tier": "A",
+      "overall_score": 8.28,
+      "dimensions": {
+        "hypothesis_clarity": 8.0,
+        "mathematical_insight": 7.0,
+        "proof_rigor": 7.83,
+        "case_analysis": 9.0,
+        "formal_correctness": 7.5,
+        "induction_validity": 9.5,
+        "tactic_usage": 8.9,
+        "lemma_usage": 8.5,
+        "edge_case_coverage": 8.3,
+        "overall_soundness": 8.28
+      },
+      "sorry_count": 1,
+      "confidence": 0.78,
+      "reasoning_phases_active": 5,
+      "timestamp": "2026-05-30T19:05:43.560937"
+    },
+    {
+      "problem_id": "E0045",
+      "domain": "category_theory",
+      "tier": "A",
+      "overall_score": 8.4,
+      "dimensions": {
+        "hypothesis_clarity": 8.0,
+        "mathematical_insight": 8.05,
+        "proof_rigor": 7.83,
+        "case_analysis": 9.0,
+        "formal_correctness": 7.5,
+        "induction_validity": 9.5,
+        "tactic_usage": 8.9,
+        "lemma_usage": 8.5,
+        "edge_case_coverage": 8.3,
+        "overall_soundness": 8.4
+      },
+      "sorry_count": 1,
+      "confidence": 0.78,
+      "reasoning_phases_active": 5,
+      "timestamp": "2026-05-30T19:05:43.560937"
+    }
+  ]
+}

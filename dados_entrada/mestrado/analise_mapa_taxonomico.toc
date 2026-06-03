@@ -1,0 +1,31 @@
+\babel@toc {brazilian}{}\relax 
+\contentsline {section}{\numberline {1}Visão Geral do Dataset}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Distribuição por Exame}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Distribuição por Área da Física}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Classificação Taxonômica dos R-codes}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Distribuição Agregada por Categoria}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}R-codes por Categoria nos 6 Exames}{5}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Distribuição dos Níveis de Bloom}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Bloom por Exame}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Bloom por Área da Física}{6}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Inclusão dos Exames ENA (Matemática)}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Distribuição de Bloom nos Exames ENA}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Bloom ENA por Área da Matemática}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Bloom ENA por R-code}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Comparação EUF versus ENA}{9}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Distribuição Consolidada (150 Questões)}{10}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Análise de Correlações Estatísticas}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Área da Física $\times $ R-code Primário}{11}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Nível de Bloom $\times $ R-code Primário}{12}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Área da Física $\times $ Nível de Bloom}{12}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Matriz de Correlações}{13}{subsection.5.4}%
+\contentsline {section}{\numberline {6}R-codes Dominantes por Área}{13}{section.6}%
+\contentsline {subsection}{\numberline {6.1}R071 --- O R-code Universal}{13}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}R069 e R065 --- O Núcleo Metodológico da Física}{14}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}R183 e R117 --- Especialização por Área}{14}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}R-codes com Ocorrência Única}{14}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Comparação EUF 2014-2 com os Demais Exames}{14}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Diferenças Qualitativas}{14}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Similaridades}{14}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Conclusões e Implicações}{15}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Trabalhos Futuros}{15}{subsection.8.1}%

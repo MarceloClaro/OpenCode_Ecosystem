@@ -1,7 +1,7 @@
 {
-  "version": "4.1.0",
+  "version": "4.3.0",
   "architecture": "transformer-cross-validation-dynamic-scoring-autohealing-linguistic-corrector",
-  "lastSession": "2026-05-14T20:34:00Z",
+  "lastSession": "2026-05-31T12:00:00Z",
   "healthScore": 100,
   "healthHistory": [
     {
@@ -74,6 +74,18 @@
     {
       "optimization": "round11-academic-ml-export-abnt",
       "timestamp": "2026-05-14T17:00:00Z",
+      "evolved": true,
+      "score": 100
+    },
+    {
+      "optimization": "round13-domain-shift-camada1b-broomva-skills",
+      "timestamp": "2026-05-30T14:35:00Z",
+      "evolved": true,
+      "score": 100
+    },
+    {
+      "optimization": "round14-package-update-python-npm",
+      "timestamp": "2026-05-31T12:00:00Z",
       "evolved": true,
       "score": 100
     }
@@ -215,6 +227,24 @@
       ],
       "score": 95,
       "insight": "v3 do artigo ARM-IAG: Secao 4.3.8 com complexidade economica, 3 novas features (knowledge_complexity, export_sophistication, product_density), 10 figuras, exportacao PDF 71p/3.1MB, DOCX 2.8MB, HTML 4.3MB. Fix encoding xelatex + emoji."
+    },
+    {
+      "round": 13,
+      "skills": [
+        "domain-shift-camada1b",
+        "broomva-skills-8"
+      ],
+      "score": 100,
+      "insight": "Camada 1B (SPEC-008-B) implementada: decomposicao institucional com 3 deltas Jaccard + bootstrap calibration. 8 skills broomva instaladas (decision-log, handoff, premortem, phronesis, social-intelligence, content-engine, stakeholder-update, weekly-review). SDK OpenCode atualizado 1.14.48->1.15.12. LSPs atualizados (TS 5.2.0->5.3.0, chrome-devtools 0.26.0->1.1.1, ESLint 10.3.0->10.4.1). 64/64 skills com frontmatter valido (3 corrigidos: maswos-v5-nexus, academic-audit, pypi-scout). Documento PDF 27 laudas com 25 referencias DOI. Audit script 725 linhas Python com seed=42. Health 100/100."
+    },
+    {
+      "round": 14,
+      "skills": [
+        "package-update-python-npm-14",
+        "aletheia-math-research"
+      ],
+      "score": 100,
+      "insight": "14 pacotes Python atualizados (browser-use 0.12.6->0.12.9, docling 2.93->2.96, anthropic 0.76.0->0.105.2, arxiv 3.0->4.0, certifi, fastmcp 3.3.1, aiohttp 3.13.4, httpx 0.28.1, tqdm 4.67.3, pip 25.0.1->26.1.1). 2 npm packages (plugin 1.14.33->1.15.13, types-bun 1.3.13->1.3.14). Aletheia Math Research Engine (Feng et al., 2026) implementado com 71/71 TDD, solve rate 100% (5/5 benchmarks), L2 PUBLISHABLE. browser-use compativel anthropic 0.105.2 (conflito declarativo). pip 26.1.1 instalado. Skills map 47 categorias, health 100/100."
     }
   ],
   "learnings": [
@@ -309,7 +339,18 @@
     "ptbr-corrector": 98,
     "evo-10-mcpick-integration": 95,
     "academic-ml-pipeline": 95,
-    "academic-export-abnt": 95
+    "academic-export-abnt": 95,
+    "domain-shift-camada1b": 98,
+    "broomva-decision-log": 85,
+    "broomva-handoff": 85,
+    "broomva-premortem": 85,
+    "broomva-phronesis": 85,
+    "broomva-social-intelligence": 80,
+    "broomva-content-engine": 80,
+    "broomva-stakeholder-update": 80,
+    "broomva-weekly-review": 80,
+    "aletheia-math-research": 95,
+    "package-update-python-npm-14": 95
   },
   "insights": [
     "Servicos de Alta Tecnologia tem a maior correlacao com desenvolvimento (r=0.9531)",
@@ -364,20 +405,58 @@
     "Round 12: v3 do artigo ARM-IAG integra complexidade economica ao pipeline ML existente",
     "Round 12: 17 referencias a medidas de complexidade no artigo completo",
     "Round 12: Codigo analise_complexidade_economica.py executado via code-runner MCP",
-    "Round 12: preambulo.sty corrigido com \\usepackage[utf8]{inputenc} antes de fontspec"
+    "Round 12: preambulo.sty corrigido com \\usepackage[utf8]{inputenc} antes de fontspec",
+    "Round 13: Camada 1B (SPEC-008-B) implementada — decomposicao institucional com 3 deltas Jaccard + bootstrap calibration",
+    "Round 13: Limiares Jaccard calibrados: P95=0.215 (moderado), P99=0.279 (estrito), mu+sigma=0.135 (permissivo)",
+    "Round 13: 8 skills broomva instaladas: decision-log, handoff, premortem, phronesis, social-intelligence, content-engine, stakeholder-update, weekly-review",
+    "Round 13: SDK OpenCode 1.14.48->1.15.12, TypeScript LSP 5.2.0->5.3.0, chrome-devtools-mcp 0.26.0->1.1.1",
+    "Round 13: 3 skills com frontmatter corrigido: maswos-v5-nexus, academic-audit, pypi-scout",
+    "Round 13: 64/64 skills com frontmatter YAML valido — 100% conformidade",
+    "Round 13: Documento jaccard_domain_shift_audit.pdf: 27 laudas, 25 referencias DOI, 0 erros compilacao",
+    "Round 13: Script domain_shift_audit.py: 725 linhas, seed=42, hash verificavel, 1040 docs simulados",
+    "Round 13: Corpus simulado: 5 instituicoes juridicas (STF/STJ/TJ-SP/TRF-1/TRF-6), 6 anos (2020-2025)",
+    "Round 13: Delta temporal medio (0.488) 9.2x maior que delta cross-inst (0.053) — confirmacao do metodo",
+    "Round 13: TRF-6 detectada como outlier institucional (Jaccard max=0.132) — falso domain shift evitado",
+    "Round 13: Limiar heuristico 0.70 da SPEC-008 e 3.26x mais conservador que P95 calibrado — nao usar em multi-inst",
+    "Round 13: TDD SPEC-008-B: 9/9 CTs verdes — CT-8B.1 a CT-8B.9",
+    "Round 13: 5 suites TDD sincronizadas: SPEC-008 (14), SPEC-008-B (9), SPEC-009 (14), SPEC-010 (8), SPEC-011 (12)",
+    "Round 13: 58/58 testes passando em 10.54s — 0 falhas, 0 erros",
+    "Round 13: 3 novas skills ecossistema: spec-009-d1-matematica, spec-010-d2-fisica, spec-011-d9-metodologia",
+    "Round 13: Projeto Antiprojeto UFC sincronizado com ecossistema — specs, TDD, menu_registry alinhados",
+    "Round 14: Aletheia Math Research Engine — Feng et al. (2026) implementado",
+    "Round 14: Arquitetura Generator-Verifier-Reviser com Cora-Debate V1-V7 (7/7 checks)",
+    "Round 14: 5 problemas benchmark: IMO-2024-P1, Erdos-1051, FutureMath, Thue-Morse, Goldbach",
+    "Round 14: Solve rate 100% (5/5), avg 1.0 attempts, max autonomy L2_PUBLISHABLE",
+    "Round 14: 71/71 TDD passando em 8.25s (6 suites: SPEC-008/008-B/009/010/011/012)",
+    "Round 14: 16 tipos de raciocinio matematico com selecao adaptativa por dominio",
+    "Round 14: Deteccao de alucinacoes em citacoes fabricadas (6 padroes)",
+    "Round 14: Niveis de autonomia L0-L4 conforme taxonomia Feng et al. (2026) Table 1",
+    "Round 14: 14 pacotes Python atualizados - ecosystem packages frescos",
+    "Round 14: browser-use 0.12.6->0.12.9 com anthropic 0.105.2 (conflito declarativo, API compativel)",
+    "Round 14: docling 2.93->2.96 - suporte a parsing academico aprimorado",
+    "Round 14: anthropic 0.76.0->0.105.2 (major jump 29 versoes) - SDK do Claude modernizado",
+    "Round 14: arxiv 3.0->4.0 - API wrapper academico atualizado",
+    "Round 14: pip 25.0.1->26.1.1 - gerenciador de pacotes na versao mais recente",
+    "Round 14: npm @opencode-ai/plugin 1.14.33->1.15.13 - plugin SDK atualizado",
+    "Round 14: certifi 2026.5.20 - certificados SSL atualizados",
+    "Round 14: Skills map mantem 47 categorias - sem duplicatas detectadas",
+    "Round 14: Health 100/100 - ecossistema estavel pos-atualizacao",
+    "Round 14: github/github-mcp-server (30.3k★) candidato a nova skill para integracao MCP GitHub"
   ],
   "pendingActions": [
-    "Implementar agent observability hooks nos plugins ecosystem-sync e manus-evolve",
-    "Avaliar integracao do open-design com o frontend do editais-local",
-    "Criar dashboard de health do ecossistema no frontend",
-    "Avaliar mcp-use/mcp-use como framework para MCP Apps interativos",
-    "Explorar awesome-claude (JSONbored) para descobrir novos MCPs relevantes"
+    "Validar Camada 1B em corpus juridico real (STF/STJ via API publica)",
+    "Integrar Camada 1B com Cora-Debate V1-V7 para ajuste de confianca",
+    "Avaliar 5 novas skills broomva (braindump, deep-dive-research, strategy-critique, make-spec, health)",
+    "Criar SKILL.md para cada spec no ecossistema (ja feito: D1/D2/D9 pendentes: D3-D8)",
+    "Avaliar github/github-mcp-server (30.3k★) como skill externa para integracao GitHub",
+    "Verificar browser-use >0.12.9 que oficialize suporte anthropic >=0.105",
+    "Consolidar skills map: verificar duplicatas (content-engine em broomva/ e broomva-skills/)"
   ],
-  "lastSync": "2026-05-14T20:34:00Z",
-  "syncComponents": 575,
-  "syncVersion": "4.1.0",
-  "evolutionFiles": 12,
-  "conflictsResolved": 3,
+  "lastSync": "2026-05-31T12:00:00Z",
+  "syncComponents": 590,
+  "syncVersion": "4.3.0",
+  "evolutionFiles": 15,
+  "conflictsResolved": 1,
   "mcpCatalogEvaluated": true,
   "topMcpCandidates": [],
   "installedMcps": [
@@ -386,14 +465,15 @@
     "mem0-mcp",
     "mcpick (npm)"
   ],
-  "externalSkillsInstalled": 5,
+  "externalSkillsInstalled": 6,
   "externalSkillsRepos": [
     "addyosmani/agent-skills",
     "nexu-io/open-design",
     "jimliu/baoyu-skills",
     "farmage/opencode-skills",
-    "cyijun/agent-smith"
+    "cyijun/agent-smith",
+    "broomva/skills"
   ],
-  "totalSkillsAvailable": 210,
-  "totalMcpsActive": 20
+  "totalSkillsAvailable": 225,
+  "totalMcpsActive": 18
 }

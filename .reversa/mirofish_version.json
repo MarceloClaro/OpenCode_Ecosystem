@@ -1,51 +1,145 @@
-{
-  "baseline_date": "2026-05-17T08:00:00-03:00",
-  "ecosystem_version": "4.2.0",
-  "repositories": {
-    "MiroFish": {
-      "url": "https://github.com/666ghj/MiroFish",
-      "last_synced_commit": "fa0f6519b10c4a25b78f1bcc1f00dfcd8bf1ab41",
-      "last_synced_date": "2026-04-02T08:51:30Z",
-      "stars": 61000,
-      "license": "AGPL-3.0",
-      "description": "Swarm Intelligence Engine — Prediction via Multi-Agent Simulation"
-    },
-    "BettaFish": {
-      "url": "https://github.com/666ghj/BettaFish",
-      "last_synced_commit": "53f60e8f4aa038a59ab5e02525634c92d6c849b5",
-      "last_synced_date": "2026-05-08T10:22:57Z",
-      "stars": 40900,
-      "license": "GPL-2.0",
-      "description": "Multi-Agent Public Opinion Analysis System"
-    },
-    "DeerFlow": {
-      "url": "https://github.com/bytedance/deer-flow",
-      "last_synced_commit": "unknown",
-      "last_synced_date": "unknown",
-      "license": "MIT",
-      "description": "Super Agent Harness — 11-layer Middleware Pipeline"
-    }
-  },
-  "extracted_patterns": {
-    "P1": {"name": "Entity NER Reader", "source": "MiroFish", "file": "entity-ner-reader", "status": "extracted"},
-    "P2": {"name": "Hybrid Graph Retrieval", "source": "MiroFish", "file": "hybrid-graph-retrieval", "status": "extracted"},
-    "P3": {"name": "Graph Builder Pipeline", "source": "MiroFish", "file": "graph-builder-pipeline", "status": "extracted"},
-    "P4": {"name": "Ontology Generator", "source": "MiroFish", "file": "ontology-generator", "status": "extracted"},
-    "P5": {"name": "OASIS Profile Gen", "source": "MiroFish", "file": "oasis-profile-gen", "status": "extracted"},
-    "P6": {"name": "Synthesis Agent", "source": "MiroFish", "file": "synthesis-agent", "status": "extracted"},
-    "P7": {"name": "Swarm Review", "source": "MiroFish", "file": "swarm-review", "status": "extracted"},
-    "P8": {"name": "Code GraphRAG", "source": "MiroFish", "file": "code-graphrag", "status": "extracted"},
-    "P9": {"name": "Machine States", "source": "MiroFish", "file": "machine-states", "status": "extracted"},
-    "P10": {"name": "Graph Memory Updater", "source": "MiroFish", "file": "graph-memory-updater", "status": "extracted"},
-    "P11": {"name": "Process Lifecycle", "source": "MiroFish", "file": "process-lifecycle", "status": "extracted"},
-    "P12": {"name": "Filesystem IPC", "source": "MiroFish", "file": "fs-ipc", "status": "extracted"},
-    "P13": {"name": "Config Generator", "source": "MiroFish", "file": "config-generator", "status": "extracted"},
-    "P14": {"name": "Agent Forum", "source": "BettaFish", "file": "agent-forum", "status": "extracted"},
-    "P15": {"name": "Document IR", "source": "BettaFish", "file": "document-ir", "status": "extracted"},
-    "P16": {"name": "Agent Node Pipeline", "source": "BettaFish", "file": "agent-node-pipeline", "status": "extracted"},
-    "P17": {"name": "MiddlewareChain + Reducers", "source": "DeerFlow", "file": "agent-node-pipeline", "status": "extracted"},
-    "P18": {"name": "PhD Auditor", "source": "nexus-phd-strategist", "file": "agent-forum/phd_auditor.py", "status": "extracted"}
-  },
-  "pending_extraction": [],
-  "sync_log": []
+﻿{
+    "baseline_date":  "2026-06-02T10:00:00-03:00",
+    "ecosystem_version":  "5.0.0",
+    "repositories":  {
+                         "MiroFish":  {
+                                          "url":  "https://github.com/666ghj/MiroFish",
+                                          "last_synced_commit":  "96096ea",
+                                          "last_synced_date":  "2026-05-24T00:00:00Z",
+                                          "stars":  61000,
+                                          "license":  "AGPL-3.0",
+                                          "description":  "Swarm Intelligence Engine â€” Prediction via Multi-Agent Simulation"
+                                      },
+                         "BettaFish":  {
+                                           "url":  "https://github.com/666ghj/BettaFish",
+                                           "last_synced_commit":  "40327d7",
+                                           "last_synced_date":  "2026-05-24T00:00:00Z",
+                                           "stars":  40900,
+                                           "license":  "GPL-2.0",
+                                           "description":  "Multi-Agent Public Opinion Analysis System"
+                                       },
+                         "DeerFlow":  {
+                                          "url":  "https://github.com/bytedance/deer-flow",
+                                          "last_synced_commit":  "5dc2d6c",
+                                          "last_synced_date":  "2026-06-02T00:00:00Z",
+                                          "license":  "MIT",
+                                          "description":  "Super Agent Harness â€” 11-layer Middleware Pipeline"
+                                      }
+                     },
+    "extracted_patterns":  {
+                               "P1":  {
+                                          "name":  "Entity NER Reader",
+                                          "source":  "MiroFish",
+                                          "file":  "entity-ner-reader",
+                                          "status":  "extracted"
+                                      },
+                               "P2":  {
+                                          "name":  "Hybrid Graph Retrieval",
+                                          "source":  "MiroFish",
+                                          "file":  "hybrid-graph-retrieval",
+                                          "status":  "extracted"
+                                      },
+                               "P3":  {
+                                          "name":  "Graph Builder Pipeline",
+                                          "source":  "MiroFish",
+                                          "file":  "graph-builder-pipeline",
+                                          "status":  "extracted"
+                                      },
+                               "P4":  {
+                                          "name":  "Ontology Generator",
+                                          "source":  "MiroFish",
+                                          "file":  "ontology-generator",
+                                          "status":  "extracted"
+                                      },
+                               "P5":  {
+                                          "name":  "OASIS Profile Gen",
+                                          "source":  "MiroFish",
+                                          "file":  "oasis-profile-gen",
+                                          "status":  "extracted"
+                                      },
+                               "P6":  {
+                                          "name":  "Synthesis Agent",
+                                          "source":  "MiroFish",
+                                          "file":  "synthesis-agent",
+                                          "status":  "extracted"
+                                      },
+                               "P7":  {
+                                          "name":  "Swarm Review",
+                                          "source":  "MiroFish",
+                                          "file":  "swarm-review",
+                                          "status":  "extracted"
+                                      },
+                               "P8":  {
+                                          "name":  "Code GraphRAG",
+                                          "source":  "MiroFish",
+                                          "file":  "code-graphrag",
+                                          "status":  "extracted"
+                                      },
+                               "P9":  {
+                                          "name":  "Machine States",
+                                          "source":  "MiroFish",
+                                          "file":  "machine-states",
+                                          "status":  "extracted"
+                                      },
+                               "P10":  {
+                                           "name":  "Graph Memory Updater",
+                                           "source":  "MiroFish",
+                                           "file":  "graph-memory-updater",
+                                           "status":  "extracted"
+                                       },
+                               "P11":  {
+                                           "name":  "Process Lifecycle",
+                                           "source":  "MiroFish",
+                                           "file":  "process-lifecycle",
+                                           "status":  "extracted"
+                                       },
+                               "P12":  {
+                                           "name":  "Filesystem IPC",
+                                           "source":  "MiroFish",
+                                           "file":  "fs-ipc",
+                                           "status":  "extracted"
+                                       },
+                               "P13":  {
+                                           "name":  "Config Generator",
+                                           "source":  "MiroFish",
+                                           "file":  "config-generator",
+                                           "status":  "extracted"
+                                       },
+                               "P14":  {
+                                           "name":  "Agent Forum",
+                                           "source":  "BettaFish",
+                                           "file":  "agent-forum",
+                                           "status":  "extracted"
+                                       },
+                               "P15":  {
+                                           "name":  "Document IR",
+                                           "source":  "BettaFish",
+                                           "file":  "document-ir",
+                                           "status":  "extracted"
+                                       },
+                               "P16":  {
+                                           "name":  "Agent Node Pipeline",
+                                           "source":  "BettaFish",
+                                           "file":  "agent-node-pipeline",
+                                           "status":  "extracted"
+                                       },
+                               "P17":  {
+                                           "name":  "MiddlewareChain + Reducers",
+                                           "source":  "DeerFlow",
+                                           "file":  "agent-node-pipeline",
+                                           "status":  "extracted"
+                                       },
+                               "P18":  {
+                                           "name":  "PhD Auditor",
+                                           "source":  "nexus-phd-strategist",
+                                           "file":  "agent-forum/phd_auditor.py",
+                                           "status":  "extracted"
+                                       }
+                           },
+    "pending_extraction":  [
+
+                           ],
+    "sync_log":  [
+
+                 ]
 }

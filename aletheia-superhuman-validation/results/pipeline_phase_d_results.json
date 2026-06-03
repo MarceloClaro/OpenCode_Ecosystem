@@ -1,0 +1,823 @@
+{
+  "metadata": {
+    "phase": "D",
+    "engine": "PhD Auditor",
+    "total_proofs": 10,
+    "audited": 10,
+    "failed": 0,
+    "start_time": "2026-05-30T21:42:57.065486",
+    "end_time": "2026-05-30T21:42:57.117758",
+    "duration_sec": 0.1,
+    "verifiers": 7,
+    "dimensions": 10
+  },
+  "results": [
+    {
+      "problem_id": "A0004",
+      "domain": "combinatorics",
+      "statement": "For any finite set S with n elements, |P(S)| = 2^n",
+      "overall_score": 4.9,
+      "tier": "D",
+      "confidence": 0.4,
+      "dimension_scores": {
+        "logical_correctness": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "theorem_structure": {
+          "avg_score": 5.428571428571429,
+          "min_score": 5.0,
+          "max_score": 8.0,
+          "num_verifiers": 7
+        },
+        "hypothesis_clarity": {
+          "avg_score": 4.0,
+          "min_score": -2,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "conclusion_clarity": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "proof_completeness": {
+          "avg_score": 4.857142857142857,
+          "min_score": 4.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "proof_rigor": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "case_analysis": {
+          "avg_score": 4.642857142857143,
+          "min_score": 3.5,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "induction_validity": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "lean_idiomaticity": {
+          "avg_score": 5.214285714285714,
+          "min_score": 5.0,
+          "max_score": 6.5,
+          "num_verifiers": 7
+        },
+        "mathematical_insight": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        }
+      },
+      "strengths": [
+        "Estrutura basica presente"
+      ],
+      "weaknesses": [
+        "hypothesis_clarity: fraco (4.0/10)"
+      ],
+      "recommendations": [
+        "Remover 3 placeholder(s) sorry",
+        "Considerar inducao se aplicavel ao dominio",
+        "Usar 'calc' para provas com multiplos passos"
+      ],
+      "timestamp": "2026-05-30T21:42:57.088094"
+    },
+    {
+      "problem_id": "B0014",
+      "domain": "number_theory",
+      "statement": "gcd(a, b) divides both a and b for all positive integers a, b",
+      "overall_score": 4.907142857142857,
+      "tier": "D",
+      "confidence": 0.4,
+      "dimension_scores": {
+        "logical_correctness": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "theorem_structure": {
+          "avg_score": 5.428571428571429,
+          "min_score": 5.0,
+          "max_score": 8.0,
+          "num_verifiers": 7
+        },
+        "hypothesis_clarity": {
+          "avg_score": 4.0,
+          "min_score": -2,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "conclusion_clarity": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "proof_completeness": {
+          "avg_score": 4.857142857142857,
+          "min_score": 4.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "proof_rigor": {
+          "avg_score": 4.857142857142857,
+          "min_score": 4.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "case_analysis": {
+          "avg_score": 4.428571428571429,
+          "min_score": 2.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "induction_validity": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "lean_idiomaticity": {
+          "avg_score": 5.214285714285714,
+          "min_score": 5.0,
+          "max_score": 6.5,
+          "num_verifiers": 7
+        },
+        "mathematical_insight": {
+          "avg_score": 4.857142857142857,
+          "min_score": 4.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        }
+      },
+      "strengths": [
+        "Estrutura basica presente"
+      ],
+      "weaknesses": [
+        "hypothesis_clarity: fraco (4.0/10)"
+      ],
+      "recommendations": [
+        "Remover 3 placeholder(s) sorry",
+        "Considerar inducao se aplicavel ao dominio",
+        "Usar 'calc' para provas com multiplos passos"
+      ],
+      "timestamp": "2026-05-30T21:42:57.089093"
+    },
+    {
+      "problem_id": "B0017",
+      "domain": "analysis",
+      "statement": "If a_n → L and b_n → L, then (a_n + b_n) / 2 → L",
+      "overall_score": 5.003571428571428,
+      "tier": "D",
+      "confidence": 0.4,
+      "dimension_scores": {
+        "logical_correctness": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "theorem_structure": {
+          "avg_score": 5.428571428571429,
+          "min_score": 5.0,
+          "max_score": 8.0,
+          "num_verifiers": 7
+        },
+        "hypothesis_clarity": {
+          "avg_score": 4.571428571428571,
+          "min_score": 0,
+          "max_score": 7.0,
+          "num_verifiers": 7
+        },
+        "conclusion_clarity": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "proof_completeness": {
+          "avg_score": 5.535714285714286,
+          "min_score": 5.0,
+          "max_score": 8.75,
+          "num_verifiers": 7
+        },
+        "proof_rigor": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "case_analysis": {
+          "avg_score": 4.428571428571429,
+          "min_score": 2.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "induction_validity": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "lean_idiomaticity": {
+          "avg_score": 5.214285714285714,
+          "min_score": 5.0,
+          "max_score": 6.5,
+          "num_verifiers": 7
+        },
+        "mathematical_insight": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        }
+      },
+      "strengths": [
+        "Estrutura basica presente"
+      ],
+      "weaknesses": [],
+      "recommendations": [
+        "Remover 1 placeholder(s) sorry",
+        "Considerar inducao se aplicavel ao dominio",
+        "Usar 'calc' para provas com multiplos passos"
+      ],
+      "timestamp": "2026-05-30T21:42:57.090091"
+    },
+    {
+      "problem_id": "E0019",
+      "domain": "graph_theory",
+      "statement": "In any connected graph, there exists a path between any two vertices",
+      "overall_score": 4.864285714285715,
+      "tier": "D",
+      "confidence": 0.4,
+      "dimension_scores": {
+        "logical_correctness": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "theorem_structure": {
+          "avg_score": 5.428571428571429,
+          "min_score": 5.0,
+          "max_score": 8.0,
+          "num_verifiers": 7
+        },
+        "hypothesis_clarity": {
+          "avg_score": 3.857142857142857,
+          "min_score": -3,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "conclusion_clarity": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "proof_completeness": {
+          "avg_score": 4.857142857142857,
+          "min_score": 4.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "proof_rigor": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "case_analysis": {
+          "avg_score": 4.428571428571429,
+          "min_score": 2.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "induction_validity": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "lean_idiomaticity": {
+          "avg_score": 5.214285714285714,
+          "min_score": 5.0,
+          "max_score": 6.5,
+          "num_verifiers": 7
+        },
+        "mathematical_insight": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        }
+      },
+      "strengths": [
+        "Estrutura basica presente"
+      ],
+      "weaknesses": [
+        "hypothesis_clarity: fraco (3.9/10)"
+      ],
+      "recommendations": [
+        "Remover 3 placeholder(s) sorry",
+        "Considerar inducao se aplicavel ao dominio",
+        "Usar 'calc' para provas com multiplos passos"
+      ],
+      "timestamp": "2026-05-30T21:42:57.091094"
+    },
+    {
+      "problem_id": "E0020",
+      "domain": "geometry",
+      "statement": "The sum of angles in any triangle equals π radians",
+      "overall_score": 4.878571428571428,
+      "tier": "D",
+      "confidence": 0.4,
+      "dimension_scores": {
+        "logical_correctness": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "theorem_structure": {
+          "avg_score": 5.428571428571429,
+          "min_score": 5.0,
+          "max_score": 8.0,
+          "num_verifiers": 7
+        },
+        "hypothesis_clarity": {
+          "avg_score": 3.857142857142857,
+          "min_score": -3,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "conclusion_clarity": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "proof_completeness": {
+          "avg_score": 5.0,
+          "min_score": 5.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "proof_rigor": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "case_analysis": {
+          "avg_score": 4.428571428571429,
+          "min_score": 2.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "induction_validity": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "lean_idiomaticity": {
+          "avg_score": 5.214285714285714,
+          "min_score": 5.0,
+          "max_score": 6.5,
+          "num_verifiers": 7
+        },
+        "mathematical_insight": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        }
+      },
+      "strengths": [
+        "Estrutura basica presente"
+      ],
+      "weaknesses": [
+        "hypothesis_clarity: fraco (3.9/10)"
+      ],
+      "recommendations": [
+        "Remover 3 placeholder(s) sorry",
+        "Considerar inducao se aplicavel ao dominio",
+        "Usar 'calc' para provas com multiplos passos"
+      ],
+      "timestamp": "2026-05-30T21:42:57.092093"
+    },
+    {
+      "problem_id": "E0025",
+      "domain": "induction",
+      "statement": "∑(i=0 to n-1) i = n(n-1)/2 for all non-negative integers n",
+      "overall_score": 5.042857142857143,
+      "tier": "D",
+      "confidence": 0.4,
+      "dimension_scores": {
+        "logical_correctness": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "theorem_structure": {
+          "avg_score": 5.428571428571429,
+          "min_score": 5.0,
+          "max_score": 8.0,
+          "num_verifiers": 7
+        },
+        "hypothesis_clarity": {
+          "avg_score": 4.428571428571429,
+          "min_score": 1,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "conclusion_clarity": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "proof_completeness": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "proof_rigor": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "case_analysis": {
+          "avg_score": 4.428571428571429,
+          "min_score": 2.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "induction_validity": {
+          "avg_score": 5.428571428571429,
+          "min_score": 5.0,
+          "max_score": 8.0,
+          "num_verifiers": 7
+        },
+        "lean_idiomaticity": {
+          "avg_score": 5.214285714285714,
+          "min_score": 5.0,
+          "max_score": 6.5,
+          "num_verifiers": 7
+        },
+        "mathematical_insight": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        }
+      },
+      "strengths": [
+        "Estrutura basica presente"
+      ],
+      "weaknesses": [],
+      "recommendations": [
+        "Remover 1 placeholder(s) sorry"
+      ],
+      "timestamp": "2026-05-30T21:42:57.094092"
+    },
+    {
+      "problem_id": "E0030",
+      "domain": "finite_case",
+      "statement": "Any real number x satisfies either x > 0, x = 0, or x < 0",
+      "overall_score": 4.928571428571429,
+      "tier": "D",
+      "confidence": 0.4,
+      "dimension_scores": {
+        "logical_correctness": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "theorem_structure": {
+          "avg_score": 5.428571428571429,
+          "min_score": 5.0,
+          "max_score": 8.0,
+          "num_verifiers": 7
+        },
+        "hypothesis_clarity": {
+          "avg_score": 3.857142857142857,
+          "min_score": -3,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "conclusion_clarity": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "proof_completeness": {
+          "avg_score": 4.857142857142857,
+          "min_score": 4.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "proof_rigor": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "case_analysis": {
+          "avg_score": 5.071428571428571,
+          "min_score": 3.5,
+          "max_score": 7.0,
+          "num_verifiers": 7
+        },
+        "induction_validity": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "lean_idiomaticity": {
+          "avg_score": 5.214285714285714,
+          "min_score": 5.0,
+          "max_score": 6.5,
+          "num_verifiers": 7
+        },
+        "mathematical_insight": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        }
+      },
+      "strengths": [
+        "Estrutura basica presente"
+      ],
+      "weaknesses": [
+        "hypothesis_clarity: fraco (3.9/10)"
+      ],
+      "recommendations": [
+        "Remover 3 placeholder(s) sorry",
+        "Considerar inducao se aplicavel ao dominio"
+      ],
+      "timestamp": "2026-05-30T21:42:57.095107"
+    },
+    {
+      "problem_id": "E0035",
+      "domain": "algebra",
+      "statement": "The identity element of a group is unique",
+      "overall_score": 4.907142857142857,
+      "tier": "D",
+      "confidence": 0.4,
+      "dimension_scores": {
+        "logical_correctness": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "theorem_structure": {
+          "avg_score": 5.428571428571429,
+          "min_score": 5.0,
+          "max_score": 8.0,
+          "num_verifiers": 7
+        },
+        "hypothesis_clarity": {
+          "avg_score": 4.0,
+          "min_score": -2,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "conclusion_clarity": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "proof_completeness": {
+          "avg_score": 5.142857142857143,
+          "min_score": 5.0,
+          "max_score": 6.0,
+          "num_verifiers": 7
+        },
+        "proof_rigor": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "case_analysis": {
+          "avg_score": 4.428571428571429,
+          "min_score": 2.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "induction_validity": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "lean_idiomaticity": {
+          "avg_score": 5.214285714285714,
+          "min_score": 5.0,
+          "max_score": 6.5,
+          "num_verifiers": 7
+        },
+        "mathematical_insight": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        }
+      },
+      "strengths": [
+        "Estrutura basica presente"
+      ],
+      "weaknesses": [
+        "hypothesis_clarity: fraco (4.0/10)"
+      ],
+      "recommendations": [
+        "Remover 2 placeholder(s) sorry",
+        "Considerar inducao se aplicavel ao dominio"
+      ],
+      "timestamp": "2026-05-30T21:42:57.116228"
+    },
+    {
+      "problem_id": "E0038",
+      "domain": "logic",
+      "statement": "√2 is irrational (proof by contradiction)",
+      "overall_score": 4.931632653061224,
+      "tier": "D",
+      "confidence": 0.4,
+      "dimension_scores": {
+        "logical_correctness": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "theorem_structure": {
+          "avg_score": 5.428571428571429,
+          "min_score": 5.0,
+          "max_score": 8.0,
+          "num_verifiers": 7
+        },
+        "hypothesis_clarity": {
+          "avg_score": 4.142857142857143,
+          "min_score": -1,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "conclusion_clarity": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "proof_completeness": {
+          "avg_score": 5.1020408163265305,
+          "min_score": 5.0,
+          "max_score": 5.7142857142857135,
+          "num_verifiers": 7
+        },
+        "proof_rigor": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "case_analysis": {
+          "avg_score": 4.428571428571429,
+          "min_score": 2.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "induction_validity": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "lean_idiomaticity": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "mathematical_insight": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        }
+      },
+      "strengths": [
+        "Estrutura basica presente"
+      ],
+      "weaknesses": [],
+      "recommendations": [
+        "Remover 3 placeholder(s) sorry",
+        "Considerar inducao se aplicavel ao dominio",
+        "Usar 'calc' para provas com multiplos passos"
+      ],
+      "timestamp": "2026-05-30T21:42:57.116741"
+    },
+    {
+      "problem_id": "E0045",
+      "domain": "category_theory",
+      "statement": "For functors F and G, F(g ∘ f) = (F g) ∘ (F f)",
+      "overall_score": 4.964285714285714,
+      "tier": "D",
+      "confidence": 0.4,
+      "dimension_scores": {
+        "logical_correctness": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "theorem_structure": {
+          "avg_score": 5.428571428571429,
+          "min_score": 5.0,
+          "max_score": 8.0,
+          "num_verifiers": 7
+        },
+        "hypothesis_clarity": {
+          "avg_score": 4.428571428571429,
+          "min_score": 1,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "conclusion_clarity": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "proof_completeness": {
+          "avg_score": 5.142857142857143,
+          "min_score": 5.0,
+          "max_score": 6.0,
+          "num_verifiers": 7
+        },
+        "proof_rigor": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "case_analysis": {
+          "avg_score": 4.428571428571429,
+          "min_score": 2.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "induction_validity": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        },
+        "lean_idiomaticity": {
+          "avg_score": 5.357142857142857,
+          "min_score": 5.0,
+          "max_score": 7.5,
+          "num_verifiers": 7
+        },
+        "mathematical_insight": {
+          "avg_score": 4.714285714285714,
+          "min_score": 3.0,
+          "max_score": 5.0,
+          "num_verifiers": 7
+        }
+      },
+      "strengths": [
+        "Estrutura basica presente"
+      ],
+      "weaknesses": [],
+      "recommendations": [
+        "Remover 2 placeholder(s) sorry",
+        "Considerar inducao se aplicavel ao dominio"
+      ],
+      "timestamp": "2026-05-30T21:42:57.116741"
+    }
+  ]
+}

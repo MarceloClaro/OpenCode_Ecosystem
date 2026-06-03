@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" font-family="Segoe UI, Arial, sans-serif">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" font-family="Segoe UI, Arial, sans-serif">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#0d1117"/>
@@ -37,13 +37,13 @@
 
   <rect width="1100" height="720" fill="url(#bg)" rx="8"/>
 
-  <text x="550" y="36" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="bold">Orquestração de Agentes v4.6.1 — 125 Agentes · 38 Raciocínios</text>
-  <text x="550" y="56" text-anchor="middle" fill="#8b949e" font-size="11">Hierarchical Multi-Agent · MCP (40 servidores) · ReAct Loop · MiroFish/BettaFish</text>
+  <text x="550" y="36" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="bold">OrquestraÃ§Ã£o de Agentes v5.0.0 â€” 125 Agentes Â· 212+ RaciocÃ­nios</text>
+  <text x="550" y="56" text-anchor="middle" fill="#8b949e" font-size="11">Hierarchical Multi-Agent Â· MCP (46 servidores) Â· ReAct Loop Â· MiroFish/BettaFish</text>
 
   <!-- Orchestrator -->
   <rect x="380" y="80" width="340" height="60" rx="12" fill="url(#orq)" opacity="0.9" filter="url(#shadow)"/>
   <text x="550" y="106" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Orquestrador Central (LLM Scheduler)</text>
-  <text x="550" y="126" text-anchor="middle" fill="#8b949e" font-size="9">OpenCode deepseek-v4-pro · ReAct Planning · 200K ctx</text>
+  <text x="550" y="126" text-anchor="middle" fill="#8b949e" font-size="9">OpenCode deepseek-v4-pro Â· ReAct Planning Â· 200K ctx</text>
 
   <!-- Lines to sub-agents -->
   <line x1="430" y1="140" x2="165" y2="200" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arw)"/>
@@ -54,27 +54,27 @@
   <!-- Sub-agents row -->
   <rect x="70" y="210" width="190" height="70" rx="10" fill="url(#agent)" opacity="0.7" filter="url(#shadow)"/>
   <text x="165" y="236" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Agente Coder</text>
-  <text x="165" y="254" text-anchor="middle" fill="#8b949e" font-size="9">Geração de código</text>
-  <text x="165" y="268" text-anchor="middle" fill="#484f58" font-size="8">TS · Python · Go · Rust</text>
+  <text x="165" y="254" text-anchor="middle" fill="#8b949e" font-size="9">GeraÃ§Ã£o de cÃ³digo</text>
+  <text x="165" y="268" text-anchor="middle" fill="#484f58" font-size="8">TS Â· Python Â· Go Â· Rust</text>
 
   <rect x="290" y="210" width="190" height="70" rx="10" fill="url(#agent)" opacity="0.7" filter="url(#shadow)"/>
   <text x="385" y="236" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Agente Pesquisa</text>
   <text x="385" y="254" text-anchor="middle" fill="#8b949e" font-size="9">Busca multi-fonte</text>
-  <text x="385" y="268" text-anchor="middle" fill="#484f58" font-size="8">SEEKER · 10+ fontes</text>
+  <text x="385" y="268" text-anchor="middle" fill="#484f58" font-size="8">SEEKER Â· 10+ fontes</text>
 
   <rect x="510" y="210" width="190" height="70" rx="10" fill="url(#agent)" opacity="0.7" filter="url(#shadow)"/>
-  <text x="605" y="236" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Agente Acadêmico</text>
+  <text x="605" y="236" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Agente AcadÃªmico</text>
   <text x="605" y="254" text-anchor="middle" fill="#8b949e" font-size="9">Artigo Qualis A1</text>
-  <text x="605" y="268" text-anchor="middle" fill="#484f58" font-size="8">MASWOS · 49 agentes</text>
+  <text x="605" y="268" text-anchor="middle" fill="#484f58" font-size="8">MASWOS Â· 49 agentes</text>
 
   <rect x="730" y="210" width="190" height="70" rx="10" fill="url(#agent)" opacity="0.7" filter="url(#shadow)"/>
-  <text x="825" y="236" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Agente Jurídico</text>
+  <text x="825" y="236" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Agente JurÃ­dico</text>
   <text x="825" y="254" text-anchor="middle" fill="#8b949e" font-size="9">Documentos legais</text>
-  <text x="825" y="268" text-anchor="middle" fill="#484f58" font-size="8">7 skills · 3 servidores</text>
+  <text x="825" y="268" text-anchor="middle" fill="#484f58" font-size="8">7 skills Â· 3 servidores</text>
 
   <!-- MCP Layer -->
   <rect x="50" y="312" width="1000" height="44" rx="8" fill="#9e6a03" opacity="0.15" stroke="#d29922" stroke-width="1" stroke-dasharray="5,3"/>
-  <text x="550" y="340" text-anchor="middle" fill="#d29922" font-size="11" font-weight="bold">MCP Layer — 40 Servidores · 38 Local + 2 Remoto (JSON-RPC sobre stdio)</text>
+  <text x="550" y="340" text-anchor="middle" fill="#d29922" font-size="11" font-weight="bold">MCP Layer â€” 46 servidores Â· 38 Local + 2 Remoto (JSON-RPC sobre stdio)</text>
 
   <!-- Tool boxes -->
   <rect x="70" y="370" width="140" height="44" rx="6" fill="url(#tool)" opacity="0.6"/>
@@ -87,19 +87,19 @@
 
   <rect x="380" y="370" width="140" height="44" rx="6" fill="url(#tool)" opacity="0.6"/>
   <text x="450" y="392" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">sequential-thinking</text>
-  <text x="450" y="404" text-anchor="middle" fill="#8b949e" font-size="7">Raciocínio estruturado</text>
+  <text x="450" y="404" text-anchor="middle" fill="#8b949e" font-size="7">RaciocÃ­nio estruturado</text>
 
   <rect x="535" y="370" width="140" height="44" rx="6" fill="url(#tool)" opacity="0.6"/>
   <text x="605" y="392" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">maswos-rag</text>
-  <text x="605" y="404" text-anchor="middle" fill="#8b949e" font-size="7">9 estratégias RAG</text>
+  <text x="605" y="404" text-anchor="middle" fill="#8b949e" font-size="7">9 estratÃ©gias RAG</text>
 
   <rect x="690" y="370" width="140" height="44" rx="6" fill="url(#tool)" opacity="0.6"/>
   <text x="760" y="392" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">GitHub</text>
-  <text x="760" y="404" text-anchor="middle" fill="#8b949e" font-size="7">Repositórios</text>
+  <text x="760" y="404" text-anchor="middle" fill="#8b949e" font-size="7">RepositÃ³rios</text>
 
   <rect x="845" y="370" width="140" height="44" rx="6" fill="url(#tool)" opacity="0.6"/>
   <text x="915" y="392" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">DecisionNode</text>
-  <text x="915" y="404" text-anchor="middle" fill="#8b949e" font-size="7">Memória de decisões</text>
+  <text x="915" y="404" text-anchor="middle" fill="#8b949e" font-size="7">MemÃ³ria de decisÃµes</text>
 
   <!-- ReAct Loop -->
   <rect x="50" y="440" width="1000" height="130" rx="8" fill="#da3633" opacity="0.06" stroke="#f85149" stroke-width="1"/>
@@ -107,7 +107,7 @@
 
   <rect x="70" y="478" width="140" height="44" rx="8" fill="url(#loop)" opacity="0.7"/>
   <text x="140" y="504" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">1. THOUGHT</text>
-  <text x="140" y="516" text-anchor="middle" fill="#8b949e" font-size="7">Raciocínio sobre tarefa</text>
+  <text x="140" y="516" text-anchor="middle" fill="#8b949e" font-size="7">RaciocÃ­nio sobre tarefa</text>
   <line x1="210" y1="500" x2="250" y2="500" stroke="#f85149" stroke-width="2" marker-end="url(#arw2)"/>
 
   <rect x="260" y="478" width="140" height="44" rx="8" fill="url(#loop)" opacity="0.7"/>
@@ -126,7 +126,7 @@
 
   <!-- Loop arrow back -->
   <path d="M750,522 Q870,540 870,570 Q550,580 140,570 Q100,570 140,530" fill="none" stroke="#f85149" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arw2)"/>
-  <text x="550" y="580" text-anchor="middle" fill="#f85149" font-size="9">Loop ReAct até conclusão</text>
+  <text x="550" y="580" text-anchor="middle" fill="#f85149" font-size="9">Loop ReAct atÃ© conclusÃ£o</text>
 
   <!-- Evolution pipeline -->
   <rect x="50" y="600" width="1000" height="100" rx="8" fill="#8b2f97" opacity="0.06" stroke="#bc8cff" stroke-width="1"/>
@@ -134,12 +134,12 @@
 
   <rect x="70" y="636" width="120" height="36" rx="6" fill="url(#pipe)" opacity="0.7"/>
   <text x="130" y="655" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">PLAN</text>
-  <text x="130" y="666" text-anchor="middle" fill="#8b949e" font-size="7">Analisar padrão</text>
+  <text x="130" y="666" text-anchor="middle" fill="#8b949e" font-size="7">Analisar padrÃ£o</text>
 
   <line x1="190" y1="654" x2="220" y2="654" stroke="#bc8cff" stroke-width="2" marker-end="url(#arw)"/>
   <rect x="230" y="636" width="120" height="36" rx="6" fill="url(#pipe)" opacity="0.7"/>
   <text x="290" y="655" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">ACT</text>
-  <text x="290" y="666" text-anchor="middle" fill="#8b949e" font-size="7">Executar ação</text>
+  <text x="290" y="666" text-anchor="middle" fill="#8b949e" font-size="7">Executar aÃ§Ã£o</text>
 
   <line x1="350" y1="654" x2="380" y2="654" stroke="#bc8cff" stroke-width="2" marker-end="url(#arw)"/>
   <rect x="390" y="636" width="120" height="36" rx="6" fill="url(#pipe)" opacity="0.7"/>
@@ -157,8 +157,8 @@
   <text x="770" y="666" text-anchor="middle" fill="#8b949e" font-size="7">Gerar nova skill</text>
 
   <rect x="860" y="636" width="140" height="36" rx="6" fill="#bc8cff" opacity="0.3" stroke="#bc8cff" stroke-width="1"/>
-  <text x="930" y="654" text-anchor="middle" fill="#bc8cff" font-size="9">→ evolution/</text>
+  <text x="930" y="654" text-anchor="middle" fill="#bc8cff" font-size="9">â†’ evolution/</text>
   <text x="930" y="666" text-anchor="middle" fill="#8b949e" font-size="7">Nova skill gerada</text>
 
-  <text x="550" y="708" text-anchor="middle" fill="#484f58" font-size="9">v4.6.1 · AgentOrchestra (arXiv:2506.12508) · Gradientsys (arXiv:2507.06520) · FoA (arXiv:2509.20175) · MiroFish/BettaFish: OASIS+Forum+Config+Graph</text>
+  <text x="550" y="708" text-anchor="middle" fill="#484f58" font-size="9">v5.0.0 Â· AgentOrchestra (arXiv:2506.12508) Â· Gradientsys (arXiv:2507.06520) Â· FoA (arXiv:2509.20175) Â· MiroFish/BettaFish: OASIS+Forum+Config+Graph</text>
 </svg>

@@ -1,0 +1,1166 @@
+{
+  "stats": {
+    "total_nodes": 176,
+    "total_edges": 30,
+    "by_type": {
+      "agent": 79,
+      "mcp": 42,
+      "skill": 28,
+      "command": 27
+    },
+    "edge_types": {
+      "references": 14,
+      "depends_on": 9,
+      "affinity": 7
+    }
+  },
+  "agents": [
+    {
+      "id": "agent:adr-manager",
+      "name": "adr-manager",
+      "description": "",
+      "path": "agents\\adr-manager.md"
+    },
+    {
+      "id": "agent:antigravity-orchestrator",
+      "name": "antigravity-orchestrator",
+      "description": "",
+      "path": "agents\\antigravity-orchestrator.md"
+    },
+    {
+      "id": "agent:architect",
+      "name": "architect",
+      "description": "",
+      "path": "agents\\architect.md"
+    },
+    {
+      "id": "agent:architecture-analyzer",
+      "name": "architecture-analyzer",
+      "description": "",
+      "path": "agents\\architecture-analyzer.md"
+    },
+    {
+      "id": "agent:autoevolve",
+      "name": "autoevolve",
+      "description": "",
+      "path": "agents\\autoevolve.md"
+    },
+    {
+      "id": "agent:batch-executor",
+      "name": "batch-executor",
+      "description": "",
+      "path": "agents\\batch-executor.md"
+    },
+    {
+      "id": "agent:bernstein-orchestrator",
+      "name": "bernstein-orchestrator",
+      "description": "",
+      "path": "agents\\bernstein-orchestrator.md"
+    },
+    {
+      "id": "agent:build-agent",
+      "name": "build-agent",
+      "description": "",
+      "path": "agents\\build-agent.md"
+    },
+    {
+      "id": "agent:code-reviewer",
+      "name": "code-reviewer",
+      "description": "",
+      "path": "agents\\code-reviewer.md"
+    },
+    {
+      "id": "agent:codebase-analyzer",
+      "name": "codebase-analyzer",
+      "description": "",
+      "path": "agents\\codebase-analyzer.md"
+    },
+    {
+      "id": "agent:codebase-locator",
+      "name": "codebase-locator",
+      "description": "",
+      "path": "agents\\codebase-locator.md"
+    },
+    {
+      "id": "agent:codebase-pattern-finder",
+      "name": "codebase-pattern-finder",
+      "description": "",
+      "path": "agents\\codebase-pattern-finder.md"
+    },
+    {
+      "id": "agent:coder-agent",
+      "name": "coder-agent",
+      "description": "",
+      "path": "agents\\coder-agent.md"
+    },
+    {
+      "id": "agent:context-manager",
+      "name": "context-manager",
+      "description": "",
+      "path": "agents\\context-manager.md"
+    },
+    {
+      "id": "agent:context-retriever",
+      "name": "context-retriever",
+      "description": "",
+      "path": "agents\\context-retriever.md"
+    },
+    {
+      "id": "agent:contextscout",
+      "name": "contextscout",
+      "description": "",
+      "path": "agents\\contextscout.md"
+    },
+    {
+      "id": "agent:contract-manager",
+      "name": "contract-manager",
+      "description": "",
+      "path": "agents\\contract-manager.md"
+    },
+    {
+      "id": "agent:copywriter",
+      "name": "copywriter",
+      "description": "",
+      "path": "agents\\copywriter.md"
+    },
+    {
+      "id": "agent:debugger",
+      "name": "debugger",
+      "description": "",
+      "path": "agents\\debugger.md"
+    },
+    {
+      "id": "agent:devops-specialist",
+      "name": "devops-specialist",
+      "description": "",
+      "path": "agents\\devops-specialist.md"
+    },
+    {
+      "id": "agent:docs-writer",
+      "name": "docs-writer",
+      "description": "",
+      "path": "agents\\docs-writer.md"
+    },
+    {
+      "id": "agent:documentation",
+      "name": "documentation",
+      "description": "",
+      "path": "agents\\documentation.md"
+    },
+    {
+      "id": "agent:eval-runner",
+      "name": "eval-runner",
+      "description": "",
+      "path": "agents\\eval-runner.md"
+    },
+    {
+      "id": "agent:externalscout",
+      "name": "externalscout",
+      "description": "",
+      "path": "agents\\externalscout.md"
+    },
+    {
+      "id": "agent:frontend-specialist",
+      "name": "frontend-specialist",
+      "description": "",
+      "path": "agents\\frontend-specialist.md"
+    },
+    {
+      "id": "agent:git-manager",
+      "name": "git-manager",
+      "description": "",
+      "path": "agents\\git-manager.md"
+    },
+    {
+      "id": "agent:image-specialist",
+      "name": "image-specialist",
+      "description": "",
+      "path": "agents\\image-specialist.md"
+    },
+    {
+      "id": "agent:linguistic-corrector",
+      "name": "linguistic-corrector",
+      "description": "",
+      "path": "agents\\linguistic-corrector.md"
+    },
+    {
+      "id": "agent:openagent",
+      "name": "openagent",
+      "description": "",
+      "path": "agents\\openagent.md"
+    },
+    {
+      "id": "agent:opencoder",
+      "name": "opencoder",
+      "description": "",
+      "path": "agents\\opencoder.md"
+    },
+    {
+      "id": "agent:optimizer",
+      "name": "optimizer",
+      "description": "",
+      "path": "agents\\optimizer.md"
+    },
+    {
+      "id": "agent:prioritization-engine",
+      "name": "prioritization-engine",
+      "description": "",
+      "path": "agents\\prioritization-engine.md"
+    },
+    {
+      "id": "agent:pypi-searcher",
+      "name": "pypi-searcher",
+      "description": "",
+      "path": "agents\\pypi-searcher.md"
+    },
+    {
+      "id": "agent:quantum-nexus-phd",
+      "name": "quantum-nexus-phd",
+      "description": "",
+      "path": "agents\\quantum-nexus-phd.md"
+    },
+    {
+      "id": "agent:reversa",
+      "name": "reversa",
+      "description": "",
+      "path": "agents\\reversa.md"
+    },
+    {
+      "id": "agent:reversa-agent-forum",
+      "name": "reversa-agent-forum",
+      "description": ">",
+      "path": "agents\\reversa-agent-forum.md"
+    },
+    {
+      "id": "agent:reversa-anp",
+      "name": "reversa-anp",
+      "description": "Agente especialista em construir pipelines ANP (Agent Node Pipeline). Executa o pipeline completo: r",
+      "path": "agents\\reversa-anp.md"
+    },
+    {
+      "id": "agent:reversa-archaeologist",
+      "name": "reversa-archaeologist",
+      "description": "",
+      "path": "agents\\reversa-archaeologist.md"
+    },
+    {
+      "id": "agent:reversa-architect",
+      "name": "reversa-architect",
+      "description": "",
+      "path": "agents\\reversa-architect.md"
+    },
+    {
+      "id": "agent:reversa-config-generator",
+      "name": "reversa-config-generator",
+      "description": ">",
+      "path": "agents\\reversa-config-generator.md"
+    },
+    {
+      "id": "agent:reversa-data-master",
+      "name": "reversa-data-master",
+      "description": "",
+      "path": "agents\\reversa-data-master.md"
+    },
+    {
+      "id": "agent:reversa-design-system",
+      "name": "reversa-design-system",
+      "description": "",
+      "path": "agents\\reversa-design-system.md"
+    },
+    {
+      "id": "agent:reversa-detective",
+      "name": "reversa-detective",
+      "description": "",
+      "path": "agents\\reversa-detective.md"
+    },
+    {
+      "id": "agent:reversa-document-ir",
+      "name": "reversa-document-ir",
+      "description": ">",
+      "path": "agents\\reversa-document-ir.md"
+    },
+    {
+      "id": "agent:reversa-entity-ner",
+      "name": "reversa-entity-ner",
+      "description": "",
+      "path": "agents\\reversa-entity-ner.md"
+    },
+    {
+      "id": "agent:reversa-fileipc",
+      "name": "reversa-fileipc",
+      "description": ">",
+      "path": "agents\\reversa-fileipc.md"
+    },
+    {
+      "id": "agent:reversa-graph-builder",
+      "name": "reversa-graph-builder",
+      "description": "",
+      "path": "agents\\reversa-graph-builder.md"
+    },
+    {
+      "id": "agent:reversa-graphrag",
+      "name": "reversa-graphrag",
+      "description": "",
+      "path": "agents\\reversa-graphrag.md"
+    },
+    {
+      "id": "agent:reversa-hybrid-graph",
+      "name": "reversa-hybrid-graph",
+      "description": "",
+      "path": "agents\\reversa-hybrid-graph.md"
+    },
+    {
+      "id": "agent:reversa-memory-updater",
+      "name": "reversa-memory-updater",
+      "description": "",
+      "path": "agents\\reversa-memory-updater.md"
+    },
+    {
+      "id": "agent:reversa-oasis-profile",
+      "name": "reversa-oasis-profile",
+      "description": "",
+      "path": "agents\\reversa-oasis-profile.md"
+    },
+    {
+      "id": "agent:reversa-ontology-gen",
+      "name": "reversa-ontology-gen",
+      "description": "",
+      "path": "agents\\reversa-ontology-gen.md"
+    },
+    {
+      "id": "agent:reversa-planner",
+      "name": "reversa-planner",
+      "description": "",
+      "path": "agents\\reversa-planner.md"
+    },
+    {
+      "id": "agent:reversa-process-lifecycle",
+      "name": "reversa-process-lifecycle",
+      "description": ">",
+      "path": "agents\\reversa-process-lifecycle.md"
+    },
+    {
+      "id": "agent:reversa-report-agent",
+      "name": "reversa-report-agent",
+      "description": "",
+      "path": "agents\\reversa-report-agent.md"
+    },
+    {
+      "id": "agent:reversa-reviewer",
+      "name": "reversa-reviewer",
+      "description": "",
+      "path": "agents\\reversa-reviewer.md"
+    },
+    {
+      "id": "agent:reversa-scout",
+      "name": "reversa-scout",
+      "description": "",
+      "path": "agents\\reversa-scout.md"
+    },
+    {
+      "id": "agent:reversa-statemachine",
+      "name": "reversa-statemachine",
+      "description": ">",
+      "path": "agents\\reversa-statemachine.md"
+    },
+    {
+      "id": "agent:reversa-swarm-review",
+      "name": "reversa-swarm-review",
+      "description": "",
+      "path": "agents\\reversa-swarm-review.md"
+    },
+    {
+      "id": "agent:reversa-synthesis",
+      "name": "reversa-synthesis",
+      "description": "",
+      "path": "agents\\reversa-synthesis.md"
+    },
+    {
+      "id": "agent:reversa-visor",
+      "name": "reversa-visor",
+      "description": "",
+      "path": "agents\\reversa-visor.md"
+    },
+    {
+      "id": "agent:reversa-writer",
+      "name": "reversa-writer",
+      "description": "",
+      "path": "agents\\reversa-writer.md"
+    },
+    {
+      "id": "agent:reviewer",
+      "name": "reviewer",
+      "description": "",
+      "path": "agents\\reviewer.md"
+    },
+    {
+      "id": "agent:security-auditor",
+      "name": "security-auditor",
+      "description": "",
+      "path": "agents\\security-auditor.md"
+    },
+    {
+      "id": "agent:simple-responder",
+      "name": "simple-responder",
+      "description": "",
+      "path": "agents\\simple-responder.md"
+    },
+    {
+      "id": "agent:stage-orchestrator",
+      "name": "stage-orchestrator",
+      "description": "",
+      "path": "agents\\stage-orchestrator.md"
+    },
+    {
+      "id": "agent:story-mapper",
+      "name": "story-mapper",
+      "description": "",
+      "path": "agents\\story-mapper.md"
+    },
+    {
+      "id": "agent:task-manager",
+      "name": "task-manager",
+      "description": "",
+      "path": "agents\\task-manager.md"
+    },
+    {
+      "id": "agent:technical-writer",
+      "name": "technical-writer",
+      "description": "",
+      "path": "agents\\technical-writer.md"
+    },
+    {
+      "id": "agent:test-engineer",
+      "name": "test-engineer",
+      "description": "",
+      "path": "agents\\test-engineer.md"
+    },
+    {
+      "id": "agent:thoughts-analyzer",
+      "name": "thoughts-analyzer",
+      "description": "",
+      "path": "agents\\thoughts-analyzer.md"
+    },
+    {
+      "id": "agent:thoughts-locator",
+      "name": "thoughts-locator",
+      "description": "",
+      "path": "agents\\thoughts-locator.md"
+    },
+    {
+      "id": "agent:web-developer",
+      "name": "web-developer",
+      "description": "",
+      "path": "agents\\web-developer.md"
+    },
+    {
+      "id": "agent:web-search-researcher",
+      "name": "web-search-researcher",
+      "description": "",
+      "path": "agents\\web-search-researcher.md"
+    },
+    {
+      "id": "agent:ws-academic-pipeline",
+      "name": "ws-academic-pipeline",
+      "description": "",
+      "path": "agents\\ws-academic-pipeline.md"
+    },
+    {
+      "id": "agent:ws-coder",
+      "name": "ws-coder",
+      "description": "",
+      "path": "agents\\ws-coder.md"
+    },
+    {
+      "id": "agent:ws-researcher",
+      "name": "ws-researcher",
+      "description": "",
+      "path": "agents\\ws-researcher.md"
+    },
+    {
+      "id": "agent:ws-reviewer",
+      "name": "ws-reviewer",
+      "description": "",
+      "path": "agents\\ws-reviewer.md"
+    },
+    {
+      "id": "agent:ws-scribe",
+      "name": "ws-scribe",
+      "description": "",
+      "path": "agents\\ws-scribe.md"
+    }
+  ],
+  "mcps": [
+    {
+      "id": "mcp:antigravity-mcp",
+      "name": "antigravity-mcp",
+      "description": "MCP: antigravity-mcp (disabled)"
+    },
+    {
+      "id": "mcp:astronomy-oracle",
+      "name": "astronomy-oracle",
+      "description": "MCP: astronomy-oracle (disabled)"
+    },
+    {
+      "id": "mcp:biomcp",
+      "name": "biomcp",
+      "description": "MCP: biomcp (disabled)"
+    },
+    {
+      "id": "mcp:biothings",
+      "name": "biothings",
+      "description": "MCP: biothings (disabled)"
+    },
+    {
+      "id": "mcp:chrome-devtools",
+      "name": "chrome-devtools",
+      "description": "MCP: chrome-devtools (disabled)"
+    },
+    {
+      "id": "mcp:code-runner",
+      "name": "code-runner",
+      "description": "MCP: code-runner (enabled)"
+    },
+    {
+      "id": "mcp:context7",
+      "name": "context7",
+      "description": "MCP: context7 (enabled)"
+    },
+    {
+      "id": "mcp:cora-verifier",
+      "name": "cora-verifier",
+      "description": "MCP: cora-verifier (disabled)"
+    },
+    {
+      "id": "mcp:decisionnode",
+      "name": "decisionnode",
+      "description": "MCP: decisionnode (enabled)"
+    },
+    {
+      "id": "mcp:desktop-commander",
+      "name": "desktop-commander",
+      "description": "MCP: desktop-commander (disabled)"
+    },
+    {
+      "id": "mcp:diff",
+      "name": "diff",
+      "description": "MCP: diff (enabled)"
+    },
+    {
+      "id": "mcp:eslint",
+      "name": "eslint",
+      "description": "MCP: eslint (enabled)"
+    },
+    {
+      "id": "mcp:fetch",
+      "name": "fetch",
+      "description": "MCP: fetch (enabled)"
+    },
+    {
+      "id": "mcp:filesystem",
+      "name": "filesystem",
+      "description": "MCP: filesystem (enabled)"
+    },
+    {
+      "id": "mcp:flowzap-mcp",
+      "name": "flowzap-mcp",
+      "description": "MCP: flowzap-mcp (disabled)"
+    },
+    {
+      "id": "mcp:gget",
+      "name": "gget",
+      "description": "MCP: gget (disabled)"
+    },
+    {
+      "id": "mcp:gh_grep",
+      "name": "gh_grep",
+      "description": "MCP: gh_grep (enabled)"
+    },
+    {
+      "id": "mcp:github",
+      "name": "github",
+      "description": "MCP: github (enabled)"
+    },
+    {
+      "id": "mcp:hacker-news",
+      "name": "hacker-news",
+      "description": "MCP: hacker-news (disabled)"
+    },
+    {
+      "id": "mcp:maswos-juridico",
+      "name": "maswos-juridico",
+      "description": "MCP: maswos-juridico (disabled)"
+    },
+    {
+      "id": "mcp:maswos-mcp",
+      "name": "maswos-mcp",
+      "description": "MCP: maswos-mcp (disabled)"
+    },
+    {
+      "id": "mcp:maswos-rag",
+      "name": "maswos-rag",
+      "description": "MCP: maswos-rag (disabled)"
+    },
+    {
+      "id": "mcp:mcp-python-interpreter",
+      "name": "mcp-python-interpreter",
+      "description": "MCP: mcp-python-interpreter (enabled)"
+    },
+    {
+      "id": "mcp:mcp-server-commands",
+      "name": "mcp-server-commands",
+      "description": "MCP: mcp-server-commands (disabled)"
+    },
+    {
+      "id": "mcp:mem0-mcp",
+      "name": "mem0-mcp",
+      "description": "MCP: mem0-mcp (disabled)"
+    },
+    {
+      "id": "mcp:memory",
+      "name": "memory",
+      "description": "MCP: memory (enabled)"
+    },
+    {
+      "id": "mcp:mermaid",
+      "name": "mermaid",
+      "description": "MCP: mermaid (disabled)"
+    },
+    {
+      "id": "mcp:node-sandbox",
+      "name": "node-sandbox",
+      "description": "MCP: node-sandbox (enabled)"
+    },
+    {
+      "id": "mcp:opengenes",
+      "name": "opengenes",
+      "description": "MCP: opengenes (disabled)"
+    },
+    {
+      "id": "mcp:pdf",
+      "name": "pdf",
+      "description": "MCP: pdf (enabled)"
+    },
+    {
+      "id": "mcp:playwright",
+      "name": "playwright",
+      "description": "MCP: playwright (enabled)"
+    },
+    {
+      "id": "mcp:puppeteer",
+      "name": "puppeteer",
+      "description": "MCP: puppeteer (disabled)"
+    },
+    {
+      "id": "mcp:run-python",
+      "name": "run-python",
+      "description": "MCP: run-python (disabled)"
+    },
+    {
+      "id": "mcp:scihub",
+      "name": "scihub",
+      "description": "MCP: scihub (enabled)"
+    },
+    {
+      "id": "mcp:self-healer",
+      "name": "self-healer",
+      "description": "MCP: self-healer (disabled)"
+    },
+    {
+      "id": "mcp:sequential-thinking",
+      "name": "sequential-thinking",
+      "description": "MCP: sequential-thinking (enabled)"
+    },
+    {
+      "id": "mcp:shell-server",
+      "name": "shell-server",
+      "description": "MCP: shell-server (disabled)"
+    },
+    {
+      "id": "mcp:sqlite",
+      "name": "sqlite",
+      "description": "MCP: sqlite (enabled)"
+    },
+    {
+      "id": "mcp:time",
+      "name": "time",
+      "description": "MCP: time (enabled)"
+    },
+    {
+      "id": "mcp:websearch",
+      "name": "websearch",
+      "description": "MCP: websearch (enabled)"
+    },
+    {
+      "id": "mcp:wikipedia",
+      "name": "wikipedia",
+      "description": "MCP: wikipedia (disabled)"
+    },
+    {
+      "id": "mcp:youtube-transcript",
+      "name": "youtube-transcript",
+      "description": "MCP: youtube-transcript (disabled)"
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill:agent-forum",
+      "name": "agent-forum",
+      "edge_count": 2
+    },
+    {
+      "id": "skill:agent-node-pipeline",
+      "name": "agent-node-pipeline",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:aletheia-opencode-native",
+      "name": "aletheia-opencode-native",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:antigravity-integration",
+      "name": "antigravity-integration",
+      "edge_count": 1
+    },
+    {
+      "id": "skill:code-graphrag",
+      "name": "code-graphrag",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:config-generator",
+      "name": "config-generator",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:cora-debate",
+      "name": "cora-debate",
+      "edge_count": 1
+    },
+    {
+      "id": "skill:decisionnode",
+      "name": "decisionnode",
+      "edge_count": 1
+    },
+    {
+      "id": "skill:docling-pdf-extraction",
+      "name": "docling-pdf-extraction",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:document-ir",
+      "name": "document-ir",
+      "edge_count": 1
+    },
+    {
+      "id": "skill:entity-ner-reader",
+      "name": "entity-ner-reader",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:file-ipc",
+      "name": "file-ipc",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:fs-ipc",
+      "name": "fs-ipc",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:graph-builder-pipeline",
+      "name": "graph-builder-pipeline",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:graph-memory-updater",
+      "name": "graph-memory-updater",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:hybrid-graph-retrieval",
+      "name": "hybrid-graph-retrieval",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:machine-states",
+      "name": "machine-states",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:maswos-v5-nexus",
+      "name": "maswos-v5-nexus",
+      "edge_count": 1
+    },
+    {
+      "id": "skill:mirofish-sync",
+      "name": "mirofish-sync",
+      "edge_count": 3
+    },
+    {
+      "id": "skill:oasis-profile-gen",
+      "name": "oasis-profile-gen",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:ontology-generator",
+      "name": "ontology-generator",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:plan-generator",
+      "name": "plan-generator",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:process-lifecycle",
+      "name": "process-lifecycle",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:reasoning-orchestrator-v11",
+      "name": "reasoning-orchestrator-v11",
+      "edge_count": 1
+    },
+    {
+      "id": "skill:reasoning-orchestrator-v12",
+      "name": "reasoning-orchestrator-v12",
+      "edge_count": 3
+    },
+    {
+      "id": "skill:report-agent-react",
+      "name": "report-agent-react",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:swarm-review",
+      "name": "swarm-review",
+      "edge_count": 0
+    },
+    {
+      "id": "skill:synthesis-agent",
+      "name": "synthesis-agent",
+      "edge_count": 0
+    }
+  ],
+  "commands": [
+    {
+      "id": "command:auto",
+      "name": "/auto",
+      "edge_count": 0
+    },
+    {
+      "id": "command:commit",
+      "name": "/commit",
+      "edge_count": 0
+    },
+    {
+      "id": "command:devcontainer",
+      "name": "/devcontainer",
+      "edge_count": 0
+    },
+    {
+      "id": "command:entity-ner",
+      "name": "/entity-ner",
+      "edge_count": 0
+    },
+    {
+      "id": "command:evolve",
+      "name": "/evolve",
+      "edge_count": 0
+    },
+    {
+      "id": "command:execute",
+      "name": "/execute",
+      "edge_count": 0
+    },
+    {
+      "id": "command:fileipc",
+      "name": "/fileipc",
+      "edge_count": 0
+    },
+    {
+      "id": "command:generate-plan",
+      "name": "/generate-plan",
+      "edge_count": 0
+    },
+    {
+      "id": "command:graph-builder",
+      "name": "/graph-builder",
+      "edge_count": 0
+    },
+    {
+      "id": "command:graphrag",
+      "name": "/graphrag",
+      "edge_count": 0
+    },
+    {
+      "id": "command:hybrid-graph",
+      "name": "/hybrid-graph",
+      "edge_count": 0
+    },
+    {
+      "id": "command:memory-updater",
+      "name": "/memory-updater",
+      "edge_count": 0
+    },
+    {
+      "id": "command:oasis-profile",
+      "name": "/oasis-profile",
+      "edge_count": 0
+    },
+    {
+      "id": "command:ontology-gen",
+      "name": "/ontology-gen",
+      "edge_count": 0
+    },
+    {
+      "id": "command:plan",
+      "name": "/plan",
+      "edge_count": 0
+    },
+    {
+      "id": "command:quantum",
+      "name": "/quantum",
+      "edge_count": 0
+    },
+    {
+      "id": "command:report-agent",
+      "name": "/report-agent",
+      "edge_count": 0
+    },
+    {
+      "id": "command:research",
+      "name": "/research",
+      "edge_count": 0
+    },
+    {
+      "id": "command:reversa",
+      "name": "/reversa",
+      "edge_count": 9
+    },
+    {
+      "id": "command:review",
+      "name": "/review",
+      "edge_count": 0
+    },
+    {
+      "id": "command:state",
+      "name": "/state",
+      "edge_count": 0
+    },
+    {
+      "id": "command:swarm-review",
+      "name": "/swarm-review",
+      "edge_count": 0
+    },
+    {
+      "id": "command:synthesize",
+      "name": "/synthesize",
+      "edge_count": 0
+    },
+    {
+      "id": "command:ticket",
+      "name": "/ticket",
+      "edge_count": 0
+    },
+    {
+      "id": "command:workspaces",
+      "name": "/workspaces",
+      "edge_count": 0
+    },
+    {
+      "id": "command:worktree",
+      "name": "/worktree",
+      "edge_count": 0
+    },
+    {
+      "id": "command:ws-review",
+      "name": "/ws-review",
+      "edge_count": 0
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent:pypi-searcher",
+      "target": "agent:code-reviewer",
+      "type": "affinity",
+      "weight": 0.7
+    },
+    {
+      "source": "agent:pypi-searcher",
+      "target": "agent:architect",
+      "type": "affinity",
+      "weight": 0.85
+    },
+    {
+      "source": "agent:pypi-searcher",
+      "target": "agent:coder-agent",
+      "type": "affinity",
+      "weight": 0.65
+    },
+    {
+      "source": "agent:pypi-searcher",
+      "target": "agent:security-auditor",
+      "type": "affinity",
+      "weight": 0.6
+    },
+    {
+      "source": "agent:pypi-searcher",
+      "target": "mcp:decisionnode",
+      "type": "affinity",
+      "weight": 0.9
+    },
+    {
+      "source": "agent:pypi-searcher",
+      "target": "skill:decisionnode",
+      "type": "affinity",
+      "weight": 0.9
+    },
+    {
+      "source": "agent:pypi-searcher",
+      "target": "agent:build-agent",
+      "type": "affinity",
+      "weight": 0.55
+    },
+    {
+      "source": "command:reversa",
+      "target": "agent:reversa-scout",
+      "type": "depends_on",
+      "weight": 0.7
+    },
+    {
+      "source": "command:reversa",
+      "target": "agent:reversa-archaeologist",
+      "type": "depends_on",
+      "weight": 0.7
+    },
+    {
+      "source": "command:reversa",
+      "target": "agent:reversa-detective",
+      "type": "depends_on",
+      "weight": 0.7
+    },
+    {
+      "source": "command:reversa",
+      "target": "agent:reversa-architect",
+      "type": "depends_on",
+      "weight": 0.7
+    },
+    {
+      "source": "command:reversa",
+      "target": "agent:reversa-writer",
+      "type": "depends_on",
+      "weight": 0.7
+    },
+    {
+      "source": "command:reversa",
+      "target": "agent:reversa-reviewer",
+      "type": "depends_on",
+      "weight": 0.7
+    },
+    {
+      "source": "command:reversa",
+      "target": "agent:reversa-visor",
+      "type": "depends_on",
+      "weight": 0.7
+    },
+    {
+      "source": "command:reversa",
+      "target": "agent:reversa-data-master",
+      "type": "depends_on",
+      "weight": 0.7
+    },
+    {
+      "source": "command:reversa",
+      "target": "agent:reversa-design-system",
+      "type": "depends_on",
+      "weight": 0.7
+    },
+    {
+      "source": "skill:agent-forum",
+      "target": "agent:coder-agent",
+      "type": "references",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:agent-forum",
+      "target": "agent:reversa-agent-forum",
+      "type": "references",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:antigravity-integration",
+      "target": "agent:coder-agent",
+      "type": "references",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:cora-debate",
+      "target": "agent:coder-agent",
+      "type": "references",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:decisionnode",
+      "target": "mcp:decisionnode",
+      "type": "references",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:document-ir",
+      "target": "agent:reversa-document-ir",
+      "type": "references",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:maswos-v5-nexus",
+      "target": "agent:coder-agent",
+      "type": "references",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:mirofish-sync",
+      "target": "agent:coder-agent",
+      "type": "references",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:mirofish-sync",
+      "target": "agent:reversa-scout",
+      "type": "references",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:mirofish-sync",
+      "target": "agent:reversa",
+      "type": "references",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:reasoning-orchestrator-v11",
+      "target": "agent:coder-agent",
+      "type": "references",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:reasoning-orchestrator-v12",
+      "target": "agent:prioritization-engine",
+      "type": "references",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:reasoning-orchestrator-v12",
+      "target": "mcp:sequential-thinking",
+      "type": "references",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:reasoning-orchestrator-v12",
+      "target": "mcp:time",
+      "type": "references",
+      "weight": 0.6
+    }
+  ]
+}

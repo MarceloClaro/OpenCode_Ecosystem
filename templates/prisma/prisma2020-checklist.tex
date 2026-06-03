@@ -1,0 +1,319 @@
+% =============================================================================
+%  PRISMA 2020 — Checklist de 27 Itens
+%  Versão em Português Brasileiro (PT-BR)
+%  Compilar com: pdflatex prisma2020-checklist.tex
+% =============================================================================
+\documentclass[11pt]{article}
+
+% ─── Pacotes ─────────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\geometry{a4paper, margin=1.8cm}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  urlcolor=blue!60!black,
+  citecolor=blue!60!black
+}
+
+% ─── Cores ───────────────────────────────────────────────────────────────────
+\definecolor{corSecao}{RGB}{41, 82, 163}
+\definecolor{corSub}{RGB}{70, 130, 180}
+
+% ─── Estilo da Tabela ───────────────────────────────────────────────────────
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% Comando para seções da checklist
+\newcommand{\secao}[1]{%
+  \rowcolor{corSecao!12}%
+  \multicolumn{4}{L{\dimexpr\textwidth-2\tabcolsep\relax}}{%
+    \textbf{\textcolor{corSecao}{#1}}}%
+  \tabularnewline%
+}
+
+% Comando para subseção (tipo "Reporting Item")
+\newcommand{\subsecao}[1]{%
+  \rowcolor{corSub!8}%
+  \multicolumn{4}{L{\dimexpr\textwidth-2\tabcolsep\relax}}{%
+    \textit{#1}}%
+  \tabularnewline%
+}
+
+% ─── Cabeçalho Repetido ─────────────────────────────────────────────────────
+\newenvironment{prismachecklist}{%
+\begin{longtable}{
+  >{\footnotesize\bfseries}C{1.2cm}
+  >{\footnotesize}L{2.8cm}
+  >{\footnotesize}L{9cm}
+  >{\footnotesize\centering}C{2cm}
+}
+  \toprule
+  \rowcolor{corSecao!20}
+  \textbf{\#} &
+  \textbf{Seção / Tópico} &
+  \textbf{Descrição do item} &
+  \textbf{P.\ rel.} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \rowcolor{corSecao!20}
+  \textbf{\#} &
+  \textbf{Seção / Tópico} &
+  \textbf{Descrição do item} &
+  \textbf{P.\ rel.} \\
+  \midrule
+  \endhead
+  \midrule
+  \multicolumn{4}{r}{\footnotesize\itshape Continua na próxima página...} \\
+  \endfoot
+  \bottomrule
+  \endlastfoot
+}{%
+  \end{longtable}
+}
+
+% =============================================================================
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+  {\Large\bfseries PRISMA 2020 --- Checklist de 27 Itens}\\[4pt]
+  {\small\itshape Preferred Reporting Items for Systematic Reviews and
+           Meta-Analyses}\\[4pt]
+  {\small Preencha a coluna ``P.\ rel.'' (página relatada) conforme a
+         localização no manuscrito.}
+\end{center}
+
+\vspace{0.4cm}
+
+\begin{prismachecklist}
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  TÍTULO
+% ══════════════════════════════════════════════════════════════════════════════
+\secao{TÍTULO --- \textit{TITLE}}
+
+1 & Título &
+  \textbf{Título.} Identifique o artigo como uma revisão sistemática,
+  meta-análise, ou ambos. &
+  \\
+  \addlinespace
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  RESUMO
+% ══════════════════════════════════════════════════════════════════════════════
+\secao{RESUMO --- \textit{ABSTRACT}}
+
+2 & Resumo estruturado &
+  \textbf{Resumo estruturado.} Forneça um resumo estruturado que inclua:
+  histórico; objetivos; critérios de elegibilidade; fontes de informação;
+  risco de viés; resultados; discussão; registro e financiamento. &
+  \\
+  \addlinespace
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  INTRODUÇÃO
+% ══════════════════════════════════════════════════════════════════════════════
+\secao{INTRODUÇÃO --- \textit{INTRODUCTION}}
+
+3 & Justificativa &
+  \textbf{Justificativa.} Descreva a justificativa para a revisão no
+  contexto do conhecimento existente. &
+  \\
+
+4 & Objetivos &
+  \textbf{Objetivos.} Forneça uma declaração explícita dos objetivos ou
+  perguntas que a revisão aborda. &
+  \\
+  \addlinespace
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  MÉTODOS
+% ══════════════════════════════════════════════════════════════════════════════
+\secao{MÉTODOS --- \textit{METHODS}}
+
+5 & Critérios de elegibilidade &
+  \textbf{Critérios de elegibilidade.} Especifique os critérios de inclusão
+  e exclusão para a revisão e como os estudos foram agrupados para as
+  sínteses. &
+  \\
+
+6 & Fontes de informação &
+  \textbf{Fontes de informação.} Especifique todas as bases de dados,
+  registros, websites, organizações, listas de referência e outros locais
+  onde a busca foi realizada ou atualizada. Informe a data da última busca
+  em cada fonte. &
+  \\
+
+7 & Estratégia de busca &
+  \textbf{Estratégia de busca.} Apresente as estratégias de busca completas
+  para todas as bases de dados e registros, incluindo filtros e limites
+  utilizados. &
+  \\
+
+8 & Processo de seleção &
+  \textbf{Processo de seleção.} Especifique os métodos usados para decidir
+  se um estudo atende aos critérios de inclusão, incluindo quantos
+  revisores analisaram cada registro e cada relato, se o trabalho foi
+  realizado de forma independente e, se aplicável, os detalhes das
+  ferramentas de automação utilizadas. &
+  \\
+
+9 & Processo de coleta de dados &
+  \textbf{Processo de coleta de dados.} Descreva os métodos usados para
+  extrair dados dos relatos, incluindo quantos revisores extraíram dados
+  de cada relato, se trabalharam de forma independente, os processos
+  para obter ou confirmar dados com os investigadores do estudo e, se
+  aplicável, detalhes das ferramentas de automação. &
+  \\
+
+10 & Itens de dados &
+  \textbf{Itens de dados.} Liste e defina todos os desfechos para os quais
+  os dados foram extraídos. Liste e defina todas as outras variáveis para
+  as quais os dados foram extraídos (características do estudo, fontes de
+  financiamento). Descreva quaisquer suposições ou simplificações feitas. &
+  \\
+
+11 & Risco de viés dos estudos &
+  \textbf{Risco de viés dos estudos.} Especifique os métodos usados para
+  avaliar o risco de viés nos estudos incluídos, incluindo detalhes das
+  ferramentas utilizadas, quantos revisores avaliaram cada estudo e se
+  trabalharam de forma independente. &
+  \\
+
+12 & Medidas de efeito &
+  \textbf{Medidas de efeito.} Especifique para cada desfecho a medida de
+  efeito utilizada (risco relativo, diferença média, etc.). &
+  \\
+
+13 & Métodos de síntese &
+  \textbf{Métodos de síntese.} Descreva o processo de síntese e análise
+  dos resultados: elegibilidade para síntese, métodos de preparação dos
+  dados, métodos de análise estatística, métodos de exploração de
+  heterogeneidade e análises de sensibilidade. &
+  \\
+
+14 & Viés de relato &
+  \textbf{Avaliação do viés de relato.} Descreva os métodos usados para
+  avaliar o risco de viés devido a resultados não relatados (viés de
+  relato seletivo). &
+  \\
+
+15 & Avaliação da certeza &
+  \textbf{Avaliação da certeza da evidência.} Descreva os métodos usados
+  para avaliar a certeza (confiança) no conjunto de evidências para cada
+  desfecho (ex.: GRADE). &
+  \\
+  \addlinespace
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  RESULTADOS
+% ══════════════════════════════════════════════════════════════════════════════
+\secao{RESULTADOS --- \textit{RESULTS}}
+
+16 & Seleção dos estudos &
+  \textbf{Seleção dos estudos.} Descreva os resultados do processo de
+  busca e seleção, desde o número de registros identificados até o número
+  de estudos incluídos na revisão, idealmente usando um diagrama de fluxo. &
+  \\
+
+17 & Características dos estudos &
+  \textbf{Características dos estudos.} Cite cada estudo incluído e
+  apresente suas características (tamanho da amostra, duração do
+  acompanhamento, tipo de intervenção, etc.). &
+  \\
+
+18 & Risco de viés nos estudos &
+  \textbf{Risco de viés nos estudos.} Apresente as avaliações de risco de
+  viés para cada estudo incluído. &
+  \\
+
+19 & Resultados individuais &
+  \textbf{Resultados individuais.} Para cada desfecho, apresente, de forma
+  ideal: estimativas de efeito e intervalos de confiança para cada estudo,
+  idealmente com gráficos de floresta ou mapas de resultados. &
+  \\
+
+20 & Resultados da síntese &
+  \textbf{Resultados da síntese.} Para cada desfecho, apresente os
+  resultados de todas as sínteses estatísticas realizadas. Se
+  meta-análise foi feita: apresente para cada uma a estimativa de efeito
+  agregado e seu intervalo de confiança/previsão, e medidas de
+  heterogeneidade. &
+  \\
+
+21 & Viés de relato &
+  \textbf{Viés de relato.} Apresente as avaliações do risco de viés de
+  relato seletivo. &
+  \\
+
+22 & Certeza da evidência &
+  \textbf{Certeza da evidência.} Apresente as avaliações da certeza
+  (confiança) no conjunto de evidências para cada desfecho. &
+  \\
+  \addlinespace
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  DISCUSSÃO
+% ══════════════════════════════════════════════════════════════════════════════
+\secao{DISCUSSÃO --- \textit{DISCUSSION}}
+
+23 & Discussão &
+  \textbf{Discussão.} Forneça uma interpretação geral dos resultados no
+  contexto de outras evidências e implicações para prática, pesquisa e
+  políticas. Discuta limitações da evidência incluída e do processo de
+  revisão. &
+  \\
+  \addlinespace
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  OUTRAS INFORMAÇÕES
+% ══════════════════════════════════════════════════════════════════════════════
+\secao{OUTRAS INFORMAÇÕES --- \textit{OTHER INFORMATION}}
+
+24 & Registro e protocolo &
+  \textbf{Registro e protocolo.} Informe onde a revisão foi registrada e
+  o identificador do registro. Indique se um protocolo foi preparado e
+  onde pode ser acessado. Descreva quaisquer alterações ao protocolo. &
+  \\
+
+25 & Suporte &
+  \textbf{Fonte de financiamento.} Descreva as fontes de suporte financeiro
+  e não financeiro para a revisão, o papel dos financiadores e quaisquer
+  conflitos de interesse. &
+  \\
+
+26 & Conflitos de interesse &
+  \textbf{Conflitos de interesse.} Declare quaisquer conflitos de interesse
+  dos autores da revisão. &
+  \\
+
+27 & Disponibilidade de dados &
+  \textbf{Disponibilidade de dados, código e outros materiais.} Indique
+  quais dos seguintes itens estão publicamente disponíveis e onde podem
+  ser encontrados: dados de extração, código de análise, outros materiais
+  usados na revisão. &
+  \\
+
+\end{prismachecklist}
+
+\vspace{0.5cm}
+
+\begin{minipage}{0.85\textwidth}
+\small
+\textbf{Citação:} Page MJ, McKenzie JE, Bossuyt PM, et al. \textit{The PRISMA
+2020 statement: an updated guideline for reporting systematic reviews.}
+BMJ 2021;372:n71. \href{https://doi.org/10.1136/bmj.n71}{doi:
+10.1136/bmj.n71}\\[4pt]
+\textbf{Licença:} CC-BY 4.0. Este checklist é uma adaptação para o
+português brasileiro do original PRISMA 2020.
+\end{minipage}
+
+\end{document}

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 750" font-family="Segoe UI, Arial, sans-serif">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 750" font-family="Segoe UI, Arial, sans-serif">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#0d1117"/>
@@ -35,111 +35,111 @@
   <rect width="1100" height="750" fill="url(#bg)" rx="8"/>
 
   <!-- Title -->
-  <text x="550" y="36" text-anchor="middle" fill="#d29922" font-size="18" font-weight="bold">9 Estratégias RAG — Maswos-RAG Server v4.6.1</text>
-  <text x="550" y="56" text-anchor="middle" fill="#8b949e" font-size="11">Implementação no servidor MCP maswos-rag · 3 ferramentas expostas · MiroFish/BettaFish integrado</text>
+  <text x="550" y="36" text-anchor="middle" fill="#d29922" font-size="18" font-weight="bold">9 EstratÃ©gias RAG â€” Maswos-RAG Server v5.0.0</text>
+  <text x="550" y="56" text-anchor="middle" fill="#8b949e" font-size="11">ImplementaÃ§Ã£o no servidor MCP maswos-rag Â· 3 ferramentas expostas Â· MiroFish/BettaFish integrado</text>
 
   <!-- Vanilla RAG -->
   <rect x="50" y="80" width="310" height="140" rx="8" fill="#238636" opacity="0.08" stroke="#3fb950" stroke-width="1" filter="url(#shadow)"/>
   <rect x="50" y="80" width="310" height="32" rx="8" fill="url(#s1)" opacity="0.3"/>
   <rect x="50" y="100" width="310" height="12" fill="url(#s1)" opacity="0.3"/>
-  <text x="205" y="101" text-anchor="middle" fill="#3fb950" font-size="12" font-weight="bold">① Vanilla RAG</text>
-  <text x="65" y="130" fill="#8b949e" font-size="10">Query → Embed → Retrieve → Generate</text>
-  <text x="65" y="148" fill="#8b949e" font-size="9">Fluxo básico padrão.</text>
-  <text x="65" y="164" fill="#8b949e" font-size="9">Referência: Lewis et al. (2020)</text>
-  <text x="65" y="182" fill="#484f58" font-size="8">ACL 2020 · 10.18653/v1/2020.emnlp-main.432</text>
+  <text x="205" y="101" text-anchor="middle" fill="#3fb950" font-size="12" font-weight="bold">â‘  Vanilla RAG</text>
+  <text x="65" y="130" fill="#8b949e" font-size="10">Query â†’ Embed â†’ Retrieve â†’ Generate</text>
+  <text x="65" y="148" fill="#8b949e" font-size="9">Fluxo bÃ¡sico padrÃ£o.</text>
+  <text x="65" y="164" fill="#8b949e" font-size="9">ReferÃªncia: Lewis et al. (2020)</text>
+  <text x="65" y="182" fill="#484f58" font-size="8">ACL 2020 Â· 10.18653/v1/2020.emnlp-main.432</text>
   <circle cx="72" cy="196" r="4" fill="#3fb950"/><text x="82" y="200" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- Memory RAG -->
   <rect x="390" y="80" width="310" height="140" rx="8" fill="#1f6feb" opacity="0.08" stroke="#58a6ff" stroke-width="1" filter="url(#shadow)"/>
   <rect x="390" y="80" width="310" height="32" rx="8" fill="url(#s2)" opacity="0.3"/>
   <rect x="390" y="100" width="310" height="12" fill="url(#s2)" opacity="0.3"/>
-  <text x="545" y="101" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="bold">② Memory RAG</text>
-  <text x="405" y="130" fill="#8b949e" font-size="10">Query → Memory → Retrieve → Generate</text>
-  <text x="405" y="148" fill="#8b949e" font-size="9">RAG com memória Redis para sessões.</text>
-  <text x="405" y="164" fill="#8b949e" font-size="9">Referência: Zhong et al. (2024)</text>
-  <text x="405" y="182" fill="#484f58" font-size="8">arXiv:2405.14367 · MemGPT</text>
+  <text x="545" y="101" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="bold">â‘¡ Memory RAG</text>
+  <text x="405" y="130" fill="#8b949e" font-size="10">Query â†’ Memory â†’ Retrieve â†’ Generate</text>
+  <text x="405" y="148" fill="#8b949e" font-size="9">RAG com memÃ³ria Redis para sessÃµes.</text>
+  <text x="405" y="164" fill="#8b949e" font-size="9">ReferÃªncia: Zhong et al. (2024)</text>
+  <text x="405" y="182" fill="#484f58" font-size="8">arXiv:2405.14367 Â· MemGPT</text>
   <circle cx="412" cy="196" r="4" fill="#3fb950"/><text x="422" y="200" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- Agentic RAG -->
   <rect x="730" y="80" width="310" height="140" rx="8" fill="#9e6a03" opacity="0.08" stroke="#d29922" stroke-width="1" filter="url(#shadow)"/>
   <rect x="730" y="80" width="310" height="32" rx="8" fill="url(#s3)" opacity="0.3"/>
   <rect x="730" y="100" width="310" height="12" fill="url(#s3)" opacity="0.3"/>
-  <text x="885" y="101" text-anchor="middle" fill="#d29922" font-size="12" font-weight="bold">③ Agentic RAG</text>
-  <text x="745" y="130" fill="#8b949e" font-size="10">Query → Agent → Route → Retrieve → Gen</text>
-  <text x="745" y="148" fill="#8b949e" font-size="9">RAG com roteamento dinâmico de fontes.</text>
-  <text x="745" y="164" fill="#8b949e" font-size="9">Referência: Gradientsys (2025)</text>
-  <text x="745" y="182" fill="#484f58" font-size="8">arXiv:2507.06520 · ReAct loop</text>
+  <text x="885" y="101" text-anchor="middle" fill="#d29922" font-size="12" font-weight="bold">â‘¢ Agentic RAG</text>
+  <text x="745" y="130" fill="#8b949e" font-size="10">Query â†’ Agent â†’ Route â†’ Retrieve â†’ Gen</text>
+  <text x="745" y="148" fill="#8b949e" font-size="9">RAG com roteamento dinÃ¢mico de fontes.</text>
+  <text x="745" y="164" fill="#8b949e" font-size="9">ReferÃªncia: Gradientsys (2025)</text>
+  <text x="745" y="182" fill="#484f58" font-size="8">arXiv:2507.06520 Â· ReAct loop</text>
   <circle cx="752" cy="196" r="4" fill="#3fb950"/><text x="762" y="200" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- Graph RAG -->
   <rect x="50" y="240" width="310" height="140" rx="8" fill="#8b2f97" opacity="0.08" stroke="#bc8cff" stroke-width="1" filter="url(#shadow)"/>
   <rect x="50" y="240" width="310" height="32" rx="8" fill="url(#s4)" opacity="0.3"/>
   <rect x="50" y="260" width="310" height="12" fill="url(#s4)" opacity="0.3"/>
-  <text x="205" y="261" text-anchor="middle" fill="#bc8cff" font-size="12" font-weight="bold">④ Graph RAG</text>
-  <text x="65" y="290" fill="#8b949e" font-size="10">Query → Graph → KG retrieval → Gen</text>
+  <text x="205" y="261" text-anchor="middle" fill="#bc8cff" font-size="12" font-weight="bold">â‘£ Graph RAG</text>
+  <text x="65" y="290" fill="#8b949e" font-size="10">Query â†’ Graph â†’ KG retrieval â†’ Gen</text>
   <text x="65" y="308" fill="#8b949e" font-size="9">RAG com grafo de conhecimento.</text>
-  <text x="65" y="324" fill="#8b949e" font-size="9">Referência: Edge et al. (2024)</text>
-  <text x="65" y="342" fill="#484f58" font-size="8">Microsoft Research · arXiv:2404.16130</text>
+  <text x="65" y="324" fill="#8b949e" font-size="9">ReferÃªncia: Edge et al. (2024)</text>
+  <text x="65" y="342" fill="#484f58" font-size="8">Microsoft Research Â· arXiv:2404.16130</text>
   <circle cx="72" cy="356" r="4" fill="#3fb950"/><text x="82" y="360" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- Hybrid RAG -->
   <rect x="390" y="240" width="310" height="140" rx="8" fill="#da3633" opacity="0.08" stroke="#f85149" stroke-width="1" filter="url(#shadow)"/>
   <rect x="390" y="240" width="310" height="32" rx="8" fill="url(#s5)" opacity="0.3"/>
   <rect x="390" y="260" width="310" height="12" fill="url(#s5)" opacity="0.3"/>
-  <text x="545" y="261" text-anchor="middle" fill="#f85149" font-size="12" font-weight="bold">⑤ Hybrid RAG</text>
-  <text x="405" y="290" fill="#8b949e" font-size="10">Query → Vector + Graph → Fusion → Gen</text>
-  <text x="405" y="308" fill="#8b949e" font-size="9">RAG híbrido vetorial + grafo.</text>
-  <text x="405" y="324" fill="#8b949e" font-size="9">Referência: Wang et al. (2025)</text>
-  <text x="405" y="342" fill="#484f58" font-size="8">arXiv:2501.00309 · GraphRAG Survey</text>
+  <text x="545" y="261" text-anchor="middle" fill="#f85149" font-size="12" font-weight="bold">â‘¤ Hybrid RAG</text>
+  <text x="405" y="290" fill="#8b949e" font-size="10">Query â†’ Vector + Graph â†’ Fusion â†’ Gen</text>
+  <text x="405" y="308" fill="#8b949e" font-size="9">RAG hÃ­brido vetorial + grafo.</text>
+  <text x="405" y="324" fill="#8b949e" font-size="9">ReferÃªncia: Wang et al. (2025)</text>
+  <text x="405" y="342" fill="#484f58" font-size="8">arXiv:2501.00309 Â· GraphRAG Survey</text>
   <circle cx="412" cy="356" r="4" fill="#3fb950"/><text x="422" y="360" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- CRAG -->
   <rect x="730" y="240" width="310" height="140" rx="8" fill="#238636" opacity="0.08" stroke="#3fb950" stroke-width="1" filter="url(#shadow)"/>
   <rect x="730" y="240" width="310" height="32" rx="8" fill="url(#s1)" opacity="0.3"/>
   <rect x="730" y="260" width="310" height="12" fill="url(#s1)" opacity="0.3"/>
-  <text x="885" y="261" text-anchor="middle" fill="#3fb950" font-size="12" font-weight="bold">⑥ CRAG (Corrective RAG)</text>
-  <text x="745" y="290" fill="#8b949e" font-size="10">Query → Eval → {Correct|Incorrect|Ambigu}</text>
-  <text x="745" y="308" fill="#8b949e" font-size="9">RAG com validação de qualidade.</text>
-  <text x="745" y="324" fill="#8b949e" font-size="9">Referência: Yan et al. (2024)</text>
-  <text x="745" y="342" fill="#484f58" font-size="8">arXiv:2401.15884 · ICLR 2024</text>
+  <text x="885" y="261" text-anchor="middle" fill="#3fb950" font-size="12" font-weight="bold">â‘¥ CRAG (Corrective RAG)</text>
+  <text x="745" y="290" fill="#8b949e" font-size="10">Query â†’ Eval â†’ {Correct|Incorrect|Ambigu}</text>
+  <text x="745" y="308" fill="#8b949e" font-size="9">RAG com validaÃ§Ã£o de qualidade.</text>
+  <text x="745" y="324" fill="#8b949e" font-size="9">ReferÃªncia: Yan et al. (2024)</text>
+  <text x="745" y="342" fill="#484f58" font-size="8">arXiv:2401.15884 Â· ICLR 2024</text>
   <circle cx="752" cy="356" r="4" fill="#3fb950"/><text x="762" y="360" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- Adaptive RAG -->
   <rect x="50" y="400" width="310" height="140" rx="8" fill="#1f6feb" opacity="0.08" stroke="#58a6ff" stroke-width="1" filter="url(#shadow)"/>
   <rect x="50" y="400" width="310" height="32" rx="8" fill="url(#s2)" opacity="0.3"/>
   <rect x="50" y="420" width="310" height="12" fill="url(#s2)" opacity="0.3"/>
-  <text x="205" y="421" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="bold">⑦ Adaptive RAG</text>
-  <text x="65" y="450" fill="#8b949e" font-size="10">Query → Strategy Select → Retrieve → Gen</text>
-  <text x="65" y="468" fill="#8b949e" font-size="9">Estratégia adaptativa conforme carga.</text>
-  <text x="65" y="484" fill="#8b949e" font-size="9">Referência: Jeong et al. (2024)</text>
-  <text x="65" y="502" fill="#484f58" font-size="8">arXiv:2403.14403 · Adaptive-RAG</text>
+  <text x="205" y="421" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="bold">â‘¦ Adaptive RAG</text>
+  <text x="65" y="450" fill="#8b949e" font-size="10">Query â†’ Strategy Select â†’ Retrieve â†’ Gen</text>
+  <text x="65" y="468" fill="#8b949e" font-size="9">EstratÃ©gia adaptativa conforme carga.</text>
+  <text x="65" y="484" fill="#8b949e" font-size="9">ReferÃªncia: Jeong et al. (2024)</text>
+  <text x="65" y="502" fill="#484f58" font-size="8">arXiv:2403.14403 Â· Adaptive-RAG</text>
   <circle cx="72" cy="516" r="4" fill="#3fb950"/><text x="82" y="520" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- Fusion RAG -->
   <rect x="390" y="400" width="310" height="140" rx="8" fill="#9e6a03" opacity="0.08" stroke="#d29922" stroke-width="1" filter="url(#shadow)"/>
   <rect x="390" y="400" width="310" height="32" rx="8" fill="url(#s3)" opacity="0.3"/>
   <rect x="390" y="420" width="310" height="12" fill="url(#s3)" opacity="0.3"/>
-  <text x="545" y="421" text-anchor="middle" fill="#d29922" font-size="12" font-weight="bold">⑧ Fusion RAG (RRF)</text>
-  <text x="405" y="450" fill="#8b949e" font-size="10">Query → Multi-Query → RRF → Generate</text>
+  <text x="545" y="421" text-anchor="middle" fill="#d29922" font-size="12" font-weight="bold">â‘§ Fusion RAG (RRF)</text>
+  <text x="405" y="450" fill="#8b949e" font-size="10">Query â†’ Multi-Query â†’ RRF â†’ Generate</text>
   <text x="405" y="468" fill="#8b949e" font-size="9">RAG-Fusion com Reciprocal Rank Fusion.</text>
-  <text x="405" y="484" fill="#8b949e" font-size="9">Referência: Radev et al. (2024)</text>
-  <text x="405" y="502" fill="#484f58" font-size="8">arXiv:2402.03367 · RAG-Fusion</text>
+  <text x="405" y="484" fill="#8b949e" font-size="9">ReferÃªncia: Radev et al. (2024)</text>
+  <text x="405" y="502" fill="#484f58" font-size="8">arXiv:2402.03367 Â· RAG-Fusion</text>
   <circle cx="412" cy="516" r="4" fill="#3fb950"/><text x="422" y="520" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- HyDE -->
   <rect x="730" y="400" width="310" height="140" rx="8" fill="#8b2f97" opacity="0.08" stroke="#bc8cff" stroke-width="1" filter="url(#shadow)"/>
   <rect x="730" y="400" width="310" height="32" rx="8" fill="url(#s4)" opacity="0.3"/>
   <rect x="730" y="420" width="310" height="12" fill="url(#s4)" opacity="0.3"/>
-  <text x="885" y="421" text-anchor="middle" fill="#bc8cff" font-size="12" font-weight="bold">⑨ HyDE</text>
-  <text x="745" y="450" fill="#8b949e" font-size="10">Query → LLM → Doc Hipotético → Encoder</text>
+  <text x="885" y="421" text-anchor="middle" fill="#bc8cff" font-size="12" font-weight="bold">â‘¨ HyDE</text>
+  <text x="745" y="450" fill="#8b949e" font-size="10">Query â†’ LLM â†’ Doc HipotÃ©tico â†’ Encoder</text>
   <text x="745" y="468" fill="#8b949e" font-size="9">Hypothetical Document Embeddings.</text>
-  <text x="745" y="484" fill="#8b949e" font-size="9">Referência: Gao et al. (2022)</text>
-  <text x="745" y="502" fill="#484f58" font-size="8">arXiv:2212.10496 · NeurIPS 2022</text>
+  <text x="745" y="484" fill="#8b949e" font-size="9">ReferÃªncia: Gao et al. (2022)</text>
+  <text x="745" y="502" fill="#484f58" font-size="8">arXiv:2212.10496 Â· NeurIPS 2022</text>
   <circle cx="752" cy="516" r="4" fill="#3fb950"/><text x="762" y="520" fill="#3fb950" font-size="9">CONFIRMADO</text>
 
   <!-- References footer -->
   <rect x="50" y="565" width="1000" height="160" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-  <text x="70" y="588" fill="#c9d1d9" font-size="12" font-weight="bold">Referências Acadêmicas</text>
+  <text x="70" y="588" fill="#c9d1d9" font-size="12" font-weight="bold">ReferÃªncias AcadÃªmicas</text>
 
   <text x="70" y="610" fill="#8b949e" font-size="9">LEWIS, P. et al. Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. NeurIPS 2020.</text>
   <text x="70" y="626" fill="#8b949e" font-size="9">YAN, S. et al. Corrective Retrieval Augmented Generation. ICLR 2024. arXiv:2401.15884.</text>
@@ -147,5 +147,5 @@
   <text x="70" y="658" fill="#8b949e" font-size="9">EDGE, D. et al. From Local to Global: A GraphRAG Approach to Query-Focused Summarization. Microsoft Research, 2024.</text>
   <text x="70" y="674" fill="#8b949e" font-size="9">WANG, Y. et al. Retrieval-Augmented Generation with Graphs (GraphRAG). arXiv:2501.00309, 2025.</text>
   <text x="70" y="690" fill="#8b949e" font-size="9">JEONG, S. et al. Adaptive-RAG: Learning to Adapt Retrieval-Augmented Large Language Models. arXiv:2403.14403, 2024.</text>
-  <text x="70" y="706" fill="#8b949e" font-size="9">CHOWDHURY, S. et al. Model Context Protocol Architecture Patterns. IBM Developer, 2026. · v4.6.1 · MiroFish/BettaFish: Agent Forum + PhD Auditor</text>
+  <text x="70" y="706" fill="#8b949e" font-size="9">CHOWDHURY, S. et al. Model Context Protocol Architecture Patterns. IBM Developer, 2026. Â· v5.0.0 Â· MiroFish/BettaFish: Agent Forum + PhD Auditor</text>
 </svg>

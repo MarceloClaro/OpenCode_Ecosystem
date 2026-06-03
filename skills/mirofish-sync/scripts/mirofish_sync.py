@@ -268,15 +268,18 @@ class MiroFishSyncEngine:
         return diff
 
     def sync_all(self) -> SyncReport:
-        """Executa ciclo completo de sincronização."""
-        print("═" * 60)
-        print("MIROFISH SYNC AGENT (P19) — Sincronização Upstream")
+        """Executa ciclo completo de sincronizacao."""
+        import sys
+        if sys.platform == 'win32':
+            sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        print("=" * 60)
+        print("MIROFISH SYNC AGENT (P19) — Sincronizacao Upstream")
         print(f"Timestamp: {self.report.timestamp}")
         print(f"Modo: {'DRY-RUN' if self.dry_run else 'SYNC'} {'FORCE' if self.force else ''}")
-        print("═" * 60)
+        print("=" * 60)
 
         for name, config in REPOS.items():
-            print(f"\n🔍 Verificando {name}...")
+            print(f"\n[*] Verificando {name}...")
             diff = self.check_repo(name, config)
             self.report.diffs.append(diff)
 
@@ -301,9 +304,9 @@ class MiroFishSyncEngine:
             self._save_baseline()
 
         # Resumo
-        print(f"\n{'═' * 60}")
-        print("RESUMO DA SINCRONIZAÇÃO")
-        print(f"{'═' * 60}")
+        print(f"\n{'=' * 60}")
+        print("RESUMO DA SINCRONIZACAO")
+        print(f"{'=' * 60}")
         print(f"Repositórios com mudanças: {self.report.repos_with_changes}/3")
         print(f"Novos padrões detectados: {self.report.new_patterns_found}")
         print(f"Padrões extraídos: {self.report.patterns_extracted}")
@@ -311,7 +314,7 @@ class MiroFishSyncEngine:
 
         if self.report.errors:
             for e in self.report.errors:
-                print(f"  ❌ {e}")
+                print(f"  [!] {e}")
 
         return self.report
 
@@ -331,7 +334,7 @@ class MiroFishSyncEngine:
                 print(f"   [DRY-RUN] Extrairia {p_id}: {pattern}")
                 continue
 
-            print(f"   🔧 Extraindo {p_id}: {pattern}...")
+            print(f"   [*] Extraindo {p_id}: {pattern}...")
 
             # Registrar na baseline
             self.baseline["extracted_patterns"][p_id] = {

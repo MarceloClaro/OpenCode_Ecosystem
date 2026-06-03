@@ -1,0 +1,140 @@
+{
+  "num_problems": 5,
+  "num_success": 5,
+  "num_failed": 0,
+  "avg_original_d11": 4.066,
+  "avg_refined_d11": 6.636666666666666,
+  "avg_improvement": 0.6322347925889489,
+  "avg_timing": {
+    "original_score": 0.001,
+    "prover": 0.0,
+    "reasoner": 0.001,
+    "enricher": 0.0,
+    "refiner": 0.0,
+    "refined_score": 0.0
+  },
+  "reasoning_types_frequency": {
+    "MATHEMATICAL_INDUCTION": 5,
+    "EXPLICIT_CONSTRUCTION": 4,
+    "PROOF_BY_CONTRADICTION": 1,
+    "STRONG_INDUCTION": 5
+  },
+  "problems": [
+    {
+      "problem_id": "PB-Basic-001",
+      "category": "Algebra",
+      "level": 1,
+      "domain": "algebra",
+      "original_d11": 4.066,
+      "refined_d11": 5.846666666666666,
+      "improvement_ratio": 0.43794064600754207,
+      "time_original_score": 0.0018112659454345703,
+      "time_prover": 0.0,
+      "time_reasoner": 0.0007216930389404297,
+      "time_enricher": 0.0,
+      "time_refiner": 0.0,
+      "time_refined_score": 0.0,
+      "reasoning_types_selected": [
+        "MATHEMATICAL_INDUCTION",
+        "EXPLICIT_CONSTRUCTION",
+        "STRONG_INDUCTION"
+      ],
+      "reasoning_confidence": 0.89,
+      "success": true,
+      "error": null
+    },
+    {
+      "problem_id": "PB-Basic-002",
+      "category": "Algebra",
+      "level": 1,
+      "domain": "algebra",
+      "original_d11": 4.066,
+      "refined_d11": 7.612666666666666,
+      "improvement_ratio": 0.8722741433021806,
+      "time_original_score": 0.0010204315185546875,
+      "time_prover": 0.0,
+      "time_reasoner": 0.0,
+      "time_enricher": 0.0,
+      "time_refiner": 0.0,
+      "time_refined_score": 0.0,
+      "reasoning_types_selected": [
+        "MATHEMATICAL_INDUCTION",
+        "STRONG_INDUCTION",
+        "PROOF_BY_CONTRADICTION"
+      ],
+      "reasoning_confidence": 0.8733333333333334,
+      "success": true,
+      "error": null
+    },
+    {
+      "problem_id": "PB-Basic-003",
+      "category": "Algebra",
+      "level": 1,
+      "domain": "algebra",
+      "original_d11": 4.066,
+      "refined_d11": 6.112666666666666,
+      "improvement_ratio": 0.5033612067552056,
+      "time_original_score": 0.0,
+      "time_prover": 0.0,
+      "time_reasoner": 0.0015208721160888672,
+      "time_enricher": 0.0,
+      "time_refiner": 0.0,
+      "time_refined_score": 0.0,
+      "reasoning_types_selected": [
+        "MATHEMATICAL_INDUCTION",
+        "EXPLICIT_CONSTRUCTION",
+        "STRONG_INDUCTION"
+      ],
+      "reasoning_confidence": 0.89,
+      "success": true,
+      "error": null
+    },
+    {
+      "problem_id": "PB-Basic-004",
+      "category": "Algebra",
+      "level": 1,
+      "domain": "algebra",
+      "original_d11": 4.066,
+      "refined_d11": 7.650666666666666,
+      "improvement_ratio": 0.8816199376947039,
+      "time_original_score": 0.0010120868682861328,
+      "time_prover": 0.0,
+      "time_reasoner": 0.0005133152008056641,
+      "time_enricher": 0.0,
+      "time_refiner": 0.0,
+      "time_refined_score": 0.0010161399841308594,
+      "reasoning_types_selected": [
+        "MATHEMATICAL_INDUCTION",
+        "EXPLICIT_CONSTRUCTION",
+        "STRONG_INDUCTION"
+      ],
+      "reasoning_confidence": 0.89,
+      "success": true,
+      "error": null
+    },
+    {
+      "problem_id": "PB-Basic-005",
+      "category": "Algebra",
+      "level": 1,
+      "domain": "algebra",
+      "original_d11": 4.066,
+      "refined_d11": 5.960666666666667,
+      "improvement_ratio": 0.46597802918511233,
+      "time_original_score": 0.0,
+      "time_prover": 0.0,
+      "time_reasoner": 0.0013706684112548828,
+      "time_enricher": 0.0,
+      "time_refiner": 0.0,
+      "time_refined_score": 0.0005142688751220703,
+      "reasoning_types_selected": [
+        "MATHEMATICAL_INDUCTION",
+        "EXPLICIT_CONSTRUCTION",
+        "STRONG_INDUCTION"
+      ],
+      "reasoning_confidence": 0.89,
+      "success": true,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-05-30 20:33:38"
+}

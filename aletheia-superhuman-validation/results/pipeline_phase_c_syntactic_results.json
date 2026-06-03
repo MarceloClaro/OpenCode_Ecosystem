@@ -1,0 +1,147 @@
+{
+  "timestamp": "2026-05-30T18:02:03.345724",
+  "mode": "syntactic_verification",
+  "total_problems": 5,
+  "results": [
+    {
+      "problem_id": "A0004",
+      "domain": "Arxiv",
+      "problem_statement": "Let $a = (a_1, a_2, a_3)$ and $b = (b_1, b_2, b_3)$ be two triples of integers.\nSay that $a$ is $2$-less than $b$, or $a <_2 b$, if $a_i < b_i$ for at",
+      "initial_candidate": {
+        "problem_id": "A0004",
+        "domain": "Arxiv",
+        "statement": "Let $a = (a_1, a_2, a_3)$ and $b = (b_1, b_2, b_3)$ be two triples of integers.\nSay that $a$ is $2$-less than $b$, or $a <_2 b$, if $a_i < b_i$ for at least\ntwo co-ordinates $i$.\n/",
+        "natural_proof": "Consideramos os casos principais:\n1. Se o problema é sobre estruturas finitas, aplicamos contagem/pigeonhole\n2. Se sobre números, usamos propriedades de divisibilidade ou congruência\n3. Se sobre conjuntos, usamos teoria de conjuntos básica\n\nO argumento prossegue por indução/casework/contradição conforme necessário.",
+        "lean_code": "theorem main_theorem : ∀ x, P x := by\n  intro x\n  -- caso 1\n  by_cases h : Q x\n  · exact sorry  -- prova do caso positivo\n  · push_neg at h\n    exact sorry  -- prova do caso negativo",
+        "confidence": 0.6,
+        "timestamp": "2026-05-30T17:56:56.960798"
+      },
+      "verification_iterations": [
+        {
+          "iteration": 1,
+          "status": "incomplete",
+          "error_message": "[\"Proof contains 'sorry' (incomplete)\", \"Proof uses placeholder propositions (P x, Q x)\"]",
+          "error_classification": "syntax"
+        },
+        {
+          "iteration": 2,
+          "status": "incomplete",
+          "error_message": "[\"Proof contains 'sorry' (incomplete)\", \"Proof uses placeholder propositions (P x, Q x)\"]",
+          "error_classification": "syntax"
+        },
+        {
+          "iteration": 3,
+          "status": "incomplete",
+          "error_message": "[\"Proof contains 'sorry' (incomplete)\", \"Proof uses placeholder propositions (P x, Q x)\"]",
+          "error_classification": "syntax"
+        }
+      ],
+      "final_status": "failed",
+      "execution_time_seconds": 0.004398
+    },
+    {
+      "problem_id": "B0014",
+      "domain": "Books",
+      "problem_statement": "Does the series\n$$\n  \\sum_{n=1}^{\\infty} \\frac{\\left(\\frac{2}{3} + \\frac{1}{3}\\sin n\\right)^n}{n}\n$$\nconverge?\n\nAfter computing approximately $10^7$ t",
+      "initial_candidate": {
+        "problem_id": "B0014",
+        "domain": "Books",
+        "statement": "Does the series\n$$\n  \\sum_{n=1}^{\\infty} \\frac{\\left(\\frac{2}{3} + \\frac{1}{3}\\sin n\\right)^n}{n}\n$$\nconverge?\n\nAfter computing approximately $10^7$ terms, the partial sums approximate $2.163$.\n\nSee https://arxiv.org/abs/2007.11017 for a proof of the convergence,\nrelying on an irrationality measure ",
+        "natural_proof": "Consideramos os casos principais:\n1. Se o problema é sobre estruturas finitas, aplicamos contagem/pigeonhole\n2. Se sobre números, usamos propriedades de divisibilidade ou congruência\n3. Se sobre conjuntos, usamos teoria de conjuntos básica\n\nO argumento prossegue por indução/casework/contradição conforme necessário.",
+        "lean_code": "theorem main_theorem : ∀ x, P x := by\n  intro x\n  -- caso 1\n  by_cases h : Q x\n  · exact sorry  -- prova do caso positivo\n  · push_neg at h\n    exact sorry  -- prova do caso negativo",
+        "confidence": 0.6,
+        "timestamp": "2026-05-30T17:56:56.970997"
+      },
+      "verification_iterations": [
+        {
+          "iteration": 1,
+          "status": "incomplete",
+          "error_message": "[\"Proof contains 'sorry' (incomplete)\", \"Proof uses placeholder propositions (P x, Q x)\"]",
+          "error_classification": "syntax"
+        },
+        {
+          "iteration": 2,
+          "status": "incomplete",
+          "error_message": "[\"Proof contains 'sorry' (incomplete)\", \"Proof uses placeholder propositions (P x, Q x)\"]",
+          "error_classification": "syntax"
+        },
+        {
+          "iteration": 3,
+          "status": "incomplete",
+          "error_message": "[\"Proof contains 'sorry' (incomplete)\", \"Proof uses placeholder propositions (P x, Q x)\"]",
+          "error_classification": "syntax"
+        }
+      ],
+      "final_status": "failed",
+      "execution_time_seconds": 0.00686
+    },
+    {
+      "problem_id": "B0017",
+      "domain": "Books",
+      "problem_statement": "Problem 10.5 (first part). Let $\\mathbb{K}$ be a real number field. Then, for any\n$\\varepsilon > 0$, there exists a lacunary sequence $(t_n)_{n \\ge 1}",
+      "initial_candidate": {
+        "problem_id": "B0017",
+        "domain": "Books",
+        "statement": "Problem 10.5 (first part). Let $\\mathbb{K}$ be a real number field. Then, for any\n$\\varepsilon > 0$, there exists a lacunary sequence $(t_n)_{n \\ge 1}$ of positive numbers\nin $\\mathbb{K}$ such that\n$$\\limsup_{n \\to \\infty} \\{\\xi t_n\\} \\ge 1 - \\varepsilon,$$\nfor any real number $\\xi$ not in $\\mathbb{",
+        "natural_proof": "Consideramos os casos principais:\n1. Se o problema é sobre estruturas finitas, aplicamos contagem/pigeonhole\n2. Se sobre números, usamos propriedades de divisibilidade ou congruência\n3. Se sobre conjuntos, usamos teoria de conjuntos básica\n\nO argumento prossegue por indução/casework/contradição conforme necessário.",
+        "lean_code": "theorem main_theorem : ∀ x, P x := by\n  intro x\n  -- caso 1\n  by_cases h : Q x\n  · exact sorry  -- prova do caso positivo\n  · push_neg at h\n    exact sorry  -- prova do caso negativo",
+        "confidence": 0.6,
+        "timestamp": "2026-05-30T17:56:56.981968"
+      },
+      "verification_iterations": [
+        {
+          "iteration": 1,
+          "status": "incomplete",
+          "error_message": "[\"Proof contains 'sorry' (incomplete)\", \"Proof uses placeholder propositions (P x, Q x)\"]",
+          "error_classification": "syntax"
+        },
+        {
+          "iteration": 2,
+          "status": "incomplete",
+          "error_message": "[\"Proof contains 'sorry' (incomplete)\", \"Proof uses placeholder propositions (P x, Q x)\"]",
+          "error_classification": "syntax"
+        },
+        {
+          "iteration": 3,
+          "status": "incomplete",
+          "error_message": "[\"Proof contains 'sorry' (incomplete)\", \"Proof uses placeholder propositions (P x, Q x)\"]",
+          "error_classification": "syntax"
+        }
+      ],
+      "final_status": "failed",
+      "execution_time_seconds": 0.003527
+    },
+    {
+      "problem_id": "E0019",
+      "domain": "ErdosProblems",
+      "problem_statement": "A finite set of naturals $A$ is said to be a sum-distinct set for $N \\in \\mathbb{N}$ if\n$A\\subseteq\\{1, ..., N\\}$ and the sums $\\sum_{a\\in S}a$ are di",
+      "initial_candidate": null,
+      "verification_iterations": [
+        {
+          "iteration": 1,
+          "status": "incomplete",
+          "error_message": "No proof candidate from Phase B",
+          "error_classification": "missing_candidate"
+        }
+      ],
+      "final_status": "failed",
+      "execution_time_seconds": 0.0
+    },
+    {
+      "problem_id": "E0020",
+      "domain": "ErdosProblems",
+      "problem_statement": "The set of natural numbers that can be written as a sum\nof a prime and at most $k$ powers of $2$.\n/\nabbrev sumPrimeAndTwoPows (k : ℕ) : Set ℕ :=\n  { p",
+      "initial_candidate": null,
+      "verification_iterations": [
+        {
+          "iteration": 1,
+          "status": "incomplete",
+          "error_message": "No proof candidate from Phase B",
+          "error_classification": "missing_candidate"
+        }
+      ],
+      "final_status": "failed",
+      "execution_time_seconds": 0.0
+    }
+  ]
+}

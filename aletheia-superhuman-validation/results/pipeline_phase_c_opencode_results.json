@@ -1,0 +1,92 @@
+{
+  "phase": "C",
+  "version": "OpenCode",
+  "timestamp": "2026-05-30 19:08:31.762826",
+  "summary": {
+    "total": 10,
+    "verified": 0,
+    "success_rate": 0.0
+  },
+  "results": [
+    {
+      "problem_id": "A0004",
+      "verified": false,
+      "errors": "",
+      "returncode": 1,
+      "sorry_count": 1,
+      "reasoning_phases": 0
+    },
+    {
+      "problem_id": "B0014",
+      "verified": false,
+      "errors": "",
+      "returncode": 1,
+      "sorry_count": 1,
+      "reasoning_phases": 0
+    },
+    {
+      "problem_id": "B0017",
+      "verified": false,
+      "errors": "",
+      "returncode": 1,
+      "sorry_count": 1,
+      "reasoning_phases": 0
+    },
+    {
+      "problem_id": "E0019",
+      "verified": false,
+      "errors": "",
+      "returncode": 1,
+      "sorry_count": 1,
+      "reasoning_phases": 0
+    },
+    {
+      "problem_id": "E0020",
+      "verified": false,
+      "errors": "",
+      "returncode": 1,
+      "sorry_count": 1,
+      "reasoning_phases": 0
+    },
+    {
+      "problem_id": "E0025",
+      "verified": false,
+      "errors": "",
+      "returncode": 1,
+      "sorry_count": 1,
+      "reasoning_phases": 0
+    },
+    {
+      "problem_id": "E0030",
+      "verified": false,
+      "errors": "",
+      "returncode": 1,
+      "sorry_count": 1,
+      "reasoning_phases": 0
+    },
+    {
+      "problem_id": "E0035",
+      "verified": false,
+      "errors": "",
+      "returncode": 1,
+      "sorry_count": 1,
+      "reasoning_phases": 0
+    },
+    {
+      "problem_id": "E0038",
+      "verified": false,
+      "errors": "",
+      "returncode": 1,
+      "sorry_count": 1,
+      "reasoning_phases": 0
+    },
+    {
+      "problem_id": "E0045",
+      "verified": false,
+      "errors": "",
+      "returncode": 1,
+      "sorry_count": 1,
+      "reasoning_phases": 0
+    }
+  ]
+}

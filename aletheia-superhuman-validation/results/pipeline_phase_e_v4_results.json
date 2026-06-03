@@ -1,0 +1,54 @@
+{
+  "phase": "E",
+  "timestamp": "2026-05-30T18:52:43.835673",
+  "method": "v4-heuristic",
+  "note": "Claude API integration planned for Phase E.5",
+  "results": [
+    {
+      "problem_id": "A0004",
+      "domain": "combinatorics",
+      "statement": "For any finite set S with n elements, |P(S)| = 2^n",
+      "lean_code": "theorem a0004 For any finite set S with n elements, |P(S)| = 2^n := by\n  -- Count argument or pigeonhole principle\n  have h1 : ∀ x, P x := by induction n with\n  | zero => simp\n  | succ n ih => simp [ih]\n  have h2 : ∀ x, Q x := by sorry\n  exact ∀ x, R x sorry",
+      "sorry_count": 2,
+      "generation_method": "v4-heuristic",
+      "template_v4_hints": [
+        "Use `induction` for recursive structures",
+        "Use `decide` for finite case analysis",
+        "Use `simp` with domain-specific lemmas"
+      ],
+      "confidence": 0.55,
+      "source": "partial_heuristic"
+    },
+    {
+      "problem_id": "B0014",
+      "domain": "number_theory",
+      "statement": "Every prime p > 2 is odd",
+      "lean_code": "theorem b0014 Every prime p > 2 is odd := by\n  -- Use properties of divisibility, primes, or modular arithmetic\n  have h1 : property 1 := by omega\n  have h2 : property 2 := by sorry\n  omega sorry",
+      "sorry_count": 2,
+      "generation_method": "v4-heuristic",
+      "template_v4_hints": [
+        "Use `omega` for linear arithmetic",
+        "Use `mod_cast` for integer/natural conversions",
+        "Use `decide` for finite checks"
+      ],
+      "confidence": 0.55,
+      "source": "partial_heuristic"
+    },
+    {
+      "problem_id": "B0017",
+      "domain": "analysis",
+      "statement": "lim(n->inf) 1/n = 0",
+      "lean_code": "theorem b0017 lim(n->inf) 1/n = 0 := by\n  -- Limit, continuity, or convergence argument\n  rw [Metric.tendsto_atTop]\n  intro ε hε\n  use N\n  intro n hn\n  rw [Real.dist_eq]\n  field_simp\n  simp",
+      "sorry_count": 0,
+      "generation_method": "v4-heuristic",
+      "template_v4_hints": [
+        "Use `intro` for epsilon-delta",
+        "Use `use` for witness construction",
+        "Use `calc` for inequality chains",
+        "Use `norm_num` for concrete arithmetic"
+      ],
+      "confidence": 0.75,
+      "source": "heuristic_fix"
+    }
+  ]
+}

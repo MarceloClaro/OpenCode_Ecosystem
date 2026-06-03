@@ -1,7 +1,10 @@
 ---
+name: maswos-v5-nexus
 description: "Referência do framework MASWOS V5 NEXUS — 130+ agentes, 9 estratégias RAG, arquitetura Transformer Network, pipeline acadêmico Qualis A1 e jurídico. Use quando mencionar 'maswos', 'transformer network', 'v5 nexus', 'qualis a1', 'rede transformadora', 'rag strategies', '9 estrategias rag', 'graphrag', 'crag', 'hyde', 'fusion rag', 'antigravity kit', 'arquitetura isonomica', 'auditoria academica', 'pipeline qualis'."
-mode: subagent
-tools: read
+version: "5.0"
+category: system
+tags: [maswos, rag, agents, qualis-a1, juridico, pipeline]
+status: active
 ---
 ## MASWOS V5 NEXUS
 

@@ -1,4 +1,4 @@
-# Primeiros Passos — OpenCode Ecosystem v4.6
+# Primeiros Passos — OpenCode Ecosystem v5.0
 
 > **Tempo estimado:** 10–15 minutos para instalação e primeiro uso.
 
@@ -189,6 +189,6 @@ Agora que o ambiente está configurado, explore a documentação complementar:
 
 <div align="center">
 
-**OpenCode Ecosystem v4.6** · Documentação em Português Brasileiro
+**OpenCode Ecosystem v5.0** · Documentação em Português Brasileiro
 
 </div>

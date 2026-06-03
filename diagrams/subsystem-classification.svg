@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" font-family="Segoe UI, Arial, sans-serif">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" font-family="Segoe UI, Arial, sans-serif">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#0d1117"/>
@@ -39,14 +39,14 @@
   <rect width="1200" height="750" fill="url(#bg)" rx="8"/>
 
   <!-- Title -->
-  <text x="600" y="36" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="bold">Classificação por Subsistema — OpenCode Ecosystem v4.6.1</text>
-  <text x="600" y="56" text-anchor="middle" fill="#8b949e" font-size="10">10 subsistemas · Classificação técnica individual · Métricas de escala</text>
+  <text x="600" y="36" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="bold">ClassificaÃ§Ã£o por Subsistema â€” OpenCode Ecosystem v5.0.0</text>
+  <text x="600" y="56" text-anchor="middle" fill="#8b949e" font-size="10">10 subsistemas Â· ClassificaÃ§Ã£o tÃ©cnica individual Â· MÃ©tricas de escala</text>
 
   <!-- Central hub -->
   <circle cx="600" cy="390" r="50" fill="#161b22" stroke="#58a6ff" stroke-width="2" opacity="0.9"/>
   <text x="600" y="384" text-anchor="middle" fill="#58a6ff" font-size="10" font-weight="bold">OpenCode</text>
   <text x="600" y="398" text-anchor="middle" fill="#58a6ff" font-size="10" font-weight="bold">Ecosystem</text>
-  <text x="600" y="412" text-anchor="middle" fill="#8b949e" font-size="8">v4.6.1</text>
+  <text x="600" y="412" text-anchor="middle" fill="#8b949e" font-size="8">v5.0.0</text>
 
   <!-- Subsystem 1: Nexus NMA (top center) -->
   <line x1="600" y1="340" x2="600" y2="190" stroke="#30363d" stroke-width="1.5" marker-end="url(#arw)"/>
@@ -56,11 +56,11 @@
   <text x="475" y="126" fill="#3fb950" font-size="9" font-weight="bold">Tipo:</text>
   <text x="520" y="126" fill="#c9d1d9" font-size="9">Meta-Granular Orchestrator</text>
   <text x="475" y="142" fill="#3fb950" font-size="9" font-weight="bold">Camadas:</text>
-  <text x="535" y="142" fill="#c9d1d9" font-size="9">6 internas (L0–L5)</text>
+  <text x="535" y="142" fill="#c9d1d9" font-size="9">6 internas (L0â€“L5)</text>
   <text x="475" y="158" fill="#3fb950" font-size="9" font-weight="bold">Escala:</text>
-  <text x="520" y="158" fill="#c9d1d9" font-size="9">120+ sync barriers · 500+ constraints</text>
+  <text x="520" y="158" fill="#c9d1d9" font-size="9">120+ sync barriers Â· 500+ constraints</text>
   <text x="475" y="174" fill="#3fb950" font-size="9" font-weight="bold">Feedback:</text>
-  <text x="535" y="174" fill="#c9d1d9" font-size="9">120 pontos · 204 raciocínios</text>
+  <text x="535" y="174" fill="#c9d1d9" font-size="9">120 pontos Â· 204 raciocÃ­nios</text>
 
   <!-- Subsystem 2: MASWOS (top left) -->
   <line x1="555" y1="355" x2="290" y2="200" stroke="#30363d" stroke-width="1.5" marker-end="url(#arw)"/>
@@ -70,9 +70,9 @@
   <text x="65" y="126" fill="#58a6ff" font-size="9" font-weight="bold">Tipo:</text>
   <text x="100" y="126" fill="#c9d1d9" font-size="9">Multi-Agent Scientific Writing OS</text>
   <text x="65" y="142" fill="#58a6ff" font-size="9" font-weight="bold">Agentes:</text>
-  <text x="120" y="142" fill="#c9d1d9" font-size="9">49 · 8 estágios sequenciais</text>
+  <text x="120" y="142" fill="#c9d1d9" font-size="9">49 Â· 8 estÃ¡gios sequenciais</text>
   <text x="65" y="158" fill="#58a6ff" font-size="9" font-weight="bold">Target:</text>
-  <text x="110" y="158" fill="#c9d1d9" font-size="9">Qualis A1 (score ≥ 95/100)</text>
+  <text x="110" y="158" fill="#c9d1d9" font-size="9">Qualis A1 (score â‰¥ 95/100)</text>
   <text x="65" y="174" fill="#58a6ff" font-size="9" font-weight="bold">Inclui:</text>
   <text x="105" y="174" fill="#c9d1d9" font-size="9">Banca 5 rev. + 4 orientadores</text>
 
@@ -92,15 +92,15 @@
   <line x1="645" y1="355" x2="910" y2="200" stroke="#30363d" stroke-width="1.5" marker-end="url(#arw)"/>
   <rect x="810" y="80" width="340" height="105" rx="10" fill="url(#g-purple)" opacity="0.15" stroke="#bc8cff" stroke-width="1.5" filter="url(#shadow)"/>
   <rect x="810" y="80" width="340" height="28" rx="10" fill="url(#g-purple)" opacity="0.6"/>
-  <text x="980" y="100" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">MiroFish/BettaFish (P1–P18)</text>
+  <text x="980" y="100" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">MiroFish/BettaFish (P1â€“P18)</text>
   <text x="825" y="126" fill="#bc8cff" font-size="9" font-weight="bold">Tipo:</text>
   <text x="860" y="126" fill="#c9d1d9" font-size="9">Agent-Based Simulation Framework</text>
-  <text x="825" y="142" fill="#bc8cff" font-size="9" font-weight="bold">Padrões:</text>
-  <text x="880" y="142" fill="#c9d1d9" font-size="9">18 arquiteturais (P1–P18)</text>
-  <text x="825" y="158" fill="#bc8cff" font-size="9" font-weight="bold">Raciocínios:</text>
-  <text x="900" y="158" fill="#c9d1d9" font-size="9">38 tipos · 25 categorias</text>
+  <text x="825" y="142" fill="#bc8cff" font-size="9" font-weight="bold">PadrÃµes:</text>
+  <text x="880" y="142" fill="#c9d1d9" font-size="9">18 arquiteturais (P1â€“P18)</text>
+  <text x="825" y="158" fill="#bc8cff" font-size="9" font-weight="bold">RaciocÃ­nios:</text>
+  <text x="900" y="158" fill="#c9d1d9" font-size="9">38 tipos Â· 25 categorias</text>
   <text x="825" y="174" fill="#bc8cff" font-size="9" font-weight="bold">Game Theory:</text>
-  <text x="910" y="174" fill="#c9d1d9" font-size="9">10 estratégias (Nash, Minimax...)</text>
+  <text x="910" y="174" fill="#c9d1d9" font-size="9">10 estratÃ©gias (Nash, Minimax...)</text>
 
   <!-- Subsystem 5: PhD Auditor (right) -->
   <line x1="650" y1="395" x2="890" y2="345" stroke="#30363d" stroke-width="1.5" marker-end="url(#arw)"/>
@@ -109,10 +109,10 @@
   <text x="1020" y="240" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">PhD Auditor (P18)</text>
   <text x="905" y="266" fill="#f85149" font-size="9" font-weight="bold">Tipo:</text>
   <text x="940" y="266" fill="#c9d1d9" font-size="9">Statistical Validation Engine</text>
-  <text x="905" y="282" fill="#f85149" font-size="9" font-weight="bold">Métodos:</text>
-  <text x="955" y="282" fill="#c9d1d9" font-size="9">NashSolver · Cohen's d</text>
-  <text x="905" y="298" fill="#f85149" font-size="9" font-weight="bold">Correções:</text>
-  <text x="965" y="298" fill="#c9d1d9" font-size="9">Bonferroni · Power Analysis</text>
+  <text x="905" y="282" fill="#f85149" font-size="9" font-weight="bold">MÃ©todos:</text>
+  <text x="955" y="282" fill="#c9d1d9" font-size="9">NashSolver Â· Cohen's d</text>
+  <text x="905" y="298" fill="#f85149" font-size="9" font-weight="bold">CorreÃ§Ãµes:</text>
+  <text x="965" y="298" fill="#c9d1d9" font-size="9">Bonferroni Â· Power Analysis</text>
 
   <!-- Subsystem 6: AutoEvolve + ASI-Evolve + Creative Leap (bottom left) -->
   <line x1="560" y1="425" x2="290" y2="500" stroke="#30363d" stroke-width="1.5" marker-end="url(#arw)"/>
@@ -122,11 +122,11 @@
   <text x="65" y="416" fill="#3fb950" font-size="9" font-weight="bold">Tipo:</text>
   <text x="100" y="416" fill="#c9d1d9" font-size="9">Autonomous Skill Evolution Engine</text>
   <text x="65" y="432" fill="#3fb950" font-size="9" font-weight="bold">Pipeline:</text>
-  <text x="120" y="432" fill="#c9d1d9" font-size="9">PLAN→ACT→REFLECT→EXTRACT→EVOLVE</text>
+  <text x="120" y="432" fill="#c9d1d9" font-size="9">PLANâ†’ACTâ†’REFLECTâ†’EXTRACTâ†’EVOLVE</text>
   <text x="65" y="448" fill="#3fb950" font-size="9" font-weight="bold">Output:</text>
   <text x="115" y="448" fill="#c9d1d9" font-size="9">Skills geradas em evolution/</text>
   <text x="65" y="464" fill="#3fb950" font-size="9" font-weight="bold">Ciclos:</text>
-  <text x="110" y="464" fill="#c9d1d9" font-size="9">8 gerações · score 85→98</text>
+  <text x="110" y="464" fill="#c9d1d9" font-size="9">8 geraÃ§Ãµes Â· score 85â†’98</text>
 
   <!-- Subsystem 7: Self-Healing (bottom center-left) -->
   <line x1="575" y1="435" x2="400" y2="560" stroke="#30363d" stroke-width="1.5" marker-end="url(#arw)"/>
@@ -136,9 +136,9 @@
   <text x="65" y="546" fill="#d29922" font-size="9" font-weight="bold">Tipo:</text>
   <text x="100" y="546" fill="#c9d1d9" font-size="9">Autonomous Recovery System</text>
   <text x="65" y="562" fill="#d29922" font-size="9" font-weight="bold">Ciclo:</text>
-  <text x="105" y="562" fill="#c9d1d9" font-size="9">Monitor→Detect→Diagnose→Repair→Verify</text>
+  <text x="105" y="562" fill="#c9d1d9" font-size="9">Monitorâ†’Detectâ†’Diagnoseâ†’Repairâ†’Verify</text>
   <text x="65" y="578" fill="#d29922" font-size="9" font-weight="bold">Score:</text>
-  <text x="110" y="578" fill="#c9d1d9" font-size="9">96/100 · Zero-tolerance CJK</text>
+  <text x="110" y="578" fill="#c9d1d9" font-size="9">96/100 Â· Zero-tolerance CJK</text>
 
   <!-- Subsystem 8: DI Container (bottom center) -->
   <line x1="600" y1="440" x2="600" y2="560" stroke="#30363d" stroke-width="1.5" marker-end="url(#arw)"/>
@@ -147,10 +147,10 @@
   <text x="470" y="580" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">DI Container</text>
   <text x="355" y="606" fill="#f85149" font-size="9" font-weight="bold">Tipo:</text>
   <text x="390" y="606" fill="#c9d1d9" font-size="9">Inversion of Control Container</text>
-  <text x="355" y="622" fill="#f85149" font-size="9" font-weight="bold">Serviços:</text>
-  <text x="410" y="622" fill="#c9d1d9" font-size="9">11 registrados · singleton</text>
+  <text x="355" y="622" fill="#f85149" font-size="9" font-weight="bold">ServiÃ§os:</text>
+  <text x="410" y="622" fill="#c9d1d9" font-size="9">11 registrados Â· singleton</text>
   <text x="355" y="638" fill="#f85149" font-size="9" font-weight="bold">Bridge:</text>
-  <text x="400" y="638" fill="#c9d1d9" font-size="9">Python↔TS · 14 cmds · 3 plugins</text>
+  <text x="400" y="638" fill="#c9d1d9" font-size="9">Pythonâ†”TS Â· 14 cmds Â· 3 plugins</text>
 
   <!-- Subsystem 9: Quantum Nexus (bottom right) -->
   <line x1="625" y1="435" x2="800" y2="560" stroke="#30363d" stroke-width="1.5" marker-end="url(#arw)"/>
@@ -160,9 +160,9 @@
   <text x="645" y="606" fill="#58a6ff" font-size="9" font-weight="bold">Tipo:</text>
   <text x="680" y="606" fill="#c9d1d9" font-size="9">Quantum ML Research Platform</text>
   <text x="645" y="622" fill="#58a6ff" font-size="9" font-weight="bold">Qubits:</text>
-  <text x="695" y="622" fill="#c9d1d9" font-size="9">50 (MPS) · HAM10000 89.52%</text>
+  <text x="695" y="622" fill="#c9d1d9" font-size="9">50 (MPS) Â· HAM10000 89.52%</text>
   <text x="645" y="638" fill="#58a6ff" font-size="9" font-weight="bold">Arquivos:</text>
-  <text x="700" y="638" fill="#c9d1d9" font-size="9">81 · ZNE/PEC · Grad-CAM</text>
+  <text x="700" y="638" fill="#c9d1d9" font-size="9">81 Â· ZNE/PEC Â· Grad-CAM</text>
 
   <!-- Subsystem 10: Reversa Framework (far right bottom) -->
   <line x1="640" y1="420" x2="920" y2="500" stroke="#30363d" stroke-width="1.5" marker-end="url(#arw)"/>
@@ -174,25 +174,25 @@
   <text x="935" y="432" fill="#d29922" font-size="9" font-weight="bold">Agentes:</text>
   <text x="990" y="432" fill="#c9d1d9" font-size="9">7 especializados</text>
   <text x="935" y="448" fill="#d29922" font-size="9" font-weight="bold">Artefatos:</text>
-  <text x="995" y="448" fill="#c9d1d9" font-size="9">67 gerados por análise</text>
+  <text x="995" y="448" fill="#c9d1d9" font-size="9">67 gerados por anÃ¡lise</text>
   <text x="935" y="464" fill="#d29922" font-size="9" font-weight="bold">Inclui:</text>
   <text x="980" y="464" fill="#c9d1d9" font-size="9">AST, UML, DI map, metrics</text>
 
   <!-- Bottom stats bar -->
   <rect x="50" y="680" width="1100" height="50" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-  <text x="600" y="700" text-anchor="middle" fill="#58a6ff" font-size="11" font-weight="bold">Métricas Agregadas do Ecossistema</text>
+  <text x="600" y="700" text-anchor="middle" fill="#58a6ff" font-size="11" font-weight="bold">MÃ©tricas Agregadas do Ecossistema</text>
 
   <rect x="70" y="710" width="100" height="16" rx="3" fill="#238636" opacity="0.4"/>
   <text x="120" y="722" text-anchor="middle" fill="#3fb950" font-size="8">125 Agentes</text>
 
   <rect x="180" y="710" width="100" height="16" rx="3" fill="#1f6feb" opacity="0.4"/>
-  <text x="230" y="722" text-anchor="middle" fill="#58a6ff" font-size="8">40 MCPs</text>
+  <text x="230" y="722" text-anchor="middle" fill="#58a6ff" font-size="8">46 MCPs</text>
 
   <rect x="290" y="710" width="100" height="16" rx="3" fill="#9e6a03" opacity="0.4"/>
-  <text x="340" y="722" text-anchor="middle" fill="#d29922" font-size="8">104 Skills</text>
+  <text x="340" y="722" text-anchor="middle" fill="#d29922" font-size="8">90 Skills</text>
 
   <rect x="400" y="710" width="100" height="16" rx="3" fill="#8b2f97" opacity="0.4"/>
-  <text x="450" y="722" text-anchor="middle" fill="#bc8cff" font-size="8">38 Raciocínios</text>
+  <text x="450" y="722" text-anchor="middle" fill="#bc8cff" font-size="8">212+ RaciocÃ­nios</text>
 
   <rect x="510" y="710" width="120" height="16" rx="3" fill="#da3633" opacity="0.4"/>
   <text x="570" y="722" text-anchor="middle" fill="#f85149" font-size="8">10 Game Theory</text>
@@ -204,8 +204,8 @@
   <text x="800" y="722" text-anchor="middle" fill="#3fb950" font-size="8">9 RAG</text>
 
   <rect x="860" y="710" width="120" height="16" rx="3" fill="#1f6feb" opacity="0.4"/>
-  <text x="920" y="722" text-anchor="middle" fill="#58a6ff" font-size="8">11 Serviços DI</text>
+  <text x="920" y="722" text-anchor="middle" fill="#58a6ff" font-size="8">11 ServiÃ§os DI</text>
 
   <rect x="990" y="710" width="140" height="16" rx="3" fill="#9e6a03" opacity="0.4"/>
-  <text x="1060" y="722" text-anchor="middle" fill="#d29922" font-size="8">600+ integrações</text>
+  <text x="1060" y="722" text-anchor="middle" fill="#d29922" font-size="8">600+ integraÃ§Ãµes</text>
 </svg>

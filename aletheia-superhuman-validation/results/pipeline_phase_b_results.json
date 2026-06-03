@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "phase": "B",
+    "engine": "ProofGeneratorV2",
+    "total_problems": 10,
+    "generated": 10,
+    "failed": 0,
+    "start_time": "2026-05-30T18:36:35.345507",
+    "end_time": "2026-05-30T18:36:35.356862",
+    "duration_sec": 0.01
+  },
+  "results": [
+    {
+      "problem_id": "A0004",
+      "domain": "combinatorics",
+      "statement": "For any finite set S with n elements, |P(S)| = 2^n",
+      "natural_proof": "Proof of: For any finite set S with n elements, |P(S)| = 2^n\n\nWe prove by counting/pigeonhole.\nObservation 1: {observation1}\nObservation 2: {observation2}\nBy combining these, we conclude {conclusion}.\n\nDomain: combinatorics\nApproach: Using Combinatorics techniques.\n",
+      "lean_code": "theorem a0004 For any finite set S with n elements, |P(S)| = 2^n := by\n  -- Count argument or pigeonhole principle\n  have h1 : \u2200 x, P x := by sorry\n  have h2 : \u2200 x, Q x := by sorry\n  exact \u2200 x, R x sorry",
+      "confidence": 0.55,
+      "template_used": "Combinatorics",
+      "timestamp": "2026-05-30T18:36:35.345507"
+    },
+    {
+      "problem_id": "B0014",
+      "domain": "number_theory",
+      "statement": "gcd(a, b) divides both a and b for all positive integers a, b",
+      "natural_proof": "Proof of: gcd(a, b) divides both a and b for all positive integers a, b\n\nBy properties of divisibility and modular arithmetic.\nKey fact 1: {fact1}\nKey fact 2: {fact2}\nTherefore {conclusion}.\n\nDomain: number_theory\nApproach: Using Number Theory techniques.\n",
+      "lean_code": "theorem b0014 gcd(a, b) divides both a and b for all positive integers a, b := by\n  -- Use properties of divisibility, primes, or modular arithmetic\n  have h1 : property 1 := by sorry\n  have h2 : property 2 := by sorry\n  omega sorry",
+      "confidence": 0.55,
+      "template_used": "Number Theory",
+      "timestamp": "2026-05-30T18:36:35.345507"
+    },
+    {
+      "problem_id": "B0017",
+      "domain": "analysis",
+      "statement": "If a_n \u2192 L and b_n \u2192 L, then (a_n + b_n) / 2 \u2192 L",
+      "natural_proof": "Proof of: If a_n \u2192 L and b_n \u2192 L, then (a_n + b_n) / 2 \u2192 L\n\nBy \u03b5-\u03b4 argument or convergence test.\nFor any \u03b5 > 0, we can find N such that for all n \u2265 N:\n{bound}\nThis shows {conclusion}.\n\nDomain: analysis\nApproach: Using Analysis / Calculus techniques.\n",
+      "lean_code": "theorem b0017 If a_n \u2192 L and b_n \u2192 L, then (a_n + b_n) / 2 \u2192 L := by\n  -- Limit, continuity, or convergence argument\n  rw [Metric.tendsto_atTop]\n  intro \u03b5 h\u03b5\n  use N\n  intro n hn\n  rw [Real.dist_eq]\n  sorry",
+      "confidence": 0.6,
+      "template_used": "Analysis / Calculus",
+      "timestamp": "2026-05-30T18:36:35.355250"
+    },
+    {
+      "problem_id": "E0019",
+      "domain": "graph_theory",
+      "statement": "In any connected graph, there exists a path between any two vertices",
+      "natural_proof": "Proof of: In any connected graph, there exists a path between any two vertices\n\nBy graph connectivity and path properties.\nThe graph has property {property}.\nConsider the path {path_description}.\nThis implies {conclusion}.\n\nDomain: graph_theory\nApproach: Using Graph Theory techniques.\n",
+      "lean_code": "theorem e0019 In any connected graph, there exists a path between any two vertices := by\n  -- Path, cycle, or connectivity argument\n  have h_connected : Graph.IsConnected G := by sorry\n  have h_path : \u2203 p, IsPath p u v := by sorry\n  exact \u2200 x, R x sorry",
+      "confidence": 0.5,
+      "template_used": "Graph Theory",
+      "timestamp": "2026-05-30T18:36:35.355250"
+    },
+    {
+      "problem_id": "E0020",
+      "domain": "geometry",
+      "statement": "The sum of angles in any triangle equals \u03c0 radians",
+      "natural_proof": "Proof of: The sum of angles in any triangle equals \u03c0 radians\n\nBy geometric construction or topological argument.\nProperty 1: {prop1}\nProperty 2: {prop2}\nBy combining, we obtain {conclusion}.\n\nDomain: geometry\nApproach: Using Geometry / Topology techniques.\n",
+      "lean_code": "theorem e0020 The sum of angles in any triangle equals \u03c0 radians := by\n  -- Use angle, distance, or topological properties\n  have h1 : geom_prop_1 := by sorry\n  have h2 : geom_prop_2 := by sorry\n  rw [angle_sum]\n  exact \u2200 x, R x sorry",
+      "confidence": 0.5,
+      "template_used": "Geometry / Topology",
+      "timestamp": "2026-05-30T18:36:35.355250"
+    },
+    {
+      "problem_id": "E0025",
+      "domain": "induction",
+      "statement": "\u2211(i=0 to n-1) i = n(n-1)/2 for all non-negative integers n",
+      "natural_proof": "Proof of: \u2211(i=0 to n-1) i = n(n-1)/2 for all non-negative integers n\n\nWe prove by induction on {variable}.\nBase case ({base_value}): {base_proof}\nInductive step: Assume {hypothesis}. Then {step_proof}\nBy induction, {conclusion}.\n\nDomain: induction\nApproach: Using Mathematical Induction techniques.\n",
+      "lean_code": "theorem e0025 \u2211(i=0 to n-1) i = n(n-1)/2 for all non-negative integers n := by\n  induction n with\n  | zero => rfl\n  | succ n ih => sorry",
+      "confidence": 0.6,
+      "template_used": "Mathematical Induction",
+      "timestamp": "2026-05-30T18:36:35.356862"
+    },
+    {
+      "problem_id": "E0030",
+      "domain": "finite_case",
+      "statement": "Any real number x satisfies either x > 0, x = 0, or x < 0",
+      "natural_proof": "Proof of: Any real number x satisfies either x > 0, x = 0, or x < 0\n\nBy exhaustive case analysis.\nCase 1 ({case_desc1}): {case_proof1}\nCase 2 ({case_desc2}): {case_proof2}\nIn all cases, {conclusion}.\n\nDomain: finite_case\nApproach: Using Finite Case Analysis techniques.\n",
+      "lean_code": "theorem e0030 Any real number x satisfies either x > 0, x = 0, or x < 0 := by\n  interval_cases n\n  \u00b7 sorry\n  \u00b7 sorry\n  \u00b7 sorry",
+      "confidence": 0.5,
+      "template_used": "Finite Case Analysis",
+      "timestamp": "2026-05-30T18:36:35.356862"
+    },
+    {
+      "problem_id": "E0035",
+      "domain": "algebra",
+      "statement": "The identity element of a group is unique",
+      "natural_proof": "Proof of: The identity element of a group is unique\n\nBy algebraic properties of {structure}.\nKey property: {property}\nTherefore {conclusion}.\n\nDomain: algebra\nApproach: Using Abstract Algebra techniques.\n",
+      "lean_code": "theorem e0035 The identity element of a group is unique := by\n  -- Ring, group, or module properties\n  rw [\u2190 map_mul, \u2190 map_add]\n  have h : alg_prop := by sorry\n  exact \u2200 x, R x sorry",
+      "confidence": 0.55,
+      "template_used": "Abstract Algebra",
+      "timestamp": "2026-05-30T18:36:35.356862"
+    },
+    {
+      "problem_id": "E0038",
+      "domain": "logic",
+      "statement": "\u221a2 is irrational (proof by contradiction)",
+      "natural_proof": "Proof of: \u221a2 is irrational (proof by contradiction)\n\nWe prove by contradiction.\nAssume {negation}. Then {consequence1}.\nBut this contradicts {consequence2}.\nTherefore {conclusion}.\n\nDomain: logic\nApproach: Using Mathematical Logic techniques.\n",
+      "lean_code": "theorem e0038 \u221a2 is irrational (proof by contradiction) := by\n  by_contra h\n  push_neg at h\n  -- Derive contradiction\n  have c1 : contradiction 1 := by sorry\n  have c2 : contradiction 2 := by sorry\n  exact absurd c1 (fun _ => c2) sorry",
+      "confidence": 0.5,
+      "template_used": "Mathematical Logic",
+      "timestamp": "2026-05-30T18:36:35.356862"
+    },
+    {
+      "problem_id": "E0045",
+      "domain": "category_theory",
+      "statement": "For functors F and G, F(g \u2218 f) = (F g) \u2218 (F f)",
+      "natural_proof": "Proof of: For functors F and G, F(g \u2218 f) = (F g) \u2218 (F f)\n\nBy categorical reasoning and functorial properties.\nConsider the diagram: {diagram_desc}\nThe key fact is {key_fact}.\nTherefore {conclusion}.\n\nDomain: category_theory\nApproach: Using Category Theory techniques.\n",
+      "lean_code": "theorem e0045 For functors F and G, F(g \u2218 f) = (F g) \u2218 (F f) := by\n  -- Commutative diagram or functor property\n  rw [\u2190 Functor.map_comp]\n  have h : functor property := by sorry\n  exact \u2200 x, R x sorry",
+      "confidence": 0.55,
+      "template_used": "Category Theory",
+      "timestamp": "2026-05-30T18:36:35.356862"
+    }
+  ]
+}

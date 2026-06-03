@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "phase": "C",
+    "verifier": "LeanVerifier",
+    "lean_timeout_sec": 120,
+    "total_proofs": 10,
+    "start_time": "2026-05-30T18:39:32.750504",
+    "end_time": "2026-05-30T18:39:52.748554",
+    "duration_sec": 20.0
+  },
+  "results": [
+    {
+      "problem_id": "A0004",
+      "status": "failed",
+      "duration_sec": 2.88,
+      "timestamp": "2026-05-30T18:39:35.672757"
+    },
+    {
+      "problem_id": "B0014",
+      "status": "failed",
+      "duration_sec": 1.64,
+      "timestamp": "2026-05-30T18:39:37.322076"
+    },
+    {
+      "problem_id": "B0017",
+      "status": "failed",
+      "duration_sec": 1.48,
+      "timestamp": "2026-05-30T18:39:38.804304"
+    },
+    {
+      "problem_id": "E0019",
+      "status": "failed",
+      "duration_sec": 1.94,
+      "timestamp": "2026-05-30T18:39:40.745847"
+    },
+    {
+      "problem_id": "E0020",
+      "status": "failed",
+      "duration_sec": 2.06,
+      "timestamp": "2026-05-30T18:39:42.835213"
+    },
+    {
+      "problem_id": "E0025",
+      "status": "failed",
+      "duration_sec": 2.63,
+      "timestamp": "2026-05-30T18:39:45.467572"
+    },
+    {
+      "problem_id": "E0030",
+      "status": "failed",
+      "duration_sec": 1.66,
+      "timestamp": "2026-05-30T18:39:47.126418"
+    },
+    {
+      "problem_id": "E0035",
+      "status": "failed",
+      "duration_sec": 1.82,
+      "timestamp": "2026-05-30T18:39:48.950926"
+    },
+    {
+      "problem_id": "E0038",
+      "status": "failed",
+      "duration_sec": 2.29,
+      "timestamp": "2026-05-30T18:39:51.249036"
+    },
+    {
+      "problem_id": "E0045",
+      "status": "failed",
+      "duration_sec": 1.49,
+      "timestamp": "2026-05-30T18:39:52.748554"
+    }
+  ]
+}

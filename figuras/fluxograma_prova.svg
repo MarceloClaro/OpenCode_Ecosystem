@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 640" width="820" height="640">
+  <defs>
+    <filter id="sh" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0.4" dy="0.8" stdDeviation="1.8" flood-color="#1A252F" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#7F8C8D"/>
+    </marker>
+  </defs>
+
+  <rect width="820" height="640" fill="#FAFCFF" rx="8"/>
+
+  <text x="410" y="32" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#1A252F">Figura 2: Estrutura Logico-Dedutiva da Prova</text>
+  <line x1="230" y1="40" x2="590" y2="40" stroke="#2980B9" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- PROBLEM node -->
+  <g filter="url(#sh)">
+    <rect x="260" y="55" width="300" height="44" rx="8" fill="#1A252F"/>
+    <text x="410" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="white">ENUNCIADO: Determinar k validos</text>
+    <text x="410" y="89" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#AED6F1">n ≥ 3 retas, k ensolaradas cobrindo Sₙ</text>
+  </g>
+
+  <line x1="410" y1="99" x2="410" y2="120" stroke="#7F8C8D" stroke-width="1.3" marker-end="url(#arr)"/>
+
+  <!-- LEMA 1 -->
+  <g filter="url(#sh)">
+    <rect x="200" y="123" width="420" height="58" rx="8" fill="#1B4F72"/>
+    <text x="410" y="145" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="white">Lema 1: Restricao de Colinearidade</text>
+    <text x="410" y="164" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#AED6F1">Reta ensolarada intersecta cada horizontal/vertical/diagonal em ≤ 1 ponto</text>
+    <text x="410" y="176" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#85C1E9">Prova: resolucao algebrica direta (m ∉ {0,∞,−1})</text>
+  </g>
+
+  <line x1="410" y1="181" x2="410" y2="202" stroke="#7F8C8D" stroke-width="1.3" marker-end="url(#arr)"/>
+
+  <!-- LEMA 2 -->
+  <g filter="url(#sh)">
+    <rect x="160" y="205" width="500" height="78" rx="8" fill="#1B4F72"/>
+    <text x="410" y="227" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="bold" fill="white">Lema 2: Limitante Superior (pigeonhole + contagem dupla)</text>
+    <text x="410" y="248" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#AED6F1">P1: Separa n−k nao-ensolaradas + k ensolaradas</text>
+    <text x="410" y="263" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#AED6F1">P2-P3: n−k horizontais cobrem (n+k+1)(n−k)/2 pts; restam |Rₖ| = k(k+1)/2</text>
+    <text x="410" y="278" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#85C1E9">P4-P5: k ensolaradas cobrem ≤ k(n−2k) + k(k+1)/2 → k ≤ (2n−1)/3</text>
+  </g>
+
+  <!-- Branch: two outcomes -->
+  <line x1="410" y1="283" x2="200" y2="320" stroke="#7F8C8D" stroke-width="1.3"/>
+  <line x1="410" y1="283" x2="620" y2="320" stroke="#7F8C8D" stroke-width="1.3"/>
+  <line x1="410" y1="283" x2="410" y2="325" stroke="#7F8C8D" stroke-width="1.3" marker-end="url(#arr)"/>
+
+  <!-- Contraprova (left) -->
+  <g filter="url(#sh)">
+    <rect x="80" y="325" width="240" height="52" rx="8" fill="#922B21"/>
+    <text x="200" y="347" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="white">Contraprova</text>
+    <text x="200" y="366" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#F5B7B1">k = ⌊(2n−1)/3⌋+1 → contradicao</text>
+  </g>
+
+  <!-- LEMA 3 (right) -->
+  <g filter="url(#sh)">
+    <rect x="500" y="325" width="260" height="52" rx="8" fill="#1B4F72"/>
+    <text x="630" y="347" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="white">Lema 3: Construcao Explicita</text>
+    <text x="630" y="366" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#AED6F1">n−k horizontais + k ensolaradas</text>
+  </g>
+
+  <!-- Merge -->
+  <line x1="200" y1="377" x2="200" y2="405" stroke="#7F8C8D" stroke-width="1.3"/>
+  <line x1="630" y1="377" x2="630" y2="405" stroke="#7F8C8D" stroke-width="1.3"/>
+  <line x1="200" y1="405" x2="630" y2="405" stroke="#7F8C8D" stroke-width="1.3"/>
+  <line x1="410" y1="405" x2="410" y2="428" stroke="#7F8C8D" stroke-width="1.3" marker-end="url(#arr)"/>
+
+  <!-- TEOREMA -->
+  <g filter="url(#sh)">
+    <rect x="160" y="431" width="500" height="52" rx="8" fill="#1A252F"/>
+    <text x="410" y="453" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="bold" fill="white">Teorema Principal: Resposta Final</text>
+    <text x="410" y="474" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#AED6F1">k ∈ {0, 1, 2, …, ⌊(2n−1)/3⌋} para n ≥ 3</text>
+  </g>
+
+  <line x1="410" y1="483" x2="410" y2="506" stroke="#7F8C8D" stroke-width="1.3" marker-end="url(#arr)"/>
+
+  <!-- VERIFICATION -->
+  <g filter="url(#sh)">
+    <rect x="60" y="510" width="700" height="100" rx="8" fill="white" stroke="#D5D8DC" stroke-width="1.5"/>
+    <rect x="60" y="510" width="700" height="26" rx="8" fill="#2980B9"/>
+    <rect x="60" y="523" width="700" height="13" fill="#2980B9"/>
+    <text x="410" y="529" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="white">Verificacao Simbolica Cora-Debate (P19) — V1 a V6</text>
+
+    <g font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="#2C3E50">
+      <!-- Row 1 -->
+      <rect x="82" y="546" width="155" height="22" rx="3" fill="#E8F8F5" stroke="#A3E4D7" stroke-width="0.7"/>
+      <text x="159" y="561" text-anchor="middle" font-weight="bold" fill="#1ABC9C">V1: Dimensional ✓</text>
+
+      <rect x="248" y="546" width="155" height="22" rx="3" fill="#E8F8F5" stroke="#A3E4D7" stroke-width="0.7"/>
+      <text x="325" y="561" text-anchor="middle" font-weight="bold" fill="#1ABC9C">V2: Algebrico ✓</text>
+
+      <rect x="414" y="546" width="155" height="22" rx="3" fill="#E8F8F5" stroke="#A3E4D7" stroke-width="0.7"/>
+      <text x="491" y="561" text-anchor="middle" font-weight="bold" fill="#1ABC9C">V3: Contraexemplos ✓</text>
+
+      <rect x="580" y="546" width="155" height="22" rx="3" fill="#E8F8F5" stroke="#A3E4D7" stroke-width="0.7"/>
+      <text x="657" y="561" text-anchor="middle" font-weight="bold" fill="#1ABC9C">V4: Estatistico ✓</text>
+
+      <!-- Row 2 -->
+      <rect x="82" y="576" width="155" height="22" rx="3" fill="#E8F8F5" stroke="#A3E4D7" stroke-width="0.7"/>
+      <text x="159" y="591" text-anchor="middle" font-weight="bold" fill="#1ABC9C">V5: Numerico ✓</text>
+
+      <rect x="248" y="576" width="155" height="22" rx="3" fill="#F2F3F4" stroke="#D5D8DC" stroke-width="0.7"/>
+      <text x="325" y="591" text-anchor="middle" fill="#7F8C8D">V6: N/A (combinatorio)</text>
+
+      <rect x="414" y="576" width="321" height="22" rx="3" fill="#FDEBD0" stroke="#F5B041" stroke-width="0.7"/>
+      <text x="575" y="591" text-anchor="middle" font-weight="bold" fill="#E67E22">Calibracao Platt: ECE = 0.026 (confianca 0.974)</text>
+    </g>
+  </g>
+
+  <!-- Side badges -->
+  <g transform="translate(15,140)" filter="url(#sh)">
+    <rect x="0" y="0" width="40" height="20" rx="4" fill="#1B4F72"/>
+    <text x="20" y="14" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="white">LEMA</text>
+  </g>
+  <g transform="translate(15,210)" filter="url(#sh)">
+    <rect x="0" y="0" width="40" height="20" rx="4" fill="#922B21"/>
+    <text x="20" y="14" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="white">NEG</text>
+  </g>
+  <g transform="translate(15,440)" filter="url(#sh)">
+    <rect x="0" y="0" width="40" height="20" rx="4" fill="#1A252F"/>
+    <text x="20" y="14" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="white">TEOR</text>
+  </g>
+
+  <text x="410" y="632" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="8.5" fill="#ABB2B9">Fonte: Estrutura baseada em Engel (1998), Zeitz (2006). Verificacao: Cora-Debate P19 — OpenCode Ecosystem v4.2.</text>
+</svg>

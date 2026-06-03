@@ -1,0 +1,297 @@
+% =============================================================================
+%  TEMPLATE PubMed / BIOMÉDICO REFINADO v1.0
+%  Estrutura IMRAD (Introdução, Métodos, Resultados e Discussão)
+%  Estilo Vancouver (citações numéricas) — padrão PubMed/Medline
+%  Compilar: pdflatex -> pdflatex
+% =============================================================================
+\documentclass[12pt,a4paper]{article}
+
+% --- Pacotes ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    citecolor=red!60!black,
+    urlcolor=blue!60!black,
+    breaklinks=true,
+    pdfauthor={Autor},
+    pdftitle={Título do Artigo Biomédico}
+}
+\usepackage[numbers]{natbib}  % Vancouver numérico
+\bibliographystyle{unsrtnat}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{times}            % Fonte Times New Roman (padrão biomédico)
+
+% --- Comandos auxiliares ---
+\newcommand{\ICMJE}{\textit{ICMJE}}
+\newcommand{\IC}{\textit{intervalo de confian\c{c}a}}
+\newcommand{\OR}{\textit{odds ratio}}
+\newcommand{\RR}{\textit{risco relativo}}
+
+% =============================================================================
+\begin{document}
+
+% --- Título ---
+\title{T\'itulo do Artigo: Subt\'itulo Explicativo \\
+        \large Template Refinado para Peri\'odicos Indexados no PubMed}
+
+% --- Autores e afiliações ---
+\author{Marcos A. Santos$^{1*}$\thanks{Correspond\^encia: marcos.santos@exemplo.com},
+        Ana C. Oliveira$^{2}$,
+        Carlos R. Lima$^{1}$ \\
+        \small $^{1}$Departamento de Medicina, Universidade Federal do Cear\'a,
+        Fortaleza, CE, Brasil \\
+        \small $^{2}$Instituto de Sa\'ude Coletiva, Universidade de S\~ao Paulo,
+        S\~ao Paulo, SP, Brasil \\
+        \small $^{*}$Autor correspondente}
+
+\date{\today}
+
+\maketitle
+
+% =============================================================================
+\begin{abstract}
+\textbf{Objetivo}: Demonstrar a estrutura de um artigo biom\'edico
+refinado para submiss\~ao a peri\'odicos indexados no PubMed,
+seguindo as recomenda\c{c}\~oes do \ICMJE{} e o padr\~ao Vancouver
+de cita\c{c}\~oes.
+
+\textbf{M\'etodos}: Este template foi elaborado em \LaTeX{} com
+a classe \texttt{article}, estrutura IMRAD e refer\^encias no
+formato num\'erico (Vancouver). O c\'odigo-fonte est\'a preparado
+para compila\c{c}\~ao direta com \texttt{pdflatex}.
+
+\textbf{Resultados}: O template apresenta todas as se\c{c}\~oes
+necess\'arias para um artigo biom\'edico completo, incluindo tabelas
+de dados cl\'inicos, an\'alise estat\'istica e refer\^encias
+formatadas segundo o estilo Vancouver.
+
+\textbf{Conclus\~ao}: Este template oferece uma base s\'olida para
+submiss\~ao a peri\'odicos biom\'edicos, reduzindo o tempo de
+formata\c{c}\~ao e garantindo conformidade com os padr\~oes
+internacionais.
+
+\textbf{Palavras-chave}: template LaTeX; PubMed; estilo Vancouver;
+ICMJE; artigo biom\'edico.
+\end{abstract}
+
+% =============================================================================
+\section{Introdu\c{c}\~ao}
+\label{sec:intro}
+
+A publica\c{c}\~ao em peri\'odicos indexados no PubMed exige
+conformidade com diretrizes rigorosas de formata\c{c}\~ao e
+estrutura editorial \cite{ICMJE2024}. O estilo Vancouver de
+cita\c{c}\~oes, caracterizado por refer\^encias num\'ericas
+ordenadas por aparecimento, \'e o padr\~ao adotado pela maioria
+das revistas biom\'edicas \cite{Patrias2007Citing}.
+
+Estima-se que aproximadamente 30 milh\~oes de artigos estejam
+indexados no PubMed, com crescimento anual de cerca de 5\%
+\cite{Landhuis2024PubMed}. Apesar da ampla disponibilidade de
+templates institucionais, muitos pesquisadores ainda enfrentam
+dificuldades com a formata\c{c}\~ao manual de manuscritos.
+
+O objetivo deste trabalho \'e fornecer um template \LaTeX{}
+refinado, completo e de f\'acil adapta\c{c}\~ao, seguindo as
+recomenda\c{c}\~oes do \ICMJE{} e do Comit\^e Internacional de
+Editores de Peri\'odicos M\'edicos.
+
+% =============================================================================
+\section{M\'etodos}
+\label{sec:metodos}
+
+\subsection{Desenho do Estudo}
+
+Trata-se de um template metodol\'ogico, do tipo guia de
+formata\c{c}\~ao, elaborado conforme as diretrizes do \ICMJE{}
+\cite{ICMJE2024} e adaptado para a realidade da pesquisa
+biom\'edica brasileira.
+
+\subsection{Estrutura do Template}
+
+O template segue a estrutura IMRAD:
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item \textbf{Introdu\c{c}\~ao}: contextualiza\c{c}\~ao e
+        objetivos do estudo;
+    \item \textbf{M\'etodos}: descri\c{c}\~ao detalhada dos
+        procedimentos;
+    \item \textbf{Resultados}: apresenta\c{c}\~ao objetiva dos
+        dados;
+    \item \textbf{Discuss\~ao}: interpreta\c{c}\~ao e compara\c{c}\~ao
+        com a literatura.
+\end{enumerate}
+
+\subsection{An\'alise Estat\'istica}
+
+Os dados hipot\'eticos foram analisados utilizando o software R
+vers\~ao 4.3 (R Foundation for Statistical Computing). As vari\'aveis
+cont\'inuas foram expressas como m\'edia $\pm$ desvio padr\~ao
+(DP) ou mediana e amplitude interquartil (AIQ), conforme a
+distribui\c{c}\~ao. Vari\'aveis categ\'oricas foram expressas como
+frequ\^encia absoluta ($n$) e relativa (\%). O teste $t$ de Student
+foi utilizado para compara\c{c}\~ao de m\'edias e o teste
+$\chi^2$ para propor\c{c}\~oes. Valores de $p < 0.05$ foram
+considerados estatisticamente significativos.
+
+% =============================================================================
+\section{Resultados}
+\label{sec:resultados}
+
+\subsection{Caracter\'isticas da Amostra}
+
+A amostra hipot\'etica foi composta por 250 pacientes, sendo
+140 (56\%) do sexo feminino e 110 (44\%) do sexo masculino, com
+idade m\'edia de 52.3 $\pm$ 14.7 anos (Tabela~\ref{tab:demografica}).
+
+\begin{table}[htbp]
+\centering
+\caption{Caracter\'isticas demogr\'aficas e cl\'inicas da
+         amostra $(n = 250)$}
+\label{tab:demografica}
+\begin{tabular}{lcc}
+\toprule
+Vari\'avel & Grupo Controle $(n = 125)$ & Grupo Estudo $(n = 125)$ \\
+\midrule
+Idade (m\'edia $\pm$ DP) & 51.8 $\pm$ 15.2 & 52.7 $\pm$ 14.1 \\
+Sexo feminino, $n$ (\%) & 68 (54.4\%) & 72 (57.6\%) \\
+IMC (kg/m$^2$) & 26.8 $\pm$ 4.3 & 27.2 $\pm$ 4.6 \\
+Press\~ao arterial sist\'olica (mmHg) & 128.4 $\pm$ 16.7 & 132.1 $\pm$ 18.2$^*$ \\
+Glicemia de jejum (mg/dL) & 94.6 $\pm$ 12.3 & 98.1 $\pm$ 15.7$^*$ \\
+\midrule
+\multicolumn{3}{l}{\small $^* p < 0.05$ vs. controle} \\
+\end{tabular}
+\end{table}
+
+\subsection{Desfecho Prim\'ario}
+
+O desfecho prim\'ario ocorreu em 38 pacientes do grupo estudo
+(30.4\%) versus 52 do grupo controle (41.6\%), com
+$\RR = 0.73$ (\IC{} 95\%: 0.52--0.98; $p = 0.038$),
+conforme ilustrado na Figura~\ref{fig:kaplan}.
+
+\begin{figure}[htbp]
+\centering
+\vspace{2cm}
+\begin{minipage}{0.75\textwidth}
+\centering
+\fbox{\parbox{\textwidth}{\centering
+    [Curva de Kaplan-Meier: sobrevida livre de evento]}}
+\end{minipage}
+\caption{Curva de Kaplan-Meier para o desfecho prim\'ario.}
+\label{fig:kaplan}
+\end{figure}
+
+\subsection{An\'alise Multivariada}
+
+A an\'alise de regress\~ao log\'istica multivariada identificou
+os seguintes preditores independentes (Tabela~\ref{tab:regressao}):
+
+\begin{table}[htbp]
+\centering
+\caption{Regress\~ao log\'istica multivariada para o desfecho
+         prim\'ario}
+\label{tab:regressao}
+\begin{tabular}{lccc}
+\toprule
+Vari\'avel & $\OR$ & IC 95\% & $p$ \\
+\midrule
+Interven\c{c}\~ao (grupo estudo) & 0.68 & 0.48--0.95 & 0.024 \\
+Idade (por 10 anos) & 1.24 & 1.08--1.42 & 0.003 \\
+IMC (por 5 kg/m$^2$) & 1.31 & 1.12--1.53 & 0.001 \\
+Sexo masculino & 1.15 & 0.82--1.61 & 0.418 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =============================================================================
+\section{Discuss\~ao}
+\label{sec:discussao}
+
+Este template demonstra a estrutura completa de um artigo
+biom\'edico no formato exigido por peri\'odicos indexados no
+PubMed. Os resultados hipot\'eticos apresentados ilustram a
+aplica\c{c}\~ao dos principais elementos estat\'isticos e
+gr\'aficos utilizados na literatura m\'edica.
+
+A redu\c{c}\~ao de 27\% no risco relativo observada no grupo
+estudo \'e consistente com achados de ensaios cl\'inicos
+pr\'evios \cite{Topol2024Preventive}. A an\'alise multivariada
+confirmou a independ\^encia do efeito ap\'os ajuste para
+vari\'aveis confundidoras.
+
+Limita\c{c}\~oes deste template incluem o car\'ater ilustrativo
+dos dados e a aus\^encia de valida\c{c}\~ao externa.
+Pesquisadores devem adaptar o conte\'udo e as an\'alises
+\`a sua \'area espec\'ifica de estudo.
+
+% =============================================================================
+\section{Conclus\~ao}
+\label{sec:conclusao}
+
+Apresentamos um template \LaTeX{} refinado e completo para
+submiss\~ao a peri\'odicos indexados no PubMed. A estrutura
+IMRAD, as cita\c{c}\~oes no estilo Vancouver e a formata\c{c}\~ao
+segundo as recomenda\c{c}\~oes do \ICMJE{} garantem conformidade
+com os padr\~oes editoriais da \'area biom\'edica.
+
+% =============================================================================
+% Agradecimentos
+\section*{Agradecimentos}
+Os autores agradecem ao suporte financeiro da CAPES
+(C\'odigo de Financiamento 001) e do CNPq (Processo
+123456/2024-0).
+
+% =============================================================================
+% Conflito de interesses
+\section*{Conflito de Interesses}
+Os autores declaram n\~ao haver conflito de interesses.
+
+% =============================================================================
+% Contribuição dos autores
+\section*{Contribui\c{c}\~ao dos Autores}
+\textbf{MAS}: concep\c{c}\~ao do estudo, reda\c{c}\~ao do manuscrito;
+\textbf{ACO}: an\'alise estat\'istica, revis\~ao cr\'itica;
+\textbf{CRL}: orienta\c{c}\~ao, revis\~ao final.
+
+% =============================================================================
+% Referências no estilo Vancouver
+\begin{thebibliography}{99}
+
+\bibitem{ICMJE2024}
+International Committee of Medical Journal Editors.
+\textit{Recommendations for the Conduct, Reporting, Editing,
+and Publication of Scholarly Work in Medical Journals}.
+ICMJE, 2024. Dispon\'ivel em: \url{https://www.icmje.org/}
+
+\bibitem{Patrias2007Citing}
+K. Patrias.
+\textit{Citing Medicine: The NLM Style Guide for Authors,
+Editors, and Publishers}. 2nd ed. Bethesda (MD):
+National Library of Medicine, 2007.
+
+\bibitem{Landhuis2024PubMed}
+E. Landhuis.
+PubMed at 30: a look back at the biomedical database that
+changed science. \textit{Nature}. 2024;626(7998):446--448.
+
+\bibitem{Topol2024Preventive}
+E.J. Topol.
+Preventive cardiology in the era of precision medicine.
+\textit{Lancet}. 2024;403(10428):912--925.
+
+\end{thebibliography}
+
+\end{document}

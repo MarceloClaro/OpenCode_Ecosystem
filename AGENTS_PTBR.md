@@ -1,4 +1,4 @@
-# Ecossistema Unificado OpenCode v4.2 (MiroFish/BettaFish + PhD Auditor + 38 Raciocínios)
+# Ecossistema Unificado OpenCode v5.0.0 (MiroFish/BettaFish + PhD Auditor + 212+ Raciocínios + Science + Reasoning)
 
 > **Idioma de saída obrigatório:** Português Brasileiro Formal.  
 > Este documento é a versão em PT-BR do [AGENTS.md](AGENTS.md).
@@ -25,14 +25,14 @@
 
 ---
 
-## Arquitetura de Sincronização Autônoma v4.2
+## Arquitetura de Sincronização Autônoma v5.0
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  Motor de Validação Cruzada v4.2 + MiroFish/BettaFish   │
-│              + PhD Auditor                               │
+│  Motor de Validação Cruzada v5.0 + MiroFish/BettaFish   │
+│              + PhD Auditor + Science + Reasoning         │
 │                                                          │
-│  MCPs(40) ◄──► Skills(104) ◄──► Agentes(125)            │
+│  MCPs(46) ◄──► Skills(91) ◄──► Agentes(125)            │
 │       │            │              │                      │
 │       └────────────┼──────────────┘                      │
 │                    │                                     │
@@ -40,8 +40,8 @@
 │                    │                                     │
 │   P18-PhD Auditor (Nash + Cohen + Bonferroni + Qualis)   │
 │   MiroFish/BettaFish: OASIS + Forum + Config + Graph    │
-│   BRAZIL_TIMEZONE (UTC-3) · 38 raciocínios · 10 Teoria  │
-│   dos Jogos                                              │
+│   BRAZIL_TIMEZONE (UTC-3) · 212+ raciocínios · 10 Teoria │
+│   dos Jogos · 37 Science Skills · 4 Reasoning Engines    │
 │                                                          │
 │  Plugins(15) ◄──► Comandos(14) ◄──► LSP(1) ◄──►        │
 │  Corretor(1)                                             │
@@ -49,7 +49,7 @@
 │  Orquestrador de Sincronização:                          │
 │    nexus/scripts/sync_orchestrator.py                    │
 │  Matriz de Validação Cruzada:                            │
-│    200+ conexões de afinidade | 110+ componentes         │
+│    200+ conexões de afinidade | 200+ componentes         │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -59,24 +59,26 @@
 
 | Categoria | Quantidade | Estado |
 |-----------|:----------:|--------|
-| MCPs | 40 | 38 locais + 2 remotos |
-| Skills | 104 | 12 categorias (+P14-P18 MiroFish/BettaFish) |
-| Agentes | 125 | Core 56 + Criação 49 + SEEKER 12 + Reversa 7 + Corretor linguístico 1 |
+| MCPs | 46 | 42 locais + 4 remotos (76% ativos) |
+| Skills | 90 | 13 categorias (system 9 + juridico 7 + research 5 + science 37 + reasoning 4 + ...) |
+| Agentes | 125 | Core 56 + Criacao 49 + SEEKER 12 + Reversa 18 + Corretor linguistico 1 |
 | Plugins | 15 | 10 npm + 2 locais (.ts) + 3 bridge |
 | Comandos | 14 | Comandos slash |
 | LSP | 1 | TypeScript |
-| Quantum | 81 | Referências/scripts/outputs/templates |
-| Nexus | 40 | Multiagente/barreiras de sincronização/tipos de raciocínio |
+| Quantum | 81 | Referencias/scripts/outputs/templates |
+| Nexus | 40 | Multiagente/barreiras sincronizacao/tipos raciocinio |
 | MiroFish/BettaFish | 11 | OASIS + Forum + Config + Graph + Report + Nash + Stats + Qualis + Sensitivity + IMRAD + Debate |
-| Tipos de Raciocínio | 38 | 6 categorias (Lógico 5 + Dialético 5 + Teoria dos Jogos 10 + Decisão 5 + Estratégico 5 + Inovação 8) |
-| Criador de Artigos | 91 | MASWOS v4.6 + bridges + auto-score |
-| SEEKER | 78 | 10 agentes + argument tree + 10+ fontes acadêmicas |
-| Evolução | 9 | 6 ciclos geracionais + editais-br v7.1 em produção + cache versionado + correção KeyError |
-| Corretor | 1 | ptbr_corrector.py (detecção CJK + gramática PT-BR) |
+| Science Skills | 37 | AlphaFold + PubMed + ChEMBL + UniProt + ClinVar + gnomAD + GTEx + PDB + PyMOL + ... |
+| Reasoning Engines | 4 | Z3 (verificacao formal) + SymPy (matematica simbolica) + miniKanren (logica) + Critical (falacias) |
+| Tipos de Raciocinio | 212+ | 27 categorias (Logico 5 + Dialetico 5 + Teoria Jogos 10 + Decisao 5 + Estrategico 5 + Inovacao 8) |
+| Criador de Artigos | 91 | MASWOS v5.0 + bridges + auto-score |
+| SEEKER | 78 | 10 agentes + argument tree + 10+ fontes academicas |
+| Evolucao | 13 | 13 ciclos + editais-br v7.1 + SandeClaw + Science + Reasoning |
+| Corretor | 1 | ptbr_corrector.py (deteccao CJK + gramatica PT-BR) |
 
 ---
 
-## Integração MiroFish/BettaFish (novidade v4.2)
+## Integracao MiroFish/BettaFish (v5.0)
 
 `skills/agent-forum/` — Pipeline completo P14-P18: Agent Forum (debate multiagente) → Debate Strategies (38 raciocínios + 6 estratégias + 8 configurações) → PhD Auditor (NashSolver + StatisticalRigor + QualisA1Auditor + SensitivityAnalyzer + IMRADFormatter). Integrado ao nexus-phd-strategist. BRAZIL_TIMEZONE (UTC-3) substitui CHINA_TIMEZONE. Simulação de 50 indicadores com dados reais (World Bank/WHO/FAO/UNESCO).
 
@@ -142,6 +144,12 @@ SEEKER (pesquisa) → Criador de Artigos (49 agentes, 8 estágios)
 | 5 | Corretor linguístico com detecção CJK | 98 | Contexto em chinês + saída PT-BR exige corretor obrigatório; tolerância zero para vazamento CJK |
 | 6 | editais-br v2.0 validação em produção + 4 categorias | 92 | Busca paralela real (pesquisa/mestrado/doutorado/startup) com DuckDuckGo via curl.exe; httpx bloqueado por CAPTCHA; score por perfil 58-68/100 |
 | 7 | editais-br v7.1 cache versionado + 50+ curados | 94 | KeyError score corrigido + CACHE_VERSION; 28 → 52 editais curados (16 FAPs estaduais, 4 exterior, 4 setoriais); fallback curadoria agora cobre todas as 27 UFs |
+| 8 | SDD+TDD Pipeline Academico + Simulacao de Arguicao | 94 | 7 specs + 9 CTs + 7 correcoes + 3 ADRs + 16 perguntas banca; anteprojeto PPGTE/UFC anonimizado |
+| 9 | SDD+TDD AutoEvolve LaTeX Refino | 96 | 4 overfulls eliminados + 16/16 TDD + FRAMEWORK.md + fix_history catalog |
+| 10 | Menu Adaptativo + Plugin System | 96 | menu.py: estatico -> adaptativo (6 cat, 4 modos); .menu_registry.json |
+| 11 | CORA-Eval Benchmark | 97 | 150 tarefas x 10 dimensoes x 4 niveis; Q-Score UCB1; CORA-Score 0.67 |
+| 12 | Science Skills Core + MCP Expansion | 98 | 9+28 skills ciencia + 4 MCPs artigos = 10 fontes academicas unificadas |
+| 13 | Reasoning Engines | 96 | 4 motores: Z3 (prova formal), SymPy (simbolico), miniKanren (logico), Critical (falacias) |
 
 ---
 
@@ -220,6 +228,6 @@ Maiores afinidades entre componentes:
 
 <div align="center">
 
-**OpenCode Ecosystem v4.6** · Documentação de Agentes em Português Brasileiro
+**OpenCode Ecosystem v5.0** · Documentacao de Agentes em Portugues Brasileiro
 
 </div>

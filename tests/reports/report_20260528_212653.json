@@ -1,0 +1,12 @@
+{
+  "benchmark": "CORA-Eval",
+  "level": "N1",
+  "timestamp": "20260528_212653",
+  "suites": {
+    "D4 - Quimica (N1)": "PASS",
+    "D5 - Biologia (N1)": "PASS",
+    "D6 - Geociencias (N1)": "PASS",
+    "D8 - Literatura (N1)": "PASS"
+  },
+  "all_green": true
+}

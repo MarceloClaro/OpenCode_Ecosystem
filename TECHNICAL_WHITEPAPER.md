@@ -1,13 +1,13 @@
 ---
-title: "OpenCode Ecosystem v4.6 — Technical Whitepaper"
+title: "OpenCode Ecosystem v5.0 — Technical Whitepaper"
 subtitle: "Arquitetura Multiagente com Verificacao Simbolica, Debate Multiagente e Evolucao Assistida"
-version: "1.0.0"
-date: "2026-05-25"
+version: "1.1.0"
+date: "2026-06-02"
 citations: 28
 references_auditable: true
 ---
 
-# OpenCode Ecosystem v4.6 — Technical Whitepaper
+# OpenCode Ecosystem v5.0 — Technical Whitepaper
 
 > **Nota ao leitor**: Este documento e a referencia tecnica definitiva do ecossistema OpenCode.
 > Toda afirmacao e respaldada por citacao academica com DOI/arXiv auditavel.

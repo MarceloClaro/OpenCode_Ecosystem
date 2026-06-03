@@ -1,0 +1,95 @@
+═══════════════════════════════════════════════════════════════════════════════
+                           SESSÃO 11 - RESUMO EXECUTIVO
+                     Integração ProofGeneratorV2 com Templates
+                                 30/05/2026 18:16–18:21
+═══════════════════════════════════════════════════════════════════════════════
+
+STATUS
+──────────────────────────────────────────────────────────────────────────────
+✓ ProofGeneratorV2 criado (395 linhas)
+✓ pipeline_phase_b.py integrado (3 linhas alteradas)
+✓ lean_verifier.py timeout aumentado (2 linhas alteradas)
+✓ Imports fixados (sys.path, fallback)
+✓ Teste inicial: 3/3 provas geradas
+⏳ Execução Phase B agendada
+
+ARQUIVOS CRIADOS
+──────────────────────────────────────────────────────────────────────────────
+scripts/proof_generator_v2.py         ← NOVO: Gerador com templates
+scripts/phase_b_quick_run.py          ← NOVO: Teste rápido 5 probs
+scripts/pipeline_phase_b.py           ← ALTERADO: Integração V2
+scripts/lean_verifier.py              ← ALTERADO: Timeout 30s→120s
+test_v2_simple.py                     ← NOVO: Teste unitário 1 prob
+run_phase_b_v2.ps1                    ← NOVO: Script PowerShell
+PROGRESS_SESSION_11.md                ← NOVO: Histórico detalhado
+NEXT_STEPS.md                         ← NOVO: Instruções execução
+
+MUDANÇAS TÉCNICAS
+──────────────────────────────────────────────────────────────────────────────
+ANTES (V1):
+  generate(problem_statement="...", lean_skeleton="...", domain="...")
+  → ∀x, P(x)  [genérico, 50% confiança]
+
+DEPOIS (V2):
+  generate(problem_id="...", statement="...", domain="...", max_tokens)
+  → Templates domínio-específicos [30–90% confiança]
+
+Timeout:  30s → 120s (4x maior para provas complexas)
+
+MÉTRICAS ESPERADAS
+──────────────────────────────────────────────────────────────────────────────
+Phase B (10 problemas):
+  • Tempo: 5–10 minutos
+  • Taxa: +10% sucesso, -10% falha
+
+Phase C (Lean):
+  • Tempo: 30–60 minutos (timeout 120s)
+  • Esperado: ≥2 sucessos (vs 0 antes)
+
+PRÓXIMOS PASSOS
+──────────────────────────────────────────────────────────────────────────────
+1. TESTE RÁPIDO (5 segundos):
+   $ python test_v2_simple.py
+
+2. PHASE B V2 (5–10 minutos):
+   $ python scripts/pipeline_phase_b.py
+   → Gera 10 provas com templates
+
+3. PHASE C VERIFICAÇÃO (30–60 minutos):
+   $ python scripts/pipeline_phase_c.py
+   → Verifica com Lean 4 (timeout 120s)
+
+4. ANÁLISE FINAL:
+   → results/FINAL_REPORT.md
+   → Métricas de sucesso/parcial/falha
+
+CONTEXTO CRÍTICO
+──────────────────────────────────────────────────────────────────────────────
+• ProofGeneratorV2 usa 10 templates: combinatorics, number_theory, analysis,
+  graph_theory, geometry, induction, finite_case, algebra, logic,
+  category_theory
+
+• Cada template inclui:
+  - Padrão Lean estruturado (não genérico)
+  - Padrão prova natural adaptado
+  - Few-shot examples (pigeonhole, gcd, geometric_series)
+
+• Confiança dinâmica baseada em:
+  - Presença de 'theorem', 'by' (aumenta)
+  - Ausência de 'sorry' (aumenta +25%)
+  - Múltiplos 'sorry' (diminui)
+
+• Problemas selecionados (10): A0004, B0014, B0017, E0019–E0045
+  (balanceado entre domínios)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ TUDO PRONTO PARA EXECUÇÃO
+
+Recomendação: Comece com test_v2_simple.py para validar integração (5s),
+depois execute pipeline_phase_b.py (5–10 min).
+
+Tempo total estimado: ~45–75 minutos.
+
+Última atualização: 30/05/2026 18:21
+Status: PRONTO PARA EXECUÇÃO

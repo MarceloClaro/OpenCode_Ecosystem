@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" font-family="'Courier New', 'JetBrains Mono', monospace">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" font-family="'Courier New', 'JetBrains Mono', monospace">
   <defs>
     <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0a0a0f"/>
@@ -72,110 +72,110 @@
   <rect x="0" y="0" width="1200" height="1" fill="#00ff41" opacity="0.4" filter="url(#glowGreen)"/>
 
   <!-- Cyberpunk Title -->
-  <text x="600" y="28" text-anchor="middle" fill="#00ff41" font-size="11" font-family="monospace" opacity="0.6" letter-spacing="4">▸ OPENGINE ECOSYSTEM v4.6 ◂</text>
+  <text x="600" y="28" text-anchor="middle" fill="#00ff41" font-size="11" font-family="monospace" opacity="0.6" letter-spacing="4">â–¸ OPENGINE ECOSYSTEM v5.0 â—‚</text>
   <text x="600" y="58" text-anchor="middle" fill="#00ff41" font-size="24" font-weight="900" filter="url(#glowGreen)" letter-spacing="2">SOFTWARE ENGINEERING</text>
-  <text x="600" y="78" text-anchor="middle" fill="#39ff14" font-size="11" opacity="0.7" letter-spacing="3">SDD · TDD · CI/CD · SWEBOK · GIT SAFETY · ADR</text>
+  <text x="600" y="78" text-anchor="middle" fill="#39ff14" font-size="11" opacity="0.7" letter-spacing="3">SDD Â· TDD Â· CI/CD Â· SWEBOK Â· GIT SAFETY Â· ADR</text>
   <line x1="200" y1="88" x2="1000" y2="88" stroke="url(#neonGreen)" stroke-width="0.5" opacity="0.3"/>
 
-  <!-- ===== SDD — Spec-Driven Development ===== -->
+  <!-- ===== SDD â€” Spec-Driven Development ===== -->
   <rect x="25" y="105" width="370" height="210" rx="4" fill="#0a0a15" stroke="#00ff41" stroke-width="1" opacity="0.9"/>
   <rect x="25" y="105" width="370" height="36" fill="#00ff41" opacity="0.08"/>
   <rect x="25" y="105" width="4" height="36" fill="url(#neonGreen)"/>
-  <text x="45" y="118" fill="#00ff41" font-size="14" font-weight="bold" letter-spacing="2">◆ S D D</text>
+  <text x="45" y="118" fill="#00ff41" font-size="14" font-weight="bold" letter-spacing="2">â—† S D D</text>
   <text x="45" y="134" fill="#39ff14" font-size="9" opacity="0.6" letter-spacing="1">SPEC-DRIVEN DEVELOPMENT</text>
 
-  <text x="45" y="160" fill="#00ff41" font-size="10" letter-spacing="1">SPEC → REVIEW → BUILD → TEST → REG → CI</text>
+  <text x="45" y="160" fill="#00ff41" font-size="10" letter-spacing="1">SPEC â†’ REVIEW â†’ BUILD â†’ TEST â†’ REG â†’ CI</text>
   <line x1="45" y1="168" x2="375" y2="168" stroke="#00ff41" stroke-width="0.3" opacity="0.15"/>
 
-  <text x="45" y="186" fill="#8b949e" font-size="9">▸ 5 dimensões por spec</text>
-  <text x="45" y="202" fill="#8b949e" font-size="9">▸ 186 componentes documentados</text>
-  <text x="45" y="218" fill="#8b949e" font-size="9">▸ 26 arquivos · 7 categorias</text>
-  <text x="45" y="234" fill="#8b949e" font-size="9">▸ Template mínimo: Comportamento,</text>
-  <text x="55" y="250" fill="#8b949e" font-size="9">Usuários, Restrições, Bordas, Critérios</text>
+  <text x="45" y="186" fill="#8b949e" font-size="9">â–¸ 5 dimensÃµes por spec</text>
+  <text x="45" y="202" fill="#8b949e" font-size="9">â–¸ 186 componentes documentados</text>
+  <text x="45" y="218" fill="#8b949e" font-size="9">â–¸ 26 arquivos Â· 7 categorias</text>
+  <text x="45" y="234" fill="#8b949e" font-size="9">â–¸ Template mÃ­nimo: Comportamento,</text>
+  <text x="55" y="250" fill="#8b949e" font-size="9">UsuÃ¡rios, RestriÃ§Ãµes, Bordas, CritÃ©rios</text>
 
   <rect x="45" y="268" width="330" height="20" rx="2" fill="#00ff41" opacity="0.05" stroke="#00ff41" stroke-width="0.5"/>
-  <text x="210" y="282" text-anchor="middle" fill="#00ff41" font-size="9" letter-spacing="2" filter="url(#glowGreen)">COBERTURA 100% ✓</text>
+  <text x="210" y="282" text-anchor="middle" fill="#00ff41" font-size="9" letter-spacing="2" filter="url(#glowGreen)">COBERTURA 100% âœ“</text>
 
-  <!-- ===== TDD — Test-Driven Development ===== -->
+  <!-- ===== TDD â€” Test-Driven Development ===== -->
   <rect x="415" y="105" width="370" height="210" rx="4" fill="#0a0a15" stroke="#00d4ff" stroke-width="1" opacity="0.9"/>
   <rect x="415" y="105" width="370" height="36" fill="#00d4ff" opacity="0.08"/>
   <rect x="415" y="105" width="4" height="36" fill="url(#neonBlue)"/>
-  <text x="435" y="118" fill="#00d4ff" font-size="14" font-weight="bold" letter-spacing="2">◆ T D D</text>
+  <text x="435" y="118" fill="#00d4ff" font-size="14" font-weight="bold" letter-spacing="2">â—† T D D</text>
   <text x="435" y="134" fill="#0080ff" font-size="9" opacity="0.6" letter-spacing="1">TEST-DRIVEN DEVELOPMENT</text>
 
-  <text x="435" y="160" fill="#00d4ff" font-size="10" letter-spacing="1">PIRÂMIDE DE TESTES</text>
+  <text x="435" y="160" fill="#00d4ff" font-size="10" letter-spacing="1">PIRÃ‚MIDE DE TESTES</text>
   <line x1="435" y1="168" x2="765" y2="168" stroke="#00d4ff" stroke-width="0.3" opacity="0.15"/>
 
-  <text x="435" y="186" fill="#8b949e" font-size="9">▸ E2E — 3 cenários críticos</text>
-  <text x="445" y="202" fill="#8b949e" font-size="9">▸ Integração — 10 cenários cross-comp</text>
-  <text x="455" y="218" fill="#8b949e" font-size="9">▸ Unitários — 100+ testes</text>
-  <text x="435" y="240" fill="#8b949e" font-size="9">▸ Teste = contrato executável da spec</text>
-  <text x="435" y="256" fill="#8b949e" font-size="9">▸ Red → Green → Refactor + Agente IA</text>
+  <text x="435" y="186" fill="#8b949e" font-size="9">â–¸ E2E â€” 3 cenÃ¡rios crÃ­ticos</text>
+  <text x="445" y="202" fill="#8b949e" font-size="9">â–¸ IntegraÃ§Ã£o â€” 10 cenÃ¡rios cross-comp</text>
+  <text x="455" y="218" fill="#8b949e" font-size="9">â–¸ UnitÃ¡rios â€” 100+ testes</text>
+  <text x="435" y="240" fill="#8b949e" font-size="9">â–¸ Teste = contrato executÃ¡vel da spec</text>
+  <text x="435" y="256" fill="#8b949e" font-size="9">â–¸ Red â†’ Green â†’ Refactor + Agente IA</text>
 
   <rect x="435" y="268" width="330" height="20" rx="2" fill="#00d4ff" opacity="0.05" stroke="#00d4ff" stroke-width="0.5"/>
-  <text x="600" y="282" text-anchor="middle" fill="#00d4ff" font-size="9" letter-spacing="2" filter="url(#glowBlue)">10 CENÁRIOS DE INTEGRAÇÃO ✓</text>
+  <text x="600" y="282" text-anchor="middle" fill="#00d4ff" font-size="9" letter-spacing="2" filter="url(#glowBlue)">10 CENÃRIOS DE INTEGRAÃ‡ÃƒO âœ“</text>
 
-  <!-- ===== CI/CD — Pipeline ===== -->
+  <!-- ===== CI/CD â€” Pipeline ===== -->
   <rect x="805" y="105" width="370" height="210" rx="4" fill="#0a0a15" stroke="#ff00ff" stroke-width="1" opacity="0.9"/>
   <rect x="805" y="105" width="370" height="36" fill="#ff00ff" opacity="0.08"/>
   <rect x="805" y="105" width="4" height="36" fill="url(#neonPink)"/>
-  <text x="825" y="118" fill="#ff00ff" font-size="14" font-weight="bold" letter-spacing="2">◆ C I / C D</text>
+  <text x="825" y="118" fill="#ff00ff" font-size="14" font-weight="bold" letter-spacing="2">â—† C I / C D</text>
   <text x="825" y="134" fill="#ff006e" font-size="9" opacity="0.6" letter-spacing="1">PIPELINE AUTOMATIZADO</text>
 
   <text x="825" y="160" fill="#ff00ff" font-size="10" letter-spacing="1">5 GATES SEQUENCIAIS</text>
   <line x1="825" y1="168" x2="1155" y2="168" stroke="#ff00ff" stroke-width="0.3" opacity="0.15"/>
 
-  <text x="825" y="186" fill="#8b949e" font-size="9">▸ Gate 1 · Lint — ruff + eslint</text>
-  <text x="825" y="202" fill="#8b949e" font-size="9">▸ Gate 2 · Unit Tests — pytest</text>
-  <text x="825" y="218" fill="#8b949e" font-size="9">▸ Gate 3 · Spec Coverage ≥ 80%</text>
-  <text x="825" y="234" fill="#8b949e" font-size="9">▸ Gate 4 · Integration — 10 cenários</text>
-  <text x="825" y="250" fill="#8b949e" font-size="9">▸ Gate 5 · Health Check — automático</text>
+  <text x="825" y="186" fill="#8b949e" font-size="9">â–¸ Gate 1 Â· Lint â€” ruff + eslint</text>
+  <text x="825" y="202" fill="#8b949e" font-size="9">â–¸ Gate 2 Â· Unit Tests â€” pytest</text>
+  <text x="825" y="218" fill="#8b949e" font-size="9">â–¸ Gate 3 Â· Spec Coverage â‰¥ 80%</text>
+  <text x="825" y="234" fill="#8b949e" font-size="9">â–¸ Gate 4 Â· Integration â€” 10 cenÃ¡rios</text>
+  <text x="825" y="250" fill="#8b949e" font-size="9">â–¸ Gate 5 Â· Health Check â€” automÃ¡tico</text>
 
   <rect x="825" y="268" width="330" height="20" rx="2" fill="#ff00ff" opacity="0.05" stroke="#ff00ff" stroke-width="0.5"/>
-  <text x="990" y="282" text-anchor="middle" fill="#ff00ff" font-size="9" letter-spacing="2" filter="url(#glowPink)">GITHUB ACTIONS ✓</text>
+  <text x="990" y="282" text-anchor="middle" fill="#ff00ff" font-size="9" letter-spacing="2" filter="url(#glowPink)">GITHUB ACTIONS âœ“</text>
 
   <!-- ===== SWEBOK + Git Safety ===== -->
   <rect x="25" y="335" width="560" height="180" rx="4" fill="#0a0a15" stroke="#ffe600" stroke-width="1" opacity="0.9"/>
   <rect x="25" y="335" width="560" height="36" fill="#ffe600" opacity="0.06"/>
   <rect x="25" y="335" width="4" height="36" fill="url(#neonYellow)"/>
-  <text x="45" y="348" fill="#ffe600" font-size="14" font-weight="bold" letter-spacing="2">◆ S W E B O K · G I T</text>
-  <text x="45" y="364" fill="#ffcc00" font-size="9" opacity="0.6" letter-spacing="1">MANUTENÇÃO 67% · SAFETY PROTOCOL</text>
+  <text x="45" y="348" fill="#ffe600" font-size="14" font-weight="bold" letter-spacing="2">â—† S W E B O K Â· G I T</text>
+  <text x="45" y="364" fill="#ffcc00" font-size="9" opacity="0.6" letter-spacing="1">MANUTENÃ‡ÃƒO 67% Â· SAFETY PROTOCOL</text>
 
-  <text x="45" y="388" fill="#ffe600" font-size="10" letter-spacing="1">CLASSIFICAÇÃO SWEBOK</text>
+  <text x="45" y="388" fill="#ffe600" font-size="10" letter-spacing="1">CLASSIFICAÃ‡ÃƒO SWEBOK</text>
   <line x1="45" y1="396" x2="565" y2="396" stroke="#ffe600" stroke-width="0.3" opacity="0.15"/>
 
-  <text x="45" y="414" fill="#8b949e" font-size="9">▸ Evolutiva 50% — novas funcionalidades</text>
-  <text x="45" y="430" fill="#8b949e" font-size="9">▸ Adaptativa 25% — mudanças de ambiente</text>
-  <text x="45" y="446" fill="#8b949e" font-size="9">▸ Corretiva 21% — bugs em produção</text>
-  <text x="45" y="462" fill="#8b949e" font-size="9">▸ Preventiva 4% — refatoração pró-ativa</text>
+  <text x="45" y="414" fill="#8b949e" font-size="9">â–¸ Evolutiva 50% â€” novas funcionalidades</text>
+  <text x="45" y="430" fill="#8b949e" font-size="9">â–¸ Adaptativa 25% â€” mudanÃ§as de ambiente</text>
+  <text x="45" y="446" fill="#8b949e" font-size="9">â–¸ Corretiva 21% â€” bugs em produÃ§Ã£o</text>
+  <text x="45" y="462" fill="#8b949e" font-size="9">â–¸ Preventiva 4% â€” refatoraÃ§Ã£o prÃ³-ativa</text>
 
   <text x="45" y="486" fill="#ffe600" font-size="10" letter-spacing="1">GIT SAFETY PROTOCOL</text>
   <line x1="45" y1="494" x2="565" y2="494" stroke="#ffe600" stroke-width="0.3" opacity="0.15"/>
-  <text x="45" y="508" fill="#8b949e" font-size="9">▸ COMMIT checkpoint → WORKTREE isolate → AGENT action → REVIEW diff → DECIDE</text>
+  <text x="45" y="508" fill="#8b949e" font-size="9">â–¸ COMMIT checkpoint â†’ WORKTREE isolate â†’ AGENT action â†’ REVIEW diff â†’ DECIDE</text>
 
   <!-- ===== ADR + Architecture ===== -->
   <rect x="615" y="335" width="560" height="180" rx="4" fill="#0a0a15" stroke="#ff3300" stroke-width="1" opacity="0.9"/>
   <rect x="615" y="335" width="560" height="36" fill="#ff3300" opacity="0.06"/>
   <rect x="615" y="335" width="4" height="36" fill="url(#neonOrange)"/>
-  <text x="635" y="348" fill="#ff6b00" font-size="14" font-weight="bold" letter-spacing="2">◆ A D R · A R Q U I T E T U R A</text>
-  <text x="635" y="364" fill="#ff3300" font-size="9" opacity="0.6" letter-spacing="1">5 DECISÕES · 3 CAMADAS</text>
+  <text x="635" y="348" fill="#ff6b00" font-size="14" font-weight="bold" letter-spacing="2">â—† A D R Â· A R Q U I T E T U R A</text>
+  <text x="635" y="364" fill="#ff3300" font-size="9" opacity="0.6" letter-spacing="1">5 DECISÃ•ES Â· 3 CAMADAS</text>
 
   <text x="635" y="388" fill="#ff6b00" font-size="10" letter-spacing="1">ARCHITECTURE DECISION RECORDS</text>
   <line x1="635" y1="396" x2="1155" y2="396" stroke="#ff6b00" stroke-width="0.3" opacity="0.15"/>
 
-  <text x="635" y="414" fill="#8b949e" font-size="9">▸ ADR-001 · Token Budget ≤ 2.500 tokens</text>
-  <text x="635" y="430" fill="#8b949e" font-size="9">▸ ADR-002 · 3 Camadas: Agente → Skill → MCP</text>
-  <text x="635" y="446" fill="#8b949e" font-size="9">▸ ADR-006 · Spec-First para novas skills</text>
-  <text x="635" y="462" fill="#8b949e" font-size="9">▸ ADR-007 · CI Pipeline com 5 gates</text>
-  <text x="635" y="478" fill="#8b949e" font-size="9">▸ ADR-008 · Component Registry SWEBOK</text>
+  <text x="635" y="414" fill="#8b949e" font-size="9">â–¸ ADR-001 Â· Token Budget â‰¤ 2.500 tokens</text>
+  <text x="635" y="430" fill="#8b949e" font-size="9">â–¸ ADR-002 Â· 3 Camadas: Agente â†’ Skill â†’ MCP</text>
+  <text x="635" y="446" fill="#8b949e" font-size="9">â–¸ ADR-006 Â· Spec-First para novas skills</text>
+  <text x="635" y="462" fill="#8b949e" font-size="9">â–¸ ADR-007 Â· CI Pipeline com 5 gates</text>
+  <text x="635" y="478" fill="#8b949e" font-size="9">â–¸ ADR-008 Â· Component Registry SWEBOK</text>
 
-  <text x="635" y="502" fill="#8b949e" font-size="9">▸ Dependência unidirecional: camada superior nunca acessa inferior</text>
+  <text x="635" y="502" fill="#8b949e" font-size="9">â–¸ DependÃªncia unidirecional: camada superior nunca acessa inferior</text>
 
   <!-- ===== Component Registry ===== -->
   <rect x="25" y="540" width="1150" height="120" rx="4" fill="#0a0a15" stroke="#00ffff" stroke-width="1" opacity="0.9"/>
   <rect x="25" y="540" width="1150" height="36" fill="#00ffff" opacity="0.05"/>
-  <text x="600" y="559" text-anchor="middle" fill="#00ffff" font-size="14" font-weight="bold" letter-spacing="2" filter="url(#glowCyan)">◆ C O M P O N E N T · R E G I S T R Y ◆</text>
-  <text x="600" y="575" text-anchor="middle" fill="#00d4ff" font-size="9" opacity="0.6" letter-spacing="1">186 ENTIDADES RASTREADAS COM CLASSIFICAÇÃO SWEBOK</text>
+  <text x="600" y="559" text-anchor="middle" fill="#00ffff" font-size="14" font-weight="bold" letter-spacing="2" filter="url(#glowCyan)">â—† C O M P O N E N T Â· R E G I S T R Y â—†</text>
+  <text x="600" y="575" text-anchor="middle" fill="#00d4ff" font-size="9" opacity="0.6" letter-spacing="1">186 ENTIDADES RASTREADAS COM CLASSIFICAÃ‡ÃƒO SWEBOK</text>
 
   <!-- Component badges -->
   <rect x="45" y="588" width="170" height="26" rx="2" fill="#00ff41" opacity="0.06" stroke="#00ff41" stroke-width="0.5"/>
@@ -197,17 +197,17 @@
   <text x="1062" y="605" text-anchor="middle" fill="#8b949e" font-size="10" letter-spacing="1">29 COMANDOS</text>
 
   <rect x="45" y="622" width="1110" height="20" rx="2" fill="#00ff41" opacity="0.04" stroke="#00ff41" stroke-width="0.3"/>
-  <text x="600" y="636" text-anchor="middle" fill="#00ff41" font-size="9" letter-spacing="3" filter="url(#glowGreen)">100% COBERTURA · 5 ADRs · 10 CENÁRIOS INTEGRAÇÃO · CI 5 GATES · HEALTH CHECK AUTO</text>
+  <text x="600" y="636" text-anchor="middle" fill="#00ff41" font-size="9" letter-spacing="3" filter="url(#glowGreen)">100% COBERTURA Â· 5 ADRs Â· 10 CENÃRIOS INTEGRAÃ‡ÃƒO Â· CI 5 GATES Â· HEALTH CHECK AUTO</text>
 
   <!-- ===== Bottom Banner ===== -->
   <rect x="0" y="688" width="1200" height="1" fill="url(#neonGreen)" opacity="0.3"/>
-  <text x="30" y="712" fill="#00ff41" font-size="9" opacity="0.4" letter-spacing="1">▸ OPENCODE ECOSYSTEM v4.6</text>
-  <text x="30" y="728" fill="#39ff14" font-size="8" opacity="0.3" letter-spacing="1">"A IA AMPLIFICA O QUE JÁ EXISTE: SE EXISTE MÉTODO, AMPLIFICA QUALIDADE."</text>
-  <text x="1170" y="712" text-anchor="end" fill="#00ff41" font-size="9" opacity="0.4" letter-spacing="1">2026-05-27 ◂</text>
+  <text x="30" y="712" fill="#00ff41" font-size="9" opacity="0.4" letter-spacing="1">â–¸ OPENCODE ECOSYSTEM v5.0</text>
+  <text x="30" y="728" fill="#39ff14" font-size="8" opacity="0.3" letter-spacing="1">"A IA AMPLIFICA O QUE JÃ EXISTE: SE EXISTE MÃ‰TODO, AMPLIFICA QUALIDADE."</text>
+  <text x="1170" y="712" text-anchor="end" fill="#00ff41" font-size="9" opacity="0.4" letter-spacing="1">2026-05-27 â—‚</text>
 
   <!-- Decorative corner elements -->
   <text x="20" y="770" fill="#00ff41" font-size="7" opacity="0.15" letter-spacing="1">01001001 01000001 00100000 00101011 00100000 01010000 01110010 01101111 01100011 01100101 01110011 01110011 01101111</text>
-  <text x="20" y="786" fill="#ff00ff" font-size="7" opacity="0.1" letter-spacing="1">SDD·TDD·CI/CD·SWEBOK·GIT·ADR·DI·MCP·RAG·NER·IPC·OASIS·CoRA·MASWOS·SEEKER·NEXUS</text>
+  <text x="20" y="786" fill="#ff00ff" font-size="7" opacity="0.1" letter-spacing="1">SDDÂ·TDDÂ·CI/CDÂ·SWEBOKÂ·GITÂ·ADRÂ·DIÂ·MCPÂ·RAGÂ·NERÂ·IPCÂ·OASISÂ·CoRAÂ·MASWOSÂ·SEEKERÂ·NEXUS</text>
 
   <!-- Scanlines overlay -->
   <rect width="1200" height="800" fill="url(#scanlines)"/>

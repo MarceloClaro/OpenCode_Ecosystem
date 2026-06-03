@@ -2,7 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
-## [v5.0.0] - 2026-05-27
+## [v5.0.0] - 2026-06-02
+### Added
+- Evo-12: MCP Expansion — 4 MCPs cientificos (latest-science, research-mcp, sura-papers, arxiv-mcp) = 10 fontes academicas unificadas
+- Evo-12: 28 skills de datasets (gnomAD, GTEx, dbSNP, Ensembl, PDB, STRING, PubChem, OpenFDA, etc.) — total 37 science skills
+- Evo-13: 4 Reasoning Engines — Z3 4.16 (prova formal), SymPy 1.14 (simbolico), miniKanren (logica relacional), Critical (15 falacias + vieses)
+- Evo-11: 9 skills cientificas core (AlphaFold, PubMed, ChEMBL, UniProt, FoldSeek, ClinVar, PyMOL, OpenAlex)
+- Evo-10: SandeClaw Integration — ProviderFactory (Multi-LLM fallback), Hot-Reload Skills, ReAct Agent Loop
+- Evo-10: 5 MCPs criticos restaurados + SciHub reabilitado
+- Evo-9: Qualis Target Navigator (7 fatores, 49 areas CAPES)
+
+### Changed
+- Skills: 46 → 91 (+45)
+- MCPs: 41 → 45 (+4)
+- Science skills: 2 → 37
+- Reasoning engines: 0 → 4
+- MCP health: 58% → 76%
+- README, AGENTS.md, AGENTS_PTBR.md atualizados para v5.0.0
+
+## [v4.6.1] - 2026-05-27
 ### Added
 - Taxonomia universal: 350 tipos de raciocinio em 35 categorias (I-XXXV), 335 referencias
 - 11 novas categorias: Quantico-Informacionais, Cibernetico-Organizacionais, Geometrico-Topologicos, Linguistico-Semanticos, Psicometrico-Avaliativos, Climatico-Ambientais, Etico-Normativos Avancados, Esportivo-Performaticos, Musical-Acusticos, Culinario-Gastronomicos, Metafisico-Ontologicos

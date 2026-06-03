@@ -1,0 +1,262 @@
+% =============================================================================
+%  PRISMA 2020 Flow Diagram
+%  Versão em Português Brasileiro (PT-BR)
+%  Compilar com: pdflatex prisma2020-flow.tex
+% =============================================================================
+\documentclass[11pt]{article}
+
+% ─── Pacotes ─────────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc}
+\usepackage{pgfkeys}
+
+% ─── Esquema de Cores ────────────────────────────────────────────────────────
+\definecolor{corId}{RGB}{41, 82, 163}       % Azul — Identificação
+\definecolor{corIdBg}{RGB}{235, 241, 252}
+\definecolor{corScreen}{RGB}{211, 84, 0}    % Laranja — Triagem
+\definecolor{corScreenBg}{RGB}{253, 242, 232}
+\definecolor{corIncl}{RGB}{39, 174, 96}     % Verde — Inclusão
+\definecolor{corInclBg}{RGB}{234, 250, 241}
+\definecolor{corExcl}{RGB}{180, 180, 180}   % Cinza — Exclusões
+\definecolor{corExclBg}{RGB}{245, 245, 245}
+
+% ─── Comandos de Edição (preencha com os números do seu fluxo) ───────────────
+% >>> SUBSTITUA OS VALORES ABAIXO PELOS NÚMEROS DA SUA REVISÃO <<<
+
+% IDENTIFICAÇÃO
+\newcommand{\NUMDB}{}             % Registros identificados em bases de dados
+\newcommand{\NUMREG}{}            % Registros identificados em registros
+\newcommand{\NUMPRE}{}            % Registros antes da triagem (soma)
+
+% REMOVIDOS ANTES DA TRIAGEM
+\newcommand{\NUMDUPLICADOS}{}     % Registros duplicados removidos
+\newcommand{\NUMINEL}{}           % Registros inelegíveis (ferramentas automáticas)
+\newcommand{\NUMOUTRAS}{}         % Removidos por outras razões
+
+% TRIAGEM
+\newcommand{\NUMTRIADOS}{}        % Registros triados
+\newcommand{\NUMEXCLUIDOS}{}      % Registros excluídos após triagem
+\newcommand{\NUMBUSCADOS}{}       % Relatos buscados para recuperação
+\newcommand{\NUMNAORECUP}{}       % Relatos não recuperados
+\newcommand{\NUMAVALIADOS}{}      % Relatos avaliados para elegibilidade
+\newcommand{\NUMEXCLUIDOSRAZAO}{} % Relatos excluídos (com razões)
+
+% EXCLUSÕES POR RAZÃO (opcional — detalhe abaixo do box de exclusão)
+\newcommand{\NUMEXCLDOI}{}        % Ex.: revisões narrativas
+\newcommand{\NUMEXCLOUT}{}        % Ex.: população diferente
+
+% INCLUSÃO
+\newcommand{\NUMINCLUIDOS}{}      % Estudos incluídos na revisão
+\newcommand{\NUMRELATOS}{}        % Relatos de estudos incluídos
+
+% ─── Estilos dos Nós ─────────────────────────────────────────────────────────
+\tikzset{
+  boxId/.style={
+    rectangle, rounded corners=3pt,
+    fill=corIdBg, draw=corId, thick,
+    text width=9.5cm, align=left,
+    inner sep=10pt, font=\normalsize
+  },
+  boxScreen/.style={
+    rectangle, rounded corners=3pt,
+    fill=corScreenBg, draw=corScreen, thick,
+    text width=9.5cm, align=left,
+    inner sep=10pt, font=\normalsize
+  },
+  boxIncl/.style={
+    rectangle, rounded corners=3pt,
+    fill=corInclBg, draw=corIncl, thick,
+    text width=9.5cm, align=left,
+    inner sep=10pt, font=\normalsize
+  },
+  boxExcl/.style={
+    rectangle, rounded corners=3pt,
+    fill=corExclBg, draw=corExcl, thick,
+    text width=8cm, align=left,
+    inner sep=8pt, font=\small
+  },
+  labelFase/.style={
+    font=\bfseries\small,
+    text=gray!70!black,
+    align=center, anchor=south
+  },
+  seta/.style={
+    -{Stealth[length=3mm, width=2mm]},
+    thick, color=gray!60!black
+  },
+  setaExcl/.style={
+    -{Stealth[length=2.5mm, width=1.8mm]},
+    thick, dashed, color=corExcl
+  }
+}
+
+% =============================================================================
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  {\Large\bfseries Diagrama de Fluxo PRISMA 2020}\\[4pt]
+  {\small\itshape PRISMA~2020 Flow Diagram}\\[4pt]
+  {\small Preencha os \texttt{\textbackslash{}newcommand} no preâmbulo com os
+         números da sua revisão.}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tikzpicture}[node distance=1.2cm]
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  FASE 1 — IDENTIFICAÇÃO
+% ══════════════════════════════════════════════════════════════════════════════
+
+\node[labelFase] (lblId) at (0, 4.8) {IDENTIFICAÇÃO\\[-2pt]{\tiny\itshape Identification}};
+
+\node[boxId] (db) at (0, 4.0) {
+  \textbf{Registros identificados em bases de dados}
+  \hfill {\color{corId}\itshape n = \NUMDB}\\[2pt]
+  {\footnotesize Databases}
+};
+
+\node[boxId] (reg) at (0, 2.7) {
+  \textbf{Registros identificados em registros}
+  \hfill {\color{corId}\itshape n = \NUMREG}\\[2pt]
+  {\footnotesize Registers}
+};
+
+\draw[seta] (db.south) -- (reg.north);
+
+\node[boxId] (total) at (0, 1.4) {
+  \textbf{Total de registros antes da triagem}
+  \hfill {\color{corId}\itshape n = \NUMPRE}\\[2pt]
+  {\footnotesize Total records before screening}
+};
+
+\draw[seta] (reg.south) -- (total.north);
+
+% Box de removidos
+\node[boxExcl, right=1.8cm of total, text width=4.8cm] (removidos) {
+  \textbf{Registros removidos antes da triagem:}\\[2pt]
+  {\small $\triangleright$ Registros duplicados \dotfill \NUMDUPLICADOS}\\[2pt]
+  {\small $\triangleright$ Inelegíveis (automação) \dotfill \NUMINEL}\\[2pt]
+  {\small $\triangleright$ Outras raz\~{o}es \dotfill \NUMOUTRAS}\\[2pt]
+  {\footnotesize Records removed before screening}
+};
+
+\draw[setaExcl] (total.east) -- (removidos.west)
+  node[midway, above, font=\tiny\itshape] {excluídos};
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  FASE 2 — TRIAGEM
+% ══════════════════════════════════════════════════════════════════════════════
+
+\node[labelFase] (lblScreen) at (0, -0.7) {TRIAGEM\\[-2pt]{\tiny\itshape Screening}};
+
+\node[boxScreen] (triados) at (0, -1.4) {
+  \textbf{Registros triados}
+  \hfill {\color{corScreen}\itshape n = \NUMTRIADOS}\\[2pt]
+  {\footnotesize Records screened}
+};
+
+\draw[seta] (total.south) -- (triados.north);
+
+\node[boxExcl, right=1.8cm of triados, text width=4.8cm] (exclTriagem) {
+  \textbf{Registros excluídos na triagem}
+  \hfill {\color{corExcl}\itshape n = \NUMEXCLUIDOS}\\[2pt]
+  {\footnotesize Records excluded}
+};
+
+\draw[setaExcl] (triados.east) -- (exclTriagem.west)
+  node[midway, above, font=\tiny\itshape] {excluídos};
+
+\node[boxScreen] (buscados) at (0, -3.2) {
+  \textbf{Relatos buscados para recuperação}
+  \hfill {\color{corScreen}\itshape n = \NUMBUSCADOS}\\[2pt]
+  {\footnotesize Reports sought for retrieval}
+};
+
+\draw[seta] (triados.south) -- (buscados.north);
+
+\node[boxExcl, right=1.8cm of buscados, text width=4.8cm] (naoRecup) {
+  \textbf{Relatos n\~{a}o recuperados}
+  \hfill {\color{corExcl}\itshape n = \NUMNAORECUP}\\[2pt]
+  {\footnotesize Reports not retrieved}
+};
+
+\draw[setaExcl] (buscados.east) -- (naoRecup.west)
+  node[midway, above, font=\tiny\itshape] {não recuperados};
+
+\node[boxScreen] (avaliados) at (0, -5.0) {
+  \textbf{Relatos avaliados para elegibilidade}
+  \hfill {\color{corScreen}\itshape n = \NUMAVALIADOS}\\[2pt]
+  {\footnotesize Reports assessed for eligibility}
+};
+
+\draw[seta] (buscados.south) -- (avaliados.north);
+
+\node[boxExcl, right=1.8cm of avaliados, text width=4.8cm] (exclRazao) {
+  \textbf{Relatos excluídos ap\'{o}s avaliação:}
+  \hfill {\color{corExcl}\itshape n = \NUMEXCLUIDOSRAZAO}\\[2pt]
+  {\footnotesize Reports excluded}\\[4pt]
+  {\small $\triangleright$ Razão A \dotfill \NUMEXCLDOI}\\[2pt]
+  {\small $\triangleright$ Razão B \dotfill \NUMEXCLOUT}\\[2pt]
+  {\small $\triangleright$ Outras \dotfill \phantom{00}}
+};
+
+\draw[setaExcl] (avaliados.east) -- (exclRazao.west)
+  node[midway, above, font=\tiny\itshape] {excluídos};
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  FASE 3 — INCLUSÃO
+% ══════════════════════════════════════════════════════════════════════════════
+
+\node[labelFase] (lblIncl) at (0, -6.8) {INCLUSÃO\\[-2pt]{\tiny\itshape Inclusion}};
+
+\node[boxIncl] (incluidos) at (0, -7.6) {
+  \textbf{Estudos incluídos na revisão}
+  \hfill {\color{corIncl}\itshape n = \NUMINCLUIDOS}\\[2pt]
+  {\footnotesize Studies included in review}
+};
+
+\draw[seta] (avaliados.south) -- (incluidos.north);
+
+\node[boxIncl] (relatosIncl) at (0, -9.0) {
+  \textbf{Relatos dos estudos incluídos}
+  \hfill {\color{corIncl}\itshape n = \NUMRELATOS}\\[2pt]
+  {\footnotesize Reports of included studies}
+};
+
+\draw[seta] (incluidos.south) -- (relatosIncl.north);
+
+% ══════════════════════════════════════════════════════════════════════════════
+%  LEGENDA / NOTAS
+% ══════════════════════════════════════════════════════════════════════════════
+
+\node[below=0.3cm of relatosIncl.south, font=\tiny, text=gray] {
+  Adaptado de: Page MJ, et al. BMJ 2021;372:n71.
+  \hfill doi: 10.1136/bmj.n71
+};
+
+\end{tikzpicture}
+\end{center}
+
+\vfill
+\begin{center}
+\begin{minipage}{0.85\textwidth}
+\small
+\textbf{Instruções:}\\
+1. Edite os \texttt{\textbackslash{}newcommand} no preâmbulo deste arquivo com
+   os números da sua revisão sistemática.\\
+2. Compile com \texttt{pdflatex prisma2020-flow.tex}\\
+3. Os boxes laterais (remoções, exclusões) podem ser omitidos definindo o
+   valor como $0$ ou comentando a linha.
+\end{minipage}
+\end{center}
+
+\end{document}
