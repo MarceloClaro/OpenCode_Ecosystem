@@ -1,5 +1,8 @@
 ---
 name: content-engine-cinema
+category: broomva
+version: "1.0.0"
+kind: python
 description: "Cinematic Generation Layer — the taste and technique library for premium AI content. Codifies start-frame doctrine, camera style vocabulary (Anderson/Fincher/Nolan/Villeneuve/Kubrick), node pipeline architecture, scene generation formulas, and 25+ design styles with exact prompts. Tier-1 generation via Higgsfield CLI (30+ models — Soul V2, Nano Banana 2, Veo 3.1, Kling 3.0, Seedance 2.0, Flux 2, Marketing Studio). Triggers on: 'generate content', 'cinematic', 'create scene', 'start frame', 'style library', 'generate campaign', 'AI filmmaking', 'higgsfield generate', 'soul cinema', 'marketing studio'."
 ---
 

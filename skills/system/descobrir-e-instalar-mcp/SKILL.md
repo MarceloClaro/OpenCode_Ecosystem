@@ -1,6 +1,11 @@
 ---
 name: descobrir-e-instalar-mcp
+category: system
+version: "1.0.0"
+kind: python
 description: "Skill do ecossistema OpenCode - descobrir-e-instalar-mcp"
+---
+
 ---
 
 

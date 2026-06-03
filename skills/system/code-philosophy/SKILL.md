@@ -1,5 +1,8 @@
 ---
 name: code-philosophy
+category: system
+version: "1.0.0"
+kind: python
 description: "Filosofia de logica interna e fluxo de dados (As 5 Leis da Defesa Elegante)"
 user-invocable: true
 license: MIT

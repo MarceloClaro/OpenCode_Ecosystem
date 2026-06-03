@@ -1,5 +1,8 @@
 ---
 name: code-review
+category: system
+version: "1.0.0"
+kind: python
 description: "Metodologia abrangente de revisao de codigo com classificacao de gravidade e limites de confianca"
 user-invocable: true
 license: MIT

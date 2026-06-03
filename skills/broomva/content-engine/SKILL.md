@@ -1,5 +1,8 @@
 ---
 name: content-engine
+category: broomva
+version: "1.0.0"
+kind: python
 description: "Full-stack AI content studio — orchestrates visual DNA compilation, cinematic generation (via Higgsfield CLI or MCP), browser-automated tool execution, and multi-platform distribution into a unified content pipeline. Compiles brand identity, character sheets, and style guides into persistent knowledge (Karpathy compile-then-query pattern), then generates premium cinematic content using Higgsfield (30+ models including Soul V2, Nano Banana 2, Veo 3.1, Kling 3.0, Seedance 2.0, Flux 2), Soul Cinema, Weavy, and ComfyUI with consistent character identity and intentional visual direction. Triggers on: 'content engine', 'generate campaign', 'compile brand', 'cinematic content', 'AI content studio', 'batch generate', 'content pipeline', 'visual DNA', 'character consistency', 'higgsfield', 'marketing studio', 'product photoshoot', 'soul character'."
 ---
 

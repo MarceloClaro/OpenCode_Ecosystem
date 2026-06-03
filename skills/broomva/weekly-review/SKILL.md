@@ -1,5 +1,8 @@
 ---
 name: weekly-review
+category: broomva
+version: "1.0.0"
+kind: python
 description: >
   Scans the vault for updates from the past week, surfaces what changed, and flags what
   needs attention. Produces a structured weekly review. Use when the user says "weekly review",

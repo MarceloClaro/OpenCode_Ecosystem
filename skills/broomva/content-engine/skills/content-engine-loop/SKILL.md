@@ -1,5 +1,8 @@
 ---
 name: content-engine-loop
+category: broomva
+version: "1.0.0"
+kind: python
 description: "Content Loop + Distribution — compounds existing broomva skills into a unified content lifecycle. Orchestrates /blog-post, /content-creation, /social-intelligence, /brainrot-for-good, and /brand-icons for multi-platform distribution. Adds performance tracking, feedback-driven identity refinement, content calendar, and campaign management. Triggers on: 'distribute content', 'content loop', 'publish campaign', 'content calendar', 'track performance'."
 ---
 

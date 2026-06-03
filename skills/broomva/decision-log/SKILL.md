@@ -1,5 +1,8 @@
 ---
 name: decision-log
+category: broomva
+version: "1.0.0"
+kind: python
 description: >
   Captures a decision with context, alternatives considered, and rationale, then links
   it to the relevant project doc in the vault. Creates a searchable decision record.

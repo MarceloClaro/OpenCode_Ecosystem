@@ -1,5 +1,8 @@
 ---
 name: domain-shift-camada1b
+category: system
+version: "1.0.0"
+kind: python
 description: >
   Deteccao de Domain Shift em corpora multi-institucionais. Distingue 'padrao real
   que evoluiu' de 'domain shift que invalida a comparacao' usando decomposicao em

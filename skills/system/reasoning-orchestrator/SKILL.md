@@ -1,5 +1,8 @@
 ---
 name: reasoning-orchestrator
+category: system
+version: "1.0.0"
+kind: python
 description: "OpenCode Reasoning Orchestrator v9.0 — 68 tipos de raciocínio (58 base + 10 Teoria dos Jogos). Integrado com AuditSystem, TokenEconomy e DataOrchestrator. Use para selecionar framework lógico, nível de profundidade e matriz de interseção com validação de diversidade de raciocínio."
 user-invocable: true
 license: MIT

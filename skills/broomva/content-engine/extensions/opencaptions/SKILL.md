@@ -1,8 +1,10 @@
 ---
 name: content-engine-opencaptions
+category: broomva
+version: "1.0.0"
+kind: python
 slug: opencaptions
 hook: post-production
-version: "0.1.0"
 description: "OpenCaptions extension for Content Engine — adds intent-driven CWI (Caption With Intent) captions to the post-production pipeline. Hooks into the grade → caption → final stage. Generates captions that understand video intent (pitch, volume, emotion, emphasis) and style themselves accordingly with variable font weight, size, and color. Uses the OpenCaptions CLI or MCP server. Triggers on: 'add captions', 'opencaptions', 'CWI captions', 'intent captions'."
 inputs:
   - "graded video asset from post-production pipeline"

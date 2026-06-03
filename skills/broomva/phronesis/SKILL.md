@@ -1,5 +1,8 @@
 ---
 name: phronesis
+category: broomva
+version: "1.0.0"
+kind: python
 description: "AI-native advisory practice for the Broomva ecosystem. Encodes top-firm consulting methodology (Three Horizons, MIT CISR digital maturity, JTBD, Value Proposition Canvas, RICE/ICE/WSJF, NPV + Real Options, QuantumBlack ML lifecycle, Wardley Mapping) as runnable typed primitives. Produces 7 Discovery-grade deliverables in two modes — consultant CLI or autonomous Life Runtime endpoint. Use when: (1) running an AI/digital consulting engagement, (2) building a maturity assessment, (3) generating prioritized use-case dossiers, (4) designing an innovation roadmap, (5) modeling ROI for AI initiatives, (6) designing controlled pilots, (7) extracting reusable IP from completed engagements. Triggers on 'consulting', 'consultancy', 'advisory', 'fast discovery', 'discovery sprint', 'AI maturity', 'digital maturity', 'use case ideation', 'use case prioritization', 'innovation roadmap', 'roi model', 'consultoría', 'evaluación de madurez', 'hoja de ruta'."
 ---
 

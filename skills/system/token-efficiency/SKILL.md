@@ -1,5 +1,8 @@
 ---
 name: token-efficiency
+category: system
+version: "1.0.0"
+kind: python
 description: "Otimizacao de tokens para ecossistema OpenCode - Chines + PT-BR + deepseek-v4-pro"
 user-invocable: true
 license: MIT

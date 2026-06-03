@@ -1,5 +1,8 @@
 ---
 name: plan-review
+category: system
+version: "1.0.0"
+kind: python
 description: "Criteria for reviewing implementation plans against quality standards"
 user-invocable: true
 license: MIT

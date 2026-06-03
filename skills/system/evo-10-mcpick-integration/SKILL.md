@@ -1,5 +1,8 @@
 ---
 name: evo-10-mcpick-integration
+category: system
+version: "1.0.0"
+kind: python
 description: >-
   Skill evoluida no Round 10 do AutoEvolve. Integra mcpick (MCP config
   manager), gerencia versoes do SDK OpenCode, audita MCPs via CLI externa,

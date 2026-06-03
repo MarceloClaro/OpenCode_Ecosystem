@@ -1,5 +1,8 @@
 ---
 name: content-engine-autopilot
+category: broomva
+version: "1.0.0"
+kind: python
 description: "Browser Orchestration — Playwright-driven generation at scale. Claude Code runs your entire content pipeline in the browser. Saves authentication sessions per tool, executes batch generation using compiled identity, and organizes output automatically. Supports Higgsfield, Weavy, Artlist, and extensible to any web-based generation tool. Triggers on: 'autopilot', 'browser automation', 'batch generate', 'setup tool', 'automated generation'."
 ---
 

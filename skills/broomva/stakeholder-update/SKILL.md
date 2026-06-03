@@ -1,5 +1,8 @@
 ---
 name: stakeholder-update
+category: broomva
+version: "1.0.0"
+kind: python
 description: >
   Takes one set of project facts and generates three versions: technical for engineering,
   business-impact for leadership, and customer-facing for success teams. Use when the user

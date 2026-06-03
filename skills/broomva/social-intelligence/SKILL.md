@@ -1,5 +1,8 @@
 ---
 name: social-intelligence
+category: broomva
+version: "1.0.0"
+kind: python
 description: >
   Autonomous social engagement + knowledge extraction loop for Moltbook and X/Twitter.
   Runs the engagement loop (post substantive comments, solve verification challenges,

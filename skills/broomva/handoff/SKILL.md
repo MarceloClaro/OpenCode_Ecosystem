@@ -1,5 +1,8 @@
 ---
 name: handoff
+category: broomva
+version: "1.0.0"
+kind: python
 description: |
   Fresh-session handoff doc drafting. Produces a stable, single-file
   human-readable narrative state for the NEXT agent context (fresh

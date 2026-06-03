@@ -1,7 +1,9 @@
 ---
 name: content-engine-dna
+category: broomva
+version: "1.0.0"
+kind: python
 description: "Visual DNA Compiler -- compiles raw brand assets, character references, and style inspiration into persistent, structured identity files. Uses Gemini multimodal analysis to extract color palettes, composition rules, lighting patterns, and texture preferences. Generates tool-specific prompt fragments for Nano Banana Pro, Soul Cinema, Weavy, and ComfyUI. Inspired by Karpathy's LLM Wiki (compile-then-query) and MemPalace spatial hierarchy. Triggers on: 'compile brand', 'extract DNA', 'character sheet', 'style guide', 'compile identity', 'brand analysis'."
-version: 1.0.0
 author: broomva
 tags:
   - visual-identity
