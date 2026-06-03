@@ -1,0 +1,963 @@
+[2026-05-19 15:28:59,879] [INFO] [MainThread] ❌ [Prática] Erro de Conexão: <urlopen error [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente>
+[2026-05-19 15:28:59,881] [INFO] [MainThread] Validação Concluída.
+[2026-05-19 15:28:59,882] [INFO] [MainThread] 🧹 Iniciando consolidação e encerramento limpo das conexões SQLite (WAL checkpoint)...
+[2026-05-19 15:28:59,927] [INFO] [MainThread] ✅ Banco consolidado com sucesso: sim_brazil.db
+[2026-05-19 15:30:22,247] [INFO] [MainThread] ✅ [Prática] Requisição GET /api/status: PASSOU (Status 200 OK)
+[2026-05-19 15:30:24,277] [INFO] [MainThread] ✅ [Prática] Requisição OPTIONS: PASSOU (Status 200 OK)
+[2026-05-19 15:30:26,312] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/start: PASSOU (Status 200 OK)
+[2026-05-19 15:30:26,370] [INFO] [Thread-2 (run_simulation_async)]    📋 61 perfis carregados do banco: {'total': 61, 'by_source': {'default': 6, 'expanded_analitico': 3, 'expanded_antropologico': 2, 'expanded_cientifico': 3, 'expanded_comportamental': 3, 'expanded_comunicador': 3, 'expanded_desenvolvimental': 2, 'expanded_economico': 3, 'expanded_emocional': 3, 'expanded_espiritual': 2, 'expanded_estrategico': 3, 'expanded_futurologia': 3, 'expanded_ideologico': 3, 'expanded_neurociencia': 2, 'expanded_politica_avancada': 3, 'expanded_psicopatologia': 3, 'expanded_regional': 3, 'expanded_social': 3, 'whatsapp': 8}, 'by_stance': {'critical': 13, 'curious': 9, 'neutral': 17, 'supportive': 22}, 'timestamp': '2026-05-19T15:30:26.370832-03:00'}
+[2026-05-19 15:30:26,381] [INFO] [Thread-2 (run_simulation_async)] 
+============================================================
+[2026-05-19 15:30:26,381] [INFO] [Thread-2 (run_simulation_async)] [SIM] MiroFish_Local
+[2026-05-19 15:30:26,381] [INFO] [Thread-2 (run_simulation_async)]      Agents: 100 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-19 15:30:26,381] [INFO] [Thread-2 (run_simulation_async)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/mirofish_local.db
+[2026-05-19 15:30:26,383] [INFO] [Thread-2 (run_simulation_async)] ============================================================
+[2026-05-19 15:30:26,401] [INFO] [Thread-2 (run_simulation_async)]    Rodada   1/30 |    9 ações |   23 ativos | sentimento: -0.11 | 0.02s
+[2026-05-19 15:30:26,626] [INFO] [Thread-2 (run_simulation_async)]    Rodada  10/30 |   21 ações |   28 ativos | sentimento: -0.33 | 0.03s
+[2026-05-19 15:30:26,844] [INFO] [Thread-2 (run_simulation_async)]    Rodada  20/30 |   20 ações |   30 ativos | sentimento: +0.05 | 0.02s
+[2026-05-19 15:30:27,050] [INFO] [Thread-2 (run_simulation_async)]    Rodada  30/30 |   16 ações |   25 ativos | sentimento: -0.25 | 0.02s
+[2026-05-19 15:30:27,246] [INFO] [Thread-2 (run_simulation_async)] 
+============================================================
+[2026-05-19 15:30:27,247] [INFO] [Thread-2 (run_simulation_async)] [OK] SIMULATION DONE in 0.7s
+[2026-05-19 15:30:27,247] [INFO] [Thread-2 (run_simulation_async)]    Actions: 502
+[2026-05-19 15:30:27,247] [INFO] [Thread-2 (run_simulation_async)]    Posts: 502 | Interactions: 0
+[2026-05-19 15:30:27,249] [INFO] [Thread-2 (run_simulation_async)]    Avg Sentiment: -0.15
+[2026-05-19 15:30:27,249] [INFO] [Thread-2 (run_simulation_async)]    Top influencer: Ministro da Fazenda
+[2026-05-19 15:30:27,249] [INFO] [Thread-2 (run_simulation_async)] ============================================================
+[2026-05-19 15:30:28,375] [INFO] [Thread-1 (run_server)] 
+======================================================================
+[2026-05-19 15:30:28,377] [INFO] [Thread-1 (run_server)] ⚔️  MULTI-AGENT WAR ROOM — GERAL
+[2026-05-19 15:30:28,377] [INFO] [Thread-1 (run_server)] ======================================================================
+[2026-05-19 15:30:28,378] [INFO] [Thread-1 (run_server)]   Problema: Teste...
+[2026-05-19 15:30:28,378] [INFO] [Thread-1 (run_server)]   Agentes: 6 | Rodadas: 1
+[2026-05-19 15:30:28,378] [INFO] [Thread-1 (run_server)] ──────────────────────────────────────────────────────────────────────
+[2026-05-19 15:30:28,378] [INFO] [Thread-1 (run_server)] 
+  [Estrategista (Carl von Clausew...] Analisando via analogia_historica...
+[2026-05-19 15:30:28,378] [INFO] [Thread-1 (run_server)] 
+  [Cético Metódico (Karl Popper)...] Analisando via falsificacao...
+[2026-05-19 15:30:28,378] [INFO] [Thread-1 (run_server)] 
+  [Sintetizador (Hegel/Engels)...] Analisando via dialetica...
+[2026-05-19 15:30:28,378] [INFO] [Thread-1 (run_server)] 
+  [Especialista Domínio (PhD)...] Analisando via revisao_literatura...
+[2026-05-19 15:30:28,378] [INFO] [Thread-1 (run_server)] 
+  [Visionário (H.G. Wells/Herman ...] Analisando via cenarios_futuros...
+[2026-05-19 15:30:28,378] [INFO] [Thread-1 (run_server)] 
+  [Pragmático (Maquiavel/Peter Dr...] Analisando via viabilidade_execucao...
+[2026-05-19 15:30:28,381] [INFO] [Thread-1 (run_server)] 
+──────────────────────────────────────────────────────────────────────
+[2026-05-19 15:30:28,381] [INFO] [Thread-1 (run_server)]   ✅ War Room concluída: 6 análises
+[2026-05-19 15:30:28,381] [INFO] [Thread-1 (run_server)]   🎯 Recomendação principal: Aplicar princípio da 'névoa da guerra' (Clausewitz): reconhecer incerteza, manter flexibilidade táti...
+[2026-05-19 15:30:28,381] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/warroom: PASSOU (Status 200 OK)
+[2026-05-19 15:30:45,754] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/omen/predict: PASSOU (Status 200 OK)
+[2026-05-19 15:30:47,778] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/report: PASSOU (Status 200 OK)
+[2026-05-19 15:30:48,333] [INFO] [Thread-4 (_gen)] [WARN] No data for SI.POV.NAHC — usando fallback sintético
+[2026-05-19 15:30:48,581] [INFO] [Thread-4 (_gen)] [WARN] No data for EN.ATM.CO2E.PC — usando fallback sintético
+[2026-05-19 15:30:48,843] [INFO] [Thread-4 (_gen)] [WARN] No data for ER.FST.TOTL.ZS — usando fallback sintético
+[2026-05-19 15:30:49,247] [INFO] [Thread-4 (_gen)] [REPORT] Relatório salvo: c:\Users\marce\.config\opencode\skills\data-collector\scripts\..\..\..\.reversa\research_report.md
+[2026-05-19 15:30:49,833] [INFO] [MainThread] ✅ [Prática] Requisição GET /api/health: PASSOU (Status 200 OK)
+[2026-05-19 15:30:51,874] [INFO] [MainThread] ❌ [Prática] Erro de Conexão: HTTP Error 404: Not Found
+[2026-05-19 15:30:51,877] [INFO] [MainThread] Validação Concluída.
+[2026-05-19 15:30:51,877] [INFO] [MainThread] 🧹 Iniciando consolidação e encerramento limpo das conexões SQLite (WAL checkpoint)...
+[2026-05-19 15:30:51,937] [INFO] [MainThread] ✅ Banco consolidado com sucesso: mirofish_local.db
+[2026-05-19 15:30:51,961] [INFO] [MainThread] ✅ Banco consolidado com sucesso: sim_brazil.db
+[2026-05-19 15:30:51,988] [INFO] [MainThread] ✅ Banco consolidado com sucesso: omen_logs.db
+[2026-05-19 15:44:44,657] [INFO] [MainThread] ✅ [Prática] Requisição GET /api/status: PASSOU (Status 200 OK)
+[2026-05-19 15:44:46,686] [INFO] [MainThread] ✅ [Prática] Requisição OPTIONS: PASSOU (Status 200 OK)
+[2026-05-19 15:44:48,717] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/start: PASSOU (Status 200 OK)
+[2026-05-19 15:44:48,747] [INFO] [Thread-2 (run_simulation_async)]    📋 61 perfis carregados do banco: {'total': 61, 'by_source': {'default': 6, 'expanded_analitico': 3, 'expanded_antropologico': 2, 'expanded_cientifico': 3, 'expanded_comportamental': 3, 'expanded_comunicador': 3, 'expanded_desenvolvimental': 2, 'expanded_economico': 3, 'expanded_emocional': 3, 'expanded_espiritual': 2, 'expanded_estrategico': 3, 'expanded_futurologia': 3, 'expanded_ideologico': 3, 'expanded_neurociencia': 2, 'expanded_politica_avancada': 3, 'expanded_psicopatologia': 3, 'expanded_regional': 3, 'expanded_social': 3, 'whatsapp': 8}, 'by_stance': {'critical': 13, 'curious': 9, 'neutral': 17, 'supportive': 22}, 'timestamp': '2026-05-19T15:44:48.747342-03:00'}
+[2026-05-19 15:44:48,750] [INFO] [Thread-2 (run_simulation_async)] 
+============================================================
+[2026-05-19 15:44:48,750] [INFO] [Thread-2 (run_simulation_async)] [SIM] MiroFish_Local
+[2026-05-19 15:44:48,752] [INFO] [Thread-2 (run_simulation_async)]      Agents: 100 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-19 15:44:48,752] [INFO] [Thread-2 (run_simulation_async)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/mirofish_local.db
+[2026-05-19 15:44:48,752] [INFO] [Thread-2 (run_simulation_async)] ============================================================
+[2026-05-19 15:44:48,765] [INFO] [Thread-2 (run_simulation_async)]    Rodada   1/30 |   15 ações |   23 ativos | sentimento: +0.73 | 0.01s
+[2026-05-19 15:44:48,871] [INFO] [Thread-2 (run_simulation_async)]    Rodada  10/30 |   17 ações |   26 ativos | sentimento: +0.18 | 0.01s
+[2026-05-19 15:44:48,992] [INFO] [Thread-2 (run_simulation_async)]    Rodada  20/30 |   19 ações |   28 ativos | sentimento: +0.42 | 0.01s
+[2026-05-19 15:44:49,107] [INFO] [Thread-2 (run_simulation_async)]    Rodada  30/30 |   19 ações |   28 ativos | sentimento: -0.53 | 0.01s
+[2026-05-19 15:44:49,187] [INFO] [Thread-2 (run_simulation_async)] 
+============================================================
+[2026-05-19 15:44:49,187] [INFO] [Thread-2 (run_simulation_async)] [OK] SIMULATION DONE in 0.4s
+[2026-05-19 15:44:49,187] [INFO] [Thread-2 (run_simulation_async)]    Actions: 548
+[2026-05-19 15:44:49,187] [INFO] [Thread-2 (run_simulation_async)]    Posts: 548 | Interactions: 0
+[2026-05-19 15:44:49,187] [INFO] [Thread-2 (run_simulation_async)]    Avg Sentiment: -0.15
+[2026-05-19 15:44:49,187] [INFO] [Thread-2 (run_simulation_async)]    Top influencer: Ministro da Fazenda
+[2026-05-19 15:44:49,187] [INFO] [Thread-2 (run_simulation_async)] ============================================================
+[2026-05-19 15:44:50,744] [INFO] [Thread-1 (run_server)] 
+======================================================================
+[2026-05-19 15:44:50,744] [INFO] [Thread-1 (run_server)] ⚔️  MULTI-AGENT WAR ROOM — GERAL
+[2026-05-19 15:44:50,744] [INFO] [Thread-1 (run_server)] ======================================================================
+[2026-05-19 15:44:50,745] [INFO] [Thread-1 (run_server)]   Problema: Teste...
+[2026-05-19 15:44:50,745] [INFO] [Thread-1 (run_server)]   Agentes: 6 | Rodadas: 1
+[2026-05-19 15:44:50,745] [INFO] [Thread-1 (run_server)] ──────────────────────────────────────────────────────────────────────
+[2026-05-19 15:44:50,745] [INFO] [Thread-1 (run_server)] 
+  [Estrategista (Carl von Clausew...] Analisando via analogia_historica...
+[2026-05-19 15:44:50,745] [INFO] [Thread-1 (run_server)] 
+  [Cético Metódico (Karl Popper)...] Analisando via falsificacao...
+[2026-05-19 15:44:50,745] [INFO] [Thread-1 (run_server)] 
+  [Sintetizador (Hegel/Engels)...] Analisando via dialetica...
+[2026-05-19 15:44:50,748] [INFO] [Thread-1 (run_server)] 
+  [Especialista Domínio (PhD)...] Analisando via revisao_literatura...
+[2026-05-19 15:44:50,748] [INFO] [Thread-1 (run_server)] 
+  [Visionário (H.G. Wells/Herman ...] Analisando via cenarios_futuros...
+[2026-05-19 15:44:50,748] [INFO] [Thread-1 (run_server)] 
+  [Pragmático (Maquiavel/Peter Dr...] Analisando via viabilidade_execucao...
+[2026-05-19 15:44:50,749] [INFO] [Thread-1 (run_server)] 
+──────────────────────────────────────────────────────────────────────
+[2026-05-19 15:44:50,749] [INFO] [Thread-1 (run_server)]   ✅ War Room concluída: 6 análises
+[2026-05-19 15:44:50,750] [INFO] [Thread-1 (run_server)]   🎯 Recomendação principal: Aplicar princípio da 'névoa da guerra' (Clausewitz): reconhecer incerteza, manter flexibilidade táti...
+[2026-05-19 15:44:50,751] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/warroom: PASSOU (Status 200 OK)
+[2026-05-19 15:44:54,606] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/omen/predict: PASSOU (Status 200 OK)
+[2026-05-19 15:44:56,678] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/report: PASSOU (Status 200 OK)
+[2026-05-19 15:44:56,993] [INFO] [Thread-4 (_gen)] [WARN] No data for SI.POV.NAHC — usando fallback sintético
+[2026-05-19 15:44:57,184] [INFO] [Thread-4 (_gen)] [WARN] No data for EN.ATM.CO2E.PC — usando fallback sintético
+[2026-05-19 15:44:57,412] [INFO] [Thread-4 (_gen)] [WARN] No data for ER.FST.TOTL.ZS — usando fallback sintético
+[2026-05-19 15:44:57,436] [INFO] [Thread-4 (_gen)] [REPORT] Relatório salvo: c:\Users\marce\.config\opencode\skills\data-collector\scripts\..\..\..\.reversa\research_report.md
+[2026-05-19 15:44:58,735] [INFO] [MainThread] ✅ [Prática] Requisição GET /api/health: PASSOU (Status 200 OK)
+[2026-05-19 15:45:00,778] [INFO] [MainThread] ✅ [Prática] Requisição GET /api/omen/audit: PASSOU (Status 200 OK)
+[2026-05-19 15:45:00,778] [INFO] [MainThread] Validação Concluída.
+[2026-05-19 15:45:00,778] [INFO] [MainThread] 🧹 Iniciando consolidação e encerramento limpo das conexões SQLite (WAL checkpoint)...
+[2026-05-19 15:45:00,799] [INFO] [MainThread] ✅ Banco consolidado com sucesso: omen_logs.db
+[2026-05-19 15:45:00,813] [INFO] [MainThread] ✅ Banco consolidado com sucesso: sim_brazil.db
+[2026-05-19 15:45:00,831] [INFO] [MainThread] ✅ Banco consolidado com sucesso: mirofish_local.db
+[2026-05-19 21:45:26,244] [INFO] [MainThread] ✅ [Prática] Requisição GET /api/status: PASSOU (Status 200 OK)
+[2026-05-19 21:45:28,286] [INFO] [MainThread] ✅ [Prática] Requisição OPTIONS: PASSOU (Status 200 OK)
+[2026-05-19 21:45:30,344] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/start: PASSOU (Status 200 OK)
+[2026-05-19 21:45:30,423] [INFO] [Thread-2 (run_simulation_async)]    📋 61 perfis carregados do banco: {'total': 61, 'by_source': {'default': 6, 'expanded_analitico': 3, 'expanded_antropologico': 2, 'expanded_cientifico': 3, 'expanded_comportamental': 3, 'expanded_comunicador': 3, 'expanded_desenvolvimental': 2, 'expanded_economico': 3, 'expanded_emocional': 3, 'expanded_espiritual': 2, 'expanded_estrategico': 3, 'expanded_futurologia': 3, 'expanded_ideologico': 3, 'expanded_neurociencia': 2, 'expanded_politica_avancada': 3, 'expanded_psicopatologia': 3, 'expanded_regional': 3, 'expanded_social': 3, 'whatsapp': 8}, 'by_stance': {'critical': 13, 'curious': 9, 'neutral': 17, 'supportive': 22}, 'timestamp': '2026-05-19T21:45:30.423853-03:00'}
+[2026-05-19 21:45:30,428] [INFO] [Thread-2 (run_simulation_async)] 
+============================================================
+[2026-05-19 21:45:30,428] [INFO] [Thread-2 (run_simulation_async)] [SIM] MiroFish_Local
+[2026-05-19 21:45:30,428] [INFO] [Thread-2 (run_simulation_async)]      Agents: 100 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-19 21:45:30,428] [INFO] [Thread-2 (run_simulation_async)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/mirofish_local.db
+[2026-05-19 21:45:30,428] [INFO] [Thread-2 (run_simulation_async)] ============================================================
+[2026-05-19 21:45:30,444] [INFO] [Thread-2 (run_simulation_async)]    Rodada   1/30 |   17 ações |   32 ativos | sentimento: -0.12 | 0.02s
+[2026-05-19 21:45:30,552] [INFO] [Thread-2 (run_simulation_async)]    Rodada  10/30 |   17 ações |   26 ativos | sentimento: -0.76 | 0.01s
+[2026-05-19 21:45:30,665] [INFO] [Thread-2 (run_simulation_async)]    Rodada  20/30 |   20 ações |   34 ativos | sentimento: -0.20 | 0.01s
+[2026-05-19 21:45:30,783] [INFO] [Thread-2 (run_simulation_async)]    Rodada  30/30 |   16 ações |   20 ativos | sentimento: +0.50 | 0.01s
+[2026-05-19 21:45:30,841] [INFO] [Thread-2 (run_simulation_async)] 
+============================================================
+[2026-05-19 21:45:30,841] [INFO] [Thread-2 (run_simulation_async)] [OK] SIMULATION DONE in 0.4s
+[2026-05-19 21:45:30,841] [INFO] [Thread-2 (run_simulation_async)]    Actions: 537
+[2026-05-19 21:45:30,841] [INFO] [Thread-2 (run_simulation_async)]    Posts: 537 | Interactions: 0
+[2026-05-19 21:45:30,842] [INFO] [Thread-2 (run_simulation_async)]    Avg Sentiment: -0.03
+[2026-05-19 21:45:30,842] [INFO] [Thread-2 (run_simulation_async)]    Top influencer: Ministro da Fazenda
+[2026-05-19 21:45:30,842] [INFO] [Thread-2 (run_simulation_async)] ============================================================
+[2026-05-19 21:45:32,394] [INFO] [Thread-1 (run_server)] 
+======================================================================
+[2026-05-19 21:45:32,394] [INFO] [Thread-1 (run_server)] ⚔️  MULTI-AGENT WAR ROOM — GERAL
+[2026-05-19 21:45:32,394] [INFO] [Thread-1 (run_server)] ======================================================================
+[2026-05-19 21:45:32,394] [INFO] [Thread-1 (run_server)]   Problema: Teste...
+[2026-05-19 21:45:32,394] [INFO] [Thread-1 (run_server)]   Agentes: 6 | Rodadas: 1
+[2026-05-19 21:45:32,394] [INFO] [Thread-1 (run_server)] ──────────────────────────────────────────────────────────────────────
+[2026-05-19 21:45:32,394] [INFO] [Thread-1 (run_server)] 
+  [Estrategista (Carl von Clausew...] Analisando via analogia_historica...
+[2026-05-19 21:45:32,394] [INFO] [Thread-1 (run_server)] 
+  [Cético Metódico (Karl Popper)...] Analisando via falsificacao...
+[2026-05-19 21:45:32,394] [INFO] [Thread-1 (run_server)] 
+  [Sintetizador (Hegel/Engels)...] Analisando via dialetica...
+[2026-05-19 21:45:32,394] [INFO] [Thread-1 (run_server)] 
+  [Especialista Domínio (PhD)...] Analisando via revisao_literatura...
+[2026-05-19 21:45:32,394] [INFO] [Thread-1 (run_server)] 
+  [Visionário (H.G. Wells/Herman ...] Analisando via cenarios_futuros...
+[2026-05-19 21:45:32,397] [INFO] [Thread-1 (run_server)] 
+  [Pragmático (Maquiavel/Peter Dr...] Analisando via viabilidade_execucao...
+[2026-05-19 21:45:32,397] [INFO] [Thread-1 (run_server)] 
+──────────────────────────────────────────────────────────────────────
+[2026-05-19 21:45:32,397] [INFO] [Thread-1 (run_server)]   ✅ War Room concluída: 6 análises
+[2026-05-19 21:45:32,397] [INFO] [Thread-1 (run_server)]   🎯 Recomendação principal: Aplicar princípio da 'névoa da guerra' (Clausewitz): reconhecer incerteza, manter flexibilidade táti...
+[2026-05-19 21:45:32,397] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/warroom: PASSOU (Status 200 OK)
+[2026-05-19 21:45:37,192] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/omen/predict: PASSOU (Status 200 OK)
+[2026-05-19 21:45:39,244] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/report: PASSOU (Status 200 OK)
+[2026-05-19 21:45:39,507] [INFO] [Thread-4 (_gen)] [WARN] No data for SI.POV.NAHC — usando fallback sintético
+[2026-05-19 21:45:39,672] [INFO] [Thread-4 (_gen)] [WARN] No data for EN.ATM.CO2E.PC — usando fallback sintético
+[2026-05-19 21:45:39,889] [INFO] [Thread-4 (_gen)] [WARN] No data for ER.FST.TOTL.ZS — usando fallback sintético
+[2026-05-19 21:45:39,905] [INFO] [Thread-4 (_gen)] [REPORT] Relatório salvo: c:\Users\marce\.config\opencode\skills\data-collector\scripts\..\..\..\.reversa\research_report.md
+[2026-05-19 21:45:41,300] [INFO] [MainThread] ✅ [Prática] Requisição GET /api/health: PASSOU (Status 200 OK)
+[2026-05-19 21:45:43,329] [INFO] [MainThread] ✅ [Prática] Requisição GET /api/omen/audit: PASSOU (Status 200 OK)
+[2026-05-19 21:45:43,329] [INFO] [MainThread] Validação Concluída.
+[2026-05-19 21:45:43,329] [INFO] [MainThread] 🧹 Iniciando consolidação e encerramento limpo das conexões SQLite (WAL checkpoint)...
+[2026-05-19 21:45:43,390] [INFO] [MainThread] ✅ Banco consolidado com sucesso: omen_logs.db
+[2026-05-19 21:45:43,406] [INFO] [MainThread] ✅ Banco consolidado com sucesso: mirofish_local.db
+[2026-05-19 21:45:43,430] [INFO] [MainThread] ✅ Banco consolidado com sucesso: sim_brazil.db
+[2026-05-19 21:51:27,932] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-19 21:51:27,933] [INFO] [MainThread] 🐟  MIROFISH LOCAL SERVER — OpenCode Ecosystem v4.2
+[2026-05-19 21:51:27,933] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-19 21:51:27,933] [INFO] [MainThread]    Local:    http://localhost:8765
+[2026-05-19 21:51:27,934] [INFO] [MainThread]    API:      http://localhost:8765/api/status
+[2026-05-19 21:51:27,934] [INFO] [MainThread]    SSE:      http://localhost:8765/events
+[2026-05-19 21:51:27,934] [INFO] [MainThread]    Agents:   http://localhost:8765/api/agents
+[2026-05-19 21:51:27,934] [INFO] [MainThread]    Chat:     POST http://localhost:8765/api/chat
+[2026-05-19 21:51:27,972] [INFO] [MainThread]    🤖 8 agentes pré-carregados para chat imediato
+[2026-05-19 21:51:27,972] [INFO] [MainThread]    Timezone: BRAZIL (UTC-3)
+[2026-05-19 21:51:27,972] [INFO] [MainThread]    DB:       .reversa/mirofish_local.db
+[2026-05-19 21:51:27,972] [INFO] [MainThread]    Modelo:   opencode/big-pickle (via Agent Forum)
+[2026-05-19 21:51:27,972] [INFO] [MainThread]    Zero dependências externas — Python stdlib only
+[2026-05-19 21:51:27,972] [INFO] [MainThread] 
+   Pressione Ctrl+C para parar
+[2026-05-19 21:51:27,973] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-19 21:52:41,914] [INFO] [Thread-8 (run_simulation_async)]    📋 61 perfis carregados do banco: {'total': 61, 'by_source': {'default': 6, 'expanded_analitico': 3, 'expanded_antropologico': 2, 'expanded_cientifico': 3, 'expanded_comportamental': 3, 'expanded_comunicador': 3, 'expanded_desenvolvimental': 2, 'expanded_economico': 3, 'expanded_emocional': 3, 'expanded_espiritual': 2, 'expanded_estrategico': 3, 'expanded_futurologia': 3, 'expanded_ideologico': 3, 'expanded_neurociencia': 2, 'expanded_politica_avancada': 3, 'expanded_psicopatologia': 3, 'expanded_regional': 3, 'expanded_social': 3, 'whatsapp': 8}, 'by_stance': {'critical': 13, 'curious': 9, 'neutral': 17, 'supportive': 22}, 'timestamp': '2026-05-19T21:52:41.914444-03:00'}
+[2026-05-19 21:52:41,927] [INFO] [Thread-8 (run_simulation_async)] 
+============================================================
+[2026-05-19 21:52:41,927] [INFO] [Thread-8 (run_simulation_async)] [SIM] MiroFish_Local
+[2026-05-19 21:52:41,927] [INFO] [Thread-8 (run_simulation_async)]      Agents: 200 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-19 21:52:41,931] [INFO] [Thread-8 (run_simulation_async)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/mirofish_local.db
+[2026-05-19 21:52:41,931] [INFO] [Thread-8 (run_simulation_async)] ============================================================
+[2026-05-19 21:52:41,947] [INFO] [Thread-8 (run_simulation_async)]    Rodada   1/30 |   39 ações |   60 ativos | sentimento: +0.38 | 0.02s
+[2026-05-19 21:52:42,102] [INFO] [Thread-8 (run_simulation_async)]    Rodada  10/30 |   24 ações |   45 ativos | sentimento: -0.29 | 0.01s
+[2026-05-19 21:52:42,252] [INFO] [Thread-8 (run_simulation_async)]    Rodada  20/30 |   21 ações |   51 ativos | sentimento: +0.33 | 0.02s
+[2026-05-19 21:52:42,481] [INFO] [Thread-8 (run_simulation_async)]    Rodada  30/30 |   34 ações |   63 ativos | sentimento: +0.29 | 0.02s
+[2026-05-19 21:52:42,748] [INFO] [Thread-8 (run_simulation_async)] 
+============================================================
+[2026-05-19 21:52:42,748] [INFO] [Thread-8 (run_simulation_async)] [OK] SIMULATION DONE in 0.5s
+[2026-05-19 21:52:42,748] [INFO] [Thread-8 (run_simulation_async)]    Actions: 871
+[2026-05-19 21:52:42,748] [INFO] [Thread-8 (run_simulation_async)]    Posts: 871 | Interactions: 0
+[2026-05-19 21:52:42,748] [INFO] [Thread-8 (run_simulation_async)]    Avg Sentiment: -0.03
+[2026-05-19 21:52:42,748] [INFO] [Thread-8 (run_simulation_async)]    Top influencer: Ministro da Fazenda
+[2026-05-19 21:52:42,748] [INFO] [Thread-8 (run_simulation_async)] ============================================================
+[2026-05-19 21:53:19,461] [INFO] [Thread-12 (process_request_thread)] 
+======================================================================
+[2026-05-19 21:53:19,462] [INFO] [Thread-12 (process_request_thread)] ⚔️  MULTI-AGENT WAR ROOM — GERAL
+[2026-05-19 21:53:19,464] [INFO] [Thread-12 (process_request_thread)] ======================================================================
+[2026-05-19 21:53:19,465] [INFO] [Thread-12 (process_request_thread)]   Problema: Impacto da IA no mercado de trabalho brasileiro...
+[2026-05-19 21:53:19,465] [INFO] [Thread-12 (process_request_thread)]   Agentes: 6 | Rodadas: 1
+[2026-05-19 21:53:19,465] [INFO] [Thread-12 (process_request_thread)] ──────────────────────────────────────────────────────────────────────
+[2026-05-19 21:53:19,465] [INFO] [Thread-12 (process_request_thread)] 
+  [Estrategista (Carl von Clausew...] Analisando via analogia_historica...
+[2026-05-19 21:53:19,465] [INFO] [Thread-12 (process_request_thread)] 
+  [Cético Metódico (Karl Popper)...] Analisando via falsificacao...
+[2026-05-19 21:53:19,465] [INFO] [Thread-12 (process_request_thread)] 
+  [Sintetizador (Hegel/Engels)...] Analisando via dialetica...
+[2026-05-19 21:53:19,467] [INFO] [Thread-12 (process_request_thread)] 
+  [Especialista Domínio (PhD)...] Analisando via revisao_literatura...
+[2026-05-19 21:53:19,467] [INFO] [Thread-12 (process_request_thread)] 
+  [Visionário (H.G. Wells/Herman ...] Analisando via cenarios_futuros...
+[2026-05-19 21:53:19,467] [INFO] [Thread-12 (process_request_thread)] 
+  [Pragmático (Maquiavel/Peter Dr...] Analisando via viabilidade_execucao...
+[2026-05-19 21:53:19,467] [INFO] [Thread-12 (process_request_thread)] 
+──────────────────────────────────────────────────────────────────────
+[2026-05-19 21:53:19,467] [INFO] [Thread-12 (process_request_thread)]   ✅ War Room concluída: 6 análises
+[2026-05-19 21:53:19,467] [INFO] [Thread-12 (process_request_thread)]   🎯 Recomendação principal: Aplicar princípio da 'névoa da guerra' (Clausewitz): reconhecer incerteza, manter flexibilidade táti...
+[2026-05-19 21:54:10,248] [INFO] [Thread-17 (_gen)] [WARN] No data for SI.POV.NAHC — usando fallback sintético
+[2026-05-19 21:54:10,433] [INFO] [Thread-17 (_gen)] [WARN] No data for EN.ATM.CO2E.PC — usando fallback sintético
+[2026-05-19 21:54:10,614] [INFO] [Thread-17 (_gen)] [WARN] No data for ER.FST.TOTL.ZS — usando fallback sintético
+[2026-05-19 21:54:10,636] [INFO] [Thread-17 (_gen)] [REPORT] Relatório salvo: C:\Users\marce\.config\opencode\skills\data-collector\scripts\..\..\..\.reversa\research_report.md
+[2026-05-19 21:56:42,775] [INFO] [Thread-22 (run_simulation_async)]    📋 61 perfis carregados do banco: {'total': 61, 'by_source': {'default': 6, 'expanded_analitico': 3, 'expanded_antropologico': 2, 'expanded_cientifico': 3, 'expanded_comportamental': 3, 'expanded_comunicador': 3, 'expanded_desenvolvimental': 2, 'expanded_economico': 3, 'expanded_emocional': 3, 'expanded_espiritual': 2, 'expanded_estrategico': 3, 'expanded_futurologia': 3, 'expanded_ideologico': 3, 'expanded_neurociencia': 2, 'expanded_politica_avancada': 3, 'expanded_psicopatologia': 3, 'expanded_regional': 3, 'expanded_social': 3, 'whatsapp': 8}, 'by_stance': {'critical': 13, 'curious': 9, 'neutral': 17, 'supportive': 22}, 'timestamp': '2026-05-19T21:56:42.775588-03:00'}
+[2026-05-19 21:56:42,790] [INFO] [Thread-22 (run_simulation_async)] 
+============================================================
+[2026-05-19 21:56:42,790] [INFO] [Thread-22 (run_simulation_async)] [SIM] MiroFish_Local
+[2026-05-19 21:56:42,791] [INFO] [Thread-22 (run_simulation_async)]      Agents: 200 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-19 21:56:42,791] [INFO] [Thread-22 (run_simulation_async)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/mirofish_local.db
+[2026-05-19 21:56:42,792] [INFO] [Thread-22 (run_simulation_async)] ============================================================
+[2026-05-19 21:56:42,807] [INFO] [Thread-22 (run_simulation_async)]    Rodada   1/30 |   19 ações |   39 ativos | sentimento: +1.32 | 0.02s
+[2026-05-19 21:56:42,953] [INFO] [Thread-22 (run_simulation_async)]    Rodada  10/30 |   29 ações |   49 ativos | sentimento: +0.07 | 0.02s
+[2026-05-19 21:56:43,118] [INFO] [Thread-22 (run_simulation_async)]    Rodada  20/30 |   30 ações |   44 ativos | sentimento: +0.13 | 0.02s
+[2026-05-19 21:56:43,297] [INFO] [Thread-22 (run_simulation_async)]    Rodada  30/30 |   27 ações |   50 ativos | sentimento: +0.44 | 0.02s
+[2026-05-19 21:56:43,498] [INFO] [Thread-22 (run_simulation_async)] 
+============================================================
+[2026-05-19 21:56:43,498] [INFO] [Thread-22 (run_simulation_async)] [OK] SIMULATION DONE in 0.5s
+[2026-05-19 21:56:43,498] [INFO] [Thread-22 (run_simulation_async)]    Actions: 931
+[2026-05-19 21:56:43,498] [INFO] [Thread-22 (run_simulation_async)]    Posts: 931 | Interactions: 0
+[2026-05-19 21:56:43,500] [INFO] [Thread-22 (run_simulation_async)]    Avg Sentiment: +0.17
+[2026-05-19 21:56:43,500] [INFO] [Thread-22 (run_simulation_async)]    Top influencer: Ministro da Fazenda
+[2026-05-19 21:56:43,500] [INFO] [Thread-22 (run_simulation_async)] ============================================================
+[2026-05-19 21:56:52,044] [INFO] [Thread-25 (process_request_thread)] 
+======================================================================
+[2026-05-19 21:56:52,044] [INFO] [Thread-25 (process_request_thread)] ⚔️  MULTI-AGENT WAR ROOM — GERAL
+[2026-05-19 21:56:52,044] [INFO] [Thread-25 (process_request_thread)] ======================================================================
+[2026-05-19 21:56:52,044] [INFO] [Thread-25 (process_request_thread)]   Problema: Impacto da IA no mercado de trabalho brasileiro...
+[2026-05-19 21:56:52,044] [INFO] [Thread-25 (process_request_thread)]   Agentes: 6 | Rodadas: 1
+[2026-05-19 21:56:52,044] [INFO] [Thread-25 (process_request_thread)] ──────────────────────────────────────────────────────────────────────
+[2026-05-19 21:56:52,044] [INFO] [Thread-25 (process_request_thread)] 
+  [Estrategista (Carl von Clausew...] Analisando via analogia_historica...
+[2026-05-19 21:56:52,044] [INFO] [Thread-25 (process_request_thread)] 
+  [Cético Metódico (Karl Popper)...] Analisando via falsificacao...
+[2026-05-19 21:56:52,047] [INFO] [Thread-25 (process_request_thread)] 
+  [Sintetizador (Hegel/Engels)...] Analisando via dialetica...
+[2026-05-19 21:56:52,047] [INFO] [Thread-25 (process_request_thread)] 
+  [Especialista Domínio (PhD)...] Analisando via revisao_literatura...
+[2026-05-19 21:56:52,047] [INFO] [Thread-25 (process_request_thread)] 
+  [Visionário (H.G. Wells/Herman ...] Analisando via cenarios_futuros...
+[2026-05-19 21:56:52,047] [INFO] [Thread-25 (process_request_thread)] 
+  [Pragmático (Maquiavel/Peter Dr...] Analisando via viabilidade_execucao...
+[2026-05-19 21:56:52,047] [INFO] [Thread-25 (process_request_thread)] 
+──────────────────────────────────────────────────────────────────────
+[2026-05-19 21:56:52,047] [INFO] [Thread-25 (process_request_thread)]   ✅ War Room concluída: 6 análises
+[2026-05-19 21:56:52,047] [INFO] [Thread-25 (process_request_thread)]   🎯 Recomendação principal: Aplicar princípio da 'névoa da guerra' (Clausewitz): reconhecer incerteza, manter flexibilidade táti...
+[2026-05-19 21:56:53,623] [INFO] [Thread-27 (_research)] 
+======================================================================
+[2026-05-19 21:56:53,623] [INFO] [Thread-27 (_research)] 🔬 MiroFishOmni — Pesquisa: Impacto da IA no mercado de trabalho brasileiro
+[2026-05-19 21:56:53,624] [INFO] [Thread-27 (_research)] ======================================================================
+[2026-05-19 21:56:53,624] [INFO] [Thread-27 (_research)]   Módulos ativos: 12/14
+[2026-05-19 21:56:53,624] [INFO] [Thread-27 (_research)] ──────────────────────────────────────────────────────────────────────
+[2026-05-19 21:56:53,625] [INFO] [Thread-27 (_research)] 
+[FASE 1/5] Coleta de dados...
+[2026-05-19 21:56:53,810] [INFO] [Thread-27 (_research)] [WARN] No data for SI.POV.NAHC — usando fallback sintético
+[2026-05-19 21:56:53,955] [INFO] [Thread-27 (_research)] [WARN] No data for EN.ATM.CO2E.PC — usando fallback sintético
+[2026-05-19 21:56:54,104] [INFO] [Thread-27 (_research)] [WARN] No data for ER.FST.TOTL.ZS — usando fallback sintético
+[2026-05-19 21:56:54,106] [INFO] [Thread-27 (_research)]   ✅ 22 indicadores World Bank + IBGE
+[2026-05-19 21:56:54,110] [INFO] [Thread-27 (_research)]   ✅ 12 citações Qualis A1 (Semantic Scholar + curadoria)
+[2026-05-19 21:56:54,111] [INFO] [Thread-27 (_research)] 
+[FASE 2/5] Simulação multiagente...
+[2026-05-19 21:56:54,142] [INFO] [Thread-27 (_research)]   📊 Calibrado com 22 indicadores reais
+[2026-05-19 21:56:54,168] [INFO] [Thread-27 (_research)] 
+============================================================
+[2026-05-19 21:56:54,168] [INFO] [Thread-27 (_research)] [SIM] omni_Impacto_da_IA_no_mer
+[2026-05-19 21:56:54,168] [INFO] [Thread-27 (_research)]      Agents: 200 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-19 21:56:54,170] [INFO] [Thread-27 (_research)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/sim_omni_Impacto_da_IA_no_mer.db
+[2026-05-19 21:56:54,170] [INFO] [Thread-27 (_research)] ============================================================
+[2026-05-19 21:56:54,178] [INFO] [Thread-27 (_research)] 
+[FASE 3/5] Análise diagnóstica...
+[2026-05-19 21:56:54,178] [INFO] [Thread-27 (_research)] 
+[FASE 4/5] Previsões...
+[2026-05-19 21:56:54,183] [INFO] [Thread-27 (_research)]   ✅ 20 cenários previstos
+[2026-05-19 21:56:54,183] [INFO] [Thread-27 (_research)] 
+[FASE 5/5] Gerando artigo Qualis A1 com transparência...
+[2026-05-19 21:56:54,350] [INFO] [Thread-27 (_research)] [WARN] No data for SI.POV.NAHC — usando fallback sintético
+[2026-05-19 21:56:54,477] [INFO] [Thread-27 (_research)] [WARN] No data for EN.ATM.CO2E.PC — usando fallback sintético
+[2026-05-19 21:56:54,595] [INFO] [Thread-27 (_research)] [WARN] No data for ER.FST.TOTL.ZS — usando fallback sintético
+[2026-05-19 21:56:54,612] [INFO] [Thread-27 (_research)]   ✅ Artigo: 16972 caracteres, 7 seções + auditoria de viés
+[2026-05-19 21:57:02,195] [INFO] [Thread-30 (_gen)] [WARN] No data for SI.POV.NAHC — usando fallback sintético
+[2026-05-19 21:57:02,361] [INFO] [Thread-30 (_gen)] [WARN] No data for EN.ATM.CO2E.PC — usando fallback sintético
+[2026-05-19 21:57:02,512] [INFO] [Thread-30 (_gen)] [WARN] No data for ER.FST.TOTL.ZS — usando fallback sintético
+[2026-05-19 21:57:02,525] [INFO] [Thread-30 (_gen)] [REPORT] Relatório salvo: C:\Users\marce\.config\opencode\skills\data-collector\scripts\..\..\..\.reversa\research_report.md
+[2026-05-19 21:58:38,319] [WARNING] [MainThread] ⚠️ Sinal 2 recebido. Desligando e limpando conexões SQLite...
+[2026-05-19 21:58:38,319] [INFO] [MainThread] 🧹 Iniciando consolidação e encerramento limpo das conexões SQLite (WAL checkpoint)...
+[2026-05-19 21:58:38,375] [INFO] [MainThread] ✅ Banco consolidado com sucesso: sim_brazil.db
+[2026-05-19 21:58:38,394] [INFO] [MainThread] ✅ Banco consolidado com sucesso: mirofish_local.db
+[2026-05-19 21:58:38,444] [INFO] [MainThread] ✅ Banco consolidado com sucesso: omen_logs.db
+[2026-05-19 21:58:38,444] [INFO] [MainThread] 🧹 Iniciando consolidação e encerramento limpo das conexões SQLite (WAL checkpoint)...
+[2026-05-19 21:58:38,461] [INFO] [MainThread] ✅ Banco consolidado com sucesso: sim_brazil.db
+[2026-05-19 21:58:38,478] [INFO] [MainThread] ✅ Banco consolidado com sucesso: mirofish_local.db
+[2026-05-19 21:58:38,502] [INFO] [MainThread] ✅ Banco consolidado com sucesso: omen_logs.db
+[2026-05-19 22:10:18,470] [INFO] [MainThread] ✅ [Prática] Requisição GET /api/status: PASSOU (Status 200 OK)
+[2026-05-19 22:10:20,500] [INFO] [MainThread] ✅ [Prática] Requisição OPTIONS: PASSOU (Status 200 OK)
+[2026-05-19 22:10:22,538] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/start: PASSOU (Status 200 OK)
+[2026-05-19 22:10:22,589] [INFO] [Thread-2 (run_simulation_async)]    📋 61 perfis carregados do banco: {'total': 61, 'by_source': {'default': 6, 'expanded_analitico': 3, 'expanded_antropologico': 2, 'expanded_cientifico': 3, 'expanded_comportamental': 3, 'expanded_comunicador': 3, 'expanded_desenvolvimental': 2, 'expanded_economico': 3, 'expanded_emocional': 3, 'expanded_espiritual': 2, 'expanded_estrategico': 3, 'expanded_futurologia': 3, 'expanded_ideologico': 3, 'expanded_neurociencia': 2, 'expanded_politica_avancada': 3, 'expanded_psicopatologia': 3, 'expanded_regional': 3, 'expanded_social': 3, 'whatsapp': 8}, 'by_stance': {'critical': 13, 'curious': 9, 'neutral': 17, 'supportive': 22}, 'timestamp': '2026-05-19T22:10:22.589154-03:00'}
+[2026-05-19 22:10:22,590] [INFO] [Thread-2 (run_simulation_async)] 
+============================================================
+[2026-05-19 22:10:22,590] [INFO] [Thread-2 (run_simulation_async)] [SIM] MiroFish_Local
+[2026-05-19 22:10:22,590] [INFO] [Thread-2 (run_simulation_async)]      Agents: 100 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-19 22:10:22,594] [INFO] [Thread-2 (run_simulation_async)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/mirofish_local.db
+[2026-05-19 22:10:22,594] [INFO] [Thread-2 (run_simulation_async)] ============================================================
+[2026-05-19 22:10:22,608] [INFO] [Thread-2 (run_simulation_async)]    Rodada   1/30 |   14 ações |   23 ativos | sentimento: +0.14 | 0.01s
+[2026-05-19 22:10:22,721] [INFO] [Thread-2 (run_simulation_async)]    Rodada  10/30 |   15 ações |   19 ativos | sentimento: +0.53 | 0.01s
+[2026-05-19 22:10:22,836] [INFO] [Thread-2 (run_simulation_async)]    Rodada  20/30 |   13 ações |   21 ativos | sentimento: +0.46 | 0.01s
+[2026-05-19 22:10:22,950] [INFO] [Thread-2 (run_simulation_async)]    Rodada  30/30 |   12 ações |   20 ativos | sentimento: +0.58 | 0.01s
+[2026-05-19 22:10:23,004] [INFO] [Thread-2 (run_simulation_async)] 
+============================================================
+[2026-05-19 22:10:23,004] [INFO] [Thread-2 (run_simulation_async)] [OK] SIMULATION DONE in 0.4s
+[2026-05-19 22:10:23,004] [INFO] [Thread-2 (run_simulation_async)]    Actions: 463
+[2026-05-19 22:10:23,004] [INFO] [Thread-2 (run_simulation_async)]    Posts: 463 | Interactions: 0
+[2026-05-19 22:10:23,004] [INFO] [Thread-2 (run_simulation_async)]    Avg Sentiment: +0.34
+[2026-05-19 22:10:23,004] [INFO] [Thread-2 (run_simulation_async)]    Top influencer: Ministro da Fazenda
+[2026-05-19 22:10:23,004] [INFO] [Thread-2 (run_simulation_async)] ============================================================
+[2026-05-19 22:10:24,578] [INFO] [Thread-1 (run_server)] 
+======================================================================
+[2026-05-19 22:10:24,578] [INFO] [Thread-1 (run_server)] ⚔️  MULTI-AGENT WAR ROOM — GERAL
+[2026-05-19 22:10:24,578] [INFO] [Thread-1 (run_server)] ======================================================================
+[2026-05-19 22:10:24,578] [INFO] [Thread-1 (run_server)]   Problema: Teste...
+[2026-05-19 22:10:24,578] [INFO] [Thread-1 (run_server)]   Agentes: 6 | Rodadas: 1
+[2026-05-19 22:10:24,578] [INFO] [Thread-1 (run_server)] ──────────────────────────────────────────────────────────────────────
+[2026-05-19 22:10:24,578] [INFO] [Thread-1 (run_server)] 
+  [Estrategista (Carl von Clausew...] Analisando via analogia_historica...
+[2026-05-19 22:10:24,578] [INFO] [Thread-1 (run_server)] 
+  [Cético Metódico (Karl Popper)...] Analisando via falsificacao...
+[2026-05-19 22:10:24,581] [INFO] [Thread-1 (run_server)] 
+  [Sintetizador (Hegel/Engels)...] Analisando via dialetica...
+[2026-05-19 22:10:24,581] [INFO] [Thread-1 (run_server)] 
+  [Especialista Domínio (PhD)...] Analisando via revisao_literatura...
+[2026-05-19 22:10:24,581] [INFO] [Thread-1 (run_server)] 
+  [Visionário (H.G. Wells/Herman ...] Analisando via cenarios_futuros...
+[2026-05-19 22:10:24,581] [INFO] [Thread-1 (run_server)] 
+  [Pragmático (Maquiavel/Peter Dr...] Analisando via viabilidade_execucao...
+[2026-05-19 22:10:24,581] [INFO] [Thread-1 (run_server)] 
+──────────────────────────────────────────────────────────────────────
+[2026-05-19 22:10:24,581] [INFO] [Thread-1 (run_server)]   ✅ War Room concluída: 6 análises
+[2026-05-19 22:10:24,581] [INFO] [Thread-1 (run_server)]   🎯 Recomendação principal: Aplicar princípio da 'névoa da guerra' (Clausewitz): reconhecer incerteza, manter flexibilidade táti...
+[2026-05-19 22:10:24,583] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/warroom: PASSOU (Status 200 OK)
+[2026-05-19 22:10:28,187] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/omen/predict: PASSOU (Status 200 OK)
+[2026-05-19 22:10:30,236] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/report: PASSOU (Status 200 OK)
+[2026-05-19 22:10:30,263] [INFO] [Thread-4 (_gen)] [REPORT] Falha ao executar corretor linguístico automático: No module named 'ptbr_corrector'
+[2026-05-19 22:10:30,265] [INFO] [Thread-4 (_gen)] [REPORT] Relatório salvo: c:\Users\marce\.config\opencode\.reversa\research_report.md
+[2026-05-19 22:10:32,256] [INFO] [MainThread] ✅ [Prática] Requisição GET /api/health: PASSOU (Status 200 OK)
+[2026-05-19 22:10:34,285] [INFO] [MainThread] ✅ [Prática] Requisição GET /api/omen/audit: PASSOU (Status 200 OK)
+[2026-05-19 22:10:34,285] [INFO] [MainThread] Validação Concluída.
+[2026-05-19 22:10:34,286] [INFO] [MainThread] 🧹 Iniciando consolidação e encerramento limpo das conexões SQLite (WAL checkpoint)...
+[2026-05-19 22:10:34,339] [INFO] [MainThread] ✅ Banco consolidado com sucesso: omen_logs.db
+[2026-05-19 22:10:34,358] [INFO] [MainThread] ✅ Banco consolidado com sucesso: mirofish_local.db
+[2026-05-19 22:10:34,373] [INFO] [MainThread] ✅ Banco consolidado com sucesso: sim_brazil.db
+[2026-05-19 22:18:26,400] [INFO] [MainThread] ✅ [Prática] Requisição GET /api/status: PASSOU (Status 200 OK)
+[2026-05-19 22:18:28,425] [INFO] [MainThread] ✅ [Prática] Requisição OPTIONS: PASSOU (Status 200 OK)
+[2026-05-19 22:18:30,490] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/start: PASSOU (Status 200 OK)
+[2026-05-19 22:18:30,537] [INFO] [Thread-2 (run_simulation_async)]    📋 61 perfis carregados do banco: {'total': 61, 'by_source': {'default': 6, 'expanded_analitico': 3, 'expanded_antropologico': 2, 'expanded_cientifico': 3, 'expanded_comportamental': 3, 'expanded_comunicador': 3, 'expanded_desenvolvimental': 2, 'expanded_economico': 3, 'expanded_emocional': 3, 'expanded_espiritual': 2, 'expanded_estrategico': 3, 'expanded_futurologia': 3, 'expanded_ideologico': 3, 'expanded_neurociencia': 2, 'expanded_politica_avancada': 3, 'expanded_psicopatologia': 3, 'expanded_regional': 3, 'expanded_social': 3, 'whatsapp': 8}, 'by_stance': {'critical': 13, 'curious': 9, 'neutral': 17, 'supportive': 22}, 'timestamp': '2026-05-19T22:18:30.537562-03:00'}
+[2026-05-19 22:18:30,551] [INFO] [Thread-2 (run_simulation_async)] 
+============================================================
+[2026-05-19 22:18:30,552] [INFO] [Thread-2 (run_simulation_async)] [SIM] MiroFish_Local
+[2026-05-19 22:18:30,552] [INFO] [Thread-2 (run_simulation_async)]      Agents: 100 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-19 22:18:30,552] [INFO] [Thread-2 (run_simulation_async)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/mirofish_local.db
+[2026-05-19 22:18:30,553] [INFO] [Thread-2 (run_simulation_async)] ============================================================
+[2026-05-19 22:18:30,575] [INFO] [Thread-2 (run_simulation_async)]    Rodada   1/30 |   15 ações |   27 ativos | sentimento: -0.27 | 0.02s
+[2026-05-19 22:18:30,747] [INFO] [Thread-2 (run_simulation_async)]    Rodada  10/30 |   20 ações |   23 ativos | sentimento: -0.65 | 0.02s
+[2026-05-19 22:18:30,951] [INFO] [Thread-2 (run_simulation_async)]    Rodada  20/30 |   24 ações |   30 ativos | sentimento: -0.04 | 0.02s
+[2026-05-19 22:18:31,160] [INFO] [Thread-2 (run_simulation_async)]    Rodada  30/30 |   21 ações |   25 ativos | sentimento: +0.00 | 0.03s
+[2026-05-19 22:18:31,311] [INFO] [Thread-2 (run_simulation_async)] 
+============================================================
+[2026-05-19 22:18:31,315] [INFO] [Thread-2 (run_simulation_async)] [OK] SIMULATION DONE in 0.6s
+[2026-05-19 22:18:31,317] [INFO] [Thread-2 (run_simulation_async)]    Actions: 518
+[2026-05-19 22:18:31,317] [INFO] [Thread-2 (run_simulation_async)]    Posts: 518 | Interactions: 0
+[2026-05-19 22:18:31,317] [INFO] [Thread-2 (run_simulation_async)]    Avg Sentiment: +0.15
+[2026-05-19 22:18:31,317] [INFO] [Thread-2 (run_simulation_async)]    Top influencer: Ministro da Fazenda
+[2026-05-19 22:18:31,319] [INFO] [Thread-2 (run_simulation_async)] ============================================================
+[2026-05-19 22:18:32,530] [INFO] [Thread-1 (run_server)] 
+======================================================================
+[2026-05-19 22:18:32,532] [INFO] [Thread-1 (run_server)] ⚔️  MULTI-AGENT WAR ROOM — GERAL
+[2026-05-19 22:18:32,532] [INFO] [Thread-1 (run_server)] ======================================================================
+[2026-05-19 22:18:32,532] [INFO] [Thread-1 (run_server)]   Problema: Teste...
+[2026-05-19 22:18:32,533] [INFO] [Thread-1 (run_server)]   Agentes: 6 | Rodadas: 1
+[2026-05-19 22:18:32,533] [INFO] [Thread-1 (run_server)] ──────────────────────────────────────────────────────────────────────
+[2026-05-19 22:18:32,536] [INFO] [Thread-1 (run_server)] 
+  [Estrategista (Carl von Clausew...] Analisando via analogia_historica...
+[2026-05-19 22:18:32,536] [INFO] [Thread-1 (run_server)] 
+  [Cético Metódico (Karl Popper)...] Analisando via falsificacao...
+[2026-05-19 22:18:32,539] [INFO] [Thread-1 (run_server)] 
+  [Sintetizador (Hegel/Engels)...] Analisando via dialetica...
+[2026-05-19 22:18:32,540] [INFO] [Thread-1 (run_server)] 
+  [Especialista Domínio (PhD)...] Analisando via revisao_literatura...
+[2026-05-19 22:18:32,540] [INFO] [Thread-1 (run_server)] 
+  [Visionário (H.G. Wells/Herman ...] Analisando via cenarios_futuros...
+[2026-05-19 22:18:32,540] [INFO] [Thread-1 (run_server)] 
+  [Pragmático (Maquiavel/Peter Dr...] Analisando via viabilidade_execucao...
+[2026-05-19 22:18:32,545] [INFO] [Thread-1 (run_server)] 
+──────────────────────────────────────────────────────────────────────
+[2026-05-19 22:18:32,546] [INFO] [Thread-1 (run_server)]   ✅ War Room concluída: 6 análises
+[2026-05-19 22:18:32,553] [INFO] [Thread-1 (run_server)]   🎯 Recomendação principal: Aplicar princípio da 'névoa da guerra' (Clausewitz): reconhecer incerteza, manter flexibilidade táti...
+[2026-05-19 22:18:32,555] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/warroom: PASSOU (Status 200 OK)
+[2026-05-19 22:18:37,429] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/omen/predict: PASSOU (Status 200 OK)
+[2026-05-19 22:18:39,462] [INFO] [MainThread] ✅ [Prática] Requisição POST /api/report: PASSOU (Status 200 OK)
+[2026-05-19 22:18:39,475] [INFO] [Thread-4 (_gen)] [REPORT] Falha ao executar corretor linguístico automático: No module named 'ptbr_corrector'
+[2026-05-19 22:18:39,478] [INFO] [Thread-4 (_gen)] [REPORT] Relatório salvo: c:\Users\marce\.config\opencode\.reversa\research_report.md
+[2026-05-19 22:18:41,506] [INFO] [MainThread] ✅ [Prática] Requisição GET /api/health: PASSOU (Status 200 OK)
+[2026-05-19 22:18:43,547] [INFO] [MainThread] ✅ [Prática] Requisição GET /api/omen/audit: PASSOU (Status 200 OK)
+[2026-05-19 22:18:43,547] [INFO] [MainThread] Validação Concluída.
+[2026-05-19 22:18:43,547] [INFO] [MainThread] 🧹 Iniciando consolidação e encerramento limpo das conexões SQLite (WAL checkpoint)...
+[2026-05-19 22:18:43,565] [INFO] [MainThread] ✅ Banco consolidado com sucesso: sim_brazil.db
+[2026-05-19 22:18:43,598] [INFO] [MainThread] ✅ Banco consolidado com sucesso: omen_logs.db
+[2026-05-19 22:18:43,614] [INFO] [MainThread] ✅ Banco consolidado com sucesso: mirofish_local.db
+[2026-05-19 22:20:32,753] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-19 22:20:32,754] [INFO] [MainThread] 🐟  MIROFISH LOCAL SERVER — OpenCode Ecosystem v4.2
+[2026-05-19 22:20:32,754] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-19 22:20:32,754] [INFO] [MainThread]    Local:    http://localhost:8765
+[2026-05-19 22:20:32,754] [INFO] [MainThread]    API:      http://localhost:8765/api/status
+[2026-05-19 22:20:32,754] [INFO] [MainThread]    SSE:      http://localhost:8765/events
+[2026-05-19 22:20:32,755] [INFO] [MainThread]    Agents:   http://localhost:8765/api/agents
+[2026-05-19 22:20:32,755] [INFO] [MainThread]    Chat:     POST http://localhost:8765/api/chat
+[2026-05-19 22:20:32,761] [INFO] [MainThread]    🤖 8 agentes pré-carregados para chat imediato
+[2026-05-19 22:20:32,762] [INFO] [MainThread]    Timezone: BRAZIL (UTC-3)
+[2026-05-19 22:20:32,762] [INFO] [MainThread]    DB:       .reversa/mirofish_local.db
+[2026-05-19 22:20:32,762] [INFO] [MainThread]    Modelo:   opencode/big-pickle (via Agent Forum)
+[2026-05-19 22:20:32,762] [INFO] [MainThread]    Zero dependências externas — Python stdlib only
+[2026-05-19 22:20:32,762] [INFO] [MainThread] 
+   Pressione Ctrl+C para parar
+[2026-05-19 22:20:32,762] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-19 22:24:08,175] [WARNING] [MainThread] ⚠️ Sinal 2 recebido. Desligando e limpando conexões SQLite...
+[2026-05-19 22:24:08,175] [INFO] [MainThread] 🧹 Iniciando consolidação e encerramento limpo das conexões SQLite (WAL checkpoint)...
+[2026-05-19 22:24:08,239] [INFO] [MainThread] ✅ Banco consolidado com sucesso: omen_logs.db
+[2026-05-19 22:24:08,257] [INFO] [MainThread] ✅ Banco consolidado com sucesso: sim_brazil.db
+[2026-05-19 22:24:08,270] [INFO] [MainThread] ✅ Banco consolidado com sucesso: mirofish_local.db
+[2026-05-19 22:24:08,273] [INFO] [MainThread] 🧹 Iniciando consolidação e encerramento limpo das conexões SQLite (WAL checkpoint)...
+[2026-05-19 22:24:08,306] [INFO] [MainThread] ✅ Banco consolidado com sucesso: omen_logs.db
+[2026-05-19 22:24:08,322] [INFO] [MainThread] ✅ Banco consolidado com sucesso: sim_brazil.db
+[2026-05-19 22:24:08,339] [INFO] [MainThread] ✅ Banco consolidado com sucesso: mirofish_local.db
+[2026-05-19 22:26:18,833] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-19 22:26:18,833] [INFO] [MainThread] 🐟  MIROFISH LOCAL SERVER — OpenCode Ecosystem v4.2
+[2026-05-19 22:26:18,847] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-19 22:26:18,847] [INFO] [MainThread]    Local:    http://localhost:8765
+[2026-05-19 22:26:18,847] [INFO] [MainThread]    API:      http://localhost:8765/api/status
+[2026-05-19 22:26:18,847] [INFO] [MainThread]    SSE:      http://localhost:8765/events
+[2026-05-19 22:26:18,847] [INFO] [MainThread]    Agents:   http://localhost:8765/api/agents
+[2026-05-19 22:26:18,847] [INFO] [MainThread]    Chat:     POST http://localhost:8765/api/chat
+[2026-05-19 22:26:18,854] [INFO] [MainThread]    🤖 8 agentes pré-carregados para chat imediato
+[2026-05-19 22:26:18,854] [INFO] [MainThread]    Timezone: BRAZIL (UTC-3)
+[2026-05-19 22:26:18,854] [INFO] [MainThread]    DB:       .reversa/mirofish_local.db
+[2026-05-19 22:26:18,854] [INFO] [MainThread]    Modelo:   opencode/big-pickle (via Agent Forum)
+[2026-05-19 22:26:18,854] [INFO] [MainThread]    Zero dependências externas — Python stdlib only
+[2026-05-19 22:26:18,854] [INFO] [MainThread] 
+   Pressione Ctrl+C para parar
+[2026-05-19 22:26:18,854] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-19 22:27:03,188] [INFO] [Thread-7 (run_simulation_async)]    📋 61 perfis carregados do banco: {'total': 61, 'by_source': {'default': 6, 'expanded_analitico': 3, 'expanded_antropologico': 2, 'expanded_cientifico': 3, 'expanded_comportamental': 3, 'expanded_comunicador': 3, 'expanded_desenvolvimental': 2, 'expanded_economico': 3, 'expanded_emocional': 3, 'expanded_espiritual': 2, 'expanded_estrategico': 3, 'expanded_futurologia': 3, 'expanded_ideologico': 3, 'expanded_neurociencia': 2, 'expanded_politica_avancada': 3, 'expanded_psicopatologia': 3, 'expanded_regional': 3, 'expanded_social': 3, 'whatsapp': 8}, 'by_stance': {'critical': 13, 'curious': 9, 'neutral': 17, 'supportive': 22}, 'timestamp': '2026-05-19T22:27:03.188331-03:00'}
+[2026-05-19 22:27:50,495] [INFO] [Thread-10 (run_simulation_async)]    📋 61 perfis carregados do banco: {'total': 61, 'by_source': {'default': 6, 'expanded_analitico': 3, 'expanded_antropologico': 2, 'expanded_cientifico': 3, 'expanded_comportamental': 3, 'expanded_comunicador': 3, 'expanded_desenvolvimental': 2, 'expanded_economico': 3, 'expanded_emocional': 3, 'expanded_espiritual': 2, 'expanded_estrategico': 3, 'expanded_futurologia': 3, 'expanded_ideologico': 3, 'expanded_neurociencia': 2, 'expanded_politica_avancada': 3, 'expanded_psicopatologia': 3, 'expanded_regional': 3, 'expanded_social': 3, 'whatsapp': 8}, 'by_stance': {'critical': 13, 'curious': 9, 'neutral': 17, 'supportive': 22}, 'timestamp': '2026-05-19T22:27:50.495146-03:00'}
+[2026-05-19 22:28:06,887] [INFO] [Thread-7 (run_simulation_async)] 
+============================================================
+[2026-05-19 22:28:06,897] [INFO] [Thread-10 (run_simulation_async)] 
+============================================================
+[2026-05-19 22:28:06,897] [INFO] [Thread-7 (run_simulation_async)] [SIM] MiroFish_Local
+[2026-05-19 22:28:06,897] [INFO] [Thread-10 (run_simulation_async)] [SIM] MiroFish_Local
+[2026-05-19 22:28:06,897] [INFO] [Thread-7 (run_simulation_async)]      Agents: 200 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-19 22:28:06,897] [INFO] [Thread-10 (run_simulation_async)]      Agents: 200 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-19 22:28:06,897] [INFO] [Thread-7 (run_simulation_async)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/mirofish_local.db
+[2026-05-19 22:28:06,897] [INFO] [Thread-10 (run_simulation_async)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/mirofish_local.db
+[2026-05-19 22:28:06,897] [INFO] [Thread-7 (run_simulation_async)] ============================================================
+[2026-05-19 22:28:06,897] [INFO] [Thread-10 (run_simulation_async)] ============================================================
+[2026-05-19 22:28:06,914] [INFO] [Thread-10 (run_simulation_async)]    Rodada   1/30 |   24 ações |   51 ativos | sentimento: -0.12 | 0.01s
+[2026-05-19 22:28:06,922] [INFO] [Thread-7 (run_simulation_async)]    Rodada   1/30 |   26 ações |   51 ativos | sentimento: +0.23 | 0.02s
+[2026-05-19 22:28:07,229] [INFO] [Thread-10 (run_simulation_async)]    Rodada  10/30 |   29 ações |   56 ativos | sentimento: +0.10 | 0.01s
+[2026-05-19 22:28:07,275] [INFO] [Thread-7 (run_simulation_async)]    Rodada  10/30 |   17 ações |   35 ativos | sentimento: -0.12 | 0.06s
+[2026-05-19 22:28:07,579] [INFO] [Thread-10 (run_simulation_async)]    Rodada  20/30 |   36 ações |   53 ativos | sentimento: +0.11 | 0.02s
+[2026-05-19 22:28:07,587] [INFO] [Thread-7 (run_simulation_async)]    Rodada  20/30 |   37 ações |   55 ativos | sentimento: +0.35 | 0.03s
+[2026-05-19 22:28:07,896] [INFO] [Thread-10 (run_simulation_async)]    Rodada  30/30 |   31 ações |   60 ativos | sentimento: +0.13 | 0.03s
+[2026-05-19 22:28:08,034] [INFO] [Thread-7 (run_simulation_async)]    Rodada  30/30 |   29 ações |   51 ativos | sentimento: +0.10 | 0.02s
+[2026-05-19 22:28:08,195] [INFO] [Thread-10 (run_simulation_async)] 
+============================================================
+[2026-05-19 22:28:08,195] [INFO] [Thread-10 (run_simulation_async)] [OK] SIMULATION DONE in 1.0s
+[2026-05-19 22:28:08,195] [INFO] [Thread-10 (run_simulation_async)]    Actions: 892
+[2026-05-19 22:28:08,195] [INFO] [Thread-10 (run_simulation_async)]    Posts: 892 | Interactions: 0
+[2026-05-19 22:28:08,197] [INFO] [Thread-10 (run_simulation_async)]    Avg Sentiment: -0.05
+[2026-05-19 22:28:08,197] [INFO] [Thread-10 (run_simulation_async)]    Top influencer: Ministro da Fazenda
+[2026-05-19 22:28:08,197] [INFO] [Thread-10 (run_simulation_async)] ============================================================
+[2026-05-19 22:28:08,213] [INFO] [Thread-7 (run_simulation_async)] 
+============================================================
+[2026-05-19 22:28:08,213] [INFO] [Thread-7 (run_simulation_async)] [OK] SIMULATION DONE in 1.1s
+[2026-05-19 22:28:08,213] [INFO] [Thread-7 (run_simulation_async)]    Actions: 884
+[2026-05-19 22:28:08,213] [INFO] [Thread-7 (run_simulation_async)]    Posts: 884 | Interactions: 0
+[2026-05-19 22:28:08,213] [INFO] [Thread-7 (run_simulation_async)]    Avg Sentiment: +0.16
+[2026-05-19 22:28:08,213] [INFO] [Thread-7 (run_simulation_async)]    Top influencer: Ministro da Fazenda
+[2026-05-19 22:28:08,213] [INFO] [Thread-7 (run_simulation_async)] ============================================================
+[2026-05-19 22:32:06,586] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-19 22:32:06,587] [INFO] [MainThread] 🐟  MIROFISH LOCAL SERVER — OpenCode Ecosystem v4.2
+[2026-05-19 22:32:06,587] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-19 22:32:06,587] [INFO] [MainThread]    Local:    http://localhost:8765
+[2026-05-19 22:32:06,587] [INFO] [MainThread]    API:      http://localhost:8765/api/status
+[2026-05-19 22:32:06,588] [INFO] [MainThread]    SSE:      http://localhost:8765/events
+[2026-05-19 22:32:06,588] [INFO] [MainThread]    Agents:   http://localhost:8765/api/agents
+[2026-05-19 22:32:06,589] [INFO] [MainThread]    Chat:     POST http://localhost:8765/api/chat
+[2026-05-19 22:32:06,597] [INFO] [MainThread]    🤖 8 agentes pré-carregados para chat imediato
+[2026-05-19 22:32:06,597] [INFO] [MainThread]    Timezone: BRAZIL (UTC-3)
+[2026-05-19 22:32:06,598] [INFO] [MainThread]    DB:       .reversa/mirofish_local.db
+[2026-05-19 22:32:06,598] [INFO] [MainThread]    Modelo:   opencode/big-pickle (via Agent Forum)
+[2026-05-19 22:32:06,598] [INFO] [MainThread]    Zero dependências externas — Python stdlib only
+[2026-05-19 22:32:06,598] [INFO] [MainThread] 
+   Pressione Ctrl+C para parar
+[2026-05-19 22:32:06,598] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-19 22:32:19,406] [INFO] [Thread-4 (run_simulation_async)]    📋 61 perfis carregados do banco: {'total': 61, 'by_source': {'default': 6, 'expanded_analitico': 3, 'expanded_antropologico': 2, 'expanded_cientifico': 3, 'expanded_comportamental': 3, 'expanded_comunicador': 3, 'expanded_desenvolvimental': 2, 'expanded_economico': 3, 'expanded_emocional': 3, 'expanded_espiritual': 2, 'expanded_estrategico': 3, 'expanded_futurologia': 3, 'expanded_ideologico': 3, 'expanded_neurociencia': 2, 'expanded_politica_avancada': 3, 'expanded_psicopatologia': 3, 'expanded_regional': 3, 'expanded_social': 3, 'whatsapp': 8}, 'by_stance': {'critical': 13, 'curious': 9, 'neutral': 17, 'supportive': 22}, 'timestamp': '2026-05-19T22:32:19.406438-03:00'}
+[2026-05-19 22:32:19,421] [INFO] [Thread-4 (run_simulation_async)] 
+============================================================
+[2026-05-19 22:32:19,421] [INFO] [Thread-4 (run_simulation_async)] [SIM] MiroFish_Local
+[2026-05-19 22:32:19,421] [INFO] [Thread-4 (run_simulation_async)]      Agents: 200 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-19 22:32:19,423] [INFO] [Thread-4 (run_simulation_async)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/mirofish_local.db
+[2026-05-19 22:32:19,423] [INFO] [Thread-4 (run_simulation_async)] ============================================================
+[2026-05-19 22:32:19,444] [INFO] [Thread-4 (run_simulation_async)]    Rodada   1/30 |   35 ações |   56 ativos | sentimento: +0.29 | 0.02s
+[2026-05-19 22:32:19,612] [INFO] [Thread-4 (run_simulation_async)]    Rodada  10/30 |   28 ações |   44 ativos | sentimento: -0.21 | 0.02s
+[2026-05-19 22:32:19,820] [INFO] [Thread-4 (run_simulation_async)]    Rodada  20/30 |   40 ações |   64 ativos | sentimento: +0.23 | 0.02s
+[2026-05-19 22:32:20,037] [INFO] [Thread-4 (run_simulation_async)]    Rodada  30/30 |   31 ações |   55 ativos | sentimento: -0.32 | 0.02s
+[2026-05-19 22:32:20,238] [INFO] [Thread-4 (run_simulation_async)] 
+============================================================
+[2026-05-19 22:32:20,239] [INFO] [Thread-4 (run_simulation_async)] [OK] SIMULATION DONE in 0.6s
+[2026-05-19 22:32:20,239] [INFO] [Thread-4 (run_simulation_async)]    Actions: 874
+[2026-05-19 22:32:20,239] [INFO] [Thread-4 (run_simulation_async)]    Posts: 874 | Interactions: 0
+[2026-05-19 22:32:20,239] [INFO] [Thread-4 (run_simulation_async)]    Avg Sentiment: +0.04
+[2026-05-19 22:32:20,239] [INFO] [Thread-4 (run_simulation_async)]    Top influencer: Ministro da Fazenda
+[2026-05-19 22:32:20,239] [INFO] [Thread-4 (run_simulation_async)] ============================================================
+[2026-05-19 22:33:58,723] [INFO] [Thread-8 (process_request_thread)] 
+======================================================================
+[2026-05-19 22:33:58,723] [INFO] [Thread-8 (process_request_thread)] ⚔️  MULTI-AGENT WAR ROOM — GERAL
+[2026-05-19 22:33:58,724] [INFO] [Thread-8 (process_request_thread)] ======================================================================
+[2026-05-19 22:33:58,742] [INFO] [Thread-8 (process_request_thread)]   Problema: Impacto da IA no mercado de trabalho brasileiro...
+[2026-05-19 22:33:58,747] [INFO] [Thread-8 (process_request_thread)]   Agentes: 10 | Rodadas: 1
+[2026-05-19 22:33:58,748] [INFO] [Thread-8 (process_request_thread)] ──────────────────────────────────────────────────────────────────────
+[2026-05-19 22:33:58,748] [INFO] [Thread-8 (process_request_thread)] 
+  [Estrategista (Carl von Clausew...] Analisando via analogia_historica...
+[2026-05-19 22:33:58,749] [INFO] [Thread-8 (process_request_thread)] 
+  [Cético Metódico (Karl Popper)...] Analisando via falsificacao...
+[2026-05-19 22:33:58,750] [INFO] [Thread-8 (process_request_thread)] 
+  [Sintetizador (Hegel/Engels)...] Analisando via dialetica...
+[2026-05-19 22:33:58,752] [INFO] [Thread-8 (process_request_thread)] 
+  [Especialista Domínio (PhD)...] Analisando via revisao_literatura...
+[2026-05-19 22:33:58,753] [INFO] [Thread-8 (process_request_thread)] 
+  [Visionário (H.G. Wells/Herman ...] Analisando via cenarios_futuros...
+[2026-05-19 22:33:58,753] [INFO] [Thread-8 (process_request_thread)] 
+  [Pragmático (Maquiavel/Peter Dr...] Analisando via viabilidade_execucao...
+[2026-05-19 22:33:58,754] [INFO] [Thread-8 (process_request_thread)] 
+  [Antropólogo (Gilberto Freyre /...] Analisando via analise_sociocultural...
+[2026-05-19 22:33:58,755] [INFO] [Thread-8 (process_request_thread)] 
+  [Jurista (Pontes de Miranda)...] Analisando via analise_regulatoria...
+[2026-05-19 22:33:58,756] [INFO] [Thread-8 (process_request_thread)] 
+  [Psicanalista Social (Carl Jung...] Analisando via inconsciente_coletivo...
+[2026-05-19 22:33:58,777] [INFO] [Thread-8 (process_request_thread)] 
+  [Teórico dos Jogos (John Nash)...] Analisando via teoria_dos_jogos...
+[2026-05-19 22:33:58,778] [INFO] [Thread-8 (process_request_thread)] 
+──────────────────────────────────────────────────────────────────────
+[2026-05-19 22:33:58,778] [INFO] [Thread-8 (process_request_thread)]   ✅ War Room concluída: 10 análises
+[2026-05-19 22:33:58,778] [INFO] [Thread-8 (process_request_thread)]   🎯 Recomendação principal: Adotar uma postura de 'dissuasão ativa' e investimento massivo em IA pública soberana....
+[2026-05-19 22:34:52,247] [INFO] [Thread-13 (_research)] 
+======================================================================
+[2026-05-19 22:34:52,247] [INFO] [Thread-13 (_research)] 🔬 MiroFishOmni — Pesquisa: Impacto da IA no mercado de trabalho brasileiro
+[2026-05-19 22:34:52,250] [INFO] [Thread-13 (_research)] ======================================================================
+[2026-05-19 22:34:52,250] [INFO] [Thread-13 (_research)]   Módulos ativos: 12/14
+[2026-05-19 22:34:52,250] [INFO] [Thread-13 (_research)] ──────────────────────────────────────────────────────────────────────
+[2026-05-19 22:34:52,250] [INFO] [Thread-13 (_research)] 
+[FASE 1/5] Coleta de dados...
+[2026-05-19 22:34:52,431] [INFO] [Thread-13 (_research)] [WARN] No data for SI.POV.NAHC — usando fallback sintético
+[2026-05-19 22:34:52,607] [INFO] [Thread-13 (_research)] [WARN] No data for EN.ATM.CO2E.PC — usando fallback sintético
+[2026-05-19 22:34:52,753] [INFO] [Thread-13 (_research)] [WARN] No data for ER.FST.TOTL.ZS — usando fallback sintético
+[2026-05-19 22:34:52,756] [INFO] [Thread-13 (_research)]   ✅ 22 indicadores World Bank + IBGE
+[2026-05-19 22:34:52,761] [INFO] [Thread-13 (_research)]   ✅ 12 citações Qualis A1 (Semantic Scholar + curadoria)
+[2026-05-19 22:34:52,761] [INFO] [Thread-13 (_research)] 
+[FASE 2/5] Simulação multiagente...
+[2026-05-19 22:34:52,783] [INFO] [Thread-13 (_research)]   📊 Calibrado com 22 indicadores reais
+[2026-05-19 22:34:52,803] [INFO] [Thread-13 (_research)] 
+============================================================
+[2026-05-19 22:34:52,804] [INFO] [Thread-13 (_research)] [SIM] omni_Impacto_da_IA_no_mer
+[2026-05-19 22:34:52,804] [INFO] [Thread-13 (_research)]      Agents: 200 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-19 22:34:52,805] [INFO] [Thread-13 (_research)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/sim_omni_Impacto_da_IA_no_mer.db
+[2026-05-19 22:34:52,805] [INFO] [Thread-13 (_research)] ============================================================
+[2026-05-19 22:34:52,807] [INFO] [Thread-13 (_research)] 
+[FASE 3/5] Análise diagnóstica...
+[2026-05-19 22:34:52,808] [INFO] [Thread-13 (_research)] 
+[FASE 4/5] Previsões...
+[2026-05-19 22:34:52,812] [INFO] [Thread-13 (_research)]   ✅ 20 cenários previstos
+[2026-05-19 22:34:52,812] [INFO] [Thread-13 (_research)] 
+[FASE 5/5] Gerando artigo Qualis A1 com transparência...
+[2026-05-19 22:34:52,824] [INFO] [Thread-13 (_research)]   ✅ Artigo: 15198 caracteres, 7 seções + auditoria de viés
+[2026-05-19 22:36:12,545] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-19 22:36:12,545] [INFO] [MainThread] 🐟  MIROFISH LOCAL SERVER — OpenCode Ecosystem v4.2
+[2026-05-19 22:36:12,546] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-19 22:36:12,546] [INFO] [MainThread]    Local:    http://localhost:8765
+[2026-05-19 22:36:12,546] [INFO] [MainThread]    API:      http://localhost:8765/api/status
+[2026-05-19 22:36:12,547] [INFO] [MainThread]    SSE:      http://localhost:8765/events
+[2026-05-19 22:36:12,548] [INFO] [MainThread]    Agents:   http://localhost:8765/api/agents
+[2026-05-19 22:36:12,548] [INFO] [MainThread]    Chat:     POST http://localhost:8765/api/chat
+[2026-05-19 22:36:12,559] [INFO] [MainThread]    🤖 8 agentes pré-carregados para chat imediato
+[2026-05-19 22:36:12,559] [INFO] [MainThread]    Timezone: BRAZIL (UTC-3)
+[2026-05-19 22:36:12,560] [INFO] [MainThread]    DB:       .reversa/mirofish_local.db
+[2026-05-19 22:36:12,560] [INFO] [MainThread]    Modelo:   opencode/big-pickle (via Agent Forum)
+[2026-05-19 22:36:12,560] [INFO] [MainThread]    Zero dependências externas — Python stdlib only
+[2026-05-19 22:36:12,560] [INFO] [MainThread] 
+   Pressione Ctrl+C para parar
+[2026-05-19 22:36:12,560] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-20 00:45:29,777] [INFO] [Thread-25 (run_simulation_async)]    📋 61 perfis carregados do banco: {'total': 61, 'by_source': {'default': 6, 'expanded_analitico': 3, 'expanded_antropologico': 2, 'expanded_cientifico': 3, 'expanded_comportamental': 3, 'expanded_comunicador': 3, 'expanded_desenvolvimental': 2, 'expanded_economico': 3, 'expanded_emocional': 3, 'expanded_espiritual': 2, 'expanded_estrategico': 3, 'expanded_futurologia': 3, 'expanded_ideologico': 3, 'expanded_neurociencia': 2, 'expanded_politica_avancada': 3, 'expanded_psicopatologia': 3, 'expanded_regional': 3, 'expanded_social': 3, 'whatsapp': 8}, 'by_stance': {'critical': 13, 'curious': 9, 'neutral': 17, 'supportive': 22}, 'timestamp': '2026-05-20T00:45:29.777107-03:00'}
+[2026-05-20 00:45:29,789] [INFO] [Thread-25 (run_simulation_async)] 
+============================================================
+[2026-05-20 00:45:29,789] [INFO] [Thread-25 (run_simulation_async)] [SIM] MiroFish_Local
+[2026-05-20 00:45:29,789] [INFO] [Thread-25 (run_simulation_async)]      Agents: 200 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-20 00:45:29,789] [INFO] [Thread-25 (run_simulation_async)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/mirofish_local.db
+[2026-05-20 00:45:29,789] [INFO] [Thread-25 (run_simulation_async)] ============================================================
+[2026-05-20 00:45:29,808] [INFO] [Thread-25 (run_simulation_async)]    Rodada   1/30 |   28 ações |   56 ativos | sentimento: +0.07 | 0.02s
+[2026-05-20 00:45:29,944] [INFO] [Thread-25 (run_simulation_async)]    Rodada  10/30 |   33 ações |   46 ativos | sentimento: -0.12 | 0.02s
+[2026-05-20 00:45:30,115] [INFO] [Thread-25 (run_simulation_async)]    Rodada  20/30 |   31 ações |   66 ativos | sentimento: +0.26 | 0.02s
+[2026-05-20 00:45:30,320] [INFO] [Thread-25 (run_simulation_async)]    Rodada  30/30 |   31 ações |   54 ativos | sentimento: -0.48 | 0.02s
+[2026-05-20 00:45:30,539] [INFO] [Thread-25 (run_simulation_async)] 
+============================================================
+[2026-05-20 00:45:30,539] [INFO] [Thread-25 (run_simulation_async)] [OK] SIMULATION DONE in 0.5s
+[2026-05-20 00:45:30,544] [INFO] [Thread-25 (run_simulation_async)]    Actions: 953
+[2026-05-20 00:45:30,544] [INFO] [Thread-25 (run_simulation_async)]    Posts: 953 | Interactions: 0
+[2026-05-20 00:45:30,544] [INFO] [Thread-25 (run_simulation_async)]    Avg Sentiment: +0.12
+[2026-05-20 00:45:30,544] [INFO] [Thread-25 (run_simulation_async)]    Top influencer: Ministro da Fazenda
+[2026-05-20 00:45:30,544] [INFO] [Thread-25 (run_simulation_async)] ============================================================
+[2026-05-20 00:45:33,621] [INFO] [Thread-28 (process_request_thread)] 
+======================================================================
+[2026-05-20 00:45:33,621] [INFO] [Thread-28 (process_request_thread)] ⚔️  MULTI-AGENT WAR ROOM — GERAL
+[2026-05-20 00:45:33,623] [INFO] [Thread-28 (process_request_thread)] ======================================================================
+[2026-05-20 00:45:33,623] [INFO] [Thread-28 (process_request_thread)]   Problema: Impacto da IA no mercado de trabalho brasileiro...
+[2026-05-20 00:45:33,623] [INFO] [Thread-28 (process_request_thread)]   Agentes: 10 | Rodadas: 1
+[2026-05-20 00:45:33,623] [INFO] [Thread-28 (process_request_thread)] ──────────────────────────────────────────────────────────────────────
+[2026-05-20 00:45:33,623] [INFO] [Thread-28 (process_request_thread)] 
+  [Estrategista (Carl von Clausew...] Analisando via analogia_historica...
+[2026-05-20 00:45:33,623] [INFO] [Thread-28 (process_request_thread)] 
+  [Cético Metódico (Karl Popper)...] Analisando via falsificacao...
+[2026-05-20 00:45:33,623] [INFO] [Thread-28 (process_request_thread)] 
+  [Sintetizador (Hegel/Engels)...] Analisando via dialetica...
+[2026-05-20 00:45:33,623] [INFO] [Thread-28 (process_request_thread)] 
+  [Especialista Domínio (PhD)...] Analisando via revisao_literatura...
+[2026-05-20 00:45:33,626] [INFO] [Thread-28 (process_request_thread)] 
+  [Visionário (H.G. Wells/Herman ...] Analisando via cenarios_futuros...
+[2026-05-20 00:45:33,626] [INFO] [Thread-28 (process_request_thread)] 
+  [Pragmático (Maquiavel/Peter Dr...] Analisando via viabilidade_execucao...
+[2026-05-20 00:45:33,626] [INFO] [Thread-28 (process_request_thread)] 
+  [Antropólogo (Gilberto Freyre /...] Analisando via analise_sociocultural...
+[2026-05-20 00:45:33,627] [INFO] [Thread-28 (process_request_thread)] 
+  [Jurista (Pontes de Miranda)...] Analisando via analise_regulatoria...
+[2026-05-20 00:45:33,628] [INFO] [Thread-28 (process_request_thread)] 
+  [Psicanalista Social (Carl Jung...] Analisando via inconsciente_coletivo...
+[2026-05-20 00:45:33,628] [INFO] [Thread-28 (process_request_thread)] 
+  [Teórico dos Jogos (John Nash)...] Analisando via teoria_dos_jogos...
+[2026-05-20 00:45:33,628] [INFO] [Thread-28 (process_request_thread)] 
+──────────────────────────────────────────────────────────────────────
+[2026-05-20 00:45:33,628] [INFO] [Thread-28 (process_request_thread)]   ✅ War Room concluída: 10 análises
+[2026-05-20 00:45:33,628] [INFO] [Thread-28 (process_request_thread)]   🎯 Recomendação principal: Adotar uma postura de 'dissuasão ativa' e investimento massivo em IA pública soberana....
+[2026-05-20 00:45:35,363] [INFO] [Thread-30 (_research)] 
+======================================================================
+[2026-05-20 00:45:35,364] [INFO] [Thread-30 (_research)] 🔬 MiroFishOmni — Pesquisa: Impacto da IA no mercado de trabalho brasileiro
+[2026-05-20 00:45:35,365] [INFO] [Thread-30 (_research)] ======================================================================
+[2026-05-20 00:45:35,365] [INFO] [Thread-30 (_research)]   Módulos ativos: 12/14
+[2026-05-20 00:45:35,365] [INFO] [Thread-30 (_research)] ──────────────────────────────────────────────────────────────────────
+[2026-05-20 00:45:35,366] [INFO] [Thread-30 (_research)] 
+[FASE 1/5] Coleta de dados...
+[2026-05-20 00:45:36,112] [INFO] [Thread-30 (_research)] [WARN] No data for SI.POV.NAHC — usando fallback sintético
+[2026-05-20 00:45:36,939] [INFO] [Thread-30 (_research)] [WARN] No data for EN.ATM.CO2E.PC — usando fallback sintético
+[2026-05-20 00:45:37,284] [INFO] [Thread-30 (_research)] [WARN] No data for ER.FST.TOTL.ZS — usando fallback sintético
+[2026-05-20 00:45:37,287] [INFO] [Thread-30 (_research)]   ✅ 22 indicadores World Bank + IBGE
+[2026-05-20 00:45:37,290] [INFO] [Thread-30 (_research)]   ✅ 12 citações Qualis A1 (Semantic Scholar + curadoria)
+[2026-05-20 00:45:37,290] [INFO] [Thread-30 (_research)] 
+[FASE 2/5] Simulação multiagente...
+[2026-05-20 00:45:37,314] [INFO] [Thread-30 (_research)]   📊 Calibrado com 22 indicadores reais
+[2026-05-20 00:45:37,330] [INFO] [Thread-30 (_research)] 
+============================================================
+[2026-05-20 00:45:37,332] [INFO] [Thread-30 (_research)] [SIM] omni_Impacto_da_IA_no_mer
+[2026-05-20 00:45:37,332] [INFO] [Thread-30 (_research)]      Agents: 200 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-20 00:45:37,332] [INFO] [Thread-30 (_research)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/sim_omni_Impacto_da_IA_no_mer.db
+[2026-05-20 00:45:37,333] [INFO] [Thread-30 (_research)] ============================================================
+[2026-05-20 00:45:37,335] [INFO] [Thread-30 (_research)] 
+[FASE 3/5] Análise diagnóstica...
+[2026-05-20 00:45:37,335] [INFO] [Thread-30 (_research)] 
+[FASE 4/5] Previsões...
+[2026-05-20 00:45:37,339] [INFO] [Thread-30 (_research)]   ✅ 20 cenários previstos
+[2026-05-20 00:45:37,341] [INFO] [Thread-30 (_research)] 
+[FASE 5/5] Gerando artigo Qualis A1 com transparência...
+[2026-05-20 00:45:37,350] [INFO] [Thread-30 (_research)]   ✅ Artigo: 15198 caracteres, 7 seções + auditoria de viés
+[2026-05-20 00:46:32,716] [INFO] [Thread-31 (process_request_thread)] 
+======================================================================
+[2026-05-20 00:46:32,717] [INFO] [Thread-31 (process_request_thread)] ⚔️  MULTI-AGENT WAR ROOM — GERAL
+[2026-05-20 00:46:32,717] [INFO] [Thread-31 (process_request_thread)] ======================================================================
+[2026-05-20 00:46:32,717] [INFO] [Thread-31 (process_request_thread)]   Problema: Impacto da IA no mercado de trabalho brasileiro...
+[2026-05-20 00:46:32,717] [INFO] [Thread-31 (process_request_thread)]   Agentes: 10 | Rodadas: 1
+[2026-05-20 00:46:32,717] [INFO] [Thread-31 (process_request_thread)] ──────────────────────────────────────────────────────────────────────
+[2026-05-20 00:46:32,717] [INFO] [Thread-31 (process_request_thread)] 
+  [Estrategista (Carl von Clausew...] Analisando via analogia_historica...
+[2026-05-20 00:46:32,719] [INFO] [Thread-31 (process_request_thread)] 
+  [Cético Metódico (Karl Popper)...] Analisando via falsificacao...
+[2026-05-20 00:46:32,719] [INFO] [Thread-31 (process_request_thread)] 
+  [Sintetizador (Hegel/Engels)...] Analisando via dialetica...
+[2026-05-20 00:46:32,720] [INFO] [Thread-31 (process_request_thread)] 
+  [Especialista Domínio (PhD)...] Analisando via revisao_literatura...
+[2026-05-20 00:46:32,720] [INFO] [Thread-31 (process_request_thread)] 
+  [Visionário (H.G. Wells/Herman ...] Analisando via cenarios_futuros...
+[2026-05-20 00:46:32,720] [INFO] [Thread-31 (process_request_thread)] 
+  [Pragmático (Maquiavel/Peter Dr...] Analisando via viabilidade_execucao...
+[2026-05-20 00:46:32,721] [INFO] [Thread-31 (process_request_thread)] 
+  [Antropólogo (Gilberto Freyre /...] Analisando via analise_sociocultural...
+[2026-05-20 00:46:32,721] [INFO] [Thread-31 (process_request_thread)] 
+  [Jurista (Pontes de Miranda)...] Analisando via analise_regulatoria...
+[2026-05-20 00:46:32,721] [INFO] [Thread-31 (process_request_thread)] 
+  [Psicanalista Social (Carl Jung...] Analisando via inconsciente_coletivo...
+[2026-05-20 00:46:32,721] [INFO] [Thread-31 (process_request_thread)] 
+  [Teórico dos Jogos (John Nash)...] Analisando via teoria_dos_jogos...
+[2026-05-20 00:46:32,723] [INFO] [Thread-31 (process_request_thread)] 
+──────────────────────────────────────────────────────────────────────
+[2026-05-20 00:46:32,724] [INFO] [Thread-31 (process_request_thread)]   ✅ War Room concluída: 10 análises
+[2026-05-20 00:46:32,724] [INFO] [Thread-31 (process_request_thread)]   🎯 Recomendação principal: Adotar uma postura de 'dissuasão ativa' e investimento massivo em IA pública soberana....
+[2026-05-20 00:46:42,089] [INFO] [Thread-34 (_research)] 
+======================================================================
+[2026-05-20 00:46:42,091] [INFO] [Thread-34 (_research)] 🔬 MiroFishOmni — Pesquisa: Impacto da IA no mercado de trabalho brasileiro
+[2026-05-20 00:46:42,091] [INFO] [Thread-34 (_research)] ======================================================================
+[2026-05-20 00:46:42,091] [INFO] [Thread-34 (_research)]   Módulos ativos: 12/14
+[2026-05-20 00:46:42,091] [INFO] [Thread-34 (_research)] ──────────────────────────────────────────────────────────────────────
+[2026-05-20 00:46:42,091] [INFO] [Thread-34 (_research)] 
+[FASE 1/5] Coleta de dados...
+[2026-05-20 00:46:42,214] [INFO] [Thread-34 (_research)] [WARN] No data for SI.POV.NAHC — usando fallback sintético
+[2026-05-20 00:46:42,439] [INFO] [Thread-34 (_research)] [WARN] No data for EN.ATM.CO2E.PC — usando fallback sintético
+[2026-05-20 00:46:42,571] [INFO] [Thread-34 (_research)] [WARN] No data for ER.FST.TOTL.ZS — usando fallback sintético
+[2026-05-20 00:46:42,575] [INFO] [Thread-34 (_research)]   ✅ 22 indicadores World Bank + IBGE
+[2026-05-20 00:46:42,579] [INFO] [Thread-34 (_research)]   ✅ 12 citações Qualis A1 (Semantic Scholar + curadoria)
+[2026-05-20 00:46:42,579] [INFO] [Thread-34 (_research)] 
+[FASE 2/5] Simulação multiagente...
+[2026-05-20 00:46:42,598] [INFO] [Thread-34 (_research)]   📊 Calibrado com 22 indicadores reais
+[2026-05-20 00:46:42,614] [INFO] [Thread-34 (_research)] 
+============================================================
+[2026-05-20 00:46:42,615] [INFO] [Thread-34 (_research)] [SIM] omni_Impacto_da_IA_no_mer
+[2026-05-20 00:46:42,615] [INFO] [Thread-34 (_research)]      Agents: 200 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-20 00:46:42,616] [INFO] [Thread-34 (_research)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/sim_omni_Impacto_da_IA_no_mer.db
+[2026-05-20 00:46:42,616] [INFO] [Thread-34 (_research)] ============================================================
+[2026-05-20 00:46:42,618] [INFO] [Thread-34 (_research)] 
+[FASE 3/5] Análise diagnóstica...
+[2026-05-20 00:46:42,618] [INFO] [Thread-34 (_research)] 
+[FASE 4/5] Previsões...
+[2026-05-20 00:46:42,621] [INFO] [Thread-34 (_research)]   ✅ 20 cenários previstos
+[2026-05-20 00:46:42,621] [INFO] [Thread-34 (_research)] 
+[FASE 5/5] Gerando artigo Qualis A1 com transparência...
+[2026-05-20 00:46:42,631] [INFO] [Thread-34 (_research)]   ✅ Artigo: 15198 caracteres, 7 seções + auditoria de viés
+[2026-05-20 00:46:57,014] [INFO] [Thread-38 (_gen)] [REPORT] Falha ao executar corretor linguístico automático: No module named 'ptbr_corrector'
+[2026-05-20 00:46:57,017] [INFO] [Thread-38 (_gen)] [REPORT] Relatório salvo: C:\Users\marce\.config\opencode\.reversa\research_report.md
+[2026-05-20 05:09:02,731] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-20 05:09:02,733] [INFO] [MainThread] 🐟  MIROFISH LOCAL SERVER — OpenCode Ecosystem v4.2
+[2026-05-20 05:09:02,734] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-20 05:09:02,734] [INFO] [MainThread]    Local:    http://localhost:8765
+[2026-05-20 05:09:02,734] [INFO] [MainThread]    API:      http://localhost:8765/api/status
+[2026-05-20 05:09:02,734] [INFO] [MainThread]    SSE:      http://localhost:8765/events
+[2026-05-20 05:09:02,736] [INFO] [MainThread]    Agents:   http://localhost:8765/api/agents
+[2026-05-20 05:09:02,736] [INFO] [MainThread]    Chat:     POST http://localhost:8765/api/chat
+[2026-05-20 05:09:02,773] [INFO] [MainThread]    🤖 8 agentes pré-carregados para chat imediato
+[2026-05-20 05:09:02,774] [INFO] [MainThread]    Timezone: BRAZIL (UTC-3)
+[2026-05-20 05:09:02,774] [INFO] [MainThread]    DB:       .reversa/mirofish_local.db
+[2026-05-20 05:09:02,775] [INFO] [MainThread]    Modelo:   opencode/big-pickle (via Agent Forum)
+[2026-05-20 05:09:02,775] [INFO] [MainThread]    Zero dependências externas — Python stdlib only
+[2026-05-20 05:09:02,776] [INFO] [MainThread] 
+   Pressione Ctrl+C para parar
+[2026-05-20 05:09:02,777] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-20 05:15:01,750] [INFO] [Thread-8 (run_simulation_async)]    📋 61 perfis carregados do banco: {'total': 61, 'by_source': {'default': 6, 'expanded_analitico': 3, 'expanded_antropologico': 2, 'expanded_cientifico': 3, 'expanded_comportamental': 3, 'expanded_comunicador': 3, 'expanded_desenvolvimental': 2, 'expanded_economico': 3, 'expanded_emocional': 3, 'expanded_espiritual': 2, 'expanded_estrategico': 3, 'expanded_futurologia': 3, 'expanded_ideologico': 3, 'expanded_neurociencia': 2, 'expanded_politica_avancada': 3, 'expanded_psicopatologia': 3, 'expanded_regional': 3, 'expanded_social': 3, 'whatsapp': 8}, 'by_stance': {'critical': 13, 'curious': 9, 'neutral': 17, 'supportive': 22}, 'timestamp': '2026-05-20T05:15:01.750018-03:00'}
+[2026-05-20 05:15:01,769] [INFO] [Thread-8 (run_simulation_async)] 
+============================================================
+[2026-05-20 05:15:01,770] [INFO] [Thread-8 (run_simulation_async)] [SIM] MiroFish_Local
+[2026-05-20 05:15:01,771] [INFO] [Thread-8 (run_simulation_async)]      Agents: 200 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-20 05:15:01,772] [INFO] [Thread-8 (run_simulation_async)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/mirofish_local.db
+[2026-05-20 05:15:01,772] [INFO] [Thread-8 (run_simulation_async)] ============================================================
+[2026-05-20 05:15:01,800] [INFO] [Thread-8 (run_simulation_async)]    Rodada   1/30 |   34 ações |   48 ativos | sentimento: +0.47 | 0.03s
+[2026-05-20 05:15:01,969] [INFO] [Thread-8 (run_simulation_async)]    Rodada  10/30 |   37 ações |   57 ativos | sentimento: -0.14 | 0.02s
+[2026-05-20 05:15:02,251] [INFO] [Thread-8 (run_simulation_async)]    Rodada  20/30 |   24 ações |   44 ativos | sentimento: +0.50 | 0.02s
+[2026-05-20 05:15:02,537] [INFO] [Thread-8 (run_simulation_async)]    Rodada  30/30 |   31 ações |   58 ativos | sentimento: -0.42 | 0.03s
+[2026-05-20 05:15:02,765] [INFO] [Thread-8 (run_simulation_async)] 
+============================================================
+[2026-05-20 05:15:02,765] [INFO] [Thread-8 (run_simulation_async)] [OK] SIMULATION DONE in 0.8s
+[2026-05-20 05:15:02,766] [INFO] [Thread-8 (run_simulation_async)]    Actions: 885
+[2026-05-20 05:15:02,766] [INFO] [Thread-8 (run_simulation_async)]    Posts: 885 | Interactions: 0
+[2026-05-20 05:15:02,767] [INFO] [Thread-8 (run_simulation_async)]    Avg Sentiment: +0.23
+[2026-05-20 05:15:02,767] [INFO] [Thread-8 (run_simulation_async)]    Top influencer: Ministro da Fazenda
+[2026-05-20 05:15:02,767] [INFO] [Thread-8 (run_simulation_async)] ============================================================
+[2026-05-20 05:15:14,466] [INFO] [Thread-12 (_research)] 
+======================================================================
+[2026-05-20 05:15:14,467] [INFO] [Thread-12 (_research)] 🔬 MiroFishOmni — Pesquisa: Impacto da IA no mercado de trabalho brasileiro
+[2026-05-20 05:15:14,467] [INFO] [Thread-12 (_research)] ======================================================================
+[2026-05-20 05:15:14,467] [INFO] [Thread-12 (_research)]   Módulos ativos: 12/14
+[2026-05-20 05:15:14,468] [INFO] [Thread-12 (_research)] ──────────────────────────────────────────────────────────────────────
+[2026-05-20 05:15:14,468] [INFO] [Thread-12 (_research)] 
+[FASE 1/5] Coleta de dados...
+[2026-05-20 05:15:14,721] [INFO] [Thread-12 (_research)] [WARN] No data for SI.POV.NAHC — usando fallback sintético
+[2026-05-20 05:15:14,850] [INFO] [Thread-12 (_research)] [WARN] No data for EN.ATM.CO2E.PC — usando fallback sintético
+[2026-05-20 05:15:14,959] [INFO] [Thread-12 (_research)] [WARN] No data for ER.FST.TOTL.ZS — usando fallback sintético
+[2026-05-20 05:15:14,961] [INFO] [Thread-12 (_research)]   ✅ 22 indicadores World Bank + IBGE
+[2026-05-20 05:15:14,967] [INFO] [Thread-12 (_research)]   ✅ 12 citações Qualis A1 (Semantic Scholar + curadoria)
+[2026-05-20 05:15:14,967] [INFO] [Thread-12 (_research)] 
+[FASE 2/5] Simulação multiagente...
+[2026-05-20 05:15:14,990] [INFO] [Thread-12 (_research)]   📊 Calibrado com 22 indicadores reais
+[2026-05-20 05:15:15,015] [INFO] [Thread-12 (_research)] 
+============================================================
+[2026-05-20 05:15:15,016] [INFO] [Thread-12 (_research)] [SIM] omni_Impacto_da_IA_no_mer
+[2026-05-20 05:15:15,017] [INFO] [Thread-12 (_research)]      Agents: 200 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-20 05:15:15,017] [INFO] [Thread-12 (_research)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/sim_omni_Impacto_da_IA_no_mer.db
+[2026-05-20 05:15:15,017] [INFO] [Thread-12 (_research)] ============================================================
+[2026-05-20 05:15:15,021] [INFO] [Thread-12 (_research)] 
+[FASE 3/5] Análise diagnóstica...
+[2026-05-20 05:15:15,022] [INFO] [Thread-12 (_research)] 
+[FASE 4/5] Previsões...
+[2026-05-20 05:15:19,226] [INFO] [Thread-12 (_research)]   ✅ 20 cenários previstos
+[2026-05-20 05:15:19,227] [INFO] [Thread-12 (_research)] 
+[FASE 5/5] Gerando artigo Qualis A1 com transparência...
+[2026-05-20 05:15:19,243] [INFO] [Thread-12 (_research)]   ✅ Artigo: 15198 caracteres, 7 seções + auditoria de viés
+[2026-05-20 05:16:55,805] [INFO] [Thread-15 (process_request_thread)] 
+======================================================================
+[2026-05-20 05:16:55,806] [INFO] [Thread-15 (process_request_thread)] ⚔️  MULTI-AGENT WAR ROOM — GERAL
+[2026-05-20 05:16:55,807] [INFO] [Thread-15 (process_request_thread)] ======================================================================
+[2026-05-20 05:16:55,807] [INFO] [Thread-15 (process_request_thread)]   Problema: Impacto da IA no mercado de trabalho brasileiro...
+[2026-05-20 05:16:55,807] [INFO] [Thread-15 (process_request_thread)]   Agentes: 10 | Rodadas: 1
+[2026-05-20 05:16:55,807] [INFO] [Thread-15 (process_request_thread)] ──────────────────────────────────────────────────────────────────────
+[2026-05-20 05:16:55,808] [INFO] [Thread-15 (process_request_thread)] 
+  [Estrategista (Carl von Clausew...] Analisando via analogia_historica...
+[2026-05-20 05:16:55,808] [INFO] [Thread-15 (process_request_thread)] 
+  [Cético Metódico (Karl Popper)...] Analisando via falsificacao...
+[2026-05-20 05:16:55,808] [INFO] [Thread-15 (process_request_thread)] 
+  [Sintetizador (Hegel/Engels)...] Analisando via dialetica...
+[2026-05-20 05:16:55,808] [INFO] [Thread-15 (process_request_thread)] 
+  [Especialista Domínio (PhD)...] Analisando via revisao_literatura...
+[2026-05-20 05:16:55,808] [INFO] [Thread-15 (process_request_thread)] 
+  [Visionário (H.G. Wells/Herman ...] Analisando via cenarios_futuros...
+[2026-05-20 05:16:55,809] [INFO] [Thread-15 (process_request_thread)] 
+  [Pragmático (Maquiavel/Peter Dr...] Analisando via viabilidade_execucao...
+[2026-05-20 05:16:55,809] [INFO] [Thread-15 (process_request_thread)] 
+  [Antropólogo (Gilberto Freyre /...] Analisando via analise_sociocultural...
+[2026-05-20 05:16:55,809] [INFO] [Thread-15 (process_request_thread)] 
+  [Jurista (Pontes de Miranda)...] Analisando via analise_regulatoria...
+[2026-05-20 05:16:55,810] [INFO] [Thread-15 (process_request_thread)] 
+  [Psicanalista Social (Carl Jung...] Analisando via inconsciente_coletivo...
+[2026-05-20 05:16:55,810] [INFO] [Thread-15 (process_request_thread)] 
+  [Teórico dos Jogos (John Nash)...] Analisando via teoria_dos_jogos...
+[2026-05-20 05:16:55,810] [INFO] [Thread-15 (process_request_thread)] 
+──────────────────────────────────────────────────────────────────────
+[2026-05-20 05:16:55,811] [INFO] [Thread-15 (process_request_thread)]   ✅ War Room concluída: 10 análises
+[2026-05-20 05:16:55,811] [INFO] [Thread-15 (process_request_thread)]   🎯 Recomendação principal: Adotar uma postura de 'dissuasão ativa' e investimento massivo em IA pública soberana....
+[2026-05-20 05:17:12,029] [INFO] [Thread-19 (_research)] 
+======================================================================
+[2026-05-20 05:17:12,029] [INFO] [Thread-19 (_research)] 🔬 MiroFishOmni — Pesquisa: Impacto da IA no mercado de trabalho brasileiro
+[2026-05-20 05:17:12,029] [INFO] [Thread-19 (_research)] ======================================================================
+[2026-05-20 05:17:12,029] [INFO] [Thread-19 (_research)]   Módulos ativos: 12/14
+[2026-05-20 05:17:12,029] [INFO] [Thread-19 (_research)] ──────────────────────────────────────────────────────────────────────
+[2026-05-20 05:17:12,029] [INFO] [Thread-19 (_research)] 
+[FASE 1/5] Coleta de dados...
+[2026-05-20 05:17:12,207] [INFO] [Thread-19 (_research)] [WARN] No data for SI.POV.NAHC — usando fallback sintético
+[2026-05-20 05:17:12,345] [INFO] [Thread-19 (_research)] [WARN] No data for EN.ATM.CO2E.PC — usando fallback sintético
+[2026-05-20 05:17:12,457] [INFO] [Thread-19 (_research)] [WARN] No data for ER.FST.TOTL.ZS — usando fallback sintético
+[2026-05-20 05:17:12,460] [INFO] [Thread-19 (_research)]   ✅ 22 indicadores World Bank + IBGE
+[2026-05-20 05:17:12,462] [INFO] [Thread-19 (_research)]   ✅ 12 citações Qualis A1 (Semantic Scholar + curadoria)
+[2026-05-20 05:17:12,462] [INFO] [Thread-19 (_research)] 
+[FASE 2/5] Simulação multiagente...
+[2026-05-20 05:17:12,482] [INFO] [Thread-19 (_research)]   📊 Calibrado com 22 indicadores reais
+[2026-05-20 05:17:12,500] [INFO] [Thread-19 (_research)] 
+============================================================
+[2026-05-20 05:17:12,500] [INFO] [Thread-19 (_research)] [SIM] omni_Impacto_da_IA_no_mer
+[2026-05-20 05:17:12,500] [INFO] [Thread-19 (_research)]      Agents: 200 | Rounds: 30 | Platforms: ['twitter', 'reddit']
+[2026-05-20 05:17:12,500] [INFO] [Thread-19 (_research)]      Timezone: BRAZIL (UTC-3) | DB: .reversa/sim_omni_Impacto_da_IA_no_mer.db
+[2026-05-20 05:17:12,500] [INFO] [Thread-19 (_research)] ============================================================
+[2026-05-20 05:17:12,503] [INFO] [Thread-19 (_research)] 
+[FASE 3/5] Análise diagnóstica...
+[2026-05-20 05:17:12,506] [INFO] [Thread-19 (_research)] 
+[FASE 4/5] Previsões...
+[2026-05-20 05:17:12,508] [INFO] [Thread-19 (_research)]   ✅ 20 cenários previstos
+[2026-05-20 05:17:12,509] [INFO] [Thread-19 (_research)] 
+[FASE 5/5] Gerando artigo Qualis A1 com transparência...
+[2026-05-20 05:17:12,517] [INFO] [Thread-19 (_research)]   ✅ Artigo: 15198 caracteres, 7 seções + auditoria de viés
+[2026-05-20 05:17:52,919] [INFO] [Thread-21 (_gen)] [REPORT] Falha ao executar corretor linguístico automático: No module named 'ptbr_corrector'
+[2026-05-20 05:17:52,921] [INFO] [Thread-21 (_gen)] [REPORT] Relatório salvo: C:\Users\marce\.config\opencode\.reversa\research_report.md
+[2026-05-20 05:19:06,679] [INFO] [Thread-25 (process_request_thread)] 
+======================================================================
+[2026-05-20 05:19:06,679] [INFO] [Thread-25 (process_request_thread)] ⚔️  MULTI-AGENT WAR ROOM — GERAL
+[2026-05-20 05:19:06,679] [INFO] [Thread-25 (process_request_thread)] ======================================================================
+[2026-05-20 05:19:06,679] [INFO] [Thread-25 (process_request_thread)]   Problema: Impacto da IA no mercado de trabalho brasileiro...
+[2026-05-20 05:19:06,679] [INFO] [Thread-25 (process_request_thread)]   Agentes: 10 | Rodadas: 1
+[2026-05-20 05:19:06,679] [INFO] [Thread-25 (process_request_thread)] ──────────────────────────────────────────────────────────────────────
+[2026-05-20 05:19:06,679] [INFO] [Thread-25 (process_request_thread)] 
+  [Estrategista (Carl von Clausew...] Analisando via analogia_historica...
+[2026-05-20 05:19:06,679] [INFO] [Thread-25 (process_request_thread)] 
+  [Cético Metódico (Karl Popper)...] Analisando via falsificacao...
+[2026-05-20 05:19:06,679] [INFO] [Thread-25 (process_request_thread)] 
+  [Sintetizador (Hegel/Engels)...] Analisando via dialetica...
+[2026-05-20 05:19:06,679] [INFO] [Thread-25 (process_request_thread)] 
+  [Especialista Domínio (PhD)...] Analisando via revisao_literatura...
+[2026-05-20 05:19:06,682] [INFO] [Thread-25 (process_request_thread)] 
+  [Visionário (H.G. Wells/Herman ...] Analisando via cenarios_futuros...
+[2026-05-20 05:19:06,682] [INFO] [Thread-25 (process_request_thread)] 
+  [Pragmático (Maquiavel/Peter Dr...] Analisando via viabilidade_execucao...
+[2026-05-20 05:19:06,682] [INFO] [Thread-25 (process_request_thread)] 
+  [Antropólogo (Gilberto Freyre /...] Analisando via analise_sociocultural...
+[2026-05-20 05:19:06,682] [INFO] [Thread-25 (process_request_thread)] 
+  [Jurista (Pontes de Miranda)...] Analisando via analise_regulatoria...
+[2026-05-20 05:19:06,682] [INFO] [Thread-25 (process_request_thread)] 
+  [Psicanalista Social (Carl Jung...] Analisando via inconsciente_coletivo...
+[2026-05-20 05:19:06,684] [INFO] [Thread-25 (process_request_thread)] 
+  [Teórico dos Jogos (John Nash)...] Analisando via teoria_dos_jogos...
+[2026-05-20 05:19:06,684] [INFO] [Thread-25 (process_request_thread)] 
+──────────────────────────────────────────────────────────────────────
+[2026-05-20 05:19:06,684] [INFO] [Thread-25 (process_request_thread)]   ✅ War Room concluída: 10 análises
+[2026-05-20 05:19:06,684] [INFO] [Thread-25 (process_request_thread)]   🎯 Recomendação principal: Adotar uma postura de 'dissuasão ativa' e investimento massivo em IA pública soberana....
+[2026-05-20 05:39:48,696] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-20 05:39:48,696] [INFO] [MainThread] 🐟  MIROFISH LOCAL SERVER — OpenCode Ecosystem v4.2
+[2026-05-20 05:39:48,696] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-20 05:39:48,696] [INFO] [MainThread]    Local:    http://localhost:8765
+[2026-05-20 05:39:48,696] [INFO] [MainThread]    API:      http://localhost:8765/api/status
+[2026-05-20 05:39:48,696] [INFO] [MainThread]    SSE:      http://localhost:8765/events
+[2026-05-20 05:39:48,696] [INFO] [MainThread]    Agents:   http://localhost:8765/api/agents
+[2026-05-20 05:39:48,696] [INFO] [MainThread]    Chat:     POST http://localhost:8765/api/chat
+[2026-05-20 05:39:48,710] [INFO] [MainThread]    🤖 8 agentes pré-carregados para chat imediato
+[2026-05-20 05:39:48,710] [INFO] [MainThread]    Timezone: BRAZIL (UTC-3)
+[2026-05-20 05:39:48,712] [INFO] [MainThread]    DB:       .reversa/mirofish_local.db
+[2026-05-20 05:39:48,712] [INFO] [MainThread]    Modelo:   opencode/big-pickle (via Agent Forum)
+[2026-05-20 05:39:48,712] [INFO] [MainThread]    Zero dependências externas — Python stdlib only
+[2026-05-20 05:39:48,712] [INFO] [MainThread] 
+   Pressione Ctrl+C para parar
+[2026-05-20 05:39:48,712] [INFO] [MainThread] ════════════════════════════════════════════════════════════
+[2026-05-20 06:29:15,002] [WARNING] [MainThread] ⚠️ Sinal 2 recebido. Desligando e limpando conexões SQLite...
+[2026-05-20 06:29:15,017] [INFO] [MainThread] 🧹 Iniciando consolidação e encerramento limpo das conexões SQLite (WAL checkpoint)...
+[2026-05-20 06:29:15,387] [INFO] [MainThread] ✅ Banco consolidado com sucesso: omen_logs.db
+[2026-05-20 06:29:15,680] [INFO] [MainThread] ✅ Banco consolidado com sucesso: sim_brazil.db
+[2026-05-20 06:29:15,719] [INFO] [MainThread] ✅ Banco consolidado com sucesso: mirofish_local.db
+[2026-05-20 06:29:15,747] [INFO] [MainThread] 🧹 Iniciando consolidação e encerramento limpo das conexões SQLite (WAL checkpoint)...
+[2026-05-20 06:29:16,278] [INFO] [MainThread] ✅ Banco consolidado com sucesso: omen_logs.db
+[2026-05-20 06:29:16,958] [INFO] [MainThread] ✅ Banco consolidado com sucesso: sim_brazil.db
+[2026-05-20 06:29:17,016] [INFO] [MainThread] ✅ Banco consolidado com sucesso: mirofish_local.db
