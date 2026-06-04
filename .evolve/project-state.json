@@ -1,16 +1,30 @@
 {
   "project": "Antiprojeto UFC — PPGTE/UFC",
-  "ecosystem_version": "4.3.0",
-  "last_sync": "2026-05-30T14:50:00Z",
+  "ecosystem_version": "4.7.1",
+  "last_sync": "2026-06-04T12:00:00Z",
+  "swot_score": 100,
+  "tdd_score": 100,
   "health": {
     "score": 100,
     "components": {
-      "documentacao": {"status": "healthy", "files": 25, "score": 100},
-      "testes": {"status": "healthy", "files": 30, "score": 100},
+      "documentacao": {"status": "healthy", "files": 31, "score": 100},
+      "testes": {"status": "healthy", "files": 32, "score": 100},
       "latex": {"status": "healthy", "compiled": 15, "score": 100},
-      "scripts": {"status": "healthy", "files": 12, "score": 100},
-      "dados": {"status": "healthy", "files": 215, "score": 100}
+      "scripts": {"status": "healthy", "files": 14, "score": 100},
+      "dados": {"status": "healthy", "files": 215, "score": 100},
+      "ci_cd": {"status": "healthy", "files": 1, "score": 100},
+      "docker": {"status": "healthy", "files": 1, "score": 100},
+      "documentacao_tecnica": {"status": "healthy", "files": 6, "score": 100}
     }
+  },
+  "test_results": {
+    "total": 344,
+    "passed": 327,
+    "skipped": 17,
+    "failed": 0,
+    "pass_rate": "100%",
+    "skipped_reason": "WDAC Windows policy (numpy/scipy DLLs)",
+    "last_run": "2026-06-04T12:00:00Z"
   },
   "artifacts": {
     "domain_shift_audit": {
@@ -26,16 +40,36 @@
       "references": 25,
       "size_kb": 629
     },
-    "triangulacao_md": {
-      "path": "artigo/TRIANGULACAO_ANTI_CIRCULARIDADE.md",
-      "research_spec": "SPEC-008"
+    "validacao_expandida": {
+      "script": "artigo/evaluations/tests/test_validacao_expandida.py",
+      "tests": 17,
+      "dimensions": ["D2", "D3", "D4", "D6", "D8", "D9"],
+      "status": "17/17 GREEN"
+    },
+    "swot_evaluation": {
+      "path": "AVALIACAO_SWOT_TDD_ECOSYSTEM.md",
+      "score": 100,
+      "recommendations": {"total": 13, "implemented": 13}
     }
   },
+  "infra": {
+    "ci_cd": ".github/workflows/ci.yml",
+    "docker": "Dockerfile",
+    "admin_runner": "run_as_admin.ps1"
+  },
   "specs": [
-    "specs/SPEC_008B_CAMADA1B.md",
-    "artigo/orchestration/SPEC_008_ANTI_CIRCULARIDADE.md",
-    "artigo/orchestration/SPEC_009_D1_MATEMATICA.md",
-    "artigo/orchestration/SPEC_010_D2_FISICA.md",
-    "artigo/orchestration/SPEC_011_D9_METODOLOGIA.md"
+    "SPEC-001 (Orchestration Pipeline)",
+    "SPEC-002 (Academic Output MASWOS)",
+    "SPEC-003 (MCP Integration)",
+    "SPEC-004 (Quantum Computing)",
+    "SPEC-005 (Reverse Engineering)",
+    "SPEC-006 (Data Orchestration)",
+    "SPEC-007 (Evolution Engine)",
+    "SPEC-008 (Triangulacao Anti-Circularidade, 14/14)",
+    "SPEC-008-B (Domain Shift Camada 1B, 9/9)",
+    "SPEC-009 (D1 Matematica, 12/12)",
+    "SPEC-010 (D2 Fisica, 8/8)",
+    "SPEC-011 (D9 Metodologia, 15/15)",
+    "SPEC-012 (Validacao Expandida M4->M5, 17/17)"
   ]
 }

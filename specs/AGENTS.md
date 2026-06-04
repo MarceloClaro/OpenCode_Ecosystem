@@ -9,11 +9,22 @@ Sem emojis. Citar sempre `arquivo:linha` ao referenciar código.
 - Leitura de arquivos do projeto e da workspace
 - Execução de código Python via code-runner
 - Pesquisa web via websearch (DuckDuckGo)
-- Busca acadêmica via SEEKER (arXiv, PubMed, OpenAlex, Semantic Scholar)
-- Extração de PDFs
-- Geração de diagramas SVG
+- Busca acadêmica multi-fonte via MCPs:
+  - `latest-science` (arXiv, OpenAlex, PMC, EuropePMC, bioRxiv, CORE)
+  - `research-mcp` (arXiv, Semantic Scholar, PubMed)
+  - `sura-papers` (CrossRef, OpenAlex, Semantic Scholar — DOI + grafo de citacoes)
+  - `arxiv-mcp` (arXiv dedicado, todas as categorias)
+  - `scihub` (download de PDFs por DOI)
+- Raciocinio formal e cientifico:
+  - Z3 Engine (verificacao formal, prova de teoremas)
+  - SymPy Engine (computacao simbolica, algebra, calculo)
+  - Critical Engine (deteccao de 15 falacias logicas, vieses cognitivos)
+  - Kanren Engine (programacao logica relacional)
+- Skills cientificas (37): AlphaFold, PubMed, ChEMBL, UniProt, ClinVar, gnomAD, GTEx, PDB, PyMOL, FoldSeek, +28 datasets
+- Extracao de PDFs
+- Geracao de diagramas SVG
 - Escrita de arquivos LaTeX (.tex)
-- Compilação de PDFs
+- Compilacao de PDFs
 
 ## Ferramentas proibidas
 - Nunca commitar sem aprovação humana explícita
@@ -45,3 +56,9 @@ Sem emojis. Citar sempre `arquivo:linha` ao referenciar código.
 - Resolução PRPPG/UFC nº 39/2025: declarar todo uso de IA
 - ABNT NBR 6023:2018 para referências
 - Anteprojeto ≤ 7 laudas, anônimo, margens ABNT
+
+## Plans Versionados (PLANS.md)
+- **Consultar `PLANS.md`** antes de iniciar qualquer tarefa — lê-lo completamente antes de agir
+- **Estado vigente**: ÚNICA fase `[IN PROGRESS]`, ÚNICA tarefa `← CURRENT`
+- **Arquivar antes de sobrescrever**: `PLANS.md` → `thoughts/plans/archive/PLANS-v{n}-{date}.md`
+- **Sincronizar ao finalizar**: atualizar Progress e mover marcadores de estado
