@@ -1,0 +1,29 @@
+# =============================================================================
+# editais-br — CD (Deploy na VPS)
+# Dispara quando merge na main. Requer secrets: VPS_HOST, VPS_USER, VPS_SSH_KEY
+# =============================================================================
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # permite deploy manual
+
+jobs:
+  deploy:
+    name: Deploy VPS
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd /opt/editais-br
+            git pull origin main
+            docker compose up -d --build

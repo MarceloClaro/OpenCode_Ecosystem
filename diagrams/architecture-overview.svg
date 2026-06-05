@@ -1,0 +1,259 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f6feb"/>
+      <stop offset="100%" stop-color="#58a6ff"/>
+    </linearGradient>
+    <linearGradient id="l6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#238636"/>
+      <stop offset="100%" stop-color="#3fb950"/>
+    </linearGradient>
+    <linearGradient id="l5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f6feb"/>
+      <stop offset="100%" stop-color="#58a6ff"/>
+    </linearGradient>
+    <linearGradient id="l4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9e6a03"/>
+      <stop offset="100%" stop-color="#d29922"/>
+    </linearGradient>
+    <linearGradient id="l3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#bc8c00"/>
+      <stop offset="100%" stop-color="#e3b341"/>
+    </linearGradient>
+    <linearGradient id="l2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b2f97"/>
+      <stop offset="100%" stop-color="#bc8cff"/>
+    </linearGradient>
+    <linearGradient id="l1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#21262d"/>
+      <stop offset="100%" stop-color="#484f58"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)" rx="8"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="1200" height="56" fill="url(#hdr)" rx="8"/>
+  <rect x="0" y="40" width="1200" height="16" fill="url(#hdr)"/>
+  <text x="600" y="36" text-anchor="middle" fill="#fff" font-size="20" font-weight="bold">Arquitetura do OpenCode Ecosystem v4.6.1 — 6 Camadas + MiroFish/BettaFish</text>
+
+  <!-- Layer 6 - Orchestration -->
+  <rect x="30" y="70" width="1140" height="110" rx="6" fill="url(#l6)" opacity="0.15" filter="url(#shadow)"/>
+  <rect x="30" y="70" width="1140" height="110" rx="6" fill="none" stroke="#3fb950" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <rect x="30" y="70" width="160" height="110" rx="6" fill="url(#l6)" opacity="0.25"/>
+  <text x="50" y="100" fill="#3fb950" font-size="11" font-weight="bold">L6 — ORQUESTRAÇÃO</text>
+  <text x="50" y="118" fill="#8b949e" font-size="9">Meta-coordenação</text>
+  <text x="50" y="134" fill="#8b949e" font-size="9">Sync Barriers: 120+</text>
+  <text x="50" y="150" fill="#8b949e" font-size="9">Constraints: 500+</text>
+  <text x="50" y="166" fill="#8b949e" font-size="9">Feedback: 120 pts</text>
+
+  <rect x="210" y="82" width="180" height="44" rx="6" fill="#238636" opacity="0.8"/>
+  <text x="300" y="102" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Nexus NMA v6.2</text>
+  <text x="300" y="117" text-anchor="middle" fill="#8b949e" font-size="9">Orquestrador Meta-Granular</text>
+
+  <rect x="410" y="82" width="180" height="44" rx="6" fill="#238636" opacity="0.8"/>
+  <text x="500" y="102" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Reversa v1.2.22</text>
+  <text x="500" y="117" text-anchor="middle" fill="#8b949e" font-size="9">Engenharia Reversa (9 ag.)</text>
+
+  <rect x="610" y="82" width="180" height="44" rx="6" fill="#238636" opacity="0.8"/>
+  <text x="700" y="102" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Evo Loop (9 gen.)</text>
+  <text x="700" y="117" text-anchor="middle" fill="#8b949e" font-size="9">PLAN→ACT→REFLECT→EVOLVE</text>
+
+  <rect x="810" y="82" width="180" height="44" rx="6" fill="#238636" opacity="0.8"/>
+  <text x="900" y="102" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">DecisionNode</text>
+  <text x="900" y="117" text-anchor="middle" fill="#8b949e" font-size="9">Memória de Decisões (SQLite)</text>
+
+  <!-- Arrow down -->
+  <line x1="600" y1="180" x2="600" y2="200" stroke="#30363d" stroke-width="2"/>
+  <polygon points="592,198 600,208 608,198" fill="#30363d"/>
+
+  <!-- Layer 5 - Agents -->
+  <rect x="30" y="210" width="1140" height="110" rx="6" fill="url(#l5)" opacity="0.15" filter="url(#shadow)"/>
+  <rect x="30" y="210" width="1140" height="110" rx="6" fill="none" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <rect x="30" y="210" width="160" height="110" rx="6" fill="url(#l5)" opacity="0.25"/>
+  <text x="50" y="240" fill="#58a6ff" font-size="11" font-weight="bold">L5 — AGENTES (125)</text>
+  <text x="50" y="258" fill="#8b949e" font-size="9">Execução especializada</text>
+  <text x="50" y="274" fill="#8b949e" font-size="9">Core: 56 | Criação: 49</text>
+  <text x="50" y="290" fill="#8b949e" font-size="9">SEEKER: 12 | Reversa: 7</text>
+  <text x="50" y="306" fill="#8b949e" font-size="9">Corretor: 1</text>
+
+  <rect x="210" y="222" width="135" height="40" rx="6" fill="#1f6feb" opacity="0.8"/>
+  <text x="277" y="240" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Orquestradores</text>
+  <text x="277" y="254" text-anchor="middle" fill="#8b949e" font-size="8">4 agentes</text>
+
+  <rect x="360" y="222" width="135" height="40" rx="6" fill="#1f6feb" opacity="0.8"/>
+  <text x="427" y="240" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Código</text>
+  <text x="427" y="254" text-anchor="middle" fill="#8b949e" font-size="8">8 agentes</text>
+
+  <rect x="510" y="222" width="135" height="40" rx="6" fill="#1f6feb" opacity="0.8"/>
+  <text x="577" y="240" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Análise</text>
+  <text x="577" y="254" text-anchor="middle" fill="#8b949e" font-size="8">7 agentes</text>
+
+  <rect x="660" y="222" width="135" height="40" rx="6" fill="#1f6feb" opacity="0.8"/>
+  <text x="727" y="240" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Pesquisa</text>
+  <text x="727" y="254" text-anchor="middle" fill="#8b949e" font-size="8">5 agentes</text>
+
+  <rect x="810" y="222" width="135" height="40" rx="6" fill="#1f6feb" opacity="0.8"/>
+  <text x="877" y="240" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">MASWOS</text>
+  <text x="877" y="254" text-anchor="middle" fill="#8b949e" font-size="8">49 agentes</text>
+
+  <rect x="960" y="222" width="135" height="40" rx="6" fill="#1f6feb" opacity="0.8"/>
+  <text x="1027" y="240" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">SEEKER + Reversa</text>
+  <text x="1027" y="254" text-anchor="middle" fill="#8b949e" font-size="8">12 + 7 agentes</text>
+
+  <rect x="210" y="270" width="885" height="38" rx="6" fill="#1f6feb" opacity="0.4"/>
+  <text x="652" y="290" text-anchor="middle" fill="#c9d1d9" font-size="10">Comunicação via MCP (JSON-RPC) · Subagents OpenCode · Contexto 200K</text>
+
+  <!-- Arrow down -->
+  <line x1="600" y1="320" x2="600" y2="340" stroke="#30363d" stroke-width="2"/>
+  <polygon points="592,338 600,348 608,338" fill="#30363d"/>
+
+  <!-- Layer 4 - MCP -->
+  <rect x="30" y="350" width="1140" height="110" rx="6" fill="url(#l4)" opacity="0.15" filter="url(#shadow)"/>
+  <rect x="30" y="350" width="1140" height="110" rx="6" fill="none" stroke="#d29922" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <rect x="30" y="350" width="160" height="110" rx="6" fill="url(#l4)" opacity="0.25"/>
+  <text x="50" y="380" fill="#d29922" font-size="11" font-weight="bold">L4 — MCP SERVERS (40)</text>
+  <text x="50" y="398" fill="#8b949e" font-size="9">Protocolo de comunicação</text>
+  <text x="50" y="414" fill="#8b949e" font-size="9">38 Local + 2 Remote</text>
+  <text x="50" y="430" fill="#8b949e" font-size="9">JSON-RPC + stdio</text>
+  <text x="50" y="446" fill="#8b949e" font-size="9">Lazy init</text>
+
+  <rect x="210" y="362" width="155" height="40" rx="6" fill="#9e6a03" opacity="0.8"/>
+  <text x="287" y="380" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Core (12)</text>
+  <text x="287" y="394" text-anchor="middle" fill="#8b949e" font-size="8">FS, SQLite, PDF, Git...</text>
+
+  <rect x="380" y="362" width="155" height="40" rx="6" fill="#9e6a03" opacity="0.8"/>
+  <text x="457" y="380" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Busca (6)</text>
+  <text x="457" y="394" text-anchor="middle" fill="#8b949e" font-size="8">WebSearch, Wikipedia...</text>
+
+  <rect x="550" y="362" width="155" height="40" rx="6" fill="#9e6a03" opacity="0.8"/>
+  <text x="627" y="380" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Código (6)</text>
+  <text x="627" y="394" text-anchor="middle" fill="#8b949e" font-size="8">Node Sandbox, ESLint...</text>
+
+  <rect x="720" y="362" width="155" height="40" rx="6" fill="#9e6a03" opacity="0.8"/>
+  <text x="797" y="380" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Memória (3)</text>
+  <text x="797" y="394" text-anchor="middle" fill="#8b949e" font-size="8">Mem0, DecisionNode...</text>
+
+  <rect x="890" y="362" width="155" height="40" rx="6" fill="#9e6a03" opacity="0.8"/>
+  <text x="967" y="380" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Domínio (6)</text>
+  <text x="967" y="394" text-anchor="middle" fill="#8b949e" font-size="8">Jurídico, RAG, SciHub...</text>
+
+  <rect x="210" y="410" width="835" height="38" rx="6" fill="#9e6a03" opacity="0.4"/>
+  <text x="627" y="430" text-anchor="middle" fill="#c9d1d9" font-size="10">Protocolo MCP (Anthropic, 2024) — IBM Architecture Patterns (Chowdhury et al., 2026)</text>
+
+  <!-- Arrow down -->
+  <line x1="600" y1="460" x2="600" y2="480" stroke="#30363d" stroke-width="2"/>
+  <polygon points="592,478 600,488 608,478" fill="#30363d"/>
+
+  <!-- Layer 3 - Skills -->
+  <rect x="30" y="490" width="1140" height="110" rx="6" fill="url(#l3)" opacity="0.15" filter="url(#shadow)"/>
+  <rect x="30" y="490" width="1140" height="110" rx="6" fill="none" stroke="#e3b341" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <rect x="30" y="490" width="160" height="110" rx="6" fill="url(#l3)" opacity="0.25"/>
+  <text x="50" y="520" fill="#e3b341" font-size="11" font-weight="bold">L3 — SKILLS (104)</text>
+  <text x="50" y="538" fill="#8b949e" font-size="9">12 categorias</text>
+  <text x="50" y="554" fill="#8b949e" font-size="9">P14-P18 MiroFish</text>
+  <text x="50" y="570" fill="#8b949e" font-size="9">BettaFish integrado</text>
+  <text x="50" y="586" fill="#8b949e" font-size="9">212 tipos (27 cat)</text>
+
+  <rect x="210" y="502" width="130" height="40" rx="6" fill="#bc8c00" opacity="0.8"/>
+  <text x="275" y="520" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Sistema (6)</text>
+  <text x="275" y="534" text-anchor="middle" fill="#8b949e" font-size="8">CodeReview, Evo...</text>
+
+  <rect x="355" y="502" width="130" height="40" rx="6" fill="#bc8c00" opacity="0.8"/>
+  <text x="420" y="520" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Jurídico (7)</text>
+  <text x="420" y="534" text-anchor="middle" fill="#8b949e" font-size="8">Contratos, Peças...</text>
+
+  <rect x="500" y="502" width="130" height="40" rx="6" fill="#bc8c00" opacity="0.8"/>
+  <text x="565" y="520" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Pesquisa (3)</text>
+  <text x="565" y="534" text-anchor="middle" fill="#8b949e" font-size="8">Editais, ABNT...</text>
+
+  <rect x="645" y="502" width="130" height="40" rx="6" fill="#bc8c00" opacity="0.8"/>
+  <text x="710" y="520" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">MiroFish (11)</text>
+  <text x="710" y="534" text-anchor="middle" fill="#8b949e" font-size="8">MCP, Agentes...</text>
+
+  <rect x="790" y="502" width="130" height="40" rx="6" fill="#bc8c00" opacity="0.8"/>
+  <text x="855" y="520" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">PhD Auditor</text>
+  <text x="855" y="534" text-anchor="middle" fill="#8b949e" font-size="8">Nash+Qualis+IMRAD</text>
+
+  <rect x="935" y="502" width="130" height="40" rx="6" fill="#bc8c00" opacity="0.8"/>
+  <text x="1000" y="520" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">General (5)</text>
+  <text x="1000" y="534" text-anchor="middle" fill="#8b949e" font-size="8">SkillStore...</text>
+
+  <rect x="210" y="550" width="855" height="38" rx="6" fill="#bc8c00" opacity="0.4"/>
+  <text x="637" y="570" text-anchor="middle" fill="#c9d1d9" font-size="10">Progressive Disclosure (CC-Skills, 2025) · SKILL.md ≤ 2.500B · references/ para conteúdo denso</text>
+
+  <!-- Arrow down -->
+  <line x1="600" y1="600" x2="600" y2="620" stroke="#30363d" stroke-width="2"/>
+  <polygon points="592,618 600,628 608,618" fill="#30363d"/>
+
+  <!-- Layer 2 - Data -->
+  <rect x="30" y="630" width="1140" height="110" rx="6" fill="url(#l2)" opacity="0.15" filter="url(#shadow)"/>
+  <rect x="30" y="630" width="1140" height="110" rx="6" fill="none" stroke="#bc8cff" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <rect x="30" y="630" width="160" height="110" rx="6" fill="url(#l2)" opacity="0.25"/>
+  <text x="50" y="660" fill="#bc8cff" font-size="11" font-weight="bold">L2 — DADOS</text>
+  <text x="50" y="678" fill="#8b949e" font-size="9">Armazenamento</text>
+  <text x="50" y="694" fill="#8b949e" font-size="9">~109.180 linhas Python</text>
+  <text x="50" y="710" fill="#8b949e" font-size="9">427+ scripts .py</text>
+
+  <rect x="210" y="642" width="175" height="44" rx="6" fill="#8b2f97" opacity="0.8"/>
+  <text x="297" y="662" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Quantum (81 arqs)</text>
+  <text x="297" y="677" text-anchor="middle" fill="#8b949e" font-size="8">QML·MPS·Grad-CAM·ZNE</text>
+
+  <rect x="405" y="642" width="175" height="44" rx="6" fill="#8b2f97" opacity="0.8"/>
+  <text x="492" y="662" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">DOCLing (100+ arqs)</text>
+  <text x="492" y="677" text-anchor="middle" fill="#8b949e" font-size="8">39.910 linhas · PDF RAG</text>
+
+  <rect x="600" y="642" width="175" height="44" rx="6" fill="#8b2f97" opacity="0.8"/>
+  <text x="687" y="662" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Mem0 + SQLite</text>
+  <text x="687" y="677" text-anchor="middle" fill="#8b949e" font-size="8">Memória persistente</text>
+
+  <rect x="795" y="642" width="175" height="44" rx="6" fill="#8b2f97" opacity="0.8"/>
+  <text x="882" y="662" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Basis Research</text>
+  <text x="882" y="677" text-anchor="middle" fill="#8b949e" font-size="8">33 scripts · 13.659 linhas</text>
+
+  <rect x="210" y="694" width="760" height="34" rx="6" fill="#8b2f97" opacity="0.4"/>
+  <text x="590" y="714" text-anchor="middle" fill="#c9d1d9" font-size="10">Editais-BR (73 scr) · Artigo MIT-IA (46 scr) · Core (20 scr) · Criador-Artigo (7 scr)</text>
+
+  <!-- Arrow down -->
+  <line x1="600" y1="740" x2="600" y2="760" stroke="#30363d" stroke-width="2"/>
+  <polygon points="592,758 600,768 608,758" fill="#30363d"/>
+
+  <!-- Layer 1 - Infra -->
+  <rect x="30" y="770" width="1140" height="90" rx="6" fill="url(#l1)" opacity="0.25" filter="url(#shadow)"/>
+  <rect x="30" y="770" width="1140" height="90" rx="6" fill="none" stroke="#484f58" stroke-width="1.5"/>
+  <rect x="30" y="770" width="160" height="90" rx="6" fill="url(#l1)" opacity="0.35"/>
+  <text x="50" y="798" fill="#8b949e" font-size="11" font-weight="bold">L1 — INFRA</text>
+  <text x="50" y="815" fill="#8b949e" font-size="9">Runtime</text>
+
+  <rect x="210" y="782" width="200" height="34" rx="6" fill="#30363d" stroke="#484f58" stroke-width="1"/>
+  <text x="310" y="803" text-anchor="middle" fill="#c9d1d9" font-size="11">Node.js 25 · Bun 1.3</text>
+
+  <rect x="430" y="782" width="200" height="34" rx="6" fill="#30363d" stroke="#484f58" stroke-width="1"/>
+  <text x="530" y="803" text-anchor="middle" fill="#c9d1d9" font-size="11">Python 3.12 · Docker</text>
+
+  <rect x="650" y="782" width="200" height="34" rx="6" fill="#30363d" stroke="#484f58" stroke-width="1"/>
+  <text x="750" y="803" text-anchor="middle" fill="#c9d1d9" font-size="11">OpenCode CLI 1.14</text>
+
+  <rect x="870" y="782" width="200" height="34" rx="6" fill="#30363d" stroke="#484f58" stroke-width="1"/>
+  <text x="970" y="803" text-anchor="middle" fill="#c9d1d9" font-size="11">Win32 · Ollama</text>
+
+  <!-- Stats bar at very bottom -->
+  <rect x="30" y="868" width="1140" height="24" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="80" y="884" fill="#8b949e" font-size="9">125 Agentes</text>
+  <text x="260" y="884" fill="#8b949e" font-size="9">40 MCPs</text>
+  <text x="420" y="884" fill="#8b949e" font-size="9">104 Skills</text>
+  <text x="580" y="884" fill="#8b949e" font-size="9">212 Raciocinios (25 cat) · 125 Agentes (7 fases)</text>
+  <text x="790" y="884" fill="#8b949e" font-size="9">81 arqs Quantum</text>
+  <text x="990" y="884" fill="#8b949e" font-size="9">v4.6.1 · 200K ctx</text>
+</svg>

@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="host" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f6feb"/>
+      <stop offset="100%" stop-color="#58a6ff"/>
+    </linearGradient>
+    <linearGradient id="client" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#238636"/>
+      <stop offset="100%" stop-color="#3fb950"/>
+    </linearGradient>
+    <linearGradient id="server" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9e6a03"/>
+      <stop offset="100%" stop-color="#d29922"/>
+    </linearGradient>
+    <linearGradient id="ext" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b2f97"/>
+      <stop offset="100%" stop-color="#bc8cff"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#30363d"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="720" fill="url(#bg)" rx="8"/>
+
+  <!-- Title -->
+  <text x="550" y="36" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="bold">Arquitetura Cliente-Host-Servidor MCP v4.6.1</text>
+  <text x="550" y="56" text-anchor="middle" fill="#8b949e" font-size="11">Model Context Protocol — 40 servidores (38 local + 2 remoto) · Anthropic (2024) · IBM (Chowdhury et al., 2026)</text>
+
+  <!-- Host Box -->
+  <rect x="50" y="80" width="1000" height="600" rx="12" fill="#1f6feb" opacity="0.06" stroke="#1f6feb" stroke-width="2"/>
+  <rect x="50" y="80" width="1000" height="36" rx="8" fill="url(#host)" opacity="0.3"/>
+  <rect x="50" y="100" width="1000" height="16" fill="url(#host)" opacity="0.3"/>
+  <text x="550" y="104" text-anchor="middle" fill="#58a6ff" font-size="13" font-weight="bold">PROCESSO HOST — OpenCode CLI</text>
+
+  <!-- OpenCode Agent -->
+  <rect x="380" y="130" width="340" height="44" rx="10" fill="#1f6feb" opacity="0.2" stroke="#1f6feb" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="550" y="150" text-anchor="middle" fill="#58a6ff" font-size="11" font-weight="bold">Agente OpenCode (deepseek-v4-pro)</text>
+  <text x="550" y="165" text-anchor="middle" fill="#8b949e" font-size="9">200K contexto · 128K output · Orquestrador central</text>
+
+  <!-- Client boxes -->
+  <rect x="100" y="200" width="240" height="50" rx="8" fill="url(#client)" opacity="0.15" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="220" y="222" text-anchor="middle" fill="#3fb950" font-size="11" font-weight="bold">Cliente MCP Core</text>
+  <text x="220" y="238" text-anchor="middle" fill="#8b949e" font-size="9">FS · SQLite · PDF · Git · Time</text>
+
+  <rect x="430" y="200" width="240" height="50" rx="8" fill="url(#client)" opacity="0.15" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="550" y="222" text-anchor="middle" fill="#3fb950" font-size="11" font-weight="bold">Cliente MCP Busca</text>
+  <text x="550" y="238" text-anchor="middle" fill="#8b949e" font-size="9">WebSearch · Context7 · gh_grep</text>
+
+  <rect x="760" y="200" width="240" height="50" rx="8" fill="url(#client)" opacity="0.15" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="880" y="222" text-anchor="middle" fill="#3fb950" font-size="11" font-weight="bold">Cliente MCP Domínio</text>
+  <text x="880" y="238" text-anchor="middle" fill="#8b949e" font-size="9">Jurídico · RAG · SciHub · Bio</text>
+
+  <!-- Client labels -->
+  <text x="100" y="196" fill="#3fb950" font-size="8">JSON-RPC session 1:1</text>
+  <text x="430" y="196" fill="#3fb950" font-size="8">JSON-RPC session 1:1</text>
+  <text x="760" y="196" fill="#3fb950" font-size="8">JSON-RPC session 1:1</text>
+
+  <!-- Security boundary -->
+  <rect x="80" y="260" width="280" height="84" rx="6" fill="none" stroke="#d29922" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="100" y="278" fill="#d29922" font-size="9">Zona de Segurança — Local</text>
+
+  <rect x="410" y="260" width="280" height="84" rx="6" fill="none" stroke="#d29922" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="430" y="278" fill="#d29922" font-size="9">Zona de Segurança — Local</text>
+
+  <!-- Security zone for Domain -->
+  <rect x="740" y="260" width="280" height="84" rx="6" fill="none" stroke="#d29922" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="760" y="278" fill="#d29922" font-size="9">Zona de Segurança — Local</text>
+
+  <!-- Client → Server connection arrows -->
+  <line x1="220" y1="250" x2="220" y2="284" stroke="#30363d" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="250" x2="550" y2="284" stroke="#30363d" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="880" y1="250" x2="880" y2="284" stroke="#30363d" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Servers -->
+  <rect x="100" y="290" width="240" height="44" rx="8" fill="url(#server)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="220" y="312" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Servidor Filesystem</text>
+  <text x="220" y="326" text-anchor="middle" fill="#8b949e" font-size="8">Acesso a arquivos locais</text>
+
+  <rect x="100" y="342" width="240" height="44" rx="8" fill="url(#server)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="220" y="364" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Servidor SQLite</text>
+  <text x="220" y="378" text-anchor="middle" fill="#8b949e" font-size="8">Banco de dados local</text>
+
+  <rect x="100" y="394" width="240" height="44" rx="8" fill="url(#server)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="220" y="416" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Servidor PDF</text>
+  <text x="220" y="430" text-anchor="middle" fill="#8b949e" font-size="8">Extração e análise PDF</text>
+
+  <!-- Servers group 2 -->
+  <rect x="430" y="290" width="240" height="44" rx="8" fill="url(#server)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="550" y="312" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Servidor WebSearch</text>
+  <text x="550" y="326" text-anchor="middle" fill="#8b949e" font-size="8">Busca web + live crawl</text>
+
+  <rect x="430" y="342" width="240" height="44" rx="8" fill="url(#server)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="550" y="364" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Servidor Context7</text>
+  <text x="550" y="378" text-anchor="middle" fill="#8b949e" font-size="8">Documentação de libs</text>
+
+  <rect x="430" y="394" width="240" height="44" rx="8" fill="url(#server)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="550" y="416" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Servidor gh_grep</text>
+  <text x="550" y="430" text-anchor="middle" fill="#8b949e" font-size="8">Busca código GitHub</text>
+
+  <!-- Servers group 3 -->
+  <rect x="760" y="290" width="240" height="44" rx="8" fill="url(#server)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="880" y="312" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">maswos-juridico</text>
+  <text x="880" y="326" text-anchor="middle" fill="#8b949e" font-size="8">Legislação · Documentos</text>
+
+  <rect x="760" y="342" width="240" height="44" rx="8" fill="url(#server)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="880" y="364" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">maswos-rag</text>
+  <text x="880" y="378" text-anchor="middle" fill="#8b949e" font-size="8">9 estratégias RAG</text>
+
+  <rect x="760" y="394" width="240" height="44" rx="8" fill="url(#server)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="880" y="416" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">maswos-mcp (orq.)</text>
+  <text x="880" y="430" text-anchor="middle" fill="#8b949e" font-size="8">Orquestrador MASWOS</text>
+
+  <!-- External / Remote zone -->
+  <rect x="80" y="460" width="940" height="100" rx="6" fill="none" stroke="#bc8cff" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <text x="100" y="480" fill="#bc8cff" font-size="10">Zona Remota (Internet)</text>
+
+  <rect x="120" y="498" width="200" height="44" rx="8" fill="url(#ext)" opacity="0.8"/>
+  <text x="220" y="520" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Context7 API</text>
+  <text x="220" y="534" text-anchor="middle" fill="#8b949e" font-size="8">Documentação externa</text>
+
+  <rect x="380" y="498" width="200" height="44" rx="8" fill="url(#ext)" opacity="0.8"/>
+  <text x="480" y="520" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">GitHub Code Search</text>
+  <text x="480" y="534" text-anchor="middle" fill="#8b949e" font-size="8">1M+ repositórios</text>
+
+  <rect x="640" y="498" width="200" height="44" rx="8" fill="url(#ext)" opacity="0.8"/>
+  <text x="740" y="520" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">DuckDuckGo</text>
+  <text x="740" y="534" text-anchor="middle" fill="#8b949e" font-size="8">Busca web anônima</text>
+
+  <!-- Legend -->
+  <rect x="80" y="590" width="940" height="110" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="100" y="612" fill="#8b949e" font-size="11" font-weight="bold">Legenda do Protocolo MCP</text>
+
+  <rect x="100" y="626" width="14" height="14" rx="3" fill="#238636"/>
+  <text x="120" y="638" fill="#8b949e" font-size="10">Cliente: sessão 1:1 com servidor, gerencia requisições</text>
+
+  <rect x="100" y="648" width="14" height="14" rx="3" fill="#9e6a03"/>
+  <text x="120" y="660" fill="#8b949e" font-size="10">Servidor: expõe Resources, Tools, Prompts via MCP</text>
+
+  <rect x="100" y="670" width="14" height="14" rx="3" fill="#8b2f97"/>
+  <text x="120" y="682" fill="#8b949e" font-size="10">Remoto: servidores externos via HTTP</text>
+
+  <text x="550" y="708" text-anchor="middle" fill="#484f58" font-size="9">Fonte: Model Context Protocol Specification (Anthropic, 2024) · IBM Developer (Chowdhury et al., 2026)</text>
+</svg>

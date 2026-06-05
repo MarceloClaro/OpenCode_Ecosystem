@@ -1,0 +1,37 @@
+{
+  "term_frequency": {
+    "the": 3,
+    "is": 2,
+    "about": 2,
+    "this": 1,
+    "important": 1,
+    "context": 1,
+    "ai": 1,
+    "research": 1,
+    "secondary": 1,
+    "information": 1,
+    "data": 1,
+    "analysis": 1,
+    "{\"result\":": 1,
+    "\"analysis": 1,
+    "complete\",": 1,
+    "\"score\":": 1,
+    "0.95}": 1,
+    "system": 1,
+    "must": 1,
+    "not": 1,
+    "modify": 1,
+    "database": 1,
+    "schema": 1,
+    "auth": 1,
+    "layer": 1,
+    "already": 1,
+    "done": 1
+  },
+  "constraints": [
+    "must"
+  ],
+  "entry_count": 5,
+  "total_tokens": 31,
+  "session_duration": 0.004495859146118164
+}

@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 650" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="step" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f6feb"/>
+      <stop offset="100%" stop-color="#58a6ff"/>
+    </linearGradient>
+    <linearGradient id="step2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#238636"/>
+      <stop offset="100%" stop-color="#3fb950"/>
+    </linearGradient>
+    <linearGradient id="step3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9e6a03"/>
+      <stop offset="100%" stop-color="#d29922"/>
+    </linearGradient>
+    <linearGradient id="step4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#da3633"/>
+      <stop offset="100%" stop-color="#f85149"/>
+    </linearGradient>
+    <linearGradient id="step5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b2f97"/>
+      <stop offset="100%" stop-color="#bc8cff"/>
+    </linearGradient>
+    <linearGradient id="final" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d29922"/>
+      <stop offset="100%" stop-color="#e3b341"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#58a6ff"/>
+    </marker>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#f85149"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="650" fill="url(#bg)" rx="8"/>
+
+  <text x="550" y="36" text-anchor="middle" fill="#e3b341" font-size="18" font-weight="bold">Pipeline de Produção Acadêmica Qualis A1 — v4.6.1</text>
+  <text x="550" y="56" text-anchor="middle" fill="#8b949e" font-size="11">Criador-Artigo (MASWOS v4.6.1) · 49 agentes · 8 estágios · Score ≥ 95/100 · CJK Corrector</text>
+
+  <!-- Stage boxes with arrows between them -->
+  <!-- S1: SEEKER -->
+  <rect x="60" y="90" width="130" height="60" rx="10" fill="url(#step)" opacity="0.85" filter="url(#shadow)"/>
+  <text x="125" y="116" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">S01 · SEEKER</text>
+  <text x="125" y="134" text-anchor="middle" fill="#8b949e" font-size="8">Pesquisa multi-fonte</text>
+  <text x="125" y="146" text-anchor="middle" fill="#484f58" font-size="7">arXiv, PubMed, CORE</text>
+  <line x1="190" y1="120" x2="240" y2="120" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S2: Estrutura -->
+  <rect x="250" y="90" width="130" height="60" rx="10" fill="url(#step)" opacity="0.85" filter="url(#shadow)"/>
+  <text x="315" y="116" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">S02 · Estrutura</text>
+  <text x="315" y="134" text-anchor="middle" fill="#8b949e" font-size="8">Sumário + Seções</text>
+  <text x="315" y="146" text-anchor="middle" fill="#484f58" font-size="7">24 templates</text>
+  <line x1="380" y1="120" x2="430" y2="120" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S3: Escrita -->
+  <rect x="440" y="90" width="130" height="60" rx="10" fill="url(#step2)" opacity="0.85" filter="url(#shadow)"/>
+  <text x="505" y="116" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">S03 · Escrita</text>
+  <text x="505" y="134" text-anchor="middle" fill="#8b949e" font-size="8">49 agentes MASWOS</text>
+  <text x="505" y="146" text-anchor="middle" fill="#484f58" font-size="7">Scheduler + 00-45</text>
+  <line x1="570" y1="120" x2="620" y2="120" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S4: Formatação -->
+  <rect x="630" y="90" width="130" height="60" rx="10" fill="url(#step3)" opacity="0.85" filter="url(#shadow)"/>
+  <text x="695" y="116" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">S04 · Formatação</text>
+  <text x="695" y="134" text-anchor="middle" fill="#8b949e" font-size="8">ABNT · LaTeX</text>
+  <text x="695" y="146" text-anchor="middle" fill="#484f58" font-size="7">14 referências</text>
+  <line x1="760" y1="120" x2="810" y2="120" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S5: Revisão -->
+  <rect x="820" y="90" width="130" height="60" rx="10" fill="url(#step4)" opacity="0.85" filter="url(#shadow)"/>
+  <text x="885" y="116" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">S05 · Revisão</text>
+  <text x="885" y="134" text-anchor="middle" fill="#8b949e" font-size="8">Banca (5 revisores)</text>
+  <text x="885" y="146" text-anchor="middle" fill="#484f58" font-size="7">Feedback iterativo</text>
+
+  <!-- Down arrow to second row -->
+  <line x1="550" y1="160" x2="550" y2="200" stroke="#30363d" stroke-width="2"/>
+  <polygon points="542,198 550,208 558,198" fill="#30363d"/>
+
+  <!-- S6: Correção -->
+  <rect x="100" y="210" width="160" height="60" rx="10" fill="url(#step)" opacity="0.85" filter="url(#shadow)"/>
+  <text x="180" y="236" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">S06 · Correção</text>
+  <text x="180" y="254" text-anchor="middle" fill="#8b949e" font-size="8">Orientadores (4)</text>
+  <text x="180" y="266" text-anchor="middle" fill="#484f58" font-size="7">Iterativo até score ≥ 95</text>
+  <line x1="260" y1="240" x2="330" y2="240" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- S7: Score -->
+  <rect x="340" y="210" width="160" height="60" rx="10" fill="url(#step5)" opacity="0.85" filter="url(#shadow)"/>
+  <text x="420" y="236" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">S07 · Auto Score</text>
+  <text x="420" y="254" text-anchor="middle" fill="#8b949e" font-size="8">10 critérios</text>
+  <text x="420" y="266" text-anchor="middle" fill="#484f58" font-size="7">Pesos Qualis A1</text>
+  <line x1="500" y1="240" x2="570" y2="240" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Decision diamond -->
+  <polygon points="640,210 710,240 640,270 570,240" fill="url(#step4)" opacity="0.8" filter="url(#shadow)"/>
+  <text x="640" y="244" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">Score</text>
+  <text x="640" y="256" text-anchor="middle" fill="#fff" font-size="9">≥95?</text>
+
+  <!-- Loop back arrow -->
+  <path d="M570,270 Q570,310 420,310 Q180,310 180,276" fill="none" stroke="#f85149" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow2)"/>
+  <text x="350" y="324" text-anchor="middle" fill="#f85149" font-size="9">Loop de Correção Iterativa</text>
+
+  <!-- S8: Export -->
+  <rect x="730" y="210" width="160" height="60" rx="10" fill="url(#final)" opacity="0.85" filter="url(#shadow)"/>
+  <text x="810" y="236" text-anchor="middle" fill="#0d1117" font-size="10" font-weight="bold">S08 · Export</text>
+  <text x="810" y="254" text-anchor="middle" fill="#0d1117" font-size="8">LaTeX / PDF</text>
+  <text x="810" y="266" text-anchor="middle" fill="#0d1117" font-size="8">Qualis A1</text>
+
+  <line x1="710" y1="240" x2="722" y2="240" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Components panel -->
+  <rect x="50" y="360" width="1000" height="260" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="70" y="385" fill="#e3b341" font-size="13" font-weight="bold">Componentes do Pipeline</text>
+
+  <!-- Component boxes -->
+  <rect x="70" y="400" width="220" height="80" rx="6" fill="#1f6feb" opacity="0.15" stroke="#58a6ff" stroke-width="1"/>
+  <text x="180" y="420" text-anchor="middle" fill="#58a6ff" font-size="10" font-weight="bold">49 Agentes MASWOS</text>
+  <text x="80" y="438" fill="#8b949e" font-size="9">• Agentes 00-45 especialistas</text>
+  <text x="80" y="453" fill="#8b949e" font-size="9">• Scheduler de orquestração</text>
+  <text x="80" y="468" fill="#8b949e" font-size="9">• 14 referências Qualis A1</text>
+
+  <rect x="310" y="400" width="220" height="80" rx="6" fill="#238636" opacity="0.15" stroke="#3fb950" stroke-width="1"/>
+  <text x="420" y="420" text-anchor="middle" fill="#3fb950" font-size="10" font-weight="bold">24 Templates</text>
+  <text x="320" y="438" fill="#8b949e" font-size="9">• TEMPLATE_00 a _24</text>
+  <text x="320" y="453" fill="#8b949e" font-size="9">• Estrutura pré-definida</text>
+  <text x="320" y="468" fill="#8b949e" font-size="9">• Estilos ABNT</text>
+
+  <rect x="550" y="400" width="220" height="80" rx="6" fill="#9e6a03" opacity="0.15" stroke="#d29922" stroke-width="1"/>
+  <text x="660" y="420" text-anchor="middle" fill="#d29922" font-size="10" font-weight="bold">Banca de Revisão</text>
+  <text x="560" y="438" fill="#8b949e" font-size="9">• 5 revisores</text>
+  <text x="560" y="453" fill="#8b949e" font-size="9">• 4 orientadores</text>
+  <text x="560" y="468" fill="#8b949e" font-size="9">• Correção iterativa</text>
+
+  <rect x="790" y="400" width="220" height="80" rx="6" fill="#8b2f97" opacity="0.15" stroke="#bc8cff" stroke-width="1"/>
+  <text x="900" y="420" text-anchor="middle" fill="#bc8cff" font-size="10" font-weight="bold">Avaliação</text>
+  <text x="800" y="438" fill="#8b949e" font-size="9">• 10 critérios ponderados</text>
+  <text x="800" y="453" fill="#8b949e" font-size="9">• Auto Score Qualis</text>
+  <text x="800" y="468" fill="#8b949e" font-size="9">• Meta: ≥ 95/100</text>
+
+  <!-- Citation -->
+  <text x="70" y="510" fill="#484f58" font-size="8">Referências: SEEKER (10 agentes, 10+ fontes) · Genesis-Writer (42 arqs) · Corretor CJK (ptbr_corrector.py) · MiroFish/BettaFish P14-P18</text>
+  <text x="70" y="525" fill="#484f58" font-size="8">Criador-Artigo v4.6.1 (MASWOS): ~145+ arquivos · Auto Score Qualis A1 · 55 IMO · TSAC anti-AI · PhD Auditor (Nash+Bonferroni+Qualis)</text>
+
+  <text x="550" y="640" text-anchor="middle" fill="#484f58" font-size="9">Baseado em: Framework MASWOS V5 NEXUS · SEEKER Research · Genesis-Writer · Qualis A1 Audit Module</text>
+</svg>

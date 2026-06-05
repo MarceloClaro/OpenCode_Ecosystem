@@ -1,0 +1,393 @@
+{
+  "metadata": {
+    "artigo": "O Papel do NBD na Estrategia de Soft Power do Brasil no BRICS (2023-2026)",
+    "analise": "Quantitative Analysis Suite v1.0"
+  },
+  "portfolio_evolucao": [
+    {
+      "ano": 2016,
+      "portfolio_total_usd_milhoes": 1544,
+      "crescimento_anual_pct": NaN,
+      "anomalia": -1
+    },
+    {
+      "ano": 2017,
+      "portfolio_total_usd_milhoes": 3419,
+      "crescimento_anual_pct": 121.43782383419688,
+      "anomalia": 1
+    },
+    {
+      "ano": 2018,
+      "portfolio_total_usd_milhoes": 7828,
+      "crescimento_anual_pct": 128.95583503948524,
+      "anomalia": 1
+    },
+    {
+      "ano": 2019,
+      "portfolio_total_usd_milhoes": 14933,
+      "crescimento_anual_pct": 90.7639243740419,
+      "anomalia": 1
+    },
+    {
+      "ano": 2020,
+      "portfolio_total_usd_milhoes": 24474,
+      "crescimento_anual_pct": 63.8920511618563,
+      "anomalia": 1
+    },
+    {
+      "ano": 2021,
+      "portfolio_total_usd_milhoes": 29143,
+      "crescimento_anual_pct": 19.077388248753778,
+      "anomalia": 1
+    },
+    {
+      "ano": 2022,
+      "portfolio_total_usd_milhoes": 30230,
+      "crescimento_anual_pct": 3.7298836770407906,
+      "anomalia": 1
+    },
+    {
+      "ano": 2023,
+      "portfolio_total_usd_milhoes": 31920,
+      "crescimento_anual_pct": 5.590473040026467,
+      "anomalia": 1
+    },
+    {
+      "ano": 2024,
+      "portfolio_total_usd_milhoes": 35152,
+      "crescimento_anual_pct": 10.125313283208026,
+      "anomalia": -1
+    }
+  ],
+  "desembolsos_por_pais": [
+    {
+      "pais": "Brasil",
+      "sigla": "BR",
+      "desembolso_usd_milhoes": 7000,
+      "num_projetos": 31,
+      "ingresso_nbd": 2015,
+      "regiao": "America_Latina",
+      "pct_portfolio": 18.56763925729443,
+      "desembolso_por_projeto": 225.80645161290323,
+      "anomalia": 1,
+      "cluster": 0
+    },
+    {
+      "pais": "China",
+      "sigla": "CN",
+      "desembolso_usd_milhoes": 10100,
+      "num_projetos": 42,
+      "ingresso_nbd": 2015,
+      "regiao": "Asia",
+      "pct_portfolio": 26.790450928381965,
+      "desembolso_por_projeto": 240.47619047619048,
+      "anomalia": 1,
+      "cluster": 2
+    },
+    {
+      "pais": "India",
+      "sigla": "IN",
+      "desembolso_usd_milhoes": 11100,
+      "num_projetos": 38,
+      "ingresso_nbd": 2015,
+      "regiao": "Asia",
+      "pct_portfolio": 29.44297082228117,
+      "desembolso_por_projeto": 292.10526315789474,
+      "anomalia": 1,
+      "cluster": 2
+    },
+    {
+      "pais": "Russia",
+      "sigla": "RU",
+      "desembolso_usd_milhoes": 4000,
+      "num_projetos": 15,
+      "ingresso_nbd": 2015,
+      "regiao": "Europa_Asia",
+      "pct_portfolio": 10.610079575596817,
+      "desembolso_por_projeto": 266.6666666666667,
+      "anomalia": 1,
+      "cluster": 0
+    },
+    {
+      "pais": "Africa_do_Sul",
+      "sigla": "ZA",
+      "desembolso_usd_milhoes": 5000,
+      "num_projetos": 22,
+      "ingresso_nbd": 2015,
+      "regiao": "Africa",
+      "pct_portfolio": 13.262599469496022,
+      "desembolso_por_projeto": 227.27272727272728,
+      "anomalia": 1,
+      "cluster": 0
+    },
+    {
+      "pais": "Bangladesh",
+      "sigla": "BD",
+      "desembolso_usd_milhoes": 500,
+      "num_projetos": 3,
+      "ingresso_nbd": 2021,
+      "regiao": "Asia",
+      "pct_portfolio": 1.3262599469496021,
+      "desembolso_por_projeto": 166.66666666666666,
+      "anomalia": -1,
+      "cluster": 1
+    }
+  ],
+  "desembolsos_brasil": [
+    {
+      "ano": 2016,
+      "desembolso_br_usd_milhoes": 180,
+      "pct_do_total_nbd": 11.658031088082902,
+      "anomalia": -1
+    },
+    {
+      "ano": 2017,
+      "desembolso_br_usd_milhoes": 250,
+      "pct_do_total_nbd": 7.312079555425563,
+      "anomalia": 1
+    },
+    {
+      "ano": 2018,
+      "desembolso_br_usd_milhoes": 310,
+      "pct_do_total_nbd": 3.960143076136944,
+      "anomalia": 1
+    },
+    {
+      "ano": 2019,
+      "desembolso_br_usd_milhoes": 380,
+      "pct_do_total_nbd": 2.54469965847452,
+      "anomalia": 1
+    },
+    {
+      "ano": 2020,
+      "desembolso_br_usd_milhoes": 620,
+      "pct_do_total_nbd": 2.5333006455830676,
+      "anomalia": 1
+    },
+    {
+      "ano": 2021,
+      "desembolso_br_usd_milhoes": 850,
+      "pct_do_total_nbd": 2.9166523693511306,
+      "anomalia": 1
+    },
+    {
+      "ano": 2022,
+      "desembolso_br_usd_milhoes": 920,
+      "pct_do_total_nbd": 3.0433344359907375,
+      "anomalia": 1
+    },
+    {
+      "ano": 2023,
+      "desembolso_br_usd_milhoes": 2800,
+      "pct_do_total_nbd": 8.771929824561402,
+      "anomalia": -1
+    },
+    {
+      "ano": 2024,
+      "desembolso_br_usd_milhoes": 688,
+      "pct_do_total_nbd": 1.957214383249886,
+      "anomalia": 1
+    }
+  ],
+  "distribuicao_setorial": [
+    {
+      "setor": "Transporte",
+      "pct_portfolio": 40.0,
+      "num_projetos": 28
+    },
+    {
+      "setor": "COVID-19 Resposta",
+      "pct_portfolio": 25.0,
+      "num_projetos": 15
+    },
+    {
+      "setor": "Agua_Saneamento",
+      "pct_portfolio": 11.0,
+      "num_projetos": 12
+    },
+    {
+      "setor": "Energia_Limpa",
+      "pct_portfolio": 10.0,
+      "num_projetos": 14
+    },
+    {
+      "setor": "Infraestrutura_Digital",
+      "pct_portfolio": 6.0,
+      "num_projetos": 8
+    },
+    {
+      "setor": "Desenvolvimento_Urbano",
+      "pct_portfolio": 5.0,
+      "num_projetos": 7
+    },
+    {
+      "setor": "Outros",
+      "pct_portfolio": 3.0,
+      "num_projetos": 5
+    }
+  ],
+  "composicao_moedas": [
+    {
+      "moeda": "USD",
+      "pct_emprestimos": 63.8
+    },
+    {
+      "moeda": "CNY_RMB",
+      "pct_emprestimos": 18.2
+    },
+    {
+      "moeda": "ZAR",
+      "pct_emprestimos": 6.5
+    },
+    {
+      "moeda": "BRL",
+      "pct_emprestimos": 5.2
+    },
+    {
+      "moeda": "INR",
+      "pct_emprestimos": 3.8
+    },
+    {
+      "moeda": "Outras",
+      "pct_emprestimos": 2.5
+    }
+  ],
+  "estatisticas_descritivas": {
+    "portfolio": {
+      "media_anual_usd_milhoes": 19849.222222222223,
+      "mediana_anual_usd_milhoes": 24474.0,
+      "desvio_padrao": 13082.02246193013,
+      "minimo": 1544.0,
+      "maximo": 35152.0,
+      "crescimento_total_pct": 2176.683937823834,
+      "cagr_pct": 47.796055341429366
+    },
+    "desembolsos_pais": {
+      "BR": {
+        "usd_milhoes": 7000,
+        "pct_portfolio": 18.56763925729443,
+        "num_projetos": 31
+      },
+      "CN": {
+        "usd_milhoes": 10100,
+        "pct_portfolio": 26.790450928381965,
+        "num_projetos": 42
+      },
+      "IN": {
+        "usd_milhoes": 11100,
+        "pct_portfolio": 29.44297082228117,
+        "num_projetos": 38
+      },
+      "RU": {
+        "usd_milhoes": 4000,
+        "pct_portfolio": 10.610079575596817,
+        "num_projetos": 15
+      },
+      "ZA": {
+        "usd_milhoes": 5000,
+        "pct_portfolio": 13.262599469496022,
+        "num_projetos": 22
+      },
+      "BD": {
+        "usd_milhoes": 500,
+        "pct_portfolio": 1.3262599469496021,
+        "num_projetos": 3
+      }
+    },
+    "concentracao": {
+      "pct_top3": 74.80106100795756,
+      "pct_brasil": 18.56763925729443
+    }
+  },
+  "correlacoes": {
+    "ano_vs_portfolio": {
+      "pearson_r": 0.9732609524389391,
+      "pearson_p": 1.0027746084923569e-05,
+      "spearman_rho": 1.0,
+      "spearman_p": 0.0
+    },
+    "projetos_vs_desembolso_pais": {
+      "pearson_r": 0.9776312167282201,
+      "pearson_p": 0.0007449474478206712
+    },
+    "ano_vs_desembolso_brasil": {
+      "pearson_r": 0.6462588283803794,
+      "pearson_p": 0.06002504078704603
+    }
+  },
+  "regressao_linear": {
+    "portfolio_total": {
+      "slope": 4649.150000000001,
+      "intercept": -9371433.77777778,
+      "r2": 0.9472368815423514,
+      "p_value": 1.0027746084923123e-05,
+      "projecao_2028_usd_milhoes": 57042.42222222127
+    },
+    "brasil": {
+      "slope": 189.53333333333333,
+      "intercept": -382079.77777777775,
+      "r2": 0.41765047325958066,
+      "p_value": 0.06002504078704601
+    }
+  },
+  "hhi": {
+    "hhi_paises": 0.22196033181124192,
+    "hhi_setores": 0.25160000000000005
+  },
+  "anomalias": {
+    "portfolio_anos_anomalos": [
+      2016,
+      2024
+    ],
+    "brasil_anos_anomalos": [
+      2016,
+      2023
+    ],
+    "paises_anomalos": [
+      "BD"
+    ]
+  },
+  "pca": {
+    "variancia_pc1": 0.8578449367337038,
+    "variancia_pc2": 0.13818155539474325,
+    "variancia_total": 0.996026492128447
+  },
+  "cluster": {
+    "assignments": {
+      "BR": 0,
+      "CN": 2,
+      "IN": 2,
+      "RU": 0,
+      "ZA": 0,
+      "BD": 1
+    }
+  },
+  "teste_t_pre_pos_presidencia": {
+    "t_statistic": -1.9218073487076015,
+    "p_value": 0.09607388717848489,
+    "media_pre": 280.0,
+    "media_pos": 1175.6,
+    "diferenca_pct": 319.85714285714283
+  },
+  "teste_qui_quadrado": {
+    "chi2": 12507.42705570292,
+    "p_value": 0.0
+  },
+  "anomalias_estrategicas": [
+    {
+      "titulo": "Efeito Presidencia Dilma 2023",
+      "descricao": "USD 2.8 bi em 2023 = 45.9% do historico do Brasil no NBD em um unico ano",
+      "nivel": "CONFIRMADO"
+    },
+    {
+      "titulo": "Sub-representacao Russia",
+      "descricao": "11% do portfolio vs 20% esperado; deficit ~USD 3.5 bi",
+      "nivel": "INFERIDO"
+    },
+    {
+      "titulo": "Dependencia USD",
+      "descricao": "63.8% dos emprestimos em USD contradiz discurso desdolarizacao",
+      "nivel": "CONFIRMADO"
+    }
+  ]
+}

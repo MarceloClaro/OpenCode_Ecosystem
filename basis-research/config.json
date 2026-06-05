@@ -1,0 +1,1217 @@
+{
+  "_description": "Pipeline theme bank and source configuration. You maintain this manually.",
+  "_version": "2.0",
+  "themes": [
+    {
+      "theme_id": "philosophy_of_mind",
+      "label": "Philosophy of Mind",
+      "keywords": [
+        {
+          "seed": "consciousness",
+          "expansion_depth": 1,
+          "boundary_note": "stay within theories of mind and subjective experience"
+        },
+        {
+          "seed": "qualia",
+          "expansion_depth": 1,
+          "boundary_note": "stay within phenomenal experience"
+        },
+        {
+          "seed": "intentionality",
+          "expansion_depth": 1,
+          "boundary_note": "stay within mental content and representation"
+        },
+        {
+          "seed": "mind body problem",
+          "expansion_depth": 1,
+          "boundary_note": "stay within dualism, physicalism, functionalism"
+        }
+      ],
+      "sources": [
+        "openalex",
+        "philpapers",
+        "semantic_scholar",
+        "core",
+        "philarchive",
+        "philsci",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "philosophy_of_language",
+      "label": "Philosophy of Language",
+      "keywords": [
+        {
+          "seed": "meaning",
+          "expansion_depth": 1,
+          "boundary_note": "stay within linguistic meaning and reference theory"
+        },
+        {
+          "seed": "speech act",
+          "expansion_depth": 1,
+          "boundary_note": "stay within Austin and Searle tradition"
+        },
+        {
+          "seed": "language game",
+          "expansion_depth": 1,
+          "boundary_note": "stay within Wittgenstein tradition"
+        }
+      ],
+      "sources": [
+        "philpapers",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "philarchive",
+        "philsci",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "philosophy_general",
+      "label": "Philosophy \u2014 General and Metaphysics",
+      "keywords": [
+        {
+          "seed": "metaphysics",
+          "expansion_depth": 1,
+          "boundary_note": "stay within ontology and fundamental structure of reality"
+        },
+        {
+          "seed": "epistemology",
+          "expansion_depth": 1,
+          "boundary_note": "stay within knowledge, belief, and justification"
+        },
+        {
+          "seed": "phenomenology",
+          "expansion_depth": 1,
+          "boundary_note": "stay within Husserl, Heidegger, Merleau-Ponty tradition"
+        }
+      ],
+      "sources": [
+        "philpapers",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "jstor",
+        "philarchive",
+        "philsci",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "ethics",
+      "label": "Ethics and Moral Philosophy",
+      "keywords": [
+        {
+          "seed": "moral philosophy",
+          "expansion_depth": 1,
+          "boundary_note": "stay within normative and metaethics"
+        },
+        {
+          "seed": "bioethics",
+          "expansion_depth": 1,
+          "boundary_note": "stay within ethics of life sciences"
+        },
+        {
+          "seed": "AI ethics",
+          "expansion_depth": 1,
+          "boundary_note": "stay within ethics of artificial intelligence"
+        }
+      ],
+      "sources": [
+        "philpapers",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "jstor",
+        "philarchive",
+        "philsci",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "linguistics",
+      "label": "Linguistics and Language",
+      "keywords": [
+        {
+          "seed": "semantics",
+          "expansion_depth": 1,
+          "boundary_note": "stay within linguistic meaning"
+        },
+        {
+          "seed": "pragmatics",
+          "expansion_depth": 1,
+          "boundary_note": "stay within language use in context"
+        },
+        {
+          "seed": "cognitive linguistics",
+          "expansion_depth": 1,
+          "boundary_note": "stay within language and cognition"
+        }
+      ],
+      "sources": [
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "philpapers",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "artificial_intelligence",
+      "label": "Artificial Intelligence",
+      "keywords": [
+        {
+          "seed": "large language models",
+          "expansion_depth": 1,
+          "boundary_note": "stay within LLM architecture and capabilities"
+        },
+        {
+          "seed": "machine learning",
+          "expansion_depth": 1,
+          "boundary_note": "stay within learning algorithms"
+        },
+        {
+          "seed": "AI alignment",
+          "expansion_depth": 1,
+          "boundary_note": "stay within AI safety and alignment"
+        }
+      ],
+      "sources": [
+        "arxiv",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "cognitive_science",
+      "label": "Cognitive Science",
+      "keywords": [
+        {
+          "seed": "cognition",
+          "expansion_depth": 1,
+          "boundary_note": "stay within mental processes and representations"
+        },
+        {
+          "seed": "embodied cognition",
+          "expansion_depth": 1,
+          "boundary_note": "stay within body-mind relations"
+        },
+        {
+          "seed": "cognitive architecture",
+          "expansion_depth": 1,
+          "boundary_note": "stay within models of mind"
+        }
+      ],
+      "sources": [
+        "openalex",
+        "pubmed",
+        "semantic_scholar",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "neuroscience",
+      "label": "Neuroscience",
+      "keywords": [
+        {
+          "seed": "neural",
+          "expansion_depth": 1,
+          "boundary_note": "stay within brain and nervous system"
+        },
+        {
+          "seed": "neuroplasticity",
+          "expansion_depth": 1,
+          "boundary_note": "stay within brain adaptation"
+        },
+        {
+          "seed": "neural correlates",
+          "expansion_depth": 1,
+          "boundary_note": "stay within neural basis of mental processes"
+        }
+      ],
+      "sources": [
+        "pubmed",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "psychology",
+      "label": "Psychology",
+      "keywords": [
+        {
+          "seed": "psychology",
+          "expansion_depth": 1,
+          "boundary_note": "stay within scientific study of behavior and mind"
+        },
+        {
+          "seed": "social psychology",
+          "expansion_depth": 1,
+          "boundary_note": "stay within social influences on behavior"
+        },
+        {
+          "seed": "cognitive psychology",
+          "expansion_depth": 1,
+          "boundary_note": "stay within mental processes"
+        }
+      ],
+      "sources": [
+        "pubmed",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "sociology",
+      "label": "Sociology",
+      "keywords": [
+        {
+          "seed": "sociology",
+          "expansion_depth": 1,
+          "boundary_note": "stay within social structures and institutions"
+        },
+        {
+          "seed": "social inequality",
+          "expansion_depth": 1,
+          "boundary_note": "stay within stratification and inequality"
+        },
+        {
+          "seed": "socialization",
+          "expansion_depth": 1,
+          "boundary_note": "stay within how individuals learn social norms"
+        },
+        {
+          "seed": "social structure"
+        },
+        {
+          "seed": "stratification"
+        },
+        {
+          "seed": "class"
+        },
+        {
+          "seed": "social mobility"
+        },
+        {
+          "seed": "urbanization"
+        },
+        {
+          "seed": "migration"
+        },
+        {
+          "seed": "globalization"
+        },
+        {
+          "seed": "institutional analysis"
+        },
+        {
+          "seed": "social capital"
+        },
+        {
+          "seed": "social reproduction"
+        },
+        {
+          "seed": "collective action"
+        },
+        {
+          "seed": "social movement"
+        },
+        {
+          "seed": "gender"
+        },
+        {
+          "seed": "race"
+        },
+        {
+          "seed": "intersectionality"
+        },
+        {
+          "seed": "modernization theory"
+        },
+        {
+          "seed": "world-systems"
+        }
+      ],
+      "sources": [
+        "jstor",
+        "openalex",
+        "semantic_scholar",
+        "ssrn",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "anthropology",
+      "label": "Anthropology",
+      "keywords": [
+        {
+          "seed": "ethnography",
+          "expansion_depth": 1,
+          "boundary_note": "stay within qualitative cultural research"
+        },
+        {
+          "seed": "kinship",
+          "expansion_depth": 1,
+          "boundary_note": "stay within family and social structures"
+        },
+        {
+          "seed": "cultural evolution",
+          "expansion_depth": 1,
+          "boundary_note": "stay within how cultures change"
+        },
+        {
+          "seed": "social anthropology"
+        },
+        {
+          "seed": "political anthropology"
+        },
+        {
+          "seed": "postcolonial theory"
+        },
+        {
+          "seed": "subaltern studies"
+        },
+        {
+          "seed": "globalization"
+        },
+        {
+          "seed": "transnationalism"
+        },
+        {
+          "seed": "indigenous knowledge"
+        },
+        {
+          "seed": "decolonial"
+        }
+      ],
+      "sources": [
+        "jstor",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "base",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "history",
+      "label": "History",
+      "keywords": [
+        {
+          "seed": "historiography",
+          "expansion_depth": 1,
+          "boundary_note": "stay within methods of historical writing"
+        },
+        {
+          "seed": "intellectual history",
+          "expansion_depth": 1,
+          "boundary_note": "stay within history of ideas"
+        },
+        {
+          "seed": "history of science",
+          "expansion_depth": 1,
+          "boundary_note": "stay within development of scientific knowledge"
+        },
+        {
+          "seed": "social history"
+        },
+        {
+          "seed": "economic history"
+        },
+        {
+          "seed": "political history"
+        },
+        {
+          "seed": "cultural history"
+        },
+        {
+          "seed": "colonial history"
+        },
+        {
+          "seed": "decolonization"
+        },
+        {
+          "seed": "modernization"
+        },
+        {
+          "seed": "revolution"
+        },
+        {
+          "seed": "reform"
+        },
+        {
+          "seed": "industrialization"
+        },
+        {
+          "seed": "state building"
+        },
+        {
+          "seed": "collective memory"
+        },
+        {
+          "seed": "periodization"
+        },
+        {
+          "seed": "longue dur\u00e9e"
+        },
+        {
+          "seed": "global history"
+        },
+        {
+          "seed": "postcolonial history"
+        },
+        {
+          "seed": "oral history"
+        },
+        {
+          "seed": "history of ideas"
+        }
+      ],
+      "sources": [
+        "jstor",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "base",
+        "persee",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "political_science",
+      "label": "Political Science and Political Philosophy",
+      "keywords": [
+        {
+          "seed": "political theory",
+          "expansion_depth": 1,
+          "boundary_note": "stay within normative and empirical political theory"
+        },
+        {
+          "seed": "democracy",
+          "expansion_depth": 1,
+          "boundary_note": "stay within democratic theory and practice"
+        },
+        {
+          "seed": "governance",
+          "expansion_depth": 1,
+          "boundary_note": "stay within political institutions"
+        },
+        {
+          "seed": "state formation"
+        },
+        {
+          "seed": "political institution"
+        },
+        {
+          "seed": "authoritarianism"
+        },
+        {
+          "seed": "democratization"
+        },
+        {
+          "seed": "public policy"
+        },
+        {
+          "seed": "public administration"
+        },
+        {
+          "seed": "political participation"
+        },
+        {
+          "seed": "social movement"
+        },
+        {
+          "seed": "nationalism"
+        },
+        {
+          "seed": "populism"
+        },
+        {
+          "seed": "political economy"
+        },
+        {
+          "seed": "international relations"
+        },
+        {
+          "seed": "civil society"
+        },
+        {
+          "seed": "sovereignty"
+        },
+        {
+          "seed": "regime"
+        },
+        {
+          "seed": "political culture"
+        },
+        {
+          "seed": "class politics"
+        },
+        {
+          "seed": "geopolitics"
+        }
+      ],
+      "sources": [
+        "jstor",
+        "openalex",
+        "semantic_scholar",
+        "ssrn",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "economics",
+      "label": "Economics and Political Economy",
+      "keywords": [
+        {
+          "seed": "political economy",
+          "expansion_depth": 1,
+          "boundary_note": "stay within intersection of politics and economics"
+        },
+        {
+          "seed": "labor economics",
+          "expansion_depth": 1,
+          "boundary_note": "stay within work, wages, employment"
+        },
+        {
+          "seed": "institutional economics",
+          "expansion_depth": 1,
+          "boundary_note": "stay within role of institutions"
+        },
+        {
+          "seed": "development economics"
+        },
+        {
+          "seed": "growth theory"
+        },
+        {
+          "seed": "trade"
+        },
+        {
+          "seed": "fiscal policy"
+        },
+        {
+          "seed": "monetary policy"
+        },
+        {
+          "seed": "inequality"
+        },
+        {
+          "seed": "redistribution"
+        },
+        {
+          "seed": "informal economy"
+        },
+        {
+          "seed": "neoliberalism"
+        },
+        {
+          "seed": "welfare economics"
+        },
+        {
+          "seed": "behavioral economics"
+        },
+        {
+          "seed": "public finance"
+        }
+      ],
+      "sources": [
+        "jstor",
+        "openalex",
+        "semantic_scholar",
+        "ssrn",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "law",
+      "label": "Law and Jurisprudence",
+      "keywords": [
+        {
+          "seed": "jurisprudence",
+          "expansion_depth": 1,
+          "boundary_note": "stay within theory and philosophy of law"
+        },
+        {
+          "seed": "AI regulation",
+          "expansion_depth": 1,
+          "boundary_note": "stay within legal governance of AI"
+        },
+        {
+          "seed": "human rights law",
+          "expansion_depth": 1,
+          "boundary_note": "stay within international human rights"
+        }
+      ],
+      "sources": [
+        "jstor",
+        "openalex",
+        "semantic_scholar",
+        "ssrn",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "science_technology_studies",
+      "label": "Science and Technology Studies",
+      "keywords": [
+        {
+          "seed": "sociotechnical",
+          "expansion_depth": 1,
+          "boundary_note": "stay within social dimensions of technology"
+        },
+        {
+          "seed": "actor network theory",
+          "expansion_depth": 1,
+          "boundary_note": "stay within Latour and STS tradition"
+        },
+        {
+          "seed": "human computer interaction",
+          "expansion_depth": 1,
+          "boundary_note": "stay within HCI"
+        }
+      ],
+      "sources": [
+        "jstor",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "philarchive",
+        "philsci",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "education_science",
+      "label": "Education Science",
+      "keywords": [
+        {
+          "seed": "pedagogy",
+          "expansion_depth": 1,
+          "boundary_note": "stay within theory and practice of teaching"
+        },
+        {
+          "seed": "learning theory",
+          "expansion_depth": 1,
+          "boundary_note": "stay within how learning occurs"
+        },
+        {
+          "seed": "educational technology",
+          "expansion_depth": 1,
+          "boundary_note": "stay within technology in education"
+        }
+      ],
+      "sources": [
+        "eric",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "media_communication",
+      "label": "Media and Communication Studies",
+      "keywords": [
+        {
+          "seed": "media theory",
+          "expansion_depth": 1,
+          "boundary_note": "stay within theory of media effects"
+        },
+        {
+          "seed": "digital media",
+          "expansion_depth": 1,
+          "boundary_note": "stay within digital communication platforms"
+        },
+        {
+          "seed": "public sphere",
+          "expansion_depth": 1,
+          "boundary_note": "stay within Habermas public discourse"
+        }
+      ],
+      "sources": [
+        "jstor",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "biology_life_sciences",
+      "label": "Biology and Life Sciences",
+      "keywords": [
+        {
+          "seed": "evolutionary biology",
+          "expansion_depth": 1,
+          "boundary_note": "stay within evolution and natural selection"
+        },
+        {
+          "seed": "genetics",
+          "expansion_depth": 1,
+          "boundary_note": "stay within heredity and genetic mechanisms"
+        },
+        {
+          "seed": "ecology",
+          "expansion_depth": 1,
+          "boundary_note": "stay within organism-environment relations"
+        }
+      ],
+      "sources": [
+        "pubmed",
+        "openalex",
+        "arxiv",
+        "semantic_scholar",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "environmental_studies",
+      "label": "Environmental Studies",
+      "keywords": [
+        {
+          "seed": "environmental ethics",
+          "expansion_depth": 1,
+          "boundary_note": "stay within moral obligations to environment"
+        },
+        {
+          "seed": "climate change",
+          "expansion_depth": 1,
+          "boundary_note": "stay within climate science and policy"
+        },
+        {
+          "seed": "Anthropocene",
+          "expansion_depth": 1,
+          "boundary_note": "stay within human impacts on planetary systems"
+        }
+      ],
+      "sources": [
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "jstor",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "complexity_systems",
+      "label": "Complexity Science and Systems Theory",
+      "keywords": [
+        {
+          "seed": "complex systems",
+          "expansion_depth": 1,
+          "boundary_note": "stay within emergent and nonlinear systems"
+        },
+        {
+          "seed": "cybernetics",
+          "expansion_depth": 1,
+          "boundary_note": "stay within feedback and control systems"
+        },
+        {
+          "seed": "emergence",
+          "expansion_depth": 1,
+          "boundary_note": "stay within higher-level properties from lower-level interactions"
+        }
+      ],
+      "sources": [
+        "openalex",
+        "arxiv",
+        "semantic_scholar",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "mathematics_logic",
+      "label": "Mathematics and Logic",
+      "keywords": [
+        {
+          "seed": "mathematical logic",
+          "expansion_depth": 1,
+          "boundary_note": "stay within formal reasoning systems"
+        },
+        {
+          "seed": "computation theory",
+          "expansion_depth": 1,
+          "boundary_note": "stay within computability and complexity"
+        },
+        {
+          "seed": "foundations of mathematics",
+          "expansion_depth": 1,
+          "boundary_note": "stay within axioms and mathematical truth"
+        }
+      ],
+      "sources": [
+        "openalex",
+        "arxiv",
+        "semantic_scholar",
+        "core",
+        "philpapers",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "religious_studies",
+      "label": "Religious Studies and Theology",
+      "keywords": [
+        {
+          "seed": "theology",
+          "expansion_depth": 1,
+          "boundary_note": "stay within systematic religious thought"
+        },
+        {
+          "seed": "comparative religion",
+          "expansion_depth": 1,
+          "boundary_note": "stay within comparison across traditions"
+        },
+        {
+          "seed": "religious experience",
+          "expansion_depth": 1,
+          "boundary_note": "stay within phenomenology of religious experience"
+        }
+      ],
+      "sources": [
+        "jstor",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "agriculture_food_systems",
+      "label": "Agriculture and Food Systems",
+      "keywords": [
+        {
+          "seed": "smallholder farming",
+          "expansion_depth": 1,
+          "boundary_note": "stay within small-scale agricultural production"
+        },
+        {
+          "seed": "agricultural sustainability",
+          "expansion_depth": 1,
+          "boundary_note": "stay within sustainable agricultural practices"
+        },
+        {
+          "seed": "food security",
+          "expansion_depth": 1,
+          "boundary_note": "stay within food availability and access"
+        },
+        {
+          "seed": "agroecology",
+          "expansion_depth": 1,
+          "boundary_note": "stay within ecological approaches to agriculture"
+        }
+      ],
+      "sources": [
+        "openalex",
+        "pubmed",
+        "semantic_scholar",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "development_studies",
+      "label": "Development Studies and Rural Policy",
+      "keywords": [
+        {
+          "seed": "rural development",
+          "expansion_depth": 1,
+          "boundary_note": "stay within rural economic and social development"
+        },
+        {
+          "seed": "socioeconomic dimensions",
+          "expansion_depth": 1,
+          "boundary_note": "stay within social and economic analysis"
+        },
+        {
+          "seed": "sustainable development",
+          "expansion_depth": 1,
+          "boundary_note": "stay within SDG frameworks and implementation"
+        },
+        {
+          "seed": "agrarian political economy",
+          "expansion_depth": 1,
+          "boundary_note": "stay within political economy of agriculture"
+        },
+        {
+          "seed": "human development"
+        },
+        {
+          "seed": "capability approach"
+        },
+        {
+          "seed": "global south"
+        },
+        {
+          "seed": "dependency theory"
+        },
+        {
+          "seed": "structural adjustment"
+        },
+        {
+          "seed": "poverty reduction"
+        },
+        {
+          "seed": "state capacity"
+        },
+        {
+          "seed": "institutional development"
+        },
+        {
+          "seed": "technology transfer"
+        },
+        {
+          "seed": "knowledge economy"
+        },
+        {
+          "seed": "social protection"
+        },
+        {
+          "seed": "SDGs"
+        }
+      ],
+      "sources": [
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "jstor",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "medicine_clinical",
+      "label": "Clinical Medicine",
+      "keywords": [
+        {
+          "seed": "clinical medicine",
+          "expansion_depth": 1,
+          "boundary_note": "stay within clinical practice, diagnosis, and treatment"
+        },
+        {
+          "seed": "evidence-based medicine",
+          "expansion_depth": 1,
+          "boundary_note": "stay within clinical evidence and medical decision-making"
+        },
+        {
+          "seed": "clinical trial",
+          "expansion_depth": 1,
+          "boundary_note": "stay within medical research methodology and intervention studies"
+        }
+      ],
+      "sources": [
+        "pubmed",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "public_health",
+      "label": "Public Health and Epidemiology",
+      "keywords": [
+        {
+          "seed": "public health",
+          "expansion_depth": 1,
+          "boundary_note": "stay within population health and prevention"
+        },
+        {
+          "seed": "epidemiology",
+          "expansion_depth": 1,
+          "boundary_note": "stay within disease distribution and determinants"
+        },
+        {
+          "seed": "global health",
+          "expansion_depth": 1,
+          "boundary_note": "stay within health across populations and nations"
+        }
+      ],
+      "sources": [
+        "pubmed",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    },
+    {
+      "theme_id": "biomedical_research",
+      "label": "Biomedical Research and Pharmacology",
+      "keywords": [
+        {
+          "seed": "pharmacology",
+          "expansion_depth": 1,
+          "boundary_note": "stay within drug action and therapeutics"
+        },
+        {
+          "seed": "translational medicine",
+          "expansion_depth": 1,
+          "boundary_note": "stay within bench-to-bedside research"
+        },
+        {
+          "seed": "molecular medicine",
+          "expansion_depth": 1,
+          "boundary_note": "stay within molecular basis of disease and therapy"
+        }
+      ],
+      "sources": [
+        "pubmed",
+        "openalex",
+        "semantic_scholar",
+        "core",
+        "scopus",
+        "consensus"
+      ]
+    }
+  ],
+  "sources": {
+    "openalex": {
+      "api_url": "https://api.openalex.org",
+      "enabled": true
+    },
+    "arxiv": {
+      "api_url": "http://export.arxiv.org/api/query",
+      "enabled": true
+    },
+    "pubmed": {
+      "api_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+      "enabled": true
+    },
+    "semantic_scholar": {
+      "api_url": "https://api.semanticscholar.org/graph/v1",
+      "enabled": true
+    },
+    "core": {
+      "api_url": "https://api.core.ac.uk/v3",
+      "enabled": true
+    },
+    "philpapers": {
+      "api_url": "https://philpapers.org/api",
+      "enabled": true,
+      "_note": "Optional \u2014 requires free registration at philpapers.org"
+    },
+    "jstor": {
+      "api_url": "https://api.jstor.org",
+      "enabled": false
+    },
+    "ssrn": {
+      "api_url": "https://api.ssrn.com",
+      "enabled": false
+    },
+    "base": {
+      "api_url": "https://api.base-search.net",
+      "enabled": false
+    },
+    "hal": {
+      "api_url": "https://api.archives-ouvertes.fr",
+      "enabled": false
+    },
+    "eric": {
+      "api_url": "https://api.ies.ed.gov/eric",
+      "enabled": false
+    },
+    "nber": {
+      "api_url": "https://api.nber.org",
+      "enabled": false
+    },
+    "persee": {
+      "api_url": "https://www.persee.fr/api",
+      "enabled": false
+    },
+    "consensus": {
+      "api_url": "https://api.consensus.app/v1/quick_search",
+      "enabled": true,
+      "_note": "Disabled by default \u2014 high token cost across all themes. Enable per-agent in agent_sources. Or test standalone: python3 core/consensus_mcp.py \"query\""
+    },
+    "philarchive": {
+      "api_url": "https://philarchive.org/oai.pl",
+      "enabled": true,
+      "_note": "No credentials needed \u2014 open access OAI-PMH"
+    },
+    "philsci": {
+      "api_url": "https://philsci-archive.pitt.edu/cgi/oai2",
+      "enabled": true,
+      "_note": "No credentials needed \u2014 philosophy of science preprints"
+    },
+    "scopus": {
+      "api_url": "https://api.elsevier.com/content/search/scopus",
+      "enabled": true,
+      "_note": "Requires SCOPUS_API_KEY + institutional IP or VPN. Institutional token optional."
+    }
+  },
+  "recheck_schedule": "twice_weekly",
+  "max_redirects": 3,
+  "agent_sources": {
+    "_description": "Controls which sources each agent uses. Remove a source from a list to disable it for that agent.",
+    "social": [
+      "openalex",
+      "arxiv",
+      "pubmed",
+      "semantic_scholar",
+      "core",
+      "philpapers",
+      "philarchive",
+      "philsci",
+      "scopus",
+      "consensus"
+    ],
+    "grounder": [
+      "openalex",
+      "semantic_scholar",
+      "consensus"
+    ],
+    "historian": [
+    "openalex",
+    "semantic_scholar",
+    "consensus"
+    ],
+    
+    "_notes": {
+      "social": "Primary discovery layer. consensus removed \u2014 high token cost per search across all themes.",
+      "grounder": "Seminal work search. consensus removed by default \u2014 add back if you want semantic search on sub-questions.",
+      "consensus_standalone": "Consensus is still available via: python3 core/consensus_mcp.py \"query\""
+    }
+  }
+}

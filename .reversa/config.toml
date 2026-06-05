@@ -1,0 +1,41 @@
+# Reversa — Configuração do Projeto
+# Este arquivo é gerenciado pelo instalador. Para customizações, edite config.user.toml
+
+[project]
+name = "opencode"
+version = "1.0.0"
+
+[user]
+name = ""
+chat_language = "pt-br"
+doc_language = "pt-br"
+
+[output]
+folder = "_reversa_sdd"
+
+[agents]
+installed = [
+  "reversa-scout",
+  "reversa-archaeologist",
+  "reversa-detective",
+  "reversa-architect",
+  "reversa-writer",
+  "reversa-reviewer",
+  "reversa-visor",
+  "reversa-data-master",
+  "reversa-design-system"
+]
+
+[engines]
+installed = ["opencode"]
+
+[analysis]
+answer_mode = "chat"
+doc_level = "detalhado"
+
+[specs]
+layout = "hibrida"
+granularity = "modulo + caso_de_uso"
+custom_folders = []
+scout_suggestion = "12 modulos identificados, recomendado organizacao por modulo com secoes de caso de uso"
+decided_at = "2026-05-10T00:00:00Z"

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — editais-br{% endblock %}
+{% block content %}
+
+<div class="hero-search" id="hero">
+    <h2>🔍 Encontre editais de fomento</h2>
+    <p>Busque em tempo real ou navegue pelos editais já catalogados</p>
+    <form hx-get="/buscar" hx-target="#resultado" hx-push-url="true" hx-indicator="#search-spinner">
+        <div class="search-box">
+            <input type="text" name="q" placeholder='Ex: "inteligência artificial", "energia solar", "agricultura familiar"...' autofocus>
+            <button type="submit">
+                <span id="search-spinner" class="htmx-indicator spinner" style="width:16px;height:16px;border-width:2px;border-top-color:white;"></span>
+                Buscar
+            </button>
+        </div>
+        <div class="suggestions">
+            <button type="button" class="suggestion" onclick="this.form.q.value='inteligência artificial';this.form.requestSubmit()">🤖 IA</button>
+            <button type="button" class="suggestion" onclick="this.form.q.value='energia solar';this.form.requestSubmit()">☀️ Energia Solar</button>
+            <button type="button" class="suggestion" onclick="this.form.q.value='agricultura familiar';this.form.requestSubmit()">🌱 Agricultura</button>
+            <button type="button" class="suggestion" onclick="this.form.q.value='saúde pública';this.form.requestSubmit()">🏥 Saúde</button>
+            <button type="button" class="suggestion" onclick="this.form.q.value='cultura';this.form.requestSubmit()">🎭 Cultura</button>
+        </div>
+    </form>
+</div>
+
+<div id="resultado"></div>
+
+<h3 style="margin:1.5rem 0 1rem;display:flex;align-items:center;gap:0.5rem;">
+    📋 Editais Catalogados
+    <span style="font-size:0.8rem;font-weight:400;color:#888;">(acumulados)</span>
+</h3>
+
+<form hx-get="/" hx-target="#tabela-editais" hx-trigger="change from:select, input from:input delay:300ms">
+    <div class="filters">
+        <div class="filter-group">
+            <label>Eixo Temático</label>
+            <select name="eixo_tematico">
+                <option value="">Todos</option>
+                <option value="tecnologia">Tecnologia</option>
+                <option value="inovacao">Inovação</option>
+                <option value="saude">Saúde</option>
+                <option value="educacao">Educação</option>
+                <option value="meio_ambiente">Meio Ambiente</option>
+                <option value="agricultura">Agricultura</option>
+                <option value="cultura">Cultura</option>
+                <option value="ciencias_exatas">Ciências Exatas</option>
+                <option value="engenharia">Engenharia</option>
+                <option value="energia">Energia</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label>Status</label>
+            <select name="status">
+                <option value="inscricoes_abertas" selected>Abertos</option>
+                <option value="todos">Todos</option>
+                <option value="em_breve">Em Breve</option>
+                <option value="encerrado">Encerrado</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label>Perfil</label>
+            <select name="perfil_elegivel">
+                <option value="">Todos</option>
+                <option value="startup_early_stage">Startup</option>
+                <option value="ict">ICT</option>
+                <option value="pesquisador_individual">Pesquisador</option>
+                <option value="osc">OSC</option>
+                <option value="mpe">MPE</option>
+            </select>
+        </div>
+    </div>
+</form>
+
+<div id="tabela-editais" hx-get="/" hx-trigger="load" hx-indicator="#table-spinner">
+    <div id="table-spinner" class="loading-state">
+        <div class="spinner"></div> Carregando...
+    </div>
+</div>
+
+{% endblock %}

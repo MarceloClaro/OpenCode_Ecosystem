@@ -1,0 +1,79 @@
+graph TD
+    A0["L0: META-COORDINATION"]
+    A0.1["A0.1: Orquestrador Mestre"]
+    A0.2["A0.2: Gerente de Sessão"]
+    A0.3["A0.3: Porteiro de Permissões"]
+    A0.4["A0.4: Harness de Veracidade"]
+    
+    A1["L1: KNOWLEDGE & DISCOVERY"]
+    A1.1["A1.1: Registrador de Skills"]
+    A1.2["A1.2: Compressor de Contexto"]
+    A1.3["A1.3: Construtor de Task Graph"]
+    A1.4["A1.4: Armazenador de Memória"]
+    A1.5["A1.5: Motor de Descoberta"]
+    A1.6["A1.6: Motor de Insights"]
+    
+    A2["L2: REASONING & ALIGNMENT"]
+    A2.1["A2.1: Analisador de Características"]
+    A2.2["A2.2: Seletor de Raciocínio"]
+    A2.3["A2.3: Configurador de Parâmetros"]
+    A2.4["A2.4: Validador de Estratégia"]
+    A2.7["A2.7: Análise de Gaps"]
+    
+    A3["L3: FRACTIONAL EXECUTION"]
+    A3.1["A3.1: Gerador de Subagentes"]
+    A3.4["A3.4: Quadro Autônomo"]
+    A3.6["A3.6: Barreira de Sincronização"]
+    A3.7["A3.7: Fracionador de Conteúdo"]
+    
+    A4["L4: SPECIALIZATION & CONTENT"]
+    A4.13["A4.13: Busca Bibliográfica"]
+    A4.1["A4.1-A4.9: MASWOS Writers"]
+    A4.11["A4.11: Análise Estatística"]
+    A4.12["A4.12: Machine Learning"]
+    
+    A5["L5: AUDIT & VALIDATION"]
+    A5.1["A5.1: Validador de Constraints"]
+    A5.3["A5.3: Validador de Citações"]
+    A5.7["A5.7: Validação Estatística"]
+    A5.8["A5.8: Auditoria de ML"]
+    A5.9["A5.9: Impacto de Citação"]
+    
+    A6["L6: OBSERVABILITY & FEEDBACK"]
+    A6.3["A6.3: Loop de Feedback"]
+    A6.4["A6.4: Meta-Aprendizado"]
+    A6.5["A6.5: Simulador de Banca"]
+    
+    A7["L7: OUTPUT & DELIVERABLES"]
+    A7.1["A7.1: Integrador Final"]
+    A7.2["A7.2: Gerador de Relatórios"]
+    A7.3["A7.3: Trilha de Auditoria"]
+    A7.4["A7.4: Entregador Verificado"]
+    
+    A0 --> A0.1 --> A0.2 --> A0.3 --> A0.4
+    A0.4 -->|Barreira L0-L1| A1
+    A1 --> A1.1 --> A1.2 --> A1.3 --> A1.5 --> A1.6
+    A1.6 -->|Barreira L1-L2| A2
+    A2 --> A2.1 --> A2.2 --> A2.3 --> A2.4 --> A2.7
+    A2.7 -->|Barreira L2-L3| A3
+    A3 --> A3.1 --> A3.4 --> A3.6 --> A3.7
+    A3.6 -->|Barreira L3-L4| A4
+    A4 --> A4.13 --> A4.1 --> A4.11 --> A4.12
+    A4.12 -->|Barreira L4-L5| A5
+    A5 --> A5.1 --> A5.3 --> A5.7 --> A5.8 --> A5.9
+    A5.9 -->|Barreira L5-L6| A6
+    A6 --> A6.3 --> A6.4 --> A6.5
+    A6.5 -->|Barreira L6-L7| A7
+    A7 --> A7.1 --> A7.2 --> A7.3 --> A7.4
+    
+    A7.4 -->|Documento Final| Output["📄 Publicação Qualis A1<br/>+ Relatório de Qualidade<br/>+ Trilha de Auditoria"]
+    
+    style A0 fill:#1a1a2e
+    style A1 fill:#16213e
+    style A2 fill:#0f3460
+    style A3 fill:#0a1f3a
+    style A4 fill:#051a2f
+    style A5 fill:#001a24
+    style A6 fill:#001428
+    style A7 fill:#000d1a
+    style Output fill:#00ff88

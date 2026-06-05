@@ -1,0 +1,525 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode/big-pickle",
+  "small_model": "opencode/big-pickle",
+  "autoupdate": true,
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 10000
+  },
+  "mcp": {
+    "filesystem": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\marce"
+      ],
+      "tags": [
+        "core",
+        "files"
+      ]
+    },
+    "code-runner": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "mcp-server-code-runner"
+      ],
+      "tags": [
+        "core",
+        "execution"
+      ]
+    },
+    "mcp-python-interpreter": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "mcp-python-interpreter"
+      ],
+      "tags": [
+        "core",
+        "python",
+        "execution"
+      ]
+    },
+    "sqlite": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "mcp-server-sqlite"
+      ],
+      "tags": [
+        "core",
+        "database"
+      ]
+    },
+    "sequential-thinking": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "node",
+        "C:/Users/marce/AppData/Roaming/npm/node_modules/@modelcontextprotocol/server-sequential-thinking/dist/index.js"
+      ],
+      "tags": [
+        "core",
+        "reasoning"
+      ]
+    },
+    "websearch": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "mcp-fetch-server",
+        "--duckduckgo"
+      ],
+      "tags": [
+        "search",
+        "web"
+      ]
+    },
+    "fetch": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "mcp-fetch-server"
+      ],
+      "tags": [
+        "search",
+        "web"
+      ]
+    },
+    "wikipedia": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "mcp-wikipedia"
+      ],
+      "tags": [
+        "search",
+        "encyclopedia"
+      ]
+    },
+    "context7": {
+      "type": "remote",
+      "enabled": true,
+      "url": "https://mcp.context7.com/mcp",
+      "tags": [
+        "search",
+        "docs"
+      ]
+    },
+    "gh_grep": {
+      "type": "remote",
+      "enabled": true,
+      "url": "https://mcp.grep.app",
+      "tags": [
+        "search",
+        "github",
+        "code"
+      ]
+    },
+    "playwright": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@playwright/mcp@latest",
+        "--headless"
+      ],
+      "tags": [
+        "browser",
+        "automation"
+      ]
+    },
+    "puppeteer": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ],
+      "tags": [
+        "browser",
+        "automation"
+      ]
+    },
+    "chrome-devtools": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "chrome-devtools-mcp"
+      ],
+      "tags": [
+        "browser",
+        "devtools"
+      ]
+    },
+    "desktop-commander": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@wonderwhy-er/desktop-commander"
+      ],
+      "tags": [
+        "ui",
+        "desktop"
+      ]
+    },
+    "eslint": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@eslint/mcp"
+      ],
+      "tags": [
+        "code",
+        "quality",
+        "linting"
+      ]
+    },
+    "diff": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "mcp-server-diff-typescript"
+      ],
+      "tags": [
+        "code",
+        "diff",
+        "comparison"
+      ]
+    },
+    "shell-server": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "uvx",
+        "mcp-shell-server"
+      ],
+      "timeout": 30000,
+      "tags": [
+        "execution",
+        "shell",
+        "sandbox"
+      ]
+    },
+    "run-python": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "uvx",
+        "mcp-run-python"
+      ],
+      "timeout": 30000,
+      "tags": [
+        "execution",
+        "python",
+        "sandbox"
+      ]
+    },
+    "node-sandbox": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "node-code-sandbox-mcp"
+      ],
+      "tags": [
+        "execution",
+        "node",
+        "sandbox"
+      ],
+      "timeout": 30000
+    },
+    "memory": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
+      "tags": [
+        "system",
+        "memory"
+      ]
+    },
+    "mcp-server-commands": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "mcp-server-commands"
+      ],
+      "tags": [
+        "system",
+        "devops",
+        "commands"
+      ]
+    },
+    "time": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@mcpcentral/mcp-time"
+      ],
+      "tags": [
+        "system",
+        "time"
+      ]
+    },
+    "github": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "environment": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_TOKEN}"
+      },
+      "tags": [
+        "github",
+        "collaboration",
+        "git"
+      ]
+    },
+    "pdf": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "pdf-mcp-server"
+      ],
+      "tags": [
+        "pdf",
+        "documents"
+      ]
+    },
+    "biomcp": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "uvx",
+        "biomcp"
+      ],
+      "timeout": 20000,
+      "tags": [
+        "biology",
+        "science",
+        "bioinformatics"
+      ]
+    },
+    "biothings": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "uvx",
+        "biothings-mcp"
+      ],
+      "timeout": 20000,
+      "tags": [
+        "biology",
+        "science",
+        "biothings"
+      ]
+    },
+    "gget": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "uvx",
+        "gget-mcp"
+      ],
+      "timeout": 20000,
+      "tags": [
+        "biology",
+        "science",
+        "genomics"
+      ]
+    },
+    "opengenes": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "uvx",
+        "opengenes-mcp"
+      ],
+      "timeout": 20000,
+      "tags": [
+        "biology",
+        "science",
+        "genomics"
+      ]
+    },
+    "scihub": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "python",
+        "-m",
+        "sci_hub_server"
+      ],
+      "timeout": 15000,
+      "tags": [
+        "academic",
+        "papers",
+        "science"
+      ]
+    },
+    "youtube-transcript": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "mcp-server-youtube-transcript"
+      ],
+      "tags": [
+        "academic",
+        "video",
+        "transcript"
+      ]
+    },
+    "mermaid": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@narasimhaponnada/mermaid-mcp-server"
+      ],
+      "tags": [
+        "visualization",
+        "diagrams"
+      ]
+    },
+    "mem0-mcp": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "mem0-mcp"
+      ],
+      "tags": [
+        "memory",
+        "persistence",
+        "ai"
+      ]
+    },
+
+
+    "exa-search": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "-y", "exa-mcp-server"],
+      "environment": {
+        "EXA_API_KEY": ""
+      },
+      "tags": ["search", "ai"]
+    },
+    "postgres": {
+      "type": "local",
+      "enabled": false,
+      "command": ["npx", "-y", "@henkey/postgres-mcp-server"],
+      "tags": ["database", "sql"]
+    },
+    "redis": {
+      "type": "local",
+      "enabled": false,
+      "command": ["npx", "-y", "redis-mcp"],
+      "tags": ["database", "cache"]
+    },
+    "docker": {
+      "type": "local",
+      "enabled": false,
+      "command": ["npx", "-y", "@hypnosis/docker-mcp-server"],
+      "tags": ["devops", "containers"]
+    },
+    "notion": {
+      "type": "local",
+      "enabled": false,
+      "command": ["npx", "-y", "easy-notion-mcp"],
+      "environment": {
+        "NOTION_TOKEN": ""
+      },
+      "tags": ["productivity", "docs"]
+    },
+    "email": {
+      "type": "local",
+      "enabled": false,
+      "command": ["npx", "-y", "@codefuturist/email-mcp"],
+      "environment": {
+        "EMAIL_IMAP_HOST": "",
+        "EMAIL_IMAP_PORT": "993",
+        "EMAIL_SMTP_HOST": "",
+        "EMAIL_SMTP_PORT": "465",
+        "EMAIL_USER": "",
+        "EMAIL_PASS": ""
+      },
+      "tags": ["communication", "email"]
+    },
+    "slack": {
+      "type": "local",
+      "enabled": false,
+      "command": ["npx", "-y", "slack-mcp-server"],
+      "environment": {
+        "SLACK_TOKEN": ""
+      },
+      "tags": ["communication", "messaging"]
+    },
+    "discord": {
+      "type": "local",
+      "enabled": false,
+      "command": ["npx", "-y", "@pasympa/discord-mcp"],
+      "environment": {
+        "DISCORD_TOKEN": ""
+      },
+      "tags": ["communication", "messaging"]
+    },
+    "jira": {
+      "type": "local",
+      "enabled": false,
+      "command": ["npx", "-y", "@aot-tech/jira-mcp-server"],
+      "environment": {
+        "JIRA_BASE_URL": "",
+        "JIRA_USER_EMAIL": "",
+        "JIRA_API_TOKEN": ""
+      },
+      "tags": ["productivity", "project-management"]
+    },
+    "linear": {
+      "type": "local",
+      "enabled": false,
+      "command": ["npx", "-y", "@mcp-devtools/linear"],
+      "environment": {
+        "LINEAR_API_KEY": ""
+      },
+      "tags": ["productivity", "project-management"]
+    }
+  },
+  "lsp": {
+    "typescript": {
+      "command": [
+        "typescript-language-server",
+        "--stdio"
+      ],
+      "initialization": {
+        "preferences": {
+          "importModuleSpecifierPreference": "relative"
+        }
+      }
+    }
+  }
+}

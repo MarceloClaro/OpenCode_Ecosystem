@@ -1,5 +1,5 @@
 # ============================================================
-# .gitignore — Antiprojeto UFC (PPGTE/UFC)
+# .gitignore — Antiprojeto UFC (PPGTE/UFC) + OpenCode Ecosystem
 # ============================================================
 
 # Dependencias e build
@@ -12,12 +12,17 @@ build/
 node_modules/
 *.egg
 
-# LaTeX auxiliares
+# Lock files
+package-lock.json
+bun.lock
+
+# LaTeX auxiliares (ciclo completo de compilacao)
 *.aux
 *.log
 *.toc
 *.out
 *.synctex*
+*.synctex.gz
 *.bbl
 *.blg
 *.fdb_latexmk
@@ -36,10 +41,24 @@ node_modules/
 .venv/
 venv/
 
-# Banco de dados local
+# Banco de dados local (runtime)
+*.db
 *.db-shm
 *.db-wal
 *.db-journal
+*.sqlite
+database.db
+database.db-shm
+database.db-wal
+data/
+
+# Temporarios
+.tmp/
+temp/
+*.tmp
+
+# Sessoes efemeras
+nexus/context_offload/
 
 # IDE
 .vscode/
@@ -52,23 +71,88 @@ Thumbs.db
 .DS_Store
 Desktop.ini
 
-# Arquivos grandes (>10MB)
-# (PDFs compilados sao regeneraveis via LaTeX, mantidos no repo para conveniencia)
-# Se necessario, descomente:
-# *.pdf
+# Ambiente
+.env
+.env.local
+.env.*.local
 
-# Sessoes efemeras
-nexus/context_offload/
+# Artefatos de sessao e estado local (regeneravel)
+.evolve/
+.evidence/
+.evolve/
+.evolve/ecosystem-observability.jsonl
+.evolve/ecosystem-state.json.gz
+.evolve/state.db
+.evolve/state.db-wal
+.evolve/state.db-shm
+.evolve/bridge.log
+.evolve/evolve.log
+_reversa_sdd/
+.opencodeignore
+smart-title.jsonc
+pytest.ini
+
+# Session logs (regeneravel)
+*.jsonl
+
+# Navegador e dados temporarios
+.reversa/whatsapp_profile/
+.playwright-mcp/
+
+# Mensagens temporarias
+message-msg_*.png
+
+# Pipeline output
+artigo-mit-ia/**/output/
+evals/*.md
+
+# Diretorios duplicados/copias
+MembrosDoCanal-main*/
+MembrosDoCanal-main (1)/
+OpenCode_Ecosystem-main/
+OpenCode_Ecosystem-main (1)/
+
+# Diretorios de terceiros
+nano/
+stock-analysis/
+whatsapp-mcp/
+
+# Estado do ecossistema .reversa (regeneravel)
+.reversa/*.db
+.reversa/*.jsonl
+.reversa/*.json.gz
+.reversa/citation_cache.db
+.reversa/code-graph.db
+.reversa/data_cache.db
+.reversa/maswos_agents.db
+.reversa/mcp_health.json
+.reversa/mirofish_version.json
+.reversa/mirofish_sync_report.json
+.reversa/omen_logs.db
+.reversa/pipeline.db
+.reversa/profiles.db
+.reversa/rag_cache.db
+.reversa/rag_vector.db
+.reversa/sim_*.db
+.reversa/state.json
+.reversa/test_report.json
+.reversa/test_check.db
+
+# Arquivos grandes (>10MB)
+*.zip
+*.tar.gz
+*.gz
 
 # Caminhos temporarios do Windows (AppData / Temp / pytest)
 **/AppData/**
 Users*/AppData/**
 **/pytest-alt*/
+**/pytest-*/
 UsersmarceAppDataLocalTemppytest-alt/
+UsersmarceAppDataLocalTemp*/
 
-# Telemetria do ecossistema (auto-gerado, nao versionar)
-.evolve/ecosystem-observability.jsonl
+# PDFs e artefatos gerados (fonte LaTeX versionada, PDF regeneravel)
+*.pdf
 
 # OpenCode_Ecosystem tem seu proprio repo (submodule ou clone)
-# NAO commitar o conteudo diretamente
 OpenCode_Ecosystem/

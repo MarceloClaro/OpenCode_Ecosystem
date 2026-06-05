@@ -1,0 +1,12 @@
+Reasoning Orchestrator — Checkpoint Nexus Template
+
+Profundidade: [L1 / L2 / L3 / L4]
+Raciocinios: [tipo1, tipo2, ...]
+Dominio: [dominio]
+Barreira: [falsificationist / bias / none]
+
+Checkpoint Nexus:
+- Nivel: {profundidade}
+- Raciocinios: {raciocinios}
+- Intersecao: {dominio}
+- Barreira: {barreira}

@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "script_hash": "",
+    "seed": 42,
+    "timestamp": "",
+    "n_samples": 262,
+    "n_features": 11
+  },
+  "classification": {
+    "Logistic Regression": {
+      "accuracy": 0.0, "accuracy_std": 0.0,
+      "f1": 0.0, "f1_std": 0.0,
+      "roc_auc": 0.0, "roc_auc_std": 0.0,
+      "precision": 0.0, "recall": 0.0
+    },
+    "Random Forest": {
+      "accuracy": 0.0, "accuracy_std": 0.0,
+      "f1": 0.0, "f1_std": 0.0,
+      "roc_auc": 0.0, "roc_auc_std": 0.0,
+      "precision": 0.0, "recall": 0.0
+    }
+  },
+  "regression": {
+    "Linear Regression": { "r2": 0.0, "r2_std": 0.0, "rmse": 0.0, "mae": 0.0 },
+    "Ridge (alpha=1)": { "r2": 0.0, "r2_std": 0.0, "rmse": 0.0, "mae": 0.0 },
+    "Random Forest": { "r2": 0.0, "r2_std": 0.0, "rmse": 0.0, "mae": 0.0 }
+  },
+  "new_features_v3": {
+    "knowledge_complexity": { "description": "KCI proxy: PC1 de 6 features de inovação", "mean": 0.0, "std": 1.0 },
+    "export_sophistication": { "description": "EXPY proxy: PIBpc ponderado por sofisticação exportadora", "mean": 0.0, "std": 1.0 },
+    "product_density": { "description": "Densidade produtiva: similaridade cosseno à fronteira", "mean": 0.0, "std": 1.0 }
+  },
+  "v3_gain_analysis": {
+    "accuracy_gain": { "Logistic Regression": 0.0, "Random Forest": 0.0 },
+    "auc_gain": { "Logistic Regression": 0.0, "Random Forest": 0.0 },
+    "regression_r2_gain": { "Linear Regression": 0.0, "Ridge": 0.0, "Random Forest": 0.0 }
+  },
+  "feature_importance": [],
+  "feature_importance_regression": [],
+  "anomalies": { "n_anomalies": 0, "top_anomalies": [] },
+  "cluster_profiles": {}
+}

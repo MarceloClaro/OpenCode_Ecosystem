@@ -1,0 +1,64 @@
+﻿\documentclass[
+  12pt,
+  a4paper,
+  brazil
+]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage[brazil]{babel}
+
+\usepackage[
+  top=3cm, left=3cm, right=2cm, bottom=2cm
+]{geometry}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{indentfirst}
+\setlength{\parindent}{1.25cm}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE,LO]{\textit{O Protocolo que Nao Protege}}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+\usepackage{array, booktabs, longtable}
+\usepackage{graphicx}
+\usepackage[bottom]{footmisc}
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\bfseries\large}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\normalfont\bfseries\normalsize}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalfont\bfseries\normalsize}{\thesubsubsection}{0.5em}{}
+
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\begin{document}
+
+\begin{titlepage}
+  \begin{center}
+    \vspace*{3cm}
+    {\large\bfseries Prof. Marcelo Claro \& Grupo de Pesquisa\par}
+    \vspace{3cm}
+    {\LARGE\bfseries O Protocolo que Nao Protege\par}
+    \vspace{0.5cm}
+    {\large\bfseries Critica Epistemica, Juridica e Comparada a Portaria CNPq n. 2.664/2026\par}
+    \vspace{1.5cm}
+    {\normalsize Ensaio cientifico apresentado ao Conselho Nacional de Desenvolvimento Cientifico e Tecnologico (CNPq) como contribuicao ao debate sobre regulacao de inteligencia artificial generativa na pesquisa academica.\par}
+    \vfill
+    {\large 2026\par}
+  \end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+$body$
+
+\end{document}

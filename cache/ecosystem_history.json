@@ -1,0 +1,424 @@
+{
+  "snapshots": [
+    {
+      "timestamp": "2026-05-09T05:34:10.808697",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 1,
+        "skills_total": 1,
+        "frontmatter_ok": 1,
+        "cjk_leaks": 0,
+        "scripts_total": 124,
+        "scripts_with_main": 87,
+        "total_lines_py": 41258
+      },
+      "totals": {
+        "skills": 1,
+        "scripts": 124,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 3,
+        "total_lines_py": 41258
+      },
+      "anomalies": 6,
+      "recommendations": 4
+    },
+    {
+      "timestamp": "2026-05-09T05:36:58.771960",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 1,
+        "skills_total": 1,
+        "frontmatter_ok": 1,
+        "cjk_leaks": 0,
+        "scripts_total": 124,
+        "scripts_with_main": 87,
+        "total_lines_py": 41277
+      },
+      "totals": {
+        "skills": 1,
+        "scripts": 124,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 3,
+        "total_lines_py": 41277
+      },
+      "anomalies": 0,
+      "recommendations": 4
+    },
+    {
+      "timestamp": "2026-05-09T05:50:32.617267",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 1,
+        "skills_total": 1,
+        "frontmatter_ok": 1,
+        "cjk_leaks": 0,
+        "scripts_total": 127,
+        "scripts_with_main": 90,
+        "total_lines_py": 42442
+      },
+      "totals": {
+        "skills": 1,
+        "scripts": 127,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 4,
+        "total_lines_py": 42442
+      },
+      "anomalies": 0,
+      "recommendations": 4
+    },
+    {
+      "timestamp": "2026-05-09T06:08:05.285407",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 8,
+        "skills_total": 9,
+        "frontmatter_ok": 9,
+        "cjk_leaks": 0,
+        "scripts_total": 128,
+        "scripts_with_main": 91,
+        "total_lines_py": 42746
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 128,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 5,
+        "total_lines_py": 42746
+      },
+      "anomalies": 1,
+      "recommendations": 4
+    },
+    {
+      "timestamp": "2026-05-09T06:19:25.352240",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 8,
+        "skills_total": 9,
+        "frontmatter_ok": 9,
+        "cjk_leaks": 0,
+        "scripts_total": 128,
+        "scripts_with_main": 91,
+        "total_lines_py": 42746
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 128,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 5,
+        "total_lines_py": 42746
+      },
+      "anomalies": 1,
+      "recommendations": 4
+    },
+    {
+      "timestamp": "2026-05-09T07:27:53.196341",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 8,
+        "skills_total": 9,
+        "frontmatter_ok": 9,
+        "cjk_leaks": 0,
+        "scripts_total": 130,
+        "scripts_with_main": 93,
+        "total_lines_py": 44227
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 130,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 6,
+        "total_lines_py": 44227
+      },
+      "anomalies": 1,
+      "recommendations": 4
+    },
+    {
+      "timestamp": "2026-05-09T07:29:55.332712",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 8,
+        "skills_total": 9,
+        "frontmatter_ok": 9,
+        "cjk_leaks": 0,
+        "scripts_total": 130,
+        "scripts_with_main": 93,
+        "total_lines_py": 44227
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 130,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 6,
+        "total_lines_py": 44227
+      },
+      "anomalies": 1,
+      "recommendations": 4
+    },
+    {
+      "timestamp": "2026-05-09T07:48:30.136528",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 8,
+        "skills_total": 9,
+        "frontmatter_ok": 9,
+        "cjk_leaks": 0,
+        "scripts_total": 131,
+        "scripts_with_main": 94,
+        "total_lines_py": 44318
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 131,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 7,
+        "total_lines_py": 44318
+      },
+      "anomalies": 1,
+      "recommendations": 3
+    },
+    {
+      "timestamp": "2026-05-09T07:49:07.987961",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 8,
+        "skills_total": 9,
+        "frontmatter_ok": 9,
+        "cjk_leaks": 0,
+        "scripts_total": 131,
+        "scripts_with_main": 94,
+        "total_lines_py": 44318
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 131,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 8,
+        "total_lines_py": 44318
+      },
+      "anomalies": 1,
+      "recommendations": 3
+    },
+    {
+      "timestamp": "2026-05-09T07:55:00.300996",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 9,
+        "skills_total": 9,
+        "frontmatter_ok": 8,
+        "cjk_leaks": 0,
+        "scripts_total": 131,
+        "scripts_with_main": 94,
+        "total_lines_py": 44318
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 131,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 8,
+        "total_lines_py": 44318
+      },
+      "anomalies": 1,
+      "recommendations": 4
+    },
+    {
+      "timestamp": "2026-05-09T07:55:47.924575",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 9,
+        "skills_total": 9,
+        "frontmatter_ok": 9,
+        "cjk_leaks": 0,
+        "scripts_total": 131,
+        "scripts_with_main": 94,
+        "total_lines_py": 44318
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 131,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 8,
+        "total_lines_py": 44318
+      },
+      "anomalies": 0,
+      "recommendations": 3
+    },
+    {
+      "timestamp": "2026-05-09T07:57:51.723088",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 9,
+        "skills_total": 9,
+        "frontmatter_ok": 9,
+        "cjk_leaks": 0,
+        "scripts_total": 131,
+        "scripts_with_main": 94,
+        "total_lines_py": 44318
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 131,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 8,
+        "total_lines_py": 44318
+      },
+      "anomalies": 0,
+      "recommendations": 3
+    },
+    {
+      "timestamp": "2026-05-09T08:09:46.443557",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 9,
+        "skills_total": 9,
+        "frontmatter_ok": 9,
+        "cjk_leaks": 0,
+        "scripts_total": 131,
+        "scripts_needing_entrypoint": 31,
+        "scripts_with_main": 97,
+        "total_lines_py": 44343
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 131,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 8,
+        "total_lines_py": 44343
+      },
+      "anomalies": 0,
+      "recommendations": 3
+    },
+    {
+      "timestamp": "2026-05-09T08:10:42.468505",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 9,
+        "skills_total": 9,
+        "frontmatter_ok": 9,
+        "cjk_leaks": 0,
+        "scripts_total": 131,
+        "scripts_needing_entrypoint": 31,
+        "scripts_with_main": 97,
+        "total_lines_py": 44353
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 131,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 8,
+        "total_lines_py": 44353
+      },
+      "anomalies": 0,
+      "recommendations": 3
+    },
+    {
+      "timestamp": "2026-05-09T08:21:08.265702",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 9,
+        "skills_total": 9,
+        "frontmatter_ok": 9,
+        "cjk_leaks": 0,
+        "scripts_total": 131,
+        "scripts_needing_entrypoint": 31,
+        "scripts_with_main": 97,
+        "total_lines_py": 44741
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 131,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 8,
+        "total_lines_py": 44741
+      },
+      "anomalies": 0,
+      "recommendations": 3
+    },
+    {
+      "timestamp": "2026-05-09T08:30:19.527646",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 9,
+        "skills_total": 9,
+        "frontmatter_ok": 9,
+        "cjk_leaks": 0,
+        "scripts_total": 131,
+        "scripts_needing_entrypoint": 31,
+        "scripts_with_main": 97,
+        "total_lines_py": 44741
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 131,
+        "plugins": 2,
+        "agents": 24,
+        "evals": 8,
+        "total_lines_py": 44741
+      },
+      "anomalies": 0,
+      "recommendations": 3
+    },
+    {
+      "timestamp": "2026-05-09T21:15:59.591321",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 9,
+        "skills_total": 9,
+        "frontmatter_ok": 9,
+        "cjk_leaks": 0,
+        "scripts_total": 139,
+        "scripts_needing_entrypoint": 35,
+        "scripts_with_main": 100,
+        "total_lines_py": 46765
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 139,
+        "plugins": 2,
+        "agents": 81,
+        "evals": 9,
+        "total_lines_py": 46765
+      },
+      "anomalies": 0,
+      "recommendations": 3
+    },
+    {
+      "timestamp": "2026-05-09T21:27:13.479688",
+      "ciclo": "7.3",
+      "health": {
+        "skills_under_2500b": 9,
+        "skills_total": 9,
+        "frontmatter_ok": 9,
+        "cjk_leaks": 0,
+        "scripts_total": 139,
+        "scripts_needing_entrypoint": 35,
+        "scripts_with_main": 100,
+        "total_lines_py": 46765
+      },
+      "totals": {
+        "skills": 9,
+        "scripts": 139,
+        "plugins": 2,
+        "agents": 81,
+        "evals": 10,
+        "total_lines_py": 46765
+      },
+      "anomalies": 0,
+      "recommendations": 3
+    }
+  ]
+}

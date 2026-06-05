@@ -1,0 +1,31 @@
+{
+  "padroes_sucesso": [],
+  "padroes_falha": [],
+  "metricas_historicas": [],
+  "recomendacoes_aplicadas": [],
+  "ciclos_analisados": 6,
+  "ultima_analise": "2026-05-09T21:16:36.682127",
+  "ultimo_manifesto": {
+    "timestamp": "2026-05-09T21:16:37.283267",
+    "health": {
+      "skills_under_2500b": 9,
+      "skills_total": 9,
+      "frontmatter_ok": 9,
+      "cjk_leaks": 0,
+      "py_compile_ok": "nao_verificado",
+      "scripts_total": 139,
+      "scripts_needing_entrypoint": 35,
+      "scripts_with_main": 100,
+      "total_lines_py": 46765
+    },
+    "totals": {
+      "skills": 9,
+      "scripts": 139,
+      "plugins": 2,
+      "agents": 81,
+      "evals": 9,
+      "total_lines_py": 46765
+    },
+    "anomalies": 0
+  }
+}

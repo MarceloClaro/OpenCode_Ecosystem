@@ -1,0 +1,63 @@
+{
+  "zne": {
+    "method": "ZNE",
+    "noise_levels": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "expectations": [
+      0.7167069653700323,
+      0.6468036273511479,
+      0.5834667727658465,
+      0.5775558212345241,
+      0.5589311645955701
+    ],
+    "e_zero_noise": "0.9305958991434826",
+    "complexity": "O(n_levels * circuit_depth)"
+  },
+  "pec": {
+    "method": "PEC",
+    "circuit_depth": 6,
+    "n_qubits": 50,
+    "layer_errors": [
+      0.001,
+      0.00125,
+      0.0014330127018922193,
+      0.0015,
+      0.0014330127018922195,
+      0.00125
+    ],
+    "total_error": 0.007866025403784439,
+    "overhead_factor": 1.0483276209159995,
+    "expected_accuracy": 89.88200961894323,
+    "complexity": "O(exp(circuit_depth))"
+  },
+  "dd": {
+    "method": "DD",
+    "dd_type": "CPMG",
+    "n_pulses": 4,
+    "pulse_times": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "t2_improvement": 4.2,
+    "error_reduction": 0.664822842263935,
+    "expected_accuracy": 86.82191441617967,
+    "complexity": "O(n_pulses)"
+  },
+  "hybrid": {
+    "method": "Hybrid ZNE+PEC",
+    "circuit_depth": 6,
+    "pec_layers": 2,
+    "zne_layers": 4,
+    "pec_overhead": 1.004008010677342,
+    "zne_overhead": 3,
+    "total_overhead": 3.0120240320320257,
+    "expected_accuracy": 89.5,
+    "complexity": "O(exp(pec_depth) * zne_levels)"
+  }
+}

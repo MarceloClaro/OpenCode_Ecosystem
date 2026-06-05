@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Buscar — editais-br{% endblock %}
+{% block content %}
+
+<div class="hero-search" style="padding:2rem;">
+    <h2>🔎 Busca Inteligente</h2>
+    <p>Pesquise editais de fomento em tempo real — o sistema busca, baixa e analisa na hora</p>
+    <form hx-get="/buscar" hx-target="#resultados-busca" hx-push-url="true" hx-indicator="#busca-spinner">
+        <div class="search-box">
+            <input type="text" name="q" value="{{ q }}" placeholder='Ex: "inteligência artificial", "energia solar", "agricultura familiar"...' autofocus>
+            <button type="submit">
+                <span id="busca-spinner" class="htmx-indicator spinner" style="width:16px;height:16px;border-width:2px;border-top-color:white;"></span>
+                Buscar
+            </button>
+        </div>
+        <div class="suggestions">
+            <button type="button" class="suggestion" onclick="this.form.q.value='inteligência artificial';this.form.requestSubmit()">🤖 IA</button>
+            <button type="button" class="suggestion" onclick="this.form.q.value='energia solar';this.form.requestSubmit()">☀️ Energia Solar</button>
+            <button type="button" class="suggestion" onclick="this.form.q.value='agricultura familiar';this.form.requestSubmit()">🌱 Agricultura</button>
+            <button type="button" class="suggestion" onclick="this.form.q.value='saúde pública';this.form.requestSubmit()">🏥 Saúde</button>
+            <button type="button" class="suggestion" onclick="this.form.q.value='biotecnologia';this.form.requestSubmit()">🧬 Biotec</button>
+        </div>
+    </form>
+</div>
+
+<div id="resultados-busca">
+{% if q %}
+    <div class="htmx-indicator loading-state" id="loading-busca">
+        <div class="spinner"></div> Buscando editais para "<strong>{{ q }}</strong>"...
+    </div>
+
+    <p style="color:#666;margin-bottom:1rem;">
+        🕐 <strong>{{ total }}</strong> resultado(s) em <strong>{{ tempo }}s</strong> para "<strong>{{ q }}</strong>"
+    </p>
+
+    {% if resultados %}
+        {% for r in resultados %}
+        <div class="card result-card" onclick="window.open('{{ r.url }}', '_blank')">
+            <h3 style="margin-bottom:0.3rem;font-size:1.1rem;">📄 {{ r.titulo }}</h3>
+            {% if r.resumo %}
+            <p style="color:#555;margin-bottom:0.5rem;font-size:0.9rem;line-height:1.5;">{{ r.resumo[:350] }}{% if r.resumo|length > 350 %}...{% endif %}</p>
+            {% endif %}
+            <div class="result-meta">
+                {% if r.chars %}<span>📏 {{ r.chars }} caracteres extraídos</span>{% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="card" style="text-align:center;padding:3rem;">
+            <p style="font-size:2.5rem;margin-bottom:0.5rem;">🔍</p>
+            <p style="font-size:1.1rem;">Nenhum edital encontrado para "<strong>{{ q }}</strong>"</p>
+            <p style="color:#999;">Tente um termo diferente ou mais específico.</p>
+        </div>
+    {% endif %}
+{% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,158 @@
+# =============================================================================
+# editais-br — Docker Compose (Issue #1)
+# Serviços: PostgreSQL 16, Redis 7, API (FastAPI), Worker (Celery), Nginx
+# =============================================================================
+
+services:
+  # --- PostgreSQL 16 ---
+  postgres:
+    image: postgres:16-alpine
+    container_name: editais-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-editais}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: ${POSTGRES_DB:-editais}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-editais} -d ${POSTGRES_DB:-editais}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - editais-net
+    restart: unless-stopped
+
+  # --- Redis 7 ---
+  redis:
+    image: redis:7-alpine
+    container_name: editais-redis
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+    networks:
+      - editais-net
+    restart: unless-stopped
+
+  # --- API FastAPI ---
+  api:
+    build:
+      context: .
+      target: api
+    container_name: editais-api
+    environment:
+      - POSTGRES_URL=postgresql://${POSTGRES_USER:-editais}:${POSTGRES_PASSWORD:-changeme}@postgres:5432/${POSTGRES_DB:-editais}
+      - REDIS_URL=redis://redis:6379/0
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-}
+      - SERPAPI_KEY=${SERPAPI_KEY:-}
+      - ADMIN_USER=${ADMIN_USER:-admin}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-editais2026}
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./api:/app/api
+      - ./agents:/app/agents
+      - ./extractors:/app/extractors
+      - ./worker:/app/worker
+      - ./templates:/app/templates
+      - ./pipeline:/app/pipeline
+      - ./tests/fixtures:/app/tests/fixtures
+      - ./scripts:/app/scripts
+    command: >
+      sh -c "alembic upgrade head &&
+             uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload"
+    networks:
+      - editais-net
+    restart: unless-stopped
+
+  # --- Worker Celery ---
+  worker:
+    build:
+      context: .
+      target: worker
+    container_name: editais-worker
+    environment:
+      - POSTGRES_URL=postgresql://${POSTGRES_USER:-editais}:${POSTGRES_PASSWORD:-changeme}@postgres:5432/${POSTGRES_DB:-editais}
+      - REDIS_URL=redis://redis:6379/0
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY:-}
+      - SERPAPI_KEY=${SERPAPI_KEY:-}
+      - ADMIN_USER=${ADMIN_USER:-admin}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-editais2026}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./api:/app/api
+      - ./agents:/app/agents
+      - ./extractors:/app/extractors
+      - ./worker:/app/worker
+      - ./pipeline:/app/pipeline
+      - ./tests/fixtures:/app/tests/fixtures
+      - ./scripts:/app/scripts
+    command: >
+      sh -c "alembic upgrade head &&
+             celery -A worker.celery_app worker --loglevel=info --concurrency=${CELERY_CONCURRENCY:-4}"
+    networks:
+      - editais-net
+    restart: unless-stopped
+
+  # --- Celery Beat (scheduler) ---
+  celery-beat:
+    build:
+      context: .
+      target: worker
+    container_name: editais-beat
+    environment:
+      - POSTGRES_URL=postgresql://${POSTGRES_USER:-editais}:${POSTGRES_PASSWORD:-changeme}@postgres:5432/${POSTGRES_DB:-editais}
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: >
+      sh -c "alembic upgrade head &&
+             celery -A worker.celery_app beat --loglevel=info"
+    networks:
+      - editais-net
+    restart: unless-stopped
+
+  # --- Nginx proxy reverso ---
+  nginx:
+    image: nginx:alpine
+    container_name: editais-nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - editais-net
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  editais-net:
+    driver: bridge

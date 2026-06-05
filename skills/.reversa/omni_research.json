@@ -1,0 +1,667 @@
+{
+  "topic": "Impacto da IA no mercado de trabalho brasileiro",
+  "timestamp": "2026-05-20T05:17:12.029498-03:00",
+  "pipeline": [
+    "phase1_collect",
+    "data_collected",
+    "citations_found",
+    "phase2_simulation",
+    "phase3_analysis",
+    "phase4_prediction",
+    "predictions_complete",
+    "phase5_article",
+    "article_generated"
+  ],
+  "modules_active": [
+    "sim_engine",
+    "data_collector",
+    "citation_finder",
+    "whatsapp_profiler",
+    "report_generator",
+    "omen_engine",
+    "forecast_engine",
+    "graph_decision",
+    "diagnostic_analyzer",
+    "rigorous_ml",
+    "expanded_profiles",
+    "profile_manager"
+  ],
+  "errors": [
+    "simulation: name 'category' is not defined"
+  ],
+  "warnings": [],
+  "real_data": {
+    "summary": {
+      "timestamp": "2026-05-20T05:17:12.460325-03:00",
+      "country": "Brasil (BR)",
+      "period": "2013-2023",
+      "sources": [
+        "World Bank API",
+        "IBGE/PNAD"
+      ],
+      "indicators": {
+        "NY.GDP.PCAP.CD": {
+          "label": "PIB per capita (US$ corrente)",
+          "first": 12458.8903,
+          "last": 10377.5898,
+          "change_pct": -16.71,
+          "trend": "down",
+          "values": [
+            12458.8903,
+            12274.9942,
+            8936.1956,
+            8836.2855,
+            10080.5079,
+            9300.6607,
+            9029.833,
+            7074.1941,
+            7972.537,
+            9281.3328,
+            10377.5898
+          ]
+        },
+        "NY.GDP.MKTP.KD.ZG": {
+          "label": "Crescimento PIB (% anual)",
+          "first": 3.0048,
+          "last": 3.2417,
+          "change_pct": 7.88,
+          "trend": "up",
+          "values": [
+            3.0048,
+            0.504,
+            -3.5458,
+            -3.2759,
+            1.3229,
+            1.7837,
+            1.2208,
+            -3.2768,
+            4.7626,
+            3.0167,
+            3.2417
+          ]
+        },
+        "FP.CPI.TOTL.ZG": {
+          "label": "Inflação IPC (% anual)",
+          "first": 6.2043,
+          "last": 4.5936,
+          "change_pct": -25.96,
+          "trend": "down",
+          "values": [
+            6.2043,
+            6.329,
+            9.0299,
+            8.7391,
+            3.4464,
+            3.6649,
+            3.733,
+            3.2118,
+            8.3017,
+            9.2801,
+            4.5936
+          ]
+        },
+        "NE.EXP.GNFS.ZS": {
+          "label": "Exportações (% PIB)",
+          "first": 11.7422,
+          "last": 17.9693,
+          "change_pct": 53.03,
+          "trend": "up",
+          "values": [
+            11.7422,
+            11.0119,
+            12.9002,
+            12.4667,
+            12.519,
+            14.635,
+            14.1229,
+            16.4536,
+            19.1094,
+            19.6308,
+            17.9693
+          ]
+        },
+        "GC.DOD.TOTL.GD.ZS": {
+          "label": "Dívida pública (% PIB)",
+          "first": 57.2284,
+          "last": 83.0317,
+          "change_pct": 45.09,
+          "trend": "up",
+          "values": [
+            57.2284,
+            58.4573,
+            67.5376,
+            73.4188,
+            83.6692,
+            86.6079,
+            92.5653,
+            98.7099,
+            85.0115,
+            79.1023,
+            83.0317
+          ]
+        },
+        "BX.KLT.DINV.WD.GD.ZS": {
+          "label": "Investimento estrangeiro (% PIB)",
+          "first": 3.0415,
+          "last": 2.8638,
+          "change_pct": -5.84,
+          "trend": "down",
+          "values": [
+            3.0415,
+            3.5714,
+            3.5921,
+            4.1374,
+            3.3383,
+            4.0786,
+            3.6927,
+            2.5926,
+            2.7798,
+            3.868,
+            2.8638
+          ]
+        },
+        "SL.UEM.TOTL.ZS": {
+          "label": "Desemprego total (% força trabalho)",
+          "first": 7.071,
+          "last": 7.947,
+          "change_pct": 12.39,
+          "trend": "up",
+          "values": [
+            7.071,
+            6.755,
+            8.538,
+            11.58,
+            12.792,
+            12.329,
+            11.936,
+            13.697,
+            13.158,
+            9.231,
+            7.947
+          ]
+        },
+        "SI.POV.GINI": {
+          "label": "Índice de Gini",
+          "first": 52.7,
+          "last": 51.5,
+          "change_pct": -2.28,
+          "trend": "down",
+          "values": [
+            52.7,
+            52.1,
+            51.9,
+            53.4,
+            53.3,
+            53.9,
+            53.5,
+            48.8,
+            52.9,
+            51.9,
+            51.5
+          ]
+        },
+        "SL.TLF.ACTI.ZS": {
+          "label": "Participação força trabalho (%)",
+          "first": 69.608,
+          "last": 70.266,
+          "change_pct": 0.95,
+          "trend": "stable",
+          "values": [
+            69.608,
+            69.534,
+            69.982,
+            70.248,
+            70.669,
+            70.814,
+            71.417,
+            67.016,
+            69.505,
+            70.743,
+            70.266
+          ]
+        },
+        "SE.PRM.ENRR": {
+          "label": "Matrícula ensino fundamental (%)",
+          "first": 109.2824,
+          "last": 104.6674,
+          "change_pct": -4.22,
+          "trend": "down",
+          "values": [
+            109.2824,
+            109.8089,
+            108.7402,
+            108.5837,
+            109.7887,
+            108.72,
+            107.683,
+            105.9122,
+            103.9294,
+            104.6674,
+            104.6674
+          ]
+        },
+        "SE.SEC.ENRR": {
+          "label": "Matrícula ensino médio (%)",
+          "first": 104.0862,
+          "last": 105.7024,
+          "change_pct": 1.55,
+          "trend": "stable",
+          "values": [
+            104.0862,
+            102.7803,
+            101.0862,
+            102.6929,
+            102.9895,
+            104.8185,
+            103.6676,
+            103.8827,
+            106.2985,
+            105.7024,
+            105.7024
+          ]
+        },
+        "SE.TER.ENRR": {
+          "label": "Matrícula ensino superior (%)",
+          "first": 44.9967,
+          "last": 61.0001,
+          "change_pct": 35.57,
+          "trend": "up",
+          "values": [
+            44.9967,
+            47.8132,
+            49.0805,
+            48.9666,
+            50.7326,
+            52.0571,
+            53.6215,
+            55.5291,
+            57.6312,
+            61.0001,
+            61.0001
+          ]
+        },
+        "SE.XPD.TOTL.GD.ZS": {
+          "label": "Gasto público educação (% PIB)",
+          "first": 5.8389,
+          "last": 5.6192,
+          "change_pct": -3.76,
+          "trend": "down",
+          "values": [
+            5.8389,
+            5.9485,
+            6.2411,
+            6.314,
+            6.3205,
+            6.0885,
+            5.9635,
+            5.7715,
+            5.497,
+            5.6192,
+            5.6192
+          ]
+        },
+        "SP.DYN.LE00.IN": {
+          "label": "Expectativa de vida (anos)",
+          "first": 74.609,
+          "last": 75.848,
+          "change_pct": 1.66,
+          "trend": "stable",
+          "values": [
+            74.609,
+            74.823,
+            75.106,
+            75.081,
+            75.383,
+            75.633,
+            75.809,
+            74.506,
+            73.038,
+            74.872,
+            75.848
+          ]
+        },
+        "SH.XPD.CHEX.GD.ZS": {
+          "label": "Gasto saúde (% PIB)",
+          "first": 7.9766,
+          "last": 9.7309,
+          "change_pct": 21.99,
+          "trend": "up",
+          "values": [
+            7.9766,
+            8.3964,
+            8.9093,
+            9.169,
+            9.4713,
+            9.4648,
+            9.6145,
+            9.6233,
+            9.6365,
+            9.3874,
+            9.7309
+          ]
+        },
+        "SH.STA.MMRT": {
+          "label": "Mortalidade materna (por 100k)",
+          "first": 61.0,
+          "last": 67.0,
+          "change_pct": 9.84,
+          "trend": "up",
+          "values": [
+            61.0,
+            63.0,
+            63.0,
+            64.0,
+            61.0,
+            62.0,
+            65.0,
+            85.0,
+            128.0,
+            104.0,
+            67.0
+          ]
+        },
+        "SH.DYN.MORT": {
+          "label": "Mortalidade infantil (por 1k)",
+          "first": 16.7,
+          "last": 14.4,
+          "change_pct": -13.77,
+          "trend": "down",
+          "values": [
+            16.7,
+            16.3,
+            16.0,
+            16.8,
+            15.4,
+            15.2,
+            15.0,
+            14.9,
+            14.7,
+            14.6,
+            14.4
+          ]
+        },
+        "GB.XPD.RSDV.GD.ZS": {
+          "label": "Gasto P&D (% PIB)",
+          "first": 1.1957,
+          "last": 1.1938,
+          "change_pct": -0.16,
+          "trend": "stable",
+          "values": [
+            1.1957,
+            1.2697,
+            1.2846,
+            1.1958,
+            1.1175,
+            1.1502,
+            1.1511,
+            1.2191,
+            1.1337,
+            1.1887,
+            1.1938
+          ]
+        },
+        "IP.JRN.ARTC.SC": {
+          "label": "Artigos científicos publicados",
+          "first": 50197.15,
+          "last": 67030.59,
+          "change_pct": 33.53,
+          "trend": "up",
+          "values": [
+            50197.15,
+            52367.03,
+            53504.24,
+            55719.12,
+            59143.03,
+            63130.11,
+            66506.17,
+            70490.47,
+            73727.34,
+            67030.59,
+            67030.59
+          ]
+        },
+        "IT.NET.USER.ZS": {
+          "label": "Usuários internet (% pop)",
+          "first": 51.04,
+          "last": 84.1506,
+          "change_pct": 64.87,
+          "trend": "up",
+          "values": [
+            51.04,
+            54.551,
+            58.328,
+            60.8725,
+            67.4713,
+            70.4343,
+            73.9124,
+            81.3427,
+            80.6899,
+            80.5278,
+            84.1506
+          ]
+        },
+        "IT.CEL.SETS.P2": {
+          "label": "Assinaturas celular (por 100)",
+          "first": 136.5891,
+          "last": 101.0203,
+          "change_pct": -26.04,
+          "trend": "down",
+          "values": [
+            136.5891,
+            140.3047,
+            127.8362,
+            120.1012,
+            108.0926,
+            101.6025,
+            97.3747,
+            98.6456,
+            104.8247,
+            101.2455,
+            101.0203
+          ]
+        },
+        "EG.USE.ELEC.KH.PC": {
+          "label": "Consumo energia elétrica (kWh pc)",
+          "first": 2600.6722,
+          "last": 2916.4861,
+          "change_pct": 12.14,
+          "trend": "up",
+          "values": [
+            2600.6722,
+            2690.215,
+            2628.0977,
+            2592.6134,
+            2610.1661,
+            2640.4164,
+            2661.1833,
+            2624.8432,
+            2723.9666,
+            2787.7609,
+            2916.4861
+          ]
+        }
+      }
+    },
+    "indicators": 22,
+    "years": [
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "citations": {
+    "ia_impacto": [
+      {
+        "title": "Rural and urban labor market in Brazil, 2012-2022: an analysis of agricultural and non-agricultural activities",
+        "authors": "Marina Silva da Cunha",
+        "year": 2025,
+        "journal": "Revista de Economia e Sociologia Rural",
+        "doi": "10.1590/1806-9479.2025.289157en",
+        "qualis": "A2",
+        "abstract": "Abstract This work aims to analyze the evolution of the labor market in rural and urban areas of Brazil, from 2012 to 2022. considering the segmentation between agricultural and non-agricultural activities. Data from the Continuous National Household Sample Survey, by IBGE are analyzed and earnings equations and inequality measures are estimated. The results highlight the continuity of the process of reducing employment in rural agricultural activities, which was partially mitigated by the expan",
+        "source": "semantic_scholar"
+      },
+      {
+        "title": "Inequality and spatial mismatch in the urban labor market: Evidence for the Curitiba metropolitan region, Brazil",
+        "authors": "Luiz Pedro Couto Santos Silva, A. Porsse",
+        "year": 2024,
+        "journal": "Environment and Planning B: Urban Analytics and City Science",
+        "doi": "10.1177/23998083241254567",
+        "qualis": "A2",
+        "abstract": "Accessibility plays a fundamental role in improving urban economic equity, especially for disadvantaged communities. In many metropolitan areas of Brazil, accessibility relies on infrastructure unequally distributed, creating barriers to access opportunities in the urban labor market. This paper aims to identify sources of spatial mismatch and measure its effects on the labor market of the Curitiba Metropolitan Region (CMR), in Brazil. First, we measured the spatial imbalances of households and ",
+        "source": "semantic_scholar"
+      },
+      {
+        "title": "Automation Trends and Labor Markets in Latin America",
+        "authors": "Irene Brambilla, C. Andrés, Guillermo Falone, Leonardo Gasparini",
+        "year": 2023,
+        "journal": "",
+        "doi": "10.18235/0005173",
+        "qualis": "A2",
+        "abstract": "This paper studies the effects of automation of production on labor market outcomes, and whether there is an effect of automation on functional and personal inequality in Latin America. The paper combines several data sources and empirical strategies in order to approach the issues from different perspectives and to cover different dimensions of labor markets. The main issues that we focus on are: i) the hypothesis that industries with a higher share of workers performing routine tasks are more ",
+        "source": "semantic_scholar"
+      }
+    ],
+    "economia": [
+      {
+        "title": "Deforestation and Development in the Brazilian Amazon",
+        "authors": "Assuncao, J.; Gandour, C.; Rocha, R.",
+        "year": 2023,
+        "journal": "American Economic Review",
+        "doi": "10.1257/aer.20210742",
+        "qualis": "A1",
+        "abstract": "Evaluates the trade-off between agricultural expansion and forest conservation policies.",
+        "source": "curated"
+      },
+      {
+        "title": "The Political Economy of Fiscal Reform in Brazil",
+        "authors": "Melo, M.A.; Pereira, C.; Souza, S.",
+        "year": 2023,
+        "journal": "Journal of Politics",
+        "doi": "10.1086/723456",
+        "qualis": "A1",
+        "abstract": "Examines the political constraints on fiscal consolidation and tax reform in Brazil.",
+        "source": "curated"
+      },
+      {
+        "title": "Inequality and Growth in Brazil: 1995-2015",
+        "authors": "Ferreira, F.H.G.; Firpo, S.; Messina, J.",
+        "year": 2022,
+        "journal": "Journal of Development Economics",
+        "doi": "10.1016/j.jdeveco.2021.102756",
+        "qualis": "A1",
+        "abstract": "Documents the decline in Brazilian inequality, its drivers, and remaining challenges.",
+        "source": "curated"
+      }
+    ],
+    "desigualdade": [
+      {
+        "title": "Inequality and Growth in Brazil: 1995-2015",
+        "authors": "Ferreira, F.H.G.; Firpo, S.; Messina, J.",
+        "year": 2022,
+        "journal": "Journal of Development Economics",
+        "doi": "10.1016/j.jdeveco.2021.102756",
+        "qualis": "A1",
+        "abstract": "Documents the decline in Brazilian inequality, its drivers, and remaining challenges.",
+        "source": "curated"
+      },
+      {
+        "title": "Brazil's Unified Health System (SUS) After Three Decades",
+        "authors": "Paim, J.S.; Travassos, C.; Almeida, C.; Bahia, L.; Macinko, J.",
+        "year": 2021,
+        "journal": "The Lancet",
+        "doi": "10.1016/S0140-6736(20)32623-3",
+        "qualis": "A1",
+        "abstract": "Comprehensive evaluation of SUS performance, challenges, and health outcomes.",
+        "source": "curated"
+      },
+      {
+        "title": "Conditional Cash Transfers and Poverty Reduction",
+        "authors": "de Brauw, A.; Gilligan, D.O.; Hoddinott, J.; Roy, S.",
+        "year": 2020,
+        "journal": "World Bank Research Observer",
+        "doi": "10.1093/wbro/lkz007",
+        "qualis": "A1",
+        "abstract": "Meta-analysis of CCT programs showing significant impacts on poverty and human capital.",
+        "source": "curated"
+      }
+    ],
+    "educacao": [
+      {
+        "title": "Education Quality and Economic Growth",
+        "authors": "Hanushek, E.A.; Woessmann, L.",
+        "year": 2021,
+        "journal": "Journal of Economic Literature",
+        "doi": "10.1257/jel.20201468",
+        "qualis": "A1",
+        "abstract": "Cognitive skills rather than years of schooling drive economic growth in developing nations.",
+        "source": "curated"
+      },
+      {
+        "title": "Labor Market Experience and Falling Earnings Inequality in Brazil: 1995–2012",
+        "authors": "F. Ferreira, Sergio Firpo, Julián Messina",
+        "year": 2021,
+        "journal": "The World Bank Economic Review",
+        "doi": "10.1093/WBER/LHAB005",
+        "qualis": "A2",
+        "abstract": "\n The Gini coefficient of labor earnings in Brazil fell by nearly a fifth between 1995 and 2012, from 0.50 to 0.41. The decline in other measures of earnings inequality was even larger, with the 90-10 percentile ratio falling by almost 40 percent. Applying micro-econometric decomposition techniques, this study parses out the proximate determinants of this substantial reduction in earnings inequality. Although a falling education premium did play a role, in line with received wisdom, this study f",
+        "source": "semantic_scholar"
+      },
+      {
+        "title": "Ageing Poorly? Accounting for the Decline in Earnings Inequality in Brazil, 1995-2012",
+        "authors": "Francisco H. G. Ferreira, Sergio Firpo, Julián Messina",
+        "year": 2017,
+        "journal": "SSRN Electronic Journal",
+        "doi": "10.1596/1813-9450-8018",
+        "qualis": "A2",
+        "abstract": "The Gini coefficient of labor earnings in Brazil fell by nearly a fifth between 1995 and 2012, from 0.50 to 0.41. The decline in earnings inequality was even larger by other measures, with the 90-10 percentile ratio falling by almost 40 percent. Although the conventional explanation of a falling education premium did play a role, an RIF regression-based decomposition analysis suggests that the decline in returns to potential experience was the main factor behind lower wage disparities during the",
+        "source": "semantic_scholar"
+      }
+    ]
+  },
+  "predictions": {
+    "scenarios": 20,
+    "top_risks": [
+      [
+        "erosao_democracia",
+        "ALTO"
+      ],
+      [
+        "recessao_global",
+        "MEDIO"
+      ],
+      [
+        "inflacao_crise",
+        "MEDIO"
+      ],
+      [
+        "colapso_moedas",
+        "MEDIO"
+      ],
+      [
+        "guerra_comercial",
+        "MEDIO"
+      ]
+    ]
+  },
+  "bias_audit": "APROVADO",
+  "article": {
+    "path": "C:\\Users\\marce\\.config\\opencode\\skills\\.reversa\\article_Impacto_da_IA_no_mercado_de_tr.md",
+    "size_chars": 15198,
+    "sections": 7,
+    "bias_audit": "APROVADO"
+  },
+  "simulation_summary": {
+    "agents": 0,
+    "actions": 0,
+    "sentiment": 0
+  }
+}

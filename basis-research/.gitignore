@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+*.egg
+.venv/
+venv/
+env/
+
+# Databases (user-generated — the compressed template is tracked)
+db/pipeline.db
+db/conceptnet.db
+db/consensus_tokens.json
+
+# Credentials
+.env
+API.txt
+
+# Runtime artifacts (user-generated per run)
+artifacts/*
+!artifacts/.gitkeep
+logs/*
+!logs/.gitkeep
+exports/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,100 @@
+# =============================================================================
+# editais-br — CI (Integração Contínua)
+# Roda em PRs e pushes na main: testes, lint, type check
+# =============================================================================
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Testes (Python 3.12)
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: editais
+          POSTGRES_PASSWORD: changeme
+          POSTGRES_DB: editais
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U editais -d editais"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 5
+
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependências
+        run: |
+          pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Rodar migrations
+        env:
+          POSTGRES_URL: postgresql://editais:changeme@localhost:5432/editais
+        run: |
+          alembic upgrade head
+
+      - name: Testes unitários
+        run: pytest tests/unit/ -v --tb=short
+
+      - name: Testes de integração
+        env:
+          POSTGRES_URL: postgresql://editais:changeme@localhost:5432/editais
+          REDIS_URL: redis://localhost:6379/0
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: pytest tests/integration/ -v -m integration --tb=short
+        continue-on-error: true  # integração pode falhar sem API key
+
+  lint:
+    name: Lint & Type Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependências
+        run: |
+          pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Ruff lint
+        run: ruff check .
+
+      - name: Ruff format check
+        run: ruff format --check .
+
+      - name: Mypy type check
+        run: mypy .

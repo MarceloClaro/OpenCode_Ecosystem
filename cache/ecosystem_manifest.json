@@ -1,0 +1,4951 @@
+{
+  "timestamp": "2026-05-09T21:27:13.479688",
+  "version": "3.5",
+  "ciclo": "7.3",
+  "git": {
+    "last_commit": "no_commits",
+    "dirty_files": 32
+  },
+  "health": {
+    "skills_under_2500b": 9,
+    "skills_total": 9,
+    "frontmatter_ok": 9,
+    "cjk_leaks": 0,
+    "py_compile_ok": "nao_verificado",
+    "scripts_total": 139,
+    "scripts_needing_entrypoint": 35,
+    "scripts_with_main": 100,
+    "total_lines_py": 46765
+  },
+  "components": {
+    "skills": [
+      {
+        "name": "docling-pdf-extraction",
+        "path": "skills\\docling-pdf-extraction\\SKILL.md",
+        "bytes": 2483,
+        "lines": 74,
+        "frontmatter": true,
+        "has_name": true,
+        "has_description": true,
+        "cjk_leak": false,
+        "scripts": [
+          "skills\\docling-pdf-extraction\\scripts\\docling_skill.py"
+        ]
+      },
+      {
+        "name": "frontend-philosophy",
+        "path": "skills\\frontend\\frontend-philosophy\\SKILL.md",
+        "bytes": 639,
+        "lines": 25,
+        "frontmatter": true,
+        "has_name": true,
+        "has_description": true,
+        "cjk_leak": false,
+        "scripts": []
+      },
+      {
+        "name": "editais-br",
+        "path": "skills\\research\\editais-br\\SKILL.md",
+        "bytes": 2215,
+        "lines": 60,
+        "frontmatter": true,
+        "has_name": true,
+        "has_description": true,
+        "cjk_leak": false,
+        "scripts": [
+          "skills\\research\\editais-br\\scripts\\buscar_editais.py",
+          "skills\\research\\editais-br\\scripts\\edital_search.py",
+          "skills\\research\\editais-br\\scripts\\extracao_profunda.py",
+          "skills\\research\\editais-br\\scripts\\extrator_dados_publicos.py"
+        ]
+      },
+      {
+        "name": "code-philosophy",
+        "path": "skills\\system\\code-philosophy\\SKILL.md",
+        "bytes": 618,
+        "lines": 25,
+        "frontmatter": true,
+        "has_name": true,
+        "has_description": true,
+        "cjk_leak": false,
+        "scripts": []
+      },
+      {
+        "name": "code-review",
+        "path": "skills\\system\\code-review\\SKILL.md",
+        "bytes": 1255,
+        "lines": 39,
+        "frontmatter": true,
+        "has_name": true,
+        "has_description": true,
+        "cjk_leak": false,
+        "scripts": []
+      },
+      {
+        "name": "plan-review",
+        "path": "skills\\system\\plan-review\\SKILL.md",
+        "bytes": 1248,
+        "lines": 39,
+        "frontmatter": true,
+        "has_name": true,
+        "has_description": true,
+        "cjk_leak": false,
+        "scripts": []
+      },
+      {
+        "name": "reasoning-orchestrator",
+        "path": "skills\\system\\reasoning-orchestrator\\SKILL.md",
+        "bytes": 1975,
+        "lines": 46,
+        "frontmatter": true,
+        "has_name": true,
+        "has_description": true,
+        "cjk_leak": false,
+        "scripts": [
+          "skills\\system\\reasoning-orchestrator\\scripts\\example.py"
+        ]
+      },
+      {
+        "name": "token-efficiency",
+        "path": "skills\\system\\token-efficiency\\SKILL.md",
+        "bytes": 1049,
+        "lines": 36,
+        "frontmatter": true,
+        "has_name": true,
+        "has_description": true,
+        "cjk_leak": false,
+        "scripts": []
+      },
+      {
+        "name": "plan-protocol",
+        "path": "skills\\workflows\\plan-protocol\\SKILL.md",
+        "bytes": 1492,
+        "lines": 49,
+        "frontmatter": true,
+        "has_name": true,
+        "has_description": true,
+        "cjk_leak": false,
+        "scripts": []
+      }
+    ],
+    "scripts": [
+      {
+        "name": "docling_skill.py",
+        "path": "skills\\docling-pdf-extraction\\scripts\\docling_skill.py",
+        "lines": 46,
+        "bytes": 1655,
+        "hash": "1cdfa76766b4",
+        "imports": [
+          "sys",
+          "json",
+          "pathlib",
+          "docling_adapter"
+        ],
+        "functions": [
+          "extrair_pdf",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "buscar_editais.py",
+        "path": "skills\\research\\editais-br\\scripts\\buscar_editais.py",
+        "lines": 102,
+        "bytes": 3509,
+        "hash": "c3f6bb0c57b4",
+        "imports": [
+          "argparse",
+          "json",
+          "sys",
+          "datetime",
+          "httpx",
+          "html.parser"
+        ],
+        "functions": [
+          "buscar_editais",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "edital_search.py",
+        "path": "skills\\research\\editais-br\\scripts\\edital_search.py",
+        "lines": 455,
+        "bytes": 27485,
+        "hash": "ebee40dcbd5a",
+        "imports": [
+          "argparse",
+          "asyncio",
+          "hashlib",
+          "json",
+          "os",
+          "re",
+          "sqlite3",
+          "subprocess",
+          "sys",
+          "time",
+          "urllib.parse",
+          "dataclasses",
+          "pathlib",
+          "httpx",
+          "urllib.request",
+          "json",
+          "http.server",
+          "edital_search",
+          "asyncio"
+        ],
+        "functions": [
+          "init_db",
+          "_cache_key",
+          "_cache_get",
+          "_cache_set",
+          "_buscar_ddg",
+          "_buscar_curados",
+          "_buscar_portais",
+          "_buscar_bndes",
+          "classificar",
+          "calcular_score",
+          "iniciar_servidor",
+          "main",
+          "buscar_sync"
+        ],
+        "classes": [
+          "Edital"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "extracao_profunda.py",
+        "path": "skills\\research\\editais-br\\scripts\\extracao_profunda.py",
+        "lines": 199,
+        "bytes": 7569,
+        "hash": "90d64af44b19",
+        "imports": [
+          "json",
+          "re",
+          "sys",
+          "dataclasses",
+          "datetime",
+          "typing",
+          "pdfplumber",
+          "docling.document_converter",
+          "argparse"
+        ],
+        "functions": [
+          "extrair_requisitos_texto",
+          "extrair_de_pdf",
+          "main"
+        ],
+        "classes": [
+          "RequisitoEdital"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "extrator_dados_publicos.py",
+        "path": "skills\\research\\editais-br\\scripts\\extrator_dados_publicos.py",
+        "lines": 1052,
+        "bytes": 45823,
+        "hash": "7744ac981e0e",
+        "imports": [
+          "json",
+          "re",
+          "sys",
+          "time",
+          "hashlib",
+          "urllib.parse",
+          "urllib.request",
+          "xml.etree.ElementTree",
+          "pathlib",
+          "datetime",
+          "typing",
+          "http.server",
+          "argparse"
+        ],
+        "functions": [
+          "listar_fontes",
+          "_cache_key",
+          "_cache_get",
+          "_cache_set",
+          "_fetch_json",
+          "extrair_bcb_sgs",
+          "extrair_bndes_ckan",
+          "extrair_tesouro",
+          "extrair_inpe_queimadas",
+          "extrair_mapbiomas",
+          "extrair_ana",
+          "extrair_gov_clima",
+          "extrair_ibge_localidades",
+          "extrair_ibge_malha",
+          "extrair_ibge_sidra",
+          "extrair_banco_mundial",
+          "extrair_dados_gov_br",
+          "extrair_rais",
+          "extrair_camara",
+          "extrair_ans",
+          "extrair_anatel",
+          "extrair_aneel",
+          "extrair_fmi",
+          "extrair_onu",
+          "extrair_ocde",
+          "extrair_oms",
+          "extrair_brics",
+          "extrair_unctad",
+          "extrair_fao",
+          "extrair_oit",
+          "extrair_unesco",
+          "extrair_adb",
+          "buscar_por_dominio",
+          "extrair_url_para_dataset",
+          "buscar_multidominio",
+          "iniciar_servidor",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "example.py",
+        "path": "skills\\system\\reasoning-orchestrator\\scripts\\example.py",
+        "lines": 34,
+        "bytes": 1001,
+        "hash": "73af12fed137",
+        "imports": [],
+        "functions": [
+          "validate_checkpoint",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "dashboard_server.py",
+        "path": "nexus\\dashboard_server.py",
+        "lines": 849,
+        "bytes": 47117,
+        "hash": "d28c198fcd00",
+        "imports": [
+          "json",
+          "os",
+          "re",
+          "sys",
+          "subprocess",
+          "pathlib",
+          "datetime",
+          "http.server",
+          "argparse"
+        ],
+        "functions": [
+          "carregar_json",
+          "contar_scripts_python",
+          "coletar_dados",
+          "gerar_swot_skill",
+          "_descrever_agente",
+          "gerar_html_estatico",
+          "main"
+        ],
+        "classes": [
+          "DashboardHandler"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "agent_metamorphosis.py",
+        "path": "nexus\\scripts\\agent_metamorphosis.py",
+        "lines": 494,
+        "bytes": 18210,
+        "hash": "2b6a57852684",
+        "imports": [
+          "json",
+          "typing",
+          "dataclasses",
+          "enum",
+          "datetime",
+          "hashlib"
+        ],
+        "functions": [],
+        "classes": [
+          "AgentRole",
+          "TransformationType",
+          "AgentCapability",
+          "AgentGenome",
+          "MetamorphosisEvent",
+          "AgentMetamorphosis"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "aop_service_discovery.py",
+        "path": "nexus\\scripts\\aop_service_discovery.py",
+        "lines": 147,
+        "bytes": 5633,
+        "hash": "ab519e90db39",
+        "imports": [
+          "asyncio",
+          "logging",
+          "time",
+          "uuid",
+          "enum",
+          "typing",
+          "dataclasses",
+          "collections"
+        ],
+        "functions": [],
+        "classes": [
+          "TaskStatus",
+          "QueuedTask",
+          "AgentRegistration",
+          "TaskQueue",
+          "AOPServer"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "auto_swarm_builder.py",
+        "path": "nexus\\scripts\\auto_swarm_builder.py",
+        "lines": 109,
+        "bytes": 4825,
+        "hash": "a4d02b10a88f",
+        "imports": [
+          "json",
+          "logging",
+          "typing",
+          "dataclasses"
+        ],
+        "functions": [],
+        "classes": [
+          "AgentSpec",
+          "SwarmRouterConfig",
+          "AutoSwarmBuilder",
+          "BuiltInTaskAnalyzers"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "autonomous_reasoning_framework.py",
+        "path": "nexus\\scripts\\autonomous_reasoning_framework.py",
+        "lines": 591,
+        "bytes": 21798,
+        "hash": "447e1e1d663d",
+        "imports": [
+          "json",
+          "dataclasses",
+          "typing",
+          "enum",
+          "datetime",
+          "collections",
+          "numpy"
+        ],
+        "functions": [],
+        "classes": [
+          "ReasoningType",
+          "ConfidenceLevel",
+          "Premise",
+          "Conclusion",
+          "AutonomousReasoningFramework"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "context_offload.py",
+        "path": "nexus\\scripts\\context_offload.py",
+        "lines": 207,
+        "bytes": 9935,
+        "hash": "8af2cee56e6b",
+        "imports": [
+          "json",
+          "os",
+          "time",
+          "hashlib",
+          "logging",
+          "pathlib",
+          "typing",
+          "dataclasses",
+          "datetime"
+        ],
+        "functions": [],
+        "classes": [
+          "ContextEntry",
+          "SessionState",
+          "ContextOffloadManager"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "docling_adapter.py",
+        "path": "nexus\\scripts\\docling_adapter.py",
+        "lines": 152,
+        "bytes": 7466,
+        "hash": "0c24bd84c80e",
+        "imports": [
+          "json",
+          "sys",
+          "time",
+          "hashlib",
+          "logging",
+          "pathlib",
+          "typing",
+          "datetime",
+          "ecosystem_config",
+          "docling.document_converter",
+          "docling.datamodel.base_models",
+          "docling.datamodel.pipeline_options",
+          "pdf_rag.bridge"
+        ],
+        "functions": [],
+        "classes": [
+          "DoclingAdapter",
+          "DoclingSkillGenerator"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "domain_discovery_engine.py",
+        "path": "nexus\\scripts\\domain_discovery_engine.py",
+        "lines": 568,
+        "bytes": 22618,
+        "hash": "98a0454b6d6d",
+        "imports": [
+          "json",
+          "re",
+          "dataclasses",
+          "typing",
+          "enum",
+          "datetime",
+          "collections",
+          "numpy"
+        ],
+        "functions": [],
+        "classes": [
+          "DomainCharacteristic",
+          "DomainProfile",
+          "DomainDiscoveryEngine"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "ecosystem_bridge.py",
+        "path": "nexus\\scripts\\ecosystem_bridge.py",
+        "lines": 454,
+        "bytes": 17587,
+        "hash": "90ee1d6bd8cc",
+        "imports": [
+          "json",
+          "sys",
+          "os",
+          "subprocess",
+          "time",
+          "logging",
+          "pathlib",
+          "dataclasses",
+          "datetime",
+          "typing",
+          "subprocess",
+          "subprocess"
+        ],
+        "functions": [
+          "check_component",
+          "compute_overall_health",
+          "run_health_check",
+          "_save_bridge_state",
+          "load_bridge_state",
+          "route_editais_to_seeker",
+          "route_seeker_to_artigo",
+          "cmd_health",
+          "cmd_discover",
+          "cmd_route",
+          "cmd_watch",
+          "cmd_pipeline_full",
+          "cmd_pipeline_seeker_to_artigo",
+          "cmd_evolve",
+          "main"
+        ],
+        "classes": [
+          "ComponentHealth",
+          "BridgeState"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "ecosystem_config.py",
+        "path": "nexus\\scripts\\ecosystem_config.py",
+        "lines": 130,
+        "bytes": 3861,
+        "hash": "1bce99462ceb",
+        "imports": [
+          "os",
+          "pathlib",
+          "gzip",
+          "json"
+        ],
+        "functions": [
+          "_find_root",
+          "state_path",
+          "_ensure_type",
+          "load_state",
+          "save_state"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "ecosystem_scanner.py",
+        "path": "nexus\\scripts\\ecosystem_scanner.py",
+        "lines": 402,
+        "bytes": 16628,
+        "hash": "75828b4e8dde",
+        "imports": [
+          "json",
+          "os",
+          "re",
+          "hashlib",
+          "sys",
+          "pathlib",
+          "datetime",
+          "typing",
+          "subprocess",
+          "argparse"
+        ],
+        "functions": [
+          "scan_skills",
+          "_parse_imports",
+          "scan_scripts",
+          "scan_plugins",
+          "scan_agents",
+          "scan_evals",
+          "scan_git",
+          "scan_health",
+          "scan",
+          "detect_anomalies",
+          "generate_recommendations",
+          "salvar_historico",
+          "diff_snapshots",
+          "gerar_relatorio",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "evolution_cycle.py",
+        "path": "nexus\\scripts\\evolution_cycle.py",
+        "lines": 393,
+        "bytes": 15029,
+        "hash": "f76d23147f85",
+        "imports": [
+          "json",
+          "sys",
+          "time",
+          "pathlib",
+          "datetime",
+          "typing",
+          "editais_local.database",
+          "editais_local.models",
+          "shutil",
+          "shutil",
+          "editais_local.feedback",
+          "subprocess"
+        ],
+        "functions": [
+          "cmd_run",
+          "cmd_metrics",
+          "cmd_prune",
+          "cmd_generate_skills",
+          "cmd_status",
+          "main"
+        ],
+        "classes": [
+          "EvolutionCycle"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "evolution_engine.py",
+        "path": "nexus\\scripts\\evolution_engine.py",
+        "lines": 399,
+        "bytes": 16390,
+        "hash": "0c987093c3d9",
+        "imports": [
+          "json",
+          "re",
+          "sys",
+          "pathlib",
+          "datetime",
+          "collections",
+          "typing",
+          "ecosystem_scanner",
+          "argparse",
+          "json"
+        ],
+        "functions": [
+          "carregar_historico",
+          "carregar_conhecimento",
+          "parse_ciclos_agents",
+          "detectar_padroes",
+          "gerar_sugestoes",
+          "calcular_health_projetado",
+          "analyze",
+          "learn",
+          "gerar_relatorio_evolucao",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "evolution_loop.py",
+        "path": "nexus\\scripts\\evolution_loop.py",
+        "lines": 749,
+        "bytes": 32349,
+        "hash": "90ba6f568694",
+        "imports": [
+          "json",
+          "os",
+          "sys",
+          "time",
+          "logging",
+          "asyncio",
+          "pathlib",
+          "datetime",
+          "typing",
+          "dataclasses",
+          "ecosystem_config",
+          "social_algorithms",
+          "sync_orchestrator",
+          "docling_adapter",
+          "argparse"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "OutcomeRecord",
+          "LearningRecord",
+          "EvolutionCycle",
+          "FeedbackLoopEngine",
+          "SocialDiagnosisEngine",
+          "EvolutionLoopRunner"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "evolution_optimizer.py",
+        "path": "nexus\\scripts\\evolution_optimizer.py",
+        "lines": 306,
+        "bytes": 10688,
+        "hash": "2b50791cfbef",
+        "imports": [
+          "json",
+          "os",
+          "sys",
+          "typing",
+          "dataclasses",
+          "datetime",
+          "hashlib"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "FitnessMetrics",
+          "EvolutionOptimizer"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "fix_all_skills.py",
+        "path": "nexus\\scripts\\fix_all_skills.py",
+        "lines": 329,
+        "bytes": 17007,
+        "hash": "447cdbc412d2",
+        "imports": [
+          "os",
+          "re",
+          "pathlib",
+          "datetime",
+          "sys"
+        ],
+        "functions": [
+          "clean_and_fix_skill",
+          "generate_workflow",
+          "generate_best_practices",
+          "generate_integration",
+          "validate_skill",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "git_sync_barrier.py",
+        "path": "nexus\\scripts\\git_sync_barrier.py",
+        "lines": 273,
+        "bytes": 8733,
+        "hash": "2fcb09fe7d8f",
+        "imports": [
+          "subprocess",
+          "sys",
+          "os",
+          "typing",
+          "dataclasses",
+          "datetime",
+          "json"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "CommitRecord",
+          "GitSyncBarrier"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "granular_sync.py",
+        "path": "nexus\\scripts\\granular_sync.py",
+        "lines": 448,
+        "bytes": 16325,
+        "hash": "3945eb27cc2a",
+        "imports": [
+          "json",
+          "typing",
+          "dataclasses",
+          "enum",
+          "datetime",
+          "hashlib",
+          "ast"
+        ],
+        "functions": [],
+        "classes": [
+          "OperationStatus",
+          "SyncBarrierType",
+          "OperationCheckpoint",
+          "OperationDependency",
+          "SyncBarrier",
+          "GranularOperation",
+          "GranularSyncManager"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "html_to_pdf.py",
+        "path": "nexus\\scripts\\html_to_pdf.py",
+        "lines": 39,
+        "bytes": 1469,
+        "hash": "32ec4d0c49ac",
+        "imports": [
+          "subprocess",
+          "sys",
+          "os",
+          "playwright.sync_api",
+          "playwright.sync_api"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "knowledge_graphs.py",
+        "path": "nexus\\scripts\\knowledge_graphs.py",
+        "lines": 524,
+        "bytes": 19568,
+        "hash": "e1d2143b99a1",
+        "imports": [
+          "json",
+          "networkx",
+          "dataclasses",
+          "typing",
+          "enum",
+          "datetime",
+          "numpy"
+        ],
+        "functions": [],
+        "classes": [
+          "RelationType",
+          "EntityType",
+          "Entity",
+          "Relation",
+          "KnowledgeGraph",
+          "ComputerScienceKG"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "manus_evolve_bridge.py",
+        "path": "nexus\\scripts\\manus_evolve_bridge.py",
+        "lines": 159,
+        "bytes": 5977,
+        "hash": "ebd5b246099c",
+        "imports": [
+          "json",
+          "sys",
+          "pathlib",
+          "typing",
+          "ecosystem_config",
+          "evolution_loop",
+          "argparse"
+        ],
+        "functions": [],
+        "classes": [
+          "ManusEvolveBridge"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "mcp_real_adapters.py",
+        "path": "nexus\\scripts\\mcp_real_adapters.py",
+        "lines": 596,
+        "bytes": 19588,
+        "hash": "7f8d47b2c62d",
+        "imports": [
+          "abc",
+          "dataclasses",
+          "typing",
+          "os",
+          "json",
+          "subprocess",
+          "requests",
+          "datetime"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "MCPRequest",
+          "MCPResponse",
+          "MCPAdapter",
+          "FilesystemMCPAdapter",
+          "WebSearchMCPAdapter",
+          "DatabaseMCPAdapter",
+          "CodeExecutionMCPAdapter",
+          "MCPManager"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "mcp_router.py",
+        "path": "nexus\\scripts\\mcp_router.py",
+        "lines": 316,
+        "bytes": 10950,
+        "hash": "905b3e5a7e57",
+        "imports": [
+          "json",
+          "typing",
+          "dataclasses",
+          "enum",
+          "hashlib",
+          "datetime"
+        ],
+        "functions": [],
+        "classes": [
+          "MCPCapability",
+          "AgentSpecialization",
+          "MCPServer",
+          "TaskDescriptor",
+          "RoutingDecision",
+          "MCPRouter"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "mcp_self_organization.py",
+        "path": "nexus\\scripts\\mcp_self_organization.py",
+        "lines": 570,
+        "bytes": 18097,
+        "hash": "e0b81771b178",
+        "imports": [
+          "json",
+          "dataclasses",
+          "typing",
+          "enum",
+          "datetime",
+          "hashlib",
+          "random"
+        ],
+        "functions": [],
+        "classes": [
+          "MCPType",
+          "HealthStatus",
+          "Capability",
+          "MCPAgent",
+          "ServiceContract",
+          "MCPSelfOrganization"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "md_to_pdf_simple.py",
+        "path": "nexus\\scripts\\md_to_pdf_simple.py",
+        "lines": 22,
+        "bytes": 805,
+        "hash": "54f667cee974",
+        "imports": [
+          "os",
+          "webbrowser"
+        ],
+        "functions": [],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "meta_learning_engine.py",
+        "path": "nexus\\scripts\\meta_learning_engine.py",
+        "lines": 581,
+        "bytes": 21482,
+        "hash": "a6079fb065f9",
+        "imports": [
+          "json",
+          "numpy",
+          "dataclasses",
+          "typing",
+          "enum",
+          "datetime",
+          "collections"
+        ],
+        "functions": [],
+        "classes": [
+          "LearningAlgorithm",
+          "TaskProfile",
+          "LearningStrategy",
+          "LearningExperience",
+          "MetaLearningEngine"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "meta_orchestrator.py",
+        "path": "nexus\\scripts\\meta_orchestrator.py",
+        "lines": 31,
+        "bytes": 977,
+        "hash": "06c5d7556e31",
+        "imports": [
+          "os",
+          "sys"
+        ],
+        "functions": [
+          "meta_orchestrate"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "micro_feedback_loop.py",
+        "path": "nexus\\scripts\\micro_feedback_loop.py",
+        "lines": 390,
+        "bytes": 14263,
+        "hash": "732b742e9eeb",
+        "imports": [
+          "dataclasses",
+          "typing",
+          "enum",
+          "json",
+          "datetime"
+        ],
+        "functions": [],
+        "classes": [
+          "FeedbackType",
+          "Lesson",
+          "OperationFeedback",
+          "MicroFeedbackEngine"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "micro_integration.py",
+        "path": "nexus\\scripts\\micro_integration.py",
+        "lines": 448,
+        "bytes": 16993,
+        "hash": "624b8b4dd22d",
+        "imports": [
+          "dataclasses",
+          "typing",
+          "enum",
+          "datetime",
+          "json",
+          "hashlib",
+          "abc",
+          "time"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "CyclePhase",
+          "BarrierResult",
+          "CycleResult",
+          "MicroBarrierExecutor",
+          "DomainDiscoveryExecutor",
+          "MicroTMAOrchestrator"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "micro_reasoning_types.py",
+        "path": "nexus\\scripts\\micro_reasoning_types.py",
+        "lines": 731,
+        "bytes": 29236,
+        "hash": "5fbf3930a1a9",
+        "imports": [
+          "dataclasses",
+          "typing",
+          "enum",
+          "json"
+        ],
+        "functions": [],
+        "classes": [
+          "ReasoningCategory",
+          "ReasoningType",
+          "MicroReasoningEngine"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "micro_sync_barriers.py",
+        "path": "nexus\\scripts\\micro_sync_barriers.py",
+        "lines": 470,
+        "bytes": 17198,
+        "hash": "7970ea52b59e",
+        "imports": [
+          "dataclasses",
+          "typing",
+          "enum",
+          "time",
+          "datetime",
+          "json"
+        ],
+        "functions": [],
+        "classes": [
+          "BarrierStatus",
+          "BarrierMetrics",
+          "SyncBarrierOutput",
+          "MicroSyncBarrier",
+          "MicroSyncBarrierNetwork"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "micro_validation.py",
+        "path": "nexus\\scripts\\micro_validation.py",
+        "lines": 507,
+        "bytes": 19170,
+        "hash": "e21d004d94b6",
+        "imports": [
+          "dataclasses",
+          "typing",
+          "enum",
+          "re"
+        ],
+        "functions": [],
+        "classes": [
+          "ConstraintType",
+          "Constraint",
+          "MicroValidator"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "migrate_all_skills.py",
+        "path": "nexus\\scripts\\migrate_all_skills.py",
+        "lines": 472,
+        "bytes": 17331,
+        "hash": "9acc40ec25dc",
+        "imports": [
+          "os",
+          "re",
+          "json",
+          "logging",
+          "pathlib",
+          "datetime",
+          "sys"
+        ],
+        "functions": [
+          "extract_name_from_file",
+          "extract_description_from_content",
+          "infer_category_from_path",
+          "generate_workflow_section",
+          "generate_best_practices",
+          "generate_integration_table",
+          "migrate_skill",
+          "validate_skill",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "nexus_integration.py",
+        "path": "nexus\\scripts\\nexus_integration.py",
+        "lines": 103,
+        "bytes": 5733,
+        "hash": "63d0c908513b",
+        "imports": [
+          "sys",
+          "os",
+          "json",
+          "time",
+          "logging",
+          "pathlib",
+          "social_algorithms",
+          "auto_swarm_builder",
+          "aop_service_discovery",
+          "context_offload"
+        ],
+        "functions": [],
+        "classes": [
+          "NexusIntegration"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "nexus_integration_full.py",
+        "path": "nexus\\scripts\\nexus_integration_full.py",
+        "lines": 269,
+        "bytes": 10668,
+        "hash": "35680b5dbffe",
+        "imports": [
+          "sys",
+          "json",
+          "time",
+          "logging",
+          "pathlib",
+          "typing",
+          "ecosystem_config",
+          "agent_metamorphosis",
+          "agent_metamorphosis",
+          "domain_discovery_engine",
+          "knowledge_graphs",
+          "granular_sync",
+          "micro_feedback_loop",
+          "micro_validation",
+          "micro_reasoning_types",
+          "micro_sync_barriers",
+          "micro_sync_barriers",
+          "micro_integration",
+          "mcp_router",
+          "mcp_router"
+        ],
+        "functions": [],
+        "classes": [
+          "AgentMetamorphosisIntegration",
+          "DomainDiscoveryIntegration",
+          "KnowledgeGraphIntegration",
+          "GranularSyncIntegration",
+          "MicroFeedbackIntegration",
+          "MicroValidationIntegration",
+          "MicroReasoningIntegration",
+          "MicroSyncIntegration",
+          "MicroIntegrationLayer",
+          "MCPRouterIntegration",
+          "NexusIntegrationFacade"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "pdf_context_offload.py",
+        "path": "nexus\\scripts\\pdf_context_offload.py",
+        "lines": 161,
+        "bytes": 6432,
+        "hash": "b51c8e165d26",
+        "imports": [
+          "sys",
+          "pathlib",
+          "typing",
+          "ecosystem_config",
+          "context_offload",
+          "docling_adapter",
+          "pdf_ecosystem_integration",
+          "argparse"
+        ],
+        "functions": [],
+        "classes": [
+          "PDFContextOffloader"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "pdf_ecosystem_integration.py",
+        "path": "nexus\\scripts\\pdf_ecosystem_integration.py",
+        "lines": 535,
+        "bytes": 20561,
+        "hash": "ab8df4928efb",
+        "imports": [
+          "os",
+          "sys",
+          "json",
+          "time",
+          "re",
+          "hashlib",
+          "logging",
+          "pathlib",
+          "datetime",
+          "typing",
+          "ecosystem_config",
+          "collections",
+          "pdf_to_markdown",
+          "fitz",
+          "argparse"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "PDFKnowledgeExtractor",
+          "PDFSkillGenerator",
+          "PDFPipelineManager"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "__init__.py",
+        "path": "nexus\\scripts\\pdf_rag\\__init__.py",
+        "lines": 12,
+        "bytes": 300,
+        "hash": "282b2933a8c4",
+        "imports": [],
+        "functions": [],
+        "classes": [],
+        "is_init": true,
+        "needs_entrypoint": false,
+        "has_entrypoint": false
+      },
+      {
+        "name": "bridge.py",
+        "path": "nexus\\scripts\\pdf_rag\\bridge.py",
+        "lines": 489,
+        "bytes": 17615,
+        "hash": "70eb278b699b",
+        "imports": [
+          "pdf_rag.bridge",
+          "os",
+          "re",
+          "sys",
+          "json",
+          "time",
+          "logging",
+          "hashlib",
+          "pathlib",
+          "datetime",
+          "collections",
+          "concurrent.futures",
+          "collections",
+          "ingestor",
+          "router",
+          "argparse"
+        ],
+        "functions": [
+          "extract_topic_words",
+          "auto_collection_name",
+          "find_best_existing_collection",
+          "main"
+        ],
+        "classes": [
+          "EcosystemBridge"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "cli.py",
+        "path": "nexus\\scripts\\pdf_rag\\cli.py",
+        "lines": 213,
+        "bytes": 7638,
+        "hash": "e9491b1295aa",
+        "imports": [
+          "argparse",
+          "json",
+          "sys",
+          "pathlib",
+          "collections",
+          "ingestor",
+          "router"
+        ],
+        "functions": [
+          "cmd_ingest",
+          "cmd_search",
+          "cmd_interactive",
+          "cmd_collections",
+          "cmd_create_collection",
+          "cmd_stats",
+          "cmd_documents",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "collections.py",
+        "path": "nexus\\scripts\\pdf_rag\\collections.py",
+        "lines": 389,
+        "bytes": 14432,
+        "hash": "9daef0d85810",
+        "imports": [
+          "pdf_rag.collections",
+          "sqlite3",
+          "json",
+          "hashlib",
+          "pathlib",
+          "datetime",
+          "dataclasses",
+          "typing"
+        ],
+        "functions": [],
+        "classes": [
+          "Collection",
+          "Document",
+          "Chunk",
+          "SearchResult",
+          "CollectionManager"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "ingestor.py",
+        "path": "nexus\\scripts\\pdf_rag\\ingestor.py",
+        "lines": 449,
+        "bytes": 15670,
+        "hash": "91fd20f06aba",
+        "imports": [
+          "pdf_rag.ingestor",
+          "os",
+          "re",
+          "sys",
+          "time",
+          "hashlib",
+          "logging",
+          "subprocess",
+          "pathlib",
+          "datetime",
+          "concurrent.futures",
+          "typing",
+          "dataclasses",
+          "collections",
+          "pdfplumber",
+          "fitz",
+          "pdfplumber",
+          "fitz"
+        ],
+        "functions": [
+          "_extract_pdfplumber",
+          "_extract_pymupdf",
+          "_extract_pdftotext",
+          "get_extractor",
+          "chunk_text",
+          "classify_collection"
+        ],
+        "classes": [
+          "IngestResult",
+          "IngestConfig",
+          "PDFIngestor"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "router.py",
+        "path": "nexus\\scripts\\pdf_rag\\router.py",
+        "lines": 286,
+        "bytes": 10226,
+        "hash": "fbded980c139",
+        "imports": [
+          "pdf_rag.router",
+          "re",
+          "time",
+          "logging",
+          "dataclasses",
+          "typing",
+          "collections"
+        ],
+        "functions": [],
+        "classes": [
+          "RouteDecision",
+          "QueryResult",
+          "QueryRouter"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "phd_learning_cores.py",
+        "path": "nexus\\scripts\\phd_learning_cores.py",
+        "lines": 637,
+        "bytes": 23803,
+        "hash": "f27cd733952d",
+        "imports": [
+          "json",
+          "hashlib",
+          "numpy",
+          "dataclasses",
+          "typing",
+          "enum",
+          "datetime",
+          "abc"
+        ],
+        "functions": [],
+        "classes": [
+          "UncertaintyType",
+          "UncertaintyEstimate",
+          "UncertaintyQuantificationCore",
+          "ConceptDrift",
+          "ContinuousLearningCore",
+          "ReasoningType",
+          "ReasoningStep",
+          "ReasoningCore",
+          "Concept",
+          "KnowledgeRepresentationCore",
+          "PerformanceMetric",
+          "SelfImprovementCore",
+          "AgentCoreEvolution"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "self_healer.py",
+        "path": "nexus\\scripts\\self_healer.py",
+        "lines": 253,
+        "bytes": 8922,
+        "hash": "91852ddbed85",
+        "imports": [
+          "re",
+          "sys",
+          "json",
+          "hashlib",
+          "subprocess",
+          "pathlib",
+          "datetime",
+          "concurrent.futures",
+          "argparse"
+        ],
+        "functions": [
+          "check_cjk_leaks",
+          "fix_cjk_leaks",
+          "check_frontmatter",
+          "fix_frontmatter",
+          "check_skill_sizes",
+          "_carregar_cache_syntax",
+          "_salvar_cache_syntax",
+          "_check_single_file",
+          "check_scripts_syntax",
+          "check_and_report",
+          "auto_fix",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "skill_migrator.py",
+        "path": "nexus\\scripts\\skill_migrator.py",
+        "lines": 107,
+        "bytes": 4038,
+        "hash": "4c6ac5d5751d",
+        "imports": [
+          "os",
+          "re",
+          "logging",
+          "pathlib",
+          "datetime"
+        ],
+        "functions": [
+          "parse_existing_skill",
+          "migrate_skill",
+          "batch_migrate",
+          "validate_skill_format"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "social_algorithms.py",
+        "path": "nexus\\scripts\\social_algorithms.py",
+        "lines": 262,
+        "bytes": 11442,
+        "hash": "be6bd80943be",
+        "imports": [
+          "asyncio",
+          "logging",
+          "time",
+          "enum",
+          "typing",
+          "dataclasses"
+        ],
+        "functions": [],
+        "classes": [
+          "SocialAlgorithmType",
+          "SocialAlgorithmResult",
+          "Agent",
+          "SocialAlgorithms"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "sync_orchestrator.py",
+        "path": "nexus\\scripts\\sync_orchestrator.py",
+        "lines": 585,
+        "bytes": 29167,
+        "hash": "2df53ee6254b",
+        "imports": [
+          "json",
+          "sys",
+          "os",
+          "re",
+          "pathlib",
+          "dataclasses",
+          "datetime",
+          "typing",
+          "ecosystem_config",
+          "ecosystem_config",
+          "ecosystem_config",
+          "gzip",
+          "gzip",
+          "gzip",
+          "gzip",
+          "argparse"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "SyncComponent",
+          "DynamicScore",
+          "SyncState",
+          "ComponentDiscovery",
+          "DynamicScoringEngine",
+          "AutoHealingEngine",
+          "CrossValidationEngine",
+          "ConflictDetector",
+          "HealthEngine",
+          "SyncOrchestrator"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "test_auto_swarm_aop.py",
+        "path": "nexus\\scripts\\test_auto_swarm_aop.py",
+        "lines": 125,
+        "bytes": 5550,
+        "hash": "b0c09a153053",
+        "imports": [
+          "sys",
+          "json",
+          "time",
+          "auto_swarm_builder",
+          "aop_service_discovery",
+          "aop_service_discovery"
+        ],
+        "functions": [
+          "main",
+          "mock_boss",
+          "mock_boss2"
+        ],
+        "classes": [
+          "QT"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "test_context_offload.py",
+        "path": "nexus\\scripts\\test_context_offload.py",
+        "lines": 84,
+        "bytes": 3062,
+        "hash": "e1c077399cf3",
+        "imports": [
+          "sys",
+          "json",
+          "time",
+          "context_offload"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "test_ecosystem_full.py",
+        "path": "nexus\\scripts\\test_ecosystem_full.py",
+        "lines": 671,
+        "bytes": 27917,
+        "hash": "9e5177adf60f",
+        "imports": [
+          "unittest",
+          "sys",
+          "json",
+          "os",
+          "time",
+          "pathlib",
+          "datetime",
+          "ecosystem_config",
+          "ecosystem_config",
+          "ecosystem_config",
+          "nexus_integration_full",
+          "nexus_integration_full",
+          "nexus_integration_full",
+          "nexus_integration_full",
+          "nexus_integration_full",
+          "evolution_loop",
+          "evolution_loop",
+          "evolution_loop",
+          "docling_adapter",
+          "docling_adapter",
+          "docling_adapter",
+          "docling_adapter",
+          "context_offload",
+          "context_offload",
+          "context_offload",
+          "social_algorithms",
+          "social_algorithms",
+          "manus_evolve_bridge",
+          "manus_evolve_bridge",
+          "sync_orchestrator",
+          "sync_orchestrator",
+          "ecosystem_config",
+          "ecosystem_config",
+          "nexus_integration_full",
+          "evolution_loop",
+          "context_offload",
+          "manus_evolve_bridge",
+          "docling_adapter",
+          "evolution_loop",
+          "context_offload",
+          "context_offload",
+          "mcp_router",
+          "granular_sync",
+          "agent_metamorphosis",
+          "domain_discovery_engine",
+          "knowledge_graphs",
+          "micro_feedback_loop",
+          "micro_validation",
+          "ecosystem_config",
+          "docling_adapter",
+          "ecosystem_config",
+          "ecosystem_config",
+          "nexus_integration_full",
+          "sync_orchestrator",
+          "sync_orchestrator",
+          "pathlib",
+          "sync_orchestrator",
+          "sync_orchestrator",
+          "sync_orchestrator",
+          "evolution_loop",
+          "evolution_loop",
+          "evolution_loop",
+          "evolution_loop",
+          "evolution_loop",
+          "evolution_loop",
+          "mcp_router",
+          "mcp_router",
+          "mcp_router",
+          "mcp_router",
+          "mcp_router",
+          "knowledge_graphs",
+          "knowledge_graphs",
+          "knowledge_graphs",
+          "knowledge_graphs",
+          "knowledge_graphs",
+          "knowledge_graphs",
+          "granular_sync",
+          "granular_sync",
+          "granular_sync",
+          "granular_sync",
+          "evolution_loop",
+          "sync_orchestrator",
+          "ecosystem_config"
+        ],
+        "functions": [],
+        "classes": [
+          "TestEcosystemConfig",
+          "TestNexusIntegrationFull",
+          "TestEvolutionLoopWithDocling",
+          "TestDoclingAdapter",
+          "TestContextOffload",
+          "TestSocialAlgorithms",
+          "TestManusEvolveBridge",
+          "TestSyncOrchestrator",
+          "TestEndToEnd",
+          "TestEdgeCases",
+          "TestSyncOrchestratorFunctional",
+          "TestEvolutionLoopFunctional",
+          "TestMCPRouterFunctional",
+          "TestKnowledgeGraphFunctional",
+          "TestGranularSyncFunctional",
+          "TestPaginationAndRotation"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "test_evolution_pdf_integration.py",
+        "path": "nexus\\scripts\\test_evolution_pdf_integration.py",
+        "lines": 39,
+        "bytes": 1209,
+        "hash": "c3654aed4a8d",
+        "imports": [
+          "unittest",
+          "sys",
+          "pathlib",
+          "evolution_loop",
+          "pdf_ecosystem_integration"
+        ],
+        "functions": [],
+        "classes": [
+          "TestEvolutionLoop",
+          "TestPDFPipeline"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "test_module_coverage.py",
+        "path": "nexus\\scripts\\test_module_coverage.py",
+        "lines": 129,
+        "bytes": 4998,
+        "hash": "9f430c9620e0",
+        "imports": [
+          "unittest",
+          "importlib",
+          "sys",
+          "ecosystem_config",
+          "pathlib",
+          "tempfile",
+          "ecosystem_config",
+          "pathlib",
+          "tempfile",
+          "ecosystem_config",
+          "pathlib",
+          "tempfile",
+          "os",
+          "ecosystem_config",
+          "granular_sync",
+          "granular_sync",
+          "granular_sync",
+          "granular_sync",
+          "ecosystem_config",
+          "tempfile",
+          "ecosystem_config",
+          "pathlib",
+          "tempfile"
+        ],
+        "functions": [],
+        "classes": [
+          "TestModuleCoverage",
+          "TestEdgeCases"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "test_social_algorithms.py",
+        "path": "nexus\\scripts\\test_social_algorithms.py",
+        "lines": 95,
+        "bytes": 3862,
+        "hash": "e88003d13913",
+        "imports": [
+          "sys",
+          "json",
+          "time",
+          "asyncio",
+          "social_algorithms"
+        ],
+        "functions": [
+          "main",
+          "custom_alg"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "validation_suite.py",
+        "path": "nexus\\scripts\\validation_suite.py",
+        "lines": 311,
+        "bytes": 11313,
+        "hash": "4ce398d63eba",
+        "imports": [
+          "sys",
+          "json",
+          "time",
+          "datetime",
+          "dataclasses",
+          "typing",
+          "traceback"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "ValidationResult",
+          "TMAValidationSuite"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "__init__.py",
+        "path": "basis-research\\agents\\__init__.py",
+        "lines": 7,
+        "bytes": 296,
+        "hash": "00eebe10a6c9",
+        "imports": [],
+        "functions": [],
+        "classes": [],
+        "is_init": true,
+        "needs_entrypoint": false,
+        "has_entrypoint": false
+      },
+      {
+        "name": "breaks.py",
+        "path": "basis-research\\agents\\breaks.py",
+        "lines": 409,
+        "bytes": 15955,
+        "hash": "8d9b65805785",
+        "imports": [
+          "os",
+          "sys",
+          "json",
+          "logging",
+          "pathlib",
+          "datetime",
+          "typing",
+          "."
+        ],
+        "functions": [
+          "_now_str",
+          "_produce_break0_doc",
+          "_produce_break1_doc",
+          "_produce_break2_doc",
+          "_wait_for_instruction_file",
+          "_extract_instructions",
+          "_check_contradictions",
+          "break0",
+          "break1",
+          "break2",
+          "parse_scribe_requests"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "gaper.py",
+        "path": "basis-research\\agents\\gaper.py",
+        "lines": 629,
+        "bytes": 26873,
+        "hash": "c5a4e155a4ae",
+        "imports": [
+          "re",
+          "json",
+          "logging",
+          "datetime",
+          "core",
+          "core",
+          "core.utils",
+          "core.argument_tree",
+          "sqlite3",
+          "pathlib",
+          "core.argument_tree",
+          "sqlite3",
+          "pathlib"
+        ],
+        "functions": [
+          "_get_structural_gaps",
+          "_build_pass1_context",
+          "_build_pass2_context",
+          "_fetch_targeted_sources",
+          "run",
+          "_save_doc"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "grounder.py",
+        "path": "basis-research\\agents\\grounder.py",
+        "lines": 837,
+        "bytes": 34527,
+        "hash": "44b66d6b1fcf",
+        "imports": [
+          "re",
+          "json",
+          "time",
+          "logging",
+          "requests",
+          "datetime",
+          "pathlib",
+          "typing",
+          "core",
+          "core",
+          "core.utils",
+          "core.keys",
+          "core.keys",
+          "core.keys",
+          "core.keys",
+          "os",
+          "anthropic",
+          "core.consensus_mcp",
+          "core.argument_tree"
+        ],
+        "functions": [
+          "_search_openalex",
+          "_search_semantic_scholar",
+          "_search_google_books",
+          "_search_open_library",
+          "_search_web",
+          "_search_consensus",
+          "_verify_link",
+          "run",
+          "_save_doc"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "historian.py",
+        "path": "basis-research\\agents\\historian.py",
+        "lines": 325,
+        "bytes": 13176,
+        "hash": "90b4c0a10477",
+        "imports": [
+          "re",
+          "json",
+          "time",
+          "logging",
+          "requests",
+          "datetime",
+          "core",
+          "core",
+          "core.utils",
+          "core.argument_tree",
+          "pathlib"
+        ],
+        "functions": [
+          "_verify_link",
+          "run",
+          "_save_doc"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "rude.py",
+        "path": "basis-research\\agents\\rude.py",
+        "lines": 154,
+        "bytes": 7235,
+        "hash": "a452c3fcacaf",
+        "imports": [
+          "re",
+          "json",
+          "logging",
+          "datetime",
+          "core",
+          "core",
+          "core.utils",
+          "pathlib"
+        ],
+        "functions": [
+          "run",
+          "_save_doc"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "scribe.py",
+        "path": "basis-research\\agents\\scribe.py",
+        "lines": 570,
+        "bytes": 24986,
+        "hash": "9546abffeea7",
+        "imports": [
+          "re",
+          "json",
+          "logging",
+          "datetime",
+          "pathlib",
+          "core",
+          "core",
+          "core",
+          "core.utils"
+        ],
+        "functions": [
+          "run",
+          "_make_title",
+          "_run_understanding_map",
+          "_extract_claims_for_validation",
+          "_redact_unknown_keys"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "social.py",
+        "path": "basis-research\\agents\\social.py",
+        "lines": 1245,
+        "bytes": 49854,
+        "hash": "2a1a1b5270ab",
+        "imports": [
+          "re",
+          "uuid",
+          "time",
+          "logging",
+          "requests",
+          "datetime",
+          "typing",
+          "pathlib",
+          "core",
+          "core.utils",
+          "core",
+          "core.rate_limiter",
+          "core.keys",
+          "arxiv",
+          "core.keys",
+          "core.keys",
+          "core.keys",
+          "core.keys",
+          "xml.etree.ElementTree",
+          "xml.etree.ElementTree",
+          "core.keys",
+          "re",
+          "core.keys",
+          "core.keys",
+          "core.consensus_mcp",
+          "json",
+          "core.rate_limiter",
+          "core.rate_limiter",
+          "json",
+          "json",
+          "core.argument_tree",
+          "core.rate_limiter"
+        ],
+        "functions": [
+          "rate_relevance",
+          "_build_query",
+          "_collect_for_theme",
+          "recheck_links",
+          "collect",
+          "feed",
+          "produce_intelligence_package",
+          "run"
+        ],
+        "classes": [
+          "SourceHandler",
+          "OpenAlexHandler",
+          "ArXivHandler",
+          "PubMedHandler",
+          "SemanticScholarHandler",
+          "COREHandler",
+          "PhilPapersHandler",
+          "PhilArchiveHandler",
+          "PhilSciHandler",
+          "ScopusHandler",
+          "ConsensusHandler"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "synthesizer.py",
+        "path": "basis-research\\agents\\synthesizer.py",
+        "lines": 204,
+        "bytes": 8550,
+        "hash": "40ea55df2e54",
+        "imports": [
+          "re",
+          "json",
+          "logging",
+          "datetime",
+          "core",
+          "core",
+          "core.utils",
+          "pathlib"
+        ],
+        "functions": [
+          "run",
+          "_save_doc"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "theorist.py",
+        "path": "basis-research\\agents\\theorist.py",
+        "lines": 237,
+        "bytes": 9914,
+        "hash": "ceefdfcfe58f",
+        "imports": [
+          "re",
+          "json",
+          "logging",
+          "datetime",
+          "core",
+          "core",
+          "core.utils",
+          "pathlib"
+        ],
+        "functions": [
+          "_parse_json",
+          "run",
+          "_save_doc"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "thinker.py",
+        "path": "basis-research\\agents\\thinker.py",
+        "lines": 170,
+        "bytes": 7651,
+        "hash": "dcd2ffc395d8",
+        "imports": [
+          "re",
+          "json",
+          "logging",
+          "datetime",
+          "core",
+          "core",
+          "core.utils",
+          "pathlib"
+        ],
+        "functions": [
+          "run",
+          "_save_doc"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "vision.py",
+        "path": "basis-research\\agents\\vision.py",
+        "lines": 202,
+        "bytes": 8349,
+        "hash": "174d30755863",
+        "imports": [
+          "re",
+          "json",
+          "logging",
+          "datetime",
+          "core",
+          "core",
+          "core.utils",
+          "pathlib"
+        ],
+        "functions": [
+          "run",
+          "_salvage_truncated_json",
+          "_save_doc"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "__init__.py",
+        "path": "basis-research\\core\\__init__.py",
+        "lines": 1,
+        "bytes": 29,
+        "hash": "38a4de17f03e",
+        "imports": [],
+        "functions": [],
+        "classes": [],
+        "is_init": true,
+        "needs_entrypoint": false,
+        "has_entrypoint": false
+      },
+      {
+        "name": "argument_tree.py",
+        "path": "basis-research\\core\\argument_tree.py",
+        "lines": 673,
+        "bytes": 25717,
+        "hash": "3bce307c57e5",
+        "imports": [
+          "core.argument_tree",
+          "__future__",
+          "json",
+          "sqlite3",
+          "logging",
+          "pathlib",
+          "datetime",
+          "typing",
+          "core.utils"
+        ],
+        "functions": [
+          "init_tree_table"
+        ],
+        "classes": [
+          "TreeBuilder"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "breaks.py",
+        "path": "basis-research\\core\\breaks.py",
+        "lines": 393,
+        "bytes": 14815,
+        "hash": "f9753bd7708f",
+        "imports": [
+          "os",
+          "sys",
+          "json",
+          "logging",
+          "pathlib",
+          "datetime",
+          "typing",
+          "."
+        ],
+        "functions": [
+          "_now_str",
+          "_produce_break0_doc",
+          "_produce_break1_doc",
+          "_produce_break2_doc",
+          "_wait_for_instruction_file",
+          "_extract_instructions",
+          "_check_contradictions",
+          "break0",
+          "break1",
+          "break2",
+          "parse_scribe_requests"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "concept_mapper.py",
+        "path": "basis-research\\core\\concept_mapper.py",
+        "lines": 813,
+        "bytes": 34381,
+        "hash": "9a44183676e2",
+        "imports": [
+          "re",
+          "json",
+          "time",
+          "hashlib",
+          "logging",
+          "sqlite3",
+          "pathlib",
+          "datetime",
+          "typing",
+          "core",
+          "core.utils",
+          "activating"
+        ],
+        "functions": [
+          "_get_conn",
+          "_cache_key",
+          "_conceptnet_available",
+          "_fetch_conceptnet",
+          "load_concept_map",
+          "_extract_raw_terms",
+          "_match_clusters",
+          "_disciplines_to_themes",
+          "_llm_synthesis",
+          "expand",
+          "get_expansion",
+          "print_expansion_report"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "consensus_mcp.py",
+        "path": "basis-research\\core\\consensus_mcp.py",
+        "lines": 459,
+        "bytes": 16570,
+        "hash": "31b2b422118a",
+        "imports": [
+          "core.consensus_mcp",
+          "__future__",
+          "asyncio",
+          "json",
+          "logging",
+          "threading",
+          "webbrowser",
+          "pathlib",
+          "typing",
+          "urllib.parse",
+          "httpx",
+          "mcp",
+          "mcp.client.auth",
+          "mcp.client.streamable_http",
+          "mcp.shared.auth",
+          "http.server",
+          "re",
+          "sys"
+        ],
+        "functions": [
+          "_to_json_safe",
+          "_ensure_trailing_slash",
+          "search_consensus"
+        ],
+        "classes": [
+          "ConsensusOAuthProvider",
+          "FileTokenStorage",
+          "_CallbackServer"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "context.py",
+        "path": "basis-research\\core\\context.py",
+        "lines": 360,
+        "bytes": 15373,
+        "hash": "574f00cad6f8",
+        "imports": [
+          "json",
+          "logging",
+          "typing",
+          ".",
+          "core.argument_tree"
+        ],
+        "functions": [
+          "_fmt",
+          "_sources_summary",
+          "_gaps_summary",
+          "_implications_summary",
+          "_proposals_summary",
+          "_evaluations_summary",
+          "for_grounder",
+          "for_historian",
+          "for_gaper",
+          "_tree_context",
+          "for_vision",
+          "for_theorist",
+          "for_rude",
+          "for_synthesizer",
+          "for_thinker",
+          "for_understanding_map",
+          "for_scribe"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "database.py",
+        "path": "basis-research\\core\\database.py",
+        "lines": 586,
+        "bytes": 20972,
+        "hash": "9b76e2e6ba8b",
+        "imports": [
+          "sqlite3",
+          "json",
+          "logging",
+          "pathlib",
+          "datetime",
+          "typing",
+          "core.argument_tree"
+        ],
+        "functions": [
+          "get_connection",
+          "init_db",
+          "_now",
+          "_json",
+          "_from_json",
+          "insert",
+          "fetch",
+          "update",
+          "count",
+          "create_run",
+          "get_run",
+          "update_run_status",
+          "mark_break_done",
+          "upsert_source",
+          "get_sources_by_type",
+          "archive_dead_link",
+          "insert_gap",
+          "get_gaps",
+          "insert_implication",
+          "get_implications",
+          "insert_proposal",
+          "get_proposals",
+          "insert_evaluation",
+          "get_evaluations",
+          "insert_synthesis",
+          "get_synthesis",
+          "insert_direction",
+          "get_directions",
+          "insert_artifact",
+          "get_artifacts",
+          "insert_seminal_proposal",
+          "get_seminal_bank"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "keys.py",
+        "path": "basis-research\\core\\keys.py",
+        "lines": 138,
+        "bytes": 5736,
+        "hash": "cfe804c9fd96",
+        "imports": [
+          "os",
+          "logging",
+          "pathlib",
+          "pathlib"
+        ],
+        "functions": [
+          "_load_env",
+          "get",
+          "openalex",
+          "ncbi_api_key",
+          "ncbi_email",
+          "semantic_scholar",
+          "core",
+          "philpapers_id",
+          "philpapers_key",
+          "anthropic",
+          "google_books",
+          "scopus_api_key",
+          "scopus_inst_token",
+          "consensus_mcp_status",
+          "print_key_status"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "llm.py",
+        "path": "basis-research\\core\\llm.py",
+        "lines": 321,
+        "bytes": 12248,
+        "hash": "71e3901437d6",
+        "imports": [
+          "os",
+          "json",
+          "time",
+          "logging",
+          "requests",
+          "typing",
+          "anthropic",
+          "pathlib"
+        ],
+        "functions": [
+          "get_client",
+          "call"
+        ],
+        "classes": [
+          "LLMClient"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "rate_limiter.py",
+        "path": "basis-research\\core\\rate_limiter.py",
+        "lines": 217,
+        "bytes": 8770,
+        "hash": "9476488bd589",
+        "imports": [
+          "time",
+          "logging",
+          "datetime",
+          "threading",
+          "typing"
+        ],
+        "functions": [
+          "get_limiter",
+          "reset_limiter"
+        ],
+        "classes": [
+          "RateLimiter"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "references.py",
+        "path": "basis-research\\core\\references.py",
+        "lines": 611,
+        "bytes": 22307,
+        "hash": "68fd2506435a",
+        "imports": [
+          "__future__",
+          "json",
+          "logging",
+          "re",
+          "sqlite3",
+          "time",
+          "urllib.parse",
+          "dataclasses",
+          "pathlib",
+          "typing",
+          "httpx",
+          "core",
+          "core",
+          "datetime"
+        ],
+        "functions": [
+          "_parse_authors",
+          "_surname",
+          "_first_initial",
+          "_format_apa_authors",
+          "_clean_doi",
+          "_doi_url",
+          "format_apa",
+          "_base_cite_key",
+          "_assign_cite_keys",
+          "build_manifest",
+          "_fallback_get_sources",
+          "format_manifest_for_prompt",
+          "_split_key_list",
+          "extract_cite_keys",
+          "find_unknown_cite_keys",
+          "validate_citation_claims",
+          "_verify_conn",
+          "_cached_verification",
+          "_cache_verification",
+          "_check_crossref",
+          "_check_openalex",
+          "_check_url_head",
+          "verify_online",
+          "render_references_markdown",
+          "render_references_tex",
+          "_tex_escape"
+        ],
+        "classes": [
+          "CitableSource"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "utils.py",
+        "path": "basis-research\\core\\utils.py",
+        "lines": 103,
+        "bytes": 2943,
+        "hash": "c820470dcc4b",
+        "imports": [
+          "uuid",
+          "json",
+          "logging",
+          "logging.handlers",
+          "pathlib",
+          "datetime"
+        ],
+        "functions": [
+          "setup_logging",
+          "generate_id",
+          "generate_run_id",
+          "load_config",
+          "get_themes",
+          "get_source_config",
+          "match_themes_to_problem"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "export_seminal.py",
+        "path": "basis-research\\export_seminal.py",
+        "lines": 456,
+        "bytes": 16298,
+        "hash": "c8f13f194af3",
+        "imports": [
+          "argparse",
+          "csv",
+          "json",
+          "os",
+          "re",
+          "sqlite3",
+          "sys",
+          "collections",
+          "datetime",
+          "pathlib"
+        ],
+        "functions": [
+          "pretty_theme",
+          "load_seminal",
+          "export_json",
+          "_paper_for_export",
+          "export_csv",
+          "slugify",
+          "export_jekyll",
+          "print_summary",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "main.py",
+        "path": "basis-research\\main.py",
+        "lines": 687,
+        "bytes": 26043,
+        "hash": "a4cfe24b8f65",
+        "imports": [
+          "sys",
+          "json",
+          "argparse",
+          "logging",
+          "pathlib",
+          "datetime",
+          "core.keys",
+          "core.utils",
+          "core",
+          "core",
+          "core.context",
+          "agents.social",
+          "agents.social",
+          "agents.social",
+          "core.concept_mapper",
+          "agents.grounder",
+          "agents.historian",
+          "agents.gaper",
+          "agents.vision",
+          "agents.theorist",
+          "agents.rude",
+          "agents.synthesizer",
+          "agents.thinker",
+          "agents.scribe",
+          "agents.social",
+          "re",
+          "pathlib",
+          "core.context",
+          "os",
+          "core",
+          "time;",
+          "core.keys",
+          "agents.social",
+          "core.keys",
+          "traceback"
+        ],
+        "functions": [
+          "_import_agents",
+          "_run_step",
+          "run_pipeline",
+          "_abort",
+          "_agent_done",
+          "cmd_run",
+          "cmd_collect",
+          "cmd_recheck",
+          "cmd_status",
+          "cmd_bank",
+          "cmd_runs",
+          "cmd_keys",
+          "cmd_test",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "dados_publicos_hook.py",
+        "path": "basis-research\\tools\\dados_publicos_hook.py",
+        "lines": 281,
+        "bytes": 9708,
+        "hash": "19c0e827de39",
+        "imports": [
+          "tools.dados_publicos_hook",
+          "json",
+          "sys",
+          "pathlib",
+          "typing",
+          "extrator_dados_publicos",
+          "importlib"
+        ],
+        "functions": [
+          "_import_extrator",
+          "buscar_dados_publicos",
+          "listar_fontes",
+          "extrair_url",
+          "buscar_multidominio",
+          "formatar_resultados",
+          "buscar_internacional",
+          "buscar_economico_br",
+          "obter_capacidades"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "editais_hook.py",
+        "path": "basis-research\\tools\\editais_hook.py",
+        "lines": 126,
+        "bytes": 3943,
+        "hash": "f0ed526018e2",
+        "imports": [
+          "tools.editais_hook",
+          "json",
+          "sys",
+          "pathlib",
+          "typing",
+          "edital_search",
+          "importlib",
+          "extracao_profunda"
+        ],
+        "functions": [
+          "_import_edital_search",
+          "buscar_editais",
+          "extrair_edital",
+          "classificar_edital",
+          "formatar_resultados"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "eval_claims.py",
+        "path": "basis-research\\tools\\eval_claims.py",
+        "lines": 547,
+        "bytes": 20849,
+        "hash": "59daadf55679",
+        "imports": [
+          "__future__",
+          "re",
+          "os",
+          "sys",
+          "json",
+          "time",
+          "sqlite3",
+          "logging",
+          "argparse",
+          "pathlib",
+          "dataclasses",
+          "datetime",
+          "anthropic"
+        ],
+        "functions": [
+          "load_sources",
+          "get_problem",
+          "verify_claim_with_claude",
+          "verify_claim_internal",
+          "verify_claim",
+          "generate_report",
+          "main"
+        ],
+        "classes": [
+          "SourceRecord",
+          "ClaimResult"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "eval_references.py",
+        "path": "basis-research\\tools\\eval_references.py",
+        "lines": 695,
+        "bytes": 27420,
+        "hash": "bed8140b2a3d",
+        "imports": [
+          "__future__",
+          "re",
+          "sys",
+          "json",
+          "time",
+          "sqlite3",
+          "logging",
+          "argparse",
+          "pathlib",
+          "dataclasses",
+          "datetime",
+          "difflib",
+          "os",
+          "anthropic",
+          "requests"
+        ],
+        "functions": [
+          "_rate_wait",
+          "load_sources",
+          "_normalize",
+          "_title_similarity",
+          "_author_match",
+          "search_semantic_scholar",
+          "search_openalex",
+          "search_claude_web",
+          "verify_source",
+          "_check_claim_vs_abstract",
+          "generate_report",
+          "main"
+        ],
+        "classes": [
+          "SourceRecord",
+          "VerifyResult"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "export_seminal.py",
+        "path": "basis-research\\tools\\export_seminal.py",
+        "lines": 456,
+        "bytes": 16298,
+        "hash": "c8f13f194af3",
+        "imports": [
+          "argparse",
+          "csv",
+          "json",
+          "os",
+          "re",
+          "sqlite3",
+          "sys",
+          "collections",
+          "datetime",
+          "pathlib"
+        ],
+        "functions": [
+          "pretty_theme",
+          "load_seminal",
+          "export_json",
+          "_paper_for_export",
+          "export_csv",
+          "slugify",
+          "export_jekyll",
+          "print_summary",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "generate_references.py",
+        "path": "basis-research\\tools\\generate_references.py",
+        "lines": 297,
+        "bytes": 9514,
+        "hash": "3a5ecc3b8deb",
+        "imports": [
+          "__future__",
+          "sys",
+          "json",
+          "sqlite3",
+          "argparse",
+          "logging",
+          "pathlib",
+          "datetime"
+        ],
+        "functions": [
+          "load_tree_sources",
+          "load_sources_by_ids",
+          "load_all_run_sources",
+          "format_apa",
+          "_apa_author",
+          "format_chicago",
+          "format_simple",
+          "generate_reference_section",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "import_conceptnet.py",
+        "path": "basis-research\\tools\\import_conceptnet.py",
+        "lines": 450,
+        "bytes": 15326,
+        "hash": "7dcd3996fc48",
+        "imports": [
+          "gzip",
+          "json",
+          "sqlite3",
+          "argparse",
+          "sys",
+          "re",
+          "time",
+          "pathlib"
+        ],
+        "functions": [
+          "extract_term",
+          "count_words",
+          "extract_relation",
+          "parse_weight",
+          "init_db",
+          "run_import",
+          "show_stats",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "create_realistic_images.py",
+        "path": "quantum\\create_realistic_images.py",
+        "lines": 217,
+        "bytes": 8427,
+        "hash": "f6a5457c82f3",
+        "imports": [
+          "numpy",
+          "cv2",
+          "PIL",
+          "os",
+          "scipy",
+          "skimage",
+          "random"
+        ],
+        "functions": [
+          "create_realistic_lesion",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "download_real_images.py",
+        "path": "quantum\\download_real_images.py",
+        "lines": 109,
+        "bytes": 3302,
+        "hash": "3090f7f67780",
+        "imports": [
+          "requests",
+          "os",
+          "PIL",
+          "io",
+          "json"
+        ],
+        "functions": [
+          "download_images_by_diagnosis",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "generate_professional_grad_cam.py",
+        "path": "quantum\\generate_professional_grad_cam.py",
+        "lines": 333,
+        "bytes": 14273,
+        "hash": "0ed1b9e93ce8",
+        "imports": [
+          "numpy",
+          "matplotlib.pyplot",
+          "matplotlib.patches",
+          "matplotlib.patches",
+          "matplotlib.collections",
+          "matplotlib.lines",
+          "PIL",
+          "os",
+          "glob",
+          "pathlib",
+          "scipy.ndimage",
+          "scipy"
+        ],
+        "functions": [
+          "generate_grad_cam_heatmap",
+          "draw_quantum_circuit",
+          "draw_neural_activation_map",
+          "draw_quantum_attention_network",
+          "create_professional_grad_cam"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "generate_qml_data.py",
+        "path": "quantum\\generate_qml_data.py",
+        "lines": 80,
+        "bytes": 2970,
+        "hash": "db5387ea0559",
+        "imports": [
+          "numpy",
+          "matplotlib.pyplot",
+          "seaborn",
+          "PIL",
+          "os"
+        ],
+        "functions": [
+          "generate_metrics",
+          "generate_grad_cam_mock"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "pdf_generator.py",
+        "path": "quantum\\pdf_generator.py",
+        "lines": 385,
+        "bytes": 14706,
+        "hash": "c6b3641b0e70",
+        "imports": [
+          "reportlab.lib.pagesizes",
+          "reportlab.lib.styles",
+          "reportlab.lib.units",
+          "reportlab.platypus",
+          "reportlab.lib",
+          "reportlab.lib.enums",
+          "datetime",
+          "io",
+          "base64",
+          "typing"
+        ],
+        "functions": [
+          "generate_analysis_report"
+        ],
+        "classes": [
+          "QMLReportGenerator"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "qml_service.py",
+        "path": "quantum\\qml_service.py",
+        "lines": 300,
+        "bytes": 10723,
+        "hash": "a697f1bd8366",
+        "imports": [
+          "numpy",
+          "cv2",
+          "PIL",
+          "io",
+          "base64",
+          "json",
+          "typing",
+          "datetime",
+          "os"
+        ],
+        "functions": [
+          "process_image_analysis"
+        ],
+        "classes": [
+          "QMLClassifier"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "quantum_vqc.py",
+        "path": "quantum\\quantum_vqc.py",
+        "lines": 362,
+        "bytes": 12096,
+        "hash": "90c8c7099e55",
+        "imports": [
+          "numpy",
+          "pennylane",
+          "pennylane",
+          "typing",
+          "json",
+          "datetime"
+        ],
+        "functions": [
+          "classify_with_quantum"
+        ],
+        "classes": [
+          "QuantumVQC"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "academic_search.py",
+        "path": "quantum\\scripts\\academic_search.py",
+        "lines": 138,
+        "bytes": 5892,
+        "hash": "218b05390ba3",
+        "imports": [
+          "requests",
+          "json",
+          "time",
+          "argparse",
+          "urllib.parse",
+          "os",
+          "xml.etree.ElementTree"
+        ],
+        "functions": [
+          "get_arxiv_pdf",
+          "download_arxiv_pdf",
+          "search_arxiv",
+          "search_semantic",
+          "search_all",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "advanced_validation.py",
+        "path": "quantum\\scripts\\advanced_validation.py",
+        "lines": 394,
+        "bytes": 16138,
+        "hash": "a5c83db2593a",
+        "imports": [
+          "argparse",
+          "json",
+          "numpy",
+          "pathlib",
+          "typing",
+          "logging",
+          "scipy",
+          "sklearn.model_selection",
+          "sklearn.metrics"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "AdvancedValidation"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "benchmarking.py",
+        "path": "quantum\\scripts\\benchmarking.py",
+        "lines": 434,
+        "bytes": 13878,
+        "hash": "0b01839bfc36",
+        "imports": [
+          "time",
+          "numpy",
+          "sys",
+          "typing",
+          "json",
+          "qiskit",
+          "qiskit_aer",
+          "cirq",
+          "pennylane",
+          "qiskit.circuit",
+          "argparse"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "BenchmarkSuite"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "create_basic_circuit.py",
+        "path": "quantum\\scripts\\create_basic_circuit.py",
+        "lines": 91,
+        "bytes": 2899,
+        "hash": "af4a3b75beb1",
+        "imports": [
+          "qiskit",
+          "qiskit_aer",
+          "json",
+          "sys"
+        ],
+        "functions": [
+          "create_bell_state",
+          "create_grover_oracle",
+          "create_superposition",
+          "simulate_circuit",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "framework_comparison.py",
+        "path": "quantum\\scripts\\framework_comparison.py",
+        "lines": 362,
+        "bytes": 12566,
+        "hash": "d1d79b45008f",
+        "imports": [
+          "numpy",
+          "sys",
+          "json",
+          "typing",
+          "qiskit",
+          "qiskit_aer",
+          "cirq",
+          "pennylane",
+          "pennylane",
+          "tensorflow_quantum",
+          "tensorflow",
+          "cirq"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "FrameworkComparison"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "ham10000_integration.py",
+        "path": "quantum\\scripts\\ham10000_integration.py",
+        "lines": 322,
+        "bytes": 11879,
+        "hash": "060be150f23f",
+        "imports": [
+          "argparse",
+          "json",
+          "numpy",
+          "pathlib",
+          "typing",
+          "logging"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "HAM10000Integration"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "hybrid_zne_pec.py",
+        "path": "quantum\\scripts\\hybrid_zne_pec.py",
+        "lines": 342,
+        "bytes": 13408,
+        "hash": "d8e728a91095",
+        "imports": [
+          "argparse",
+          "json",
+          "numpy",
+          "pathlib",
+          "typing",
+          "logging"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "HybridZNEPEC"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "learning_roadmap.py",
+        "path": "quantum\\scripts\\learning_roadmap.py",
+        "lines": 437,
+        "bytes": 16525,
+        "hash": "f39c390a4d73",
+        "imports": [
+          "sys",
+          "json",
+          "typing",
+          "argparse"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "LearningRoadmap"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "main_menu.py",
+        "path": "quantum\\scripts\\main_menu.py",
+        "lines": 793,
+        "bytes": 29249,
+        "hash": "239e1ed54724",
+        "imports": [
+          "os",
+          "sys",
+          "subprocess",
+          "typing",
+          "enum"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "UserLevel",
+          "Colors",
+          "QuantumComputingMenu"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "optimize_circuit.py",
+        "path": "quantum\\scripts\\optimize_circuit.py",
+        "lines": 91,
+        "bytes": 2951,
+        "hash": "09c802a4edd0",
+        "imports": [
+          "qiskit",
+          "qiskit_aer",
+          "qiskit.transpiler",
+          "qiskit.transpiler.passes",
+          "json",
+          "sys",
+          "pickle"
+        ],
+        "functions": [
+          "optimize_circuit",
+          "analyze_circuit",
+          "compare_circuits",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "origin_pilot_integration.py",
+        "path": "quantum\\scripts\\origin_pilot_integration.py",
+        "lines": 321,
+        "bytes": 10203,
+        "hash": "80897e6d52a5",
+        "imports": [
+          "sys",
+          "subprocess",
+          "pathlib",
+          "origin_pilot",
+          "origin_pilot",
+          "origin_pilot",
+          "origin_pilot.ansatz",
+          "numpy",
+          "origin_pilot",
+          "origin_pilot.feature_maps",
+          "numpy",
+          "origin_pilot"
+        ],
+        "functions": [
+          "print_header",
+          "print_section",
+          "check_origin_pilot_installed",
+          "install_origin_pilot",
+          "demo_basic_circuit",
+          "demo_vqe",
+          "demo_quantum_classifier",
+          "demo_task_scheduler",
+          "compare_frameworks",
+          "show_resources",
+          "show_menu",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "pec_pennylane_implementation.py",
+        "path": "quantum\\scripts\\pec_pennylane_implementation.py",
+        "lines": 306,
+        "bytes": 11502,
+        "hash": "9f6aef2e9f4b",
+        "imports": [
+          "argparse",
+          "json",
+          "numpy",
+          "pathlib",
+          "typing",
+          "logging"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "PECPennyLane"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "phd_forensic_auditor.py",
+        "path": "quantum\\scripts\\phd_forensic_auditor.py",
+        "lines": 52,
+        "bytes": 1619,
+        "hash": "531a79c7c723",
+        "imports": [
+          "re",
+          "requests",
+          "json",
+          "sys"
+        ],
+        "functions": [],
+        "classes": [
+          "PhDForensicAuditor"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "qml_scientific_benchmarking.py",
+        "path": "quantum\\scripts\\qml_scientific_benchmarking.py",
+        "lines": 69,
+        "bytes": 2600,
+        "hash": "b28decd011dc",
+        "imports": [
+          "numpy",
+          "matplotlib.pyplot",
+          "sklearn.model_selection",
+          "sklearn.metrics",
+          "sklearn.svm",
+          "sklearn.ensemble",
+          "pennylane",
+          "argparse"
+        ],
+        "functions": [
+          "run_benchmarking"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "quantum_applications.py",
+        "path": "quantum\\scripts\\quantum_applications.py",
+        "lines": 364,
+        "bytes": 10949,
+        "hash": "577f41388855",
+        "imports": [
+          "numpy",
+          "qiskit",
+          "qiskit.circuit",
+          "qiskit_aer",
+          "sys",
+          "json",
+          "itertools"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "QuantumChemistry",
+          "QuantumFinance",
+          "QuantumOptimization",
+          "QuantumMachineLearning"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "quantum_classifier.py",
+        "path": "quantum\\scripts\\quantum_classifier.py",
+        "lines": 249,
+        "bytes": 8009,
+        "hash": "c7bb7a9bcba8",
+        "imports": [
+          "numpy",
+          "qiskit",
+          "qiskit.circuit",
+          "qiskit_aer",
+          "qiskit.primitives",
+          "qiskit.quantum_info",
+          "json",
+          "sys"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "QuantumKernel",
+          "QuantumNeuralNetwork"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "quantum_embeddings.py",
+        "path": "quantum\\scripts\\quantum_embeddings.py",
+        "lines": 244,
+        "bytes": 7365,
+        "hash": "210440868b24",
+        "imports": [
+          "numpy",
+          "qiskit",
+          "qiskit_aer",
+          "qiskit.quantum_info",
+          "json",
+          "sys"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "QuantumFeatureMap",
+          "FeatureMapAnalyzer"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "quantum_error_mitigation.py",
+        "path": "quantum\\scripts\\quantum_error_mitigation.py",
+        "lines": 40,
+        "bytes": 1256,
+        "hash": "c4389a67f6a6",
+        "imports": [
+          "pennylane",
+          "numpy"
+        ],
+        "functions": [
+          "zne_mitigation",
+          "example_circuit"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "quantum_master_controller.py",
+        "path": "quantum\\scripts\\quantum_master_controller.py",
+        "lines": 42,
+        "bytes": 1725,
+        "hash": "07be2c2de9b9",
+        "imports": [
+          "argparse",
+          "subprocess",
+          "sys",
+          "os"
+        ],
+        "functions": [
+          "run_script",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "quantum_nexus_maestro.py",
+        "path": "quantum\\scripts\\quantum_nexus_maestro.py",
+        "lines": 407,
+        "bytes": 17863,
+        "hash": "38e1d53f7bc3",
+        "imports": [
+          "argparse",
+          "json",
+          "sys",
+          "os",
+          "datetime",
+          "pathlib",
+          "typing",
+          "logging"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "QuantumNexusMaestro"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "quantum_unit_tests.py",
+        "path": "quantum\\scripts\\quantum_unit_tests.py",
+        "lines": 43,
+        "bytes": 1630,
+        "hash": "098ab5436086",
+        "imports": [
+          "unittest",
+          "numpy",
+          "pennylane"
+        ],
+        "functions": [],
+        "classes": [
+          "TestQuantumCircuits"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "qubit_stabilization.py",
+        "path": "quantum\\scripts\\qubit_stabilization.py",
+        "lines": 410,
+        "bytes": 16520,
+        "hash": "2446d5629e6e",
+        "imports": [
+          "argparse",
+          "json",
+          "numpy",
+          "pathlib",
+          "typing",
+          "logging",
+          "scipy.interpolate"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "QubitStabilization"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "__init__.py",
+        "path": "quantum\\scripts\\scihub_cn\\__init__.py",
+        "lines": 0,
+        "bytes": 0,
+        "hash": "d41d8cd98f00",
+        "imports": [],
+        "functions": [],
+        "classes": [],
+        "is_init": true,
+        "needs_entrypoint": false,
+        "has_entrypoint": false
+      },
+      {
+        "name": "exceptions.py",
+        "path": "quantum\\scripts\\scihub_cn\\exceptions.py",
+        "lines": 30,
+        "bytes": 767,
+        "hash": "3c8fa232cb4a",
+        "imports": [],
+        "functions": [],
+        "classes": [
+          "NotExistError",
+          "VerificationError",
+          "ScholarConf",
+          "ArgumentsError"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "models.py",
+        "path": "quantum\\scripts\\scihub_cn\\models.py",
+        "lines": 153,
+        "bytes": 2977,
+        "hash": "8bee0072ca5f",
+        "imports": [
+          "dataclasses",
+          "enum"
+        ],
+        "functions": [],
+        "classes": [
+          "PaperInfo",
+          "PaperDetailDescription",
+          "SearchEngine",
+          "DownLoadSetting",
+          "DownLoadCommandSetting",
+          "DownLoadCommandFileSetting"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "scihub.py",
+        "path": "quantum\\scripts\\scihub_cn\\scihub.py",
+        "lines": 729,
+        "bytes": 28368,
+        "hash": "1f0ae4a20b96",
+        "imports": [
+          "argparse",
+          "asyncio",
+          "hashlib",
+          "json",
+          "logging",
+          "os",
+          "re",
+          "typing",
+          "aiohttp",
+          "bibtexparser",
+          "requests",
+          "bs4",
+          "scihub_cn.exceptions",
+          "scihub_cn.models",
+          "scihub_cn.utils"
+        ],
+        "functions": [
+          "filter_none",
+          "construct_download_setting",
+          "readline_paper_info",
+          "main"
+        ],
+        "classes": [
+          "SciHub"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "test_scihub.py",
+        "path": "quantum\\scripts\\scihub_cn\\test_scihub.py",
+        "lines": 26,
+        "bytes": 675,
+        "hash": "65c82e143332",
+        "imports": [
+          "scihub_cn.models",
+          "scihub_cn.scihub"
+        ],
+        "functions": [
+          "test_api_with_proxy",
+          "test_api_without_proxy"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "test_utils.py",
+        "path": "quantum\\scripts\\scihub_cn\\test_utils.py",
+        "lines": 26,
+        "bytes": 1206,
+        "hash": "a6f71fd43077",
+        "imports": [
+          "scihub_cn.utils"
+        ],
+        "functions": [
+          "test_split_description",
+          "test_translate"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": false
+      },
+      {
+        "name": "utils.py",
+        "path": "quantum\\scripts\\scihub_cn\\utils.py",
+        "lines": 79,
+        "bytes": 2665,
+        "hash": "0e66a019905d",
+        "imports": [
+          "hashlib",
+          "json",
+          "random",
+          "re",
+          "time",
+          "typing",
+          "requests",
+          "scihub_cn.models"
+        ],
+        "functions": [
+          "translate",
+          "split_description"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "scihub_downloader.py",
+        "path": "quantum\\scripts\\scihub_downloader.py",
+        "lines": 209,
+        "bytes": 8340,
+        "hash": "11a05d9442be",
+        "imports": [
+          "re",
+          "argparse",
+          "hashlib",
+          "logging",
+          "os",
+          "requests",
+          "urllib3",
+          "bs4",
+          "retrying",
+          "cloudscraper"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "SciHub"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "training_optimization.py",
+        "path": "quantum\\scripts\\training_optimization.py",
+        "lines": 480,
+        "bytes": 19564,
+        "hash": "cbbef9ce8d80",
+        "imports": [
+          "argparse",
+          "json",
+          "numpy",
+          "pathlib",
+          "typing",
+          "logging",
+          "dataclasses"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "TrainingConfig",
+          "TrainingOptimization"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "vqc_50qubits_training.py",
+        "path": "quantum\\scripts\\vqc_50qubits_training.py",
+        "lines": 300,
+        "bytes": 11070,
+        "hash": "aaa2dbbd1805",
+        "imports": [
+          "argparse",
+          "json",
+          "numpy",
+          "pathlib",
+          "typing",
+          "logging"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "VQC50QubitTraining"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "zne_qiskit_implementation.py",
+        "path": "quantum\\scripts\\zne_qiskit_implementation.py",
+        "lines": 319,
+        "bytes": 11724,
+        "hash": "a5bafc274752",
+        "imports": [
+          "argparse",
+          "json",
+          "numpy",
+          "pathlib",
+          "typing",
+          "logging",
+          "qiskit",
+          "qiskit.circuit",
+          "qiskit_aer",
+          "qiskit_aer.noise"
+        ],
+        "functions": [
+          "main"
+        ],
+        "classes": [
+          "ZNEQiskit"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "auto_score_qualis.py",
+        "path": "criador-artigo\\auto_score_qualis.py",
+        "lines": 222,
+        "bytes": 10229,
+        "hash": "98fc872439dc",
+        "imports": [
+          "json",
+          "os",
+          "sys",
+          "argparse",
+          "pathlib",
+          "re"
+        ],
+        "functions": [
+          "score_manuscript",
+          "score_with_board_weights",
+          "main"
+        ],
+        "classes": [],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "iterative_correction_loop.py",
+        "path": "criador-artigo\\banca\\iterative_correction_loop.py",
+        "lines": 762,
+        "bytes": 30685,
+        "hash": "00b94ca251f2",
+        "imports": [
+          "json",
+          "os",
+          "sys",
+          "argparse",
+          "re",
+          "pathlib",
+          "datetime"
+        ],
+        "functions": [
+          "read_manuscript",
+          "count_tsac_footnotes",
+          "count_correlations",
+          "count_references_with_doi",
+          "count_tables",
+          "count_prohibited",
+          "count_travessoes",
+          "create_board",
+          "run_board",
+          "create_advisors",
+          "run_advisors",
+          "compute_final_score",
+          "run_pipeline",
+          "main"
+        ],
+        "classes": [
+          "Reviewer",
+          "Advisor",
+          "Corrector"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "ptbr_corrector.py",
+        "path": "criador-artigo\\banca\\ptbr_corrector.py",
+        "lines": 415,
+        "bytes": 14874,
+        "hash": "83fbf166ade3",
+        "imports": [
+          "re",
+          "sys",
+          "json",
+          "argparse",
+          "pathlib",
+          "dataclasses",
+          "typing",
+          "datetime"
+        ],
+        "functions": [
+          "is_cjk",
+          "remove_cjk_chars",
+          "apply_ptbr_corrections",
+          "correct_file",
+          "correct_directory",
+          "main"
+        ],
+        "classes": [
+          "ContaminationIssue",
+          "CorrectionReport",
+          "PTBRCorrector"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "executor.py",
+        "path": "criador-artigo\\executor.py",
+        "lines": 461,
+        "bytes": 19101,
+        "hash": "27627c6ca3ee",
+        "imports": [
+          "json",
+          "sys",
+          "os",
+          "shutil",
+          "pathlib",
+          "datetime",
+          "dataclasses",
+          "typing",
+          "subprocess",
+          "subprocess"
+        ],
+        "functions": [
+          "cmd_list_agents",
+          "cmd_run",
+          "cmd_run_phase",
+          "main"
+        ],
+        "classes": [
+          "AgentContext",
+          "PipelineState",
+          "AgentExecutor"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      },
+      {
+        "name": "seeker_bridge.py",
+        "path": "criador-artigo\\seeker_bridge.py",
+        "lines": 210,
+        "bytes": 6746,
+        "hash": "cb1e57a636b2",
+        "imports": [
+          "json",
+          "sys",
+          "pathlib",
+          "datetime",
+          "typing",
+          "executor",
+          "subprocess"
+        ],
+        "functions": [
+          "cmd_from_seeker",
+          "cmd_list_seeker_runs",
+          "cmd_from_editais",
+          "main"
+        ],
+        "classes": [
+          "SeekerBridge"
+        ],
+        "is_init": false,
+        "needs_entrypoint": true,
+        "has_entrypoint": true
+      }
+    ],
+    "plugins": [
+      {
+        "name": "ecosystem-sync",
+        "path": "plugins\\ecosystem-sync.ts",
+        "bytes": 19413,
+        "lines": 473,
+        "hash": "2709255f289b"
+      },
+      {
+        "name": "manus-evolve",
+        "path": "plugins\\manus-evolve.ts",
+        "bytes": 16970,
+        "lines": 412,
+        "hash": "f1602401bf10"
+      }
+    ],
+    "agents": [
+      {
+        "name": "breaks",
+        "path": "basis-research\\agents\\breaks.py",
+        "lines": 409,
+        "type": "agent",
+        "functions": 11
+      },
+      {
+        "name": "gaper",
+        "path": "basis-research\\agents\\gaper.py",
+        "lines": 629,
+        "type": "agent",
+        "functions": 6
+      },
+      {
+        "name": "grounder",
+        "path": "basis-research\\agents\\grounder.py",
+        "lines": 837,
+        "type": "agent",
+        "functions": 9
+      },
+      {
+        "name": "historian",
+        "path": "basis-research\\agents\\historian.py",
+        "lines": 325,
+        "type": "agent",
+        "functions": 3
+      },
+      {
+        "name": "rude",
+        "path": "basis-research\\agents\\rude.py",
+        "lines": 154,
+        "type": "agent",
+        "functions": 2
+      },
+      {
+        "name": "scribe",
+        "path": "basis-research\\agents\\scribe.py",
+        "lines": 570,
+        "type": "agent",
+        "functions": 5
+      },
+      {
+        "name": "social",
+        "path": "basis-research\\agents\\social.py",
+        "lines": 1245,
+        "type": "agent",
+        "functions": 8
+      },
+      {
+        "name": "synthesizer",
+        "path": "basis-research\\agents\\synthesizer.py",
+        "lines": 204,
+        "type": "agent",
+        "functions": 2
+      },
+      {
+        "name": "theorist",
+        "path": "basis-research\\agents\\theorist.py",
+        "lines": 237,
+        "type": "agent",
+        "functions": 3
+      },
+      {
+        "name": "thinker",
+        "path": "basis-research\\agents\\thinker.py",
+        "lines": 170,
+        "type": "agent",
+        "functions": 2
+      },
+      {
+        "name": "vision",
+        "path": "basis-research\\agents\\vision.py",
+        "lines": 202,
+        "type": "agent",
+        "functions": 3
+      },
+      {
+        "name": "__init__",
+        "path": "basis-research\\agents\\__init__.py",
+        "lines": 7,
+        "type": "agent",
+        "functions": 0
+      },
+      {
+        "name": "argument_tree",
+        "path": "basis-research\\core\\argument_tree.py",
+        "lines": 673,
+        "type": "core",
+        "functions": 1
+      },
+      {
+        "name": "breaks",
+        "path": "basis-research\\core\\breaks.py",
+        "lines": 393,
+        "type": "core",
+        "functions": 11
+      },
+      {
+        "name": "concept_mapper",
+        "path": "basis-research\\core\\concept_mapper.py",
+        "lines": 813,
+        "type": "core",
+        "functions": 12
+      },
+      {
+        "name": "consensus_mcp",
+        "path": "basis-research\\core\\consensus_mcp.py",
+        "lines": 459,
+        "type": "core",
+        "functions": 3
+      },
+      {
+        "name": "context",
+        "path": "basis-research\\core\\context.py",
+        "lines": 360,
+        "type": "core",
+        "functions": 17
+      },
+      {
+        "name": "database",
+        "path": "basis-research\\core\\database.py",
+        "lines": 586,
+        "type": "core",
+        "functions": 32
+      },
+      {
+        "name": "keys",
+        "path": "basis-research\\core\\keys.py",
+        "lines": 138,
+        "type": "core",
+        "functions": 15
+      },
+      {
+        "name": "llm",
+        "path": "basis-research\\core\\llm.py",
+        "lines": 321,
+        "type": "core",
+        "functions": 2
+      },
+      {
+        "name": "rate_limiter",
+        "path": "basis-research\\core\\rate_limiter.py",
+        "lines": 217,
+        "type": "core",
+        "functions": 2
+      },
+      {
+        "name": "references",
+        "path": "basis-research\\core\\references.py",
+        "lines": 611,
+        "type": "core",
+        "functions": 26
+      },
+      {
+        "name": "utils",
+        "path": "basis-research\\core\\utils.py",
+        "lines": 103,
+        "type": "core",
+        "functions": 7
+      },
+      {
+        "name": "__init__",
+        "path": "basis-research\\core\\__init__.py",
+        "lines": 1,
+        "type": "core",
+        "functions": 0
+      },
+      {
+        "name": "adr-manager",
+        "path": "agents\\adr-manager.md",
+        "lines": 369,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "architect",
+        "path": "agents\\architect.md",
+        "lines": 32,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "architecture-analyzer",
+        "path": "agents\\architecture-analyzer.md",
+        "lines": 755,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "autoevolve",
+        "path": "agents\\autoevolve.md",
+        "lines": 64,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "batch-executor",
+        "path": "agents\\batch-executor.md",
+        "lines": 398,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "build-agent",
+        "path": "agents\\build-agent.md",
+        "lines": 123,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "code-reviewer",
+        "path": "agents\\code-reviewer.md",
+        "lines": 27,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "codebase-analyzer",
+        "path": "agents\\codebase-analyzer.md",
+        "lines": 139,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "codebase-locator",
+        "path": "agents\\codebase-locator.md",
+        "lines": 123,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "codebase-pattern-finder",
+        "path": "agents\\codebase-pattern-finder.md",
+        "lines": 225,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "coder-agent",
+        "path": "agents\\coder-agent.md",
+        "lines": 260,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "context-manager",
+        "path": "agents\\context-manager.md",
+        "lines": 482,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "context-retriever",
+        "path": "agents\\context-retriever.md",
+        "lines": 649,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "contextscout",
+        "path": "agents\\contextscout.md",
+        "lines": 123,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "contract-manager",
+        "path": "agents\\contract-manager.md",
+        "lines": 602,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "copywriter",
+        "path": "agents\\copywriter.md",
+        "lines": 66,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "debugger",
+        "path": "agents\\debugger.md",
+        "lines": 34,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "devops-specialist",
+        "path": "agents\\devops-specialist.md",
+        "lines": 142,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "docs-writer",
+        "path": "agents\\docs-writer.md",
+        "lines": 30,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "documentation",
+        "path": "agents\\documentation.md",
+        "lines": 117,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "eval-runner",
+        "path": "agents\\eval-runner.md",
+        "lines": 41,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "externalscout",
+        "path": "agents\\externalscout.md",
+        "lines": 327,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "frontend-specialist",
+        "path": "agents\\frontend-specialist.md",
+        "lines": 193,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "git-manager",
+        "path": "agents\\git-manager.md",
+        "lines": 30,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "image-specialist",
+        "path": "agents\\image-specialist.md",
+        "lines": 61,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "linguistic-corrector",
+        "path": "agents\\linguistic-corrector.md",
+        "lines": 108,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "openagent",
+        "path": "agents\\openagent.md",
+        "lines": 684,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "opencoder",
+        "path": "agents\\opencoder.md",
+        "lines": 508,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "optimizer",
+        "path": "agents\\optimizer.md",
+        "lines": 33,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "prioritization-engine",
+        "path": "agents\\prioritization-engine.md",
+        "lines": 710,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "quantum-nexus-phd",
+        "path": "agents\\quantum-nexus-phd.md",
+        "lines": 73,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "reversa-archaeologist",
+        "path": "agents\\reversa-archaeologist.md",
+        "lines": 74,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "reversa-architect",
+        "path": "agents\\reversa-architect.md",
+        "lines": 70,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "reversa-data-master",
+        "path": "agents\\reversa-data-master.md",
+        "lines": 63,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "reversa-design-system",
+        "path": "agents\\reversa-design-system.md",
+        "lines": 64,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "reversa-detective",
+        "path": "agents\\reversa-detective.md",
+        "lines": 63,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "reversa-reviewer",
+        "path": "agents\\reversa-reviewer.md",
+        "lines": 61,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "reversa-scout",
+        "path": "agents\\reversa-scout.md",
+        "lines": 68,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "reversa-visor",
+        "path": "agents\\reversa-visor.md",
+        "lines": 60,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "reversa-writer",
+        "path": "agents\\reversa-writer.md",
+        "lines": 76,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "reversa",
+        "path": "agents\\reversa.md",
+        "lines": 100,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "reviewer",
+        "path": "agents\\reviewer.md",
+        "lines": 115,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "security-auditor",
+        "path": "agents\\security-auditor.md",
+        "lines": 26,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "simple-responder",
+        "path": "agents\\simple-responder.md",
+        "lines": 40,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "stage-orchestrator",
+        "path": "agents\\stage-orchestrator.md",
+        "lines": 799,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "story-mapper",
+        "path": "agents\\story-mapper.md",
+        "lines": 604,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "task-manager",
+        "path": "agents\\task-manager.md",
+        "lines": 673,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "technical-writer",
+        "path": "agents\\technical-writer.md",
+        "lines": 66,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "test-engineer",
+        "path": "agents\\test-engineer.md",
+        "lines": 133,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "thoughts-analyzer",
+        "path": "agents\\thoughts-analyzer.md",
+        "lines": 163,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "thoughts-locator",
+        "path": "agents\\thoughts-locator.md",
+        "lines": 126,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "web-developer",
+        "path": "agents\\web-developer.md",
+        "lines": 12,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "web-search-researcher",
+        "path": "agents\\web-search-researcher.md",
+        "lines": 131,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "ws-coder",
+        "path": "agents\\ws-coder.md",
+        "lines": 158,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "ws-researcher",
+        "path": "agents\\ws-researcher.md",
+        "lines": 225,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "ws-reviewer",
+        "path": "agents\\ws-reviewer.md",
+        "lines": 135,
+        "type": "system_agent",
+        "functions": 0
+      },
+      {
+        "name": "ws-scribe",
+        "path": "agents\\ws-scribe.md",
+        "lines": 100,
+        "type": "system_agent",
+        "functions": 0
+      }
+    ],
+    "evals": [
+      {
+        "name": "2026-05-08_ecosystem-eval-v2",
+        "path": "evals\\2026-05-08_ecosystem-eval-v2.md",
+        "bytes": 1882,
+        "health": 100
+      },
+      {
+        "name": "2026-05-08_ecosystem-eval",
+        "path": "evals\\2026-05-08_ecosystem-eval.md",
+        "bytes": 8096,
+        "health": 96
+      },
+      {
+        "name": "DOCUMENTACAO_COMPLETA",
+        "path": "evals\\DOCUMENTACAO_COMPLETA.md",
+        "bytes": 25465,
+        "health": null
+      },
+      {
+        "name": "DOSSIER_ECOSSISTEMA",
+        "path": "evals\\DOSSIER_ECOSSISTEMA.md",
+        "bytes": 9678,
+        "health": null
+      },
+      {
+        "name": "evolucao_20260509_0537",
+        "path": "evals\\evolucao_20260509_0537.md",
+        "bytes": 1162,
+        "health": null
+      },
+      {
+        "name": "evolucao_20260509_0551",
+        "path": "evals\\evolucao_20260509_0551.md",
+        "bytes": 1318,
+        "health": null
+      },
+      {
+        "name": "evolucao_20260509_2127",
+        "path": "evals\\evolucao_20260509_2127.md",
+        "bytes": 1619,
+        "health": null
+      },
+      {
+        "name": "scan_20260509_0729",
+        "path": "evals\\scan_20260509_0729.md",
+        "bytes": 1323,
+        "health": null
+      },
+      {
+        "name": "scan_20260509_0748",
+        "path": "evals\\scan_20260509_0748.md",
+        "bytes": 1230,
+        "health": null
+      },
+      {
+        "name": "scan_20260509_0830",
+        "path": "evals\\scan_20260509_0830.md",
+        "bytes": 1177,
+        "health": null
+      }
+    ]
+  },
+  "totals": {
+    "skills": 9,
+    "scripts": 139,
+    "plugins": 2,
+    "agents": 81,
+    "evals": 10,
+    "total_lines_py": 46765
+  },
+  "anomalies": [],
+  "recommendations": [
+    {
+      "area": "arquitetura",
+      "acao": "adicionar entrypoint main()",
+      "impacto": "35 scripts sem entrypoint"
+    },
+    {
+      "area": "expansao",
+      "acao": "adicionar integracao com CAPES API",
+      "impacto": "Dados oficiais de bolsas em tempo real"
+    },
+    {
+      "area": "expansao",
+      "acao": "adicionar integracao com CNPq API (Lattes)",
+      "impacto": "Dados curriculares para scoring de perfil"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "_readme": "Renomeie para settings.local.json — gitignored, nunca commitado. Apenas configurações pessoais.",
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/session-end-context.sh",
+            "statusMessage": "Salvando contexto da sessão..."
+          }
+        ]
+      }
+    ]
+  }
+}

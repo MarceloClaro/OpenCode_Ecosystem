@@ -1,0 +1,7 @@
+# Reversa — Preferências pessoais
+# Este arquivo NÃO deve ser commitado.
+# As chaves aqui sobrescrevem as de config.toml.
+
+[user]
+name = ""
+chat_language = "pt-br"

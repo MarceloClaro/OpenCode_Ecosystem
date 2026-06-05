@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mermaid Renderer</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: "Noto Sans CJK SC", "WenQuanYi Zen Hei", "SimSun", "Microsoft YaHei",
+                         "Arial Unicode MS", "Arial", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background: white;
+            color: #333;
+        }
+         
+        .mermaid {
+            text-align: center;
+            margin: 1.5em 0;
+            page-break-inside: avoid;
+            background-color: transparent;
+        }
+        .mermaid svg {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="mermaid">graph TD
+    A0[&#34;L0: META-COORDINATION&#34;]
+    A0.1[&#34;A0.1: Orquestrador Mestre&#34;]
+    A0.2[&#34;A0.2: Gerente de Sessão&#34;]
+    A0.3[&#34;A0.3: Porteiro de Permissões&#34;]
+    A0.4[&#34;A0.4: Harness de Veracidade&#34;]
+    
+    A1[&#34;L1: KNOWLEDGE &amp; DISCOVERY&#34;]
+    A1.1[&#34;A1.1: Registrador de Skills&#34;]
+    A1.2[&#34;A1.2: Compressor de Contexto&#34;]
+    A1.3[&#34;A1.3: Construtor de Task Graph&#34;]
+    A1.4[&#34;A1.4: Armazenador de Memória&#34;]
+    A1.5[&#34;A1.5: Motor de Descoberta&#34;]
+    A1.6[&#34;A1.6: Motor de Insights&#34;]
+    
+    A2[&#34;L2: REASONING &amp; ALIGNMENT&#34;]
+    A2.1[&#34;A2.1: Analisador de Características&#34;]
+    A2.2[&#34;A2.2: Seletor de Raciocínio&#34;]
+    A2.3[&#34;A2.3: Configurador de Parâmetros&#34;]
+    A2.4[&#34;A2.4: Validador de Estratégia&#34;]
+    A2.7[&#34;A2.7: Análise de Gaps&#34;]
+    
+    A3[&#34;L3: FRACTIONAL EXECUTION&#34;]
+    A3.1[&#34;A3.1: Gerador de Subagentes&#34;]
+    A3.4[&#34;A3.4: Quadro Autônomo&#34;]
+    A3.6[&#34;A3.6: Barreira de Sincronização&#34;]
+    A3.7[&#34;A3.7: Fracionador de Conteúdo&#34;]
+    
+    A4[&#34;L4: SPECIALIZATION &amp; CONTENT&#34;]
+    A4.13[&#34;A4.13: Busca Bibliográfica&#34;]
+    A4.1[&#34;A4.1-A4.9: MASWOS Writers&#34;]
+    A4.11[&#34;A4.11: Análise Estatística&#34;]
+    A4.12[&#34;A4.12: Machine Learning&#34;]
+    
+    A5[&#34;L5: AUDIT &amp; VALIDATION&#34;]
+    A5.1[&#34;A5.1: Validador de Constraints&#34;]
+    A5.3[&#34;A5.3: Validador de Citações&#34;]
+    A5.7[&#34;A5.7: Validação Estatística&#34;]
+    A5.8[&#34;A5.8: Auditoria de ML&#34;]
+    A5.9[&#34;A5.9: Impacto de Citação&#34;]
+    
+    A6[&#34;L6: OBSERVABILITY &amp; FEEDBACK&#34;]
+    A6.3[&#34;A6.3: Loop de Feedback&#34;]
+    A6.4[&#34;A6.4: Meta-Aprendizado&#34;]
+    A6.5[&#34;A6.5: Simulador de Banca&#34;]
+    
+    A7[&#34;L7: OUTPUT &amp; DELIVERABLES&#34;]
+    A7.1[&#34;A7.1: Integrador Final&#34;]
+    A7.2[&#34;A7.2: Gerador de Relatórios&#34;]
+    A7.3[&#34;A7.3: Trilha de Auditoria&#34;]
+    A7.4[&#34;A7.4: Entregador Verificado&#34;]
+    
+    A0 --&gt; A0.1 --&gt; A0.2 --&gt; A0.3 --&gt; A0.4
+    A0.4 --&gt;|Barreira L0-L1| A1
+    A1 --&gt; A1.1 --&gt; A1.2 --&gt; A1.3 --&gt; A1.5 --&gt; A1.6
+    A1.6 --&gt;|Barreira L1-L2| A2
+    A2 --&gt; A2.1 --&gt; A2.2 --&gt; A2.3 --&gt; A2.4 --&gt; A2.7
+    A2.7 --&gt;|Barreira L2-L3| A3
+    A3 --&gt; A3.1 --&gt; A3.4 --&gt; A3.6 --&gt; A3.7
+    A3.6 --&gt;|Barreira L3-L4| A4
+    A4 --&gt; A4.13 --&gt; A4.1 --&gt; A4.11 --&gt; A4.12
+    A4.12 --&gt;|Barreira L4-L5| A5
+    A5 --&gt; A5.1 --&gt; A5.3 --&gt; A5.7 --&gt; A5.8 --&gt; A5.9
+    A5.9 --&gt;|Barreira L5-L6| A6
+    A6 --&gt; A6.3 --&gt; A6.4 --&gt; A6.5
+    A6.5 --&gt;|Barreira L6-L7| A7
+    A7 --&gt; A7.1 --&gt; A7.2 --&gt; A7.3 --&gt; A7.4
+    
+    A7.4 --&gt;|Documento Final| Output[&#34;📄 Publicação Qualis A1&lt;br/&gt;&#43; Relatório de Qualidade&lt;br/&gt;&#43; Trilha de Auditoria&#34;]
+    
+    style A0 fill:#1a1a2e
+    style A1 fill:#16213e
+    style A2 fill:#0f3460
+    style A3 fill:#0a1f3a
+    style A4 fill:#051a2f
+    style A5 fill:#001a24
+    style A6 fill:#001428
+    style A7 fill:#000d1a
+    style Output fill:#00ff88
+</div>
+    <script>
+        
+        if (typeof mermaid !== 'undefined') {
+            mermaid.initialize({
+                startOnLoad: false,  
+                theme: 'default',
+                securityLevel: 'loose'
+            });
+        }
+
+        
+        document.addEventListener("DOMContentLoaded", async function() {
+            if (typeof mermaid === 'undefined') {
+                return;
+            }
+
+            const mermaidElements = document.querySelectorAll('.mermaid');
+            let hasError = false;
+
+            for (let i = 0; i < mermaidElements.length; i++) {
+                const element = mermaidElements[i];
+                const mermaidCode = element.textContent.trim();
+
+                try {
+                    const { svg } = await mermaid.render('mermaid-diagram-' + i, mermaidCode);
+                    element.innerHTML = svg;
+                    console.log('Mermaid diagram ' + (i + 1) + ' rendered successfully');
+                } catch (error) {
+                    hasError = true;
+                    console.error('Mermaid rendering error for diagram ' + (i + 1) + ':', error);
+
+                    
+                    element.innerHTML = '<div class="mermaid-error" style="color: red; border: 2px solid red; padding: 10px; border-radius: 5px; background: #ffeeee;">' +
+                        '<strong>Mermaid Rendering Error (Diagram ' + (i + 1) + '):</strong><br>' +
+                        '<code>' + error.message + '</code>' +
+                        '</div>';
+
+                    
+                    document.body.classList.add('mermaid-render-failed');
+                }
+            }
+
+            
+            window.mermaidRenderComplete = true;
+            window.mermaidHasError = hasError;
+        });
+    </script>
+</body>
+</html>
