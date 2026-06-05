@@ -38,6 +38,7 @@ A pesquisa propõe o desenvolvimento e validação de um guia prático de uso é
 - **4 Motores de Raciocínio** — Z3 (prova formal), SymPy (simbólico), miniKanren (lógico), Critical (falácias)
 - **46 MCPs** — Conectores com GitHub, PubMed, Sci-Hub, Playwright, SQLite, PDF e mais
 - **Pesquisa de Editais** — Busca inteligente em 25 subdimensões com 52 editais curados (CNPq/CAPES/FINEP)
+- **Pesquisa Jurisprudencial** — CLI automatizada via API Jurisprudencias.ai com cache SHA256 para consultas no STJ, STF e demais tribunais
 - **Pipeline de Escrita** — SEEKER → MASWOS → AutoScore → Corretor PT-BR → Banca Simulada
 
 ---
