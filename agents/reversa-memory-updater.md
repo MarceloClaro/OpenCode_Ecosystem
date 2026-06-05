@@ -4,6 +4,7 @@
 -->
 
 ---
+name: reversa-memory-updater
 description: >
   Agente de atualização de grafos em tempo real com atividades de
   simulação. Inspirado pelo GraphMemoryUpdater do MiroFish-Offline.

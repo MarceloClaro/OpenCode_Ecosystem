@@ -6,6 +6,7 @@
 -->
 
 ---
+name: ws-academic-pipeline
 description: Pipeline acadêmico LaTeX — compilação, fichamentos, cotejo, status e registro de aprendizado
 mode: subagent
 tools:

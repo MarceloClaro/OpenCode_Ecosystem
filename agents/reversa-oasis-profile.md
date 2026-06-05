@@ -6,6 +6,7 @@
 -->
 
 ---
+name: reversa-oasis-profile
 description: >
   Agente gerador de perfis OASIS. Converte entidades de grafos de
   conhecimento em personas detalhadas de agente para simulação.

@@ -6,6 +6,7 @@
 -->
 
 ---
+name: docs-writer
 description: Escreve e mantem documentacao do projeto
 mode: subagent
 temperature: 0.2

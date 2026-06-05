@@ -6,6 +6,7 @@
 -->
 
 ---
+name: web-developer
 description: Develops Web UI components.
 mode: all
 ---

@@ -1,4 +1,5 @@
 ---
+name: reversa-process-lifecycle
 description: >
   Agente gerenciador de ciclo de vida de processos background. Inspirado
   pelo SimulationRunner do MiroFish-Offline (simulation_runner.py).

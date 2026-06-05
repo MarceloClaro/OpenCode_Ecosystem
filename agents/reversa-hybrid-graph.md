@@ -4,6 +4,7 @@
 -->
 
 ---
+name: reversa-hybrid-graph
 description: >
   Agente de busca híbrida em grafo de conhecimento. Oferece 3 estratégias
   complementares: InsightForge (análise profunda), PanoramaSearch (visão

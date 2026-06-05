@@ -5,6 +5,10 @@
   Modelo: deepseek-v4-pro (OpenCode Zen, 200K ctx, 128K out, gratuito)
 -->
 
+---
+name: linguistic-corrector
+---
+
 # Agente Corretor Linguistico — PT-BR Output Corrector
 
 ## Identidade

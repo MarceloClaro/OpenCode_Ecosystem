@@ -4,6 +4,7 @@
 -->
 
 ---
+name: reversa-entity-ner
 description: >
   Agente de leitura e filtragem de entidades em grafos de conhecimento.
   Inspirado pelo EntityReader do MiroFish-Offline. Lista entidades,

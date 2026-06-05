@@ -6,6 +6,7 @@
 -->
 
 ---
+name: architect
 description: Projeta arquitetura de software e toma decisoes de design
 mode: subagent
 temperature: 0.1

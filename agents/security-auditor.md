@@ -6,6 +6,7 @@
 -->
 
 ---
+name: security-auditor
 description: Realiza auditorias de seguranca e identifica vulnerabilidades
 mode: subagent
 temperature: 0.1

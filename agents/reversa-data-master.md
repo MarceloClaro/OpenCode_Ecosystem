@@ -6,6 +6,7 @@
 -->
 
 ---
+name: reversa-data-master
 description: Documenta completamente o banco de dados do projeto legado — tabelas, relacionamentos, constraints, triggers, procedures e ERD completo. Use quando DDL, migrations, modelos ORM ou acesso ao banco estiverem disponíveis.
 mode: subagent
 tools:

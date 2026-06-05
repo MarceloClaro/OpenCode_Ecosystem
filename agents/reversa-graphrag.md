@@ -5,6 +5,7 @@
 -->
 
 ---
+name: reversa-graphrag
 description: >
   Agente de conhecimento que constrói e consulta o grafo de dependências
   do ecossistema OpenCode. Inspirado pelo GraphRAG + Zep Cloud do MiroFish

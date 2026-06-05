@@ -6,6 +6,7 @@
 -->
 
 ---
+name: reversa-writer
 description: Gera especificações executáveis do sistema legado como contratos operacionais, em formato de pasta-por-unit com requirements.md, design.md e tasks.md. Use na fase de geração de uma análise de engenharia reversa.
 mode: subagent
 tools:

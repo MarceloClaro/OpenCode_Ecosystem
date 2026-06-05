@@ -4,6 +4,7 @@
 -->
 
 ---
+name: reversa-graph-builder
 description: >
   Agente de construção assíncrona de grafos de conhecimento.
   Inspirado pelo GraphBuilderService do MiroFish-Offline. Processa

@@ -6,6 +6,7 @@
 -->
 
 ---
+name: reversa-visor
 description: Documenta a interface do sistema legado a partir de screenshots — extrai componentes, layouts, fluxos de navegação e estados de tela. Use quando screenshots do sistema estiverem disponíveis.
 mode: subagent
 tools:

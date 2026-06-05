@@ -6,6 +6,7 @@
 -->
 
 ---
+name: reversa-architect
 description: Sintetiza a análise do projeto legado em documentação arquitetural completa — diagramas C4, ERD completo, mapa de integrações e Spec Impact Matrix. Use na fase de interpretação após o reversa-detective.
 mode: subagent
 tools:

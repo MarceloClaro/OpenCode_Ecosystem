@@ -5,6 +5,7 @@
 -->
 
 ---
+name: reversa-planner
 description: >
   Gera planos de engenharia reversa em etapas (Scope → Modules → Tasks →
   Dependencies → Resources), inspirado pelo simulation_config_generator.py
