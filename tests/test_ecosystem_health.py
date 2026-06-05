@@ -107,10 +107,10 @@ class TestEcosystemHealth(unittest.TestCase):
     # ── TC-003: Agentes ───────────────────────────────────────────────
 
     def test_agents_count(self):
-        """Pelo menos 75 agentes documentados."""
+        """Pelo menos 100 agentes documentados."""
         agents = list((BASE / "agents").glob("*.md"))
-        self.assertGreaterEqual(len(agents), 75,
-            f"Apenas {len(agents)} agentes. Minimo: 75")
+        self.assertGreaterEqual(len(agents), 100,
+            f"Apenas {len(agents)} agentes. Minimo: 100")
 
     def test_agents_have_names(self):
         """Agentes tem metadados de nome no frontmatter."""
