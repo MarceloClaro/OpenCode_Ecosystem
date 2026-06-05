@@ -1,0 +1,205 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e7]:
+        - generic [ref=e9]:
+          - list [ref=e10]:
+            - generic [ref=e11]: "Ir para:"
+            - listitem [ref=e12]:
+              - link "1 conteúdo" [ref=e13] [cursor=pointer]:
+                - /url: "#conteudo"
+            - listitem [ref=e14]:
+              - link "2 menu" [ref=e15] [cursor=pointer]:
+                - /url: "#menu-principal"
+            - listitem [ref=e16]:
+              - link "3 busca" [ref=e17] [cursor=pointer]:
+                - /url: "#pesquisa"
+            - listitem [ref=e18]:
+              - link "4 rodapé" [ref=e19] [cursor=pointer]:
+                - /url: "#rodape"
+          - generic [ref=e20]:
+            - link " Acessibilidade" [ref=e22] [cursor=pointer]:
+              - /url: /acessibilidade
+              - generic [ref=e23]: 
+              - text: Acessibilidade
+            - generic [ref=e24]:
+              - button "A-" [ref=e25] [cursor=pointer]
+              - button "A+" [ref=e26] [cursor=pointer]
+            - button "" [ref=e27] [cursor=pointer]:
+              - generic [ref=e28]: 
+            - button "" [ref=e29] [cursor=pointer]:
+              - generic "clique aqui para recomendações de acessibilidade" [ref=e30]: 
+        - generic [ref=e31]:
+          - link "STF Educa" [ref=e33] [cursor=pointer]:
+            - /url: https://ead.stf.jus.br
+          - link "Gestão de Pessoas" [ref=e35] [cursor=pointer]:
+            - /url: https://egesp-portal.stf.jus.br/
+          - link "Ouvidoria" [ref=e37] [cursor=pointer]:
+            - /url: /ouvidoria
+          - link "Transparência e Prestação de Contas" [ref=e39] [cursor=pointer]:
+            - /url: /transparencia
+      - generic [ref=e40]:
+        - generic [ref=e42]:
+          - link "Supremo Tribunal Federal" [ref=e44] [cursor=pointer]:
+            - /url: /
+            - img "Supremo Tribunal Federal" [ref=e45]
+          - generic [ref=e47]:
+            - link "Twitter" [ref=e48] [cursor=pointer]:
+              - /url: https://twitter.com/stf_oficial
+              - img [ref=e49]: 
+            - link "YouTube" [ref=e53] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/STF
+              - img [ref=e54]: 
+            - link "Instagram" [ref=e56] [cursor=pointer]:
+              - /url: https://www.instagram.com/supremotribunalfederal
+              - img [ref=e57]: 
+            - link "Facebook" [ref=e59] [cursor=pointer]:
+              - /url: https://www.facebook.com/supremotribunalfederal
+              - img [ref=e60]: 
+            - link "Flickr" [ref=e62] [cursor=pointer]:
+              - /url: https://www.flickr.com/photos/supremotribunalfederal/albums
+              - img [ref=e63]: 
+            - link "TikTok" [ref=e65] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@stfoficial
+              - img [ref=e66]: 
+            - link "WhatsApp - Assistente Virtual" [ref=e68] [cursor=pointer]:
+              - /url: https://wa.me/556132173003
+              - img [ref=e69]: 
+            - link "Spotify" [ref=e71] [cursor=pointer]:
+              - /url: https://open.spotify.com/show/6KlYf9BKn4YNKsjDZ8eJKP?si=TQmCJWQvTJaDKyU-rPGStw&dl_branch=1&nd=1&dlsi=845c6386b02a40a7
+              - img [ref=e72]: 
+            - link "Linkedin" [ref=e79] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/supremo-tribunal-federal/
+              - img [ref=e80]: 
+        - navigation [ref=e83]:
+          - generic [ref=e84]:
+            - text: 
+            - generic [ref=e85]:
+              - list [ref=e86]:
+                - listitem [ref=e87]:
+                  - generic [ref=e88]: Institucional
+                  - text:    
+                - listitem [ref=e89]:
+                  - generic [ref=e90]: Processos
+                  - text:  
+                - listitem [ref=e91]:
+                  - generic [ref=e92]: Repercussão Geral
+                  - text: 
+                - listitem [ref=e93]:
+                  - generic [ref=e94]: Jurisprudência
+                  - text: 
+                - listitem [ref=e95]:
+                  - generic [ref=e96]: Publicações
+                  - text: 
+                - listitem [ref=e97]:
+                  - generic [ref=e98]: Estatística
+                  - text: 
+                - listitem [ref=e99]:
+                  - generic [ref=e100]: Comunicação
+                  - text:  
+                - listitem [ref=e101]:
+                  - generic [ref=e102]: Centro de Estudos do STF
+                  - text: 
+              - generic [ref=e104]:
+                - button "Pesquisar" [ref=e105] [cursor=pointer]:
+                  - img "Pesquisar" [ref=e106]: 
+                - textbox "Pesquisar conteúdo..." [ref=e107]
+              - text: 
+    - generic [ref=e109]:
+      - paragraph [ref=e111]:
+        - text: "Peticione e acompanhe processos:"
+        - link "Peticionamento Eletrônico" [ref=e112] [cursor=pointer]:
+          - /url: https://peticionamento.stf.jus.br/
+      - generic [ref=e113]:
+        - heading "O que você procura?" [level=3] [ref=e115]
+        - generic [ref=e119]:
+          - list [ref=e121]:
+            - listitem [ref=e122]:
+              - generic [ref=e123] [cursor=pointer]: Processos
+            - listitem [ref=e124]:
+              - generic [ref=e125] [cursor=pointer]: Jurisprudência
+            - listitem [ref=e126]:
+              - generic [ref=e127] [cursor=pointer]: Repercussão Geral
+            - listitem [ref=e128]:
+              - generic [ref=e129] [cursor=pointer]: Conteúdo e Notícias
+          - generic [ref=e131]:
+            - generic [ref=e132]: Pesquisa por jurisprudência
+            - textbox "Pesquisa por jurisprudência" [active] [ref=e133]:
+              - /placeholder: Digite um termo para a pesquisa de jurisprudência...
+              - text: desapropriação
+          - button "Pesquisar" [ref=e134] [cursor=pointer]:  Pesquisar
+    - generic [ref=e136]:
+      - generic [ref=e137]:
+        - generic [ref=e138]: Inteiro Teor de Acórdãos - Pesquisa
+        - generic [ref=e140]:
+          - strong [ref=e141]: Pesquisa por processos
+          - paragraph [ref=e142]: Nesta base é possível consultar a íntegra de acórdãos publicados. Caso o acórdão não tenha sido publicado, sugere-se que o usuário cadastre seu e-mail no STF-Push para acompanhar o andamento processual. Não é possível consultar decisões monocráticas neste serviço.
+          - generic [ref=e143]:
+            - generic [ref=e145]:
+              - textbox "Digite somente números..." [ref=e146]
+              - button "Pesquisar" [ref=e147] [cursor=pointer]:
+                - img "Pesquisar" [ref=e148]: 
+            - strong [ref=e150]: "* Informe apenas o número do processo sem ponto ou dígito verificador e serão listadas as classes relacionadas ao número, caso existam."
+      - generic [ref=e151]:
+        - generic [ref=e152]: Inteiro Teor de Acórdãos - Resultados
+        - generic [ref=e158]: Argumento da pesquisa inválido.
+    - contentinfo [ref=e159]:
+      - navigation "Links úteis do rodapé" [ref=e161]:
+        - list [ref=e162]:
+          - listitem [ref=e163]:
+            - link "Mapa do Site" [ref=e164] [cursor=pointer]:
+              - /url: /mapa
+          - listitem [ref=e165]:
+            - link "Acessibilidade" [ref=e166] [cursor=pointer]:
+              - /url: /acessibilidade
+      - generic [ref=e167]:
+        - text:         
+        - generic [ref=e168]:
+          - link "Supremo Tribunal Federal" [ref=e170] [cursor=pointer]:
+            - /url: "#"
+            - img "Supremo Tribunal Federal" [ref=e171]
+          - generic [ref=e172]:
+            - paragraph [ref=e173]:
+              - generic [ref=e174]: 
+              - text: Praça dos Três Poderes, Brasília - DF - CEP 70175-900
+            - paragraph [ref=e175]:
+              - link "Veja a localização no Google Maps" [ref=e176] [cursor=pointer]:
+                - /url: https://goo.gl/maps/TEeR6xGZP7x
+            - paragraph [ref=e177]:
+              - img [ref=e179]
+              - text: "E-mail:"
+              - link "ouvidoria@stf.jus.br" [ref=e183] [cursor=pointer]:
+                - /url: mailto:ouvidoria@stf.jus.br
+            - paragraph [ref=e184]:
+              - generic [ref=e185]: 
+              - text: "Telefone:"
+              - link "+55 61 3217-3000" [ref=e186] [cursor=pointer]:
+                - /url: tel:+556132173000
+            - paragraph [ref=e187]:
+              - generic [ref=e188]: 
+              - text: "Fax:"
+              - link "+55 61 3217-7921" [ref=e189] [cursor=pointer]:
+                - /url: tel:+556132177921
+              - text: /
+              - link "+55 61 3217-7922" [ref=e190] [cursor=pointer]:
+                - /url: tel:+556132177922
+            - paragraph [ref=e191]:
+              - generic [ref=e192]: 
+              - text: "Confirmação de recebimento dos faxes das 11h às 19h:"
+              - link "+55 61 3217-3623" [ref=e193] [cursor=pointer]:
+                - /url: tel:+556132173623
+            - paragraph [ref=e194]:
+              - generic [ref=e195]: 
+              - text: "Horário de atendimento presencial: 11h às 19h"
+            - paragraph [ref=e196]:
+              - generic [ref=e197]: 
+              - text: "Horário de atendimento por telefone: 8h às 20h"
+  - generic [ref=e199] [cursor=pointer]:
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=e200]
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=e201]
+  - generic [ref=e202]:
+    - paragraph [ref=e204]:
+      - text: O Portal do STF coleta dados, por meio de cookies ou dos navegadores, a fim de cumprir obrigação legal, permitir a melhor navegação ou para realizar análises estatísticas.
+      - link "Para saber mais, acesse a página do STF sobre a LGPD." [ref=e205] [cursor=pointer]:
+        - /url: /lgpd
+    - button "Estou ciente" [ref=e207] [cursor=pointer]

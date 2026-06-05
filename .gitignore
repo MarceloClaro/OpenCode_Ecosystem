@@ -24,6 +24,12 @@ node_modules/
 *.fls
 *.run.xml
 *.spl
+*.lof
+*.lot
+*.brf
+*.idx
+*.ilg
+*.ind
 
 # Python
 *.pyc

@@ -1,6 +1,6 @@
-# Indice Unificado — OpenCode Ecosystem v4.7.1
+# Indice Unificado — OpenCode Ecosystem v5.0.0
 
-**Documentacao consolidada** | **25+ arquivos indexados** | **2026-06-04**
+**Documentacao consolidada** | **55+ arquivos indexados** | **2026-06-04**
 
 ---
 
@@ -34,12 +34,16 @@ Ficha de producao academica do PPGTE/UFC para avaliacao de produtos.
 
 ## 2. ECOSSISTEMA OPENCODE
 
+### RELATORIO_ECOSYSTEM_v5.0.0.md
+Relatorio oficial do ecossistema: saude 100/100, 344 testes (327/17/0), CORA 3.04, SWOT+TDD 100/100.
+`/docs/RELATORIO_ECOSYSTEM_v5.0.0.md`
+
 ### AVALIACAO_SWOT_TDD_ECOSYSTEM.md
-Avaliacao completa SWOT+TDD: 263 testes em 4 camadas, nota 86/100, 13 recomendacoes.
+Avaliacao completa SWOT+TDD: 344 testes em 6 camadas, nota 100/100, 13 recomendacoes implementadas.
 `/AVALIACAO_SWOT_TDD_ECOSYSTEM.md`
 
 ### .evolve/project-state.json
-Estado atual do projeto: health score 100, 5 componentes saudaveis, 5 SPECs ativas.
+Estado atual do projeto: health score 100, 8 componentes saudaveis, 11 SPECs ativas.
 `/.evolve/project-state.json`
 
 ### .menu_registry.json
@@ -122,10 +126,11 @@ Testes de qualidade LaTeX (3 suites, 16 testes):
 `/artigo/tests/README.md` (Documentacao dos testes)
 
 ### artigo/orchestration/evolutions/
-Insights evolutivos: padroes aprendidos, tendencias, recomendacoes.
+Insights evolutivos: 15 rounds, padroes aprendidos, tendencias, recomendacoes.
 `/artigo/orchestration/evolutions/INDEX.md`
 `/artigo/orchestration/evolutions/insight_20260528.md`
 `/artigo/orchestration/evolutions/insight_cora_eval_20260529.md`
+`/artigo/orchestration/evolutions/insight_20260604_swot_100.md` (R15 — SWOT+TDD 100/100)
 
 ---
 
@@ -156,6 +161,14 @@ Modulo didatico — Geometric Arbitrage Theory.
 `/artigo_completo_qualis_a1.pdf` — Artigo Qualis A1 sobre ecossistema
 `/artigo_cora_opencode.pdf` — Artigo CORA-Eval × OpenCode
 
+### avaliacao_ecossistema_v2.0.md
+Avaliacao do ecossistema v2.0: CORA 3.04 por dominio (1-10), cobertura 75.05%, redundancia 85.67%, diversidade 64.63%.
+`/artigo/avaliacao_ecossistema_v2.0.md`
+
+### esboco_artigo_1.md
+Estrutura de artigo cientifico: 16 secoes (2.1-2.6, 3.1-3.4, 4.1-4.6), 56 referencias em bibliografia TDD+CDP.
+`/artigo/esboco_artigo_1.md`
+
 ---
 
 ## 6. VALIDACAO CIENTIFICA (SPECs e Auditoria)
@@ -184,7 +197,7 @@ Modulo didatico — Geometric Arbitrage Theory.
 
 ---
 
-## 7. NOVA INFRAESTRUTURA (v4.7.1)
+## 7. NOVA INFRAESTRUTURA (v5.0.0)
 
 ### CI/CD
 `/.github/workflows/ci.yml` — GitHub Actions: Windows+Ubuntu, 206 testes, 15min timeout
@@ -232,4 +245,4 @@ Anteprojeto sobre IA, personalidade humana e Enciclica Magnifica Humanitas.
 
 ---
 
-**Indice Unificado** · 2026-06-04 · 52 arquivos indexados · OpenCode Ecosystem v4.7.1
+**Indice Unificado** · 2026-06-04 · 55+ arquivos indexados · OpenCode Ecosystem v5.0.0

@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/><stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16a34a"/><stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ea580c"/><stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="g6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0891b2"/><stop offset="100%" stop-color="#0e7490"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <text x="600" y="38" text-anchor="middle" fill="#e2e8f0" font-size="22" font-weight="700" letter-spacing="2">ARQUITETURA DO ECOSSISTEMA OPENCODE v5.0.0</text>
+  <text x="600" y="56" text-anchor="middle" fill="#94a3b8" font-size="12">600+ componentes integrados | 125 agentes | 150 skills | 46 MCPs | 212+ tipos de raciocínio</text>
+
+  <!-- Camada 1: MCPs (topo) -->
+  <rect x="50" y="75" width="1100" height="110" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="600" y="95" text-anchor="middle" fill="#2563eb" font-size="14" font-weight="700">CAMADA 1: MCPs (Model Context Protocol) — 46 servidores (23 ativos)</text>
+  <rect x="65" y="105" width="130" height="28" rx="6" fill="url(#g1)" filter="url(#shadow)"/><text x="130" y="124" text-anchor="middle" fill="#fff" font-size="10">websearch</text>
+  <rect x="205" y="105" width="130" height="28" rx="6" fill="url(#g1)" filter="url(#shadow)"/><text x="270" y="124" text-anchor="middle" fill="#fff" font-size="10">gh_grep</text>
+  <rect x="345" y="105" width="130" height="28" rx="6" fill="url(#g1)" filter="url(#shadow)"/><text x="410" y="124" text-anchor="middle" fill="#fff" font-size="10">context7</text>
+  <rect x="485" y="105" width="130" height="28" rx="6" fill="url(#g1)" filter="url(#shadow)"/><text x="550" y="124" text-anchor="middle" fill="#fff" font-size="10">scihub</text>
+  <rect x="625" y="105" width="130" height="28" rx="6" fill="url(#g1)" filter="url(#shadow)"/><text x="690" y="124" text-anchor="middle" fill="#fff" font-size="10">playwright</text>
+  <rect x="765" y="105" width="130" height="28" rx="6" fill="url(#g1)" filter="url(#shadow)"/><text x="830" y="124" text-anchor="middle" fill="#fff" font-size="10">ar_ xiv</text>
+  <rect x="905" y="105" width="130" height="28" rx="6" fill="url(#g1)" filter="url(#shadow)"/><text x="970" y="124" text-anchor="middle" fill="#fff" font-size="10">sqlite</text>
+  <rect x="145" y="140" width="130" height="28" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="210" y="158" text-anchor="middle" fill="#cbd5e1" font-size="10">sequential-thinking</text>
+  <rect x="285" y="140" width="130" height="28" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="350" y="158" text-anchor="middle" fill="#cbd5e1" font-size="10">filesystem</text>
+  <rect x="425" y="140" width="130" height="28" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="490" y="158" text-anchor="middle" fill="#cbd5e1" font-size="10">github</text>
+  <rect x="565" y="140" width="130" height="28" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="630" y="158" text-anchor="middle" fill="#cbd5e1" font-size="10">code-runner</text>
+  <rect x="705" y="140" width="130" height="28" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="770" y="158" text-anchor="middle" fill="#cbd5e1" font-size="10">pdf</text>
+  <rect x="845" y="140" width="130" height="28" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="910" y="158" text-anchor="middle" fill="#cbd5e1" font-size="10">+18 MCPs</text>
+
+  <!-- Setas Camada 1 → 2 -->
+  <line x1="600" y1="185" x2="600" y2="210" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Camada 2: Skills (meio-topo) -->
+  <rect x="50" y="210" width="1100" height="120" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="600" y="232" text-anchor="middle" fill="#16a34a" font-size="14" font-weight="700">CAMADA 2: Skills — 150 habilidades em 13 categorias</text>
+
+  <rect x="65" y="242" width="160" height="36" rx="6" fill="url(#g2)" filter="url(#shadow)"/><text x="145" y="256" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">System (12)</text><text x="145" y="268" text-anchor="middle" fill="#dcfce7" font-size="8">code-review, audit, mcpick...</text>
+  <rect x="235" y="242" width="160" height="36" rx="6" fill="url(#g2)" filter="url(#shadow)"/><text x="315" y="256" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">Jurídico (7)</text><text x="315" y="268" text-anchor="middle" fill="#dcfce7" font-size="8">contratos, triagem, peças...</text>
+  <rect x="405" y="242" width="160" height="36" rx="6" fill="url(#g2)" filter="url(#shadow)"/><text x="485" y="256" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">Research (18)</text><text x="485" y="268" text-anchor="middle" fill="#dcfce7" font-size="8">editais, SEER, clinical...</text>
+  <rect x="575" y="242" width="160" height="36" rx="6" fill="url(#g2)" filter="url(#shadow)"/><text x="655" y="256" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">Science (38)</text><text x="655" y="268" text-anchor="middle" fill="#dcfce7" font-size="8">AlphaFold, PubMed, UniProt...</text>
+  <rect x="745" y="242" width="160" height="36" rx="6" fill="url(#g2)" filter="url(#shadow)"/><text x="825" y="256" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">Reasoning (4)</text><text x="825" y="268" text-anchor="middle" fill="#dcfce7" font-size="8">Z3, SymPy, Kanren, Critical</text>
+  <rect x="915" y="242" width="160" height="36" rx="6" fill="url(#g2)" filter="url(#shadow)"/><text x="995" y="256" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">Agency (56+49)</text><text x="995" y="268" text-anchor="middle" fill="#dcfce7" font-size="8">antropólogo, historiador...</text>
+
+  <rect x="65" y="286" width="160" height="30" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="145" y="306" text-anchor="middle" fill="#cbd5e1" font-size="9">Open Design (75+)</text>
+  <rect x="235" y="286" width="160" height="30" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="315" y="306" text-anchor="middle" fill="#cbd5e1" font-size="9">Broomva (30+)</text>
+  <rect x="405" y="286" width="160" height="30" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="485" y="306" text-anchor="middle" fill="#cbd5e1" font-size="9">Baoyu (20+)</text>
+  <rect x="575" y="286" width="160" height="30" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="655" y="306" text-anchor="middle" fill="#cbd5e1" font-size="9">CC-Skills (10+)</text>
+  <rect x="745" y="286" width="160" height="30" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="825" y="306" text-anchor="middle" fill="#cbd5e1" font-size="9">Agent Skills (20+)</text>
+
+  <!-- Setas Camada 2 → 3 -->
+  <line x1="600" y1="330" x2="600" y2="355" stroke="#475569" stroke-width="2"/>
+
+  <!-- Camada 3: Agentes + Subagentes (meio) -->
+  <rect x="50" y="355" width="1100" height="130" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="600" y="376" text-anchor="middle" fill="#ea580c" font-size="14" font-weight="700">CAMADA 3: Agentes — 125 especialistas (56 core + 49 criação + 12 SEER + 8 Reversa)</text>
+
+  <rect x="65" y="390" width="140" height="40" rx="6" fill="url(#g3)" filter="url(#shadow)"/><text x="135" y="408" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">Autoevolve</text><text x="135" y="420" text-anchor="middle" fill="#fed7aa" font-size="8">Evol. autônoma</text>
+  <rect x="215" y="390" width="140" height="40" rx="6" fill="url(#g3)" filter="url(#shadow)"/><text x="285" y="408" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">Reversa</text><text x="285" y="420" text-anchor="middle" fill="#fed7aa" font-size="8">Eng. reversa (25)</text>
+  <rect x="365" y="390" width="140" height="40" rx="6" fill="url(#g3)" filter="url(#shadow)"/><text x="435" y="408" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">Coder/Frontend</text><text x="435" y="420" text-anchor="middle" fill="#fed7aa" font-size="8">8 especialistas</text>
+  <rect x="515" y="390" width="140" height="40" rx="6" fill="url(#g3)" filter="url(#shadow)"/><text x="585" y="408" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">SEER</text><text x="585" y="420" text-anchor="middle" fill="#fed7aa" font-size="8">Pesquisa (12)</text>
+  <rect x="665" y="390" width="140" height="40" rx="6" fill="url(#g3)" filter="url(#shadow)"/><text x="735" y="408" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">Article Creator</text><text x="735" y="420" text-anchor="middle" fill="#fed7aa" font-size="8">49 agentes</text>
+  <rect x="815" y="390" width="140" height="40" rx="6" fill="url(#g3)" filter="url(#shadow)"/><text x="885" y="408" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">PhD Auditor</text><text x="885" y="420" text-anchor="middle" fill="#fed7aa" font-size="8">Nash, Cohen, Bonf.</text>
+  <rect x="965" y="390" width="140" height="40" rx="6" fill="url(#g3)" filter="url(#shadow)"/><text x="1035" y="408" text-anchor="middle" fill="#fff" font-size="9" font-weight="600">Cora Debate</text><text x="1035" y="420" text-anchor="middle" fill="#fed7aa" font-size="8">7 verificadores</text>
+
+  <rect x="65" y="438" width="210" height="32" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="170" y="458" text-anchor="middle" fill="#cbd5e1" font-size="9">Agency: Anthropologist, Geographer, Narratologist, Psychologist, Historian</text>
+  <rect x="285" y="438" width="210" height="32" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="390" y="458" text-anchor="middle" fill="#cbd5e1" font-size="9">DevOps, Test, Security, Audit, Code Review, Build</text>
+  <rect x="505" y="438" width="210" height="32" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="610" y="458" text-anchor="middle" fill="#cbd5e1" font-size="9">Web Dev, Image Specialist, Technical Writer, Copywriter</text>
+  <rect x="725" y="438" width="210" height="32" rx="6" fill="#334155" stroke="#475569" stroke-width="1"/><text x="830" y="458" text-anchor="middle" fill="#cbd5e1" font-size="9">Context Scout, External Scout, Story Mapper</text>
+
+  <!-- Setas Camada 3 → 4 -->
+  <line x1="250" y1="485" x2="250" y2="515" stroke="#475569" stroke-width="2"/>
+  <line x1="600" y1="485" x2="600" y2="515" stroke="#475569" stroke-width="2"/>
+  <line x1="950" y1="485" x2="950" y2="515" stroke="#475569" stroke-width="2"/>
+
+  <!-- Camada 4: Subsistemas Core (base) -->
+  <rect x="50" y="515" width="540" height="170" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="320" y="536" text-anchor="middle" fill="#dc2626" font-size="13" font-weight="700">SUBSISTEMAS CORE</text>
+
+  <rect x="65" y="548" width="160" height="55" rx="6" fill="url(#g4)" filter="url(#shadow)"/>
+  <text x="145" y="566" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Quantum Nexus</text>
+  <text x="145" y="580" text-anchor="middle" fill="#fecaca" font-size="8">107 arquivos · QML HAM10000 89,52%</text>
+  <text x="145" y="594" text-anchor="middle" fill="#fecaca" font-size="8">50-qubit MPS · ZNE/PEC/DD</text>
+
+  <rect x="240" y="548" width="160" height="55" rx="6" fill="url(#g4)" filter="url(#shadow)"/>
+  <text x="320" y="566" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Nexus Multi-Agente</text>
+  <text x="320" y="580" text-anchor="middle" fill="#fecaca" font-size="8">488 arquivos · 6 camadas L0-L6</text>
+  <text x="320" y="594" text-anchor="middle" fill="#fecaca" font-size="8">120+ sync barriers · 500+ constraints</text>
+
+  <rect x="415" y="548" width="160" height="55" rx="6" fill="url(#g4)" filter="url(#shadow)"/>
+  <text x="495" y="566" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Article Creator v2</text>
+  <text x="495" y="580" text-anchor="middle" fill="#fecaca" font-size="8">91 arquivos · 49 agentes MASWOS</text>
+  <text x="495" y="594" text-anchor="middle" fill="#fecaca" font-size="8">14 refs Qualis A1 · LaTeX/PDF</text>
+
+  <rect x="65" y="612" width="160" height="55" rx="6" fill="url(#g4)" filter="url(#shadow)"/>
+  <text x="145" y="630" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Validators</text>
+  <text x="145" y="644" text-anchor="middle" fill="#fecaca" font-size="8">Java SOLID · IValidator&lt;T&gt;</text>
+  <text x="145" y="658" text-anchor="middle" fill="#fecaca" font-size="8">Harness · Hooks · CI/CD</text>
+
+  <rect x="240" y="612" width="160" height="55" rx="6" fill="url(#g4)" filter="url(#shadow)"/>
+  <text x="320" y="630" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Evolution System</text>
+  <text x="320" y="644" text-anchor="middle" fill="#fecaca" font-size="8">14 gerações · 13 cycles</text>
+  <text x="320" y="658" text-anchor="middle" fill="#fecaca" font-size="8">Score 85→98</text>
+
+  <rect x="415" y="612" width="160" height="55" rx="6" fill="url(#g4)" filter="url(#shadow)"/>
+  <text x="495" y="630" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">SEER Research</text>
+  <text x="495" y="644" text-anchor="middle" fill="#fecaca" font-size="8">78 arquivos · 10 agentes Python</text>
+  <text x="495" y="658" text-anchor="middle" fill="#fecaca" font-size="8">10+ fontes acadêmicas</text>
+
+  <!-- Camada 4 direita: Integrações -->
+  <rect x="610" y="515" width="540" height="170" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="880" y="536" text-anchor="middle" fill="#7c3aed" font-size="13" font-weight="700">INTEGRAÇÕES CIENTÍFICAS</text>
+
+  <rect x="625" y="548" width="160" height="55" rx="6" fill="url(#g5)" filter="url(#shadow)"/>
+  <text x="705" y="566" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Science Skills (38)</text>
+  <text x="705" y="580" text-anchor="middle" fill="#e9d5ff" font-size="8">AlphaFold · PubMed · ChEMBL</text>
+  <text x="705" y="594" text-anchor="middle" fill="#e9d5ff" font-size="8">UniProt · ClinVar · FoldSeek</text>
+
+  <rect x="800" y="548" width="160" height="55" rx="6" fill="url(#g5)" filter="url(#shadow)"/>
+  <text x="880" y="566" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Reasoning Engines</text>
+  <text x="880" y="580" text-anchor="middle" fill="#e9d5ff" font-size="8">Z3 · SymPy · Kanren</text>
+  <text x="880" y="594" text-anchor="middle" fill="#e9d5ff" font-size="8">Critical (15 falácias)</text>
+
+  <rect x="975" y="548" width="160" height="55" rx="6" fill="url(#g5)" filter="url(#shadow)"/>
+  <text x="1055" y="566" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">CORA-Eval</text>
+  <text x="1055" y="580" text-anchor="middle" fill="#e9d5ff" font-size="8">150 tarefas · 10 dim. × 4 níveis</text>
+  <text x="1055" y="594" text-anchor="middle" fill="#e9d5ff" font-size="8">CORA-Score 0.67 baseline</text>
+
+  <rect x="625" y="612" width="160" height="55" rx="6" fill="url(#g5)" filter="url(#shadow)"/>
+  <text x="705" y="630" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">MiroFish/BettaFish</text>
+  <text x="705" y="644" text-anchor="middle" fill="#e9d5ff" font-size="8">11 integrações · OASIS</text>
+  <text x="705" y="658" text-anchor="middle" fill="#e9d5ff" font-size="8">Forum · Config · Graph</text>
+
+  <rect x="800" y="612" width="160" height="55" rx="6" fill="url(#g5)" filter="url(#shadow)"/>
+  <text x="880" y="630" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Academic MCPs</text>
+  <text x="880" y="644" text-anchor="middle" fill="#e9d5ff" font-size="8">latest-science · sura-papers</text>
+  <text x="880" y="658" text-anchor="middle" fill="#e9d5ff" font-size="8">research-mcp · arxiv-mcp</text>
+
+  <rect x="975" y="612" width="160" height="55" rx="6" fill="url(#g5)" filter="url(#shadow)"/>
+  <text x="1055" y="630" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">LGPD·Fase1·Fase2</text>
+  <text x="1055" y="644" text-anchor="middle" fill="#e9d5ff" font-size="8">3 fases de implementação</text>
+  <text x="1055" y="658" text-anchor="middle" fill="#e9d5ff" font-size="8">Governança de dados</text>
+
+  <!-- Camada 5: Plugins e Comandos -->
+  <rect x="50" y="700" width="1100" height="80" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="600" y="720" text-anchor="middle" fill="#0891b2" font-size="13" font-weight="700">CAMADA 5: PLUGINS (15) + COMANDOS (14) + LSP (1) + CORRETOR (1)</text>
+
+  <rect x="65" y="732" width="140" height="32" rx="6" fill="url(#g6)" filter="url(#shadow)"/><text x="135" y="752" text-anchor="middle" fill="#fff" font-size="9">/evolve</text>
+  <rect x="215" y="732" width="140" height="32" rx="6" fill="url(#g6)" filter="url(#shadow)"/><text x="285" y="752" text-anchor="middle" fill="#fff" font-size="9">/reversa</text>
+  <rect x="365" y="732" width="140" height="32" rx="6" fill="url(#g6)" filter="url(#shadow)"/><text x="435" y="752" text-anchor="middle" fill="#fff" font-size="9">/plan</text>
+  <rect x="515" y="732" width="140" height="32" rx="6" fill="url(#g6)" filter="url(#shadow)"/><text x="585" y="752" text-anchor="middle" fill="#fff" font-size="9">/auto</text>
+  <rect x="665" y="732" width="140" height="32" rx="6" fill="url(#g6)" filter="url(#shadow)"/><text x="735" y="752" text-anchor="middle" fill="#fff" font-size="9">/quantum</text>
+  <rect x="815" y="732" width="140" height="32" rx="6" fill="url(#g6)" filter="url(#shadow)"/><text x="885" y="752" text-anchor="middle" fill="#fff" font-size="9">/artigo</text>
+  <rect x="965" y="732" width="140" height="32" rx="6" fill="url(#g6)" filter="url(#shadow)"/><text x="1035" y="752" text-anchor="middle" fill="#fff" font-size="9">+7 comandos</text>
+
+  <!-- Linha de tempo evolutiva -->
+  <rect x="50" y="795" width="1100" height="50" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="600" y="812" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600">EVOLUÇÃO: 14 gerações | Score 85 → 98 | 600+ componentes | 488 nexus | 146 quantum | 91 article creator | 125 agentes | 150 skills | 46 MCPs</text>
+  <text x="600" y="832" text-anchor="middle" fill="#64748b" font-size="10">P14 Agent Forum → P15 Doc IR → P16 ANP → P17 MiddlewareChain → P18 PhD Auditor → MiroFish/BettaFish → Science Skills → Reasoning Engines → CORA-Eval</text>
+
+  <!-- Legendas -->
+  <rect x="50" y="855" width="12" height="12" rx="2" fill="url(#g1)"/><text x="68" y="866" fill="#94a3b8" font-size="9">MCPs</text>
+  <rect x="130" y="855" width="12" height="12" rx="2" fill="url(#g2)"/><text x="148" y="866" fill="#94a3b8" font-size="9">Skills</text>
+  <rect x="200" y="855" width="12" height="12" rx="2" fill="url(#g3)"/><text x="218" y="866" fill="#94a3b8" font-size="9">Agentes</text>
+  <rect x="285" y="855" width="12" height="12" rx="2" fill="url(#g4)"/><text x="303" y="866" fill="#94a3b8" font-size="9">Core</text>
+  <rect x="350" y="855" width="12" height="12" rx="2" fill="url(#g5)"/><text x="368" y="866" fill="#94a3b8" font-size="9">Científico</text>
+  <rect x="445" y="855" width="12" height="12" rx="2" fill="url(#g6)"/><text x="463" y="866" fill="#94a3b8" font-size="9">Comandos</text>
+</svg>

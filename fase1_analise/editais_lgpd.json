@@ -1,0 +1,598 @@
+{
+  "metadata": {
+    "total_editais": 65,
+    "lgpd_alta": 4,
+    "lgpd_media": 22,
+    "lgpd_baixa": 24,
+    "lgpd_nula": 15,
+    "total_relevantes": 26,
+    "data_analise": "2026-06-01"
+  },
+  "editais": [
+    {
+      "id": "CNPq-001",
+      "titulo": "Chamada Universal CNPq",
+      "agencia": "CNPq",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 65
+    },
+    {
+      "id": "CNPq-002",
+      "titulo": "Bolsa Produtividade CNPq (PQ)",
+      "agencia": "CNPq",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 92
+    },
+    {
+      "id": "CNPq-003",
+      "titulo": "INCT - Institutos Nacionais",
+      "agencia": "CNPq",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Edital de pesquisa",
+      "score_pesquisa": 74
+    },
+    {
+      "id": "CNPq-004",
+      "titulo": "Bolsa CNPq Mestrado",
+      "agencia": "CNPq",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "CNPq-005",
+      "titulo": "Bolsa CNPq Doutorado",
+      "agencia": "CNPq",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "CNPq-006",
+      "titulo": "CNPq SWE Doutorado Sanduiche",
+      "agencia": "CNPq",
+      "categoria": "internacional",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 15
+    },
+    {
+      "id": "CAPES-001",
+      "titulo": "Bolsa CAPES Demanda Social Mestrado",
+      "agencia": "CAPES",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "CAPES-002",
+      "titulo": "Bolsa CAPES Demanda Social Doutorado",
+      "agencia": "CAPES",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "CAPES-003",
+      "titulo": "PROEX CAPES",
+      "agencia": "CAPES",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 45
+    },
+    {
+      "id": "CAPES-004",
+      "titulo": "PNPD CAPES Pos-Doutorado",
+      "agencia": "CAPES",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "CAPES-005",
+      "titulo": "Bolsa PROSUC CAPES",
+      "agencia": "CAPES",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 10
+    },
+    {
+      "id": "CAPES-006",
+      "titulo": "CAPES PRINT Internacionalizacao",
+      "agencia": "CAPES",
+      "categoria": "internacional",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 15
+    },
+    {
+      "id": "CAPES-007",
+      "titulo": "CAPES Fulbright Doutorado",
+      "agencia": "CAPES",
+      "categoria": "internacional",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 15
+    },
+    {
+      "id": "CAPES-008",
+      "titulo": "Bolsa CAPES Doutorado Pleno Exterior",
+      "agencia": "CAPES",
+      "categoria": "internacional",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 15
+    },
+    {
+      "id": "FINEP-001",
+      "titulo": "Chamada FINEP Inovacao",
+      "agencia": "FINEP",
+      "categoria": "auxilio",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Auxílio inovação empresarial",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "FINEP-002",
+      "titulo": "Subvencao Economica FINEP",
+      "agencia": "FINEP",
+      "categoria": "auxilio",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Auxílio inovação empresarial",
+      "score_pesquisa": 35
+    },
+    {
+      "id": "FINEP-003",
+      "titulo": "FINEP Startup",
+      "agencia": "FINEP",
+      "categoria": "startup",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Fomento empresarial/cultural (baixa relevância LGPD)",
+      "score_pesquisa": 15
+    },
+    {
+      "id": "FAPESP-001",
+      "titulo": "Jovem Pesquisador FAPESP",
+      "agencia": "FAPESP",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 42
+    },
+    {
+      "id": "FAPESP-002",
+      "titulo": "Projeto Tematico FAPESP",
+      "agencia": "FAPESP",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 68
+    },
+    {
+      "id": "FAPESP-003",
+      "titulo": "FAPESP PIPE",
+      "agencia": "FAPESP",
+      "categoria": "startup",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Fomento empresarial/cultural (baixa relevância LGPD)",
+      "score_pesquisa": 45
+    },
+    {
+      "id": "FAPERJ-001",
+      "titulo": "Auxilio Pesquisa FAPERJ",
+      "agencia": "FAPERJ",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 78
+    },
+    {
+      "id": "FAPEMIG-001",
+      "titulo": "Demanda Universal FAPEMIG",
+      "agencia": "FAPEMIG",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 95
+    },
+    {
+      "id": "FAPESB-001",
+      "titulo": "Edital Universal FAPESB",
+      "agencia": "FAPESB",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 68
+    },
+    {
+      "id": "FAPESB-002",
+      "titulo": "Bolsa FAPESB Mestrado/Doutorado",
+      "agencia": "FAPESB",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "FUNCAP-001",
+      "titulo": "Edital Universal FUNCAP",
+      "agencia": "FUNCAP",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 70
+    },
+    {
+      "id": "FUNCAP-002",
+      "titulo": "Bolsa FUNCAP Mestrado/Doutorado",
+      "agencia": "FUNCAP",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "FACEPE-001",
+      "titulo": "Edital Universal FACEPE",
+      "agencia": "FACEPE",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 72
+    },
+    {
+      "id": "FACEPE-002",
+      "titulo": "Bolsa FACEPE Mestrado/Doutorado",
+      "agencia": "FACEPE",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "FAPEMA-001",
+      "titulo": "Edital Universal FAPEMA",
+      "agencia": "FAPEMA",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 55
+    },
+    {
+      "id": "FAPEMA-002",
+      "titulo": "Bolsa FAPEMA Mestrado/Doutorado",
+      "agencia": "FAPEMA",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "FAPESQ-001",
+      "titulo": "Edital Universal FAPESQ",
+      "agencia": "FAPESQ",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 65
+    },
+    {
+      "id": "FAPESQ-002",
+      "titulo": "Bolsa FAPESQ Mestrado/Doutorado",
+      "agencia": "FAPESQ",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "FAPEPI-001",
+      "titulo": "Edital Universal FAPEPI",
+      "agencia": "FAPEPI",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 55
+    },
+    {
+      "id": "FAPITEC-001",
+      "titulo": "Edital Universal FAPITEC",
+      "agencia": "FAPITEC",
+      "categoria": "startup",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Fomento empresarial/cultural (baixa relevância LGPD)",
+      "score_pesquisa": 70
+    },
+    {
+      "id": "FAPEAM-001",
+      "titulo": "Edital Universal FAPEAM",
+      "agencia": "FAPEAM",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 50
+    },
+    {
+      "id": "FAPEAM-002",
+      "titulo": "Bolsa FAPEAM Mestrado/Doutorado",
+      "agencia": "FAPEAM",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "FAPAC-001",
+      "titulo": "Edital Universal FAPAC",
+      "agencia": "FAPAC",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 70
+    },
+    {
+      "id": "FAPT-001",
+      "titulo": "Edital Universal FAPT",
+      "agencia": "FAPT",
+      "categoria": "inovacao",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Fomento empresarial/cultural (baixa relevância LGPD)",
+      "score_pesquisa": 68
+    },
+    {
+      "id": "FAPERO-001",
+      "titulo": "Edital Universal FAPERO",
+      "agencia": "FAPERO",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 74
+    },
+    {
+      "id": "FAPERO-002",
+      "titulo": "Bolsa FAPERO Mestrado/Doutorado",
+      "agencia": "FAPERO",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "FAPDF-001",
+      "titulo": "Edital Universal FAPDF",
+      "agencia": "FAPDF",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 68
+    },
+    {
+      "id": "FAPDF-002",
+      "titulo": "Bolsa FAPDF Mestrado/Doutorado",
+      "agencia": "FAPDF",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "FUNDECT-001",
+      "titulo": "Edital Universal FUNDECT",
+      "agencia": "FUNDECT",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 58
+    },
+    {
+      "id": "FUNDECT-002",
+      "titulo": "Bolsa FUNDECT Mestrado/Doutorado",
+      "agencia": "FUNDECT",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "FAPEMAT-001",
+      "titulo": "Edital Universal FAPEMAT",
+      "agencia": "FAPEMAT",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 55
+    },
+    {
+      "id": "FAPES-001",
+      "titulo": "Edital Universal FAPES",
+      "agencia": "FAPES",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 68
+    },
+    {
+      "id": "FAPES-002",
+      "titulo": "Bolsa FAPES Mestrado/Doutorado",
+      "agencia": "FAPES",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "FAPERGS-001",
+      "titulo": "Edital Universal FAPERGS",
+      "agencia": "FAPERGS",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 74
+    },
+    {
+      "id": "FAPERGS-002",
+      "titulo": "Bolsa FAPERGS Mestrado/Doutorado",
+      "agencia": "FAPERGS",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "FAPESC-001",
+      "titulo": "Edital Universal FAPESC",
+      "agencia": "FAPESC",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Pesquisa geral (pode envolver dados)",
+      "score_pesquisa": 70
+    },
+    {
+      "id": "FAPESC-002",
+      "titulo": "Bolsa FAPESC Mestrado/Doutorado",
+      "agencia": "FAPESC",
+      "categoria": "bolsa",
+      "conformidade_lgpd": "baixa",
+      "justificativa": "Bolsa acadêmica (sem manejo direto de dados)",
+      "score_pesquisa": 20
+    },
+    {
+      "id": "INOV-001",
+      "titulo": "InovAtiva Brasil",
+      "agencia": "MCTI/SEBRAE",
+      "categoria": "startup",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Fomento empresarial/cultural (baixa relevância LGPD)",
+      "score_pesquisa": 10
+    },
+    {
+      "id": "INOV-002",
+      "titulo": "BNDES Garagem",
+      "agencia": "BNDES",
+      "categoria": "startup",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Fomento empresarial/cultural (baixa relevância LGPD)",
+      "score_pesquisa": 10
+    },
+    {
+      "id": "INOV-003",
+      "titulo": "EMBRAPII",
+      "agencia": "EMBRAPII",
+      "categoria": "inovacao",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Fomento empresarial/cultural (baixa relevância LGPD)",
+      "score_pesquisa": 30
+    },
+    {
+      "id": "INOV-004",
+      "titulo": "SEBRAE Inovacao",
+      "agencia": "SEBRAE",
+      "categoria": "startup",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Fomento empresarial/cultural (baixa relevância LGPD)",
+      "score_pesquisa": 15
+    },
+    {
+      "id": "INOV-005",
+      "titulo": "Lei do Bem P&D",
+      "agencia": "MCTI",
+      "categoria": "inovacao",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Fomento empresarial/cultural (baixa relevância LGPD)",
+      "score_pesquisa": 10
+    },
+    {
+      "id": "CULT-001",
+      "titulo": "Lei Rouanet",
+      "agencia": "Minc",
+      "categoria": "cultura",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Fomento empresarial/cultural (baixa relevância LGPD)",
+      "score_pesquisa": 25
+    },
+    {
+      "id": "CULT-002",
+      "titulo": "Fundo Setorial Audiovisual",
+      "agencia": "ANCINE",
+      "categoria": "cultura",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Fomento empresarial/cultural (baixa relevância LGPD)",
+      "score_pesquisa": 35
+    },
+    {
+      "id": "SOCIAL-001",
+      "titulo": "Prosas Editais",
+      "agencia": "Prosas",
+      "categoria": "social",
+      "conformidade_lgpd": "alta",
+      "justificativa": "Projeto social com dados de vulneráveis",
+      "score_pesquisa": 45
+    },
+    {
+      "id": "SOCIAL-002",
+      "titulo": "Fundacao Banco do Brasil",
+      "agencia": "FBB",
+      "categoria": "social",
+      "conformidade_lgpd": "alta",
+      "justificativa": "Projeto social com dados de vulneráveis",
+      "score_pesquisa": 35
+    },
+    {
+      "id": "SET-001",
+      "titulo": "Embrapa Chamada de Projetos",
+      "agencia": "Embrapa",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "media",
+      "justificativa": "Edital de pesquisa",
+      "score_pesquisa": 62
+    },
+    {
+      "id": "SET-002",
+      "titulo": "Fiocruz Edital de Pesquisa",
+      "agencia": "Fiocruz",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "alta",
+      "justificativa": "Pesquisa em saúde/dados sensíveis",
+      "score_pesquisa": 78
+    },
+    {
+      "id": "SET-003",
+      "titulo": "Petrobras Conexoes Inovacao",
+      "agencia": "Petrobras",
+      "categoria": "inovacao",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Fomento empresarial/cultural (baixa relevância LGPD)",
+      "score_pesquisa": 15
+    },
+    {
+      "id": "SET-004",
+      "titulo": "Vale Fundo Amapa Inovacao",
+      "agencia": "Vale",
+      "categoria": "startup",
+      "conformidade_lgpd": "nula",
+      "justificativa": "Fomento empresarial/cultural (baixa relevância LGPD)",
+      "score_pesquisa": 45
+    },
+    {
+      "id": "SAUDE-001",
+      "titulo": "Pesquisa Inovativa SUS",
+      "agencia": "MS/Saúde",
+      "categoria": "pesquisa",
+      "conformidade_lgpd": "alta",
+      "justificativa": "Pesquisa em saúde/dados sensíveis",
+      "score_pesquisa": 10
+    }
+  ]
+}

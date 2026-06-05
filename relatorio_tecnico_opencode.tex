@@ -1,0 +1,408 @@
+% ------------------------------------------------------------------------
+% RELATÓRIO TÉCNICO OPENCODE
+% Formato: ABNT NBR 6022:2018 (Artigo em Publicação Técnico-Científica)
+% Compilação: lualatex → biber → lualatex → lualatex
+% ------------------------------------------------------------------------
+\documentclass[
+  brazil,
+  sumario=tradicional,
+  10pt
+]{abntex2}
+
+% --- Pacotes fundamentais ---
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage[alf,abnt-etal-text=it,abnt-etal-list=0]{abntex2cite}
+
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, shadows, fit}
+
+% --- Configurações de cores ---
+\definecolor{blueopencode}{RGB}{37,99,235}
+\definecolor{greenopencode}{RGB}{22,163,74}
+\definecolor{orangeopencode}{RGB}{234,88,12}
+\definecolor{redopencode}{RGB}{220,38,38}
+\definecolor{purpleopencode}{RGB}{124,58,237}
+\definecolor{graycode}{RGB}{30,41,59}
+\definecolor{lightgray}{RGB}{241,245,249}
+
+% --- Configuração de listings ---
+\lstdefinestyle{javastyle}{
+  language=Java,
+  basicstyle=\small\ttfamily,
+  keywordstyle=\color{blueopencode}\bfseries,
+  commentstyle=\color{green!50!black},
+  stringstyle=\color{redopencode},
+  numbers=left,
+  numberstyle=\tiny,
+  frame=single,
+  breaklines=true,
+  backgroundcolor=\color{lightgray},
+  tabsize=2
+}
+
+% --- Metadados ABNT ---
+\titulo{Pipeline Integrado de Especificação, Validação e Automação no Ecossistema OpenCode: Engenharia de Software Orientada a Especificações com SDD, TDD, Harness e Hooks}
+\autor{Equipe OpenCode}
+\local{Brasil}
+\data{Junho 2026}
+
+\instituicao{%
+  OpenCode Ecosystem
+  \par
+  Engenharia de Software com Agentes Inteligentes
+}
+
+\tipotrabalho{Relatório Técnico}
+
+% --- Resumo ---
+\begin{document}
+
+\resumo
+  Este relatório técnico apresenta a arquitetura integrada de especificação,
+  validação e automação do ecossistema OpenCode, fundamentada em quatro pilares:
+  \textit{Spec-Driven Development} (SDD), \textit{Test-Driven Development} (TDD),
+  infraestrutura de validação (\textit{Harness}) e automação orientada a eventos
+  (\textit{Hooks}). A abordagem consolida princípios de Engenharia de Software --
+  SOLID, padrões de projeto GoF, \textit{Clean Architecture} e \textit{Continuous
+  Delivery} -- em um pipeline fechado de qualidade que garante rastreabilidade
+  bidirecional entre especificações e implementação. O ecossistema conta com 186
+  componentes documentados, 25 assertivas críticas (CAs) distribuídas em 5
+  especificações acadêmicas TDDAcademic, e uma arquitetura de validadores
+  orientada a interfaces com suporte a hooks pré, pós e de erro. São discutidas
+  as contribuições para as disciplinas de Engenharia de Software, incluindo
+  SDD/TDD, CI/CD, arquitetura de software, padrões de projeto e verificação
+  formal.
+\endresumo
+
+% ======================================================================
+\section{INTRODUÇÃO}
+% ======================================================================
+
+A engenharia de software moderna demanda abordagens que integrem
+especificação rigorosa, validação automatizada e rastreabilidade contínua
+entre artefatos \cite{sommerville2011engenharia, pressman2016engenharia}.
+O ecossistema OpenCode propõe um pipeline unificado que combina quatro
+camadas complementares:
+
+\begin{enumerate}
+  \item \textbf{SDD (Spec-Driven Development):} Especificações executáveis
+    que funcionam como contratos formais entre requisitos e implementação.
+  \item \textbf{TDD (Test-Driven Development):} Assertivas críticas (CAs)
+    que validam cada aspecto da especificação.
+  \item \textbf{Harness:} Infraestrutura de validação que orquestra a
+    execução dos validadores e consolida resultados.
+  \item \textbf{Hooks:} Sistema de eventos para automação de ações
+    pré e pós-validação.
+\end{enumerate}
+
+Este relatório documenta a arquitetura, os padrões de projeto empregados
+e as contribuições para as disciplinas de Engenharia de Software,
+apresentando o ecossistema OpenCode como estudo de caso de aplicação
+sistemática de princípios SDD/TDD em um ambiente multiagente.
+
+% ======================================================================
+\section{ARCHITETURA DO PIPELINE}
+% ======================================================================
+
+A arquitetura do pipeline segue o fluxo linear com retroalimentação:
+
+\begin{equation}
+  \text{SDD} \longrightarrow \text{TDD} \longrightarrow
+  \text{Harness} \longrightarrow \text{Hooks}
+  \looparrowleft \text{Feedback}
+\end{equation}
+
+Cada estágio produz artefatos que alimentam o estágio subsequente,
+enquanto o \textit{feedback loop} permite que métricas de cobertura e
+resultados de validação retroalimentem a especificação inicial.
+
+% ----------------------------------------------------------------------
+\subsection{SDD -- Spec-Driven Development}
+% ----------------------------------------------------------------------
+
+O SDD estabelece que toda implementação deve ser precedida por uma
+especificação formal. No OpenCode, as especificações são documentos
+estruturados que definem:
+
+\begin{itemize}
+  \item \textbf{Metadados:} Identificador, categoria, versão, autor.
+  \item \textbf{Requisitos funcionais:} Comportamento esperado do sistema.
+  \item \textbf{Assertivas Críticas (CAs):} Condições que devem ser
+    satisfeitas para validação.
+  \item \textbf{Dependências:} Relacionamentos com outras especificações.
+\end{itemize}
+
+O ecossistema mantém 186 componentes documentados com 100\% de cobertura
+de especificações \cite{OpenCode2025}.
+
+% ----------------------------------------------------------------------
+\subsection{TDD -- Test-Driven Development}
+% ----------------------------------------------------------------------
+
+O TDD acadêmico no OpenCode materializa-se através do sistema TDDAcademic,
+composto por 5 especificações e 25 Assertivas Críticas (CAs):
+
+\begin{longtable}{lll}
+  \caption{Especificações TDDAcademic e CAs correspondentes}
+  \label{tab:tddacademic}\\
+  \toprule
+  \textbf{Especificação} & \textbf{ID} & \textbf{CAs} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Especificação} & \textbf{ID} & \textbf{CAs} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  TDDAcademic Base & SPEC-TDDA-BASE & CA-BASE-001 a 005 \\
+  Ciclo de Desenvolvimento & SPEC-TDDA-CICLO & CA-CICLO-001 a 005 \\
+  Baby Steps & SPEC-TDDA-BABY & CA-BABY-001 a 005 \\
+  Regras de Refatoração & SPEC-TDDA-REGRAS & CA-REGRAS-001 a 005 \\
+  Ferramentas TDD & SPEC-TDDA-FERRAMENTAS & CA-FERRAMENTAS-001 a 005 \\
+\end{longtable}
+
+Cada CA é classificada por peso (essencial, alta, média) e domain, e
+inclui descrição do cenário de validação e procedimento de verificação.
+
+% ----------------------------------------------------------------------
+\subsection{Harness -- Infraestrutura de Validação}
+% ----------------------------------------------------------------------
+
+A camada Harness é uma infraestrutura de validação composta por quatro
+componentes principais que orquestram o ciclo de validação:
+
+\begin{itemize}
+  \item \textbf{DiscoveryService:} Varre o classpath para localizar
+    validadores registrados via anotação ou convenção de nomenclatura.
+  \item \textbf{ExecutionEngine:} Executa cada validador contra a
+    especificação alvo, coletando resultados individuais.
+  \item \textbf{AggregationService:} Consolida resultados parciais em
+    um relatório unificado de validação.
+  \item \textbf{ReportingService:} Gera artefatos de saída (JSON, texto,
+    HTML) e dispara hooks de pós-validação.
+\end{itemize}
+
+O Harness implementa o padrão \textit{Template Method} através da classe
+abstrata \texttt{AbstractValidator<T>}, que define o esqueleto do
+algoritmo de validação enquanto delega etapas específicas para
+subclasses concretas.
+
+% ----------------------------------------------------------------------
+\subsection{Hooks -- Automação Orientada a Eventos}
+% ----------------------------------------------------------------------
+
+O sistema de hooks implementa o padrão \textit{Observer} \cite{gamma1995design},
+permitindo que agentes sejam notificados sobre eventos do pipeline:
+
+\begin{itemize}
+  \item \textbf{Pre-Hook (\texttt{on-spec-create}):} Acionado antes da
+    criação de uma especificação. Valida a estrutura, verifica
+    consistência dos CAs e bloqueia a criação se inválida.
+  \item \textbf{Error-Hook (\texttt{on-ca-fail}):} Acionado quando uma
+    CA falha. Registra o incidente, notifica agentes responsáveis e
+    bloqueia o avanço no pipeline.
+  \item \textbf{Post-Hook (\texttt{on-validation-complete}):} Acionado
+    após a validação completa. Gera relatório de cobertura, atualiza
+    painel de métricas e dispara implantação se aprovado.
+\end{itemize}
+
+% ======================================================================
+\section{ARQUITETURA OOP E PADRÕES DE PROJETO}
+% ======================================================================
+
+A arquitetura de validadores do OpenCode é construída sobre princípios
+SOLID \cite{martin2000principles} e padrões de projeto GoF
+\cite{gamma1995design}.
+
+% ----------------------------------------------------------------------
+\subsection{Hierarquia de Validadores}
+% ----------------------------------------------------------------------
+
+O núcleo da arquitetura é definido por uma interface genérica:
+
+\begin{lstlisting}[style=javastyle, caption={Interface IValidator<T>}]
+public interface IValidator<T> {
+    ValidationResult validate(T target);
+    boolean canHandle(Spec spec);
+    Category getCategory();
+}
+\end{lstlisting}
+
+A classe abstrata \texttt{AbstractValidator<T>} implementa o padrão
+\textit{Template Method}:
+
+\begin{lstlisting}[style=javastyle, caption={AbstractValidator -- Template Method}]
+public abstract class AbstractValidator<T>
+    implements IValidator<T> {
+
+    protected String id;
+    protected Category category;
+
+    public ValidationResult validate(T target) {
+        ValidationResult result = new ValidationResult();
+        result.setId(this.id);
+        if (!preValidate(target, result)) return result;
+        doValidate(target, result);
+        postValidate(target, result);
+        return result;
+    }
+
+    protected boolean preValidate(T t, ValidationResult r) { return true; }
+    protected abstract void doValidate(T t, ValidationResult r);
+    protected void postValidate(T t, ValidationResult r) {}
+}
+\end{lstlisting}
+
+As implementações concretas incluem:
+
+\begin{itemize}
+  \item \textbf{SpecValidator} (SPEC-VALIDATOR-001): Valida estrutura,
+    semântica e dependências de especificações.
+  \item \textbf{CAValidator} (CA-VALIDATOR-001): Valida assertivas
+    críticas individuais, seus pesos e classificações.
+  \item \textbf{HarnessValidator} (HARNESS-VALIDATOR-001): Orquestra a
+    execução de múltiplos validadores e gera relatórios de cobertura.
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{Padrões de Projeto Empregados}
+% ----------------------------------------------------------------------
+
+\subsubsection{Strategy}
+Cada validador concreto encapsula um algoritmo de validação específico,
+permitindo que sejam intercambiáveis. O \texttt{HarnessValidator}
+seleciona dinamicamente o validador adequado com base no tipo da
+especificação via \texttt{canHandle()}.
+
+\subsubsection{Template Method}
+\texttt{AbstractValidator<T>} define o esqueleto do algoritmo de
+validação (\texttt{preValidate → doValidate → postValidate}),
+permitindo que subclasses redefinam etapas específicas sem alterar
+a estrutura geral.
+
+\subsubsection{Composite}
+O \texttt{HarnessValidator} trata validadores individuais e coleções
+de validadores de forma uniforme, permitindo composição hierárquica
+de validações.
+
+\subsubsection{Observer}
+O sistema de hooks (\textit{Publisher}) notifica agentes registrados
+(\textit{Subscribers}) sobre eventos do pipeline, implementando
+desacoplamento completo entre a origem do evento e os manipuladores.
+
+% ======================================================================
+\section{INTEGRAÇÃO DO PIPELINE E CICLO DE QUALIDADE}
+% ======================================================================
+
+O pipeline opera como um ciclo fechado de qualidade (\textit{closed-loop
+quality}):
+
+\begin{enumerate}
+  \item \textbf{Especificação:} Cria-se ou atualiza-se uma especificação
+    SDD. O pre-hook valida a estrutura.
+  \item \textbf{Implementação:} Desenvolve-se a implementação orientada
+    pelas especificações e CAs.
+  \item \textbf{Validação:} O Harness executa todos os validadores
+    aplicáveis contra a implementação.
+  \item \textbf{Feedback:} Os resultados da validação retroalimentam a
+    especificação, permitindo refinamento iterativo.
+  \item \textbf{Relatório:} O ReportingService gera artefatos de
+    cobertura e rastreabilidade.
+\end{enumerate}
+
+Este ciclo garante que toda alteração seja validada contra o conjunto
+completo de especificações antes de ser considerada concluída,
+estabelecendo um contrato formal e verificável entre requisitos e
+implementação \cite{humble2010continuous}.
+
+% ======================================================================
+\section{EXTRAÇÃO PARA AVALIAÇÃO EM BANCA}
+% ======================================================================
+
+Esta seção apresenta os artefatos do OpenCode relevantes para avaliação
+em banca acadêmica, mapeados contra disciplinas de Engenharia de Software.
+
+\begin{longtable}{p{4cm}p{4cm}p{4cm}}
+  \caption{Mapeamento Artefato-Disciplina}
+  \label{tab:banca}\\
+  \toprule
+  \textbf{Artefato} & \textbf{Disciplinas ES} & \textbf{Contribuição} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Artefato} & \textbf{Disciplinas ES} & \textbf{Contribuição} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  SDD + 186 specs & SDD, Requisitos, Documentação & Rastreabilidade req.--impl. \\
+  TDDAcademic CAs & TDD, Verificação, Testes & 25 assertivas críticas \\
+  Harness + Validadores & CI/CD, Arquitetura SWEBOK & Infraestrutura de validação \\
+  Hooks + Eventos & Automação, DevOps & Gatilhos de pipeline \\
+  Interface IValidator & OOP, SOLID, Padrões GoF & Strategy + Template Method \\
+  AbstractValidator & Reuso, Herança, Polimorfismo & Template Method concreto \\
+  Diagrama Pipeline & Arquitetura de Software, Documentação & Visão integrada do fluxo \\
+  Feedback Loop & Melhoria Contínua, Métricas & Ciclo fechado de qualidade \\
+\end{longtable}
+
+% ======================================================================
+\section{CONCLUSÃO}
+% ======================================================================
+
+O ecossistema OpenCode demonstra a viabilidade de integrar SDD, TDD,
+Harness e Hooks em um pipeline unificado de engenharia de software. As
+principais contribuições incluem:
+
+\begin{enumerate}
+  \item \textbf{Arquitetura orientada a interfaces} com separação clara
+    de responsabilidades e adesão aos princípios SOLID.
+  \item \textbf{Pipeline de qualidade fechado} que garante rastreabilidade
+    bidirecional entre especificações e implementação.
+  \item \textbf{Sistema de hooks extensível} que permite automação de
+    ações pré e pós-validação sem acoplamento.
+  \item \textbf{Documentação completa} com 186 componentes e 100\% de
+    cobertura de especificações.
+  \item \textbf{Estrutura de validação multiagente} com suporte a
+    composição hierárquica de validadores.
+\end{enumerate}
+
+Os padrões de projeto empregados -- Strategy, Template Method, Composite
+e Observer -- fornecem uma base sólida para extensão futura do
+ecossistema, enquanto o ciclo fechado de qualidade estabelece um
+arcabouço replicável para projetos que exigem rigor entre especificação
+e implementação.
+
+% ======================================================================
+\section{TRABALHOS FUTUROS}
+% =====================================================================%
+
+Entre as direções para trabalho futuro, destacam-se:
+
+\begin{itemize}
+  \item Integração com ferramentas formais de verificação (Z3, Coq) para
+    validação simbólica de especificações.
+  \item Geração automática de casos de teste a partir das especificações
+    SDD utilizando técnicas de \textit{model-based testing}.
+  \item Expansão do sistema de hooks para suportar encadeamento de
+    eventos e orquestração multiagente.
+  \item Métricas quantitativas de eficácia do pipeline em projetos reais.
+  \item Publicação do ecossistema como \textit{open-source} para
+    replicação e validação pela comunidade acadêmica.
+\end{itemize}
+
+% ======================================================================
+\bibliography{relatorio_tecnico_opencode}
+% ======================================================================
+
+\end{document}

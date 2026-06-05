@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="gradSDD" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradTDD" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#16a34a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#15803d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradHarness" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ea580c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c2410c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradHooks" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b91c1c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradCoverage" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-color="#00000030"/>
+    </filter>
+    <filter id="shadowLight" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#00000020"/>
+    </filter>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#ea580c"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="url(#gradBg)" rx="8"/>
+
+  <!-- Title -->
+  <text x="600" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">
+    Pipeline Integrado SDD → TDD → Harness → Hooks
+  </text>
+  <text x="600" y="68" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">
+    Ecossistema OpenCode — Engenharia de Software Orientada a Especificações
+  </text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 1: MAIN PIPELINE -->
+  <!-- ============================================================ -->
+
+  <!-- SDD Box -->
+  <rect x="60" y="110" width="240" height="80" rx="12" fill="url(#gradSDD)" filter="url(#shadow)"/>
+  <text x="180" y="140" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle">SDD</text>
+  <text x="180" y="162" font-family="Arial, sans-serif" font-size="12" fill="#dbeafe" text-anchor="middle">Spec-Driven Development</text>
+  <text x="180" y="180" font-family="Arial, sans-serif" font-size="10" fill="#93c5fd" text-anchor="middle">Especificações Executáveis</text>
+
+  <!-- Arrow SDD → TDD -->
+  <line x1="300" y1="150" x2="370" y2="150" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+
+  <!-- TDD Box -->
+  <rect x="380" y="110" width="240" height="80" rx="12" fill="url(#gradTDD)" filter="url(#shadow)"/>
+  <text x="500" y="140" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle">TDD</text>
+  <text x="500" y="162" font-family="Arial, sans-serif" font-size="12" fill="#dcfce7" text-anchor="middle">Test-Driven Development</text>
+  <text x="500" y="180" font-family="Arial, sans-serif" font-size="10" fill="#86efac" text-anchor="middle">Assertivas Críticas (CA)</text>
+
+  <!-- Arrow TDD → Harness -->
+  <line x1="620" y1="150" x2="690" y2="150" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+
+  <!-- Harness Box -->
+  <rect x="700" y="110" width="240" height="80" rx="12" fill="url(#gradHarness)" filter="url(#shadow)"/>
+  <text x="820" y="140" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle">Harness</text>
+  <text x="820" y="162" font-family="Arial, sans-serif" font-size="12" fill="#ffedd5" text-anchor="middle">Infraestrutura de Validação</text>
+  <text x="820" y="180" font-family="Arial, sans-serif" font-size="10" fill="#fdba74" text-anchor="middle">Discoverer • Runner • Aggregator • Reporter</text>
+
+  <!-- Arrow Harness → Hooks -->
+  <line x1="940" y1="150" x2="1010" y2="150" stroke="#ea580c" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+
+  <!-- Hooks Box -->
+  <rect x="1020" y="110" width="160" height="80" rx="12" fill="url(#gradHooks)" filter="url(#shadow)"/>
+  <text x="1100" y="140" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle">Hooks</text>
+  <text x="1100" y="162" font-family="Arial, sans-serif" font-size="12" fill="#fee2e2" text-anchor="middle">Eventos</text>
+  <text x="1100" y="180" font-family="Arial, sans-serif" font-size="10" fill="#fca5a5" text-anchor="middle">Pre • Post • Error</text>
+
+  <!-- Main Pipeline Label -->
+  <text x="600" y="100" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">
+    CAMADA PRINCIPAL — Pipeline de Especificação → Validação
+  </text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 2: HOOK DETAILS -->
+  <!-- ============================================================ -->
+
+  <text x="600" y="230" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">
+    CAMADA DE HOOKS — Automação de Eventos no Pipeline
+  </text>
+
+  <!-- Pre-Hook -->
+  <rect x="100" y="250" width="280" height="110" rx="8" fill="white" stroke="#93c5fd" stroke-width="1.5" filter="url(#shadowLight)"/>
+  <rect x="100" y="250" width="280" height="28" rx="8" fill="#2563eb"/>
+  <rect x="100" y="270" width="280" height="8" fill="#2563eb"/>
+  <text x="240" y="269" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white" text-anchor="middle">PRE-HOOK (on-spec-create)</text>
+  <text x="120" y="300" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Valida estrutura da especificação</text>
+  <text x="120" y="318" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Verifica consistência dos CAs</text>
+  <text x="120" y="336" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Bloqueia criação se inválida</text>
+  <text x="120" y="354" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Evento: criação de spec | Ação: validação estrutural</text>
+
+  <!-- Error-Hook -->
+  <rect x="460" y="250" width="280" height="110" rx="8" fill="white" stroke="#fca5a5" stroke-width="1.5" filter="url(#shadowLight)"/>
+  <rect x="460" y="250" width="280" height="28" rx="8" fill="#dc2626"/>
+  <rect x="460" y="270" width="280" height="8" fill="#dc2626"/>
+  <text x="600" y="269" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white" text-anchor="middle">ERROR-HOOK (on-ca-fail)</text>
+  <text x="480" y="300" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Registra incidente de falha</text>
+  <text x="480" y="318" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Notifica agentes responsáveis</text>
+  <text x="480" y="336" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Bloqueia avanço no pipeline</text>
+  <text x="480" y="354" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Evento: falha de CA | Ação: bloqueio + notificação</text>
+
+  <!-- Post-Hook -->
+  <rect x="820" y="250" width="280" height="110" rx="8" fill="white" stroke="#fdba74" stroke-width="1.5" filter="url(#shadowLight)"/>
+  <rect x="820" y="250" width="280" height="28" rx="8" fill="#ea580c"/>
+  <rect x="820" y="270" width="280" height="8" fill="#ea580c"/>
+  <text x="960" y="269" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white" text-anchor="middle">POST-HOOK (on-validation-complete)</text>
+  <text x="840" y="300" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Gera relatório de cobertura</text>
+  <text x="840" y="318" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Atualiza painel de métricas</text>
+  <text x="840" y="336" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Dispara implantação (se aprovado)</text>
+  <text x="840" y="354" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Evento: validação completa | Ação: relatório + deploy</text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 3: OOP ARCHITECTURE -->
+  <!-- ============================================================ -->
+
+  <text x="600" y="405" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">
+    CAMADA OOP — Arquitetura de Validadores (SOLID + Padrões de Projeto)
+  </text>
+
+  <!-- IValidator Interface -->
+  <rect x="60" y="425" width="220" height="100" rx="8" fill="#e0e7ff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadowLight)"/>
+  <text x="170" y="448" font-family="monospace" font-size="12" font-weight="bold" fill="#4338ca" text-anchor="middle">«interface»</text>
+  <text x="170" y="466" font-family="monospace" font-size="13" font-weight="bold" fill="#4338ca" text-anchor="middle">IValidator&lt;T&gt;</text>
+  <text x="170" y="484" font-family="monospace" font-size="10" fill="#6366f1" text-anchor="middle">+ validate(T): Result</text>
+  <text x="170" y="498" font-family="monospace" font-size="10" fill="#6366f1" text-anchor="middle">+ canHandle(Spec): bool</text>
+  <text x="170" y="512" font-family="monospace" font-size="10" fill="#6366f1" text-anchor="middle">+ getCategory(): Category</text>
+
+  <!-- AbstractValidator -->
+  <rect x="330" y="425" width="240" height="100" rx="8" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5" filter="url(#shadowLight)"/>
+  <text x="450" y="448" font-family="monospace" font-size="12" font-weight="bold" fill="#7e22ce" text-anchor="middle">«abstract»</text>
+  <text x="450" y="466" font-family="monospace" font-size="13" font-weight="bold" fill="#7e22ce" text-anchor="middle">AbstractValidator&lt;T&gt;</text>
+  <text x="450" y="484" font-family="monospace" font-size="10" fill="#9333ea" text-anchor="middle"># id: String</text>
+  <text x="450" y="498" font-family="monospace" font-size="10" fill="#9333ea" text-anchor="middle"># category: Category</text>
+  <text x="450" y="512" font-family="monospace" font-size="10" fill="#9333ea" text-anchor="middle"># doValidate(T): Result</text>
+
+  <!-- Arrow: IValidator → AbstractValidator -->
+  <line x1="280" y1="475" x2="330" y2="475" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <text x="305" y="468" font-family="Arial, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">implementa</text>
+
+  <!-- Concrete Validators -->
+  <!-- SpecValidator -->
+  <rect x="60" y="560" width="200" height="100" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" filter="url(#shadowLight)"/>
+  <text x="160" y="583" font-family="monospace" font-size="12" font-weight="bold" fill="#1d4ed8" text-anchor="middle">SpecValidator</text>
+  <text x="160" y="600" font-family="monospace" font-size="9" fill="#2563eb" text-anchor="middle">SPEC-VALIDATOR-001</text>
+  <text x="160" y="618" font-family="monospace" font-size="10" fill="#475569" text-anchor="middle">validateStructure()</text>
+  <text x="160" y="632" font-family="monospace" font-size="10" fill="#475569" text-anchor="middle">validateSemantics()</text>
+  <text x="160" y="646" font-family="monospace" font-size="10" fill="#475569" text-anchor="middle">validateDependencies()</text>
+
+  <!-- CAValidator -->
+  <rect x="290" y="560" width="200" height="100" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" filter="url(#shadowLight)"/>
+  <text x="390" y="583" font-family="monospace" font-size="12" font-weight="bold" fill="#15803d" text-anchor="middle">CAValidator</text>
+  <text x="390" y="600" font-family="monospace" font-size="9" fill="#16a34a" text-anchor="middle">CA-VALIDATOR-001</text>
+  <text x="390" y="618" font-family="monospace" font-size="10" fill="#475569" text-anchor="middle">validateAssertion()</text>
+  <text x="390" y="632" font-family="monospace" font-size="10" fill="#475569" text-anchor="middle">validateWeight()</text>
+  <text x="390" y="646" font-family="monospace" font-size="10" fill="#475569" text-anchor="middle">isCritical()</text>
+
+  <!-- HarnessValidator -->
+  <rect x="520" y="560" width="220" height="100" rx="8" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" filter="url(#shadowLight)"/>
+  <text x="630" y="583" font-family="monospace" font-size="12" font-weight="bold" fill="#c2410c" text-anchor="middle">HarnessValidator</text>
+  <text x="630" y="600" font-family="monospace" font-size="9" fill="#ea580c" text-anchor="middle">HARNESS-VALIDATOR-001</text>
+  <text x="630" y="618" font-family="monospace" font-size="10" fill="#475569" text-anchor="middle">registerValidator()</text>
+  <text x="630" y="632" font-family="monospace" font-size="10" fill="#475569" text-anchor="middle">executeAll()</text>
+  <text x="630" y="646" font-family="monospace" font-size="10" fill="#475569" text-anchor="middle">generateCoverageReport()</text>
+
+  <!-- Arrows: Abstract → Concrete -->
+  <line x1="160" y1="525" x2="160" y2="560" stroke="#9333ea" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrowGray)"/>
+  <line x1="390" y1="525" x2="390" y2="560" stroke="#9333ea" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrowGray)"/>
+  <line x1="630" y1="525" x2="630" y2="560" stroke="#9333ea" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrowGray)"/>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 4: COVERAGE & METRICS -->
+  <!-- ============================================================ -->
+
+  <text x="600" y="700" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">
+    CAMADA DE COBERTURA — Métricas e Relatórios
+  </text>
+
+  <!-- Coverage Metrics -->
+  <rect x="60" y="720" width="250" height="100" rx="8" fill="url(#gradCoverage)" filter="url(#shadow)"/>
+  <text x="185" y="745" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Cobertura de Especificações</text>
+  <text x="185" y="765" font-family="Arial, sans-serif" font-size="11" fill="#ddd6fe" text-anchor="middle">✓ Cobertura de specs implementadas</text>
+  <text x="185" y="782" font-family="Arial, sans-serif" font-size="11" fill="#ddd6fe" text-anchor="middle">✓ Cobertura de assertivas (CAs)</text>
+  <text x="185" y="799" font-family="Arial, sans-serif" font-size="11" fill="#ddd6fe" text-anchor="middle">✓ Cobertura de dependências</text>
+  <text x="185" y="816" font-family="Arial, sans-serif" font-size="11" fill="#ddd6fe" text-anchor="middle">✓ Cobertura de rastreabilidade</text>
+
+  <!-- Feedback Loop Arrow -->
+  <path d="M 310 770 Q 350 770 350 600 Q 350 150 350 150" fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrowPurple)"/>
+  <text x="340" y="470" font-family="Arial, sans-serif" font-size="10" fill="#7c3aed" text-anchor="middle" transform="rotate(-90, 340, 470)">feedback loop</text>
+
+  <!-- Cycle Stats -->
+  <rect x="360" y="720" width="250" height="100" rx="8" fill="white" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadowLight)"/>
+  <text x="485" y="745" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Closed-Loop Quality</text>
+  <circle cx="410" cy="772" r="5" fill="#22c55e"/>
+  <text x="420" y="776" font-family="Arial, sans-serif" font-size="11" fill="#475569">Especificação → Implementação</text>
+  <circle cx="410" cy="792" r="5" fill="#22c55e"/>
+  <text x="420" y="796" font-family="Arial, sans-serif" font-size="11" fill="#475569">Validação → Retroalimentação</text>
+  <circle cx="410" cy="812" r="5" fill="#22c55e"/>
+  <text x="420" y="816" font-family="Arial, sans-serif" font-size="11" fill="#475569">Métricas → Priorização</text>
+
+  <!-- Legend -->
+  <rect x="660" y="720" width="480" height="100" rx="8" fill="white" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadowLight)"/>
+  <text x="900" y="740" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">Padrões de Projeto na Arquitetura</text>
+  <text x="680" y="758" font-family="Arial, sans-serif" font-size="11" fill="#475569">▸ <tspan font-weight="bold">Strategy</tspan>: Diferentes algoritmos de validação encapsulados</text>
+  <text x="680" y="776" font-family="Arial, sans-serif" font-size="11" fill="#475569">▸ <tspan font-weight="bold">Template Method</tspan>: AbstractValidator define esqueleto</text>
+  <text x="680" y="794" font-family="Arial, sans-serif" font-size="11" fill="#475569">▸ <tspan font-weight="bold">Composite</tspan>: Harness trata validadores unitários e coleções</text>
+  <text x="680" y="812" font-family="Arial, sans-serif" font-size="11" fill="#475569">▸ <tspan font-weight="bold">Observer</tspan>: Hooks notificam agentes sobre eventos</text>
+
+  <!-- Footer -->
+  <text x="600" y="880" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    OpenCode Ecosystem — SDD + TDD + Harness + Hooks — Arquitetura OOP com Princípios SOLID
+  </text>
+</svg>

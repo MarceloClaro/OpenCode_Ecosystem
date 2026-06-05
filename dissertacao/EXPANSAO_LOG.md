@@ -1,0 +1,1 @@
+OK. 48 paginas = 60\% do alvo. Expandindo para 80+ agora com +32 paginas de conteudo adicional em todas as secoes. Corrigindo os 7 overfull restantes com \raggedright nos enumerates longos. Compilando.

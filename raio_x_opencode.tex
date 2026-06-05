@@ -1,0 +1,897 @@
+% ------------------------------------------------------------------------
+% RAIO-X DO ECOSSISTEMA OPENCODE v5.0.0
+% Relatório Técnico Abrangente para Avaliação em Banca CNPq
+% Formato: ABNT NBR 6022:2018 (Artigo em Publicação Técnico-Científica)
+% Compilação: pdflatex -> bibtex -> pdflatex -> pdflatex
+% ------------------------------------------------------------------------
+\documentclass[
+  brazil,
+  sumario=tradicional,
+  10pt
+]{abntex2}
+
+% --- Pacotes fundamentais ---
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage[alf,abnt-etal-text=it,abnt-etal-list=0]{abntex2cite}
+
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, shadows, fit}
+
+% --- Configurações de cores ---
+\definecolor{blueopencode}{RGB}{37,99,235}
+\definecolor{greenopencode}{RGB}{22,163,74}
+\definecolor{orangeopencode}{RGB}{234,88,12}
+\definecolor{redopencode}{RGB}{220,38,38}
+\definecolor{purpleopencode}{RGB}{124,58,237}
+\definecolor{graycode}{RGB}{30,41,59}
+\definecolor{lightgray}{RGB}{241,245,249}
+
+% --- Configuração de listings ---
+\lstdefinestyle{javastyle}{
+  language=Java,
+  basicstyle=\small\ttfamily,
+  keywordstyle=\color{blueopencode}\bfseries,
+  commentstyle=\color{green!50!black},
+  stringstyle=\color{redopencode},
+  numbers=left,
+  numberstyle=\tiny,
+  frame=single,
+  breaklines=true,
+  backgroundcolor=\color{lightgray},
+  tabsize=2
+}
+
+\lstdefinestyle{pythonstyle}{
+  language=Python,
+  basicstyle=\small\ttfamily,
+  keywordstyle=\color{purpleopencode}\bfseries,
+  commentstyle=\color{green!50!black},
+  stringstyle=\color{orangeopencode},
+  numbers=left,
+  numberstyle=\tiny,
+  frame=single,
+  breaklines=true,
+  backgroundcolor=\color{lightgray},
+  tabsize=2
+}
+
+% --- Metadados ABNT ---
+\titulo{Ecossistema OpenCode v5.0.0: Uma Arquitetura Integrada de Engenharia de Software com Agentes Inteligentes, Computação Quântica e Validação Acadêmica Multiagente}
+\autor{Equipe OpenCode}
+\local{Brasil}
+\data{Junho 2026}
+
+\instituicao{%
+  OpenCode Ecosystem
+  \par
+  Engenharia de Software com Agentes Inteligentes
+}
+
+\tipotrabalho{Relatório Técnico}
+
+% ======================================================================
+\begin{document}
+% ======================================================================
+
+\resumo
+  Este relatório técnico apresenta o raio-x completo do ecossistema
+  OpenCode v5.0.0, uma plataforma integrada de engenharia de software
+  com agentes inteligentes que compreende mais de 600 componentes
+  distribuídos em 125 agentes especializados, 150 habilidades (\textit{skills}),
+  46 servidores MCP (\textit{Model Context Protocol}), 4 motores de
+  raciocínio formal (Z3, SymPy, miniKanren, Critical), 38 \textit{skills}
+  científicas integradas a bases como AlphaFold, PubMed e UniProt, e um
+  subsistema de computação quântica com 107 arquivos incluindo QML
+  (Quantum Machine Learning) com acurácia de 89,52\% no conjunto HAM10000.
+  São documentados: (i) a arquitetura em 3 camadas (MCP $\rightarrow$
+  Skill $\rightarrow$ Agente); (ii) o \textit{pipeline} acadêmico com
+  49 agentes MASWOS e 91 artefatos de criação de artigos; (iii) o
+  sistema de orquestração Nexus com 488 arquivos e 6 camadas de
+  meta-granularidade (L0--L6); (iv) o sistema evolutivo com 14 gerações
+  e evolução de score 85 para 98; (v) os 4 motores de raciocínio com
+  212+ tipos em 27 categorias; (vi) o \textit{benchmark} CORA-Eval com
+  150 tarefas em 10 dimensões; e (vii) o \textit{pipeline} SDD--TDD--
+  Harness--Hooks com 25 assertivas críticas. O ecossistema é analisado
+  sob as lentes da Engenharia de Software, Inteligência Artificial,
+  Computação Quântica e Metodologia Científica, com ênfase em
+  rastreabilidade, validação formal e produção acadêmica Qualis A1.
+\endresumo
+
+% ======================================================================
+\section{INTRODUÇÃO}
+% ======================================================================
+
+A convergência entre engenharia de software, inteligência artificial e
+computação quântica tem impulsionado o desenvolvimento de plataformas
+cada vez mais integradas e autônomas \cite{sommerville2011engenharia,
+pressman2016engenharia}. O ecossistema OpenCode v5.0.0 surge como uma
+resposta a este cenário, propondo uma arquitetura unificada que combina
+agentes inteligentes, validação formal, computação quântica e produção
+acadêmica em um único ambiente de desenvolvimento.
+
+Este relatório apresenta um raio-x completo do ecossistema, cobrindo:
+
+\begin{enumerate}
+  \item \textbf{Arquitetura em 3 camadas:} MCPs (46 servidores),
+    Skills (150 habilidades), Agentes (125 especialistas).
+  \item \textbf{Computação Quântica:} 107 arquivos, QML com acurácia
+    de 89,52\% no HAM10000, mitigação de erros ZNE/PEC/DD.
+  \item \textbf{Orquestração Multiagente Nexus:} 488 arquivos,
+    6 camadas de meta-granularidade, 120+ barreiras de sincronização.
+  \item \textbf{Pipeline de Criação de Artigos:} 91 arquivos,
+    49 agentes MASWOS, 14 referências Qualis A1.
+  \item \textbf{Sistema Evolutivo:} 14 gerações, score 85 $\rightarrow$ 98.
+  \item \textbf{Motores de Raciocínio:} Z3, SymPy, miniKanren, Critical.
+  \item \textbf{Skills Científicas:} 38 integrações com bases como
+    AlphaFold, PubMed, ChEMBL, UniProt.
+  \item \textbf{Benchmark CORA-Eval:} 150 tarefas em 10 dimensões.
+  \item \textbf{Pipeline SDD--TDD--Harness--Hooks:} 25 assertivas
+    críticas, validação hierárquica.
+\end{enumerate}
+
+A Seção~\ref{sec:arquitetura} descreve a arquitetura geral do ecossistema.
+A Seção~\ref{sec:quantum} detalha o subsistema de computação quântica.
+A Seção~\ref{sec:nexus} apresenta a orquestração multiagente Nexus.
+A Seção~\ref{sec:artigo} documenta o pipeline de criação de artigos.
+A Seção~\ref{sec:validadores} descreve o sistema de validadores e o
+pipeline SDD--TDD--Harness--Hooks. A Seção~\ref{sec:evolucao} apresenta
+o sistema evolutivo. A Seção~\ref{sec:raciocinio} documenta os motores
+de raciocínio. A Seção~\ref{sec:ciencia} detalha as \textit{skills}
+científicas. A Seção~\ref{sec:coraeval} apresenta o \textit{benchmark}
+CORA-Eval. A Seção~\ref{sec:conclusao} tece as considerações finais.
+
+% ======================================================================
+\section{ARQUITETURA DO ECOSSISTEMA}
+\label{sec:arquitetura}
+% ======================================================================
+
+A arquitetura do OpenCode v5.0.0 é organizada em 3 camadas principais,
+seguindo o padrão de \textit{layered architecture}
+\cite{martin2017clean}:
+
+% ----------------------------------------------------------------------
+\subsection{Camada 1: MCPs (Model Context Protocol)}
+% ----------------------------------------------------------------------
+
+A camada de MCPs constitui a interface entre o ecossistema e fontes
+externas de dados e serviços. São 46 servidores MCP, dos quais 23
+encontram-se ativos, distribuídos nas seguintes categorias funcionais:
+
+\begin{longtable}{p{3cm}p{3.5cm}p{5.5cm}}
+  \caption{Categorias de MCPs no ecossistema OpenCode}
+  \label{tab:mcps}\\
+  \toprule
+  \textbf{Categoria} & \textbf{Quantidade} & \textbf{Exemplos} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Categoria} & \textbf{Quantidade} & \textbf{Exemplos} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  Busca             & 4  & websearch, gh\_grep, context7, scihub \\
+  Navegador         & 2  & playwright, chrome-devtools \\
+  Código            & 3  & eslint, diff, code-runner \\
+  Dados             & 3  & sqlite, fetch, pdf, time \\
+  Raciocínio        & 2  & sequential-thinking, memory \\
+  Infraestrutura    & 2  & filesystem, github \\
+  Ciência           & 4  & arxiv-mcp, latest-science, research-mcp, sura-papers \\
+  Outros            & 3  & node-sandbox, websearch, web-fetch \\
+  \hline
+  \textbf{Total}    & \textbf{23 ativos} & (de 46 instalados) \\
+\end{longtable}
+
+% ----------------------------------------------------------------------
+\subsection{Camada 2: Skills (Habilidades)}
+% ----------------------------------------------------------------------
+
+A camada de Skills é composta por 150 habilidades distribuídas em
+13 categorias:
+
+\begin{longtable}{p{3cm}p{2cm}p{7cm}}
+  \caption{Categorias de Skills no ecossistema OpenCode}
+  \label{tab:skills}\\
+  \toprule
+  \textbf{Categoria} & \textbf{Qtde.} & \textbf{Descrição} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Categoria} & \textbf{Qtde.} & \textbf{Descrição} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  System              & 12   & Auditoria acadêmica, revisão de código, \
+                                      planos, MCP discovery \\
+  Jurídico            & 7    & Contratos, triagem, peças jurídicas, \
+                                      edição cirúrgica \\
+  Research            & 18   & Editais BR, SEER, arteterapia clínica, \
+                                      ML acadêmico \\
+  Science             & 38   & AlphaFold, PubMed, ChEMBL, UniProt, \
+                                      ClinVar, FoldSeek, PyMOL \\
+  Reasoning           & 4    & Z3, SymPy, miniKanren, Critical \\
+  Agency/Academic     & 5    & Anthropologist, Geographer, Historian, \
+                                      Narratologist, Psychologist \\
+  Open Design         & 75+  & Templates HTML, decks, dashboards, \
+                                      landing pages, vídeos \\
+  Broomva             & 30+  & Content engine, saúde, finanças, \
+                                      oncologia, genômica \\
+  Baoyu               & 20+  & Imagens, tradução, compressão, \
+                                      diagramas, WeChat, X \\
+  CC-Skills           & 10+  & SEO, ghostwriting, press release, \
+                                      chrome-extension \\
+  Agent Skills        & 20+  & Code review, TDD, debugging, CI/CD, \
+                                      documentation \\
+  Agente-Forum        & 10+  & MiroFish, BettaFish, ANP, OASIS, \
+                                      PhD Auditor \\
+  Especificações      & 10+  & CORA-Eval D1--D11, TDDAcademic \\
+\end{longtable}
+
+% ----------------------------------------------------------------------
+\subsection{Camada 3: Agentes}
+% ----------------------------------------------------------------------
+
+O OpenCode dispõe de 125 agentes especializados, distribuídos em:
+
+\begin{itemize}
+  \item \textbf{56 agentes core:} Autoevolve (evolução autônoma),
+    Reversa (25 subagentes de engenharia reversa), Coder/Frontend
+    (8 especialistas), DevOps, Test, Security, Audit, Build.
+  \item \textbf{49 agentes de criação:} Article Creator (MASWOS),
+    44 agentes especializados por domínio científico mais 5 de
+    suporte (scheduler, revisor, consultor, corretor, avaliador).
+  \item \textbf{12 agentes SEER:} Pesquisa acadêmica com 10+
+    fontes (arXiv, OpenAlex, Semantic Scholar, PubMed, CORE).
+  \item \textbf{8 agentes Reversa:} Scout, Archaeologist, Architect,
+    Writer, Reviewer, Synthesis, Swarm, Agent-Forum.
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{Integração entre Camadas}
+% ----------------------------------------------------------------------
+
+A integração entre as camadas segue o princípio de injeção de
+dependência e desacoplamento via MCP. Um agente não acessa diretamente
+uma fonte de dados; ele o faz através de uma Skill que, por sua vez,
+utiliza um MCP específico. Este padrão arquitetural permite:
+
+\begin{itemize}
+  \item Substituição de implementações sem impacto nos agentes.
+  \item Versionamento independente de MCPs, Skills e Agentes.
+  \item Auditoria e rastreabilidade de todas as chamadas externas.
+  \item Paralelismo na execução de múltiplos MCPs simultâneos.
+\end{itemize}
+
+A Figura~\ref{fig:arquitetura} (disponível no arquivo
+\texttt{diagrams/arquitetura\_ecossistema\_opencode.svg}) ilustra a
+disposição das camadas e seus componentes.
+
+% ======================================================================
+\section{SUBSISTEMA DE COMPUTAÇÃO QUÂNTICA}
+\label{sec:quantum}
+% ======================================================================
+
+O subsistema quântico do OpenCode, localizado no diretório
+\texttt{quantum/}, compreende 107 arquivos organizados em 5 frameworks
+principais:
+
+\begin{itemize}
+  \item \textbf{Quantum Machine Learning (QML):} Implementação de
+    redes neurais quânticas aplicadas à classificação de imagens
+    médicas, utilizando o conjunto de dados HAM10000 (dermatoscopia).
+    Acurácia alcançada: 89,52\%.
+  \item \textbf{MPS (Matrix Product States):} Simulação de sistemas
+    quânticos com até 50 qubits utilizando representação tensorial
+    compacta (estados produto de matrizes).
+  \item \textbf{Mitigação de Erros:} Pipeline ZNE (Zero-Noise
+    Extrapolation), PEC (Probabilistic Error Cancellation) e DD
+    (Dynamic Decoupling) para correção de erros em processadores
+    quânticos NISQ (Noisy Intermediate-Scale Quantum).
+  \item \textbf{Grad-CAM Quântico:} Adaptação do Grad-CAM
+    (Gradient-weighted Class Activation Mapping) para interpretabilidade
+    de decisões em modelos quânticos.
+  \item \textbf{Referências Qualis A1:} 21 citações acadêmicas
+    indexadas no sistema de classificação Qualis A1 da CAPES.
+\end{itemize}
+
+O pipeline de mitigação de erros implementa três técnicas
+complementares:
+
+\begin{enumerate}
+  \item \textbf{ZNE:} Executa o mesmo circuito em diferentes níveis
+    de ruído (via pulos de gate ou inserção de identidades) e
+    extrapola para o limite de ruído zero.
+  \item \textbf{PEC:} Aplica cancelamento probabilístico de erros
+    através da decomposição de canais ruidosos em combinações
+    convexas de operações ideais.
+  \item \textbf{DD:} Insere pulsos de controle durante períodos de
+    espera para desacoplar o sistema quântico do ambiente.
+\end{enumerate}
+
+A Tabela~\ref{tab:quantum} resume os principais artefatos do
+subsistema quântico:
+
+\begin{longtable}{p{4cm}p{3cm}p{5cm}}
+  \caption{Artefatos do subsistema de computação quântica}
+  \label{tab:quantum}\\
+  \toprule
+  \textbf{Componente} & \textbf{Arquivos} & \textbf{Descrição} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Componente} & \textbf{Quantidade} & \textbf{Descrição} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  Scripts Python/Rust & 26 & Implementações QML, MPS, Grad-CAM \\
+  Citações acadêmicas & 21 & Referências Qualis A1 \\
+  Saídas de validação & 7  & Resultados de execução e métricas \\
+  Templates           & 24 & Estruturas de circuitos e pipelines \\
+  Documentação        & 29 & Especificações, relatórios, diagramas \\
+\end{longtable}
+
+% ======================================================================
+\section{ORQUESTRAÇÃO MULTIAGENTE NEXUS}
+\label{sec:nexus}
+% ======================================================================
+
+O diretório \texttt{nexus/} contém 488 arquivos dedicados à
+orquestração multiagente do ecossistema. A arquitetura Nexus
+organiza-se em 6 camadas de meta-granularidade (L0--L6), cada uma
+responsável por um nível de abstração na coordenação de agentes:
+
+\begin{enumerate}
+  \item \textbf{L0 -- Núcleo:} Tipos fundamentais, construtores de
+    agentes e barreiras de sincronização primitivas.
+  \item \textbf{L1 -- Comunicação:} Protocolos de troca de mensagens
+    entre agentes, incluindo \textit{file-ipc} e \textit{fs-ipc}.
+  \item \textbf{L2 -- Orquestração:} Coordenação de pipelines
+    multiagente com barreiras de sincronização.
+  \item \textbf{L3 -- Raciocínio:} Integração com os 4 motores de
+    raciocínio formal (Z3, SymPy, Kanren, Critical).
+  \item \textbf{L4 -- Aprendizado:} Loop evolutivo com registro de
+    padrões de sucesso e geração de novas skills.
+  \item \textbf{L5 -- Auditoria:} Verificação cruzada entre agentes,
+    validação de consistência e geração de relatórios.
+\end{enumerate}
+
+O sistema conta com 120+ barreiras de sincronização e mais de 500
+restrições de validação distribuídas entre as camadas. A orquestração
+segue o padrão \textit{Barrier Synchronization}, onde agentes são
+liberados para executar apenas quando todos os agentes do grupo
+anterior completaram suas tarefas.
+
+São 18 documentos de arquitetura de referência e 20 scripts Python
+para automação de testes e validação do orquestrador.
+
+% ======================================================================
+\section{SUBSISTEMA DE CRIAÇÃO DE ARTIGOS ACADÊMICOS}
+\label{sec:artigo}
+% ======================================================================
+
+O pipeline de criação de artigos acadêmicos, localizado em
+\texttt{criador-artigo/}, compreende 91 arquivos organizados em
+três subsistemas principais.
+
+% ----------------------------------------------------------------------
+\subsection{Agentes MASWOS (49 especialistas)}
+% ----------------------------------------------------------------------
+
+O sistema MASWOS (Multi-Agent Scientific Writing Orchestration System)
+coordena 49 agentes especializados (identificados como agente-00 a
+agente-44 mais 5 de suporte), cada um responsável por uma etapa do
+processo de escrita acadêmica:
+
+\begin{itemize}
+  \item \textbf{Agentes de Pesquisa (00--09):} Busca, seleção e
+    síntese de literatura científica.
+  \item \textbf{Agentes de Estruturação (10--19):} Organização de
+    seções, definição de hipóteses e metodologia.
+  \item \textbf{Agentes de Redação (20--29):} Escrita de seções
+    específicas (introdução, métodos, resultados, discussão).
+  \item \textbf{Agentes de Revisão (30--39):} Revisão gramatical,
+    de conteúdo e adequação a normas.
+  \item \textbf{Agentes de Formatação (40--44):} Geração de LaTeX,
+    PDF e metadados ABNT.
+  \item \textbf{Agente Scheduler:} Coordenação temporal das etapas.
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{Pipeline de Qualidade}
+% ----------------------------------------------------------------------
+
+O pipeline de qualidade implementa múltiplos estágios de verificação:
+
+\begin{itemize}
+  \item \textbf{Revisão anti-AI:} Filtro TSAC com 87 palavras
+    banidas para evitar detecção de escrita por IA.
+  \item \textbf{Validação cruzada:} Correlação de Pearson entre
+    seções, 3 níveis de consistência.
+  \item \textbf{Correção iterativa:} 5 revisores simulados,
+    4 consultores doutores, 6 motores de correção.
+  \item \textbf{Avaliação automática:} Script
+    AUTO\_SCORE\_QUALIS.py com 10 critérios e pesos de banca.
+  \item \textbf{Corretor linguístico:} Detecção e remoção de
+    caracteres CJK, verificação gramatical PT-BR.
+\end{itemize}
+
+O score mínimo para aprovação é 95/100, alinhado ao padrão Qualis A1.
+
+% ----------------------------------------------------------------------
+\subsection{Templates e Integração SDD--TDD}
+% ----------------------------------------------------------------------
+
+O diretório \texttt{criador-artigo/} contém 24 templates LaTeX, 14
+referências Qualis A1 e integração completa com o pipeline
+SDD--TDD--Harness--Hooks para validação de qualidade acadêmica.
+
+% ======================================================================
+\section{PIPELINE SDD--TDD--HARNESS--HOOKS E VALIDADORES}
+\label{sec:validadores}
+% ======================================================================
+
+O pipeline de validação acadêmica segue o fluxo quadrifásico:
+\[
+\text{SDD} \longrightarrow \text{TDD} \longrightarrow
+\text{Harness} \longrightarrow \text{Hooks}
+\looparrowleft \text{Feedback}
+\]
+
+% ----------------------------------------------------------------------
+\subsection{SDD -- Spec-Driven Development}
+% ----------------------------------------------------------------------
+
+O SDD estabelece que toda implementação deve ser precedida por uma
+especificação formal. Cada especificação define metadados
+(identificador, categoria, versão, autor), requisitos funcionais,
+Assertivas Críticas (CAs) e dependências. O ecossistema mantém 186
+componentes documentados com 100\% de cobertura.
+
+% ----------------------------------------------------------------------
+\subsection{TDD -- Test-Driven Development Acadêmico}
+% ----------------------------------------------------------------------
+
+O sistema TDDAcademic é composto por 5 especificações e 25 CAs:
+
+\begin{longtable}{p{4cm}p{3cm}p{5cm}}
+  \caption{Especificações TDDAcademic}
+  \label{tab:tdd}\\
+  \toprule
+  \textbf{Especificação} & \textbf{ID} & \textbf{CAs} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Especificação} & \textbf{ID} & \textbf{CAs} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  TDDAcademic Base       & SPEC-TDDA-BASE      & 5 \\
+  Ciclo de Desenvolvimento & SPEC-TDDA-CICLO   & 5 \\
+  Baby Steps             & SPEC-TDDA-BABY      & 5 \\
+  Regras de Refatoração  & SPEC-TDDA-REGRAS    & 5 \\
+  Ferramentas TDD        & SPEC-TDDA-FERRAMENTAS & 5 \\
+\end{longtable}
+
+% ----------------------------------------------------------------------
+\subsection{Arquitetura de Validadores}
+% ----------------------------------------------------------------------
+
+A arquitetura de validadores segue os princípios SOLID
+\cite{martin2000principles} e padrões GoF \cite{gamma1995design}.
+O núcleo é definido pela interface genérica \texttt{IValidator<T>}
+com os métodos \texttt{validate(T)}, \texttt{canHandle(Spec)} e
+\texttt{getCategory()}. A classe abstrata
+\texttt{AbstractValidator<T>} implementa o padrão \textit{Template
+Method} com o fluxo \texttt{preValidate $\rightarrow$ doValidate
+$\rightarrow$ postValidate}.
+
+As implementações concretas incluem \texttt{SpecValidator}
+(SPEC-VALIDATOR-001), \texttt{CAValidator} (CA-VALIDATOR-001) e
+\texttt{HarnessValidator} (HARNESS-VALIDATOR-001).
+
+% ----------------------------------------------------------------------
+\subsection{Hooks -- Automação Orientada a Eventos}
+% ----------------------------------------------------------------------
+
+O sistema de hooks implementa o padrão \textit{Observer}, permitindo
+que agentes sejam notificados sobre eventos do pipeline:
+
+\begin{itemize}
+  \item \textbf{Pre-Hook (\texttt{on-spec-create}):} Valida estrutura
+    e consistência antes da criação de especificações.
+  \item \textbf{Error-Hook (\texttt{on-ca-fail}):} Registra falhas
+    e notifica agentes responsáveis.
+  \item \textbf{Post-Hook (\texttt{on-validation-complete}):} Gera
+    relatórios e dispara implantações.
+\end{itemize}
+
+% ======================================================================
+\section{SISTEMA EVOLUTIVO}
+\label{sec:evolucao}
+% ======================================================================
+
+O sistema evolutivo do OpenCode (\texttt{evolution/}) implementa um
+mecanismo de evolução autônoma inspirado em algoritmos genéticos. São
+14 gerações documentadas, cada uma com score, insights extraídos e
+novas skills geradas:
+
+\begin{longtable}{p{2cm}p{4cm}p{2cm}p{4cm}}
+  \caption{Evolução do ecossistema ao longo de 14 gerações}
+  \label{tab:evolucao}\\
+  \toprule
+  \textbf{Round} & \textbf{Skill gerada} & \textbf{Score} & \textbf{Insight} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Round} & \textbf{Skill gerada} & \textbf{Score} & \textbf{Insight} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  1  & Validação quantitativa cruzada & 85  & Educação r=-0,03; P\&D r=+0,73 \\
+  2  & Pipeline de artigos acadêmicos & 90  & Serviços de alta tecnologia r=+0,95 \\
+  3  & Citações TSAC, Sci-Hub         & 92  & 46 anotações TSAC auditáveis \\
+  4  & Loop de correção iterativa v2  & 95  & Revisores + consultores + corretores \\
+  5  & Corretor CJK                   & 98  & Tolerância zero a vazamento CJK \\
+  6  & Editais BR v2.0                & 92  & Busca real com curl + Firefox UA \\
+  7  & Editais BR v7.1 cache          & 94  & 52 editais curados, 27 UFs \\
+  8  & SDD+TDD acadêmico + Arguição   & 94  & Nota DAP 8,07$\rightarrow$9,0 \\
+  9  & LaTeX refino + Framework Docs  & 96  & 4 overfulls eliminados, 16/16 TDD \\
+  10 & Menu adaptativo + Plugin       & 96  & Menu estático $\rightarrow$ adaptativo \\
+  11 & CORA-Eval Benchmark            & 97  & 150 tarefas, baseline 0,67 \\
+  12 & Science Skills + MCP Expansion & 98  & 9 skills + 28 datasets + 4 MCPs \\
+  13 & Reasoning Engines              & 96  & Z3 + SymPy + Kanren + Critical \\
+  14 & Edição final e consolidação    & 98  & Score máximo sustentado \\
+\end{longtable}
+
+% ======================================================================
+\subsection{Mecanismo de Evolução}
+% ======================================================================
+
+O mecanismo \texttt{autoevolve} \cite{OpenCode2025} segue o ciclo:
+
+\begin{enumerate}
+  \item \textbf{PLAN:} Identifica lacunas no ecossistema com base em
+    métricas de uso e feedback.
+  \item \textbf{ACT:} Gera nova skill ou modifica skill existente.
+  \item \textbf{REFLECT:} Avalia impacto da mudança através de
+    validação cruzada com CAs existentes.
+  \item \textbf{EXTRACT:} Extrai padrões de sucesso para reuso.
+  \item \textbf{EVOLVE:} Incorpora aprendizado no ecossistema.
+\end{enumerate}
+
+A \textit{skill} de evolução autônoma \texttt{Manus Evolve v1.0} é
+implementada como plugin em \texttt{plugins/manus-evolve.ts} e
+aprende automaticamente a partir de padrões de sucesso observados
+durante execuções anteriores.
+
+% ======================================================================
+\section{MOTORES DE RACIOCÍNIO}
+\label{sec:raciocinio}
+% ======================================================================
+
+O OpenCode integra 4 motores de raciocínio formal, cada um com um
+propósito específico:
+
+% ----------------------------------------------------------------------
+\subsection{Z3 (Prova Formal)}
+% ----------------------------------------------------------------------
+
+O Z3 Theorem Prover (v4.16, Microsoft Research) é integrado para
+verificação formal de propriedades de especificações. Utilizado para:
+
+\begin{itemize}
+  \item Validação de invariantes em especificações SDD.
+  \item Verificação de consistência em Assertivas Críticas (CAs).
+  \item Prova de propriedades de segurança em pipelines multiagente.
+  \item Model checking de máquinas de estado do sistema Reversa.
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{SymPy (Matemática Simbólica)}
+% ----------------------------------------------------------------------
+
+O SymPy (v1.14) é utilizado para manipulação simbólica em:
+
+\begin{itemize}
+  \item Diferenciação e integração simbólica para validação de
+    modelos matemáticos.
+  \item Resolução de sistemas de equações em especificações
+    científicas.
+  \item Simplificação algébrica de expressões derivadas de CAs.
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{MiniKanren (Lógica Relacional)}
+% ----------------------------------------------------------------------
+
+Implementação do miniKanren para programação lógica relacional:
+
+\begin{itemize}
+  \item Definição de relações entre entidades do grafo de
+    conhecimento do ecossistema.
+  \item Consultas lógicas sobre dependências entre especificações.
+  \item Inferência de relações não explicitamente declaradas.
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{Critical (Análise de Falácias)}
+% ----------------------------------------------------------------------
+
+O motor Critical implementa detecção de 15 tipos de falácias lógicas
+e vieses cognitivos em argumentos gerados por agentes:
+
+\begin{itemize}
+  \item \textbf{Falácias formais:} Negação do antecedente, afirmação
+    do consequente, silogismo disjuntivo inválido.
+  \item \textbf{Falácias informais:} Apelo à autoridade, falsa
+    dicotomia, generalização apressada, correlação-causalidade.
+  \item \textbf{Vieses cognitivos:} Viés de confirmação, ancoragem,
+    disponibilidade, excesso de confiança.
+\end{itemize}
+
+O sistema classifica 212+ tipos de raciocínio em 27 categorias,
+incluindo 10 estratégias de teoria dos jogos aplicadas a cenários
+de debate multiagente.
+
+% ======================================================================
+\section{SKILLS CIENTÍFICAS}
+\label{sec:ciencia}
+% ======================================================================
+
+O OpenCode integra 38 \textit{skills} científicas que fornecem acesso
+programático a bases de dados e ferramentas de pesquisa:
+
+\begin{longtable}{p{3.5cm}p{3cm}p{5.5cm}}
+  \caption{Skills científicas do ecossistema OpenCode}
+  \label{tab:ciencia}\\
+  \toprule
+  \textbf{Skill} & \textbf{Tipo} & \textbf{Funcionalidade} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Skill} & \textbf{Tipo} & \textbf{Funcionalidade} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  AlphaFold       & Estrutura      & Predição de estruturas de proteínas \\
+  PubMed          & Literatura     & Busca em literatura biomédica \\
+  ChEMBL          & Farmacologia   & Moléculas bioativas e alvos \\
+  UniProt         & Proteínas      & Metadados de proteínas \\
+  ClinVar         & Genética       & Significância clínica de variantes \\
+  FoldSeek        & Estrutura      & Busca estrutural 3D de proteínas \\
+  PyMOL           & Visualização   & Renderização de estruturas moleculares \\
+  OpenAlex        & Literatura     & Busca acadêmica multidisciplinar \\
+  JASPAR          & Genômica       & Perfis de ligação de TFs \\
+  ENCODE cCREs    & Genômica       & Elementos regulatórios cis \\
+  QuickGO         & Ontologia      & Ontologia gênica GO \\
+  HPA             & Proteínas      & Expressão proteica em tecidos \\
+  NCBI Sequence   & Sequências     & Sequências de nucleotídeos/proteínas \\
+  UCSC            & Genômica       & Conservação evolutiva e TFBS \\
+  EMBL-EBI OLS    & Ontologia      & Serviço de ontologias biomédicas \\
+  MSA             & Sequências     & Alinhamento múltiplo de sequências \\
+  MMseqs2/BLAST   & Sequências     & Busca de similaridade \\
+  AlphaGenome     & Genômica       & Efeitos de variantes não-codificantes \\
+\end{longtable}
+
+As skills científicas acessam 28 datasets adicionais, incluindo
+gnomAD (variantes populacionais), GTEx (expressão em tecidos),
+Ensembl (genômica comparativa), PDB (estruturas de proteínas) e
+STRING (interações proteína-proteína).
+
+% ======================================================================
+\section{BENCHMARK CORA-EVAL}
+\label{sec:coraeval}
+% ======================================================================
+
+O CORA-Eval (Cognitive ORchestrated Argumentation Evaluation) é um
+benchmark abrangente para avaliação de raciocínio científico em
+agentes de IA. Compreende 150 tarefas distribuídas em 10 dimensões
+e 4 níveis de dificuldade (Básico, Intermediário, Avançado,
+Pesquisa):
+
+\begin{longtable}{p{3cm}p{2cm}p{2cm}p{5cm}}
+  \caption{Dimensões do CORA-Eval}
+  \label{tab:coraeval}\\
+  \toprule
+  \textbf{Dimensão} & \textbf{Nível} & \textbf{CTs} & \textbf{Descrição} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Dimensão} & \textbf{Nível} & \textbf{CTs} & \textbf{Descrição} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  D1 -- Matemática     & N1--N3 & 8  & Pitágoras, Gauss, Fibonacci, \
+                                      Primos, MDC, Trigonometria \\
+  D2 -- Física         & N1--N2 & 8  & MRU, Queda Livre, Hooke, \
+                                      Pêndulo, Gases \\
+  D3 -- Estatística    & N2--N3 & 9  & Teste t, ANOVA, Bootstrap, \
+                                      MCMC, PCA \\
+  D4 -- Química        & N1     & 3  & Balanceamento, Massa Molar, \
+                                      Concentração \\
+  D5 -- Biologia       & N1     & 3  & Transcrição, Tradução, GC \\
+  D6 -- Geociências    & N1     & 3  & Rochas, Temperatura, Atmosfera \\
+  D7 -- Código         & N3     & 6  & Syntax, Logic, Types, Security \\
+  D8 -- Literatura     & N1     & 3  & Claims, Citations, Classification \\
+  D9 -- Metodologia    & N2     & 8  & ANOVA, Cohen, Shapiro, \
+                                      Fatorial 2³ \\
+  D10 -- Interdisciplinar & N4 & 3  & Geometria Diferencial, \
+                                      Teoria de Gauge \\
+  D11 -- Long Horizon  & N1--N4 & 150 & Raciocínio em DAG \\
+\end{longtable}
+
+O benchmark utiliza um rastreador Python com persistência JSON,
+Q-Score UCB1 para seleção adaptativa de tarefas e CORA-Score como
+métrica composta ponderada por 7 verificadores (V1--V7). O baseline
+atual é CORA-Score = 0,67.
+
+% ======================================================================
+\section{INTEGRAÇÃO MIROFISH E BETTAFISH}
+\label{sec:mirofish}
+% ======================================================================
+
+O ecossistema OpenCode integra 11 componentes dos projetos
+MiroFish e BettaFish (666ghj/MiroFish, 666ghj/BettaFish):
+
+\begin{itemize}
+  \item \textbf{OASIS:} Perfil de agentes a partir de grafos de
+    conhecimento (OASIS Profile Generator).
+  \item \textbf{Forum:} Motor de debate multiagente com moderação
+    LLM (ForumEngine).
+  \item \textbf{Config:} Geração de configurações complexas com
+    fallback heurístico (SimulationConfigGenerator).
+  \item \textbf{Graph:} Construção e consulta de grafos de
+    conhecimento (GraphBuilderService, GraphTools).
+  \item \textbf{Report:} Geração de relatórios com cadeia ReACT
+    (ReportAgent).
+  \item \textbf{Nash:} Equilíbrio de Nash para payoff matrix em
+    debates multiagente.
+  \item \textbf{Stats:} Rigor estatístico com correções de
+    Bonferroni e Cohen's d.
+  \item \textbf{Qualis:} Auditoria Qualis A1 com verificação de
+    conformidade.
+  \item \textbf{Sensitivity:} Análise de sensibilidade de
+    hiperparâmetros.
+  \item \textbf{IMRAD:} Formatação de artigos no padrão Qualis A1.
+  \item \textbf{Debate:} Estratégias de debate com 212+ tipos de
+    raciocínio.
+\end{itemize}
+
+% ======================================================================
+\section{SISTEMA DE PESQUISA SEER}
+\label{sec:seer}
+% ======================================================================
+
+O SEER (Seeker for Evidence-based Enhanced Research) é um sistema
+de pesquisa acadêmica composto por 78 arquivos e 10 agentes Python:
+
+\begin{itemize}
+  \item \textbf{Agente Searcher:} Consulta a 10+ fontes acadêmicas
+    (arXiv, OpenAlex, Semantic Scholar, PubMed, CORE).
+  \item \textbf{Agente Grounder:} Valida afirmações com evidências
+    citáveis.
+  \item \textbf{Agente Argument Tree:} Constrói árvores de argumentos
+    com suporte empírico.
+  \item \textbf{Agente Verifier:} Verifica cruzadamente afirmações
+    entre múltiplas fontes.
+\end{itemize}
+
+O SEER suporta pesquisa aprofundada com rastreamento de confiança
+por afirmação, produzindo relatórios em Markdown com citações
+verificáveis.
+
+% ======================================================================
+\section{IMPLEMENTAÇÃO LGPD}
+\label{sec:lgpd}
+% ======================================================================
+
+A implementação da Lei Geral de Proteção de Dados (LGPD) no
+OpenCode é organizada em 3 fases:
+
+\begin{itemize}
+  \item \textbf{Fase 1 -- Análise (\texttt{fase1\_analise/}):}
+    Mapeamento de dados pessoais, identificação de bases legais,
+    análise de riscos e documentação de conformidade.
+  \item \textbf{Fase 2 -- Implementação (\texttt{fase2\_implementacao/}):}
+    Implementação de controles técnicos, anonimização, pseudonimização,
+    registro de consentimento e DPO as a Service.
+  \item \textbf{Fase 3 -- Governança:} Monitoramento contínuo,
+    auditoria de conformidade, resposta a incidentes e relatórios
+    de impacto.
+\end{itemize}
+
+% ======================================================================
+\section{PLUGINS E COMANDOS}
+\label{sec:plugins}
+% ======================================================================
+
+O ecossistema dispõe de 15 plugins (10 npm + 2 TypeScript locais +
+3 bridge), 14 comandos no formato \texttt{/comando} e 1 LSP
+(\textit{Language Server Protocol}) TypeScript:
+
+\begin{longtable}{p{3cm}p{4cm}p{5cm}}
+  \caption{Comandos do ecossistema OpenCode}
+  \label{tab:comandos}\\
+  \toprule
+  \textbf{Comando} & \textbf{Função} & \textbf{MCPs/Plugins associados} \\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Comando} & \textbf{Função} & \textbf{MCPs/Plugins associados} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  /evolve  & Auto-evolução do ecossistema & autoevolve, ecosystem-sync \\
+  /reversa & Engenharia reversa           & reversa-* agents, filesystem \\
+  /plan    & Planejamento de escrita      & writing-plans, sequential-thinking \\
+  /auto    & Automação geral              & openagent, todos MCPs \\
+  /quantum & Pipeline quântico            & quantum-nexus-phd, code-runner \\
+  /artigo  & Criação de artigos            & SEER + Article Creator \\
+  /forum   & Debate multiagente            & agent-forum, Cora-Debate \\
+  +7 comandos adicionais \\
+\end{longtable}
+
+% ======================================================================
+\section{CONSIDERAÇÕES FINAIS}
+\label{sec:conclusao}
+% ======================================================================
+
+O ecossistema OpenCode v5.0.0 representa uma contribuição original
+para a convergência entre engenharia de software, inteligência
+artificial, computação quântica e produção acadêmica. Com mais de
+600 componentes integrados, 125 agentes especializados e 150
+habilidades, a plataforma demonstra a viabilidade de um ambiente
+unificado de desenvolvimento assistido por IA com rigor acadêmico.
+
+As principais contribuições incluem:
+
+\begin{enumerate}
+  \item \textbf{Arquitetura em 3 camadas} com desacoplamento entre
+    MCPs, Skills e Agentes, permitindo substituição independente
+    de implementações.
+  \item \textbf{Computação quântica aplicada} com QML atingindo
+    89,52\% de acurácia em classificação de imagens médicas e
+    pipeline completo de mitigação de erros.
+  \item \textbf{Orquestração multiagente} com 488 arquivos Nexus,
+    6 camadas de meta-granularidade e 120+ barreiras de
+    sincronização.
+  \item \textbf{Pipeline acadêmico MASWOS} com 49 agentes e score
+    Qualis A1 sustentado acima de 95/100.
+  \item \textbf{Sistema evolutivo autônomo} que elevou o score do
+    ecossistema de 85 para 98 ao longo de 14 gerações.
+  \item \textbf{Motores de raciocínio formal} integrados (Z4,
+    SymPy, miniKanren, Critical) com 212+ tipos em 27 categorias.
+  \item \textbf{Benchmark CORA-Eval} com 150 tarefas em 10
+    dimensões acadêmicas.
+  \item \textbf{38 skills científicas} integradas a bases como
+    AlphaFold, PubMed, ChEMBL e UniProt.
+\end{enumerate}
+
+Entre as direções para trabalho futuro, destacam-se a expansão do
+sistema de computação quântica para 100+ qubits, a integração com
+verificadores formais adicionais (Coq, Lean 4), a ampliação do
+CORA-Eval para 500+ tarefas e a publicação do ecossistema como
+plataforma open-source para validação pela comunidade acadêmica.
+
+% ======================================================================
+\bibliography{raio_x_opencode}
+% ======================================================================
+
+\end{document}

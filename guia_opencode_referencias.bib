@@ -1,0 +1,203 @@
+% ============================================================================
+% Referências Bibliográficas — Guia de Evolução do Ecossistema OpenCode
+% Todas as referências são auditáveis via DOI, arXiv ou URL institucional
+% ============================================================================
+
+% --- Multi-Agent Systems & LLM Orchestration ---
+
+@article{wu2023autogen,
+  author    = {Qingyun Wu and Gagan Bansal and Jieyu Zhang and Yiran Wu and Beibin Li and Erkang Zhu and Li Jiang and Xiaoyun Zhang and Shaokun Zhang and Jiale Liu and Ahmed Hassan Awadallah and Ryen W. White and Doug Burger and Chi Wang},
+  title     = {{AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation}},
+  journal   = {arXiv preprint arXiv:2308.08155},
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2308.08155},
+  note      = {Framework multiagente para conversação autônoma e orquestração. Disponível em: https://arxiv.org/abs/2308.08155. Acesso em: 01 jun. 2026.}
+}
+
+@article{park2023generative,
+  author    = {Joon Sung Park and Joseph C. O'Brien and Carrie J. Cai and Meredith Ringel Morris and Percy Liang and Michael S. Bernstein},
+  title     = {{Generative Agents: Interactive Simulacra of Human Behavior}},
+  journal   = {arXiv preprint arXiv:2304.03442},
+  year      = {2023},
+  note      = {Apresentado no UIST 2023. Arquitetura de agentes generativos com memória, reflexão e planejamento. Disponível em: https://arxiv.org/abs/2304.03442.}
+}
+
+@article{li2023camel,
+  author    = {Guohao Li and Hasan Abed Al Kader Hammoud and Hani Itani and Dmitrii Khizbullin and Bernard Ghanem},
+  title     = {{CAMEL: Communicative Agents for ``Mind'' Exploration of Large Scale Language Model Society}},
+  journal   = {arXiv preprint arXiv:2307.07926},
+  year      = {2023},
+  note      = {Framework de sociedade de agentes com role-playing autônomo para exploração colaborativa. Disponível em: https://arxiv.org/abs/2307.07926.}
+}
+
+% --- Autonomous Evolution & Self-Improvement ---
+
+@article{shinn2023reflexion,
+  author    = {Noah Shinn and Federico Cassano and Beck Labash and Ashwin Gopinath and Karthik Narasimhan and Shunyu Yao},
+  title     = {{Reflexion: Language Agents with Verbal Reinforcement Learning}},
+  journal   = {arXiv preprint arXiv:2303.11366},
+  year      = {2023},
+  note      = {Apresentado no NeurIPS 2023. Agentes que aprendem com feedback verbal em loop de auto-reflexão. Disponível em: https://arxiv.org/abs/2303.11366.}
+}
+
+@article{madaan2023selfrefine,
+  author    = {Aman Madaan and Niket Tandon and Prakhar Gupta and Skyler Hallinan and Luyu Gao and Sarah Wiegreffe and Uri Alon and Nouha Dziri and Shrimai Prabhumoye and Yiming Yang and Sean Welleck and Bodhisattwa Prasad Majumder and Shashank Gupta and Amir Yazdanbakhsh and Peter Clark},
+  title     = {{Self-Refine: Iterative Refinement with Self-Feedback}},
+  journal   = {arXiv preprint arXiv:2303.17651},
+  year      = {2023},
+  note      = {Apresentado no NeurIPS 2023. Método de auto-refinamento iterativo via feedback do próprio LLM. Disponível em: https://arxiv.org/abs/2303.17651.}
+}
+
+@article{hu2024adas,
+  author    = {Shengran Hu and Cong Lu and Jeff Clune},
+  title     = {{Automated Design of Agentic Systems (ADAS)}},
+  journal   = {arXiv preprint arXiv:2408.08435},
+  year      = {2024},
+  note      = {Meta-agente que projeta automaticamente novos sistemas agentivos via busca em espaço de código. Disponível em: https://arxiv.org/abs/2408.08435.}
+}
+
+@article{wang2023voyager,
+  author    = {Guanzhi Wang and Yuqi Xie and Yunfan Jiang and Ajay Mandlekar and Chaowei Xiao and Yuke Zhu and Linxi Fan and Anima Anandkumar},
+  title     = {{Voyager: An Open-Ended Embodied Agent with Large Language Models}},
+  journal   = {arXiv preprint arXiv:2305.16291},
+  year      = {2023},
+  note      = {Agente que gera e aperfeiçoa autonomamente seu próprio currículo de habilidades. Disponível em: https://arxiv.org/abs/2305.16291.}
+}
+
+% --- Reasoning & Chain-of-Thought ---
+
+@inproceedings{wei2022chainofthought,
+  author    = {Jason Wei and Xuezhi Wang and Dale Schuurmans and Maarten Bosma and Brian Ichter and Fei Xia and Ed H. Chi and Quoc V. Le and Denny Zhou},
+  title     = {{Chain-of-Thought Prompting Elicits Reasoning in Large Language Models}},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {35},
+  pages     = {24824--24837},
+  year      = {2022},
+  note      = {Demonstra que agentes podem decompor raciocínio complexo em etapas encadeadas. Disponível em: https://arxiv.org/abs/2201.11903.}
+}
+
+@inproceedings{yao2023treeofthoughts,
+  author    = {Shunyu Yao and Dian Yu and Jeffrey Zhao and Izhak Shafran and Thomas L. Griffiths and Yuan Cao and Karthik Narasimhan},
+  title     = {{Tree of Thoughts: Deliberate Problem Solving with Large Language Models}},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {36},
+  year      = {2023},
+  note      = {Framework de raciocínio deliberativo com exploração de múltiplos caminhos. Disponível em: https://arxiv.org/abs/2305.10601.}
+}
+
+% --- Formal Verification & Symbolic Reasoning ---
+
+@inproceedings{demoura2008z3,
+  author    = {Leonardo {de Moura} and Nikolaj Bj{\o}rner},
+  title     = {{Z3: An Efficient SMT Solver}},
+  booktitle = {Tools and Algorithms for the Construction and Analysis of Systems (TACAS)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {4963},
+  pages     = {337--340},
+  year      = {2008},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-540-78800-3_24},
+  note      = {SMT solver utilizado para verificação formal de pré/pós-condições no pipeline de evolução.}
+}
+
+@article{meurer2017sympy,
+  author    = {Aaron Meurer and Christopher P. Smith and Mateusz Paprocki and Ond{\v{r}}ej {\v{C}}ert{\'i}k and Sergey B. Kirpichev and Matthew Rocklin and AMiT Kumar and Sergiu Ivanov and Jason K. Moore and Sartaj Singh and Thilina Rathnayake and Sean Vig and Brian E. Granger and Richard P. Muller and Francesco Bonazzi and Harsh Gupta and Shivam Vats and Fredrik Johansson and Fabian Pedregosa and Matthew J. Curry and Andy R. Terrel and {\v{S}}t{\v{e}}p{\'a}n Rou{\v{c}}ka and Ashutosh Saboo and Isuru Fernando and Sumith Kulal and Robert Cimrman and Anthony Scopatz},
+  title     = {{SymPy: Symbolic Computing in Python}},
+  journal   = {PeerJ Computer Science},
+  volume    = {3},
+  pages     = {e103},
+  year      = {2017},
+  doi       = {10.7717/peerj-cs.103},
+  note      = {Biblioteca de matemática simbólica integrada ao motor de raciocínio do ecossistema.}
+}
+
+% --- Software Engineering & Code Generation ---
+
+@article{yang2024sweagent,
+  author    = {John Yang and Carlos E. Jimenez and Alexander Wettig and Kilian Lieret and Shunyu Yao and Karthik Narasimhan and Ofir Press},
+  title     = {{SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering}},
+  journal   = {arXiv preprint arXiv:2405.15793},
+  year      = {2024},
+  note      = {Agente autônomo para engenharia de software com interface agente-computador (ACI). Disponível em: https://arxiv.org/abs/2405.15793.}
+}
+
+@article{jimenez2023swebench,
+  author    = {Carlos E. Jimenez and John Yang and Alexander Wettig and Shunyu Yao and Karthik Narasimhan and Ofir Press},
+  title     = {{SWE-bench: Can Language Models Resolve Real-World GitHub Issues?}},
+  journal   = {arXiv preprint arXiv:2310.06770},
+  year      = {2023},
+  note      = {Apresentado no ICLR 2024. Benchmark de engenharia de software para agentes autônomos. Disponível em: https://arxiv.org/abs/2310.06770.}
+}
+
+@article{zheng2023judge,
+  author    = {Lianmin Zheng and Wei-Lin Chiang and Ying Sheng and Siyuan Zhuang and Zhanghao Wu and Yonghao Zhuang and Zi Lin and Zhuohan Li and Dacheng Li and Eric P. Xing and Hao Zhang and Joseph E. Gonzalez and Ion Stoica},
+  title     = {{Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena}},
+  journal   = {arXiv preprint arXiv:2306.05685},
+  year      = {2023},
+  note      = {Apresentado no NeurIPS 2023. Avaliação multiagente com LLM como juiz para verificação de qualidade. Disponível em: https://arxiv.org/abs/2306.05685.}
+}
+
+% --- Discussion & Debate Frameworks ---
+
+@article{du2023improving,
+  author    = {Yilun Du and Shuang Li and Antonio Torralba and Joshua B. Tenenbaum and Igor Mordatch},
+  title     = {{Improving Factuality and Reasoning in Language Models through Multiagent Debate}},
+  journal   = {arXiv preprint arXiv:2305.14325},
+  year      = {2023},
+  note      = {Debate multiagente como mecanismo de verificação de factualidade e raciocínio. Disponível em: https://arxiv.org/abs/2305.14325.}
+}
+
+@article{liang2023taskmatrix,
+  author    = {Yaobo Liang and Chenfei Wu and Ting Song and Wenshan Wu and Yan Xia and Yu Liu and Yang Ou and Shuai Lu and Lei Ji and Shaoguang Mao and Yun Wang and Linjun Shou and Ming Gong and Nan Duan},
+  title     = {{TaskMatrix.AI: Completing Tasks by Connecting Foundation Models with Millions of APIs}},
+  journal   = {arXiv preprint arXiv:2303.16434},
+  year      = {2023},
+  note      = {Ecossistema que conecta modelos fundacionais com APIs externas para completar tarefas complexas. Disponível em: https://arxiv.org/abs/2303.16434.}
+}
+
+% --- Software Engineering Discipline ---
+
+@book{gamma1994design,
+  author    = {Erich Gamma and Richard Helm and Ralph Johnson and John Vlissides},
+  title     = {{Design Patterns: Elements of Reusable Object-Oriented Software}},
+  publisher = {Addison-Wesley},
+  year      = {1994},
+  isbn      = {0-201-63361-2},
+  note      = {Padrões de projeto reutilizáveis aplicados à arquitetura de agentes.}
+}
+
+@book{bass2021devops,
+  author    = {Len Bass and Ingo Weber and Liming Zhu},
+  title     = {{DevOps: A Software Architect's Perspective}},
+  publisher = {Addison-Wesley},
+  edition   = {2},
+  year      = {2021},
+  isbn      = {978-0-13-404984-7},
+  note      = {Princípios de CI/CD e automação de pipeline aplicados ao ciclo de evolução de agentes.}
+}
+
+@article{vaswani2017attention,
+  author    = {Ashish Vaswani and Noam Shazeer and Niki Parmar and Jakob Uszkoreit and Llion Jones and Aidan N. Gomez and {\L}ukasz Kaiser and Illia Polosukhin},
+  title     = {{Attention Is All You Need}},
+  journal   = {arXiv preprint arXiv:1706.03762},
+  year      = {2017},
+  note      = {Apresentado no NeurIPS 2017. Arquitetura Transformer que fundamenta todos os LLMs utilizados no ecossistema. Disponível em: https://arxiv.org/abs/1706.03762.}
+}
+
+% --- Normas ABNT ---
+
+@misc{abnt6022,
+  author    = {{Associação Brasileira de Normas Técnicas}},
+  title     = {{NBR 6022: Informação e documentação --- Artigo em publicação periódica técnica e/ou científica --- Apresentação}},
+  year      = {2018},
+  publisher = {ABNT},
+  address   = {Rio de Janeiro}
+}
+
+@misc{abnt10520,
+  author    = {{Associação Brasileira de Normas Técnicas}},
+  title     = {{NBR 10520: Informação e documentação --- Citações em documentos --- Apresentação}},
+  year      = {2023},
+  publisher = {ABNT},
+  address   = {Rio de Janeiro}
+}
