@@ -60,6 +60,14 @@ Desktop.ini
 # Sessoes efemeras
 nexus/context_offload/
 
+# Caminhos temporarios do Windows (AppData)
+**/AppData/**
+Users*/AppData/**
+**/pytest-alt*/
+
+# Telemetria do ecossistema (auto-gerado, nao versionar)
+.evolve/ecosystem-observability.jsonl
+
 # OpenCode_Ecosystem tem seu proprio repo (submodule ou clone)
 # NAO commitar o conteudo diretamente
 OpenCode_Ecosystem/
