@@ -128,7 +128,7 @@ class TestEcosystemHealth(unittest.TestCase):
     def test_plugins_count(self):
         """5 plugins TS estao presentes."""
         plugins = list((BASE / "plugins").glob("*.ts"))
-        self.assertGreaterEqual(len(plugins), 4,
+        self.assertGreaterEqual(len(plugins), 10,
             f"Apenas {len(plugins)} plugins. Minimo: 4")
 
     def test_plugins_registered_in_config(self):

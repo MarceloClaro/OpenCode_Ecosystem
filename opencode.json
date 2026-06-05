@@ -13,7 +13,14 @@
     "plugins/manus-evolve.ts",
     "plugins/bernstein-sync.ts",
     "plugins/antigravity-bridge.ts",
-    "plugins/cora-qscore.ts"
+    "plugins/cora-qscore.ts",
+    "plugins/dashboard-monitor.ts",
+    "plugins/auto-discovery.ts",
+    "plugins/token-optimizer.ts",
+    "plugins/context-compressor.ts",
+    "plugins/event-aggregator.ts",
+    "plugins/metrics-exporter.ts",
+    "plugins/health-reporter.ts"
   ],
   "mcp": {
     "filesystem": {
@@ -406,9 +413,8 @@
       "type": "local",
       "enabled": true,
       "command": [
-        "npx",
-        "-y",
-        "researchmcp"
+        "researchmcp",
+        "arxiv"
       ],
       "timeout": 30000,
       "tags": [
@@ -622,21 +628,6 @@
         "debate",
         "mathematics",
         "science"
-      ]
-    },
-    "scihub": {
-      "type": "local",
-      "enabled": true,
-      "command": [
-        "sci-hub-mcp-server"
-      ],
-      "timeout": 120000,
-      "tags": [
-        "scihub",
-        "academic",
-        "research",
-        "papers",
-        "pdf"
       ]
     }
   },
