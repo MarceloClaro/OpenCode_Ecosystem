@@ -5,6 +5,7 @@
 -->
 
 ---
+name: reversa-swarm-review
 description: >
   Orquestra revisão de código por enxame de agentes especializados (Segurança,
   Performance, Arquitetura), inspirado no padrão de simulação multi-agente do

@@ -6,6 +6,7 @@
 -->
 
 ---
+name: git-manager
 description: Gerencia git - commits atomicos, PRs, mensagens convencionais
 mode: subagent
 temperature: 0.1

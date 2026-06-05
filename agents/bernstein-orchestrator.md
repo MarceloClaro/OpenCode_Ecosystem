@@ -1,3 +1,7 @@
+---
+name: bernstein-orchestrator
+---
+
 # Bernstein — Orquestrador Multi-Agente para OpenCode
 
 **Versão:** 1.0.0  

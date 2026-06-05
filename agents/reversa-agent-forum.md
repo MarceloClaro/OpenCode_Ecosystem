@@ -1,4 +1,5 @@
 ---
+name: reversa-agent-forum
 description: >
   Agente moderador de forum multiagente. Inspirado pelo ForumEngine do
   BettaFish (666ghj/BettaFish) — monitor.py + llm_host.py.

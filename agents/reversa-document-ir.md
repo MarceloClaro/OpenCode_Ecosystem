@@ -1,4 +1,5 @@
 ---
+name: reversa-document-ir
 description: >
   Agente pipeline de documentacao estruturada. Inspirado pelo ReportEngine
   do BettaFish (666ghj/BettaFish) — ir/schema.py, core/stitcher.py, agent.py.

@@ -6,6 +6,7 @@
 -->
 
 ---
+name: web-search-researcher
 description: Used to perform web searches from a URL and analyze the contents based on a query.
 mode: subagent
 temperature: 0.1

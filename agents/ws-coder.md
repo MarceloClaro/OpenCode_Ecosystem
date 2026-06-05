@@ -6,6 +6,7 @@
 -->
 
 ---
+name: ws-coder
 description: Technical implementation specialist for writing and modifying code
 mode: subagent
 ---

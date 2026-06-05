@@ -6,6 +6,7 @@
 -->
 
 ---
+name: code-reviewer
 description: Revisa codigo para qualidade, seguranca e melhores praticas
 mode: subagent
 temperature: 0.1

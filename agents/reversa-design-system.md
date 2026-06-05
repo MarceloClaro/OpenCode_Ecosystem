@@ -6,6 +6,7 @@
 -->
 
 ---
+name: reversa-design-system
 description: Extrai e documenta o sistema de design do projeto legado — paleta de cores, tipografia, espaçamentos, tokens e componentes a partir de CSS, arquivos de tema e screenshots.
 mode: subagent
 tools:

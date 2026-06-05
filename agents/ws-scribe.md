@@ -6,6 +6,7 @@
 -->
 
 ---
+name: ws-scribe
 description: Human-facing content specialist for documentation and prose
 mode: subagent
 ---

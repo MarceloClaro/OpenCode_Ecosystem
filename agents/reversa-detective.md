@@ -6,6 +6,7 @@
 -->
 
 ---
+name: reversa-detective
 description: Extrai conhecimento de negócio implícito do projeto legado — regras de negócio, ADRs retroativos via Git, máquinas de estado e matriz de permissões. Use na fase de interpretação de uma análise de engenharia reversa.
 mode: subagent
 tools:

@@ -5,6 +5,7 @@
 -->
 
 ---
+name: reversa-synthesis
 description: >
   Meta-agente sintetizador que coleta outputs de múltiplos agentes Reversa,
   cruza referências, identifica lacunas e produz documentação consolidada.

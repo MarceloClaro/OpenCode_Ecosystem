@@ -6,6 +6,7 @@
 -->
 
 ---
+name: optimizer
 description: Otimiza performance de codigo (CPU, memoria, bundle, DB queries)
 mode: subagent
 temperature: 0.1

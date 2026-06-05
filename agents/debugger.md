@@ -6,6 +6,7 @@
 -->
 
 ---
+name: debugger
 description: Investiga e diagnostica bugs com acesso a bash e logs
 mode: subagent
 temperature: 0.1

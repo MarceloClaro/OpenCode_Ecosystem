@@ -6,6 +6,7 @@
 -->
 
 ---
+name: autoevolve
 description: AutoEvolve — engine de evolução autônoma do ecossistema OpenCode. Descobre novas skills, auto-instala, monitora saúde, aprende com sessões passadas e evolui continuamente sem intervenção humana.
 mode: subagent
 tools:

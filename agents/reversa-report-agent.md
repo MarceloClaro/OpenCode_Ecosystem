@@ -4,6 +4,7 @@
 -->
 
 ---
+name: reversa-report-agent
 description: >
   Agente de relatório com cadeia ReACT (Reasoning + Acting) e reflexão
   em 3 dimensões. Inspirado pelo ReportAgent do MiroFish-Offline.

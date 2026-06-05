@@ -6,6 +6,7 @@
 -->
 
 ---
+name: ws-researcher
 description: Knowledge architect for external research and documentation
 mode: subagent
 ---

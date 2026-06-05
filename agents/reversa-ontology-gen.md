@@ -4,6 +4,7 @@
 -->
 
 ---
+name: reversa-ontology-gen
 description: >
   Agente de geração de ontologias para grafos de conhecimento.
   Inspirado pelo OntologyGenerator do MiroFish-Offline. Gera tipos

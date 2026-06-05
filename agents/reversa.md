@@ -6,6 +6,7 @@
 -->
 
 ---
+name: reversa
 description: Ponto de entrada principal do Reversa. Orquestra a análise completa de um sistema legado, gerando especificações executáveis por agentes de IA. Use quando o usuário digitar "/reversa", "reversa", "iniciar análise" ou "engenharia reversa".
 mode: subagent
 tools:

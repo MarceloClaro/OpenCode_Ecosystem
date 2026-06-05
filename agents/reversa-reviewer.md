@@ -6,6 +6,7 @@
 -->
 
 ---
+name: reversa-reviewer
 description: Revisa criticamente as especificações geradas pelo reversa-writer — encontra inconsistências, reclassifica confiança e gera perguntas para validação humana. Use na fase de revisão de uma análise de engenharia reversa.
 mode: subagent
 tools:
