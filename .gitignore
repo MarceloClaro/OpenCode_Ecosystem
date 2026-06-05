@@ -60,10 +60,11 @@ Desktop.ini
 # Sessoes efemeras
 nexus/context_offload/
 
-# Caminhos temporarios do Windows (AppData)
+# Caminhos temporarios do Windows (AppData / Temp / pytest)
 **/AppData/**
 Users*/AppData/**
 **/pytest-alt*/
+UsersmarceAppDataLocalTemppytest-alt/
 
 # Telemetria do ecossistema (auto-gerado, nao versionar)
 .evolve/ecosystem-observability.jsonl
