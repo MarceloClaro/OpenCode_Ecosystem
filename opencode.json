@@ -513,7 +513,7 @@
     },
     "flowzap-mcp": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "npx",
         "-y",
@@ -526,7 +526,7 @@
     },
     "astronomy-oracle": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "npx",
         "-y",
@@ -539,7 +539,7 @@
     },
     "self-healer": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "python",
         "nexus/mcp_self_healer.py"
@@ -560,7 +560,7 @@
     },
     "maswos-juridico": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "python",
         "skills/maswos-v5-nexus/servers/juridico_server.py"
@@ -573,7 +573,7 @@
     },
     "maswos-mcp": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "python",
         "skills/maswos-v5-nexus/servers/maswos_server.py"
@@ -586,7 +586,7 @@
     },
     "maswos-rag": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "python",
         "skills/maswos-v5-nexus/servers/rag_server.py"
@@ -599,7 +599,7 @@
     },
     "antigravity-mcp": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "python",
         "nexus/antigravity_mcp_server.py"
@@ -615,7 +615,7 @@
     },
     "cora-verifier": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "python",
         "skills/cora-debate/servers/cora_verifier.py"
