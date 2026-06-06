@@ -108,7 +108,7 @@
     },
     "wikipedia": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "npx",
         "-y",
@@ -154,7 +154,7 @@
     },
     "puppeteer": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "npx",
         "-y",
@@ -167,7 +167,7 @@
     },
     "chrome-devtools": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "chrome-devtools-mcp"
       ],
@@ -178,7 +178,7 @@
     },
     "desktop-commander": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "npx",
         "-y",
@@ -217,7 +217,7 @@
     },
     "shell-server": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "uvx",
         "mcp-shell-server"
@@ -231,7 +231,7 @@
     },
     "run-python": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "uvx",
         "mcp-run-python"
@@ -271,7 +271,7 @@
     },
     "mcp-server-commands": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "mcp-server-commands"
       ],
@@ -324,7 +324,7 @@
     },
     "biomcp": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "uvx",
         "biomcp"
@@ -338,7 +338,7 @@
     },
     "biothings": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "uvx",
         "biothings-mcp"
@@ -352,7 +352,7 @@
     },
     "gget": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "uvx",
         "gget-mcp"
@@ -366,7 +366,7 @@
     },
     "opengenes": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "uvx",
         "opengenes-mcp"
@@ -461,7 +461,7 @@
     },
     "youtube-transcript": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "npx",
         "-y",
@@ -475,7 +475,7 @@
     },
     "mermaid": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "npx",
         "-y",
@@ -488,7 +488,7 @@
     },
     "mem0-mcp": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "mem0-mcp"
       ],
@@ -500,7 +500,7 @@
     },
     "hacker-news": {
       "type": "local",
-      "enabled": false,
+      "enabled": true,
       "command": [
         "npx",
         "-y",
