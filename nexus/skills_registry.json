@@ -3,9 +3,9 @@
   "timestamp": "2026-06-05T20:10:57.709840+00:00",
   "workspace": "C:\\Users\\marce\\.config\\opencode",
   "summary": {
-    "total_skills": 122,
+    "total_skills": 123,
     "oversize_count": 23,
-    "healthy_count": 98,
+    "healthy_count": 99,
     "total_bytes": 691627,
     "categories": {
       "dotclaude-edicao-cirurgica": {
@@ -1833,6 +1833,20 @@
       "oversize_by": 19033,
       "md5": "91b5b318f916c4fb9c181e88c30480f4",
       "last_checked": "2026-06-05T20:10:57.704295+00:00"
+    },
+    {
+      "name": "clinical-case-study",
+      "path": "skills/research/clinical-case-study/SKILL.md",
+      "category": "research",
+      "bytes": 1304,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": false,
+      "oversize_by": 0,
+      "md5": "0b3c812f00d663728bdfba5c89596ddc",
+      "last_checked": "2026-06-06T23:50:18.757929+00:00"
     }
   ]
 }
