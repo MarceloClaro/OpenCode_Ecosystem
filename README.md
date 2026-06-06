@@ -4,25 +4,24 @@
 
 # OpenCode Ecosystem v5.0.0
 
-### 38 Skills Cientificas · 4 Motores de Raciocinio · 10 Fontes Academicas · 5 MCPs de Artigos
+### 38 Skills Cientificas · 4 Motores de Raciocinio · Scanner Noológico · 128 Agentes · Score 99/100
 
 <br/>
 
-[![Agentes](https://img.shields.io/badge/Agentes-125-6366f1?style=flat-square)](agents/)
+[![Agentes](https://img.shields.io/badge/Agentes-128-6366f1?style=flat-square)](agents/)
 [![MCPs](https://img.shields.io/badge/MCP_Servers-46-0ea5e9?style=flat-square)](opencode.json)
-[![Skills](https://img.shields.io/badge/Skills-150-10b981?style=flat-square)](skills/)
-[![TDD](https://img.shields.io/badge/TDD-226_suites-22c55e?style=flat-square)]()
-[![SDD](https://img.shields.io/badge/SDD-162_specs-0ea5e9?style=flat-square)](specs/)
-[![YAML](https://img.shields.io/badge/YAML-77.3%25-facc15?style=flat-square)]()
-[![Evolucoes](https://img.shields.io/badge/Evolucoes-14-c084fc?style=flat-square)](evolution/)
-[![GitHub](https://img.shields.io/badge/GitHub-v5.0.0-333?style=flat-square)](https://github.com/MarceloClaro/OpenCode_Ecosystem)
-[![Z3](https://img.shields.io/badge/Z3_Prover-4.16-8b5cf6?style=flat-square)]()
+[![Skills](https://img.shields.io/badge/Skills-156-10b981?style=flat-square)](skills/)
+[![Hooks](https://img.shields.io/badge/Ecosystem_Hooks-11-a855f7?style=flat-square)](skills/system/pypi-scout/ecosystem_hooks.py)
+[![Auditoria](https://img.shields.io/badge/Auditoria-6_componentes-ef4444?style=flat-square)](skills/system/academic-audit/)
+[![Scanner](https://img.shields.io/badge/Scanner_Noológico-10_dimensoes-f59e0b?style=flat-square)](skills/system/academic-audit/noological_scanner.py)
+[![Score](https://img.shields.io/badge/Score-99%2F100-22c55e?style=flat-square)]()
+[![CJK](https://img.shields.io/badge/CJK_Leaks-0-22c55e?style=flat-square)]()
 [![Status](https://img.shields.io/badge/Status-Producao-22c55e?style=flat-square)]()
 
 <br/>
 
-> **Versao:** 5.0.0 · **Atualizado:** 2026-06-02 · **Modelo:** `deepseek-v4-pro`  
-> **Novo (Evo-13):** 4 motores de raciocinio: Z3 (prova formal), SymPy (matematica simbolica), miniKanren (logica), Critical (falacias)
+> **Versao:** 5.0.0 · **Atualizado:** 2026-06-06 · **Modelo:** `deepseek-v4-pro`  
+> **Novo (Evo-16):** Scanner Noológico (92 categorias) · Clinical Case Study Pipeline · Expansão 5D · 30 parágrafos/dimensão · 36 refs DOI · Score 99/100
 
 </div>
 
