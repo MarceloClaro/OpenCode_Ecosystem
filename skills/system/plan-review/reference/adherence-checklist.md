@@ -9,3 +9,4 @@ Before completing a plan review, verify:
 - [ ] Quality Assessment table completed
 - [ ] Positive observations noted
 - [ ] Output follows the standard format
+- [ ] PLANS.md compliance verified (state machine, versioning, consistency)

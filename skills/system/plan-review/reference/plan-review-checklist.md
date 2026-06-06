@@ -37,7 +37,17 @@
 - ✅ "Add JWT authentication with refresh token support" (specific)
 - ✅ "Migrate user table to PostgreSQL with zero downtime" (measurable)
 
-### 4. Actionability
+### 4. PLANS.md Compliance
+
+| Requirement | Check |
+|-------------|-------|
+| PLANS.md exists | Active plan tracking artifact present at workspace root |
+| State machine obeyed | Exactly ONE phase `[IN PROGRESS]`, exactly ONE task `← CURRENT` |
+| Versioning respected | Previous PLANS.md archived before overwrite |
+| Consistency with detail plan | PLANS.md condensed version matches `thoughts/plans/{name}.md` |
+| Critical context current | Relevant files, blockers, and decisions reflect reality |
+
+### 5. Actionability
 
 | Requirement | Check |
 |-------------|-------|
