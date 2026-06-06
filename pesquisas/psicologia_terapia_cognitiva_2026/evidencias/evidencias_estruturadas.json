@@ -1,0 +1,41 @@
+{
+  "pesquisa": "TCC e Ansiedade",
+  "paradigma": "Positivista (quantitativo)",
+  "paragraphs": {
+    "P01": {
+      "text": "TCC eficacia d=0.73-1.31",
+      "sources": [
+        "10.1016/j.cpr.2020.101856",
+        "10.1001/jamapsychiatry.2019.3986"
+      ]
+    },
+    "P02": {
+      "text": "TCC vs farmaco recaida",
+      "sources": [
+        "10.1016/S0140-6736(18)32293-1"
+      ]
+    },
+    "P03": {
+      "text": "iCBT custo-efetividade",
+      "sources": [
+        "10.1002/wps.20846"
+      ]
+    },
+    "P04": {
+      "text": "Neurobiologia TCC",
+      "sources": [
+        "10.1038/s41583-020-00413-2"
+      ]
+    },
+    "P05": {
+      "text": "TCC atencao primaria",
+      "sources": [
+        "10.1192/bjp.2020.93"
+      ]
+    }
+  },
+  "total_evidences": 6,
+  "tsac_violations": 0,
+  "peer_reviewed": "5/5",
+  "timestamp": "2026-06-06T11:55:19.385593"
+}

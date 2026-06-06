@@ -1,0 +1,56 @@
+{
+  "paragraphs": {
+    "P01": {
+      "text": "A terapia cognitivo-comportamental (TCC) demonstrou eficacia significativa no tratamento de transtor",
+      "tsac": 0
+    },
+    "P02": {
+      "text": "Estudos comparativos entre TCC e farmacoterapia indicam que a TCC apresenta taxas de recaida signifi",
+      "tsac": 1
+    },
+    "P03": {
+      "text": "A TCC baseada em internet (iCBT) emerge como alternativa custo-efetiva, com resultados comparaveis a",
+      "tsac": 0
+    },
+    "P04": {
+      "text": "Mecanismos neurobiologicos da TCC incluem modulacao da atividade da amigdala e fortalecimento do con",
+      "tsac": 0
+    },
+    "P05": {
+      "text": "A aplicacao da TCC em contextos de atencao primaria demonstrou viabilidade e eficacia, reduzindo lis",
+      "tsac": 0
+    }
+  },
+  "evidences": [
+    {
+      "para": "P01",
+      "source": "10.1016/j.cpr.2020.101856",
+      "claim": "Meta-analise TCC ansiedade"
+    },
+    {
+      "para": "P01",
+      "source": "10.1001/jamapsychiatry.2019.3986",
+      "claim": "TCC eficacia transtornos ansiedade"
+    },
+    {
+      "para": "P02",
+      "source": "10.1016/S0140-6736(18)32293-1",
+      "claim": "TCC vs farmacoterapia recaida"
+    },
+    {
+      "para": "P03",
+      "source": "10.1002/wps.20846",
+      "claim": "iCBT custo-efetividade"
+    },
+    {
+      "para": "P04",
+      "source": "10.1038/s41583-020-00413-2",
+      "claim": "Neurobiologia TCC amigdala"
+    },
+    {
+      "para": "P05",
+      "source": "10.1192/bjp.2020.93",
+      "claim": "TCC atencao primaria"
+    }
+  ]
+}
