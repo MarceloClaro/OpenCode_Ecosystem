@@ -145,7 +145,11 @@ Once aligned on approach:
 After structure approval:
 
 1. **Write the plan** to `thoughts/plans/{descriptive_name}.md`
-2. **Use this template structure**:
+2. **Sync PLANS.md**: After writing the detailed plan, sync a condensed version:
+   - Archive first: se `PLANS.md` existir, copiar para `thoughts/plans/archive/PLANS-v{n}-{date}.md`
+   - Escrever novo `PLANS.md` com: Meta, Goal, Progress, Key Decisions, Blockers, Next Steps, Critical Context, Relevant Files
+   - Manter consistência: marcar `← CURRENT` na tarefa ativa, `[x]` nas concluídas
+3. **Use this template structure**:
 
 ```markdown
 # [Feature/Task Name] Implementation Plan
@@ -303,6 +307,14 @@ Use the todowrite tool to create a structured task list for the 6 steps above, m
    - Do NOT write the plan with unresolved questions
    - The implementation plan must be complete and actionable
    - Every decision must be made before finalizing the plan
+
+7. **Sync PLANS.md**:
+   - Always consult `PLANS.md` first if it exists (read it before starting)
+   - After writing the detailed plan, sync a condensed version to `PLANS.md`
+   - Before overwriting `PLANS.md`, archive the previous version:
+     copy `PLANS.md` → `thoughts/plans/archive/PLANS-v{n}-{YYYY-MM-DD}.md`
+   - PLANS.md sections: Meta, Goal, Progress, Key Decisions, Blockers, Next Steps, Critical Context, Relevant Files
+   - Increment version (`v1`, `v2`, ...) on each update
 
 ## Success Criteria Guidelines
 
