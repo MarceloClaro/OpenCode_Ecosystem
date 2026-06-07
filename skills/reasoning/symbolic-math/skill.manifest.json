@@ -1,0 +1,29 @@
+{
+  "name": "reasoning/symbolic-math",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "835713b7d6e72b679aa2b719b9b7d8cfe48beadd24e09bc8e3699864036b8519",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:06.045219+00:00",
+  "updated": "2026-06-04T21:54:06.045219+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\reasoning\\symbolic-math"
+}

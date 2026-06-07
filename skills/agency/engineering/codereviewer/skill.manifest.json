@@ -1,0 +1,29 @@
+{
+  "name": "agency/engineering/codereviewer",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "7fe0f19b578d22915a49d1db771bf439d47e6cbcd0c2348010c720307b360057",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.193729+00:00",
+  "updated": "2026-06-04T21:54:05.193729+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\agency\\engineering\\codereviewer"
+}

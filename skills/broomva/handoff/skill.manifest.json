@@ -1,0 +1,29 @@
+{
+  "name": "broomva/handoff",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "3c96df313fac9f3f6ed3143f6c860ee1c3e0f78b927db96e8e71059d14115426",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.543817+00:00",
+  "updated": "2026-06-04T21:54:05.543817+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\broomva\\handoff"
+}

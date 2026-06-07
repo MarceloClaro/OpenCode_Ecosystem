@@ -1,0 +1,29 @@
+{
+  "name": "document-ir",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "4b9eb5a27cf6594864c66618a4877c3c6430ebf082bc62e49188f56445bbf981",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.788376+00:00",
+  "updated": "2026-06-04T21:54:05.788376+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\document-ir"
+}

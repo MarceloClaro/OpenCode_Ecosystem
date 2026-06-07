@@ -1,0 +1,29 @@
+{
+  "name": "research/aletheia-superhuman-integration",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "86b21209380f75caa037080d2cf205c5233b6bc1c34f974175cc565a0a8a4af0",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:06.152463+00:00",
+  "updated": "2026-06-04T21:54:06.152463+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\research\\aletheia-superhuman-integration"
+}

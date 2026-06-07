@@ -1,0 +1,29 @@
+{
+  "name": "agent-forum/antigravity-integration",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "bdba4c0338feb9cb33780a3250524fc39c4072012b30283bc2ace188b6b2f5a7",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.348066+00:00",
+  "updated": "2026-06-04T21:54:05.348066+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\agent-forum\\antigravity-integration"
+}

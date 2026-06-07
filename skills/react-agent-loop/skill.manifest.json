@@ -1,0 +1,29 @@
+{
+  "name": "react-agent-loop",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "51d6d9d02506b3c5f29b676996a047cd601b8694fbd19ff77ac67d20d006d5d2",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.944196+00:00",
+  "updated": "2026-06-04T21:54:05.944196+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\react-agent-loop"
+}

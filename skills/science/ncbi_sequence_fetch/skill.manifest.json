@@ -1,0 +1,29 @@
+{
+  "name": "science/ncbi_sequence_fetch",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "89f02404b7c73268cdca1bfaecc18a11a0a66471547faac0c1de771468274832",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:06.538996+00:00",
+  "updated": "2026-06-04T21:54:06.538996+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\science\\ncbi_sequence_fetch"
+}

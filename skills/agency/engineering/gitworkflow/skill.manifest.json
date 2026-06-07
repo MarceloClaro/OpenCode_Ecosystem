@@ -1,0 +1,29 @@
+{
+  "name": "agency/engineering/gitworkflow",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "f5e94e2ee1aefb47f84e7ee93dd04766636b870093ee4b4394dc2832e632a637",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.208805+00:00",
+  "updated": "2026-06-04T21:54:05.208805+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\agency\\engineering\\gitworkflow"
+}

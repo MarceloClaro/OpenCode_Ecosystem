@@ -1,0 +1,29 @@
+{
+  "name": "reasoning/formal-verification",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "90a1d3759ae02fe124f885613a73b6472c1b5d19b82a2957045e9ea0d42b936d",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:06.027498+00:00",
+  "updated": "2026-06-04T21:54:06.027498+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\reasoning\\formal-verification"
+}

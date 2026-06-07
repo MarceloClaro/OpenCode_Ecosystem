@@ -1,0 +1,29 @@
+{
+  "name": "agency/engineering/dboptimizer",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "575273d93d5fafb5aedfd3db8daf574ffead38925c527ace3ffff84ce53df865",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.199334+00:00",
+  "updated": "2026-06-04T21:54:05.200673+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\agency\\engineering\\dboptimizer"
+}

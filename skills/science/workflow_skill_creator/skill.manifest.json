@@ -1,0 +1,29 @@
+{
+  "name": "science/workflow_skill_creator",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "01e6482ba5e4e61cc566544953c1b856ce50eb229d0f9ed9e6132c2e5b109f31",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:06.697524+00:00",
+  "updated": "2026-06-04T21:54:06.697524+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\science\\workflow_skill_creator"
+}

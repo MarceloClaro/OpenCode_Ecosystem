@@ -1,0 +1,29 @@
+{
+  "name": "agency/academic/geographer",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "32965c286128355741647563c9b4039aa3f867bafd0aef2ddf22d8c684ec3dc8",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.164542+00:00",
+  "updated": "2026-06-04T21:54:05.164542+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\agency\\academic\\geographer"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "workflows/plan-protocol",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "589b577ed96339a18cbdf18d5b222b692b3918809f98ad6e9c85078fc8230cbe",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:06.859375+00:00",
+  "updated": "2026-06-04T21:54:06.859375+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\workflows\\plan-protocol"
+}
