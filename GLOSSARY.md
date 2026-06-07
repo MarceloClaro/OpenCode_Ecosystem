@@ -189,3 +189,11 @@ Sistema de **pesquisa científica autônoma** implementado em `basis-research/`.
 ### NoologicalScanner v2.0
 
 Versao ampliada do Scanner Noológico (2026). Adiciona: pesos adaptativos por dominio (5 dominios), correlacao cruzada entre dimensoes (heatmap), deteccao de zonas de conforto epistemologico, keyword map enriquecido com n-gramas e sinonimos, integracao com TextAnalyzer para validacao por frequencia, e historico de scans para analise de tendencia.
+
+### TeleologicalScanner (Scanner Noologico v4.0)
+
+Scanner que inverte a logica: em vez de analisar o estado atual para descobrir ausencias, parte de um ESTADO FUTURO DESEJADO (ex: "AGI", "artigo Qualis A1") e decompoe, por engenharia reversa, quais capacidades precisariam existir. Implementa AND-OR trees, Gap Score (0-100) e Roadmap de 3 fases (Imediato, Curto Prazo, Longo Prazo). Conceito original: interlocutor anonimo (2026).
+
+### Epistemological Potential Score (EPS)
+
+Score de 0-100 que prioriza oportunidades de pesquisa baseado em 5 criterios ponderados: Cross-Domain Impact (30%), Theoretical Fertility (25%), Game-Theoretic Value (20%), Citation Void Density (15%) e Temporal Urgency (10%). Grades: Discovery (>=80), Promising (>=60), Exploratory (>=40), Marginal (<40).
