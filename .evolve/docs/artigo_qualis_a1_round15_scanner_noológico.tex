@@ -1,6 +1,6 @@
 % ===========================================================================
-%  Artigo Qualis A1 — Round 15: Scanner Noológico e Expansão Epistemológica
-%  OpenCode Ecosystem v4.2.3 — Documentação Completa com Citações DOI
+%  Artigo Qualis A1 — Scanner Noológico v3.0: ERRO → AUSÊNCIA → OPORTUNIDADE
+%  OpenCode Ecosystem v5.0 — Documentação Completa com Citações DOI
 %  Formato ABNT NBR 6023:2025 · Autor: Marcelo Claro Laranjeira
 % ===========================================================================
 
@@ -33,8 +33,8 @@
 \fancyhead[R]{\small OpenCode Ecosystem v4.2.3 — Round 15}
 \fancyfoot[C]{\thepage}
 
-\title{\textbf{Scanner Noológico e Expansão Epistemológica 5D}\\[2pt]
-       \large Uma Nova Camada de Análise de Ausências no OpenCode Ecosystem v4.2.3 (Round 15)}
+\title{\textbf{Scanner Noológico v3.0: De Ausências a Oportunidades}\\[2pt]
+       \large A Evolução ERRO $\rightarrow$ AUSÊNCIA $\rightarrow$ OPORTUNIDADE no OpenCode Ecosystem v5.0}
 \author{\textbf{Marcelo Claro Laranjeira}\\[2pt]
         \small \texttt{https://github.com/MarceloClaro/OpenCode\_Ecosystem}}
 \date{Junho de 2026}
@@ -300,15 +300,77 @@ Esta mudança é análoga à transição da ``medicina baseada em evidências'' 
   \item \textbf{Validação inter-avaliadores}: Comparar os resultados do scanner com avaliações de especialistas humanos.
 \end{enumerate}
 
+\section{Scanner Noológico v3.0: De Ausências a Oportunidades}
+
+A evolução do Scanner Noológico revelou uma progressão conceitual natural em três estágios: \textbf{ERRO} $\rightarrow$ \textbf{AUSÊNCIA} $\rightarrow$ \textbf{OPORTUNIDADE}. O v1.0 (sistemas tradicionais de auditoria) detecta erros --- inconsistências, violações, divergências. O v2.0 (Scanner Noológico original) identifica ausências --- dimensões inexploradas, pontos cegos, lacunas de conhecimento. O v3.0, apresentado nesta seção, transforma essas ausências em oportunidades de pesquisa priorizadas por potencial de descoberta.
+
+\subsection{Fundamentação: Por Que Nem Toda Ausência Tem o Mesmo Valor}
+
+A premissa central do v3.0 é que \textbf{nem toda ausência possui o mesmo valor científico}. Duas lacunas podem ser igualmente inexploradas, mas uma pode representar uma complementação marginal enquanto a outra esconde uma oportunidade de descoberta significativa. Esta intuição encontra respaldo em Kauffman (2000), que introduziu o conceito de ``adjacent possible'' --- o conjunto de inovações que se tornam possíveis a partir do estado atual do conhecimento. Preencher uma lacuna que expande o ``adjacent possible'' tem valor desproporcionalmente maior do que preencher uma lacuna isolada.
+
+\subsection{O Epistemological Potential Score (EPS)}
+
+O \textbf{Epistemological Potential Estimator} (\texttt{epistemological\_potential.py}, 310 linhas) calcula, para cada ponto cego identificado pelo Scanner Noológico v2.0, um \textit{Epistemological Potential Score} (EPS) de 0 a 100, baseado em cinco critérios ponderados:
+
+\begin{enumerate}[itemsep=2pt]
+  \item \textbf{Cross-Domain Impact} (30\% do EPS): Quantos dos 10 domínios do espaço de conhecimento seriam impactados se esta lacuna fosse preenchida? Uma lacuna em Teoria dos Jogos impacta 8 domínios (todos que envolvem decisão ou interação estratégica), enquanto uma lacuna em Teorias específicas impacta apenas 2. Este critério captura o ``efeito cascata'' do conhecimento.
+  \item \textbf{Theoretical Fertility} (25\% do EPS): Quantas teorias, frameworks ou modelos se conectam diretamente à categoria ausente? O Equilíbrio de Nash (fertilidade 9/10) conecta-se a economia, biologia evolutiva, ciência política e inteligência artificial, enquanto uma teoria localizada (fertilidade 3/10) tem escopo limitado. Este critério mede o potencial de integração teórica.
+  \item \textbf{Game-Theoretic Value} (20\% do EPS): Preencher esta lacuna mudaria o equilíbrio estratégico da paisagem de pesquisa? Lacunas em Teoria dos Jogos (valor 10/10) têm potencial disruptivo máximo, pois alteram o próprio framework de análise de decisões. Lacunas em População (valor 3/10) têm impacto mais circunscrito. Este critério captura o potencial de ``mudança de jogo'' (\textit{game-changing}).
+  \item \textbf{Citation Void Density} (15\% do EPS): Quão inexplorada é esta área? Uma densidade zero (completamente inexplorada) recebe pontuação máxima (10/10), indicando ``território virgem''. Uma densidade de 20\% (já parcialmente explorada) recebe pontuação menor (8/10). Este critério captura a ``novidade'' potencial da contribuição.
+  \item \textbf{Temporal Urgency} (10\% do EPS): O gap está crescendo ou diminuindo? Áreas com palavras-chave de alta relevância contemporânea (inteligência artificial, neurociência, mudança climática) recebem pontuação maior (7/10), enquanto áreas estáveis recebem pontuação base (4/10). Este critério captura a ``janela de oportunidade'' temporal.
+\end{enumerate}
+
+\subsection{Grades de Oportunidade}
+
+Com base no EPS, cada oportunidade é classificada em quatro níveis:
+
+\begin{itemize}[itemsep=1pt]
+  \item \textbf{Discovery} (EPS $\geq$ 80): Potencial de abrir nova linha de pesquisa. Exige investimento significativo, mas oferece retorno desproporcional.
+  \item \textbf{Promising} (EPS $\geq$ 60): Contribuição significativa para a área. Investimento moderado com retorno previsível.
+  \item \textbf{Exploratory} (EPS $\geq$ 40): Complementação relevante ao campo. Investimento baixo, retorno incremental.
+  \item \textbf{Marginal} (EPS $<$ 40): Refinamento incremental. Baixa prioridade de investimento.
+\end{itemize}
+
+\subsection{Resultados da Aplicação ao Estudo de Caso}
+
+O EPS Estimator foi aplicado aos resultados do Scanner Noológico v2.0 sobre o estudo de caso de TCC e Ansiedade. Das 73 oportunidades identificadas:
+
+\begin{table}[H]
+  \centering
+  \caption{Distribuição de oportunidades por grade}
+  \begin{tabular}{l c c}
+    \toprule
+    \textbf{Grade} & \textbf{Quantidade} & \textbf{\% do Total} \\
+    \midrule
+    Discovery (EPS $\geq$ 80)  & 4  & 5,5\% \\
+    Promising (EPS $\geq$ 60)  & 17 & 23,3\% \\
+    Exploratory (EPS $\geq$ 40) & 47 & 64,4\% \\
+    Marginal (EPS $<$ 40)      & 5  & 6,8\% \\
+    \textbf{Total}             & \textbf{73} & \textbf{100\%} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+As quatro oportunidades classificadas como ``Discovery'' foram:
+
+\begin{enumerate}[itemsep=1pt]
+  \item \textbf{Jogos Bayesianos (Harsanyi)} --- EPS=87. Impacta 8 domínios, fertilidade teórica 9/10, valor game-theoretic 10/10. Justificativa: modelar situações com informação incompleta é relevante para qualquer domínio onde agentes tomam decisões sob incerteza --- da relação terapêutica (paciente não revela todas as informações ao terapeuta) à economia (mercados com informação assimétrica).
+  \item \textbf{Equilíbrio de Nash} --- EPS=84. Impacta 8 domínios, fertilidade 9/10. Justificativa: o framework mais fundamental da Teoria dos Jogos, aplicável a qualquer interação estratégica. Sua aplicação sistemática à psicologia clínica permanece inexplorada.
+  \item \textbf{Dilema do Prisioneiro} --- EPS=82. Impacta 8 domínios, fertilidade 8/10. Justificativa: o dilema entre cooperação e competição é universal. Modelar a relação terapêutica como dilema do prisioneiro iterado revela por que a aliança terapêutica é preditora de 30\% da variância.
+  \item \textbf{Jogos Cooperativos (Shapley)} --- EPS=82. Impacta 8 domínios, fertilidade 8/10. Justificativa: decompor a contribuição de cada técnica terapêutica (reestruturação cognitiva, exposição, mindfulness) via Valor de Shapley permite otimizar protocolos clínicos.
+\end{enumerate}
+
+\subsection{Implicações para a Pesquisa Científica}
+
+O Scanner Noológico v3.0 transforma o ecossistema OpenCode de uma \textbf{plataforma de validação} (que verifica se o conhecimento produzido é correto e completo) para uma \textbf{plataforma de geração de hipóteses} (que sugere ativamente quais direções de pesquisa oferecem maior potencial de descoberta). Esta transição é análoga à diferença entre um revisor de artigos (que avalia o que foi submetido) e um orientador de pesquisa (que sugere o que deveria ser investigado).
+
+A principal limitação atual do EPS é sua dependência de matrizes de impacto predefinidas (CROSS\_DOMAIN\_IMPACT, THEORETICAL\_FERTILITY, GAME\_THEORETIC\_VALUE), que foram calibradas heuristicamente. Trabalhos futuros incluem: (a) validação empírica das matrizes contra dados bibliométricos reais; (b) incorporação de métricas dinâmicas de citação (altmetrics) para o Citation Void Density; e (c) integração com sistemas de recomendação de periódicos (Qualis Target Navigator) para sugerir não apenas o que pesquisar, mas onde publicar.
+
 \section{Conclusão}
 
-O Round 15 do pipeline \texttt{/evolve} introduziu duas contribuições ao OpenCode Ecosystem v4.2.3: o \textbf{Scanner Noológico} --- uma camada de análise que identifica ausências no espaço de conhecimento, complementando sistemas que detectam apenas erros --- e a \textbf{Expansão Epistemológica 5D} de um estudo de caso em psicologia clínica.
+Este artigo documentou a evolução do Scanner Noológico em três versões progressivas --- ERRO (v1.0), AUSÊNCIA (v2.0) e OPORTUNIDADE (v3.0) --- no OpenCode Ecosystem v5.0. O v2.0, aplicado a um estudo de caso em psicologia clínica, revelou que um documento tecnicamente perfeito (score Anti-IA 100/100, 0 violações TSAC) pode estar epistemologicamente restrito a 12\% do espaço de conhecimento potencial. A Expansão 5D triplicou a cobertura para 35\%. O v3.0 transformou os pontos cegos remanescentes em 73 oportunidades de pesquisa priorizadas, das quais 4 foram classificadas como ``Discovery'' (EPS $\geq$ 80), oferecendo um roteiro claro para expansão futura do conhecimento.
 
-A aplicação do scanner ao estudo de caso revelou que um documento tecnicamente perfeito (score Anti-IA 100/100, 0 violações TSAC, 13 DOIs verificáveis) pode estar epistemologicamente restrito, explorando apenas 12\% do espaço de conhecimento potencial. A Expansão 5D triplicou a cobertura para 35\%, adicionando perspectivas da Teoria dos Jogos, políticas públicas, neurociências, análise longitudinal e métodos mistos.
-
-O ecossistema progrediu de 85 para 99/100 pontos ao longo de 15 rounds, mantendo zero vazamentos CJK e 100\% de MCPs ativos. A arquitetura resultante oferece uma plataforma completa para pesquisa acadêmica: da descoberta de bibliotecas (R8) ao acesso a dados (R9), da auditoria de erros (R11--R12) à identificação de ausências (R15).
-
-A mudança de paradigma proposta --- de ``o que está errado?'' para ``o que está ausente?'' --- representa uma contribuição conceitual que transcende o ecossistema específico e sugere direções para sistemas de validação acadêmica em geral.
+A progressão conceitual ERRO $\rightarrow$ AUSÊNCIA $\rightarrow$ OPORTUNIDADE representa uma contribuição que transcende o ecossistema específico: ela sugere que sistemas de inteligência artificial para pesquisa acadêmica podem evoluir de ferramentas de validação passiva para parceiros ativos na geração de hipóteses --- não apenas verificando o que foi produzido, mas sugerindo o que deveria ser investigado. O conceito original do Scanner Noológico foi proposto por um interlocutor anônimo em junho de 2026, e sua evolução em três versões foi implementada por Marcelo Claro Laranjeira.
 
 \section*{Agradecimentos}
 
