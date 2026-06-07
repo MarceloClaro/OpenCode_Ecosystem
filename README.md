@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="./AUTOR%20MARCELO%20CLARO%20(1).png" alt="Marcelo Claro Laranjeira" width="120" style="border-radius:50%"/>
+<img src="./AUTOR%20MARCELO%20CLARO%20(1).png" alt="Marcelo Claro Laranjeira" />
 
 <br/>
 
