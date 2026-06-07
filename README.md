@@ -1,9 +1,12 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/OpenCode_Ecosystem-v5.0.0-6366f1?style=for-the-badge&logo=openai&logoColor=white" alt="version"/>
+<div align="center">
+
+<img src="./AUTOR%20MARCELO%20CLARO%20(1).png" alt="Autor Marcelo Claro Laranjeira" width="120" style="border-radius:50%"/>
 
 <br/>
-<img src="https://github.com/MarceloClaro/OpenCode_Ecosystem/blob/main/AUTOR%20%20MARCELO%20CLARO%20(1).png?raw=true" alt="Marcelo Claro Laranjeira" width="120" style="border-radius:50%"/>
+
+<img src="https://img.shields.io/badge/OpenCode_Ecosystem-v5.0.0-6366f1?style=for-the-badge&logo=openai&logoColor=white" alt="version"/>
 
 # OpenCode Ecosystem v5.0.0
 
