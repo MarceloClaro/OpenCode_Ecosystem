@@ -4,7 +4,7 @@
 
 # OpenCode Ecosystem v5.0.0
 
-### 38 Skills Cientificas · 9 Motores de Raciocinio · Scanner Noológico · 128 Agentes · Score 99/100
+### 38 Skills Cientificas · 9 Motores de Raciocinio · Scanner Noológico v2.0 · 128 Agentes · Score 100/100
 
 <br/>
 
@@ -12,16 +12,16 @@
 [![MCPs](https://img.shields.io/badge/MCP_Servers-46-0ea5e9?style=flat-square)](opencode.json)
 [![Skills](https://img.shields.io/badge/Skills-161-10b981?style=flat-square)](skills/)
 [![Hooks](https://img.shields.io/badge/Ecosystem_Hooks-11-a855f7?style=flat-square)](skills/system/pypi-scout/ecosystem_hooks.py)
-[![Auditoria](https://img.shields.io/badge/Auditoria-6_componentes-ef4444?style=flat-square)](skills/system/academic-audit/)
-[![Scanner](https://img.shields.io/badge/Scanner_Noológico-10_dimensoes-f59e0b?style=flat-square)](skills/system/academic-audit/noological_scanner.py)
-[![Score](https://img.shields.io/badge/Score-99%2F100-22c55e?style=flat-square)]()
+[![Auditoria](https://img.shields.io/badge/Auditoria-7_componentes-ef4444?style=flat-square)](skills/system/academic-audit/)
+[![Scanner](https://img.shields.io/badge/Scanner_Noológico-v2.0-f59e0b?style=flat-square)](skills/system/academic-audit/noological_scanner.py)
+[![Score](https://img.shields.io/badge/Score-100%2F100-22c55e?style=flat-square)]()
 [![CJK](https://img.shields.io/badge/CJK_Leaks-0-22c55e?style=flat-square)]()
 [![Status](https://img.shields.io/badge/Status-Producao-22c55e?style=flat-square)]()
 
 <br/>
 
 > **Versao:** 5.0.0 · **Atualizado:** 2026-06-07 · **Modelo:** `deepseek-v4-pro`  
-> **Novo (Evo-16) · Scanner Noológico v2.0 · 9 motores raciocinio · 7 comp. auditoria · Score 100/100:** Scanner Noológico (92 categorias) · Clinical Case Study Pipeline · Expansão 5D · 30 parágrafos/dimensão · 36 refs DOI · Score 99/100
+> **Novo (Evo-16) · Scanner Noológico v2.0 · 9 motores raciocinio · 7 comp. auditoria · Score 100/100:** Scanner Noológico (92 categorias) · Clinical Case Study Pipeline · Expansão 5D · 30 parágrafos/dimensão · 36 refs DOI
 
 </div>
 
