@@ -21,7 +21,33 @@
 <br/>
 
 > **Versao:** 5.0.0 · **Atualizado:** 2026-06-07 · **Modelo:** `deepseek-v4-pro`  
-> **Novo (Evo-16):** Scanner Noológico v4.0 (Teleológico Reverso) · Dissertação 107 páginas ABNT/CNPq · Score 100/100
+> **Novo:** Scanner Noologico v4.0 (Teleologico Reverso) · Dissertacao 107pp ABNT/CNPq · Score 100/100
+
+</div>
+
+---
+
+## 🚀 Guia Rápido para Iniciantes (Leigos)
+
+**O que e isto?** Um ecossistema de inteligencia artificial que funciona como uma "universidade dentro do computador". Voce pode pedir para ele pesquisar artigos cientificos, escrever uma dissertacao completa, ou analisar se seu texto parece ter sido escrito por IA.
+
+**Como usar em 3 passos:**
+
+1. **Instale os programas base:** Node.js, Python 3.12 e Bun (gratuitos, links no [guia de instalacao](GETTING_STARTED.md))
+2. **Clone o repositorio:** `git clone https://github.com/MarceloClaro/OpenCode_Ecosystem.git`
+3. **Execute um comando:** Digite `/artigo` para gerar um artigo academico, ou `/auto` para modo autonomo completo
+
+**O que voce pode fazer (sem saber programar):**
+- 📝 Gerar artigos academicos com referencias verificaveis (DOI clicavel)
+- 🔍 Verificar se seu texto tem padroes de IA (87 palavras banidas detectadas)
+- 🧠 Descobrir lacunas no seu conhecimento com o Scanner Noologico
+- 📊 Analisar frequencia de palavras, n-gramas e concordancia
+
+**O que voce pode fazer (se souber programar):**
+- Tudo acima, mais acesso a 128 agentes especializados, 46 MCPs, 161 skills
+- Integrar a API do Banco Mundial, Yahoo Finance, arXiv, PubMed e muito mais
+- Usar o DataOrchestrator para consultar 8 dominios de dados em linguagem natural
+- Executar o pipeline de auditoria caixa branca com hash SHA-256
 
 </div>
 
