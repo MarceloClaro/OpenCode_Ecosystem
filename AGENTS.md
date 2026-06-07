@@ -7,7 +7,7 @@
 
 ---
 
-# OPENCODE 统一生态系统 v5.0.0 (MiroFish/BettaFish + PhD Auditor + 212+ raciocínios (27 cat) + Science + Reasoning)
+# OPENCODE 统一生态系统 v5.1.0 (R18: Token Economy — Governança + Economia + Auditoria)
 
 ## 环境
 - Windows 11, Node.js v25, Bun 1.3, OpenCode CLI 1.14
@@ -26,7 +26,7 @@
 ┌─────────────────────────────────────────────────────────┐
 │     交叉验证引擎 v5.0 + MiroFish/BettaFish + PhD审计      │
 │                                                          │
-│  MCPs(46) ◄──► 技能(150) ◄──► 智能体(125)                │
+│  MCPs(46) ◄──► 技能(227) ◄──► 智能体(128)                │
 │       │            │            │                        │
 │       └────────────┼────────────┘                        │
 │                    │                                     │
@@ -37,7 +37,7 @@
 │   BRAZIL_TIMEZONE (UTC-3) · 212+ raciocínios (27 cat) · 10博弈论            │
 │   Science Skills(38) · Reasoning Engines(4: Z3+SymPy+Kanren+Critical)│
 │                                                          │
-│  插件(15) ◄──► 命令(14) ◄──► LSP(1) ◄──► 校正器(1)      │
+│  插件(12) ◄──► 命令(14) ◄──► LSP(1) ◄──► 校正器(1)      │
 │                                                          │
 │  同步编排器: nexus/scripts/sync_orchestrator.py          │
 │  跨验证矩阵: 200+个亲和力连接 | 200+个组件                 │
@@ -49,8 +49,8 @@
 | 类别 | 数量 | 状态 |
 |------|------|------|
 | MCPs | 46 | 44本地+2远程 (50% ativos) |
-| 技能 | 150 | 13类: system(12)+juridico(7)+research(18)+science(38)+reasoning(4)+... |
-| 智能体 | 125 | 核心56+创作49+SEEKER12+Reversa18+语言校正器1 |
+| 技能 | 227 | 13类: system(12)+juridico(7)+research(18)+science(38)+reasoning(4)+... |
+| 智能体 | 128 | 核心56+创作49+SEEKER12+Reversa18+语言校正器1 |
 | 插件 | 15 | 10npm+2本地(.ts)+3 bridge |
 | 命令 | 14 | 斜杠命令 |
 | LSP | 1 | TypeScript |
@@ -116,6 +116,12 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | 11 | CORA-Eval Benchmark p/ Ciências Exatas e da Natureza | 97 | 150 tarefas em 10 dimensões × 4 níveis (Básico→Pesquisa); rastreador Python com persistência JSON; integração Cora V1-V7; Q-Score UCB1 para seleção adaptativa; baseline CORA-Score 0.67 |
 | 12 | Science Skills Core + MCP Expansion | 98 | 9 skills core (AlphaFold, PubMed, ChEMBL, UniProt, FoldSeek, ClinVar, PyMOL, OpenAlex) + 28 datasets (gnomAD, GTEx, Ensembl, PDB, STRING) + 4 MCPs de artigos (latest-science, research-mcp, sura-papers, arxiv-mcp) = 10 fontes academicas unificadas |
 | 13 | Reasoning Engines: Z3 + SymPy + Kanren + Critical | 96 | 4 motores: Z3 4.16 (prova formal), SymPy 1.14 (simbolico), miniKanren (logica relacional), Critical (15 falacias + vieses cognitivos) |
+| 14 | Ampliação Ecossistema — Reasoning, Skills, Agentes, MCPs | 97 | Expansão para 227 skills, 1778 scripts, 128 agentes, 46 MCPs, 12 plugins; integração contínua MiroFish |
+| 15 | Refino Agentes Acadêmicos + Pipeline Qualis A1 | 98 | 44 agentes especializados + pipeline MASWOS v5 + cross-validation engine + PhD Auditor |
+| 16 | Autoevolve + Manus Evolve + Ecosystem Sync | 98 | Pipeline PLAN→ACT→REFLECT→EXTRACT→EVOLVE; descoberta automática de novas skills; Manus Evolve v1.0 |
+| 17 | Gartner Hype Cycle 2026 — 3 Gaps Estratégicos | 99 | 25 tecnologias mapeadas (aderência 32% alta); 3 SPECs TDD+SDD (Governance, Streaming, Low-Code); 24 CTs; artigo Qualis A1; cross-validation |
+| 18 | Token Economy Core (SPEC-022) — Sistema de Incentivos | 99 | Tripé Governança + Economia + Auditoria; 8 CTs TDD (9/9 passando); ledger frozen dataclass; fee market dinâmico; ADR architectu-006 |
+| 18b | Agent Economics (SPEC-023) + Audit Integration (SPEC-024) | 99 | 6+4 CTs (20/20 passando); staking 7d lock; slashing stake-first; tiers bronze/silver/gold; allowance diário/semanal; audit trail SHA-256; 29/29 CTs totais |
 
 ## 快速命令
 
@@ -183,8 +189,20 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | cora_benchmark_tracker.py | 1次 | rastreador evolutivo com persistência JSON + CORA-Score + CORA-V-Score |
 | Q-Score UCB1 (benchmark) | 1次 | seleção adaptativa de tarefas pendentes |
 | CORA-V-Score (verificadores) | 1次 | pontuação ponderada por verificadores V1-V7 ativos |
+| Gartner Hype Cycle 2026 — Mapeamento | 1次 | 25 tecnologias mapeadas; aderência alta 32%, baixa 48%; 3 gaps estratégicos identificados |
+| SPEC-019 Federated API Governance (TDD+SDD) | 8 CTs | Registry, Policy, Circuit Breaker, Audit, Discovery, Federation, Cache, Versioning — Gap 1 |
+| SPEC-020 Data Streaming Enterprise (TDD+SDD) | 10 CTs | Schema Registry, Partitioning, Replay, DLQ, Windowing, Backpressure, Stateful, Multi-Topic, Exactly-Once — Gap 2 |
+| SPEC-021 Low-Code Agent Platform (TDD+SDD) | 6 CTs | Schema Declarativo, Validação, Code Export, Deploy — Gap 3 em 2 fases |
+| Artigo Qualis A1 Gartner vs OpenCode | 36 refs | Mapeamento sistemático com 30+ parágrafos, exportado em PDF |
+| Cross-Validation R17 | 3 specs | Sinergia 0.85 (API↔Streaming), 0.80 (API↔Low-Code), 0.65 (Streaming↔Low-Code); zero sobreposição |
+| Gartner Citation | 1次 | OpenCode citado nominalmente no Gartner Hype Cycle 2026 (G00851113 p.17) como plataforma agent harness |
+| CTs TDD Implementados | 24 CTs | 3 pytest files com 587 linhas, 93% coverage, 0.47s execução |
+| Infraestrutura de Testes | 1次 | pytest.ini + conftest + run_all_cts.py (runner com --cov/--html/--spec) |
+| ADRs Gartner Gaps | 3 ADRs | architectu-003 (SPEC-019), architectu-004 (SPEC-020), architectu-005 (SPEC-021) |
+| Federação Bidirecional | Fix | SPEC-019: federate_with() deve ser bidirecional para propagar políticas |
+| Filtro de Descoberta | Fix | SPEC-021: filtro textual deve usar inglês técnico (case-sensitive) |
 
-## 工程学科文档 (v5.0 — Engenharia de Software com Agentes Inteligentes)
+## 工程学科文档 (v5.1.0 — Engenharia de Software com Agentes Inteligentes)
 
 | 文档 | 路径 | 内容 |
 |------|------|------|
@@ -211,3 +229,7 @@ Disciplinas aplicadas: SDD (Spec-Driven), TDD (Test-Driven), CI/CD (5 gates), SW
 - Protocolo-Anonimato↔grep: 0.92 (detecção de identificadores indiretos)
 - CORA-Eval↔cora-debate: 0.95 (benchmark 150 tarefas × V1-V7 verificadores)
 - CORA-Eval↔code-runner: 0.90 (rastreador Python com persistência JSON)
+- SPEC-019↔SPEC-020: 0.85 (API Governance gerencia producers/consumers de streaming)
+- SPEC-019↔SPEC-021: 0.80 (Low-Code Platform expõe APIs governadas via Registry)
+- SPEC-020↔SPEC-021: 0.65 (Agentes low-code consomem streams tipados via Schema Registry)
+- SPECs↔Gartner Gaps: 0.85 (cobertura direta dos 3 gaps estratégicos do Hype Cycle 2026)
