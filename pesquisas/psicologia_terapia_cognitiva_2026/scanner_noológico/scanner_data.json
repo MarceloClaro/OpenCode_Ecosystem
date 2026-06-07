@@ -1,0 +1,842 @@
+{
+  "pipeline": "artigo",
+  "domain": "psicologia",
+  "timestamp": "2026-06-07T09:21:48.583793+00:00",
+  "coverage": {
+    "research_domain": "psicologia",
+    "timestamp": "2026-06-07T09:21:48.577392+00:00",
+    "version": "2.0",
+    "overall_density": 0.21,
+    "overall_coverage_pct": 21,
+    "dimensions_analyzed": 10,
+    "total_categories": 92,
+    "categories_covered": 19,
+    "categories_absent": 73,
+    "dimensions": {
+      "paradigmas": {
+        "name": "Paradigmas Epistemológicos",
+        "description": "Lentes epistemológicas através das quais o fenômeno é observado",
+        "weight": 1.2,
+        "covered": [
+          "Positivista",
+          "Interpretativista",
+          "Complexo/Sistêmico"
+        ],
+        "absent": [
+          "Crítico/Transformador",
+          "Pragmatista",
+          "Fenomenológico",
+          "Construtivista",
+          "Pós-estruturalista"
+        ],
+        "density": 0.38,
+        "coverage_pct": 38,
+        "confidence": 0.7,
+        "weighted_coverage": 45,
+        "blind_spot_score": 0
+      },
+      "metodos": {
+        "name": "Métodos de Investigação",
+        "description": "Abordagens metodológicas empregadas",
+        "weight": 1.1,
+        "covered": [
+          "Quantitativo experimental",
+          "Qualitativo fenomenológico",
+          "Qualitativo grounded theory",
+          "Estudo de caso"
+        ],
+        "absent": [
+          "Quantitativo correlacional",
+          "Misto sequencial",
+          "Misto convergente",
+          "Revisão sistemática",
+          "Meta-análise",
+          "Pesquisa-ação"
+        ],
+        "density": 0.4,
+        "coverage_pct": 40,
+        "confidence": 0.7,
+        "weighted_coverage": 44,
+        "blind_spot_score": 0
+      },
+      "teorias": {
+        "name": "Referenciais Teóricos",
+        "description": "Marcos teóricos que fundamentam a análise",
+        "weight": 1.3,
+        "covered": [
+          "Cognitivo-comportamental",
+          "Comportamental"
+        ],
+        "absent": [
+          "Psicanalítico",
+          "Humanista",
+          "Sistêmico",
+          "Neurobiológico",
+          "Evolucionista",
+          "Social-crítico",
+          "Fenomenológico-existencial",
+          "Integrativo/transdiagnóstico"
+        ],
+        "density": 0.2,
+        "coverage_pct": 20,
+        "confidence": 0.7,
+        "weighted_coverage": 26,
+        "blind_spot_score": 0
+      },
+      "raciocinio": {
+        "name": "Tipos de Raciocínio",
+        "description": "Modos de inferência e construção de conhecimento",
+        "weight": 1.0,
+        "covered": [
+          "Indutivo",
+          "Dialético",
+          "Contrafactual",
+          "Teleológico",
+          "Pragmático"
+        ],
+        "absent": [
+          "Dedutivo",
+          "Abdutivo",
+          "Sistêmico",
+          "Probabilístico",
+          "Metacognitivo"
+        ],
+        "density": 0.5,
+        "coverage_pct": 50,
+        "confidence": 0.7,
+        "weighted_coverage": 50,
+        "blind_spot_score": 0
+      },
+      "teoria_jogos": {
+        "name": "Perspectivas Estratégicas (Teoria dos Jogos)",
+        "description": "Modelos estratégicos para análise de decisões",
+        "weight": 0.6,
+        "covered": [
+          "Evolutivo"
+        ],
+        "absent": [
+          "Equilíbrio de Nash",
+          "Dilema do Prisioneiro",
+          "Soma Zero",
+          "Tit-for-Tat",
+          "Stackelberg",
+          "Barganha",
+          "Sinalização",
+          "Bayesiano",
+          "Cooperativo"
+        ],
+        "density": 0.1,
+        "coverage_pct": 10,
+        "confidence": 0.7,
+        "weighted_coverage": 6,
+        "blind_spot_score": 0.06
+      },
+      "niveis_analise": {
+        "name": "Níveis de Análise",
+        "description": "Escalas de observação do fenômeno",
+        "weight": 1.0,
+        "covered": [],
+        "absent": [
+          "Individual/intrapsíquico",
+          "Interpessoal/relacional",
+          "Grupal/organizacional",
+          "Comunitário",
+          "Sistêmico/político",
+          "Neurobiológico",
+          "Evolutivo/filogenético",
+          "Cultural/antropológico"
+        ],
+        "density": 0.0,
+        "coverage_pct": 0,
+        "confidence": 0.7,
+        "weighted_coverage": 0,
+        "blind_spot_score": 0.2
+      },
+      "temporalidade": {
+        "name": "Perspectiva Temporal",
+        "description": "Enquadramento temporal da análise",
+        "weight": 0.8,
+        "covered": [],
+        "absent": [
+          "Transversal (momento único)",
+          "Longitudinal (curto prazo)",
+          "Longitudinal (longo prazo)",
+          "Histórico/retrospectivo",
+          "Prospectivo/preditivo",
+          "Desenvolvimental (ciclo de vida)"
+        ],
+        "density": 0.0,
+        "coverage_pct": 0,
+        "confidence": 0.7,
+        "weighted_coverage": 0,
+        "blind_spot_score": 0.16
+      },
+      "populacao": {
+        "name": "População e Contexto",
+        "description": "Características da população estudada e contexto",
+        "weight": 1.2,
+        "covered": [
+          "Gênero feminino"
+        ],
+        "absent": [
+          "Adultos",
+          "Idosos",
+          "Adolescentes",
+          "Infância",
+          "Gênero masculino",
+          "Diversidade de gênero",
+          "Contexto clínico",
+          "Contexto comunitário",
+          "Contexto organizacional",
+          "Brasil/América Latina",
+          "Cross-cultural"
+        ],
+        "density": 0.08,
+        "coverage_pct": 8,
+        "confidence": 0.7,
+        "weighted_coverage": 10,
+        "blind_spot_score": 0.14
+      },
+      "dados": {
+        "name": "Tipos de Dados e Evidências",
+        "description": "Natureza das evidências utilizadas",
+        "weight": 1.1,
+        "covered": [],
+        "absent": [
+          "Dados clínicos (escalas, inventários)",
+          "Dados neurobiológicos",
+          "Dados qualitativos (entrevistas)",
+          "Dados observacionais",
+          "Dados epidemiológicos",
+          "Dados longitudinais",
+          "Dados comparativos (cross-cultural)",
+          "Metadados (revisões)"
+        ],
+        "density": 0.0,
+        "coverage_pct": 0,
+        "confidence": 0.7,
+        "weighted_coverage": 0,
+        "blind_spot_score": 0.22
+      },
+      "dominios": {
+        "name": "Domínios de Conhecimento Cruzados",
+        "description": "Áreas do conhecimento potencialmente relevantes",
+        "weight": 0.7,
+        "covered": [
+          "Psicologia clínica",
+          "Economia comportamental",
+          "Educação"
+        ],
+        "absent": [
+          "Neurociências",
+          "Sociologia",
+          "Antropologia",
+          "Filosofia da mente",
+          "Psicofarmacologia",
+          "Saúde pública",
+          "Inteligência Artificial / Tecnologia"
+        ],
+        "density": 0.3,
+        "coverage_pct": 30,
+        "confidence": 0.7,
+        "weighted_coverage": 21,
+        "blind_spot_score": 0
+      }
+    },
+    "cross_correlation": [
+      {
+        "dim1": "niveis_analise",
+        "dim2": "temporalidade",
+        "d1_pct": 0,
+        "d2_pct": 0,
+        "correlation": 1.0
+      },
+      {
+        "dim1": "niveis_analise",
+        "dim2": "dados",
+        "d1_pct": 0,
+        "d2_pct": 0,
+        "correlation": 1.0
+      },
+      {
+        "dim1": "temporalidade",
+        "dim2": "dados",
+        "d1_pct": 0,
+        "d2_pct": 0,
+        "correlation": 1.0
+      },
+      {
+        "dim1": "paradigmas",
+        "dim2": "metodos",
+        "d1_pct": 38,
+        "d2_pct": 40,
+        "correlation": 0.98
+      },
+      {
+        "dim1": "teoria_jogos",
+        "dim2": "populacao",
+        "d1_pct": 10,
+        "d2_pct": 8,
+        "correlation": 0.98
+      },
+      {
+        "dim1": "paradigmas",
+        "dim2": "dominios",
+        "d1_pct": 38,
+        "d2_pct": 30,
+        "correlation": 0.92
+      },
+      {
+        "dim1": "niveis_analise",
+        "dim2": "populacao",
+        "d1_pct": 0,
+        "d2_pct": 8,
+        "correlation": 0.92
+      },
+      {
+        "dim1": "temporalidade",
+        "dim2": "populacao",
+        "d1_pct": 0,
+        "d2_pct": 8,
+        "correlation": 0.92
+      },
+      {
+        "dim1": "populacao",
+        "dim2": "dados",
+        "d1_pct": 8,
+        "d2_pct": 0,
+        "correlation": 0.92
+      },
+      {
+        "dim1": "metodos",
+        "dim2": "raciocinio",
+        "d1_pct": 40,
+        "d2_pct": 50,
+        "correlation": 0.9
+      },
+      {
+        "dim1": "metodos",
+        "dim2": "dominios",
+        "d1_pct": 40,
+        "d2_pct": 30,
+        "correlation": 0.9
+      },
+      {
+        "dim1": "teorias",
+        "dim2": "teoria_jogos",
+        "d1_pct": 20,
+        "d2_pct": 10,
+        "correlation": 0.9
+      },
+      {
+        "dim1": "teorias",
+        "dim2": "dominios",
+        "d1_pct": 20,
+        "d2_pct": 30,
+        "correlation": 0.9
+      },
+      {
+        "dim1": "teoria_jogos",
+        "dim2": "niveis_analise",
+        "d1_pct": 10,
+        "d2_pct": 0,
+        "correlation": 0.9
+      },
+      {
+        "dim1": "teoria_jogos",
+        "dim2": "temporalidade",
+        "d1_pct": 10,
+        "d2_pct": 0,
+        "correlation": 0.9
+      },
+      {
+        "dim1": "teoria_jogos",
+        "dim2": "dados",
+        "d1_pct": 10,
+        "d2_pct": 0,
+        "correlation": 0.9
+      },
+      {
+        "dim1": "paradigmas",
+        "dim2": "raciocinio",
+        "d1_pct": 38,
+        "d2_pct": 50,
+        "correlation": 0.88
+      },
+      {
+        "dim1": "teorias",
+        "dim2": "populacao",
+        "d1_pct": 20,
+        "d2_pct": 8,
+        "correlation": 0.88
+      },
+      {
+        "dim1": "paradigmas",
+        "dim2": "teorias",
+        "d1_pct": 38,
+        "d2_pct": 20,
+        "correlation": 0.82
+      },
+      {
+        "dim1": "metodos",
+        "dim2": "teorias",
+        "d1_pct": 40,
+        "d2_pct": 20,
+        "correlation": 0.8
+      },
+      {
+        "dim1": "teorias",
+        "dim2": "niveis_analise",
+        "d1_pct": 20,
+        "d2_pct": 0,
+        "correlation": 0.8
+      },
+      {
+        "dim1": "teorias",
+        "dim2": "temporalidade",
+        "d1_pct": 20,
+        "d2_pct": 0,
+        "correlation": 0.8
+      },
+      {
+        "dim1": "teorias",
+        "dim2": "dados",
+        "d1_pct": 20,
+        "d2_pct": 0,
+        "correlation": 0.8
+      },
+      {
+        "dim1": "raciocinio",
+        "dim2": "dominios",
+        "d1_pct": 50,
+        "d2_pct": 30,
+        "correlation": 0.8
+      },
+      {
+        "dim1": "teoria_jogos",
+        "dim2": "dominios",
+        "d1_pct": 10,
+        "d2_pct": 30,
+        "correlation": 0.8
+      },
+      {
+        "dim1": "populacao",
+        "dim2": "dominios",
+        "d1_pct": 8,
+        "d2_pct": 30,
+        "correlation": 0.78
+      },
+      {
+        "dim1": "paradigmas",
+        "dim2": "teoria_jogos",
+        "d1_pct": 38,
+        "d2_pct": 10,
+        "correlation": 0.72
+      },
+      {
+        "dim1": "paradigmas",
+        "dim2": "populacao",
+        "d1_pct": 38,
+        "d2_pct": 8,
+        "correlation": 0.7
+      },
+      {
+        "dim1": "metodos",
+        "dim2": "teoria_jogos",
+        "d1_pct": 40,
+        "d2_pct": 10,
+        "correlation": 0.7
+      },
+      {
+        "dim1": "teorias",
+        "dim2": "raciocinio",
+        "d1_pct": 20,
+        "d2_pct": 50,
+        "correlation": 0.7
+      },
+      {
+        "dim1": "niveis_analise",
+        "dim2": "dominios",
+        "d1_pct": 0,
+        "d2_pct": 30,
+        "correlation": 0.7
+      },
+      {
+        "dim1": "temporalidade",
+        "dim2": "dominios",
+        "d1_pct": 0,
+        "d2_pct": 30,
+        "correlation": 0.7
+      },
+      {
+        "dim1": "dados",
+        "dim2": "dominios",
+        "d1_pct": 0,
+        "d2_pct": 30,
+        "correlation": 0.7
+      },
+      {
+        "dim1": "metodos",
+        "dim2": "populacao",
+        "d1_pct": 40,
+        "d2_pct": 8,
+        "correlation": 0.68
+      },
+      {
+        "dim1": "paradigmas",
+        "dim2": "niveis_analise",
+        "d1_pct": 38,
+        "d2_pct": 0,
+        "correlation": 0.62
+      },
+      {
+        "dim1": "paradigmas",
+        "dim2": "temporalidade",
+        "d1_pct": 38,
+        "d2_pct": 0,
+        "correlation": 0.62
+      },
+      {
+        "dim1": "paradigmas",
+        "dim2": "dados",
+        "d1_pct": 38,
+        "d2_pct": 0,
+        "correlation": 0.62
+      },
+      {
+        "dim1": "metodos",
+        "dim2": "niveis_analise",
+        "d1_pct": 40,
+        "d2_pct": 0,
+        "correlation": 0.6
+      },
+      {
+        "dim1": "metodos",
+        "dim2": "temporalidade",
+        "d1_pct": 40,
+        "d2_pct": 0,
+        "correlation": 0.6
+      },
+      {
+        "dim1": "metodos",
+        "dim2": "dados",
+        "d1_pct": 40,
+        "d2_pct": 0,
+        "correlation": 0.6
+      },
+      {
+        "dim1": "raciocinio",
+        "dim2": "teoria_jogos",
+        "d1_pct": 50,
+        "d2_pct": 10,
+        "correlation": 0.6
+      },
+      {
+        "dim1": "raciocinio",
+        "dim2": "populacao",
+        "d1_pct": 50,
+        "d2_pct": 8,
+        "correlation": 0.58
+      },
+      {
+        "dim1": "raciocinio",
+        "dim2": "niveis_analise",
+        "d1_pct": 50,
+        "d2_pct": 0,
+        "correlation": 0.5
+      },
+      {
+        "dim1": "raciocinio",
+        "dim2": "temporalidade",
+        "d1_pct": 50,
+        "d2_pct": 0,
+        "correlation": 0.5
+      },
+      {
+        "dim1": "raciocinio",
+        "dim2": "dados",
+        "d1_pct": 50,
+        "d2_pct": 0,
+        "correlation": 0.5
+      }
+    ],
+    "comfort_zones": [],
+    "blind_spots": [
+      {
+        "dimension": "Níveis de Análise",
+        "key": "niveis_analise",
+        "density": 0.0,
+        "severity": "high",
+        "weight": 1.0,
+        "absent_categories": [
+          "Individual/intrapsíquico",
+          "Interpessoal/relacional",
+          "Grupal/organizacional",
+          "Comunitário",
+          "Sistêmico/político"
+        ],
+        "impact": "Dimensao 'Níveis de Análise' com apenas 0% de cobertura (peso: 1.0)."
+      },
+      {
+        "dimension": "Perspectiva Temporal",
+        "key": "temporalidade",
+        "density": 0.0,
+        "severity": "high",
+        "weight": 0.8,
+        "absent_categories": [
+          "Transversal (momento único)",
+          "Longitudinal (curto prazo)",
+          "Longitudinal (longo prazo)",
+          "Histórico/retrospectivo",
+          "Prospectivo/preditivo"
+        ],
+        "impact": "Dimensao 'Perspectiva Temporal' com apenas 0% de cobertura (peso: 0.8)."
+      },
+      {
+        "dimension": "Tipos de Dados e Evidências",
+        "key": "dados",
+        "density": 0.0,
+        "severity": "critical",
+        "weight": 1.1,
+        "absent_categories": [
+          "Dados clínicos (escalas, inventários)",
+          "Dados neurobiológicos",
+          "Dados qualitativos (entrevistas)",
+          "Dados observacionais",
+          "Dados epidemiológicos"
+        ],
+        "impact": "Dimensao 'Tipos de Dados e Evidências' com apenas 0% de cobertura (peso: 1.1)."
+      },
+      {
+        "dimension": "População e Contexto",
+        "key": "populacao",
+        "density": 0.08,
+        "severity": "high",
+        "weight": 1.2,
+        "absent_categories": [
+          "Adultos",
+          "Idosos",
+          "Adolescentes",
+          "Infância",
+          "Gênero masculino"
+        ],
+        "impact": "Dimensao 'População e Contexto' com apenas 8% de cobertura (peso: 1.2)."
+      },
+      {
+        "dimension": "Perspectivas Estratégicas (Teoria dos Jogos)",
+        "key": "teoria_jogos",
+        "density": 0.1,
+        "severity": "moderate",
+        "weight": 0.6,
+        "absent_categories": [
+          "Equilíbrio de Nash",
+          "Dilema do Prisioneiro",
+          "Soma Zero",
+          "Tit-for-Tat",
+          "Stackelberg"
+        ],
+        "impact": "Dimensao 'Perspectivas Estratégicas (Teoria dos Jogos)' com apenas 10% de cobertura (peso: 0.6)."
+      }
+    ],
+    "recommendations": [
+      "[Referenciais Teóricos] Densidade 20%. Explorar: Psicanalítico, Humanista, Sistêmico.",
+      "[Perspectivas Estratégicas (Teoria dos Jogos)] Densidade 10%. Explorar: Equilíbrio de Nash, Dilema do Prisioneiro, Soma Zero.",
+      "[Níveis de Análise] Densidade 0%. Explorar: Individual/intrapsíquico, Interpessoal/relacional, Grupal/organizacional.",
+      "[Perspectiva Temporal] Densidade 0%. Explorar: Transversal (momento único), Longitudinal (curto prazo), Longitudinal (longo prazo).",
+      "[População e Contexto] Densidade 8%. Explorar: Adultos, Idosos, Adolescentes.",
+      "[Tipos de Dados e Evidências] Densidade 0%. Explorar: Dados clínicos (escalas, inventários), Dados neurobiológicos, Dados qualitativos (entrevistas)."
+    ],
+    "completeness_grade": "D — Cobertura Restrita"
+  },
+  "opportunities": [
+    {
+      "rank": 1,
+      "dimension": "Perspectivas Estratégicas (Teoria dos Jogos)",
+      "category": "Bayesiano",
+      "eps": 87,
+      "grade": "Discovery",
+      "rationale": "Alto impacto interdisciplinar (afeta 8 dominios). Alta fertilidade teorica (9/10). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Modelagem formal + simulacao computacional"
+    },
+    {
+      "rank": 2,
+      "dimension": "Perspectivas Estratégicas (Teoria dos Jogos)",
+      "category": "Equilíbrio de Nash",
+      "eps": 84,
+      "grade": "Discovery",
+      "rationale": "Alto impacto interdisciplinar (afeta 8 dominios). Alta fertilidade teorica (9/10). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Modelagem formal + simulacao computacional"
+    },
+    {
+      "rank": 3,
+      "dimension": "Perspectivas Estratégicas (Teoria dos Jogos)",
+      "category": "Dilema do Prisioneiro",
+      "eps": 82,
+      "grade": "Discovery",
+      "rationale": "Alto impacto interdisciplinar (afeta 8 dominios). Alta fertilidade teorica (8/10). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Modelagem formal + simulacao computacional"
+    },
+    {
+      "rank": 4,
+      "dimension": "Perspectivas Estratégicas (Teoria dos Jogos)",
+      "category": "Cooperativo",
+      "eps": 82,
+      "grade": "Discovery",
+      "rationale": "Alto impacto interdisciplinar (afeta 8 dominios). Alta fertilidade teorica (8/10). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Modelagem formal + simulacao computacional"
+    },
+    {
+      "rank": 5,
+      "dimension": "Perspectivas Estratégicas (Teoria dos Jogos)",
+      "category": "Soma Zero",
+      "eps": 76,
+      "grade": "Promising",
+      "rationale": "Alto impacto interdisciplinar (afeta 8 dominios). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Modelagem formal + simulacao computacional"
+    },
+    {
+      "rank": 6,
+      "dimension": "Perspectivas Estratégicas (Teoria dos Jogos)",
+      "category": "Tit-for-Tat",
+      "eps": 76,
+      "grade": "Promising",
+      "rationale": "Alto impacto interdisciplinar (afeta 8 dominios). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Modelagem formal + simulacao computacional"
+    },
+    {
+      "rank": 7,
+      "dimension": "Perspectivas Estratégicas (Teoria dos Jogos)",
+      "category": "Stackelberg",
+      "eps": 76,
+      "grade": "Promising",
+      "rationale": "Alto impacto interdisciplinar (afeta 8 dominios). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Modelagem formal + simulacao computacional"
+    },
+    {
+      "rank": 8,
+      "dimension": "Perspectivas Estratégicas (Teoria dos Jogos)",
+      "category": "Barganha",
+      "eps": 76,
+      "grade": "Promising",
+      "rationale": "Alto impacto interdisciplinar (afeta 8 dominios). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Modelagem formal + simulacao computacional"
+    },
+    {
+      "rank": 9,
+      "dimension": "Perspectivas Estratégicas (Teoria dos Jogos)",
+      "category": "Sinalização",
+      "eps": 76,
+      "grade": "Promising",
+      "rationale": "Alto impacto interdisciplinar (afeta 8 dominios). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Modelagem formal + simulacao computacional"
+    },
+    {
+      "rank": 10,
+      "dimension": "Domínios de Conhecimento Cruzados",
+      "category": "Neurociências",
+      "eps": 72,
+      "grade": "Promising",
+      "rationale": "Alta fertilidade teorica (8/10). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Revisao sistematica interdisciplinar"
+    },
+    {
+      "rank": 11,
+      "dimension": "Domínios de Conhecimento Cruzados",
+      "category": "Inteligência Artificial / Tecnologia",
+      "eps": 72,
+      "grade": "Promising",
+      "rationale": "Alta fertilidade teorica (8/10). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Revisao sistematica interdisciplinar"
+    },
+    {
+      "rank": 12,
+      "dimension": "Paradigmas Epistemológicos",
+      "category": "Fenomenológico",
+      "eps": 66,
+      "grade": "Promising",
+      "rationale": "Alto impacto interdisciplinar (afeta 7 dominios). Alta fertilidade teorica (7/10). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Ensaio teorico + analise comparativa"
+    },
+    {
+      "rank": 13,
+      "dimension": "Paradigmas Epistemológicos",
+      "category": "Construtivista",
+      "eps": 66,
+      "grade": "Promising",
+      "rationale": "Alto impacto interdisciplinar (afeta 7 dominios). Alta fertilidade teorica (7/10). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Ensaio teorico + analise comparativa"
+    },
+    {
+      "rank": 14,
+      "dimension": "Domínios de Conhecimento Cruzados",
+      "category": "Sociologia",
+      "eps": 66,
+      "grade": "Promising",
+      "rationale": "Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Revisao sistematica interdisciplinar"
+    },
+    {
+      "rank": 15,
+      "dimension": "Domínios de Conhecimento Cruzados",
+      "category": "Antropologia",
+      "eps": 64,
+      "grade": "Promising",
+      "rationale": "Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Revisao sistematica interdisciplinar"
+    },
+    {
+      "rank": 16,
+      "dimension": "Domínios de Conhecimento Cruzados",
+      "category": "Filosofia da mente",
+      "eps": 64,
+      "grade": "Promising",
+      "rationale": "Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Revisao sistematica interdisciplinar"
+    },
+    {
+      "rank": 17,
+      "dimension": "Domínios de Conhecimento Cruzados",
+      "category": "Psicofarmacologia",
+      "eps": 64,
+      "grade": "Promising",
+      "rationale": "Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Revisao sistematica interdisciplinar"
+    },
+    {
+      "rank": 18,
+      "dimension": "Paradigmas Epistemológicos",
+      "category": "Crítico/Transformador",
+      "eps": 61,
+      "grade": "Promising",
+      "rationale": "Alto impacto interdisciplinar (afeta 7 dominios). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Ensaio teorico + analise comparativa"
+    },
+    {
+      "rank": 19,
+      "dimension": "Paradigmas Epistemológicos",
+      "category": "Pragmatista",
+      "eps": 61,
+      "grade": "Promising",
+      "rationale": "Alto impacto interdisciplinar (afeta 7 dominios). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Ensaio teorico + analise comparativa"
+    },
+    {
+      "rank": 20,
+      "dimension": "Paradigmas Epistemológicos",
+      "category": "Pós-estruturalista",
+      "eps": 61,
+      "grade": "Promising",
+      "rationale": "Alto impacto interdisciplinar (afeta 7 dominios). Potencial de mudar o equilibrio estrategico da area. Oportunidade de contribuicao original significativa",
+      "suggested_method": "Ensaio teorico + analise comparativa"
+    }
+  ],
+  "summary": {
+    "total_opportunities": 73,
+    "discovery": 4,
+    "promising": 17,
+    "exploratory": 47,
+    "marginal": 5,
+    "coverage_pct": 21,
+    "completeness_grade": "D — Cobertura Restrita"
+  }
+}
