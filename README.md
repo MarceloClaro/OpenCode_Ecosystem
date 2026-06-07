@@ -10,7 +10,7 @@
 
 [![Agentes](https://img.shields.io/badge/Agentes-128-6366f1?style=flat-square)](agents/)
 [![MCPs](https://img.shields.io/badge/MCP_Servers-46-0ea5e9?style=flat-square)](opencode.json)
-[![Skills](https://img.shields.io/badge/Skills-156-10b981?style=flat-square)](skills/)
+[![Skills](https://img.shields.io/badge/Skills-161-10b981?style=flat-square)](skills/)
 [![Hooks](https://img.shields.io/badge/Ecosystem_Hooks-11-a855f7?style=flat-square)](skills/system/pypi-scout/ecosystem_hooks.py)
 [![Auditoria](https://img.shields.io/badge/Auditoria-6_componentes-ef4444?style=flat-square)](skills/system/academic-audit/)
 [![Scanner](https://img.shields.io/badge/Scanner_Noológico-10_dimensoes-f59e0b?style=flat-square)](skills/system/academic-audit/noological_scanner.py)
@@ -20,8 +20,8 @@
 
 <br/>
 
-> **Versao:** 5.0.0 · **Atualizado:** 2026-06-06 · **Modelo:** `deepseek-v4-pro`  
-> **Novo (Evo-16):** Scanner Noológico (92 categorias) · Clinical Case Study Pipeline · Expansão 5D · 30 parágrafos/dimensão · 36 refs DOI · Score 99/100
+> **Versao:** 5.0.0 · **Atualizado:** 2026-06-07 · **Modelo:** `deepseek-v4-pro`  
+> **Novo (Evo-16) · Scanner Noológico v2.0 · 9 motores raciocinio · 7 comp. auditoria · Score 100/100:** Scanner Noológico (92 categorias) · Clinical Case Study Pipeline · Expansão 5D · 30 parágrafos/dimensão · 36 refs DOI · Score 99/100
 
 </div>
 

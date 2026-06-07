@@ -185,3 +185,7 @@ Sistema de **pesquisa científica autônoma** implementado em `basis-research/`.
 **OpenCode Ecosystem v4.6** · Glossário de Termos Técnicos
 
 </div>
+
+### NoologicalScanner v2.0
+
+Versao ampliada do Scanner Noológico (2026). Adiciona: pesos adaptativos por dominio (5 dominios), correlacao cruzada entre dimensoes (heatmap), deteccao de zonas de conforto epistemologico, keyword map enriquecido com n-gramas e sinonimos, integracao com TextAnalyzer para validacao por frequencia, e historico de scans para analise de tendencia.
