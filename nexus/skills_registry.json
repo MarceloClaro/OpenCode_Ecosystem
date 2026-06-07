@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "timestamp": "2026-06-07T00:35:53.634594+00:00",
+  "timestamp": "2026-06-07T19:36:45.092540+00:00",
   "workspace": "C:\\Users\\marce\\.config\\opencode",
   "summary": {
-    "total_skills": 127,
+    "total_skills": 128,
     "oversize_count": 23,
-    "healthy_count": 103,
+    "healthy_count": 104,
     "total_bytes": 698001,
     "categories": {
       "dotclaude-edicao-cirurgica": {
@@ -1903,6 +1903,20 @@
       "oversize_by": 0,
       "md5": "7f3ad4cff8f7d139f9e4983ccb512046",
       "last_checked": "2026-06-07T00:35:53.575358+00:00"
+    },
+    {
+      "name": "resurgence-analysis",
+      "path": "skills\\reasoning\\resurgence-analysis\\SKILL.md",
+      "category": "reasoning",
+      "bytes": 2191,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": false,
+      "oversize_by": 0,
+      "md5": "30709cf879b20419eaebfe53abb5e446",
+      "last_checked": "2026-06-07T19:36:45.020420+00:00"
     }
   ]
 }
