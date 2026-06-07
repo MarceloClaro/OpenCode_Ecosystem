@@ -2,6 +2,9 @@
 
 <img src="https://img.shields.io/badge/OpenCode_Ecosystem-v5.0.0-6366f1?style=for-the-badge&logo=openai&logoColor=white" alt="version"/>
 
+<br/>
+<img src="https://github.com/MarceloClaro/OpenCode_Ecosystem/blob/main/AUTOR%20%20MARCELO%20CLARO%20(1).png?raw=true" alt="Marcelo Claro Laranjeira" width="120" style="border-radius:50%"/>
+
 # OpenCode Ecosystem v5.0.0
 
 ### 38 Skills Cientificas · 9 Motores de Raciocinio · Scanner Noológico v4.0 · 128 Agentes · Score 100/100
