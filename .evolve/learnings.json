@@ -132,8 +132,169 @@
       "aprendizado": "Figuras v3 estao em ml_pipeline/outputs/figuras/ (nao em Figuras/) - fig8_feature_importance_v3.png, fig9_product_density_income.png, fig10_knowledge_complexity_scatter.png",
       "fonte": "ml_pipeline/outputs/figuras",
       "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-06-07T18:00:00-03:00",
+      "categoria": "ciclo_evolucao",
+      "aprendizado": "Round 17 concluido: 3 gaps Gartner Hype Cycle 2026 documentados com TDD+SDD (SPEC-019/020/021), artigo Qualis A1 gerado, 24 CTs, score 99/100",
+      "fonte": "evolve-state-round-17.json",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-06-07T18:00:00-03:00",
+      "categoria": "gartner",
+      "aprendizado": "Mapeamento Gartner Hype Cycle 2026: aderencia alta 32% (8/25), media 20% (5/25), baixa 48% (12/25) — 3 gaps estrategicos priorizados",
+      "fonte": "gartner-hype-cycle-2026-vs-opencode.md",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-06-07T18:00:00-03:00",
+      "categoria": "spec",
+      "aprendizado": "SPEC-019 Federated API Governance: 8 CTs TDD (Registry, Policy, Circuit Breaker, Audit, Discovery, Federation, Cache, Versioning) com SDD integrado",
+      "fonte": "specs/SPEC-019-FEDERATED-API-GOVERNANCE.md",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-06-07T18:00:00-03:00",
+      "categoria": "spec",
+      "aprendizado": "SPEC-020 Data Streaming Enterprise: 10 CTs TDD (Schema Registry, Partitioning, Replay, At-Least-Once, DLQ, Windowing, Backpressure, Stateful, Multi-Topic, Exactly-Once)",
+      "fonte": "specs/SPEC-020-DATA-STREAMING-ENTERPRISE.md",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-06-07T18:00:00-03:00",
+      "categoria": "spec",
+      "aprendizado": "SPEC-021 Low-Code Agent Platform: 6 CTs TDD em 2 fases (Schema Declarativo, Validacao, Code Export), integracao com ecossistema multi-modelo",
+      "fonte": "specs/SPEC-021-LOW-CODE-AGENT-PLATFORM.md",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-06-07T18:00:00-03:00",
+      "categoria": "qualidade",
+      "aprendizado": "24 CTs TDD criados no Round 17, validacao cruzada entre as 3 specs confirma sinergia algoritmica e ausencia de sobreposicao funcional",
+      "fonte": "cross-validation-r17.md",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-06-07T18:00:00-03:00",
+      "categoria": "artigo",
+      "aprendizado": "Artigo Qualis A1 gerado: 30+ paragrafos, 36 referencias, mapeamento sistematico das 25 tecnologias Gartner vs ecossistema OpenCode",
+      "fonte": "artigos/gartner-hype-cycle-2026-vs-opencode.md",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-06-07T18:00:00-03:00",
+      "categoria": "insight",
+      "aprendizado": "OpenCode citado nominalmente no Gartner Hype Cycle 2026 (G00851113 p.17) como plataforma agent harness — validacao externa da arquitetura",
+      "fonte": "gartner-hype-cycle-2026-vs-opencode.md",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-06-07T18:00:00-03:00",
+      "categoria": "ecossistema",
+      "aprendizado": "Ecossistema evoluiu para 227 skills, 1778 scripts, 128 agentes, 46 MCPs, 12 plugins — 0 CJK leaks mantidos",
+      "fonte": "evolve-state-round-17.json",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-06-07T18:00:00-03:00",
+      "categoria": "metodologia",
+      "aprendizado": "Metodologia hibrida TDD+SDD validada: especificacao funcional com contratos de seguranca integrados, aplicavel a gaps de roadmap tecnologico",
+      "fonte": "specs/SPEC-019, SPEC-020, SPEC-021",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-06-07T19:30:00-03:00",
+      "categoria": "testes",
+      "aprendizado": "24/24 CTs TDD implementados como pytest executavel com 93% coverage — infraestrutura de testes em specs/tests/ (pytest.ini, conftest, run_all_cts.py)",
+      "fonte": "specs/tests/",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-06-07T19:30:00-03:00",
+      "categoria": "testes",
+      "aprendizado": "Federacao bidirecional (SPEC-019) necessaria para propagacao de politicas — implementacao inicial era unidirecional e quebrava o CT",
+      "fonte": "test_spec019_api_governance.py::test_federation_propagation",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-06-07T19:30:00-03:00",
+      "categoria": "testes",
+      "aprendizado": "Filtro de descoberta (SPEC-021) deve usar texto em ingles para consistencia com nomenclatura tecnica — 'academic' ao inves de 'academico'",
+      "fonte": "test_spec021_low_code_platform.py::test_agent_discovery",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-06-07T19:30:00-03:00",
+      "categoria": "adr",
+      "aprendizado": "3 ADRs arquiteturais registradas via DecisionNode: architectu-003 (SPEC-019), architectu-004 (SPEC-020), architectu-005 (SPEC-021)",
+      "fonte": "decisionnode_add_decision",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-06-07T22:00:00-03:00",
+      "categoria": "ciclo_evolucao",
+      "aprendizado": "Round 18 iniciado: Token Economy — Sistema de Incentivos Economicos para Agentes OpenCode, completando o tripe Governanca + Economia + Auditoria",
+      "fonte": "evolution/evo-18-token-economy.md",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-06-07T22:00:00-03:00",
+      "categoria": "spec",
+      "aprendizado": "SPEC-022 Token Economy Core: 8 CTs TDD implementados (Mint, Transfer, Burn, Insufficient Balance, Ledger Immutability, Fee Market, Reward, Audit Integration) — 9/9 testes passando",
+      "fonte": "specs/tests/test_spec022_token_economy.py",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-06-07T22:00:00-03:00",
+      "categoria": "testes",
+      "aprendizado": "Ledger imutavel via frozen dataclass + dataclasses.FrozenInstanceError — object.__setattr__ burla protecao, usar atribuicao direta para testar frozen",
+      "fonte": "test_spec022_token_economy.py::test_ledger_immutability",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-06-07T22:00:00-03:00",
+      "categoria": "adr",
+      "aprendizado": "ADR architectu-006 registrada via DecisionNode para SPEC-022 Token Economy Core — complementa o tripe de governanca",
+      "fonte": "decisionnode_add_decision",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-06-07T22:30:00-03:00",
+      "categoria": "ciclo_evolucao",
+      "aprendizado": "Round 18 concluido: Token Economy — 3 SPECs (022 Core + 023 Agent Economics + 024 Audit Integration), 29/29 CTS aprovados, score 99/100",
+      "fonte": "evolve-state-round-18.json",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-06-07T22:30:00-03:00",
+      "categoria": "spec",
+      "aprendizado": "SPEC-023 Agent Economics: 6 CTs TDD implementados (Pricing, Rate Limiting, Staking, Slashing, Allowance, Tiers) — 12/12 testes passando",
+      "fonte": "specs/tests/test_spec023_agent_economics.py",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-06-07T22:30:00-03:00",
+      "categoria": "spec",
+      "aprendizado": "SPEC-024 Audit Integration: 4 CTs TDD implementados (Balance Report, Spending Report, Cross-Reference, Health Metrics) — 8/8 testes passando",
+      "fonte": "specs/tests/test_spec024_audit_integration.py",
+      "confianca": 0.95
+    },
+    {
+      "timestamp": "2026-06-07T22:30:00-03:00",
+      "categoria": "testes",
+      "aprendizado": "check_allowance(SPEC-023) deve consumir allowance (chamar _record_spend) — implementacao inicial so checava sem registrar, quebrando test_spending_allowance",
+      "fonte": "test_spec023_agent_economics.py::TestSpendingAllowance::test_spending_allowance",
+      "confianca": 0.9
+    },
+    {
+      "timestamp": "2026-06-07T22:30:00-03:00",
+      "categoria": "testes",
+      "aprendizado": "29/29 CTs TDD criados no Round 18 (9+12+8), integrados no runner run_all_cts.py com filtros --spec 22/23/24",
+      "fonte": "specs/tests/run_all_cts.py",
+      "confianca": 0.95
     }
   ],
-  "total_records": 19,
-  "last_updated": "2026-05-14T20:34:00Z"
+  "total_records": 44,
+  "last_updated": "2026-06-07T22:00:00-03:00"
 }
