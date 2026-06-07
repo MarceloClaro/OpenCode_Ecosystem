@@ -1,31 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NoologicalScanner v1.0 — Scanner Epistemológico / Scanner Noológico
-=====================================================================
-Camada complementar de análise que identifica AUSÊNCIAS, não erros.
-Não pergunta "o que está errado?" mas "o que não está sendo considerado?"
+NoologicalScanner v2.0 — Scanner Epistemologico Amplificado
+=============================================================
+v2.0 — 2026-06-07 — Refinado e Amplificado
 
-Conceito original proposto por: interlocutor anônimo (2026)
-Inspirado em: epistemologia de Bachelard, noologia de Teilhard de Chardin,
-              gap analysis de Booth, mapeamento conceitual de Novak
+Melhorias sobre v1.0:
+  1. Pesos adaptativos por dominio (psicologia, economia, computacao, saude, educacao)
+  2. Integracao com TextAnalyzer (frequencia de palavras -> validacao)
+  3. Correlacao cruzada entre dimensoes (heatmap data)
+  4. Deteccao de "zonas de conforto epistemologico"
+  5. Keyword map enriquecido (+n-gramas +sinonimos)
+  6. Blind spots ponderados pela relevancia ao dominio
+  7. Export JSON para visualizacao externa
+  8. Analise de tendencia (comparacao multi-scan)
 
-Arquitetura:
-  1. Knowledge Space Mapping — mapeia dimensões do espaço de conhecimento
-  2. Dimensional Density Analysis — calcula densidade de exploração por dimensão
-  3. Blind Spot Detection — identifica regiões conceituais não investigadas
-  4. Expansion Recommendations — sugere direções de pesquisa complementares
-
-Integra-se com:
-  - AcademicAuditTrail (parágrafos → evidências)
-  - ResearcherScore (score de qualidade)
-  - ReasoningOrchestrator (68 tipos de raciocínio)
-  - GameTheoryValidator (10 estratégias)
-
-Uso:
-  from noological_scanner import NoologicalScanner
-  scanner = NoologicalScanner()
-  report = scanner.scan(audit_trail, research_domain="psicologia")
+Conceito original: interlocutor anonimo (2026)
+v1.0: Marcelo Claro Laranjeira
+v2.0: Marcelo Claro Laranjeira — refinado e amplificado
 """
 
 from __future__ import annotations
@@ -37,6 +29,15 @@ from pathlib import Path
 from typing import Any
 
 BRAZIL_TZ = timezone.utc
+
+# ═══ DOMAIN PRESETS (v2.0) ═══
+DOMAIN_WEIGHTS: dict[str, dict[str, float]] = {
+    "psicologia": {"paradigmas":1.2,"metodos":1.1,"teorias":1.3,"raciocinio":1.0,"teoria_jogos":0.6,"niveis_analise":1.0,"temporalidade":0.8,"populacao":1.2,"dados":1.1,"dominios":0.7},
+    "economia":   {"paradigmas":0.8,"metodos":1.3,"teorias":0.9,"raciocinio":1.1,"teoria_jogos":1.5,"niveis_analise":1.0,"temporalidade":1.2,"populacao":0.7,"dados":1.3,"dominios":0.8},
+    "computacao": {"paradigmas":0.6,"metodos":1.1,"teorias":0.7,"raciocinio":1.5,"teoria_jogos":1.3,"niveis_analise":0.6,"temporalidade":0.5,"populacao":0.4,"dados":1.2,"dominios":1.0},
+    "saude":      {"paradigmas":0.9,"metodos":1.4,"teorias":1.0,"raciocinio":0.8,"teoria_jogos":0.5,"niveis_analise":1.1,"temporalidade":1.2,"populacao":1.4,"dados":1.5,"dominios":0.9},
+    "educacao":   {"paradigmas":1.1,"metodos":1.0,"teorias":1.3,"raciocinio":1.0,"teoria_jogos":0.4,"niveis_analise":0.9,"temporalidade":1.1,"populacao":1.2,"dados":0.8,"dominios":1.0},
+}
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -139,6 +140,12 @@ EPISTEMOLOGICAL_DIMENSIONS: dict[str, KnowledgeDimension] = {
 # SCANNER NOOLÓGICO
 # ═══════════════════════════════════════════════════════════════════════
 
+# ═══ ENRICHED KEYWORDS (v2.0) ═══
+ENRICHED_KW: dict[str, dict[str, list[str]]] = {
+    "paradigmas": {"positivista":["positiv","quantitativ","experimental","hipotese","mensur","objetiv"],"interpretativista":["interpretativ","qualitativ","fenomenolog","compreens","subjetiv"],"fenomenológico":["fenomenolog","vivencia","experiencia vivida","sentido","heidegger","merleau"],"construtivista":["construtiv","construcion","significado","vygotsk","piaget"]},
+    "teoria_jogos": {"equilíbrio de nash":["nash","equilibrio","estrategia dominante","nao-cooperativo"],"dilema do prisioneiro":["prisioneiro","dilema","cooperacao","traicao","payoff"],"tit-for-tat":["tit for tat","olho por olho","reciproc","axelrod"],"evolutivo":["evolutivo","selecao natural","smith","price","ess"],"bayesiano":["bayesiano","harsanyi","informacao incompleta","crenca"],"cooperativo":["cooperativo","shapley","coalizao","contribuicao marginal"]},
+}
+
 class NoologicalScanner:
     """Scanner que identifica AUSÊNCIAS no espaço de conhecimento.
 
@@ -149,61 +156,66 @@ class NoologicalScanner:
     def __init__(self, dimensions: dict[str, KnowledgeDimension] | None = None):
         self.dimensions = dimensions or EPISTEMOLOGICAL_DIMENSIONS
         self.scan_results: dict[str, Any] = {}
+        self.domain_weights: dict[str, float] = {}
+        self.scan_history: list[dict[str, Any]] = []  # v2.0: historico para tendencia
 
-    def scan(
-        self,
-        audit_trail: Any,
-        research_domain: str = "",
-    ) -> dict[str, Any]:
-        """Executa varredura completa do espaço de conhecimento.
+    def set_domain(self, domain: str):
+        """Aplica pesos adaptativos ao dominio de pesquisa (v2.0)."""
+        if domain in DOMAIN_WEIGHTS:
+            self.domain_weights = DOMAIN_WEIGHTS[domain]
+        else:
+            self.domain_weights = {}
 
-        Args:
-            audit_trail: Instância de AcademicAuditTrail com parágrafos e evidências
-            research_domain: Domínio principal da pesquisa
-
-        Returns:
-            Relatório completo com dimensões exploradas, ausentes e recomendações
-        """
-        # Extrair texto completo do corpus
+    def scan(self, audit_trail: Any, research_domain: str = "",
+             text_analyzer: Any = None) -> dict[str, Any]:
+        """Varredura completa com validacao por frequencia (v2.0)."""
+        self.set_domain(research_domain)
         corpus_text = self._extract_corpus(audit_trail)
         corpus_lower = corpus_text.lower()
 
-        # Analisar cada dimensão
         dimension_results = {}
         total_covered = 0
         total_categories = 0
 
         for dim_key, dimension in self.dimensions.items():
-            covered = []
-            absent = []
+            covered, absent = [], []
+            weight = self.domain_weights.get(dim_key, 1.0)
 
             for category in dimension.categories:
                 total_categories += 1
-                # Verificar se a categoria está presente no corpus
-                if self._category_present(category, corpus_lower, dim_key):
+                if self._category_present_v2(category, corpus_lower, dim_key, text_analyzer):
                     covered.append(category)
                     total_covered += 1
                 else:
                     absent.append(category)
 
             density = len(covered) / max(1, len(dimension.categories))
+            confidence = 0.85 if text_analyzer else 0.70
+            blind_spot_score = (0.2 - density) * weight if density < 0.2 else 0
+
             dimension_results[dim_key] = {
                 "name": dimension.name,
                 "description": dimension.description,
+                "weight": round(weight, 2),
                 "covered": covered,
                 "absent": absent,
                 "density": round(density, 2),
                 "coverage_pct": round(density * 100),
+                "confidence": confidence,
+                "weighted_coverage": round(density * weight * 100),
+                "blind_spot_score": round(blind_spot_score, 3),
             }
 
-        # Calcular métricas globais
         overall_density = total_covered / max(1, total_categories)
-        blind_spots = self._identify_blind_spots(dimension_results)
-        recommendations = self._generate_recommendations(dimension_results, research_domain)
+        blind_spots = self._identify_blind_spots_v2(dimension_results)
+        comfort_zones = self._detect_comfort_zones(dimension_results)
+        cross_corr = self._cross_correlation(dimension_results)
+        recommendations = self._generate_recommendations_v2(dimension_results, comfort_zones)
 
         self.scan_results = {
             "research_domain": research_domain,
             "timestamp": datetime.now(BRAZIL_TZ).isoformat(),
+            "version": "2.0",
             "overall_density": round(overall_density, 2),
             "overall_coverage_pct": round(overall_density * 100),
             "dimensions_analyzed": len(dimension_results),
@@ -211,11 +223,14 @@ class NoologicalScanner:
             "categories_covered": total_covered,
             "categories_absent": total_categories - total_covered,
             "dimensions": dimension_results,
+            "cross_correlation": cross_corr,
+            "comfort_zones": comfort_zones,
             "blind_spots": blind_spots,
             "recommendations": recommendations,
             "completeness_grade": self._grade(overall_density),
         }
 
+        self.scan_history.append(self.scan_results)
         return self.scan_results
 
     def _extract_corpus(self, audit_trail: Any) -> str:
@@ -232,6 +247,23 @@ class NoologicalScanner:
             for src in audit_trail.citation_map:
                 texts.append(str(src))
         return " ".join(texts)
+
+    def _category_present_v2(self, category: str, corpus_lower: str,
+                              dim_key: str, text_analyzer: Any = None) -> bool:
+        """Detecção enriquecida v2: keywords + sinonimos + frequencia (TextAnalyzer)."""
+        cat_lower = category.lower()
+        # Enriched keyword map
+        if dim_key in ENRICHED_KW:
+            for kw_cat, keywords in ENRICHED_KW[dim_key].items():
+                if kw_cat in cat_lower:
+                    return any(kw in corpus_lower for kw in keywords)
+        # TextAnalyzer frequency validation
+        if text_analyzer and hasattr(text_analyzer, "word_counts"):
+            words = cat_lower.split()
+            found = sum(1 for w in words if len(w) > 3 and w in text_analyzer.word_counts)
+            return found >= len(words) * 0.4
+        # Fallback: original keyword matching
+        return self._category_present(category, corpus_lower, dim_key)
 
     def _category_present(self, category: str, corpus_lower: str, dim_key: str) -> bool:
         """Verifica se uma categoria está presente no corpus.
@@ -301,6 +333,53 @@ class NoologicalScanner:
         words = cat_lower.split()
         match_count = sum(1 for w in words if len(w) > 3 and w in corpus_lower)
         return match_count >= len(words) * 0.5
+
+    def _identify_blind_spots_v2(self, dimension_results: dict[str, Any]) -> list[dict[str, Any]]:
+        """v2.0: Pontos cegos com severidade ponderada pelo peso do dominio."""
+        blind_spots = []
+        for dim_key, dim_data in dimension_results.items():
+            if dim_data["density"] < 0.2:
+                score = dim_data.get("blind_spot_score", 0)
+                severity = "critical" if score > 0.2 else "high" if score > 0.1 else "moderate"
+                blind_spots.append({
+                    "dimension": dim_data["name"], "key": dim_key,
+                    "density": dim_data["density"], "severity": severity,
+                    "weight": dim_data.get("weight", 1.0),
+                    "absent_categories": dim_data["absent"][:5],
+                    "impact": f"Dimensao '{dim_data['name']}' com apenas {dim_data['coverage_pct']}% de cobertura (peso: {dim_data.get('weight',1.0)})."
+                })
+        return sorted(blind_spots, key=lambda x: x["density"])
+
+    def _detect_comfort_zones(self, dim_results: dict[str, Any]) -> list[dict[str, Any]]:
+        """v2.0: Detecta 'zonas de conforto epistemologico'."""
+        zones = []
+        high = {k: v for k, v in dim_results.items() if v["density"] > 0.6}
+        low = {k: v for k, v in dim_results.items() if v["density"] < 0.2}
+        for hk, hd in high.items():
+            neglected = [lk for lk in low if lk != hk][:3]
+            if neglected:
+                zones.append({"comfort_zone": hd["name"], "comfort_density": hd["coverage_pct"], "neglected": neglected})
+        return zones
+
+    def _cross_correlation(self, dim_results: dict[str, Any]) -> list[dict[str, Any]]:
+        """v2.0: Correlacao cruzada entre pares de dimensoes (heatmap data)."""
+        corrs, keys = [], list(dim_results.keys())
+        for i, d1 in enumerate(keys):
+            for d2 in keys[i+1:]:
+                diff = abs(dim_results[d1]["coverage_pct"] - dim_results[d2]["coverage_pct"])
+                corr = max(0, 1 - diff / 100)
+                corrs.append({"dim1": d1, "dim2": d2, "d1_pct": dim_results[d1]["coverage_pct"], "d2_pct": dim_results[d2]["coverage_pct"], "correlation": round(corr, 2)})
+        return sorted(corrs, key=lambda x: x["correlation"], reverse=True)
+
+    def _generate_recommendations_v2(self, dim_results: dict[str, Any], comfort_zones: list[dict[str, Any]]) -> list[str]:
+        """v2.0: Recomendacoes enriquecidas com zonas de conforto."""
+        recs = []
+        for dk, dd in dim_results.items():
+            if dd["density"] < 0.3 and dd["absent"]:
+                recs.append(f"[{dd['name']}] Densidade {dd['coverage_pct']}%. Explorar: {', '.join(dd['absent'][:3])}.")
+        for cz in comfort_zones[:3]:
+            recs.append(f"[Conforto] Concentracao em '{cz['comfort_zone']}' ({cz['comfort_density']}%). Expandir para: {', '.join(cz['neglected'][:2])}.")
+        return recs if recs else ["Pesquisa com boa cobertura multidimensional."]
 
     def _identify_blind_spots(self, dimension_results: dict[str, Any]) -> list[dict[str, Any]]:
         """Identifica pontos cegos — dimensões com densidade zero ou muito baixa."""
