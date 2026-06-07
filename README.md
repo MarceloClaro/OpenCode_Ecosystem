@@ -4,7 +4,7 @@
 
 # OpenCode Ecosystem v5.0.0
 
-### 38 Skills Cientificas · 8 Motores de Raciocinio · Scanner Noológico · 128 Agentes · Score 99/100
+### 38 Skills Cientificas · 9 Motores de Raciocinio · Scanner Noológico · 128 Agentes · Score 99/100
 
 <br/>
 
