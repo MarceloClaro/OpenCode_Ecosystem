@@ -87,6 +87,7 @@ async function loadState(directory: string): Promise<ManusState> {
       if (!s.toolCallMetrics) s.toolCallMetrics = null
       if (!s.nexusReports) s.nexusReports = []
       if (!s.lastNexusRun) s.lastNexusRun = null
+      if (!s.rounds) s.rounds = []
       if (!s.sessionMetrics) {
         s.sessionMetrics = {
           sessionId: crypto.randomUUID(), agent: "manus-evolve",
