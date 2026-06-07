@@ -1,0 +1,29 @@
+{
+  "name": "agent-forum",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "dc8426ae7471b224951332816369d910b4a3a20df029c56be386a4848b93db5d",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.345509+00:00",
+  "updated": "2026-06-04T21:54:05.345509+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\agent-forum"
+}

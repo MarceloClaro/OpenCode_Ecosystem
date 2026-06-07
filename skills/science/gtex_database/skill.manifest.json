@@ -1,0 +1,29 @@
+{
+  "name": "science/gtex_database",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "ef5c0e86292f4a0f33efa296899e17230d8a72c1f04689cb0d65c81ecbcb105d",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:06.472064+00:00",
+  "updated": "2026-06-04T21:54:06.472064+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\science\\gtex_database"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "broomva/content-engine/skills/content-engine-dna",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "bcb5ce5620e817a925f79ea77a5e59be1c7077cc5463f2172443c49164491bf9",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.527810+00:00",
+  "updated": "2026-06-04T21:54:05.527810+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\broomva\\content-engine\\skills\\content-engine-dna"
+}

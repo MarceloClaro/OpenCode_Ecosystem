@@ -1,0 +1,29 @@
+{
+  "name": "research/aletheia-math-research",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "f38be810ecc3d7f2a31fdb2c9fb6a9c9d907237a66dba8aa75a80507fdcbe805",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:06.095293+00:00",
+  "updated": "2026-06-04T21:54:06.095293+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\research\\aletheia-math-research"
+}

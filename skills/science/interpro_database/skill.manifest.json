@@ -1,0 +1,29 @@
+{
+  "name": "science/interpro_database",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "1c8e6c9ee935e7ddd9454e250689389afe0a47e6cd01a5f1633746a5bec3062d",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:06.484627+00:00",
+  "updated": "2026-06-04T21:54:06.484627+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\science\\interpro_database"
+}

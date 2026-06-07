@@ -1,0 +1,29 @@
+{
+  "name": "agency/product/trend-researcher",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "3b7b61f525c84abc12a67c4e80541a497286a564e67974c0c1b946aba931b567",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.259403+00:00",
+  "updated": "2026-06-04T21:54:05.259403+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\agency\\product\\trend-researcher"
+}

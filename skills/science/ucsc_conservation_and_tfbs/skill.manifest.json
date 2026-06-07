@@ -1,0 +1,29 @@
+{
+  "name": "science/ucsc_conservation_and_tfbs",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "92747a19bd93316e377c4e59a893a1c9a7bafd22255250e4033677a5f8c37b1e",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:06.657805+00:00",
+  "updated": "2026-06-04T21:54:06.657805+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\science\\ucsc_conservation_and_tfbs"
+}

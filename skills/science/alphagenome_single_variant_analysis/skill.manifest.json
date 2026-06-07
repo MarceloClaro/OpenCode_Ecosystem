@@ -1,0 +1,29 @@
+{
+  "name": "science/alphagenome_single_variant_analysis",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "ecbe6a8f5ba47b1460d0c620fc08a047618fe5ef7581c2fd899f1d6209945d0e",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:06.374417+00:00",
+  "updated": "2026-06-04T21:54:06.374417+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\science\\alphagenome_single_variant_analysis"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "science/pubmed_database",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "d87137ec78b044e7a0fa25e29b9e963dcc0dd9b51d6032816059ce39cc96d74d",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:06.595499+00:00",
+  "updated": "2026-06-04T21:54:06.595499+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\science\\pubmed_database"
+}

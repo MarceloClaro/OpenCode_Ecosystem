@@ -1,0 +1,29 @@
+{
+  "name": "juridico/pesquisa-jurisprudencia",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "bfc53737dbeb7027375d48c8ddc1979325abaeb284aa3beff753978083262594",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.888938+00:00",
+  "updated": "2026-06-04T21:54:05.888938+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\juridico\\pesquisa-jurisprudencia"
+}

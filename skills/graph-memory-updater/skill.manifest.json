@@ -1,0 +1,29 @@
+{
+  "name": "graph-memory-updater",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "45a8ab1a1ba4a37f1e02a322eb6c8953104b8fb2e00a0d4ee74617b54de4aef7",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.820179+00:00",
+  "updated": "2026-06-04T21:54:05.820179+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\graph-memory-updater"
+}

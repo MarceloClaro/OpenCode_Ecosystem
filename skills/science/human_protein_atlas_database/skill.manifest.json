@@ -1,0 +1,29 @@
+{
+  "name": "science/human_protein_atlas_database",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "927cce7dcfc40028fa5223520b5853cb8324ec91a63757e5455b40d4b8b1c2a8",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:06.479676+00:00",
+  "updated": "2026-06-04T21:54:06.479676+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\science\\human_protein_atlas_database"
+}

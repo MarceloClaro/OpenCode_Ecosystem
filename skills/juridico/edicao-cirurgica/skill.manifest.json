@@ -1,0 +1,29 @@
+{
+  "name": "juridico/edicao-cirurgica",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "e2e5d3db9889fe77bac07a8375c212cea2c0531249087df11110131fbc53bcae",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.852946+00:00",
+  "updated": "2026-06-04T21:54:05.852946+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\juridico\\edicao-cirurgica"
+}

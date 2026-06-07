@@ -1,0 +1,29 @@
+{
+  "name": "agency/specialized/compliance-auditor",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "2bce458c0d114d4d8feb48f2bb36dbe1b43ccc37592378b404b6832f2622730d",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.280045+00:00",
+  "updated": "2026-06-04T21:54:05.280045+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\agency\\specialized\\compliance-auditor"
+}

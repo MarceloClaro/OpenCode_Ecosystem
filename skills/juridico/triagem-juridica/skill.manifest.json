@@ -1,0 +1,29 @@
+{
+  "name": "juridico/triagem-juridica",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "073b6cf09d56ba9097b2fc2cddfae133394ba1b0f0a85e82361e576d530344ea",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.895681+00:00",
+  "updated": "2026-06-04T21:54:05.895681+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\juridico\\triagem-juridica"
+}

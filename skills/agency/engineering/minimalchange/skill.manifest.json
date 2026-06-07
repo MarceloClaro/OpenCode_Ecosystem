@@ -1,0 +1,29 @@
+{
+  "name": "agency/engineering/minimalchange",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "82e20aac9a5f7993fc35db39720c7c1815a175df89cfce0cf24ab6474e02144e",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.214909+00:00",
+  "updated": "2026-06-04T21:54:05.214909+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\agency\\engineering\\minimalchange"
+}

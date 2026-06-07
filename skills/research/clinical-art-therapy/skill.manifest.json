@@ -1,0 +1,29 @@
+{
+  "name": "research/clinical-art-therapy",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "cfebcc67ecbf92f0a0a8e81570916a3041a10570d14493ebf292b014ae68f2ba",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:06.158981+00:00",
+  "updated": "2026-06-04T21:54:06.158981+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\research\\clinical-art-therapy"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "agency/product/sprint-prioritizer",
+  "version": "0.1.0",
+  "semver": "0.1.0",
+  "sha256": "4ad6100da2fa55b2e89831abf9164b00fa1593c46d2cd4e66c3a4bfdcb3d649e",
+  "signature": "",
+  "public_key": "",
+  "author": "opencode-ecosystem",
+  "created": "2026-06-04T21:54:05.250985+00:00",
+  "updated": "2026-06-04T21:54:05.250985+00:00",
+  "dependencies": {},
+  "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-06-04",
+      "changes": [
+        "Registro via Inventory Auditor (MDE)"
+      ]
+    }
+  ],
+  "permissions": [
+    "read:filesystem"
+  ],
+  "allowed_tools": [],
+  "denied_tools": [],
+  "human_approval_required": false,
+  "min_opencode_version": "1.14.0",
+  "skill_path": "C:\\Users\\marce\\.config\\opencode\\skills\\agency\\product\\sprint-prioritizer"
+}
