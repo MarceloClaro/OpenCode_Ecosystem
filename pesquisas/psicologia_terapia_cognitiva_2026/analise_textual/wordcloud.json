@@ -1,0 +1,709 @@
+{
+  "words": [
+    {
+      "word": "doi",
+      "count": 28,
+      "frequency": 0.0301,
+      "size": 80,
+      "rank": 1
+    },
+    {
+      "word": "https",
+      "count": 13,
+      "frequency": 0.014,
+      "size": 37,
+      "rank": 2
+    },
+    {
+      "word": "org",
+      "count": 13,
+      "frequency": 0.014,
+      "size": 37,
+      "rank": 3
+    },
+    {
+      "word": "ansiedade",
+      "count": 12,
+      "frequency": 0.0129,
+      "size": 34,
+      "rank": 4
+    },
+    {
+      "word": "paciente",
+      "count": 12,
+      "frequency": 0.0129,
+      "size": 34,
+      "rank": 5
+    },
+    {
+      "word": "auditoria",
+      "count": 11,
+      "frequency": 0.0118,
+      "size": 31,
+      "rank": 6
+    },
+    {
+      "word": "beck",
+      "count": 11,
+      "frequency": 0.0118,
+      "size": 31,
+      "rank": 7
+    },
+    {
+      "word": "transtorno",
+      "count": 7,
+      "frequency": 0.0075,
+      "size": 20,
+      "rank": 8
+    },
+    {
+      "word": "pânico",
+      "count": 7,
+      "frequency": 0.0075,
+      "size": 20,
+      "rank": 9
+    },
+    {
+      "word": "and",
+      "count": 7,
+      "frequency": 0.0075,
+      "size": 20,
+      "rank": 10
+    },
+    {
+      "word": "the",
+      "count": 7,
+      "frequency": 0.0075,
+      "size": 20,
+      "rank": 11
+    },
+    {
+      "word": "therapy",
+      "count": 7,
+      "frequency": 0.0075,
+      "size": 20,
+      "rank": 12
+    },
+    {
+      "word": "caso",
+      "count": 6,
+      "frequency": 0.0065,
+      "size": 17,
+      "rank": 13
+    },
+    {
+      "word": "tratamento",
+      "count": 6,
+      "frequency": 0.0065,
+      "size": 17,
+      "rank": 14
+    },
+    {
+      "word": "evidências",
+      "count": 6,
+      "frequency": 0.0065,
+      "size": 17,
+      "rank": 15
+    },
+    {
+      "word": "social",
+      "count": 6,
+      "frequency": 0.0065,
+      "size": 17,
+      "rank": 16
+    },
+    {
+      "word": "tcc",
+      "count": 6,
+      "frequency": 0.0065,
+      "size": 17,
+      "rank": 17
+    },
+    {
+      "word": "meta",
+      "count": 6,
+      "frequency": 0.0065,
+      "size": 17,
+      "rank": 18
+    },
+    {
+      "word": "sessões",
+      "count": 6,
+      "frequency": 0.0065,
+      "size": 17,
+      "rank": 19
+    },
+    {
+      "word": "sintomas",
+      "count": 5,
+      "frequency": 0.0054,
+      "size": 14,
+      "rank": 20
+    },
+    {
+      "word": "foram",
+      "count": 5,
+      "frequency": 0.0054,
+      "size": 14,
+      "rank": 21
+    },
+    {
+      "word": "anxiety",
+      "count": 5,
+      "frequency": 0.0054,
+      "size": 14,
+      "rank": 22
+    },
+    {
+      "word": "modelo",
+      "count": 5,
+      "frequency": 0.0054,
+      "size": 14,
+      "rank": 23
+    },
+    {
+      "word": "terapêutica",
+      "count": 5,
+      "frequency": 0.0054,
+      "size": 14,
+      "rank": 24
+    },
+    {
+      "word": "exposição",
+      "count": 5,
+      "frequency": 0.0054,
+      "size": 14,
+      "rank": 25
+    },
+    {
+      "word": "clinical",
+      "count": 5,
+      "frequency": 0.0054,
+      "size": 14,
+      "rank": 26
+    },
+    {
+      "word": "cognitive",
+      "count": 5,
+      "frequency": 0.0054,
+      "size": 14,
+      "rank": 27
+    },
+    {
+      "word": "clínico",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 28
+    },
+    {
+      "word": "cognitivo",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 29
+    },
+    {
+      "word": "generalizada",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 30
+    },
+    {
+      "word": "relatou",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 31
+    },
+    {
+      "word": "após",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 32
+    },
+    {
+      "word": "inventory",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 33
+    },
+    {
+      "word": "transtornos",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 34
+    },
+    {
+      "word": "carpenter",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 35
+    },
+    {
+      "word": "incluindo",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 36
+    },
+    {
+      "word": "técnicas",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 37
+    },
+    {
+      "word": "aliança",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 38
+    },
+    {
+      "word": "manejo",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 39
+    },
+    {
+      "word": "melhora",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 40
+    },
+    {
+      "word": "for",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 41
+    },
+    {
+      "word": "review",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 42
+    },
+    {
+      "word": "psychology",
+      "count": 4,
+      "frequency": 0.0043,
+      "size": 11,
+      "rank": 43
+    },
+    {
+      "word": "estudo",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 44
+    },
+    {
+      "word": "terapia",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 45
+    },
+    {
+      "word": "comorbidade",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 46
+    },
+    {
+      "word": "hash",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 47
+    },
+    {
+      "word": "sha",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 48
+    },
+    {
+      "word": "inicial",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 49
+    },
+    {
+      "word": "depression",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 50
+    },
+    {
+      "word": "dsm",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 51
+    },
+    {
+      "word": "questionamento",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 52
+    },
+    {
+      "word": "clark",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 53
+    },
+    {
+      "word": "wells",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 54
+    },
+    {
+      "word": "barlow",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 55
+    },
+    {
+      "word": "compreensão",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 56
+    },
+    {
+      "word": "ansiosos",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 57
+    },
+    {
+      "word": "borkovec",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 58
+    },
+    {
+      "word": "ruscio",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 59
+    },
+    {
+      "word": "pensamentos",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 60
+    },
+    {
+      "word": "situações",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 61
+    },
+    {
+      "word": "craske",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 62
+    },
+    {
+      "word": "relaxamento",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 63
+    },
+    {
+      "word": "mindfulness",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 64
+    },
+    {
+      "word": "redução",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 65
+    },
+    {
+      "word": "disorders",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 66
+    },
+    {
+      "word": "journal",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 67
+    },
+    {
+      "word": "psychotherapy",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 68
+    },
+    {
+      "word": "analysis",
+      "count": 3,
+      "frequency": 0.0032,
+      "size": 10,
+      "rank": 69
+    },
+    {
+      "word": "comportamental",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 70
+    },
+    {
+      "word": "relato",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 71
+    },
+    {
+      "word": "avaliação",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 72
+    },
+    {
+      "word": "iii",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 73
+    },
+    {
+      "word": "paradigma",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 74
+    },
+    {
+      "word": "fenomenológico",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 75
+    },
+    {
+      "word": "interpretativo",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 76
+    },
+    {
+      "word": "qualitativo",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 77
+    },
+    {
+      "word": "trilha",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 78
+    },
+    {
+      "word": "métricas",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 79
+    },
+    {
+      "word": "json",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 80
+    },
+    {
+      "word": "crises",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 81
+    },
+    {
+      "word": "aproximadamente",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 82
+    },
+    {
+      "word": "meses",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 83
+    },
+    {
+      "word": "trabalho",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 84
+    },
+    {
+      "word": "muscular",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 85
+    },
+    {
+      "word": "bai",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 86
+    },
+    {
+      "word": "escore",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 87
+    },
+    {
+      "word": "bdi",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 88
+    },
+    {
+      "word": "depressão",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 89
+    },
+    {
+      "word": "steer",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 90
+    },
+    {
+      "word": "brown",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 91
+    },
+    {
+      "word": "funcionamento",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 92
+    },
+    {
+      "word": "ocupacional",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 93
+    },
+    {
+      "word": "evitação",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 94
+    },
+    {
+      "word": "progressivo",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 95
+    },
+    {
+      "word": "tag",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 96
+    },
+    {
+      "word": "american",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 97
+    },
+    {
+      "word": "psychiatric",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 98
+    },
+    {
+      "word": "association",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 99
+    },
+    {
+      "word": "são",
+      "count": 2,
+      "frequency": 0.0022,
+      "size": 10,
+      "rank": 100
+    }
+  ],
+  "metadata": {
+    "total_words": 930,
+    "unique_words": 541,
+    "diversity": 0.582
+  }
+}
