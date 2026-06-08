@@ -1,393 +1,486 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-TeleologicalScanner v1.0 — Scanner Noologico Reverso (v4.0)
-=============================================================
-Conceito original: interlocutor anonimo (2026)
-Implementacao: Marcelo Claro Laranjeira
+TeleologicalReverseScanner v1.0 — Scanner Teleologico Reverso
+==============================================================
 
-Progressao completa do Scanner Noologico:
-  v1.0 — ERRO:      "O que esta errado?"      (Popper)
-  v2.0 — AUSENCIA:  "O que esta ausente?"      (Bachelard)
-  v3.0 — OPORTUNIDADE: "Onde investir?"         (Kauffman)
-  v4.0 — TELEOLOGIA:   "O que precisa existir?"  (Aristoteles/Polya)
+Complementa o NoologicalScanner com inferencia prescritiva:
+  - Dados os OBJETIVOS da pesquisa, infere QUAIS dimensoes epistemologicas
+    sao necessarias (principio teleologico)
+  - Compara o requerido com o existente (scan noologico)
+  - Identifica GAPS TELEOLOGICOS: dimensoes que DEVERIAM estar cobertas
+    mas NAO ESTAO
 
-Principio: Em vez de analisar o estado atual para descobrir ausencias,
-o Scanner Reverso parte de um ESTADO FUTURO DESEJADO e decompoe,
-por engenharia reversa, quais capacidades, estruturas e componentes
-precisariam existir para que aquele estado fosse alcancavel.
+Pipeline:
+  1. set_goals(goals) → infer_requirements() → lista de requisitos
+  2. compare_with_scan(noological_results) → lista de gaps
+  3. generate_report() → markdown
 
-Fluxo conceitual:
-  Estado Futuro Desejado
-       ↓ (decomposicao teleologica)
-  Capacidades Necessarias
-       ↓ (mapeamento estrutural)
-  Estruturas Necessarias
-       ↓ (mapeamento componencial)
-  Componentes Necessarios
-       ↓ (comparacao com estado atual)
-  Lacunas de Evolucao (roadmap priorizado)
-
-Formalismo matematico:
-  - AND-OR trees para decomposicao de objetivos complexos
-  - Minimum Spanning Capability Set (MSCS)
-  - Gap Score = f(importancia, dependencia, viabilidade)
-
-Uso:
-  from teleological_scanner import TeleologicalScanner
-  scanner = TeleologicalScanner()
-  roadmap = scanner.scan("AGI com alinhamento humano")
+Autor: Marcelo Claro Laranjeira (2026)
+Integrado com: NoologicalScanner v3.0 (SPEC-028)
 """
 
 from __future__ import annotations
 
-import json
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from pathlib import Path
 from typing import Any
 
 BRAZIL_TZ = timezone.utc
 
 
-@dataclass
-class Capability:
-    """Uma capacidade necessaria para atingir o estado futuro."""
-    name: str
-    description: str = ""
-    dependencies: list[str] = field(default_factory=list)
-    priority: int = 1  # 1=critico, 2=importante, 3=desejavel
-    exists: bool = False
-    gap_score: float = 0.0  # 0-100: quao longe estamos de te-la
-
+# ═══════════════════════════════════════════════════════════════════════════
+# DATA CLASSES
+# ═══════════════════════════════════════════════════════════════════════════
 
 @dataclass
-class EvolutionGap:
-    """Uma lacuna de evolucao — capacidade ausente que precisa ser desenvolvida."""
-    capability: str
-    priority: int
-    gap_score: float
-    prerequisites: list[str] = field(default_factory=list)
-    estimated_effort: str = ""
-    rationale: str = ""
+class TeleologicalGoal:
+    """Objetivo de pesquisa com tipo teleologico."""
+    description: str
+    goal_type: str
+    weight: float = 1.0
+
+    def __post_init__(self):
+        valid_types = list(TELEOLOGICAL_MAPPINGS.keys())
+        if self.goal_type not in valid_types:
+            import warnings
+            warnings.warn(
+                f"Goal type '{self.goal_type}' nao reconhecido. "
+                f"Tipos validos: {valid_types}. Nenhum requisito sera inferido."
+            )
 
 
-# ═══════════════════════════════════════════════════════════════════════
-# GOAL DECOMPOSITION TREES (AND-OR)
-# ═══════════════════════════════════════════════════════════════════════
+@dataclass
+class DimensionRequirement:
+    """Requisito teleologico: uma categoria que DEVE estar presente."""
+    dim_key: str
+    category: str
+    weight: float          # 0.0–1.0 (quao essencial)
+    rationale: str
+    goal_description: str  # qual objetivo gerou este requisito
 
-GOAL_TREES: dict[str, dict[str, Any]] = {
-    "AGI": {
-        "description": "Inteligencia Artificial Geral com alinhamento humano",
-        "capabilities": {
-            "raciocinio_abstrato": {
-                "desc": "Capacidade de raciocinio abstrato cross-domain",
-                "deps": ["transfer_learning", "analogical_reasoning"],
-                "priority": 1,
-            },
-            "aprendizado_continuo": {
-                "desc": "Aprendizado continuo sem esquecimento catastrofico",
-                "deps": ["memory_consolidation", "online_learning"],
-                "priority": 1,
-            },
-            "alinhamento_valores": {
-                "desc": "Alinhamento robusto com valores humanos",
-                "deps": ["value_learning", " corrigibility", "interpretability"],
-                "priority": 1,
-            },
-            "autoaperfeicoamento": {
-                "desc": "Capacidade de melhorar o proprio codigo/arquitetura",
-                "deps": ["meta_learning", "self_verification"],
-                "priority": 2,
-            },
-            "consciencia_situacional": {
-                "desc": "Compreensao do proprio estado, capacidades e limitacoes",
-                "deps": ["self_modeling", "uncertainty_quantification"],
-                "priority": 2,
-            },
-            "comunicacao_natural": {
-                "desc": "Comunicacao em linguagem natural multi-contexto",
-                "deps": ["pragmatics", "common_sense", "theory_of_mind"],
-                "priority": 2,
-            },
-            "criatividade": {
-                "desc": "Geracao de ideias genuinamente novas",
-                "deps": ["divergent_thinking", "conceptual_blending"],
-                "priority": 3,
-            },
-        }
-    },
-    "artigo_qualis_a1": {
-        "description": "Artigo cientifico com score >= 95/100 nos criterios Qualis/CAPES",
-        "capabilities": {
-            "pesquisa_bibliografica": {
-                "desc": "Busca exaustiva em 10+ fontes academicas",
-                "deps": ["seeker_multi_source", "doi_verification"],
-                "priority": 1,
-            },
-            "rigor_metodologico": {
-                "desc": "Metodologia explicitamente fundamentada",
-                "deps": ["paradigm_selection", "method_justification"],
-                "priority": 1,
-            },
-            "rastreabilidade": {
-                "desc": "Toda afirmacao vinculada a evidencia verificavel",
-                "deps": ["academic_audit_trail", "doi_linking"],
-                "priority": 1,
-            },
-            "anti_ia_compliance": {
-                "desc": "Zero violacoes TSAC (87 palavras banidas)",
-                "deps": ["tsac_check", "anti_ia_score"],
-                "priority": 1,
-            },
-            "cobertura_epistemologica": {
-                "desc": "Alta cobertura no Scanner Noologico",
-                "deps": ["noological_scanner", "eps_estimator"],
-                "priority": 2,
-            },
-            "dialogo_interdisciplinar": {
-                "desc": "Dialogo entre diferentes tradicoes teoricas",
-                "deps": ["cross_domain_analysis", "game_theory_integration"],
-                "priority": 2,
-            },
-        }
-    },
-    "ecossistema_autonomo": {
-        "description": "Ecossistema cientifico com autonomia nivel 4 (auto-evolucao)",
-        "capabilities": {
-            "auto_discovery": {
-                "desc": "Descoberta automatica de novas ferramentas e bibliotecas",
-                "deps": ["pypi_scout", "auto_install"],
-                "priority": 1,
-            },
-            "auto_healing": {
-                "desc": "Deteccao e reparo automatico de falhas",
-                "deps": ["self_healer", "health_monitor"],
-                "priority": 1,
-            },
-            "auto_evolution": {
-                "desc": "Geracao automatica de novas skills a partir de padroes",
-                "deps": ["manus_evolve", "pattern_extraction"],
-                "priority": 1,
-            },
-            "auto_audit": {
-                "desc": "Auditoria continua e automatica de toda producao",
-                "deps": ["interaction_logger", "academic_audit_trail"],
-                "priority": 1,
-            },
-            "auto_scan": {
-                "desc": "Scanner epistemologico executado a cada publicacao",
-                "deps": ["scanner_integration", "eps_estimator"],
-                "priority": 2,
-            },
-            "auto_roadmap": {
-                "desc": "Geracao automatica de roadmap de evolucao",
-                "deps": ["teleological_scanner", "gap_analyzer"],
-                "priority": 2,
-            },
-        }
-    },
+
+@dataclass
+class TeleologicalGap:
+    """Gap teleologico: categoria requerida mas ausente no scan."""
+    goal: str
+    dim_key: str
+    category: str
+    required_weight: float
+    severity: str          # "critical" | "high" | "moderate" | "low"
+    rationale: str
+    actual_density: float = 0.0  # densidade real da dimensao (do scan)
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# MAPEAMENTOS TELEOLÓGICOS (Goal Type → Required Categories)
+# ═══════════════════════════════════════════════════════════════════════════
+
+# Cada entrada: (dim_key, category, weight, rationale)
+# weight: 1.0 = essencial, 0.5 = desejavel
+
+TELEOLOGICAL_MAPPINGS: dict[str, list[tuple[str, str, float, str]]] = {
+    "causal": [
+        ("metodos", "Quantitativo experimental", 1.0,
+         "Relações causais exigem controle experimental e randomização"),
+        ("temporalidade", "Longitudinal (longo prazo)", 0.8,
+         "Causalidade requer observação temporal para estabelecer precedência"),
+        ("raciocinio", "Probabilístico", 0.7,
+         "Inferência causal é intrinsecamente probabilística"),
+        ("raciocinio", "Contrafactual", 0.6,
+         "Contrafactuais são a base lógica da causalidade (Rubin, Pearl)"),
+        ("dados", "Dados longitudinais", 0.7,
+         "Dados de painel ou coorte são necessários para inferência causal"),
+        ("metodos", "Quantitativo correlacional", 0.5,
+         "Correlação é pré-condição (embora não suficiente) para causalidade"),
+    ],
+    "evaluative": [
+        ("metodos", "Misto sequencial", 0.9,
+         "Avaliação de intervenções requer triangulação quali+quanti"),
+        ("metodos", "Misto convergente", 0.8,
+         "Convergência de métodos fortalece validade da avaliação"),
+        ("paradigmas", "Pragmatista", 0.8,
+         "Paradigma pragmatista é o fundamento epistemológico da avaliação"),
+        ("populacao", "Contexto clínico", 0.7,
+         "Avaliação de intervenções tipicamente ocorre em contexto aplicado"),
+        ("dados", "Dados clínicos (escalas, inventários)", 0.8,
+         "Instrumentos padronizados são necessários para mensurar outcomes"),
+        ("metodos", "Revisão sistemática", 0.6,
+         "Revisões sistemáticas contextualizam a intervenção na literatura"),
+        ("temporalidade", "Longitudinal (curto prazo)", 0.6,
+         "Follow-up é necessário para avaliar manutenção de efeitos"),
+    ],
+    "exploratory": [
+        ("paradigmas", "Fenomenológico", 1.0,
+         "Exploração de experiências requer lente fenomenológica"),
+        ("paradigmas", "Construtivista", 0.8,
+         "Construção de significado é central na pesquisa exploratória"),
+        ("metodos", "Qualitativo fenomenológico", 1.0,
+         "Métodos qualitativos são essenciais para capturar experiência vivida"),
+        ("metodos", "Qualitativo grounded theory", 0.7,
+         "Grounded theory permite que categorias emerjam dos dados"),
+        ("dados", "Dados qualitativos (entrevistas)", 1.0,
+         "Entrevistas e grupos focais são a fonte primária na pesquisa exploratória"),
+        ("raciocinio", "Abdutivo", 0.6,
+         "Abdução gera hipóteses a partir de padrões observados"),
+        ("raciocinio", "Indutivo", 0.5,
+         "Indução permite generalização a partir de casos particulares"),
+    ],
+    "strategic": [
+        ("teoria_jogos", "Equilíbrio de Nash", 1.0,
+         "Nash é o conceito fundacional de interação estratégica"),
+        ("teoria_jogos", "Bayesiano", 0.9,
+         "Jogos bayesianos modelam decisão sob informação incompleta"),
+        ("teoria_jogos", "Evolutivo", 0.7,
+         "Jogos evolutivos modelam dinâmicas de adaptação estratégica"),
+        ("raciocinio", "Contrafactual", 0.8,
+         "Raciocínio contrafactual avalia cenários alternativos"),
+        ("raciocinio", "Probabilístico", 0.7,
+         "Decisão estratégica é intrinsecamente probabilística"),
+        ("niveis_analise", "Sistêmico/político", 0.6,
+         "Decisões estratégicas frequentemente envolvem análise sistêmica"),
+        ("teoria_jogos", "Cooperativo", 0.6,
+         "Coalizões e barganha são centrais em contextos cooperativos"),
+    ],
+    "comparative": [
+        ("populacao", "Cross-cultural", 1.0,
+         "Comparação entre culturas requer amostragem cross-cultural"),
+        ("populacao", "Brasil/América Latina", 0.8,
+         "Contexto LATAM é relevante para pesquisa comparativa na região"),
+        ("dados", "Dados comparativos (cross-cultural)", 1.0,
+         "Dados comparativos são a essência da pesquisa cross-cultural"),
+        ("dominios", "Antropologia", 0.6,
+         "Antropologia fornece framework para comparação cultural"),
+        ("metodos", "Misto sequencial", 0.6,
+         "Métodos mistos permitem comparação em múltiplos níveis"),
+        ("temporalidade", "Transversal (momento único)", 0.5,
+         "Comparações transversais são o design mais comum"),
+    ],
+    "predictive": [
+        ("temporalidade", "Prospectivo/preditivo", 1.0,
+         "Predição requer orientação temporal para o futuro"),
+        ("dados", "Dados longitudinais", 1.0,
+         "Modelos preditivos exigem dados de painel ou coorte"),
+        ("raciocinio", "Probabilístico", 0.9,
+         "Predição é fundamentalmente probabilística"),
+        ("metodos", "Quantitativo correlacional", 0.7,
+         "Modelos de regressão são a base da predição estatística"),
+        ("dados", "Dados epidemiológicos", 0.6,
+         "Dados populacionais alimentam modelos preditivos"),
+        ("dados", "Metadados (revisões)", 0.5,
+         "Meta-análises fornecem estimativas pooled para predição"),
+    ],
+    "integrative": [
+        ("dominios", "Neurociências", 0.7,
+         "Integração frequentemente requer ponte entre psicologia e neurociência"),
+        ("dominios", "Sociologia", 0.6,
+         "Fenômenos complexos exigem lente sociológica"),
+        ("dominios", "Inteligência Artificial / Tecnologia", 0.6,
+         "IA é domínio emergente para síntese de conhecimento"),
+        ("paradigmas", "Complexo/Sistêmico", 0.8,
+         "Paradigma da complexidade é o fundamento da integração"),
+        ("raciocinio", "Sistêmico", 0.7,
+         "Pensamento sistêmico conecta domínios dispares"),
+        ("metodos", "Revisão sistemática", 0.7,
+         "Revisões sistemáticas são o método padrão para síntese"),
+        ("teoria_jogos", "Cooperativo", 0.5,
+         "Coalizões interdisciplinares podem ser modeladas como jogos cooperativos"),
+    ],
+    "critical": [
+        ("paradigmas", "Crítico/Transformador", 1.0,
+         "Paradigma crítico é essencial para questionar estruturas de poder"),
+        ("paradigmas", "Pós-estruturalista", 0.8,
+         "Desconstrução de discursos requer lente pós-estruturalista"),
+        ("niveis_analise", "Sistêmico/político", 0.7,
+         "Análise crítica opera no nível sistêmico e político"),
+        ("populacao", "Diversidade de gênero", 0.5,
+         "Interseccionalidade requer atenção à diversidade"),
+        ("dominios", "Sociologia", 0.6,
+         "Sociologia fornece ferramentas para análise estrutural"),
+        ("raciocinio", "Dialético", 0.7,
+         "Dialética é o modo de raciocínio da transformação social"),
+    ],
 }
 
 
-class TeleologicalScanner:
-    """Scanner Noologico Reverso (v4.0).
+# ═══════════════════════════════════════════════════════════════════════════
+# SCANNER TELEOLÓGICO REVERSO
+# ═══════════════════════════════════════════════════════════════════════════
 
-    Decompoe um estado futuro desejado em capacidades necessarias,
-    mapeia-as para o estado atual, e gera um roadmap de evolucao
-    priorizado por importancia, dependencia e viabilidade.
+class TeleologicalReverseScanner:
+    """Scanner que infere requisitos epistemologicos a partir dos objetivos.
 
-    Uso:
-        scanner = TeleologicalScanner()
-        roadmap = scanner.scan("AGI")
-        scanner.save_roadmap(roadmap, "roadmap_agi.md")
+    Principio teleologico:
+      "Se o objetivo da pesquisa e X, entao por necessidade logica
+       as dimensoes A, B, C devem estar cobertas."
+
+    Pipeline:
+      1. set_goals(goals) → define os objetivos da pesquisa
+      2. infer_requirements() → mapeia goals → dimensoes requeridas
+      3. compare_with_scan(noological_results) → identifica gaps
+      4. generate_report() → relatorio teleologico
     """
 
-    def scan(self, goal: str, current_capabilities: list[str] | None = None) -> dict[str, Any]:
-        """Executa decomposicao teleologica de um objetivo.
+    def __init__(self):
+        self.goals: list[TeleologicalGoal] = []
+        self.requirements: list[DimensionRequirement] = []
+        self.gaps: list[TeleologicalGap] = []
+        self._scan_results: dict[str, Any] = {}
+        self._teleological_score: float = 0.0
 
-        Args:
-            goal: Objetivo (ex: "AGI", "artigo_qualis_a1", "ecossistema_autonomo")
-            current_capabilities: Capacidades ja existentes (se None, usa defaults)
+    # ─── GOAL MANAGEMENT ─────────────────────────────────────────────────
 
-        Returns:
-            Roadmap com capacidades, gaps e prioridades
+    def set_goals(self, goals: list[TeleologicalGoal]) -> None:
+        """Define os objetivos da pesquisa."""
+        self.goals = goals
+        self.requirements = []
+        self.gaps = []
+        self._scan_results = {}
+        self._teleological_score = 0.0
+
+    # ─── INFERENCE ENGINE ─────────────────────────────────────────────────
+
+    def infer_requirements(self) -> list[DimensionRequirement]:
+        """Infere requisitos teleologicos a partir dos objetivos.
+
+        Para cada goal, consulta TELEOLOGICAL_MAPPINGS e gera
+        DimensionRequirement com peso, racional e goal_description.
+        Requisitos duplicados (mesmo dim_key + category) tem seus
+        pesos somados e racionais concatenados.
         """
-        # Normalizar goal
-        goal_key = goal.lower().replace(" ", "_")
-        # Case-insensitive lookup
-        tree = None
-        for k, v in GOAL_TREES.items():
-            if k.lower() == goal_key or goal_key in k.lower():
-                tree = v
-                goal_key = k
-                break
-        if tree is None:
-            return {"error": f"Goal nao encontrado: {goal}. Disponiveis: {list(GOAL_TREES.keys())}"}
-        capabilities = tree["capabilities"]
+        self.requirements = []
+        seen: dict[tuple[str, str], list[DimensionRequirement]] = {}
 
-        # Se nao foram fornecidas capacidades atuais, assumir que so temos as basicas
-        if current_capabilities is None:
-            # Simular estado atual do ecossistema
-            current_capabilities = [
-                "seeker_multi_source", "doi_verification", "academic_audit_trail",
-                "tsac_check", "anti_ia_score", "pypi_scout", "self_healer",
-                "interaction_logger", "scanner_integration", "eps_estimator",
-                "manus_evolve", "auto_install", "health_monitor",
-            ]
+        for goal in self.goals:
+            if goal.goal_type not in TELEOLOGICAL_MAPPINGS:
+                continue
+            mappings = TELEOLOGICAL_MAPPINGS[goal.goal_type]
+            for dim_key, category, weight, rationale in mappings:
+                effective_weight = weight * goal.weight
+                req = DimensionRequirement(
+                    dim_key=dim_key,
+                    category=category,
+                    weight=effective_weight,
+                    rationale=rationale,
+                    goal_description=goal.description,
+                )
+                key = (dim_key, category)
+                if key not in seen:
+                    seen[key] = []
+                seen[key].append(req)
 
-        current_set = set(current_capabilities)
-
-        # Analisar cada capacidade
-        gaps = []
-        covered = []
-        total_deps = 0
-        covered_deps = 0
-
-        for cap_name, cap_data in capabilities.items():
-            deps = cap_data.get("deps", [])
-            total_deps += len(deps)
-            deps_covered = sum(1 for d in deps if d in current_set)
-            covered_deps += deps_covered
-
-            # Verificar se a capacidade existe (todos os deps cobertos)
-            exists = all(d in current_set for d in deps)
-            gap_score = (1 - deps_covered / max(1, len(deps))) * 100 if deps else 0
-
-            if exists:
-                covered.append(cap_name)
+        # Consolidar duplicatas: soma pesos, concatena racionais
+        for key, reqs in seen.items():
+            if len(reqs) == 1:
+                self.requirements.append(reqs[0])
             else:
-                missing_deps = [d for d in deps if d not in current_set]
-                gaps.append(EvolutionGap(
-                    capability=cap_name,
-                    priority=cap_data.get("priority", 2),
-                    gap_score=round(gap_score),
-                    prerequisites=missing_deps,
-                    estimated_effort=self._estimate_effort(gap_score),
-                    rationale=cap_data.get("desc", ""),
+                total_weight = min(1.0, sum(r.weight for r in reqs))
+                combined_rationale = " | ".join(r.rationale for r in reqs)
+                combined_goals = "; ".join(r.goal_description for r in reqs)
+                self.requirements.append(DimensionRequirement(
+                    dim_key=key[0],
+                    category=key[1],
+                    weight=total_weight,
+                    rationale=combined_rationale,
+                    goal_description=combined_goals,
                 ))
 
-        # Ordenar gaps por prioridade e gap_score
-        gaps.sort(key=lambda g: (g.priority, -g.gap_score))
+        # Ordenar por peso decrescente
+        self.requirements.sort(key=lambda r: r.weight, reverse=True)
+        return self.requirements
 
-        # Calcular progresso
-        total_caps = len(capabilities)
-        covered_caps = len(covered)
-        progress_pct = round(covered_caps / max(1, total_caps) * 100)
-        dependency_coverage = round(covered_deps / max(1, total_deps) * 100)
+    # ─── GAP DETECTION ────────────────────────────────────────────────────
 
-        return {
-            "goal": goal,
-            "goal_key": goal_key,
-            "description": tree["description"],
-            "timestamp": datetime.now(BRAZIL_TZ).isoformat(),
-            "version": "4.0",
-            "total_capabilities": total_caps,
-            "covered_capabilities": covered_caps,
-            "gap_capabilities": len(gaps),
-            "progress_pct": progress_pct,
-            "dependency_coverage_pct": dependency_coverage,
-            "capabilities": {
-                "covered": covered,
-                "gaps": [
-                    {
-                        "capability": g.capability,
-                        "priority": g.priority,
-                        "gap_score": g.gap_score,
-                        "prerequisites": g.prerequisites,
-                        "estimated_effort": g.estimated_effort,
-                        "rationale": g.rationale,
-                    }
-                    for g in gaps
-                ],
-            },
-            "roadmap": self._generate_roadmap(gaps, progress_pct),
-        }
+    def compare_with_scan(self, noological_results: dict[str, Any]) -> list[TeleologicalGap]:
+        """Compara requisitos teleologicos com scan noologico real.
 
-    def _estimate_effort(self, gap_score: float) -> str:
-        """Estima esforco necessario baseado no gap_score."""
-        if gap_score >= 80: return "Alto (requer pesquisa fundamental)"
-        if gap_score >= 50: return "Medio (requer desenvolvimento significativo)"
-        if gap_score >= 20: return "Baixo (requer integracao de componentes existentes)"
-        return "Minimo (componentes ja disponiveis)"
+        Para cada requisito inferido, verifica se a categoria esta
+        presente no scan. Se nao estiver, gera um TeleologicalGap.
 
-    def _generate_roadmap(self, gaps: list[EvolutionGap], progress: int) -> list[dict[str, Any]]:
-        """Gera roadmap priorizado em 3 fases."""
-        phases = {"Fase 1 — Imediato (0-3 meses)": [], "Fase 2 — Curto Prazo (3-12 meses)": [], "Fase 3 — Longo Prazo (12+ meses)": []}
+        Args:
+            noological_results: saida de NoologicalScanner.scan()
+        """
+        self._scan_results = noological_results
+        if not self.requirements:
+            self.infer_requirements()
 
-        for g in gaps:
-            if g.priority == 1 and g.gap_score < 50:
-                phases["Fase 1 — Imediato (0-3 meses)"].append(g.capability)
-            elif g.priority <= 2:
-                phases["Fase 2 — Curto Prazo (3-12 meses)"].append(g.capability)
-            else:
-                phases["Fase 3 — Longo Prazo (12+ meses)"].append(g.capability)
+        self.gaps = []
+        dims = noological_results.get("dimensions", {})
 
-        return [
-            {"phase": phase, "capabilities": caps, "count": len(caps)}
-            for phase, caps in phases.items() if caps
-        ]
+        for req in self.requirements:
+            dim_data = dims.get(req.dim_key, {})
+            covered = dim_data.get("covered", [])
+            actual_density = dim_data.get("density", 0.0)
 
-    def generate_markdown_report(self, results: dict[str, Any]) -> str:
-        """Gera relatorio Markdown do roadmap."""
-        r = results
+            if req.category not in covered:
+                severity = self._severity(req.weight)
+                self.gaps.append(TeleologicalGap(
+                    goal=req.goal_description,
+                    dim_key=req.dim_key,
+                    category=req.category,
+                    required_weight=round(req.weight, 2),
+                    severity=severity,
+                    rationale=req.rationale,
+                    actual_density=actual_density,
+                ))
+
+        # Ordenar por severidade → peso
+        severity_order = {"critical": 0, "high": 1, "moderate": 2, "low": 3}
+        self.gaps.sort(key=lambda g: (severity_order.get(g.severity, 4), -g.required_weight))
+
+        # Calcular score teleologico
+        self._calc_score()
+        return self.gaps
+
+    def _severity(self, weight: float) -> str:
+        """Classifica severidade do gap baseado no peso do requisito."""
+        if weight >= 0.9:
+            return "critical"
+        if weight >= 0.7:
+            return "high"
+        if weight >= 0.4:
+            return "moderate"
+        return "low"
+
+    def _calc_score(self) -> None:
+        """Calcula teleological_score: % de requisitos atendidos."""
+        if not self.requirements:
+            self._teleological_score = 1.0
+            return
+
+        total_weight = sum(r.weight for r in self.requirements)
+        if total_weight == 0:
+            self._teleological_score = 1.0
+            return
+
+        # Soma pesos dos requisitos atendidos
+        dims = self._scan_results.get("dimensions", {})
+        covered_weight = 0.0
+        for req in self.requirements:
+            dim_data = dims.get(req.dim_key, {})
+            covered = dim_data.get("covered", [])
+            if req.category in covered:
+                covered_weight += req.weight
+
+        self._teleological_score = round(covered_weight / total_weight, 3)
+
+    def teleological_score(self) -> float:
+        """Retorna o score teleologico (0.0–1.0)."""
+        return self._teleological_score
+
+    # ─── REPORTING ────────────────────────────────────────────────────────
+
+    def generate_report(self) -> str:
+        """Gera relatorio Markdown do scan teleologico reverso."""
+        if not self.goals:
+            return "Nenhum objetivo definido. Use set_goals() primeiro."
+
         lines = [
-            f"# Scanner Noologico Reverso v4.0 — Roadmap Teleologico",
-            f"",
-            f"**Objetivo**: {r['goal']}",
-            f"**Descricao**: {r['description']}",
-            f"**Data**: {r['timestamp'][:19]}",
-            f"**Progresso atual**: {r['progress_pct']}% ({r['covered_capabilities']}/{r['total_capabilities']} capacidades)",
-            f"**Cobertura de dependencias**: {r['dependency_coverage_pct']}%",
-            f"",
-            f"---",
-            f"",
-            f"## GAPS — Capacidades Ausentes ({r['gap_capabilities']})",
-            f"",
+            "# Scanner Teleológico Reverso — Relatório de Alinhamento Epistemológico",
+            "",
+            f"**Data**: {datetime.now(BRAZIL_TZ).isoformat()[:19]}",
+            f"**Score Teleológico**: {self._teleological_score:.0%} "
+            f"({sum(1 for r in self.requirements if self._is_met(r))}/{len(self.requirements)} requisitos atendidos)",
+            "",
+            "---",
+            "",
+            "## Objetivos da Pesquisa",
+            "",
         ]
 
-        for i, g in enumerate(r["capabilities"]["gaps"], 1):
-            priority_label = {1: "CRITICO", 2: "IMPORTANTE", 3: "DESEJAVEL"}.get(g["priority"], "?")
-            lines.append(f"### {i}. {g['capability']} [{priority_label}] — Gap Score: {g['gap_score']}%")
-            lines.append(f"")
-            lines.append(f"**Por que e necessario**: {g['rationale']}")
-            lines.append(f"**Pre-requisitos ausentes**: {', '.join(g['prerequisites']) if g['prerequisites'] else 'Nenhum'}")
-            lines.append(f"**Esforco estimado**: {g['estimated_effort']}")
-            lines.append(f"")
+        for i, goal in enumerate(self.goals, 1):
+            lines.append(f"{i}. **[{goal.goal_type}]** {goal.description} "
+                        f"(peso: {goal.weight})")
 
-        lines.append("---")
-        lines.append("")
-        lines.append("## Roadmap de Evolucao")
-        lines.append("")
-        for phase_data in r["roadmap"]:
-            lines.append(f"### {phase_data['phase']} ({phase_data['count']} capacidades)")
-            for cap in phase_data["capabilities"]:
-                lines.append(f"- {cap}")
-            lines.append("")
+        lines.extend([
+            "",
+            "---",
+            "",
+            f"## Requisitos Teleológicos ({len(self.requirements)})",
+            "",
+            "| # | Dimensão | Categoria | Peso | Status |",
+            "|:--:|----------|-----------|:----:|:------:|",
+        ])
 
-        lines.append("---")
-        lines.append(f"**Progressao conceitual**: ERRO (v1) → AUSENCIA (v2) → OPORTUNIDADE (v3) → TELEOLOGIA (v4)")
-        lines.append(f"**Conceito original**: interlocutor anonimo (2026) | **Implementacao**: Marcelo Claro Laranjeira")
+        for i, req in enumerate(self.requirements, 1):
+            met = self._is_met(req)
+            status = "✓ Coberto" if met else "✗ Gap"
+            lines.append(f"| {i} | {req.dim_key} | {req.category} | "
+                        f"{req.weight:.1f} | {status} |")
+
+        lines.extend([
+            "",
+            "---",
+            "",
+            f"## Gaps Teleológicos ({len(self.gaps)})",
+            "",
+        ])
+
+        if not self.gaps:
+            lines.append("✅ **Nenhum gap teleológico detectado.** "
+                         "A pesquisa cobre todas as dimensões necessárias para seus objetivos.")
+        else:
+            # Agrupar por severidade
+            for severity in ["critical", "high", "moderate", "low"]:
+                sev_gaps = [g for g in self.gaps if g.severity == severity]
+                if not sev_gaps:
+                    continue
+                emoji = {"critical": "🔴", "high": "🟠", "moderate": "🟡", "low": "⚪"}
+                lines.append(f"### {emoji.get(severity, '')} {severity.upper()} ({len(sev_gaps)})")
+                lines.append("")
+                for g in sev_gaps:
+                    lines.append(f"- **{g.category}** `[{g.dim_key}]` — peso: {g.required_weight}")
+                    lines.append(f"  > {g.rationale}")
+                    lines.append(f"  > _Objetivo: {g.goal}_")
+                    lines.append("")
+
+        lines.extend([
+            "---",
+            "",
+            "## Recomendações de Alinhamento Teleológico",
+            "",
+        ])
+
+        if self.gaps:
+            critical_gaps = [g for g in self.gaps if g.severity == "critical"]
+            if critical_gaps:
+                lines.append("### Ações Prioritárias (Gaps Críticos)")
+                for g in critical_gaps[:5]:
+                    lines.append(f"- **Incorporar {g.category}** na dimensão `{g.dim_key}`: {g.rationale}")
+                lines.append("")
+
+            high_gaps = [g for g in self.gaps if g.severity == "high"]
+            if high_gaps:
+                lines.append("### Ações Recomendadas (Gaps Altos)")
+                for g in high_gaps[:5]:
+                    lines.append(f"- Expandir cobertura de **{g.category}** `[{g.dim_key}]`")
+                lines.append("")
+        else:
+            lines.append("A pesquisa está teleologicamente alinhada com seus objetivos. "
+                         "Nenhuma ação corretiva necessária.")
+
+        lines.extend([
+            "",
+            "---",
+            "",
+            f"*Relatório gerado pelo TeleologicalReverseScanner v1.0 — "
+            f"{datetime.now(BRAZIL_TZ).isoformat()[:19]}*",
+        ])
 
         return "\n".join(lines)
 
-    def save_roadmap(self, results: dict[str, Any], output_path: str | Path) -> Path:
-        """Salva roadmap em disco."""
+    def _is_met(self, req: DimensionRequirement) -> bool:
+        """Verifica se um requisito foi atendido no scan."""
+        if not self._scan_results:
+            return False
+        dims = self._scan_results.get("dimensions", {})
+        dim_data = dims.get(req.dim_key, {})
+        covered = dim_data.get("covered", [])
+        return req.category in covered
+
+    def save_report(self, output_path: str) -> None:
+        """Salva relatorio em disco."""
+        from pathlib import Path
         path = Path(output_path)
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(self.generate_markdown_report(results), encoding="utf-8")
-        return path
-
-
-# ── Teste ──
-if __name__ == "__main__":
-    scanner = TeleologicalScanner()
-
-    for goal in ["AGI", "artigo_qualis_a1", "ecossistema_autonomo"]:
-        results = scanner.scan(goal)
-        print(f"\n{'='*60}")
-        print(f"Goal: {goal}")
-        print(f"Progresso: {results['progress_pct']}% ({results['covered_capabilities']}/{results['total_capabilities']})")
-        print(f"Gaps: {results['gap_capabilities']}")
-        for g in results["capabilities"]["gaps"][:3]:
-            print(f"  [{g['priority']}] {g['capability']} — Gap: {g['gap_score']}% — {g['estimated_effort']}")
+        path.write_text(self.generate_report(), encoding="utf-8")
