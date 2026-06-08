@@ -187,13 +187,13 @@ Para alcançar o objetivo geral, foram estabelecidos seis objetivos específicos
 
   \item \textbf{Apresentar o pipeline acadêmico MASWOS v5.0}, detalhando seus 8 estágios (Diagnóstico $\rightarrow$ Busca $\rightarrow$ Evidências $\rightarrow$ Estrutura $\rightarrow$ Revisão $\rightarrow$ Metodologia $\rightarrow$ Resultados $\rightarrow$ Exportação), 49 agentes especializados, e protocolos de rigor como TSAC (87 palavras banidas) e validação cruzada de Pearson.
 
-  \item \textbf{Demonstrar a aplicação de SDD+TDD no ecossistema}, incluindo os 188 documentos SPEC (com 5 dimensões cada), os 29 casos de teste TDD, e o motor AutoEvolve com 16 ciclos evolutivos documentados (progressão de score: 85→99/100).
+  \item \textbf{Demonstrar a aplicação de SDD+TDD no ecossistema}, incluindo os 169 documentos SPEC (com 5 dimensões cada), os 255 casos de teste TDD em 8 suites (SPEC-025 a SPEC-032), e o motor AutoEvolve com 18 ciclos evolutivos documentados (progressão de score: 85→99/100). As 8 suites TDD cobrem: frontmatter de 161 skills (SPEC-025), pipeline evolutivo (SPEC-026/027), scanner noológico v3.0 (SPEC-028), scanner teleológico reverso (SPEC-029), scanner de trajetórias evolutivas (SPEC-030), refinamento de scanners (SPEC-031), e solver de conjunto mínimo de capacidades (SPEC-032).
 
-  \item \textbf{Validar o roadmap do ecossistema} através de testes automatizados que cobrem os 3 gaps estratégicos identificados pelo Gartner Hype Cycle 2026: Governança de APIs (SPEC-019, 8 CTs), Data Streaming Enterprise (SPEC-020, 10 CTs) e Plataforma Low-Code para Agentes (SPEC-021, 6 CTs).
+  \item \textbf{Validar o roadmap do ecossistema} através de testes automatizados que cobrem os 3 gaps estratégicos identificados pelo Gartner Hype Cycle 2026: Governança de APIs (SPEC-019, 8 CTs), Data Streaming Enterprise (SPEC-020, 10 CTs) e Plataforma Low-Code para Agentes (SPEC-021, 6 CTs). Adicionalmente, validar o ecossistema de 5 scanners epistemológicos que implementam um pipeline completo de análise de conhecimento --- do descritivo ao preditivo --- com 62 CTs dedicados (SPEC-028 a SPEC-031).
 
-  \item \textbf{Apresentar o subsistema de raciocínio}, incluindo o orquestrador v12 com 212 tipos de raciocínio em 27 categorias, debate multiagente (Agent Forum P14), e auditoria PhD (P18: Nash Solver + Cohen's $\kappa$ + Bonferroni + Qualis A1).
+  \item \textbf{Apresentar o subsistema de raciocínio}, incluindo o orquestrador v12 com 212 tipos de raciocínio em 27 categorias, debate multiagente (Agent Forum P14), auditoria PhD (P18: Nash Solver + Cohen's $\kappa$ + Bonferroni + Qualis A1), e o ecossistema de scanners epistemológicos que cobre 10 dimensões $\times$ 92 categorias do espaço de conhecimento.
 
-  \item \textbf{Demonstrar a aplicabilidade prática} do ecossistema através de casos de uso reais: geração de dissertação ABNT/CNPq de 100+ páginas, classificação quântica de imagens médicas (QML HAM10000, 89,52\% de acurácia), e busca inteligente de editais de fomento (52 editais curados de CNPq/CAPES/FINEP).
+  \item \textbf{Demonstrar a aplicabilidade prática} do ecossistema através de casos de uso reais: geração de dissertação ABNT/CNPq de 100+ páginas, classificação quântica de imagens médicas (QML HAM10000, 89,52\% de acurácia), busca inteligente de editais de fomento (52 editais curados de CNPq/CAPES/FINEP), scan epistemológico da própria dissertação (74\% de cobertura, Grau A), e resolução formal do problema de conjunto mínimo de capacidades (MCSP, SPEC-032).
 
 \end{enumerate}
 
@@ -206,11 +206,11 @@ Esta dissertação está organizada em seis capítulos, seguindo a estrutura IMR
 
   \item \textbf{Capítulo 3 --- Metodologia (16pp):} Detalha o framework SDD+\-TDD+\-Auto\-Evolve, o protocolo de validação cruzada, o loop de correção iterativa, a arquitetura em 3 camadas, o pipeline acadêmico MASWOS v5.0, e os 14 artefatos de auditoria obrigatórios por capítulo.
 
-  \item \textbf{Capítulo 4 --- Resultados (14pp):} Apresenta o ecossistema OpenCode completo: arquitetura de componentes, matriz de validação cruzada (200+ conexões), cobertura de especificação (100\%), scores Qualis, ciclos evolutivos, e casos de uso validados.
+  \item \textbf{Capítulo 4 --- Resultados (16pp):} Apresenta o ecossistema OpenCode completo: arquitetura de componentes, matriz de validação cruzada (200+ conexões), cobertura de especificação (100\%), ecossistema de 5 scanners epistemológicos com MCSP Solver, scores Qualis, 18 ciclos evolutivos, e casos de uso validados.
 
-  \item \textbf{Capítulo 5 --- Discussão (18pp):} Analisa os resultados à luz da literatura, valida o roadmap com TDD+SDD, discute limitações e vieses, apresenta o sistema de economia de tokens (Governança+Economia+Auditoria), e projeta a evolução futura do ecossistema.
+  \item \textbf{Capítulo 5 --- Discussão (22pp):} Analisa os resultados à luz da literatura, aprofunda-se nos gaps identificados pelo scan epistemológico da dissertação (Dilema do Prisioneiro, abdução peirceana, sistemas complexos, metacognição artificial, fenomenologia, meta-análise, Stackelberg, sinalização, bayesianos, pesquisa-ação), valida o roadmap com TDD+SDD, discute limitações e vieses, apresenta o sistema de economia de tokens (Governança+Economia+Auditoria), e projeta a evolução futura do ecossistema com recomendações geradas automaticamente pelos scanners.
 
-  \item \textbf{Capítulo 6 --- Conclusão (6pp):} Sintetiza as contribuições, responde à pergunta de pesquisa, e delineia trabalhos futuros.
+  \item \textbf{Capítulo 6 --- Conclusão (8pp):} Sintetiza as contribuições --- metodológica (SDD+TDD para pipelines científicos), arquitetural (3 camadas com 200+ conexões), empírica (18 ciclos evolutivos, Cohen's $d = 2,8$), epistemológica (5 scanners com 62 CTs), e prática (ecossistema aberto com 161 skills) --- responde à pergunta de pesquisa, e delineia trabalhos futuros incluindo validação externa e expansão do ecossistema de scanners.
 \end{itemize}
 
 \subsection{Contribuições Esperadas}
@@ -218,13 +218,15 @@ Esta dissertação está organizada em seis capítulos, seguindo a estrutura IMR
 As principais contribuições desta dissertação para a literatura científica são:
 
 \begin{enumerate}
-  \item \textbf{Contribuição Metodológica:} A demonstração de que as disciplinas de engenharia de software SDD e TDD, originalmente concebidas para sistemas corporativos, podem ser adaptadas com sucesso para pipelines de produção científica, elevando a verificabilidade dos artefatos gerados de ``confiança no autor'' para ``confiança na especificação + testes''.
+  \item \textbf{Contribuição Metodológica:} A demonstração de que as disciplinas de engenharia de software SDD e TDD, originalmente concebidas para sistemas corporativos, podem ser adaptadas com sucesso para pipelines de produção científica, elevando a verificabilidade dos artefatos gerados de ``confiança no autor'' para ``confiança na especificação + testes''. Esta contribuição é validada por 255 casos de teste TDD em 8 suites (SPEC-025 a SPEC-032), executando em 5,0 segundos com 100\% de aprovação.
 
-  \item \textbf{Contribuição Arquitetural:} A documentação completa de uma arquitetura em 3 camadas (MCP→Skill→Agent) com 200+ conexões de afinidade documentadas, servindo como modelo de referência para futuros ecossistemas multiagentes de pesquisa.
+  \item \textbf{Contribuição Arquitetural:} A documentação completa de uma arquitetura em 3 camadas (MCP→Skill→Agent) com 200+ conexões de afinidade documentadas, complementada por um ecossistema de 5 scanners epistemológicos (Noológico, Teleológico, CrossValidation, Polymathic, Trajectory) e um solver de otimização combinatória (MCSP), servindo como modelo de referência para futuros ecossistemas multiagentes de pesquisa.
 
-  \item \textbf{Contribuição Empírica:} A demonstração de 16 ciclos evolutivos documentados (85→99/100), fornecendo evidência quantitativa de que sistemas multiagentes podem melhorar continuamente sua qualidade através de feedback automatizado.
+  \item \textbf{Contribuição Empírica:} A demonstração de 18 ciclos evolutivos documentados (85→99/100, Cohen's $d = 2,8$), fornecendo evidência quantitativa de que sistemas multiagentes podem melhorar continuamente sua qualidade através de feedback automatizado. Adicionalmente, o scan epistemológico da própria dissertação (74\% de cobertura, Grau A, 68/92 categorias) demonstra a aplicabilidade do ferramental de auto-análise a artefatos acadêmicos reais.
 
-  \item \textbf{Contribuição Prática:} A disponibilização de um ecossistema completo e gratuito (227 skills, 128 agentes, 46 MCPs) que qualquer pesquisador pode utilizar para elevar a qualidade e verificabilidade de sua produção científica.
+  \item \textbf{Contribuição Epistemológica:} A formalização matemática do Minimum Capability Set Problem (MCSP) e sua implementação algorítmica em 3 fases, transformando o problema de ``como evoluir um ecossistema de conhecimento'' em um problema de otimização combinatória com solução verificável. Esta contribuição estabelece uma ponte entre a engenharia de software, a epistemologia e a otimização combinatória.
+
+  \item \textbf{Contribuição Prática:} A disponibilização de um ecossistema completo e gratuito (161 skills, 128 agentes, 46 MCPs, 5 scanners, 255 CTs, 169 SPECs) que qualquer pesquisador pode utilizar para elevar a qualidade e verificabilidade de sua produção científica, incluindo a capacidade inédita de escanear epistemologicamente seus próprios manuscritos para identificar lacunas de conhecimento.
 
 \end{enumerate}
 
