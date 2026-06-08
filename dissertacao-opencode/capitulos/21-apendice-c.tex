@@ -273,4 +273,58 @@ O código-fonte completo do scanner noológico (\texttt{noological\_scanner.py},
 
 Todas as 25 citações neste apêndice possuem DOI verificável e link de acesso público, em conformidade com o protocolo TSAC e os princípios de Ciência Aberta.
 
+\section{Evolução do Scanner Noológico (v1.0 a v3.0)}
+
+O scanner passou por três versões principais, cada uma adicionando capacidades significativas:
+
+\subsection{v1.0 — Scanner Original (Junho 2026)}
+
+A versão original implementava a ideia fundamental: varrer um corpus textual contra 10 dimensões epistemológicas $\times$ 92 categorias e reportar ausências. Limitações incluíam: (a) falsos positivos por substring matching (ex.: ``controle'' era detectado como contendo a keyword ``control''); (b) ausência de filtro de negação (``sem grupo controle'' ainda detectava ``controle''); (c) keywords limitadas a 4 das 10 dimensões, com as outras 6 caindo em fallback genérico de baixa precisão.
+
+\subsection{v2.0 — Scanner Amplificado (Junho 2026)}
+
+A segunda versão introduziu: (a) pesos adaptativos por domínio (psicologia, economia, computação, saúde, educação); (b) integração com TextAnalyzer para validação por frequência de palavras; (c) correlação cruzada entre dimensões (heatmap data); (d) detecção de zonas de conforto epistemológico; (e) keyword map enriquecido com n-gramas e sinônimos (ENRICHED\_KW); (f) blind spots ponderados pela relevância ao domínio; (g) export JSON para visualização externa; (h) análise de tendência com comparação multi-scan. Limitação principal: os falsos positivos por substring e negação persistiam.
+
+\subsection{v3.0 — Scanner com Negação e Word-Boundary (Junho 2026, SPEC-028)}
+
+A versão atual resolveu as limitações das versões anteriores com duas inovações:
+
+\begin{enumerate}
+  \item \textbf{Filtro de negação (\_negation\_filter):} Remove do corpus sentenças com 6 padrões de negação antes do keyword matching --- ``sem X'' (com lookahead anti-guloso para evitar capturar múltiplos ``sem'' em um único match), ``ausência de X'', ``não X'', ``inexistência de X'', ``desprovido de X'', ``carente de X''. Correção validada: corpus ``estudo sem grupo controle e sem randomização'' não é mais falsamente classificado como contendo ``Quantitativo experimental''.
+  \item \textbf{Word-boundary matching (\_word\_boundary\_match):} Substitui o ingênuo \texttt{kw in corpus} por \texttt{re.search(r'\textbackslash b' + kw + r'\textbackslash w*', corpus)}, que exige que a keyword apareça como prefixo de palavra (word boundary). Isso preserva a detecção de cognatos legítimos (``control'' $\rightarrow$ ``controle'', pois ambos compartilham a mesma raiz semântica) mas evita falsos positivos por prefixo diferente (``control'' não casa com ``descontrole'').
+\end{enumerate}
+
+Adicionalmente, o keyword map foi expandido de 4 para 10 dimensões, adicionando keywords específicas para níveis de análise, temporalidade, população, dados, domínios e teorias --- eliminando a dependência do fallback genérico de baixa precisão.
+
+\section{Integração com o Ecossistema de Scanners}
+
+O NoologicalScanner não opera isoladamente. Ele é o primeiro estágio de um pipeline de 5 scanners que transformam progressivamente a análise de conhecimento:
+
+\begin{enumerate}
+  \item \textbf{NoologicalScanner (descritivo):} Recebe o corpus textual $\rightarrow$ produz lista de ausências por dimensão.
+  \item \textbf{TeleologicalReverseScanner (prescritivo):} Recebe as ausências + objetivos de pesquisa $\rightarrow$ produz gaps teleológicos (ausências que são relevantes para os objetivos).
+  \item \textbf{CrossValidationEngine (estrutural):} Recebe as ausências + grafo de dependências $\rightarrow$ produz bottlenecks e cascade\_impact.
+  \item \textbf{PolymathicConvergence (comparativo):} Recebe os gaps $\rightarrow$ produz analogias de 30 domínios externos com princípios transferíveis.
+  \item \textbf{TrajectoryMapper + MCSP Solver (preditivo):} Recebe gaps + bottlenecks + analogias $\rightarrow$ produz cenários, rotas, e conjunto mínimo de capacidades.
+\end{enumerate}
+
+Este pipeline transforma o problema de ``como melhorar este artefato acadêmico'' de uma questão de julgamento subjetivo para um problema de engenharia com solução algorítmica verificável --- validado por 62 casos de teste TDD (SPEC-028 a SPEC-031) com 100\% de aprovação.
+
+\section{Aplicação à Dissertação: Resultados Completos}
+
+O scan completo da dissertação (6 capítulos, 102.972 caracteres, 15.006 palavras) produziu os seguintes resultados:
+
+\begin{itemize}
+  \item \textbf{Cobertura global:} 74\% (68/92 categorias) --- Grau A (Ampla Cobertura Epistemológica).
+  \item \textbf{Dimensões com 100\%:} Paradigmas (8/8), Domínios (10/10).
+  \item \textbf{Dimensões com 75\%:} Níveis de Análise (6/8), Dados (6/8), População (9/12).
+  \item \textbf{Dimensões com 70\%:} Métodos (7/10), Raciocínio (7/10).
+  \item \textbf{Dimensões com 60-67\%:} Temporalidade (4/6), Teorias (6/10).
+  \item \textbf{Dimensão com 50\%:} Teoria dos Jogos (5/10).
+  \item \textbf{Pontos cegos críticos:} 0 (nenhuma dimensão com density = 0).
+  \item \textbf{Gaps aprofundados no Capítulo 5:} Dilema do Prisioneiro, Abdução, Sistemas Complexos, Metacognição, Fenomenologia, Meta-análise, Stackelberg, Sinalização, Bayesianos, Pesquisa-ação.
+\end{itemize}
+
+O scan foi executado em 2026-06-08, 14:42 UTC-3, utilizando o NoologicalScanner v3.0 com domain weights para ``computação'', filtro de negação ativo, e word-boundary matching. O hash SHA-256 do arquivo de dados gerado (\texttt{scanner\_data.json}) garante a integridade e reprodutibilidade dos resultados.
+
 \newpage
