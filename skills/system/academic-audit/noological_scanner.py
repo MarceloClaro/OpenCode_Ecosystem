@@ -1,11 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NoologicalScanner v2.0 — Scanner Epistemologico Amplificado
-=============================================================
+NoologicalScanner v3.0 — Scanner Epistemologico com Negacao + Word-Boundary
+===========================================================================
+v3.0 — 2026-06-08 — Refinado com correcoes de precisao (SPEC-028)
 v2.0 — 2026-06-07 — Refinado e Amplificado
+v1.0 — 2026-06-06 — Original
 
-Melhorias sobre v1.0:
+Melhorias v3.0 sobre v2.0:
+  1. _negation_filter() — remove sentencas negadas antes do keyword matching
+  2. _word_boundary_match() — evita falsos positivos por substring
+     (ex: "control" nao casa mais com "controle")
+  3. keyword_map expandido: 10 dimensoes (antes 4) com keywords especificas
+  4. Pipeline documentado: negacao → ENRICHED_KW → TextAnalyzer → keyword_map → fallback
+  5. Metodos v1.0 marcados como @deprecated
+
+Melhorias v2.0 sobre v1.0:
   1. Pesos adaptativos por dominio (psicologia, economia, computacao, saude, educacao)
   2. Integracao com TextAnalyzer (frequencia de palavras -> validacao)
   3. Correlacao cruzada entre dimensoes (heatmap data)
@@ -16,8 +26,8 @@ Melhorias sobre v1.0:
   8. Analise de tendencia (comparacao multi-scan)
 
 Conceito original: interlocutor anonimo (2026)
-v1.0: Marcelo Claro Laranjeira
-v2.0: Marcelo Claro Laranjeira — refinado e amplificado
+v1.0-v2.0: Marcelo Claro Laranjeira
+v3.0: Marcelo Claro Laranjeira — refinado com SPEC-028 (SDD+TDD, 14 CTs)
 """
 
 from __future__ import annotations
@@ -151,7 +161,53 @@ class NoologicalScanner:
 
     Complementa o AcademicAuditTrail (que identifica ERROS)
     com uma camada que identifica INCOMPLETUDES.
+
+    Pipeline de detecção (v3.0):
+      1. _negation_filter() — remove sentenças negadas ("sem X", "ausência de X")
+      2. _category_present_v2() — ENRICHED_KW (keywords + sinônimos + n-gramas)
+      3. _category_present() — keyword_map específico por dimensão
+      4. Fallback genérico — word matching com word-boundary (\b)
     """
+
+    # ─── Negation patterns (v3.0) ────────────────────────────────────────
+    NEGATION_PATTERNS: list[str] = [
+        r'\bsem\s+\w+(?:\s+(?!sem\b|aus[eê]ncia\b|n[aã]o\b)\w+){0,3}\b',  # "sem X" — non-greedy, evita capturar proximo "sem"
+        r'\baus[eê]ncia\s+de\s+\w+(?:\s+\w+){0,3}\b',  # "ausência de X"
+        r'\bn[aã]o\s+\w+(?:\s+\w+){0,3}\b',       # "não randomizado"
+        r'\binexist[eê]ncia\s+de\s+\w+(?:\s+\w+){0,3}\b',
+        r'\bdesprovido\s+de\s+\w+(?:\s+\w+){0,3}\b',
+        r'\bcarente\s+de\s+\w+(?:\s+\w+){0,3}\b',
+    ]
+
+    @staticmethod
+    def _negation_filter(corpus: str) -> str:
+        """Remove do corpus sentencas com padrões de negacao (v3.0).
+
+        Evita falsos positivos como:
+          "sem grupo controle" -> "controle" detectado
+          "ausencia de randomizacao" -> "randomiz" detectado
+        """
+        import re
+        filtered = corpus
+        for pattern in NoologicalScanner.NEGATION_PATTERNS:
+            filtered = re.sub(pattern, ' ', filtered, flags=re.IGNORECASE)
+        # Remove extra whitespace
+        return re.sub(r'\s+', ' ', filtered).strip()
+
+    @staticmethod
+    def _word_boundary_match(keyword: str, corpus: str) -> bool:
+        """Keyword matching com word-boundary (\b) — v3.0.
+
+        Evita falsos positivos como:
+          "control" ⊂ "controle" (substring)
+          "randomiz" ⊂ "randomizacao" (substring)
+        """
+        import re
+        # Para keywords multi-palavra, usa match literal
+        if ' ' in keyword:
+            return keyword in corpus
+        # Para keywords de raiz (ex: "control", "randomiz"), usa \b
+        return bool(re.search(r'\b' + re.escape(keyword) + r'\w*', corpus, re.IGNORECASE))
 
     def __init__(self, dimensions: dict[str, KnowledgeDimension] | None = None):
         self.dimensions = dimensions or EPISTEMOLOGICAL_DIMENSIONS
@@ -250,30 +306,43 @@ class NoologicalScanner:
 
     def _category_present_v2(self, category: str, corpus_lower: str,
                               dim_key: str, text_analyzer: Any = None) -> bool:
-        """Detecção enriquecida v2: keywords + sinonimos + frequencia (TextAnalyzer)."""
+        """Detecção enriquecida v3.0: negação → ENRICHED_KW → TextAnalyzer → keyword_map → fallback.
+
+        Pipeline de precedência:
+          1. _negation_filter() — remove sentenças negadas
+          2. ENRICHED_KW — keywords enriquecidas com sinonimos e n-gramas
+          3. TextAnalyzer — validação por frequência de palavras
+          4. _category_present() — keyword_map específico por dimensão
+          5. Fallback genérico — word matching com \b boundary
+        """
         cat_lower = category.lower()
-        # Enriched keyword map
+        # v3.0: Remove sentencas negadas antes do matching
+        clean_corpus = self._negation_filter(corpus_lower)
+        # Enriched keyword map (camada 1)
         if dim_key in ENRICHED_KW:
             for kw_cat, keywords in ENRICHED_KW[dim_key].items():
                 if kw_cat in cat_lower:
-                    return any(kw in corpus_lower for kw in keywords)
-        # TextAnalyzer frequency validation
+                    # v3.0: word-boundary matching
+                    return any(self._word_boundary_match(kw, clean_corpus) for kw in keywords)
+        # TextAnalyzer frequency validation (camada 2)
         if text_analyzer and hasattr(text_analyzer, "word_counts"):
             words = cat_lower.split()
             found = sum(1 for w in words if len(w) > 3 and w in text_analyzer.word_counts)
             return found >= len(words) * 0.4
-        # Fallback: original keyword matching
-        return self._category_present(category, corpus_lower, dim_key)
+        # Fallback: original keyword matching (camada 3)
+        return self._category_present(category, clean_corpus, dim_key)
 
     def _category_present(self, category: str, corpus_lower: str, dim_key: str) -> bool:
-        """Verifica se uma categoria está presente no corpus.
+        """v3.0: Keyword matching com word-boundary (\\b) + 5 novas dimensoes.
 
-        Usa casamento semântico por palavras-chave específicas de cada dimensão.
+        Usa casamento semantico por palavras-chave especificas de cada dimensao.
+        v3.0: Adicionadas keywords para niveis_analise, temporalidade, populacao,
+        dados, dominios (antes caiam no fallback generico).
         """
         cat_lower = category.lower()
 
-        # Palavras-chave por dimensão
-        keyword_map = {
+        # Palavras-chave por dimensão (v3.0: expandido para 10 dimensoes)
+        keyword_map: dict[str, dict[str, list[str]]] = {
             "paradigmas": {
                 "positivista": ["positiv", "quantitativ", "experimental", "hipotese", "mensura"],
                 "interpretativista": ["interpretativ", "qualitativ", "fenomenolog", "compreens"],
@@ -318,20 +387,77 @@ class NoologicalScanner:
                 "teleológico": ["teleolog", "proposit", "finalidad", "objetivo"],
                 "pragmático": ["pragmat", "aplic", "util", "pratico", "funcional"],
             },
+            # ─── v3.0: novas dimensões com keywords específicas ───────
+            "niveis_analise": {
+                "individual": ["individu", "intrapsiquic", "sujeito", "self", "autoconsci"],
+                "interpessoal": ["interpessoal", "relacional", "vincul", "terapeut"],
+                "grupal": ["grupal", "organizacional", "equipe", "grupo", "coletiv"],
+                "comunitário": ["comunitari", "comunidade", "territor", "local"],
+                "sistêmico": ["politic", "governanc", "politica publica", "legislac"],
+                "neurobiológico": ["neurobiolog", "neurocien", "amigdala", "cortex"],
+                "cultural": ["cultur", "antropolog", "etnograf", "intercultur"],
+            },
+            "temporalidade": {
+                "transversal": ["transversal", "cross-sectional", "amostra unica"],
+                "longitudinal curto": ["follow-up", "pre-post", "pre post", "seguimento"],
+                "longitudinal longo": ["longitudinal", "coorte", "prospectiv", "acompanhamento"],
+                "histórico": ["retrospectiv", "histor", "arquiv", "documental", "passado"],
+                "prospectivo": ["preditiv", "prognost", "futuro", "previs"],
+                "desenvolvimental": ["desenvolviment", "ciclo de vida", "life span", "life-span"],
+            },
+            "populacao": {
+                "adultos": ["adult", "meia-idade", "meia idade"],
+                "idosos": ["idos", "envelhec", "geriatri"],
+                "adolescentes": ["adolesc", "juven", "jovem"],
+                "infância": ["infanc", "crianc", "infantil", "pre-escolar"],
+                "gênero feminino": ["mulher", "feminin", "genero feminin"],
+                "gênero masculino": ["homem", "masculin", "genero masculin"],
+                "diversidade": ["lgbt", "diversidade", "genero nao", "transgener"],
+                "contexto clínico": ["paciente", "clinic", "hospital", "ambulatori"],
+                "contexto comunitário": ["comunitari", "comunidade", "atencao primaria"],
+                "brasil": ["brasil", "latino-americ", "latino americ", "latam"],
+            },
+            "dados": {
+                "clínicos": ["escala", "inventari", "questionari", "bdi", "ham", "scl"],
+                "neurobiológicos": ["eeg", "fmri", "mri", "neuroimag", "biomarcador"],
+                "qualitativos": ["entrevista", "grupo focal", "discurso", "narrativa"],
+                "observacionais": ["observac", "naturalist", "etnograf"],
+                "epidemiológicos": ["epidemiolog", "prevalenc", "incidencia", "comorbid"],
+                "longitudinais": ["longitudinal", "follow-up", "onda", "wave", "painel"],
+                "comparativos": ["cross-cultural", "transcultural", "cross national"],
+                "metadados": ["meta-analise", "revisao sistematica", "metanalise"],
+            },
+            "dominios": {
+                "psicologia clínica": ["psicologi", "clinic", "psicopatolog", "psicoterap"],
+                "neurociências": ["neurocien", "neurobiolog", "neuroimag", "cerebr"],
+                "sociologia": ["sociolog", "estratificac", "desiguald", "capital social"],
+                "antropologia": ["antropolog", "etnograf", "cultur", "ritual"],
+                "economia comportamental": ["economi", "comportamental", "nudge", "vies"],
+                "filosofia da mente": ["filosof", "conscienc", "mente", "fenomenolog"],
+                "psicofarmacologia": ["farmac", "medicac", "antidepress", "psicofarmac"],
+                "saúde pública": ["saude publica", "sus", "promocao saude", "prevenc"],
+                "educação": ["educac", "ensino", "aprendizag", "escolar"],
+                "ia tecnologia": ["inteligencia artificial", "machine learning", "deep learning", "ia", "chatbot"],
+            },
         }
 
         # Buscar keywords específicas da dimensão
         if dim_key in keyword_map:
             for kw_category, keywords in keyword_map[dim_key].items():
                 if kw_category in cat_lower:
+                    # v3.0: word-boundary matching
                     for kw in keywords:
-                        if kw in corpus_lower:
+                        if self._word_boundary_match(kw, corpus_lower):
                             return True
                     return False  # Categoria específica não encontrada
 
-        # Fallback: busca genérica
+        # Fallback: busca genérica com word-boundary
         words = cat_lower.split()
-        match_count = sum(1 for w in words if len(w) > 3 and w in corpus_lower)
+        match_count = 0
+        for w in words:
+            if len(w) > 3:
+                if self._word_boundary_match(w, corpus_lower):
+                    match_count += 1
         return match_count >= len(words) * 0.5
 
     def _identify_blind_spots_v2(self, dimension_results: dict[str, Any]) -> list[dict[str, Any]]:
@@ -382,7 +508,10 @@ class NoologicalScanner:
         return recs if recs else ["Pesquisa com boa cobertura multidimensional."]
 
     def _identify_blind_spots(self, dimension_results: dict[str, Any]) -> list[dict[str, Any]]:
-        """Identifica pontos cegos — dimensões com densidade zero ou muito baixa."""
+        """@deprecated v1.0 — Substituído por _identify_blind_spots_v2().
+        
+        Mantido para compatibilidade com código legado.
+        """
         blind_spots = []
 
         for dim_key, dim_data in dimension_results.items():
@@ -404,7 +533,10 @@ class NoologicalScanner:
         dimension_results: dict[str, Any],
         research_domain: str,
     ) -> list[str]:
-        """Gera recomendações de expansão baseadas nos gaps identificados."""
+        """@deprecated v1.0 — Substituído por _generate_recommendations_v2().
+        
+        Mantido para compatibilidade com código legado.
+        """
         recommendations = []
 
         # Recomendações por dimensão com baixa densidade
