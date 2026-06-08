@@ -7,14 +7,14 @@
 
 ## Visão Geral
 
-O OpenCode Ecosystem aplica **disciplinas formais de engenharia de software** a um ecossistema de 186 componentes com agentes inteligentes. Esta documentação descreve como cada disciplina clássica da engenharia de software foi implementada.
+O OpenCode Ecosystem aplica **disciplinas formais de engenharia de software** a um ecossistema de 169 componentes com agentes inteligentes. Esta documentação descreve como cada disciplina clássica da engenharia de software foi implementada.
 
 | Disciplina | Implementação | Artefatos |
 |-----------|---------------|-----------|
-| **SDD** (Spec-Driven Development) | Spec antes de código para todos os 186 componentes | `specs/` — 26 arquivos, 5 dimensões por spec |
-| **TDD** (Test-Driven Development) | Teste como contrato da spec | `tests/` — 100+ unit tests, 10 cenários de integração |
+| **SDD** (Spec-Driven Development) | Spec antes de codigo para todos os 169 componentes | `specs/` — 7 SPECs TDD + 160+ specs tematicas |
+| **TDD** (Test-Driven Development) | Teste como contrato da spec | 7 suites — 241 Critical Tests, 5.0s execucao |
 | **CI/CD** | Pipeline automatizado de 5 gates | `.github/workflows/ci.yml` |
-| **Manutenção** (SWEBOK) | Classificação de 186 componentes por categoria | `specs/component-registry.md` |
+| **Manutenção** (SWEBOK) | Classificação de 169 componentes por categoria | `specs/component-registry.md` |
 | **Git Safety** | Commit-before-AI, worktree isolation | `using-git-worktrees` v2.0 |
 | **ADR** | 5 decisões arquiteturais documentadas | `specs/adr/` |
 | **Arquitetura em Camadas** | 3 camadas: MCP→Skill→Agent | ADR-002 |
@@ -41,7 +41,7 @@ SPEC (5 dimensões) → REVIEW (checklist) → SKILL (implementar) → TEST (val
 ```
 
 ### Cobertura
-- **186/186 componentes** com spec documentada (100%)
+- **169/169 componentes** com spec documentada (100%)
 - **10 módulos core** com specs individuais
 - **48 skills** com specs por categoria
 - **50 agentes** documentados
@@ -205,9 +205,9 @@ git worktree add -b feat/experimento ../projeto-exp
 
 | Métrica | Valor Atual | Meta | Status |
 |---------|------------|------|--------|
-| Cobertura de Spec | 100% (186/186) | ≥ 95% | 🟢 |
-| Testes Unitários | 100+ | ≥ 100 | 🟢 |
-| Testes de Integração | 10 cenários | ≥ 10 | 🟢 |
+| Cobertura de Spec | 100% (169/169) | >= 95% | OK |
+| Testes Unitarios | 241 CTs | >= 100 | OK |
+| Testes de Integracao | 7 suites SPEC | >= 10 | OK |
 | CI Pipeline Gates | 5 | 5 | 🟢 |
 | ADRs Documentadas | 5 | ≥ 3 | 🟢 |
 | Component Registry | 100% | 100% | 🟢 |
@@ -228,7 +228,7 @@ specs/                              ← Documentação de engenharia
 ├── plugins/ (8 plugins)            ← Principais + lib
 ├── integration/ (CI + harness)     ← Pipeline e testes
 ├── SDD-ONBOARDING.md               ← Fluxo spec-first
-├── component-registry.md           ← 186 entradas SWEBOK
+├── component-registry.md           <- 169 entradas SWEBOK
 └── spec-coverage-report.md         ← Relatório de cobertura
 
 scripts/
