@@ -87,6 +87,50 @@ DEPENDENCY_RULES: list[tuple[str, str, float, str]] = [
     ("dominios.Neurociências", "dados.Dados neurobiológicos", 0.90, "co_occurs"),
     ("dominios.Antropologia", "metodos.Qualitativo fenomenológico", 0.80, "co_occurs"),
     ("dominios.Economia comportamental", "teoria_jogos.Bayesiano", 0.75, "co_occurs"),
+    
+    # ─── v2.0 Expansion: Prerequisites (12 novas) ────────────────────────
+    ("paradigmas.Crítico/Transformador", "raciocinio.Dialético", 0.85, "requires"),
+    ("paradigmas.Crítico/Transformador", "niveis_analise.Sistêmico/político", 0.75, "requires"),
+    ("dados.Dados neurobiológicos", "dominios.Neurociências", 0.9, "requires"),
+    ("metodos.Pesquisa-ação", "paradigmas.Pragmatista", 0.8, "requires"),
+    ("metodos.Pesquisa-ação", "niveis_analise.Comunitário", 0.7, "requires"),
+    ("raciocinio.Teleológico", "temporalidade.Prospectivo/preditivo", 0.7, "requires"),
+    ("teoria_jogos.Stackelberg", "teoria_jogos.Equilíbrio de Nash", 0.8, "requires"),
+    ("teoria_jogos.Sinalização", "teoria_jogos.Bayesiano", 0.85, "requires"),
+    ("teoria_jogos.Barganha", "teoria_jogos.Cooperativo", 0.75, "requires"),
+    ("dominios.Psicofarmacologia", "dominios.Neurociências", 0.8, "requires"),
+    ("dominios.Inteligência Artificial / Tecnologia", "raciocinio.Probabilístico", 0.7, "requires"),
+    ("populacao.Cross-cultural", "dominios.Antropologia", 0.65, "requires"),
+    
+    # ─── v2.0 Expansion: Enablers (10 novas) ─────────────────────────────
+    ("raciocinio.Dialético", "paradigmas.Crítico/Transformador", 0.85, "enables"),
+    ("raciocinio.Dialético", "niveis_analise.Sistêmico/político", 0.7, "enables"),
+    ("dados.Dados qualitativos (entrevistas)", "metodos.Qualitativo grounded theory", 0.8, "enables"),
+    ("dados.Dados qualitativos (entrevistas)", "paradigmas.Fenomenológico", 0.75, "enables"),
+    ("dominios.Inteligência Artificial / Tecnologia", "dados.Dados comparativos (cross-cultural)", 0.6, "enables"),
+    ("dominios.Inteligência Artificial / Tecnologia", "raciocinio.Probabilístico", 0.7, "enables"),
+    ("temporalidade.Histórico/retrospectivo", "dados.Dados epidemiológicos", 0.65, "enables"),
+    ("raciocinio.Metacognitivo", "paradigmas.Construtivista", 0.7, "enables"),
+    ("raciocinio.Metacognitivo", "raciocinio.Abdutivo", 0.6, "enables"),
+    ("populacao.Contexto comunitário", "niveis_analise.Comunitário", 0.8, "enables"),
+    
+    # ─── v2.0 Expansion: Co-occurrence (6 novas) ─────────────────────────
+    ("paradigmas.Pós-estruturalista", "dominios.Sociologia", 0.8, "co_occurs"),
+    ("metodos.Misto sequencial", "paradigmas.Pragmatista", 0.85, "co_occurs"),
+    ("raciocinio.Abdutivo", "metodos.Qualitativo fenomenológico", 0.7, "co_occurs"),
+    ("temporalidade.Desenvolvimental (ciclo de vida)", "populacao.Infância", 0.75, "co_occurs"),
+    ("teoria_jogos.Dilema do Prisioneiro", "raciocinio.Contrafactual", 0.7, "co_occurs"),
+    ("dados.Dados observacionais", "metodos.Estudo de caso", 0.8, "co_occurs"),
+    
+    # ─── v2.0: teorias dimension edges ─────────────────────────────────
+    ("teorias.Cognitivo-comportamental", "metodos.Quantitativo experimental", 0.7, "co_occurs"),
+    ("teorias.Neurobiológico", "dados.Dados neurobiológicos", 0.9, "enables"),
+    ("teorias.Sistêmico", "paradigmas.Complexo/Sistêmico", 0.75, "co_occurs"),
+    ("teorias.Evolucionista", "teoria_jogos.Evolutivo", 0.85, "co_occurs"),
+    ("teorias.Integrativo/transdiagnóstico", "dominios.Neurociências", 0.6, "enables"),
+    ("teorias.Integrativo/transdiagnóstico", "dominios.Sociologia", 0.55, "enables"),
+    ("teorias.Social-crítico", "paradigmas.Crítico/Transformador", 0.8, "co_occurs"),
+    ("teorias.Fenomenológico-existencial", "paradigmas.Fenomenológico", 0.9, "co_occurs"),
 ]
 
 
@@ -246,3 +290,34 @@ class CrossValidationEngine:
                     if cycle not in cycles and list(reversed(cycle)) not in cycles:
                         cycles.append(cycle)
         return cycles
+
+    # ─── SELF-DISCOVERY (v2.0) ──────────────────────────────────────────
+
+    def learn_from_scan(self, noological_scan: dict[str, Any]) -> list[DependencyEdge]:
+        """v2.0: Auto-descoberta de co-ocorrencias implicitas no scan.
+
+        Se duas categorias estao AMBAS presentes (covered), sugere
+        afinidade implicita como regra de co-ocorrencia (weight=0.6).
+        """
+        discovered: list[DependencyEdge] = []
+        dims = noological_scan.get("dimensions", {})
+        existing_pairs = {(e.source, e.target) for e in self.edges}
+        existing_pairs.update({(e.target, e.source) for e in self.edges})
+        
+        items = []
+        for dk, dd in dims.items():
+            for cat in dd.get("covered", []):
+                items.append((dk, cat))
+        
+        for i in range(len(items)):
+            for j in range(i + 1, len(items)):
+                dk1, cat1 = items[i]
+                dk2, cat2 = items[j]
+                key1 = f"{dk1}.{cat1}"
+                key2 = f"{dk2}.{cat2}"
+                if (key1, key2) not in existing_pairs and (key2, key1) not in existing_pairs:
+                    discovered.append(DependencyEdge(
+                        source=key1, target=key2,
+                        weight=0.6, relation="co_occurs"
+                    ))
+        return discovered
