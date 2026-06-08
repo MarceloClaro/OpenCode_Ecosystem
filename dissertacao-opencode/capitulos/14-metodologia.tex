@@ -286,6 +286,53 @@ Esta mudança tem quatro implicações metodológicas:
   \item \textbf{De conformidade para consciência epistemológica:} Em vez de verificar conformidade com normas, revela os limites do próprio conhecimento --- as fronteiras além das quais o documento (e, por extensão, o ecossistema que o gerou) ainda não foi.
 \end{enumerate}
 
+\section{Metodologia do Ecossistema de Scanners Epistemológicos}
+
+Além do Scanner Noológico descrito acima, esta dissertação desenvolveu e aplicou um ecossistema completo de 5 scanners epistemológicos que operam em pipeline, cada um respondendo a uma pergunta complementar sobre o conhecimento. Esta seção descreve a metodologia de cada scanner e sua integração.
+
+\subsection{Scanner Teleológico Reverso (SPEC-029)}
+
+O Scanner Teleológico Reverso implementa raciocínio prescritivo: em vez de perguntar ``o que está ausente?'', pergunta ``o que deveria estar presente dados os objetivos da pesquisa?''. A metodologia opera em três etapas:
+
+\begin{enumerate}
+  \item \textbf{Definição de objetivos:} O pesquisador define um ou mais objetivos de pesquisa usando 8 tipos predefinidos de \textit{goal types} --- causal, avaliativo, exploratório, estratégico, comparativo, preditivo, integrativo e crítico. Cada tipo aciona um conjunto específico de requisitos epistemológicos.
+  \item \textbf{Inferência de requisitos:} Para cada \textit{goal type}, o scanner consulta mapeamentos teleológicos que associam objetivos a dimensões epistemológicas necessárias. Por exemplo, um objetivo ``causal'' exige métodos experimentais (peso 1.0), temporalidade longitudinal (peso 0.8), e raciocínio probabilístico (peso 0.7).
+  \item \textbf{Comparação com o estado atual:} Os requisitos inferidos são comparados com o scan noológico real, gerando \textit{gaps teleológicos} --- categorias que são necessárias para o objetivo mas estão ausentes no estado atual do conhecimento.
+\end{enumerate}
+
+\subsection{CrossValidationEngine (SPEC-030)}
+
+O motor de validação cruzada modela dependências entre capacidades como um grafo direcionado $G = (V, E)$ com 92 nós (categorias) e 73 arestas (dependências). A metodologia inclui:
+
+\begin{enumerate}
+  \item \textbf{Construção do grafo:} Arestas são derivadas de regras de dependência (\textit{requires}, \textit{enables}, \textit{co-occurs}) entre categorias. Por exemplo, ``raciocínio probabilístico'' habilita ``meta-análise'' (peso 0.9) e ``métodos experimentais'' requerem ``raciocínio dedutivo'' (peso 0.7).
+  \item \textbf{Detecção de bottlenecks:} Nós que habilitam ou são pré-requisito de 3 ou mais outros nós são classificados como \textit{bottlenecks} críticos. O principal bottleneck identificado é ``raciocínio probabilístico'' (\textit{influence\_score} = 0.6).
+  \item \textbf{Cálculo de impacto em cascata:} Para cada categoria ausente, o algoritmo calcula quantas outras categorias são afetadas direta ou indiretamente, permitindo priorizar a aquisição de capacidades com maior efeito multiplicador.
+\end{enumerate}
+
+\subsection{PolymathicConvergence (SPEC-030)}
+
+O scanner de convergência polimática implementa busca por soluções análogas em domínios externos. A metodologia mapeia 30 domínios de conhecimento --- da neurociência à culinária, da física à arquitetura --- para 22 gaps epistemológicos. Para cada gap, o scanner retorna:
+
+\begin{enumerate}
+  \item \textbf{Domínio externo} onde um problema análogo foi resolvido (ex.: para o gap ``raciocínio probabilístico'', a neurociência oferece o modelo de inferência bayesiana no córtex).
+  \item \textbf{Princípio transferível} que pode ser adaptado (ex.: ``redes neurais biológicas implementam inferência probabilística naturalmente'').
+  \item \textbf{Escore de transferibilidade} (0--1) que quantifica o grau de similaridade entre o problema original e o análogo.
+\end{enumerate}
+
+\subsection{TrajectoryMapper e MCSP Solver (SPEC-030/032)}
+
+A camada preditiva do ecossistema transforma gaps e analogias em trajetórias de evolução:
+
+\begin{enumerate}
+  \item \textbf{Classificação de cenários:} Cada gap é classificado em um de 4 tipos --- \textit{quick\_win} (baixo custo, alto impacto), \textit{foundation} (habilita múltiplas outras capacidades), \textit{convergent} (já resolvido em outro domínio), ou \textit{frontier} (requer múltiplas novas capacidades).
+  \item \textbf{Geração de rotas:} O TrajectoryMapper gera 3 rotas de evolução --- Pragmática (quick-wins primeiro), Polimática (convergências como alavanca), e Estrutural (fundações para maximizar cascata).
+  \item \textbf{Resolução do MCSP:} O Minimum Capability Set Solver resolve formalmente o problema de otimização combinatória: dados $S$ (capacidades presentes) e $T$ (capacidades alvo), encontrar $C \subseteq V \setminus S$ mínimo tal que $S \cup C \supseteq T$ com fecho de dependências. O algoritmo opera em 3 fases com complexidade $O(|V|^2 \cdot |E|)$.
+  \item \textbf{Estimação temporal:} O TimelineEstimator atribui durações por tipo de cenário (1--2 semanas para quick-wins, 8--16 para frontiers) e classifica o risco da rota (baixo/médio/alto).
+\end{enumerate}
+
+A validação metodológica deste ecossistema é realizada por 62 casos de teste TDD (SPEC-028 a SPEC-031), executando em 0,7 segundos com 100\% de aprovação, garantindo que cada scanner produza resultados consistentes e reproduzíveis.
+
 \section{Limitações Metodológicas}
 
 \begin{enumerate}
