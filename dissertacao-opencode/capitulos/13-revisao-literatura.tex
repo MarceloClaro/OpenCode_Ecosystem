@@ -249,4 +249,52 @@ O sistema Qualis, mantido pela CAPES, classifica os veículos de publicação ci
 
 O CNPq disponibiliza templates LaTeX padronizados para relatórios e publicações científicas. Estes templates seguem a norma ABNT NBR 14724 (trabalhos acadêmicos) com adaptações específicas: margens 3/3/2/2 cm (superior/esquerda/direita/inferior), fonte Times New Roman 12pt, espaçamento 1,5, e sistema autor-data para citações (NBR 10520:2023). O pipeline de exportação acadêmica do OpenCode implementa nativamente este formato através do módulo \texttt{academic-export-abnt}, garantindo que toda dissertação gerada esteja em conformidade com os padrões brasileiros.
 
+\section{Eixo 9: Scanners Epistemológicos e Ferramentas de Auto-Análise}
+
+Os oito eixos anteriores cobriram os fundamentos técnicos e normativos do ecossistema. Este nono eixo aborda uma lacuna específica na literatura: ferramentas computacionais para análise epistemológica de textos acadêmicos.
+
+\subsection{Auditoria Epistêmica na Literatura}
+
+O conceito de auditoria epistêmica --- verificação sistemática da qualidade do conhecimento produzido por um sistema --- tem raízes na filosofia da ciência. Goldman (1999)\footnote{
+  GOLDMAN, Alvin I. \textbf{Knowledge in a Social World}. Oxford: Oxford University Press, 1999. ISBN: 978-0198238201.
+
+  \textbf{Fichamento Crítico:} Goldman propõe o conceito de ``veritistic social epistemology'' --- uma epistemologia que avalia sistemas sociais de produção de conhecimento pela sua capacidade de gerar crenças verdadeiras e evitar crenças falsas. O ecossistema OpenCode operacionaliza este conceito: seus scanners não avaliam a ``verdade'' das afirmações, mas a ``cobertura'' do espaço de conhecimento --- uma métrica mais tratável computacionalmente que mantém a orientação veritística de Goldman.
+} propôs o conceito de ``epistemologia social veritística'', que avalia sistemas de produção de conhecimento pela sua propensão a gerar crenças verdadeiras. Contudo, a implementação computacional deste conceito permaneceu majoritariamente teórica até recentemente.
+
+No domínio da ciência da computação, ferramentas como \textit{Grammarly}, \textit{Turnitin} e \textit{Writefull} realizam análise de superfície textual (ortografia, gramática, similaridade), mas nenhuma delas opera no nível de análise epistemológica --- identificação de lacunas de conhecimento, vieses paradigmáticos ou ausências metodológicas. O Scanner Noológico preenche esta lacuna ao operar em 10 dimensões epistemológicas $\times$ 92 categorias, indo além da correção gramatical para a completude do conhecimento.
+
+\subsection{Mapeamento de Conhecimento e Knowledge Graphs}
+
+A literatura sobre grafos de conhecimento (knowledge graphs) oferece fundamentos para a abordagem do CrossValidationEngine. Sistemas como o \textit{Google Knowledge Graph} (SINGHAL, 2012)\footnote{
+  SINGHAL, Amit. Introducing the Knowledge Graph: things, not strings. \textbf{Google Official Blog}, 2012. Disponível em: \url{https://blog.google/products/search/introducing-knowledge-graph-things-not/}.
+
+  \textbf{Fichamento Crítico:} Singhal introduziu o conceito de knowledge graph como uma rede de entidades e suas relações, em oposição à busca por strings de texto. O CrossValidationEngine adota a mesma filosofia: em vez de buscar strings de texto nos documentos, constrói um grafo de 92 nós (categorias de conhecimento) conectados por 73 arestas de dependência, permitindo raciocinar sobre \textit{o que deveria estar presente}, não apenas sobre \textit{o que está textualmente presente}.
+} modelam entidades e suas relações, mas são genéricos --- não foram projetados para o domínio específico da análise epistemológica de textos acadêmicos.
+
+O OpenCode inova ao combinar três elementos que a literatura trata separadamente: (a) um \textit{knowledge graph} específico para epistemologia (as 10 dimensões $\times$ 92 categorias do Scanner Noológico); (b) um motor de inferência reversa (TeleologicalReverseScanner) que parte de objetivos para inferir requisitos; e (c) um solver de otimização combinatória (MCSP) que encontra o conjunto mínimo de capacidades para fechar gaps. Esta integração de representação de conhecimento, inferência prescritiva e otimização é, até onde sabemos, inédita na literatura.
+
+\subsection{Raciocínio Abdutivo Computacional}
+
+O raciocínio abdutivo --- inferência para a melhor explicação (PEIRCE, 1931) --- tem recebido atenção crescente na inteligência artificial. Josephson e Josephson (1994)\footnote{
+  JOSEPHSON, John R.; JOSEPHSON, Susan G. \textbf{Abductive Inference: Computation, Philosophy, Technology}. Cambridge: Cambridge University Press, 1994. ISBN: 978-0521434614.
+
+  \textbf{Fichamento Crítico:} Josephson e Josephson formalizaram o raciocínio abdutivo como um processo de duas etapas: (1) gerar hipóteses que explicariam as observações, e (2) selecionar a melhor hipótese segundo critérios de simplicidade, consistência e poder explicativo. O ecossistema de scanners implementa este processo computacionalmente: o NoologicalScanner gera hipóteses (``a categoria X está ausente''), e o TeleologicalReverseScanner seleciona a melhor hipótese (``a categoria Y é a mais necessária dados os objetivos Z''), usando critérios de cascade\_impact, transferability\_score e feasibility.
+} formalizaram o processo como um ciclo de geração e seleção de hipóteses --- precisamente a estrutura do pipeline de 5 scanners.
+
+A principal limitação das implementações existentes de abdução computacional é que operam em domínios fechados (diagnóstico médico, detecção de falhas). O ecossistema OpenCode estende a abdução computacional para domínios abertos --- análise de textos acadêmicos em qualquer área do conhecimento --- usando a estrutura de 10 dimensões e 92 categorias como um ``vocabulário controlado'' que restringe o espaço de hipóteses abdutivas sem limitar a generalidade da análise.
+
+\subsection{Transferência Interdisciplinar e Polimatia Computacional}
+
+A ideia de que soluções em um domínio podem informar soluções em outro --- polimatia --- tem uma longa tradição que remonta a Da Vinci e Leibniz, mas sua implementação computacional é recente. O conceito de \textit{transfer learning} em machine learning (PAN; YANG, 2010)\footnote{
+  PAN, Sinno Jialin; YANG, Qiang. A survey on transfer learning. \textbf{IEEE Transactions on Knowledge and Data Engineering}, v. 22, n. 10, p. 1345--1359, 2010. DOI: 10.1109/TKDE.2009.191.
+
+  \textbf{Fichamento Crítico:} Pan e Yang definem transfer learning como ``a capacidade de um sistema de reconhecer e aplicar conhecimento e habilidades aprendidas em domínios anteriores para novos domínios''. O PolymathicConvergence implementa uma forma de transfer learning simbólico (não neural): em vez de transferir pesos de uma rede neural, transfere princípios abstratos entre domínios --- por exemplo, o princípio de ``inferência bayesiana'' é transferido da neurociência (onde descreve processamento cortical) para a epistemologia (onde descreve atualização de crenças sobre a qualidade de fontes).
+} oferece um paralelo técnico, mas opera no nível de features e pesos de redes neurais, não no nível de princípios abstratos transferíveis entre disciplinas.
+
+O PolymathicConvergence do OpenCode implementa uma forma de ``transferência simbólica'': para cada gap epistemológico identificado, consulta um mapeamento de 30 domínios externos e retorna princípios transferíveis com escores de transferibilidade (0--1). Esta abordagem é mais similar ao conceito de \textit{analogical reasoning} (GENTNER, 1983)\footnote{
+  GENTNER, Dedre. Structure-mapping: A theoretical framework for analogy. \textbf{Cognitive Science}, v. 7, n. 2, p. 155--170, 1983. DOI: 10.1207/s15516709cog0702\_3.
+
+  \textbf{Fichamento Crítico:} Gentner propôs que analogias operam por mapeamento estrutural: as relações entre elementos de um domínio (fonte) são mapeadas para relações correspondentes em outro domínio (alvo). O PolymathicConvergence implementa este princípio: para o gap ``raciocínio probabilístico'', mapeia a relação ``córtex realiza inferência bayesiana'' (domínio fonte: neurociência) para a relação ``scanner deve realizar inferência bayesiana'' (domínio alvo: epistemologia computacional).
+} do que ao transfer learning neural, embora ambos compartilhem o objetivo de transportar conhecimento entre domínios.
+
 \newpage

@@ -253,4 +253,66 @@ O scanner identificou 3 pontos cegos críticos nesta dissertação, com as segui
   \item \textbf{D8 — Cobertura populacional (50\%):} Mitigado pela Seção 5.2 (Democratização do Acesso) e Seção 6.3 (Trabalhos Futuros), que incluem expansão para humanidades e populações sub-representadas.
 \end{enumerate}
 
+\subsection{Resultados do Ecossistema Completo de Scanners}
+
+Além do scan noológico descrito acima, o ecossistema completo de 5 scanners foi aplicado à dissertação, gerando os seguintes resultados integrados:
+
+\begin{table}[H]
+\centering
+\caption{Resultados do Ecossistema de Scanners Aplicado à Dissertação}
+\label{tab:scanners-resultados}
+\begin{tabular}{p{3cm}p{3cm}cp{3cm}}
+\toprule
+\textbf{Scanner} & \textbf{Métrica} & \textbf{Valor} & \textbf{Interpretação} \\
+\midrule
+NoologicalScanner & Cobertura global & 74\% (68/92) & Grau A --- Ampla cobertura \\
+TeleologicalReverse & Score teleológico & 56\% & 56\% dos requisitos atendidos \\
+CrossValidation & Bottlenecks & 5 críticos & Principal: raciocínio probabilístico \\
+Polymathic & Analogias encontradas & 11 & 5 domínios conectados \\
+TrajectoryMapper & Rotas geradas & 3 & Pragmática, Polimática, Estrutural \\
+MCSP Solver & Conjunto mínimo & 1 capacidade & C = \{raciocinio.Probabilistico\} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Os resultados revelam um perfil epistemológico consistente: a dissertação é forte em dimensões descritivas (paradigmas 100\%, domínios 100\%) e análise em múltiplos níveis (75\%), mas apresenta lacunas em ferramentas formais de modelagem estratégica (teoria dos jogos 50\%) e diversidade de referenciais teóricos (60\%). O TeleologicalReverseScanner, configurado com objetivos do tipo ``causal'' e ``estratégico'', identificou que 56\% dos requisitos inferidos estão atendidos --- os 44\% restantes constituem oportunidades de aprofundamento que foram exploradas no Capítulo 5.
+
+O MCSP Solver demonstrou que, para fechar o gap entre o estado atual e os requisitos teleológicos, seria necessário adquirir 1 capacidade adicional: raciocínio probabilístico. Esta única capacidade, por sua posição como bottleneck no grafo de dependências (habilita 3 outras categorias), teria efeito cascata sobre teoria dos jogos bayesiana, meta-análise e inferência contrafactual.
+
+\subsection{Validação Cruzada e Análise de Robustez}
+
+A matriz de validação cruzada do ecossistema de scanners foi submetida a 62 casos de teste TDD (SPEC-028 a SPEC-031), executando em 0,7 segundos com 100\% de aprovação. Adicionalmente, o CrossValidationEngine foi validado contra 3 cenários de estresse:
+
+\begin{enumerate}
+  \item \textbf{Grafo vazio (0 arestas):} O sistema retorna 0 bottlenecks e 0 cascade\_impact, sem erro --- comportamento esperado para ecossistemas sem dependências documentadas.
+  \item \textbf{Grafo denso (73 arestas, 92 nós):} O sistema identifica 5 bottlenecks com influence\_score entre 0,3 e 0,6, demonstrando capacidade de priorização em grafos realistas.
+  \item \textbf{Ciclo de dependência (A→B→A):} O topological\_order lança TopologicalCycleError, prevenindo ordenações inválidas no roadmap.
+\end{enumerate}
+
+\subsection{Métricas de Performance do Pipeline TDD}
+
+A Tabela~\ref{tab:tdd-performance} apresenta as métricas de execução das 8 suites TDD que validam o ecossistema:
+
+\begin{table}[H]
+\centering
+\caption{Performance das 8 Suites TDD (SPEC-025 a SPEC-032)}
+\label{tab:tdd-performance}
+\begin{tabular}{p{2.5cm}cccc}
+\toprule
+\textbf{Suite} & \textbf{CTs} & \textbf{Tempo} & \textbf{Cobertura} & \textbf{Status} \\
+\midrule
+SPEC-025 (Frontmatter) & 161 & 0,4s & 161 skills & OK \\
+SPEC-026 (Pipeline) & 10 & 0,9s & 6 fases & OK \\
+SPEC-027 (E2E) & 8 & 3,0s & 7 subcomandos & OK \\
+SPEC-028 (Noological) & 18 & 0,2s & 10 dims & OK \\
+SPEC-029 (Teleological) & 12 & 0,1s & 8 goal types & OK \\
+SPEC-030 (Evolutionary) & 16 & 0,2s & 5 módulos & OK \\
+SPEC-031 (Refinement) & 16 & 0,2s & 4 eixos & OK \\
+SPEC-032 (MCSP) & 14 & 0,0s & 3 fases & OK \\
+\addlinespace
+\textbf{Total} & \textbf{255} & \textbf{5,0s} & \textbf{Ecossistema} & \textbf{100\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \newpage
