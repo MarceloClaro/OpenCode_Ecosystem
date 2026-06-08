@@ -6,29 +6,28 @@
 
 <br/>
 
-<img src="https://img.shields.io/badge/OpenCode_Ecosystem-v5.1.0-6366f1?style=for-the-badge&logo=openai&logoColor=white" alt="version"/>
+<img src="https://img.shields.io/badge/OpenCode_Ecosystem-v5.2.0-6366f1?style=for-the-badge&logo=openai&logoColor=white" alt="version"/>
 
-# OpenCode Ecosystem v5.1.0
+# OpenCode Ecosystem v5.2.0
 
-### 209 CTs Validados · Scanner Teleológico Reverso · Pipeline Evolutivo Autônomo · Score 100/100
+### 241 CTs Validados · 5 Scanners Epistemológicos · 7 Suites SPEC · Score 100/100
 
 <br/>
 
 [![Agentes](https://img.shields.io/badge/Agentes-128-6366f1?style=flat-square)](agents/)
 [![MCPs](https://img.shields.io/badge/MCP_Servers-46-0ea5e9?style=flat-square)](opencode.json)
 [![Skills](https://img.shields.io/badge/Skills-161-10b981?style=flat-square)](skills/)
-[![CTs](https://img.shields.io/badge/CTs-209%2F209-22c55e?style=flat-square)](specs/)
-[![Hooks](https://img.shields.io/badge/Ecosystem_Hooks-11-a855f7?style=flat-square)](skills/system/pypi-scout/ecosystem_hooks.py)
-[![Auditoria](https://img.shields.io/badge/Auditoria-7_componentes-ef4444?style=flat-square)](skills/system/academic-audit/)
-[![Scanner](https://img.shields.io/badge/Scanner_Teleológico-v1.0-f59e0b?style=flat-square)](skills/system/academic-audit/teleological_scanner.py)
+[![CTs](https://img.shields.io/badge/CTs-241%2F241-22c55e?style=flat-square)](specs/)
+[![Scanners](https://img.shields.io/badge/Scanners-5-f59e0b?style=flat-square)](skills/system/academic-audit/)
+[![Auditoria](https://img.shields.io/badge/Auditoria-9_componentes-ef4444?style=flat-square)](skills/system/academic-audit/)
 [![Score](https://img.shields.io/badge/Score-100%2F100-22c55e?style=flat-square)]()
 [![CJK](https://img.shields.io/badge/CJK_Leaks-0-22c55e?style=flat-square)]()
 [![Status](https://img.shields.io/badge/Status-Producao-22c55e?style=flat-square)]()
 
 <br/>
 
-> **Versao:** 5.1.0 · **Atualizado:** 2026-06-08 · **Modelo:** `deepseek-v4-pro`  
-> **Novo:** Scanner Teleologico Reverso · NoologicalScanner v3.0 (negacao + word-boundary) · Pipeline /evolve com 7 subcomandos · 5 novas SPECs validadas (025-029) · 209/209 CTs PASS
+> **Versao:** 5.2.0 · **Atualizado:** 2026-06-08 · **Modelo:** `deepseek-v4-pro`  
+> **Novo:** Scanner de Trajetórias Evolutivas (5 módulos) · CrossValidationEngine (73 arestas) · EvolutionTracker · TimelineEstimator · 7 suites SPEC (025-031) · 241/241 CTs PASS
 
 </div>
 
@@ -1040,10 +1039,10 @@ Mapa radial dos 10 subsistemas com classificação técnica individual: Nexus NM
 
 <div align="center">
 
-**OpenCode Ecosystem v5.0**
+**OpenCode Ecosystem v5.2**
 
-125 agentes · 46 MCPs · 150 skills · 26 agency · 226 suites · 14 evos
+241 CTs · 7 Suites SPEC · 5 Scanners Epistemológicos · 128 agentes · 46 MCPs · 161 skills · 16 evos
 
-*Documentação atualizada — 2026-06-02 · BRAZIL_TIMEZONE UTC-3*
+*Documentação atualizada — 2026-06-08 · BRAZIL_TIMEZONE UTC-3*
 
 </div>

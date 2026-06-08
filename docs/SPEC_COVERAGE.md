@@ -1,4 +1,4 @@
-# Spec Coverage Report — OpenCode Ecosystem v5.1.0
+# Spec Coverage Report — OpenCode Ecosystem v5.2.0
 
 **Data:** 2026-06-08 | **Cobertura:** 100% | **Status:** 🟢 COMPLETO
 
@@ -16,8 +16,8 @@
 | MCPs (ativos + inativos) | 46 | 46 | 100% |
 | Plugins | 5 | 5 | 100% |
 | Comandos | 29 | 29 | 100% |
-| SPECs TDD (025-029) | 5 | 5 | 100% |
-| **TOTAL** | **167** | **167** | **100%** |
+| SPECs TDD (025-031) | 7 | 7 | 100% |
+| **TOTAL** | **169** | **169** | **100%** |
 
 ---
 
@@ -25,10 +25,10 @@
 
 | Disciplina | Artefato | Status |
 |-----------|----------|--------|
-| SDD (Spec-Driven Development) | 167 specs, 5 dimensões cada | 🟢 |
-| TDD (Test-Driven Development) | 209 CTs (5 suites: 161+10+8+18+12) | 🟢 |
+| SDD (Spec-Driven Development) | 169 specs, 5 dimensões cada | 🟢 |
+| TDD (Test-Driven Development) | 241 CTs (7 suites) | 🟢 |
 | CI/CD | Pipeline 5 gates (GitHub Actions) | 🟢 |
-| Manutenção (SWEBOK) | 167 entradas classificadas | 🟢 |
+| Manutenção (SWEBOK) | 169 entradas classificadas | 🟢 |
 | Git Safety | Protocolo commit-before-AI | 🟢 |
 | ADR | 5 decisões arquiteturais | 🟢 |
 | Arquitetura em Camadas | 3 camadas (MCP→Skill→Agent) | 🟢 |
@@ -36,7 +36,7 @@
 
 ---
 
-## Suites TDD (v5.1.0)
+## Suites TDD (v5.2.0)
 
 | Suite | SPEC | CTs | Status |
 |-------|------|-----|--------|
@@ -45,19 +45,37 @@
 | test_evolve_e2e.py | SPEC-027 | 8/8 | 🟢 |
 | test_noological_scanner.py | SPEC-028 | 18/18 | 🟢 |
 | test_teleological_scanner.py | SPEC-029 | 12/12 | 🟢 |
-| **TOTAL** | | **209/209** | 🟢 |
+| test_evolutionary_scanner.py | SPEC-030 | 16/16 | 🟢 |
+| test_scanner_refinement.py | SPEC-031 | 16/16 | 🟢 |
+| **TOTAL** | | **241/241** | 🟢 |
 
 ---
 
-## Novas SPECs (v5.1.0)
+## Especificações (SPEC-025 a SPEC-031)
 
-| SPEC | Nome | Descrição |
-|------|------|-----------|
-| SPEC-025 | Frontmatter Validator | Validação YAML de 161 SKILL.md (name, description, CJK, duplicatas) |
-| SPEC-026 | Evolve Pipeline Review | Auditoria SDD+TDD do pipeline evolutivo SENSE→LEARN |
-| SPEC-027 | Subcommand Routing + E2E | Routing de 7 subcomandos + integração E2E |
-| SPEC-028 | Noological Scanner v3.0 | Scanner epistemológico com negação + word-boundary + 10 dimensões |
-| SPEC-029 | Teleological Reverse Scanner | Scanner prescritivo: infere requisitos a partir de objetivos de pesquisa |
+| SPEC | Nome | Arquivo | CTs |
+|------|------|---------|-----|
+| SPEC-025 | Frontmatter Validator | `test_frontmatter_validator.py` | 161 |
+| SPEC-026 | Evolve Pipeline Review | `test_evolve_pipeline.py` | 10 |
+| SPEC-027 | Subcommand Routing + E2E | `test_evolve_e2e.py` | 8 |
+| SPEC-028 | Noological Scanner v3.0 | `test_noological_scanner.py` | 18 |
+| SPEC-029 | Teleological Reverse Scanner | `test_teleological_scanner.py` | 12 |
+| SPEC-030 | Evolutionary Trajectories Scanner | `test_evolutionary_scanner.py` | 16 |
+| SPEC-031 | Scanner Refinement (4 eixos) | `test_scanner_refinement.py` | 16 |
+
+---
+
+## Ecossistema de Scanners Epistemológicos
+
+| Módulo | Arquivo | Função |
+|--------|---------|--------|
+| NoologicalScanner v3.0 | `noological_scanner.py` | "O que não existe?" — 10 dims × 92 cats, negação, word-boundary |
+| TeleologicalReverseScanner | `teleological_scanner.py` | "O que deveria existir?" — 8 goal types, inferência prescritiva |
+| CrossValidationEngine v2.0 | `cross_validation_engine.py` | "O que sustenta o quê?" — 73 arestas, bottlenecks, cascade |
+| PolymathicConvergence v2.0 | `evolutionary_pipeline.py` | "Quem já resolveu?" — 30 domínios, transferência bidirecional |
+| TrajectoryMapper | `evolutionary_pipeline.py` | "Qual o melhor caminho?" — 4 cenários, 3 rotas |
+| EvolutionTracker | `scanner_refinements.py` | Tracking temporal: snapshots, delta, trend, velocity |
+| TimelineEstimator | `scanner_refinements.py` | Timeline com fases, duração e risco |
 
 ---
 
@@ -120,3 +138,4 @@ python scripts/health_check.py
 | 2026-05-09 | ~8% | ~19/249 | Estado inicial (pré-SDD) |
 | 2026-05-27 | 100% | 162/162 | Documentação completa aplicando engenharia de software |
 | 2026-06-08 | 100% | 167/167 | +5 SPECs TDD (025-029) · 209 CTs · Scanner Teleológico · Pipeline /evolve |
+| 2026-06-08 | 100% | 169/169 | +2 SPECs (030-031) · 241 CTs · 5 Scanners · EvolutionTracker · TimelineEstimator |
