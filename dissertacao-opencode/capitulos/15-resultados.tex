@@ -180,6 +180,13 @@ Todos os 255 CTs passam consistentemente (100\% de aprovação), validando o eco
 
 O ecossistema OpenCode implementa 5 scanners epistemológicos complementares que cobrem o espectro completo da análise de conhecimento --- do descritivo ao preditivo:
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{capitulos/figuras/fig-scanners-pipeline.pdf}
+\caption{Pipeline dos 5 Scanners Epistemológicos + MCSP Solver. Os scanners respondem a 5 perguntas complementares: descritiva (Noological), prescritiva (Teleológico), estrutural (CrossValidation), comparativa (Polymathic) e preditiva (TrajectoryMapper). O MCSP Solver integra os outputs de todos os scanners para encontrar o conjunto mínimo de capacidades necessárias.}
+\label{fig:scanners-pipeline}
+\end{figure}
+
 \begin{table}[H]
 \centering
 \caption{Ecossistema de Scanners Epistemológicos}
@@ -200,7 +207,14 @@ MinimumCapabilitySolver & ``Qual o conjunto mínimo?'' & 032 & 14 \\
 
 O \textbf{NoologicalScanner v3.0} (SPEC-028) implementa 10 dimensões $\times$ 92 categorias com filtro de negação (\textit{``sem grupo controle''} não é mais falsamente classificado como contendo ``controle'') e \textit{word-boundary matching} ($\backslash$b). O grafo de dependências do \textbf{CrossValidationEngine} contém 73 arestas cobrindo todas as 10 dimensões, com 5 bottlenecks identificados (principal: raciocínio probabilístico, \textit{influence\_score}=0,6).
 
-O \textbf{MinimumCapabilitySolver} (SPEC-032) resolve formalmente o MCSP (\textit{Minimum Capability Set Problem}): dados um estado atual $S$ (capacidades cobertas) e um estado alvo $T$ (requisitos teleológicos), encontra o conjunto mínimo $C \subseteq V \setminus S$ tal que $S \cup C \supseteq T$ e $\forall c \in C, \text{prereq}(c) \subseteq S \cup C$. O algoritmo opera em 3 fases --- \textit{backward\_closure} $O(|V|+|E|)$, \textit{greedy\_select} $O(|V|^2 \cdot |E|)$, e \textit{topological\_order} $O(|V|+|E|)$ --- e atinge 100\% de cobertura nos testes de integração.
+O \textbf{MinimumCapabilitySolver} (SPEC-032) resolve formalmente o MCSP (\textit{Minimum Capability Set Problem}): dados um estado atual $S$ (capacidades cobertas) e um estado alvo $T$ (requisitos teleológicos), encontra o conjunto mínimo $C \subseteq V \setminus S$ tal que $S \cup C \supseteq T$ e $\forall c \in C, \text{prereq}(c) \subseteq S \cup C$ (Figura~\ref{fig:mcsp-graph}). O algoritmo opera em 3 fases --- \textit{backward\_closure} $O(|V|+|E|)$, \textit{greedy\_select} $O(|V|^2 \cdot |E|)$, e \textit{topological\_order} $O(|V|+|E|)$ --- e atinge 100\% de cobertura nos testes de integração.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{capitulos/figuras/fig-mcsp-graph.pdf}
+\caption{Formalização do MCSP (Minimum Capability Set Problem). Dados o estado atual $S$ (verde, 68/92 categorias), o estado alvo $T$ (amarelo, requisitos teleológicos dos 8 goal types), e o grafo de dependências $G = (V,E)$, o solver encontra o conjunto mínimo $C$ (azul) que satisfaz $S \cup C \supseteq T$ com fecho de dependências. Exemplo: $C = \{\text{raciocinio.Probabilistico}\}$ com custo 1.0 e cobertura 100\%.}
+\label{fig:mcsp-graph}
+\end{figure}
 
 \subsection{Aplicação do Scanner Noológico à Dissertação}
 
