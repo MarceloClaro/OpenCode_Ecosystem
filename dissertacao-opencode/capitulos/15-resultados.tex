@@ -183,7 +183,7 @@ O ecossistema OpenCode implementa 5 scanners epistemológicos complementares que
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{capitulos/figuras/fig-scanners-pipeline.pdf}
-\caption{Pipeline dos 5 Scanners Epistemológicos + MCSP Solver. Os scanners respondem a 5 perguntas complementares: descritiva (Noological), prescritiva (Teleológico), estrutural (CrossValidation), comparativa (Polymathic) e preditiva (TrajectoryMapper). O MCSP Solver integra os outputs de todos os scanners para encontrar o conjunto mínimo de capacidades necessárias.}
+\caption{\textbf{Como ler esta figura.} A ilustração deve ser lida da esquerda para a direita (cinco caixas superiores) e depois de cima para baixo (setas tracejadas convergindo para a caixa central). \textbf{Cada cor representa uma pergunta diferente} que o ecossistema responde: roxo = descritiva (``O que não existe?''), azul = prescritiva (``O que deveria existir?''), verde = estrutural (``O que sustenta o quê?''), laranja = comparativa (``Quem já resolveu?''), vermelho = preditiva (``Qual o melhor caminho?''). \textbf{A caixa central} (MCSP Solver, lilás) integra as respostas dos cinco scanners e calcula o conjunto mínimo de capacidades que precisam ser adquiridas. \textbf{A fileira inferior} resume as cinco perguntas em linguagem acessível, com a progressão Descritiva $\rightarrow$ Prescritiva $\rightarrow$ Estrutural $\rightarrow$ Comparativa $\rightarrow$ Preditiva. As setas entre as caixas superiores indicam que o fluxo de informação é sequencial: cada scanner recebe o output do anterior e o enriquece com uma nova camada de análise.}
 \label{fig:scanners-pipeline}
 \end{figure}
 
@@ -212,43 +212,13 @@ O \textbf{MinimumCapabilitySolver} (SPEC-032) resolve formalmente o MCSP (\texti
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{capitulos/figuras/fig-mcsp-graph.pdf}
-\caption{Formalização do MCSP (Minimum Capability Set Problem). Dados o estado atual $S$ (verde, 68/92 categorias), o estado alvo $T$ (amarelo, requisitos teleológicos dos 8 goal types), e o grafo de dependências $G = (V,E)$, o solver encontra o conjunto mínimo $C$ (azul) que satisfaz $S \cup C \supseteq T$ com fecho de dependências. Exemplo: $C = \{\text{raciocinio.Probabilistico}\}$ com custo 1.0 e cobertura 100\%.}
+\caption{\textbf{Como ler esta figura.} A ilustração formaliza o problema matemático que o MCSP Solver resolve. \textbf{Caixa verde (S)}: representa o estado atual do conhecimento — o que já está coberto pela dissertação (68 de 92 categorias, 74\%). \textbf{Caixa amarela (T)}: representa o estado alvo — o que os objetivos teleológicos exigem que esteja presente (requisitos inferidos a partir de 8 tipos de objetivo de pesquisa). \textbf{Seta tracejada entre S e T}: o ``gap teleológico'' — a distância entre o que existe e o que deveria existir. \textbf{Caixa azul central (C)}: a solução do problema — o conjunto mínimo de capacidades que precisam ser adquiridas para fechar o gap, calculado pelo algoritmo em 3 fases (\textit{backward\_closure}, \textit{greedy\_select}, \textit{topological\_order}). \textbf{Exemplo na parte inferior}: um grafo de dependências concreto com 3 nós — o nó verde (``dedutivo'') já está em S; os nós amarelo (``probabilístico'') e vermelho (``Nash'') estão em T; a solução C = \{``probabilístico''\} fecha o gap com custo 1.0 porque ``probabilístico'' habilita ``Nash'' (seta entre eles). \textbf{Mensagem central}: o problema de evoluir um ecossistema de conhecimento é transformado em um problema de otimização combinatoria com solução algorítmica verificável.}
 \label{fig:mcsp-graph}
 \end{figure}
 
 \subsection{Aplicação do Scanner Noológico à Dissertação}
 
-\begin{table}[H]
-\centering
-\caption{Scanner Noológico — Cobertura Epistemológica da Dissertação}
-\label{tab:scanner-dissertacao}
-\begin{tabular}{p{3.5cm}ccc}
-\toprule
-\textbf{Dimensão} & \textbf{Cobertura} & \textbf{Pontos Cegos} & \textbf{Status} \\
-\midrule
-D1 — Paradigmática & 6/8 (75\%) & 2 & $\checkmark$ \\
-D2 — Teórica & 9/12 (75\%) & 3 & $\checkmark$ \\
-D3 — Metodológica & 8/10 (80\%) & 2 & $\checkmark$ \\
-D4 — Níveis Sistêmicos & 6/8 (75\%) & 2 & $\checkmark$ \\
-D5 — Temporal & 4/6 (67\%) & 2 & \textbf{!} \\
-D6 — Diversidade de Dados & 7/10 (70\%) & 3 & $\checkmark$ \\
-D7 — Geográfica/Cultural & 5/8 (63\%) & 3 & \textbf{!} \\
-D8 — Populacional & 6/12 (50\%) & 6 & \textbf{!} \\
-D9 — Ética/Regulatória & 6/8 (75\%) & 2 & $\checkmark$ \\
-D10 — Translacional & 7/10 (70\%) & 3 & $\checkmark$ \\
-\addlinespace
-\textbf{Global} & \textbf{64/92 (70\%)} & \textbf{28} & \textbf{A1} \\
-\bottomrule
-\end{tabular}
-\fonte{Scanner Noológico v6.0, \texttt{noological\_scanner.py}, OpenCode v5.1.0, 2026.}
-\end{table}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{capitulos/figuras/fig-scanner.pdf}
-\caption{Cobertura epistemológica da dissertação segundo o Scanner Noológico (10 dimensões $\times$ 92 categorias). Barras verdes = cobertura adequada; amarelas = cobertura parcial; vermelhas = ponto cego crítico. Cobertura global: 70\% (64/92), 28 pontos cegos, 3 mitigados.}
-\label{fig:scanner-noológico}
-\end{figure}
+O NoologicalScanner v3.0 foi aplicado ao texto completo da dissertação (6 capítulos, 102.972 caracteres, 15.006 palavras). A Figura~\ref{fig:cobertura-epistemologica} (Capítulo 5, Discussão) apresenta os resultados completos por dimensão. Em síntese, a dissertação atinge \textbf{74\% de cobertura epistemológica (Grau A)}, com 68 das 92 categorias presentes. As dimensões mais fortes são Paradigmas e Domínios (100\% cada); as que mais necessitam de aprofundamento são Teoria dos Jogos (50\%) e Teorias (60\%). O Capítulo 5 desenvolve análises aprofundadas para cada gap identificado.
 
 \subsection{Validação via Estudo de Caso em Psicologia Clínica}
 
