@@ -297,4 +297,62 @@ O PolymathicConvergence do OpenCode implementa uma forma de ``transferência sim
   \textbf{Fichamento Crítico:} Gentner propôs que analogias operam por mapeamento estrutural: as relações entre elementos de um domínio (fonte) são mapeadas para relações correspondentes em outro domínio (alvo). O PolymathicConvergence implementa este princípio: para o gap ``raciocínio probabilístico'', mapeia a relação ``córtex realiza inferência bayesiana'' (domínio fonte: neurociência) para a relação ``scanner deve realizar inferência bayesiana'' (domínio alvo: epistemologia computacional).
 } do que ao transfer learning neural, embora ambos compartilhem o objetivo de transportar conhecimento entre domínios.
 
+\section{Eixo 10: Economia de Tokens e Governança de Ecossistemas Multiagentes}
+
+A coordenação de múltiplos agentes em um ecossistema de produção científica requer não apenas mecanismos técnicos de integração, mas também mecanismos econômicos de incentivo. Este eixo revisa a literatura sobre economias de tokens e governança de sistemas multiagentes.
+
+\subsection{Fundamentos de Token Economy}
+
+O conceito de \textit{token economy} tem raízes na economia comportamental e na psicologia operante (KAZDIN, 1982)\footnote{
+  KAZDIN, Alan E. The token economy: A decade later. \textbf{Journal of Applied Behavior Analysis}, v. 15, n. 3, p. 431--445, 1982. DOI: 10.1901/jaba.1982.15-431.
+
+  \textbf{Fichamento Crítico:} Kazdin revisa uma década de pesquisa sobre economias de tokens --- sistemas onde comportamentos desejados são reforçados com tokens que podem ser trocados por recompensas. O OpenCode adapta este conceito para o domínio computacional: ``tokens'' são unidades de orçamento computacional que agentes consomem ao executar operações; agentes que produzem outputs de alta qualidade recebem mais tokens; agentes que produzem outputs de baixa qualidade têm seu orçamento reduzido.
+}, mas sua aplicação a sistemas computacionais multiagentes é recente. No contexto de LLMs e agentes autônomos, cada interação com um modelo de linguagem consome tokens que têm custo financeiro e computacional. O OpenCode implementa uma economia de tokens em 3 níveis (Magnum/Tese: 500K tokens/sessão; Standard Paper: 200K; Short Communication: 50K), com monitoramento em tempo real via \texttt{TokenEconomyMonitor} e auditoria de gastos via \texttt{AcademicAuditTrail}.
+
+\subsection{Staking e Slashing em Sistemas de Agentes}
+
+Mecanismos de \textit{staking} (depósito de garantia) e \textit{slashing} (penalização por mau comportamento), originalmente desenvolvidos para blockchains e protocolos de proof-of-stake (BUTERIN, 2014)\footnote{
+  BUTERIN, Vitalik. Slasher: A punitive proof-of-stake algorithm. \textbf{Ethereum Blog}, 2014. Disponível em: \url{https://blog.ethereum.org/2014/01/15/slasher-a-punitive-proof-of-stake-algorithm}.
+
+  \textbf{Fichamento Crítico:} Buterin propôs o conceito de \textit{slashing} --- penalização de validadores que agem maliciosamente em protocolos de proof-of-stake. O OpenCode adapta este conceito para agentes acadêmicos: agentes que produzem afirmações não verificáveis ou citações com DOI inválido sofrem \textit{slashing} --- redução de seu orçamento de tokens e, em casos graves, remoção do ecossistema.
+}, oferecem um modelo para governança de agentes. O OpenCode implementa \textit{staking} de 7 dias (agentes devem ``depositar'' reputação antes de terem permissões elevadas) e \textit{slashing} progressivo (stake-first: a penalização começa pelo depósito, não pelo agente).
+
+\subsection{Mercado de Fees e Alocação de Recursos}
+
+O problema de alocação ótima de recursos computacionais entre agentes concorrentes pode ser modelado como um \textit{auction mechanism} (VICKREY, 1961)\footnote{
+  VICKREY, William. Counterspeculation, auctions, and competitive sealed tenders. \textbf{The Journal of Finance}, v. 16, n. 1, p. 8--37, 1961. DOI: 10.1111/j.1540-6261.1961.tb02789.x.
+
+  \textbf{Fichamento Crítico:} Vickrey demonstrou que leilões de segundo preço (Vickrey auctions) incentivam lances honestos --- cada participante revela sua verdadeira valoração do recurso. O OpenCode implementa um \textit{fee market} dinâmico onde agentes competem por orçamento de tokens revelando a prioridade e o impacto esperado de suas operações, e o sistema aloca tokens para maximizar o valor epistêmico gerado por unidade de recurso computacional.
+}. O \textit{fee market} implementado no OpenCode permite que agentes compitam por recursos oferecendo ``lances'' baseados na prioridade e no impacto esperado de suas operações. O sistema aloca tokens para maximizar o valor epistêmico por unidade de custo computacional --- uma adaptação do princípio de eficiência alocativa de Vickrey para o domínio da produção científica.
+
+\section{Eixo 11: Agentes Autônomos, Ética e o Futuro da Produção Científica}
+
+Este eixo final revisa a literatura sobre as implicações éticas e sociais da automação da produção científica, conectando o ecossistema OpenCode a debates mais amplos sobre o futuro da ciência.
+
+\subsection{Riscos de Homogeneização do Conhecimento}
+
+Um risco frequentemente negligenciado em sistemas de produção científica automatizada é a homogeneização do conhecimento. Se múltiplos pesquisadores utilizam o mesmo ecossistema de IA para gerar artigos, revisões e hipóteses, o resultado pode ser uma convergência indesejada para um ``pensamento único'' --- uma redução da diversidade epistêmica que é essencial para o progresso científico (LONGINO, 1990)\footnote{
+  LONGINO, Helen E. \textbf{Science as Social Knowledge: Values and Objectivity in Scientific Inquiry}. Princeton: Princeton University Press, 1990. ISBN: 978-0691020518.
+
+  \textbf{Fichamento Crítico:} Longino argumenta que a objetividade científica não é uma propriedade de indivíduos, mas de comunidades --- emerge da diversidade de perspectivas e do escrutínio crítico entre pares. Sistemas de IA que homogeneízam a produção científica ameaçam esta diversidade. O OpenCode mitiga este risco através de duas características arquiteturais: (a) o Scanner Noológico, ao identificar ausências, incentiva a diversificação em vez da convergência; (b) o PolymathicConvergence, ao buscar soluções em 30 domínios externos, injeta diversidade interdisciplinar no processo.
+}.
+
+O OpenCode mitiga este risco através de três características arquiteturais deliberadas: (a) o Scanner Noológico, ao identificar ausências e pontos cegos, \textit{incentiva a diversificação} do conhecimento em vez da convergência; (b) o PolymathicConvergence, ao buscar soluções em 30 domínios externos, \textit{injeta diversidade interdisciplinar} no processo de produção científica; (c) o Agent Forum (P14), ao estruturar debates entre agentes com perspectivas divergentes, \textit{preserva o dissenso} como motor de qualidade científica.
+
+\subsection{Validação Humana no Loop}
+
+A literatura sobre \textit{human-in-the-loop AI} (HITL) enfatiza que sistemas de IA de alto risco devem manter supervisão humana em pontos críticos de decisão (AMERSHI et al., 2014)\footnote{
+  AMERSHI, Saleema et al. Power to the people: The role of humans in interactive machine learning. \textbf{AI Magazine}, v. 35, n. 4, p. 105--120, 2014. DOI: 10.1609/aimag.v35i4.2513.
+
+  \textbf{Fichamento Crítico:} Amershi et al. propõem que sistemas de machine learning interativo devem manter ``humanos no loop'' não apenas para corrigir erros, mas para prover \textit{domain knowledge} que o sistema não possui. O OpenCode implementa HITL em três pontos: (a) o pesquisador define os objetivos no TeleologicalReverseScanner; (b) o pesquisador interpreta os gaps identificados pelo NoologicalScanner e decide quais aprofundar; (c) o pesquisador valida as recomendações do TrajectoryMapper antes de implementar mudanças no ecossistema.
+}. O OpenCode implementa \textit{human-in-the-loop} em três pontos críticos: (a) definição de objetivos de pesquisa no TeleologicalReverseScanner; (b) interpretação dos gaps identificados pelo NoologicalScanner; (c) validação das recomendações do TrajectoryMapper antes da implementação.
+
+\subsection{O Problema da Auto-Referencialidade}
+
+Um desafio epistemológico fundamental emerge quando o mesmo ecossistema que gera conhecimento também audita e avalia este conhecimento. Esta \textit{auto-referencialidade} --- o sistema avaliando seus próprios outputs --- introduz um risco de circularidade epistêmica análogo ao problema do critério na epistemologia (CHISHOLM, 1973)\footnote{
+  CHISHOLM, Roderick M. \textbf{The Problem of the Criterion}. Milwaukee: Marquette University Press, 1973.
+
+  \textbf{Fichamento Crítico:} O ``problema do critério'' de Chisholm questiona: como podemos saber quais fontes de conhecimento são confiáveis sem já pressupor um critério de confiabilidade? O OpenCode enfrenta este problema: como o scanner pode avaliar a cobertura epistemológica da dissertação que o descreve sem pressupor que suas próprias categorias de análise são as corretas? A resposta parcial é que o scanner não avalia \textit{correção}, apenas \textit{cobertura} --- não afirma que as categorias ausentes ``deveriam'' estar presentes, apenas reporta que não estão. Mas o problema da auto-referencialidade permanece como uma limitação reconhecida que requer validação externa por pesquisadores independentes.
+}. O OpenCode reconhece esta limitação e implementa três mitigações: (a) o scanner reporta \textit{ausências} sem julgá-las como ``erros''; (b) o TeleologicalReverseScanner permite que o pesquisador defina seus próprios critérios de avaliação; (c) a validação externa por pesquisadores independentes é parte do roadmap futuro (Seção 5.7).
+
 \newpage
