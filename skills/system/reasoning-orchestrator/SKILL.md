@@ -9,7 +9,6 @@ license: MIT
 compatibility: OpenCode, Claude Code, Cursor, Gemini CLI
 metadata:
   author: OpenCode Ecosystem
-  version: "9.0.0"
   evolved_from: "v8.0 (Nexus) + v6.1 (Z-Notation)"
   game_theory_strategies: 10
   total_reasoning_types: 68

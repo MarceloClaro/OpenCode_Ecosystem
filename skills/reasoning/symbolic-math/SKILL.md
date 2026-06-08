@@ -4,6 +4,7 @@ version: "1.0.0"
 kind: python
 category: reasoning
 affinity: {spec-009-d1-matematica: 0.95, spec-010-d2-fisica: 0.90, reasoning-orchestrator: 0.85}
+description: Symbolic Math skill for the OpenCode ecosystem
 ---
 
 # Symbolic Mathematics — SymPy Engine

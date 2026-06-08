@@ -3,6 +3,7 @@ name: dbsnp_database
 version: "1.0.0"
 kind: python
 category: science
+description: Dbsnp_Database skill for the OpenCode ecosystem
 ---
 
 # NCBI dbSNP Database

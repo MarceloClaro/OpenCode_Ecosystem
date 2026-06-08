@@ -4,6 +4,7 @@ version: "1.0.0"
 kind: python
 category: reasoning
 affinity: {cora-debate: 0.95, agent-forum: 0.90, reasoning-orchestrator: 0.85, the-fool: 0.80}
+description: Critical Reasoning skill for the OpenCode ecosystem
 ---
 
 # Critical Reasoning — Analise de Argumentos e Falacias

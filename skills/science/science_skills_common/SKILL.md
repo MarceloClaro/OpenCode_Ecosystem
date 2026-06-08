@@ -1,8 +1,5 @@
-﻿---
+---
 name: science-skills-common
-category: science
-version: "1.0.0"
-kind: python
 category: science
 version: "1.0.0"
 kind: python

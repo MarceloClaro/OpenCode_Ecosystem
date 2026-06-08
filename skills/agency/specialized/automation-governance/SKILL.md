@@ -4,6 +4,7 @@ category: agency
 domain: specialized
 version: "1.0.0"
 kind: python
+description: Automation Governance skill for the OpenCode ecosystem
 ---
 
 # Automation Governance Architect

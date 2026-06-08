@@ -1,3 +1,8 @@
+---
+name: behavioral-nudge
+description: Behavioral Nudge skill for the OpenCode ecosystem
+---
+
 # Behavioral Nudge Engine
 category: agency
 kind: python

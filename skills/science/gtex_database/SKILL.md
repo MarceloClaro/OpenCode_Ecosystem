@@ -3,6 +3,7 @@ name: gtex_database
 version: "1.0.0"
 kind: python
 category: science
+description: Gtex_Database skill for the OpenCode ecosystem
 ---
 
 # GTEx Database

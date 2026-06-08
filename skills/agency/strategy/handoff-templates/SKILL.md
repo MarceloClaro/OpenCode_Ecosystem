@@ -1,3 +1,8 @@
+---
+name: handoff-templates
+description: Handoff Templates skill for the OpenCode ecosystem
+---
+
 # Handoff Templates
 category: agency
 kind: python

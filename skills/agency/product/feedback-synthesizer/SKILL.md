@@ -1,3 +1,8 @@
+---
+name: feedback-synthesizer
+description: Feedback Synthesizer skill for the OpenCode ecosystem
+---
+
 # Feedback Synthesizer
 category: agency
 kind: python

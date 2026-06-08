@@ -1,3 +1,8 @@
+---
+name: sprint-prioritizer
+description: Sprint Prioritizer skill for the OpenCode ecosystem
+---
+
 # Sprint Prioritizer
 category: agency
 kind: python

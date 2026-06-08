@@ -13,10 +13,8 @@ description: >
   cego detecta queda de performance que pode ser domain shift em vez de overfitting;
   (3) precisa calibrar limiares de Jaccard especificos do dominio.
   NAO use quando o corpus tem fonte unica (split temporal cego basta).
-version: "1.0"
 spec: "SPEC-008-B"
 dependencies: [SPEC-008, INTEGRIDADE.md]
-category: system
 tags: [validation, domain-shift, jaccard, bootstrap, multi-institutional, triangulacao]
 author: "Marcelo Claro Laranjeira"
 orcid: "0000-0001-8996-2887"

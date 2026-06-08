@@ -9,7 +9,6 @@ license: MIT
 compatibility: OpenCode, Claude Code, Cursor, Gemini CLI
 metadata:
   author: OpenCode Ecosystem
-  version: "2.1.0"
   openclaw:
     emoji: "🔍"
     homepage: https://github.com/anomalyco/opencode

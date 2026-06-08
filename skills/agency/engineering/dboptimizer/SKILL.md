@@ -2,6 +2,8 @@
 category: agency
 kind: python
 version: "1.0.0"
+description: Dboptimizer skill for the OpenCode ecosystem
+name: dboptimizer
 ---
 
 # DatabaseOptimizer — Otimizador de Banco de Dados

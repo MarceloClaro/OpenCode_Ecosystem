@@ -1,3 +1,8 @@
+---
+name: agent-activation
+description: Agent Activation skill for the OpenCode ecosystem
+---
+
 # Agent Activation Prompts
 category: agency
 kind: python

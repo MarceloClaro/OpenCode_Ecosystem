@@ -3,6 +3,7 @@ name: ensembl_database
 version: "1.0.0"
 kind: python
 category: science
+description: Ensembl_Database skill for the OpenCode ecosystem
 ---
 
 # Ensembl Genome Browser

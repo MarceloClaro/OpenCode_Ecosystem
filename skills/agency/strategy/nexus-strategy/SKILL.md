@@ -1,3 +1,8 @@
+---
+name: nexus-strategy
+description: Nexus Strategy skill for the OpenCode ecosystem
+---
+
 # NEXUS Strategy Orchestrator
 category: agency
 kind: python

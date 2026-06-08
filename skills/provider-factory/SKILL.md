@@ -4,6 +4,7 @@ version: "1.0.0"
 kind: python
 category: system
 affinity: {llm_client: 0.95, maswos-v5-nexus: 0.85, agent-node-pipeline: 0.80}
+description: Provider Factory skill for the OpenCode ecosystem
 ---
 
 # ProviderFactory — Multi-LLM com Fallback Automatico

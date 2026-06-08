@@ -1,8 +1,5 @@
-﻿---
+---
 name: uv
-category: science
-version: "1.0.0"
-kind: python
 category: science
 version: "1.0.0"
 kind: python

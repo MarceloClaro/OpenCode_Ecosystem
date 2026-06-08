@@ -1,3 +1,8 @@
+---
+name: trend-researcher
+description: Trend Researcher skill for the OpenCode ecosystem
+---
+
 # Trend Researcher
 category: agency
 kind: python

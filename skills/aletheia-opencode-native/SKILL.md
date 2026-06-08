@@ -1,3 +1,8 @@
+---
+name: aletheia-opencode-native
+description: Aletheia Opencode Native skill for the OpenCode ecosystem
+---
+
 # Aletheia OpenCode Native Skill
 ## Superhuman Mathematical Proof Validation
 

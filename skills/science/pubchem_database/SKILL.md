@@ -3,6 +3,7 @@ name: pubchem_database
 version: "1.0.0"
 kind: python
 category: science
+description: Pubchem_Database skill for the OpenCode ecosystem
 ---
 
 # PubChem Database

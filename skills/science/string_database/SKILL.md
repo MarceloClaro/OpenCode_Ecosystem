@@ -3,6 +3,7 @@ name: string_database
 version: "1.0.0"
 kind: python
 category: science
+description: String_Database skill for the OpenCode ecosystem
 ---
 
 # STRING Database

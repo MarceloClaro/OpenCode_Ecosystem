@@ -3,6 +3,7 @@ name: reactome_database
 version: "1.0.0"
 kind: python
 category: science
+description: Reactome_Database skill for the OpenCode ecosystem
 ---
 
 # Reactome Database

@@ -2,6 +2,8 @@
 category: agency
 kind: python
 version: "1.0.0"
+description: Gitworkflow skill for the OpenCode ecosystem
+name: gitworkflow
 ---
 
 # GitWorkflowEngine — Validador de Fluxo Git

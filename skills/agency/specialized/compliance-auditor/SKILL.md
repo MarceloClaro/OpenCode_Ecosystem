@@ -4,6 +4,7 @@ category: agency
 domain: specialized
 version: "1.0.0"
 kind: python
+description: Compliance Auditor skill for the OpenCode ecosystem
 ---
 
 # Compliance Auditor

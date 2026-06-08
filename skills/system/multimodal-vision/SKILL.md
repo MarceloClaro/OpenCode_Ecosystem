@@ -4,7 +4,6 @@ category: system
 version: "1.0.0"
 kind: python
 description: "Skill de integração multimodal visão+texto para o ecossistema OpenCode. Permite análise de imagens, diagramas, gráficos, screenshots e raciocínio visual combinado com texto. Integra MCPs de visão, Image Specialist agent, baoyu-diagram e ferramentas de geração/edição visual."
-version: 1.0.0
 author: ecosystem
 tags: [vision, multimodal, image, visual-reasoning, gpt-4o, gemini, claude-vision]
 compatibility: deepseek-v4-pro, gpt-4o, gemini-2.5-pro
