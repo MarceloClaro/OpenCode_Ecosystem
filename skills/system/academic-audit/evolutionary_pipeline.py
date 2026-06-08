@@ -152,6 +152,67 @@ POLYMATHIC_MAPPINGS: dict[str, list[tuple[str, str, str, float]]] = {
         ("Astronomia", "Observações de ciclo longo",
          "Registros astronômicos milenares para detecção de padrões", 0.6),
     ],
+    # ─── v2.0: novos dominios (10 adicionais) ───────────────────────────
+    "paradigmas.Pós-estruturalista": [
+        ("Literatura", "Desconstrução textual (Derrida)",
+         "Estratégias de leitura que expõem hierarquias implícitas", 0.85),
+        ("Arquitetura", "Desconstrução arquitetônica (Eisenman)",
+         "Formas que desafiam a estabilidade estrutural", 0.7),
+    ],
+    "raciocinio.Dedutivo": [
+        ("Matemática", "Prova formal e sistemas axiomáticos",
+         "Dedução como método de construção de conhecimento certo", 1.0),
+        ("Ciência da Computação", "Verificação formal de programas",
+         "Provas de correção usando lógica formal", 0.9),
+    ],
+    "raciocinio.Indutivo": [
+        ("Ciência de Dados", "Aprendizado de máquina supervisionado",
+         "Indução de padrões a partir de exemplos rotulados", 0.9),
+        ("Genética", "Estudos de associação genômica (GWAS)",
+         "Indução de variantes genéticas associadas a fenótipos", 0.8),
+    ],
+    "metodos.Revisão sistemática": [
+        ("Medicina", "Medicina baseada em evidências (Cochrane)",
+         "Protocolos PRISMA para síntese rigorosa de evidências", 1.0),
+        ("Engenharia de Software", "Systematic Literature Reviews (SLR)",
+         "Protocolos Kitchenham para revisões em engenharia de software", 0.85),
+    ],
+    "metodos.Meta-análise": [
+        ("Epidemiologia", "Meta-análise de ensaios clínicos",
+         "Modelos de efeitos fixos e aleatórios para síntese quantitativa", 1.0),
+        ("Economia", "Meta-regressão em economia",
+         "Síntese de elasticidades e efeitos de tratamento", 0.8),
+    ],
+    "niveis_analise.Sistêmico/político": [
+        ("Ciência Política", "Análise de políticas públicas",
+         "Modelos de ciclo de políticas e advocacy coalitions", 0.85),
+        ("Ecologia", "Ecologia de paisagens e governança ambiental",
+         "Sistemas socioecológicos e resiliência (Ostrom)", 0.8),
+    ],
+    "temporalidade.Transversal (momento único)": [
+        ("Epidemiologia", "Estudos transversais de prevalência",
+         "Inquéritos populacionais para estimar prevalência pontual", 0.9),
+        ("Sociologia", "Surveys sociais transversais",
+         "General Social Survey — retratos instantâneos da sociedade", 0.8),
+    ],
+    "populacao.Adultos": [
+        ("Medicina", "Ensaios clínicos em população adulta",
+         "Triagens de fase III com critérios de inclusão por idade", 0.9),
+        ("Economia", "Economia do trabalho",
+         "Estudos sobre participação na força de trabalho adulta", 0.7),
+    ],
+    "populacao.Infância": [
+        ("Psicologia do Desenvolvimento", "Marcos do desenvolvimento infantil",
+         "Piaget, Vygotsky — estágios de desenvolvimento cognitivo", 0.95),
+        ("Pediatria", "Crescimento e desenvolvimento pediátrico",
+         "Curvas de crescimento da OMS e marcos motores", 0.9),
+    ],
+    "dados.Dados epidemiológicos": [
+        ("Saúde Pública", "Vigilância epidemiológica",
+         "Sistemas de notificação compulsória e análise de surtos", 1.0),
+        ("Climatologia", "Modelagem de propagação de doenças vetoriais",
+         "Mapas de risco climático para dengue, malária, zika", 0.7),
+    ],
 }
 
 
