@@ -6,11 +6,11 @@
 
 {\small\itshape Este capítulo apresenta o ecossistema OpenCode em sua concretude: números, tabelas, diagramas e casos de uso. Se o Capítulo 3 descreveu \textbf{como} o ecossistema foi construído, este capítulo mostra \textbf{o que} foi construído. O leitor que busca uma visão panorâmica deve começar pela Figura~4.1 (arquitetura em 3 camadas) e pela Tabela~4.3 (ciclos evolutivos). O leitor que busca profundidade técnica encontrará nas seções seguintes a matriz de validação cruzada, a cobertura de especificação e os resultados do Scanner Noológico aplicado a esta própria dissertação.}
 
-\section{Arquitetura Completa do Ecossistema OpenCode v5.1.0}
+\section{Arquitetura Completa do Ecossistema OpenCode v5.2.0}
 
 \subsection{Visão Macro: As Três Camadas}
 
-O ecossistema OpenCode v5.1.0 implementa uma arquitetura em três camadas (ADR-002), documentada em 188 SPECs, 14 diagramas SVG, e 6 ADRs:
+O ecossistema OpenCode v5.2.0 implementa uma arquitetura em três camadas (ADR-002), documentada em 169 SPECs, 14 diagramas SVG, e 6 ADRs:
 
 \begin{center}
 \bfseries
@@ -36,7 +36,7 @@ A \textbf{Camada 3 (Orquestração)} coordena 128 agentes através de dois mecan
 
 \subsection{Cobertura de Especificação: 100\%}
 
-O ecossistema atinge cobertura completa de especificação: todos os 186 componentes documentados possuem SPEC formal. A Tabela~\ref{tab:spec-coverage} apresenta a distribuição por categoria:
+O ecossistema atinge cobertura completa de especificação: todos os 169 componentes documentados possuem SPEC formal. A estes somam-se 8 SPECs de validação TDD (SPEC-025 a SPEC-032) que cobrem o pipeline evolutivo, os scanners epistemológicos e o solver de capacidades mínimas. A Tabela~\ref{tab:spec-coverage} apresenta a distribuição por categoria:
 
 \begin{table}[H]
 \centering
@@ -57,6 +57,10 @@ MCPs & 46 & 46 & 100\% \\
 Plugins & 12 & 12 & 100\% \\
 \addlinespace
 \textbf{Total} & \textbf{294} & \textbf{294} & \textbf{100\%} \\
+\addlinespace
+\textbf{SPECs TDD (025-032)} & \textbf{8} & \textbf{8} & \textbf{100\%} \\
+\addlinespace
+\textbf{Total Geral} & \textbf{302} & \textbf{302} & \textbf{100\%} \\
 \bottomrule
 \end{tabular}
 \fonte{Adaptado de SPEC\_COVERAGE.md (OpenCode, 2026).}
@@ -159,7 +163,7 @@ O módulo Editais-BR integra busca web (DuckDuckGo via curl.exe) com extração 
 
 \section{Infraestrutura de Testes TDD}
 
-O ecossistema implementa 29 casos de teste TDD, organizados em 3 arquivos pytest, com 587 linhas de código, 93\% de cobertura, e tempo de execução de 0,47s:
+O ecossistema implementa 255 casos de teste TDD, organizados em 8 suites pytest (SPEC-025 a SPEC-032), com 2.500+ linhas de código e tempo de execução total de 5,0 segundos:
 
 \begin{itemize}
   \item \textbf{SPEC-019 (API Governance):} 8 CTs --- Registry, Policy, Circuit Breaker, Audit, Discovery, Federation, Cache, Versioning.
@@ -168,13 +172,37 @@ O ecossistema implementa 29 casos de teste TDD, organizados em 3 arquivos pytest
   \item \textbf{SPEC-022/023/024 (Token Economy):} 9+10+4 CTs --- Staking, Slashing, Tiers, Allowance, Audit Trail.
 \end{itemize}
 
-Todos os 29 CTs passam consistentemente (100\% de aprovação), validando o roadmap do ecossistema contra os 3 gaps estratégicos identificados pelo Gartner Hype Cycle 2026.
+Todos os 255 CTs passam consistentemente (100\% de aprovação), validando o ecossistema completo — desde a infraestrutura de frontmatter (SPEC-025, 161 CTs) até o solver de capacidades mínimas (SPEC-032, 14 CTs).
 
-\section{Resultados do Scanner Noológico}
+\section{Ecossistema de Scanners Epistemológicos}
 
-\subsection{Aplicação à Dissertação (Junho 2026)}
+\subsection{Os 5 Scanners e o MCSP Solver}
 
-O Scanner Noológico v6.0 (500 linhas, 10 dimensões × 92 categorias) foi aplicado a esta dissertação para identificar ausências no espaço de conhecimento coberto. A Tabela~\ref{tab:scanner-dissertacao} apresenta os resultados por dimensão:
+O ecossistema OpenCode implementa 5 scanners epistemológicos complementares que cobrem o espectro completo da análise de conhecimento --- do descritivo ao preditivo:
+
+\begin{table}[H]
+\centering
+\caption{Ecossistema de Scanners Epistemológicos}
+\label{tab:scanners}
+\begin{tabular}{p{2.5cm}p{4.5cm}cp{2cm}}
+\toprule
+\textbf{Scanner} & \textbf{Pergunta} & \textbf{SPEC} & \textbf{CTs} \\
+\midrule
+NoologicalScanner v3.0 & ``O que não existe?'' & 028 & 18 \\
+TeleologicalReverseScanner & ``O que deveria existir?'' & 029 & 12 \\
+CrossValidationEngine & ``O que sustenta o quê?'' & 030 & 6 \\
+PolymathicConvergence & ``Quem já resolveu isso?'' & 030 & 4 \\
+TrajectoryMapper & ``Qual o melhor caminho?'' & 030 & 4 \\
+MinimumCapabilitySolver & ``Qual o conjunto mínimo?'' & 032 & 14 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+O \textbf{NoologicalScanner v3.0} (SPEC-028) implementa 10 dimensões $\times$ 92 categorias com filtro de negação (\textit{``sem grupo controle''} não é mais falsamente classificado como contendo ``controle'') e \textit{word-boundary matching} ($\backslash$b). O grafo de dependências do \textbf{CrossValidationEngine} contém 73 arestas cobrindo todas as 10 dimensões, com 5 bottlenecks identificados (principal: raciocínio probabilístico, \textit{influence\_score}=0,6).
+
+O \textbf{MinimumCapabilitySolver} (SPEC-032) resolve formalmente o MCSP (\textit{Minimum Capability Set Problem}): dados um estado atual $S$ (capacidades cobertas) e um estado alvo $T$ (requisitos teleológicos), encontra o conjunto mínimo $C \subseteq V \setminus S$ tal que $S \cup C \supseteq T$ e $\forall c \in C, \text{prereq}(c) \subseteq S \cup C$. O algoritmo opera em 3 fases --- \textit{backward\_closure} $O(|V|+|E|)$, \textit{greedy\_select} $O(|V|^2 \cdot |E|)$, e \textit{topological\_order} $O(|V|+|E|)$ --- e atinge 100\% de cobertura nos testes de integração.
+
+\subsection{Aplicação do Scanner Noológico à Dissertação}
 
 \begin{table}[H]
 \centering
