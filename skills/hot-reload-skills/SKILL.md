@@ -4,6 +4,7 @@ version: "1.0.0"
 kind: python
 category: system
 affinity: {autoevolve: 0.95, manus-evolve: 0.90, code-graphrag: 0.80}
+description: Hot Reload Skills skill for the OpenCode ecosystem
 ---
 
 # Hot-Reload Skill System — Carregamento Dinamico sem Reinicializacao

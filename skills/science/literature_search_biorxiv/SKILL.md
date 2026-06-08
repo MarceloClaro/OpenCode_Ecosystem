@@ -3,6 +3,7 @@ name: literature_search_biorxiv
 version: "1.0.0"
 kind: python
 category: science
+description: Literature_Search_Biorxiv skill for the OpenCode ecosystem
 ---
 
 # bioRxiv / medRxiv Literature Search

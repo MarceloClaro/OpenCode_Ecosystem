@@ -3,6 +3,7 @@ name: clinical_trials_database
 version: "1.0.0"
 kind: python
 category: science
+description: Clinical_Trials_Database skill for the OpenCode ecosystem
 ---
 
 # ClinicalTrials.gov Database

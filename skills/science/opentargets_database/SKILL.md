@@ -3,6 +3,7 @@ name: opentargets_database
 version: "1.0.0"
 kind: python
 category: science
+description: Opentargets_Database skill for the OpenCode ecosystem
 ---
 
 # Open Targets Database

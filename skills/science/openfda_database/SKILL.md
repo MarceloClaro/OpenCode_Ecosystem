@@ -3,6 +3,7 @@ name: openfda_database
 version: "1.0.0"
 kind: python
 category: science
+description: Openfda_Database skill for the OpenCode ecosystem
 ---
 
 # openFDA Database

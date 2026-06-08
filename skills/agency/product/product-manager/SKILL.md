@@ -1,3 +1,8 @@
+---
+name: product-manager
+description: Product Manager skill for the OpenCode ecosystem
+---
+
 # Product Manager
 category: agency
 kind: python

@@ -4,6 +4,7 @@ version: "1.0.0"
 kind: python
 category: system
 affinity: {agent-forum: 0.95, reasoning-orchestrator: 0.90, cora-debate: 0.85}
+description: React Agent Loop skill for the OpenCode ecosystem
 ---
 
 # ReAct Agent Loop — Ciclo Thought -> Action -> Observation

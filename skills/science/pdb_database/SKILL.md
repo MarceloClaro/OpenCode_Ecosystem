@@ -3,6 +3,7 @@ name: pdb_database
 version: "1.0.0"
 kind: python
 category: science
+description: Pdb_Database skill for the OpenCode ecosystem
 ---
 
 # RCSB PDB Database

@@ -2,6 +2,8 @@
 category: agency
 kind: python
 version: "1.0.0"
+description: Securityaudit skill for the OpenCode ecosystem
+name: securityaudit
 ---
 
 # SecurityAuditEngine — Motor de Auditoria de Seguranca

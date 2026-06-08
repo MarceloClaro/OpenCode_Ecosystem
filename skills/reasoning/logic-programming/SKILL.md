@@ -4,6 +4,7 @@ version: "1.0.0"
 kind: python
 category: reasoning
 affinity: {reasoning-orchestrator: 0.90, cora-debate: 0.85, hybrid-graph-retrieval: 0.80}
+description: Logic Programming skill for the OpenCode ecosystem
 ---
 
 # Logic Programming — miniKanren Relational Engine

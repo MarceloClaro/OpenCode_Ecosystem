@@ -3,6 +3,7 @@ name: interpro_database
 version: "1.0.0"
 kind: python
 category: science
+description: Interpro_Database skill for the OpenCode ecosystem
 ---
 
 # InterPro Database

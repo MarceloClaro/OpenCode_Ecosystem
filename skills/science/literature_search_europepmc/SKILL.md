@@ -3,6 +3,7 @@ name: literature_search_europepmc
 version: "1.0.0"
 kind: python
 category: science
+description: Literature_Search_Europepmc skill for the OpenCode ecosystem
 ---
 
 # Europe PMC Literature Search

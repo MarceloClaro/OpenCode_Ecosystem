@@ -1,3 +1,8 @@
+---
+name: qualis-target-navigator
+description: Qualis Target Navigator skill for the OpenCode ecosystem
+---
+
 # Qualis Target Navigator (QTNav)
 
 Navegador inteligente de periodicos cientificos com classificacao Qualis CAPES.

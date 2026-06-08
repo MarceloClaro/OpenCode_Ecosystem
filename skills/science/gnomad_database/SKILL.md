@@ -3,6 +3,7 @@ name: gnomad_database
 version: "1.0.0"
 kind: python
 category: science
+description: Gnomad_Database skill for the OpenCode ecosystem
 ---
 
 # gnomAD Database

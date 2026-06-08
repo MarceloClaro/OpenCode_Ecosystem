@@ -2,6 +2,8 @@
 category: agency
 kind: python
 version: "1.0.0"
+description: Minimalchange skill for the OpenCode ecosystem
+name: minimalchange
 ---
 
 # MinimalChangeEngine — Validador de Diffs Minimos

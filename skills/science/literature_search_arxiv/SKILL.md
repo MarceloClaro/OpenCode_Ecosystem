@@ -3,6 +3,7 @@ name: literature_search_arxiv
 version: "1.0.0"
 kind: python
 category: science
+description: Literature_Search_Arxiv skill for the OpenCode ecosystem
 ---
 
 # arXiv Literature Search

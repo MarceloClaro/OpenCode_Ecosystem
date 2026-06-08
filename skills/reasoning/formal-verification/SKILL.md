@@ -4,6 +4,7 @@ version: "1.0.0"
 kind: python
 category: reasoning
 affinity: {cora-debate: 0.95, reasoning-orchestrator: 0.90, spec-016-d7-codigo: 0.85}
+description: Formal Verification skill for the OpenCode ecosystem
 ---
 
 # Formal Verification — Z3 SMT Solver

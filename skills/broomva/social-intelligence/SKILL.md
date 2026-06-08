@@ -16,7 +16,6 @@ description: >
   Triggers on: "social loop", "engagement loop", "moltbook", "extract insights",
   "knowledge from interactions", "what's trending on moltbook", "run the loop",
   "social intelligence", "outreach strategy".
-version: "1.0.0"
 author: broomva
 tags:
   - social

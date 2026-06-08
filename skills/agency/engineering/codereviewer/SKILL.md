@@ -2,6 +2,8 @@
 category: agency
 kind: python
 version: "1.0.0"
+description: Codereviewer skill for the OpenCode ecosystem
+name: codereviewer
 ---
 
 # CodeReviewer — Motor de Revisao de Codigo
