@@ -1,3 +1,12 @@
+---
+name: evo-18-token-economy
+description: "Round 18: Token Economy — Sistema de Incentivos Economicos para Agentes. SPEC-022, SPEC-023, SPEC-024. Tripe Governanca + Economia + Auditoria."
+evolved: true
+round: 18
+source: manus-evolve-plugin-v2
+score: 99
+---
+
 # Round 18: Token Economy — Sistema de Incentivos Econômicos para Agentes
 
 **Data**: 2026-06-07
