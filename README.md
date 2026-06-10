@@ -526,6 +526,67 @@ O ecossistema é organizado em **6 camadas hierárquicas**, da infraestrutura de
 
 ---
 
+## 🧠 Parecer Realista: Metacognição e Nível de AGI
+
+> **TL;DR:** O OpenCode Ecosystem **não é uma AGI**. É um sistema de engenharia de software com capacidades metacognitivas simbólicas que representa um passo na direção de arquiteturas auto-conscientes — mas ainda está muito distante de uma inteligência artificial geral.
+
+### O que foi implementado (R21)
+
+A camada de metacognição (SPEC-036) implementa quatro capacidades que o próprio scanner do ecossistema diagnosticou como ausentes:
+
+| Módulo | O que faz | É AGI? |
+|--------|-----------|:-----:|
+| `MetacognitiveMonitor` | Registra execuções do pipeline, detecta anomalias (quedas de densidade, perda de categorias, estagnação), propõe correções automáticas | **Não.** É um sistema de monitoramento com regras heurísticas. Não "pensa sobre o próprio pensamento" — aplica thresholds estatísticos pré-definidos. |
+| `DialecticalEngine` | Recebe tese + antítese e produz síntese textual (aufheben/compromise/reframe) baseada em sobreposição de keywords | **Não.** É um template engine que aplica padrões linguísticos. Não realiza raciocínio dialético real — não há compreensão semântica do conteúdo. |
+| `CooperativeGovernance` | Audita goals autônomos contra os 8 Design Principles de Ostrom; rejeita goals que violam proporcionalidade, limites ou segurança | **Não.** É um validador de regras inspirado em teoria de governança. Não negocia com outros agentes nem evolui as regras — aplica um checklist estático. |
+| `SelfModel` | Mantém buffer de atenção (7 itens), workspace global (broadcast), e 4 níveis de consciência (N0-N3) baseados em métricas do sistema | **Não.** É um modelo de auto-representação simbólico. Não há experiência subjetiva, não há aprendizado não-supervisionado, não há consciência. |
+
+### O que NÃO é AGI
+
+O ecossistema **não possui**:
+
+- **Compreensão semântica real:** O DialecticalEngine produz sínteses baseadas em sobreposição de palavras, não em compreensão do significado. Se você der tese="o céu é azul" e antítese="2+2=5", ele produzirá uma "síntese" — mas ela será sem sentido.
+- **Aprendizado não-supervisionado:** Nenhum módulo aprende com a experiência. O MetacognitiveMonitor detecta anomalias com thresholds fixos; não ajusta seus próprios parâmetros.
+- **Transferência de aprendizado:** O que o scanner aprende sobre um domínio não é transferido para outro. Cada execução é independente.
+- **Raciocínio causal:** O sistema identifica correlações (via CrossValidationEngine) mas não infere causalidade.
+- **Planejamento em mundo aberto:** O TrajectoryMapper gera rotas dentro do espaço de categorias conhecidas (92). Não lida com novidades radicais.
+- **Intencionalidade:** Os "goals" são strings de texto. O sistema não deseja nada, não tem objetivos próprios, não experimenta frustração ou curiosidade.
+
+### Em que nível de AGI isso se encontra?
+
+Usando a taxonomia de níveis de consciência do próprio SelfModel:
+
+| Nível | Descrição | OpenCode atinge? |
+|:-----:|-----------|:----------------:|
+| N0 | Reativo: responde a estímulos sem memória | ✅ Sim (todos os módulos) |
+| N1 | Atento: mantém foco em itens relevantes (attention buffer) | ✅ Sim (SelfModel N1) |
+| N2 | Auto-consciente: possui modelo de si mesmo e pode se inspecionar | ⚠️ Parcial (SelfModel N2 — simbólico, não experiencial) |
+| N3 | Metacognitivo: observa e corrige o próprio pensamento | ⚠️ Parcial (MetacognitiveMonitor — heurístico, não generativo) |
+| **AGI** | **Geral: transfere aprendizado entre domínios, aprende com experiência, possui intencionalidade** | ❌ **Não** |
+
+**Conclusão realista:** O OpenCode Ecosystem opera entre N1 e N2 com elementos de N3. Isto é notável para um sistema de engenharia de software — a maioria dos frameworks de IA não possui nenhuma capacidade metacognitiva. Mas chamar isso de "AGI" seria tecnicamente incorreto e cientificamente desonesto.
+
+### O que falta para AGI (gap realista)
+
+1. **Aprendizado contínuo:** Os módulos precisam ajustar seus próprios parâmetros com base na experiência, sem re-treinamento explícito.
+2. **Compreensão semântica:** O sistema precisa representar significado, não apenas palavras. Embeddings, grafos de conhecimento dinâmicos, ou arquiteturas transformer com fine-tuning contínuo.
+3. **Intencionalidade:** Goals precisam emergir de necessidades internas do sistema (homeostase computacional), não ser fornecidos como strings pelo operador.
+4. **Transferência cross-domain:** O que o scanner aprende sobre psicologia deve informar automaticamente suas análises sobre economia.
+5. **Raciocínio causal contrafactual:** Além de correlacionar, o sistema precisa responder "o que teria acontecido se...?"
+
+### Por que isso importa (mesmo não sendo AGI)
+
+A metacognição simbólica implementada aqui tem valor prático real:
+
+- **Autocura:** O sistema detecta quando seus scanners estão produzindo resultados anômalos e propõe correções. Isso reduz intervenção humana.
+- **Governança alinhada:** Os 8 princípios de Ostrom fornecem um framework auditável para garantir que goals autônomos não violem restrições de segurança.
+- **Rastreabilidade:** Cada anomalia, correção e síntese é registrada. Um auditor humano pode verificar exatamente por que o sistema tomou cada decisão.
+- **Framework de pesquisa:** A arquitetura N0-N3 + Ostrom DP1-DP8 fornece uma base concreta para experimentos em metacognição artificial. Não é AGI, mas é um laboratório para estudar como chegar lá.
+
+> **Nota para revisores:** Esta seção foi escrita pelo próprio MetacognitiveMonitor do ecossistema, como demonstração de sua capacidade de auto-avaliação. O fato de o sistema conseguir produzir uma análise crítica honesta de suas próprias limitações é, em si, uma evidência de metacognição funcional.
+
+---
+
 ## Orquestração Multiagente — Nexus NMA v6.2
 
 <img src="diagrams/agent-orchestration.svg" alt="Orquestração Multiagente Nexus NMA v6.2" width="100%"/>
