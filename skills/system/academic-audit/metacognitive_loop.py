@@ -39,17 +39,17 @@ BRAZIL_TZ = timezone.utc
 # DATA CLASSES
 # ═══════════════════════════════════════════════════════════════════════════
 
-@dataclass(frozen=True)
+@dataclass
 class ExecutionTrace:
-    """Registro imutavel de uma execucao do pipeline."""
+    """Registro de uma execucao do pipeline (mutavel para permitir atualizacoes)."""
     trace_id: str
     timestamp: str
-    pipeline: str               # "noological", "teleological", "evolutionary", etc.
-    input_hash: str             # hash do input para deduplicacao
-    output_summary: dict[str, Any]  # metricas consolidadas
+    pipeline: str
+    input_hash: str
+    output_summary: dict[str, Any]
     duration_ms: float
     anomaly_flags: list[str] = field(default_factory=list)
-    confidence: float = 1.0     # 0-1
+    confidence: float = 1.0
 
 
 @dataclass
@@ -431,57 +431,207 @@ class MetacognitiveMonitor:
         return results
 
     def root_cause_analysis(self) -> dict[str, Any]:
-        """Analise de causa raiz: correlaciona anomalias para encontrar padroes.
+        """Analise de causa raiz com inferencia causal (Granger-inspired).
+
+        Nao apenas correlaciona anomalias — infere direcao causal usando:
+        1. Temporal precedence: A precede B consistentemente?
+        2. Causal chain detection: A -> B -> C?
+        3. Common cause detection: A e B compartilham trigger?
+        4. Bayesian inference: P(B|A) vs P(B)?
 
         Returns:
-            {"root_causes": [...], "correlated_anomalies": [...], "recommendation": str}
+            {"causal_chains": [...], "common_causes": [...], "bayesian": {...}, "verdict": str}
         """
-        if len(self._anomalies) < 2:
-            return {"root_causes": [], "correlated_anomalies": [], "recommendation": "insufficient_data"}
+        traces = self._traces
+        if len(traces) < 4:
+            return {"causal_chains": [], "common_causes": [], "bayesian": {}, "verdict": "insufficient_data (need >= 4 traces)"}
 
-        # Agrupar anomalias por dimensao
-        by_dim: dict[str, list[AnomalyPattern]] = {}
-        for a in self._anomalies:
-            by_dim.setdefault(a.dimension, []).append(a)
+        # ── 1. Extrair sequencia temporal de anomalias ──
+        anomaly_sequence: list[tuple[int, set[str]]] = []  # [(trace_index, {pattern_ids})]
+        for i, t in enumerate(traces):
+            flags = set(t.anomaly_flags)
+            if flags:
+                anomaly_sequence.append((i, flags))
 
-        root_causes = []
-        correlated = []
+        if len(anomaly_sequence) < 2:
+            return {"causal_chains": [], "common_causes": [], "bayesian": {}, "verdict": "insufficient_anomalies"}
 
-        # Dimensao com multiplas anomalias = causa raiz
-        for dim, anomalies in by_dim.items():
-            if len(anomalies) >= 2:
-                root_causes.append({
-                    "dimension": dim,
-                    "anomaly_count": len(anomalies),
-                    "types": list(set(a.pattern_id for a in anomalies)),
-                    "hypothesis": f"Dimensao {dim} tem {len(anomalies)} anomalias — investigar causa sistemica",
-                })
+        # ── 2. Teste de precedencia temporal (Granger-inspired) ──
+        pattern_types = list(set(a.pattern_id for a in self._anomalies))
+        causal_edges: list[dict[str, Any]] = []
 
-        # Correlacionar anomalias do mesmo tipo
-        by_type: dict[str, list[AnomalyPattern]] = {}
-        for a in self._anomalies:
-            by_type.setdefault(a.pattern_id, []).append(a)
-        for ptype, anomalies in by_type.items():
-            if len(anomalies) >= 2:
-                correlated.append({
-                    "pattern": ptype,
-                    "count": len(anomalies),
-                    "dimensions": list(set(a.dimension for a in anomalies)),
-                })
+        for cause_type in pattern_types:
+            for effect_type in pattern_types:
+                if cause_type == effect_type:
+                    continue
 
-        # Recomendacao
-        if root_causes:
-            recommendation = f"Investigar {len(root_causes)} dimensoes com anomalias sistematicas: " + ", ".join(rc["dimension"] for rc in root_causes)
-        elif correlated:
-            recommendation = f"Padroes correlacionados detectados: {len(correlated)} tipos de anomalia recorrentes"
+                # Contar: quantas vezes cause_type aparece antes de effect_type?
+                precedence_count = 0
+                total_cause = 0
+                total_effect = 0
+
+                for i in range(len(anomaly_sequence) - 1):
+                    current_flags = anomaly_sequence[i][1]
+                    next_flags = anomaly_sequence[i + 1][1]
+
+                    if cause_type in current_flags:
+                        total_cause += 1
+                        if effect_type in next_flags:
+                            precedence_count += 1
+
+                    if effect_type in next_flags:
+                        total_effect += 1
+
+                if total_cause > 0:
+                    precedence_ratio = precedence_count / total_cause
+                    # Granger score: how much does knowing A improve prediction of B?
+                    p_b_given_a = precedence_count / max(1, total_cause)
+                    p_b = total_effect / max(1, len(anomaly_sequence))
+
+                    granger_score = p_b_given_a - p_b
+
+                    if precedence_ratio >= 0.5 and granger_score > 0.2:
+                        causal_edges.append({
+                            "cause": cause_type,
+                            "effect": effect_type,
+                            "precedence_ratio": round(precedence_ratio, 2),
+                            "granger_score": round(granger_score, 2),
+                            "evidence": f"{cause_type} precedes {effect_type} in {precedence_count}/{total_cause} cases (Granger +{granger_score:.2f})",
+                            "confidence": "high" if precedence_ratio >= 0.75 else "medium",
+                        })
+
+        causal_edges.sort(key=lambda e: -e["granger_score"])
+
+        # ── 3. Construir cadeias causais ──
+        causal_chains = self._build_causal_chains(causal_edges)
+
+        # ── 4. Detectar causas comuns ──
+        common_causes = self._detect_common_causes(anomaly_sequence, pattern_types)
+
+        # ── 5. Inferencia bayesiana ──
+        bayesian = self._bayesian_inference(anomaly_sequence, pattern_types)
+
+        # ── 6. Verdict ──
+        if causal_chains:
+            chain_descriptions = [" -> ".join(c) for c in causal_chains[:3]]
+            verdict = f"Cadeias causais detectadas: {'; '.join(chain_descriptions)}. "
+            if common_causes:
+                verdict += f"Causas comuns: {len(common_causes)} triggers compartilhados."
+            verdict += f" Confianca bayesiana media: {bayesian.get('avg_confidence', 0):.2f}"
+        elif common_causes:
+            verdict = f"Sem cadeias causais. {len(common_causes)} causas comuns identificadas (anomalias compartilham triggers)."
+        elif causal_edges:
+            verdict = f"Evidencia causal fraca: {len(causal_edges)} arestas com Granger score baixo. Dados insuficientes para cadeias."
         else:
-            recommendation = "Anomalias isoladas — sem causa raiz sistemica aparente"
+            verdict = "Sem evidencia causal: anomalias parecem independentes."
 
         return {
-            "root_causes": root_causes,
-            "correlated_anomalies": correlated,
-            "recommendation": recommendation,
+            "causal_edges": causal_edges[:5],
+            "causal_chains": causal_chains[:3],
+            "common_causes": common_causes[:3],
+            "bayesian": bayesian,
+            "verdict": verdict,
         }
+
+    def _build_causal_chains(self, edges: list[dict]) -> list[list[str]]:
+        """Constrói cadeias causais a partir de arestas direcionadas."""
+        if not edges:
+            return []
+
+        # Construir grafo direcionado
+        graph: dict[str, set[str]] = {}
+        for e in edges:
+            graph.setdefault(e["cause"], set()).add(e["effect"])
+
+        # Encontrar cadeias (DFS com profundidade maxima 3)
+        chains = []
+        visited_in_chain: set[str] = set()
+
+        def dfs(node: str, path: list[str]):
+            if len(path) > 3:
+                chains.append(list(path))
+                return
+            for neighbor in graph.get(node, set()):
+                if neighbor not in path:
+                    dfs(neighbor, path + [neighbor])
+                elif len(path) >= 2:
+                    chains.append(list(path))
+
+        for start in graph:
+            if start not in visited_in_chain:
+                dfs(start, [start])
+                visited_in_chain.add(start)
+
+        # Remover duplicatas e sub-cadeias
+        unique = []
+        for c in chains:
+            if not any(set(c).issubset(set(existing)) and len(c) < len(existing) for existing in unique):
+                unique.append(c)
+
+        return unique[:3]
+
+    def _detect_common_causes(self, sequence: list, pattern_types: list[str]) -> list[dict]:
+        """Detecta anomalias que sempre co-ocorrem (possivel causa comum)."""
+        common = []
+        for i, p1 in enumerate(pattern_types):
+            for p2 in pattern_types[i+1:]:
+                co_occurrence = 0
+                p1_total = 0
+                p2_total = 0
+                for _, flags in sequence:
+                    has_p1 = p1 in flags
+                    has_p2 = p2 in flags
+                    if has_p1: p1_total += 1
+                    if has_p2: p2_total += 1
+                    if has_p1 and has_p2: co_occurrence += 1
+
+                total_occurrences = max(p1_total, p2_total)
+                if total_occurrences > 0:
+                    co_rate = co_occurrence / total_occurrences
+                    if co_rate >= 0.7:
+                        common.append({
+                            "patterns": [p1, p2],
+                            "co_occurrence_rate": round(co_rate, 2),
+                            "hypothesis": f"{p1} e {p2} compartilham trigger comum (co-ocorrem em {co_rate:.0%} dos casos)",
+                        })
+
+        return sorted(common, key=lambda c: -c["co_occurrence_rate"])
+
+    def _bayesian_inference(self, sequence: list, pattern_types: list[str]) -> dict:
+        """Calcula probabilidades condicionais entre anomalias."""
+        if len(pattern_types) < 2:
+            return {"inferences": [], "avg_confidence": 0}
+
+        total_events = len(sequence)
+        inferences = []
+
+        for cause in pattern_types:
+            for effect in pattern_types:
+                if cause == effect: continue
+
+                # P(effect | cause)
+                cause_count = sum(1 for _, flags in sequence if cause in flags)
+                joint_count = sum(1 for _, flags in sequence if cause in flags and effect in flags)
+
+                if cause_count > 0:
+                    p_effect_given_cause = joint_count / cause_count
+                    # P(effect) marginal
+                    p_effect = sum(1 for _, flags in sequence if effect in flags) / max(1, total_events)
+                    # Lift: quanto P(effect|cause) excede P(effect)
+                    lift = p_effect_given_cause / max(0.01, p_effect)
+
+                    if lift > 1.5:
+                        inferences.append({
+                            "cause": cause, "effect": effect,
+                            "p_effect_given_cause": round(p_effect_given_cause, 2),
+                            "p_effect_marginal": round(p_effect, 2),
+                            "lift": round(lift, 1),
+                        })
+
+        inferences.sort(key=lambda i: -i["lift"])
+        avg_conf = sum(i["lift"] for i in inferences) / max(1, len(inferences))
+
+        return {"inferences": inferences[:5], "avg_confidence": round(avg_conf, 1)}
 
     def adaptive_thresholds(self) -> dict[str, float]:
         """Ajusta thresholds de deteccao baseado no historico.

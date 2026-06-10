@@ -138,26 +138,49 @@ def n3_up_005_auto_monitor() -> CTResult:
 
 
 def n3_up_006_root_cause() -> CTResult:
-    """N3-UP-006: MetacognitiveMonitor.root_cause_analysis() correlaciona anomalias."""
+    """N3-UP-006: Root cause analysis com inferencia causal (Granger-inspired).
+
+    5 traces: ANOM-001 aparece sozinho (causa), ANOM-002 so depois (efeito).
+    Base rate baixo + alta probabilidade condicional = Granger score positivo.
+    """
     monitor = MetacognitiveMonitor()
 
-    # Registrar baseline
-    for _ in range(3):
-        monitor.observe("scanner", {"overall_density": 0.7, "dimensions": {"raciocinio": {"covered": ["Prob", "Dedutivo"], "density": 0.4, "coverage_pct": 40, "blind_spot_score": 0.2}, "metodos": {"covered": ["Experimental"], "density": 0.3, "coverage_pct": 30, "blind_spot_score": 0.3}}})
+    # T0-T1: limpos
+    monitor.observe("s", {"overall_density": 0.7, "dimensions": {"r": {"covered": ["P"], "density": 0.3, "coverage_pct": 30, "blind_spot_score": 0.3}}}).anomaly_flags = []
+    monitor.observe("s", {"overall_density": 0.7, "dimensions": {"r": {"covered": ["P"], "density": 0.3, "coverage_pct": 30, "blind_spot_score": 0.3}}}).anomaly_flags = []
 
-    # Gerar anomalia: queda de densidade + perda de categorias
-    monitor.observe("scanner", {"overall_density": 0.1, "dimensions": {"raciocinio": {"covered": [], "density": 0.0, "coverage_pct": 0, "blind_spot_score": 0.1}, "metodos": {"covered": [], "density": 0.0, "coverage_pct": 0, "blind_spot_score": 0.1}}})
+    # T2: ANOM-001 (causa)
+    monitor.observe("s", {"overall_density": 0.5, "dimensions": {"r": {"covered": ["P"], "density": 0.2, "coverage_pct": 20, "blind_spot_score": 0.3}}}).anomaly_flags = ["ANOM-001"]
 
-    # Segundo scan anomalo para gerar multiplas anomalias
-    monitor.observe("scanner", {"overall_density": 0.1, "dimensions": {"raciocinio": {"covered": [], "density": 0.0, "coverage_pct": 0, "blind_spot_score": 0.1}}})
+    # T3: ANOM-002 (efeito imediato)
+    monitor.observe("s", {"overall_density": 0.5, "dimensions": {"r": {"covered": [], "density": 0.0, "coverage_pct": 0, "blind_spot_score": 0.1}}}).anomaly_flags = ["ANOM-002"]
+
+    # T4: limpo
+    monitor.observe("s", {"overall_density": 0.7, "dimensions": {"r": {"covered": ["P"], "density": 0.3, "coverage_pct": 30, "blind_spot_score": 0.3}}}).anomaly_flags = []
+
+    # Registrar anomalias
+    from metacognitive_loop import AnomalyPattern
+    monitor._anomalies = [AnomalyPattern("ANOM-001", "g", (0.3,1), 0.15, "critical", "Q"), AnomalyPattern("ANOM-002", "r", (2,10), 0, "high", "P")]
 
     rca = monitor.root_cause_analysis()
 
-    if "recommendation" not in rca:
-        return CTResult("N3-UP-006", "Root cause analysis retorna recomendacao", False, str(rca))
+    if "verdict" not in rca:
+        return CTResult("N3-UP-006", "Root cause retorna verdict", False, str(rca))
 
-    return CTResult("N3-UP-006", "Root cause analysis correlaciona anomalias", True,
-                    f"root_causes={len(rca['root_causes'])}, correlated={len(rca['correlated_anomalies'])}, rec={rca['recommendation'][:60]}")
+    has_causal = (
+        len(rca.get("causal_edges", [])) > 0 or
+        len(rca.get("causal_chains", [])) > 0 or
+        len(rca.get("common_causes", [])) > 0
+    )
+
+    if not has_causal:
+        return CTResult("N3-UP-006", "Inferencia causal detecta relacoes", False,
+                       f"edges={len(rca.get('causal_edges',[]))}, chains={len(rca.get('causal_chains',[]))}, verdict={rca['verdict'][:80]}")
+
+    bayesian = rca.get("bayesian", {})
+    return CTResult("N3-UP-006", "Root cause com inferencia causal (Granger + Bayes)", True,
+                    f"edges={len(rca.get('causal_edges',[]))}, chains={len(rca.get('causal_chains',[]))}, "
+                    f"bayes={len(bayesian.get('inferences',[]))}, verdict={rca['verdict'][:80]}")
 
 
 def n3_up_007_adaptive_thresholds() -> CTResult:
