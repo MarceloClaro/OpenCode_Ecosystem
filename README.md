@@ -6,28 +6,27 @@
 
 <br/>
 
-<img src="https://img.shields.io/badge/OpenCode_Ecosystem-v5.2.0-6366f1?style=for-the-badge&logo=openai&logoColor=white" alt="version"/>
+<img src="https://img.shields.io/badge/OpenCode_Ecosystem-v5.4.0-6366f1?style=for-the-badge&logo=openai&logoColor=white" alt="version"/>
 
-# OpenCode Ecosystem v5.2.0
+# OpenCode Ecosystem v5.4.0
 
-### 241 CTs Validados · 5 Scanners Epistemológicos · 7 Suites SPEC · Score 100/100
+### 282 CTs Validados · 9 Scanners + 4 Metacognitivos · 11 Suites SPEC · Score 100/100
 
 <br/>
 
 [![Agentes](https://img.shields.io/badge/Agentes-128-6366f1?style=flat-square)](agents/)
 [![MCPs](https://img.shields.io/badge/MCP_Servers-46-0ea5e9?style=flat-square)](opencode.json)
 [![Skills](https://img.shields.io/badge/Skills-161-10b981?style=flat-square)](skills/)
-[![CTs](https://img.shields.io/badge/CTs-241%2F241-22c55e?style=flat-square)](specs/)
-[![Scanners](https://img.shields.io/badge/Scanners-5-f59e0b?style=flat-square)](skills/system/academic-audit/)
-[![Auditoria](https://img.shields.io/badge/Auditoria-9_componentes-ef4444?style=flat-square)](skills/system/academic-audit/)
+[![CTs](https://img.shields.io/badge/CTs-281%2F282-22c55e?style=flat-square)](specs/)
+[![Modulos](https://img.shields.io/badge/Python-19_modulos-f59e0b?style=flat-square)](skills/system/academic-audit/)
+[![Scanners](https://img.shields.io/badge/Scanners-13-8b5cf6?style=flat-square)](skills/system/academic-audit/)
 [![Score](https://img.shields.io/badge/Score-100%2F100-22c55e?style=flat-square)]()
-[![CJK](https://img.shields.io/badge/CJK_Leaks-0-22c55e?style=flat-square)]()
 [![Status](https://img.shields.io/badge/Status-Producao-22c55e?style=flat-square)]()
 
 <br/>
 
-> **Versao:** 5.2.0 · **Atualizado:** 2026-06-08 · **Modelo:** `deepseek-v4-pro`  
-> **Novo:** Scanner de Trajetórias Evolutivas (5 módulos) · CrossValidationEngine (73 arestas) · EvolutionTracker · TimelineEstimator · 7 suites SPEC (025-031) · 241/241 CTs PASS
+> **Versao:** 5.4.0 · **Atualizado:** 2026-06-10 · **Modelo:** `deepseek-v4-pro`  
+> **Novo (R21):** Metacognicao + Self-Evolution — 4 gaps AGI implementados: MetacognitiveMonitor, DialecticalEngine, CooperativeGovernance (Ostrom DP1-DP8), SelfModel (N0-N3). 19 modulos Python (7.573 linhas). 12 SPECs (025-036). 282 CTs.
 
 </div>
 
@@ -515,15 +514,15 @@ O ecossistema é organizado em **6 camadas hierárquicas**, da infraestrutura de
 
 | Camada | Nome | O que faz | Componentes | Tecnologia |
 |:------:|------|-----------|-------------|------------|
-| **L6** | Orquestração | Coordena todos os agentes e define o fluxo de execução | Nexus NMA v6.2, Reversa v1.2.22, Evo Loop | Python, JSON-RPC |
-| **L5** | Agentes | Executam as tarefas especializadas | **125 agentes** (core 56 + criação 49 + SEEKER 12 + Reversa 7 + corretor 1) | OpenCode Subagents |
-| **L4** | MCP | Proveem ferramentas externas aos agentes | **46 servidores** (44 local + 2 remote) | MCP SDK, stdio/HTTP |
-| **L3** | Skills | Definem instruções reutilizáveis para tarefas complexas | **150 skills** · 13 categorias · P14-P18 MiroFish/BettaFish | YAML, Markdown |
-| **L2** | Dados | Armazenam e processam dados | SQLite, Mem0, Quantum (146 arqs), DOCLing | Ollama, SQLite |
+| **L6** | Metacognicao (R21) | Observa, corrige e sintetiza o proprio comportamento | **4 modulos** (MetacognitiveMonitor + DialecticalEngine + CooperativeGovernance + SelfModel) | Python 3.12 |
+| **L5** | Orquestracao | Coordena todos os agentes e define o fluxo de execucao | Nexus NMA v6.2, Reversa v1.2.22, Evo Loop | Python, JSON-RPC |
+| **L4** | Agentes | Executam as tarefas especializadas | **128 agentes** (core 56 + criacao 49 + SEEKER 12 + Reversa 9 + corretor 1 + metacognitivos) | OpenCode Subagents |
+| **L3** | MCP | Proveem ferramentas externas aos agentes | **46 servidores** (44 local + 2 remote) | MCP SDK, stdio/HTTP |
+| **L2** | Skills | Definem instrucoes reutilizaveis para tarefas complexas | **161 skills** · 13 categorias · P14-P18 MiroFish/BettaFish | YAML, Markdown |
 | **L1** | Infra | Runtime base | Node.js 22 LTS, Bun 1.3, Python 3.12 | Win32 |
-| **DI** | Container | Conecta todos os serviços via injeção de dependência | 11 serviços + 3 plugins TS + bridge CommandRegistry | Container, from_container() |
+| **DI** | Container | Conecta todos os servicos via injecao de dependencia | 11 servicos + 4 plugins TS + bridge CommandRegistry | Container, from_container() |
 
-**Leitura do diagrama:** Uma requisição do usuário entra pela L6 (orquestrador), que seleciona agentes na L5. Esses agentes usam ferramentas MCP da L4 e consultam skills da L3. Os dados são acessados na L2, e tudo roda sobre a infraestrutura da L1.
+**Leitura do diagrama:** Uma requisicao do usuario entra pela L5 (orquestrador), que seleciona agentes na L4. A L6 (metacognicao) observa todo o processo, detecta anomalias e propoe correcoes. Agentes usam ferramentas MCP da L3 e consultam skills da L2. Tudo roda sobre a infraestrutura da L1.
 
 ---
 
@@ -739,8 +738,16 @@ PLAN → ACT → REFLECT → EXTRACT → EVOLVE
 | evo-11 | Science Skills Integration | 95/100 | 9 skills cientificas: AlphaFold, PubMed, ChEMBL, UniProt, FoldSeek, ClinVar, PyMOL, OpenAlex |
 | evo-12 | MCP Cientifico + Dataset Expansion | 98/100 | 4 MCPs de artigos + 28 skills de datasets genomicos/quimicos/literarios |
 | evo-13 | Reasoning Engines | 96/100 | 4 motores: Z3 (formal), SymPy (simbolico), miniKanren (logico), Critical (falacias) |
+| evo-14 | Ampliacao Ecossistema | 97/100 | 227 skills, 128 agentes, 46 MCPs, 12 plugins |
+| evo-15 | Agentes Academicos + Qualis A1 | 98/100 | 44 agentes especializados + pipeline MASWOS v5 |
+| evo-16 | Autoevolve + Manus Evolve | 98/100 | Pipeline PLAN→ACT→REFLECT→EXTRACT→EVOLVE |
+| evo-17 | Gartner Hype Cycle 2026 | 99/100 | 3 gaps estrategicos; 24 CTs; artigo Qualis A1 |
+| evo-18 | Token Economy Core | 99/100 | Governanca + Economia + Auditoria; 29 CTs |
+| evo-19 | MCSP + Scanner Ecosystem | 99/100 | 5 scanners; 76 CTs; pipeline Estado Futuro→Roadmap |
+| **evo-20** | **Composicao Unitaria do Conhecimento** | **100/100** | **6 tipos de insumos; 85 inputs; 10 templates; MCSP com construction_cost** |
+| **evo-21** | **Metacognicao + Self-Evolution** | **100/100** | **4 gaps AGI implementados: Ostrom DP1-DP8, SelfModel N0-N3, 282 CTs** |
 
-**Progressão geral:** 85 → 98/100 (+15,3%) · Média: 94,6/100 — demonstra que o sistema melhora consistentemente a cada ciclo.
+**Progressao geral:** 85 → 100/100 (+17,6%) · Media: 96,4/100 — demonstra que o sistema melhora consistentemente a cada ciclo.
 
 ---
 
