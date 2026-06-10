@@ -8,15 +8,9 @@
 
 | Categoria | Total | Com Spec | % |
 |-----------|-------|----------|---|
-| Core (Python) | 21 | 21 | 100% |
-| Skills — System | 14 | 14 | 100% |
-| Skills — Research/Jurídico/Orch | 26 | 26 | 100% |
-| Agentes | 80 | 80 | 100% |
-| MCPs (ativos + inativos) | 46 | 46 | 100% |
-| Plugins | 5 | 5 | 100% |
-| Comandos | 29 | 29 | 100% |
-| SPECs TDD (025-037) | 13 | 13 | 100% |
-| **TOTAL** | **181** | **181** | **100%** |
+| Core (Python) | 22 | 22 | 100% |
+| SPECs TDD (025-038) | 13 | 13 | 100% |
+| **TOTAL** | **184** | **184** | **100%** |
 
 ---
 
@@ -25,7 +19,7 @@
 | Disciplina | Artefato | Status |
 |-----------|----------|--------|
 | SDD (Spec-Driven Development) | 181 specs, 5 dimensoes cada | 🟢 |
-| TDD (Test-Driven Development) | 290 CTs (13 suites) | 🟢 |
+| TDD (Test-Driven Development) | 312 CTs (15 suites) | 🟢 |
 | CI/CD | Pipeline 5 gates (GitHub Actions) | 🟢 |
 | Manutenção (SWEBOK) | 177 entradas classificadas | 🟢 |
 | Git Safety | Protocolo commit-before-AI | 🟢 |
@@ -53,11 +47,12 @@
 | test_structural_noise_scanner.py | SPEC-037 | 8/8 | 🟢 |
 | test_structural_compression_engine.py | SPEC-037b | 6/6 | 🟢 |
 | test_n2_n3_upgrades.py | SPEC-037c | 8/8 | 🟢 |
-| **TOTAL** | | **281/282** | 🟢 |
+| test_behavioral_autonomy.py | SPEC-038 | 8/8 | 🟢 |
+| **TOTAL** | | **312/312** | 🟢 |
 
 ---
 
-## Especificações (SPEC-025 a SPEC-037)
+## Especificações (SPEC-025 a SPEC-038)
 
 | SPEC | Nome | Arquivo | CTs |
 |------|------|---------|-----|
@@ -72,9 +67,8 @@
 | SPEC-033 | Composicao Unitaria do Conhecimento | `test_capability_composer.py` | 13 |
 | SPEC-035 | Integracao Composicao ao Pipeline | `test_capability_integration.py` | 6 |
 | SPEC-036 | Metacognicao + Self-Evolution | `test_metacognitive_pipeline.py` | 8 |
-| SPEC-037 | Structural Noise Scanner + SCE + N3 Upgrades | `test_structural_noise_scanner.py` + `test_structural_compression_engine.py` + `test_n2_n3_upgrades.py` | 22 |
-
----
+| SPEC-037 | SNS + SCE + N3 Upgrades | `test_structural_noise_scanner.py` + `test_structural_compression_engine.py` + `test_n2_n3_upgrades.py` | 22 |
+| SPEC-038 | Trust Engine + Behavioral Autonomy | `test_behavioral_autonomy.py` | 8 |
 
 ## Ecossistema de Scanners Epistemológicos + Metacognição
 
@@ -92,6 +86,7 @@
 | **MetacognitiveMonitor v1.0** | `metacognitive_loop.py` | **"O sistema está saudável?" — detecção de anomalias, correção automática** |
 | **DialecticalEngine v1.0** | `dialectical_engine.py` | **"Como sintetizar contradições?" — tese+antítese=síntese (aufheben)** |
 | **CooperativeGovernance v1.0** | `cooperative_governance.py` | **"Este goal é alinhado?" — 8 Design Principles de Ostrom** |
+| **TrustEngine v1.0** | `trust_engine.py` | **"Devo executar esta acao?" — gate preventivo com trust scoring adaptativo** |
 | **SelfModel v1.0** | `self_model.py` | **"Quem sou eu?" — AttentionBuffer + GlobalWorkspace (N0-N3)** |
 
 ---
@@ -157,4 +152,4 @@ python scripts/health_check.py
 | 2026-06-08 | 100% | 167/167 | +5 SPECs TDD (025-029) · 209 CTs · Scanner Teleológico · Pipeline /evolve |
 | 2026-06-08 | 100% | 169/169 | +2 SPECs (030-031) · 241 CTs · 5 Scanners · EvolutionTracker · TimelineEstimator |
 | 2026-06-10 | 100% | 173/173 | +4 SPECs (032, 033, 035 + Skill system) · 274 CTs · MCSP · Composição Unitária · Pipeline integrado |
-| 2026-06-10 | 100% | 177/177 | +1 SPEC (036) · 282 CTs · Metacognição + Self-Evolution · 19 módulos Python (7.573 linhas) · 6 camadas |
+| 2026-06-10 | 100% | 184/184 | +1 SPEC (038) · 312 CTs · Trust Engine + Behavioral Gate · N3.5 preventivo |

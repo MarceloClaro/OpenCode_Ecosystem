@@ -17,16 +17,12 @@
 [![Agentes](https://img.shields.io/badge/Agentes-128-6366f1?style=flat-square)](agents/)
 [![MCPs](https://img.shields.io/badge/MCP_Servers-46-0ea5e9?style=flat-square)](opencode.json)
 [![Skills](https://img.shields.io/badge/Skills-161-10b981?style=flat-square)](skills/)
-[![CTs](https://img.shields.io/badge/CTs-281%2F282-22c55e?style=flat-square)](specs/)
-[![Modulos](https://img.shields.io/badge/Python-19_modulos-f59e0b?style=flat-square)](skills/system/academic-audit/)
-[![Scanners](https://img.shields.io/badge/Scanners-13-8b5cf6?style=flat-square)](skills/system/academic-audit/)
-[![Score](https://img.shields.io/badge/Score-100%2F100-22c55e?style=flat-square)]()
-[![Status](https://img.shields.io/badge/Status-Producao-22c55e?style=flat-square)]()
-
-<br/>
+[![CTs](https://img.shields.io/badge/CTs-312%2F312-22c55e?style=flat-square)](specs/)
+[![Modulos](https://img.shields.io/badge/Python-22_modulos-f59e0b?style=flat-square)](skills/system/academic-audit/)
+[![Scanners](https://img.shields.io/badge/Scanners-16-8b5cf6?style=flat-square)](skills/system/academic-audit/)
 
 > **Versao:** 5.4.0 · **Atualizado:** 2026-06-10 · **Modelo:** `deepseek-v4-pro`  
-> **Novo (R21):** Metacognicao + Self-Evolution — 4 gaps AGI implementados: MetacognitiveMonitor, DialecticalEngine, CooperativeGovernance (Ostrom DP1-DP8), SelfModel (N0-N3). 19 modulos Python (7.573 linhas). 12 SPECs (025-036). 282 CTs.
+> **Novo (R23):** Trust Engine + Behavioral Gate — N3.5 preventivo. Trust Scoring (blend 70/30) + Natural Forgetting (Atkinson-Shiffrin). 22 modulos Python (8.937 linhas). 13 SPECs (025-038). 312/312 CTs.
 
 </div>
 

@@ -7,7 +7,7 @@
 
 ---
 
-# OPENCODE 统一生态系统 v5.4.0 (R22: Structural Noise Scanner + N3 Completo)
+# OPENCODE 统一生态系统 v5.4.0 (R23: Trust Engine + N3.5 Completo)
 
 ## 环境
 - Windows 11, Node.js v25, Bun 1.3, OpenCode CLI 1.14
@@ -53,11 +53,11 @@
 | 智能体 | 128 | 核心56+创作49+SEEKER12+Reversa18+语言校正器1 |
 | 插件 | 15 | 10npm+2本地(.ts)+3 bridge |
 | 命令 | 14 | 斜杠命令 |
-| Módulos Python | 19 | Scanner Pipeline (7.573 linhas) + Metacognição |
-| Suites TDD | 11 | 282 CTs (281/282 PASS — 99.6%) |
-| SPECs | 12 | SPEC-025 a SPEC-036 |
+| Módulos Python | 22 | Scanner Pipeline (8.937 linhas) + Metacognição + TrustEngine |
+| Suites TDD | 15 | 312 CTs (312/312 PASS — 100%) |
+| SPECs | 13 | SPEC-025 a SPEC-038 |
 | ADRs | 10 | architectu-001 a architectu-010 |
-| Ciclos Evolutivos | 21 | R1(85) → R21(100) |
+| Ciclos Evolutivos | 23 | R1(85) → R23(100) |
 | LSP | 1 | TypeScript |
 | 量子 | 146 | 引用/脚本/输出/模板 |
 | Nexus | 488 | 多智能体/同步屏障/推理类型 |
@@ -130,7 +130,8 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | 19 | MCSP + Scanner Ecosystem (SPEC-028 a SPEC-032) | 99 | 5 scanners encadeados: Noologico(18 CTs) + Teleologico(12) + Evolutivo(16) + Refinamento(16) + MCSP(14) = 76 CTs; pipeline completo Estado Futuro -> Roadmap |
 | 20 | Composição Unitária do Conhecimento (SPEC-033 + SPEC-035) | 100 | Nova camada entre Scanner Teleológico e Sequenciamento Evolutivo; 6 tipos de insumos cognitivos; 85 inputs na biblioteca seed; 10 templates de decomposição; MCSP com construction_cost real + desconto por inputs compartilhados; 19 CTs (13+6); 105/105 total; ADRs architectu-008 + architectu-009 |
 | 21 | Metacognição + Self-Evolution (SPEC-036) | 100 | Scanner auto-diagnosticou 4 gaps críticos (metacognitivo, dialético, cooperativo, neurobiológico) e os implementou: MetacognitiveMonitor + DialecticalEngine + CooperativeGovernance(Ostrom DP1-DP8) + SelfModel(N0-N3); 8 CTs; 282/282 total; 19 módulos Python (7.573 linhas) |
-| 22 | Structural Noise Scanner + N3 Completo (SPEC-037) | 100 | SNS: compressão estrutural com preservação funcional (5 submódulos). SCE: compressor de grandes textos (CR, CPS, FLI, DG). N2+N3 Upgrades: forecasting, source introspection, self/other boundary, auto-monitor, root cause causal (Granger+Bayes). 22 CTs (8+6+8); 135/135 total; N3 4/4 completo. |
+| 22 | Structural Noise Scanner + N3 Completo (SPEC-037) | 100 | SNS: compressão estrutural com preservação funcional (5 submódulos). SCE: compressor de grandes textos (CR, CPS, FLI, DG). N2+N3 Upgrades: forecasting, source introspection, self/other boundary, auto-monitor, root cause causal (Granger+Bayes). 22 CTs; N3 4/4 completo. |
+| 23 | Trust Engine + Behavioral Autonomy (SPEC-038) | 100 | TrustScorer (blend 70/30, shadow mode, rollback), BehavioralGate (safe/moderate/risky/blocked), NaturalForgetting (Atkinson-Shiffrin), OutcomeTracker. 8 CTs; 312/312 total; N3.5 (N3 completo + gate preventivo). |
 
 ## 快速命令
 
