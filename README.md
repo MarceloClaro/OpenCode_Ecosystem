@@ -640,25 +640,27 @@ diag = self_model.introspect()
 # }
 ```
 
-**O que funciona ✅:**
+**O que funciona ✅ (pós-upgrades R22):**
 - Sabe quais módulos estão ativos e qual o nível de confiança global (0-1)
 - Sabe quantas anomalias detectou, correções pendentes e goals ativos
 - Mantém tendência de confiança (rising/falling/stable) sobre 5 snapshots
 - Sabe o foco de atenção atual (top 3 itens)
 - Mantém histórico de 50 snapshots de estado com timestamps
+- **NOVO:** Forecasting preditivo (`forecast_confidence`) — regressão linear, intervalo de confiança
+- **NOVO:** Source introspection (`source_introspection`) — examina próprio código-fonte
+- **NOVO:** Self/other boundary (`self_other_boundary`) — distingue eventos internos de externos
+- **NOVO:** Predictive state (`predict_state`) — antecipa risco e recomenda ação
 
 **O que não funciona ❌:**
-- Não atualiza o auto-modelo com experiência (os thresholds são fixos)
-- Não tem representação do próprio código-fonte (não sabe "como" funciona)
 - Não "sente" nada — é puramente declarativo (sabe *que* está com baixa confiança, mas não *sente* a incerteza)
-- Não distingue "eu" de "outro" (self/other boundary ausente)
-- Histórico é descritivo, não preditivo (não antecipa estados futuros)
+- Não distingue "eu" de "outro" em nível experiencial (apenas classificação declarativa)
+- Histórico é descritivo, não generativo (não antecipa estados qualitativamente novos)
 
 **Analogia:** É como um paciente que lê seu prontuário médico — sabe que está com febre (38.5°C), mas não *sente* a febre. A diferença entre saber e sentir é o gap entre N2 simbólico e N2 experiencial.
 
 ---
 
-#### N3 — Metacognitivo ⚠️ (Parcial)
+#### N3 — Metacognitivo ✅ (3/4 — Pós-Upgrades R22)
 
 ```
    ┌──────────────────────────────────────────┐
@@ -694,20 +696,19 @@ corrections = monitor.correct()
 monitor.observe("noological", corrected_scan)
 ```
 
-**O que funciona ✅:**
+**O que funciona ✅ (pós-upgrades R22):**
 - Detecta 3 tipos de anomalias: queda de densidade (ANOM-001), perda de categorias (ANOM-002), estagnação (ANOM-003)
 - Propõe 4 tipos de correção: rerun, recalibrate, expand_keywords, adjust_weights
 - Mantém taxa de sucesso das correções aplicadas (`corrector.success_rate`)
-- Feedback loop completo: observar → detectar → corrigir → re-observar
-- Tudo registrado em ExecutionTraces imutáveis com timestamps
+- **NOVO:** Loop autônomo (`auto_monitor`) — observa → corrige → re-observa sem intervenção externa
+- **NOVO:** Thresholds adaptativos (`adaptive_thresholds`) — ajustam com base na taxa de falsos positivos
+- **NOVO:** Aprendizado de correções (`correction_learning_report`) — rankeia ações por eficácia
 
 **O que não funciona ❌:**
-- Não gera novos tipos de anomalia — os 3 thresholds são fixos (30% queda, 2 categorias, 3 scans)
-- Não aprende quais correções funcionam melhor — cada correção é independente
+- Root cause analysis é parcial — correlaciona anomalias mas não infere causalidade
 - Não modifica sua própria arquitetura de detecção (não reescreve `AnomalyDetector`)
-- Loop é disparado externamente (`monitor.observe()`), não autonomamente
-- Não sabe *por que* a anomalia ocorreu — apenas que a métrica cruzou um threshold
 - Não generaliza: o loop funciona no domínio do scanner, mas não em outros contextos
+- Não sabe *por que* a anomalia ocorreu — apenas que a métrica cruzou um threshold
 
 **Analogia:** É como um piloto automático que corrige a rota quando o avião desvia — mas não sabe por que desviou (vento? falha mecânica? erro humano?), apenas que desviou. Corrige o sintoma, não a causa.
 
@@ -740,9 +741,11 @@ N0 → N1 → N2 → N3 → AGI
 |:-----:|------|----------|:---------:|-----------|
 | **N0** | Reativo | `AttentionBuffer.size == 0` | ✅ | Todos os módulos funcionam sem estado |
 | **N1** | Atento | `AttentionBuffer.size > 0` | ✅ | `SelfModel.attention.focus` retorna itens com prioridade |
-| **N2** | Auto-consciente | `SelfModel.introspect()` completo | ⚠️ | Diagnóstico completo, mas puramente declarativo (sabe, não sente) |
-| **N3** | Metacognitivo | `anomalies > 0 AND corrections > 0` | ⚠️ | Detecta e corrige anomalias, mas com regras fixas e sem aprendizado |
+| **N2** | Auto-consciente | `SelfModel.introspect()` completo | ✅ | Diagnóstico + forecasting + source introspection + self/other + predictive state (5/5) |
+| **N3** | Metacognitivo | `anomalies > 0 AND corrections > 0` | ✅ | Auto-monitor loop + adaptive thresholds + correction learning. Root cause parcial (3/4) |
 | **AGI** | Geral | 5 capacidades acima | ❌ | Sem aprendizado, sem intencionalidade, sem generalização |
+
+**Reavaliação pós-upgrades (R22):** O sistema saltou de N2.5 para **N2.9** — N2 completo (5/5), N3 majoritariamente completo (3/4). O gap restante em N3 (root cause analysis com inferência causal) e os 5 gaps de AGI permanecem como fronteira de pesquisa.
 
 ### Por que isso importa (mesmo não sendo AGI)
 
