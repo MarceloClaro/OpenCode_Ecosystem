@@ -122,6 +122,8 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | 17 | Gartner Hype Cycle 2026 — 3 Gaps Estratégicos | 99 | 25 tecnologias mapeadas (aderência 32% alta); 3 SPECs TDD+SDD (Governance, Streaming, Low-Code); 24 CTs; artigo Qualis A1; cross-validation |
 | 18 | Token Economy Core (SPEC-022) — Sistema de Incentivos | 99 | Tripé Governança + Economia + Auditoria; 8 CTs TDD (9/9 passando); ledger frozen dataclass; fee market dinâmico; ADR architectu-006 |
 | 18b | Agent Economics (SPEC-023) + Audit Integration (SPEC-024) | 99 | 6+4 CTs (20/20 passando); staking 7d lock; slashing stake-first; tiers bronze/silver/gold; allowance diário/semanal; audit trail SHA-256; 29/29 CTs totais |
+| 19 | MCSP + Scanner Ecosystem (SPEC-028 a SPEC-032) | 99 | 5 scanners encadeados: Noologico(18 CTs) + Teleologico(12) + Evolutivo(16) + Refinamento(16) + MCSP(14) = 76 CTs; pipeline completo Estado Futuro -> Roadmap |
+| 20 | Composição Unitária do Conhecimento (SPEC-033 + SPEC-035) | 100 | Nova camada entre Scanner Teleológico e Sequenciamento Evolutivo; 6 tipos de insumos cognitivos; 85 inputs na biblioteca seed; 10 templates de decomposição; MCSP com construction_cost real + desconto por inputs compartilhados; 19 CTs (13+6); 105/105 total; ADRs architectu-008 + architectu-009 |
 
 ## 快速命令
 

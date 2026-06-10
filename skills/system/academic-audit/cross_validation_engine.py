@@ -28,6 +28,7 @@ class CapabilityNode:
     requires: list[str] = field(default_factory=list)    # capacidades das quais depende
     influence_score: float = 0.0
     cascade_impact: float = 0.0
+    composition: Any | None = None  # SPEC-033: CapabilityUnit opcional
 
 
 @dataclass

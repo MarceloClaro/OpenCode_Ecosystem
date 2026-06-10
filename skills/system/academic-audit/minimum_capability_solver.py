@@ -31,6 +31,7 @@ class CapabilitySet:
     topological_order: list[str]
     coverage_pct: float
     transitive_deps: int
+    shared_inputs: dict[str, list[str]] = field(default_factory=dict)  # SPEC-033: input_id → [capability_ids]
 
 
 @dataclass
@@ -294,15 +295,184 @@ class MinimumCapabilitySolver:
             elapsed_ms=round(elapsed, 2),
         )
 
+    # ─── INTEGRAÇÃO COM SPEC-033 ──────────────────────────────────────
+
+    def solve_with_composer(
+        self,
+        present: set[str],
+        targets: set[str],
+        composer: Any = None,  # CapabilityComposer
+    ) -> MCSPSolution:
+        """Resolve MCSP integrando custo de construção real via CapabilityComposer.
+
+        Diferente de solve(), o custo reflete construction_cost de cada
+        capacidade, com desconto para inputs compartilhados.
+
+        Args:
+            present: capacidades já cobertas
+            targets: capacidades alvo
+            composer: CapabilityComposer com biblioteca carregada
+
+        Returns:
+            MCSPSolution com custo baseado em composição
+        """
+        import time
+        t0 = time.time()
+
+        # Fase 1: backward closure (inalterada)
+        closure = self.backward_closure(targets, present)
+
+        # Fase 2: greedy selection com construction_cost
+        if composer is not None:
+            # Decompõe todas as capacidades no fecho
+            all_cap_ids = list((closure | targets) - present)
+            capability_units = composer.decompose_many(all_cap_ids)
+
+            # Constrói grafo de inputs compartilhados
+            input_nodes = composer.compute_shared_inputs(capability_units)
+
+            # Seleção gulosa com construction_cost
+            greedy = self._greedy_select_with_cost(
+                targets, present, closure, capability_units, input_nodes,
+            )
+        else:
+            # Fallback: greedy tradicional
+            greedy = self.greedy_select(targets, present, closure)
+
+        is_optimal = len(targets) <= 10
+        elapsed = (time.time() - t0) * 1000
+
+        return MCSPSolution(
+            minimum_set=greedy,
+            greedy_set=greedy,
+            is_optimal=is_optimal,
+            search_space=len(closure),
+            elapsed_ms=round(elapsed, 2),
+        )
+
+    def _greedy_select_with_cost(
+        self,
+        targets: set[str],
+        present: set[str],
+        closure: set[str],
+        capability_units: dict[str, Any],
+        input_nodes: dict[str, Any],
+    ) -> "CapabilitySet":
+        """Seleção gulosa que usa construction_cost em vez de |C|.
+
+        Heurística: score(c) = cascade_impact(c) / max(0.01, construction_cost(c))
+        Inputs compartilhados reduzem o custo marginal de capacidades
+        que usam os mesmos inputs.
+        """
+        available = (closure | targets) - present
+        selected: set[str] = set()
+        pending: set[str] = targets - present
+        shared_inputs: dict[str, list[str]] = {}
+
+        while pending:
+            best_node = None
+            best_score = -1.0
+
+            for node in available - selected:
+                reachable = self._reachable_from(node, pending)
+                if not reachable:
+                    continue
+
+                coverage = len(reachable & pending)
+                cascade = len(self._enables_map.get(node, set())) + 1
+
+                # Obtém construction_cost da composição
+                unit = capability_units.get(node)
+                if unit is not None:
+                    # Custo base: construction_cost da unidade
+                    base_cost = unit.construction_cost
+
+                    # Desconto por inputs já cobertos por capacidades selecionadas
+                    shared_discount = 0.0
+                    for iid in unit.all_inputs:
+                        if iid in input_nodes:
+                            already_built_by = input_nodes[iid].shared_by & selected
+                            if already_built_by:
+                                shared_discount += 1.0 / len(unit.all_inputs)
+
+                    effective_cost = max(0.01, base_cost - shared_discount)
+                else:
+                    effective_cost = 1.0  # sem composição = custo máximo
+
+                score = (cascade * coverage) / effective_cost
+
+                if score > best_score:
+                    best_score = score
+                    best_node = node
+
+            if best_node is None:
+                break
+
+            selected.add(best_node)
+
+            # Registra inputs compartilhados
+            unit = capability_units.get(best_node)
+            if unit is not None:
+                for iid in unit.all_inputs:
+                    if iid in input_nodes:
+                        shared_inputs.setdefault(iid, []).append(best_node)
+
+            # Adiciona pré-requisitos
+            for prereq in self._prereq_map.get(best_node, set()):
+                if prereq not in present and prereq not in selected:
+                    selected.add(prereq)
+
+            reached = self._reachable_from(best_node, pending)
+            pending -= reached
+            pending -= {best_node}
+
+        # Calcula custo total com desconto
+        total_cost = 0.0
+        accounted_inputs: set[str] = set()
+        for node in selected:
+            unit = capability_units.get(node)
+            if unit is not None:
+                node_cost = 0.0
+                for iid in unit.all_inputs:
+                    if iid not in accounted_inputs:
+                        node_cost += 1.0 / len(unit.all_inputs)
+                        accounted_inputs.add(iid)
+                total_cost += node_cost
+            else:
+                total_cost += 1.0
+
+        # Normaliza
+        total_cost = min(1.0, total_cost / max(1, len(selected)))
+
+        # Ordem topológica
+        try:
+            order = self.topological_order(selected, present)
+        except TopologicalCycleError:
+            order = sorted(selected)
+
+        coverage = len(targets - present - selected) if targets else 0
+        coverage_pct = 1.0 - (coverage / max(1, len(targets)))
+
+        return CapabilitySet(
+            required=selected,
+            cost=round(total_cost, 4),
+            topological_order=order,
+            coverage_pct=round(coverage_pct, 4),
+            transitive_deps=len(closure),
+            shared_inputs=shared_inputs,
+        )
+
     # ─── INTEGRAÇÃO COM SCANNERS ────────────────────────────────────────
 
     def solve_from_scanners(self, noological_scan: dict[str, Any],
-                            teleological_gaps: list[Any]) -> MCSPSolution:
+                            teleological_gaps: list[Any],
+                            composer: Any = None) -> MCSPSolution:
         """Resolve MCSP diretamente dos outputs dos scanners.
 
         Args:
             noological_scan: saida de NoologicalScanner.scan()
             teleological_gaps: saida de TeleologicalReverseScanner.compare_with_scan()
+            composer: CapabilityComposer opcional (SPEC-033) para custo real
 
         Returns:
             MCSPSolution
@@ -319,6 +489,8 @@ class MinimumCapabilitySolver:
         for gap in teleological_gaps:
             targets.add(f"{gap.dim_key}.{gap.category}")
 
+        if composer is not None:
+            return self.solve_with_composer(present, targets, composer)
         return self.solve(present, targets)
 
 

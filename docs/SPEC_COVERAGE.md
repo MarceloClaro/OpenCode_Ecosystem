@@ -1,6 +1,6 @@
-# Spec Coverage Report — OpenCode Ecosystem v5.2.0
+# Spec Coverage Report — OpenCode Ecosystem v5.3.0
 
-**Data:** 2026-06-08 | **Cobertura:** 100% | **Status:** 🟢 COMPLETO
+**Data:** 2026-06-10 | **Cobertura:** 100% | **Status:** 🟢 COMPLETO
 
 ---
 
@@ -10,14 +10,14 @@
 |-----------|-------|----------|---|
 | Core (Python) | 10 | 10 | 100% |
 | Skills — Superpowers | 12 | 12 | 100% |
-| Skills — System | 10 | 10 | 100% |
+| Skills — System | 11 | 11 | 100% |
 | Skills — Research/Jurídico/Orch | 26 | 26 | 100% |
 | Agentes | 80 | 80 | 100% |
 | MCPs (ativos + inativos) | 46 | 46 | 100% |
 | Plugins | 5 | 5 | 100% |
 | Comandos | 29 | 29 | 100% |
-| SPECs TDD (025-031) | 7 | 7 | 100% |
-| **TOTAL** | **169** | **169** | **100%** |
+| SPECs TDD (025-035) | 10 | 10 | 100% |
+| **TOTAL** | **173** | **173** | **100%** |
 
 ---
 
@@ -25,18 +25,18 @@
 
 | Disciplina | Artefato | Status |
 |-----------|----------|--------|
-| SDD (Spec-Driven Development) | 169 specs, 5 dimensões cada | 🟢 |
-| TDD (Test-Driven Development) | 241 CTs (7 suites) | 🟢 |
+| SDD (Spec-Driven Development) | 173 specs, 5 dimensões cada | 🟢 |
+| TDD (Test-Driven Development) | 274 CTs (10 suites) | 🟢 |
 | CI/CD | Pipeline 5 gates (GitHub Actions) | 🟢 |
-| Manutenção (SWEBOK) | 169 entradas classificadas | 🟢 |
+| Manutenção (SWEBOK) | 173 entradas classificadas | 🟢 |
 | Git Safety | Protocolo commit-before-AI | 🟢 |
-| ADR | 5 decisões arquiteturais | 🟢 |
-| Arquitetura em Camadas | 3 camadas (MCP→Skill→Agent) | 🟢 |
+| ADR | 9 decisões arquiteturais | 🟢 |
+| Arquitetura em Camadas | 3 camadas (MCP→Skill→Agent) + Composição Unitária | 🟢 |
 | DI Container | 11 serviços injetáveis | 🟢 |
 
 ---
 
-## Suites TDD (v5.2.0)
+## Suites TDD (v5.3.0)
 
 | Suite | SPEC | CTs | Status |
 |-------|------|-----|--------|
@@ -47,11 +47,14 @@
 | test_teleological_scanner.py | SPEC-029 | 12/12 | 🟢 |
 | test_evolutionary_scanner.py | SPEC-030 | 16/16 | 🟢 |
 | test_scanner_refinement.py | SPEC-031 | 16/16 | 🟢 |
-| **TOTAL** | | **241/241** | 🟢 |
+| test_minimum_capability_solver.py | SPEC-032 | 14/14 | 🟢 |
+| test_capability_composer.py | SPEC-033 | 13/13 | 🟢 |
+| test_capability_integration.py | SPEC-035 | 6/6 | 🟢 |
+| **TOTAL** | | **274/274** | 🟢 |
 
 ---
 
-## Especificações (SPEC-025 a SPEC-031)
+## Especificações (SPEC-025 a SPEC-035)
 
 | SPEC | Nome | Arquivo | CTs |
 |------|------|---------|-----|
@@ -62,6 +65,9 @@
 | SPEC-029 | Teleological Reverse Scanner | `test_teleological_scanner.py` | 12 |
 | SPEC-030 | Evolutionary Trajectories Scanner | `test_evolutionary_scanner.py` | 16 |
 | SPEC-031 | Scanner Refinement (4 eixos) | `test_scanner_refinement.py` | 16 |
+| SPEC-032 | Minimum Capability Solver | `test_minimum_capability_solver.py` | 14 |
+| SPEC-033 | Composição Unitária do Conhecimento | `test_capability_composer.py` | 13 |
+| SPEC-035 | Integração Composição ao Pipeline | `test_capability_integration.py` | 6 |
 
 ---
 
@@ -72,8 +78,10 @@
 | NoologicalScanner v3.0 | `noological_scanner.py` | "O que não existe?" — 10 dims × 92 cats, negação, word-boundary |
 | TeleologicalReverseScanner | `teleological_scanner.py` | "O que deveria existir?" — 8 goal types, inferência prescritiva |
 | CrossValidationEngine v2.0 | `cross_validation_engine.py` | "O que sustenta o quê?" — 73 arestas, bottlenecks, cascade |
+| **CapabilityComposer v1.0** | `capability_composer.py` | **"Do que cada capacidade é feita?" — 6 tipos de insumos, 85 inputs, 10 templates** |
 | PolymathicConvergence v2.0 | `evolutionary_pipeline.py` | "Quem já resolveu?" — 30 domínios, transferência bidirecional |
 | TrajectoryMapper | `evolutionary_pipeline.py` | "Qual o melhor caminho?" — 4 cenários, 3 rotas |
+| MinimumCapabilitySolver v1.0 | `minimum_capability_solver.py` | "Qual o conjunto mínimo?" — backward closure + greedy select + topological order |
 | EvolutionTracker | `scanner_refinements.py` | Tracking temporal: snapshots, delta, trend, velocity |
 | TimelineEstimator | `scanner_refinements.py` | Timeline com fases, duração e risco |
 
@@ -139,3 +147,4 @@ python scripts/health_check.py
 | 2026-05-27 | 100% | 162/162 | Documentação completa aplicando engenharia de software |
 | 2026-06-08 | 100% | 167/167 | +5 SPECs TDD (025-029) · 209 CTs · Scanner Teleológico · Pipeline /evolve |
 | 2026-06-08 | 100% | 169/169 | +2 SPECs (030-031) · 241 CTs · 5 Scanners · EvolutionTracker · TimelineEstimator |
+| 2026-06-10 | 100% | 173/173 | +4 SPECs (032, 033, 035 + Skill system) · 274 CTs · MCSP · Composição Unitária do Conhecimento · Pipeline integrado |

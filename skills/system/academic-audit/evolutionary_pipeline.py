@@ -44,6 +44,7 @@ class EvolutionaryScenario:
     cascade_impact: float     # quantas capacidades desbloqueia
     prerequisites: list[str]  # capacidades necessárias antes
     analogies: list[PolymathicAnalogy] = field(default_factory=list)
+    required_inputs: list[str] = field(default_factory=list)  # SPEC-033: input_ids necessários
 
 
 @dataclass
@@ -70,6 +71,8 @@ class EvolutionaryRoadmap:
     foundations: int
     frontiers: int
     convergents: int
+    capability_units: list[Any] = field(default_factory=list)  # SPEC-033: CapabilityUnit[]
+    total_construction_cost: float = 0.0  # SPEC-033
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -398,12 +401,21 @@ class EvolutionaryScannerPipeline:
         from noological_scanner import NoologicalScanner
         from teleological_scanner import TeleologicalReverseScanner
         from cross_validation_engine import CrossValidationEngine
+        from capability_composer import CapabilityComposer, CognitiveLibrary
+        from pathlib import Path as _Path
 
         self.noological = NoologicalScanner()
         self.teleological = TeleologicalReverseScanner()
         self.cross_validator = CrossValidationEngine()
         self.polymathic = PolymathicConvergence()
         self.trajectory_mapper = TrajectoryMapper()
+
+        # SPEC-033: Inicializa compositor com biblioteca seed
+        lib = CognitiveLibrary()
+        lib_path = _Path(__file__).parent / "cognitive_library.json"
+        if lib_path.exists():
+            lib.load_json(lib_path)
+        self.composer = CapabilityComposer(lib)
 
     def scan(self, audit_trail: Any, goals: list[Any],
              domain: str = "") -> EvolutionaryRoadmap:
@@ -427,6 +439,16 @@ class EvolutionaryScannerPipeline:
         bottlenecks = self.cross_validator.find_bottlenecks()
         cascade = self.cross_validator.cascade_impact(nool_scan)
 
+        # M3.5: Composição Unitária do Conhecimento (SPEC-033) ← NOVO
+        capability_ids = [f"{gap.dim_key}.{gap.category}" for gap in tel_gaps]
+        capability_units = self.composer.decompose_many(capability_ids, domain)
+        total_cost = self.composer.compute_total_construction_cost(capability_units)
+
+        # Enriquecer CapabilityNode com composição
+        for node_key, node in dep_graph.items():
+            if node_key in capability_units:
+                node.composition = capability_units[node_key]
+
         # M4: Convergência polimática
         analogies = self.polymathic.find_analogies(tel_gaps)
 
@@ -437,6 +459,13 @@ class EvolutionaryScannerPipeline:
             analogies=analogies,
             cascade=cascade,
         )
+
+        # Enriquecer cenários com required_inputs da composição
+        for scenario in scenarios:
+            cap_id = f"{scenario.domain}.{scenario.category}"
+            if cap_id in capability_units:
+                unit = capability_units[cap_id]
+                scenario.required_inputs = unit.all_inputs
 
         # Classificar cenários por tipo
         quick_wins = sum(1 for s in scenarios if s.scenario_type == "quick_win")
@@ -456,6 +485,8 @@ class EvolutionaryScannerPipeline:
             foundations=foundations,
             frontiers=frontiers,
             convergents=convergents,
+            capability_units=list(capability_units.values()),  # SPEC-033
+            total_construction_cost=total_cost,  # SPEC-033
         )
 
     def generate_report(self, roadmap: EvolutionaryRoadmap) -> str:
