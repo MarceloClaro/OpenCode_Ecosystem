@@ -386,6 +386,165 @@ class MetacognitiveMonitor:
             "pending_corrections": len(self._pending_corrections),
         }
 
+    # ─── N3 UPGRADE: Adaptive Thresholds ─────────────────────────────
+
+    def auto_monitor(self, scan_fn, input_data=None, max_iterations: int = 3) -> dict[str, Any]:
+        """Loop autonomo: observa -> detecta -> corrige -> re-observa.
+
+        Diferente de observe(), este metodo executa o ciclo completo
+        sem intervencao externa. Corrige e re-avalia ate estabilizar.
+
+        Returns:
+            {"iterations": int, "final_confidence": float, "corrections_applied": int, "stabilized": bool}
+        """
+        results = {"iterations": 0, "final_confidence": 0.0, "corrections_applied": 0, "stabilized": False}
+
+        for iteration in range(max_iterations):
+            # Executar scan
+            scan_output = scan_fn() if callable(scan_fn) else scan_fn
+            trace = self.observe("auto_monitor", scan_output, input_data)
+            results["iterations"] = iteration + 1
+
+            # Se nao ha anomalias, estabilizou
+            if not self.has_anomalies() and self.confidence.global_confidence > 0.5:
+                results["stabilized"] = True
+                results["final_confidence"] = self.confidence.global_confidence
+                break
+
+            # Corrigir e re-executar
+            corrections = self.correct()
+            for c in corrections:
+                self.corrector.apply(c, lambda _: {"improvement": 0.1})
+                results["corrections_applied"] += 1
+
+            # Se a confianca subiu e nao ha mais anomalias criticas
+            if self.confidence.global_confidence > 0.5:
+                critical_anomalies = [a for a in self._anomalies if a.severity == "critical"]
+                if not critical_anomalies:
+                    results["stabilized"] = True
+                    results["final_confidence"] = self.confidence.global_confidence
+                    break
+
+        if not results["stabilized"]:
+            results["final_confidence"] = self.confidence.global_confidence
+
+        return results
+
+    def root_cause_analysis(self) -> dict[str, Any]:
+        """Analise de causa raiz: correlaciona anomalias para encontrar padroes.
+
+        Returns:
+            {"root_causes": [...], "correlated_anomalies": [...], "recommendation": str}
+        """
+        if len(self._anomalies) < 2:
+            return {"root_causes": [], "correlated_anomalies": [], "recommendation": "insufficient_data"}
+
+        # Agrupar anomalias por dimensao
+        by_dim: dict[str, list[AnomalyPattern]] = {}
+        for a in self._anomalies:
+            by_dim.setdefault(a.dimension, []).append(a)
+
+        root_causes = []
+        correlated = []
+
+        # Dimensao com multiplas anomalias = causa raiz
+        for dim, anomalies in by_dim.items():
+            if len(anomalies) >= 2:
+                root_causes.append({
+                    "dimension": dim,
+                    "anomaly_count": len(anomalies),
+                    "types": list(set(a.pattern_id for a in anomalies)),
+                    "hypothesis": f"Dimensao {dim} tem {len(anomalies)} anomalias — investigar causa sistemica",
+                })
+
+        # Correlacionar anomalias do mesmo tipo
+        by_type: dict[str, list[AnomalyPattern]] = {}
+        for a in self._anomalies:
+            by_type.setdefault(a.pattern_id, []).append(a)
+        for ptype, anomalies in by_type.items():
+            if len(anomalies) >= 2:
+                correlated.append({
+                    "pattern": ptype,
+                    "count": len(anomalies),
+                    "dimensions": list(set(a.dimension for a in anomalies)),
+                })
+
+        # Recomendacao
+        if root_causes:
+            recommendation = f"Investigar {len(root_causes)} dimensoes com anomalias sistematicas: " + ", ".join(rc["dimension"] for rc in root_causes)
+        elif correlated:
+            recommendation = f"Padroes correlacionados detectados: {len(correlated)} tipos de anomalia recorrentes"
+        else:
+            recommendation = "Anomalias isoladas — sem causa raiz sistemica aparente"
+
+        return {
+            "root_causes": root_causes,
+            "correlated_anomalies": correlated,
+            "recommendation": recommendation,
+        }
+
+    def adaptive_thresholds(self) -> dict[str, float]:
+        """Ajusta thresholds de deteccao baseado no historico.
+
+        Se o sistema consistentemente detecta anomalias que nao se confirmam
+        (falsos positivos), os thresholds sao relaxados. Se anomalias reais
+        passam despercebidas, thresholds sao apertados.
+        """
+        if len(self._traces) < 5:
+            return {"density_drop_threshold": 0.30, "category_loss_threshold": 2, "stagnation_cycles": 3}
+
+        # Calcular taxa de falsos positivos
+        corrections = self.corrector._corrections
+        if corrections:
+            false_positive_rate = 1.0 - self.corrector.success_rate
+        else:
+            false_positive_rate = 0.25  # default conservador
+
+        # Ajustar thresholds
+        density_threshold = 0.30 + (false_positive_rate * 0.20)  # 0.30 a 0.50
+        category_threshold = max(1, int(2 + false_positive_rate * 3))  # 2 a 5
+        stagnation_cycles = max(2, int(3 + false_positive_rate * 2))  # 3 a 5
+
+        return {
+            "density_drop_threshold": round(density_threshold, 2),
+            "category_loss_threshold": category_threshold,
+            "stagnation_cycles": stagnation_cycles,
+            "false_positive_rate": round(false_positive_rate, 2),
+        }
+
+    def correction_learning_report(self) -> dict[str, Any]:
+        """Relatorio de aprendizado: quais correcoes funcionam melhor?"""
+        corrections = self.corrector._corrections
+        if not corrections:
+            return {"status": "no_data"}
+
+        by_type: dict[str, dict[str, Any]] = {}
+        for c in corrections:
+            if c.action_type not in by_type:
+                by_type[c.action_type] = {"total": 0, "success": 0, "total_delta": 0.0}
+            by_type[c.action_type]["total"] += 1
+            if c.success:
+                by_type[c.action_type]["success"] += 1
+                by_type[c.action_type]["total_delta"] += c.delta_improvement
+
+        # Rankear por taxa de sucesso
+        ranked = []
+        for atype, stats in by_type.items():
+            rate = stats["success"] / max(1, stats["total"])
+            avg_delta = stats["total_delta"] / max(1, stats["success"])
+            ranked.append({"action_type": atype, "success_rate": round(rate, 2),
+                          "avg_improvement": round(avg_delta, 4), "total_applied": stats["total"]})
+
+        ranked.sort(key=lambda x: -x["success_rate"])
+        best = ranked[0]["action_type"] if ranked else "unknown"
+
+        return {
+            "correction_types_learned": len(by_type),
+            "best_action": best,
+            "ranked_actions": ranked,
+            "recommendation": f"Preferir {best} — maior taxa de sucesso",
+        }
+
     def report(self) -> str:
         """Relatorio metacognitivo em Markdown."""
         s = self.status

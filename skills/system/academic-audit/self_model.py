@@ -289,6 +289,135 @@ class SelfModel:
         """True se o sistema atingiu pelo menos N2 (auto-consciente)."""
         return self._consciousness_level in ("N2", "N3")
 
+    # ─── N2 UPGRADE: Predictive Forecasting ─────────────────────────
+
+    def forecast_confidence(self, horizon: int = 3) -> dict[str, Any]:
+        """Preve confianca futura usando regressao linear sobre ultimos N snapshots.
+
+        Args:
+            horizon: quantos snapshots a frente prever
+
+        Returns:
+            {"predicted": float, "trend": str, "slope": float, "confidence_interval": (low, high)}
+        """
+        history = self._state_history[-10:]
+        if len(history) < 3:
+            return {"predicted": 0.5, "trend": "insufficient_data", "slope": 0, "confidence_interval": (0, 1)}
+
+        xs = list(range(len(history)))
+        ys = [s.confidence_global for s in history]
+        n = len(xs)
+
+        # Simple linear regression
+        mean_x = sum(xs) / n
+        mean_y = sum(ys) / n
+        num = sum((xs[i] - mean_x) * (ys[i] - mean_y) for i in range(n))
+        den = sum((xs[i] - mean_x) ** 2 for i in range(n))
+        slope = num / den if den != 0 else 0
+        intercept = mean_y - slope * mean_x
+
+        # Predict
+        future_x = n + horizon - 1
+        predicted = intercept + slope * future_x
+        predicted = max(0.0, min(1.0, predicted))
+
+        # Confidence interval (±1 std dev of residuals)
+        residuals = [ys[i] - (intercept + slope * xs[i]) for i in range(n)]
+        std_residual = (sum(r**2 for r in residuals) / max(1, n - 2)) ** 0.5
+        low = max(0.0, predicted - std_residual)
+        high = min(1.0, predicted + std_residual)
+
+        trend = "rising" if slope > 0.02 else "falling" if slope < -0.02 else "stable"
+
+        return {
+            "predicted": round(predicted, 4),
+            "trend": trend,
+            "slope": round(slope, 4),
+            "confidence_interval": (round(low, 4), round(high, 4)),
+        }
+
+    def source_introspection(self, module_dir: str | None = None) -> dict[str, Any]:
+        """Examina o proprio codigo-fonte (auto-representacao do codigo).
+
+        Returns:
+            {"modules": int, "total_lines": int, "largest_module": str, ...}
+        """
+        from pathlib import Path
+        target = Path(module_dir) if module_dir else Path(__file__).parent
+        py_files = sorted(target.glob("*.py"))
+
+        modules_info = {}
+        total_lines = 0
+        largest = ("", 0)
+
+        for pf in py_files:
+            try:
+                lines = len(pf.read_text(encoding="utf-8").split('\n'))
+                modules_info[pf.name] = lines
+                total_lines += lines
+                if lines > largest[1]:
+                    largest = (pf.name, lines)
+            except Exception:
+                modules_info[pf.name] = -1
+
+        return {
+            "module_count": len(py_files),
+            "total_lines": total_lines,
+            "largest_module": largest[0],
+            "largest_lines": largest[1],
+            "modules": modules_info,
+            "self_file": Path(__file__).name,
+            "self_lines": modules_info.get(Path(__file__).name, -1),
+        }
+
+    def self_other_boundary(self, event_source: str) -> dict[str, str]:
+        """Distingue eventos internos (self) de externos (other).
+
+        Args:
+            event_source: modulo que gerou o evento
+
+        Returns:
+            {"classification": "self"|"other"|"boundary", "reason": str}
+        """
+        internal_modules = {
+            "SelfModel", "MetacognitiveMonitor", "DialecticalEngine",
+            "CooperativeGovernance", "NoologicalScanner",
+            "TeleologicalScanner", "CapabilityComposer",
+            "CrossValidationEngine", "EvolutionaryScannerPipeline",
+        }
+
+        if event_source in internal_modules:
+            return {"classification": "self", "reason": f"{event_source} e parte do nucleo metacognitivo"}
+        elif event_source.startswith("MCP:") or event_source.startswith("external:"):
+            return {"classification": "other", "reason": f"{event_source} e externo ao sistema"}
+        else:
+            return {"classification": "boundary", "reason": f"{event_source} esta na fronteira self/other"}
+
+    def predict_state(self) -> dict[str, Any]:
+        """Preve o proximo estado do sistema combinando forecasting + introspeccao."""
+        if len(self._state_history) < 3:
+            return {"status": "insufficient_data"}
+
+        fc = self.forecast_confidence()
+        current = self.introspect()
+
+        return {
+            "current_level": current["consciousness_level"],
+            "predicted_confidence": fc["predicted"],
+            "confidence_trend": fc["trend"],
+            "confidence_interval": fc["confidence_interval"],
+            "risk_assessment": (
+                "high_risk" if fc["trend"] == "falling" and fc["predicted"] < 0.3
+                else "moderate_risk" if fc["trend"] == "falling"
+                else "stable"
+            ),
+            "recommended_action": (
+                "intervene" if fc["predicted"] < 0.3
+                else "monitor" if fc["trend"] == "falling"
+                else "continue"
+            ),
+        }
+
     def report(self) -> str:
         """Relatorio de auto-representacao em Markdown."""
         diag = self.introspect()
