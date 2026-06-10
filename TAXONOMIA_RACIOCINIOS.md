@@ -1,10 +1,10 @@
 ---
 title: "Taxonomia Completa de Raciocinios para Resolucao Cientifica Verificada"
 subtitle: "Como Aprimorar os Multiagentes do OpenCode Ecosystem para Orquestrar Provas Matematicas"
-version: "1.0.0"
-date: "2026-05-25"
-status: "Proposta de Arquitetura Cognitiva — ReasoningOrchestrator v10.0"
-trigger: "Licoes do Problema 1 da IMO 2025 — a verificacao simbolica (V1-V6) nao bastou"
+version: "2.0.0"
+date: "2026-06-10"
+status: "Atualizado — R22: Metacognicao + N3 completo"
+trigger: "Scanner auto-diagnosticou 4 gaps criticos. Todos implementados (SPEC-036 + SPEC-037)."
 principio: "Cada raciocinio deve ser rastreavel, verificavel e ter sua falha propagada automaticamente"
 referencias: 34 (com DOI/ISBN/arXiv)
 ---
@@ -23,11 +23,18 @@ referencias: 34 (com DOI/ISBN/arXiv)
 
 ## 1. Estrutura da Taxonomia
 
-Organizamos os raciocinios em 7 categorias, totalizando 34 tipos:
+Organizamos os raciocinios em 8 categorias, totalizando 42 tipos:
 
-| Categoria | Tipos | Funcao na Prova |
-|-----------|-------|-----------------|
+| Categoria | Tipos | Funcao |
+|-----------|-------|--------|
 | **I. Fundacionais** | 5 | Definicao, abstracao, notacao, traducao |
+| **II. Estruturais** | 5 | Decomposicao, inducao estrutural, reducao, dualidade |
+| **III. Dedutivos** | 5 | Modus ponens, resolucao, encadeamento, contradicao |
+| **IV. Indutivos/Probabilisticos** | 5 | Generalizacao, analogia, Bayes, bootstrap, Monte Carlo |
+| **V. Estrategicos** | 5 | Prova por exaustao, construcao, invariantes, backtracking |
+| **VI. Verificacao** | 5 | Type-checking, model-checking, counterexample, test |
+| **VII. Dialeticos** | 4 | Tese-antitese-sintese, refutacao, critica, aufheben |
+| **VIII. Metacognitivos (R22)** | 8 | Auto-observacao, deteccao de anomalias, correcao adaptativa, sintese dialetica, governanca Ostrom, auto-representacao (N0-N3), inferencia causal (Granger+Bayes), forecasting preditivo |
 | **II. Dedutivos** | 6 | Logica formal, encadeamento, silogismo |
 | **III. Indutivos/Redutivos** | 5 | Inducao, reducao estrutural, caso base |
 | **IV. Construtivos** | 5 | Construcao, existencia, algoritmo |
@@ -284,6 +291,6 @@ PROBLEMA RECEBIDO
 
 ---
 
-> **Documento mantido por**: OpenCode Ecosystem AutoEvolve v1.0
-> **Proxima acao**: Implementar ReasoningOrchestrator v10.0 com os 10 novos agentes
-> **Roadmap**: Fase 1 (R13,R15,R22,R24,R27,R31) — criticos para provas matematicas
+> **Documento mantido por**: OpenCode Ecosystem AutoEvolve v5.4.0
+> **Status atual**: 42 tipos em 8 categorias (34 originais + 8 metacognitivos R22)
+> **Roadmap**: Fase 1 concluida — todos os raciocinios criticos implementados e testados (135/135 CTs)

@@ -8,16 +8,15 @@
 
 | Categoria | Total | Com Spec | % |
 |-----------|-------|----------|---|
-| Core (Python) | 19 | 19 | 100% |
-| Skills — Superpowers | 12 | 12 | 100% |
-| Skills — System | 12 | 12 | 100% |
+| Core (Python) | 21 | 21 | 100% |
+| Skills — System | 14 | 14 | 100% |
 | Skills — Research/Jurídico/Orch | 26 | 26 | 100% |
 | Agentes | 80 | 80 | 100% |
 | MCPs (ativos + inativos) | 46 | 46 | 100% |
 | Plugins | 5 | 5 | 100% |
 | Comandos | 29 | 29 | 100% |
-| SPECs TDD (025-036) | 12 | 12 | 100% |
-| **TOTAL** | **177** | **177** | **100%** |
+| SPECs TDD (025-037) | 13 | 13 | 100% |
+| **TOTAL** | **181** | **181** | **100%** |
 
 ---
 
@@ -25,8 +24,8 @@
 
 | Disciplina | Artefato | Status |
 |-----------|----------|--------|
-| SDD (Spec-Driven Development) | 177 specs, 5 dimensões cada | 🟢 |
-| TDD (Test-Driven Development) | 282 CTs (11 suites) | 🟢 |
+| SDD (Spec-Driven Development) | 181 specs, 5 dimensoes cada | 🟢 |
+| TDD (Test-Driven Development) | 290 CTs (13 suites) | 🟢 |
 | CI/CD | Pipeline 5 gates (GitHub Actions) | 🟢 |
 | Manutenção (SWEBOK) | 177 entradas classificadas | 🟢 |
 | Git Safety | Protocolo commit-before-AI | 🟢 |
@@ -51,11 +50,14 @@
 | test_capability_composer.py | SPEC-033 | 13/13 | 🟢 |
 | test_capability_integration.py | SPEC-035 | 6/6 | 🟢 |
 | test_metacognitive_pipeline.py | SPEC-036 | 8/8 | 🟢 |
+| test_structural_noise_scanner.py | SPEC-037 | 8/8 | 🟢 |
+| test_structural_compression_engine.py | SPEC-037b | 6/6 | 🟢 |
+| test_n2_n3_upgrades.py | SPEC-037c | 8/8 | 🟢 |
 | **TOTAL** | | **281/282** | 🟢 |
 
 ---
 
-## Especificações (SPEC-025 a SPEC-036)
+## Especificações (SPEC-025 a SPEC-037)
 
 | SPEC | Nome | Arquivo | CTs |
 |------|------|---------|-----|
@@ -67,9 +69,10 @@
 | SPEC-030 | Evolutionary Trajectories Scanner | `test_evolutionary_scanner.py` | 16 |
 | SPEC-031 | Scanner Refinement (4 eixos) | `test_scanner_refinement.py` | 16 |
 | SPEC-032 | Minimum Capability Solver | `test_minimum_capability_solver.py` | 14 |
-| SPEC-033 | Composição Unitária do Conhecimento | `test_capability_composer.py` | 13 |
-| SPEC-035 | Integração Composição ao Pipeline | `test_capability_integration.py` | 6 |
-| SPEC-036 | Metacognição + Self-Evolution | `test_metacognitive_pipeline.py` | 8 |
+| SPEC-033 | Composicao Unitaria do Conhecimento | `test_capability_composer.py` | 13 |
+| SPEC-035 | Integracao Composicao ao Pipeline | `test_capability_integration.py` | 6 |
+| SPEC-036 | Metacognicao + Self-Evolution | `test_metacognitive_pipeline.py` | 8 |
+| SPEC-037 | Structural Noise Scanner + SCE + N3 Upgrades | `test_structural_noise_scanner.py` + `test_structural_compression_engine.py` + `test_n2_n3_upgrades.py` | 22 |
 
 ---
 

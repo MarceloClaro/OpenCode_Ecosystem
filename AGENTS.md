@@ -7,7 +7,7 @@
 
 ---
 
-# OPENCODE 统一生态系统 v5.4.0 (R21: Metacognição + Self-Evolution)
+# OPENCODE 统一生态系统 v5.4.0 (R22: Structural Noise Scanner + N3 Completo)
 
 ## 环境
 - Windows 11, Node.js v25, Bun 1.3, OpenCode CLI 1.14
@@ -130,6 +130,7 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | 19 | MCSP + Scanner Ecosystem (SPEC-028 a SPEC-032) | 99 | 5 scanners encadeados: Noologico(18 CTs) + Teleologico(12) + Evolutivo(16) + Refinamento(16) + MCSP(14) = 76 CTs; pipeline completo Estado Futuro -> Roadmap |
 | 20 | Composição Unitária do Conhecimento (SPEC-033 + SPEC-035) | 100 | Nova camada entre Scanner Teleológico e Sequenciamento Evolutivo; 6 tipos de insumos cognitivos; 85 inputs na biblioteca seed; 10 templates de decomposição; MCSP com construction_cost real + desconto por inputs compartilhados; 19 CTs (13+6); 105/105 total; ADRs architectu-008 + architectu-009 |
 | 21 | Metacognição + Self-Evolution (SPEC-036) | 100 | Scanner auto-diagnosticou 4 gaps críticos (metacognitivo, dialético, cooperativo, neurobiológico) e os implementou: MetacognitiveMonitor + DialecticalEngine + CooperativeGovernance(Ostrom DP1-DP8) + SelfModel(N0-N3); 8 CTs; 282/282 total; 19 módulos Python (7.573 linhas) |
+| 22 | Structural Noise Scanner + N3 Completo (SPEC-037) | 100 | SNS: compressão estrutural com preservação funcional (5 submódulos). SCE: compressor de grandes textos (CR, CPS, FLI, DG). N2+N3 Upgrades: forecasting, source introspection, self/other boundary, auto-monitor, root cause causal (Granger+Bayes). 22 CTs (8+6+8); 135/135 total; N3 4/4 completo. |
 
 ## 快速命令
 

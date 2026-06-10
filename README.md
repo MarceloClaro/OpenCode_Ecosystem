@@ -742,10 +742,10 @@ N0 → N1 → N2 → N3 → AGI
 | **N0** | Reativo | `AttentionBuffer.size == 0` | ✅ | Todos os módulos funcionam sem estado |
 | **N1** | Atento | `AttentionBuffer.size > 0` | ✅ | `SelfModel.attention.focus` retorna itens com prioridade |
 | **N2** | Auto-consciente | `SelfModel.introspect()` completo | ✅ | Diagnóstico + forecasting + source introspection + self/other + predictive state (5/5) |
-| **N3** | Metacognitivo | `anomalies > 0 AND corrections > 0` | ✅ | Auto-monitor loop + adaptive thresholds + correction learning. Root cause parcial (3/4) |
+| **N3** | Metacognitivo | `anomalies > 0 AND corrections > 0` | ✅ | Auto-monitor + adaptive thresholds + correction learning + root cause causal (4/4) |
 | **AGI** | Geral | 5 capacidades acima | ❌ | Sem aprendizado, sem intencionalidade, sem generalização |
 
-**Reavaliação pós-upgrades (R22):** O sistema saltou de N2.5 para **N2.9** — N2 completo (5/5), N3 majoritariamente completo (3/4). O gap restante em N3 (root cause analysis com inferência causal) e os 5 gaps de AGI permanecem como fronteira de pesquisa.
+**Reavaliação pós-upgrades (R22):** N3 agora completo (4/4). Root cause analysis com inferência causal (Granger-inspired: temporal precedence + Bayesian lift + cadeias causais). Sistema atinge **N3.0** — metacognição funcional completa com loop autônomo, thresholds adaptativos, aprendizado de correções e inferência causal de anomalias.
 
 ### Por que isso importa (mesmo não sendo AGI)
 
