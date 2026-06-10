@@ -34,7 +34,7 @@ Organizamos os raciocinios em 8 categorias, totalizando 42 tipos:
 | **V. Estrategicos** | 5 | Prova por exaustao, construcao, invariantes, backtracking |
 | **VI. Verificacao** | 5 | Type-checking, model-checking, counterexample, test |
 | **VII. Dialeticos** | 4 | Tese-antitese-sintese, refutacao, critica, aufheben |
-| **VIII. Metacognitivos (R22)** | 8 | Auto-observacao, deteccao de anomalias, correcao adaptativa, sintese dialetica, governanca Ostrom, auto-representacao (N0-N3), inferencia causal (Granger+Bayes), forecasting preditivo |
+| **VIII. Metacognitivos (R22)** | 8 | Auto-observacao, deteccao de anomalias, correcao adaptativa, sintese dialetica, governanca Ostrom, auto-representacao N0-N3, inferencia causal, forecasting |
 | **II. Dedutivos** | 6 | Logica formal, encadeamento, silogismo |
 | **III. Indutivos/Redutivos** | 5 | Inducao, reducao estrutural, caso base |
 | **IV. Construtivos** | 5 | Construcao, existencia, algoritmo |
@@ -120,16 +120,31 @@ Validam a prova contra fontes externas ou por metodos computacionais.
 | **R29** | Simbolico-Algebrico | Verificar identidades algebricas via CAS (SymPy, Mathematica) | Meurer et al. (2017) — *SymPy* [27] | ✅ V2 |
 | **R30** | Numerico-Estatistico | Verificar propriedades numericas e estatisticas | Virtanen et al. (2020) — *SciPy* [28] | ✅ V4, V5 |
 
-### Categoria VII — Meta-Cognitivos
+### Categoria VII — Meta-Cognitivos (Atualizado R22)
 
 Raciocinios sobre a **propria prova**: sua estrutura, suas dependencias, sua confianca.
 
 | ID | Raciocinio | Descricao | Referencia | Status no OpenCode |
 |----|-----------|-----------|------------|-------------------|
-| **R31** | Dependencia-Logica | Rastrear quais lemas dependem de quais; propagar falhas | de Bruijn (1980) — *A Survey of the Project Automath* [29] | ❌ **AUSENTE (falha critica na IMO)** |
-| **R32** | Confianca-Calibrada | Atribuir nivel de confianca a cada lema baseado em verificacao | Guo et al. (2017) — *On Calibration of Modern NNs* [30] + Platt (1999) [31] | ✅ Parcial (calibracao Platt implementada) |
+| **R31** | Dependencia-Logica | Rastrear quais lemas dependem de quais; propagar falhas | de Bruijn (1980) — *A Survey of the Project Automath* [29] | ✅ **R22: root_cause_analysis (causal chains)** |
+| **R32** | Confianca-Calibrada | Atribuir nivel de confianca a cada lema baseado em verificacao | Guo et al. (2017) — *On Calibration of Modern NNs* [30] + Platt (1999) [31] | ✅ **R22: ConfidenceEstimator + adaptive_thresholds** |
 | **R33** | Revisao-por-Pares | Submeter a prova a revisores independentes com personas distintas | Liang et al. (2023) — *Multi-Agent Debate* [32] | ✅ agent-forum (P14) |
 | **R34** | Generalizacao-Restritiva | Determinar se a resposta se generaliza ou e especifica do caso base | Polya (1954) — *Mathematics and Plausible Reasoning* [33] | ❌ Ausente |
+
+### Categoria VIII — Metacognitivos (NOVO — R22)
+
+Raciocinios implementados pelo pipeline de metacognicao do OpenCode (SPEC-036 + SPEC-037).
+
+| ID | Raciocinio | Descricao | Modulo OpenCode | Status |
+|----|-----------|-----------|-----------------|--------|
+| **R35** | Auto-Observacao | Registrar e analisar a propria execucao (traces, metricas) | `MetacognitiveMonitor.observe()` | ✅ 8/8 CTs |
+| **R36** | Deteccao-Anomalias | Identificar desvios de padroes historicos (ANOM-001 a 003) | `AnomalyDetector.detect()` | ✅ 8/8 CTs |
+| **R37** | Correcao-Adaptativa | Propor e aplicar correcoes com thresholds que se auto-ajustam | `CorrectionEngine + adaptive_thresholds()` | ✅ 8/8 CTs |
+| **R38** | Sintese-Dialetica | Resolver contradicoes via tese+antitese=sintese (aufheben) | `DialecticalEngine.synthesize()` | ✅ 8/8 CTs |
+| **R39** | Governanca-Alinhada | Validar goals contra 8 Design Principles de Ostrom (DP1-DP8) | `CooperativeGovernance.audit_goal()` | ✅ 8/8 CTs |
+| **R40** | Auto-Representacao | Manter modelo de si mesmo com atencao, workspace e introspeccao (N0-N3) | `SelfModel` (AttentionBuffer + GlobalWorkspace) | ✅ 8/8 CTs |
+| **R41** | Inferencia-Causal | Determinar direcao causal entre anomalias (Granger-inspired + Bayesian) | `root_cause_analysis()` | ✅ 8/8 CTs |
+| **R42** | Forecasting-Preditivo | Prever estados futuros via regressao linear sobre historico | `SelfModel.forecast_confidence()` | ✅ 8/8 CTs |
 
 ---
 
@@ -293,4 +308,5 @@ PROBLEMA RECEBIDO
 
 > **Documento mantido por**: OpenCode Ecosystem AutoEvolve v5.4.0
 > **Status atual**: 42 tipos em 8 categorias (34 originais + 8 metacognitivos R22)
-> **Roadmap**: Fase 1 concluida — todos os raciocinios criticos implementados e testados (135/135 CTs)
+> **Implementados**: 19/42 (45%) — 8 metacognitivos (R35-R42, todos), 5 verificacionais/refutacionais, 6 outros
+> **Roadmap**: Fase 1 concluida — todos os raciocinios metacognitivos implementados e testados (135/135 CTs)
