@@ -92,3 +92,25 @@ Onde $C_t$ = cobertura de testes, $C_d$ = cobertura de documentação, $I$ = ino
 \section{Considerações Éticas}
 
 Nenhum ser humano, animal ou dado pessoal foi utilizado. O artefato é open-source (Apache 2.0). Reprodutibilidade: ambiente documentado (Windows 11, Python 3.12), seed=42, ordem determinística, ambiente limpo.
+
+\section{Ameaças à Validade}
+
+Seguindo a taxonomia de Wohlin et al. (2012)\citecrit{%
+Four types of validity threats should be considered: conclusion validity, internal validity, construct validity, and external validity.}{%
+Quatro tipos de ameaças à validade devem ser considerados: validade de conclusão, validade interna, validade de constructo e validade externa.}{%
+Metodológico. Wohlin et al. (2012) fornecem o framework padrão para discussão de ameaças à validade em engenharia de software experimental. As quatro categorias estruturam a auto-crítica metodológica desta seção.}{%
+ISBN: 978-3-642-29043-5}, quatro ameaças são declaradas:
+
+\begin{enumerate}
+    \item \textbf{Validade de Constructo}: A taxonomia N0-N3.5 é uma construção dos autores, operacionalizada através de condições técnicas específicas. Embora fundamentada em Flavell (1979), Baars (1988) e Graziano (2013), não há consenso na literatura sobre como medir ``consciência'' em sistemas de software. Ameaça: os constructos podem não capturar completamente o fenômeno.
+    
+    \item \textbf{Validade Interna}: O autor implementou tanto o sistema quanto os testes que o validam, criando potencial viés de confirmação. Mitigação: os 312 CTs são executados automaticamente a cada modificação, e qualquer regressão é imediatamente detectada. O shadow mode (SPEC-038) força novas funcionalidades a operarem com confiança limitada por 5 execuções.
+    
+    \item \textbf{Validade Externa}: O ecossistema foi desenvolvido e avaliado em seu próprio domínio (engenharia de software com agentes). A generalização para outros domínios (saúde, finanças, educação) não foi testada. A arquitetura modular permite adaptação, mas a validação em outros contextos é necessária.
+    
+    \item \textbf{Validade de Conclusão}: Os 312 CTs cobrem 100\% dos módulos, mas não garantem ausência de bugs — apenas que os comportamentos especificados estão implementados. Bugs em casos de borda não cobertos podem existir. Além disso, a métrica de ``zero regressão'' é condicionada à cobertura atual dos testes.
+\end{enumerate}
+
+\subsection{Limitações do DSR como Paradigma}
+
+O Design Science Research, como paradigma, tem uma limitação inerente: o pesquisador que projeta e implementa o artefato também o avalia. Esta dualidade criador-avaliador pode introduzir viés de confirmação (Hevner et al., 2004). O OpenCode mitiga parcialmente esta limitação através da automatização completa da avaliação (312 CTs executados deterministicamente), mas o design das SPECs e a escolha dos CTs ainda são atos do pesquisador. Esta é uma limitação reconhecida do paradigma, não uma falha específica desta pesquisa.
