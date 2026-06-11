@@ -114,22 +114,27 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {9}\MakeTextUppercase []{Conclusão}}{62}{chapter.9}%
 \contentsline {section}{\numberline {9.1}Síntese dos Resultados}{62}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Contribuições}{62}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Comparação com o Estado da Arte}{63}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Limitações e Trabalhos Futuros}{63}{section.9.4}%
-\contentsline {section}{\numberline {9.5}Considerações Finais}{63}{section.9.5}%
+\contentsline {subsection}{\numberline {9.1.1}Metacognição Simbólica Funcional É Implementável}{62}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Composição Unitária Fecha a Lacuna Entre Identificação e Construção}{62}{subsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.1.3}Governança Ostrom Fornece Framework Auditável para Alinhamento}{62}{subsection.9.1.3}%
+\contentsline {subsection}{\numberline {9.1.4}Behavioral Gate Fecha o Ciclo Metacognitivo}{63}{subsection.9.1.4}%
+\contentsline {subsection}{\numberline {9.1.5}312 Testes Críticos Fornecem Evidência Reproduzível}{63}{subsection.9.1.5}%
+\contentsline {section}{\numberline {9.2}Contribuições}{63}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Comparação com o Estado da Arte}{64}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Limitações e Trabalhos Futuros}{64}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Considerações Finais}{64}{section.9.5}%
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{64}{section*.22}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{66}{section*.22}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Lista Completa de Módulos Python}}{67}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Lista Completa de Módulos Python}}{69}{appendix.A}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Comandos de Verificação}}{68}{appendix.B}%
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Comandos de Verificação}}{70}{appendix.B}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Glossário de Termos Técnicos}}{69}{appendix.C}%
+\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Glossário de Termos Técnicos}}{71}{appendix.C}%
