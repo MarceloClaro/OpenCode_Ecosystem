@@ -8,14 +8,21 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{adjustbox}
+\usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{url}
 \usepackage{caption}
 \usepackage{float}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{tikz}
+\usepackage{multirow}
 \usetikzlibrary{positioning,shapes,arrows,fit,backgrounds}
+
+% ─── DOI COMMAND ───
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\texttt{DOI: #1}}}
 
 % ─── METADADOS ───
 \titulo{OpenCode Ecosystem v5.4.0 R23:\\
@@ -857,7 +864,8 @@ Este pipeline fecha o ciclo que faltava: anteriormente, o sistema detectava anom
 
 \begin{table}[H]
 \centering
-\caption{Resultados Consolidados das Suites TDD}
+\small
+\caption{Resultados Consolidados das Suites TDD — 312/312 PASS (100\%)}
 \label{tab:tdd}
 \begin{tabular}{lcc}
 \toprule
@@ -990,67 +998,97 @@ Entretanto, o valor do sistema não está em ser uma AGI, mas em demonstrar que 
 \begin{thebibliography}{99}
 
 \bibitem{flavell1979}
-FLAVELL, J. H. Metacognition and cognitive monitoring: A new area of cognitive-developmental inquiry. \textit{American Psychologist}, v. 34, n. 10, p. 906-911, 1979.
+FLAVELL, J. H. Metacognition and cognitive monitoring: A new area of cognitive-developmental inquiry. \textit{American Psychologist}, v. 34, n. 10, p. 906--911, 1979. \doi{10.1037/0003-066X.34.10.906}.
 
 \bibitem{cox2005}
-COX, M. T. Metacognition in computation: A selected research review. \textit{Artificial Intelligence}, v. 169, n. 2, p. 104-141, 2005.
+COX, M. T. Metacognition in computation: A selected research review. \textit{Artificial Intelligence}, v. 169, n. 2, p. 104--141, 2005. \doi{10.1016/j.artint.2005.10.009}.
 
 \bibitem{minsky2006}
-MINSKY, M. \textit{The Emotion Machine: Commonsense Thinking, Artificial Intelligence, and the Future of the Human Mind}. New York: Simon \& Schuster, 2006.
+MINSKY, M. \textit{The Emotion Machine: Commonsense Thinking, Artificial Intelligence, and the Future of the Human Mind}. New York: Simon \& Schuster, 2006. ISBN: 978-0-7432-7663-8.
 
 \bibitem{baars1988}
-BAARS, B. J. \textit{A Cognitive Theory of Consciousness}. Cambridge: Cambridge University Press, 1988.
+BAARS, B. J. \textit{A Cognitive Theory of Consciousness}. Cambridge: Cambridge University Press, 1988. ISBN: 978-0-521-30133-8. \url{https://doi.org/10.1017/CBO9780511551326}.
 
 \bibitem{graziano2013}
-GRAZIANO, M. S. A. \textit{Consciousness and the Social Brain}. Oxford: Oxford University Press, 2013.
+GRAZIANO, M. S. A. \textit{Consciousness and the Social Brain}. Oxford: Oxford University Press, 2013. ISBN: 978-0-19-992864-4.
+
+\bibitem{graziano2019}
+GRAZIANO, M. S. A. \textit{Rethinking Consciousness: A Scientific Theory of Subjective Experience}. New York: W. W. Norton, 2019. ISBN: 978-0-393-65261-1.
 
 \bibitem{atkinson1968}
-ATKINSON, R. C.; SHIFFRIN, R. M. Human memory: A proposed system and its control processes. In: SPENCE, K. W.; SPENCE, J. T. (Eds.). \textit{The Psychology of Learning and Motivation}. New York: Academic Press, 1968. v. 2, p. 89-195.
+ATKINSON, R. C.; SHIFFRIN, R. M. Human memory: A proposed system and its control processes. In: SPENCE, K. W.; SPENCE, J. T. (Eds.). \textit{The Psychology of Learning and Motivation}. New York: Academic Press, 1968. v. 2, p. 89--195. \doi{10.1016/S0079-7421(08)60422-3}.
 
 \bibitem{ostrom1990}
-OSTROM, E. \textit{Governing the Commons: The Evolution of Institutions for Collective Action}. Cambridge: Cambridge University Press, 1990.
+OSTROM, E. \textit{Governing the Commons: The Evolution of Institutions for Collective Action}. Cambridge: Cambridge University Press, 1990. ISBN: 978-0-521-40599-7. \doi{10.1017/CBO9780511807763}.
 
 \bibitem{ostrom2010}
-OSTROM, E. Beyond markets and states: Polycentric governance of complex economic systems. \textit{American Economic Review}, v. 100, n. 3, p. 641-672, 2010.
+OSTROM, E. Beyond markets and states: Polycentric governance of complex economic systems. \textit{American Economic Review}, v. 100, n. 3, p. 641--672, 2010. \doi{10.1257/aer.100.3.641}.
+
+\bibitem{ostrom1999}
+OSTROM, E.; BURGER, J.; FIELD, C. B.; NORGAARD, R. B.; POLICANSKY, D. Revisiting the commons: Local lessons, global challenges. \textit{Science}, v. 284, n. 5412, p. 278--282, 1999. \doi{10.1126/science.284.5412.278}.
 
 \bibitem{smith1973}
-SMITH, J. M.; PRICE, G. R. The logic of animal conflict. \textit{Nature}, v. 246, p. 15-18, 1973.
+SMITH, J. M.; PRICE, G. R. The logic of animal conflict. \textit{Nature}, v. 246, p. 15--18, 1973. \doi{10.1038/246015a0}.
 
 \bibitem{axelrod1984}
-AXELROD, R. \textit{The Evolution of Cooperation}. New York: Basic Books, 1984.
+AXELROD, R. \textit{The Evolution of Cooperation}. New York: Basic Books, 1984. ISBN: 978-0-465-02121-5.
 
 \bibitem{beck2003}
-BECK, K. \textit{Test-Driven Development: By Example}. Boston: Addison-Wesley, 2003.
+BECK, K. \textit{Test-Driven Development: By Example}. Boston: Addison-Wesley, 2003. ISBN: 978-0-321-14653-3.
 
 \bibitem{gamma1994}
-GAMMA, E.; HELM, R.; JOHNSON, R.; VLISSIDES, J. \textit{Design Patterns: Elements of Reusable Object-Oriented Software}. Reading: Addison-Wesley, 1994.
+GAMMA, E.; HELM, R.; JOHNSON, R.; VLISSIDES, J. \textit{Design Patterns: Elements of Reusable Object-Oriented Software}. Reading: Addison-Wesley, 1994. ISBN: 978-0-201-63361-0.
 
 \bibitem{polya1945}
-PÓLYA, G. \textit{How to Solve It}. Princeton: Princeton University Press, 1945.
+PÓLYA, G. \textit{How to Solve It}. Princeton: Princeton University Press, 1945. ISBN: 978-0-691-11966-3. \doi{10.2307/j.ctt7swnh}.
 
 \bibitem{lakatos1976}
-LAKATOS, I. \textit{Proofs and Refutations: The Logic of Mathematical Discovery}. Cambridge: Cambridge University Press, 1976.
-
-\bibitem{karpathy2025}
-KARPATHY, A. Autoresearch: Autonomous experiment loops for ML optimization. \textit{Twitter/@karpathy}, 2025.
+LAKATOS, I. \textit{Proofs and Refutations: The Logic of Mathematical Discovery}. Cambridge: Cambridge University Press, 1976. ISBN: 978-0-521-29038-8. \doi{10.1017/CBO9781139171472}.
 
 \bibitem{granger1969}
-GRANGER, C. W. J. Investigating causal relations by econometric models and cross-spectral methods. \textit{Econometrica}, v. 37, n. 3, p. 424-438, 1969.
+GRANGER, C. W. J. Investigating causal relations by econometric models and cross-spectral methods. \textit{Econometrica}, v. 37, n. 3, p. 424--438, 1969. \doi{10.2307/1912791}.
 
 \bibitem{miller1956}
-MILLER, G. A. The magical number seven, plus or minus two: Some limits on our capacity for processing information. \textit{Psychological Review}, v. 63, n. 2, p. 81-97, 1956.
+MILLER, G. A. The magical number seven, plus or minus two: Some limits on our capacity for processing information. \textit{Psychological Review}, v. 63, n. 2, p. 81--97, 1956. \doi{10.1037/h0043158}.
+
+\bibitem{hoare1969}
+HOARE, C. A. R. An axiomatic basis for computer programming. \textit{Communications of the ACM}, v. 12, n. 10, p. 576--580, 1969. \doi{10.1145/363235.363259}.
+
+\bibitem{dijkstra1976}
+DIJKSTRA, E. W. \textit{A Discipline of Programming}. Englewood Cliffs: Prentice-Hall, 1976. ISBN: 978-0-13-215871-8.
+
+\bibitem{gentzen1935}
+GENTZEN, G. Untersuchungen über das logische Schließen. \textit{Mathematische Zeitschrift}, v. 39, p. 176--210, 405--431, 1935. \doi{10.1007/BF01201353}.
+
+\bibitem{baars1997}
+BAARS, B. J. \textit{In the Theater of Consciousness: The Workspace of the Mind}. Oxford: Oxford University Press, 1997. ISBN: 978-0-19-510265-9. \doi{10.1093/acprof:oso/9780195102659.001.1}.
+
+\bibitem{russell2010}
+RUSSELL, S.; NORVIG, P. \textit{Artificial Intelligence: A Modern Approach}. 3. ed. Upper Saddle River: Prentice Hall, 2010. ISBN: 978-0-13-604259-4.
 
 \bibitem{nexo2026}
-WAZIONAPPS. NEXO Brain: Shared brain for AI agents. \textit{GitHub}, 2026. Disponível em: \url{https://github.com/wazionapps/nexo}.
+WAZIONAPPS. NEXO Brain: Shared brain for AI agents. \textit{GitHub}, 2026. Disponível em: \url{https://github.com/wazionapps/nexo}. Acesso em: 10 jun. 2026.
 
 \bibitem{autoresearch2026}
-ALVINREAL. Awesome Autoresearch: Curated list of autonomous improvement loops. \textit{GitHub}, 2026. Disponível em: \url{https://github.com/alvinreal/awesome-autoresearch}.
+ALVINREAL. Awesome Autoresearch: Curated list of autonomous improvement loops. \textit{GitHub}, 2026. Disponível em: \url{https://github.com/alvinreal/awesome-autoresearch}. Acesso em: 10 jun. 2026.
 
 \bibitem{ruflo2026}
-RUVNET. Ruflo: Agent meta-harness for Claude. \textit{GitHub}, 2026. Disponível em: \url{https://github.com/ruvnet/ruflo}.
+RUVNET. Ruflo: Agent meta-harness for Claude. \textit{GitHub}, 2026. Disponível em: \url{https://github.com/ruvnet/ruflo}. Acesso em: 10 jun. 2026.
 
 \bibitem{opencode2026}
-LARANJEIRA, M. C. OpenCode Ecosystem v5.4.0 R23. \textit{GitHub}, 2026. Disponível em: \url{https://github.com/MarceloClaro/OpenCode_Ecosystem}.
+LARANJEIRA, M. C. OpenCode Ecosystem v5.4.0 R23. \textit{GitHub}, 2026. Disponível em: \url{https://github.com/MarceloClaro/OpenCode_Ecosystem}. Acesso em: 10 jun. 2026.
+
+\bibitem{planning2026}
+ADIO, O. Planning-with-files: Persistent file-based planning for long-running agentic tasks. \textit{GitHub}, 2026. Disponível em: \url{https://github.com/OthmanAdi/planning-with-files}. Acesso em: 10 jun. 2026.
+
+\bibitem{kahneman2011}
+KAHNEMAN, D. \textit{Thinking, Fast and Slow}. New York: Farrar, Straus and Giroux, 2011. ISBN: 978-0-374-27563-1.
+
+\bibitem{clarke1999}
+CLARKE, E. M.; GRUMBERG, O.; PELED, D. A. \textit{Model Checking}. Cambridge: MIT Press, 1999. ISBN: 978-0-262-03270-4.
+
+\bibitem{knuth1968}
+KNUTH, D. E. \textit{The Art of Computer Programming, Volume 1: Fundamental Algorithms}. Reading: Addison-Wesley, 1968. ISBN: 978-0-201-03801-9.
 
 \end{thebibliography}
 
