@@ -34,7 +34,14 @@ ISBN: 978-0-321-14653-3} estabeleceu o Test-Driven Development como metodologia 
 
 \section{Problema de Pesquisa}
 
-O problema central que esta dissertação aborda pode ser formulado da seguinte maneira:
+O problema central desta dissertação é a lacuna entre a identificação de capacidades necessárias e sua construção efetiva. Formalmente:
+
+\begin{equation}
+\text{Gap} = |\text{Capacidades}_{\text{necessárias}}| - |\text{Capacidades}_{\text{construíveis}}|
+\label{eq:gap}
+\end{equation}
+
+Onde $\text{Capacidades}_{\text{construíveis}}$ são aquelas para as quais o sistema possui todos os insumos cognitivos necessários (construction\_cost = 0), e $\text{Capacidades}_{\text{necessárias}}$ são aquelas identificadas pelo Scanner Teleológico (SPEC-029). O objetivo do OpenCode é minimizar este gap a cada ciclo evolutivo.
 
 \begin{quote}
 \textit{É possível construir um sistema de engenharia de software que implemente metacognição funcional completa — auto-observação, detecção de anomalias, correção automática, inferência causal de causas raiz, prevenção baseada em confiança, e evolução autônoma — de forma que cada capacidade seja verificável por testes automatizados e cada decisão seja rastreável por auditores humanos?}
@@ -88,7 +95,14 @@ Em todos estes cenários, a capacidade de auto-observação, diagnóstico, corre
 
 \section{Contribuições Esperadas}
 
-As principais contribuições desta dissertação são:
+As principais contribuições desta dissertação são quantificadas pelo impacto no ecossistema:
+
+\begin{equation}
+\text{Impacto}(c) = \frac{\text{CTs}_{\text{novos}}(c) \times \text{cascade\_impact}(c)}{\text{construction\_cost}(c)}
+\label{eq:impacto}
+\end{equation}
+
+Onde $c$ é uma contribuição (módulo, SPEC, ou padrão), $\text{CTs}_{\text{novos}}$ são os testes adicionados, e $\text{cascade\_impact}$ é o número de outras capacidades habilitadas.
 
 \begin{enumerate}
     \item \textbf{Taxonomia N0-N3.5}: uma taxonomia de níveis de consciência para sistemas de software, com condições técnicas objetivas e verificáveis, fundamentada na literatura de psicologia cognitiva (Flavell, 1979; Baars, 1988; Graziano, 2013) e validada por 8 CTs por nível.

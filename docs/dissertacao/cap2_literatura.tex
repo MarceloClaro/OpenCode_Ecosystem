@@ -10,11 +10,18 @@ Este capítulo estabelece a fundamentação teórica sobre a qual o OpenCode Eco
 
 \subsection{O Que É Metacognição?}
 
-Metacognição — literalmente ``cognição sobre a cognição'' — é a capacidade de refletir sobre os próprios processos mentais. O termo foi cunhado por Flavell (1979) \doi{10.1037/0003-066X.34.10.906} no contexto da psicologia do desenvolvimento, mas suas implicações se estendem muito além.
+Metacognição — literalmente ``cognição sobre a cognição'' — é a capacidade de refletir sobre os próprios processos mentais. Flavell (1979) \citecrit{%
+Metacognition refers to one's knowledge concerning one's own cognitive processes and products or anything related to them... For example, I am engaging in metacognition if I notice that I am having more trouble learning A than B.}{%
+Metacognição refere-se ao conhecimento sobre os próprios processos e produtos cognitivos. Exemplo: perceber que estou tendo mais dificuldade em aprender A do que B.}{%
+Fundador. Flavell (1979) estabelece a definição canônica de metacognição que fundamenta toda a arquitetura do OpenCode. A distinção entre conhecimento metacognitivo (SelfModel) e regulação metacognitiva (MetacognitiveMonitor) deriva diretamente deste artigo.}{%
+\doi{10.1037/0003-066X.34.10.906}} distinguiu dois componentes que podem ser formalizados como:
 
-Para o leitor não familiarizado com o conceito, uma analogia cotidiana: quando você está lendo um texto e subitamente percebe que não entendeu as últimas três frases, você acaba de exercer metacognição. Você não apenas leu (cognição) — você \textit{monitorou} sua própria compreensão da leitura (metacognição) e, ao perceber a falha, provavelmente voltou para reler o trecho (regulação metacognitiva).
+\begin{equation}
+M = M_k + M_r
+\label{eq:metacognicao}
+\end{equation}
 
-Flavell (1979) distinguiu dois componentes fundamentais da metacognição que permanecem centrais até hoje. O primeiro é o \textbf{conhecimento metacognitivo}: o que sabemos sobre nosso próprio funcionamento cognitivo. Este conhecimento se divide em três categorias: conhecimento sobre pessoas (``eu sou melhor em matemática do que em poesia''), conhecimento sobre tarefas (``este problema é difícil porque envolve muitas variáveis''), e conhecimento sobre estratégias (``quando enfrento um problema complexo, faço um diagrama primeiro''). O segundo componente é a \textbf{regulação metacognitiva}: como monitoramos e controlamos ativamente nossos processos cognitivos. Isto inclui planejamento (``por onde devo começar?''), monitoramento (``estou progredindo adequadamente?''), e avaliação (``minha solução está correta? Como posso verificá-la?'').
+Onde $M$ é a metacognição total, $M_k$ é o conhecimento metacognitivo (saber \textit{que} se sabe — implementado pelo \texttt{SelfModel}), e $M_r$ é a regulação metacognitiva (agir sobre o que se sabe — implementado pelo \texttt{MetacognitiveMonitor}). O primeiro é o \textbf{conhecimento metacognitivo}: o que sabemos sobre nosso próprio funcionamento cognitivo. Este conhecimento se divide em três categorias: conhecimento sobre pessoas (``eu sou melhor em matemática do que em poesia''), conhecimento sobre tarefas (``este problema é difícil porque envolve muitas variáveis''), e conhecimento sobre estratégias (``quando enfrento um problema complexo, faço um diagrama primeiro''). O segundo componente é a \textbf{regulação metacognitiva}: como monitoramos e controlamos ativamente nossos processos cognitivos. Isto inclui planejamento (``por onde devo começar?''), monitoramento (``estou progredindo adequadamente?''), e avaliação (``minha solução está correta? Como posso verificá-la?'').
 
 Esta distinção é fundamental para o OpenCode porque mapeia diretamente para dois módulos distintos: o \texttt{SelfModel} (Capítulo 6, Seção 6.4) implementa o equivalente computacional do conhecimento metacognitivo — mantendo um modelo explícito do estado do sistema, suas capacidades e limitações. O \texttt{MetacognitiveMonitor} (Capítulo 6, Seção 6.1) implementa a regulação metacognitiva — observando o desempenho do sistema, detectando desvios e disparando correções.
 

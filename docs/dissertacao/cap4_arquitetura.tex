@@ -86,3 +86,14 @@ A infraestrutura de testes é integrada à arquitetura. Cada módulo tem SPEC fo
 \text{cobertura} = \frac{|\text{módulos com } \geq 1 \text{ suite TDD}|}{|\text{módulos totais}|} = \frac{22}{22} = 1.0
 \label{eq:coverage}
 \end{equation}
+
+\section{Evolução da Arquitetura}
+
+A arquitetura evoluiu ao longo de 23 ciclos. A cada ciclo, novas camadas foram adicionadas sem modificar as existentes, demonstrando o princípio de evolutibilidade. A complexidade arquitetural pode ser modelada como:
+
+\begin{equation}
+C_a(n) = C_a(n-1) + \Delta_n
+\label{eq:arch_evolution}
+\end{equation}
+
+Onde $C_a(n)$ é a complexidade arquitetural após $n$ ciclos, e $\Delta_n$ é a complexidade adicionada no ciclo $n$ (módulos, camadas, ou ADRs). O design modular garante que $\Delta_n$ seja aditivo sem perturbar $C_a(n-1)$.

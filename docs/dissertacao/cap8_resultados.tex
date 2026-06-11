@@ -120,18 +120,21 @@ ISBN: 978-0-465-02656-2}, este é um exemplo de \textit{strange loop} — um sis
 
 \textbf{Validação das métricas}:
 \begin{equation}
-\text{CR} = \frac{|\text{Tokens Originais}|}{|\text{Tokens Finais}|} = \frac{300}{137} = 2.19 \approx 2.2
+\text{CR} = \frac{|\text{Tokens Originais}|}{|\text{Tokens Finais}|} = \frac{300}{137} \approx 2.2
+\label{eq:cr_validacao}
 \end{equation}
 
 \begin{equation}
 \text{CPS} = \frac{|\text{Funções Preservadas}|}{|\text{Funções Totais}|} = \frac{12}{12} = 1.0
+\label{eq:cps_validacao}
 \end{equation}
 
 \begin{equation}
 \text{DG} = \text{CPS} \times \text{CR} = 1.0 \times 2.2 = 2.2
+\label{eq:dg_validacao}
 \end{equation}
 
-\textbf{Interpretação}: O SCE reduziu o volume pela metade com preservação completa da estrutura cognitiva. O CPS de 100\% indica que o modelo reduzido capturou todas as 12 funções essenciais do original. Este resultado é particularmente relevante para o processamento de documentos longos (dissertações, relatórios, bases documentais) onde a economia de tokens é crítica.
+\textbf{Interpretação}: O SCE reduziu o volume pela metade com preservação completa da estrutura cognitiva. O CPS de 100\% indica que o modelo reduzido capturou todas as 12 funções essenciais do original. Este resultado valida o princípio fundamental do SNS: é possível comprimir informação sem perda estrutural, desde que a distinção entre estrutura (S), exemplo (E) e ruído (R) seja corretamente identificada — princípio este formulado como $C = E + S + R$ (Equação~\ref{eq:decomposicao}).
 
 \subsection{Caso 3: Behavioral Gate em Produção Simulada}
 
