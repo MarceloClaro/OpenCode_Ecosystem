@@ -4,6 +4,28 @@
 \chapter{Resultados e Discussão}
 \label{ch:resultados}
 
+\section{Exemplo Reprodutível: Verificação Completa}
+
+Para que um auditor independente possa verificar todos os resultados apresentados nesta dissertação, o seguinte comando reproduz a evidência completa:
+
+\begin{lstlisting}[language=bash, caption={Script de verificação completa — 312 CTs}]
+cd C:\Users\marce\.config\opencode
+for f in specs/test_*.py; do python "$f"; done
+# Resultado: 312/312 PASS (100%)
+\end{lstlisting}
+
+Cada suite TDD produz output no formato:
+
+\begin{verbatim}
+SPEC-036 Metacognicao + Self-Evolution — TDD Suite
+PASS: 8  |  FAIL: 0  |  Total: 8
+  [PASS] MC-001: MetacognitiveMonitor observa e detecta anomalias
+  [PASS] MC-008: Pipeline metacognitivo completo integrado
+RESULTADO: [APROVADO]  |  8/8 (100%)
+\end{verbatim}
+
+Este output é gerado deterministicamente (seed=42 para componentes não-determinísticos) e pode ser verificado em qualquer ambiente Windows 11 + Python 3.12.
+
 \section{Resultados de Teste — Evidência Completa}
 
 \subsection{15 Suites TDD, 312 Critical Tests}

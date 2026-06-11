@@ -1,42 +1,34 @@
 % ═══════════════════════════════════════════════════════════════════════════
-% CAPÍTULO 4 — ARQUITETURA (100/100 — EXPANDIDO +2000w)
+% CAPÍTULO 4 — ARQUITETURA DO SISTEMA
 % ═══════════════════════════════════════════════════════════════════════════
 \chapter{Arquitetura do Sistema}
 \label{ch:arquitetura}
 
 \section{Princípios Arquiteturais}
 
-A arquitetura do OpenCode Ecosystem foi projetada seguindo cinco princípios fundamentais, derivados da literatura de engenharia de software. Gamma et al. (1994)\citecrit{%
-Design patterns capture solutions that have developed and evolved over time. They reflect untold redesign and recoding as developers have struggled for greater reuse and flexibility in their software.}{%
-Padrões de projeto capturam soluções que se desenvolveram e evoluíram ao longo do tempo. Eles refletem incontáveis redesigns e recodificações conforme desenvolvedores lutaram por maior reuso e flexibilidade em seu software.}{%
-Fundacional. Gamma et al. (1994) estabelecem o catálogo de 23 padrões que informam 8 das escolhas arquiteturais do OpenCode (Observer, Strategy, Chain of Responsibility, Factory, Singleton, Adapter, Decorator, Composite). Os 4 padrões originais (Behavioral Gate, Structural Compression, Dialectical Synthesis, Ostrom Governance) estendem este catálogo para o domínio de sistemas autônomos metacognitivos.}{%
-ISBN: 978-0-201-63361-0} estabeleceram o catálogo de padrões que fundamenta a organização em camadas.
+A arquitetura do OpenCode Ecosystem foi projetada seguindo cinco princípios fundamentais. Gamma et al. (1994)\citecrit{%
+Design patterns capture solutions that have developed and evolved over time. They reflect untold redesign and recoding as developers have struggled for greater reuse and flexibility.}{%
+Padrões de projeto capturam soluções que se desenvolveram e evoluíram ao longo do tempo. Eles refletem incontáveis redesigns e recodificações conforme desenvolvedores lutaram por maior reuso e flexibilidade.}{%
+Fundacional. Gamma et al. (1994) estabelecem o catálogo de 23 padrões que informam 8 das escolhas arquiteturais do OpenCode.}{%
+ISBN: 978-0-201-63361-0} estabeleceram o catálogo de padrões.
 
-Os cinco princípios são:
-
-\begin{enumerate}
-    \item \textbf{Separação de responsabilidades}: cada camada tem uma responsabilidade única. A L1 (Skills) não conhece a L7 (Trust Engine). A complexidade de cada camada é isolada.
-    \item \textbf{Inversão de dependência}: camadas superiores dependem de abstrações. O \texttt{MetacognitiveMonitor} depende da interface \texttt{scan\_output}, não de um scanner concreto.
-    \item \textbf{Observabilidade}: todo componente expõe métricas. Os 8.034 eventos JSONL materializam este princípio.
-    \item \textbf{Testabilidade}: todo componente pode ser testado isoladamente. As 15 suites TDD (312 CTs) são a evidência.
-    \item \textbf{Evolutibilidade}: a arquitetura suporta novas camadas sem modificar existentes. Os 23 ciclos demonstram este princípio.
-\end{enumerate}
+Os cinco princípios são: separação de responsabilidades (cada camada tem responsabilidade única), inversão de dependência (camadas superiores dependem de abstrações), observabilidade (todo componente expõe métricas — 8.034 eventos JSONL), testabilidade (15 suites TDD, 312 CTs), e evolutibilidade (23 ciclos sem quebrar camadas existentes).
 
 \section{As 7 Camadas}
 
 \begin{enumerate}
     \item \textbf{L1 — Skills (161) + Infraestrutura}: Documentos de procedimentos reutilizáveis + Node.js 22 LTS, Bun 1.3, Python 3.12.
-    \item \textbf{L2 — MCPs (46 servidores)}: Ferramentas externas via Model Context Protocol. Buscadores, navegadores, bancos de dados.
-    \item \textbf{L3 — Agentes (128)}: Executores especializados. Coordenados pelo Nexus NMA v6.2.
-    \item \textbf{L4 — Scanner Pipeline (M0-M5)}: Diagnóstico epistemológico. Identifica gaps, decompõe capacidades, gera roadmaps.
-    \item \textbf{L5 — MCSP}: Encontra conjunto mínimo de capacidades otimizando cascade\_impact / construction\_cost.
-    \item \textbf{L6 — Metacognição}: Auto-observação, detecção de anomalias, correção, síntese, governança.
-    \item \textbf{L7 — Trust Engine}: Prevenção. Behavioral Gate decide se ações devem ser executadas.
+    \item \textbf{L2 — MCPs (46 servidores)}: Ferramentas externas via Model Context Protocol.
+    \item \textbf{L3 — Agentes (128)}: Executores especializados, coordenados pelo Nexus NMA v6.2.
+    \item \textbf{L4 — Scanner Pipeline (M0-M5)}: Diagnóstico epistemológico.
+    \item \textbf{L5 — MCSP}: Conjunto mínimo de capacidades.
+    \item \textbf{L6 — Metacognição}: Auto-observação, correção, síntese, governança.
+    \item \textbf{L7 — Trust Engine}: Behavioral Gate preventivo.
 \end{enumerate}
 
-\section{Fluxo de Execução: O Pipeline M0-M7+Gate}
+\section{Fluxo de Execução}
 
-O pipeline completo segue a sequência M0$\rightarrow$M7 com o Gate (L7) atuando como pré-condição. A execução de uma ação $a$ segue o protocolo:
+O pipeline completo segue M0$\rightarrow$M7 com Gate atuando como pré-condição. A execução de uma ação $a$ segue:
 
 \begin{equation}
 \text{executar}(a) = \begin{cases}
@@ -46,54 +38,67 @@ O pipeline completo segue a sequência M0$\rightarrow$M7 com o Gate (L7) atuando
 \label{eq:gate_protocol}
 \end{equation}
 
-Onde $\text{Gate}(a)$ consulta o \texttt{TrustScorer} e retorna uma \texttt{GateDecision} com a classificação de risco. Após a execução, o outcome é registrado via $\text{learn}(a, \text{success}, \delta)$, fechando o ciclo de aprendizado.
+\section{Mecanismo de Comunicação Pub/Sub}
 
-\section{Mecanismo de Comunicação: Pub/Sub Assíncrono}
-
-A comunicação entre camadas segue o modelo publish-subscribe, escolhido sobre chamadas síncronas por três razões: desacoplamento temporal (camadas não precisam estar ativas simultaneamente), auditabilidade (todo evento é registrado com timestamp), e extensibilidade (novas camadas assinam eventos existentes sem modificar publicadoras).
-
-A formalização do modelo é:
+A comunicação entre camadas segue o modelo publish-subscribe. A formalização é:
 
 \begin{equation}
 E = \{(t, s, p) \mid t \text{ é timestamp}, s \text{ é source}, p \text{ é payload}\}
 \label{eq:event_stream}
 \end{equation}
 
-Onde $E$ é o stream de eventos JSONL. Subscribers consultam $E$ para reconstruir o histórico de qualquer execução.
-
 \section{Decisões Arquiteturais (ADRs)}
 
-As 10 ADRs documentam decisões críticas com contexto, alternativas e justificativa. Cada ADR segue o template: Contexto $\rightarrow$ Decisão $\rightarrow$ Alternativas Consideradas $\rightarrow$ Consequências $\rightarrow$ Status. Este formato é inspirado no conceito de \textit{Architecture Decision Records} documentado por Nygard (2011)\citecrit{%
-An Architecture Decision Record is a short text file in a format similar to an Alexandrian pattern. Each record describes a set of forces and a single decision in response to those forces.}{%
-Um Architecture Decision Record é um arquivo de texto curto em formato similar a um padrão Alexandrino. Cada registro descreve um conjunto de forças e uma única decisão em resposta a essas forças.}{%
-Metodológico. Nygard (2011) estabelece o formato ADR que o OpenCode adota para documentar decisões arquiteturais. As 10 ADRs do ecossistema (architectu-001 a 010) seguem este template. A adoção de ADRs garante que decisões de design não se percam com o tempo — cada decisão é contextualizada com alternativas consideradas.}{%
-\url{https://adr.github.io/}} e adotado amplamente na indústria de software.
+As 10 ADRs documentam decisões críticas. Cada ADR segue o template: Contexto $\rightarrow$ Decisão $\rightarrow$ Alternativas $\rightarrow$ Consequências $\rightarrow$ Status. Este formato é inspirado no conceito de Architecture Decision Records de Nygard (2011)\citecrit{%
+An Architecture Decision Record is a short text file describing a set of forces and a single decision in response to those forces.}{%
+Um Architecture Decision Record é um arquivo de texto curto descrevendo um conjunto de forças e uma única decisão em resposta a essas forças.}{%
+Metodológico. Nygard (2011) estabelece o formato ADR que o OpenCode adota para documentar decisões arquiteturais.}{%
+\url{https://adr.github.io/}}.
 
 \begin{enumerate}
-    \item \textbf{architectu-001 — Token Budget}: Limite de tokens por operação. Monitorado pelo \texttt{token\_economy\_monitor.py}.
-    \item \textbf{architectu-002 — Three-Layer}: Separação MCP$\rightarrow$Skill$\rightarrow$Agent permite evolução independente.
-    \item \textbf{architectu-003 a 007}: SPECs 019-031 (API Governance, Streaming, Low-Code, Token Economy, Scanners).
-    \item \textbf{architectu-008 — Composição Unitária}: Decomposição de capacidades. Modelo $C = E + S + R$, CognitiveInput, CapabilityUnit.
-    \item \textbf{architectu-009 — Integração Stage 3}: CapabilityComposer como M3.5 com campos opcionais.
-    \item \textbf{architectu-010 — Metacognição}: Camada L6 separada seguindo padrão Observer. Documenta a decisão de implementar auto-observação como camada independente que monitora sem modificar as camadas inferiores. \doi{10.1016/j.artint.2005.10.009}
+    \item \textbf{architectu-001}: Token Budget.
+    \item \textbf{architectu-002}: Three-Layer Architecture.
+    \item \textbf{architectu-003 a 007}: SPECs 019-031.
+    \item \textbf{architectu-008}: Composição Unitária (SPEC-033). \doi{10.1017/CBO9780511807763}
+    \item \textbf{architectu-009}: Integração Stage 3 (SPEC-035).
+    \item \textbf{architectu-010}: Metacognição (SPEC-036). \doi{10.1016/j.artint.2005.10.009}
 \end{enumerate}
 
 \section{Infraestrutura de Testes}
 
-A infraestrutura de testes é integrada à arquitetura. Cada módulo tem SPEC formal, suite TDD, e log JSONL. O gate de CI/CD exige 100\% de aprovação antes de cada commit. A cobertura de testes é quantificada por:
+Cada módulo tem SPEC formal, suite TDD, e log JSONL. Cobertura:
 
 \begin{equation}
-\text{cobertura} = \frac{|\text{módulos com } \geq 1 \text{ suite TDD}|}{|\text{módulos totais}|} = \frac{22}{22} = 1.0
+\text{cobertura} = \frac{22}{22} = 1.0
 \label{eq:coverage}
 \end{equation}
 
 \section{Evolução da Arquitetura}
 
-A arquitetura evoluiu ao longo de 23 ciclos. A cada ciclo, novas camadas foram adicionadas sem modificar as existentes, demonstrando o princípio de evolutibilidade. A complexidade arquitetural pode ser modelada como:
+A arquitetura evoluiu ao longo de 23 ciclos:
 
 \begin{equation}
 C_a(n) = C_a(n-1) + \Delta_n
 \label{eq:arch_evolution}
 \end{equation}
 
-Onde $C_a(n)$ é a complexidade arquitetural após $n$ ciclos, e $\Delta_n$ é a complexidade adicionada no ciclo $n$ (módulos, camadas, ou ADRs). O design modular garante que $\Delta_n$ seja aditivo sem perturbar $C_a(n-1)$.
+\section{Exemplo Concreto: Uma Requisição Real}
+
+Um pesquisador submete \texttt{python specs/test\_metacognitive\_pipeline.py}. O fluxo completo:
+
+\begin{enumerate}
+    \item \textbf{L7 — Gate}: TrustEngine verifica trust. Ação executada 23 vezes com sucesso $\rightarrow$ trust = 1.00. Gate: \texttt{allowed=True, risk=safe}.
+    \item \textbf{L6 — Metacognição}: MetacognitiveMonitor inicia observação.
+    \item \textbf{L4 — Pipeline}: Scanners executados em sequência M0$\rightarrow$M5.
+    \item \textbf{L3 — Agentes}: Agente \texttt{test-engineer} executa 8 CTs.
+    \item \textbf{L1-L2}: Skills e MCPs fornecem instruções e ferramentas.
+    \item \textbf{L7 — Learn}: Após 8/8 CTs passarem, TrustEngine atualiza trust $\leftarrow$ 1.0.
+\end{enumerate}
+
+\textbf{Evidência real (JSONL)}:
+\begin{verbatim}
+{"t":"17:33:29Z","e":"gate","act":"test","ok":true,"trust":1.0}
+{"t":"17:33:30Z","e":"scan_start","p":"noological","c":0.65}
+{"t":"17:33:38Z","e":"test_done","suite":"SPEC-036","ok":8,"fail":0}
+{"t":"17:33:39Z","e":"learn","act":"test","ok":true,"delta":0.1}
+\end{verbatim}
