@@ -6,13 +6,13 @@
 
 \section{Princípios Arquiteturais}
 
-A arquitetura do OpenCode Ecosystem foi projetada seguindo cinco princípios fundamentais. Gamma et al. (1994)\citecrit{%
+A arquitetura do OpenCode Ecosystem foi projetada seguindo cinco princípios fundamentais, derivados da literatura de engenharia de software. Gamma et al. (1994)\citecrit{%
 Design patterns capture solutions that have developed and evolved over time. They reflect untold redesign and recoding as developers have struggled for greater reuse and flexibility.}{%
 Padrões de projeto capturam soluções que se desenvolveram e evoluíram ao longo do tempo. Eles refletem incontáveis redesigns e recodificações conforme desenvolvedores lutaram por maior reuso e flexibilidade.}{%
-Fundacional. Gamma et al. (1994) estabelecem o catálogo de 23 padrões que informam 8 das escolhas arquiteturais do OpenCode.}{%
+Fundacional. Gamma et al. (1994) estabelecem o catálogo de 23 padrões que informam 8 das escolhas arquiteturais do OpenCode. Os 4 padrões originais (Behavioral Gate, Structural Compression, Dialectical Synthesis, Ostrom Governance) estendem este catálogo para o domínio de sistemas autônomos metacognitivos.}{%
 ISBN: 978-0-201-63361-0} estabeleceram o catálogo de padrões.
 
-Os cinco princípios são: separação de responsabilidades (cada camada tem responsabilidade única), inversão de dependência (camadas superiores dependem de abstrações), observabilidade (todo componente expõe métricas — 8.034 eventos JSONL), testabilidade (15 suites TDD, 312 CTs), e evolutibilidade (23 ciclos sem quebrar camadas existentes).
+Os cinco princípios são: separação de responsabilidades, inversão de dependência, observabilidade (8.034 eventos JSONL — conforme discutido no Capítulo~\ref{ch:metacognicao}), testabilidade (15 suites TDD, 312 CTs — conforme Tabela~\ref{tab:tdd_full} no Capítulo~\ref{ch:resultados}), e evolutibilidade (23 ciclos — conforme Seção~3.4 do Capítulo~\ref{ch:metodologia}).
 
 \section{As 7 Camadas}
 
