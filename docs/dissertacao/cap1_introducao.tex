@@ -81,17 +81,23 @@ Construir e validar um ecossistema de engenharia de software com metacognição 
 
 \section{Justificativa e Relevância}
 
-A construção de sistemas de software capazes de metacognição funcional não é apenas um exercício acadêmico — tem implicações práticas profundas. Considere três cenários:
+A construção de sistemas de software capazes de metacognição funcional não é apenas um exercício acadêmico — tem implicações práticas, sociais e éticas profundas. Utilizando o framework da Teoria da Atividade de Leontiev (1978)\citecrit{%
+Activity is the unit of life that connects the subject to the world. Human activity is structured in hierarchical levels: activity (motivated by needs), actions (directed toward goals), and operations (dependent on conditions).}{%
+A atividade é a unidade da vida que conecta o sujeito ao mundo. A atividade humana é estruturada em níveis hierárquicos: atividade (motivada por necessidades), ações (dirigidas a objetivos) e operações (dependentes de condições).}{%
+Estrutural. Leontiev (1978) fornece o framework para entender a metacognição como atividade: a necessidade (sistemas confiáveis) motiva a atividade (auto-observação), que se desdobra em ações (detectar, corrigir, prevenir) e operações (CTs, logs, gates).}{%
+ISBN: 978-0-13-037535-7}, a metacognição transforma a própria atividade do sistema: de executor passivo de comandos para agente que monitora, avalia e modifica sua própria atividade.
+
+Considere três cenários onde a metacognição funcional teria prevenido falhas catastróficas:
 
 \begin{itemize}
-    \item \textbf{Sistemas críticos}: um sistema de controle de tráfego aéreo que detecta que seu módulo de previsão meteorológica está produzindo resultados anômalos e automaticamente recalibra seus parâmetros, sem intervenção humana e sem interrupção do serviço. Este cenário requer exatamente as capacidades implementadas pelo MetacognitiveMonitor (N2-N3).
+    \item \textbf{Sistemas críticos}: um sistema de controle de tráfego aéreo que detecta que seu módulo de previsão meteorológica está produzindo resultados anômalos (ANOM-001: queda de densidade $>30\%$) e automaticamente recalibra seus parâmetros, sem intervenção humana. O Behavioral Gate (SPEC-038) teria prevenido a execução de ações com trust score degradado.
     
-    \item \textbf{Sistemas de saúde}: um sistema de diagnóstico médico que percebe que está consistentemente subestimando riscos para um grupo demográfico específico, investiga a causa raiz (viés nos dados de treinamento), e propõe uma correção (rebalanceamento do dataset). Este cenário requer inferência causal (root\_cause\_analysis, SPEC-037).
+    \item \textbf{Sistemas de saúde}: um sistema de diagnóstico que percebe viés sistemático contra um grupo demográfico (ANOM-002: perda de categorias em dimensão específica), investiga a causa raiz (root\_cause\_analysis com Granger score), e propõe correção. A governança Ostrom (SPEC-036) garante que a correção não viole princípios éticos.
     
-    \item \textbf{Infraestrutura crítica}: um sistema de distribuição de energia que, ao detectar um padrão de consumo anômalo, decide preventivamente não executar uma manutenção programada que poderia causar apagão, baseado em confiança aprendida com situações similares passadas. Este cenário requer o Behavioral Gate (SPEC-038, N3.5).
+    \item \textbf{Infraestrutura crítica}: um sistema de distribuição de energia que, ao detectar padrão de consumo anômalo, decide preventivamente não executar manutenção programada que causaria apagão (BehavioralGate: trust $< 0.25$, blocked). O shadow mode teria testado esta decisão por 5 ciclos antes da ativação.
 \end{itemize}
 
-Em todos estes cenários, a capacidade de auto-observação, diagnóstico, correção e prevenção — metacognição funcional — é o que separa um sistema frágil de um sistema resiliente.
+Em todos estes cenários, a metacognição funcional — auto-observação, diagnóstico, correção e prevenção — é o que separa um sistema frágil de um sistema resiliente. A relevância social é direta: sistemas críticos mais confiáveis significam menos acidentes, menos falhas médicas, e menos apagões.
 
 \section{Contribuições Esperadas}
 

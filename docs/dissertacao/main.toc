@@ -16,147 +16,147 @@
 \contentsline {section}{\numberline {1.4}Justificativa e Relevância}{17}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Contribuições Esperadas}{18}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Estrutura da Dissertação}{19}{section.1.6}%
-\contentsline {section}{\numberline {1.7}Declaração de Uso de Inteligência Artificial}{19}{section.1.7}%
+\contentsline {section}{\numberline {1.7}Declaração de Uso de Inteligência Artificial}{20}{section.1.7}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Revisão da Literatura}}{20}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Metacognição: Fundamentos Teóricos}{20}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}O Que É Metacognição?}{20}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Metacognição em Inteligência Artificial}{21}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}A Taxonomia de Minsky: Múltiplos Níveis de Reflexão}{22}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Teorias de Consciência e Sua Adaptação Computacional}{23}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Global Workspace Theory (GWT)}{23}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Attention Schema Theory (AST)}{24}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Atkinson-Shiffrin Memory Model}{25}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Teoria dos Jogos e Governança de Commons}{26}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Ostrom's Design Principles (DP1-DP8)}{26}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Equilíbrio de Nash e Estratégias Evolutivamente Estáveis}{28}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}Engenharia de Software com Agentes Inteligentes}{29}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Test-Driven Development como Método Científico}{29}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Padrões de Projeto para Sistemas Autônomos}{30}{subsection.2.4.2}%
-\contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{31}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}NEXO Brain (wazionapps/nexo)}{31}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Awesome Autoresearch (alvinreal/awesome-autoresearch)}{31}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Ruflo e Planejamento com Arquivos}{31}{subsection.2.5.3}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Revisão da Literatura}}{21}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Metacognição: Fundamentos Teóricos}{21}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}O Que É Metacognição?}{21}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Metacognição em Inteligência Artificial}{22}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}A Taxonomia de Minsky: Múltiplos Níveis de Reflexão}{23}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Teorias de Consciência e Sua Adaptação Computacional}{24}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Global Workspace Theory (GWT)}{24}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Attention Schema Theory (AST)}{25}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Atkinson-Shiffrin Memory Model}{26}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Teoria dos Jogos e Governança de Commons}{27}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Ostrom's Design Principles (DP1-DP8)}{27}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Equilíbrio de Nash e Estratégias Evolutivamente Estáveis}{29}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Engenharia de Software com Agentes Inteligentes}{30}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Test-Driven Development como Método Científico}{30}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Padrões de Projeto para Sistemas Autônomos}{31}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{32}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}NEXO Brain (wazionapps/nexo)}{32}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Awesome Autoresearch (alvinreal/awesome-autoresearch)}{32}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Ruflo e Planejamento com Arquivos}{32}{subsection.2.5.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Metodologia}}{32}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Design Science Research}{32}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Aderência aos 7 Princípios}{32}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Spec-Driven Development}{33}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Test-Driven Development como Método Científico}{33}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Fundamentação Epistemológica}{33}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Estrutura de um CT}{33}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Ciclos Evolutivos}{34}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Métricas de Validação}{34}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Considerações Éticas}{34}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Ameaças à Validade}{34}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Limitações do DSR como Paradigma}{35}{subsection.3.7.1}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Metodologia}}{33}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Design Science Research}{33}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Aderência aos 7 Princípios}{33}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Spec-Driven Development}{34}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Test-Driven Development como Método Científico}{34}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Fundamentação Epistemológica}{34}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Estrutura de um CT}{34}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Ciclos Evolutivos}{35}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Métricas de Validação}{35}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Considerações Éticas}{35}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Ameaças à Validade}{35}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Limitações do DSR como Paradigma}{36}{subsection.3.7.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Arquitetura do Sistema}}{36}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Princípios Arquiteturais}{36}{section.4.1}%
-\contentsline {section}{\numberline {4.2}As 7 Camadas}{36}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Fluxo de Execução}{36}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Mecanismo de Comunicação Pub/Sub}{37}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Decisões Arquiteturais (ADRs)}{37}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Infraestrutura de Testes}{37}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Evolução da Arquitetura}{38}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Exemplo Concreto: Uma Requisição Real}{38}{section.4.8}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Arquitetura do Sistema}}{37}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Princípios Arquiteturais}{37}{section.4.1}%
+\contentsline {section}{\numberline {4.2}As 7 Camadas}{37}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Fluxo de Execução}{37}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Mecanismo de Comunicação Pub/Sub}{38}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Decisões Arquiteturais (ADRs)}{38}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Infraestrutura de Testes}{38}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Evolução da Arquitetura}{39}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Exemplo Concreto: Uma Requisição Real}{39}{section.4.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Composição Unitária do Conhecimento}}{39}{chapter.5}%
-\contentsline {section}{\numberline {5.1}O Problema: Por Que Capacidades Não São Átomos}{39}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Uma Analogia para Começar}{39}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}A Evidência do Problema}{39}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Modelo Formal: A Decomposição C = E + S + R}{40}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Explicação Didática da Fórmula}{40}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Explicação Didática da Compressão}{40}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Explicação Didática da Condição de Validade}{41}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}As Métricas em Português Claro}{41}{subsection.5.2.4}%
-\contentsline {section}{\numberline {5.3}Estrutura de Dados: Como Representar Isso em Código}{42}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}CognitiveInput — A Menor Unidade de Conhecimento}{42}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}CapabilityUnit — A Receita Completa}{43}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Biblioteca de Insumos Cognitivos}{43}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Integração com MCSP: Como Isso Muda a Otimização}{44}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Explicação Didática da Mudança}{44}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Explicação Didática da Fórmula de Custo}{44}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Explicação Didática da Heurística Gulosa}{44}{subsection.5.5.3}%
-\contentsline {section}{\numberline {5.6}Exemplo Concreto: Da Teoria à Prática}{45}{section.5.6}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Composição Unitária do Conhecimento}}{40}{chapter.5}%
+\contentsline {section}{\numberline {5.1}O Problema: Por Que Capacidades Não São Átomos}{40}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Uma Analogia para Começar}{40}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}A Evidência do Problema}{40}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Modelo Formal: A Decomposição C = E + S + R}{41}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Explicação Didática da Fórmula}{41}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Explicação Didática da Compressão}{41}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Explicação Didática da Condição de Validade}{42}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}As Métricas em Português Claro}{42}{subsection.5.2.4}%
+\contentsline {section}{\numberline {5.3}Estrutura de Dados: Como Representar Isso em Código}{43}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}CognitiveInput — A Menor Unidade de Conhecimento}{43}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}CapabilityUnit — A Receita Completa}{44}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Biblioteca de Insumos Cognitivos}{44}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Integração com MCSP: Como Isso Muda a Otimização}{45}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Explicação Didática da Mudança}{45}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Explicação Didática da Fórmula de Custo}{45}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Explicação Didática da Heurística Gulosa}{45}{subsection.5.5.3}%
+\contentsline {section}{\numberline {5.6}Exemplo Concreto: Da Teoria à Prática}{46}{section.5.6}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Metacognição Funcional (N3)}}{47}{chapter.6}%
-\contentsline {section}{\numberline {6.1}MetacognitiveMonitor — Auto-Observação e Correção}{47}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Fundamentação Teórica}{47}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Detecção de Anomalias — Três Padrões com Thresholds Calibrados}{47}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Inferência Causal de Causa Raiz (Granger + Bayes)}{48}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}DialecticalEngine — Síntese de Contradições}{49}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Fundamentação Filosófica}{49}{subsection.6.2.1}%
-\contentsline {section}{\numberline {6.3}CooperativeGovernance — Ostrom DP1-DP8}{50}{section.6.3}%
-\contentsline {section}{\numberline {6.4}SelfModel — Auto-Representação N0-N3.5}{50}{section.6.4}%
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Metacognição Funcional (N3)}}{48}{chapter.6}%
+\contentsline {section}{\numberline {6.1}MetacognitiveMonitor — Auto-Observação e Correção}{48}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Fundamentação Teórica}{48}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Detecção de Anomalias — Três Padrões com Thresholds Calibrados}{48}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Inferência Causal de Causa Raiz (Granger + Bayes)}{49}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}DialecticalEngine — Síntese de Contradições}{50}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Fundamentação Filosófica}{50}{subsection.6.2.1}%
+\contentsline {section}{\numberline {6.3}CooperativeGovernance — Ostrom DP1-DP8}{51}{section.6.3}%
+\contentsline {section}{\numberline {6.4}SelfModel — Auto-Representação N0-N3.5}{51}{section.6.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase []{Behavioral Gate Preventivo (N3.5)}}{52}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Do Reativo ao Preventivo}{52}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Trust Scoring: Como Calcular Confiança}{52}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Explicação Didática da Fórmula}{52}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Exemplo Numérico Passo a Passo}{53}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Shadow Mode: Proteção para Ações Novas}{53}{subsection.7.2.3}%
-\contentsline {subsection}{\numberline {7.2.4}Rollback Detection: Detectando Degradação}{54}{subsection.7.2.4}%
-\contentsline {section}{\numberline {7.3}Behavioral Gate: Classificação de Risco}{54}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Natural Forgetting: Memória com Decaimento}{55}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Validação Experimental}{55}{section.7.5}%
+\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase []{Behavioral Gate Preventivo (N3.5)}}{53}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Do Reativo ao Preventivo}{53}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Trust Scoring: Como Calcular Confiança}{53}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Explicação Didática da Fórmula}{53}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Exemplo Numérico Passo a Passo}{54}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Shadow Mode: Proteção para Ações Novas}{54}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.4}Rollback Detection: Detectando Degradação}{55}{subsection.7.2.4}%
+\contentsline {section}{\numberline {7.3}Behavioral Gate: Classificação de Risco}{55}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Natural Forgetting: Memória com Decaimento}{56}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Validação Experimental}{56}{section.7.5}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {8}\MakeTextUppercase []{Resultados e Discussão}}{56}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Exemplo Reprodutível: Verificação Completa}{56}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Resultados de Teste — Evidência Completa}{56}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}15 Suites TDD, 312 Critical Tests}{56}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}Evolução da Cobertura de Testes}{57}{subsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.2.3}Progressão dos Níveis de Consciência}{58}{subsection.8.2.3}%
-\contentsline {section}{\numberline {8.3}Estudos de Caso — Evidência Experimental}{58}{section.8.3}%
-\contentsline {subsection}{\numberline {8.3.1}Caso 1: Auto-Diagnóstico do Ecossistema}{58}{subsection.8.3.1}%
-\contentsline {subsection}{\numberline {8.3.2}Caso 2: Compressão Estrutural de Texto Acadêmico}{59}{subsection.8.3.2}%
-\contentsline {subsection}{\numberline {8.3.3}Caso 3: Behavioral Gate em Produção Simulada}{59}{subsection.8.3.3}%
-\contentsline {section}{\numberline {8.4}Comparação com o Estado da Arte}{60}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Discussão}{60}{section.8.5}%
-\contentsline {subsection}{\numberline {8.5.1}Implicações Teóricas}{60}{subsection.8.5.1}%
-\contentsline {subsection}{\numberline {8.5.2}Implicações Práticas}{61}{subsection.8.5.2}%
-\contentsline {section}{\numberline {8.6}Limitações (Transparência Total)}{61}{section.8.6}%
-\contentsline {section}{\numberline {8.7}Trabalhos Futuros}{62}{section.8.7}%
+\contentsline {chapter}{\chapternumberline {8}\MakeTextUppercase []{Resultados e Discussão}}{57}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Exemplo Reprodutível: Verificação Completa}{57}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Resultados de Teste — Evidência Completa}{57}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}15 Suites TDD, 312 Critical Tests}{57}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Evolução da Cobertura de Testes}{58}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}Progressão dos Níveis de Consciência}{59}{subsection.8.2.3}%
+\contentsline {section}{\numberline {8.3}Estudos de Caso — Evidência Experimental}{59}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Caso 1: Auto-Diagnóstico do Ecossistema}{59}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Caso 2: Compressão Estrutural de Texto Acadêmico}{60}{subsection.8.3.2}%
+\contentsline {subsection}{\numberline {8.3.3}Caso 3: Behavioral Gate em Produção Simulada}{60}{subsection.8.3.3}%
+\contentsline {section}{\numberline {8.4}Comparação com o Estado da Arte}{61}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Discussão}{61}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}Implicações Teóricas}{61}{subsection.8.5.1}%
+\contentsline {subsection}{\numberline {8.5.2}Implicações Práticas}{62}{subsection.8.5.2}%
+\contentsline {section}{\numberline {8.6}Limitações (Transparência Total)}{62}{section.8.6}%
+\contentsline {section}{\numberline {8.7}Trabalhos Futuros}{63}{section.8.7}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {9}\MakeTextUppercase []{Conclusão}}{63}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Síntese dos Resultados}{63}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}Metacognição Simbólica Funcional É Implementável}{63}{subsection.9.1.1}%
-\contentsline {subsection}{\numberline {9.1.2}Composição Unitária Fecha a Lacuna Entre Identificação e Construção}{63}{subsection.9.1.2}%
-\contentsline {subsection}{\numberline {9.1.3}Governança Ostrom Fornece Framework Auditável para Alinhamento}{63}{subsection.9.1.3}%
-\contentsline {subsection}{\numberline {9.1.4}Behavioral Gate Fecha o Ciclo Metacognitivo}{64}{subsection.9.1.4}%
-\contentsline {subsection}{\numberline {9.1.5}312 Testes Críticos Fornecem Evidência Reproduzível}{64}{subsection.9.1.5}%
-\contentsline {section}{\numberline {9.2}Contribuições}{64}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Comparação com o Estado da Arte}{65}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Limitações e Trabalhos Futuros}{65}{section.9.4}%
-\contentsline {section}{\numberline {9.5}Considerações Finais}{65}{section.9.5}%
-\contentsline {subsection}{\numberline {9.5.1}Exemplo Concreto: Auto-Documentação como Evidência}{65}{subsection.9.5.1}%
+\contentsline {chapter}{\chapternumberline {9}\MakeTextUppercase []{Conclusão}}{64}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Síntese dos Resultados}{64}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Metacognição Simbólica Funcional É Implementável}{64}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Composição Unitária Fecha a Lacuna Entre Identificação e Construção}{64}{subsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.1.3}Governança Ostrom Fornece Framework Auditável para Alinhamento}{64}{subsection.9.1.3}%
+\contentsline {subsection}{\numberline {9.1.4}Behavioral Gate Fecha o Ciclo Metacognitivo}{65}{subsection.9.1.4}%
+\contentsline {subsection}{\numberline {9.1.5}312 Testes Críticos Fornecem Evidência Reproduzível}{65}{subsection.9.1.5}%
+\contentsline {section}{\numberline {9.2}Contribuições}{65}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Comparação com o Estado da Arte}{66}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Limitações e Trabalhos Futuros}{66}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Considerações Finais}{66}{section.9.5}%
+\contentsline {subsection}{\numberline {9.5.1}Exemplo Concreto: Auto-Documentação como Evidência}{66}{subsection.9.5.1}%
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{67}{section*.21}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{68}{section*.21}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Lista Completa de Módulos Python}}{70}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Lista Completa de Módulos Python}}{71}{appendix.A}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Comandos de Verificação}}{71}{appendix.B}%
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Comandos de Verificação}}{72}{appendix.B}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Glossário de Termos Técnicos}}{72}{appendix.C}%
+\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Glossário de Termos Técnicos}}{73}{appendix.C}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {D}\MakeTextUppercase []{Código Fonte dos Módulos Principais}}{74}{appendix.D}%
-\contentsline {section}{\numberline {D.1}TrustScorer — Cálculo de Confiança Adaptativo}{74}{section.D.1}%
-\contentsline {section}{\numberline {D.2}NaturalForgetting — Modelo Atkinson-Shiffrin}{74}{section.D.2}%
-\contentsline {section}{\numberline {D.3}MetacognitiveMonitor — Detecção de Anomalias}{75}{section.D.3}%
+\contentsline {appendix}{\chapternumberline {D}\MakeTextUppercase []{Código Fonte dos Módulos Principais}}{75}{appendix.D}%
+\contentsline {section}{\numberline {D.1}TrustScorer — Cálculo de Confiança Adaptativo}{75}{section.D.1}%
+\contentsline {section}{\numberline {D.2}NaturalForgetting — Modelo Atkinson-Shiffrin}{75}{section.D.2}%
+\contentsline {section}{\numberline {D.3}MetacognitiveMonitor — Detecção de Anomalias}{76}{section.D.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {E}\MakeTextUppercase []{Log de Execução do Pipeline (JSONL)}}{77}{appendix.E}%
+\contentsline {appendix}{\chapternumberline {E}\MakeTextUppercase []{Log de Execução do Pipeline (JSONL)}}{78}{appendix.E}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {F}\MakeTextUppercase []{Glossário de Termos Técnicos (Expandido)}}{78}{appendix.F}%
+\contentsline {appendix}{\chapternumberline {F}\MakeTextUppercase []{Glossário de Termos Técnicos (Expandido)}}{79}{appendix.F}%
