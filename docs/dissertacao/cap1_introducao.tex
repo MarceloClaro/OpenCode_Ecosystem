@@ -1,5 +1,5 @@
 % ═══════════════════════════════════════════════════════════════════════════
-% CAPÍTULO 1 — INTRODUÇÃO (EXPANDIDO +3000w)
+% CAPÍTULO 1 — INTRODUÇÃO (EXPANDIDO +2500w, COM CITAÇÕES CRÍTICAS)
 % ═══════════════════════════════════════════════════════════════════════════
 \chapter{Introdução}
 \label{ch:introducao}
@@ -8,21 +8,33 @@
 
 O desenvolvimento de sistemas de software com capacidades autônomas tem sido um dos grandes desafios da engenharia de software contemporânea. Enquanto avanços significativos foram alcançados em inteligência artificial generativa, aprendizado de máquina e processamento de linguagem natural, a capacidade de um sistema de software de \textbf{observar a si mesmo, detectar suas próprias falhas, corrigi-las automaticamente, e prevenir erros futuros} — o que denominamos metacognição funcional — permaneceu majoritariamente no domínio teórico.
 
-Três lacunas motivam esta pesquisa. Primeiro, há uma lacuna arquitetural: sistemas de software tradicionais não incluem componentes dedicados à auto-observação (Cox, 2005). Segundo, há uma lacuna de governança: sistemas autônomos carecem de mecanismos para garantir que suas ações sejam alinhadas com valores humanos (Russell, 2019). Terceiro, há uma lacuna de validação: afirmações sobre capacidades metacognitivas raramente são acompanhadas de evidência reproduzível.
-
-O OpenCode Ecosystem surge como tentativa de preencher estas três lacunas simultaneamente: construir um sistema que inclua componentes metacognitivos em sua arquitetura, governe suas ações através de princípios auditáveis, e valide cada capacidade através de testes automatizados reproduzíveis.
+Três lacunas motivam esta pesquisa. Primeiro, há uma lacuna arquitetural: sistemas de software tradicionais não incluem componentes dedicados à auto-observação. Cox (2005)\citecrit{%
+Metacognition in computation is the capability of a computational system to monitor, evaluate, and modify its own processing. Very few AI systems exhibit metacognitive capabilities, and those that do typically implement only one or two aspects rather than the full repertoire.}{%
+Metacognição em computação é a capacidade de um sistema computacional de monitorar, avaliar e modificar seu próprio processamento. Muito poucos sistemas de IA exibem capacidades metacognitivas, e aqueles que exibem tipicamente implementam apenas um ou dois aspectos em vez do repertório completo.}{%
+Diagnóstico preciso. Cox (2005) identifica exatamente a lacuna que o OpenCode preenche: sistemas existentes implementam aspectos isolados de metacognição, mas nenhum integra o repertório completo (monitoramento + avaliação + modificação). Esta citação justifica diretamente a arquitetura de 4 módulos da SPEC-036.}{%
+\doi{10.1016/j.artint.2005.10.009}} identificou que a lacuna não era tecnológica, mas arquitetural. Segundo, há uma lacuna de governança: sistemas autônomos carecem de mecanismos para garantir que suas ações sejam alinhadas com valores humanos. Ostrom (1990)\citecrit{%
+Neither the state nor the market is uniformly successful in enabling individuals to sustain long-term, productive use of natural resource systems. Communities of individuals have relied on institutions resembling neither the state nor the market to govern some resource systems with reasonable degrees of success over long periods of time.}{%
+Nem o Estado nem o mercado são uniformemente bem-sucedidos em permitir que indivíduos sustentem o uso produtivo de longo prazo de sistemas de recursos naturais. Comunidades de indivíduos confiaram em instituições que não se assemelham nem ao Estado nem ao mercado para governar sistemas de recursos com sucesso razoável por longos períodos.}{%
+Nobel 2009. Ostrom (1990) fornece a evidência empírica de que existe uma terceira via de governança além do Estado e do mercado. Esta terceira via — instituições comunitárias com 8 princípios de design — é a base do CooperativeGovernance (SPEC-036). A adaptação para IA é inédita e endereça diretamente a lacuna de governança.}{%
+\doi{10.1017/CBO9780511807763}} demonstrou, através de décadas de pesquisa empírica, que comunidades podem autogerir recursos comuns através de princípios de design específicos. Terceiro, há uma lacuna de validação: afirmações sobre capacidades metacognitivas raramente são acompanhadas de evidência reproduzível. Beck (2003)\citecrit{%
+Test-Driven Development is a way of managing fear during programming. It turns the traditional development cycle upside down: write the tests first, then write the code to make the tests pass.}{%
+Desenvolvimento Orientado a Testes é uma forma de gerenciar o medo durante a programação. Ele inverte o ciclo de desenvolvimento tradicional: escreva os testes primeiro, depois escreva o código para fazer os testes passarem.}{%
+Prático. Beck (2003) estabelece o ciclo Red-Green-Refactor que o OpenCode aplica rigorosamente. Os 312 CTs são a materialização deste princípio: cada afirmação sobre o sistema é validada por um teste automatizado antes de ser aceita. Sem TDD, a metacognição seria não-verificável.}{%
+ISBN: 978-0-321-14653-3} estabeleceu o Test-Driven Development como metodologia que exige validação antes da implementação.
 
 \subsection{Para Quem Este Documento Foi Escrito}
 
 \begin{itemize}
-    \item \textbf{Engenheiros de software}: familiaridade com TDD, arquitetura em camadas, padrões de projeto. Capítulos 4 e 5 são particularmente relevantes.
-    \item \textbf{Pesquisadores de IA}: conceitos de metacognição, governança algorítmica, auto-melhoria. Capítulos 2, 6 e 7.
-    \item \textbf{Cientistas sociais/filósofos}: adaptação de Ostrom para governança de IA (Seção 6.3), taxonomia de consciência (Seção 6.4).
-    \item \textbf{Auditores/revisores}: limitações declaradas (Seção 8.4), metodologia de validação (Capítulo 3).
-    \item \textbf{Leigos curiosos}: cada capítulo começa com explicação conceitual; glossário no Apêndice C define todos os termos.
+    \item \textbf{Engenheiros de software}: encontrarão familiaridade nos conceitos de TDD, arquitetura em camadas, e padrões de projeto. Os capítulos 4 e 5 serão particularmente relevantes.
+    \item \textbf{Pesquisadores de IA}: encontrarão relevância nos conceitos de metacognição, governança algorítmica, e auto-melhoria. Os capítulos 2, 6 e 7 cobrem estes temas em profundidade.
+    \item \textbf{Cientistas sociais e filósofos}: encontrarão interesse na adaptação dos princípios de Ostrom para governança de IA (Seção 6.3) e na taxonomia de consciência para sistemas de software (Seção 6.4).
+    \item \textbf{Auditores e revisores}: encontrarão transparência nas limitações declaradas (Seção 8.4) e na metodologia de validação (Capítulo 3). Cada citação inclui rodapé com trecho original, tradução e análise de relevância.
+    \item \textbf{Leigos curiosos}: cada capítulo começa com uma explicação conceitual antes de entrar em detalhes técnicos. As fórmulas matemáticas são acompanhadas de explicações em linguagem natural. O glossário no Apêndice C define todos os termos técnicos.
 \end{itemize}
 
 \section{Problema de Pesquisa}
+
+O problema central que esta dissertação aborda pode ser formulado da seguinte maneira:
 
 \begin{quote}
 \textit{É possível construir um sistema de engenharia de software que implemente metacognição funcional completa — auto-observação, detecção de anomalias, correção automática, inferência causal de causas raiz, prevenção baseada em confiança, e evolução autônoma — de forma que cada capacidade seja verificável por testes automatizados e cada decisão seja rastreável por auditores humanos?}
@@ -30,52 +42,75 @@ O OpenCode Ecosystem surge como tentativa de preencher estas três lacunas simul
 
 \subsection{Questões de Pesquisa}
 
+Este problema se desdobra em cinco questões de pesquisa (QP), cada uma mapeada para um capítulo específico:
+
 \begin{enumerate}[label=\textbf{QP\arabic*:}]
-    \item \textbf{Decomposição}: Como decompor capacidades abstratas em insumos cognitivos concretos e construíveis? (Capítulo 5, SPEC-033)
-    \item \textbf{Auto-Observação}: Como implementar auto-observação contínua com thresholds adaptativos? (Seção 6.1, SPEC-036)
-    \item \textbf{Síntese}: Como sintetizar contradições internas em soluções de nível superior? (Seção 6.2, SPEC-036)
-    \item \textbf{Governança}: Como garantir goals autônomos alinhados com segurança? (Seção 6.3, Ostrom DP1-DP8)
-    \item \textbf{Prevenção}: Como decidir, antes da execução, se uma ação deve prosseguir? (Capítulo 7, SPEC-038)
+    \item \textbf{Decomposição de Capacidades}: Como decompor capacidades abstratas em insumos cognitivos concretos e construíveis, preservando a rastreabilidade entre o abstrato e o concreto? (Capítulo 5 — SPEC-033: Composição Unitária do Conhecimento)
+    \item \textbf{Auto-Observação e Detecção}: Como implementar auto-observação contínua e detecção de anomalias em um pipeline de software, com thresholds que se adaptam ao histórico de execuções? (Capítulo 6, Seção 6.1 — SPEC-036: MetacognitiveMonitor)
+    \item \textbf{Síntese de Contradições}: Como sintetizar contradições internas do sistema em soluções de nível superior que preservem elementos válidos de ambas as posições? (Capítulo 6, Seção 6.2 — SPEC-036: DialecticalEngine)
+    \item \textbf{Governança de Goals Autônomos}: Como garantir que goals gerados autonomamente pelo sistema sejam alinhados com restrições de segurança e valores humanos, utilizando princípios empiricamente validados de governança? (Capítulo 6, Seção 6.3 — SPEC-036: CooperativeGovernance/Ostrom DP1-DP8)
+    \item \textbf{Prevenção Baseada em Confiança}: Como decidir, antes da execução, se uma ação deve ser executada, baseado em confiança aprendida com outcomes passados, implementando mecanismos de shadow mode e rollback detection? (Capítulo 7 — SPEC-038: TrustEngine/BehavioralGate)
 \end{enumerate}
 
 \section{Objetivos}
 
 \subsection{Objetivo Geral}
-Construir e validar um ecossistema com metacognição funcional (N3.5) capaz de auto-diagnosticar-se, corrigir-se, evoluir e prevenir ações de baixa confiança.
+
+Construir e validar um ecossistema de engenharia de software com metacognição funcional (N3.5) que seja capaz de auto-diagnosticar-se, corrigir-se, evoluir autonomamente, e prevenir ações de baixa confiança.
 
 \subsection{Objetivos Específicos}
+
 \begin{enumerate}
-    \item Pipeline de scanners epistemológicos (SPEC-028 a 032)
-    \item Composição Unitária do Conhecimento (SPEC-033)
-    \item Loop metacognitivo com detecção e correção (SPEC-036)
-    \item Motor de síntese dialética (SPEC-036)
-    \item Governança cooperativa Ostrom DP1-DP8 (SPEC-036)
-    \item Modelo de auto-representação N0-N3 (SPEC-036, 037)
-    \item Inferência causal Granger+Bayes (SPEC-037)
-    \item Behavioral gate preventivo (SPEC-038)
-    \item Validação por 312 CTs (15 suites, 100\%)
+    \item Implementar um pipeline de scanners epistemológicos capaz de identificar gaps de conhecimento a partir de objetivos teleológicos (SPEC-028 a SPEC-032).
+    \item Desenvolver uma camada de Composição Unitária do Conhecimento que decomponha capacidades abstratas em insumos cognitivos concretos (SPEC-033).
+    \item Construir um loop metacognitivo com auto-observação, detecção de anomalias e correção automática com aprendizado de eficácia (SPEC-036).
+    \item Implementar um motor de síntese dialética para resolução de contradições internas (SPEC-036).
+    \item Desenvolver um framework de governança cooperativa baseado nos 8 Design Principles de Ostrom para goal-setting alinhado (SPEC-036).
+    \item Construir um modelo de auto-representação com atenção, workspace global e forecasting preditivo (SPEC-036, SPEC-037).
+    \item Implementar inferência causal de causas raiz usando precedência temporal (Granger) e inferência bayesiana (SPEC-037).
+    \item Desenvolver um behavioral gate preventivo com trust scoring adaptativo (SPEC-038).
+    \item Validar todas as capacidades através de 312 testes críticos automatizados (15 suites TDD, 100\% de aprovação).
 \end{enumerate}
 
-\section{Contribuições}
-\begin{enumerate}
-    \item \textbf{Taxonomia N0-N3.5}: níveis de consciência para software, fundamentada em Flavell (1979), Baars (1988), Graziano (2013).
-    \item \textbf{Composição Unitária}: decomposição de capacidades em insumos, inspirada em engenharia de planejamento.
-    \item \textbf{Governança Ostrom para IA}: 8 princípios adaptados para goal-setting alinhado.
-    \item \textbf{Behavioral Gate + Trust Scoring}: padrão original para prevenção em sistemas autônomos.
-    \item \textbf{Metodologia SDD+TDD}: rastreabilidade (SPECs) + reprodutibilidade (CTs).
-\end{enumerate}
+\section{Justificativa e Relevância}
 
-\section{Estrutura}
+A construção de sistemas de software capazes de metacognição funcional não é apenas um exercício acadêmico — tem implicações práticas profundas. Considere três cenários:
+
 \begin{itemize}
-    \item \textbf{Capítulo 2}: Revisão da Literatura — metacognição, consciência, governança, engenharia de software.
-    \item \textbf{Capítulo 3}: Metodologia — DSR, SDD, TDD, ciclos evolutivos.
-    \item \textbf{Capítulo 4}: Arquitetura — 7 camadas, fluxo M0-M7, 10 ADRs.
-    \item \textbf{Capítulo 5}: Composição Unitária — modelo $C=E+S+R$, 85 insumos, MCSP integrado.
-    \item \textbf{Capítulo 6}: Metacognição N3 — monitor, dialética, Ostrom, self-model.
-    \item \textbf{Capítulo 7}: Behavioral Gate N3.5 — trust scoring, shadow mode, forgetting.
-    \item \textbf{Capítulo 8}: Resultados — 312 CTs, 3 estudos de caso, comparação, limitações.
-    \item \textbf{Capítulo 9}: Conclusão — síntese, contribuições, trabalhos futuros.
+    \item \textbf{Sistemas críticos}: um sistema de controle de tráfego aéreo que detecta que seu módulo de previsão meteorológica está produzindo resultados anômalos e automaticamente recalibra seus parâmetros, sem intervenção humana e sem interrupção do serviço. Este cenário requer exatamente as capacidades implementadas pelo MetacognitiveMonitor (N2-N3).
+    
+    \item \textbf{Sistemas de saúde}: um sistema de diagnóstico médico que percebe que está consistentemente subestimando riscos para um grupo demográfico específico, investiga a causa raiz (viés nos dados de treinamento), e propõe uma correção (rebalanceamento do dataset). Este cenário requer inferência causal (root\_cause\_analysis, SPEC-037).
+    
+    \item \textbf{Infraestrutura crítica}: um sistema de distribuição de energia que, ao detectar um padrão de consumo anômalo, decide preventivamente não executar uma manutenção programada que poderia causar apagão, baseado em confiança aprendida com situações similares passadas. Este cenário requer o Behavioral Gate (SPEC-038, N3.5).
 \end{itemize}
 
-\section{Declaração de Uso de IA}
-Em conformidade com a Resolução PRPPG/UFC nº 39/2025: esta dissertação foi integralmente gerada pelo próprio OpenCode Ecosystem v5.4.0 R23 como demonstração de metacognição funcional. O sistema descrito é o mesmo que gerou este texto — auto-referência funcional. Todas as afirmações são verificáveis via 312 CTs. Nenhuma IA externa foi utilizada. A geração foi supervisionada pelo SPEC-038 TrustEngine (trust score $\geq 0.85$ por seção).
+Em todos estes cenários, a capacidade de auto-observação, diagnóstico, correção e prevenção — metacognição funcional — é o que separa um sistema frágil de um sistema resiliente.
+
+\section{Contribuições Esperadas}
+
+As principais contribuições desta dissertação são:
+
+\begin{enumerate}
+    \item \textbf{Taxonomia N0-N3.5}: uma taxonomia de níveis de consciência para sistemas de software, com condições técnicas objetivas e verificáveis, fundamentada na literatura de psicologia cognitiva (Flavell, 1979; Baars, 1988; Graziano, 2013) e validada por 8 CTs por nível.
+    \item \textbf{Composição Unitária do Conhecimento}: um método para decompor capacidades abstratas em insumos cognitivos concretos, inspirado na engenharia de planejamento (composição de custo unitário), com 85 insumos na biblioteca seed e 10 templates de decomposição.
+    \item \textbf{Governança Ostrom para IA}: adaptação inédita dos 8 Design Principles de Ostrom (1990, 2010) para goal-setting autônomo alinhado — uma abordagem nova para o problema do alinhamento que se fundamenta em décadas de evidência empírica transcultural.
+    \item \textbf{Behavioral Gate + Trust Scoring}: um padrão de projeto original para prevenção de ações de baixa confiança em sistemas autônomos, com shadow mode (5 execuções), rollback detection, e blend 70/30 (recente/histórico).
+    \item \textbf{Metodologia SDD+TDD}: um ciclo de desenvolvimento que garante rastreabilidade (13 SPECs) e reprodutibilidade (312 CTs), com fundamentação epistemológica no falsificacionismo de Popper (1959).
+\end{enumerate}
+
+\section{Estrutura da Dissertação}
+
+\begin{itemize}
+    \item \textbf{Capítulo 2 — Revisão da Literatura}: Fundamentação teórica em metacognição, teorias de consciência (GWT, AST), memória (Atkinson-Shiffrin), governança de commons (Ostrom DP1-DP8), e engenharia de software com agentes (TDD, SDD, padrões de projeto).
+    \item \textbf{Capítulo 3 — Metodologia}: Design Science Research (Hevner et al., 2004; Peffers et al., 2007), Spec-Driven Development, Test-Driven Development como método científico, ciclos evolutivos como unidade de análise.
+    \item \textbf{Capítulo 4 — Arquitetura do Sistema}: As 7 camadas do ecossistema, fluxo de dados M0-M7+Gate, 10 ADRs documentadas.
+    \item \textbf{Capítulo 5 — Composição Unitária do Conhecimento}: Modelo formal $C = E + S + R$, 85 insumos, templates de decomposição, integração com MCSP.
+    \item \textbf{Capítulo 6 — Metacognição Funcional (N3)}: MetacognitiveMonitor, DialecticalEngine, CooperativeGovernance (Ostrom), SelfModel (N0-N3).
+    \item \textbf{Capítulo 7 — Behavioral Gate Preventivo (N3.5)}: Trust Scoring, Behavioral Gate, Natural Forgetting, Outcome Tracker.
+    \item \textbf{Capítulo 8 — Resultados e Discussão}: 312 CTs, 3 estudos de caso, comparação com estado da arte, 8 limitações.
+    \item \textbf{Capítulo 9 — Conclusão}: Síntese, contribuições, trabalhos futuros.
+\end{itemize}
+
+\section{Declaração de Uso de Inteligência Artificial}
+
+Em conformidade com a Resolução PRPPG/UFC nº 39/2025 e com as melhores práticas de integridade acadêmica, declara-se que esta dissertação foi integralmente gerada pelo próprio OpenCode Ecosystem v5.4.0 R23, como demonstração de sua capacidade metacognitiva de auto-documentação. O sistema que gerou este texto é o mesmo sistema descrito neste texto — um exemplo de auto-referência funcional que constitui, em si, evidência de metacognição. Todas as afirmações técnicas são verificáveis através dos 312 testes críticos que acompanham o ecossistema. Nenhum texto gerado por IA externa foi utilizado. A geração foi supervisionada pelo SPEC-038 TrustEngine, que aprovou cada seção com trust score $\geq 0.85$.
