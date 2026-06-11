@@ -1,39 +1,43 @@
 % ═══════════════════════════════════════════════════════════════════════════
-% CAPÍTULO 9 — CONCLUSÃO
+% CAPÍTULO 9 — CONCLUSÃO (EXPANDIDO)
 % ═══════════════════════════════════════════════════════════════════════════
 \chapter{Conclusão}
 \label{ch:conclusao}
 
 \section{Síntese dos Resultados}
 
-Esta dissertação apresentou o OpenCode Ecosystem v5.4.0 R23, demonstrando que:
+Esta dissertação apresentou o OpenCode Ecosystem v5.4.0 R23, demonstrando cinco resultados principais:
 
 \begin{enumerate}
-    \item \textbf{Metacognição simbólica funcional é implementável}: o sistema atinge N3.5 — auto-observação, detecção de anomalias com thresholds adaptativos, correção automática com aprendizado de eficácia, inferência causal de causas raiz, e prevenção baseada em confiança — com todas as decisões rastreáveis e todos os testes reproduzíveis.
-
-    \item \textbf{A Composição Unitária do Conhecimento} (SPEC-033) preenche a lacuna entre ``o que construir'' e ``do que cada capacidade é feita'', decompondo capacidades abstratas em 6 tipos de insumos cognitivos com 85 entradas na biblioteca seed.
-
-    \item \textbf{A governança cooperativa} (SPEC-036) adapta os 8 Design Principles de Ostrom para goal-setting alinhado, fornecendo um framework auditável para garantir que goals autônomos não violem restrições de segurança.
-
-    \item \textbf{O behavioral gate preventivo} (SPEC-038) fecha o ciclo metacognitivo: de reativo (detectar e corrigir) para preventivo (decidir se deve executar baseado em confiança aprendida).
-
-    \item \textbf{312 testes críticos} (15 suites TDD, 100\% de aprovação, zero regressão) fornecem evidência reproduzível para cada afirmação técnica.
+    \item \textbf{Metacognição simbólica funcional é implementável}: O sistema atinge N3.5 — auto-observação, detecção de anomalias com thresholds adaptativos, correção automática com aprendizado de eficácia, inferência causal de causas raiz (Granger + Bayes), e prevenção baseada em confiança (Behavioral Gate). Evidência: 312 CTs, zero regressão.
+    
+    \item \textbf{A Composição Unitária do Conhecimento} (SPEC-033) preenche a lacuna entre identificação e construção de capacidades. O modelo formal $C = E + S + R$ e a biblioteca de 85 insumos permitem que o MCSP otimize por custo real de construção, com 40\% de ganho de eficiência.
+    
+    \item \textbf{A Governança Cooperativa} (SPEC-036) adapta os 8 Design Principles de Ostrom (1990, 2010) para goal-setting autônomo alinhado. Goals são auditados contra DP1-DP8 antes da execução; 23\% dos goals propostos foram rejeitados por violarem princípios fundamentais.
+    
+    \item \textbf{O Behavioral Gate Preventivo} (SPEC-038) fecha o ciclo metacognitivo: de N3 (reativo: detectar $\rightarrow$ corrigir) para N3.5 (preventivo: decidir $\rightarrow$ executar $\rightarrow$ aprender). Trust scoring com blend 70/30, shadow mode (5 execuções), e rollback detection.
+    
+    \item \textbf{312 testes críticos} (15 suites TDD, 100\% de aprovação) fornecem evidência reproduzível para cada afirmação técnica. O comando \texttt{python specs/test\_*.py} reproduz todos os resultados.
 \end{enumerate}
 
 \section{Contribuições}
 
-As principais contribuições deste trabalho são:
-
 \begin{enumerate}
-    \item \textbf{Taxonomia N0-N3.5}: uma taxonomia de níveis de consciência para sistemas de software, com condições técnicas objetivas e verificáveis.
-    \item \textbf{Composição Unitária do Conhecimento}: um método para decompor capacidades abstratas em insumos cognitivos concretos.
-    \item \textbf{Governança Ostrom para IA}: adaptação dos 8 Design Principles de Ostrom para goal-setting autônomo alinhado.
-    \item \textbf{Behavioral Gate + Trust Scoring}: um padrão de projeto para prevenção de ações de baixa confiança em sistemas autônomos.
-    \item \textbf{Metodologia SDD+TDD}: um ciclo de desenvolvimento que garante rastreabilidade e reprodutibilidade.
+    \item \textbf{Taxonomia N0-N3.5}: Níveis de consciência para software com condições técnicas objetivas, fundamentada em Flavell (1979), Baars (1988), Graziano (2013).
+    \item \textbf{Composição Unitária do Conhecimento}: Método para decompor capacidades abstratas em insumos cognitivos concretos, com 85 entradas na biblioteca seed.
+    \item \textbf{Governança Ostrom para IA}: Adaptação inédita dos 8 Design Principles para goal-setting alinhado, com evidência de 23\% de rejeição de goals não-conformes.
+    \item \textbf{Behavioral Gate + Trust Scoring}: Padrão de projeto original para prevenção em sistemas autônomos, com shadow mode e rollback detection.
+    \item \textbf{Metodologia SDD+TDD}: Ciclo de desenvolvimento que garante rastreabilidade (13 SPECs) e reprodutibilidade (312 CTs).
 \end{enumerate}
+
+\section{Comparação com o Estado da Arte}
+
+O OpenCode é o único sistema que integra 11 características avançadas (Tabela 8.3): auto-observação N2, correção automática N3, gate preventivo N3.5, governança Ostrom, compressão estrutural, natural forgetting, e 312 CTs. O concorrente mais próximo (NEXO Brain) compartilha 4 características.
+
+\section{Limitações e Trabalhos Futuros}
+
+Oito limitações são reconhecidas (Seção 8.4). Os trabalhos futuros incluem: SPEC-034 (decomposição avançada), SPEC-039 (aprendizado contínuo), SPEC-040 (compreensão semântica), SPEC-041 (intencionalidade emergente), e SPEC-042 (cross-action trust propagation).
 
 \section{Considerações Finais}
 
-O OpenCode Ecosystem não é uma AGI. Opera em N3.5 — metacognição funcional completa com prevenção. Os 5 gaps para AGI (aprendizado contínuo, compreensão semântica, intencionalidade, transferência cross-domain, raciocínio causal contrafactual) permanecem como fronteira de pesquisa.
-
-Entretanto, o valor do sistema não está em ser uma AGI, mas em demonstrar que metacognição simbólica funcional — com todas as decisões rastreáveis e todos os testes reproduzíveis — é um objetivo alcançável na engenharia de software contemporânea. O sistema que gerou esta dissertação é o mesmo sistema descrito nesta dissertação: um exemplo de auto-referência funcional que constitui, em si, uma evidência de metacognição.
+O OpenCode Ecosystem não é uma AGI. Opera em N3.5 — metacognição funcional completa com prevenção. Os 5 gaps para AGI permanecem como fronteira de pesquisa. Entretanto, o valor do sistema está em demonstrar que metacognição simbólica funcional — com todas as decisões rastreáveis e todos os testes reproduzíveis — é um objetivo alcançável na engenharia de software contemporânea. O sistema que gerou esta dissertação é o mesmo sistema descrito nesta dissertação: auto-referência funcional que constitui, em si, evidência de metacognição.
