@@ -81,7 +81,11 @@ Se uma ação que historicamente era confiável começa a falhar consistentement
 \label{eq:rollback}
 \end{equation}
 
-Este mecanismo é inspirado no padrão Circuit Breaker da engenharia de software (Nygard, 2007): quando um serviço começa a falhar, paramos de chamá-lo para evitar danos em cascata.
+Este mecanismo é inspirado no padrão Circuit Breaker da engenharia de software (Nygard, 2007)\citecrit{%
+Circuit breakers are a design pattern for handling failures in distributed systems. When a service begins to fail, the circuit breaker prevents cascading failures by stopping calls to the failing service.}{%
+Circuit breakers são um padrão de projeto para lidar com falhas em sistemas distribuídos. Quando um serviço começa a falhar, o circuit breaker previne falhas em cascata interrompendo chamadas ao serviço com falha.}{%
+Prático. Nygard (2007) introduz o padrão Circuit Breaker que inspira diretamente o rollback detection do OpenCode. Quando uma ação começa a falhar consistentemente (como um serviço degradado), o sistema reduz a confiança rapidamente (como abrir o circuito) para prevenir danos em cascata.}{%
+ISBN: 978-0-9787393-0-8}: quando um serviço começa a falhar, paramos de chamá-lo para evitar danos em cascata.
 
 \section{Behavioral Gate: Classificação de Risco}
 
