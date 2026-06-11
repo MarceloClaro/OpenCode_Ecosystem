@@ -139,3 +139,18 @@
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
 \contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Glossário de Termos Técnicos}}{70}{appendix.C}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {D}\MakeTextUppercase []{Código Fonte dos Módulos Principais}}{72}{appendix.D}%
+\contentsline {section}{\numberline {D.1}TrustScorer — Cálculo de Confiança Adaptativo}{72}{section.D.1}%
+\contentsline {section}{\numberline {D.2}NaturalForgetting — Modelo Atkinson-Shiffrin}{72}{section.D.2}%
+\contentsline {section}{\numberline {D.3}MetacognitiveMonitor — Detecção de Anomalias}{73}{section.D.3}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {E}\MakeTextUppercase []{Log de Execução do Pipeline (JSONL)}}{75}{appendix.E}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {F}\MakeTextUppercase []{Glossário de Termos Técnicos (Expandido)}}{76}{appendix.F}%
