@@ -233,6 +233,17 @@ A demonstração de metacognição funcional N3.5 em um sistema de engenharia de
 
 \section{Limitações (Transparência Total)}
 
+\subsection{Ciclos que Ensinaram pela Falha}
+
+A progressão documentada ($85 \rightarrow 100$) pode sugerir uma trajetória linear. A realidade é mais complexa. Dois ciclos ensinaram através do erro:
+
+\begin{enumerate}
+    \item \textbf{R17 — O Bug da Linha Corrompida}: O CT-007 do SPEC-026 falhou por 3 ciclos consecutivos devido a uma única linha corrompida (\texttt{l\}}) no JSONL de 8.001 linhas. Lição: observabilidade sem validação de integridade é ilusão. Resposta: \texttt{AnomalyDetector} com verificação de integridade.
+    \item \textbf{R20 — O Contrato de Dados}: A integração do CapabilityComposer quebrou 6 CTs porque o \texttt{capability\_id} usava \texttt{gap.category} em vez de \texttt{domain.category}. Lição: integração entre camadas exige validação de contrato de dados. Resposta: requisito formalizado para todas as SPECs.
+\end{enumerate}
+
+\section{Limitações (Transparência Total)}
+
 Oito limitações são reconhecidas e declaradas explicitamente:
 
 \begin{enumerate}
