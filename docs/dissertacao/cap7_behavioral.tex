@@ -18,7 +18,11 @@ ISBN: 978-0-374-27563-1}: o Sistema 1 age rápido por intuição; o Sistema 2 de
 
 \subsection{Explicação Didática da Fórmula}
 
-O TrustScorer atribui a cada ação um número entre 0 e 1 que representa ``o quanto confiamos que esta ação terá sucesso''. 0 significa ``nunca funciona''; 1 significa ``sempre funciona''. A fórmula que calcula este número é:
+O TrustScorer atribui a cada ação um número entre 0 e 1 que representa ``o quanto confiamos que esta ação terá sucesso''. Esta abordagem é inspirada no trabalho de Sutton \& Barto (2018)\citecrit{%
+Reinforcement learning is learning what to do — how to map situations to actions — so as to maximize a numerical reward signal. The learner is not told which actions to take, but instead must discover which actions yield the most reward by trying them.}{%
+Aprendizado por reforço é aprender o que fazer — como mapear situações para ações — de modo a maximizar um sinal numérico de recompensa. O aprendiz não é instruído sobre quais ações tomar, mas deve descobrir quais ações produzem mais recompensa experimentando-as.}{%
+Fundacional. Sutton \& Barto (2018) fornecem o framework de aprendizado por reforço que inspira o TrustScorer. O trust score é análogo ao value estimate de uma ação: atualizado a cada outcome (recompensa), com peso maior para experiências recentes (temporal-difference learning).}{%
+ISBN: 978-0-262-03924-6} sobre aprendizado por reforço, onde o trust score é análogo ao \textit{value estimate} de uma ação, atualizado a cada outcome. \doi{10.1007/978-1-4899-7687-1}
 
 \begin{equation}
 \tau = 0.7 \cdot r_{\text{recente}} + 0.3 \cdot r_{\text{histórico}} - \rho
