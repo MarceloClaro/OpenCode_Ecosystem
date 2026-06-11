@@ -1,3 +1,5 @@
 \babel@toc {brazil}{}\relax 
 \contentsline {figure}{\numberline {1}{\ignorespaces Arquitetura do OpenCode Ecosystem — 7 Camadas com Fluxo de Dados}}{38}{figure.caption.14}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Arquitetura do OpenCode Ecosystem — 7 Camadas com Fluxo de Dados}}{39}{figure.caption.15}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Pipeline de Scanners — Fluxo M0 $\rightarrow $ M5. O corpus passa por compressão estrutural (M0), diagnóstico epistemológico (M1), inferência teleológica (M2), decomposição em insumos (M3.5), validação cruzada (M3), convergência polimática (M4) e mapeamento de trajetórias (M5).}}{39}{figure.caption.15}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Arquitetura do OpenCode Ecosystem — 7 Camadas com Fluxo de Dados}}{40}{figure.caption.16}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Ciclo Metacognitivo completo — Observar $\rightarrow $ Detectar $\rightarrow $ Corrigir $\rightarrow $ Re-avaliar $\rightarrow $ Prevenir. O feedback loop (seta tracejada) garante que cada correção seja re-avaliada. O Behavioral Gate (N3.5) fecha o ciclo aprendendo com os outcomes para prevenir ações de baixa confiança.}}{51}{figure.caption.17}%

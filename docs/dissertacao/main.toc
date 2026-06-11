@@ -56,111 +56,111 @@
 \contentsline {section}{\numberline {4.2}As 7 Camadas}{38}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Fluxo de Execução}{39}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Mecanismo de Comunicação Pub/Sub}{39}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Diagrama da Arquitetura}{39}{section.4.5}%
+\contentsline {section}{\numberline {4.5}Diagrama da Arquitetura}{40}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Decisões Arquiteturais (ADRs)}{40}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Infraestrutura de Testes}{40}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Evolução da Arquitetura}{40}{section.4.8}%
+\contentsline {section}{\numberline {4.7}Infraestrutura de Testes}{41}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Evolução da Arquitetura}{41}{section.4.8}%
 \contentsline {section}{\numberline {4.9}Exemplo Concreto: Uma Requisição Real}{41}{section.4.9}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Composição Unitária do Conhecimento}}{42}{chapter.5}%
-\contentsline {section}{\numberline {5.1}O Problema: Por Que Capacidades Não São Átomos}{42}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Uma Analogia para Começar}{42}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}A Evidência do Problema}{42}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Modelo Formal: A Decomposição C = E + S + R}{43}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Explicação Didática da Fórmula}{43}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Explicação Didática da Compressão}{43}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Explicação Didática da Condição de Validade}{44}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}As Métricas em Português Claro}{44}{subsection.5.2.4}%
-\contentsline {section}{\numberline {5.3}Estrutura de Dados: Como Representar Isso em Código}{45}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}CognitiveInput — A Menor Unidade de Conhecimento}{45}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}CapabilityUnit — A Receita Completa}{46}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Biblioteca de Insumos Cognitivos}{46}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Integração com MCSP: Como Isso Muda a Otimização}{47}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Explicação Didática da Mudança}{47}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Explicação Didática da Fórmula de Custo}{47}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Explicação Didática da Heurística Gulosa}{47}{subsection.5.5.3}%
-\contentsline {section}{\numberline {5.6}Exemplo Concreto: Da Teoria à Prática}{48}{section.5.6}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Composição Unitária do Conhecimento}}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}O Problema: Por Que Capacidades Não São Átomos}{43}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Uma Analogia para Começar}{43}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}A Evidência do Problema}{43}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Modelo Formal: A Decomposição C = E + S + R}{44}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Explicação Didática da Fórmula}{44}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Explicação Didática da Compressão}{44}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Explicação Didática da Condição de Validade}{45}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}As Métricas em Português Claro}{45}{subsection.5.2.4}%
+\contentsline {section}{\numberline {5.3}Estrutura de Dados: Como Representar Isso em Código}{46}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}CognitiveInput — A Menor Unidade de Conhecimento}{46}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}CapabilityUnit — A Receita Completa}{47}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Biblioteca de Insumos Cognitivos}{47}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Integração com MCSP: Como Isso Muda a Otimização}{48}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Explicação Didática da Mudança}{48}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Explicação Didática da Fórmula de Custo}{48}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Explicação Didática da Heurística Gulosa}{48}{subsection.5.5.3}%
+\contentsline {section}{\numberline {5.6}Exemplo Concreto: Da Teoria à Prática}{49}{section.5.6}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Metacognição Funcional (N3)}}{50}{chapter.6}%
-\contentsline {section}{\numberline {6.1}MetacognitiveMonitor — Auto-Observação e Correção}{50}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Fundamentação Teórica}{50}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Detecção de Anomalias — Três Padrões com Thresholds Calibrados}{50}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Inferência Causal de Causa Raiz (Granger + Bayes)}{51}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}DialecticalEngine — Síntese de Contradições}{52}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Fundamentação Filosófica}{52}{subsection.6.2.1}%
-\contentsline {section}{\numberline {6.3}CooperativeGovernance — Ostrom DP1-DP8}{53}{section.6.3}%
-\contentsline {section}{\numberline {6.4}SelfModel — Auto-Representação N0-N3.5}{53}{section.6.4}%
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase []{Metacognição Funcional (N3)}}{51}{chapter.6}%
+\contentsline {section}{\numberline {6.1}MetacognitiveMonitor — Auto-Observação e Correção}{51}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Fundamentação Teórica}{51}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Detecção de Anomalias — Três Padrões com Thresholds Calibrados}{52}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Inferência Causal de Causa Raiz (Granger + Bayes)}{52}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}DialecticalEngine — Síntese de Contradições}{53}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Fundamentação Filosófica}{53}{subsection.6.2.1}%
+\contentsline {section}{\numberline {6.3}CooperativeGovernance — Ostrom DP1-DP8}{54}{section.6.3}%
+\contentsline {section}{\numberline {6.4}SelfModel — Auto-Representação N0-N3.5}{55}{section.6.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase []{Behavioral Gate Preventivo (N3.5)}}{55}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Do Reativo ao Preventivo}{55}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Trust Scoring: Como Calcular Confiança}{55}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Explicação Didática da Fórmula}{55}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Exemplo Numérico Passo a Passo}{56}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Shadow Mode: Proteção para Ações Novas}{56}{subsection.7.2.3}%
-\contentsline {subsection}{\numberline {7.2.4}Rollback Detection: Detectando Degradação}{57}{subsection.7.2.4}%
-\contentsline {section}{\numberline {7.3}Behavioral Gate: Classificação de Risco}{57}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Natural Forgetting: Memória com Decaimento}{58}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Validação Experimental}{58}{section.7.5}%
+\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase []{Behavioral Gate Preventivo (N3.5)}}{56}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Do Reativo ao Preventivo}{56}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Trust Scoring: Como Calcular Confiança}{56}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Explicação Didática da Fórmula}{56}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Exemplo Numérico Passo a Passo}{57}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Shadow Mode: Proteção para Ações Novas}{57}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.4}Rollback Detection: Detectando Degradação}{58}{subsection.7.2.4}%
+\contentsline {section}{\numberline {7.3}Behavioral Gate: Classificação de Risco}{58}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Natural Forgetting: Memória com Decaimento}{59}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Validação Experimental}{59}{section.7.5}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {8}\MakeTextUppercase []{Resultados e Discussão}}{59}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Exemplo Reprodutível: Verificação Completa}{59}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Resultados de Teste — Evidência Completa}{59}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}15 Suites TDD, 312 Critical Tests}{59}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}Evolução da Cobertura de Testes}{60}{subsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.2.3}Progressão dos Níveis de Consciência}{61}{subsection.8.2.3}%
-\contentsline {section}{\numberline {8.3}Estudos de Caso — Evidência Experimental}{61}{section.8.3}%
-\contentsline {subsection}{\numberline {8.3.1}Caso 1: Auto-Diagnóstico do Ecossistema}{61}{subsection.8.3.1}%
-\contentsline {subsubsection}{\numberline {8.3.1.1}Ciclos que Ensinaram pela Falha}{61}{subsubsection.8.3.1.1}%
-\contentsline {subsection}{\numberline {8.3.2}Caso 2: Compressão Estrutural de Texto Acadêmico}{62}{subsection.8.3.2}%
-\contentsline {subsection}{\numberline {8.3.3}Caso 3: Behavioral Gate em Produção Simulada}{63}{subsection.8.3.3}%
-\contentsline {section}{\numberline {8.4}Comparação com o Estado da Arte}{64}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Discussão}{64}{section.8.5}%
-\contentsline {subsection}{\numberline {8.5.1}Implicações Teóricas}{64}{subsection.8.5.1}%
-\contentsline {subsection}{\numberline {8.5.2}Implicações Práticas}{65}{subsection.8.5.2}%
-\contentsline {section}{\numberline {8.6}Limitações (Transparência Total)}{65}{section.8.6}%
-\contentsline {subsection}{\numberline {8.6.1}Ciclos que Ensinaram pela Falha}{65}{subsection.8.6.1}%
-\contentsline {section}{\numberline {8.7}Limitações (Transparência Total)}{65}{section.8.7}%
-\contentsline {section}{\numberline {8.8}Trabalhos Futuros}{66}{section.8.8}%
+\contentsline {chapter}{\chapternumberline {8}\MakeTextUppercase []{Resultados e Discussão}}{60}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Exemplo Reprodutível: Verificação Completa}{60}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Resultados de Teste — Evidência Completa}{60}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}15 Suites TDD, 312 Critical Tests}{60}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Evolução da Cobertura de Testes}{61}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}Progressão dos Níveis de Consciência}{62}{subsection.8.2.3}%
+\contentsline {section}{\numberline {8.3}Estudos de Caso — Evidência Experimental}{62}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Caso 1: Auto-Diagnóstico do Ecossistema}{62}{subsection.8.3.1}%
+\contentsline {subsubsection}{\numberline {8.3.1.1}Ciclos que Ensinaram pela Falha}{62}{subsubsection.8.3.1.1}%
+\contentsline {subsection}{\numberline {8.3.2}Caso 2: Compressão Estrutural de Texto Acadêmico}{63}{subsection.8.3.2}%
+\contentsline {subsection}{\numberline {8.3.3}Caso 3: Behavioral Gate em Produção Simulada}{64}{subsection.8.3.3}%
+\contentsline {section}{\numberline {8.4}Comparação com o Estado da Arte}{65}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Discussão}{65}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}Implicações Teóricas}{65}{subsection.8.5.1}%
+\contentsline {subsection}{\numberline {8.5.2}Implicações Práticas}{66}{subsection.8.5.2}%
+\contentsline {section}{\numberline {8.6}Limitações (Transparência Total)}{66}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Ciclos que Ensinaram pela Falha}{66}{subsection.8.6.1}%
+\contentsline {section}{\numberline {8.7}Limitações (Transparência Total)}{66}{section.8.7}%
+\contentsline {section}{\numberline {8.8}Trabalhos Futuros}{67}{section.8.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {9}\MakeTextUppercase []{Conclusão}}{67}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Síntese dos Resultados}{67}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}Metacognição Simbólica Funcional É Implementável}{67}{subsection.9.1.1}%
-\contentsline {subsection}{\numberline {9.1.2}Composição Unitária Fecha a Lacuna Entre Identificação e Construção}{67}{subsection.9.1.2}%
-\contentsline {subsection}{\numberline {9.1.3}Governança Ostrom Fornece Framework Auditável para Alinhamento}{67}{subsection.9.1.3}%
-\contentsline {subsection}{\numberline {9.1.4}Behavioral Gate Fecha o Ciclo Metacognitivo}{68}{subsection.9.1.4}%
-\contentsline {subsection}{\numberline {9.1.5}312 Testes Críticos Fornecem Evidência Reproduzível}{68}{subsection.9.1.5}%
-\contentsline {section}{\numberline {9.2}Contribuições}{68}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Comparação com o Estado da Arte}{69}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Limitações e Trabalhos Futuros}{69}{section.9.4}%
-\contentsline {section}{\numberline {9.5}Considerações Finais}{69}{section.9.5}%
-\contentsline {subsection}{\numberline {9.5.1}Exemplo Concreto: Auto-Documentação como Evidência}{69}{subsection.9.5.1}%
+\contentsline {chapter}{\chapternumberline {9}\MakeTextUppercase []{Conclusão}}{68}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Síntese dos Resultados}{68}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Metacognição Simbólica Funcional É Implementável}{68}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Composição Unitária Fecha a Lacuna Entre Identificação e Construção}{68}{subsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.1.3}Governança Ostrom Fornece Framework Auditável para Alinhamento}{68}{subsection.9.1.3}%
+\contentsline {subsection}{\numberline {9.1.4}Behavioral Gate Fecha o Ciclo Metacognitivo}{69}{subsection.9.1.4}%
+\contentsline {subsection}{\numberline {9.1.5}312 Testes Críticos Fornecem Evidência Reproduzível}{69}{subsection.9.1.5}%
+\contentsline {section}{\numberline {9.2}Contribuições}{69}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Comparação com o Estado da Arte}{70}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Limitações e Trabalhos Futuros}{70}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Considerações Finais}{70}{section.9.5}%
+\contentsline {subsection}{\numberline {9.5.1}Exemplo Concreto: Auto-Documentação como Evidência}{70}{subsection.9.5.1}%
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{71}{section*.23}%
+\contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{72}{section*.25}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Lista Completa de Módulos Python}}{74}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Lista Completa de Módulos Python}}{75}{appendix.A}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Comandos de Verificação}}{75}{appendix.B}%
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{Comandos de Verificação}}{76}{appendix.B}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Glossário de Termos Técnicos}}{76}{appendix.C}%
+\contentsline {appendix}{\chapternumberline {C}\MakeTextUppercase []{Glossário de Termos Técnicos}}{77}{appendix.C}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {D}\MakeTextUppercase []{Código Fonte dos Módulos Principais}}{78}{appendix.D}%
-\contentsline {section}{\numberline {D.1}TrustScorer — Cálculo de Confiança Adaptativo}{78}{section.D.1}%
-\contentsline {section}{\numberline {D.2}NaturalForgetting — Modelo Atkinson-Shiffrin}{78}{section.D.2}%
-\contentsline {section}{\numberline {D.3}MetacognitiveMonitor — Detecção de Anomalias}{79}{section.D.3}%
+\contentsline {appendix}{\chapternumberline {D}\MakeTextUppercase []{Código Fonte dos Módulos Principais}}{79}{appendix.D}%
+\contentsline {section}{\numberline {D.1}TrustScorer — Cálculo de Confiança Adaptativo}{79}{section.D.1}%
+\contentsline {section}{\numberline {D.2}NaturalForgetting — Modelo Atkinson-Shiffrin}{79}{section.D.2}%
+\contentsline {section}{\numberline {D.3}MetacognitiveMonitor — Detecção de Anomalias}{80}{section.D.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {E}\MakeTextUppercase []{Log de Execução do Pipeline (JSONL)}}{81}{appendix.E}%
+\contentsline {appendix}{\chapternumberline {E}\MakeTextUppercase []{Log de Execução do Pipeline (JSONL)}}{82}{appendix.E}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {F}\MakeTextUppercase []{Glossário de Termos Técnicos (Expandido)}}{82}{appendix.F}%
+\contentsline {appendix}{\chapternumberline {F}\MakeTextUppercase []{Glossário de Termos Técnicos (Expandido)}}{83}{appendix.F}%
