@@ -52,7 +52,11 @@ Estudos mostram que TDD pode reduzir taxas de defeitos em 40-90\% comparado a pr
 Evidencial. A redução de 40-90\% em defeitos justifica o investimento inicial. Os 312 CTs do OpenCode são a manifestação direta.}{%
 \doi{10.1109/MC.2005.314}} documentaram esta redução.
 
-A interpretação epistemológica fundamenta-se em Popper (1959, ISBN: 978-0-415-27844-7): uma teoria nunca é provada, apenas corroborada após resistir a refutações. Cada CT é uma hipótese falseável. Os 312 CTs representam 312 hipóteses corroboradas. A formalização é:
+A interpretação epistemológica fundamenta-se em Popper (1959)\citecrit{%
+The criterion of the scientific status of a theory is its falsifiability, or refutability, or testability. Every genuine test of a theory is an attempt to falsify it, or to refute it.}{%
+O critério do status científico de uma teoria é sua falseabilidade, ou refutabilidade, ou testabilidade. Todo teste genuíno de uma teoria é uma tentativa de falseá-la, ou de refutá-la.}{%
+Epistemológico. Popper (1959) estabelece o critério de falseabilidade que fundamenta a interpretação do TDD como método científico. Cada CT do OpenCode é uma tentativa de falsear a hipótese 'o sistema se comporta conforme especificado'. Os 312 CTs que passam não provam correção — apenas que 312 tentativas de falseação falharam.}{%
+ISBN: 978-0-415-27844-7}: uma teoria nunca é provada, apenas corroborada após resistir a refutações. Cada CT é uma hipótese falseável. Os 312 CTs representam 312 hipóteses corroboradas. A formalização é:
 
 \begin{equation}
 H_i: \text{O sistema comporta-se conforme especificado no CT}_i

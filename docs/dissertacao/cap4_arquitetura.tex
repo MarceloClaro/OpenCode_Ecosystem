@@ -63,7 +63,11 @@ Onde $E$ é o stream de eventos JSONL. Subscribers consultam $E$ para reconstrui
 
 \section{Decisões Arquiteturais (ADRs)}
 
-As 10 ADRs documentam decisões críticas com contexto, alternativas e justificativa. Cada ADR segue o template: Contexto $\rightarrow$ Decisão $\rightarrow$ Alternativas Consideradas $\rightarrow$ Consequências $\rightarrow$ Status.
+As 10 ADRs documentam decisões críticas com contexto, alternativas e justificativa. Cada ADR segue o template: Contexto $\rightarrow$ Decisão $\rightarrow$ Alternativas Consideradas $\rightarrow$ Consequências $\rightarrow$ Status. Este formato é inspirado no conceito de \textit{Architecture Decision Records} documentado por Nygard (2011)\citecrit{%
+An Architecture Decision Record is a short text file in a format similar to an Alexandrian pattern. Each record describes a set of forces and a single decision in response to those forces.}{%
+Um Architecture Decision Record é um arquivo de texto curto em formato similar a um padrão Alexandrino. Cada registro descreve um conjunto de forças e uma única decisão em resposta a essas forças.}{%
+Metodológico. Nygard (2011) estabelece o formato ADR que o OpenCode adota para documentar decisões arquiteturais. As 10 ADRs do ecossistema (architectu-001 a 010) seguem este template. A adoção de ADRs garante que decisões de design não se percam com o tempo — cada decisão é contextualizada com alternativas consideradas.}{%
+\url{https://adr.github.io/}} e adotado amplamente na indústria de software.
 
 \begin{enumerate}
     \item \textbf{architectu-001 — Token Budget}: Limite de tokens por operação. Monitorado pelo \texttt{token\_economy\_monitor.py}.
