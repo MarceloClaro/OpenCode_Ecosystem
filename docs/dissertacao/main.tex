@@ -24,6 +24,16 @@
 
 % ─── DOI COMMAND ───
 \newcommand{\doi}[1]{\href{https://doi.org/#1}{\texttt{DOI: #1}}}
+% ─── COMANDO DE CITAÇÃO CRÍTICA ───
+\newcommand{\citecrit}[4]{%
+\footnote{%
+\textbf{Original}: ``#1'' \\
+\textbf{Tradução}: ``#2'' \\
+\textbf{Relevância}: #3 \\
+\textbf{DOI/Ref}: #4%
+}%
+}
+
 
 % ─── METADADOS ───
 \titulo{OpenCode Ecosystem v5.4.0 R23:\\Arquitetura, Implementação e Validação de um Sistema de\\Engenharia de Software com Metacognição Funcional\\e Behavioral Gate Preventivo}
