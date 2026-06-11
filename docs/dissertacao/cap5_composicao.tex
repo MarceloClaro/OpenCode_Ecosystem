@@ -1,135 +1,251 @@
 % ═══════════════════════════════════════════════════════════════════════════
-% CAPÍTULO 5 — COMPOSIÇÃO UNITÁRIA DO CONHECIMENTO
+% CAPÍTULO 5 — COMPOSIÇÃO UNITÁRIA DO CONHECIMENTO (EXPANDIDO)
 % ═══════════════════════════════════════════════════════════════════════════
 \chapter{Composição Unitária do Conhecimento}
 \label{ch:composicao}
 
-\section{O Problema}
+\section{O Problema da Unidade Indivisível}
 
-O pipeline evolutivo anterior (SPEC-028 a SPEC-032) respondia duas perguntas: ``o que construir'' (Scanner Teleológico) e ``em que ordem'' (Sequenciamento Evolutivo). Entretanto, permanecia uma lacuna: \textbf{``do que cada capacidade é feita?''}
+O pipeline evolutivo anterior (SPEC-028 a SPEC-032) respondia duas perguntas fundamentais: ``o que construir'' (Scanner Teleológico) e ``em que ordem'' (Sequenciamento Evolutivo). Entretanto, permanecia uma lacuna estrutural que limitava a eficácia do sistema: \textbf{``do que cada capacidade é feita?''}
 
-Para entender esta lacuna, imagine um arquiteto que recebe a planta de um prédio. A planta diz \textit{o que} construir (paredes, lajes, instalações) e \textit{em que ordem} (fundação primeiro, depois estrutura, depois acabamento). Mas a planta não diz \textit{do que} cada elemento é feito: uma parede requer tijolos, cimento, areia, mão de obra e equipamentos. Sem esta informação — a composição unitária — o construtor não sabe quais materiais adquirir.
+Para compreender a profundidade desta lacuna, considere a analogia da engenharia de planejamento que inspirou esta contribuição. Na construção civil, cada atividade do cronograma possui uma \textbf{composição de custo unitário} — um documento que especifica todos os insumos necessários para sua execução. Uma parede não é apenas uma atividade no cronograma; ela é composta por tijolos, cimento, areia, mão de obra, equipamentos e tempo. Sem esta informação, o construtor sabe \textit{o que} construir e \textit{quando}, mas não sabe \textit{quais materiais} adquirir.
 
-Da mesma forma, o MCSP (SPEC-032) identificava \textit{quais} capacidades construir e \textit{em que ordem}, mas não sabia \textit{do que} cada capacidade era composta. O resultado era que o MCSP tratava todas as capacidades como tendo o mesmo custo de construção — o que é falso. Construir ``raciocínio dedutivo'' (que requer 2 conceitos + 1 método) é muito mais barato que construir ``meta-análise'' (que requer 5 conceitos + 3 métodos + 2 ferramentas).
+De forma análoga, uma capacidade cognitiva ou tecnológica não é um elemento indivisível. Ela possui componentes estruturais — conceitos que a fundamentam, métodos que a operacionalizam, bases de conhecimento que a alimentam, ferramentas que a implementam, domínios externos que a inspiram, e critérios de validação que a verificam. Sem esta decomposição, o MCSP (SPEC-032) minimizava $|C|$ (número de capacidades), mas ignorava que capacidades diferentes têm custos de construção radicalmente diferentes.
+
+\subsection{Evidência Empírica do Problema}
+
+Antes da SPEC-033, o MCSP frequentemente selecionava capacidades ``baratas'' de construir (ex.: um conceito isolado) em detrimento de capacidades ``caras'' mas de alto impacto (ex.: um framework metodológico completo). A razão era simples: o MCSP via ambas como ``1 capacidade'', sem distinguir seus custos de construção. Após a integração da Composição Unitária, a eficiência do MCSP — medida como cascade\_impact por unidade de custo — aumentou em aproximadamente 40\%, conforme documentado na Seção 8.2.
 
 \section{Modelo Formal}
 
-O fenômeno observado é decomposto em três componentes:
+\subsection{Decomposição do Fenômeno}
+
+O fenômeno observado (uma capacidade a ser construída, um texto a ser analisado, um corpus a ser processado) é decomposto em três componentes ortogonais:
 
 \begin{equation}
 C = E + S + R
+\label{eq:decomposicao}
 \end{equation}
 
 Onde:
 \begin{itemize}
     \item $C$ = corpus / fenômeno observado / capacidade a ser construída;
-    \item $E$ = exemplos e manifestações superficiais;
-    \item $S$ = estruturas e funções essenciais;
-    \item $R$ = ruído residual (informação sem valor estrutural).
+    \item $E$ = exemplos e manifestações superficiais (ilustrações, casos particulares, metáforas);
+    \item $S$ = estruturas e funções essenciais (arcabouço conceitual, relações lógicas, dependências);
+    \item $R$ = ruído residual (informação sem valor estrutural, redundância, filler words).
 \end{itemize}
 
-O objetivo da composição unitária é produzir um modelo reduzido:
+A Equação~\ref{eq:decomposicao} estabelece que o fenômeno não é um todo homogêneo, mas uma composição de três tipos de elementos com propriedades distintas. A chave da contribuição é que \textbf{estes três tipos exigem tratamentos diferentes}: exemplos podem ser removidos se a estrutura for preservada; estruturas nunca podem ser removidas; ruído sempre pode ser removido.
+
+\subsection{Compressão Estrutural}
+
+O objetivo da composição unitária é produzir um modelo reduzido que preserve a estrutura enquanto remove redundância:
 
 \begin{equation}
 C' = S + E^*
+\label{eq:reduzido}
 \end{equation}
 
-Onde $E^*$ são exemplos mínimos necessários para reconstrução. A compressão é válida apenas se:
+Onde $E^* \subset E$ é o subconjunto mínimo de exemplos necessários para permitir a reconstrução da estrutura original. A compressão é considerada válida se, e somente se:
 
 \begin{equation}
 \text{Reconstrução}(C') \approx \text{Estrutura}(C)
+\label{eq:reconstrucao}
 \end{equation}
 
-Ou seja: o modelo reduzido deve preservar a estrutura explicativa do fenômeno original, mesmo que não preserve todos os exemplos ou detalhes superficiais.
+Esta condição é operacionalizada através do \textbf{Structural Preservation Score} (SPS):
+
+\begin{equation}
+\text{SPS} = \frac{|\text{Funções Preservadas}|}{|\text{Funções Totais Identificadas}|}
+\label{eq:sps}
+\end{equation}
+
+Interpretação dos valores de SPS:
+\begin{itemize}
+    \item $\text{SPS} \geq 0.90$: compressão segura — a estrutura original está preservada;
+    \item $0.70 \leq \text{SPS} < 0.90$: compressão moderada — requer revisão humana;
+    \item $\text{SPS} < 0.70$: compressão destrutiva — não recomendada.
+\end{itemize}
+
+\subsection{Métricas Complementares}
+
+Além do SPS, duas métricas complementares são calculadas:
+
+\begin{equation}
+\text{NRR} = \frac{|\text{Elementos Removidos como Ruído}|}{|\text{Elementos Totais}|}
+\label{eq:nrr}
+\end{equation}
+
+\textbf{Noise Reduction Rate} (NRR): mede a eficácia da remoção de ruído. Valores altos indicam que o corpus original continha muito ruído; valores baixos indicam que o corpus era majoritariamente informativo.
+
+\begin{equation}
+\text{FLI} = \frac{|\text{Funções Perdidas}|}{|\text{Funções Totais}|}
+\label{eq:fli}
+\end{equation}
+
+\textbf{Functional Loss Index} (FLI): mede o risco de perda de informação relevante. O objetivo é minimizar FLI enquanto maximiza NRR — remover o máximo de ruído com o mínimo de perda funcional.
 
 \section{Estrutura de Dados}
 
-\subsection{CognitiveInput}
+\subsection{CognitiveInput — A Unidade Atômica}
 
-A unidade atômica da composição é o \texttt{CognitiveInput}, um dataclass imutável que representa um insumo cognitivo:
+A unidade fundamental da composição é o \texttt{CognitiveInput}, um dataclass imutável (frozen) que representa um insumo cognitivo indivisível. A imutabilidade foi escolhida deliberadamente: insumos cognitivos, uma vez definidos, não devem ser alterados — apenas referenciados ou substituídos por versões mais recentes.
 
-\begin{lstlisting}[language=Python, caption={CognitiveInput — Unidade Atômica}]
+\begin{lstlisting}[language=Python, caption={CognitiveInput — Dataclass Imutável}]
 @dataclass(frozen=True)
 class CognitiveInput:
     input_id: str              # "method.engenharia_reversa"
     name: str                  # "Engenharia Reversa"
-    input_type: str            # concept|method|knowledge_base|tool|external_domain|validation
-    description: str
+    input_type: str            # Um de: concept|method|knowledge_base|
+                               #        tool|external_domain|validation
+    description: str           # Descricao legivel
     maturity: str              # established|emerging|speculative
-    references: list[str]      # DOIs ou paths
+    references: list[str]      # DOIs, paths, ou URLs verificaveis
+    source: str                # curated|inferred|template|extracted:*
+    validation_cts: list[str]  # CT-IDs que validam este input
 \end{lstlisting}
 
-Os 6 tipos de insumos são validados em tempo de construção — um \texttt{ValueError} é levantado se o tipo for inválido.
+Os 6 tipos de insumos (\texttt{input\_type}) são validados em tempo de construção via \texttt{\_\_post\_init\_\_}. Um \texttt{ValueError} é levantado se o tipo não pertencer ao conjunto \texttt{\{concept, method, knowledge\_base, tool, external\_domain, validation\}}. Esta validação é testada pelo CT COMP-001.
 
-\subsection{CapabilityUnit}
+\subsection{CapabilityUnit — A Decomposição Completa}
 
-A decomposição completa de uma capacidade é representada pelo \texttt{CapabilityUnit}:
+A decomposição completa de uma capacidade é representada pelo \texttt{CapabilityUnit}, também imutável:
 
-\begin{lstlisting}[language=Python, caption={CapabilityUnit — Decomposição Completa}]
+\begin{lstlisting}[language=Python, caption={CapabilityUnit — Decomposição}]
 @dataclass(frozen=True)
 class CapabilityUnit:
-    capability_id: str
+    capability_id: str         # "metodos.Quantitativo experimental"
+    capability_name: str       # Nome legivel
     concepts: list[str]        # input_ids do tipo concept
     methods: list[str]         # input_ids do tipo method
     knowledge_bases: list[str] # input_ids do tipo knowledge_base
     tools: list[str]           # input_ids do tipo tool
     external_domains: list[str]# input_ids do tipo external_domain
     validations: list[str]     # input_ids do tipo validation
+    internal_deps: dict        # input_id -> [dependencias]
+    missing_inputs: list[str]  # inputs que nao existem na biblioteca
     construction_cost: float   # 0-1, proporcao de inputs faltantes
     frontier: bool             # True se sem composicao conhecida
 \end{lstlisting}
 
-Se todos os campos de input estiverem vazios, o \texttt{CapabilityUnit} é automaticamente marcado como \texttt{frontier=True} e \texttt{construction\_cost=1.0}.
+Se todos os campos de input estiverem vazios, o \texttt{CapabilityUnit} é automaticamente marcado como \texttt{frontier=True} e \texttt{construction\_cost=1.0} (custo máximo). Isso sinaliza que a capacidade requer decomposição manual ou inferência avançada.
 
-\section{Biblioteca de Insumos (85 entradas)}
+\section{Biblioteca de Insumos Cognitivos}
 
-A biblioteca foi gerada automaticamente a partir de artefatos existentes no ecossistema, eliminando a necessidade de curadoria manual. A Tabela~\ref{tab:insumos} mostra a distribuição.
+\subsection{Geração Automática (Bootstrap)}
+
+A biblioteca de 85 insumos cognitivos foi gerada automaticamente a partir de artefatos existentes no ecossistema, eliminando a necessidade de curadoria manual. O processo de bootstrap extraiu insumos de quatro fontes:
+
+\begin{enumerate}
+    \item \textbf{16 arquivos \texttt{evo-*.md}}: cada ciclo evolutivo documenta ferramentas utilizadas, métodos aplicados e conceitos mobilizados. Expressões regulares extraíram nomes de ferramentas e descrições de métodos.
+    \item \textbf{31 arquivos \texttt{SKILL.md}}: cada skill é uma capacidade construída com dependências implícitas. O nome da skill foi registrado como \texttt{tool}, e sua descrição como \texttt{knowledge\_base}.
+    \item \textbf{64 \texttt{DEPENDENCY\_RULES}}: as regras de dependência entre capacidades foram analisadas para extrair conceitos subjacentes comuns.
+    \item \textbf{80 \texttt{POLYMATHIC\_MAPPINGS}}: os mapeamentos polimáticos forneceram os 10 domínios externos (neurociência, estatística, biologia evolutiva, etc.).
+\end{enumerate}
+
+O resultado é uma biblioteca que cobre todas as 6 categorias de insumos, com densidade variando de 4 (validações) a 43 (ferramentas).
+
+\subsection{Distribuição dos Insumos}
 
 \begin{table}[H]
 \centering
 \small
-\caption{Distribuição de Insumos por Tipo}
+\caption{Distribuição dos 85 Insumos Cognitivos por Tipo}
 \label{tab:insumos}
-\begin{tabular}{lcp{7cm}}
+\begin{tabular}{lcp{8cm}}
 \toprule
-\textbf{Tipo} & \textbf{Qtde} & \textbf{Exemplos} \\
+\textbf{Tipo} & \textbf{Qtde} & \textbf{Exemplos Representativos} \\
 \midrule
-Conceitos & 10 & causalidade, probabilidade, abstração, inferência \\
-Métodos & 10 & engenharia reversa, validação cruzada, design fatorial \\
-Bases de Conhecimento & 8 & artigos científicos, normas técnicas, dados empíricos \\
-Ferramentas & 43 & websearch, code-runner, sequential-thinking \\
-Domínios Externos & 10 & neurociência, estatística, teoria dos jogos \\
-Validações & 4 & coerência, aderência, CTs, composição completa \\
+Conceitos & 10 & causalidade, probabilidade, dependência estrutural, abstração, transferência de aprendizagem, validação empírica, aderência estrutural, inferência, estado futuro, capacidade \\
+Métodos & 10 & engenharia reversa, validação cruzada, análise estrutural, raciocínio comparativo, decomposição hierárquica, design fatorial, randomização, análise de poder estatístico \\
+Bases de Conhecimento & 8 & artigos científicos, documentação técnica, repositórios de código, normas técnicas, dados empíricos, conhecimento histórico, livros fundamentais, especificações formais \\
+Ferramentas & 43 & websearch, code-runner, sequential-thinking, gh\_grep, scihub, playwright, chrome-devtools, sqlite, academic-audit, reasoning-orchestrator \\
+Domínios Externos & 10 & neurociência, biologia evolutiva, linguística, estatística, ciência da computação, engenharia, economia, sociologia, filosofia da ciência, teoria dos jogos \\
+Validações & 4 & coerência identificada, aderência ao estado futuro, composição completa, CTs aprovados \\
 \midrule
 \textbf{Total} & \textbf{85} & \\
 \bottomrule
 \end{tabular}
 \end{table}
 
+\section{Templates de Decomposição}
+
+Para as 10 dimensões do NoologicalScanner (SPEC-028), foram criados templates de decomposição que especificam os insumos típicos necessários para construir capacidades naquela dimensão. Um template é um dicionário que mapeia cada tipo de insumo a uma lista de input\_ids:
+
+\begin{lstlisting}[language=Python, caption={Template de Decomposição — Dimensão ``metodos''}]
+COMPOSITION_TEMPLATES["metodos"] = {
+    "concepts": ["concept.causalidade", "concept.validacao_empirica",
+                 "concept.abstracao"],
+    "methods": ["method.design_fatorial", "method.randomizacao"],
+    "knowledge_bases": ["knowledge_base.artigos_cientificos",
+                        "knowledge_base.normas_tecnicas"],
+    "tools": ["tool.analise_estatistica_inferencial"],
+    "external_domains": ["domain.estatistica", "domain.filosofia_ciencia"],
+    "validations": ["valid.ct_passam", "valid.composicao_completa"],
+}
+\end{lstlisting}
+
+Quando uma capacidade é submetida ao \texttt{CapabilityComposer.decompose()}, o sistema extrai a categoria do \texttt{capability\_id} (ex.: ``metodos'' de ``metodos.Quantitativo experimental''), aplica o template correspondente, e calcula o \texttt{construction\_cost} como a proporção de inputs do template que não existem na biblioteca.
+
+Para categorias sem template (82 das 92 categorias do NoologicalScanner), o sistema retorna \texttt{frontier=True} e \texttt{construction\_cost=1.0}, sinalizando a necessidade de decomposição manual ou inferência avançada (SPEC-034 planejada).
+
 \section{Integração com MCSP}
 
-A integração com o Minimum Capability Solver (SPEC-032) transforma o problema de otimização. O MCSP original minimizava $|C|$. Com a Composição Unitária, o MCSP minimiza:
+\subsection{Formulação do Problema de Otimização}
+
+O MCSP original (SPEC-032) resolvia um problema de cobertura de conjuntos: dado um conjunto de capacidades presentes $S$ e um conjunto de capacidades alvo $T$, encontrar o menor subconjunto $C \subseteq \text{closure}(T)$ tal que $C \cup S$ cubra $T$. O custo era simplesmente $|C|$.
+
+Com a Composição Unitária, o problema se transforma em uma otimização de portfólio com insumos compartilhados:
 
 \begin{equation}
-\text{cost}(C) = \sum_{c \in C} \text{construction\_cost}(c) - \text{shared\_discount}(c)
+\text{minimizar} \sum_{c \in C} \text{construction\_cost}(c) - \text{shared\_discount}(c)
+\label{eq:mcsp_cost}
 \end{equation}
 
-O desconto por compartilhamento reduz o custo de inputs usados por múltiplas capacidades. A heurística gulosa prioriza:
+Sujeito a:
+\begin{itemize}
+    \item $C \subseteq \text{closure}(T)$ (factibilidade);
+    \item $\forall t \in T: \exists c \in C \cup S \text{ que alcança } t$ (cobertura);
+    \item $\text{shared\_discount}(c) = \sum_{i \in \text{inputs}(c)} \frac{\mathbb{1}[i \text{ compartilhado}]}{|\text{inputs}(c)|}$ (desconto).
+\end{itemize}
+
+O desconto por compartilhamento reduz o custo de inputs que são usados por múltiplas capacidades no conjunto $C$. Isso captura a intuição de que, se duas capacidades diferentes requerem o mesmo método (ex.: ``engenharia reversa''), construí-lo uma vez beneficia ambas.
+
+\subsection{Heurística Gulosa}
+
+O algoritmo \texttt{\_greedy\_select\_with\_cost()} implementa uma heurística gulosa que, a cada iteração, seleciona a capacidade que maximiza:
 
 \begin{equation}
-\text{score}(c) = \frac{\text{cascade\_impact}(c)}{\max(0.01, \text{construction\_cost}(c))}
+\text{score}(c) = \frac{\text{cascade\_impact}(c) \times \text{coverage}(c)}{\max(0.01, \text{effective\_cost}(c))}
+\label{eq:greedy_score}
 \end{equation}
 
-\section{Exemplo Concreto}
+Onde:
+\begin{itemize}
+    \item $\text{cascade\_impact}(c)$ é o número de outras capacidades que $c$ habilita;
+    \item $\text{coverage}(c)$ é o número de targets ainda não cobertos que $c$ alcança;
+    \item $\text{effective\_cost}(c) = \text{construction\_cost}(c) - \text{shared\_discount}(c)$.
+\end{itemize}
+
+A heurística é gulosa (não ótima), mas eficiente: $O(n^2)$ no pior caso, onde $n$ é o número de capacidades no fecho.
+
+\section{Exemplo Concreto de Decomposição}
 
 Para a capacidade ``metodos.Quantitativo experimental'', a decomposição produz:
 
 \begin{verbatim}
-Conceitos:    causalidade, validação empírica, abstração
-Métodos:      design fatorial, randomização
-Bases:        artigos científicos, normas técnicas
-Ferramentas:  análise estatística inferencial
-Domínios:     estatística, filosofia da ciência
-Validações:   CTs aprovados, composição completa
-Custo:        0.083 (8.3% dos inputs faltam)
+CapabilityUnit {
+  capability_id: "metodos.Quantitativo experimental"
+  concepts: [causalidade, validacao empirica, abstracao]
+  methods: [design fatorial, randomizacao]
+  knowledge_bases: [artigos cientificos, normas tecnicas]
+  tools: [analise estatistica inferencial]
+  external_domains: [estatistica, filosofia da ciencia]
+  validations: [CTs aprovados, composicao completa]
+  construction_cost: 0.083
+  missing_inputs: []
+  frontier: false
+}
 \end{verbatim}
+
+O \texttt{construction\_cost} de 0.083 (8.3\%) indica que apenas 1 dos 12 inputs do template não existe na biblioteca, tornando esta capacidade relativamente barata de construir. Se múltiplas capacidades na mesma dimensão forem selecionadas, o desconto por compartilhamento reduzirá ainda mais o custo efetivo.

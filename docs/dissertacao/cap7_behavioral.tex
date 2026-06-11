@@ -1,55 +1,163 @@
 % ═══════════════════════════════════════════════════════════════════════════
-% CAPÍTULO 7 — BEHAVIORAL GATE PREVENTIVO (N3.5)
+% CAPÍTULO 7 — BEHAVIORAL GATE PREVENTIVO (N3.5) (EXPANDIDO)
 % ═══════════════════════════════════════════════════════════════════════════
 \chapter{Behavioral Gate Preventivo (N3.5)}
 \label{ch:behavioral}
 
-\section{Do Reativo ao Preventivo}
+\section{Do Reativo ao Preventivo: Uma Mudança de Paradigma}
 
-Antes do SPEC-038, o OpenCode operava em modo reativo: executava ações e, se algo desse errado, detectava a anomalia e corrigia. O Behavioral Gate introduz o modo preventivo: \textbf{antes} de executar, o sistema consulta seu histórico de confiança e decide se deve ou não prosseguir.
+Antes da SPEC-038, o OpenCode Ecosystem operava exclusivamente em modo reativo: executava ações e, se algo desse errado, o MetacognitiveMonitor detectava a anomalia e o CorrectionEngine propunha uma correção. Este ciclo — observar $\rightarrow$ detectar $\rightarrow$ corrigir — constitui o nível N3 de metacognição (Capítulo 6).
+
+Entretanto, a correção reativa tem uma limitação fundamental: \textbf{o dano já foi causado}. Quando uma anomalia é detectada, a ação já foi executada, e recursos já foram consumidos. Em sistemas críticos — controle de tráfego aéreo, distribuição de energia, diagnóstico médico — ``corrigir depois'' pode ser tarde demais.
+
+O Behavioral Gate (SPEC-038) introduz o modo preventivo: \textbf{antes} de executar qualquer ação, o sistema consulta seu histórico de confiança naquela ação e decide se deve ou não prosseguir. Esta mudança de reativo para preventivo é o que eleva o sistema de N3.0 para N3.5.
+
+\subsection{Fundamentação Teórica}
+
+A mudança de paradigma é fundamentada em duas tradições teóricas:
+
+\begin{enumerate}
+    \item \textbf{Teoria de Controle} (Wiener, 1948): sistemas de controle em malha fechada usam feedback para corrigir desvios (reativo). Sistemas em malha aberta usam modelos preditivos para antecipar desvios e agir preventivamente (preventivo). O Behavioral Gate implementa uma malha aberta baseada em confiança aprendida.
+    
+    \item \textbf{Psicologia Cognitiva} (Kahneman, 2011): o Sistema 1 (rápido, intuitivo) toma decisões baseadas em heurísticas; o Sistema 2 (lento, deliberativo) analisa antes de agir. O Behavioral Gate implementa um equivalente computacional do Sistema 2: antes de ``agir rápido'', o sistema ``pensa devagar'' consultando seu histórico de confiança.
+\end{enumerate}
 
 \section{Trust Scoring Adaptativo}
 
-O \texttt{TrustScorer} calcula e atualiza scores de confiança para cada ação. O algoritmo utiliza um blend ponderado que dá mais peso ao desempenho recente:
+\subsection{Modelo Matemático}
+
+O \texttt{TrustScorer} mantém, para cada ação do sistema, um score de confiança $\tau \in [0,1]$ que evolui com base nos outcomes observados. O score é calculado como um blend ponderado entre desempenho recente e histórico:
 
 \begin{equation}
-\text{score} = 0.7 \times \text{recent\_rate} + 0.3 \times \text{hist\_rate} - \text{penalty}
+\tau = 0.7 \cdot r_{\text{recente}} + 0.3 \cdot r_{\text{histórico}} - \rho
+\label{eq:trust_score}
 \end{equation}
 
 Onde:
 \begin{itemize}
-    \item $\text{recent\_rate}$ é a taxa de sucesso nas últimas 10 execuções;
-    \item $\text{hist\_rate}$ é a taxa de sucesso em toda a história da ação;
-    \item $\text{penalty}$ é a penalidade por falhas consecutivas ($\min(0.5, k \times 0.1)$, onde $k$ é o número de falhas consecutivas).
+    \item $r_{\text{recente}} = \frac{1}{10} \sum_{i=1}^{10} o_i$ é a taxa de sucesso nas últimas 10 execuções, com $o_i \in \{0,1\}$ indicando falha ou sucesso;
+    \item $r_{\text{histórico}} = \frac{\sum \text{sucessos}}{\text{total\_execuções}}$ é a taxa de sucesso em toda a história da ação;
+    \item $\rho = \min(0.5, k \cdot 0.1)$ é a penalidade por $k$ falhas consecutivas.
 \end{itemize}
+
+O peso de 70\% para o desempenho recente (vs. 30\% para o histórico) foi escolhido com base no princípio de que \textbf{o desempenho recente é mais preditivo do desempenho futuro que o desempenho histórico distante}. Esta escolha é consistente com a literatura de \textit{recency bias} em tomada de decisão (Kahneman, 2011) e com a implementação do NEXO Brain (wazionapps/nexo, 2026).
 
 \subsection{Shadow Mode}
 
-Nas primeiras 5 execuções de uma ação, o trust score é limitado a 0.5, independentemente da taxa de sucesso. Isso evita que o sistema confie prematuramente em ações não validadas.
+Nas primeiras $m = 5$ execuções de uma ação, o trust score é artificialmente limitado a $\tau \leq 0.5$, independentemente da taxa de sucesso observada:
+
+\begin{equation}
+\tau_{\text{efetivo}} = \min(\tau, 0.5) \quad \text{se} \quad \text{total\_execuções} < m
+\label{eq:shadow}
+\end{equation}
+
+O shadow mode implementa um princípio de \textbf{confiança mínima inicial}: ações novas não são confiáveis até que tenham demonstrado desempenho consistente. Este princípio é análogo ao \textit{cold start problem} em sistemas de recomendação (Schein et al., 2002) e à \textit{exploration-exploitation dilemma} em aprendizado por reforço (Sutton \& Barto, 2018).
 
 \subsection{Rollback Detection}
 
-Se a taxa de sucesso recente cair abaixo de 50\% da baseline estabelecida, o trust score sofre uma penalidade adicional de 0.2. Isso permite que o sistema detecte degradação de desempenho e reduza a confiança proporcionalmente.
+Se a taxa de sucesso recente $r_{\text{recente}}$ cair abaixo de 50\% da baseline estabelecida $b$, o trust score sofre uma penalidade adicional:
+
+\begin{equation}
+\tau \leftarrow \max(0.1, \tau - 0.2) \quad \text{se} \quad r_{\text{recente}} < \frac{b}{2}
+\label{eq:rollback}
+\end{equation}
+
+O rollback detection implementa um mecanismo de \textbf{degradação controlada}: se uma ação que historicamente era confiável começa a falhar consistentemente, a confiança é reduzida rapidamente para prevenir danos. Este mecanismo é inspirado no \textit{circuit breaker pattern} da engenharia de software (Nygard, 2007).
 
 \section{Behavioral Gate}
 
-O \texttt{BehavioralGate} decide se uma ação deve ser executada baseado em faixas de trust score:
+\subsection{Classificação de Risco}
+
+O \texttt{BehavioralGate} classifica cada ação em uma de quatro categorias de risco, baseado no trust score $\tau$:
+
+\begin{equation}
+\text{risco}(\tau) = \begin{cases}
+\text{safe} & \text{se } \tau \geq 0.70 \\
+\text{moderate} & \text{se } 0.40 \leq \tau < 0.70 \\
+\text{risky} & \text{se } \theta \leq \tau < 0.40 \\
+\text{blocked} & \text{se } \tau < \theta
+\end{cases}
+\label{eq:risk}
+\end{equation}
+
+Onde $\theta$ é o threshold configurável (default: 0.25). Ações ``safe'' são executadas sem restrições; ações ``moderate'' requerem $\tau \geq \theta$; ações ``risky'' são executadas com logging adicional; ações ``blocked'' não são executadas.
+
+\subsection{Estrutura da Decisão}
+
+Cada decisão do gate é registrada como um \texttt{GateDecision} imutável, contendo:
 
 \begin{itemize}
-    \item $\text{score} \geq 0.70$: \textbf{safe} — executar sem restrições;
-    \item $0.40 \leq \text{score} < 0.70$: \textbf{moderate} — executar se acima do threshold;
-    \item $\text{threshold} \leq \text{score} < 0.40$: \textbf{risky} — executar com cautela;
-    \item $\text{score} < \text{threshold}$: \textbf{blocked} — não executar.
+    \item \texttt{action\_id}: identificador da ação;
+    \item \texttt{allowed}: booleano indicando se a ação foi autorizada;
+    \item \texttt{trust\_score}: score de confiança no momento da decisão;
+    \item \texttt{threshold}: threshold utilizado;
+    \item \texttt{reason}: justificativa textual auditável;
+    \item \texttt{risk\_level}: classificação de risco (safe/moderate/risky/blocked).
 \end{itemize}
 
-Cada decisão é registrada como \texttt{GateDecision} com justificativa auditável.
+Estas decisões são persistidas e podem ser auditadas post-hoc, permitindo que um operador humano entenda exatamente por que cada ação foi autorizada ou bloqueada.
 
-\section{Natural Forgetting}
+\section{Natural Forgetting — Modelo Atkinson-Shiffrin Adaptado}
 
-O \texttt{NaturalForgetting} implementa o modelo Atkinson-Shiffrin com três níveis de memória e decaimento progressivo. Itens importantes decaem lentamente; itens triviais desaparecem rapidamente.
+\subsection{Formulação do Decaimento}
+
+O \texttt{NaturalForgetting} implementa o modelo de memória de Atkinson \& Shiffrin (1968) com três níveis e decaimento exponencial. O tempo de vida efetivo de um item no nível $\ell$ é:
+
+\begin{equation}
+\text{TTL}_{\text{efetivo}}(\ell, i) = \frac{\text{TTL}_{\text{base}}(\ell)}{1 + 2 \cdot \text{importância}(i)}
+\label{eq:ttl}
+\end{equation}
+
+Onde:
+\begin{itemize}
+    \item $\text{TTL}_{\text{base}}(\text{sensory}) = 30\text{s}$, $\text{TTL}_{\text{base}}(\text{short\_term}) = 300\text{s}$, $\text{TTL}_{\text{base}}(\text{long\_term}) = 86400\text{s}$;
+    \item $\text{importância}(i) \in [0,1]$ é calculada na entrada do item.
+\end{itemize}
+
+Itens importantes ($\text{importância} \rightarrow 1$) têm TTL efetivo 3$\times$ maior que itens triviais ($\text{importância} \rightarrow 0$). Este mecanismo implementa o princípio de que \textbf{informação relevante deve ser retida por mais tempo que informação irrelevante}.
+
+\subsection{Promoção entre Níveis}
+
+A promoção de um item do nível sensorial para memória de curto prazo ocorre após $a = 3$ acessos; para memória de longo prazo, após $a = 5$ acessos com alta importância ($\geq 0.6$):
+
+\begin{equation}
+\text{nível}(i) = \begin{cases}
+\text{sensory} & \text{se } \text{acessos}(i) < 3 \\
+\text{short\_term} & \text{se } 3 \leq \text{acessos}(i) < 5 \text{ ou importância}(i) < 0.6 \\
+\text{long\_term} & \text{se } \text{acessos}(i) \geq 5 \text{ e importância}(i) \geq 0.6
+\end{cases}
+\label{eq:promocao}
+\end{equation}
+
+\section{Outcome Tracker — Aprendizado Contínuo}
+
+O \texttt{OutcomeTracker} fecha o ciclo de aprendizado: registra cada outcome de ação, atualiza o trust score, e recalibra a baseline periodicamente. A baseline $b$ é recalculada a cada 20 outcomes como a taxa de sucesso média:
+
+\begin{equation}
+b \leftarrow \frac{1}{20} \sum_{i=1}^{20} o_i \quad \text{a cada 20 outcomes}
+\label{eq:baseline}
+\end{equation}
 
 \section{Pipeline SPEC-038}
 
-O pipeline preventivo opera em três estágios: pré-execução (gate decide), execução (ação roda), pós-execução (trust é atualizado e memória é consolidada).
+O pipeline preventivo opera em três estágios:
 
-Este pipeline fecha o ciclo metacognitivo: de N3 (reativo: detectar e corrigir) para N3.5 (preventivo: decidir se deve executar baseado em confiança aprendida).
+\begin{enumerate}
+    \item \textbf{Pré-execução}: \texttt{BehavioralGate.gate(action\_id)} $\rightarrow$ \texttt{GateDecision}. Se \texttt{allowed=False}, a ação é bloqueada e registrada.
+    \item \textbf{Execução}: a ação é executada. Métricas são coletadas (tempo, memória, sucesso/falha).
+    \item \textbf{Pós-execução}: \texttt{OutcomeTracker.record(action\_id, success, delta)} $\rightarrow$ \texttt{TrustScorer} atualizado $\rightarrow$ \texttt{NaturalForgetting.store(context)}.
+\end{enumerate}
+
+Este pipeline fecha o ciclo metacognitivo: de N3 (reativo: detectar $\rightarrow$ corrigir) para N3.5 (preventivo: decidir $\rightarrow$ executar $\rightarrow$ aprender).
+
+\section{Evidência Experimental}
+
+O TrustEngine foi validado em três cenários (Seção 8.2, Caso 3):
+
+\begin{itemize}
+    \item \textbf{Ação confiável} (10 execuções bem-sucedidas): trust score convergiu para 1.00, classificado como ``safe''.
+    \item \textbf{Ação arriscada} (3 sucessos, 5 falhas): trust score caiu para 0.32, classificado como ``risky''.
+    \item \textbf{Ação nova} (shadow mode): trust score limitado a $\leq 0.50$ nas primeiras 5 execuções.
+\end{itemize}
+
+Estes resultados demonstram que o TrustScorer efetivamente distingue entre ações confiáveis e não-confiáveis baseado em histórico de outcomes, e que o shadow mode previne overconfidence prematura.

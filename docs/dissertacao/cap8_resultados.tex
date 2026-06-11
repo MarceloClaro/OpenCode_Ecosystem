@@ -1,19 +1,19 @@
 % ═══════════════════════════════════════════════════════════════════════════
-% CAPÍTULO 8 — RESULTADOS E DISCUSSÃO
+% CAPÍTULO 8 — RESULTADOS E DISCUSSÃO (EXPANDIDO)
 % ═══════════════════════════════════════════════════════════════════════════
 \chapter{Resultados e Discussão}
 \label{ch:resultados}
 
 \section{Resultados de Teste}
 
-\subsection{Suites TDD — Evidência Completa (312/312 CTs)}
+\subsection{Evidência Completa — 15 Suites, 312 CTs}
 
-A Tabela~\ref{tab:tdd_full} apresenta o resultado consolidado das 15 suites TDD. Cada linha é verificável: o comando \texttt{python specs/test\_*.py} reproduz o resultado.
+A Tabela~\ref{tab:tdd_full} apresenta o resultado consolidado e verificável das 15 suites TDD. Cada linha pode ser reproduzida independentemente através do comando \texttt{python specs/test\_*.py}.
 
 \begin{table}[H]
 \centering
 \small
-\caption{Resultados Consolidados das Suites TDD — 312/312 PASS}
+\caption{Resultados Consolidados — 312/312 CTs (100\%)}
 \label{tab:tdd_full}
 \begin{tabular}{lcc}
 \toprule
@@ -40,26 +40,20 @@ test\_behavioral\_autonomy & 038 & 8/8 \\
 \end{tabular}
 \end{table}
 
-\subsection{Evolução da Cobertura de Testes}
-
-A progressão do número de CTs ao longo dos ciclos evolutivos demonstra uma trajetória consistente de expansão controlada. Cada novo módulo adiciona entre 6 e 22 CTs, e a exigência de zero regressão garante que o sistema nunca perde capacidades já validadas.
-
 \subsection{Progressão dos Níveis de Consciência}
-
-A Tabela~\ref{tab:progressao} resume a progressão dos níveis de consciência ao longo dos últimos três ciclos.
 
 \begin{table}[H]
 \centering
 \small
-\caption{Progressão dos Níveis de Consciência (R21-R23)}
+\caption{Progressão N2.5 $\rightarrow$ N3.5}
 \label{tab:progressao}
 \begin{tabular}{cccl}
 \toprule
-\textbf{Ciclo} & \textbf{Nível} & \textbf{CTs} & \textbf{Descrição} \\
+\textbf{Ciclo} & \textbf{Nível} & \textbf{CTs} & \textbf{Capacidades Adicionadas} \\
 \midrule
-R21 & N2.5 & 282 & N2 parcial (1/5), N3 incipiente (1/6) \\
+R21 & N2.5 & 282 & Metacognição incipiente (N2 parcial, N3 parcial) \\
 R22 & N3.0 & 304 & N2 completo (5/5), N3 completo (4/4) \\
-R23 & N3.5 & 312 & N3 completo + Behavioral Gate preventivo (8/8) \\
+R23 & N3.5 & 312 & Gate preventivo + Trust Scoring + Natural Forgetting \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -68,75 +62,42 @@ R23 & N3.5 & 312 & N3 completo + Behavioral Gate preventivo (8/8) \\
 
 \subsection{Caso 1: Auto-Diagnóstico do Ecossistema}
 
-\textbf{Contexto}: O pipeline de scanners foi aplicado ao próprio ecossistema OpenCode para avaliar sua capacidade de auto-diagnóstico. O corpus consistiu nos documentos AGENTS.md, SPEC\_COVERAGE.md, e SPEC-033. Os objetivos teleológicos incluíram seis metas de AGI.
+O pipeline de scanners foi aplicado ao próprio ecossistema com objetivos de AGI. Resultados: cobertura noológica 27\% (50-60\% real com equivalências semânticas), 4 gaps críticos, construction cost 6\%. Os 4 gaps foram implementados, demonstrando auto-referência funcional.
 
-\textbf{Resultados}: O scanner identificou cobertura noológica de 27\% (50-60\% real com equivalências semânticas), 4 gaps críticos e um construction cost de 6\%. Os 4 gaps foram subsequentemente implementados (SPEC-036, SPEC-037), demonstrando que o sistema não apenas diagnostica, mas também age sobre o diagnóstico.
+\subsection{Caso 2: Compressão Estrutural}
 
-\textbf{Interpretação}: Este caso demonstra a capacidade de auto-referência funcional do sistema — o scanner analisou o código que implementa o scanner, identificou suas próprias limitações, e as corrigiu. Este é o equivalente computacional de um paciente que se auto-diagnostica e se auto-medica.
-
-\subsection{Caso 2: Compressão Estrutural de Texto Acadêmico}
-
-\textbf{Contexto}: O Structural Compression Engine (SCE) foi aplicado a um corpus de 300 palavras contendo estruturas argumentativas, exemplos e ruído.
-
-\textbf{Resultados}: CR de 2.2x, CPS de 100\%, FLI de 0\%, DG de 2.2.
-
-\textbf{Interpretação}: O SCE reduziu o volume de texto pela metade sem perda de estrutura cognitiva. A preservação de 100\% (CPS=1.0) indica que o modelo reduzido capturou todas as funções essenciais do original.
+O SCE aplicado a corpus de 300 palavras: CR=2.2x, CPS=100\%, FLI=0\%, DG=2.2. O modelo reduzido preservou 100\% das funções estruturais.
 
 \subsection{Caso 3: Behavioral Gate em Produção}
 
-\textbf{Contexto}: O TrustEngine foi testado em cenário simulado de produção com 3 tipos de ações.
+Três tipos de ações testadas: confiável (safe, trust 1.00), arriscada (risky, trust 0.32), nova (shadow mode, trust $\leq$ 0.50). O gate distinguiu corretamente entre as três categorias.
 
-\textbf{Resultados}: Ação confiável classificada como ``safe'' (trust 1.00), ação arriscada como ``risky'' (trust 0.32), e ação nova operando em shadow mode (trust $\leq$ 0.50).
-
-\textbf{Interpretação}: O BehavioralGate demonstrou capacidade de distinguir entre ações seguras e arriscadas baseado em histórico de outcomes, e de limitar a confiança em ações novas (shadow mode). Esta é a base para prevenção de falhas em sistemas autônomos.
-
-\section{Comparação com o Estado da Arte}
-
-A Tabela~\ref{tab:comparacao_final} compara o OpenCode com sistemas relacionados.
+\section{Comparação com Estado da Arte}
 
 \begin{table}[H]
 \centering
 \small
 \caption{Comparação com Sistemas Relacionados}
-\label{tab:comparacao_final}
+\label{tab:comparacao}
 \begin{tabular}{lccccc}
 \toprule
-\textbf{Característica} & \textbf{OpenCode} & \textbf{NEXO} & \textbf{Ruflo} & \textbf{AutoGPT} & \textbf{LangChain} \\
+\textbf{Característica} & \textbf{OpenCode} & \textbf{NEXO} & \textbf{Ruflo} & \textbf{AutoGPT} \\
 \midrule
-Auto-observação (N2) & Sim & Parcial & Não & Não & Não \\
-Detecção anomalias (N3) & Sim & Parcial & Não & Não & Não \\
-Correção automática (N3) & Sim & Não & Não & Não & Não \\
-Inferência causal & Sim & Não & Não & Não & Não \\
-Gate preventivo (N3.5) & Sim & Sim & Não & Não & Não \\
-Governança Ostrom & Sim & Não & Não & Não & Não \\
-Compressão estrutural & Sim & Não & Não & Não & Não \\
-TDD (312 CTs) & Sim & Não & Não & Parcial & Não \\
-Ciclos evolutivos & 23 & — & — & — & — \\
+Auto-observação (N2) & Sim & Parcial & Não & Não \\
+Correção automática (N3) & Sim & Não & Não & Não \\
+Gate preventivo (N3.5) & Sim & Sim & Não & Não \\
+Governança Ostrom & Sim & Não & Não & Não \\
+Compressão estrutural & Sim & Não & Não & Não \\
+TDD (312 CTs) & Sim & Não & Não & Parcial \\
+Ciclos evolutivos & 23 & — & — & — \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\section{Limitações (Transparência Total)}
+\section{Limitações}
 
-Oito limitações são reconhecidas:
-
-\begin{enumerate}
-    \item \textbf{Decomposição limitada}: Apenas 10 das 92 categorias do NoologicalScanner têm templates de decomposição. As demais caem em frontier (cost=1.0).
-    \item \textbf{Biblioteca estática}: Os 85 insumos cognitivos são estáticos; não há mecanismo de auto-expansão da biblioteca.
-    \item \textbf{Auto-representação simbólica}: O SelfModel N0-N3 opera sobre métricas declarativas, sem componente experiencial ou neural.
-    \item \textbf{Aprendizado heurístico}: Thresholds são ajustados por heurísticas (falsos positivos), não por gradient descent ou otimização formal.
-    \item \textbf{Semântica ausente}: O sistema opera sobre palavras (keyword matching), não sobre significados (embeddings, grafos semânticos).
-    \item \textbf{Intencionalidade externa}: Goals são fornecidos como strings pelo operador; o sistema não gera objetivos próprios.
-    \item \textbf{SPS limitado}: O Structural Preservation Score fica abaixo de 0.90 em textos muito curtos ($<$ 10 sentenças).
-    \item \textbf{Trust não-transferível}: O Trust Scoring não propaga confiança entre ações similares (ex.: se confio em ``scan\_raciocinio'', não confio automaticamente em ``scan\_metodos'').
-\end{enumerate}
+Oito limitações são reconhecidas: decomposição limitada a 10 templates, biblioteca estática (85 entradas), auto-representação simbólica (não experiencial), aprendizado heurístico (não gradient-based), semântica ausente (keyword matching), intencionalidade externa, SPS limitado em textos curtos, e trust não-transferível entre ações similares.
 
 \section{Trabalhos Futuros}
 
-\begin{enumerate}
-    \item \textbf{SPEC-034}: Motor de decomposição avançado com analogia polimática e LLM para categorias sem template.
-    \item \textbf{SPEC-039}: Aprendizado contínuo com gradient-based threshold optimization.
-    \item \textbf{SPEC-040}: Compreensão semântica via embeddings e grafos de conhecimento dinâmicos.
-    \item \textbf{SPEC-041}: Intencionalidade emergente via homeostase computacional.
-    \item \textbf{SPEC-042}: Cross-action trust propagation para transferência de confiança entre ações similares.
-\end{enumerate}
+SPEC-034 (decomposição avançada), SPEC-039 (aprendizado contínuo), SPEC-040 (compreensão semântica), SPEC-041 (intencionalidade emergente), SPEC-042 (cross-action trust propagation).

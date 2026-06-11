@@ -1,60 +1,113 @@
 % ═══════════════════════════════════════════════════════════════════════════
-% CAPÍTULO 4 — ARQUITETURA
+% CAPÍTULO 4 — ARQUITETURA DO SISTEMA (EXPANDIDO)
 % ═══════════════════════════════════════════════════════════════════════════
 \chapter{Arquitetura do Sistema}
 \label{ch:arquitetura}
 
-\section{Visão Geral — 7 Camadas}
+\section{Princípios Arquiteturais}
 
-O OpenCode Ecosystem é organizado em 7 camadas hierárquicas. Para um leitor não familiarizado com arquitetura de software, imagine um prédio de 7 andares: cada andar (camada) oferece serviços ao andar de cima e usa serviços do andar de baixo. O térreo (L1) é a infraestrutura básica; a cobertura (L7) é onde as decisões mais sofisticadas acontecem.
+A arquitetura do OpenCode Ecosystem foi projetada seguindo cinco princípios fundamentais, derivados da literatura de engenharia de software (Gamma et al., 1994; Bass, Clements \& Kazman, 2012):
 
 \begin{enumerate}
-    \item \textbf{L1 — Skills (161) + Infraestrutura}: Conhecimento reutilizável. Skills são como ``receitas'' que descrevem como realizar tarefas complexas.
-    \item \textbf{L2 — MCPs (46 servidores)}: Ferramentas externas. MCPs são como ``plugins'' que conectam o sistema a serviços externos (buscadores, bancos de dados, navegadores).
-    \item \textbf{L3 — Agentes (128)}: Executores especializados. Cada agente é como um ``funcionário'' treinado para uma tarefa específica.
-    \item \textbf{L4 — Scanner Pipeline (M0-M5)}: Diagnóstico. Esta camada é o ``departamento de P\&D'' do ecossistema — identifica o que está faltando e planeja como construir.
-    \item \textbf{L5 — MCSP}: Otimização. O ``departamento de compras'' que decide qual o conjunto mínimo de capacidades a construir.
-    \item \textbf{L6 — Metacognição}: Auto-observação. O ``departamento de qualidade'' que monitora, corrige e aprende.
-    \item \textbf{L7 — Trust Engine}: Prevenção. O ``porteiro'' que decide se uma ação deve ser executada.
+    \item \textbf{Separação de responsabilidades}: cada camada tem uma responsabilidade única e bem definida. A L1 (Skills) não sabe como a L7 (Trust Engine) funciona; a L7 não precisa conhecer os detalhes de implementação da L1.
+    \item \textbf{Inversão de dependência}: camadas superiores dependem de abstrações, não de implementações concretas. O \texttt{MetacognitiveMonitor} depende da interface \texttt{scan\_output}, não de um scanner específico.
+    \item \textbf{Observabilidade}: todo componente expõe métricas que podem ser monitoradas. Os 8.034 eventos JSONL são a materialização deste princípio.
+    \item \textbf{Testabilidade}: todo componente pode ser testado isoladamente. As 15 suites TDD (312 CTs) são a evidência deste princípio.
+    \item \textbf{Evolutibilidade}: a arquitetura suporta adição de novas camadas sem modificar as existentes. Os 23 ciclos evolutivos demonstram este princípio na prática.
+\end{enumerate}
+
+\section{Visão Geral — 7 Camadas}
+
+O OpenCode Ecosystem é organizado em 7 camadas hierárquicas, cada uma com responsabilidades específicas e interfaces bem definidas. Para um leitor não familiarizado com arquitetura de software, imagine um prédio de 7 andares: cada andar oferece serviços ao andar de cima e usa serviços do andar de baixo, mas nenhum andar precisa saber como os outros funcionam internamente.
+
+\begin{enumerate}
+    \item \textbf{L1 — Skills (161) + Infraestrutura}: A camada fundamental. Skills são documentos que descrevem procedimentos reutilizáveis para tarefas complexas — como receitas de cozinha que qualquer agente pode seguir. A infraestrutura inclui Node.js 22 LTS, Bun 1.3, Python 3.12, e o sistema de arquivos.
+    
+    \item \textbf{L2 — MCPs (46 servidores)}: Ferramentas externas acessíveis via Model Context Protocol. Incluem buscadores (websearch, gh\_grep), navegadores (playwright, chrome-devtools), bancos de dados (sqlite), e utilitários (fetch, pdf, time). MCPs são como ``plugins'' que estendem as capacidades do sistema sem modificar seu núcleo.
+    
+    \item \textbf{L3 — Agentes (128)}: Executores especializados. Cada agente é um subprocesso Python com um domínio de expertise específico. Agentes não tomam decisões arquiteturais — eles executam tarefas dentro de seu domínio. A coordenação entre agentes é feita pelo Nexus NMA v6.2 (L5).
+    
+    \item \textbf{L4 — Scanner Pipeline (M0-M5)}: O coração epistemológico do ecossistema. Esta camada implementa o pipeline de diagnóstico que identifica gaps de conhecimento, decompõe capacidades em insumos, e gera roadmaps evolutivos. É o ``departamento de P\&D'' do sistema.
+    
+    \item \textbf{L5 — MCSP}: O Minimum Capability Solver. Recebe o grafo de dependências da L4 e encontra o conjunto mínimo de capacidades a construir, otimizando por cascade\_impact / construction\_cost.
+    
+    \item \textbf{L6 — Metacognição}: A camada de auto-observação. Monitora as camadas inferiores, detecta anomalias, propõe correções, sintetiza contradições, e governa goals autônomos. É o ``departamento de qualidade'' do sistema.
+    
+    \item \textbf{L7 — Trust Engine}: A camada de prevenção. Antes que qualquer ação seja executada, o Behavioral Gate consulta o histórico de confiança e decide se a ação deve prosseguir. É o ``porteiro'' do sistema.
 \end{enumerate}
 
 \section{Fluxo de Execução}
 
-O pipeline completo de execução segue a sequência M0$\rightarrow$M7 com gate preventivo. A Tabela~\ref{tab:fluxo} resume cada etapa.
+O pipeline completo de execução segue a sequência M0$\rightarrow$M7, com o Gate (L7) atuando como pré-condição. A Tabela~\ref{tab:fluxo} resume cada etapa com seu propósito, entrada e saída.
 
 \begin{table}[H]
 \centering
 \small
-\caption{Fluxo Completo do Pipeline}
+\caption{Fluxo Completo do Pipeline M0$\rightarrow$M7 + Gate}
 \label{tab:fluxo}
-\begin{tabular}{clp{8cm}}
+\begin{tabular}{clp{4cm}p{4cm}}
 \toprule
-\textbf{Etapa} & \textbf{Módulo} & \textbf{Função} \\
+\textbf{Etapa} & \textbf{Módulo} & \textbf{Entrada} & \textbf{Saída} \\
 \midrule
-GATE & TrustEngine & Decidir se deve executar (trust $\geq$ threshold) \\
-M0 & SNS & Comprimir corpus preservando estrutura \\
-M1 & NoologicalScanner & Diagnosticar gaps de conhecimento (10 dims $\times$ 92 cats) \\
-M2 & TeleologicalScanner & Inferir capacidades necessárias para objetivos \\
-M3.5 & CapabilityComposer & Decompor capacidades em insumos cognitivos \\
-M3 & CrossValidationEngine & Construir grafo de dependências (73 arestas) \\
-M4 & PolymathicConvergence & Encontrar analogias em 30+ domínios externos \\
-M5 & TrajectoryMapper & Gerar roadmap evolutivo com 4 cenários \\
-M6 & MCSP & Selecionar conjunto mínimo de capacidades \\
-M7 & Metacognição & Observar, detectar, corrigir, aprender \\
-LEARN & TrustEngine & Atualizar trust score baseado no outcome \\
+GATE & TrustEngine & Ação + histórico & GateDecision (allowed/blocked) \\
+M0 & SNS & Corpus bruto & Corpus comprimido (SPS/NRR/FLI) \\
+M1 & NoologicalScanner & Corpus comprimido & Coverage (10 dims $\times$ 92 cats) \\
+M2 & TeleologicalScanner & Goals + coverage & Gaps com severity \\
+M3.5 & CapabilityComposer & Gaps & CapabilityUnit[] + construction\_cost \\
+M3 & CrossValidationEngine & CapabilityUnit[] & Grafo (73 arestas) + bottlenecks \\
+M4 & PolymathicConvergence & Gaps + grafo & Analogias (30+ domínios) \\
+M5 & TrajectoryMapper & Gaps + analogias + grafo & Cenários (4) + rotas (3) \\
+M6 & MCSP & Grafo + costs & Conjunto mínimo + topological\_order \\
+M7 & Metacognição & Pipeline output & Anomalies + corrections + synthesis \\
+LEARN & TrustEngine & Outcome & Trust score atualizado \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\section{Decisões Arquiteturais (ADRs)}
+\section{Mecanismo de Comunicação entre Camadas}
 
-As 10 ADRs documentam decisões críticas com contexto, alternativas consideradas e justificativa:
+A comunicação entre camadas segue um protocolo assíncrono baseado em eventos. Cada camada:
 
 \begin{enumerate}
-    \item \textbf{architectu-001}: Token Budget — limite de tokens por operação;
-    \item \textbf{architectu-002}: Three-Layer Architecture (MCP$\rightarrow$Skill$\rightarrow$Agent);
-    \item \textbf{architectu-003 a 007}: SPECs 019-031 (API, Streaming, Low-Code, Token Economy, Scanners);
-    \item \textbf{architectu-008}: Composição Unitária do Conhecimento (SPEC-033);
-    \item \textbf{architectu-009}: Integração Stage 3 ao Pipeline (SPEC-035);
-    \item \textbf{architectu-010}: Metacognição + Self-Evolution (SPEC-036).
+    \item \textbf{Publica} eventos em um barramento compartilhado (JSONL);
+    \item \textbf{Assina} eventos de camadas inferiores que são relevantes para seu domínio;
+    \item \textbf{Reage} a eventos publicando novos eventos ou modificando seu estado interno.
 \end{enumerate}
+
+Este modelo pub/sub (publish-subscribe) foi escolhido sobre chamadas síncronas (REST) por três razões:
+
+\begin{enumerate}
+    \item \textbf{Desacoplamento temporal}: camadas não precisam estar ativas simultaneamente;
+    \item \textbf{Auditabilidade}: todo evento é registrado com timestamp, permitindo reconstrução forense;
+    \item \textbf{Extensibilidade}: novas camadas podem assinar eventos existentes sem modificar as publicadoras.
+\end{enumerate}
+
+\section{Decisões Arquiteturais (ADRs)}
+
+As 10 ADRs (Architecture Decision Records) documentam decisões críticas de design. Cada ADR segue o template: contexto, decisão, alternativas consideradas, consequências, e status.
+
+\begin{enumerate}
+    \item \textbf{architectu-001 — Token Budget}: Cada operação tem um limite de tokens para prevenir consumo excessivo de contexto. Este limite é monitorado pelo \texttt{token\_economy\_monitor.py}.
+    
+    \item \textbf{architectu-002 — Three-Layer Architecture}: A separação MCP$\rightarrow$Skill$\rightarrow$Agent foi escolhida sobre uma arquitetura monolítica para permitir evolução independente de cada camada.
+    
+    \item \textbf{architectu-003 a 007}: Documentam as decisões de design das SPECs 019-031 (API Governance, Data Streaming, Low-Code Platform, Token Economy, Scanner Pipeline).
+    
+    \item \textbf{architectu-008 — Composição Unitária}: A decisão de adicionar uma camada de decomposição de capacidades entre o Scanner Teleológico e o Sequenciamento Evolutivo. Documenta o modelo formal $C = E + S + R$ e a estrutura de dados CognitiveInput/CapabilityUnit.
+    
+    \item \textbf{architectu-009 — Integração Stage 3}: A decisão de integrar o CapabilityComposer ao pipeline existente como etapa M3.5, com campos opcionais para retrocompatibilidade.
+    
+    \item \textbf{architectu-010 — Metacognição}: A decisão de implementar metacognição como uma camada separada (L6) que observa as camadas inferiores sem modificá-las, seguindo o padrão Observer.
+\end{enumerate}
+
+\section{Infraestrutura de Testes}
+
+A infraestrutura de testes é parte integrante da arquitetura. Cada módulo Python é acompanhado por:
+
+\begin{itemize}
+    \item Uma especificação formal (SPEC-0xx) que define comportamento esperado;
+    \item Uma suite TDD (\texttt{test\_*.py}) com Critical Tests;
+    \item Um arquivo de log (\texttt{*.jsonl}) que registra eventos de observabilidade.
+\end{itemize}
+
+Os testes são executados automaticamente antes de cada commit (gate de CI/CD). A exigência de 100\% de aprovação e zero regressão é não-negociável.
