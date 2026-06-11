@@ -1,0 +1,55 @@
+% ═══════════════════════════════════════════════════════════════════════════
+% CAPÍTULO 7 — BEHAVIORAL GATE PREVENTIVO (N3.5)
+% ═══════════════════════════════════════════════════════════════════════════
+\chapter{Behavioral Gate Preventivo (N3.5)}
+\label{ch:behavioral}
+
+\section{Do Reativo ao Preventivo}
+
+Antes do SPEC-038, o OpenCode operava em modo reativo: executava ações e, se algo desse errado, detectava a anomalia e corrigia. O Behavioral Gate introduz o modo preventivo: \textbf{antes} de executar, o sistema consulta seu histórico de confiança e decide se deve ou não prosseguir.
+
+\section{Trust Scoring Adaptativo}
+
+O \texttt{TrustScorer} calcula e atualiza scores de confiança para cada ação. O algoritmo utiliza um blend ponderado que dá mais peso ao desempenho recente:
+
+\begin{equation}
+\text{score} = 0.7 \times \text{recent\_rate} + 0.3 \times \text{hist\_rate} - \text{penalty}
+\end{equation}
+
+Onde:
+\begin{itemize}
+    \item $\text{recent\_rate}$ é a taxa de sucesso nas últimas 10 execuções;
+    \item $\text{hist\_rate}$ é a taxa de sucesso em toda a história da ação;
+    \item $\text{penalty}$ é a penalidade por falhas consecutivas ($\min(0.5, k \times 0.1)$, onde $k$ é o número de falhas consecutivas).
+\end{itemize}
+
+\subsection{Shadow Mode}
+
+Nas primeiras 5 execuções de uma ação, o trust score é limitado a 0.5, independentemente da taxa de sucesso. Isso evita que o sistema confie prematuramente em ações não validadas.
+
+\subsection{Rollback Detection}
+
+Se a taxa de sucesso recente cair abaixo de 50\% da baseline estabelecida, o trust score sofre uma penalidade adicional de 0.2. Isso permite que o sistema detecte degradação de desempenho e reduza a confiança proporcionalmente.
+
+\section{Behavioral Gate}
+
+O \texttt{BehavioralGate} decide se uma ação deve ser executada baseado em faixas de trust score:
+
+\begin{itemize}
+    \item $\text{score} \geq 0.70$: \textbf{safe} — executar sem restrições;
+    \item $0.40 \leq \text{score} < 0.70$: \textbf{moderate} — executar se acima do threshold;
+    \item $\text{threshold} \leq \text{score} < 0.40$: \textbf{risky} — executar com cautela;
+    \item $\text{score} < \text{threshold}$: \textbf{blocked} — não executar.
+\end{itemize}
+
+Cada decisão é registrada como \texttt{GateDecision} com justificativa auditável.
+
+\section{Natural Forgetting}
+
+O \texttt{NaturalForgetting} implementa o modelo Atkinson-Shiffrin com três níveis de memória e decaimento progressivo. Itens importantes decaem lentamente; itens triviais desaparecem rapidamente.
+
+\section{Pipeline SPEC-038}
+
+O pipeline preventivo opera em três estágios: pré-execução (gate decide), execução (ação roda), pós-execução (trust é atualizado e memória é consolidada).
+
+Este pipeline fecha o ciclo metacognitivo: de N3 (reativo: detectar e corrigir) para N3.5 (preventivo: decidir se deve executar baseado em confiança aprendida).

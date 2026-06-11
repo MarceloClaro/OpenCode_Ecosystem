@@ -1,0 +1,205 @@
+% ═══════════════════════════════════════════════════════════════════════════
+% CAPÍTULO 3 — METODOLOGIA
+% ═══════════════════════════════════════════════════════════════════════════
+\chapter{Metodologia}
+\label{ch:metodologia}
+
+\section{Visão Geral da Abordagem Metodológica}
+
+Esta pesquisa adota uma abordagem metodológica mista, combinando Design Science Research (DSR) como paradigma principal, Test-Driven Development (TDD) como método de validação, e ciclos evolutivos como unidade de análise. Esta combinação foi escolhida porque:
+
+\begin{enumerate}
+    \item \textbf{DSR} é o paradigma adequado para pesquisas que produzem artefatos de software como contribuição principal (Hevner et al., 2004);
+    \item \textbf{TDD} fornece validação contínua e automatizada de cada componente do artefato (Beck, 2003);
+    \item \textbf{Ciclos evolutivos} permitem rastrear a progressão do sistema ao longo do tempo e identificar padrões de melhoria.
+\end{enumerate}
+
+\section{Design Science Research}
+
+O Design Science Research, conforme formulado por Hevner et al. (2004) e refinado por Peffers et al. (2007), é um paradigma de pesquisa que busca criar e avaliar artefatos de TI destinados a resolver problemas organizacionais identificados. Diferentemente das ciências naturais, que buscam \textit{explicar} fenômenos, o DSR busca \textit{criar} soluções.
+
+\subsection{Os Sete Princípios do DSR}
+
+Hevner et al. (2004) estabeleceram sete princípios que guiam a pesquisa em DSR. A Tabela~\ref{tab:dsr} mostra como cada princípio é atendido por esta pesquisa.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Aderência aos Princípios do Design Science Research}
+\label{tab:dsr}
+\begin{tabular}{p{4cm}p{9cm}}
+\toprule
+\textbf{Princípio DSR} & \textbf{Como Esta Pesquisa Atende} \\
+\midrule
+1. Design como artefato & O OpenCode Ecosystem é o artefato (22 módulos Python, 8.937 linhas) \\
+2. Relevância do problema & O problema (gap entre identificação e construção de capacidades) foi diagnosticado pelo próprio sistema \\
+3. Avaliação do design & 312 CTs, 15 suites TDD, zero regressão \\
+4. Contribuições de pesquisa & Taxonomia N0-N3.5, Composição Unitária, Governança Ostrom para IA \\
+5. Rigor de pesquisa & Fundamentação em 31 referências com DOI/ISBN verificáveis \\
+6. Design como processo de busca & 23 ciclos evolutivos documentados \\
+7. Comunicação da pesquisa & Esta dissertação + repositório GitHub público + 10 ADRs \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{O Ciclo DSR Adotado}
+
+O ciclo DSR adotado nesta pesquisa segue o modelo de 6 etapas de Peffers et al. (2007):
+
+\begin{enumerate}
+    \item \textbf{Identificação do problema e motivação}: O próprio Scanner Pipeline (M0-M5) diagnosticou 4 gaps críticos no ecossistema: ausência de raciocínio metacognitivo, dialético, cooperativo, e neurobiológico. Estes gaps foram documentados na architectu-008.
+    
+    \item \textbf{Definição dos objetivos da solução}: Para cada gap, foram definidos objetivos específicos: (a) implementar auto-observação e detecção de anomalias; (b) implementar síntese dialética de contradições; (c) implementar governança cooperativa baseada em Ostrom; (d) implementar modelo de auto-representação.
+    
+    \item \textbf{Design e desenvolvimento}: Cada objetivo foi traduzido em uma especificação formal (SPEC-0xx), seguida por implementação Python com TDD. O ciclo Red-Green-Refactor foi aplicado rigorosamente.
+    
+    \item \textbf{Demonstração}: O artefato foi usado para resolver o problema que o originou — o scanner foi aplicado ao próprio ecossistema, demonstrando auto-diagnóstico funcional.
+    
+    \item \textbf{Avaliação}: A avaliação combinou: (a) testes automatizados (312 CTs); (b) observabilidade (8.034 eventos JSONL); (c) métricas de evolução (23 ciclos, progressão 85 $\rightarrow$ 100).
+    
+    \item \textbf{Comunicação}: Os resultados são comunicados através desta dissertação, do repositório GitHub público (\url{https://github.com/MarceloClaro/OpenCode_Ecosystem}), e de 10 ADRs.
+\end{enumerate}
+
+\section{Spec-Driven Development (SDD)}
+
+O Spec-Driven Development é uma extensão do TDD adotada pelo OpenCode Ecosystem. Enquanto o TDD tradicional exige testes antes do código, o SDD exige uma \textbf{especificação formal} antes dos testes.
+
+\subsection{Estrutura de uma SPEC}
+
+Cada especificação formal (SPEC-0xx) segue uma estrutura padronizada:
+
+\begin{enumerate}
+    \item \textbf{Status}: draft, implemented, deprecated;
+    \item \textbf{Problema}: qual gap a SPEC resolve;
+    \item \textbf{Conceito}: descrição conceitual da solução;
+    \item \textbf{Estrutura de Dados}: dataclasses, enums, interfaces;
+    \item \textbf{Interface Pública}: métodos, parâmetros, retornos;
+    \item \textbf{Critérios de Aceitação}: CTs que validam a SPEC;
+    \item \textbf{Integração}: dependências de outras SPECs;
+    \item \textbf{Referências}: literatura que fundamenta o design.
+\end{enumerate}
+
+\subsection{Exemplo: SPEC-033 (Composição Unitária)}
+
+A SPEC-033, que define a camada de Composição Unitária do Conhecimento, exemplifica o processo SDD:
+
+\begin{enumerate}
+    \item \textbf{Problema}: O pipeline identifica \textit{quais} capacidades construir, mas não sabe \textit{do que} cada capacidade é composta.
+    \item \textbf{Conceito}: Inspirado na engenharia de planejamento, cada capacidade é decomposta em 6 tipos de insumos cognitivos.
+    \item \textbf{Estrutura}: CognitiveInput (frozen dataclass, 6 tipos validados), CapabilityUnit (decomposição completa), CognitiveLibrary (load/save/query).
+    \item \textbf{CTs}: 13 testes críticos cobrindo validação sintática, semântica, bootstrap, unicidade e serialização.
+    \item \textbf{Integração}: Depende de SPEC-028 (NoologicalScanner), SPEC-029 (TeleologicalScanner), SPEC-030 (CrossValidationEngine).
+\end{enumerate}
+
+\section{Test-Driven Development (TDD)}
+
+\subsection{O Ciclo Red-Green-Refactor}
+
+O TDD, formalizado por Beck (2003), estabelece um ciclo de três etapas:
+
+\begin{enumerate}
+    \item \textbf{Red}: Escrever um teste que falha. O teste define o comportamento esperado antes que o código exista.
+    \item \textbf{Green}: Implementar o código mínimo necessário para fazer o teste passar. Sem otimizações prematuras.
+    \item \textbf{Refactor}: Melhorar a qualidade do código (legibilidade, performance, estrutura) sem alterar o comportamento — os testes existentes garantem que nada quebrou.
+\end{enumerate}
+
+\subsection{TDD como Método Científico}
+
+Uma interpretação menos explorada do TDD é sua equivalência ao método científico (Janzen \& Saiedian, 2005):
+
+\begin{itemize}
+    \item \textbf{Hipótese falseável}: O teste define o comportamento esperado. Se o código não produz este comportamento, a hipótese é falseada.
+    \item \textbf{Experimentação}: A execução do teste é o experimento que testa a hipótese.
+    \item \textbf{Refutação}: Teste falha $\rightarrow$ hipótese rejeitada $\rightarrow$ código corrigido.
+    \item \textbf{Corroboração}: Teste passa $\rightarrow$ hipótese corroborada (não provada — Popper, 1959).
+\end{itemize}
+
+Esta interpretação eleva o TDD de uma prática de engenharia a uma metodologia científica. Cada CT (Critical Test) é uma hipótese falseável sobre o comportamento do sistema. Os 312 CTs do OpenCode representam 312 hipóteses corroboradas — não provadas, mas resistentes a 23 ciclos de tentativas de refutação.
+
+\subsection{Estrutura de um CT}
+
+Cada Critical Test no OpenCode segue uma estrutura padronizada:
+
+\begin{lstlisting}[language=Python, caption={Estrutura de um Critical Test}]
+def comp_001_validate_cognitive_input() -> CTResult:
+    """COMP-001: CognitiveInput rejeita input_type invalido."""
+    try:
+        CognitiveInput(input_id="x.y", name="Teste",
+                       input_type="invalid_type", description="desc")
+        return CTResult("COMP-001", "Rejeita tipo invalido",
+                       False, "Deveria ter levantado ValueError")
+    except ValueError as e:
+        return CTResult("COMP-001", "Rejeita tipo invalido",
+                       True, str(e)[:120])
+\end{lstlisting}
+
+Cada CT retorna um objeto \texttt{CTResult} com:
+\begin{itemize}
+    \item \texttt{ct\_id}: identificador único vinculado à SPEC;
+    \item \texttt{name}: descrição legível do que está sendo testado;
+    \item \texttt{passed}: booleano indicando se o teste passou;
+    \item \texttt{detail}: evidência textual que um auditor humano pode verificar.
+\end{itemize}
+
+\section{Ciclos Evolutivos como Unidade de Análise}
+
+Cada ciclo evolutivo (R1 a R23) constitui uma unidade de análise independente. Um ciclo é definido por:
+
+\begin{enumerate}
+    \item \textbf{Diagnóstico}: O Scanner Pipeline (M0-M5) identifica gaps no estado atual do ecossistema;
+    \item \textbf{Planejamento}: O CapabilityComposer (M3.5) decompõe os gaps em insumos e o MCSP (M6) seleciona o conjunto mínimo;
+    \item \textbf{Implementação}: Novos módulos Python são desenvolvidos seguindo SDD+TDD;
+    \item \textbf{Validação}: Todas as 15 suites TDD são executadas; zero regressão é exigida;
+    \item \textbf{Documentação}: ADRs, SPECs, e documentação são atualizadas.
+\end{enumerate}
+
+\subsection{Progressão Documentada}
+
+A Tabela~\ref{tab:ciclos_completa} apresenta a progressão completa dos 23 ciclos.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Progressão Completa dos Ciclos Evolutivos}
+\label{tab:ciclos_completa}
+\begin{tabular}{clcp{5cm}}
+\toprule
+\textbf{Ciclo} & \textbf{Score} & \textbf{CTs} & \textbf{Artefatos Principais} \\
+\midrule
+R1 & 85 & — & Cross-validation quantitativo, World Bank API \\
+R2 & 90 & — & Pipeline de artigo 35 páginas ABNT \\
+R5 & 92 & — & Pearson CV em 27 indicadores \\
+R8 & 98 & — & Progressive disclosure + observabilidade \\
+R13 & 96 & — & Reasoning Engines (Z3, SymPy, Kanren, Critical) \\
+R17 & 99 & 24 & Gartner Hype Cycle 2026 \\
+R19 & 99 & 76 & MCSP + 5 Scanners \\
+R20 & 100 & 19 & Composição Unitária do Conhecimento \\
+R21 & 100 & 8 & Metacognição + Self-Evolution \\
+R22 & 100 & 22 & SNS + SCE + N3 Completo \\
+R23 & 100 & 8 & Trust Engine + Behavioral Gate \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Métricas de Validação}
+
+\subsection{Critical Tests (CTs)}
+
+Os CTs são a principal métrica de validação. O critério de aceitação para cada ciclo é: 100\% dos CTs passam, zero regressão nas suites existentes. A evolução do número de CTs (R17=24 $\rightarrow$ R23=312) demonstra expansão controlada.
+
+\subsection{Taxonomia de Consciência (N0-N3.5)}
+
+A taxonomia de níveis de consciência do sistema é avaliada por condições técnicas objetivas, detalhadas no Capítulo 6. Cada nível requer um conjunto específico de capacidades implementadas e testadas.
+
+\subsection{Métricas de Código}
+
+\begin{itemize}
+    \item \textbf{Linhas de código}: 8.937 linhas em 22 módulos Python;
+    \item \textbf{Cobertura de testes}: 100\% dos módulos têm pelo menos 1 suite TDD;
+    \item \textbf{Cobertura de documentação}: 100\% dos módulos têm SPEC formal;
+    \item \textbf{Regressão}: zero falhas em 23 ciclos de modificação.
+\end{itemize}
+
+\section{Considerações Éticas}
+
+Esta pesquisa não envolveu seres humanos, animais, ou dados pessoais. O artefato de software é open-source (Apache 2.0) e todo o código e documentação estão publicamente disponíveis. A geração automatizada desta dissertação pelo próprio sistema descrito é declarada explicitamente (Seção 1.8), em conformidade com as melhores práticas de transparência acadêmica.

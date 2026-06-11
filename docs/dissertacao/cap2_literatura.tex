@@ -1,0 +1,142 @@
+% ═══════════════════════════════════════════════════════════════════════════
+% CAPÍTULO 2 — REVISÃO DA LITERATURA
+% ═══════════════════════════════════════════════════════════════════════════
+\chapter{Revisão da Literatura}
+\label{ch:literatura}
+
+\section{Metacognição: Fundamentos Teóricos}
+
+\subsection{O Que É Metacognição?}
+
+Metacognição, literalmente ``cognição sobre a cognição'', é a capacidade de refletir sobre os próprios processos mentais. Flavell (1979), pioneiro no estudo da metacognição, a definiu como ``o conhecimento e a regulação dos próprios processos cognitivos''. Para um leitor não familiarizado com o termo, uma analogia útil: assim como você pode estar lendo este texto (cognição) e simultaneamente perceber que está entendendo ou não o que lê (metacognição), um sistema de software pode executar uma tarefa (cognição) e simultaneamente monitorar se está executando corretamente (metacognição).
+
+Flavell distinguiu dois componentes da metacognição:
+
+\begin{enumerate}
+    \item \textbf{Conhecimento metacognitivo}: o que sabemos sobre nosso próprio funcionamento cognitivo. Inclui conhecimento sobre pessoas (``eu sou melhor em matemática que em poesia''), tarefas (``este problema é difícil'') e estratégias (``devo fazer um diagrama para entender melhor'').
+    \item \textbf{Regulação metacognitiva}: como monitoramos e controlamos nossos processos cognitivos. Inclui planejamento (``por onde começar?''), monitoramento (``estou progredindo?''), e avaliação (``cheguei à resposta correta?'').
+\end{enumerate}
+
+\subsection{Metacognição em Inteligência Artificial}
+
+Cox (2005) foi pioneiro na adaptação do conceito de metacognição para o domínio da inteligência artificial. Em sua revisão seminal, ``Metacognition in Computation'', Cox argumentou que sistemas de IA metacognitivos deveriam ser capazes de:
+
+\begin{enumerate}
+    \item \textbf{Auto-monitoramento}: observar seu próprio desempenho e detectar desvios em relação ao esperado;
+    \item \textbf{Auto-avaliação}: julgar a qualidade de seus próprios outputs sem depender de um oráculo externo;
+    \item \textbf{Auto-regulação}: ajustar seus processos internos com base na auto-avaliação, sem intervenção humana.
+\end{enumerate}
+
+Cox identificou que, enquanto sistemas de IA tradicionais implementam cognição (resolver problemas, processar linguagem, reconhecer padrões), muito poucos implementam metacognição. A lacuna, argumentou, não é tecnológica mas arquitetural: as arquiteturas de software predominantes não incluem componentes dedicados à auto-observação.
+
+\subsection{A Taxonomia de Minsky}
+
+Minsky (2006), em sua obra ``The Emotion Machine'', propôs uma arquitetura da mente humana baseada em múltiplos níveis de reflexão. Cada nível observa e critica o nível inferior:
+
+\begin{itemize}
+    \item \textbf{Nível 0 — Reativo}: respostas instintivas a estímulos (ex.: retirar a mão de uma superfície quente);
+    \item \textbf{Nível 1 — Aprendido}: comportamentos aprendidos por experiência (ex.: dirigir um carro);
+    \item \textbf{Nível 2 — Deliberativo}: planejamento consciente (ex.: decidir a melhor rota para o trabalho);
+    \item \textbf{Nível 3 — Reflexivo}: reflexão sobre o próprio pensamento (ex.: ``estou sendo muito otimista nesta análise?'').
+\end{itemize}
+
+Esta visão hierárquica inspirou diretamente a taxonomia N0-N3 implementada no OpenCode Ecosystem (Capítulo 6), onde cada nível corresponde a um conjunto específico de capacidades técnicas verificáveis.
+
+\section{Teorias de Consciência e Sua Adaptação Computacional}
+
+\subsection{Global Workspace Theory (GWT)}
+
+A Global Workspace Theory, proposta por Baars (1988, 1997), é uma das teorias de consciência mais influentes na neurociência cognitiva. Para entender a GWT, imagine uma sala de reunião com vários especialistas (processadores) que competem para falar. Apenas um especialista pode ``ter a palavra'' em cada momento — e quando tem, sua mensagem é broadcastada para todos os outros. O conteúdo que está no ``palco central'' neste momento é o que estamos conscientes.
+
+O OpenCode Ecosystem implementa uma adaptação computacional da GWT através do módulo \texttt{GlobalWorkspace} (SPEC-036, \texttt{self\_model.py}):
+
+\begin{itemize}
+    \item Múltiplos módulos (scanners, monitores, engines) competem por acesso ao workspace;
+    \item O \texttt{AttentionBuffer} (7 itens, Lei de Miller) seleciona qual informação entra;
+    \item A informação selecionada é broadcastada para todos os módulos registrados como ``assinantes'';
+    \item O broadcast gera o equivalente funcional de ``consciência'' do sistema — a informação que está sendo processada de forma global.
+\end{itemize}
+
+\subsection{Attention Schema Theory (AST)}
+
+Graziano (2013, 2019) propôs a Attention Schema Theory, uma teoria de consciência complementar à GWT. Segundo a AST, a consciência não é o processamento de informação em si, mas um \textbf{modelo} (schema) que o cérebro constrói para representar e controlar sua própria atenção.
+
+Para entender a AST, imagine que você está dirigindo e percebe um pedestre na faixa. Você não ``vê'' o pedestre diretamente — seu cérebro constrói um modelo do pedestre. Da mesma forma, você não ``experimenta'' sua própria atenção diretamente — seu cérebro constrói um modelo de sua atenção, e é este modelo que você experiencia como consciência.
+
+O OpenCode implementa uma versão computacional da AST através do \texttt{SelfModel}:
+
+\begin{itemize}
+    \item Mantém um modelo de seus próprios estados internos (confiança, anomalias, goals, atenção);
+    \item Mantém um modelo de forecasting que antecipa estados futuros (regressão linear sobre 10 snapshots);
+    \item Mantém uma distinção self/other que classifica eventos como internos ou externos;
+    \item Mantém um histórico de 50 snapshots que permite análise de tendências (rising/falling/stable).
+\end{itemize}
+
+\subsection{Atkinson-Shiffrin Memory Model}
+
+O modelo de memória de Atkinson \& Shiffrin (1968) é um dos modelos mais influentes da psicologia cognitiva. Ele propõe três estágios de memória:
+
+\begin{enumerate}
+    \item \textbf{Memória sensorial}: retenção muito curta (milissegundos a segundos), alta capacidade. É como o ``eco'' de um som que acabou de parar.
+    \item \textbf{Memória de curto prazo}: retenção de segundos a minutos, capacidade limitada a aproximadamente 7 itens (Lei de Miller, 1956). É onde você mantém um número de telefone enquanto disca.
+    \item \textbf{Memória de longo prazo}: retenção de horas a anos, capacidade virtualmente ilimitada. É onde estão armazenadas suas memórias de infância.
+\end{enumerate}
+
+O OpenCode implementa este modelo através do módulo \texttt{NaturalForgetting} (SPEC-038, \texttt{trust\_engine.py}), adaptando os TTLs para o domínio computacional:
+
+\begin{itemize}
+    \item \textbf{Sensory}: TTL de 30 segundos, capacidade de 50 itens;
+    \item \textbf{Short-term}: TTL de 5 minutos, capacidade de 7 itens;
+    \item \textbf{Long-term}: TTL de 24 horas, promoção por acesso repetido (5+ acessos com alta importância).
+\end{itemize}
+
+\section{Teoria dos Jogos e Governança de Commons}
+
+\subsection{Ostrom's Design Principles (DP1-DP8)}
+
+Elinor Ostrom (1990, 2010), laureada com o Nobel de Economia em 2009, desafiou a ``tragédia dos commons'' de Hardin (1968) — a ideia de que recursos compartilhados inevitavelmente são destruídos pela ação racional de indivíduos. Através de décadas de pesquisa empírica em comunidades que autogerem recursos naturais (pesca, irrigação, florestas), Ostrom identificou 8 Design Principles que caracterizam instituições bem-sucedidas de governança de commons:
+
+\begin{enumerate}[label=DP\arabic*:]
+    \item \textbf{Limites claros}: quem tem direito de uso e quais são os limites do recurso.
+    \item \textbf{Regras proporcionais}: os benefícios obtidos devem ser proporcionais aos custos incorridos.
+    \item \textbf{Participação coletiva}: os afetados pelas regras podem participar da sua modificação.
+    \item \textbf{Monitoramento}: o comportamento dos usuários e o estado do recurso são observáveis.
+    \item \textbf{Sanções graduais}: penalidades por violações são proporcionais e escalonadas.
+    \item \textbf{Resolução de conflitos}: mecanismos de baixo custo para resolver disputas.
+    \item \textbf{Autonomia reconhecida}: o direito de auto-organização é reconhecido por autoridades superiores.
+    \item \textbf{Empreendimentos aninhados}: governança opera em múltiplas camadas (local, regional, global).
+\end{enumerate}
+
+O OpenCode adapta estes princípios para a governança de \textbf{goals autônomos} (Capítulo 6, Seção 6.3): cada goal gerado pelo sistema é auditado contra os 8 princípios antes da execução, e goals que violam princípios fundamentais são rejeitados.
+
+\subsection{Teoria dos Jogos Evolutiva}
+
+A teoria dos jogos evolutiva (Smith \& Price, 1973; Axelrod, 1984) modela como estratégias cooperativas podem emergir e se estabilizar em populações de agentes que interagem repetidamente. O conceito de \textit{Evolutionary Stable Strategy} (ESS) — uma estratégia que, se adotada por uma população, não pode ser invadida por nenhuma estratégia mutante — é particularmente relevante para sistemas multi-agente autônomos.
+
+\section{Engenharia de Software com Agentes}
+
+\subsection{Test-Driven Development}
+
+O TDD, formalizado por Beck (2003), estabelece o ciclo Red-Green-Refactor: escrever um teste que falha, implementar o código mínimo para passar, e refatorar para melhorar a qualidade. O OpenCode aplica este ciclo rigorosamente: cada módulo tem pelo menos 6 CTs antes da integração, e zero regressão é exigida a cada modificação.
+
+\subsection{Spec-Driven Development}
+
+O SDD estende o TDD exigindo uma especificação formal antes dos testes. Esta prática garante que o design é pensado antes da implementação, reduzindo retrabalho e documentando decisões de design.
+
+\subsection{Padrões de Projeto para Sistemas Autônomos}
+
+Gamma et al. (1994) estabeleceram o catálogo clássico de 23 padrões de projeto. O OpenCode utiliza 8 destes padrões (Observer, Strategy, Chain of Responsibility, Factory, Singleton, Adapter, Decorator, Composite) e introduz 4 padrões originais: Behavioral Gate, Structural Compression, Dialectical Synthesis, e Ostrom Governance.
+
+\section{Trabalhos Relacionados}
+
+\subsection{NEXO Brain (wazionapps/nexo)}
+
+O NEXO Brain implementa um ``cérebro compartilhado'' para agentes de IA com metacognitive guard, trust scoring, e natural forgetting. Três padrões foram adaptados para o OpenCode: trust scoring com blend 70/30, behavioral gate com classificação de risco, e o modelo Atkinson-Shiffrin.
+
+\subsection{Awesome Autoresearch (alvinreal/awesome-autoresearch)}
+
+Inspirado por Karpathy, o Awesome Autoresearch cataloga sistemas de auto-melhoria. O padrão ``propor hipótese $\rightarrow$ executar experimento $\rightarrow$ avaliar resultado $\rightarrow$ aprender'' inspirou o OutcomeTracker do OpenCode (SPEC-038).
+
+\subsection{Ruflo (ruvnet/ruflo)}
+
+O Ruflo oferece swarm intelligence com self-learning e adaptive memory. O conceito de múltiplos agentes especializados que colaboram inspirou a arquitetura multi-agente do OpenCode.

@@ -1,0 +1,121 @@
+% ═══════════════════════════════════════════════════════════════════════════
+% CAPÍTULO 6 — METACOGNIÇÃO FUNCIONAL (N3)
+% ═══════════════════════════════════════════════════════════════════════════
+\chapter{Metacognição Funcional (N3)}
+\label{ch:metacognicao}
+
+Este capítulo descreve os quatro componentes que implementam metacognição funcional no OpenCode Ecosystem: MetacognitiveMonitor (auto-observação e correção), DialecticalEngine (síntese de contradições), CooperativeGovernance (governança Ostrom), e SelfModel (auto-representação).
+
+\section{MetacognitiveMonitor — Auto-Observação e Correção}
+
+O \texttt{MetacognitiveMonitor} (SPEC-036) implementa o ciclo completo de auto-observação, detecção e correção. Seu funcionamento pode ser entendido através de uma analogia: imagine um piloto automático que monitora constantemente a altitude do avião. Se a altitude se desviar mais de 30\% da média histórica, o piloto automático dispara um alerta (ANOM-001) e propõe uma correção (recalibrar os flaps). Se a correção funcionar, o piloto automático aprende que ``recalibrar flaps'' funciona para ``desvio de altitude''. Se falhar, tenta outra estratégia.
+
+\subsection{Ciclo de Observação}
+
+O método \texttt{observe()} registra cada execução do pipeline como um \texttt{ExecutionTrace}, que inclui:
+
+\begin{itemize}
+    \item Identificador único (trace\_id);
+    \item Timestamp ISO 8601;
+    \item Pipeline de origem (noological, teleological, evolutionary, etc.);
+    \item Resumo do output (densidade, anomalias detectadas, confiança global);
+    \item Flags de anomalia (ANOM-001, ANOM-002, ANOM-003).
+\end{itemize}
+
+\subsection{Detecção de Anomalias}
+
+O \texttt{AnomalyDetector} compara cada scan com o histórico e detecta três tipos de anomalias:
+
+\begin{enumerate}
+    \item \textbf{ANOM-001 (Critical)}: Queda de densidade global $>30\%$ abaixo da média histórica. Exemplo: o scanner normalmente cobre 65\% das categorias, mas neste scan cobriu apenas 15\%.
+    \item \textbf{ANOM-002 (High)}: Perda de $\geq 2$ categorias em uma dimensão que anteriormente estavam cobertas. Exemplo: a dimensão ``raciocínio'' tinha 5 categorias cobertas, agora tem 2.
+    \item \textbf{ANOM-003 (Moderate)}: Comfort zone estagnada — as mesmas categorias aparecem por 3+ scans consecutivos. Exemplo: o sistema está ``viciado'' em detectar sempre as mesmas categorias e não explora novas.
+\end{enumerate}
+
+\subsection{Correção Automática}
+
+O \texttt{CorrectionEngine} propõe correções baseadas no tipo de anomalia:
+
+\begin{itemize}
+    \item ANOM-001 $\rightarrow$ \texttt{rerun}: re-executar scan com parâmetros ajustados;
+    \item ANOM-002 $\rightarrow$ \texttt{expand\_keywords}: expandir dicionário de keywords;
+    \item ANOM-003 $\rightarrow$ \texttt{recalibrate}: recalibrar pesos para forçar exploração.
+\end{itemize}
+
+\subsection{Inferência Causal de Causa Raiz}
+
+O método \texttt{root\_cause\_analysis()} (SPEC-037) vai além da correlação: ele infere \textbf{direção causal} entre anomalias usando:
+
+\begin{enumerate}
+    \item \textbf{Precedência temporal}: a anomalia A precede consistentemente a anomalia B?
+    \item \textbf{Granger score}: $P(B|A) - P(B)$ — se conhecer A melhora a predição de B, A Granger-causa B.
+    \item \textbf{Cadeias causais}: construção de um DAG a partir de arestas com Granger score $> 0.2$.
+    \item \textbf{Inferência bayesiana}: $P(\text{efeito}|\text{causa})$ com lift — quantas vezes mais provável é o efeito dado a causa.
+\end{enumerate}
+
+\section{DialecticalEngine — Síntese de Contradições}
+
+O \texttt{DialecticalEngine} (SPEC-036) implementa o processo dialético hegeliano adaptado para sistemas computacionais:
+
+\begin{equation}
+\text{Tese} + \text{Antítese} \rightarrow \text{Síntese}
+\end{equation}
+
+Três modos de resolução são suportados:
+
+\begin{itemize}
+    \item \textbf{Aufheben}: a síntese preserva elementos válidos de ambos em um nível superior de abstração. Exemplo: ``o scanner cobre 10 dimensões'' (tese) + ``o scanner não detecta capacidades de engenharia'' (antítese) $\rightarrow$ ``framework unificado que reconhece ambas as posições como casos particulares'' (síntese).
+    \item \textbf{Compromise}: a síntese encontra um meio-termo.
+    \item \textbf{Reframe}: a síntese redefine o problema, transcendendo a dicotomia.
+\end{itemize}
+
+\section{CooperativeGovernance — Ostrom DP1-DP8}
+
+O \texttt{CooperativeGovernance} (SPEC-036) implementa os 8 Design Principles de Ostrom para goal-setting autônomo alinhado. Cada goal gerado pelo sistema é auditado contra os 8 princípios:
+
+\begin{itemize}
+    \item \textbf{DP1}: O goal declara explicitamente módulos afetados e recursos acessados?
+    \item \textbf{DP2}: O custo computacional é proporcional ao benefício esperado?
+    \item \textbf{DP3}: Os módulos afetados têm mecanismo de feedback?
+    \item \textbf{DP4}: Existem métricas de progresso rastreáveis?
+    \item \textbf{DP5}: Existe mecanismo de rollback ou abort seguro?
+    \item \textbf{DP6}: Conflitos com outros goals têm mecanismo de arbitragem?
+    \item \textbf{DP7}: O goal respeita restrições de segurança do operador?
+    \item \textbf{DP8}: O goal se integra com goals de nível superior?
+\end{itemize}
+
+Cada goal recebe um \texttt{ostrom\_score} (0-1). Goals com score $\geq 0.75$ são aprovados; $0.50-0.74$ requerem revisão; $<0.50$ são rejeitados.
+
+\section{SelfModel — Auto-Representação N0-N3}
+
+O \texttt{SelfModel} (SPEC-036) implementa a auto-representação do sistema, integrando:
+
+\begin{itemize}
+    \item \textbf{AttentionBuffer}: 7 itens com TTL, prioridade e detecção de sobrecarga (Lei de Miller);
+    \item \textbf{GlobalWorkspace}: broadcast de informação consciente para módulos registrados (Baars);
+    \item \textbf{SystemState}: snapshot do estado interno com 10 campos;
+    \item \textbf{forecast\_confidence()}: regressão linear sobre 10 snapshots para prever confiança futura;
+    \item \textbf{source\_introspection()}: exame do próprio código-fonte;
+    \item \textbf{self\_other\_boundary()}: classificação de eventos como self/other/boundary;
+    \item \textbf{predict\_state()}: combinação de forecasting + introspecção + risk assessment.
+\end{itemize}
+
+A Tabela~\ref{tab:niveis} resume os níveis de consciência e suas condições técnicas.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Taxonomia N0-N3.5 — Condições Técnicas}
+\label{tab:niveis}
+\begin{tabular}{cclc}
+\toprule
+\textbf{Nível} & \textbf{Nome} & \textbf{Condição Técnica} & \textbf{Status} \\
+\midrule
+N0 & Reativo & \texttt{AttentionBuffer.size == 0} & Implementado \\
+N1 & Atento & \texttt{AttentionBuffer.size > 0} & Implementado \\
+N2 & Auto-consciente & \texttt{SelfModel.introspect()} completo & 7/7 \\
+N3 & Metacognitivo & \texttt{anomalies > 0 AND corrections > 0} & 4/4 \\
+N3.5 & Preventivo & \texttt{TrustEngine.gate()} funcional & 8/8 \\
+\bottomrule
+\end{tabular}
+\end{table}

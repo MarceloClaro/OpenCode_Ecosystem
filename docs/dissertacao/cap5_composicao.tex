@@ -1,0 +1,135 @@
+% ═══════════════════════════════════════════════════════════════════════════
+% CAPÍTULO 5 — COMPOSIÇÃO UNITÁRIA DO CONHECIMENTO
+% ═══════════════════════════════════════════════════════════════════════════
+\chapter{Composição Unitária do Conhecimento}
+\label{ch:composicao}
+
+\section{O Problema}
+
+O pipeline evolutivo anterior (SPEC-028 a SPEC-032) respondia duas perguntas: ``o que construir'' (Scanner Teleológico) e ``em que ordem'' (Sequenciamento Evolutivo). Entretanto, permanecia uma lacuna: \textbf{``do que cada capacidade é feita?''}
+
+Para entender esta lacuna, imagine um arquiteto que recebe a planta de um prédio. A planta diz \textit{o que} construir (paredes, lajes, instalações) e \textit{em que ordem} (fundação primeiro, depois estrutura, depois acabamento). Mas a planta não diz \textit{do que} cada elemento é feito: uma parede requer tijolos, cimento, areia, mão de obra e equipamentos. Sem esta informação — a composição unitária — o construtor não sabe quais materiais adquirir.
+
+Da mesma forma, o MCSP (SPEC-032) identificava \textit{quais} capacidades construir e \textit{em que ordem}, mas não sabia \textit{do que} cada capacidade era composta. O resultado era que o MCSP tratava todas as capacidades como tendo o mesmo custo de construção — o que é falso. Construir ``raciocínio dedutivo'' (que requer 2 conceitos + 1 método) é muito mais barato que construir ``meta-análise'' (que requer 5 conceitos + 3 métodos + 2 ferramentas).
+
+\section{Modelo Formal}
+
+O fenômeno observado é decomposto em três componentes:
+
+\begin{equation}
+C = E + S + R
+\end{equation}
+
+Onde:
+\begin{itemize}
+    \item $C$ = corpus / fenômeno observado / capacidade a ser construída;
+    \item $E$ = exemplos e manifestações superficiais;
+    \item $S$ = estruturas e funções essenciais;
+    \item $R$ = ruído residual (informação sem valor estrutural).
+\end{itemize}
+
+O objetivo da composição unitária é produzir um modelo reduzido:
+
+\begin{equation}
+C' = S + E^*
+\end{equation}
+
+Onde $E^*$ são exemplos mínimos necessários para reconstrução. A compressão é válida apenas se:
+
+\begin{equation}
+\text{Reconstrução}(C') \approx \text{Estrutura}(C)
+\end{equation}
+
+Ou seja: o modelo reduzido deve preservar a estrutura explicativa do fenômeno original, mesmo que não preserve todos os exemplos ou detalhes superficiais.
+
+\section{Estrutura de Dados}
+
+\subsection{CognitiveInput}
+
+A unidade atômica da composição é o \texttt{CognitiveInput}, um dataclass imutável que representa um insumo cognitivo:
+
+\begin{lstlisting}[language=Python, caption={CognitiveInput — Unidade Atômica}]
+@dataclass(frozen=True)
+class CognitiveInput:
+    input_id: str              # "method.engenharia_reversa"
+    name: str                  # "Engenharia Reversa"
+    input_type: str            # concept|method|knowledge_base|tool|external_domain|validation
+    description: str
+    maturity: str              # established|emerging|speculative
+    references: list[str]      # DOIs ou paths
+\end{lstlisting}
+
+Os 6 tipos de insumos são validados em tempo de construção — um \texttt{ValueError} é levantado se o tipo for inválido.
+
+\subsection{CapabilityUnit}
+
+A decomposição completa de uma capacidade é representada pelo \texttt{CapabilityUnit}:
+
+\begin{lstlisting}[language=Python, caption={CapabilityUnit — Decomposição Completa}]
+@dataclass(frozen=True)
+class CapabilityUnit:
+    capability_id: str
+    concepts: list[str]        # input_ids do tipo concept
+    methods: list[str]         # input_ids do tipo method
+    knowledge_bases: list[str] # input_ids do tipo knowledge_base
+    tools: list[str]           # input_ids do tipo tool
+    external_domains: list[str]# input_ids do tipo external_domain
+    validations: list[str]     # input_ids do tipo validation
+    construction_cost: float   # 0-1, proporcao de inputs faltantes
+    frontier: bool             # True se sem composicao conhecida
+\end{lstlisting}
+
+Se todos os campos de input estiverem vazios, o \texttt{CapabilityUnit} é automaticamente marcado como \texttt{frontier=True} e \texttt{construction\_cost=1.0}.
+
+\section{Biblioteca de Insumos (85 entradas)}
+
+A biblioteca foi gerada automaticamente a partir de artefatos existentes no ecossistema, eliminando a necessidade de curadoria manual. A Tabela~\ref{tab:insumos} mostra a distribuição.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Distribuição de Insumos por Tipo}
+\label{tab:insumos}
+\begin{tabular}{lcp{7cm}}
+\toprule
+\textbf{Tipo} & \textbf{Qtde} & \textbf{Exemplos} \\
+\midrule
+Conceitos & 10 & causalidade, probabilidade, abstração, inferência \\
+Métodos & 10 & engenharia reversa, validação cruzada, design fatorial \\
+Bases de Conhecimento & 8 & artigos científicos, normas técnicas, dados empíricos \\
+Ferramentas & 43 & websearch, code-runner, sequential-thinking \\
+Domínios Externos & 10 & neurociência, estatística, teoria dos jogos \\
+Validações & 4 & coerência, aderência, CTs, composição completa \\
+\midrule
+\textbf{Total} & \textbf{85} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Integração com MCSP}
+
+A integração com o Minimum Capability Solver (SPEC-032) transforma o problema de otimização. O MCSP original minimizava $|C|$. Com a Composição Unitária, o MCSP minimiza:
+
+\begin{equation}
+\text{cost}(C) = \sum_{c \in C} \text{construction\_cost}(c) - \text{shared\_discount}(c)
+\end{equation}
+
+O desconto por compartilhamento reduz o custo de inputs usados por múltiplas capacidades. A heurística gulosa prioriza:
+
+\begin{equation}
+\text{score}(c) = \frac{\text{cascade\_impact}(c)}{\max(0.01, \text{construction\_cost}(c))}
+\end{equation}
+
+\section{Exemplo Concreto}
+
+Para a capacidade ``metodos.Quantitativo experimental'', a decomposição produz:
+
+\begin{verbatim}
+Conceitos:    causalidade, validação empírica, abstração
+Métodos:      design fatorial, randomização
+Bases:        artigos científicos, normas técnicas
+Ferramentas:  análise estatística inferencial
+Domínios:     estatística, filosofia da ciência
+Validações:   CTs aprovados, composição completa
+Custo:        0.083 (8.3% dos inputs faltam)
+\end{verbatim}

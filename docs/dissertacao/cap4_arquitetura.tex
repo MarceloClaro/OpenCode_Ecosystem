@@ -1,0 +1,60 @@
+% ═══════════════════════════════════════════════════════════════════════════
+% CAPÍTULO 4 — ARQUITETURA
+% ═══════════════════════════════════════════════════════════════════════════
+\chapter{Arquitetura do Sistema}
+\label{ch:arquitetura}
+
+\section{Visão Geral — 7 Camadas}
+
+O OpenCode Ecosystem é organizado em 7 camadas hierárquicas. Para um leitor não familiarizado com arquitetura de software, imagine um prédio de 7 andares: cada andar (camada) oferece serviços ao andar de cima e usa serviços do andar de baixo. O térreo (L1) é a infraestrutura básica; a cobertura (L7) é onde as decisões mais sofisticadas acontecem.
+
+\begin{enumerate}
+    \item \textbf{L1 — Skills (161) + Infraestrutura}: Conhecimento reutilizável. Skills são como ``receitas'' que descrevem como realizar tarefas complexas.
+    \item \textbf{L2 — MCPs (46 servidores)}: Ferramentas externas. MCPs são como ``plugins'' que conectam o sistema a serviços externos (buscadores, bancos de dados, navegadores).
+    \item \textbf{L3 — Agentes (128)}: Executores especializados. Cada agente é como um ``funcionário'' treinado para uma tarefa específica.
+    \item \textbf{L4 — Scanner Pipeline (M0-M5)}: Diagnóstico. Esta camada é o ``departamento de P\&D'' do ecossistema — identifica o que está faltando e planeja como construir.
+    \item \textbf{L5 — MCSP}: Otimização. O ``departamento de compras'' que decide qual o conjunto mínimo de capacidades a construir.
+    \item \textbf{L6 — Metacognição}: Auto-observação. O ``departamento de qualidade'' que monitora, corrige e aprende.
+    \item \textbf{L7 — Trust Engine}: Prevenção. O ``porteiro'' que decide se uma ação deve ser executada.
+\end{enumerate}
+
+\section{Fluxo de Execução}
+
+O pipeline completo de execução segue a sequência M0$\rightarrow$M7 com gate preventivo. A Tabela~\ref{tab:fluxo} resume cada etapa.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Fluxo Completo do Pipeline}
+\label{tab:fluxo}
+\begin{tabular}{clp{8cm}}
+\toprule
+\textbf{Etapa} & \textbf{Módulo} & \textbf{Função} \\
+\midrule
+GATE & TrustEngine & Decidir se deve executar (trust $\geq$ threshold) \\
+M0 & SNS & Comprimir corpus preservando estrutura \\
+M1 & NoologicalScanner & Diagnosticar gaps de conhecimento (10 dims $\times$ 92 cats) \\
+M2 & TeleologicalScanner & Inferir capacidades necessárias para objetivos \\
+M3.5 & CapabilityComposer & Decompor capacidades em insumos cognitivos \\
+M3 & CrossValidationEngine & Construir grafo de dependências (73 arestas) \\
+M4 & PolymathicConvergence & Encontrar analogias em 30+ domínios externos \\
+M5 & TrajectoryMapper & Gerar roadmap evolutivo com 4 cenários \\
+M6 & MCSP & Selecionar conjunto mínimo de capacidades \\
+M7 & Metacognição & Observar, detectar, corrigir, aprender \\
+LEARN & TrustEngine & Atualizar trust score baseado no outcome \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Decisões Arquiteturais (ADRs)}
+
+As 10 ADRs documentam decisões críticas com contexto, alternativas consideradas e justificativa:
+
+\begin{enumerate}
+    \item \textbf{architectu-001}: Token Budget — limite de tokens por operação;
+    \item \textbf{architectu-002}: Three-Layer Architecture (MCP$\rightarrow$Skill$\rightarrow$Agent);
+    \item \textbf{architectu-003 a 007}: SPECs 019-031 (API, Streaming, Low-Code, Token Economy, Scanners);
+    \item \textbf{architectu-008}: Composição Unitária do Conhecimento (SPEC-033);
+    \item \textbf{architectu-009}: Integração Stage 3 ao Pipeline (SPEC-035);
+    \item \textbf{architectu-010}: Metacognição + Self-Evolution (SPEC-036).
+\end{enumerate}

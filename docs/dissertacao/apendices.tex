@@ -1,0 +1,67 @@
+% ═══════════════════════════════════════════════════════════════════════════
+% APÊNDICES
+% ═══════════════════════════════════════════════════════════════════════════
+\begin{apendicesenv}
+
+\chapter{Lista Completa de Módulos Python}
+
+\begin{longtable}{p{5cm}p{2cm}p{6cm}}
+\toprule
+\textbf{Módulo} & \textbf{SPEC} & \textbf{Função} \\
+\midrule
+capability\_composer.py & 033 & Decomposição de capacidades em insumos \\
+noological\_scanner.py & 028 & Scanner epistemológico (10 dims) \\
+metacognitive\_loop.py & 036 & Auto-observação + root cause causal \\
+evolutionary\_pipeline.py & 030 & Orquestrador M0$\rightarrow$M7 \\
+structural\_noise\_scanner.py & 037 & Compressão estrutural (SNS) \\
+audit\_refinements.py & — & Refinamentos de auditoria \\
+minimum\_capability\_solver.py & 032 & MCSP com construction\_cost \\
+teleological\_scanner.py & 029 & Scanner teleológico reverso \\
+trust\_engine.py & 038 & Trust Scoring + Behavioral Gate \\
+self\_model.py & 036 & Auto-representação N0-N3 \\
+cross\_validation\_engine.py & 030 & Grafo de dependências \\
+cooperative\_governance.py & 036 & Ostrom DP1-DP8 \\
+structural\_compression\_engine.py & 037b & Compressor de textos (SCE) \\
+dialectical\_engine.py & 036 & Síntese dialética (aufheben) \\
+\bottomrule
+\caption{Módulos Python do OpenCode Ecosystem (14 principais de 22)}
+\end{longtable}
+
+\chapter{Comandos de Verificação}
+
+\begin{lstlisting}[language=bash, caption={Script de verificação completa (312 CTs)}]
+cd C:\Users\marce\.config\opencode
+for f in specs/test_*.py; do python "$f"; done
+# Resultado: 312/312 PASS
+\end{lstlisting}
+
+\chapter{Glossário de Termos Técnicos}
+
+\begin{longtable}{p{3.5cm}p{9.5cm}}
+\toprule
+\textbf{Termo} & \textbf{Definição} \\
+\midrule
+ADT (ADR) & Architecture Decision Record — documento que registra uma decisão arquitetural. \\
+AGI & Artificial General Intelligence — inteligência com capacidade de generalização cross-domain. \\
+Behavioral Gate & Mecanismo de pré-execução que decide se uma ação deve ser executada. \\
+CapabilityUnit & Estrutura que decompõe uma capacidade em 6 tipos de insumos cognitivos. \\
+CognitiveInput & Unidade atômica de insumo cognitivo. \\
+CPS (Cognitive Preservation Score) & Proporção de funções preservadas após compressão. \\
+CR (Compression Ratio) & Razão entre tokens originais e comprimidos. \\
+CT (Critical Test) & Teste automatizado que valida um comportamento crítico do sistema. \\
+DG (Density Gain) & Produto de CPS por CR. \\
+DP1-DP8 & Ostrom's Design Principles — 8 princípios de governança de commons. \\
+FLI (Functional Loss Index) & Proporção de funções perdidas na compressão. \\
+GWT & Global Workspace Theory — teoria de Baars sobre consciência como broadcast global. \\
+MCSP & Minimum Capability Solver — algoritmo do conjunto mínimo de capacidades. \\
+NRR (Noise Reduction Rate) & Proporção de elementos removidos como ruído. \\
+SNS & Structural Noise Scanner — scanner de compressão estrutural. \\
+SPS & Structural Preservation Score — proporção de funções preservadas. \\
+SPEC & Specification — documento formal que define o comportamento de um módulo. \\
+TDD & Test-Driven Development — desenvolvimento orientado a testes. \\
+Trust Score & Pontuação de confiança (0-1) atribuída a cada ação do sistema. \\
+\bottomrule
+\caption{Glossário de Termos Técnicos}
+\end{longtable}
+
+\end{apendicesenv}
