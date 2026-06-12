@@ -64,8 +64,16 @@ Metodológico. Nygard (2011) estabelece o formato ADR que o OpenCode adota para 
 \url{https://adr.github.io/}}.
 
 \begin{enumerate}
-    \item \textbf{architectu-001}: Token Budget.
-    \item \textbf{architectu-002}: Three-Layer Architecture.
+    \item \textbf{architectu-001 — Token Budget}: Limite de tokens por operação.\citecrit{%
+Software architecture is about the important stuff. Whatever that is.}{%
+Arquitetura de software é sobre as coisas importantes. Seja lá o que forem.}{%
+Referência. Fowler (2003) captura a essência da arquitetura de software que o OpenCode incorpora: decisões que importam. O Token Budget (architectu-001) é uma dessas decisões — previne consumo excessivo de contexto.}{%
+ISBN: 978-0-321-12742-2}
+    \item \textbf{architectu-002 — Three-Layer Architecture}: Separação MCP$\rightarrow$Skill$\rightarrow$Agent. \citecrit{%
+Separation of concerns is the key to managing complexity. By separating a program into distinct features that overlap in functionality as little as possible, we can manage the complexity of large systems.}{%
+Separação de responsabilidades é a chave para gerenciar complexidade. Ao separar um programa em características distintas que se sobrepõem minimamente, podemos gerenciar a complexidade de grandes sistemas.}{%
+Fundacional. Dijkstra (1974) estabelece o princípio de separação de responsabilidades que fundamenta a arquitetura em camadas do OpenCode. As 7 camadas são a materialização deste princípio: cada camada tem responsabilidade única e interfaces bem definidas.}{%
+\url{https://www.cs.utexas.edu/users/EWD/ewd04xx/EWD447.PDF}}
     \item \textbf{architectu-003 a 007}: SPECs 019-031.
     \item \textbf{architectu-008}: Composição Unitária (SPEC-033). \doi{10.1017/CBO9780511807763}
     \item \textbf{architectu-009}: Integração Stage 3 (SPEC-035).

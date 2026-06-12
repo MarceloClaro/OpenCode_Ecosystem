@@ -174,7 +174,11 @@ ISBN: 978-0-465-02656-2}, este é um exemplo de \textit{strange loop} — um sis
 
 \subsection{Caso 3: Behavioral Gate em Produção Simulada}
 
-\textbf{Contexto}: O TrustEngine (SPEC-038) foi testado em cenário simulado de produção com 3 categorias de ações: confiável (10 execuções bem-sucedidas consecutivas), arriscada (3 sucessos seguidos de 5 falhas), e nova (sem histórico, shadow mode).
+\textbf{Contexto}: O TrustEngine foi testado em cenário simulado.\citecrit{%
+In production, failures happen. The question is not whether something will fail, but how gracefully the system handles failure and how quickly it recovers.}{%
+Em produção, falhas acontecem. A questão não é se algo vai falhar, mas quão graciosamente o sistema lida com a falha e quão rapidamente se recupera.}{%
+Prático. Nygard (2007) captura a filosofia que motiva o Behavioral Gate: falhas são inevitáveis; o que importa é como o sistema responde. O gate preventivo reduz o impacto de falhas ao não executar ações de baixa confiança.}{%
+ISBN: 978-0-9787393-0-8}
 
 \textbf{Resultados}:
 \begin{itemize}
