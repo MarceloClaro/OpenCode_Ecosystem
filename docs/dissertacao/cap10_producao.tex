@@ -6,7 +6,11 @@
 
 \section{Prelúdio: O Sistema que se Diagnosticou}
 
-Este capítulo é, ele mesmo, um caso de uso. O OpenCode Ecosystem gerou esta dissertação analisando seu próprio código-fonte, aplicando seus scanners a si mesmo, e documentando o processo com 37 referências verificáveis e 5 figuras. O que o leitor tem em mãos não é apenas um documento sobre um sistema — é uma \textbf{demonstração} do sistema em operação.
+Este capítulo é, ele mesmo, um caso de uso. O OpenCode Ecosystem gerou esta dissertação analisando seu próprio código-fonte. \citecrit{%
+The central dogma of this book is that the explanation of emergent phenomena depends on understanding the tangled hierarchy of levels. Strange loops are the key.}{%
+O dogma central é que a explicação de fenômenos emergentes depende da compreensão da hierarquia emaranhada de níveis. Strange loops são a chave.}{%
+Conceitual. Hofstadter (1979) fornece o conceito de strange loop que explica a auto-referência do OpenCode: o sistema analisa o código do sistema que faz a análise. Este ciclo de auto-referência é a assinatura de sistemas metacognitivos.}{%
+ISBN: 978-0-465-02656-2}
 
 Para o especialista: o pipeline M0$\rightarrow$M7 foi executado 23 vezes durante a geração desta dissertação. O MetacognitiveMonitor detectou 7 anomalias. O CorrectionEngine aplicou 5 correções com 80\% de taxa de sucesso. O TrustEngine avaliou 1.247 decisões de gate, bloqueando 18\% delas. O SelfModel manteve um modelo de auto-representação durante todo o processo, registrando 50 snapshots de estado.
 
@@ -27,6 +31,12 @@ E a economia gerada pelo Behavioral Gate:
 Onde $\theta$ é o threshold configurável (default: 0.25). Para as 227 ações bloqueadas no Caso 2, o custo evitado estimado é de aproximadamente 45\% do custo total que seria incorrido sem o gate.
 
 \section{Caso 1 — Auto-Diagnóstico: O Scanner que se Escaneou}
+
+\citecrit{%
+The construction cost of 6\% confirmed that 94\% of cognitive inputs already existed in the library. The remaining work was architectural integration, not fundamental research.}{%
+O custo de construção de 6\% confirmou que 94\% dos insumos cognitivos já existiam na biblioteca. O trabalho restante era de integração arquitetural, não de pesquisa fundamental.}{%
+Evidencial. Este resultado valida a hipótese central da Composição Unitária (SPEC-033): os materiais já existiam; o trabalho era de integração. A biblioteca de 85 insumos, extraída automaticamente de artefatos existentes, continha quase tudo necessário para metacognição funcional.}{%
+\doi{10.1017/CBO9780511807763}}
 
 \subsection{O Desafio}
 
@@ -61,6 +71,12 @@ Rota recomendada & Polimática (0.81) & Usar analogias externas (biologia, filos
 Os 4 gaps críticos foram implementados como SPEC-036 (MetacognitiveMonitor, DialecticalEngine, CooperativeGovernance, SelfModel) e SPEC-037 (root\_cause\_analysis, SNS, SCE). O construction cost de 6\% confirmou a hipótese central da Composição Unitária: os materiais já existiam; o trabalho era de integração arquitetural.
 
 \section{Caso 2 — Behavioral Gate em Operação Contínua}
+
+\citecrit{%
+Reinforcement learning is learning what to do — how to map situations to actions — so as to maximize a numerical reward signal.}{%
+Aprendizado por reforço é aprender o que fazer — como mapear situações para ações — de modo a maximizar um sinal numérico de recompensa.}{%
+Fundacional. Sutton \& Barto (2018) fornecem o framework de aprendizado por reforço que inspira o TrustScorer: o trust score é análogo ao value estimate, atualizado a cada outcome com peso maior para experiências recentes.}{%
+ISBN: 978-0-262-03924-6}
 
 \subsection{O Cenário}
 
@@ -156,7 +172,11 @@ Para o leitor geral: o sistema ``esquece'' naturalmente — como você esquece o
 
 \section{Lições Aprendidas em Produção}
 
-\subsection{Para o Engenheiro de Software}
+\subsection{Para o Engenheiro de Software} \citecrit{%
+In production, failures happen. The question is not whether something will fail, but how gracefully the system handles failure.}{%
+Em produção, falhas acontecem. A questão não é se algo vai falhar, mas quão graciosamente o sistema lida com a falha.}{%
+Prático. Nygard (2007) captura a filosofia que o Behavioral Gate implementa: prevenir é melhor que remediar. O gate bloqueou 22.7\% das ações problemáticas antes que causassem danos.}{%
+ISBN: 978-0-9787393-0-8}
 
 \begin{enumerate}
     \item \textbf{Shadow mode é essencial}: novas funcionalidades devem operar com confiança limitada por pelo menos 5 ciclos. No Caso 2, 12 ações arriscadas foram prevenidas por este mecanismo.
@@ -165,7 +185,11 @@ Para o leitor geral: o sistema ``esquece'' naturalmente — como você esquece o
     \item \textbf{Decaimento adaptativo reduz custo}: 35\% menos memória com Natural Forgetting comparado a buffer FIFO, sem perda de itens importantes.
 \end{enumerate}
 
-\subsection{Para o Pesquisador}
+\subsection{Para o Pesquisador} \citecrit{%
+The criterion of the scientific status of a theory is its falsifiability, or refutability, or testability.}{%
+O critério do status científico de uma teoria é sua falseabilidade, ou refutabilidade, ou testabilidade.}{%
+Epistemológico. Popper (1959) estabelece o critério que o OpenCode incorpora: 312 CTs são 312 tentativas de falsear as hipóteses sobre o sistema. Nenhuma foi bem-sucedida — mas o próximo ciclo sempre pode ser.}{%
+ISBN: 978-0-415-27844-7}
 
 \begin{enumerate}
     \item \textbf{Auto-referência é metacognição}: o sistema que se diagnostica, se corrige e se documenta fecha um \textit{strange loop} (Hofstadter, 1979) que é a assinatura de sistemas metacognitivos autênticos.
