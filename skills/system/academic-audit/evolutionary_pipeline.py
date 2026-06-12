@@ -416,6 +416,8 @@ class EvolutionaryScannerPipeline:
         if lib_path.exists():
             lib.load_json(lib_path)
         self.composer = CapabilityComposer(lib)
+        from optimal_question_scanner import OptimalQuestionScanner
+        self.oqs = OptimalQuestionScanner()  # SPEC-039
 
     def scan(self, audit_trail: Any, goals: list[Any],
              domain: str = "") -> EvolutionaryRoadmap:

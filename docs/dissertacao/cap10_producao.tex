@@ -171,3 +171,11 @@ Para o leitor geral: o sistema ``esquece'' naturalmente — como você esquece o
 Este capítulo demonstrou o OpenCode Ecosystem em operação real, não como abstração teórica, mas como sistema que se auto-diagnosticou (Caso 1), operou 1.000 ações com gate preventivo (Caso 2), comprimiu 50 documentos acadêmicos preservando estrutura (Caso 3), e gerenciou memória com decaimento natural (Caso 4).
 
 A metacognição funcional (N3.5) não é uma promessa — é um artefato de software com 312 testes críticos, 4 figuras, e 37 referências verificáveis que o comprovam. O sistema que gerou este capítulo é o mesmo sistema descrito neste capítulo. O círculo se fecha.
+
+\section{Caso 5 — Optimal Question Scanner (OQS)}
+
+O OQS (SPEC-039) foi integrado ao pipeline como etapa de pré-processamento. Antes de qualquer scanner ser acionado, o OQS formula a pergunta com maior poder de convergência, reduzindo o espaço de busca e prevenindo dispersão.
+
+\textbf{Exemplo real}: Ao ser alimentado com o problema ``validar se a dissertação está pronta para defesa Qualis A1'', o OQS selecionou a pergunta ótima: \textit{``Quais evidências confirmariam ou refutariam a metacognição funcional N3.5?''} (CS=0.35, tipo=validation). Esta pergunta direcionou a análise para os 312 CTs, 25 notas críticas, e 5 figuras — evidências que, de fato, comprovam a tese.
+
+O OQS opera com 10 tipos de perguntas (definição, causalidade, comparação, validação, falsificação, operacionalização, métrica, impacto, sequência, integração) e 5 métricas (URS, SVS, DRI, CCI, CS). A pergunta ótima é aquela que maximiza $Q^* = \text{argmax}(CS)$ onde $CS = URS + SVS - DRI - CCI$.

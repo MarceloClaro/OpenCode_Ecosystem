@@ -10,8 +10,8 @@
 \contentsline {subsection}{\numberline {1.1.1}Para Quem Este Documento Foi Escrito}{16}{subsection.1.1.1}%
 \contentsline {section}{\numberline {1.2}Problema de Pesquisa}{16}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Questões de Pesquisa}{17}{subsection.1.2.1}%
-\contentsline {section}{\numberline {1.3}Objetivos}{17}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Objetivo Geral}{17}{subsection.1.3.1}%
+\contentsline {section}{\numberline {1.3}Objetivos}{18}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Objetivo Geral}{18}{subsection.1.3.1}%
 \contentsline {subsection}{\numberline {1.3.2}Objetivos Específicos}{18}{subsection.1.3.2}%
 \contentsline {section}{\numberline {1.4}Justificativa e Relevância}{18}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Contribuições Esperadas}{19}{section.1.5}%
@@ -156,6 +156,7 @@
 \contentsline {subsection}{\numberline {10.6.2}Para o Pesquisador}{77}{subsection.10.6.2}%
 \contentsline {subsection}{\numberline {10.6.3}Para o Gestor de Tecnologia}{78}{subsection.10.6.3}%
 \contentsline {section}{\numberline {10.7}Conclusão do Capítulo}{78}{section.10.7}%
+\contentsline {section}{\numberline {10.8}Caso 5 — Optimal Question Scanner (OQS)}{78}{section.10.8}%
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \contentsline {chapter}{\MakeTextUppercase []{Refer\^encias}}{79}{section*.29}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
