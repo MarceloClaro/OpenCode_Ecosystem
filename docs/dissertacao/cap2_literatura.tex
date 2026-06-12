@@ -163,7 +163,13 @@ O OpenCode adapta os 8 princípios para o domínio de goals autônomos (Seção 
 
 \subsection{Equilíbrio de Nash e Estratégias Evolutivamente Estáveis}
 
-John Nash (1950) \doi{10.1073/pnas.36.1.48} demonstrou que todo jogo com um número finito de jogadores e estratégias tem pelo menos um ponto de equilíbrio — uma configuração onde nenhum jogador tem incentivo para mudar unilateralmente sua estratégia. O equilíbrio de Nash é aplicado no \texttt{DialecticalEngine} (Seção 6.2) como modelo de convergência: tese e antítese são tratadas como estratégias concorrentes, e a síntese é o ponto de equilíbrio onde ambas encontram expressão máxima sem contradição.
+\subsection{Equilíbrio de Nash e Estratégias Evolutivamente Estáveis}
+
+John Nash (1950)\citecrit{%
+Equilibrium points in n-person games. Any finite game has at least one equilibrium point.}{%
+Pontos de equilíbrio em jogos de n-pessoas. Todo jogo finito tem pelo menos um ponto de equilíbrio.}{%
+Fundacional. Nash (1950) demonstra que todo jogo finito tem equilíbrio — resultado que fundamenta o DialecticalEngine: tese e antítese convergem para um ponto onde nenhuma posição tem incentivo para mudar unilateralmente.}{%
+\doi{10.1073/pnas.36.1.48}} demonstrou que todo jogo finito tem pelo menos um ponto de equilíbrio. \doi{10.1073/pnas.36.1.48}
 
 Smith e Price (1973) \doi{10.1038/246015a0} introduziram o conceito de Estratégia Evolutivamente Estável (ESS) — uma estratégia que, se adotada por toda uma população, não pode ser invadida por nenhuma estratégia mutante. O conceito de ESS é aplicado no \texttt{correction\_learning\_report()} (Seção 6.1): o sistema mantém um portfólio de estratégias de correção, e a estratégia com maior taxa de sucesso (a ``ESS local'') é preferida. Se uma nova estratégia de correção consistentemente supera a estratégia dominante, ela a substitui — exatamente como uma mutação bem-sucedida invade uma população no modelo evolutivo.
 
