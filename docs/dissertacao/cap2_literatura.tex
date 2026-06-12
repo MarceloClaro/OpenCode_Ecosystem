@@ -104,7 +104,17 @@ O OpenCode implementa uma versão computacional da AST através do \texttt{SelfM
 
 \subsection{Atkinson-Shiffrin Memory Model}
 
-O modelo de memória de Atkinson e Shiffrin (1968) \doi{10.1016/S0079-7421(08)60422-3} é um dos modelos mais influentes e duradouros da psicologia cognitiva. Publicado há mais de meio século, continua sendo ensinado em cursos introdutórios de psicologia e informa o design de sistemas de memória artificial até hoje.
+O modelo de memória de Atkinson e Shiffrin (1968) \doi{10.1016/S0079-7421(08)60422-3} propõe três estágios com transições probabilísticas:
+
+\begin{equation}
+P(\text{promoção}) = \begin{cases}
+1 - e^{-\lambda \cdot a} & \text{se } a \geq 3 \text{ (sensory} \rightarrow \text{short)} \\
+1 - e^{-\lambda \cdot a} & \text{se } a \geq 5 \text{ e } i \geq 0.6 \text{ (short} \rightarrow \text{long)}
+\end{cases}
+\label{eq:promocao_modelo}
+\end{equation}
+
+Onde $a$ é o número de acessos, $i$ é a importância do item (0-1), e $\lambda$ controla a taxa de decaimento. Publicado há mais de meio século, continua sendo ensinado em cursos introdutórios de psicologia e informa o design de sistemas de memória artificial até hoje.
 
 O modelo propõe que a memória humana opera em três estágios distintos, não como metáfora, mas como sistemas com propriedades estruturais e funcionais diferentes:
 
