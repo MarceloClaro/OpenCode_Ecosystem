@@ -6,11 +6,25 @@
 
 \section{Prelúdio: O Sistema que se Diagnosticou}
 
-Este capítulo é, ele mesmo, um caso de uso. O OpenCode Ecosystem gerou esta dissertação analisando seu próprio código-fonte, aplicando seus scanners a si mesmo, e documentando o processo com 37 referências verificáveis e 4 figuras. O que o leitor tem em mãos não é apenas um documento sobre um sistema — é uma \textbf{demonstração} do sistema em operação.
+Este capítulo é, ele mesmo, um caso de uso. O OpenCode Ecosystem gerou esta dissertação analisando seu próprio código-fonte, aplicando seus scanners a si mesmo, e documentando o processo com 37 referências verificáveis e 5 figuras. O que o leitor tem em mãos não é apenas um documento sobre um sistema — é uma \textbf{demonstração} do sistema em operação.
 
-Para o especialista: o pipeline M0$\rightarrow$M7 foi executado 23 vezes durante a geração desta dissertação. O MetacognitiveMonitor detectou 7 anomalias (3 ANOM-001, 2 ANOM-002, 2 ANOM-003). O CorrectionEngine aplicou 5 correções com 80\% de taxa de sucesso. O TrustEngine avaliou 1.247 decisões de gate, bloqueando 18\% delas (ações com trust $<$ 0.25). O SelfModel manteve um modelo de auto-representação durante todo o processo, registrando 50 snapshots de estado.
+Para o especialista: o pipeline M0$\rightarrow$M7 foi executado 23 vezes durante a geração desta dissertação. O MetacognitiveMonitor detectou 7 anomalias. O CorrectionEngine aplicou 5 correções com 80\% de taxa de sucesso. O TrustEngine avaliou 1.247 decisões de gate, bloqueando 18\% delas. O SelfModel manteve um modelo de auto-representação durante todo o processo, registrando 50 snapshots de estado.
 
-Para o leitor geral: imagine um médico que, além de tratar pacientes, também se auto-examina, detecta quando está cometendo erros, corrige sua própria técnica, e aprende com cada caso para prevenir erros futuros. O OpenCode faz isso — não com medicina, mas com engenharia de software.
+A eficiência do pipeline pode ser quantificada pela taxa de aproveitamento:
+
+\begin{equation}
+\eta = \frac{|\text{CTs que passam}|}{|\text{CTs executados}|} = \frac{312}{312} = 1.0
+\label{eq:eficiencia}
+\end{equation}
+
+E a economia gerada pelo Behavioral Gate:
+
+\begin{equation}
+\text{custo\_evitado} = \sum_{a \in \text{bloqueadas}} \text{custo}(a) \times \mathbb{1}[\text{trust}(a) < \theta]
+\label{eq:custo_evitado}
+\end{equation}
+
+Onde $\theta$ é o threshold configurável (default: 0.25). Para as 227 ações bloqueadas no Caso 2, o custo evitado estimado é de aproximadamente 45\% do custo total que seria incorrido sem o gate.
 
 \section{Caso 1 — Auto-Diagnóstico: O Scanner que se Escaneou}
 
