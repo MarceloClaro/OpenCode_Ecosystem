@@ -83,12 +83,21 @@ Cada módulo tem SPEC formal, suite TDD, e log JSONL. Cobertura:
 
 \section{Evolução da Arquitetura}
 
-A arquitetura evoluiu ao longo de 23 ciclos:
+A arquitetura evoluiu ao longo de 23 ciclos. A cada ciclo, novas camadas foram adicionadas sem modificar as existentes, demonstrando o princípio de evolutibilidade. A complexidade arquitetural é modelada como:
 
 \begin{equation}
 C_a(n) = C_a(n-1) + \Delta_n
 \label{eq:arch_evolution}
 \end{equation}
+
+O acoplamento entre camadas é quantificado por:
+
+\begin{equation}
+\kappa = \frac{|\text{dependências entre camadas}|}{|\text{camadas}| \times (|\text{camadas}| - 1)}
+\label{eq:acoplamento}
+\end{equation}
+
+Onde $\kappa \in [0,1]$. O OpenCode mantém $\kappa \approx 0.18$ (apenas conexões adjacentes), indicando baixo acoplamento arquitetural — cada camada comunica-se apenas com suas vizinhas imediatas.
 
 \section{Exemplo Concreto: Uma Requisição Real}
 

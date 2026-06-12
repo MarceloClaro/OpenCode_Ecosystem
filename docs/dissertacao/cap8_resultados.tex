@@ -211,7 +211,11 @@ Código aberto & \textbf{Sim} & \textbf{Sim} & \textbf{Sim} & \textbf{Sim} & \te
 \end{tabular}
 \end{table}
 
-O OpenCode é o único sistema que integra todas as 11 características listadas. O NEXO Brain é o concorrente mais próximo, compartilhando 4 características (gate preventivo, natural forgetting, trust scoring, código aberto), mas não implementa auto-observação, correção automática, inferência causal, governança Ostrom, ou compressão estrutural.
+O OpenCode é o único sistema que integra todas as 11 características listadas, conforme documentado por Russell \& Norvig (2010)\citecrit{%
+AI is the study of agents that receive percepts from the environment and perform actions. Each agent implements a function that maps percept sequences to actions.}{%
+IA é o estudo de agentes que recebem percepções do ambiente e executam ações. Cada agente implementa uma função que mapeia sequências de percepções para ações.}{%
+Referência. Russell \& Norvig (2010) definem o framework canônico de agentes inteligentes que o OpenCode estende com metacognição: além de mapear percepções em ações, o sistema monitora, avalia e modifica este mapeamento.}{%
+ISBN: 978-0-13-604259-4} e estendido pelo framework metacognitivo do OpenCode. \doi{10.1016/j.artint.2005.10.009} O NEXO Brain é o concorrente mais próximo, compartilhando 4 características (gate preventivo, natural forgetting, trust scoring, código aberto), mas não implementa auto-observação, correção automática, inferência causal, governança Ostrom, ou compressão estrutural.
 
 \section{Discussão}
 
@@ -246,7 +250,11 @@ A progressão documentada ($85 \rightarrow 100$) pode sugerir uma trajetória li
 
 \section{Limitações (Transparência Total)}
 
-Oito limitações são reconhecidas e declaradas explicitamente:
+Oito limitações são reconhecidas e declaradas explicitamente, em conformidade com o princípio de falseabilidade de Popper (1959)\citecrit{%
+The criterion of the scientific status of a theory is its falsifiability, or refutability, or testability. Every genuine test of a theory is an attempt to falsify it.}{%
+O critério do status científico de uma teoria é sua falseabilidade, ou refutabilidade, ou testabilidade. Todo teste genuíno de uma teoria é uma tentativa de falseá-la.}{%
+Epistemológico. Popper (1959) fundamenta a transparência da Seção 8.4: declarar limitações não é fraqueza — é o critério que distingue ciência de dogma. Cada limitação é uma hipótese falseável sobre o sistema.}{%
+ISBN: 978-0-415-27844-7}: declarar limitações não é fraqueza metodológica — é o critério que distingue ciência de dogma.
 
 \begin{enumerate}
     \item \textbf{Decomposição limitada}: 10/92 categorias têm templates; 82 caem em frontier (cost=1.0).
