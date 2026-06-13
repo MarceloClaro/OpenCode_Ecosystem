@@ -1,5 +1,27 @@
- *~
-*.tmp
+# Python Caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local State and Communications
+.vocalizer_cmd
 *.log
+
+# System & OS Files
+*~
+*.tmp
 .DS_Store
 Thumbs.db
+
+# Node.js / Bun Dependencies (if any)
+node_modules/
+dist/
+build/
+
+# Local Environment Secrets
+.env
+.env.local
+.env.*.local
