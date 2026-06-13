@@ -1,4 +1,4 @@
-﻿---
+---
 name: data_consolidation
 category: agency
 domain: specialized

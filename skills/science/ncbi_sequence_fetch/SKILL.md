@@ -1,4 +1,4 @@
-﻿---
+---
 name: ncbi-sequence-fetch
 category: science
 version: "1.0.0"

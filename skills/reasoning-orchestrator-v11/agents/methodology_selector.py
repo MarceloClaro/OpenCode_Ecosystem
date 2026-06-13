@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # =====================================================================
 # AUTOMATIC METHODOLOGY SELECTOR — Weighted Activation
 # SDD <-> TDD <-> REVERSA — Orchestrated by context, not by command

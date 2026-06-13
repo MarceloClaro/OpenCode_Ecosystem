@@ -1,4 +1,4 @@
-﻿# =====================================================================
+# =====================================================================
 # IMO TRAINING & VALIDATION ENGINE -- OpenCode Ecosystem v4.3
 # Treina e valida raciocinios cientificos usando banco IMO 2001-2025
 # Fontes: github.com/MarceloClaro/IMO_QUESTIONS_SOLUTIONS

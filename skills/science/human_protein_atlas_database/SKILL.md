@@ -1,4 +1,4 @@
-﻿---
+---
 name: human-protein-atlas-database
 category: science
 version: "1.0.0"

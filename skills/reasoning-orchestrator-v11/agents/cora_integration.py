@@ -1,4 +1,4 @@
-﻿# =====================================================================
+# =====================================================================
 # CORA INTEGRATION — Collaborative Reasoning Agents
 # Concepts from Prof. Antonio Murilo S. Macedo (UFPE, 2025)
 # Integrates physical analogies into multi-agent reasoning

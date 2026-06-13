@@ -1,4 +1,4 @@
-﻿---
+---
 name: compliance_auditor
 category: agency
 domain: specialized

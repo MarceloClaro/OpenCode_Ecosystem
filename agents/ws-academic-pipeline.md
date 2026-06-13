@@ -10,13 +10,13 @@ name: ws-academic-pipeline
 description: Pipeline acadêmico LaTeX — compilação, fichamentos, cotejo, status e registro de aprendizado
 mode: subagent
 tools:
-  - read
-  - write
-  - edit
-  - glob
-  - grep
-  - bash
-  - pdf_*
+  read: true
+  write: true
+  edit: true
+  glob: true
+  grep: true
+  bash: true
+  pdf_*: true
 ---
 
 # Academic Pipeline Agent

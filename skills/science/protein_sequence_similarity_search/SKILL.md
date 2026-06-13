@@ -1,4 +1,4 @@
-﻿---
+---
 name: protein-sequence-similarity-search
 category: science
 version: "1.0.0"

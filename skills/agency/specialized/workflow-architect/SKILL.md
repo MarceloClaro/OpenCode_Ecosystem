@@ -1,4 +1,4 @@
-﻿---
+---
 name: workflow_architect
 category: agency
 domain: specialized

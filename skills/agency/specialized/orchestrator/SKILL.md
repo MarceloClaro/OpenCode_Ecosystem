@@ -1,4 +1,4 @@
-﻿---
+---
 name: orchestrator
 category: agency
 domain: specialized

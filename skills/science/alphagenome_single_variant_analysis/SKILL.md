@@ -1,4 +1,4 @@
-﻿---
+---
 name: alphagenome-single-variant-analysis
 category: science
 version: "1.0.0"

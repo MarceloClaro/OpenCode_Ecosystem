@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # =====================================================================
 # PHYSICS DERIVATION + CHEMISTRY EXPANSION + CREATIVE LEAPS
 # Solves the 3 remaining weaknesses of the OpenCode Ecosystem

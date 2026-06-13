@@ -1,4 +1,4 @@
-﻿---
+---
 name: mcp_builder
 category: agency
 domain: specialized

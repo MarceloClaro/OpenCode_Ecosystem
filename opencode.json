@@ -126,7 +126,13 @@
       "tags": [
         "search",
         "docs"
-      ]
+      ],
+      "headers": {
+        "Authorization": "Bearer ctx7sk-5d74972d-1a99-4aa3-b386-df8db154ecd4"
+      },
+      "environment": {
+        "CONTEXT7_API_KEY": "ctx7sk-5d74972d-1a99-4aa3-b386-df8db154ecd4"
+      }
     },
     "gh_grep": {
       "type": "remote",
@@ -154,7 +160,7 @@
     },
     "puppeteer": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "npx",
         "-y",
@@ -167,7 +173,7 @@
     },
     "chrome-devtools": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "chrome-devtools-mcp"
       ],
@@ -178,7 +184,7 @@
     },
     "desktop-commander": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "npx",
         "-y",
@@ -217,7 +223,7 @@
     },
     "shell-server": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "uvx",
         "mcp-shell-server"
@@ -231,7 +237,7 @@
     },
     "run-python": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "uvx",
         "mcp-run-python"
@@ -271,7 +277,7 @@
     },
     "mcp-server-commands": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "mcp-server-commands"
       ],
@@ -296,7 +302,7 @@
     },
     "github": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "npx",
         "-y",
@@ -324,7 +330,7 @@
     },
     "biomcp": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "uvx",
         "biomcp"
@@ -338,7 +344,7 @@
     },
     "biothings": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "uvx",
         "biothings-mcp"
@@ -352,7 +358,7 @@
     },
     "gget": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "uvx",
         "gget-mcp"
@@ -366,7 +372,7 @@
     },
     "opengenes": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "uvx",
         "opengenes-mcp"
@@ -395,7 +401,7 @@
     },
     "latest-science": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "npx",
         "-y",
@@ -411,7 +417,7 @@
     },
     "research-mcp": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "researchmcp",
         "arxiv"
@@ -428,7 +434,7 @@
     },
     "sura-papers": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "npx",
         "-y",
@@ -445,7 +451,7 @@
     },
     "arxiv-mcp": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "npx",
         "-y",
@@ -488,7 +494,7 @@
     },
     "mem0-mcp": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "mem0-mcp"
       ],
@@ -513,7 +519,7 @@
     },
     "flowzap-mcp": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "npx",
         "-y",
@@ -526,7 +532,7 @@
     },
     "astronomy-oracle": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "npx",
         "-y",
@@ -539,7 +545,7 @@
     },
     "self-healer": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "python",
         "nexus/mcp_self_healer.py"
@@ -560,7 +566,7 @@
     },
     "maswos-juridico": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "python",
         "skills/maswos-v5-nexus/servers/juridico_server.py"
@@ -573,7 +579,7 @@
     },
     "maswos-mcp": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "python",
         "skills/maswos-v5-nexus/servers/maswos_server.py"
@@ -586,7 +592,7 @@
     },
     "maswos-rag": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "python",
         "skills/maswos-v5-nexus/servers/rag_server.py"
@@ -599,7 +605,7 @@
     },
     "antigravity-mcp": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "python",
         "nexus/antigravity_mcp_server.py"
@@ -615,7 +621,7 @@
     },
     "cora-verifier": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "python",
         "skills/cora-debate/servers/cora_verifier.py"

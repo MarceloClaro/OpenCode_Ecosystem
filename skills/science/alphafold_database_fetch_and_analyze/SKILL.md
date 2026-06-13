@@ -1,4 +1,4 @@
-﻿---
+---
 name: alphafold-database-fetch-and-analyze
 category: science
 version: "1.0.0"

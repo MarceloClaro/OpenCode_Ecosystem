@@ -40,7 +40,7 @@ def create_backup(file_path: Path):
     rel_path = file_path.relative_to(WORKSPACE)
     dest_path = BACKUP_DIR / rel_path
     dest_path.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(file_path, dest_path)
+    shutil.copyfile(file_path, dest_path)
 
 # ============================================================================
 # FASE 1: REMOÇÃO DE BOM (Byte Order Mark) \ufeff

@@ -1,4 +1,4 @@
-﻿---
+---
 name: chembl-database
 category: science
 version: "1.0.0"

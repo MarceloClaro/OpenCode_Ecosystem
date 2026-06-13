@@ -1,4 +1,4 @@
-﻿---
+---
 name: ucsc-conservation-and-tfbs
 category: science
 version: "1.0.0"

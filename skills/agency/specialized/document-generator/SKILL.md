@@ -1,4 +1,4 @@
-﻿---
+---
 name: document_generator
 category: agency
 domain: specialized

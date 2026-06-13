@@ -1,4 +1,4 @@
-﻿---
+---
 name: literature-search-openalex
 category: science
 version: "1.0.0"

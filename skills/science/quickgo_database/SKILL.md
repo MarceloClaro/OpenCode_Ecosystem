@@ -1,4 +1,4 @@
-﻿---
+---
 name: quickgo-database
 category: science
 version: "1.0.0"

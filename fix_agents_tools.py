@@ -122,7 +122,7 @@ def main():
             if modified:
                 # Backup
                 backup_path = os.path.join(BACKUP_DIR, fname)
-                shutil.copy2(fpath, backup_path)
+                shutil.copyfile(fpath, backup_path)
 
                 # Salva corrigido
                 with open(fpath, "w", encoding="utf-8") as f:

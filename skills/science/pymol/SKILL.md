@@ -1,4 +1,4 @@
-﻿---
+---
 name: pymol
 category: science
 version: "1.0.0"

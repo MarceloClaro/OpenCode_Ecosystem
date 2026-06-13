@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 VALIDACAO EXTERNA REAL â€” Project Euler + Rosalind
 Problemas com respostas verificadas por centenas de milhares de solvers.

@@ -1,4 +1,4 @@
-﻿---
+---
 name: embl-ebi-ols
 category: science
 version: "1.0.0"
