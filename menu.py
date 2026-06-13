@@ -3,19 +3,15 @@
 Sistema de navegacao adaptativo que descobre dinamicamente skills,
 agentes, MCPs e motores de raciocinio do ecossistema.
 
-Suporta:
-- Submenus hierarquicos com profundidade ilimitada
-- Descoberta automatica de componentes do ecossistema
-- Navegacao por teclado (numeros, setas, busca textual)
-- Plugins externos via .menu_registry.json
-- Integracao com reasoning engines (Z3, SymPy, Kanren, Critical)
-- Sessao com historico e breadcrumbs
+Autor: Prof. Marcelo Claro Laranjeira (https://github.com/MarceloClaro)
+ORCID: https://orcid.org/0000-0001-8996-2887
 """
 
 import json
 import os
 import sys
 import time
+import subprocess
 from dataclasses import dataclass, field
 from typing import Any, Callable, Dict, List, Optional, Tuple
 from collections import OrderedDict
@@ -93,13 +89,70 @@ class SessionState:
     start_time: float = 0.0
 
 
+# ==========================================
+# DEFINIÇÃO DE AÇÕES DO ECOSSISTEMA
+# ==========================================
+
+def executar_auditoria_tdd():
+    os.system("bash /mnt/c/Users/marce/Documents/OpenCode_Ecosystem/tests/test_environment.sh")
+
+def opencode_debug():
+    os.system("opencode debug")
+
+def opencode_stats():
+    os.system("opencode stats")
+
+def iniciar_opencode_web():
+    print("\nIniciando OpenCode Web na porta 4096...")
+    os.system("explorer.exe 'http://localhost:4096' >/dev/null 2>&1 &")
+    os.system("cd /mnt/c/Users/marce/Documents/OpenCode_Ecosystem/projects && opencode web --hostname 127.0.0.1 --port 4096")
+
+def iniciar_opencode_tui():
+    os.system("cd /mnt/c/Users/marce/Documents/OpenCode_Ecosystem/projects && opencode")
+
+def continuar_antigravity():
+    os.system("cd /mnt/c/Users/marce/Documents/OpenCode_Ecosystem && /mnt/c/Users/marce/AppData/Local/agy/bin/agy.exe -c")
+
+def novo_prompt_antigravity():
+    prompt = input("\nDigite o prompt inicial para a sessão (ou Enter para interativo): ").strip()
+    if prompt:
+        os.system(f"cd /mnt/c/Users/marce/Documents/OpenCode_Ecosystem && /mnt/c/Users/marce/AppData/Local/agy/bin/agy.exe -i --prompt \"{prompt}\"")
+    else:
+        os.system("cd /mnt/c/Users/marce/Documents/OpenCode_Ecosystem && /mnt/c/Users/marce/AppData/Local/agy/bin/agy.exe -i")
+
+def listar_modelos_antigravity():
+    os.system("/mnt/c/Users/marce/AppData/Local/agy/bin/agy.exe models")
+
+def chat_local_ollama():
+    os.system("python3 /mnt/c/Users/marce/Documents/OpenCode_Ecosystem/scripts/chat_ollama.py")
+
+def gerenciar_provedores():
+    os.system("opencode providers")
+
+def sincronizar_github():
+    print("\nAdicionando arquivos ao Git...")
+    os.system("cd /mnt/c/Users/marce/Documents/OpenCode_Ecosystem && git add .")
+    msg = input("Digite a mensagem do commit de backup: ").strip()
+    if not msg:
+        msg = "Backup acadêmico automático"
+    os.system(f"cd /mnt/c/Users/marce/Documents/OpenCode_Ecosystem && git commit -m \"{msg}\"")
+    print("\nEnviando para o GitHub...")
+    os.system("cd /mnt/c/Users/marce/Documents/OpenCode_Ecosystem && git push -u origin main")
+
+def abrir_pasta_explorer():
+    os.system("explorer.exe 'C:\\Users\\marce\\Documents\\OpenCode_Ecosystem\\projects' >/dev/null 2>&1")
+
+def visualizar_sdd():
+    os.system("cat /mnt/c/Users/marce/Documents/OpenCode_Ecosystem/docs/sdd.md")
+
+def visualizar_manual():
+    os.system("cat /mnt/c/Users/marce/Documents/OpenCode_Ecosystem/docs/manual_academic_presentation.md")
+
+
 class MenuEngine:
     """Motor de menu adaptativo com auto-descoberta do ecossistema."""
 
-    ECOSYSTEM_ROOT = os.environ.get(
-        "OPENCODE_ROOT",
-        os.path.expanduser("~/.config/opencode")
-    )
+    ECOSYSTEM_ROOT = "/mnt/c/Users/marce/Documents/OpenCode_Ecosystem"
 
     def __init__(self, registry_path: str = None):
         self.session = SessionState(start_time=time.time())
@@ -120,7 +173,7 @@ class MenuEngine:
         academic = MenuNode("Pesquisa Academica")
         self._discover_academic(academic)
         r.items["academic"] = MenuItem("academic", "Pesquisa Academica",
-            "Artigos, editais, revisao sistematica, Qualis",
+            "Artigos, RAG Local, Qualis e busca externa/interna",
             icon="[ACAD]", submenu=academic)
 
         # === 2. Ciencia e Dados ===
@@ -140,29 +193,29 @@ class MenuEngine:
         # === 4. Agentes Inteligentes ===
         agents = MenuNode("Agentes Inteligentes")
         self._discover_agents(agents)
-        r.items["agents"] = MenuItem("agents", "Agentes Inteligentes",
-            "26 agency agents + MASWOS + agent-forum",
+        r.items["agents"] = MenuItem("agents", "Agentes Inteligentes & Antigravity CLI",
+            "Orquestração de agentes, continuação de sessões e modelos agy",
             icon="[AGNT]", submenu=agents)
 
         # === 5. Engenharia de Software ===
         eng = MenuNode("Engenharia de Software")
         self._discover_engineering(eng)
-        r.items["engineering"] = MenuItem("engineering", "Engenharia de Software",
-            "SDD, TDD, code review, CI/CD, git",
+        r.items["engineering"] = MenuItem("engineering", "Engenharia de Software (TDD / SDD)",
+            "SDD, testes TDD de integridade, ADRs",
             icon="[ENG]", submenu=eng)
 
         # === 6. Ferramentas ===
         tools = MenuNode("Ferramentas e MCPs")
         self._discover_tools(tools)
-        r.items["tools"] = MenuItem("tools", "Ferramentas e MCPs",
-            f"MCPs, plugins, comandos",
+        r.items["tools"] = MenuItem("tools", "Ferramentas, OpenCode e MCPs",
+            f"Servidor Web, TUI, provedores e diagnósticos do OpenCode",
             icon="[TOOL]", submenu=tools)
 
         # === 7. Sistema ===
-        system = MenuNode("Sistema e Configuracao")
+        system = MenuNode("Sistema, Backup e Configuração")
         self._discover_system(system)
-        r.items["system"] = MenuItem("system", "Sistema e Configuracao",
-            "Saude, status, evolucao, documentacao",
+        r.items["system"] = MenuItem("system", "Sistema, Backup e Configuração",
+            "GitHub Push, Explorer e saúde do sistema",
             icon="[SYS]", submenu=system)
 
         # === 8. Ajuda ===
@@ -174,16 +227,15 @@ class MenuEngine:
 
     def _discover_academic(self, node: MenuNode) -> None:
         """Descobre skills academicas disponiveis."""
-        skills = {
-            "artigo": ("Gerar Artigo Qualis A1", "49 agentes MASWOS + SEEKER + ABNT", ["artigo", "qualis"]),
-            "editais": ("Buscar Editais de Fomento", "CNPq, CAPES, FINEP — 52 curados", ["editais", "fomento"]),
-            "qualis": ("Qualis Target Navigator", "Ranqueamento de periodicos (7 fatores, 49 areas)", ["qualis", "periodicos"]),
-            "abnt": ("Exportar ABNT", "Formatacao NBR 6023 automatica", ["abnt", "formatacao"]),
-            "revisao": ("Revisao Sistematica", "PRISMA 2020, meta-analise", ["revisao", "prisma"]),
-            "ml": ("Pipeline ML Academico", "Correlacao bootstrap, classificacao ARM", ["ml", "estatistica"]),
-        }
-        for key, (label, desc, tags) in skills.items():
-            node.add(key, label, desc, tags=tags)
+        node.add("chat_local", "Chat Local + RAG Híbrido + Vocalização (Ollama + Qwen)",
+                 "Consultas locais com busca híbrida Wikipedia/DuckDuckGo e voz nativa do Windows",
+                 action=chat_local_ollama)
+        node.add("artigo", "Gerar Artigo Qualis A1", "49 agentes MASWOS + SEEKER + ABNT", tags=["artigo", "qualis"])
+        node.add("editais", "Buscar Editais de Fomento", "CNPq, CAPES, FINEP — 52 curados", tags=["editais", "fomento"])
+        node.add("qualis", "Qualis Target Navigator", "Ranqueamento de periodicos (7 fatores, 49 areas)", tags=["qualis", "periodicos"])
+        node.add("abnt", "Exportar ABNT", "Formatacao NBR 6023 automatica", tags=["abnt", "formatacao"])
+        node.add("revisao", "Revisao Sistematica", "PRISMA 2020, meta-analise", tags=["revisao", "prisma"])
+        node.add("ml", "Pipeline ML Academico", "Correlacao bootstrap, classificacao ARM", tags=["ml", "estatistica"])
 
     def _discover_science(self, node: MenuNode) -> None:
         """Descobre skills cientificas."""
@@ -213,6 +265,16 @@ class MenuEngine:
 
     def _discover_agents(self, node: MenuNode) -> None:
         """Descobre agentes disponiveis."""
+        node.add("agy_c", "Continuar Sessão no Antigravity (agy.exe -c)",
+                 "Retoma a conversa anterior com o agente de programação no terminal",
+                 action=continuar_antigravity)
+        node.add("agy_i", "Novo Prompt Interativo no Antigravity (agy.exe -i)",
+                 "Envia uma nova instrução e inicia chat interativo com o agente",
+                 action=novo_prompt_antigravity)
+        node.add("agy_models", "Listar Modelos Disponíveis no Antigravity",
+                 "Lista os modelos de inferência suportados no Antigravity CLI",
+                 action=listar_modelos_antigravity)
+        
         categories = OrderedDict([
             ("academic", ("Academicos (5)", ["Antropologo", "Geografo", "Historiador", "Narratologo", "Psicologo"])),
             ("engineering", ("Engenharia (5)", ["Code Reviewer", "Minimal Change", "Git Workflow", "Security Audit", "DB Optimizer"])),
@@ -230,40 +292,60 @@ class MenuEngine:
 
     def _discover_engineering(self, node: MenuNode) -> None:
         """Descobre skills de engenharia."""
-        items = {
-            "sdd": ("SDD — Spec-Driven Development", "Especificacoes antes do codigo", ["sdd", "spec"]),
-            "tdd": ("TDD — 226 Suites de Teste", "Testes automatizados: 226 suites, 92.7% cobertura", ["tdd", "testes"]),
-            "review": ("Code Review", "Revisao multi-eixo com classificacao de severidade", ["review", "codigo"]),
-            "cicd": ("CI/CD Pipeline", "5 gates de qualidade automatizados", ["cicd", "pipeline"]),
-            "git": ("Git Workflow", "Conventional Commits, branches, PRs", ["git", "versionamento"]),
-            "adr": ("Decision Records", "ADR: decisoes arquiteturais rastreaveis", ["adr", "arquitetura"]),
-        }
-        for key, (label, desc, tags) in items.items():
-            node.add(key, label, desc, tags=tags)
+        node.add("tdd_check", "Executar Auditoria TDD (test_environment.sh)",
+                 "Verifica a conformidade e integridade da instalação local (WSL/Windows)",
+                 action=executar_auditoria_tdd)
+        node.add("sdd", "SDD — Spec-Driven Development", "Especificacoes antes do codigo", tags=["sdd", "spec"])
+        node.add("tdd", "TDD — 226 Suites de Teste", "Testes automatizados: 226 suites, 92.7% cobertura", tags=["tdd", "testes"])
+        node.add("review", "Code Review", "Revisao multi-eixo com classificacao de severidade", tags=["review", "codigo"])
+        node.add("cicd", "CI/CD Pipeline", "5 gates de qualidade automatizados", tags=["cicd", "pipeline"])
+        node.add("git", "Git Workflow", "Conventional Commits, branches, PRs", tags=["git", "versionamento"])
+        node.add("adr", "Decision Records", "ADR: decisoes arquiteturais rastreaveis", tags=["adr", "arquitetura"])
 
     def _discover_tools(self, node: MenuNode) -> None:
         """Descobre ferramentas e MCPs."""
-        items = {
-            "mcps": ("MCPs Ativos (23/46)", "Gerenciar servidores MCP", ["mcp", "servidores"]),
-            "plugins": ("Plugins (5)", "manus-evolve, ecosystem-sync, cora-qscore", ["plugins"]),
-            "diagrams": ("Diagramas (14)", "SVGs: arquitetura, pipeline, classificacao", ["diagrams", "svg"]),
-            "search": ("Busca Cientifica", "10 fontes: arXiv, PubMed, Semantic Scholar, CrossRef, etc.", ["search", "artigos"]),
-            "rag": ("RAG Strategies (9)", "GraphRAG, CRAG, HyDE, Fusion RAG", ["rag", "busca"]),
-        }
-        for key, (label, desc, tags) in items.items():
-            node.add(key, label, desc, tags=tags)
+        node.add("opencode_web", "Iniciar OpenCode Web Server (Interface Visual)",
+                 "Sobe o servidor headless local e abre o navegador em http://localhost:4096",
+                 action=iniciar_opencode_web)
+        node.add("opencode_tui", "Iniciar OpenCode TUI (Interface de Terminal)",
+                 "Abre a interface de controle do OpenCode direto no terminal",
+                 action=iniciar_opencode_tui)
+        node.add("opencode_providers", "Gerenciar Provedores e Autenticações (opencode auth)",
+                 "Configura chaves de API e conexões com provedores externos",
+                 action=gerenciar_provedores)
+        node.add("opencode_debug", "Diagnóstico e Depuração (opencode debug)",
+                 "Ferramentas de troubleshooting e análise de logs do OpenCode",
+                 action=opencode_debug)
+        node.add("opencode_stats", "Estatísticas de Uso e Custos (opencode stats)",
+                 "Analisa o histórico de tokens consumidos e custos estimados",
+                 action=opencode_stats)
+
+        node.add("mcps", "MCPs Ativos (23/46)", "Gerenciar servidores MCP", tags=["mcp", "servidores"])
+        node.add("plugins", "Plugins (5)", "manus-evolve, ecosystem-sync, cora-qscore", tags=["plugins"])
+        node.add("diagrams", "Diagramas (14)", "SVGs: arquitetura, pipeline, classificacao", tags=["diagrams", "svg"])
+        node.add("search", "Busca Cientifica", "10 fontes: arXiv, PubMed, Semantic Scholar, CrossRef, etc.", tags=["search", "artigos"])
+        node.add("rag", "RAG Strategies (9)", "GraphRAG, CRAG, HyDE, Fusion RAG", tags=["rag", "busca"])
 
     def _discover_system(self, node: MenuNode) -> None:
         """Sistema e configuracao."""
-        items = {
-            "status": ("Status do Ecossistema", "150 skills, 46 MCPs, 226 TDD, 162 SDD", ["status", "saude"]),
-            "evolve": ("Evoluir Ecossistema", "AutoEvolve: PLAN → ACT → REFLECT → EXTRACT → EVOLVE", ["evolucao"]),
-            "sync": ("Sincronizar MiroFish", "Monitora upstream e integra novos padroes", ["sync", "mirofish"]),
-            "docs": ("Documentacao", "README, AGENTS, CHANGELOG, SPEC_COVERAGE", ["docs"]),
-            "config": ("Configuracao", "opencode.json, MCPs, providers", ["config"]),
-        }
-        for key, (label, desc, tags) in items.items():
-            node.add(key, label, desc, tags=tags)
+        node.add("github_backup", "Sincronizar e Backup com GitHub (Git Push)",
+                 "Commit automático e envio para o repositório MarceloClaro/OpenCode_Ecosystem",
+                 action=sincronizar_github)
+        node.add("open_explorer", "Abrir Diretório de Projetos no Windows Explorer",
+                 "Abre a pasta physical projects/ no explorador do Windows",
+                 action=abrir_pasta_explorer)
+        node.add("read_sdd", "Visualizar Documento de Design de Software (SDD)",
+                 "Lê e renderiza as especificações técnicas da arquitetura do ecossistema",
+                 action=visualizar_sdd)
+        node.add("read_manual", "Visualizar Manual Acadêmico & Slides de Apresentação",
+                 "Abre a documentação detalhada de banca A1 para leitura no console",
+                 action=visualizar_manual)
+
+        node.add("status", "Status do Ecossistema", "150 skills, 46 MCPs, 226 TDD, 162 SDD", tags=["status", "saude"])
+        node.add("evolve", "Evoluir Ecossistema", "AutoEvolve: PLAN → ACT → REFLECT → EXTRACT → EVOLVE", tags=["evolucao"])
+        node.add("sync", "Sincronizar MiroFish", "Monitora upstream e integra novos padroes", tags=["sync", "mirofish"])
+        node.add("docs", "Documentacao", "README, AGENTS, CHANGELOG, SPEC_COVERAGE", tags=["docs"])
+        node.add("config", "Configuracao", "opencode.json, MCPs, providers", tags=["config"])
 
     def _build_help(self, node: MenuNode) -> None:
         """Constroi menu de ajuda."""
@@ -410,8 +492,8 @@ class MenuRenderer:
     }
 
     def __init__(self, use_colors: bool = True):
-        self.use_colors = use_colors and sys.platform != "win32"
-        # Fallback: no colors on Windows unless in Windows Terminal
+        # Habilita cores para terminais modernos (incluindo Windows Terminal)
+        self.use_colors = use_colors
 
     def _c(self, color: str, text: str) -> str:
         """Aplica cor se habilitado."""
@@ -425,11 +507,13 @@ class MenuRenderer:
         lines = []
         w = 80
 
-        # Header
+        # Header Acadêmico / Startup Qualis A1
         lines.append(self._c("bold", "=" * w))
+        lines.append(self._c("cyan", "  UNIVERSIDADE & CIÊNCIA | ECOSSISTEMA CIENTÍFICO CONSOLIDADO"))
         lines.append(self._c("cyan", f"  {node.title}"))
+        lines.append(self._c("dim", "  Autor: Prof. Marcelo Claro Laranjeira | ORCID: 0000-0001-8996-2887"))
         if breadcrumbs:
-            lines.append(self._c("dim", f"  {' > '.join(breadcrumbs)}"))
+            lines.append(self._c("dim", f"  Caminho: {' > '.join(breadcrumbs)}"))
         lines.append(self._c("bold", "=" * w))
         lines.append("")
 
@@ -451,7 +535,7 @@ class MenuRenderer:
             lines.append(f"{prefix}{label}{sub_indicator}")
 
             if item.description:
-                desc = item.description[:60] + "..." if len(item.description) > 60 else item.description
+                desc = item.description[:70] + "..." if len(item.description) > 70 else item.description
                 lines.append(f"       {self._c('dim', desc)}")
 
             lines.append("")
@@ -467,7 +551,7 @@ class MenuRenderer:
         # Commands
         lines.append(f"  {self._c('yellow', 'n°')} selecionar  |  {self._c('yellow', 'b')} voltar  |  "
                      f"{self._c('yellow', 'q')} sair  |  {self._c('yellow', '/texto')} buscar  |  "
-                     f"{self._c('yellow', 'h')} ajuda")
+                     f"{self._c('yellow', 'p/r/c/t')} áudio")
         lines.append(self._c("bold", "=" * w))
 
         return "\n".join(lines)
@@ -483,6 +567,14 @@ class InteractiveMenu:
         self.path: List[str] = []
         self.running = True
 
+    def enviar_comando_voz(self, cmd: str) -> None:
+        try:
+            cmd_file = "/mnt/c/Users/marce/Documents/OpenCode_Ecosystem/.vocalizer_cmd"
+            with open(cmd_file, "w", encoding="utf-8") as f:
+                f.write(cmd)
+        except Exception:
+            pass
+
     def run(self) -> None:
         """Executa loop principal do menu."""
         while self.running:
@@ -491,7 +583,10 @@ class InteractiveMenu:
 
             if choice.lower() == "q":
                 self.running = False
-                print("\nOpenCode Ecosystem — Ate logo.\n")
+                self.enviar_comando_voz("STOP")
+                time.sleep(0.1)
+                self.enviar_comando_voz("PLAY:Painel encerrado. Até logo.")
+                time.sleep(1.5)
                 break
 
             elif choice.lower() == "b":
@@ -503,6 +598,22 @@ class InteractiveMenu:
 
             elif choice.lower() == "h":
                 self._show_help()
+                continue
+
+            elif choice.lower() == "p":
+                self.enviar_comando_voz("PAUSE")
+                continue
+
+            elif choice.lower() == "r":
+                self.enviar_comando_voz("RESUME")
+                continue
+
+            elif choice.lower() == "c":
+                self.enviar_comando_voz("STOP")
+                continue
+
+            elif choice.lower() == "t":
+                self.enviar_comando_voz("REPEAT")
                 continue
 
             elif choice.startswith("/"):
@@ -527,8 +638,10 @@ class InteractiveMenu:
                         self._input("\nPressione Enter para continuar...")
                 else:
                     print(f"  [!] Opcao invalida: {idx + 1}")
+                    time.sleep(1)
             except ValueError:
                 print(f"  [!] Entrada invalida: '{choice}'")
+                time.sleep(1)
 
     def _display(self) -> None:
         """Mostra o menu atual."""
@@ -542,6 +655,8 @@ class InteractiveMenu:
         """Mostra resultados de busca."""
         if sys.platform == "win32":
             os.system("cls")
+        else:
+            os.system("clear")
         print(self.renderer.render(self.current_node, self.path, query, self.engine))
         self._input("Pressione Enter para voltar...")
 
@@ -554,20 +669,13 @@ COMANDOS DO MENU:
   q         Sair do menu
   /texto    Buscar em todos os menus
   h         Mostrar esta ajuda
-
-COMANDOS SLASH:
-  /artigo   Gerar artigo academico Qualis A1
-  /reversa  Engenharia reversa (67 artefatos)
-  /quantum  Experimentos quanticos (VQC 50 qubits)
-  /evolve   Evoluir ecossistema (AutoEvolve)
-  /plan     Criar plano estruturado
-  /auto     Modo autonomo total (23 MCPs)
-  /ticket   Gerenciar tickets Jira
+  p / r     Pausar e Retomar áudio (TTS)
+  c / t     Cancelar e Repetir áudio (TTS)
 
 ECOSSISTEMA:
-  Skills: 150 | TDD: 226 suites | SDD: 162 specs
-  MCPs: 46 (23 ativos) | Evolucoes: 14
-  Science: 38 | Agency: 26 | Reasoning: 4
+  Criador: Prof. Marcelo Claro Laranjeira
+  ORCID: 0000-0001-8996-2887
+  GitHub: https://github.com/MarceloClaro/OpenCode_Ecosystem
 """
         print(help_text)
         self._input("Pressione Enter para continuar...")
