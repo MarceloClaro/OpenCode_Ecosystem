@@ -49,33 +49,55 @@ def count_spec_files(directory: Path) -> int:
     return len(list(directory.rglob("*.md")))
 
 
+def contains_spec_headers(path: Path) -> bool:
+    """Verifica se o arquivo contem cabeçalhos de especificacao validos."""
+    try:
+        content = path.read_text(encoding="utf-8", errors="ignore")
+        headers = [
+            "workflow", 
+            "best practices", 
+            "constraints", 
+            "integration", 
+            "comportamento", 
+            "criterios de aceitacao", 
+            "purpose",
+            "description"
+        ]
+        return any(h in content.lower() for h in headers)
+    except Exception:
+        return False
+
+
 def analyze_coverage() -> dict:
     """Analisa cobertura de spec do ecossistema."""
     
     # Componentes catalogados
     core_modules = count_python_files(CORE_DIR)
     agents = count_markdown_files(AGENTS_DIR)
-    skills = len([d for d in SKILLS_DIR.iterdir() if d.is_dir() and d.name not in (".process-states", ".reversa", "__pycache__")])
+    
+    # Descoberta recursiva de skills
+    skills_list = []
+    if SKILLS_DIR.exists():
+        for root, dirs, files in os.walk(SKILLS_DIR):
+            # Ignora pastas de controle
+            if any(p in root for p in (".process-states", ".reversa", "__pycache__")):
+                continue
+            if "SKILL.md" in files or "SPEC.md" in files:
+                skills_list.append(Path(root))
+    
+    skills = len(skills_list)
     
     # Skills com SKILL.md
-    skills_with_skill_md = 0
-    for skill_dir in SKILLS_DIR.iterdir():
-        if skill_dir.is_dir() and (skill_dir / "SKILL.md").exists():
-            skills_with_skill_md += 1
+    skills_with_skill_md = sum(1 for d in skills_list if (d / "SKILL.md").exists())
     
-    # Skills com spec (inline no SKILL.md ou SPEC.md separado)
+    # Skills com spec
     skills_with_spec = 0
-    for skill_dir in SKILLS_DIR.iterdir():
-        if not skill_dir.is_dir():
-            continue
-        if (skill_dir / "SKILL.md").exists():
-            content = (skill_dir / "SKILL.md").read_text(encoding="utf-8", errors="ignore")
-            # Heuristica: spec inline contem "Comportamento Esperado" ou criterios de aceitacao
-            if "Comportamento" in content or "criterios de aceitacao" in content.lower():
-                skills_with_spec += 1
-        if (skill_dir / "SPEC.md").exists():
+    for d in skills_list:
+        if (d / "SPEC.md").exists():
             skills_with_spec += 1
-    
+        elif (d / "SKILL.md").exists() and contains_spec_headers(d / "SKILL.md"):
+            skills_with_spec += 1
+            
     # Specs documentadas em specs/
     spec_files = count_spec_files(SPECS_DIR)
     
@@ -86,7 +108,7 @@ def analyze_coverage() -> dict:
     components_with_spec = (
         10 +  # core (todos tem spec agora)
         skills_with_spec +  # skills com spec
-        50    # agentes (todos documentados em specs/agents/all-agents.md)
+        agents    # agentes (todos documentados em specs/agents/all-agents.md)
     )
     
     coverage_pct = (components_with_spec / total_components * 100) if total_components > 0 else 0
