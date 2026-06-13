@@ -78,6 +78,19 @@ else
     FAILED=1
 fi
 
+# T6: Verificar se os scripts de RAG e Vocalização existem
+echo -n "T6: Verificando scripts de RAG e Vocalização... "
+CHAT_SCRIPT="/mnt/c/Users/marce/Documents/OpenCode_Ecosystem/scripts/chat_ollama.py"
+DAEMON_SCRIPT="/mnt/c/Users/marce/Documents/OpenCode_Ecosystem/scripts/vocalizer_daemon.ps1"
+TEST_CHAT_SCRIPT="/mnt/c/Users/marce/Documents/OpenCode_Ecosystem/tests/test_chat_ollama.py"
+
+if [ -f "$CHAT_SCRIPT" ] && [ -f "$DAEMON_SCRIPT" ] && [ -f "$TEST_CHAT_SCRIPT" ]; then
+    echo -e "${GREEN}[PASS]${NC} (chat_ollama.py, vocalizer_daemon.ps1, test_chat_ollama.py OK)"
+else
+    echo -e "${RED}[FAIL]${NC} (Faltam scripts de RAG ou Vocalização)"
+    FAILED=1
+fi
+
 echo ""
 echo -e "${YELLOW}===================================================${NC}"
 if [ $FAILED -eq 0 ]; then
