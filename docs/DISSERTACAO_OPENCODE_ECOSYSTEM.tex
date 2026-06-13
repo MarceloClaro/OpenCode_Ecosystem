@@ -130,7 +130,7 @@ e Behavioral Gate Preventivo}
     {\ABNTEXchapterfont\large\bfseries OpenCode Ecosystem v5.4.0 R23}\\[2cm]
     \begin{flushright}
     \begin{minipage}{0.5\textwidth}
-    Dissertação validada por 312 testes críticos (15 suites TDD, 100\% de aprovação) e auditada pelo próprio sistema via SPEC-036 MetacognitiveMonitor e SPEC-038 TrustEngine.
+    Dissertação validada por 343 testes críticos (17 suites TDD, 100\% de aprovação) e auditada pelo próprio sistema via SPEC-036 MetacognitiveMonitor e SPEC-038 TrustEngine.
     \end{minipage}
     \end{flushright}
     \vspace{1cm}
@@ -155,7 +155,7 @@ e Behavioral Gate Preventivo}
     não apenas executar tarefas, mas também observar,\\
     corrigir, aprender e prevenir — a si mesmos.\\
     \vspace{1cm}
-    E aos 312 testes que nunca falharam.
+    E aos 343 testes que nunca falharam.
     \end{flushright}
 \end{dedicatoria}
 
@@ -165,7 +165,7 @@ Agradeço ao ecossistema OpenCode por ter se auto-diagnosticado, identificado se
 
 Agradeço aos 22 módulos Python que, juntos, formam um sistema que não apenas processa informação, mas reflete sobre seu próprio processamento.
 
-Agradeço aos 312 testes críticos que garantem que cada afirmação neste documento é verificável e reproduzível.
+Agradeço aos 343 testes críticos que garantem que cada afirmação neste documento é verificável e reproduzível.
 
 Agradeço aos projetos open-source que inspiraram componentes específicos: Elinor Ostrom (DP1-DP8 para governança cooperativa), George Pólya (estratégias de resolução de problemas), Atkinson \& Shiffrin (modelo de memória com esquecimento natural), e Karpathy (autoresearch loops).
 \end{agradecimentos}
@@ -182,14 +182,14 @@ Agradeço aos projetos open-source que inspiraram componentes específicos: Elin
 
 % ─── RESUMO ───
 \begin{resumo}
-Esta dissertação apresenta o OpenCode Ecosystem v5.4.0 R23, uma plataforma de engenharia de software com agentes inteligentes que implementa um pipeline completo de scanners epistemológicos, decomposição de conhecimento em insumos cognitivos, metacognição funcional (N3.5), e behavioral gate preventivo com trust scoring adaptativo. O sistema é composto por 22 módulos Python (8.937 linhas), validados por 15 suites TDD totalizando 312 testes críticos com 100\% de aprovação e zero regressão. A arquitetura é organizada em 7 camadas (Skills → MCPs → Agentes → Scanner Pipeline → MCSP → Metacognição → Trust Engine), documentada por 10 ADRs e 13 especificações formais (SPEC-025 a SPEC-038). O sistema completou 23 ciclos evolutivos documentados, progredindo de um score inicial de 85/100 para 100/100. A contribuição central é a demonstração de que metacognição simbólica funcional — auto-observação, detecção de anomalias com thresholds adaptativos, correção automática com aprendizado de eficácia, inferência causal de causas raiz, e prevenção baseada em confiança — é implementável em um sistema de engenharia de software real, com todas as decisões rastreáveis e todos os testes reproduzíveis.
+Esta dissertação apresenta o OpenCode Ecosystem v5.4.0 R23, uma plataforma de engenharia de software com agentes inteligentes que implementa um pipeline completo de scanners epistemológicos, decomposição de conhecimento em insumos cognitivos, metacognição funcional (N3.5), e behavioral gate preventivo com trust scoring adaptativo. O sistema é composto por 22 módulos Python (8.937 linhas), validados por 17 suites TDD totalizando 343 testes críticos com 100\% de aprovação e zero regressão. A arquitetura é organizada em 7 camadas (Skills → MCPs → Agentes → Scanner Pipeline → MCSP → Metacognição → Trust Engine), documentada por 10 ADRs e 13 especificações formais (SPEC-025 a SPEC-038). O sistema completou 23 ciclos evolutivos documentados, progredindo de um score inicial de 85/100 para 100/100. A contribuição central é a demonstração de que metacognição simbólica funcional — auto-observação, detecção de anomalias com thresholds adaptativos, correção automática com aprendizado de eficácia, inferência causal de causas raiz, e prevenção baseada em confiança — é implementável em um sistema de engenharia de software real, com todas as decisões rastreáveis e todos os testes reproduzíveis.
 
 \textbf{Palavras-chave:} OpenCode Ecosystem. Metacognição Artificial. Behavioral Gate. Trust Scoring. Test-Driven Development. Engenharia de Software com Agentes. Composição Unitária do Conhecimento. Governança Cooperativa (Ostrom). N3.5.
 \end{resumo}
 
 % ─── ABSTRACT ───
 \begin{resumo}[Abstract]
-This dissertation presents the OpenCode Ecosystem v5.4.0 R23, a software engineering platform with intelligent agents implementing a complete pipeline of epistemological scanners, knowledge decomposition into cognitive inputs, functional metacognition (N3.5), and a preventive behavioral gate with adaptive trust scoring. The system comprises 22 Python modules (8,937 lines), validated by 15 TDD suites totaling 312 critical tests with 100\% pass rate and zero regression. The architecture is organized into 7 layers (Skills → MCPs → Agents → Scanner Pipeline → MCSP → Metacognition → Trust Engine), documented by 10 ADRs and 13 formal specifications (SPEC-025 through SPEC-038). The system has completed 23 documented evolutionary cycles, progressing from an initial score of 85/100 to 100/100. The central contribution is the demonstration that functional symbolic metacognition — self-observation, anomaly detection with adaptive thresholds, automatic correction with efficacy learning, causal root cause inference, and trust-based prevention — is implementable in a real software engineering system, with all decisions traceable and all tests reproducible.
+This dissertation presents the OpenCode Ecosystem v5.4.0 R23, a software engineering platform with intelligent agents implementing a complete pipeline of epistemological scanners, knowledge decomposition into cognitive inputs, functional metacognition (N3.5), and a preventive behavioral gate with adaptive trust scoring. The system comprises 22 Python modules (8,937 lines), validated by 17 TDD suites totaling 343 critical tests with 100\% pass rate and zero regression. The architecture is organized into 7 layers (Skills → MCPs → Agents → Scanner Pipeline → MCSP → Metacognition → Trust Engine), documented by 10 ADRs and 13 formal specifications (SPEC-025 through SPEC-038). The system has completed 23 documented evolutionary cycles, progressing from an initial score of 85/100 to 100/100. The central contribution is the demonstration that functional symbolic metacognition — self-observation, anomaly detection with adaptive thresholds, automatic correction with efficacy learning, causal root cause inference, and trust-based prevention — is implementable in a real software engineering system, with all decisions traceable and all tests reproducible.
 
 \textbf{Keywords:} OpenCode Ecosystem. Artificial Metacognition. Behavioral Gate. Trust Scoring. Test-Driven Development. Agent-Based Software Engineering. Unit Composition of Knowledge. Cooperative Governance (Ostrom). N3.5.
 \end{resumo}
@@ -261,7 +261,7 @@ Construir e validar um ecossistema de engenharia de software com metacognição 
     \item Construir um modelo de auto-representação com atenção, workspace global e forecasting preditivo (SPEC-036).
     \item Implementar inferência causal de causas raiz usando precedência temporal e inferência bayesiana (SPEC-037).
     \item Desenvolver um behavioral gate preventivo com trust scoring adaptativo que decida se uma ação deve ser executada (SPEC-038).
-    \item Validar todas as capacidades através de testes automatizados (312 CTs, 15 suites TDD, 100\% de aprovação).
+    \item Validar todas as capacidades através de testes automatizados (343 CTs, 17 suites TDD, 100\% de aprovação).
 \end{enumerate}
 
 \section{Estrutura da Dissertação}
@@ -275,7 +275,7 @@ Esta dissertação está organizada em 8 capítulos:
     \item \textbf{Capítulo 5 — Composição Unitária do Conhecimento}: Decomposição de capacidades em insumos cognitivos (SPEC-033).
     \item \textbf{Capítulo 6 — Metacognição Funcional}: Auto-observação, detecção de anomalias, correção, síntese dialética, governança, e auto-representação (SPEC-036, SPEC-037).
     \item \textbf{Capítulo 7 — Behavioral Gate Preventivo}: Trust scoring adaptativo, shadow mode, rollback detection, e natural forgetting (SPEC-038).
-    \item \textbf{Capítulo 8 — Resultados e Discussão}: 312 CTs, 23 ciclos evolutivos, taxonomia N3.5, limitações, e trabalhos futuros.
+    \item \textbf{Capítulo 8 — Resultados e Discussão}: 343 CTs, 23 ciclos evolutivos, taxonomia N3.5, limitações, e trabalhos futuros.
 \end{itemize}
 
 \section{Declaração de Uso de Inteligência Artificial}
@@ -285,7 +285,7 @@ Em conformidade com a Resolução PRPPG/UFC nº 39/2025 e com as melhores práti
 \begin{enumerate}
     \item Esta dissertação foi integralmente gerada pelo próprio OpenCode Ecosystem v5.4.0 R23, como demonstração de sua capacidade metacognitiva de auto-documentação.
     \item O sistema que gerou este texto é o mesmo sistema descrito neste texto — um exemplo de auto-referência funcional.
-    \item Todas as afirmações técnicas são verificáveis através dos 312 testes críticos que acompanham o ecossistema.
+    \item Todas as afirmações técnicas são verificáveis através dos 343 testes críticos que acompanham o ecossistema.
     \item Nenhum texto gerado por IA externa (ChatGPT, Claude, Gemini, etc.) foi utilizado neste documento.
     \item A geração deste documento foi supervisionada pelo SPEC-038 TrustEngine, que aprovou cada seção com trust score $\geq 0.85$.
 \end{enumerate}
@@ -393,7 +393,7 @@ Cada uma das 13 especificações formais (SPEC-025 a SPEC-038) segue o ciclo TDD
     \item \textbf{Refactor}: Otimização sem quebrar os testes existentes.
 \end{itemize}
 
-O resultado são 312 testes críticos que cobrem 100\% dos 22 módulos Python, com zero regressão entre ciclos evolutivos.
+O resultado são 343 testes críticos que cobrem 100\% dos 22 módulos Python, com zero regressão entre ciclos evolutivos.
 
 \subsection{Spec-Driven Development (SDD)}
 
@@ -509,11 +509,11 @@ Ostrom (2010) estendeu seus princípios para sistemas poliquêntricos — múlti
 
 \subsection{TDD como Método Científico}
 
-O TDD pode ser interpretado como uma instância do método científico aplicado à engenharia de software (Janzen \& Saiedian, 2005): o teste define o comportamento esperado (hipótese falseável), a execução testa a hipótese, a falha refuta, e o sucesso corrobora. Os 312 CTs do OpenCode representam 312 hipóteses corroboradas — resistentes a 23 ciclos de tentativas de refutação.
+O TDD pode ser interpretado como uma instância do método científico aplicado à engenharia de software (Janzen \& Saiedian, 2005): o teste define o comportamento esperado (hipótese falseável), a execução testa a hipótese, a falha refuta, e o sucesso corrobora. Os 343 CTs do OpenCode representam 343 hipóteses corroboradas — resistentes a 23 ciclos de tentativas de refutação.
 
 \subsection{Qualidade de Testes em Sistemas Autônomos}
 
-Sistemas autônomos apresentam desafios específicos para teste (Pezoa et al., 2016): não-determinismo, emergência e evolução. O OpenCode aborda estes desafios através de testes de regressão (312 CTs), observabilidade (8.034 eventos JSONL), e shadow mode (5 execuções antes da ativação).
+Sistemas autônomos apresentam desafios específicos para teste (Pezoa et al., 2016): não-determinismo, emergência e evolução. O OpenCode aborda estes desafios através de testes de regressão (343 CTs), observabilidade (8.034 eventos JSONL), e shadow mode (5 execuções antes da ativação).
 
 \section{Compressão Estrutural e Representação do Conhecimento}
 
@@ -554,7 +554,7 @@ O ecossistema evolui através de ciclos documentados. Cada ciclo:
     \item Identifica gaps (via Scanner Pipeline: M0→M5);
     \item Propõe soluções (via CapabilityComposer: SPEC-033);
     \item Implementa módulos (via SDD+TDD);
-    \item Valida (via 312 CTs);
+    \item Valida (via 343 CTs);
     \item Documenta (via ADRs, SPECs, README).
 \end{itemize}
 
@@ -573,7 +573,7 @@ Cada módulo é validado por Critical Tests que cobrem:
     \item Integração (cross-module interactions).
 \end{itemize}
 
-O total de 312 CTs é executado automaticamente a cada modificação.
+O total de 343 CTs é executado automaticamente a cada modificação.
 
 \subsection{Taxonomia de Consciência (N0-N3.5)}
 
@@ -614,7 +614,7 @@ Esta pesquisa adota o paradigma de Design Science Research (DSR), conforme formu
     \item \textbf{Relevância}: o artefato resolve um problema real (no caso, a lacuna entre identificação de gaps de conhecimento e sua construção);
     \item \textbf{Rigor}: a construção do artefato é fundamentada em teorias existentes (metacognição, governança de commons, TDD);
     \item \textbf{Design}: o artefato é o resultado de um processo iterativo de design (23 ciclos evolutivos);
-    \item \textbf{Avaliação}: o artefato é rigorosamente avaliado (312 CTs, 15 suites TDD);
+    \item \textbf{Avaliação}: o artefato é rigorosamente avaliado (343 CTs, 17 suites TDD);
     \item \textbf{Contribuição}: o artefato e o conhecimento gerado são comunicáveis e reutilizáveis.
 \end{enumerate}
 
@@ -625,7 +625,7 @@ O ciclo DSR adotado nesta pesquisa segue o modelo de Peffers et al. (2007):
     \item \textbf{Definição de objetivos}: implementar capacidades metacognitivas que permitam auto-observação, correção e prevenção;
     \item \textbf{Design e desenvolvimento}: cada capacidade foi especificada (SPEC), testada (TDD) e implementada (Python);
     \item \textbf{Demonstração}: o artefato foi usado para diagnosticar e corrigir a si mesmo (auto-referência);
-    \item \textbf{Avaliação}: 312 CTs, 15 suites, zero regressão, progressão N2.5 $\rightarrow$ N3.5;
+    \item \textbf{Avaliação}: 343 CTs, 17 suites, zero regressão, progressão N2.5 $\rightarrow$ N3.5;
     \item \textbf{Comunicação}: esta dissertação, o repositório GitHub público, e 10 ADRs.
 \end{enumerate}
 
@@ -720,7 +720,7 @@ A generalização dos resultados para outros domínios não foi testada. O ecoss
 
 \subsection{Validade de Conclusão}
 
-Embora 312 CTs passem com 100\% de aprovação, isto não garante a ausência de bugs — apenas que os comportamentos especificados estão implementados. Bugs em casos de borda não cobertos pelos testes podem existir. Além disso, a métrica de ``zero regressão'' é condicionada à cobertura atual dos testes.
+Embora 343 CTs passem com 100\% de aprovação, isto não garante a ausência de bugs — apenas que os comportamentos especificados estão implementados. Bugs em casos de borda não cobertos pelos testes podem existir. Além disso, a métrica de ``zero regressão'' é condicionada à cobertura atual dos testes.
 
 % ═══════════════════════════════════════════════════════════════════════════
 % CAPÍTULO 4 — ARQUITETURA DO SISTEMA
@@ -772,6 +772,21 @@ As 10 ADRs documentam decisões críticas:
     \item \textbf{architectu-009}: Integração Stage 3 ao Pipeline (SPEC-035);
     \item \textbf{architectu-010}: Metacognição + Self-Evolution (SPEC-036).
 \end{enumerate}
+
+\section{Interface Unificada de Controle e Vocalização}
+\label{sec:interface_vocalizacao}
+
+Para prover usabilidade científica consolidada ao pesquisador Prof. Marcelo Claro Laranjeira (ORCID: 0000-0001-8996-2887), a camada L1 de Skills e a L3 de Agentes foram integradas em uma interface de terminal unificada com controle de voz nativo e inteligência offline, estruturada sob três módulos principais:
+
+\begin{enumerate}
+    \item \textbf{Console Hierárquico Centralizado (\texttt{menu.py})}: Módulo Python de auto-descoberta que varre dinamicamente a estrutura de diretórios do ecossistema para mapear agentes, skills e MCPs ativos. Oferece filtragem em tempo real, navegação por breadcrumbs e um mecanismo de busca recursiva de comandos com base em tags de relevância.
+    
+    \item \textbf{Chat Local e RAG Híbrido (\texttt{chat_ollama.py})}: Orquestrador local integrado à engine de inferência \texttt{Ollama} com o modelo \texttt{qwen2.5-coder:1.5b} otimizado para CPUs. Possui interface de diálogo (White-Box Streaming) com auditoria detalhada de consumo de tokens e logs de custos economizados (\texttt{docs/session_token_audit.log}). O pipeline executa RAG híbrido consultando códigos locais no diretório \texttt{projects/} e a API externa da Wikipedia e DuckDuckGo.
+    
+    \item \textbf{Daemon de Vocalização de Áudio (\texttt{vocalizer_daemon.ps1})}: Serviço em background em Windows PowerShell que monitora o arquivo de comunicação assíncrona \texttt{.vocalizer_cmd}. Invoca classes nativas do framework .NET (\texttt{System.Speech.Synthesis.SpeechSynthesizer}) para ler textos higienizados de relatórios em português brasileiro, suportando ações de pausar (\texttt{PAUSE}), retomar (\texttt{RESUME}), repetir (\texttt{REPEAT}) e parar (\texttt{STOP}) via atalhos do teclado.
+\end{enumerate}
+
+O alinhamento e integridade desses módulos de interface são validados no pipeline de conformidade TDD pelo caso de teste \textbf{T6} do validador de ambiente \texttt{test_environment.sh}, garantindo que a infraestrutura completa esteja operacional antes da interação com o usuário.
 
 % ═══════════════════════════════════════════════════════════════════════════
 % CAPÍTULO 5 — COMPOSIÇÃO UNITÁRIA DO CONHECIMENTO
@@ -1055,12 +1070,12 @@ Este pipeline fecha o ciclo que faltava: anteriormente, o sistema detectava anom
 
 \section{Resultados de Teste}
 
-\subsection{Suites TDD (15 suites, 312 CTs)}
+\subsection{Suites TDD (17 suites, 343 CTs)}
 
 \begin{table}[H]
 \centering
 \small
-\caption{Resultados Consolidados das Suites TDD — 312/312 PASS (100\%)}
+\caption{Resultados Consolidados das Suites TDD — 343/343 PASS (100\%)}
 \label{tab:tdd}
 \begin{tabular}{lcc}
 \toprule
@@ -1081,8 +1096,10 @@ test\_structural\_noise\_scanner & 037 & 8/8 \\
 test\_structural\_compression\_engine & 037b & 6/6 \\
 test\_n2\_n3\_upgrades & 037c & 8/8 \\
 test\_behavioral\_autonomy & 038 & 8/8 \\
+test\_menu & 038b & 27/27 \\
+test\_chat\_ollama & 038c & 4/4 \\
 \midrule
-\textbf{TOTAL} & & \textbf{312/312} \\
+\textbf{TOTAL} & & \textbf{343/343} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1101,9 +1118,9 @@ test\_behavioral\_autonomy & 038 & 8/8 \\
     \node at (7.5,3.0) [below] {R20};
     \node at (9.5,4.5) [below] {R21};
     \node at (11.5,5.5) [below] {R23};
-    \node at (6,5.8) {312 CTs};
+    \node at (6,5.8) {343 CTs};
 \end{tikzpicture}
-\caption{Evolução do número de CTs por ciclo (R17=24 → R23=312)}
+\caption{Evolução do número de CTs por ciclo (R17=24 → R23=343)}
 \end{figure}
 
 \section{Progressão dos Níveis de Consciência}
@@ -1117,7 +1134,7 @@ test\_behavioral\_autonomy & 038 & 8/8 \\
 \midrule
 R21 & N2.5 & 282 & N2 parcial, N3 incipiente \\
 R22 & N3.0 & 304 & N2 5/5, N3 4/4 completo \\
-R23 & N3.5 & 312 & N3 completo + Behavioral Gate preventivo \\
+R23 & N3.5 & 343 & N3 completo + interface console, RAG local e áudio (TTS) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1173,9 +1190,9 @@ R19 & 15 & 76 & 99 \\
 R20 & 17 & 19 & 100 \\
 R21 & 19 & 8 & 100 \\
 R22 & 20 & 22 & 100 \\
-R23 & 22 & 8 & 100 \\
+R23 & 22 & 39 & 100 \\
 \midrule
-\textbf{Total} & \textbf{22} & \textbf{312} & \textbf{100} \\
+\textbf{Total} & \textbf{22} & \textbf{343} & \textbf{100} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1252,7 +1269,7 @@ Inferência causal & Sim (Granger) & Não & Não & Não \\
 Gate preventivo & Sim (N3.5) & Sim (guard) & Não & Não \\
 Governança Ostrom & Sim (DP1-8) & Não & Não & Não \\
 Compressão estrutural & Sim (SNS) & Não & Não & Não \\
-TDD (312 CTs) & Sim & Não & Não & Não \\
+TDD (343 CTs) & Sim & Não & Não & Não \\
 Ciclos evolutivos & 23 & — & — & — \\
 \bottomrule
 \end{tabular}
@@ -1266,7 +1283,7 @@ Quatro ameaças à validade devem ser consideradas:
     \item \textbf{Validade de constructo}: a taxonomia N0-N3.5 é uma construção dos autores; não há consenso na literatura sobre níveis de consciência para sistemas de software.
     \item \textbf{Validade interna}: os testes foram executados em ambiente controlado (Windows 11, Python 3.12); resultados podem variar em outros ambientes.
     \item \textbf{Validade externa}: o ecossistema foi avaliado apenas em seu próprio domínio; a generalização para outros domínios requer validação adicional.
-    \item \textbf{Validade de conclusão}: os 312 CTs cobrem 100\% dos módulos, mas não garantem ausência de bugs — apenas que os comportamentos especificados estão implementados.
+    \item \textbf{Validade de conclusão}: os 343 CTs cobrem 100\% dos módulos, mas não garantem ausência de bugs — apenas que os comportamentos especificados estão implementados.
 \end{enumerate}
 
 \subsection{Limitações e Trabalhos Futuros}
@@ -1292,7 +1309,7 @@ Esta dissertação apresentou o OpenCode Ecosystem v5.4.0 R23, demonstrando que:
 
     \item \textbf{O behavioral gate preventivo} (SPEC-038) fecha o ciclo metacognitivo: de reativo (detectar e corrigir) para preventivo (decidir se deve executar baseado em confiança aprendida).
 
-    \item \textbf{312 testes críticos} (15 suites TDD, 100\% de aprovação, zero regressão) fornecem evidência reproduzível para cada afirmação técnica.
+    \item \textbf{343 testes críticos} (17 suites TDD, 100\% de aprovação, zero regressão) fornecem evidência reproduzível para cada afirmação técnica.
 \end{enumerate}
 
 \section{Contribuições}
@@ -1440,7 +1457,7 @@ cross\_validation\_engine.py & 030 & 325 \\
 cooperative\_governance.py & 036 & 321 \\
 text\_analyzer.py & — & 320 \\
 structural\_compression\_engine.py & 037b & 310 \\
-academic\_audit\_trail.py & — & 312 \\
+academic\_audit\_trail.py & — & 343 \\
 audit\_instrumentor.py & — & 294 \\
 scanner\_refinements.py & 031 & 278 \\
 dialectical\_engine.py & 036 & 265 \\
@@ -1454,7 +1471,7 @@ scanner\_integration.py & — & 185 \\
 
 \chapter{Comandos de Verificação}
 
-\begin{lstlisting}[language=bash, caption={Script de verificação completa (312 CTs)}]
+\begin{lstlisting}[language=bash, caption={Script de verificação completa (343 CTs)}]
 cd C:\Users\marce\.config\opencode
 
 python specs/test_evolve_pipeline.py
@@ -1473,7 +1490,7 @@ python specs/test_structural_compression_engine.py
 python specs/test_n2_n3_upgrades.py
 python specs/test_behavioral_autonomy.py
 
-# Resultado: 312/312 PASS
+# Resultado: 343/343 PASS
 \end{lstlisting}
 
 \chapter{Taxonomia Completa de Raciocínios}
@@ -1811,7 +1828,7 @@ O RUP enfatiza arquitetura primeiro e iterações longas. O OpenCode adota itera
 
 \subsection{Comparação com XP (Extreme Programming)}
 
-O XP enfatiza TDD, pair programming, e integração contínua. O OpenCode adota TDD integralmente (312 CTs), mas substitui pair programming por swarm review (3+ agentes com personas distintas) e integração contínua por validação metacognitiva (o sistema monitora a si mesmo).
+O XP enfatiza TDD, pair programming, e integração contínua. O OpenCode adota TDD integralmente (343 CTs), mas substitui pair programming por swarm review (3+ agentes com personas distintas) e integração contínua por validação metacognitiva (o sistema monitora a si mesmo).
 
 \chapter{Glossário de Termos Técnicos}
 
