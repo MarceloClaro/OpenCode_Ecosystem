@@ -25,3 +25,11 @@ build/
 .env
 .env.local
 .env.*.local
+
+# LaTeX auxiliary files
+*.aux
+*.lof
+*.lot
+*.toc
+*.out
+*.synctex.gz
