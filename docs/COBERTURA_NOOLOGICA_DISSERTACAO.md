@@ -1,7 +1,7 @@
 # Scanner Noológico — Relatório de Cobertura Epistemológica
 
 **Domínio**: computacao
-**Data**: 2026-06-13T18:15:13
+**Data**: 2026-06-13T18:20:34
 **Cobertura Global**: 100% (92/92 categorias)
 **Conceito**: A — Cobertura Epistemológica Ampla
 
