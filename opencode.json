@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "opencode/big-pickle",
+  "model": "opencode-go/minimax-m3",
   "small_model": "opencode/big-pickle",
   "autoupdate": true,
   "compaction": {
@@ -8,20 +8,7 @@
     "prune": true,
     "reserved": 10000
   },
-  "plugin": [
-    "plugins/ecosystem-sync.ts",
-    "plugins/manus-evolve.ts",
-    "plugins/bernstein-sync.ts",
-    "plugins/antigravity-bridge.ts",
-    "plugins/cora-qscore.ts",
-    "plugins/dashboard-monitor.ts",
-    "plugins/auto-discovery.ts",
-    "plugins/token-optimizer.ts",
-    "plugins/context-compressor.ts",
-    "plugins/event-aggregator.ts",
-    "plugins/metrics-exporter.ts",
-    "plugins/health-reporter.ts"
-  ],
+  // plugins carregados pelo config global (~/.config/opencode/opencode.jsonc)
   "mcp": {
     "filesystem": {
       "type": "local",
@@ -562,6 +549,25 @@
         "decisions",
         "ai",
         "ecosystem"
+      ]
+    },
+    "ollama-websearch": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "uv",
+        "run",
+        "nexus/ollama_web_search_mcp.py"
+      ],
+      "environment": {
+        "OLLAMA_API_KEY": "be97a056dd1342078274a4b25b14c152.-a9lnTfnh7GQiqgK-Z2woTj1"
+      },
+      "timeout": 30000,
+      "tags": [
+        "search",
+        "web",
+        "ollama",
+        "realtime"
       ]
     },
     "maswos-juridico": {

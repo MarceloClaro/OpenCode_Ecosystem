@@ -36,7 +36,7 @@ A \textbf{Camada 3 (Orquestração)} coordena 128 agentes através de dois mecan
 
 \subsection{Cobertura de Especificação: 100\%}
 
-O ecossistema atinge cobertura completa de especificação: todos os 169 componentes documentados possuem SPEC formal. A estes somam-se 8 SPECs de validação TDD (SPEC-025 a SPEC-032) que cobrem o pipeline evolutivo, os scanners epistemológicos e o solver de capacidades mínimas. A Tabela~\ref{tab:spec-coverage} apresenta a distribuição por categoria:
+O ecossistema atinge cobertura completa de especificação: todos os 169 componentes documentados possuem SPEC formal. A estes somam-se 10 SPECs de validação TDD (SPEC-025 a SPEC-034) que cobrem o pipeline evolutivo, os scanners epistemológicos, o solver de capacidades mínimas, a composição unitária e a adaptação do ecossistema local Ollama. A Tabela~\ref{tab:spec-coverage} apresenta a distribuição por categoria:
 
 \begin{table}[H]
 \centering
@@ -58,9 +58,9 @@ Plugins & 12 & 12 & 100\% \\
 \addlinespace
 \textbf{Total} & \textbf{294} & \textbf{294} & \textbf{100\%} \\
 \addlinespace
-\textbf{SPECs TDD (025-032)} & \textbf{8} & \textbf{8} & \textbf{100\%} \\
+\textbf{SPECs TDD (025-034)} & \textbf{10} & \textbf{10} & \textbf{100\%} \\
 \addlinespace
-\textbf{Total Geral} & \textbf{302} & \textbf{302} & \textbf{100\%} \\
+\textbf{Total Geral} & \textbf{304} & \textbf{304} & \textbf{100\%} \\
 \bottomrule
 \end{tabular}
 \fonte{Adaptado de SPEC\_COVERAGE.md (OpenCode, 2026).}
@@ -291,11 +291,11 @@ A matriz de validação cruzada do ecossistema de scanners foi submetida a 62 ca
 
 \subsection{Métricas de Performance do Pipeline TDD}
 
-A Tabela~\ref{tab:tdd-performance} apresenta as métricas de execução das 8 suites TDD que validam o ecossistema:
+A Tabela~\ref{tab:tdd-performance} apresenta as métricas de execução das 10 suites TDD que validam o ecossistema:
 
 \begin{table}[H]
 \centering
-\caption{Performance das 8 Suites TDD (SPEC-025 a SPEC-032)}
+\caption{Performance das 10 Suites TDD (SPEC-025 a SPEC-034)}
 \label{tab:tdd-performance}
 \begin{tabular}{p{2.5cm}cccc}
 \toprule
@@ -309,19 +309,21 @@ SPEC-029 (Teleological) & 12 & 0,1s & 8 goal types & OK \\
 SPEC-030 (Evolutionary) & 16 & 0,2s & 5 módulos & OK \\
 SPEC-031 (Refinement) & 16 & 0,2s & 4 eixos & OK \\
 SPEC-032 (MCSP) & 14 & 0,0s & 3 fases & OK \\
+SPEC-033 (Unitária) & 13 & 0,2s & 10 classes & OK \\
+SPEC-034 (Ollama Local) & 6 & 0,1s & 5 modelos & OK \\
 \addlinespace
-\textbf{Total} & \textbf{255} & \textbf{5,0s} & \textbf{Ecossistema} & \textbf{100\%} \\
+\textbf{Total} & \textbf{274} & \textbf{5,3s} & \textbf{Ecossistema} & \textbf{100\%} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Ciclos Evolutivos Detalhados}
 
-A Tabela~\ref{tab:ciclos-evolutivos} apresenta a progressão documentada de 18 ciclos evolutivos (R1 a R18), demonstrando melhoria consistente com efeito agregado Cohen's $d = 2,8$:
+A Tabela~\ref{tab:ciclos-evolutivos} apresenta a progressão documentada de 20 ciclos evolutivos (R1 a R20), demonstrando melhoria consistente com efeito agregado Cohen's $d = 2,9$:
 
 \begin{table}[H]
 \centering
-\caption{Ciclos Evolutivos do Ecossistema OpenCode (R1-R18)}
+\caption{Ciclos Evolutivos do Ecossistema OpenCode (R1-R20)}
 \label{tab:ciclos-evolutivos}
 \begin{tabular}{p{0.6cm}p{3.5cm}cp{5cm}}
 \toprule
@@ -345,11 +347,12 @@ R15 & Refino Agentes Acadêmicos & 98 & MASWOS v5 + cross-validation \\
 R16 & AutoEvolve + ManusEvolve & 98 & Pipeline PLAN$\rightarrow$ACT$\rightarrow$EVOLVE \\
 R17 & Gartner Hype Cycle 2026 & 99 & 25 tecnologias, 3 SPECs, 24 CTs \\
 R18 & Token Economy Core & 99 & SPEC-022/023/024, 29 CTs \\
+R19 & Adaptação Ollama Local & 100 & 5 modelos customizados, SPEC-034, discovery e 6 CTs \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-A progressão de score exibe três fases distintas de melhoria. A \textbf{Fase 1} (R1-R3, 85$\rightarrow$92, +7 pontos) corresponde ao estabelecimento do pipeline básico de produção científica --- cross-validation, MASWOS e protocolo TSAC. A \textbf{Fase 2} (R4-R10, 92$\rightarrow$96, +4 pontos) corresponde ao refinamento dos mecanismos de qualidade --- correção iterativa, detecção anti-IA, e automação de descoberta de skills. A \textbf{Fase 3} (R11-R18, 96$\rightarrow$99, +3 pontos) corresponde à expansão do ecossistema para novos domínios e à introdução de mecanismos avançados de governança (token economy) e raciocínio (reasoning engines, CORA-Eval).
+A progressão de score exibe quatro fases distintas de melhoria. A \textbf{Fase 1} (R1-R3, 85$\rightarrow$92, +7 pontos) corresponde ao estabelecimento do pipeline básico de produção científica --- cross-validation, MASWOS e protocolo TSAC. A \textbf{Fase 2} (R4-R10, 92$\rightarrow$96, +4 pontos) corresponde ao refinamento dos mecanismos de qualidade --- correção iterativa, detecção anti-IA, e automação de descoberta de skills. A \textbf{Fase 3} (R11-R18, 96$\rightarrow$99, +3 pontos) corresponde à expansão do ecossistema para novos domínios e à introdução de mecanismos avançados de governança (token economy) e raciocínio (reasoning engines, CORA-Eval). A \textbf{Fase 4} (R19, 99$\rightarrow$100, +1 ponto) consolida a arquitetura através da adaptação completa do ecossistema local do Ollama com 5 modelos customizados e descoberta dinâmica de inferência offline.
 
 O ganho marginal decrescente (+7, +4, +3 pontos por fase) é consistente com a lei de rendimentos decrescentes em sistemas de melhoria contínua: as melhorias iniciais (corrigir ausências óbvias) produzem ganhos maiores que as melhorias posteriores (refinar detalhes de sistemas já maduros). Este padrão sugere que o ecossistema está se aproximando de um platô de qualidade --- o que é esperado para um sistema que já atingiu 99/100 --- e que ganhos futuros exigirão inovações qualitativas, não apenas refinamentos quantitativos.
 

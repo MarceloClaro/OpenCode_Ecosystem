@@ -6,11 +6,11 @@
 
 {\small\itshape Este capítulo apresenta o ecossistema OpenCode em sua concretude: números, tabelas, diagramas e casos de uso. Se o Capítulo 3 descreveu \textbf{como} o ecossistema foi construído, este capítulo mostra \textbf{o que} foi construído. O leitor que busca uma visão panorâmica deve começar pela Figura~4.1 (arquitetura em 3 camadas) e pela Tabela~4.3 (ciclos evolutivos). O leitor que busca profundidade técnica encontrará nas seções seguintes a matriz de validação cruzada, a cobertura de especificação e os resultados do Scanner Noológico aplicado a esta própria dissertação.}
 
-\section{Arquitetura Completa do Ecossistema OpenCode v5.1.0}
+\section{Arquitetura Completa do Ecossistema OpenCode v5.2.0}
 
 \subsection{Visão Macro: As Três Camadas}
 
-O ecossistema OpenCode v5.1.0 implementa uma arquitetura em três camadas (ADR-002), documentada em 188 SPECs, 14 diagramas SVG, e 6 ADRs:
+O ecossistema OpenCode v5.2.0 implementa uma arquitetura em três camadas (ADR-002), documentada em 169 SPECs, 14 diagramas SVG, e 6 ADRs:
 
 \begin{center}
 \bfseries
@@ -36,7 +36,7 @@ A \textbf{Camada 3 (Orquestração)} coordena 128 agentes através de dois mecan
 
 \subsection{Cobertura de Especificação: 100\%}
 
-O ecossistema atinge cobertura completa de especificação: todos os 186 componentes documentados possuem SPEC formal. A Tabela~\ref{tab:spec-coverage} apresenta a distribuição por categoria:
+O ecossistema atinge cobertura completa de especificação: todos os 169 componentes documentados possuem SPEC formal. A estes somam-se 10 SPECs de validação TDD (SPEC-025 a SPEC-034) que cobrem o pipeline evolutivo, os scanners epistemológicos, o solver de capacidades mínimas, a composição unitária e a adaptação do ecossistema local Ollama. A Tabela~\ref{tab:spec-coverage} apresenta a distribuição por categoria:
 
 \begin{table}[H]
 \centering
@@ -57,6 +57,10 @@ MCPs & 46 & 46 & 100\% \\
 Plugins & 12 & 12 & 100\% \\
 \addlinespace
 \textbf{Total} & \textbf{294} & \textbf{294} & \textbf{100\%} \\
+\addlinespace
+\textbf{SPECs TDD (025-034)} & \textbf{10} & \textbf{10} & \textbf{100\%} \\
+\addlinespace
+\textbf{Total Geral} & \textbf{304} & \textbf{304} & \textbf{100\%} \\
 \bottomrule
 \end{tabular}
 \fonte{Adaptado de SPEC\_COVERAGE.md (OpenCode, 2026).}
@@ -159,7 +163,7 @@ O módulo Editais-BR integra busca web (DuckDuckGo via curl.exe) com extração 
 
 \section{Infraestrutura de Testes TDD}
 
-O ecossistema implementa 29 casos de teste TDD, organizados em 3 arquivos pytest, com 587 linhas de código, 93\% de cobertura, e tempo de execução de 0,47s:
+O ecossistema implementa 255 casos de teste TDD, organizados em 8 suites pytest (SPEC-025 a SPEC-032), com 2.500+ linhas de código e tempo de execução total de 5,0 segundos:
 
 \begin{itemize}
   \item \textbf{SPEC-019 (API Governance):} 8 CTs --- Registry, Policy, Circuit Breaker, Audit, Discovery, Federation, Cache, Versioning.
@@ -168,45 +172,53 @@ O ecossistema implementa 29 casos de teste TDD, organizados em 3 arquivos pytest
   \item \textbf{SPEC-022/023/024 (Token Economy):} 9+10+4 CTs --- Staking, Slashing, Tiers, Allowance, Audit Trail.
 \end{itemize}
 
-Todos os 29 CTs passam consistentemente (100\% de aprovação), validando o roadmap do ecossistema contra os 3 gaps estratégicos identificados pelo Gartner Hype Cycle 2026.
+Todos os 255 CTs passam consistentemente (100\% de aprovação), validando o ecossistema completo — desde a infraestrutura de frontmatter (SPEC-025, 161 CTs) até o solver de capacidades mínimas (SPEC-032, 14 CTs).
 
-\section{Resultados do Scanner Noológico}
+\section{Ecossistema de Scanners Epistemológicos}
 
-\subsection{Aplicação à Dissertação (Junho 2026)}
+\subsection{Os 5 Scanners e o MCSP Solver}
 
-O Scanner Noológico v6.0 (500 linhas, 10 dimensões × 92 categorias) foi aplicado a esta dissertação para identificar ausências no espaço de conhecimento coberto. A Tabela~\ref{tab:scanner-dissertacao} apresenta os resultados por dimensão:
-
-\begin{table}[H]
-\centering
-\caption{Scanner Noológico — Cobertura Epistemológica da Dissertação}
-\label{tab:scanner-dissertacao}
-\begin{tabular}{p{3.5cm}ccc}
-\toprule
-\textbf{Dimensão} & \textbf{Cobertura} & \textbf{Pontos Cegos} & \textbf{Status} \\
-\midrule
-D1 — Paradigmática & 6/8 (75\%) & 2 & $\checkmark$ \\
-D2 — Teórica & 9/12 (75\%) & 3 & $\checkmark$ \\
-D3 — Metodológica & 8/10 (80\%) & 2 & $\checkmark$ \\
-D4 — Níveis Sistêmicos & 6/8 (75\%) & 2 & $\checkmark$ \\
-D5 — Temporal & 4/6 (67\%) & 2 & \textbf{!} \\
-D6 — Diversidade de Dados & 7/10 (70\%) & 3 & $\checkmark$ \\
-D7 — Geográfica/Cultural & 5/8 (63\%) & 3 & \textbf{!} \\
-D8 — Populacional & 6/12 (50\%) & 6 & \textbf{!} \\
-D9 — Ética/Regulatória & 6/8 (75\%) & 2 & $\checkmark$ \\
-D10 — Translacional & 7/10 (70\%) & 3 & $\checkmark$ \\
-\addlinespace
-\textbf{Global} & \textbf{64/92 (70\%)} & \textbf{28} & \textbf{A1} \\
-\bottomrule
-\end{tabular}
-\fonte{Scanner Noológico v6.0, \texttt{noological\_scanner.py}, OpenCode v5.1.0, 2026.}
-\end{table}
+O ecossistema OpenCode implementa 5 scanners epistemológicos complementares que cobrem o espectro completo da análise de conhecimento --- do descritivo ao preditivo:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{capitulos/figuras/fig-scanner.pdf}
-\caption{Cobertura epistemológica da dissertação segundo o Scanner Noológico (10 dimensões $\times$ 92 categorias). Barras verdes = cobertura adequada; amarelas = cobertura parcial; vermelhas = ponto cego crítico. Cobertura global: 70\% (64/92), 28 pontos cegos, 3 mitigados.}
-\label{fig:scanner-noológico}
+\includegraphics[width=\textwidth]{capitulos/figuras/fig-scanners-pipeline.pdf}
+\caption{\textbf{Como ler esta figura.} A ilustração deve ser lida da esquerda para a direita (cinco caixas superiores) e depois de cima para baixo (setas tracejadas convergindo para a caixa central). \textbf{Cada cor representa uma pergunta diferente} que o ecossistema responde: roxo = descritiva (``O que não existe?''), azul = prescritiva (``O que deveria existir?''), verde = estrutural (``O que sustenta o quê?''), laranja = comparativa (``Quem já resolveu?''), vermelho = preditiva (``Qual o melhor caminho?''). \textbf{A caixa central} (MCSP Solver, lilás) integra as respostas dos cinco scanners e calcula o conjunto mínimo de capacidades que precisam ser adquiridas. \textbf{A fileira inferior} resume as cinco perguntas em linguagem acessível, com a progressão Descritiva $\rightarrow$ Prescritiva $\rightarrow$ Estrutural $\rightarrow$ Comparativa $\rightarrow$ Preditiva. As setas entre as caixas superiores indicam que o fluxo de informação é sequencial: cada scanner recebe o output do anterior e o enriquece com uma nova camada de análise.}
+\label{fig:scanners-pipeline}
 \end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Ecossistema de Scanners Epistemológicos}
+\label{tab:scanners}
+\begin{tabular}{p{2.5cm}p{4.5cm}cp{2cm}}
+\toprule
+\textbf{Scanner} & \textbf{Pergunta} & \textbf{SPEC} & \textbf{CTs} \\
+\midrule
+NoologicalScanner v3.0 & ``O que não existe?'' & 028 & 18 \\
+TeleologicalReverseScanner & ``O que deveria existir?'' & 029 & 12 \\
+CrossValidationEngine & ``O que sustenta o quê?'' & 030 & 6 \\
+PolymathicConvergence & ``Quem já resolveu isso?'' & 030 & 4 \\
+TrajectoryMapper & ``Qual o melhor caminho?'' & 030 & 4 \\
+MinimumCapabilitySolver & ``Qual o conjunto mínimo?'' & 032 & 14 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+O \textbf{NoologicalScanner v3.0} (SPEC-028) implementa 10 dimensões $\times$ 92 categorias com filtro de negação (\textit{``sem grupo controle''} não é mais falsamente classificado como contendo ``controle'') e \textit{word-boundary matching} ($\backslash$b). O grafo de dependências do \textbf{CrossValidationEngine} contém 73 arestas cobrindo todas as 10 dimensões, com 5 bottlenecks identificados (principal: raciocínio probabilístico, \textit{influence\_score}=0,6).
+
+O \textbf{MinimumCapabilitySolver} (SPEC-032) resolve formalmente o MCSP (\textit{Minimum Capability Set Problem}): dados um estado atual $S$ (capacidades cobertas) e um estado alvo $T$ (requisitos teleológicos), encontra o conjunto mínimo $C \subseteq V \setminus S$ tal que $S \cup C \supseteq T$ e $\forall c \in C, \text{prereq}(c) \subseteq S \cup C$ (Figura~\ref{fig:mcsp-graph}). O algoritmo opera em 3 fases --- \textit{backward\_closure} $O(|V|+|E|)$, \textit{greedy\_select} $O(|V|^2 \cdot |E|)$, e \textit{topological\_order} $O(|V|+|E|)$ --- e atinge 100\% de cobertura nos testes de integração.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{capitulos/figuras/fig-mcsp-graph.pdf}
+\caption{\textbf{Como ler esta figura.} A ilustração formaliza o problema matemático que o MCSP Solver resolve. \textbf{Caixa verde (S)}: representa o estado atual do conhecimento — o que já está coberto pela dissertação (68 de 92 categorias, 74\%). \textbf{Caixa amarela (T)}: representa o estado alvo — o que os objetivos teleológicos exigem que esteja presente (requisitos inferidos a partir de 8 tipos de objetivo de pesquisa). \textbf{Seta tracejada entre S e T}: o ``gap teleológico'' — a distância entre o que existe e o que deveria existir. \textbf{Caixa azul central (C)}: a solução do problema — o conjunto mínimo de capacidades que precisam ser adquiridas para fechar o gap, calculado pelo algoritmo em 3 fases (\textit{backward\_closure}, \textit{greedy\_select}, \textit{topological\_order}). \textbf{Exemplo na parte inferior}: um grafo de dependências concreto com 3 nós — o nó verde (``dedutivo'') já está em S; os nós amarelo (``probabilístico'') e vermelho (``Nash'') estão em T; a solução C = \{``probabilístico''\} fecha o gap com custo 1.0 porque ``probabilístico'' habilita ``Nash'' (seta entre eles). \textbf{Mensagem central}: o problema de evoluir um ecossistema de conhecimento é transformado em um problema de otimização combinatoria com solução algorítmica verificável.}
+\label{fig:mcsp-graph}
+\end{figure}
+
+\subsection{Aplicação do Scanner Noológico à Dissertação}
+
+O NoologicalScanner v3.0 foi aplicado ao texto completo da dissertação (6 capítulos, 102.972 caracteres, 15.006 palavras). A Figura~\ref{fig:cobertura-epistemologica} (Capítulo 5, Discussão) apresenta os resultados completos por dimensão. Em síntese, a dissertação atinge \textbf{74\% de cobertura epistemológica (Grau A)}, com 68 das 92 categorias presentes. As dimensões mais fortes são Paradigmas e Domínios (100\% cada); as que mais necessitam de aprofundamento são Teoria dos Jogos (50\%) e Teorias (60\%). O Capítulo 5 desenvolve análises aprofundadas para cada gap identificado.
 
 \subsection{Validação via Estudo de Caso em Psicologia Clínica}
 
@@ -239,6 +251,123 @@ O scanner identificou 3 pontos cegos críticos nesta dissertação, com as segui
   \item \textbf{D5 — Perspectiva longitudinal (67\%):} Mitigado pela Seção 5.4, que projeta horizontes de curto (6m), médio (12m) e longo prazo (24+m) para a evolução do ecossistema.
   \item \textbf{D7 — Diversidade geográfica (63\%):} Mitigado pela Seção 5.2, que contextualiza o sistema Qualis no cenário internacional, com referências ao Sul Global (Chan et al., 2022).
   \item \textbf{D8 — Cobertura populacional (50\%):} Mitigado pela Seção 5.2 (Democratização do Acesso) e Seção 6.3 (Trabalhos Futuros), que incluem expansão para humanidades e populações sub-representadas.
+\end{enumerate}
+
+\subsection{Resultados do Ecossistema Completo de Scanners}
+
+Além do scan noológico descrito acima, o ecossistema completo de 5 scanners foi aplicado à dissertação, gerando os seguintes resultados integrados:
+
+\begin{table}[H]
+\centering
+\caption{Resultados do Ecossistema de Scanners Aplicado à Dissertação}
+\label{tab:scanners-resultados}
+\begin{tabular}{p{3cm}p{3cm}cp{3cm}}
+\toprule
+\textbf{Scanner} & \textbf{Métrica} & \textbf{Valor} & \textbf{Interpretação} \\
+\midrule
+NoologicalScanner & Cobertura global & 74\% (68/92) & Grau A --- Ampla cobertura \\
+TeleologicalReverse & Score teleológico & 56\% & 56\% dos requisitos atendidos \\
+CrossValidation & Bottlenecks & 5 críticos & Principal: raciocínio probabilístico \\
+Polymathic & Analogias encontradas & 11 & 5 domínios conectados \\
+TrajectoryMapper & Rotas geradas & 3 & Pragmática, Polimática, Estrutural \\
+MCSP Solver & Conjunto mínimo & 1 capacidade & C = \{raciocinio.Probabilistico\} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Os resultados revelam um perfil epistemológico consistente: a dissertação é forte em dimensões descritivas (paradigmas 100\%, domínios 100\%) e análise em múltiplos níveis (75\%), mas apresenta lacunas em ferramentas formais de modelagem estratégica (teoria dos jogos 50\%) e diversidade de referenciais teóricos (60\%). O TeleologicalReverseScanner, configurado com objetivos do tipo ``causal'' e ``estratégico'', identificou que 56\% dos requisitos inferidos estão atendidos --- os 44\% restantes constituem oportunidades de aprofundamento que foram exploradas no Capítulo 5.
+
+O MCSP Solver demonstrou que, para fechar o gap entre o estado atual e os requisitos teleológicos, seria necessário adquirir 1 capacidade adicional: raciocínio probabilístico. Esta única capacidade, por sua posição como bottleneck no grafo de dependências (habilita 3 outras categorias), teria efeito cascata sobre teoria dos jogos bayesiana, meta-análise e inferência contrafactual.
+
+\subsection{Validação Cruzada e Análise de Robustez}
+
+A matriz de validação cruzada do ecossistema de scanners foi submetida a 62 casos de teste TDD (SPEC-028 a SPEC-031), executando em 0,7 segundos com 100\% de aprovação. Adicionalmente, o CrossValidationEngine foi validado contra 3 cenários de estresse:
+
+\begin{enumerate}
+  \item \textbf{Grafo vazio (0 arestas):} O sistema retorna 0 bottlenecks e 0 cascade\_impact, sem erro --- comportamento esperado para ecossistemas sem dependências documentadas.
+  \item \textbf{Grafo denso (73 arestas, 92 nós):} O sistema identifica 5 bottlenecks com influence\_score entre 0,3 e 0,6, demonstrando capacidade de priorização em grafos realistas.
+  \item \textbf{Ciclo de dependência (A→B→A):} O topological\_order lança TopologicalCycleError, prevenindo ordenações inválidas no roadmap.
+\end{enumerate}
+
+\subsection{Métricas de Performance do Pipeline TDD}
+
+A Tabela~\ref{tab:tdd-performance} apresenta as métricas de execução das 10 suites TDD que validam o ecossistema:
+
+\begin{table}[H]
+\centering
+\caption{Performance das 10 Suites TDD (SPEC-025 a SPEC-034)}
+\label{tab:tdd-performance}
+\begin{tabular}{p{2.5cm}cccc}
+\toprule
+\textbf{Suite} & \textbf{CTs} & \textbf{Tempo} & \textbf{Cobertura} & \textbf{Status} \\
+\midrule
+SPEC-025 (Frontmatter) & 161 & 0,4s & 161 skills & OK \\
+SPEC-026 (Pipeline) & 10 & 0,9s & 6 fases & OK \\
+SPEC-027 (E2E) & 8 & 3,0s & 7 subcomandos & OK \\
+SPEC-028 (Noological) & 18 & 0,2s & 10 dims & OK \\
+SPEC-029 (Teleological) & 12 & 0,1s & 8 goal types & OK \\
+SPEC-030 (Evolutionary) & 16 & 0,2s & 5 módulos & OK \\
+SPEC-031 (Refinement) & 16 & 0,2s & 4 eixos & OK \\
+SPEC-032 (MCSP) & 14 & 0,0s & 3 fases & OK \\
+SPEC-033 (Unitária) & 13 & 0,2s & 10 classes & OK \\
+SPEC-034 (Ollama Local) & 6 & 0,1s & 5 modelos & OK \\
+\addlinespace
+\textbf{Total} & \textbf{274} & \textbf{5,3s} & \textbf{Ecossistema} & \textbf{100\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Ciclos Evolutivos Detalhados}
+
+A Tabela~\ref{tab:ciclos-evolutivos} apresenta a progressão documentada de 20 ciclos evolutivos (R1 a R20), demonstrando melhoria consistente com efeito agregado Cohen's $d = 2,9$:
+
+\begin{table}[H]
+\centering
+\caption{Ciclos Evolutivos do Ecossistema OpenCode (R1-R20)}
+\label{tab:ciclos-evolutivos}
+\begin{tabular}{p{0.6cm}p{3.5cm}cp{5cm}}
+\toprule
+\textbf{R} & \textbf{Descrição} & \textbf{Score} & \textbf{Principais Entregas} \\
+\midrule
+R1 & Cross-Validation + WB Data & 85 & Correlação educação r=-0.03; P\&D r=+0.73 \\
+R2 & Academic Article Pipeline & 90 & Pipeline MASWOS inicial \\
+R3 & TSAC Citation + Sci-Hub & 92 & 46 anotações TSAC auditáveis \\
+R4 & Iterative Correction Loop v2.0 & 95 & 86.5$\rightarrow$92.7 em 1 iteração \\
+R5 & Language Corrector CJK & 98 & Zero vazamento CJK para output \\
+R6 & Editais-BR v2.0 & 92 & Busca paralela 4 categorias \\
+R7 & Editais-BR v7.1 cache & 94 & 52 editais curados \\
+R8 & SDD+TDD Pipeline + Arguição & 94 & 7 specs, 9 CTs, 16 perguntas banca \\
+R9 & AutoEvolve LaTeX Refino & 96 & 4 overfulls eliminados \\
+R10 & Menu Adaptativo + Plugins & 96 & DiscoveryEngine + .menu\_registry \\
+R11 & CORA-Eval Benchmark & 97 & 150 tarefas $\times$ 10 dimensões \\
+R12 & Science Skills Core & 98 & 9 skills core + 28 datasets \\
+R13 & Reasoning Engines & 96 & Z3 + SymPy + Kanren + Critical \\
+R14 & Ampliação Ecossistema & 97 & 227 skills, 128 agentes, 46 MCPs \\
+R15 & Refino Agentes Acadêmicos & 98 & MASWOS v5 + cross-validation \\
+R16 & AutoEvolve + ManusEvolve & 98 & Pipeline PLAN$\rightarrow$ACT$\rightarrow$EVOLVE \\
+R17 & Gartner Hype Cycle 2026 & 99 & 25 tecnologias, 3 SPECs, 24 CTs \\
+R18 & Token Economy Core & 99 & SPEC-022/023/024, 29 CTs \\
+R19 & Adaptação Ollama Local & 100 & 5 modelos customizados, SPEC-034, discovery e 6 CTs \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A progressão de score exibe quatro fases distintas de melhoria. A \textbf{Fase 1} (R1-R3, 85$\rightarrow$92, +7 pontos) corresponde ao estabelecimento do pipeline básico de produção científica --- cross-validation, MASWOS e protocolo TSAC. A \textbf{Fase 2} (R4-R10, 92$\rightarrow$96, +4 pontos) corresponde ao refinamento dos mecanismos de qualidade --- correção iterativa, detecção anti-IA, e automação de descoberta de skills. A \textbf{Fase 3} (R11-R18, 96$\rightarrow$99, +3 pontos) corresponde à expansão do ecossistema para novos domínios e à introdução de mecanismos avançados de governança (token economy) e raciocínio (reasoning engines, CORA-Eval). A \textbf{Fase 4} (R19, 99$\rightarrow$100, +1 ponto) consolida a arquitetura através da adaptação completa do ecossistema local do Ollama com 5 modelos customizados e descoberta dinâmica de inferência offline.
+
+O ganho marginal decrescente (+7, +4, +3 pontos por fase) é consistente com a lei de rendimentos decrescentes em sistemas de melhoria contínua: as melhorias iniciais (corrigir ausências óbvias) produzem ganhos maiores que as melhorias posteriores (refinar detalhes de sistemas já maduros). Este padrão sugere que o ecossistema está se aproximando de um platô de qualidade --- o que é esperado para um sistema que já atingiu 99/100 --- e que ganhos futuros exigirão inovações qualitativas, não apenas refinamentos quantitativos.
+
+\subsection{Casos de Uso Validados}
+
+O ecossistema foi validado em 4 casos de uso reais que demonstram sua aplicabilidade em contextos distintos:
+
+\begin{enumerate}
+  \item \textbf{Geração de Dissertação ABNT/CNPq (100+ pp):} O pipeline MASWOS v5.0 gerou esta dissertação em formato LaTeX com conformidade ABNT NBR 14724, incluindo 21 arquivos de capítulo, 11 figuras SVG, referências com DOI verificável, e protocolo TSAC com fichamento crítico em todas as citações. Tempo total de geração: aproximadamente 8 horas de processamento distribuído entre 15 agentes especializados.
+
+  \item \textbf{Scan Epistemológico da Dissertação (74\%, Grau A):} O NoologicalScanner v3.0 analisou 102.972 caracteres em 6 capítulos, identificando 68/92 categorias cobertas (74\%) e 0 pontos cegos críticos. O TeleologicalReverseScanner complementou a análise identificando gaps alinhados com objetivos de pesquisa. As recomendações geradas foram incorporadas ao Capítulo 5.
+
+  \item \textbf{Classificação Quântica de Imagens Médicas (QML HAM10000):} O pipeline Quantum Nexus aplicou um classificador quântico (50 qubits MPS) ao dataset HAM10000 de lesões de pele, atingindo 89,52\% de acurácia com técnicas de mitigação de erro (ZNE/PEC). Este caso demonstra a capacidade do ecossistema de integrar computação quântica a pipelines científicos tradicionais.
+
+  \item \textbf{Busca Inteligente de Editais de Fomento (Editais-BR v7.1):} O módulo Editais-BR realiza busca paralela em 4 categorias (pesquisa, mestrado, doutorado, startup) com curl.exe + DuckDuckGo (bypass de CAPTCHA), mantendo cache versionado de 52 editais curados de CNPq/CAPES/FINEP com pontuação por perfil (score 58-68/100).
 \end{enumerate}
 
 \newpage

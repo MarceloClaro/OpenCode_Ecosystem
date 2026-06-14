@@ -34,7 +34,9 @@ fi
 
 # T3: Verificar se o executável opencode está acessível no PATH
 echo -n "T3: Verificando se o opencode está no PATH... "
-# Carrega o .bashrc para simular shell interativo
+# Adiciona caminhos padrão para garantir descoberta em execuções não-interativas
+export PATH="$HOME/.opencode/bin:$PATH"
+source "$HOME/.profile" 2>/dev/null || true
 source "$HOME/.bashrc" 2>/dev/null || true
 OPENCODE_PATH=$(which opencode 2>/dev/null)
 if [ -n "$OPENCODE_PATH" ]; then
@@ -90,6 +92,33 @@ else
     echo -e "${RED}[FAIL]${NC} (Faltam scripts de RAG ou Vocalização)"
     FAILED=1
 fi
+
+# T7: Verificar se os 5 modelos customizados do ecossistema estão instalados no Ollama
+echo -n "T7: Verificando modelos locais customizados no Ollama... "
+REQUIRED_MODELS=(
+    "opencode/deepseek-reasoner"
+    "opencode/qwen-coder-pro"
+    "opencode/phi4-orchestrator"
+    "opencode/qwen-coder-fast"
+    "opencode/gemma-scholar"
+)
+
+OLLAMA_LIST=$(ollama list 2>/dev/null)
+MISSING_MODELS=()
+
+for model in "${REQUIRED_MODELS[@]}"; do
+    if ! echo "$OLLAMA_LIST" | grep -q "$model"; then
+        MISSING_MODELS+=("$model")
+    fi
+done
+
+if [ ${#MISSING_MODELS[@]} -eq 0 ]; then
+    echo -e "${GREEN}[PASS]${NC} (Todos os 5 modelos customizados estão disponíveis)"
+else
+    echo -e "${RED}[FAIL]${NC} (Modelos ausentes: ${MISSING_MODELS[*]})"
+    FAILED=1
+fi
+
 
 echo ""
 echo -e "${YELLOW}===================================================${NC}"

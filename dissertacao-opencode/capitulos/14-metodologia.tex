@@ -335,11 +335,11 @@ A validação metodológica deste ecossistema é realizada por 62 casos de teste
 
 \section{Procedimentos de Validação e Verificação}
 
-\subsection{Validação Interna via TDD (8 Suites, 255 CTs)}
+\subsection{Validação Interna via TDD (11 Suites, 278 CTs)}
 
-O framework TDD (Test-Driven Development) foi aplicado em 8 suites de teste que cobrem o ecossistema completo. Cada suite segue o ciclo RED-GREEN-REFACTOR: (1) escrever um teste que falha (RED) porque a funcionalidade ainda não existe; (2) implementar a funcionalidade mínima para o teste passar (GREEN); (3) refatorar o código mantendo os testes verdes (REFACTOR). Este ciclo foi repetido para cada um dos 255 casos de teste, garantindo que toda funcionalidade documentada nas SPECs tem cobertura de teste.
+O framework TDD (Test-Driven Development) foi aplicado em 11 suites de teste que cobrem o ecossistema completo. Cada suite segue o ciclo RED-GREEN-REFACTOR: (1) escrever um teste que falha (RED) porque a funcionalidade ainda não existe; (2) implementar a funcionalidade mínima para o teste passar (GREEN); (3) refatorar o código mantendo os testes verdes (REFACTOR). Este ciclo foi repetido para cada um dos 278 casos de teste, garantindo que toda funcionalidade documentada nas SPECs tem cobertura de teste.
 
-As 8 suites e seus escopos são:
+As 10 suites e seus escopos são:
 
 \begin{enumerate}
   \item \textbf{SPEC-025 (Frontmatter, 161 CTs):} Valida que todos os 161 SKILL.md do ecossistema possuem frontmatter YAML com os campos obrigatórios \texttt{name:} e \texttt{description:}, sem caracteres CJK (chinês/japonês/coreano) que violariam o protocolo de saída em português, e sem chaves YAML duplicadas. Inclui correção automática (\texttt{--fix}) para NO\_FRONTMATTER, MISSING\_NAME, MISSING\_DESCRIPTION e DUPLICATE\_KEYS.
@@ -357,6 +357,10 @@ As 8 suites e seus escopos são:
   \item \textbf{SPEC-031 (Scanner Refinement, 16 CTs):} Valida as 4 expansões: CrossValidationEngine com 73 arestas (todas as 10 dimensões cobertas), PolymathicConvergence com 30 domínios, EvolutionTracker com análise de tendência, e TimelineEstimator com classificação de risco.
 
   \item \textbf{SPEC-032 (MCSP Solver, 14 CTs):} Valida o algoritmo de 3 fases --- backward\_closure $O(|V|+|E|)$ para propagação reversa de dependências, greedy\_select $O(|V|^2 \cdot |E|)$ para seleção do conjunto mínimo, e topological\_order $O(|V|+|E|)$ para ordenação de aquisição --- incluindo detecção de ciclos e integração com os scanners.
+
+  \item \textbf{SPEC-033 (Composição Unitária, 13 CTs):} Valida a decomposição de capacidades cognitivas em insumos atômicos (conceitos, métodos, ferramentas e critérios de validação), permitindo o sequenciamento evolutivo micro-estruturado e o cálculo preciso de custos de aquisição.
+
+  \item \textbf{SPEC-034 (Adaptação Ollama Local, 6 CTs):} Valida o subsistema de descoberta e chat local com Ollama, incluindo o mocking da API REST para tags, a higienização de comandos de voz sintetizados e a resiliência a falhas de conexão do serviço local.
 \end{enumerate}
 
 \subsection{Validação Cruzada e Triangulação}

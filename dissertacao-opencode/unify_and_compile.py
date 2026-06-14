@@ -19,7 +19,7 @@ from pathlib import Path
 from datetime import datetime
 
 # ===== CONFIGURAÇÃO =====
-DISSERTACAO_DIR = Path(r"C:\Users\marce\.config\opencode\dissertacao-opencode")
+DISSERTACAO_DIR = Path(__file__).resolve().parent
 CAPITULOS_DIR = DISSERTACAO_DIR / "capitulos"
 OUTPUT_DIR = DISSERTACAO_DIR / "output"
 MAIN_TEX = DISSERTACAO_DIR / "dissertacao.tex"

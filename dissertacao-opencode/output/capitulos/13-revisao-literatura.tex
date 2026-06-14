@@ -249,4 +249,110 @@ O sistema Qualis, mantido pela CAPES, classifica os veículos de publicação ci
 
 O CNPq disponibiliza templates LaTeX padronizados para relatórios e publicações científicas. Estes templates seguem a norma ABNT NBR 14724 (trabalhos acadêmicos) com adaptações específicas: margens 3/3/2/2 cm (superior/esquerda/direita/inferior), fonte Times New Roman 12pt, espaçamento 1,5, e sistema autor-data para citações (NBR 10520:2023). O pipeline de exportação acadêmica do OpenCode implementa nativamente este formato através do módulo \texttt{academic-export-abnt}, garantindo que toda dissertação gerada esteja em conformidade com os padrões brasileiros.
 
+\section{Eixo 9: Scanners Epistemológicos e Ferramentas de Auto-Análise}
+
+Os oito eixos anteriores cobriram os fundamentos técnicos e normativos do ecossistema. Este nono eixo aborda uma lacuna específica na literatura: ferramentas computacionais para análise epistemológica de textos acadêmicos.
+
+\subsection{Auditoria Epistêmica na Literatura}
+
+O conceito de auditoria epistêmica --- verificação sistemática da qualidade do conhecimento produzido por um sistema --- tem raízes na filosofia da ciência. Goldman (1999)\footnote{
+  GOLDMAN, Alvin I. \textbf{Knowledge in a Social World}. Oxford: Oxford University Press, 1999. ISBN: 978-0198238201.
+
+  \textbf{Fichamento Crítico:} Goldman propõe o conceito de ``veritistic social epistemology'' --- uma epistemologia que avalia sistemas sociais de produção de conhecimento pela sua capacidade de gerar crenças verdadeiras e evitar crenças falsas. O ecossistema OpenCode operacionaliza este conceito: seus scanners não avaliam a ``verdade'' das afirmações, mas a ``cobertura'' do espaço de conhecimento --- uma métrica mais tratável computacionalmente que mantém a orientação veritística de Goldman.
+} propôs o conceito de ``epistemologia social veritística'', que avalia sistemas de produção de conhecimento pela sua propensão a gerar crenças verdadeiras. Contudo, a implementação computacional deste conceito permaneceu majoritariamente teórica até recentemente.
+
+No domínio da ciência da computação, ferramentas como \textit{Grammarly}, \textit{Turnitin} e \textit{Writefull} realizam análise de superfície textual (ortografia, gramática, similaridade), mas nenhuma delas opera no nível de análise epistemológica --- identificação de lacunas de conhecimento, vieses paradigmáticos ou ausências metodológicas. O Scanner Noológico preenche esta lacuna ao operar em 10 dimensões epistemológicas $\times$ 92 categorias, indo além da correção gramatical para a completude do conhecimento.
+
+\subsection{Mapeamento de Conhecimento e Knowledge Graphs}
+
+A literatura sobre grafos de conhecimento (knowledge graphs) oferece fundamentos para a abordagem do CrossValidationEngine. Sistemas como o \textit{Google Knowledge Graph} (SINGHAL, 2012)\footnote{
+  SINGHAL, Amit. Introducing the Knowledge Graph: things, not strings. \textbf{Google Official Blog}, 2012. Disponível em: \url{https://blog.google/products/search/introducing-knowledge-graph-things-not/}.
+
+  \textbf{Fichamento Crítico:} Singhal introduziu o conceito de knowledge graph como uma rede de entidades e suas relações, em oposição à busca por strings de texto. O CrossValidationEngine adota a mesma filosofia: em vez de buscar strings de texto nos documentos, constrói um grafo de 92 nós (categorias de conhecimento) conectados por 73 arestas de dependência, permitindo raciocinar sobre \textit{o que deveria estar presente}, não apenas sobre \textit{o que está textualmente presente}.
+} modelam entidades e suas relações, mas são genéricos --- não foram projetados para o domínio específico da análise epistemológica de textos acadêmicos.
+
+O OpenCode inova ao combinar três elementos que a literatura trata separadamente: (a) um \textit{knowledge graph} específico para epistemologia (as 10 dimensões $\times$ 92 categorias do Scanner Noológico); (b) um motor de inferência reversa (TeleologicalReverseScanner) que parte de objetivos para inferir requisitos; e (c) um solver de otimização combinatória (MCSP) que encontra o conjunto mínimo de capacidades para fechar gaps. Esta integração de representação de conhecimento, inferência prescritiva e otimização é, até onde sabemos, inédita na literatura.
+
+\subsection{Raciocínio Abdutivo Computacional}
+
+O raciocínio abdutivo --- inferência para a melhor explicação (PEIRCE, 1931) --- tem recebido atenção crescente na inteligência artificial. Josephson e Josephson (1994)\footnote{
+  JOSEPHSON, John R.; JOSEPHSON, Susan G. \textbf{Abductive Inference: Computation, Philosophy, Technology}. Cambridge: Cambridge University Press, 1994. ISBN: 978-0521434614.
+
+  \textbf{Fichamento Crítico:} Josephson e Josephson formalizaram o raciocínio abdutivo como um processo de duas etapas: (1) gerar hipóteses que explicariam as observações, e (2) selecionar a melhor hipótese segundo critérios de simplicidade, consistência e poder explicativo. O ecossistema de scanners implementa este processo computacionalmente: o NoologicalScanner gera hipóteses (``a categoria X está ausente''), e o TeleologicalReverseScanner seleciona a melhor hipótese (``a categoria Y é a mais necessária dados os objetivos Z''), usando critérios de cascade\_impact, transferability\_score e feasibility.
+} formalizaram o processo como um ciclo de geração e seleção de hipóteses --- precisamente a estrutura do pipeline de 5 scanners.
+
+A principal limitação das implementações existentes de abdução computacional é que operam em domínios fechados (diagnóstico médico, detecção de falhas). O ecossistema OpenCode estende a abdução computacional para domínios abertos --- análise de textos acadêmicos em qualquer área do conhecimento --- usando a estrutura de 10 dimensões e 92 categorias como um ``vocabulário controlado'' que restringe o espaço de hipóteses abdutivas sem limitar a generalidade da análise.
+
+\subsection{Transferência Interdisciplinar e Polimatia Computacional}
+
+A ideia de que soluções em um domínio podem informar soluções em outro --- polimatia --- tem uma longa tradição que remonta a Da Vinci e Leibniz, mas sua implementação computacional é recente. O conceito de \textit{transfer learning} em machine learning (PAN; YANG, 2010)\footnote{
+  PAN, Sinno Jialin; YANG, Qiang. A survey on transfer learning. \textbf{IEEE Transactions on Knowledge and Data Engineering}, v. 22, n. 10, p. 1345--1359, 2010. DOI: 10.1109/TKDE.2009.191.
+
+  \textbf{Fichamento Crítico:} Pan e Yang definem transfer learning como ``a capacidade de um sistema de reconhecer e aplicar conhecimento e habilidades aprendidas em domínios anteriores para novos domínios''. O PolymathicConvergence implementa uma forma de transfer learning simbólico (não neural): em vez de transferir pesos de uma rede neural, transfere princípios abstratos entre domínios --- por exemplo, o princípio de ``inferência bayesiana'' é transferido da neurociência (onde descreve processamento cortical) para a epistemologia (onde descreve atualização de crenças sobre a qualidade de fontes).
+} oferece um paralelo técnico, mas opera no nível de features e pesos de redes neurais, não no nível de princípios abstratos transferíveis entre disciplinas.
+
+O PolymathicConvergence do OpenCode implementa uma forma de ``transferência simbólica'': para cada gap epistemológico identificado, consulta um mapeamento de 30 domínios externos e retorna princípios transferíveis com escores de transferibilidade (0--1). Esta abordagem é mais similar ao conceito de \textit{analogical reasoning} (GENTNER, 1983)\footnote{
+  GENTNER, Dedre. Structure-mapping: A theoretical framework for analogy. \textbf{Cognitive Science}, v. 7, n. 2, p. 155--170, 1983. DOI: 10.1207/s15516709cog0702\_3.
+
+  \textbf{Fichamento Crítico:} Gentner propôs que analogias operam por mapeamento estrutural: as relações entre elementos de um domínio (fonte) são mapeadas para relações correspondentes em outro domínio (alvo). O PolymathicConvergence implementa este princípio: para o gap ``raciocínio probabilístico'', mapeia a relação ``córtex realiza inferência bayesiana'' (domínio fonte: neurociência) para a relação ``scanner deve realizar inferência bayesiana'' (domínio alvo: epistemologia computacional).
+} do que ao transfer learning neural, embora ambos compartilhem o objetivo de transportar conhecimento entre domínios.
+
+\section{Eixo 10: Economia de Tokens e Governança de Ecossistemas Multiagentes}
+
+A coordenação de múltiplos agentes em um ecossistema de produção científica requer não apenas mecanismos técnicos de integração, mas também mecanismos econômicos de incentivo. Este eixo revisa a literatura sobre economias de tokens e governança de sistemas multiagentes.
+
+\subsection{Fundamentos de Token Economy}
+
+O conceito de \textit{token economy} tem raízes na economia comportamental e na psicologia operante (KAZDIN, 1982)\footnote{
+  KAZDIN, Alan E. The token economy: A decade later. \textbf{Journal of Applied Behavior Analysis}, v. 15, n. 3, p. 431--445, 1982. DOI: 10.1901/jaba.1982.15-431.
+
+  \textbf{Fichamento Crítico:} Kazdin revisa uma década de pesquisa sobre economias de tokens --- sistemas onde comportamentos desejados são reforçados com tokens que podem ser trocados por recompensas. O OpenCode adapta este conceito para o domínio computacional: ``tokens'' são unidades de orçamento computacional que agentes consomem ao executar operações; agentes que produzem outputs de alta qualidade recebem mais tokens; agentes que produzem outputs de baixa qualidade têm seu orçamento reduzido.
+}, mas sua aplicação a sistemas computacionais multiagentes é recente. No contexto de LLMs e agentes autônomos, cada interação com um modelo de linguagem consome tokens que têm custo financeiro e computacional. O OpenCode implementa uma economia de tokens em 3 níveis (Magnum/Tese: 500K tokens/sessão; Standard Paper: 200K; Short Communication: 50K), com monitoramento em tempo real via \texttt{TokenEconomyMonitor} e auditoria de gastos via \texttt{AcademicAuditTrail}.
+
+\subsection{Staking e Slashing em Sistemas de Agentes}
+
+Mecanismos de \textit{staking} (depósito de garantia) e \textit{slashing} (penalização por mau comportamento), originalmente desenvolvidos para blockchains e protocolos de proof-of-stake (BUTERIN, 2014)\footnote{
+  BUTERIN, Vitalik. Slasher: A punitive proof-of-stake algorithm. \textbf{Ethereum Blog}, 2014. Disponível em: \url{https://blog.ethereum.org/2014/01/15/slasher-a-punitive-proof-of-stake-algorithm}.
+
+  \textbf{Fichamento Crítico:} Buterin propôs o conceito de \textit{slashing} --- penalização de validadores que agem maliciosamente em protocolos de proof-of-stake. O OpenCode adapta este conceito para agentes acadêmicos: agentes que produzem afirmações não verificáveis ou citações com DOI inválido sofrem \textit{slashing} --- redução de seu orçamento de tokens e, em casos graves, remoção do ecossistema.
+}, oferecem um modelo para governança de agentes. O OpenCode implementa \textit{staking} de 7 dias (agentes devem ``depositar'' reputação antes de terem permissões elevadas) e \textit{slashing} progressivo (stake-first: a penalização começa pelo depósito, não pelo agente).
+
+\subsection{Mercado de Fees e Alocação de Recursos}
+
+O problema de alocação ótima de recursos computacionais entre agentes concorrentes pode ser modelado como um \textit{auction mechanism} (VICKREY, 1961)\footnote{
+  VICKREY, William. Counterspeculation, auctions, and competitive sealed tenders. \textbf{The Journal of Finance}, v. 16, n. 1, p. 8--37, 1961. DOI: 10.1111/j.1540-6261.1961.tb02789.x.
+
+  \textbf{Fichamento Crítico:} Vickrey demonstrou que leilões de segundo preço (Vickrey auctions) incentivam lances honestos --- cada participante revela sua verdadeira valoração do recurso. O OpenCode implementa um \textit{fee market} dinâmico onde agentes competem por orçamento de tokens revelando a prioridade e o impacto esperado de suas operações, e o sistema aloca tokens para maximizar o valor epistêmico gerado por unidade de recurso computacional.
+}. O \textit{fee market} implementado no OpenCode permite que agentes compitam por recursos oferecendo ``lances'' baseados na prioridade e no impacto esperado de suas operações. O sistema aloca tokens para maximizar o valor epistêmico por unidade de custo computacional --- uma adaptação do princípio de eficiência alocativa de Vickrey para o domínio da produção científica.
+
+\section{Eixo 11: Agentes Autônomos, Ética e o Futuro da Produção Científica}
+
+Este eixo final revisa a literatura sobre as implicações éticas e sociais da automação da produção científica, conectando o ecossistema OpenCode a debates mais amplos sobre o futuro da ciência.
+
+\subsection{Riscos de Homogeneização do Conhecimento}
+
+Um risco frequentemente negligenciado em sistemas de produção científica automatizada é a homogeneização do conhecimento. Se múltiplos pesquisadores utilizam o mesmo ecossistema de IA para gerar artigos, revisões e hipóteses, o resultado pode ser uma convergência indesejada para um ``pensamento único'' --- uma redução da diversidade epistêmica que é essencial para o progresso científico (LONGINO, 1990)\footnote{
+  LONGINO, Helen E. \textbf{Science as Social Knowledge: Values and Objectivity in Scientific Inquiry}. Princeton: Princeton University Press, 1990. ISBN: 978-0691020518.
+
+  \textbf{Fichamento Crítico:} Longino argumenta que a objetividade científica não é uma propriedade de indivíduos, mas de comunidades --- emerge da diversidade de perspectivas e do escrutínio crítico entre pares. Sistemas de IA que homogeneízam a produção científica ameaçam esta diversidade. O OpenCode mitiga este risco através de duas características arquiteturais: (a) o Scanner Noológico, ao identificar ausências, incentiva a diversificação em vez da convergência; (b) o PolymathicConvergence, ao buscar soluções em 30 domínios externos, injeta diversidade interdisciplinar no processo.
+}.
+
+O OpenCode mitiga este risco através de três características arquiteturais deliberadas: (a) o Scanner Noológico, ao identificar ausências e pontos cegos, \textit{incentiva a diversificação} do conhecimento em vez da convergência; (b) o PolymathicConvergence, ao buscar soluções em 30 domínios externos, \textit{injeta diversidade interdisciplinar} no processo de produção científica; (c) o Agent Forum (P14), ao estruturar debates entre agentes com perspectivas divergentes, \textit{preserva o dissenso} como motor de qualidade científica.
+
+\subsection{Validação Humana no Loop}
+
+A literatura sobre \textit{human-in-the-loop AI} (HITL) enfatiza que sistemas de IA de alto risco devem manter supervisão humana em pontos críticos de decisão (AMERSHI et al., 2014)\footnote{
+  AMERSHI, Saleema et al. Power to the people: The role of humans in interactive machine learning. \textbf{AI Magazine}, v. 35, n. 4, p. 105--120, 2014. DOI: 10.1609/aimag.v35i4.2513.
+
+  \textbf{Fichamento Crítico:} Amershi et al. propõem que sistemas de machine learning interativo devem manter ``humanos no loop'' não apenas para corrigir erros, mas para prover \textit{domain knowledge} que o sistema não possui. O OpenCode implementa HITL em três pontos: (a) o pesquisador define os objetivos no TeleologicalReverseScanner; (b) o pesquisador interpreta os gaps identificados pelo NoologicalScanner e decide quais aprofundar; (c) o pesquisador valida as recomendações do TrajectoryMapper antes de implementar mudanças no ecossistema.
+}. O OpenCode implementa \textit{human-in-the-loop} em três pontos críticos: (a) definição de objetivos de pesquisa no TeleologicalReverseScanner; (b) interpretação dos gaps identificados pelo NoologicalScanner; (c) validação das recomendações do TrajectoryMapper antes da implementação.
+
+\subsection{O Problema da Auto-Referencialidade}
+
+Um desafio epistemológico fundamental emerge quando o mesmo ecossistema que gera conhecimento também audita e avalia este conhecimento. Esta \textit{auto-referencialidade} --- o sistema avaliando seus próprios outputs --- introduz um risco de circularidade epistêmica análogo ao problema do critério na epistemologia (CHISHOLM, 1973)\footnote{
+  CHISHOLM, Roderick M. \textbf{The Problem of the Criterion}. Milwaukee: Marquette University Press, 1973.
+
+  \textbf{Fichamento Crítico:} O ``problema do critério'' de Chisholm questiona: como podemos saber quais fontes de conhecimento são confiáveis sem já pressupor um critério de confiabilidade? O OpenCode enfrenta este problema: como o scanner pode avaliar a cobertura epistemológica da dissertação que o descreve sem pressupor que suas próprias categorias de análise são as corretas? A resposta parcial é que o scanner não avalia \textit{correção}, apenas \textit{cobertura} --- não afirma que as categorias ausentes ``deveriam'' estar presentes, apenas reporta que não estão. Mas o problema da auto-referencialidade permanece como uma limitação reconhecida que requer validação externa por pesquisadores independentes.
+}. O OpenCode reconhece esta limitação e implementa três mitigações: (a) o scanner reporta \textit{ausências} sem julgá-las como ``erros''; (b) o TeleologicalReverseScanner permite que o pesquisador defina seus próprios critérios de avaliação; (c) a validação externa por pesquisadores independentes é parte do roadmap futuro (Seção 5.7).
+
 \newpage

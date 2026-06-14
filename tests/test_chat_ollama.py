@@ -87,3 +87,35 @@ class TestChatOllama:
         assert "'" not in content
         assert "\n" not in content
         assert "PLAY:Mensagem com aspas duplas, simples e uma nova linha." in content
+
+    def test_obter_modelos_locais_mocked(self, monkeypatch):
+        """Verifica se obter_modelos_locais() analisa corretamente a resposta da API do Ollama."""
+        class MockResponse:
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                pass
+            def read(self):
+                return b'{"models": [{"name": "opencode/deepseek-reasoner:latest"}, {"name": "qwen2.5-coder:1.5b"}]}'
+        
+        monkeypatch.setattr(
+            chat_ollama.urllib.request, 
+            "urlopen", 
+            lambda *args, **kwargs: MockResponse()
+        )
+        
+        modelos = chat_ollama.obter_modelos_locais()
+        assert len(modelos) == 2
+        assert "opencode/deepseek-reasoner:latest" in modelos
+        assert "qwen2.5-coder:1.5b" in modelos
+
+    def test_obter_modelos_locais_error_handling(self, monkeypatch):
+        """Verifica se obter_modelos_locais() retorna lista vazia em caso de erro na conexão."""
+        def mock_error(*args, **kwargs):
+            raise Exception("Erro de Conexão Simulada")
+            
+        monkeypatch.setattr(chat_ollama.urllib.request, "urlopen", mock_error)
+        
+        modelos = chat_ollama.obter_modelos_locais()
+        assert modelos == []
+

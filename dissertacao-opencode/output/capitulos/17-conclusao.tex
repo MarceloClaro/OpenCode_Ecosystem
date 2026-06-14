@@ -38,9 +38,15 @@ A documentação completa da arquitetura em 3 camadas (MCP→Skill→Agent), com
 
 A documentação sistemática de 16 ciclos de evolução, cada um com problema detectado, análise de causa-raiz, correção implementada, validação e impacto no score, constitui um conjunto de dados único sobre a dinâmica de melhoria de sistemas multiagentes. Este conjunto de dados pode informar futuras pesquisas sobre \textit{continuous improvement} em IA, \textit{technical debt} em ecossistemas de agentes, e \textit{emergent behavior} em sistemas complexos.
 
+\subsection{Contribuição Epistemológica: Ecossistema de 5 Scanners com 62 CTs}
+
+A quinta contribuição é o ecossistema de scanners epistemológicos que transforma a análise de conhecimento em um problema de engenharia com solução algorítmica verificável. O pipeline de 5 scanners (Noológico, Teleológico, CrossValidation, Polymathic, Trajectory) cobre o espectro completo da análise de conhecimento --- do descritivo ao preditivo --- e é complementado pelo MCSP Solver (SPEC-032). A formalização matemática do MCSP estabelece uma ponte inédita entre engenharia de software, epistemologia e otimização combinatória. O scan da própria dissertação (74\%, Grau A) demonstra a viabilidade da auto-análise epistemológica como ferramenta de melhoria contínua.
+
 \subsection{Contribuição Prática: Ecossistema Aberto e Gratuito}
 
-A disponibilização do ecossistema completo como software livre (227 skills, 128 agentes, 46 MCPs, 188 SPECs, 29 CTs) permite que qualquer pesquisador --- independentemente de sua instituição ou recursos --- utilize, adapte e estenda as capacidades documentadas nesta dissertação. Esta contribuição alinha-se com os princípios da Ciência Aberta (Open Science) e do movimento de Software Livre, que veem o conhecimento e as ferramentas para produzi-lo como bens públicos.
+A disponibilização do ecossistema completo como software livre (161 skills, 128 agentes, 46 MCPs, 169 SPECs, 255 CTs em 8 suites, 5 scanners epistemológicos) permite que qualquer pesquisador --- independentemente de sua instituição ou recursos --- utilize, adapte e estenda as capacidades documentadas nesta dissertação.
+
+A disponibilização do ecossistema completo como software livre (161 skills, 128 agentes, 46 MCPs, 169 SPECs, 255 CTs em 8 suites, 5 scanners epistemológicos) permite que qualquer pesquisador --- independentemente de sua instituição ou recursos --- utilize, adapte e estenda as capacidades documentadas nesta dissertação.
 
 \section{Trabalhos Futuros}
 
@@ -49,14 +55,61 @@ A disponibilização do ecossistema completo como software livre (227 skills, 12
 O próximo passo mais urgente é a validação externa dos outputs do ecossistema. Isso requer:
 
 \begin{itemize}
-  \item Submeter 3-5 artigos gerados pelo MASWOS a periódicos Qualis A1-A2 em diferentes áreas (Ciência da Computação, Bioinformática, Ciências Sociais Computacionais).
-  \item Conduzir um experimento controlado onde revisores humanos avaliam artigos sem saber se foram gerados por IA ou por humanos, comparando scores e identificando vieses de percepção.
-  \item Publicar os resultados desta validação --- incluindo rejeições e críticas --- como parte do compromisso com a transparência.
+  \item Submeter 3-5 artigos gerados pelo MASWOS a periódicos Qualis A1-A2 em diferentes áreas (Ciência da Computação, Bioinformática, Ciências Sociais Computacionais), documentando taxas de aceitação, revisões recebidas, e correlação entre scores internos e avaliações externas.
+  \item Conduzir um experimento controlado onde revisores humanos avaliam artigos sem saber se foram gerados por IA ou por humanos (protocolo duplo-cego), comparando scores e identificando vieses de percepção --- um fenômeno conhecido como \textit{automation bias} (SKITKA et al., 1999).
+  \item Publicar os resultados desta validação --- incluindo rejeições e críticas --- como parte do compromisso com a transparência e a falseabilidade popperiana.
 \end{itemize}
 
 \subsection{Expansão de Cobertura de Domínios}
 
 O ecossistema atual tem cobertura mais robusta em STEM do que em humanidades e artes. Trabalhos futuros devem:
+
+\begin{itemize}
+  \item Expandir as 10 dimensões do Scanner Noológico para incluir dimensões específicas de humanidades (ex.: hermenêutica, análise discursiva, crítica literária) e artes (ex.: estética, poética, performatividade).
+  \item Adicionar ao PolymathicConvergence mapeamentos para domínios atualmente sub-representados: direito, filosofia continental, estudos culturais, musicologia e história da arte.
+  \item Desenvolver um módulo de tradução automática que permita ao ecossistema operar nativamente em português, inglês, espanhol e francês, mantendo o rigor dos protocolos de citação e formatação específicos de cada idioma.
+\end{itemize}
+
+\subsection{Aprimoramento do Ecossistema de Scanners}
+
+Os 5 scanners atuais representam uma primeira geração de ferramentas epistemológicas automatizadas. Trabalhos futuros devem:
+
+\begin{itemize}
+  \item \textbf{MCSP com garantia de otimalidade:} Implementar um solver exato para o Minimum Capability Set Problem usando programação inteira (ILP) ou SAT solving, permitindo verificar formalmente a otimalidade das soluções gulosas para grafos de até 92 nós.
+  \item \textbf{Scanner adaptativo:} Um scanner que aprende com os padrões de ausência detectados em múltiplos documentos e ajusta automaticamente seus pesos e thresholds --- uma forma de meta-aprendizado aplicado à epistemologia computacional.
+  \item \textbf{Integração com revisão por pares:} Conectar o ecossistema de scanners a plataformas de submissão de artigos (OJS, ScholarOne), permitindo que editores e revisores utilizem scans epistemológicos como ferramenta complementar de avaliação.
+  \item \textbf{Feedback loop fechado:} Fechar o ciclo entre recomendação dos scanners e verificação de impacto --- quando o scanner recomenda aprofundar uma dimensão e o autor o faz, o sistema deve verificar automaticamente se a cobertura naquela dimensão aumentou e reportar o delta.
+\end{itemize}
+
+\subsection{Ecossistema Federado e Ciência Distribuída}
+
+A longo prazo (24+ meses), o ecossistema OpenCode deve evoluir para uma arquitetura federada:
+
+\begin{itemize}
+  \item Múltiplas instâncias do ecossistema operando em diferentes instituições de pesquisa, compartilhando skills, agentes e datasets através de um protocolo de federação padronizado.
+  \item Um mercado descentralizado de skills científicas, onde pesquisadores podem publicar, revisar e utilizar skills desenvolvidas por terceiros --- com mecanismos de reputação e incentivo baseados na economia de tokens.
+  \item Integração com infraestruturas de Ciência Aberta (Open Science Framework, Zenodo, Crossref) para garantir que todos os artefatos gerados pelo ecossistema --- dados, código, especificações, testes --- sejam permanentemente arquivados e citáveis.
+\end{itemize}
+
+\subsection{Descoberta Científica Autônoma}
+
+O horizonte mais ambicioso é a transição de um ecossistema que \textit{documenta} pesquisa para um que \textit{conduz} pesquisa:
+
+\begin{itemize}
+  \item Agentes que não apenas compilam literatura existente, mas formulam hipóteses originais baseadas em gaps identificados pelo Scanner Noológico e validam estas hipóteses através de experimentos computacionais ou simulações.
+  \item Integração com laboratórios automatizados (\textit{self-driving labs}) para fechar o ciclo completo do método científico: hipótese $\rightarrow$ experimento $\rightarrow$ análise $\rightarrow$ conclusão $\rightarrow$ nova hipótese.
+  \item Desenvolvimento de métricas de ``impacto epistêmico'' que quantifiquem não apenas o número de citações de um artigo, mas sua contribuição para preencher gaps no espaço de conhecimento --- uma alternativa ao fator de impacto tradicional que recompensa a diversificação epistêmica em vez da concentração.
+\end{itemize}
+
+\section{Considerações Finais}
+
+Esta dissertação começou com uma pergunta: é possível construir um ecossistema multiagente para produção científica que atinja simultaneamente cobertura completa de especificação, validação cruzada automatizada, correção iterativa com simulação de revisão por pares, e evolução autônoma documentada --- mantendo qualidade verificável?
+
+A resposta, fundamentada em 169 especificações formais, 255 casos de teste TDD (100\% de aprovação), 18 ciclos evolutivos documentados, e um ecossistema de 5 scanners epistemológicos com 62 CTs dedicados, é afirmativa --- com a qualificação de que a validação externa definitiva está em andamento.
+
+Mas a contribuição mais duradoura desta dissertação talvez não seja o ecossistema em si, mas a demonstração de que \textbf{qualidade epistemológica pode ser tratada como uma propriedade de engenharia} --- mensurável, testável e otimizável. Assim como a engenharia de software transformou a qualidade de código de uma arte intuitiva para uma disciplina com métricas, testes e processos, a \textit{engenharia epistêmica} aqui proposta visa transformar a qualidade do conhecimento científico de uma questão de confiança no autor para uma questão de verificação por qualquer leitor.
+
+Se esta dissertação inspirar outros pesquisadores a aplicar scanners epistemológicos a seus próprios manuscritos --- a perguntar não apenas ``o que está errado?'' mas ``o que está ausente?'' --- então seu objetivo terá sido alcançado, independentemente do destino do ecossistema OpenCode específico que a gerou.
 
 \begin{itemize}
   \item Desenvolver skills especializadas para análise literária, historiografia, filosofia e crítica de arte.
@@ -108,7 +161,7 @@ Se você chegou até aqui sem formação prévia em sistemas multiagentes, engen
 
 Se você é um pesquisador que enfrenta diariamente a fragmentação de ferramentas descrita na Seção 1.1.2, saiba que o ecossistema documentado nesta dissertação está disponível gratuitamente. Cada linha de código, cada especificação, cada caso de teste pode ser inspecionado, adaptado e estendido. A verificabilidade que defendemos como princípio arquitetural se aplica também a este texto: cada afirmação pode ser rastreada até sua fonte original através dos DOIs nas notas de rodapé.
 
-Se você é um desenvolvedor que quer construir o próximo ecossistema multiagente, o Capítulo 3 contém o framework que você precisa. Não reinvente a roda: SDD+TDD+AutoEvolve é um padrão testado em 16 ciclos de evolução, com 29 casos de teste validando cada componente. Comece pelas SPECs (Apêndice A), implemente os testes (Apêndice B), e deixe o AutoEvolve guiar as melhorias.
+Se você é um desenvolvedor que quer construir o próximo ecossistema multiagente, o Capítulo 3 contém o framework que você precisa. Não reinvente a roda: SDD+TDD+AutoEvolve é um padrão testado em 18 ciclos de evolução, com 255 casos de teste validando cada componente.
 
 Em todos os casos, lembre-se da pergunta que o Scanner Noológico nos ensinou a fazer: não apenas ``o que está errado?'', mas ``o que está ausente?''. Esta dissertação não é um ponto final — é um convite para que você identifique as ausências que nós não vimos, e as preencha.
 

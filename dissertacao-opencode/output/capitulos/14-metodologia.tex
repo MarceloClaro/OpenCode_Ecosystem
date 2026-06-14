@@ -286,6 +286,124 @@ Esta mudança tem quatro implicações metodológicas:
   \item \textbf{De conformidade para consciência epistemológica:} Em vez de verificar conformidade com normas, revela os limites do próprio conhecimento --- as fronteiras além das quais o documento (e, por extensão, o ecossistema que o gerou) ainda não foi.
 \end{enumerate}
 
+\section{Metodologia do Ecossistema de Scanners Epistemológicos}
+
+Além do Scanner Noológico descrito acima, esta dissertação desenvolveu e aplicou um ecossistema completo de 5 scanners epistemológicos que operam em pipeline, cada um respondendo a uma pergunta complementar sobre o conhecimento. Esta seção descreve a metodologia de cada scanner e sua integração.
+
+\subsection{Scanner Teleológico Reverso (SPEC-029)}
+
+O Scanner Teleológico Reverso implementa raciocínio prescritivo: em vez de perguntar ``o que está ausente?'', pergunta ``o que deveria estar presente dados os objetivos da pesquisa?''. A metodologia opera em três etapas:
+
+\begin{enumerate}
+  \item \textbf{Definição de objetivos:} O pesquisador define um ou mais objetivos de pesquisa usando 8 tipos predefinidos de \textit{goal types} --- causal, avaliativo, exploratório, estratégico, comparativo, preditivo, integrativo e crítico. Cada tipo aciona um conjunto específico de requisitos epistemológicos.
+  \item \textbf{Inferência de requisitos:} Para cada \textit{goal type}, o scanner consulta mapeamentos teleológicos que associam objetivos a dimensões epistemológicas necessárias. Por exemplo, um objetivo ``causal'' exige métodos experimentais (peso 1.0), temporalidade longitudinal (peso 0.8), e raciocínio probabilístico (peso 0.7).
+  \item \textbf{Comparação com o estado atual:} Os requisitos inferidos são comparados com o scan noológico real, gerando \textit{gaps teleológicos} --- categorias que são necessárias para o objetivo mas estão ausentes no estado atual do conhecimento.
+\end{enumerate}
+
+\subsection{CrossValidationEngine (SPEC-030)}
+
+O motor de validação cruzada modela dependências entre capacidades como um grafo direcionado $G = (V, E)$ com 92 nós (categorias) e 73 arestas (dependências). A metodologia inclui:
+
+\begin{enumerate}
+  \item \textbf{Construção do grafo:} Arestas são derivadas de regras de dependência (\textit{requires}, \textit{enables}, \textit{co-occurs}) entre categorias. Por exemplo, ``raciocínio probabilístico'' habilita ``meta-análise'' (peso 0.9) e ``métodos experimentais'' requerem ``raciocínio dedutivo'' (peso 0.7).
+  \item \textbf{Detecção de bottlenecks:} Nós que habilitam ou são pré-requisito de 3 ou mais outros nós são classificados como \textit{bottlenecks} críticos. O principal bottleneck identificado é ``raciocínio probabilístico'' (\textit{influence\_score} = 0.6).
+  \item \textbf{Cálculo de impacto em cascata:} Para cada categoria ausente, o algoritmo calcula quantas outras categorias são afetadas direta ou indiretamente, permitindo priorizar a aquisição de capacidades com maior efeito multiplicador.
+\end{enumerate}
+
+\subsection{PolymathicConvergence (SPEC-030)}
+
+O scanner de convergência polimática implementa busca por soluções análogas em domínios externos. A metodologia mapeia 30 domínios de conhecimento --- da neurociência à culinária, da física à arquitetura --- para 22 gaps epistemológicos. Para cada gap, o scanner retorna:
+
+\begin{enumerate}
+  \item \textbf{Domínio externo} onde um problema análogo foi resolvido (ex.: para o gap ``raciocínio probabilístico'', a neurociência oferece o modelo de inferência bayesiana no córtex).
+  \item \textbf{Princípio transferível} que pode ser adaptado (ex.: ``redes neurais biológicas implementam inferência probabilística naturalmente'').
+  \item \textbf{Escore de transferibilidade} (0--1) que quantifica o grau de similaridade entre o problema original e o análogo.
+\end{enumerate}
+
+\subsection{TrajectoryMapper e MCSP Solver (SPEC-030/032)}
+
+A camada preditiva do ecossistema transforma gaps e analogias em trajetórias de evolução:
+
+\begin{enumerate}
+  \item \textbf{Classificação de cenários:} Cada gap é classificado em um de 4 tipos --- \textit{quick\_win} (baixo custo, alto impacto), \textit{foundation} (habilita múltiplas outras capacidades), \textit{convergent} (já resolvido em outro domínio), ou \textit{frontier} (requer múltiplas novas capacidades).
+  \item \textbf{Geração de rotas:} O TrajectoryMapper gera 3 rotas de evolução --- Pragmática (quick-wins primeiro), Polimática (convergências como alavanca), e Estrutural (fundações para maximizar cascata).
+  \item \textbf{Resolução do MCSP:} O Minimum Capability Set Solver resolve formalmente o problema de otimização combinatória: dados $S$ (capacidades presentes) e $T$ (capacidades alvo), encontrar $C \subseteq V \setminus S$ mínimo tal que $S \cup C \supseteq T$ com fecho de dependências. O algoritmo opera em 3 fases com complexidade $O(|V|^2 \cdot |E|)$.
+  \item \textbf{Estimação temporal:} O TimelineEstimator atribui durações por tipo de cenário (1--2 semanas para quick-wins, 8--16 para frontiers) e classifica o risco da rota (baixo/médio/alto).
+\end{enumerate}
+
+A validação metodológica deste ecossistema é realizada por 62 casos de teste TDD (SPEC-028 a SPEC-031), executando em 0,7 segundos com 100\% de aprovação, garantindo que cada scanner produza resultados consistentes e reproduzíveis.
+
+\section{Procedimentos de Validação e Verificação}
+
+\subsection{Validação Interna via TDD (11 Suites, 278 CTs)}
+
+O framework TDD (Test-Driven Development) foi aplicado em 11 suites de teste que cobrem o ecossistema completo. Cada suite segue o ciclo RED-GREEN-REFACTOR: (1) escrever um teste que falha (RED) porque a funcionalidade ainda não existe; (2) implementar a funcionalidade mínima para o teste passar (GREEN); (3) refatorar o código mantendo os testes verdes (REFACTOR). Este ciclo foi repetido para cada um dos 278 casos de teste, garantindo que toda funcionalidade documentada nas SPECs tem cobertura de teste.
+
+As 10 suites e seus escopos são:
+
+\begin{enumerate}
+  \item \textbf{SPEC-025 (Frontmatter, 161 CTs):} Valida que todos os 161 SKILL.md do ecossistema possuem frontmatter YAML com os campos obrigatórios \texttt{name:} e \texttt{description:}, sem caracteres CJK (chinês/japonês/coreano) que violariam o protocolo de saída em português, e sem chaves YAML duplicadas. Inclui correção automática (\texttt{--fix}) para NO\_FRONTMATTER, MISSING\_NAME, MISSING\_DESCRIPTION e DUPLICATE\_KEYS.
+
+  \item \textbf{SPEC-026 (Pipeline Evolutivo, 10 CTs):} Valida as 6 fases do pipeline evolutivo SENSE$\rightarrow$DISCOVER$\rightarrow$INSTALL$\rightarrow$VERIFY$\rightarrow$EVOLVE$\rightarrow$LEARN, verificando que \texttt{installed.json} é JSON válido, que \texttt{memory.json} contém healthHistory com scores, e que a estrutura de diretórios do ecossistema está completa.
+
+  \item \textbf{SPEC-027 (E2E Integration, 8 CTs):} Valida a integração ponta-a-ponta dos 7 subcomandos do AutoEvolve (\texttt{/evolve status}, \texttt{discover}, \texttt{install}, \texttt{verify}, \texttt{update}, \texttt{learn}), incluindo consulta à API do GitHub para descoberta de novas skills e validação de regras de segurança (stars $\geq$ 10).
+
+  \item \textbf{SPEC-028 (NoologicalScanner v3.0, 18 CTs):} Valida as 10 dimensões $\times$ 92 categorias do scanner, o filtro de negação com 6 padrões regex, o word-boundary matching, a detecção de keywords enriquecidas, os pesos adaptativos por domínio, a correlação cruzada entre dimensões, e a integridade dos dados (covered + absent = total\_categories).
+
+  \item \textbf{SPEC-029 (TeleologicalReverseScanner, 12 CTs):} Valida os 8 goal types e seus mapeamentos para dimensões epistemológicas, a inferência de requisitos, a detecção de gaps teleológicos com severidade proporcional ao peso, o cálculo de score teleológico (0--1), e a integração com o NoologicalScanner.
+
+  \item \textbf{SPEC-030 (EvolutionaryScannerPipeline, 16 CTs):} Valida o CrossValidationEngine (grafo de 92 nós, 73 arestas, detecção de bottlenecks e ciclos), o PolymathicConvergence (30 domínios, transferência bidirecional), o TrajectoryMapper (4 cenários, 3 rotas), e o pipeline completo integrando todos os módulos.
+
+  \item \textbf{SPEC-031 (Scanner Refinement, 16 CTs):} Valida as 4 expansões: CrossValidationEngine com 73 arestas (todas as 10 dimensões cobertas), PolymathicConvergence com 30 domínios, EvolutionTracker com análise de tendência, e TimelineEstimator com classificação de risco.
+
+  \item \textbf{SPEC-032 (MCSP Solver, 14 CTs):} Valida o algoritmo de 3 fases --- backward\_closure $O(|V|+|E|)$ para propagação reversa de dependências, greedy\_select $O(|V|^2 \cdot |E|)$ para seleção do conjunto mínimo, e topological\_order $O(|V|+|E|)$ para ordenação de aquisição --- incluindo detecção de ciclos e integração com os scanners.
+
+  \item \textbf{SPEC-033 (Composição Unitária, 13 CTs):} Valida a decomposição de capacidades cognitivas em insumos atômicos (conceitos, métodos, ferramentas e critérios de validação), permitindo o sequenciamento evolutivo micro-estruturado e o cálculo preciso de custos de aquisição.
+
+  \item \textbf{SPEC-034 (Adaptação Ollama Local, 6 CTs):} Valida o subsistema de descoberta e chat local com Ollama, incluindo o mocking da API REST para tags, a higienização de comandos de voz sintetizados e a resiliência a falhas de conexão do serviço local.
+\end{enumerate}
+
+\subsection{Validação Cruzada e Triangulação}
+
+O protocolo de validação cruzada do OpenCode exige que cada afirmação científica gerada pelo ecossistema seja validada por pelo menos 3 fontes independentes antes de ser aceita. Este princípio de triangulação (DENZIN, 1978) é implementado em três níveis:
+
+\begin{enumerate}
+  \item \textbf{Triangulação de fontes:} Cada afirmação deve ser suportada por pelo menos 3 referências bibliográficas independentes com DOI verificável. O agente de validação (13) testa cada DOI antes da inclusão final.
+  \item \textbf{Triangulação de agentes:} Cada output crítico (escore Qualis, análise estatística, recomendação de edital) é gerado por pelo menos 3 agentes independentes e submetido a votação ou consenso via Agent Forum (P14).
+  \item \textbf{Triangulação de scanners:} Os outputs dos 5 scanners são cruzados: um gap identificado pelo NoologicalScanner só é considerado ``crítico'' se também for identificado como ``requisito ausente'' pelo TeleologicalReverseScanner e como ``bottleneck'' pelo CrossValidationEngine.
+\end{enumerate}
+
+\subsection{Métricas de Qualidade e Confiabilidade}
+
+A qualidade dos outputs do ecossistema é medida por 10 critérios ponderados, implementados no módulo \texttt{auto\_score\_qualis.py}:
+
+\begin{table}[H]
+\centering
+\caption{Critérios de Avaliação Qualis A1 e seus Pesos}
+\begin{tabular}{p{0.5cm}p{6cm}cc}
+\toprule
+\textbf{\#} & \textbf{Critério} & \textbf{Peso} & \textbf{Automatizado?} \\
+\midrule
+1 & Originalidade da contribuição & 20\% & Parcial (detecção de similaridade) \\
+2 & Rigor metodológico & 15\% & Sim (checklist TDD) \\
+3 & Relevância para avanço do conhecimento & 10\% & Parcial (métricas de citação) \\
+4 & Clareza e organização & 10\% & Sim (TSAC, anti-IA) \\
+5 & Diálogo com literatura internacional & 10\% & Sim (matriz de afinidade) \\
+6 & Validação experimental & 10\% & Sim (cross-validation) \\
+7 & Completude epistemológica & 10\% & Sim (Scanner Noológico) \\
+8 & Conformidade normativa (ABNT) & 5\% & Sim (academic-export-abnt) \\
+9 & Rastreabilidade e auditoria & 5\% & Sim (AcademicAuditTrail) \\
+10 & Reprodutibilidade & 5\% & Sim (SPECs + CTs) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+O critério 7 (Completude epistemológica) é uma adição original desta dissertação à metodologia de avaliação Qualis. Ele quantifica, via Scanner Noológico, a fração do espaço de conhecimento (10 dimensões $\times$ 92 categorias) que o artefato acadêmico cobre. Esta métrica complementa os critérios tradicionais --- que avaliam a \textit{qualidade do que está presente} --- com uma avaliação da \textit{completude do que poderia estar presente}.
+
+\section{Procedimentos Éticos e de Transparência}
+
+Esta pesquisa foi conduzida em conformidade com os princípios da Ciência Aberta (Open Science). Todos os dados, códigos, especificações e testes estão disponíveis publicamente no repositório \url{https://github.com/MarceloClaro/OpenCode_Ecosystem} sob licença MIT. Nenhum dado pessoal de participantes humanos foi coletado ou processado --- todos os casos de uso envolvem dados públicos (artigos científicos, editais de fomento, datasets abertos). O protocolo de anonimato para estudos de caso (ex.: anteprojeto PPGTE/UFC) foi aplicado removendo identificadores indiretos antes da inclusão na dissertação.
+
 \section{Limitações Metodológicas}
 
 \begin{enumerate}

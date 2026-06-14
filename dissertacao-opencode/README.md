@@ -5,10 +5,10 @@
 | Métrica | Valor |
 |---------|-------|
 | Arquivos de capítulo | 21/21 |
-| Palavras totais | 17,485 |
-| Páginas estimadas (ABNT) | ≈49 |
-| Notas de rodapé | 42 |
-| DOIs nas citações | 67 |
+| Palavras totais | 35,840 |
+| Páginas estimadas (ABNT) | ≈102 |
+| Notas de rodapé | 71 |
+| DOIs nas citações | 82 |
 | Referências bibliográficas | 68 |
 | Score Qualis alvo | 100/100 |
 
@@ -51,5 +51,5 @@ python unify_and_compile.py --no-pdf
 ```
 
 ---
-*Gerado em: 07/06/2026 21:49*
+*Gerado em: 13/06/2026 21:19*
 *Ecossistema OpenCode v5.1.0 — Score Qualis A1 100/100*

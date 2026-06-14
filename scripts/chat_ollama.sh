@@ -72,6 +72,41 @@ echo ""
 
 falar "Bem-vindo ao Chat Acadêmico Local. O que gostaria de pesquisar hoje?"
 
+# Consulta modelos locais via Ollama API
+MODELOS=$(curl -s http://127.0.0.1:11434/api/tags | python3 -c '
+import sys, json
+try:
+    data = json.load(sys.stdin)
+    names = [m["name"].replace(":latest", "") for m in data.get("models", [])]
+    print("\n".join(names))
+except Exception:
+    pass
+' 2>/dev/null)
+
+if [ -n "$MODELOS" ]; then
+    echo "Selecione o modelo local do Ollama a utilizar:"
+    # Converte string de modelos para array usando IFS
+    IFS=$'\n' read -rd '' -a MODELOS_ARR <<< "$MODELOS"
+    
+    # Lista os modelos
+    for i in "${!MODELOS_ARR[@]}"; do
+        echo " [$((i+1))] ${MODELOS_ARR[$i]}"
+    done
+    
+    echo -n "Escolha o modelo (padrão: 1 - ${MODELOS_ARR[0]}): "
+    read -r op_model
+    if [ -z "$op_model" ]; then
+        MODELO_SELECIONADO="${MODELOS_ARR[0]}"
+    else
+        MODELO_SELECIONADO="${MODELOS_ARR[$((op_model-1))]}"
+    fi
+else
+    MODELO_SELECIONADO="qwen2.5-coder:1.5b"
+fi
+
+echo -e ">> Modelo selecionado: ${GREEN}${MODELO_SELECIONADO}${NC}"
+echo ""
+
 echo -n "Digite a sua pergunta científica: "
 read -r pergunta
 
@@ -109,7 +144,7 @@ case $opcao_busca in
 esac
 
 echo ""
-echo -e "${YELLOW}>> Consultando modelo local qwen2.5-coder:1.5b via Ollama...${NC}"
+echo -e "${YELLOW}>> Consultando modelo local ${MODELO_SELECIONADO} via Ollama...${NC}"
 echo ""
 
 # Constrói o prompt final com o contexto
@@ -120,7 +155,7 @@ fi
 PROMPT_FINAL="$PROMPT_FINAL\n\n[Pergunta]: $pergunta"
 
 # Executa o Ollama passando o prompt e salvando a resposta
-RESP_LLM=$(echo -e "$PROMPT_FINAL" | ollama run qwen2.5-coder:1.5b)
+RESP_LLM=$(echo -e "$PROMPT_FINAL" | ollama run "$MODELO_SELECIONADO")
 
 echo -e "${GREEN}Resposta do Modelo Local:${NC}"
 echo -e "$RESP_LLM"

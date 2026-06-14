@@ -11,12 +11,24 @@ import urllib.parse
 import time
 import subprocess
 import re
+import argparse
 
 # Configurações de Caminho
 ECO_DIR = "/mnt/c/Users/marce/Documents/OpenCode_Ecosystem"
 PROJECTS_DIR = os.path.join(ECO_DIR, "projects")
 AUDIT_LOG_PATH = os.path.join(ECO_DIR, "docs/session_token_audit.log")
 CMD_FILE = os.path.join(ECO_DIR, ".vocalizer_cmd")
+
+def obter_modelos_locais():
+    """Consulta a API local do Ollama para listar os modelos instalados."""
+    try:
+        url = "http://127.0.0.1:11434/api/tags"
+        req = urllib.request.Request(url)
+        with urllib.request.urlopen(req, timeout=3) as response:
+            data = json.loads(response.read().decode("utf-8"))
+            return [m["name"] for m in data.get("models", [])]
+    except Exception:
+        return []
 
 # Estilos de Cores ANSI
 RED = "\033[0;31m"
@@ -129,6 +141,10 @@ def salvar_acumulado(prompt_tokens, eval_tokens, savings):
         print(f"Erro ao salvar log de auditoria: {e}")
 
 def main():
+    parser = argparse.ArgumentParser(description="Chat Científico e Auditoria de Tokenização Local")
+    parser.add_argument("--model", "-m", help="Modelo local do Ollama a usar", default=None)
+    args, unknown = parser.parse_known_args()
+
     print(f"{CYAN}================================================================={NC}")
     print(f"{CYAN}   INTERFACE DE AUDITORIA CIENTÍFICA (CAIXA BRANCA - QUALIS A1)  {NC}")
     print(f"{CYAN}   Orquestrador Local: Ollama Engine + RAG + TTS                 {NC}")
@@ -141,6 +157,60 @@ def main():
 
     # Carrega dados acumulados de auditoria anterior
     acc_prompt, acc_eval, acc_savings = carregar_acumulado()
+
+    # Seleção de Modelo Adaptativa
+    modelos = obter_modelos_locais()
+    modelos_limpos = [m.replace(":latest", "") for m in modelos]
+    
+    modelos_ecosystem = [
+        "opencode/deepseek-reasoner",
+        "opencode/qwen-coder-pro",
+        "opencode/phi4-orchestrator",
+        "opencode/qwen-coder-fast",
+        "opencode/gemma-scholar",
+        "qwen2.5-coder:1.5b"
+    ]
+    
+    modelo_selecionado = None
+    if args.model:
+        modelo_selecionado = args.model
+    else:
+        # Se houver modelos instalados no Ollama, mostra menu
+        if modelos_limpos:
+            print(f"{BOLD}Selecione o modelo local do Ollama a utilizar:{NC}")
+            modelos_ordenados = []
+            for eco in modelos_ecosystem:
+                if eco in modelos_limpos:
+                    modelos_ordenados.append(eco)
+            for m in modelos_limpos:
+                if m not in modelos_ordenados:
+                    modelos_ordenados.append(m)
+            
+            for idx, m in enumerate(modelos_ordenados, 1):
+                desc = ""
+                if "deepseek-reasoner" in m: desc = " (Raciocínio científico + dissertação)"
+                elif "qwen-coder-pro" in m: desc = " (Código avançado + arquitetura)"
+                elif "phi4-orchestrator" in m: desc = " (Orquestração + planejamento)"
+                elif "qwen-coder-fast" in m: desc = " (Código rápido + validação)"
+                elif "gemma-scholar" in m: desc = " (Pesquisa acadêmica + referências)"
+                print(f" [{idx}] {GREEN}{m}{NC}{desc}")
+            
+            try:
+                op_model = input(f"Escolha o modelo [1-{len(modelos_ordenados)}] (padrão: 1 - {modelos_ordenados[0]}): ").strip()
+                if not op_model:
+                    modelo_selecionado = modelos_ordenados[0]
+                else:
+                    op_model = int(op_model)
+                    if 1 <= op_model <= len(modelos_ordenados):
+                        modelo_selecionado = modelos_ordenados[op_model - 1]
+                    else:
+                        modelo_selecionado = modelos_ordenados[0]
+            except ValueError:
+                modelo_selecionado = modelos_ordenados[0]
+        else:
+            modelo_selecionado = "qwen2.5-coder:1.5b"
+            
+    print(f"\n{BLUE}>> Modelo selecionado: {modelo_selecionado}{NC}\n")
 
     pergunta = input(f"{BOLD}Digite a sua pergunta científica/código:{NC} ").strip()
     if not pergunta:
@@ -173,13 +243,13 @@ def main():
         prompt_final += f"\n\nContexto de suporte:\n{contexto}"
     prompt_final += f"\n\nPergunta do usuário: {pergunta}"
 
-    print(f"\n{YELLOW}>> Conectando ao modelo local (qwen2.5-coder:1.5b)...{NC}")
+    print(f"\n{YELLOW}>> Conectando ao modelo local ({modelo_selecionado})...{NC}")
     print(f"{MAGENTA}[AUDITORIA] Raciocínio em tempo real (White-Box Streaming):{NC}")
     print("-" * 65)
 
     # Inicia chamada de stream à API do Ollama
     payload = {
-        "model": "qwen2.5-coder:1.5b",
+        "model": modelo_selecionado,
         "prompt": prompt_final,
         "stream": True
     }
