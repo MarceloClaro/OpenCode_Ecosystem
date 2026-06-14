@@ -33,3 +33,4 @@ build/
 *.toc
 *.out
 *.synctex.gz
+projects/*.zip
