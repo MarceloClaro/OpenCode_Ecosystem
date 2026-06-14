@@ -88,6 +88,9 @@ async function loadState(directory: string): Promise<ManusState> {
       if (!s.nexusReports) s.nexusReports = []
       if (!s.lastNexusRun) s.lastNexusRun = null
       if (!s.rounds) s.rounds = []
+      if (!s.correctionPatterns) s.correctionPatterns = {}
+      if (!s.tokenOptimizationPatterns) s.tokenOptimizationPatterns = {}
+      if (!s.patterns) s.patterns = {}
       if (!s.sessionMetrics) {
         s.sessionMetrics = {
           sessionId: crypto.randomUUID(), agent: "manus-evolve",
@@ -222,6 +225,7 @@ export const ManusEvolvePlugin: Plugin = async ({ project, client, $, directory,
 
   return {
     "session.created": async () => {
+      if (!state) return
       state.currentPlan = null; state.actionCount = 0
       await client.app.log({
         body: { service: "manus-evolve-v2", level: "info",
@@ -230,6 +234,7 @@ export const ManusEvolvePlugin: Plugin = async ({ project, client, $, directory,
     },
 
     "tool.execute.before": async (input: any, _output: any) => {
+      if (!state) return
       state.actionCount++
       state.toolCallMetrics = { startTime: Date.now(), tool: input.tool || "unknown" }
       const prompt = input.args?.prompt || input.args?.command || ""
@@ -239,6 +244,7 @@ export const ManusEvolvePlugin: Plugin = async ({ project, client, $, directory,
     },
 
     "tool.execute.after": async (input: any, output: any) => {
+      if (!state) return
       const toolName = input.tool || "unknown"
       const latency = state.toolCallMetrics ? Date.now() - state.toolCallMetrics.startTime : 0
       state.toolCallMetrics = null
@@ -288,6 +294,7 @@ export const ManusEvolvePlugin: Plugin = async ({ project, client, $, directory,
     },
 
     "session.idle": async () => {
+      if (!state) return
       if (state.rounds.length > 0) {
         const cr = state.rounds[state.rounds.length - 1]
         if (cr.actions.length > 0) {
