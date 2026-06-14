@@ -1,40 +1,64 @@
 # OpenCode Ecosystem
 
-Repositório exclusivo para gerenciamento de projetos e automação da instalação do ecossistema do OpenCode e Antigravity no Windows (WSL).
-
-## Diretórios do Repositório
-
-- `docs/` - Documentação e especificações técnicas (Software Design Document - SDD).
-- `scripts/` - Scripts de automação e inicialização.
-- `tests/` - Scripts de teste e auditoria de ambiente (TDD).
-- `projects/` - Pasta exclusiva para seus projetos de desenvolvimento integrados ao ecossistema.
-
-## Como Reproduzir este Ambiente em Outro PC
-
-### 1. Pré-requisitos
-Certifique-se de que o WSL (Ubuntu) esteja instalado no Windows.
-
-### 2. Executar os Testes Iniciais (Red)
-Na raiz do projeto no Windows, execute:
-```bash
-.\tests\run_tests.bat
-```
-*(Os testes devem falhar indicando que o OpenCode ainda não foi instalado no WSL)*
-
-### 3. Executar o Script de Instalação no WSL
-Abra o terminal do WSL e execute:
-```bash
-bash /mnt/c/Users/marce/Documents/OpenCode_Ecosystem/scripts/install_ecosystem.sh
-```
-*(Isso baixará, instalará o OpenCode e configurará o PATH automaticamente)*
-
-### 4. Executar os Testes Novamente (Green)
-Execute novamente o script de auditoria no Windows:
-```bash
-.\tests\run_tests.bat
-```
-*(Desta vez, todos os testes deverão passar!)*
+<div align="center">
+  <img src="diagrams/architecture-overview.svg" alt="Arquitetura do Ecossistema OpenCode" width="800"/>
+</div>
 
 ---
 
-Para detalhes técnicos e de especificação, consulte o arquivo [docs/sdd.md](docs/sdd.md).
+O **OpenCode Ecosystem** é uma arquitetura multiagente evolutiva desenhada para automatizar processos complexos de desenvolvimento, pesquisa acadêmica (Qualis A1) e engenharia de software no Windows (via WSL2). Integrado ao OpenCode (Antigravity), atua como um hub centralizado.
+
+Atualmente na **v4.6.1**, o ecossistema orquestra:
+- 🤖 **125 Agentes Especializados** catalogados
+- 🔌 **41 Servidores MCP (Model Context Protocol)** configurados
+- 🎯 **106 Skills Ativas** com foco em raciocínio avançado
+- 🧠 **Nexus NMA v6.2 (Multi-Agent Framework)** com 120+ barreiras de sincronização
+- 🧬 **Loop de Evolução Contínua** (AutoEvolve / Manus Evolve)
+
+## 📖 Documentação Técnica Completa
+
+A documentação exaustiva e de altíssimo nível da arquitetura encontra-se no arquivo central:
+👉 **[OPENCODE_ECOSYSTEM.md](OPENCODE_ECOSYSTEM.md)**
+
+Nele você encontrará:
+- Integração e fluxo dos **18 Padrões MiroFish / BettaFish**
+- Pipelines de Validação (PhD Auditor)
+- Pipeline Acadêmico (MASWOS)
+- Camada Universal de Dados (DataOrchestrator) e Ecosystem Hooks
+
+---
+
+## 🛠️ Como Instalar e Rodar no Windows / WSL
+
+### 1. Pré-requisitos
+Certifique-se de que o **WSL2 (Ubuntu)** esteja instalado no Windows.
+
+### 2. Inicializando o Ecossistema
+Abra o PowerShell como Administrador e execute:
+```powershell
+.\start_ecosystem.ps1
+```
+*(Ele cuidará de iniciar os serviços essenciais, como Ollama, atualizar os status do Git e iniciar o OpenCode).*
+
+### 3. Executando Auditorias (TDD)
+O repositório é orientado a testes. Para auditar o ecossistema e verificar a saúde dos MCPs no WSL:
+```bash
+./tests/test_environment.sh
+```
+
+---
+
+## 📁 Estrutura do Repositório
+
+- `agents/` — Definições e diretrizes de agentes autônomos (incluindo o orquestrador master `@marceloclaro`).
+- `core/` e `nexus/` — Lógica do orquestrador NMA v6 e camada de Injeção de Dependências.
+- `diagrams/` — Diagramas arquiteturais SVG auto-mantidos pelo Reversa Framework.
+- `docs/` — Documentação complementar técnica (Software Design Document - SDD).
+- `plugins/` — Plugins TypeScript do ecossistema integrados (ex: `manus-evolve`).
+- `scripts/` — Scripts bash e python de automação.
+- `skills/` — Repositório com as 104+ capacidades cognitivas categorizadas.
+- `tests/` — Scripts de teste unitários e validação contínua (TDD).
+
+---
+
+> Desenvolvido no modelo de Governança Autônoma Assistida e mantido dinamicamente.
