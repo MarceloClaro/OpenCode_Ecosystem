@@ -16,7 +16,7 @@ O ecossistema OpenCode v5.2.0 implementa uma arquitetura em três camadas (ADR-0
 \bfseries
 Camada 1 (Infraestrutura): 46 MCPs\\
 $\downarrow$\\
-Camada 2 (Processamento): 227 Skills\\
+Camada 2 (Processamento): 106 Skills\\
 $\downarrow$\\
 Camada 3 (Orquestração): 128 Agentes
 \end{center}
@@ -25,18 +25,18 @@ A \textbf{Camada 1 (Infraestrutura)} provê conectividade com o mundo externo at
 
 A \textbf{Camada 2 (Processamento)} contém 227 habilidades especializadas organizadas em 13 categorias: sistema (12), pesquisa (42), ciências (38), raciocínio (9), jurídico (7), agent-forum (5), agência (26), Broomva (14), conteúdo (6), superpoderes (13), CORA (7), evolução (2), e utilitárias (46). Cada skill é um módulo autônomo com seu próprio SKILL.md, manifesto, referências, scripts e testes.
 
-A \textbf{Camada 3 (Orquestração)} coordena 128 agentes através de dois mecanismos complementares: o Nexus Multiagente v6.2 (orquestração centralizada com 6 níveis L0-L6, 120+ barreiras de sincronização) e o Agent Forum P14 (orquestração descentralizada com debate multiagente e protocolo OASIS de 4 estágios).
+A \textbf{Camada 3 (Orquestração)} coordena 125 agentes através de dois mecanismos complementares: o Nexus Multiagente v6.2 (orquestração centralizada com 6 níveis L0-L6, 120+ barreiras de sincronização) e o Agent Forum P14 (orquestração descentralizada com debate multiagente e protocolo OASIS de 4 estágios).
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{capitulos/figuras/fig-arquitetura.pdf}
-\caption{Arquitetura em 3 Camadas do Ecossistema OpenCode v5.1.0. A Camada 1 (Infraestrutura) provê conectividade via 46 MCPs; a Camada 2 (Processamento) contém 227 skills; a Camada 3 (Orquestração) coordena 128 agentes.}
+\caption{Arquitetura em 3 Camadas do Ecossistema OpenCode v5.1.0. A Camada 1 (Infraestrutura) provê conectividade via 41 MCPs; a Camada 2 (Processamento) contém 106 skills; a Camada 3 (Orquestração) coordena 125 agentes.}
 \label{fig:arquitetura-3camadas}
 \end{figure}
 
 \subsection{Cobertura de Especificação: 100\%}
 
-O ecossistema atinge cobertura completa de especificação: todos os 169 componentes documentados possuem SPEC formal. A estes somam-se 10 SPECs de validação TDD (SPEC-025 a SPEC-034) que cobrem o pipeline evolutivo, os scanners epistemológicos, o solver de capacidades mínimas, a composição unitária e a adaptação do ecossistema local Ollama. A Tabela~\ref{tab:spec-coverage} apresenta a distribuição por categoria:
+O ecossistema atinge cobertura completa de especificação: todos os 282 componentes documentados possuem SPEC formal. A estes somam-se 10 SPECs de validação TDD (SPEC-025 a SPEC-034) que cobrem o pipeline evolutivo, os scanners epistemológicos, o solver de capacidades mínimas, a composição unitária e a adaptação do ecossistema local Ollama. A Tabela~\ref{tab:spec-coverage} apresenta a distribuição por categoria:
 
 \begin{table}[H]
 \centering
@@ -95,7 +95,7 @@ SPEC-019 (API Gov.) & SPEC-020 (Streaming) & 0.85 \\
 
 \section{Ciclos Evolutivos Documentados}
 
-O ecossistema documenta 16 ciclos evolutivos completos (R1 a R18), com progressão de score de 85/100 para 99/100 (+16,5\%). A Tabela~\ref{tab:evolution} resume a trajetória:
+O ecossistema documenta 23 ciclos evolutivos completos (R1 a R18), com progressão de score de 85/100 para 99/100 (+16,5\%). A Tabela~\ref{tab:evolution} resume a trajetória:
 
 \begin{table}[H]
 \centering
@@ -312,7 +312,7 @@ SPEC-032 (MCSP) & 14 & 0,0s & 3 fases & OK \\
 SPEC-033 (Unitária) & 13 & 0,2s & 10 classes & OK \\
 SPEC-034 (Ollama Local) & 6 & 0,1s & 5 modelos & OK \\
 \addlinespace
-\textbf{Total} & \textbf{274} & \textbf{5,3s} & \textbf{Ecossistema} & \textbf{100\%} \\
+\textbf{Total} & \textbf{343} & \textbf{5,3s} & \textbf{Ecossistema} & \textbf{100\%} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -342,7 +342,7 @@ R10 & Menu Adaptativo + Plugins & 96 & DiscoveryEngine + .menu\_registry \\
 R11 & CORA-Eval Benchmark & 97 & 150 tarefas $\times$ 10 dimensões \\
 R12 & Science Skills Core & 98 & 9 skills core + 28 datasets \\
 R13 & Reasoning Engines & 96 & Z3 + SymPy + Kanren + Critical \\
-R14 & Ampliação Ecossistema & 97 & 227 skills, 128 agentes, 46 MCPs \\
+R14 & Ampliação Ecossistema & 97 & 106 skills, 125 agentes, 41 MCPs \\
 R15 & Refino Agentes Acadêmicos & 98 & MASWOS v5 + cross-validation \\
 R16 & AutoEvolve + ManusEvolve & 98 & Pipeline PLAN$\rightarrow$ACT$\rightarrow$EVOLVE \\
 R17 & Gartner Hype Cycle 2026 & 99 & 25 tecnologias, 3 SPECs, 24 CTs \\

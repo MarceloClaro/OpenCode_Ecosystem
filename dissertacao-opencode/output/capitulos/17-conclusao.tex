@@ -5,7 +5,7 @@
 
 \section{Síntese das Contribuições}
 
-Esta dissertação apresentou, documentou e validou o ecossistema OpenCode --- uma plataforma multiagente integrada para produção científica autônoma que orquestra 227 habilidades, 128 agentes e 46 conectores MCP em uma arquitetura de três camadas governada por especificações formais e validada por testes automatizados.
+Esta dissertação apresentou, documentou e validou o ecossistema OpenCode --- uma plataforma multiagente integrada para produção científica autônoma que orquestra 106 habilidades, 125 agentes e 41 conectores MCP em uma arquitetura de três camadas governada por especificações formais e validada por testes automatizados.
 
 Retomando a pergunta de pesquisa formulada na Introdução:
 
@@ -16,10 +16,10 @@ Retomando a pergunta de pesquisa formulada na Introdução:
 A resposta, fundamentada nos resultados apresentados e discutidos, é \textbf{afirmativa com qualificações}:
 
 \begin{enumerate}
-  \item \textbf{Cobertura completa de especificação (100\%):} Alcançada. Todos os 186 componentes do ecossistema possuem SPEC documentada com 5 dimensões (objetivo, comportamento, interface, dependências, validação). Este feito, sem paralelo na literatura de sistemas multiagentes para pesquisa, demonstra que é possível aplicar engenharia de software formal ao domínio da produção científica.
+  \item \textbf{Cobertura completa de especificação (100\%):} Alcançada. Todos os 282 componentes do ecossistema possuem SPEC documentada com 5 dimensões (objetivo, comportamento, interface, dependências, validação). Este feito, sem paralelo na literatura de sistemas multiagentes para pesquisa, demonstra que é possível aplicar engenharia de software formal ao domínio da produção científica.
   \item \textbf{Validação cruzada automatizada:} Alcançada. A matriz com 200+ conexões de afinidade, combinada com o protocolo de triangulação anti-circularidade e os 29 casos de teste TDD, estabelece um framework de verificação que reduz --- embora não elimine --- o risco de circularidade epistêmica.
   \item \textbf{Correção iterativa com simulação de revisão por pares:} Alcançada. O loop de correção iterativa v2.0, com 5 agentes-revisores debatendo através do Agent Forum (P14), demonstrou capacidade de elevar scores de 86,5 para 92,7 em uma única iteração. A integração com orientadores PhD (4 agentes) e corretores especializados (6 engines) cria um pipeline de melhoria multi-nível.
-  \item \textbf{Evolução autônoma documentada:} Alcançada. Os 16 ciclos evolutivos documentados (R1-R18) demonstram uma trajetória de melhoria consistente: +16,5\% de score Qualis em 18 iterações. O motor AutoEvolve (PLAN→ACT→REFLECT→EXTRACT→EVOLVE) institucionaliza o aprendizado contínuo como propriedade arquitetural do ecossistema.
+  \item \textbf{Evolução autônoma documentada:} Alcançada. Os 23 ciclos evolutivos documentados (R1-R18) demonstram uma trajetória de melhoria consistente: +16,5\% de score Qualis em 18 iterações. O motor AutoEvolve (PLAN→ACT→REFLECT→EXTRACT→EVOLVE) institucionaliza o aprendizado contínuo como propriedade arquitetural do ecossistema.
 \end{enumerate}
 
 A qualificação necessária é que a qualidade verificável ($\geq$ 95/100) foi demonstrada em condições de validação interna (testes TDD, cross-validation entre agentes do próprio ecossistema). A validação externa definitiva --- submissão a periódicos Qualis A1 e avaliação por revisores humanos independentes --- está em andamento e constitui o próximo passo crítico na trajetória de validação do ecossistema.
@@ -36,7 +36,7 @@ A documentação completa da arquitetura em 3 camadas (MCP→Skill→Agent), com
 
 \subsection{Contribuição Empírica: 16 Ciclos Evolutivos Documentados}
 
-A documentação sistemática de 16 ciclos de evolução, cada um com problema detectado, análise de causa-raiz, correção implementada, validação e impacto no score, constitui um conjunto de dados único sobre a dinâmica de melhoria de sistemas multiagentes. Este conjunto de dados pode informar futuras pesquisas sobre \textit{continuous improvement} em IA, \textit{technical debt} em ecossistemas de agentes, e \textit{emergent behavior} em sistemas complexos.
+A documentação sistemática de 23 ciclos de evolução, cada um com problema detectado, análise de causa-raiz, correção implementada, validação e impacto no score, constitui um conjunto de dados único sobre a dinâmica de melhoria de sistemas multiagentes. Este conjunto de dados pode informar futuras pesquisas sobre \textit{continuous improvement} em IA, \textit{technical debt} em ecossistemas de agentes, e \textit{emergent behavior} em sistemas complexos.
 
 \subsection{Contribuição Epistemológica: Ecossistema de 5 Scanners com 62 CTs}
 
@@ -143,7 +143,7 @@ Este objetivo --- que chamamos de ``Cientista Artificial Nível 5'' em analogia 
 
 \section{Considerações Finais}
 
-O ecossistema OpenCode não é um ponto de chegada, mas uma plataforma de partida. Cada um dos seus 227 skills, 128 agentes, 46 MCPs e 188 SPECs é um convite à extensão, à crítica e à melhoria. Cada um dos seus 16 ciclos evolutivos documentados é um testemunho de que sistemas multiagentes podem --- e devem --- aprender com seus próprios erros.
+O ecossistema OpenCode não é um ponto de chegada, mas uma plataforma de partida. Cada um dos seus 106 skills, 125 agentes, 41 MCPs e 282 SPECs é um convite à extensão, à crítica e à melhoria. Cada um dos seus 23 ciclos evolutivos documentados é um testemunho de que sistemas multiagentes podem --- e devem --- aprender com seus próprios erros.
 
 A crise de reprodutibilidade que motivou esta pesquisa não será resolvida por uma única ferramenta ou plataforma. Mas ecossistemas como o OpenCode, que institucionalizam a verificabilidade como requisito arquitetural --- não como reflexão tardia ---, representam um passo na direção certa: de uma ciência que confia em autoridades para uma ciência que confia em evidências rastreáveis.
 

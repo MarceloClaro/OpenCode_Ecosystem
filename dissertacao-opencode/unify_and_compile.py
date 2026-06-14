@@ -87,7 +87,7 @@ def compile_latex(main_tex: Path, output_dir: Path, clean: bool = True) -> bool:
         result = subprocess.run(
             ["pdflatex", "-interaction=nonstopmode", "-output-directory",
              str(output_dir), str(dest_tex)],
-            capture_output=True, text=True, timeout=120,
+            capture_output=True, text=True, errors="replace", timeout=600,
             cwd=str(output_dir)
         )
         
@@ -102,7 +102,7 @@ def compile_latex(main_tex: Path, output_dir: Path, clean: bool = True) -> bool:
         result2 = subprocess.run(
             ["pdflatex", "-interaction=nonstopmode", "-output-directory",
              str(output_dir), str(dest_tex)],
-            capture_output=True, text=True, timeout=120,
+            capture_output=True, text=True, errors="replace", timeout=600,
             cwd=str(output_dir)
         )
         

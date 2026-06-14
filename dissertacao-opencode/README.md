@@ -51,5 +51,5 @@ python unify_and_compile.py --no-pdf
 ```
 
 ---
-*Gerado em: 13/06/2026 21:19*
+*Gerado em: 14/06/2026 07:39*
 *Ecossistema OpenCode v5.1.0 — Score Qualis A1 100/100*

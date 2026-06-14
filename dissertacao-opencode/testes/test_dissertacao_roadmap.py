@@ -20,7 +20,7 @@ import re
 from pathlib import Path
 
 # ===== CONFIGURAÇÃO =====
-DISSERTACAO_DIR = Path(r"C:\Users\marce\.config\opencode\dissertacao-opencode")
+DISSERTACAO_DIR = Path(__file__).resolve().parent.parent
 CAPITULOS_DIR = DISSERTACAO_DIR / "capitulos"
 TEMPLATE_FILE = DISSERTACAO_DIR / "dissertacao.tex"
 

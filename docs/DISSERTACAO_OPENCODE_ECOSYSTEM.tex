@@ -25,12 +25,12 @@
 \newcommand{\doi}[1]{\href{https://doi.org/#1}{\texttt{DOI: #1}}}
 
 % ─── METADADOS ───
-\titulo{OpenCode Ecosystem v5.4.0 R23:\\
+\titulo{OpenCode Ecosystem v5.1.0:\\
 Arquitetura, Implementação e Validação de um Sistema de\\
 Engenharia de Software com Metacognição Funcional\\
 e Behavioral Gate Preventivo}
 \autor{Marcelo Claro Laranjeira}
-\local{Fortaleza, Ceará}
+\local{Crateús, Ceará}
 \data{2026}
 \instituicao{OpenCode Ecosystem Research Initiative}
 \tipotrabalho{Dissertação (Pesquisa Independente)}
@@ -66,7 +66,7 @@ e Behavioral Gate Preventivo}
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=cyan,
-    pdftitle={OpenCode Ecosystem v5.4.0 R23},
+    pdftitle={OpenCode Ecosystem v5.1.0},
     pdfauthor={Marcelo Claro Laranjeira},
     pdfsubject={Engenharia de Software, Metacognição, Sistemas Autônomos},
     pdfkeywords={OpenCode, metacognição, behavioral gate, trust scoring, N3.5, TDD, SPEC}
@@ -77,28 +77,54 @@ e Behavioral Gate Preventivo}
 % ─── CAPA ───
 \begin{capa}
     \centering
-    \vspace*{4cm}
-    {\ABNTEXchapterfont\Large\bfseries OpenCode Ecosystem v5.4.0 R23}\\[1cm]
-    {\ABNTEXchapterfont\large Arquitetura, Implementação e Validação de um Sistema de\\Engenharia de Software com Metacognição Funcional\\e Behavioral Gate Preventivo}\\[3cm]
-    {\large Marcelo Claro Laranjeira}\\[4cm]
-    {\large Fortaleza, Ceará\\2026}
+    \pagecolor{white}
+    \vspace*{1cm}
+    
+    \noindent
+    \color{blue!70!black}\rule{\textwidth}{4pt}\par
+    \vspace{1.5cm}
+    
+    {\large\scshape PUBLICADO NOS ANAIS DO CONGRESSO OPENCODE 2026}\\[0.2cm]
+    {\small\scshape -- Coleção de Engenharia de Sistemas Autônomos e Metacognição --}\par
+    
+    \vspace{2cm}
+    
+    {\Huge\bfseries\color{blue!70!black} O ECOSSISTEMA OPENCODE}\\[0.5cm]
+    {\Large\bfseries\color{gray!80!black} Arquitetura, Implementação e Validação de um Sistema de Engenharia de Software com Metacognição Funcional e Behavioral Gate Preventivo}\\[1cm]
+    
+    \noindent
+    \color{blue!70!black}\rule[0.5ex]{8cm}{1.5pt}\par
+    
+    \vspace{2.5cm}
+    
+    {\large\bfseries Marcelo Claro Laranjeira}\\[0.2cm]
+    {\small ORCID: 0000-0001-8996-2887 | e-mail: marceloclaro@gmail.com}\par
+    
+    \vfill
+    
+    \noindent
+    \color{blue!70!black}\rule{\textwidth}{1.5pt}\par
+    \vspace{0.4cm}
+    {\large\bfseries CRATEÚS -- CEARÁ}\\[0.1cm]
+    {\large 2026}\par
+    \vspace*{0.5cm}
 \end{capa}
 
 % ─── FOLHA DE ROSTO ───
 \begin{folhaderosto}
     \centering
     {\ABNTEXchapterfont\Large Marcelo Claro Laranjeira}\\[1.5cm]
-    {\ABNTEXchapterfont\Large\bfseries OpenCode Ecosystem v5.4.0 R23:\\
+    {\ABNTEXchapterfont\Large\bfseries OpenCode Ecosystem v5.1.0:\\
     Arquitetura, Implementação e Validação de um Sistema de\\
     Engenharia de Software com Metacognição Funcional\\
     e Behavioral Gate Preventivo}\\[2cm]
     \begin{flushright}
     \begin{minipage}{0.5\textwidth}
-    Dissertação apresentada como requisito para documentação científica do projeto OpenCode Ecosystem, sob orientação do próprio sistema (AutoEvolve v5.4.0).
+    Dissertação apresentada como requisito para documentação científica do projeto OpenCode Ecosystem, sob orientação do próprio sistema (AutoEvolve v5.1.0).
     \end{minipage}
     \end{flushright}
     \vfill
-    {\large Fortaleza, Ceará\\2026}
+    {\large Crateús, Ceará\\2026}
 \end{folhaderosto}
 
 % ─── FICHA CATALOGRÁFICA ───
@@ -109,10 +135,10 @@ e Behavioral Gate Preventivo}
     \small
     Dados Internacionais de Catalogação na Publicação (CIP)\\[0.5cm]
     L318o \hspace{0.5cm} Laranjeira, Marcelo Claro\\
-    \hspace{1.2cm} OpenCode Ecosystem v5.4.0 R23: Arquitetura, Implementação e\\
+    \hspace{1.2cm} OpenCode Ecosystem v5.1.0: Arquitetura, Implementação e\\
     \hspace{1.2cm} Validação de um Sistema de Engenharia de Software com\\
     \hspace{1.2cm} Metacognição Funcional e Behavioral Gate Preventivo.\\
-    \hspace{1.2cm} Fortaleza, 2026.\\
+    \hspace{1.2cm} Crateús, 2026.\\
     \hspace{1.2cm} 200p. : il. ; 30 cm.\\
     \hspace{1.2cm} Dissertação — OpenCode Ecosystem Research Initiative, 2026.\\
     \hspace{1.2cm} 1. Engenharia de Software. 2. Metacognição Artificial.\\
@@ -127,7 +153,7 @@ e Behavioral Gate Preventivo}
 \begin{folhadeaprovacao}
     \centering
     {\ABNTEXchapterfont\Large Marcelo Claro Laranjeira}\\[1cm]
-    {\ABNTEXchapterfont\large\bfseries OpenCode Ecosystem v5.4.0 R23}\\[2cm]
+    {\ABNTEXchapterfont\large\bfseries OpenCode Ecosystem v5.1.0}\\[2cm]
     \begin{flushright}
     \begin{minipage}{0.5\textwidth}
     Dissertação validada por 343 testes críticos (17 suites TDD, 100\% de aprovação) e auditada pelo próprio sistema via SPEC-036 MetacognitiveMonitor e SPEC-038 TrustEngine.
@@ -137,7 +163,7 @@ e Behavioral Gate Preventivo}
     Aprovado em: \_\_\_ / \_\_\_ / 2026\\[2cm]
     \begin{center}
     \rule{0.4\textwidth}{0.4pt}\\
-    AutoEvolve v5.4.0 — Auditor Automatizado\\
+    AutoEvolve v5.1.0 — Auditor Automatizado\\
     \vspace{1cm}
     \rule{0.4\textwidth}{0.4pt}\\
     SPEC-036 MetacognitiveMonitor — Verificador de Integridade\\
@@ -182,14 +208,14 @@ Agradeço aos projetos open-source que inspiraram componentes específicos: Elin
 
 % ─── RESUMO ───
 \begin{resumo}
-Esta dissertação apresenta o OpenCode Ecosystem v5.4.0 R23, uma plataforma de engenharia de software com agentes inteligentes que implementa um pipeline completo de scanners epistemológicos, decomposição de conhecimento em insumos cognitivos, metacognição funcional (N3.5), e behavioral gate preventivo com trust scoring adaptativo. O sistema é composto por 22 módulos Python (8.937 linhas), validados por 17 suites TDD totalizando 343 testes críticos com 100\% de aprovação e zero regressão. A arquitetura é organizada em 7 camadas (Skills → MCPs → Agentes → Scanner Pipeline → MCSP → Metacognição → Trust Engine), documentada por 10 ADRs e 13 especificações formais (SPEC-025 a SPEC-038). O sistema completou 23 ciclos evolutivos documentados, progredindo de um score inicial de 85/100 para 100/100. A contribuição central é a demonstração de que metacognição simbólica funcional — auto-observação, detecção de anomalias com thresholds adaptativos, correção automática com aprendizado de eficácia, inferência causal de causas raiz, e prevenção baseada em confiança — é implementável em um sistema de engenharia de software real, com todas as decisões rastreáveis e todos os testes reproduzíveis.
+Esta dissertação apresenta o OpenCode Ecosystem v5.1.0, uma plataforma de engenharia de software com agentes inteligentes que implementa um pipeline completo de scanners epistemológicos, decomposição de conhecimento em insumos cognitivos, metacognição funcional (N3.5), e behavioral gate preventivo com trust scoring adaptativo. O sistema é composto por 22 módulos Python (8.937 linhas), validados por 17 suites TDD totalizando 343 testes críticos com 100\% de aprovação e zero regressão. A arquitetura é organizada em 7 camadas (Skills → MCPs → Agentes → Scanner Pipeline → MCSP → Metacognição → Trust Engine), documentada por 10 ADRs e 13 especificações formais (SPEC-025 a SPEC-038). O sistema completou 23 ciclos evolutivos documentados, progredindo de um score inicial de 85/100 para 100/100. A contribuição central é a demonstração de que metacognição simbólica funcional — auto-observação, detecção de anomalias com thresholds adaptativos, correção automática com aprendizado de eficácia, inferência causal de causas raiz, e prevenção baseada em confiança — é implementável em um sistema de engenharia de software real, com todas as decisões rastreáveis e todos os testes reproduzíveis.
 
 \textbf{Palavras-chave:} OpenCode Ecosystem. Metacognição Artificial. Behavioral Gate. Trust Scoring. Test-Driven Development. Engenharia de Software com Agentes. Composição Unitária do Conhecimento. Governança Cooperativa (Ostrom). N3.5.
 \end{resumo}
 
 % ─── ABSTRACT ───
 \begin{resumo}[Abstract]
-This dissertation presents the OpenCode Ecosystem v5.4.0 R23, a software engineering platform with intelligent agents implementing a complete pipeline of epistemological scanners, knowledge decomposition into cognitive inputs, functional metacognition (N3.5), and a preventive behavioral gate with adaptive trust scoring. The system comprises 22 Python modules (8,937 lines), validated by 17 TDD suites totaling 343 critical tests with 100\% pass rate and zero regression. The architecture is organized into 7 layers (Skills → MCPs → Agents → Scanner Pipeline → MCSP → Metacognition → Trust Engine), documented by 10 ADRs and 13 formal specifications (SPEC-025 through SPEC-038). The system has completed 23 documented evolutionary cycles, progressing from an initial score of 85/100 to 100/100. The central contribution is the demonstration that functional symbolic metacognition — self-observation, anomaly detection with adaptive thresholds, automatic correction with efficacy learning, causal root cause inference, and trust-based prevention — is implementable in a real software engineering system, with all decisions traceable and all tests reproducible.
+This dissertation presents the OpenCode Ecosystem v5.1.0, a software engineering platform with intelligent agents implementing a complete pipeline of epistemological scanners, knowledge decomposition into cognitive inputs, functional metacognition (N3.5), and a preventive behavioral gate with adaptive trust scoring. The system comprises 22 Python modules (8,937 lines), validated by 17 TDD suites totaling 343 critical tests with 100\% pass rate and zero regression. The architecture is organized into 7 layers (Skills → MCPs → Agents → Scanner Pipeline → MCSP → Metacognition → Trust Engine), documented by 10 ADRs and 13 formal specifications (SPEC-025 through SPEC-038). The system has completed 23 documented evolutionary cycles, progressing from an initial score of 85/100 to 100/100. The central contribution is the demonstration that functional symbolic metacognition — self-observation, anomaly detection with adaptive thresholds, automatic correction with efficacy learning, causal root cause inference, and trust-based prevention — is implementable in a real software engineering system, with all decisions traceable and all tests reproducible.
 
 \textbf{Keywords:} OpenCode Ecosystem. Artificial Metacognition. Behavioral Gate. Trust Scoring. Test-Driven Development. Agent-Based Software Engineering. Unit Composition of Knowledge. Cooperative Governance (Ostrom). N3.5.
 \end{resumo}
@@ -283,7 +309,7 @@ Esta dissertação está organizada em 8 capítulos:
 Em conformidade com a Resolução PRPPG/UFC nº 39/2025 e com as melhores práticas de integridade acadêmica, declara-se que:
 
 \begin{enumerate}
-    \item Esta dissertação foi integralmente gerada pelo próprio OpenCode Ecosystem v5.4.0 R23, como demonstração de sua capacidade metacognitiva de auto-documentação.
+    \item Esta dissertação foi integralmente gerada pelo próprio OpenCode Ecosystem v5.1.0, como demonstração de sua capacidade metacognitiva de auto-documentação.
     \item O sistema que gerou este texto é o mesmo sistema descrito neste texto — um exemplo de auto-referência funcional.
     \item Todas as afirmações técnicas são verificáveis através dos 343 testes críticos que acompanham o ecossistema.
     \item Nenhum texto gerado por IA externa (ChatGPT, Claude, Gemini, etc.) foi utilizado neste documento.
@@ -407,7 +433,7 @@ A metodologia central do OpenCode Ecosystem combina SDD e TDD em um ciclo iterat
     \item \textbf{CODE}: Implementar módulo Python que satisfaz os CTs;
     \item \textbf{INTEGRATE}: Integrar o módulo ao pipeline existente;
     \item \textbf{REGRESSION}: Executar todas as suites TDD para verificar zero regressão;
-    \item \textbf{DOCUMENT}: Atualizar documentação (README, AGENTS.md, SPEC\_COVERAGE.md).
+    \item \textbf{DOCUMENT}: Atualizar documentação (\texttt{README.md}, \texttt{AGENTS.md},\\ \texttt{SPEC\_COVERAGE.md}).
 \end{enumerate}
 
 Cada ciclo evolutivo (R1 a R23) segue esta metodologia. O critério de aceitação para cada ciclo é: 100\% dos CTs passam, zero regressão nas suites existentes.
@@ -521,7 +547,7 @@ R10 & 97 & ProviderFactory + Hot-Reload Skills \\
 R11 & 95 & Science Skills (AlphaFold, PubMed, 9 skills) \\
 R12 & 98 & MCP Científico + 28 datasets \\
 R13 & 96 & Reasoning Engines (Z3, SymPy, Kanren, Critical) \\
-R14-R16 & 97-98 & Ampliação (227 skills, 128 agentes, 46 MCPs) \\
+R14-R16 & 97-98 & Ampliação (106 skills, 125 agentes, 41 MCPs) \\
 R17 & 99 & Gartner Hype Cycle (24 CTs, 3 gaps) \\
 R18 & 99 & Token Economy Core (Governança + Economia) \\
 R19 & 99 & MCSP + 5 Scanners (76 CTs) \\
@@ -599,9 +625,9 @@ Embora 343 CTs passem com 100\% de aprovação, isto não garante a ausência de
 O OpenCode Ecosystem é organizado em 7 camadas hierárquicas:
 
 \begin{enumerate}
-    \item \textbf{L1 — Skills (161) + Infraestrutura}: instruções reutilizáveis para tarefas complexas.
-    \item \textbf{L2 — MCPs (46 servidores)}: ferramentas externas acessíveis aos agentes.
-    \item \textbf{L3 — Agentes (128)}: executores especializados de tarefas.
+    \item \textbf{L1 — Skills (106) + Infraestrutura}: instruções reutilizáveis para tarefas complexas.
+    \item \textbf{L2 — MCPs (41 servidores)}: ferramentas externas acessíveis aos agentes.
+    \item \textbf{L3 — Agentes (125)}: executores especializados de tarefas.
     \item \textbf{L4 — Scanner Pipeline (M0-M5)}: diagnóstico epistemológico e decomposição.
     \item \textbf{L5 — MCSP}: solver do conjunto mínimo de capacidades.
     \item \textbf{L6 — Metacognição (R21-R22)}: auto-observação, correção, síntese, governança.
@@ -614,15 +640,15 @@ O pipeline completo de execução segue a sequência M0→M7 com gate preventivo
 
 \begin{enumerate}
     \item \textbf{[GATE]} TrustEngine decide se deve executar (trust $\geq$ threshold);
-    \item \textbf{M0}: StructuralNoiseScanner — compressão estrutural do corpus;
-    \item \textbf{M1}: NoologicalScanner — diagnóstico epistemológico (10 dimensões $\times$ 92 categorias);
-    \item \textbf{M2}: TeleologicalScanner — gaps teleológicos com severity;
-    \item \textbf{M3.5}: CapabilityComposer — decomposição em insumos cognitivos;
-    \item \textbf{M3}: CrossValidationEngine — grafo de dependências (73 arestas);
-    \item \textbf{M4}: PolymathicConvergence — analogias com 30+ domínios externos;
-    \item \textbf{M5}: TrajectoryMapper — roadmap evolutivo com 4 cenários;
-    \item \textbf{M6}: MCSP — conjunto mínimo de capacidades com construction\_cost;
-    \item \textbf{M7}: Metacognição — observar, detectar, corrigir, sintetizar, governar, auto-representar;
+    \item \textbf{M0}: \texttt{StructuralNoiseScanner} — compressão estrutural do corpus;
+    \item \textbf{M1}: \texttt{NoologicalScanner} — diagnóstico epistemológico (10 dimensões $\times$ 92 categorias);
+    \item \textbf{M2}: \texttt{TeleologicalScanner} — gaps teleológicos com severity;
+    \item \textbf{M3.5}: \texttt{CapabilityComposer} — decomposição em insumos cognitivos;
+    \item \textbf{M3}: \texttt{CrossValidationEngine} — grafo de dependências (73 arestas);
+    \item \textbf{M4}: \texttt{PolymathicConvergence} — analogias com 30+ domínios externos;
+    \item \textbf{M5}: \texttt{TrajectoryMapper} — roadmap evolutivo com 4 cenários;
+    \item \textbf{M6}: \texttt{MCSP} — conjunto mínimo de capacidades com \texttt{construction\_cost};
+    \item \textbf{M7}: Metacognição — observar, detectar, corrigir, sintetizar, governar, auto\-re\-pre\-sen\-tar;
     \item \textbf{[LEARN]}: TrustEngine atualiza trust score baseado no outcome.
 \end{enumerate}
 
@@ -645,11 +671,11 @@ As 10 ADRs documentam decisões críticas:
 Para prover usabilidade científica consolidada ao pesquisador Prof. Marcelo Claro Laranjeira (ORCID: 0000-0001-8996-2887), a camada L1 de Skills e a L3 de Agentes foram integradas em uma interface de terminal unificada com controle de voz nativo e inteligência offline, estruturada sob três módulos principais:
 
 \begin{enumerate}
-    \item \textbf{Console Hierárquico Centralizado (\texttt{menu.py})}: Módulo Python de auto-descoberta que varre dinamicamente a estrutura de diretórios do ecossistema para mapear agentes, skills e MCPs ativos. Oferece filtragem em tempo real, navegação por breadcrumbs e um mecanismo de busca recursiva de comandos com base em tags de relevância.
+    \item \textbf{Console Hierárquico Centralizado\\ (\texttt{menu.py})}: Módulo Python de auto-descoberta que varre dinamicamente a estrutura de diretórios do ecossistema para mapear agentes, skills e MCPs ativos. Oferece filtragem em tempo real, navegação por breadcrumbs e um mecanismo de busca recursiva de comandos com base em tags de relevância.
     
-    \item \textbf{Chat Local e RAG Híbrido (\texttt{chat\_ollama.py})}: Orquestrador local integrado à engine de inferência \texttt{Ollama} com o modelo \texttt{qwen2.5-coder:1.5b} otimizado para CPUs. Possui interface de diálogo (White-Box Streaming) com auditoria detalhada de consumo de tokens e logs de custos economizados (\texttt{docs/session\_token\_audit.log}). O pipeline executa RAG híbrido consultando códigos locais no diretório \texttt{projects/} e a API externa da Wikipedia e DuckDuckGo.
+    \item \textbf{Chat Local e RAG Híbrido (\texttt{chat\_ollama.py})}: Orquestrador local integrado à engine de inferência \texttt{Ollama} com o modelo \texttt{qwen2.5-coder:1.5b} otimizado para CPUs. Possui interface de diálogo (White-Box Streaming) com auditoria detalhada de consumo de tokens e logs de custos economizados (\texttt{docs/session\_}\-\texttt{token\_}\-\texttt{audit.log}). O pipeline executa RAG híbrido consultando códigos locais no diretório \texttt{projects/} e a API externa da Wikipedia e DuckDuckGo.
     
-    \item \textbf{Daemon de Vocalização de Áudio (\texttt{vocalizer\_daemon.ps1})}: Serviço em background em Windows PowerShell que monitora o arquivo de comunicação assíncrona \texttt{.vocalizer\_cmd}. Invoca classes nativas do framework .NET (\texttt{System.Speech.Synthesis.SpeechSynthesizer}) para ler textos higienizados de relatórios em português brasileiro, suportando ações de pausar (\texttt{PAUSE}), retomar (\texttt{RESUME}), repetir (\texttt{REPEAT}) e parar (\texttt{STOP}) via atalhos do teclado.
+    \item \textbf{Daemon de Vocalização de Áudio (\texttt{vocalizer\_daemon.ps1})}: Serviço em background em Windows PowerShell que monitora o arquivo de comunicação assíncrona \texttt{.vocalizer\_}\-\texttt{cmd}. Invoca classes nativas do framework .NET (\texttt{System.}\-\texttt{Speech.}\-\texttt{Synthesis.}\-\texttt{Speech\-Synthesizer}) para ler textos higienizados de relatórios em português brasileiro, suportando ações de pausar (\texttt{PAUSE}), retomar (\texttt{RESUME}), repetir (\texttt{REPEAT}) e parar (\texttt{STOP}) via atalhos do teclado.
 \end{enumerate}
 
 O alinhamento e integridade desses módulos de interface são validados no pipeline de conformidade TDD pelo caso de teste \textbf{T6} do validador de ambiente \texttt{test\_environment.sh}, garantindo que a infraestrutura completa esteja operacional antes da interação com o usuário.
@@ -1093,7 +1119,7 @@ TrustEngine & 8 & 1.1 \\
 
 \subsection{Caso 1: Auto-Diagnóstico do Ecossistema}
 
-O pipeline de scanners foi aplicado ao próprio ecossistema OpenCode para avaliar sua capacidade de auto-diagnóstico. O corpus consistiu nos documentos AGENTS.md, SPEC\_COVERAGE.md, e SPEC-033. Os objetivos teleológicos incluíram seis metas de AGI (raciocínio metacognitivo, auto-modificação recursiva, modelo de mundo unificado, planejamento de longo horizonte, consciência artificial, e goal-setting autônomo).
+O pipeline de scanners foi aplicado ao próprio ecossistema OpenCode para avaliar sua capacidade de auto-diagnóstico. O corpus consistiu nos documentos \texttt{AGENTS.md}, \texttt{SPEC\_}\-\texttt{COVERAGE.md} e \texttt{SPEC-033}. Os objetivos teleológicos incluíram seis metas de AGI (raciocínio metacognitivo, auto-modificação recursiva, modelo de mundo unificado, planejamento de longo horizonte, consciência artificial, e goal-setting autônomo).
 
 \textbf{Resultados:} O scanner identificou cobertura noológica de 27\% (50-60\% real com equivalências semânticas), 4 gaps críticos (metacognitivo, dialético, cooperativo, neurobiológico), e um construction cost de 6\%. Os 4 gaps foram subsequentemente implementados (SPEC-036, SPEC-037), demonstrando que o sistema não apenas diagnostica, mas também age sobre o diagnóstico.
 
@@ -1164,7 +1190,7 @@ Oito limitações são reconhecidas (Seção~\ref{ch:resultados}). Os trabalhos 
 
 \section{Síntese dos Resultados}
 
-Esta dissertação apresentou o OpenCode Ecosystem v5.4.0 R23, demonstrando que:
+Esta dissertação apresentou o OpenCode Ecosystem v5.1.0, demonstrando que:
 
 \begin{enumerate}
     \item \textbf{Metacognição simbólica funcional é implementável}: o sistema atinge N3.5 — auto-observação, detecção de anomalias com thresholds adaptativos, correção automática com aprendizado de eficácia, inferência causal de causas raiz, e prevenção baseada em confiança — com todas as decisões rastreáveis e todos os testes reproduzíveis.
@@ -1280,7 +1306,7 @@ ALVINREAL. Awesome Autoresearch: Curated list of autonomous improvement loops. \
 RUVNET. Ruflo: Agent meta-harness for Claude. \textit{GitHub}, 2026. Disponível em: \url{https://github.com/ruvnet/ruflo}. Acesso em: 10 jun. 2026.
 
 \bibitem{opencode2026}
-LARANJEIRA, M. C. OpenCode Ecosystem v5.4.0 R23. \textit{GitHub}, 2026. Disponível em: \url{https://github.com/MarceloClaro/OpenCode_Ecosystem}. Acesso em: 10 jun. 2026.
+LARANJEIRA, M. C. OpenCode Ecosystem v5.1.0. \textit{GitHub}, 2026. Disponível em: \url{https://github.com/MarceloClaro/OpenCode_Ecosystem}. Acesso em: 10 jun. 2026.
 
 \bibitem{planning2026}
 ADIO, O. Planning-with-files: Persistent file-based planning for long-running agentic tasks. \textit{GitHub}, 2026. Disponível em: \url{https://github.com/OthmanAdi/planning-with-files}. Acesso em: 10 jun. 2026.
@@ -1332,7 +1358,7 @@ scanner\_integration.py & — & 185 \\
 \midrule
 \textbf{TOTAL} & & \textbf{8.937} \\
 \bottomrule
-\caption{Módulos Python do OpenCode Ecosystem v5.4.0 R23}
+\caption{Módulos Python do OpenCode Ecosystem v5.1.0}
 \end{longtable}
 
 \chapter{Comandos de Verificação}
@@ -1361,7 +1387,7 @@ python specs/test_behavioral_autonomy.py
 
 \chapter{Taxonomia Completa de Raciocínios}
 
-\begin{longtable}{cll}
+\begin{longtable}{cp{7.5cm}p{5.5cm}}
 \toprule
 \textbf{ID} & \textbf{Raciocínio} & \textbf{Status} \\
 \midrule
@@ -1618,7 +1644,7 @@ A especificação formal (SPEC-033) definiu:
 \begin{enumerate}
     \item \textbf{Objetivo}: Decompor capacidades abstratas em insumos cognitivos construtíveis.
     \item \textbf{Estrutura de dados}: CognitiveInput (6 tipos), CapabilityUnit (decomposição completa), InputNode (grafo de insumos).
-    \item \textbf{Interface}: CognitiveLibrary (load/save/query), CapabilityComposer (decompose/decompose\_many/compute\_shared\_inputs).
+    \item \textbf{Interface}: \texttt{CognitiveLibrary} (load/save/query), \texttt{CapabilityComposer} (de\-com\-pose/de\-com\-pose\_many/com\-pute\_shared\_in\-puts).
     \item \textbf{Critérios de aceitação}: 8 CTs cobrindo validação sintática, semântica, bootstrap, unicidade e serialização.
 \end{enumerate}
 
@@ -1654,7 +1680,7 @@ O ecossistema utiliza 12 padrões de projeto, dos quais 4 são contribuições o
 \begin{enumerate}
     \item \textbf{Behavioral Gate} (SPEC-038): padrão de pré-execução que decide se uma ação deve ser executada baseado em trust score adaptativo. Inspirado no metacognitive guard do NEXO Brain.
     \item \textbf{Structural Compression} (SPEC-037): padrão de processamento de corpus que classifica elementos em estrutura/exemplo/ruído, verifica preservação funcional, e testa reconstrução. Diferente de padrões de compressão estatística.
-    \item \textbf{Dialectical Synthesis} (SPEC-036): padrão de resolução de contradições via tese+antítese=síntese, com três modos (aufheben, compromise, reframe).
+    \item \textbf{Dialectical Synthesis} (SPEC-036): padrão de resolução de contradições via tese + antítese = síntese, com três modos (aufheben, compromise, reframe).
     \item \textbf{Ostrom Governance} (SPEC-036): padrão de validação de goals autônomos contra 8 princípios de governança de commons, adaptados de Ostrom (1990, 2010).
 \end{enumerate}
 

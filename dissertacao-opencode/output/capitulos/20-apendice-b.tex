@@ -77,9 +77,9 @@ specs/tests/test_spec020_data_streaming.py:: ................. 10 passed [100%]
 
 Além dos 29 CTs originais que cobrem os gaps do Gartner Hype Cycle, o ecossistema foi expandido com 7 suites TDD adicionais, totalizando 255 casos de teste. Esta seção documenta cada suite.
 
-\subsection{SPEC-025: Frontmatter Validator (161 CTs)}
+\subsection{SPEC-025: Frontmatter Validator (106 CTs)}
 
-Valida que todos os 161 arquivos SKILL.md do ecossistema possuem frontmatter YAML válido com os campos obrigatórios \texttt{name:} e \texttt{description:}. Categorias de falha detectadas e corrigidas automaticamente:
+Valida que todos os 106 arquivos SKILL.md do ecossistema possuem frontmatter YAML válido com os campos obrigatórios \texttt{name:} e \texttt{description:}. Categorias de falha detectadas e corrigidas automaticamente:
 
 \begin{itemize}
   \item \textbf{NO\_FRONTMATTER} (10 arquivos): SKILL.md sem delimitadores \texttt{---}. Correção: adiciona bloco YAML completo com \texttt{name:} derivado do nome do diretório.
@@ -89,7 +89,7 @@ Valida que todos os 161 arquivos SKILL.md do ecossistema possuem frontmatter YAM
   \item \textbf{CJK\_LEAK} (0 ocorrências após correção): Caracteres chineses/japoneses/coreanos em SKILL.md. Correção: substituição por equivalentes em português.
 \end{itemize}
 
-Implementação: parse YAML minimalista usando apenas stdlib Python (sem dependência de PyYAML), com suporte a BOM (\texttt{\textbackslash ufeff}) em arquivos UTF-8. O validador processa 161 arquivos em 0,4 segundos.
+Implementação: parse YAML minimalista usando apenas stdlib Python (sem dependência de PyYAML), com suporte a BOM (\texttt{\textbackslash ufeff}) em arquivos UTF-8. O validador processa 106 arquivos em 0,4 segundos.
 
 \subsection{SPEC-026: Evolve Pipeline Review (10 CTs)}
 
@@ -97,7 +97,7 @@ Valida as 6 fases do pipeline evolutivo:
 
 \begin{enumerate}
   \item \textbf{SENSE (2 CTs):} \texttt{installed.json} é JSON válido com campo \texttt{skills} (array) e \texttt{timestamp} (string); \texttt{memory.json} contém \texttt{healthHistory} com pelo menos 1 entrada com \texttt{score}.
-  \item \textbf{VERIFY (2 CTs):} Todos os 161 SKILL.md têm frontmatter válido (integração com SPEC-025); zero caracteres CJK em qualquer SKILL.md.
+  \item \textbf{VERIFY (2 CTs):} Todos os 106 SKILL.md têm frontmatter válido (integração com SPEC-025); zero caracteres CJK em qualquer SKILL.md.
   \item \textbf{EVOLVE (2 CTs):} Arquivos em \texttt{evolution/} têm frontmatter com \texttt{name:} e \texttt{description:}; \texttt{installed.json} não contém órfãos ativos (status \texttt{orphan-404} sem \texttt{action: remove-next}).
   \item \textbf{LEARN (2 CTs):} \texttt{ecosystem-observability.jsonl} é JSONL válido (todas as linhas parseáveis, com campos \texttt{timestamp}, \texttt{event}, \texttt{tool}); \texttt{manus-state.json} (se existir) é JSON válido.
   \item \textbf{MANUS (2 CTs):} Bridge Python (\texttt{manus\_evolve\_bridge.py}) compila sem erros de sintaxe; estrutura de diretórios do ecossistema está completa.
