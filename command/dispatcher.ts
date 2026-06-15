@@ -56,6 +56,7 @@ const TRIGGER_MAP: Record<string, string[]> = {
   workspaces:   ["/workspaces", "workspaces"],
   worktree:     ["/worktree", "worktree"],
   "ws-review":  ["/ws-review", "ws-review", "ws review"],
+  marceloclaro: ["/marceloclaro", "marceloclaro", "supreme orchestrator", "orquestrador supremo"],
 }
 
 const NEW_SESSION_COMMANDS = new Set(["plan", "research", "execute"])

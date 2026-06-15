@@ -279,7 +279,7 @@ class MenuEngine:
             ("academic", ("Academicos (5)", ["Antropologo", "Geografo", "Historiador", "Narratologo", "Psicologo"])),
             ("engineering", ("Engenharia (5)", ["Code Reviewer", "Minimal Change", "Git Workflow", "Security Audit", "DB Optimizer"])),
             ("product", ("Produto (5)", ["Behavioral Nudge", "Feedback", "Product Manager", "Sprint", "Trends"])),
-            ("strategy", ("Estrategia (3)", ["Nexus Strategy", "Agent Activation", "Handoff Templates"])),
+            ("strategy", ("Estrategia (4)", ["MarceloClaro", "Nexus Strategy", "Agent Activation", "Handoff Templates"])),
             ("specialized", ("Especializados (8)", ["Orchestrator", "MCP Builder", "Compliance", "Workflow", "Docs", "Blockchain", "Governance", "Data"])),
             ("forum", ("Agent Forum", ["Debate multiagente", "Moderacao LLM"])),
             ("maswos", ("MASWOS v5", ["49 agentes de escrita academica"])),
