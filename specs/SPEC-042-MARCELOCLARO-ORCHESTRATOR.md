@@ -29,3 +29,8 @@ O agente `/marceloclaro` (avatar digital de Prof. Marcelo Claro Laranjeira) atua
 * **CT-4202 (Orquestração de Pilares):** Valida se o agente retorna o status consolidado com validação dos 4 pilares em seu resultado de execução.
 * **CT-4203 (Delegação e Alinhamento):** Testa se a chamada delega e interage corretamente com o `AntigravityOrchestrator` e o `MasterOrchestrator` em cenários simulados.
 * **CT-4204 (Controle de Erro & Guardrails):** Verifica se o agente detecta e bloqueia comandos instáveis acionando as regras de contenção do TrustEngine.
+* **CT-4205 (Integração de Bridge):** Valida se a ponte do Antigravity no TypeScript (`antigravity-bridge.ts`) reconhece e prioriza a orquestração do `marceloclaro` com prioridade crítica.
+
+## 5. Refinamento de Integração TUI
+O menu interativo (`menu.py`) foi refinado com a ação global `iniciar_marceloclaro`, que executa o `opencode` pré-configurado com a opção `--agent marceloclaro` no diretório de projetos. O item MarceloClaro na categoria Estratégia dispara automaticamente essa orquestração direta em vez de permanecer inativo.
+

@@ -106,6 +106,7 @@ const ANTIGRAVITY_TRIGGER_PATTERNS = [
   /\b(paralelo|parallel|simultâneo|concurrent)\b/i,
   /\b(demo|demonstração|animação|recording|gravação)\b/i,
   /\b(rag|banco vetorial|vector db|consultar base|busca semântica)\b/i,
+  /\b(marceloclaro|\/marceloclaro|orquestrador supremo)\b/i,
 ]
 
 // ============================================================
@@ -121,6 +122,16 @@ function classifyTask(input: string): TaskClassification {
 
   // Verificar triggers do Antigravity
   const triggeredPatterns = ANTIGRAVITY_TRIGGER_PATTERNS.filter(p => p.test(input))
+
+  if (lowerInput.includes("/marceloclaro") || lowerInput.includes("marceloclaro") || lowerInput.includes("orquestrador supremo")) {
+    return {
+      type: "orchestration",
+      priority: "critical",
+      requiresAntigravity: true,
+      reason: "Invocação explícita do Orquestrador Supremo Marcelo Claro (SPEC-042)",
+      suggestedCapability: "subagent_orchestration",
+    }
+  }
 
   if (lowerInput.includes("image") || lowerInput.includes("imagem") || lowerInput.includes("visual")) {
     return {
@@ -311,7 +322,7 @@ export const AntiBridgePlugin: Plugin = async ({ project, client, $, directory, 
           ecoState = JSON.parse(ecoContent)
         } catch {}
 
-        // Registrar Antigravity como agente externo especializado
+        // Registrar Antigravity e MarceloClaro como agentes especializados
         if (!ecoState.agents) ecoState.agents = {}
         ecoState.agents["antigravity-bridge"] = {
           name: "antigravity-bridge",
@@ -326,6 +337,19 @@ export const AntiBridgePlugin: Plugin = async ({ project, client, $, directory, 
           provider: "google-deepmind",
           version: BRIDGE_VERSION,
         }
+        ecoState.agents["marceloclaro"] = {
+          name: "marceloclaro",
+          type: "orchestrator",
+          status: "active",
+          score: 100,
+          lastCheck: new Date().toISOString(),
+          errorCount: 0,
+          latency: null,
+          category: "supreme-orchestration",
+          capabilities: ["orchestrate_pillars", "prevent_goal_drift", "tdd_validation", "cli_alignment"],
+          provider: "opencode-ecosystem",
+          version: "1.0.0",
+        }
 
         // Adicionar entradas de afinidade na matriz de validação cruzada
         const affinityEntries: Record<string, number> = {
@@ -339,6 +363,10 @@ export const AntiBridgePlugin: Plugin = async ({ project, client, $, directory, 
           "antigravity↔browser_subagent:agent": 1.0,
           "antigravity↔search_web:mcp": 0.95,
           "antigravity↔websearch:mcp": 0.90,
+          "marceloclaro↔antigravity": 0.98,
+          "marceloclaro↔master-orchestrator": 0.95,
+          "marceloclaro↔stage-orchestrator": 0.95,
+          "marceloclaro↔trust-engine": 0.95,
         }
 
         if (!ecoState.crossValidationMatrix) ecoState.crossValidationMatrix = {}

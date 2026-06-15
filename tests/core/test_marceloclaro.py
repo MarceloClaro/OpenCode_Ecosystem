@@ -55,3 +55,12 @@ class TestMarceloClaroOrchestrator:
         
         assert "master-orchestrator" in content, "Falta delegação para o master-orchestrator."
         assert "antigravity-orchestrator" in content, "Falta delegação para o antigravity-orchestrator."
+
+    def test_ct4205_bridge_integration_mapped(self):
+        """CT-4205: Valida se a ponte do Antigravity no TypeScript reconhece e prioriza o marceloclaro."""
+        bridge_path = BASE_DIR / "plugins" / "antigravity-bridge.ts"
+        assert bridge_path.exists(), "O arquivo do plugin antigravity-bridge.ts não foi encontrado."
+        
+        content = bridge_path.read_text(encoding="utf-8")
+        assert "marceloclaro" in content, "Falta integração do marceloclaro na ponte do Antigravity."
+        assert "supreme-orchestration" in content, "Falta o registro da categoria supreme-orchestration no ecossistema."

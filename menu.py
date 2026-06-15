@@ -126,6 +126,9 @@ def listar_modelos_antigravity():
 def chat_local_ollama():
     os.system("python3 /mnt/c/Users/marce/Documents/OpenCode_Ecosystem/scripts/chat_ollama.py")
 
+def iniciar_marceloclaro():
+    os.system("export PATH=\"$HOME/.opencode/bin:$PATH\"; cd /mnt/c/Users/marce/Documents/OpenCode_Ecosystem/projects && opencode --agent marceloclaro")
+
 def gerenciar_provedores():
     os.system("opencode providers")
 
@@ -287,7 +290,9 @@ class MenuEngine:
         for key, (label, agents) in categories.items():
             sub = MenuNode(label)
             for a in agents[:4] + (agents[4:5] if len(agents) > 4 else []):
-                sub.add(a.lower().replace(" ", "_")[:20], a, f"Agente: {a}")
+                agent_key = a.lower().replace(" ", "_")[:20]
+                action = iniciar_marceloclaro if agent_key == "marceloclaro" else None
+                sub.add(agent_key, a, f"Agente: {a}", action=action)
             node.items[key] = MenuItem(key, label, f"{len(agents)} agentes", submenu=sub)
 
     def _discover_engineering(self, node: MenuNode) -> None:
