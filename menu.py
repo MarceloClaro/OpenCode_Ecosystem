@@ -151,6 +151,12 @@ def visualizar_sdd():
 def visualizar_manual():
     os.system("cat /mnt/c/Users/marce/Documents/OpenCode_Ecosystem/docs/manual_academic_presentation.md")
 
+def executar_potentiality_scanner():
+    print("\nExecutando Módulo 1: Structural DNA Extractor...")
+    os.system("python3 -c \"import sys; sys.path.insert(0, '/mnt/c/Users/marce/Documents/OpenCode_Ecosystem/skills/system/academic-audit'); from potentiality_scanner import PotentialityScanner; scanner = PotentialityScanner(); dna = scanner.scan(); scanner.save_report(dna, '/mnt/c/Users/marce/Documents/OpenCode_Ecosystem/pesquisas/dna_estrutural_report.md')\"")
+    print("\nRelatório gerado em: pesquisas/dna_estrutural_report.md")
+    os.system("cat /mnt/c/Users/marce/Documents/OpenCode_Ecosystem/pesquisas/dna_estrutural_report.md")
+
 
 class MenuEngine:
     """Motor de menu adaptativo com auto-descoberta do ecossistema."""
@@ -345,6 +351,9 @@ class MenuEngine:
         node.add("read_manual", "Visualizar Manual Acadêmico & Slides de Apresentação",
                  "Abre a documentação detalhada de banca A1 para leitura no console",
                  action=visualizar_manual)
+        node.add("potentiality_scan", "Potentiality Scanner (Módulo 1: Structural DNA Extractor)",
+                 "Mapeia o DNA de capacidades, redundâncias e lacunas do ecossistema",
+                 action=executar_potentiality_scanner)
 
         node.add("status", "Status do Ecossistema", "150 skills, 46 MCPs, 226 TDD, 162 SDD", tags=["status", "saude"])
         node.add("evolve", "Evoluir Ecossistema", "AutoEvolve: PLAN → ACT → REFLECT → EXTRACT → EVOLVE", tags=["evolucao"])
