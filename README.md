@@ -60,6 +60,14 @@ Se desejar verificar o pulso dos agentes e atestar que as ferramentas de infraes
 ./tests/test_environment.sh
 ```
 
+**4. Executando o Orquestrador Supremo (/marceloclaro)**
+Para acionar o agente de controle supremo, alinhar todos os subagentes e validar os 4 pilares do OpenCode Ecosystem de forma perfeita, basta disparar no terminal do OpenCode CLI:
+```bash
+opencode
+/marceloclaro [sua missão ou comando]
+```
+*(O agente `/marceloclaro` gerenciará e auditará de forma autônoma e transparente o exército de subagentes, aplicando regras de contenção de desvios e TDD).*
+
 ---
 
 ## 🎪 Guia de Demonstração para Eventos de Startups (Pitch & Demo Guide)
