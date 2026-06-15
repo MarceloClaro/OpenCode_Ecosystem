@@ -17,10 +17,10 @@ O **OpenCode Ecosystem** é uma arquitetura revolucionária de Inteligência Art
 
 ## 🚀 Para Startups e Investidores (O Valor do Negócio)
 
-- **Custo Operacional Zero:** Diferente da concorrência que depende de APIs pagas por token (em dólar), o OpenCode foi otimizado para rodar de forma híbrida e local (com modelos de 200K de contexto), extinguindo o custo de nuvem.
+- **Execução Híbrida e Inteligente:** O ecossistema é flexível e opera tanto de forma local offline (via **Ollama CLI** com modelos como `opencode/qwen-coder-pro`) quanto integrada com a nuvem (via **Xiaomi MiMo API** com contexto gigante de até 1M de tokens para tarefas longas), extinguindo ou minimizando custos com infraestrutura.
 - **Produtividade Exponencial:** O pipeline *AutoEvolve* substitui o fluxo de trabalho de semanas por minutos. Tarefas de planejamento de produto, extração de métricas de mercado (50 indicadores globais) e codificação acontecem em paralelo.
 - **Escalabilidade Plug & Play:** Arquitetura agnóstica baseada no novo padrão da indústria (Model Context Protocol). A sua empresa pode injetar "Skills" corporativas proprietárias no cérebro do ecossistema instantaneamente.
-- **Governança Rigorosa:** A IA não sofre de alucinações desenfreadas. Cada decisão tomada pela máquina passa por um conselho de auditores lógicos baseados na Teoria dos Jogos (Equilíbrio de Nash) e Validação Cruzada antes de ser executada.
+- **Governança Preventiva Contra Goal Drift:** O ecossistema implementa a tecnologia de **Preventive Cognitive Guardrails (Barreiras Cognitivas Preventivas)** baseada no *SPEC-038 TrustEngine*. Cada decisão tomada pelos agentes de IA passa por um conselho de auditores de confiança em tempo real, mitigando e eliminando alucinações cognitivas e desvios de objetivos em produção.
 
 ---
 
@@ -30,12 +30,13 @@ A versão **v5.1** eleva o teto da automação de software operando através de 
 
 - 🧠 **Orquestração Nexus (NMA v6.2):** Framework de sincronização meta-granular responsável por coordenar operações atômicas entre agentes usando 120+ barreiras de concorrência.
 - 🤖 **125 Agentes Catalogados & 106 Skills Ativas:** Especialistas dinâmicos geridos via um robusto Container de Injeção de Dependências (DI) transversal.
-- 🔌 **Camada Universal de Protocolos (41 Servidores MCP):** Integração *out-of-the-box* com bancos SQLite, Web Crawlers, APIs financeiras, Execução de Código Sandbox (Node/Python) e Motores CJK.
+- 🔌 **Camada Universal de Protocolos (41 Servidores MCP):** Integração *out-of-the-box* com bancos SQLite, Web Crawlers, APIs financeiras, Execução de Código Sandbox (Node/Python) e pontes integradas para o **Antigravity CLI (agy)**.
 - 🔬 **Módulo de Pesquisa e IA Avançada:** Integração nativa de Computação Quântica simulada (81 arquiteturas testadas) e DataOrchestrator com RAG Multi-Engine Adaptativo.
-- 🧬 **Fusão de Frameworks (MASWOS / MiroFish / BettaFish):** Padrões acadêmicos absorvidos no *core* para validação rígida em 8 domínios distintos (Geo, Finance, Crypto, BioMed, Economics, etc.).
+- 🧬 **Metacognição Funcional e Auditoria:** Sistema de auto-observação (N0 a N3.5) que se autodiagnostica, propõe patches e executa correções em tempo de execução. Todo o modelo teórico, provas matemáticas de complexidade (Set Cover) e mitigação de auto-referência estão compilados no **Manuscrito de Dissertação de 96 páginas** do projeto.
 
 Para o aprofundamento arquitetural e mapeamento vetorial dos processos, consulte a bíblia do sistema:
 👉 **[Documentação Técnica Completa (OPENCODE_ECOSYSTEM.md)](OPENCODE_ECOSYSTEM.md)**
+👉 **[Manuscrito de Dissertação Acadêmica (DISSERTACAO_OPENCODE_ECOSYSTEM.pdf)](docs/DISSERTACAO_OPENCODE_ECOSYSTEM.pdf)**
 
 ---
 

@@ -39,13 +39,13 @@ def verify_structure() -> dict:
     }
     
     expected = [
-        "00-capa", "01-folha-rosto", "02-ficha-catalografica",
+        "00-ilustracao", "00-capa", "01-folha-rosto", "02-ficha-catalografica",
         "03-dedicatoria", "04-agradecimentos", "05-epigrafe",
         "06-resumo", "07-abstract", "08-lista-figuras",
         "09-lista-tabelas", "10-lista-siglas", "11-sumario",
         "12-introducao", "13-revisao-literatura", "14-metodologia",
         "15-resultados", "16-discussao", "17-conclusao",
-        "18-referencias", "19-apendice-a", "20-apendice-b"
+        "18-referencias", "19-apendice-a", "20-apendice-b", "21-apendice-c"
     ]
     
     for name in expected:
@@ -140,7 +140,7 @@ def generate_readme(metrics: dict, output_dir: Path):
 
 | Métrica | Valor |
 |---------|-------|
-| Arquivos de capítulo | {metrics['total_arquivos']}/21 |
+| Arquivos de capítulo | {metrics['total_arquivos']}/23 |
 | Palavras totais | {metrics['total_palavras']:,} |
 | Páginas estimadas (ABNT) | ≈{metrics['total_palavras'] // 350} |
 | Notas de rodapé | {metrics['total_notas_rodape']} |
@@ -204,7 +204,7 @@ def main():
     print("\n🔍 Verificando estrutura de arquivos...")
     metrics = verify_structure()
     
-    print(f"\n   ✅ {metrics['total_arquivos']}/21 capítulos encontrados")
+    print(f"\n   ✅ {metrics['total_arquivos']}/23 capítulos encontrados")
     print(f"   📝 {metrics['total_palavras']:,} palavras totais")
     print(f"   📄 ≈{metrics['total_palavras'] // 350} páginas estimadas (ABNT)")
     print(f"   📌 {metrics['total_notas_rodape']} notas de rodapé")

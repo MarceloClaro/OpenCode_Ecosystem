@@ -27,7 +27,8 @@ Antes de iniciar, verifique se o seu ambiente atende aos seguintes requisitos:
 | **Python** | 3.12+ | Necessário para os agentes, scripts Nexus e módulos quânticos |
 | **OpenCode CLI** | 1.14+ | Interface de linha de comando do OpenCode |
 | **Sistema Operacional** | Windows 11 (principal) | Linux e macOS também são suportados (experimental) |
-| **Modelo** | `deepseek-v4-pro` | OpenCode Zen — 200K contexto, 128K saída, gratuito (⚠️ [veja aviso de privacidade](PRIVACY.md)) |
+| **Modelo (Nuvem)** | `mimo-v2.5-pro` | Xiaomi MiMo API — 1M contexto, 128K saída (Pay-as-you-go ou Token Plan) |
+| **Modelo (Local)** | `opencode/qwen-coder-pro` | Ollama local — 32K contexto, 8K saída (totalmente offline e gratuito) |
 
 ---
 
@@ -57,14 +58,15 @@ opencode --version
 # Saída esperada: 1.14.x ou superior
 ```
 
-### 4. Verificar o modelo `deepseek-v4-pro`
+### 4. Verificar os Modelos Ativos
 
-O modelo padrão do ecossistema é o `deepseek-v4-pro` (OpenCode Zen), que é gratuito e oferece 200K tokens de contexto com 128K tokens de saída. Verifique a disponibilidade:
+O ecossistema opera de forma híbrida. Você pode verificar os modelos disponíveis executando:
 
 ```bash
-opencode models
-# O modelo deepseek-v4-pro deve aparecer na lista
+opencode
+/models
 ```
+*(Isso listará tanto os modelos em nuvem da Xiaomi MiMo quanto os modelos locais executando sob o seu Ollama CLI local).*
 
 ---
 
@@ -142,11 +144,13 @@ nvm install 25
 nvm use 25
 ```
 
-### Modelo `deepseek-v4-pro` não disponível
+### Modelos MiMo ou Ollama não disponíveis
 
-**Sintoma:** `Model not found` ao executar comandos
+**Sintoma:** `Model not found` ao tentar executar comandos no OpenCode
 
-**Solução:** Verifique a conexão com a internet e execute `opencode models` para listar os modelos disponíveis. O `deepseek-v4-pro` é gratuito e deve estar disponível automaticamente.
+**Solução:**
+1. Para modelos **MiMo (nuvem)**, certifique-se de que sua chave de API e URL base estão configuradas corretamente em `~/.config/opencode/opencode.json` e que você possui conexão com a internet.
+2. Para modelos **Ollama (local)**, garanta que o serviço do Ollama esteja rodando em sua máquina e que você baixou o modelo desejado (ex: `ollama run deepseek-r1:7b`).
 
 ### MCPs não inicializando
 
