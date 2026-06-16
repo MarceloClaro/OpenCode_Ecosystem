@@ -287,16 +287,20 @@ Abra o MiKTeX Console e instale os pacotes:
 
 ## 19. Livros (Templates LaTeX) (`livro/`)
 
-Modelos de livros baseados no repositório oficial [lathex-template](https://github.com/MarceloClaro/lathex-template).
+Modelos de livros baseados no repositório oficial [lathex-template](https://github.com/MarceloClaro/lathex-template) e templates locais adicionados pelo usuário.
 
 | Template | Descrição |
 |----------|-----------|
 | `book` | Modelo clássico com capa customizada, sumário completo, divisões de capítulos e bibliografia em arquivos separados. |
 | `forta` | Estilo moderno (portfólio) com cabeçalhos decorados, suporte nativo a figuras e design contemporâneo. |
 | `apehex` | Estilo minimalista com cabeçalhos limpos, layout direto e direto ao ponto (ideal para relatórios técnicos longos). |
+| `LatHex_dark` | Estilo temático escuro (Dark Theme) para livros e projetos de design de alta sofisticação visual. |
+| `Modelo_de_livro_para_Editora_UnB` | Modelo e diretrizes de diagramação e tipografia oficiais da Editora da Universidade de Brasília (UnB). |
+| `Template_for_Editor_of_a_Springer_Nature_Contributed_Volume` | Template de publicação oficial da Springer Nature para volumes coletivos/editados com múltiplos contribuidores. |
+| `Victoria_Regia___A_Classical_LaTeX_e_Book_Template` | Layout tradicional clássico de livro eletrônico (e-Book) refinado, baseado na estética "Victoria Regia". |
 
-**Uso:** Copie o template desejado e edite o arquivo principal `main.tex` na pasta.
-**Nota Importante:** O ecossistema está configurado para interagir com o usuário e solicitar a escolha de qual desses três templates usar antes de começar a escrita de qualquer livro.
+**Uso:** Copie a pasta do template desejado do diretório `templates/livro/` e configure o seu compilador (como pdflatex ou xelatex).
+**Nota Importante:** O ecossistema está configurado para interagir com o usuário e solicitar a escolha de qual dessas opções usar antes de começar a escrita de qualquer livro.
 
 ---
 
@@ -307,3 +311,4 @@ Modelos de livros baseados no repositório oficial [lathex-template](https://git
 | 30/05/2026 | Criação da coleção com 8 categorias |
 | 30/05/2026 | Expansão para 18 categorias: adicionados ELSEVIER-CAS, APA7, KOMA-SCRIPT, MDPI, SBC, T\&F, Artigo Qualis A1, Dissertação ABNT, Ensaios/Fichamentos, Regulamentos |
 | 16/06/2026 | Adicionada a 19ª categoria de Livros clonando o repositório `lathex-template` e configurando prompts de agentes |
+| 16/06/2026 | Implementação de novos templates de livros adicionais (`LatHex_dark`, `Editora UnB`, `Springer Nature Contributed Volume`, `Victoria Regia`) na pasta global e nos fluxos do ecossistema |

@@ -104,8 +104,12 @@ Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 ## ⚠️ MANDATÓRIO: Escrita de Livros (Templates LaTeX)
 
 Se a sua missão envolver a redação, formatação ou criação de um livro (ou documento equivalente em formato book/livro):
-1. **Pergunte ao usuário antes de começar**: Você **DEVE obrigatoriamente fazer uma pergunta de múltipla escolha** ao usuário usando a ferramenta `question` do OpenCode para coletar qual template LaTeX do repositório `templates/livro/` (da URL https://github.com/MarceloClaro/lathex-template) ele deseja utilizar:
+1. **Pergunte ao usuário antes de começar**: Você **DEVE obrigatoriamente fazer uma pergunta de múltipla escolha** ao usuário usando a ferramenta `question` do OpenCode para coletar qual template LaTeX do repositório `templates/livro/` ele deseja utilizar:
    - **book**: Template clássico estruturado com capa, sumário, capítulos divididos e bibliografia.
    - **forta**: Template moderno (portfólio) com cabeçalhos robustos e design visual arrojado.
    - **apehex**: Template minimalista de relatório extenso com headers limpos e layout direto.
+   - **LatHex_dark**: Estilo temático escuro (Dark Theme) para livros sofisticados.
+   - **Modelo_de_livro_para_Editora_UnB**: Estilo de diagramação e publicação oficiais da Editora UnB.
+   - **Template_for_Editor_of_a_Springer_Nature_Contributed_Volume**: Padrão Springer Nature para volumes coletivos/científicos.
+   - **Victoria_Regia___A_Classical_LaTeX_e_Book_Template**: Design clássico de e-Book baseado na estética "Victoria Regia".
 2. **Respeite a escolha**: Só comece a gerar os arquivos e capítulos após receber a decisão do usuário.

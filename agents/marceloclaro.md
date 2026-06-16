@@ -90,9 +90,13 @@ Quando o usuário invocar o agente `/marceloclaro` ou `@marceloclaro`:
 
 > [!IMPORTANT]
 > **REQUISITO MANDATÓRIO DE ESCRITA DE LIVROS**:
-> Antes de delegar ou iniciar qualquer tarefa de escrita de livros (ou documentos equivalentes em formato book/livro), você **DEVE obrigatoriamente fazer uma pergunta de múltipla escolha ao usuário** para que ele decida qual template LaTeX do repositório `templates/livro/` (da URL https://github.com/MarceloClaro/lathex-template) ele deseja usar:
+> Antes de delegar ou iniciar qualquer tarefa de escrita de livros (ou documentos equivalentes em formato book/livro), você **DEVE obrigatoriamente fazer uma pergunta de múltipla escolha ao usuário** para que ele decida qual template LaTeX do repositório `templates/livro/` ele deseja usar:
 > - **book**: Template clássico estruturado com capa, sumário, capítulos divididos e bibliografia.
 > - **forta**: Template moderno (portfólio) com cabeçalhos robustos e design visual arrojado.
 > - **apehex**: Template minimalista de relatório extenso com headers limpos e layout direto.
+> - **LatHex_dark**: Estilo temático escuro (Dark Theme) para livros sofisticados.
+> - **Modelo_de_livro_para_Editora_UnB**: Estilo de diagramação e publicação oficiais da Editora UnB.
+> - **Template_for_Editor_of_a_Springer_Nature_Contributed_Volume**: Padrão Springer Nature para volumes coletivos/científicos.
+> - **Victoria_Regia___A_Classical_LaTeX_e_Book_Template**: Design clássico de e-Book baseado na estética "Victoria Regia".
 >
 > Use a ferramenta `question` do OpenCode para realizar essa pergunta e colete a resposta do usuário antes de iniciar qualquer geração ou acionar subagentes de escrita.
