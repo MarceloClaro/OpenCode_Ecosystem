@@ -553,7 +553,7 @@
     },
     "ollama-websearch": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "uv",
         "run",
