@@ -610,7 +610,7 @@ class EvolutionLoopRunner:
                                 if extraction.get("topics") or extraction.get("key_findings"):
                                     generator.generate_from_extraction(extraction, str(pdf_file))
                                     processed += 1
-                             except Exception as e:
+                            except Exception as e:
                                 logger.error(f"Docling error on {pdf_file.name}: {e}")
             return processed
         except ImportError:

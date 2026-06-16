@@ -34,3 +34,10 @@ build/
 *.out
 *.synctex.gz
 projects/*.zip
+
+database.db*
+docs.*
+*.rar
+*.zip
+MembrosDoCanal-main*/
+UsersmarceAppDataLocalTemppytest-alt/

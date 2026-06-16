@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v5.1.0] - 2026-06-16
+### Added
+- Sincronização e ativação global de agentes personalizados (incluindo o avatar do criador `/marceloclaro` e mais de 100 agentes do ecossistema) via links simbólicos no WSL e junções de pasta no Windows Desktop.
+- Criação e configuração do ambiente virtual Python `.venv` integrado com dependências de testes (`pytest`, `pydantic`, `numpy`, etc.) no WSL.
+
+### Changed
+- Migração de todos os plugins JS/TS (`plugins/`) para a nova assinatura funcional dinâmica compatível com `@opencode-ai/plugin` v1.17+, eliminando erros silenciosos de carregamento.
+- Ajustes de indentação e erros de sintaxe nos testes centrais (`tests/core/test_state_file.py`) e na lógica do meta-orquestrador (`nexus/`).
+- Atualização e alinhamento do arquivo de configuração `opencode.json` e arquivos de logs no ecossistema.
+
+### Fixed
+- Correção de exibição de agentes personalizados no terminal CLI/TUI e no aplicativo de desktop.
+- Limpeza e reset do cache visual e arquivos de estado do OpenCode Desktop no Windows (`opencode.global.dat`, `opencode.workspace.*.dat`, `opencode.settings`) eliminando travamentos de inicialização e problemas de conexão.
+
 ## [v5.0.0] - 2026-06-02
 ### Added
 - Evo-12: MCP Expansion — 4 MCPs cientificos (latest-science, research-mcp, sura-papers, arxiv-mcp) = 10 fontes academicas unificadas

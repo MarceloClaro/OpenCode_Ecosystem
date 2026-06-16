@@ -126,6 +126,11 @@ Uma das maiores vantagens competitivas do **OpenCode Ecosystem** é a unificaç�
 2. **Inicialização Alinhada no OpenCode CLI**: Inicie o OpenCode CLI rodando `opencode` e envie `/models`. O terminal exibirá instantaneamente os modelos locais servidos pelo Ollama e os modelos remotos de nuvem integrados na mesma interface.
 3. **Validação da Ponte (Bridge)**: Execute a suíte de testes (`./tests/test_environment.sh`) para demonstrar como o ecossistema valida autonomamente a integridade e latência de comunicação da ponte de integração `antigravity-mcp` (Bridge).
 
+> [!TIP]
+> **Resolução de Escopo de Agentes & Plugins (v5.1+):**
+> Se agentes personalizados (como o `/marceloclaro`) não forem listados no OpenCode Desktop ou TUI, certifique-se de que eles estão presentes no diretório global de agentes. O ecossistema agora cria automaticamente links simbólicos no WSL (`~/.config/opencode/agents/`) e junções de diretório no Windows (`%USERPROFILE%\.config\opencode\agents`).
+> Além disso, todos os plugins em `plugins/` foram migrados para a assinatura funcional dinâmica exigida pelo `@opencode-ai/plugin` v1.17+, eliminando erros silenciosos no `opencode.log`.
+
 ---
 
 > *"O software tradicional exige que você digite os comandos. O OpenCode Ecosystem inventa as soluções."*
