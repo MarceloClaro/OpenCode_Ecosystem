@@ -43,8 +43,8 @@ class TestMarceloClaroOrchestrator:
         assert "CT-4201" in content
         assert "CT-4202" in content
 
-    def test_ct4204_four_pillars_explicitly_mapped(self):
-        """CT-4204: Garante que os quatro pilares essenciais de orquestração estejam explicitados no agente."""
+    def test_ct4204_five_pillars_explicitly_mapped(self):
+        """CT-4204: Garante que os cinco pilares essenciais de orquestração estejam explicitados no agente."""
         agent_path = AGENTS_DIR / "marceloclaro.md"
         content = agent_path.read_text(encoding="utf-8")
         
@@ -52,6 +52,7 @@ class TestMarceloClaroOrchestrator:
         assert "Pilar 2" in content or "Contenção de Desvios" in content, "Pilar 2 (TrustEngine) deve estar mapeado."
         assert "Pilar 3" in content or "Viabilidade de Negócio" in content, "Pilar 3 (SaaS/Token) deve estar mapeado."
         assert "Pilar 4" in content or "Unificação de CLIs" in content, "Pilar 4 (CLIs/Motores) deve estar mapeado."
+        assert "Pilar 5" in content or "Descoberta de Potenciais Latentes" in content, "Pilar 5 (Potentiality Scanner) deve estar mapeado."
         
         assert "master-orchestrator" in content, "Falta delegação para o master-orchestrator."
         assert "antigravity-orchestrator" in content, "Falta delegação para o antigravity-orchestrator."

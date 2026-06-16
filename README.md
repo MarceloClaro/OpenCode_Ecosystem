@@ -61,7 +61,7 @@ Se desejar verificar o pulso dos agentes e atestar que as ferramentas de infraes
 ```
 
 **4. Executando o Orquestrador Supremo (/marceloclaro)**
-Para acionar o agente de controle supremo, alinhar todos os subagentes e validar os 4 pilares do OpenCode Ecosystem de forma perfeita, basta disparar no terminal do OpenCode CLI:
+Para acionar o agente de controle supremo, alinhar todos os subagentes e validar os 5 pilares do OpenCode Ecosystem de forma perfeita, basta disparar no terminal do OpenCode CLI:
 ```bash
 opencode
 /marceloclaro [sua missão ou comando]
