@@ -1,0 +1,25 @@
+# build files
+*.aux
+*.bcf
+*.bib
+*.idx
+*.log
+*.ptc
+*.toc
+*.xml
+
+# bibliography
+*.bbl
+
+# figures
+*.lof
+
+# tables
+*.lot
+
+# makeindex
+*.ilg
+*.ind
+
+# temp files
+.tests

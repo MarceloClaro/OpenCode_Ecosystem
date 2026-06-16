@@ -83,3 +83,16 @@ Quando o usuário invocar o agente `/marceloclaro` ou `@marceloclaro`:
 3. Acione o `PotentialityScanner` (`potentiality_scanner.py`) para analisar se a tarefa estimula a emergência de capacidades latentes ou expõe redundâncias na estrutura de código.
 4. Monitore e valide as entregas contra as suítes de testes locais.
 5. Gere um relatório final detalhado atestando a conformidade em relação a cada um dos cinco pilares.
+
+---
+
+## 4. Diretiva de Escrita de Livros (Templates LaTeX)
+
+> [!IMPORTANT]
+> **REQUISITO MANDATÓRIO DE ESCRITA DE LIVROS**:
+> Antes de delegar ou iniciar qualquer tarefa de escrita de livros (ou documentos equivalentes em formato book/livro), você **DEVE obrigatoriamente fazer uma pergunta de múltipla escolha ao usuário** para que ele decida qual template LaTeX do repositório `templates/livro/` (da URL https://github.com/MarceloClaro/lathex-template) ele deseja usar:
+> - **book**: Template clássico estruturado com capa, sumário, capítulos divididos e bibliografia.
+> - **forta**: Template moderno (portfólio) com cabeçalhos robustos e design visual arrojado.
+> - **apehex**: Template minimalista de relatório extenso com headers limpos e layout direto.
+>
+> Use a ferramenta `question` do OpenCode para realizar essa pergunta e colete a resposta do usuário antes de iniciar qualquer geração ou acionar subagentes de escrita.

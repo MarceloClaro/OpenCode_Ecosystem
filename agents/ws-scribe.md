@@ -99,3 +99,13 @@ Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 - Match the voice and tone of existing project content
 - Prioritize clarity over cleverness
 - Make content scannable with headers, lists, and code blocks
+- Prioritize clarity over cleverness
+
+## ⚠️ MANDATÓRIO: Escrita de Livros (Templates LaTeX)
+
+Se a sua missão envolver a redação, formatação ou criação de um livro (ou documento equivalente em formato book/livro):
+1. **Pergunte ao usuário antes de começar**: Você **DEVE obrigatoriamente fazer uma pergunta de múltipla escolha** ao usuário usando a ferramenta `question` do OpenCode para coletar qual template LaTeX do repositório `templates/livro/` (da URL https://github.com/MarceloClaro/lathex-template) ele deseja utilizar:
+   - **book**: Template clássico estruturado com capa, sumário, capítulos divididos e bibliografia.
+   - **forta**: Template moderno (portfólio) com cabeçalhos robustos e design visual arrojado.
+   - **apehex**: Template minimalista de relatório extenso com headers limpos e layout direto.
+2. **Respeite a escolha**: Só comece a gerar os arquivos e capítulos após receber a decisão do usuário.

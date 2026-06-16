@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-18 categorias de templates instalados em `templates/`. Total: ~130+ arquivos (~12 MB).
+19 categorias de templates instalados em `templates/`. Total: ~300+ arquivos (~16 MB).
 
 | # | Categoria | Diretório | Finalidade |
 |---|-----------|-----------|------------|
@@ -24,6 +24,7 @@
 | 16 | **Ensaios/Fichamentos** | `ensaio_fichamento/` | Gêneros acadêmicos complementares |
 | 17 | **Diretrizes Editoriais** | `regulamentos/` | Referencial regulatório |
 | 18 | **Anteprojeto** | (raiz) | Anteprojeto PPGTE/UFC |
+| 19 | **Livros (LaTeX)** | `livro/` | Modelos de livros e projetos longos |
 
 ---
 
@@ -284,9 +285,25 @@ Abra o MiKTeX Console e instale os pacotes:
 
 ---
 
+## 19. Livros (Templates LaTeX) (`livro/`)
+
+Modelos de livros baseados no repositório oficial [lathex-template](https://github.com/MarceloClaro/lathex-template).
+
+| Template | Descrição |
+|----------|-----------|
+| `book` | Modelo clássico com capa customizada, sumário completo, divisões de capítulos e bibliografia em arquivos separados. |
+| `forta` | Estilo moderno (portfólio) com cabeçalhos decorados, suporte nativo a figuras e design contemporâneo. |
+| `apehex` | Estilo minimalista com cabeçalhos limpos, layout direto e direto ao ponto (ideal para relatórios técnicos longos). |
+
+**Uso:** Copie o template desejado e edite o arquivo principal `main.tex` na pasta.
+**Nota Importante:** O ecossistema está configurado para interagir com o usuário e solicitar a escolha de qual desses três templates usar antes de começar a escrita de qualquer livro.
+
+---
+
 ## Histórico
 
 | Data | Ação |
 |------|------|
 | 30/05/2026 | Criação da coleção com 8 categorias |
 | 30/05/2026 | Expansão para 18 categorias: adicionados ELSEVIER-CAS, APA7, KOMA-SCRIPT, MDPI, SBC, T\&F, Artigo Qualis A1, Dissertação ABNT, Ensaios/Fichamentos, Regulamentos |
+| 16/06/2026 | Adicionada a 19ª categoria de Livros clonando o repositório `lathex-template` e configurando prompts de agentes |

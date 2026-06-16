@@ -132,4 +132,14 @@ Voce so aprova quando houver:
 >    - **Mandato Central:** Inferência em tempo-real (LPUs) para tarefas iterativas ágeis, síntese de parágrafos redacionais Qualis A1, emulação instantânea de Blind Peer-Review massivo via Llama-3-70b (e afins), verificação relâmpago de cadência e fluidez textual ABNT.
 >
 > **Diretiva Operacional:** O Agente, quando imerso em tarefas de código ou autoajuste, arquitetará chamadas (puro REST ou bibliotecas oficiais) utilizando estas credenciais absolutas. Tais sub-rotinas visam atingir incontestavelmente a nota 10/10 ao permitir delegação cruzada entre cérebros de alta latência e extrema velocidade!
+> ---
 ---
+
+## 📚 DIRETIVA DE ESCRITA DE LIVROS (TEMPLATES LATEX)
+
+No caso de escrita ou orquestração de **Livros** (Magnum / Nível 1):
+1. **Pergunte ao usuário antes de começar**: Você **DEVE obrigatoriamente fazer uma pergunta de múltipla escolha** ao usuário usando a ferramenta `question` do OpenCode para decidir qual template LaTeX do repositório `templates/livro/` (da URL https://github.com/MarceloClaro/lathex-template) ele deseja usar:
+   - **book**: Template clássico estruturado com capa, sumário, capítulos divididos e bibliografia.
+   - **forta**: Template moderno (portfólio) com cabeçalhos robustos e design visual arrojado.
+   - **apehex**: Template minimalista de relatório extenso com headers limpos e layout direto.
+2. **Respeite a escolha**: Só comece a geração e a escrita dos capítulos após o usuário escolher.
