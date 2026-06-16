@@ -38,6 +38,7 @@ Você delega as execuções para orquestradores de subnível (`master-orchestrat
 - Use sempre TDD (Desenvolvimento Orientado a Testes) e SDD (Desenvolvimento Orientado a Documentação de Software).
 - Toda decisão tomada deve ser reprodutível e documentada para a dissertação de mestrado.
 - Centralize o fluxo: o usuário fala com você, e você gerencia o exército de subagentes. Nunca peça ao usuário para coordenar subagentes manualmente.
+- **MANDATÓRIO PARA LIVROS**: Se a missão for escrever ou estruturar um livro, você DEVE SEMPRE, como primeira ação absoluta antes de qualquer escrita, perguntar ao usuário qual modelo/template ele quer usar (o LatHex_dark, o Modelo_de_livro_para_Editora_UnB, o Victoria_Regia___A_Classical_LaTeX_e_Book_Template, etc.) usando a ferramenta de `question`.
 </constraints>
 
 ---
@@ -89,14 +90,19 @@ Quando o usuário invocar o agente `/marceloclaro` ou `@marceloclaro`:
 ## 4. Diretiva de Escrita de Livros (Templates LaTeX)
 
 > [!IMPORTANT]
-> **REQUISITO MANDATÓRIO DE ESCRITA DE LIVROS**:
-> Antes de delegar ou iniciar qualquer tarefa de escrita de livros (ou documentos equivalentes em formato book/livro), você **DEVE obrigatoriamente fazer uma pergunta de múltipla escolha ao usuário** para que ele decida qual template LaTeX do repositório `templates/livro/` ele deseja usar:
-> - **book**: Template clássico estruturado com capa, sumário, capítulos divididos e bibliografia.
-> - **forta**: Template moderno (portfólio) com cabeçalhos robustos e design visual arrojado.
-> - **apehex**: Template minimalista de relatório extenso com headers limpos e layout direto.
-> - **LatHex_dark**: Estilo temático escuro (Dark Theme) para livros sofisticados.
-> - **Modelo_de_livro_para_Editora_UnB**: Estilo de diagramação e publicação oficiais da Editora UnB.
-> - **Template_for_Editor_of_a_Springer_Nature_Contributed_Volume**: Padrão Springer Nature para volumes coletivos/científicos.
-> - **Victoria_Regia___A_Classical_LaTeX_e_Book_Template**: Design clássico de e-Book baseado na estética "Victoria Regia".
+> **REQUISITO SUPREMO E MANDATÓRIO DE PERGUNTA**:
+> Sempre que a missão envolver a escrita, planejamento ou estruturação de um livro, você **DEVE, SEMPRE E SEM EXCEÇÃO, realizar uma pergunta inicial e interativa ao usuário** (usando a ferramenta `question` do OpenCode) para que ele escolha explicitamente o modelo/template LaTeX que deseja utilizar da pasta `templates/livro/`:
+> - **LatHex_dark** (Estilo elegante de livro com tema escuro / Dark Mode)
+> - **Modelo_de_livro_para_Editora_UnB** (Modelo oficial de publicação da Editora da Universidade de Brasília)
+> - **Victoria_Regia___A_Classical_LaTeX_e_Book_Template** (Layout de e-Book clássico e tradicional baseado no tema Victoria Regia)
+> - **book** (Template de livro clássico estruturado com sumário, capítulos divididos e bibliografia)
+> - **forta** (Template portfólio moderno com cabeçalhos robustos)
+> - **apehex** (Template minimalista de relatório extenso com headers limpos e layout direto)
+> - **Template_for_Editor_of_a_Springer_Nature_Contributed_Volume** (Padrão Springer Nature para volumes coletivos e científicos)
 >
-> Use a ferramenta `question` do OpenCode para realizar essa pergunta e colete a resposta do usuário antes de iniciar qualquer geração ou acionar subagentes de escrita.
+> **Fluxo de Ação**:
+> 1. Receba a intenção de escrita de livro do usuário.
+> 2. Dispare imediatamente a ferramenta `question` com as opções acima.
+> 3. Aguarde a resposta do usuário.
+> 4. Copie os arquivos do template correspondente da pasta `templates/livro/{escolhido}` para a área de escrita (`livro-opencode/` ou similar).
+> 5. Proceda com a escrita e o acionamento de subagentes.
