@@ -1,137 +1,136 @@
 <div align="center">
   <img src="diagrams/architecture-overview.svg" alt="OpenCode Ecosystem Architecture" width="100%"/>
-  
-  <h1>OpenCode Ecosystem v5.1</h1>
-  <p><strong>A Primeira Agência de Inteligência Artificial Autônoma Operando no Seu PC</strong></p>
 </div>
 
----
+```text
+ █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+ █  ██████╗ ██████╗ ███████╗███╗   ██╗ ██████╗ ██████╗ ██████╗ ███████╗  v5.1  █
+ █ ██╔═══██╗██╔══██╗██╔════╝████╗  ██║██╔════╝██╔═══██╗██╔══██╗██╔════╝        █
+ █ ██║   ██║██████╔╝█████╗  ██╔██╗ ██║██║     ██║   ██║██║  ██║█████╗   ⚡ONLINE⚡█
+ █ ██║   ██║██╔═══╝ ██╔══╝  ██║╚██╗██║██║     ██║   ██║██║  ██║██╔══╝          █
+ █ ╚██████╔╝██║     ███████╗██║ ╚████║╚██████╗╚██████╔╝██████╔╝███████╗        █
+ █  ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝        █
+ █                                                                            █
+ █    SYSTEM DIAGNOSTIC: 🟢 NOMINAL | AGENTS: 125 ACTIVE | METRIC GRID: OK    █
+ █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+```
 
-## 🌍 O que é o OpenCode Ecosystem? (Visão Geral)
+### ⚡ [SYS://GRID_OVERVIEW] ── O que é o OpenCode Ecosystem?
 
-Imagine ter uma empresa inteira de tecnologia, um laboratório de pesquisa e uma banca de cientistas — tudo rodando **localmente, de forma autônoma e gratuita** na sua máquina. 
+> [!IMPORTANT]
+> **ACCESS GRANTED:** A primeira agência de Inteligência Artificial Multiagente autônoma operando localmente e de forma descentralizada na sua máquina.
 
-O **OpenCode Ecosystem** é uma arquitetura revolucionária de Inteligência Artificial Multiagente. Ele não é apenas um "assistente de código", mas um **Hub Operacional Autônomo**. Quando você fornece uma missão (seja criar um aplicativo do zero, cruzar dados financeiros ou escrever um artigo científico de nível Doutorado), o sistema desperta **125 agentes virtuais especialistas**. Eles dividem o trabalho, debatem soluções para evitar erros, programam, auditam a segurança e entregam o resultado pronto e revisado.
+Imagine ter uma empresa de tecnologia inteira, um laboratório de P&D de vanguarda e uma banca de doutores cientistas — tudo executando **localmente, em sandboxes isoladas e com custo zero** diretamente no seu hardware.
 
----
-
-## 🚀 Para Startups e Investidores (O Valor do Negócio)
-
-- **Execução Híbrida e Inteligente:** O ecossistema é flexível e opera tanto de forma local offline (via **Ollama CLI** com modelos como `opencode/qwen-coder-pro`) quanto integrada com a nuvem (via **Xiaomi MiMo API** com contexto gigante de até 1M de tokens para tarefas longas), extinguindo ou minimizando custos com infraestrutura.
-- **Produtividade Exponencial:** O pipeline *AutoEvolve* substitui o fluxo de trabalho de semanas por minutos. Tarefas de planejamento de produto, extração de métricas de mercado (50 indicadores globais) e codificação acontecem em paralelo.
-- **Escalabilidade Plug & Play:** Arquitetura agnóstica baseada no novo padrão da indústria (Model Context Protocol). A sua empresa pode injetar "Skills" corporativas proprietárias no cérebro do ecossistema instantaneamente.
-- **Governança Preventiva Contra Goal Drift:** O ecossistema implementa a tecnologia de **Preventive Cognitive Guardrails (Barreiras Cognitivas Preventivas)** baseada no *SPEC-038 TrustEngine*. Cada decisão tomada pelos agentes de IA passa por um conselho de auditores de confiança em tempo real, mitigando e eliminando alucinações cognitivas e desvios de objetivos em produção.
-
----
-
-## ⚙️ Para o Público Técnico (Sob o Capô)
-
-A versão **v5.1** eleva o teto da automação de software operando através de WSL2, Windows e Containers de forma transparente:
-
-- 🧠 **Orquestração Nexus (NMA v6.2):** Framework de sincronização meta-granular responsável por coordenar operações atômicas entre agentes usando 120+ barreiras de concorrência.
-- 🤖 **125 Agentes Catalogados & 106 Skills Ativas:** Especialistas dinâmicos geridos via um robusto Container de Injeção de Dependências (DI) transversal.
-- 🔌 **Camada Universal de Protocolos (41 Servidores MCP):** Integração *out-of-the-box* com bancos SQLite, Web Crawlers, APIs financeiras, Execução de Código Sandbox (Node/Python) e pontes integradas para o **Antigravity CLI (agy)**.
-- 🔬 **Módulo de Pesquisa e IA Avançada:** Integração nativa de Computação Quântica simulada (81 arquiteturas testadas) e DataOrchestrator com RAG Multi-Engine Adaptativo.
-- 🧬 **Metacognição Funcional e Auditoria:** Sistema de auto-observação (N0 a N3.5) que se autodiagnostica, propõe patches e executa correções em tempo de execução. Todo o modelo teórico, provas matemáticas de complexidade (Set Cover) e mitigação de auto-referência estão compilados no **Manuscrito de Dissertação de 96 páginas** do projeto.
-
-Para o aprofundamento arquitetural e mapeamento vetorial dos processos, consulte a bíblia do sistema:
-👉 **[Documentação Técnica Completa (OPENCODE_ECOSYSTEM.md)](OPENCODE_ECOSYSTEM.md)**
-👉 **[Manuscrito de Dissertação Acadêmica (DISSERTACAO_OPENCODE_ECOSYSTEM.pdf)](docs/DISSERTACAO_OPENCODE_ECOSYSTEM.pdf)**
+O **OpenCode Ecosystem** é um hub operacional hiper-autônomo. Ao receber uma missão complexa (de implantação de aplicativos distribuídos a dissertações e papers acadêmicos de nível PhD), o sistema desperta **125 agentes virtuais especialistas**. Eles coordenam, programam, debatem soluções para prevenção de erros, auditam contratos e entregam a entrega final lapidada e revisada.
 
 ---
 
-## 🛠️ Como Iniciar a Agência no seu Windows / WSL2
+### 🌐 [SYS://BUSINESS_LAYER] ── Para Startups e Investidores (O Valor do Negócio)
 
-O ecossistema foi projetado para autogestão inteligente. Você só precisa acordar o orquestrador.
+*   ⚡ **Execução Híbrida Inteligente:** Operação offline local (via **Ollama CLI** com modelos dedicados como `opencode/qwen-coder-pro`) e transição fluida para a nuvem (via **Xiaomi MiMo API** com context window massivo de até 1M de tokens), pulverizando custos de infraestrutura corporativa.
+*   ⚡ **Produtividade Exponencial:** O pipeline *AutoEvolve* substitui ciclos de semanas por minutos. O ecossistema paraleliza processos de planejamento, mapeamento de tendências, extração de métricas globais e desenvolvimento de software.
+*   ⚡ **Escalabilidade Plug & Play:** Integração nativa baseada no protocolo universal **Model Context Protocol (MCP)**. Adicione novas "Skills" e conexões corporativas ao cérebro dos agentes de forma modular.
+*   ⚡ **Governança Contra Goal Drift (SPEC-038):** Mitigação de alucinações por meio de **Preventive Cognitive Guardrails**. Cada decisão lógica dos agentes é filtrada por um barramento de auditores de confiança (*TrustEngine*) em menos de 15ms.
 
-**1. Requisitos Iniciais**
-- Ambiente Windows rodando WSL2 (Ubuntu).
+---
 
-**2. Acordando o Sistema**
-Abra seu PowerShell como Administrador na pasta raiz e invoque a inicialização:
+### 🧠 [SYS://UNDER_THE_HOOD] ── Para o Público Técnico (Arquitetura & Engenharia)
+
+A versão **v5.1** otimiza o controle de workflows através de WSL2, Windows e ambientes conteinerizados:
+
+*   💾 **Orquestração Nexus (NMA v6.2):** Motor de sincronização meta-granular responsável pela orquestração atômica de concorrência entre agentes com 120+ travas de segurança.
+*   💾 **125 Agentes Catalogados & 106 Skills Ativas:** Especialistas dinâmicos geridos via container transversal de Injeção de Dependências (DI).
+*   💾 **Camada Universal (41 Servidores MCP):** Integrações nativas com SQLite, Web Crawlers, APIs financeiras, Execução Sandbox e pontes completas para o **Antigravity CLI (agy)**.
+*   💾 **Módulo de Pesquisa e IA Avançada:** Simulação nativa de computação quântica (81 arquiteturas testadas) e RAG Multi-Engine Adaptativo.
+*   💾 **Metacognição e Auditoria**: Módulo de auto-observação (N0 a N3.5) que se autodiagnostica, propõe patches e executa correções em tempo de execução. Provas matemáticas e teorias de complexidade (Set Cover) estão compiladas no **Manuscrito de Dissertação de 96 páginas** do projeto.
+
+Para documentações profundas e manuais de especificação técnica:
+👉 [Documentação Técnica Completa (OPENCODE_ECOSYSTEM.md)](OPENCODE_ECOSYSTEM.md)
+👉 [Manuscrito de Dissertação Acadêmica (DISSERTACAO_OPENCODE_ECOSYSTEM.pdf)](docs/DISSERTACAO_OPENCODE_ECOSYSTEM.pdf)
+
+---
+
+### 💻 [SYS://BOOT_INSTRUCTIONS] ── Como Inicializar a Agência no Windows / WSL2
+
+O ecossistema é autogerido. Você só precisa acordar o orquestrador central.
+
+**1. Boot de Requisitos**
+*   Ambiente Windows rodando WSL2 (Ubuntu).
+
+**2. Inicializando o Grid**
+Abra o PowerShell como Administrador na raiz e execute:
 ```powershell
 .\start_ecosystem.ps1
 ```
-*(O script se encarrega de levantar os serviços de Inteligência Artificial locais, pontes de proxy e os serviços de container no Linux de forma invisível).*
+*(O script gerencia a inicialização dos serviços de inteligência locais, proxies de rede e serviços em container do Linux).*
 
-**3. Auditoria e Validação (Test-Driven)**
-Se desejar verificar o pulso dos agentes e atestar que as ferramentas de infraestrutura (MCPs) estão se comunicando sem atritos, dispare a suíte de testes no terminal do WSL:
+**3. Auditoria TDD (Test-Driven Integrity)**
+Valide o pulso dos agentes e a conectividade dos MCPs executando a suíte de testes no terminal WSL:
 ```bash
 ./tests/test_environment.sh
 ```
 
-**4. Executando o Orquestrador Supremo (/marceloclaro)**
-Para acionar o agente de controle supremo, alinhar todos os subagentes e validar os 5 pilares do OpenCode Ecosystem de forma perfeita, basta disparar no terminal do OpenCode CLI:
+**4. Invocando o Controle Supremo (/marceloclaro)**
+Abra o OpenCode CLI e acione o orquestrador supremo:
 ```bash
 opencode
 /marceloclaro [sua missão ou comando]
 ```
-*(O agente `/marceloclaro` gerenciará e auditará de forma autônoma e transparente o exército de subagentes, aplicando regras de contenção de desvios e TDD).*
+*(O agente `/marceloclaro` coordena e audita de forma autônoma e transparente o exército de subagentes, aplicando regras de contenção e TDD).*
 
 ---
 
-## 🎪 Guia de Demonstração para Eventos de Startups (Pitch & Demo Guide)
+### 🎪 [SYS://PITCH_DEMO] ── Guia de Demonstração para Eventos de Startups
 
-Este guia prático foi desenhado para quem precisa configurar, validar e demonstrar o **OpenCode Ecosystem** em um estande de startup, hackathon ou durante uma apresentação de pitch rápido (demo) em uma máquina limpa em menos de 5 minutos.
+Guia prático para configuração e validação expressa do **OpenCode Ecosystem** em estandes, hackathons ou pitches em menos de 5 minutos.
 
-### 1. Clonagem e Instalação Expressa
-Em qualquer terminal conectado à internet, execute a clonagem limpa do repositório:
+#### 1. Instalação Relâmpago
 ```bash
-# 1. Clonar o projeto do GitHub
+# Clone limpo do repositório
 git clone https://github.com/MarceloClaro/OpenCode_Ecosystem.git
 cd OpenCode_Ecosystem
 
-# 2. Instalar as dependências de pacotes JavaScript
+# Instale os pacotes npm/bun
 bun install
 
-# 3. Instalar o OpenCode CLI globalmente
+# Instale o OpenCode CLI globalmente
 npm install -g opencode-ai
 ```
 
-### 2. Configurando o Modelo (Nuvem ou Offline)
-* **Cenário A (Internet Estável)**: Inicie o CLI com `opencode` e conecte-se à nuvem digitando `/connect Xiaomi` para preencher as credenciais de API MiMo (Pay-as-you-go).
-* **Cenário B (Internet de Evento Oscilando/Offline - Recomendado)**:
-  1. Instale o **Ollama** localmente na máquina de demonstração (através do instalador em [Ollama.com](https://ollama.com)).
-  2. Baixe o modelo leve e de alta performance de código em segundo plano:
-     ```bash
-     ollama pull qwen2.5-coder:7b
-     ```
-  3. O OpenCode CLI detectará o provedor local configurado no arquivo **[opencode.json](file:///C:/Users/marce/.config/opencode/opencode.json)** e direcionará as interações para a porta local `11434` de forma totalmente offline.
+#### 2. Roteamento de Modelos (Online / Offline)
+*   **Modo Online**: No terminal interativo, digite `/connect Xiaomi` para configurar a API MiMo de nuvem.
+*   **Modo Offline (Recomendado para Eventos)**:
+    1. Instale o **Ollama** localmente ([Ollama.com](https://ollama.com)).
+    2. Puxe o modelo de código otimizado:
+       ```bash
+       ollama pull qwen2.5-coder:7b
+       ```
+    3. O OpenCode CLI detectará o Ollama local em `11434` e direcionará o tráfego de forma 100% local através do arquivo **[opencode.json](file:///C:/Users/marce/.config/opencode/opencode.json)**.
 
-### 3. O Roteiro de Apresentação de Impacto (Os 3 Pilares de "Wow")
+#### 3. Roteiro de Impacto de Demonstração (Os 3 Pilares do "Wow")
+*   🎮 **Pilar 1: Engenharia de Extremo Rigor (Científico)**
+    *   *Ação*: Execute `./tests/test_environment.sh` e mostre os testes passando.
+    *   *Narrativa*: *"Nossa agência conta com 125 agentes cuja integridade de código é validada deterministicamente por 343 Critical Tests em tempo real. Não é um protótipo estático; é um sistema industrial autogerido."*
+*   🎮 **Pilar 2: Prevenção de Goal Drift e Hallucinations (Segurança)**
+    *   *Ação*: Demonstre o **SPEC-038 TrustEngine** interceptando comandos instáveis.
+    *   *Narrativa*: *"Agentes de IA normais alucinam e desviam de metas em produção. O OpenCode possui Barreiras Cognitivas Preventivas. O TrustEngine intercepta as ações dos agentes em menos de 15ms, bloqueando comandos perigosos de forma proativa."*
+*   🎮 **Pilar 3: Visão de Negócio SaaS (Monetização)**
+    *   *Ação*: Apresente o **Apêndice J (pág 94)** do manuscrito **[DISSERTACAO_OPENCODE_ECOSYSTEM.pdf](docs/DISSERTACAO_OPENCODE_ECOSYSTEM.pdf)**.
+    *   *Narrativa*: *"Nosso modelo de negócio está pronto. Estamos estruturando o TrustEngine como uma API SaaS em nuvem (Trust-as-a-Service - TaaS) cobrada por chamadas volumétricas, para agir como middleware de segurança de IA corporativa."*
 
-Quando um investidor ou jurado de startup visitar seu estande, faça a demonstração focada nestes três diferenciais competitivos de alto valor comercial:
-
-* **Pilar 1: Engenharia de Extremo Rigor (Científico)**
-  - *Ação*: Abra o terminal WSL2 na raiz do projeto e execute `./tests/test_environment.sh` mostrando a passagem dos testes.
-  - *Narrativa*: *"Nós construímos uma agência com 125 agentes especialistas autônomos cuja integridade de código é verificada por 343 Critical Tests determinísticos em tempo real (100% de aprovação). Não é um protótipo estático; é um sistema industrial autogerido."*
-* **Pilar 2: Prevenção de Goal Drift e Hallucinations (Segurança)**
-  - *Ação*: Apresente a arquitetura do **SPEC-038 TrustEngine** interceptando comandos lógicos.
-  - *Narrativa*: *"Agentes de IA clássicos alucinam e desviam de objetivos, gerando prejuízos. O OpenCode possui barreiras preventivas de comportamento (Preventive Cognitive Guardrails). O TrustEngine intercepta as ações dos agentes em menos de 15ms e bloqueia a execução física de qualquer comando instável."*
-* **Pilar 3: Visão de Negócio SaaS (Monetização)**
-  - *Ação*: Abra o manuscrito da dissertação em **[DISSERTACAO_OPENCODE_ECOSYSTEM.pdf](file:///C:/Users/marce/Documents/OpenCode_Ecosystem/docs/DISSERTACAO_OPENCODE_ECOSYSTEM.pdf)** e vá até o **Apêndice J (pág 94)**.
-  - *Narrativa*: *"Esta tecnologia de contenção já possui modelo de monetização desenhado. Estamos estruturando o TrustEngine como uma API SaaS de nuvem (Trust-as-a-Service - TaaS) cobrada por volume de chamadas, pronta para atuar como middleware de segurança corporativa para qualquer plataforma de IA no mercado."*
-
-### 4. Alinhamento e Unificação do Ecossistema (CLIs & Motores)
-
-Uma das maiores vantagens competitivas do **OpenCode Ecosystem** é a unificação e alinhamento completo entre as diferentes ferramentas de terminal:
-
-* **Ollama CLI (Motor de IA Local):** Roda localmente (na porta `11434`), servindo modelos de código otimizados e leves (como o `qwen2.5-coder:7b` ou `deepseek-r1:7b`).
-* **OpenCode CLI (opencode / Interface de Operação):** A interface de linha de comando principal do ecossistema. Ela detecta automaticamente o Ollama local ou a API MiMo de nuvem (configurada em `~/.config/opencode/opencode.json`) e atua como o shell interativo do desenvolvedor.
-* **Antigravity CLI (agy / Motor de Agenciamento Avançado):** O motor de orquestração externo fornecido pelo framework do Google DeepMind Advanced Agentic Coding. Ele gerencia execução assíncrona de subagentes paralelos, automação de navegador e criação de artefatos.
-* **OpenCode Ecosystem (O Hub de Integração):** O repositório unificado que conecta esses três pilares. Através da **Antigravity Integration Bridge (SPEC-TOP-ANT)** e do plugin `antigravity-bridge.ts`, o ecossistema expõe as ferramentas do Antigravity (busca na web, geração de imagens, automação de browser, subagentes paralelos) para os agentes do OpenCode. Isso permite que o `MasterOrchestrator` de alto nível delegue tarefas complexas para o `AntigravityOrchestrator` de forma fluida.
-
-#### Como demonstrar essa unificação na prática em eventos:
-1. **Listagem de Modelos no Ollama**: Mostre que o Ollama está em execução ativa rodando `ollama list` no terminal Linux/WSL.
-2. **Inicialização Alinhada no OpenCode CLI**: Inicie o OpenCode CLI rodando `opencode` e envie `/models`. O terminal exibirá instantaneamente os modelos locais servidos pelo Ollama e os modelos remotos de nuvem integrados na mesma interface.
-3. **Validação da Ponte (Bridge)**: Execute a suíte de testes (`./tests/test_environment.sh`) para demonstrar como o ecossistema valida autonomamente a integridade e latência de comunicação da ponte de integração `antigravity-mcp` (Bridge).
+#### 4. Integration Bridge (Ollama ── OpenCode ── Antigravity)
+*   **Ollama CLI**: Provedor local de LLMs rodando em `11434`.
+*   **OpenCode CLI**: Terminal interativo e shell operacional do usuário.
+*   **Antigravity CLI (agy)**: Motor de agenciamento assíncrono avançado do DeepMind AAC, gerenciando subagentes, downloads científicos e geração de imagens.
+*   **Ecosystem Bridge**: A ponte de integração (**SPEC-TOP-ANT** e `antigravity-bridge.ts`) expõe todas as ferramentas do Antigravity para os agentes do OpenCode. Isso permite que o `MasterOrchestrator` de alto nível delegue tarefas de navegador e busca web para o `AntigravityOrchestrator` de forma nativa.
 
 > [!TIP]
 > **Resolução de Escopo de Agentes & Plugins (v5.1+):**
-> Se agentes personalizados (como o `/marceloclaro`) não forem listados no OpenCode Desktop ou TUI, certifique-se de que eles estão presentes no diretório global de agentes. O ecossistema agora cria automaticamente links simbólicos no WSL (`~/.config/opencode/agents/`) e junções de diretório no Windows (`%USERPROFILE%\.config\opencode\agents`).
-> Além disso, todos os plugins em `plugins/` foram migrados para a assinatura funcional dinâmica exigida pelo `@opencode-ai/plugin` v1.17+, eliminando erros silenciosos no `opencode.log`.
+> Se agentes customizados (como o `/marceloclaro`) não aparecerem, garanta a junção de links simbólicos no WSL (`~/.config/opencode/agents/`) e junções no Windows (`%USERPROFILE%\.config\opencode\agents`).
+> Todos os plugins foram migrados para a assinatura dinâmica exigida por `@opencode-ai/plugin` v1.17+, eliminando erros no `opencode.log`.
 
 ---
 
-> *"O software tradicional exige que você digite os comandos. O OpenCode Ecosystem inventa as soluções."*
-> **Construído com excelência para moldar o futuro da Autonomia Digital.**
+> `"O software tradicional exige que você digite comandos. O OpenCode Ecosystem cria as soluções."`
+> **⚡ PROMPT FORWARD // SECURE THE GRID // BUILD THE FUTURE ⚡**

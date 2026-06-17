@@ -1,198 +1,181 @@
-# Primeiros Passos — OpenCode Ecosystem v5.0
+```text
+ █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+ █  ██████╗ ███████╗████████╗    ███████╗████████╗ █████╗ ██████╗ ████████╗   █
+ █ ██╔════╝ ██╔════╝╚══██╔══╝    ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝   █
+ █ ██║  ███╗█████╗     ██║       ███████╗   ██║   ███████║██████╔╝   ██║      █
+ █ ██║   ██║██╔══╝     ██║       ╚════██║   ██║   ██╔══██║██╔══██╗   ██║      █
+ █ ╚██████╔╝███████╗   ██║       ███████║   ██║   ██║  ██║██║  ██║   ██║      █
+ █  ╚═════╝ ╚══════╝   ╚═╝       ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝      █
+ █                                                                            █
+ █          INITIALIZATION DECRYPT PROTOCOL // ESTIMATED_BOOT: 10-15M         █
+ █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+```
 
-> **Tempo estimado:** 10–15 minutos para instalação e primeiro uso.
-
----
-
-## Para quem é este guia
+### ⚡ [BOOT://TARGET_AUDIENCE] ── Para quem é este guia
 
 Este guia destina-se a:
+*   ⚡ **Pesquisadores Acadêmicos**: Que desejam gerar artigos com auditoria de qualidade (10 critérios CAPES) e debates multiagentes com verificadores simbólicos.
+*   ⚡ **Desenvolvedores de IA**: Interessados em arquiteturas multiagentes, engenharia reversa automatizada e injeção dinâmica de servidores MCP.
+*   ⚡ **Estudantes de Computação Quântica**: Que buscam experimentar com Variational Quantum Circuits (VQC) de 50 qubits, Quantum Machine Learning (QML) aplicado a imagens médicas e técnicas de mitigação de erros (ZNE/PEC).
 
-- **Pesquisadores acadêmicos** — que desejam gerar artigos com auditoria de qualidade (10 critérios CAPES) e debate multiagente com verificadores simbólicos.
-- **Desenvolvedores de IA** — interessados em arquiteturas multiagente, engenharia reversa automatizada e integração de MCPs.
-- **Estudantes de computação quântica** — que buscam experimentar com VQC de 50 qubits, QML em dados médicos e mitigação de erros (ZNE/PEC).
-
-Nenhum conhecimento prévio sobre o OpenCode Ecosystem é necessário. Este documento guiará você desde a instalação até a execução dos primeiros comandos.
-
----
-
-## Pré-requisitos
-
-Antes de iniciar, verifique se o seu ambiente atende aos seguintes requisitos:
-
-| Componente | Versão Mínima | Observação |
-|------------|:-------------:|-----------|
-| **Node.js** | v22+ (LTS) | Runtime JavaScript necessário para o OpenCode CLI |
-| **Bun** | 1.3+ | Gerenciador de pacotes e runtime utilizado pelo projeto |
-| **Python** | 3.12+ | Necessário para os agentes, scripts Nexus e módulos quânticos |
-| **OpenCode CLI** | 1.14+ | Interface de linha de comando do OpenCode |
-| **Sistema Operacional** | Windows 11 (principal) | Linux e macOS também são suportados (experimental) |
-| **Modelo (Nuvem)** | `mimo-v2.5-pro` | Xiaomi MiMo API — 1M contexto, 128K saída (Pay-as-you-go ou Token Plan) |
-| **Modelo (Local)** | `opencode/qwen-coder-pro` | Ollama local — 32K contexto, 8K saída (totalmente offline e gratuito) |
+Não é necessário conhecimento prévio do ecossistema. Este guia orientará desde a instalação até a primeira rodada operacional dos orquestradores.
 
 ---
 
-## Instalação Passo-a-Passo
+### 🔌 [BOOT://PREREQUISITES] ── Requisitos do Sistema
 
-### 1. Clonar o repositório
+Antes de iniciar, verifique se o seu terminal atende às seguintes especificações de grid:
 
+| Componente | Versão Mínima | Observação / Função no Grid |
+| :--- | :---: | :--- |
+| **Node.js** | v22+ (LTS) | Runtime JavaScript para execução do OpenCode CLI |
+| **Bun** | v1.3+ | Gerenciador de pacotes e runtime ultra-veloz do ecossistema |
+| **Python** | 3.12+ | Runtime para agentes, scripts Nexus e simuladores quânticos |
+| **OpenCode CLI** | 1.14+ | Interface de controle e console central do OpenCode |
+| **OS Principal** | Windows 11 | Compatível nativamente via WSL2 (Ubuntu) |
+| **Modelo Cloud** | `mimo-v2.5-pro` | Xiaomi MiMo API (1M contexto, Pay-as-you-go ou Token Plan) |
+| **Modelo Local** | `qwen-coder-pro` | Ollama local — 100% offline, seguro e gratuito |
+
+---
+
+### 💾 [BOOT://DEPLOYMENT_STEP] ── Instalação Passo a Passo
+
+#### 1. Clonar o Grid de Repositórios
 ```bash
 git clone https://github.com/MarceloClaro/OpenCode_Ecosystem.git
 cd OpenCode_Ecosystem
 ```
 
-### 2. Instalar dependências
-
-O projeto utiliza o Bun como gerenciador de pacotes. As dependências incluem `@opencode-ai/plugin` e `@types/bun`:
-
+#### 2. Injetar Dependências Funcionais
+O projeto utiliza o Bun para carregamento de alta velocidade. As dependências primárias cobrem `@opencode-ai/plugin` e `@types/bun`:
 ```bash
 bun install
 ```
 
-### 3. Configurar o OpenCode CLI
-
-Certifique-se de que o OpenCode CLI (versão 1.14+) esteja instalado e acessível no `PATH`. Consulte a [documentação oficial do OpenCode](https://opencode.ai) para instruções de instalação.
-
+#### 3. Configurar e Validar OpenCode CLI
+Certifique-se de que o CLI (versão 1.14+) esteja acessível no PATH do seu terminal:
 ```bash
 opencode --version
 # Saída esperada: 1.14.x ou superior
 ```
 
-### 4. Verificar os Modelos Ativos
-
-O ecossistema opera de forma híbrida. Você pode verificar os modelos disponíveis executando:
-
+#### 4. Checar Modelos Ativos
+Execute o CLI para verificar quais cérebros (locais e remotos) estão ativos no ecossistema:
 ```bash
 opencode
 /models
 ```
-*(Isso listará tanto os modelos em nuvem da Xiaomi MiMo quanto os modelos locais executando sob o seu Ollama CLI local).*
+*(Isso retornará tanto os modelos em nuvem da Xiaomi MiMo quanto os modelos locais servidos via Ollama local).*
 
 ---
 
-## Comandos de Verificação
+### 📋 [BOOT://INTEGRITY_CHECK] ── Comandos de Diagnóstico do Grid
 
-Execute os comandos abaixo para confirmar que seu ambiente está corretamente configurado:
+Valide as versões instaladas no seu ambiente de execução:
 
-| Comando | Saída Esperada |
-|---------|---------------|
-| `node --version` | `v25.x.x` |
-| `bun --version` | `1.3.x` |
-| `python --version` | `Python 3.12.x` |
-| `opencode --version` | `1.14.x` ou superior |
+| Comando de Varredura | Saída Mínima Esperada | Status |
+| :--- | :---: | :---: |
+| `node --version` | `v25.x.x` | 🟢 OK |
+| `bun --version` | `1.3.x` | 🟢 OK |
+| `python --version` | `Python 3.12.x` | 🟢 OK |
+| `opencode --version` | `1.14.x` ou superior | 🟢 OK |
 
 ---
 
-## Primeiros Passos — 3 Exemplos
+### 🕹️ [BOOT://OPERATIONAL_COMMANDS] ── Exemplos de Inicialização
 
-### Exemplo 1: Gerar artigo academico com auditoria CAPES
-
-```
+#### 🚀 Exemplo 1: Gerar Artigo Acadêmico com Auditoria CAPES
+```bash
 /artigo
 ```
+Este comando ativa o pipeline acadêmico distribuído:
+1.  **SEEKER** — pesquisa autônoma e mineração em 10+ fontes científicas (arXiv, PubMed, OpenAlex, Semantic Scholar).
+2.  **MASWOS** — 49 agentes especialistas rodando em 8 estágios síncronos de redação científica.
+3.  **Banca** — 5 revisores e 4 orientadores virtuais em loop iterativo até atingir score de aprovação de 95/100.
+4.  **AUTO_SCORE_QUALIS.py** — auditoria de 10 critérios CAPES.
+5.  **Export** — Geração de LaTeX/PDF contendo 46 marcações de auditoria TSAC auditáveis.
 
-Este comando aciona o pipeline completo de produção acadêmica:
+**Saída**: Artigo de 35+ páginas ABNT estruturado com citações válidas e auditadas.
 
-1. **SEEKER** — pesquisa autônoma em 10+ fontes (arXiv, PubMed, OpenAlex, CORE, Semantic Scholar)
-2. **MASWOS** — 49 agentes especializados em 8 estágios de escrita
-3. **Banca** — 5 revisores + 4 orientadores em iteração até score ≥ 95/100
-4. **AUTO_SCORE_QUALIS.py** — avaliação automática com 10 critérios ponderados
-5. **Export** — LaTeX/PDF com 46 anotações TSAC auditáveis
+<div align="center">
+  <img src="diagrams/academic-pipeline.svg" alt="Pipeline Acadêmico MASWOS" width="100%" style="max-width: 800px; border-radius: 8px; margin: 16px 0;"/>
+</div>
 
-**Resultado:** artigo de 35+ paginas em formato ABNT, com citacoes verificaveis e auditoria baseada em 10 criterios CAPES.
-
-<img src="diagrams/academic-pipeline.svg" alt="Pipeline Acadêmico MASWOS Qualis A1" width="100%" style="max-width: 800px; border-radius: 8px; margin: 16px 0;"/>
-
-### Exemplo 2: Engenharia reversa de sistemas
-
-```
+#### 🚀 Exemplo 2: Engenharia Reversa de Sistemas Existentes
+```bash
 /reversa
 ```
-
-Aciona um pipeline de 9 agentes especializados em engenharia reversa:
-
+Inicia o fluxo em cascata de 9 agentes especialistas em engenharia reversa e decomposição arquitetural:
+```text
+Scout ──> Archaeologist ──> Detective ──> Architect ──> Writer ──> Reviewer
+                                            │
+                                            └──> Visor ──> Data Master ──> Design System
 ```
-Scout → Archaeologist → Detective → Architect → Writer → Reviewer
-                                    ↓
-                        Visor → Data Master → Design System
-```
+**Saída**: 7 esquemas em formato SVG, mapas de dependências de código, ADRs e especificações técnicas de software (SDDs) gerados na pasta do projeto.
 
-**Resultado:** 7 SVGs de arquitetura, mapas de dependência, ADRs e SDDs gerados automaticamente.
+<div align="center">
+  <img src="diagrams/agent-orchestration.svg" alt="Orquestração de Agentes" width="100%" style="max-width: 800px; border-radius: 8px; margin: 16px 0;"/>
+</div>
 
-<img src="diagrams/agent-orchestration.svg" alt="Orquestração de Agentes" width="100%" style="max-width: 800px; border-radius: 8px; margin: 16px 0;"/>
-
-### Exemplo 3: Modo autônomo com todos os MCPs
-
-```
+#### 🚀 Exemplo 3: Modo Autônomo com Acesso Total a Ferramentas (MCPs)
+```bash
 /auto
 ```
-
-Ativa o agente `openagent` com acesso a todos os 46 MCPs (servidores de contexto), permitindo execução autônoma de tarefas complexas que combinam pesquisa, código, dados e análise.
-
----
-
-## Solução de Problemas Comuns
-
-### Erro de versão do Node.js
-
-**Sintoma:** `Error: Unsupported Node.js version`
-
-**Solução:** Atualize o Node.js para v25 ou superior. Utilize o `nvm` para gerenciar versões:
-
-```bash
-nvm install 25
-nvm use 25
-```
-
-### Modelos MiMo ou Ollama não disponíveis
-
-**Sintoma:** `Model not found` ao tentar executar comandos no OpenCode
-
-**Solução:**
-1. Para modelos **MiMo (nuvem)**, certifique-se de que sua chave de API e URL base estão configuradas corretamente em `~/.config/opencode/opencode.json` e que você possui conexão com a internet.
-2. Para modelos **Ollama (local)**, garanta que o serviço do Ollama esteja rodando em sua máquina e que você baixou o modelo desejado (ex: `ollama run deepseek-r1:7b`).
-
-### MCPs não inicializando
-
-**Sintoma:** Servidores MCP não respondem nas primeiras interações
-
-**Explicação:** Os MCPs utilizam **lazy init** — eles só inicializam na primeira chamada de ferramenta, não durante a inicialização do sistema. Isso é comportamento esperado e reduz o tempo de startup.
-
-**Solução:** Execute um comando que utilize o MCP desejado (por exemplo, `/artigo` para MCPs acadêmicos) e aguarde a inicialização automática.
-
-### Erro `bun install` — dependências não instaladas
-
-**Sintoma:** Falha ao instalar dependências
-
-**Solução:** Verifique se o Bun está na versão 1.3+ e se o `package.json` está presente na raiz do projeto:
-
-```bash
-bun --version
-ls package.json
-bun install
-```
+Aciona o agente universal `openagent` com permissão total de leitura, escrita e execução em todos os 46 MCPs configurados, resolvendo missões complexas que demandam triangulação entre web crawling, refatoração de código local e consultas de dados estruturados.
 
 ---
 
-## Próximos Passos
+### ☣️ [BOOT://TROUBLESHOOTING] ── Solução de Problemas do Grid
 
-Agora que o ambiente está configurado, explore a documentação complementar:
+#### 1. Erro de Versão do Node.js
+*   **Sintoma**: `Error: Unsupported Node.js version`
+*   **Resolução**: Atualize o Node.js para v25+ (LTS). Use o `nvm` para atualização rápida:
+    ```bash
+    nvm install 25
+    nvm use 25
+    ```
 
-| Documento | Descrição |
-|-----------|-----------|
-| [README.md](README.md) | Visão geral completa do ecossistema |
-| [PROJECTS.md](PROJECTS.md) | Painel didático e detalhado de projetos (Kanban) |
-| [TUTORIALS.md](TUTORIALS.md) | Tutoriais práticos detalhados |
-| [GLOSSARY.md](GLOSSARY.md) | Glossário de termos técnicos |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Guia para contribuidores |
-| [ROADMAP.md](ROADMAP.md) | Visão futura do projeto |
-| [AGENTS_PTBR.md](AGENTS_PTBR.md) | Documentação de agentes em PT-BR |
+#### 2. Modelos MiMo ou Ollama Indisponíveis
+*   **Sintoma**: `Model not found` ao submeter prompts.
+*   **Resolução**:
+    *   Para **MiMo (Cloud)**: Valide a chave de API e a URL configuradas em `~/.config/opencode/opencode.json`.
+    *   Para **Ollama (Local)**: Verifique se o daemon do Ollama está rodando localmente (`ollama serve`) e se o modelo foi baixado (`ollama run deepseek-r1:7b`).
 
+#### 3. MCPs Não Inicializam ou Estão Inativos
+*   **Sintoma**: Servidores MCP não respondem nas primeiras chamadas.
+*   **Motivo**: Os MCPs usam **lazy init** (inicialização preguiçosa) para economizar recursos de startup da máquina. Eles só sobem na primeira requisição física que necessita da ferramenta.
+*   **Resolução**: Execute um comando que demande explicitamente o MCP (ex: `/artigo` para buscas acadêmicas) e aguarde o spawn automático do processo em segundo plano.
+
+#### 4. Erro ao Rodar `bun install`
+*   **Sintoma**: Falha na instalação e links quebrados.
+*   **Resolução**: Verifique se o Bun está atualizado (1.3+) e se você está executando o comando na mesma pasta onde está o arquivo `package.json`:
+    ```bash
+    bun --version
+    ls package.json
+    bun install
+    ```
+
+---
+
+### 🗺️ [BOOT://NEXT_STEPS] ── Próximos Passos de Navegação
+
+Explore a documentação detalhada para expandir seu controle sobre o grid:
+
+| Código de Acesso | Documento de Destino | Descrição do Conteúdo |
+| :--- | :--- | :--- |
+| **SYS_DOC_001** | [README.md](README.md) | Visão geral cyberpunk e guias rápidos de demonstração |
+| **SYS_DOC_002** | [PROJECTS.md](PROJECTS.md) | Painel didático de projetos organizados em Kanban |
+| **SYS_DOC_003** | [TUTORIALS.md](TUTORIALS.md) | Tutoriais operacionais passo a passo |
+| **SYS_DOC_004** | [GLOSSARY.md](GLOSSARY.md) | Glossário de arquitetura e conceitos do ecossistema |
+| **SYS_DOC_005** | [CONTRIBUTING.md](CONTRIBUTING.md) | Diretrizes e padrões para desenvolvedores externos |
+| **SYS_DOC_006** | [ROADMAP.md](ROADMAP.md) | Visão de metas e marcos de evolução futura |
+| **SYS_DOC_007** | [AGENTS_PTBR.md](AGENTS_PTBR.md) | Detalhamento dos 125 agentes especialistas em PT-BR |
 
 ---
 
 <div align="center">
 
-**OpenCode Ecosystem v5.0** · Documentação em Português Brasileiro
+**OpenCode Ecosystem v5.0** · Terminal de Controle de Documentação
+`⚡ SYSTEM OVERWATCH ACTIVE ── GRID SECURED ⚡`
 
 </div>
