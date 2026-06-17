@@ -1,0 +1,23 @@
+*.aux
+*.log
+*.toc
+*.lof
+*.lot
+*.lol
+*.pdf
+*.bbl
+*.blg
+*.out
+*.synctex.gz
+*.bcf
+*.run.xml
+*_tmp*
+backups/
+_tmp_main*
+capitulos/*.aux
+capitulos/*.log
+ilustracoes/*.aux
+ilustracoes/*.log
+
+# Whitelist figure PDFs so pdfLaTeX can compile the book out-of-the-box
+!ilustracoes/*.pdf
