@@ -1055,7 +1055,7 @@ iniciais.
 
 \subsection{Biblioteca Seed e Templates de Decomposição}
 
-A biblioteca de insumos cognitivos (\codigo{cognitive_library.json}) contém
+A biblioteca de insumos cognitivos (\codigo{cognitive\_library.json}) contém
 85 insumos seed, cobrindo conceitos fundamentais de computação, matemática,
 estatística e inteligência artificial. A construção desta biblioteca seguiu
 os princípios de \emph{engenharia reversa do conhecimento}: em vez de
@@ -1165,19 +1165,19 @@ dependência ou ativação.
 \subsection{Módulo 1: Structural DNA Extractor}
 
 O módulo principal do Potentiality Scanner é o \emph{Structural DNA
-Extractor}, implementado no arquivo \codigo{potentiality_scanner.py} (210
+Extractor}, implementado no arquivo \codigo{potentiality\_scanner.py} (210
 linhas). Ele opera em três passos:
 
 \begin{enumerate}
 \item \destaque{Carregamento do registro de componentes}: o scanner lê o
-arquivo \codigo{skills_registry.json} e o mapa estático de componentes
+arquivo \codigo{skills\_registry.json} e o mapa estático de componentes
 core (scanners, engines, pontes). Cada componente é mapeado para uma ou
 mais capacidades atômicas.
 \item \destaque{Inferência de capacidades por heurística}: para skills
 dinâmicas, o scanner aplica heurísticas de associação de palavras-chave.
 Por exemplo, uma skill cuja descrição contém ``quantum'' ou ``qubit'' é
-mapeada para \codigo{quantum\_computing}; uma skill com ``legal'',
-``contract'' ou ``jurídico'' é mapeada para \codigo{legal\_processing}.
+mapeada para \codigo{quantum\\_computing}; uma skill com ``legal'',
+``contract'' ou ``jurídico'' é mapeada para \codigo{legal\\_processing}.
 \item \destaque{Geração do mapa de capacidades}: a saída é um dicionário
 que associa cada componente a suas capacidades, mais a análise de núcleo
 central, redundâncias e lacunas.
@@ -1252,16 +1252,16 @@ def detect_redundancies(capability_map: dict,
 Da mesma forma, a detecção de lacunas emergentes projeta quais capacidades
 serão necessárias no futuro próximo com base no roadmap evolutivo. O
 scanner mantém uma lista de \emph{target evolving capabilities}
-(capacidades alvo em evolução) como \codigo{autonomous\_self\_repair},
-\codigo{distributed\_consensus} e \codigo{proactive\_alignment}. Por exemplo, se o ``master orchestrator'' e
+(capacidades alvo em evolução) como \codigo{autonomous\\_self\\_repair},
+\codigo{distributed\\_consensus} e \codigo{proactive\\_alignment}. Por exemplo, se o ``master orchestrator'' e
 o ``antigravity bridge'' ambos implementam ``central coordination'', o
 scanner sinaliza a redundância e sugere unificação.
 
 Da mesma forma, a detecção de lacunas emergentes projeta quais capacidades
 serão necessárias no futuro próximo com base no roadmap evolutivo. O
 scanner mantém uma lista de \emph{target evolving capabilities}
-(capacidades alvo em evolução) como \codigo{autonomous\_self\_repair},
-\codigo{distributed\_consensus} e \codigo{proactive\_alignment}.
+(capacidades alvo em evolução) como \codigo{autonomous\\_self\\_repair},
+\codigo{distributed\\_consensus} e \codigo{proactive\\_alignment}.
 
 \subsection{Integração com o Orquestrador /marceloclaro}
 
@@ -1347,7 +1347,7 @@ especializados, descritos a seguir.
 
 \subsection{MetacognitiveMonitor: O Orquestrador do Loop}
 
-O \emph{MetacognitiveMonitor} (726 linhas em \codigo{metacognitive\_loop.py})
+O \emph{MetacognitiveMonitor} (726 linhas em \codigo{metacognitive\\_loop.py})
 é o orquestrador central do loop metacognitivo. Ele coordena a execução
 dos outros módulos e mantém o estado global do ciclo. Seu ciclo principal
 opera em quatro fases:
@@ -1411,7 +1411,7 @@ necessários para preenchê-las.
 
 \subsection{Self-Model N0--N3: Quatro Níveis de Auto-Consciência Artificial}
 
-O \emph{SelfModel} (447 linhas em \codigo{self\_model.py}) implementa uma
+O \emph{SelfModel} (447 linhas em \codigo{self\\_model.py}) implementa uma
 arquitetura de auto-representação em quatro níveis, inspirada na Global
 Workspace Theory de Baars \cite{baars1988cognitive, baars2002conscious},
 na Attention Schema Theory de Graziano \cite{graziano2013consciousness,
@@ -1431,7 +1431,7 @@ selecionando focos prioritários.
 mesmo, incluindo estado interno, métricas de confiança e histórico.
 \item[N3 (Metacognitivo):] o sistema reflete sobre seus próprios processos
 cognitivos, identifica padrões e ajusta seu comportamento com base na
-reflexão (implementado via \codigo{metacognitive\_loop.py}).
+reflexão (implementado via \codigo{metacognitive\\_loop.py}).
 \end{description}
 \end{definicao}
 
@@ -1528,7 +1528,7 @@ fundamentais para a evolução autônoma e alinhada do ecossistema.
 
 \subsection{Dialectical Engine: Tese $\rightarrow$ Antítese $\rightarrow$ Síntese}
 
-O \emph{DialecticalEngine} (264 linhas em \codigo{dialectical\_engine.py})
+O \emph{DialecticalEngine} (264 linhas em \codigo{dialectical\\_engine.py})
 implementa uma arquitetura hegeliana adaptada para sistemas computacionais.
 O princípio fundamental é que toda limitação (antítese) contém em si a
 semente de uma solução mais geral (síntese).
@@ -1582,7 +1582,7 @@ síntese = refatoração.
 \subsection{Governança Cooperativa: Os 8 Design Principles de Ostrom}
 
 O \emph{CooperativeGovernance} (320 linhas em
-\codigo{cooperative\_governance.py}) adapta os 8 Design Principles (DPs) de
+\codigo{cooperative\\_governance.py}) adapta os 8 Design Principles (DPs) de
 Elinor Ostrom para governança de recursos comuns ao contexto de goal-setting
 autônomo em sistemas de IA \cite{ostrom1990governing}.
 

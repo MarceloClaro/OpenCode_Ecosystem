@@ -241,7 +241,7 @@ que orquestra o ecossistema.
 
 \begin{exercicio}
 Instale o \opencodeeco{} seguindo os passos do
-Código~\ref{lst:instalacao}. Execute \codigo{python scripts/validate\_installation.py}
+Código~\ref{lst:instalacao}. Execute \codigo{python scripts/validate\\_installation.py}
 e registre o resultado. (\nivelzero)
 \end{exercicio}
 
@@ -349,7 +349,7 @@ injetadas no contexto da IA quando ativadas.
 \end{definicao}
 
 As categorias de skills estão detalhadas na Seção~3.6. O mecanismo de
-carregamento é gerenciado pelo módulo \codigo{core/skill\_manager.py}:
+carregamento é gerenciado pelo módulo \codigo{core/skill\\_manager.py}:
 
 \begin{lstlisting}[style=pythonstyle, caption={Mecanismo de carregamento de skills},
                    label={lst:skill-load}]
@@ -542,7 +542,7 @@ O fluxo detalhado é:
 comando e consulta o \codigo{AgentManager} para identificar o agente
 competente;
 \item O \destaque{Agente} selecionado carrega a skill necessária via
-\codigo{SkillManager.load\_skill()};
+\codigo{SkillManager.load\\_skill()};
 \item A \destaque{Skill} invoca um ou mais MCPs para executar operações
 externas;
 \item O resultado percorre o caminho inverso até o usuário.
@@ -550,7 +550,7 @@ externas;
 
 \begin{exercicio}
 Identifique no código-fonte os arquivos \codigo{core/container.py},
-\codigo{core/orchestrator.py} e \codigo{core/agent\_manager.py}.
+\codigo{core/orchestrator.py} e \codigo{core/agent\\_manager.py}.
 Descreva as responsabilidades de cada um. (\nivelbasico)
 \end{exercicio}
 
@@ -734,7 +734,7 @@ markers =
     slow: Testes lentos (> 5s)
 \end{lstlisting}
 
-O script \codigo{run\_all\_cts.py} executa toda a suíte e gera relatórios
+O script \codigo{run\\_all\\_cts.py} executa toda a suíte e gera relatórios
 detalhados:
 
 \begin{lstlisting}[style=pythonstyle, caption={Runner de testes},
@@ -910,7 +910,7 @@ class AutoSummarizer:
 \subsubsection{Etapa 4: Refatoração e Documentação}
 
 A refatoração identifica oportunidades de melhoria: extrair o método
-\codigo{\_call\_llm} para um serviço separado, adicionar cache de
+\codigo{\\_call\\_llm} para um serviço separado, adicionar cache de
 resultados e implementar rate limiting. A ADR correspondente
 (architectu-011) documenta a decisão de separar a camada de LLM em um
 serviço independente para facilitar testes e substituição de modelos.
@@ -960,7 +960,7 @@ consumidores, e consumidores se inscrevem para receber eventos sem
 conhecer os produtores.
 \end{definicao}
 
-A implementação no \opencodeeco{} está em \codigo{core/event\_bus.py}:
+A implementação no \opencodeeco{} está em \codigo{core/event\\_bus.py}:
 
 \begin{lstlisting}[style=pythonstyle, caption={Event Bus assincrono},
                    label={lst:event-bus}]
@@ -1404,7 +1404,7 @@ class ManusEvolve:
 \end{lstlisting}
 
 \begin{exercicio}
-Registre um novo plugin no \codigo{.menu\_registry.json} com um comando
+Registre um novo plugin no \codigo{.menu\\_registry.json} com um comando
 personalizado. Teste a descoberta automática pelo menu adaptativo.
 (\nivelintermediario)
 \end{exercicio}
@@ -1697,7 +1697,7 @@ decomposição de tarefas;
 \item \textbf{L6 -- Evolução}: aprendizado e adaptação do sistema.
 \end{itemize}
 
-O meta-orquestrador (\codigo{nexus/scripts/meta\_orchestrator.py})
+O meta-orquestrador (\codigo{nexus/scripts/meta\\_orchestrator.py})
 coordena a execução dos agentes:
 
 \begin{lstlisting}[style=pythonstyle, caption={Meta-orquestrador Nexus},
@@ -1834,7 +1834,7 @@ class SyncBarrier:
 \subsection{Auto-cura: Self Healer}
 \label{subsec:self-healer}
 
-O módulo \codigo{self\_healer.py} implementa detecção e recuperação
+O módulo \codigo{self\\_healer.py} implementa detecção e recuperação
 autônoma de falhas:
 
 \begin{lstlisting}[style=pythonstyle, caption={Mecanismo de auto-cura},
@@ -2282,7 +2282,7 @@ agentes especializados \cite{fowler2019refactoring}:
 \subsection{Documentação: SPEC\_COVERAGE.md (186/186 = 100\%)}
 \label{subsec:spec-coverage}
 
-O arquivo \codigo{docs/SPEC\_COVERAGE.md} documenta a cobertura de todos
+O arquivo \codigo{docs/SPEC\\_COVERAGE.md} documenta a cobertura de todos
 os 186 componentes do ecossistema, atingindo 100\% de documentação:
 
 \begin{lstlisting}[style=pythonstyle, caption={Cobertura de documentacao},
@@ -2328,7 +2328,7 @@ identificados. (\nivelavancado)
 
 \begin{exercicio}
 Verifique a cobertura de documentação do ecossistema executando
-\codigo{python scripts/check\_spec\_coverage.py}. (\nivelbasico)
+\codigo{python scripts/check\\_spec\\_coverage.py}. (\nivelbasico)
 \end{exercicio}
 
 % =============================================================================
@@ -2353,7 +2353,7 @@ requirements.txt};
 \item Instale dependências Node.js: \codigo{npm install};
 \item Copie o arquivo de ambiente: \codigo{cp .env.example .env};
 \item Configure as chaves de API no arquivo \codigo{.env};
-\item Execute a validação: \codigo{python scripts/validate\_installation.py}.
+\item Execute a validação: \codigo{python scripts/validate\\_installation.py}.
 \end{enumerate}
 
 \subsection{Primeiro Comando: /auto}

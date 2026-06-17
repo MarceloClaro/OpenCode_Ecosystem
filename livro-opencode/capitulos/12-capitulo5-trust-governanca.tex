@@ -271,7 +271,7 @@ empiricamente durante o ciclo evolutivo R23 do ecossistema.
 \subsection{Arquitetura do TrustScorer}
 
 A implementação do TrustScorer está no arquivo
-\codigo{skills/system/academic-audit/trust\_engine.py:78-176}.
+\codigo{skills/system/academic-audit/trust\\_engine.py:78-176}.
 
 \begin{definicao}[Score de confiança]
 O \destaque{score de confiança} $\sigma(a)$ para uma ação $a$ é:
@@ -528,7 +528,7 @@ pré-definidos.
 \end{definicao}
 
 A implementação do Behavioral Gate está em
-\codigo{trust\_engine.py:182-274}.
+\codigo{trust\\_engine.py:182-274}.
 
 Os limiares de classificação são:
 \begin{itemize}
@@ -696,7 +696,7 @@ BA-008 & Pipeline completo gate $\to$ learn $\to$ recall & PASS \\
 \end{table}
 
 A implementação dos CTs está em
-\codigo{specs/test\_behavioral\_autonomy.py:42-260}.
+\codigo{specs/test\\_behavioral\\_autonomy.py:42-260}.
 
 \begin{lstlisting}[style=pythonstyle, caption={CTs de validacao do Behavioral Gate (test\_behavioral\_autonomy.py)}]
 def ba_004_gate_blocks() -> CTResult:
@@ -798,7 +798,7 @@ ilimitada, duração de horas a anos.
 \subsection{Implementação Computacional}
 
 A implementação do NaturalForgetting está em
-\codigo{trust\_engine.py:280-395}.
+\codigo{trust\\_engine.py:280-395}.
 
 \begin{definicao}[Slot de memória]
 Um \destaque{slot de memória} $m = (\text{conteúdo}, \text{importância},
@@ -1135,7 +1135,7 @@ de sistemas multiagentes \cite{ostrom1990governing, opencode2026spec036}.
 \subsection{Implementação: cooperative\_governance.py}
 
 A implementação dos princípios de Ostrom está em
-\codigo{cooperative\_governance.py:129-320}.
+\codigo{cooperative\\_governance.py:129-320}.
 
 \begin{lstlisting}[style=pythonstyle, caption={CooperativeGovernance: auditoria Ostrom (cooperative\_governance.py:129-273)}]
 class CooperativeGovernance:
@@ -1409,7 +1409,7 @@ O tipo de síntese pode ser:
 \subsection{Motor Dialético: Implementação}
 
 A implementação está em
-\codigo{dialectical\_engine.py:62-215}.
+\codigo{dialectical\\_engine.py:62-215}.
 
 \begin{lstlisting}[style=pythonstyle, caption={DialecticalEngine: sintese dialetica (dialectical\_engine.py:62-143)}]
 class DialecticalEngine:
@@ -1611,7 +1611,7 @@ pensa sobre seu próprio pensamento e modifica seu código.
 \subsection{Implementação: self\_model.py}
 
 A implementação do SelfModel está em
-\codigo{self\_model.py:180-439}.
+\codigo{self\\_model.py:180-439}.
 
 \begin{lstlisting}[style=pythonstyle, caption={SelfModel: arquitetura N0-N3 (self\_model.py:180-250)}]
 class SelfModel:
@@ -1836,7 +1836,7 @@ def audit_decisions(engine: TrustEngine) -> list[dict]:
 
 \subsection{AuditInstrumentor: Instrumentação Automática}
 
-O módulo \codigo{audit\_instrumentor.py} (293 linhas) implementa
+O módulo \codigo{audit\\_instrumentor.py} (293 linhas) implementa
 instrumentação automática de pipelines \cite{opencode2026ecosystem}:
 
 \begin{lstlisting}[style=pythonstyle, caption={AuditInstrumentor: auto-instrumentacao (audit\_instrumentor.py:51-112)}]
@@ -1862,13 +1862,13 @@ class AuditInstrumentor:
 
 \subsection{AuditRefinements}
 
-O módulo \codigo{audit\_refinements.py} (542 linhas) implementa
+O módulo \codigo{audit\\_refinements.py} (542 linhas) implementa
 refinamentos adicionais de auditoria, incluindo validação cruzada de
 decisões e detecção de anomalias em trilhas de auditoria.
 
 \begin{exemplo}
 O relatório auditável completo do ecossistema
-(\codigo{RELATORIO\_AUDITAVEL\_FINAL\_v5.4.0.md}) documenta:
+(\codigo{RELATORIO\\_AUDITAVEL\\_FINAL\\_v5.4.0.md}) documenta:
 \begin{itemize}
 \item Todas as decisões do Trust Engine em cada ciclo evolutivo;
 \item Scores de confiança consolidados por tipo de ação;

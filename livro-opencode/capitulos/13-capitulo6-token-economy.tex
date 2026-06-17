@@ -648,9 +648,9 @@ A implementação completa da SPEC-022 está nos seguintes arquivos:
 \begin{itemize}
 \item \codigo{specs/SPEC-022-Token-Economy-Core/README.md} —
 especificação completa;
-\item \codigo{skills/system/token-economy/token\_economy.py} —
+\item \codigo{skills/system/token-economy/token\\_economy.py} —
 implementação do motor;
-\item \codigo{specs/tests/test\_token\_economy.py} — 9 CTs;
+\item \codigo{specs/tests/test\\_token\\_economy.py} — 9 CTs;
 \item \codigo{docs/adr/architectu-006.md} — registro ADR.
 \end{itemize}
 
@@ -1421,7 +1421,7 @@ de recursos.
 \subsection{Monitoramento de Consumo}
 
 O monitoramento de consumo é implementado pelo script
-\codigo{token\_economy\_monitor.py} (220 linhas), que expõe
+\codigo{token\\_economy\\_monitor.py} (220 linhas), que expõe
 métricas em tempo real via API REST \cite{opencode2026token}.
 
 \begin{lstlisting}[caption={Monitor de consumo da Token Economy},
@@ -2511,7 +2511,7 @@ class AnomalyDetector:
 
 \subsection{Integração com audit\_instrumentor.py}
 
-O script \codigo{audit\_instrumentor.py} do ecossistema
+O script \codigo{audit\\_instrumentor.py} do ecossistema
 instrumenta automaticamente todas as transações da Token Economy,
 gerando logs de auditoria que alimentam o sistema de
 monitoramento \cite{opencode2026ecosystem}.
