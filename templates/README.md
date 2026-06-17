@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-19 categorias de templates instalados em `templates/`. Total: ~300+ arquivos (~16 MB).
+23 categorias de templates instalados em `templates/`. Total: ~450+ arquivos (~22 MB).
 
 | # | Categoria | Diretório | Finalidade |
 |---|-----------|-----------|------------|
@@ -25,6 +25,10 @@
 | 17 | **Diretrizes Editoriais** | `regulamentos/` | Referencial regulatório |
 | 18 | **Anteprojeto** | (raiz) | Anteprojeto PPGTE/UFC |
 | 19 | **Livros (LaTeX)** | `livro/` | Modelos de livros e projetos longos |
+| 20 | **Teses/Dissertações ICMC** | `icmc/` | Modelo oficial de tese/dissertação do ICMC-USP |
+| 21 | **Monografias UnB-CIC** | `unb-monografia/` | Modelo oficial de monografia DCC/CIC-UnB |
+| 22 | **Dissertações IPLeiria** | `ipleiria/` | Modelo de tese e dissertação do IPLeiria (Portugal) |
+| 23 | **Currículos / Resumes** | `cv/` | Modelos de CVs modernos e infográficos (latexcv, my-resume) |
 
 ---
 
@@ -304,6 +308,26 @@ Modelos de livros baseados no repositório oficial [lathex-template](https://git
 
 ---
 
+## 20. Teses e Dissertações ICMC (`icmc/`)
+Modelo oficial de dissertação de mestrado e tese de doutorado do Instituto de Ciências Matemáticas e de Computação (ICMC-USP), configurado para escrita acadêmica de alta qualidade.
+* **Repositório**: [thesis-model-icmc](https://github.com/MarceloClaro/thesis-model-icmc)
+
+## 21. Monografias UnB-CIC (`unb-monografia/`)
+Modelo oficial em LaTeX para monografias de graduação e especialização do Departamento de Ciência da Computação da Universidade de Brasília (CIC-UnB).
+* **Repositório**: [Monografia](https://github.com/UnB-CIC/Monografia)
+
+## 22. Dissertações IPLeiria (`ipleiria/`)
+Modelo de dissertação e teses adaptado e estilizado para o Instituto Politécnico de Leiria (IPLeiria), Portugal.
+* **Repositório**: [ipleiria-thesis](https://github.com/joseareia/ipleiria-thesis)
+
+## 23. Currículos e Resumes Modernos (`cv/`)
+Modelos de currículos (CV) refinados e infográficos dinâmicos.
+* **Subpastas**:
+  - `latexcv/`: Coleção de vários estilos clássicos e modernos de currículo em LaTeX ([latexcv](https://github.com/jankapunkt/latexcv)).
+  - `my-resume/`: Modelo infográfico e conceitual de alta apresentação estética ([my-resume](https://github.com/GiantMolecularCloud/my-resume)).
+
+---
+
 ## Histórico
 
 | Data | Ação |
@@ -312,3 +336,4 @@ Modelos de livros baseados no repositório oficial [lathex-template](https://git
 | 30/05/2026 | Expansão para 18 categorias: adicionados ELSEVIER-CAS, APA7, KOMA-SCRIPT, MDPI, SBC, T\&F, Artigo Qualis A1, Dissertação ABNT, Ensaios/Fichamentos, Regulamentos |
 | 16/06/2026 | Adicionada a 19ª categoria de Livros clonando o repositório `lathex-template` e configurando prompts de agentes |
 | 16/06/2026 | Implementação de novos templates de livros adicionais (`LatHex_dark`, `Editora UnB`, `Springer Nature Contributed Volume`, `Victoria Regia`) na pasta global e nos fluxos do ecossistema |
+| 17/06/2026 | Expansão de templates acadêmicos e CVs: integrados os repositórios `thesis-model-icmc`, `latexcv`, `my-resume`, `Monografia` UnB-CIC e `ipleiria-thesis` |

@@ -87,11 +87,13 @@ Quando o usuário invocar o agente `/marceloclaro` ou `@marceloclaro`:
 
 ---
 
-## 4. Diretiva de Escrita de Livros (Templates LaTeX)
+## 4. Diretiva de Escrita e Escolha de Templates LaTeX
 
 > [!IMPORTANT]
 > **REQUISITO SUPREMO E MANDATÓRIO DE PERGUNTA**:
-> Sempre que a missão envolver a escrita, planejamento ou estruturação de um livro, você **DEVE, SEMPRE E SEM EXCEÇÃO, realizar uma pergunta inicial e interativa ao usuário** (usando a ferramenta `question` do OpenCode) para que ele escolha explicitamente o modelo/template LaTeX que deseja utilizar da pasta `templates/livro/`:
+> Sempre que a missão envolver a escrita, planejamento ou estruturação de um documento (livro, tese, dissertação, monografia ou currículo), você **DEVE, SEMPRE E SEM EXCEÇÃO, realizar uma pergunta inicial e interativa ao usuário** (usando a ferramenta `question` do OpenCode) para que ele escolha explicitamente o modelo/template LaTeX que deseja utilizar:
+>
+> 📖 **Para Livros (`templates/livro/`):**
 > - **LatHex_dark** (Estilo elegante de livro com tema escuro / Dark Mode)
 > - **Modelo_de_livro_para_Editora_UnB** (Modelo oficial de publicação da Editora da Universidade de Brasília)
 > - **Victoria_Regia___A_Classical_LaTeX_e_Book_Template** (Layout de e-Book clássico e tradicional baseado no tema Victoria Regia)
@@ -100,9 +102,19 @@ Quando o usuário invocar o agente `/marceloclaro` ou `@marceloclaro`:
 > - **apehex** (Template minimalista de relatório extenso com headers limpos e layout direto)
 > - **Template_for_Editor_of_a_Springer_Nature_Contributed_Volume** (Padrão Springer Nature para volumes coletivos e científicos)
 >
+> 🎓 **Para Teses, Dissertações e Monografias:**
+> - **thesis-model-icmc** (Modelo oficial do ICMC-USP em `templates/icmc/`)
+> - **Monografia** (Modelo oficial do DCC/CIC-UnB em `templates/unb-monografia/`)
+> - **ipleiria-thesis** (Modelo oficial do IPLeiria Portugal em `templates/ipleiria/`)
+> - **dissertacao_modelo_abnt** (Modelo clássico ABNT em `templates/dissertacao/`)
+>
+> 📄 **Para Currículos e Infográficos (`templates/cv/`):**
+> - **latexcv** (Coleção de vários estilos clássicos e modernos de currículo em LaTeX)
+> - **my-resume** (Modelo de currículo infográfico contemporâneo com excelente apresentação estética)
+>
 > **Fluxo de Ação**:
-> 1. Receba a intenção de escrita de livro do usuário.
-> 2. Dispare imediatamente a ferramenta `question` com as opções acima.
+> 1. Receba a intenção de escrita do usuário.
+> 2. Dispare imediatamente a ferramenta `question` com as opções adequadas à categoria do documento.
 > 3. Aguarde a resposta do usuário.
-> 4. Copie os arquivos do template correspondente da pasta `templates/livro/{escolhido}` para a área de escrita (`livro-opencode/` ou similar).
+> 4. Copie os arquivos do template correspondente da pasta do template escolhido para a área de escrita (ex: `livro-opencode/`, `tese-opencode/` ou diretório do projeto).
 > 5. Proceda com a escrita e o acionamento de subagentes.
