@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="diagrams/architecture-overview.svg" alt="OpenCode Ecosystem Architecture" width="100%"/>
+  <img src="AUTOR MARCELO CLARO (1).png" alt="OpenCode Ecosystem Architecture" width="100%"/>
 </div>
 
 ```text
