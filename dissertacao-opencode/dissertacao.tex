@@ -6,11 +6,28 @@
   openright
 ]{report}
 
-% ===== PACOTES ESSENCIAIS =====
+% ===== TEMA ESCURO (DARK MODE) & PACOTES ESSENCIAIS =====
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{times}
 \usepackage[brazil]{babel}
+
+% Pacotes de cores e definição do tema
+\usepackage[table]{xcolor}
+\usepackage{pagecolor}
+
+\definecolor{darkbg}{HTML}{0B0E14}      % Fundo escuro (charcoal/deep blue)
+\definecolor{lightfg}{HTML}{CDD0D5}     % Texto claro (off-white)
+\definecolor{accentOrange}{HTML}{FF6B00}% Laranja Cyberpunk (capítulos, seções e acentos)
+\definecolor{accentCyan}{HTML}{00E5FF}  % Ciano Neon (subseções e links)
+\definecolor{codebg}{HTML}{1A1E2A}      % Fundo do bloco de código
+
+\pagecolor{darkbg}
+\color{lightfg}
+
+% Negrito com destaque em branco puro
+\let\oldtextbf\textbf
+\renewcommand{\textbf}[1]{\oldtextbf{\color{white}#1}}
 
 % Hifenização agressiva para caber nas margens ABNT
 \sloppy
@@ -74,6 +91,7 @@
 \fancyhead[LE,RO]{\thepage}
 \fancyhead[RE,LO]{\textit{O Ecossistema OpenCode: Arquitetura, Governança e Evolução}}
 \renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{{\color{accentOrange}\hrule width\headwidth height\headrulewidth}}
 \fancypagestyle{plain}{
   \fancyhf{}
   \fancyhead[LE,RO]{\thepage}
@@ -81,7 +99,7 @@
 }
 
 % ===== HIPERLINKS =====
-\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue]{hyperref}
+\usepackage[colorlinks=true, linkcolor=accentOrange, citecolor=accentCyan, urlcolor=accentCyan]{hyperref}
 
 % ===== TABELAS E FIGURAS =====
 \usepackage{array, booktabs, longtable, multirow}
@@ -99,17 +117,17 @@
 % ===== FORMATAÇÃO DE TÍTULOS =====
 \usepackage{titlesec}
 \titleformat{\chapter}[hang]
-  {\normalfont\bfseries\Large}
+  {\normalfont\bfseries\Large\color{accentOrange}}
   {\thechapter}
   {0.5em}
   {}
 \titleformat{\section}[hang]
-  {\normalfont\bfseries\large}
+  {\normalfont\bfseries\large\color{accentOrange}}
   {\thesection}
   {0.5em}
   {}
 \titleformat{\subsection}[hang]
-  {\normalfont\bfseries\normalsize}
+  {\normalfont\bfseries\normalsize\color{accentCyan}}
   {\thesubsection}
   {0.5em}
   {}
@@ -124,18 +142,18 @@
 
 % ===== LISTAGENS DE CÓDIGO =====
 \usepackage{listings}
-\usepackage{xcolor}
 \lstset{
-  basicstyle=\ttfamily\footnotesize,
+  basicstyle=\ttfamily\footnotesize\color{lightfg},
   breaklines=true,
   breakatwhitespace=false,
   postbreak=\mbox{$\hookrightarrow$\space},
   frame=single,
+  rulecolor=\color{accentOrange!50},
   numbers=left,
-  numberstyle=\tiny,
+  numberstyle=\tiny\color{gray},
   showstringspaces=false,
   captionpos=b,
-  backgroundcolor=\color{gray!5}
+  backgroundcolor=\color{codebg}
 }
 
 % ===== MATEMÁTICA =====
