@@ -25,6 +25,17 @@
 \tolerance=2000 % Aumentado para evitar palavras saltando da margem
 \emergencystretch=3em
 \hfuzz=2pt
+
+% --- NUMERAÇÃO DE SEÇÕES E SUMÁRIO ATÉ NÍVEL 5 ---
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+% --- PADRONIZAÇÃO DE TABELAS ---
+\usepackage{etoolbox}
+\AtBeginEnvironment{tabular}{\small}
+\AtBeginEnvironment{longtable}{\small}
+\AtBeginEnvironment{tabularx}{\small}
+\hfuzz=2pt
 \widowpenalty=10000 % Evita viúvas
 \clubpenalty=10000  % Evita órfãs
 \raggedbottom
