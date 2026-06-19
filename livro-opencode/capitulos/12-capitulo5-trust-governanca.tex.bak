@@ -7,14 +7,6 @@
 \chapter{Trust Engine e Governança Comportamental: Segurança e Autonomia em Sistemas de Agentes}
 \label{cap:trust-governanca}
 
-\paragraph{Por que Confiar em Agentes Autônomos?}
-Antes de mergulharmos nos algoritmos de confiança computacional,
-faça uma pergunta simples: você deixaria um agente artificial
-decidir sozinho quais ações executar no \opencodeeco{}?
-Provavelmente não --- a menos que houvesse um sistema garantindo
-que esse agente é confiável. Este capítulo constrói exatamente
-esse sistema, peça por peça.
-
 A autonomia em sistemas de agentes artificiais apresenta um dilema
 fundamental: quanto mais autônomo um agente, maior seu potencial de
 causar danos não-intencionais. Resolver este dilema requer um sistema
@@ -52,10 +44,8 @@ carga horária estimada para estudo.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Conteúdo do Capítulo 5}
 \label{tab:conteudo-capitulo5}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{clcc}
 \toprule
 \textbf{Seção} & \textbf{Tópico} & \textbf{Nível} & \textbf{Estudo} \\
@@ -72,7 +62,6 @@ carga horária estimada para estudo.
 5.10 & Integração Prática & \text{Todos} & 4h \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 % =============================================================================
@@ -82,14 +71,6 @@ carga horária estimada para estudo.
 \section{Introdução à Confiança em Sistemas Autônomos}
 \label{sec:introducao-confianca}
 \nivelzero
-
-\paragraph{Confiança: de Sentimento a Grandeza Computacional.}
-Assim como um motorista novato ganha a confiança dos passageiros
-com direção segura, um agente no \opencodeeco{} precisa
-demonstrar que suas ações são previsíveis e corretas.
-Esta seção apresenta o conceito fundamental de confiança
-computacional --- a base sobre a qual todo o Trust Engine é
-construído.
 
 A confiança é um conceito ubíquo nas interações humanas. Confiamos em
 motoristas que transportam nossos filhos, em médicos que diagnosticam
@@ -153,10 +134,8 @@ principais diferenças entre confiança humana e computacional.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Confiança humana vs. computacional}
 \label{tab:confianca-humana-computacional}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lll}
 \toprule
 \textbf{Dimensão} & \textbf{Humana} & \textbf{Computacional} \\
@@ -170,7 +149,6 @@ Escala & Limitada (Dunbar) & Ilimitada \\
 Transparência & Opaca & Caixa-branca \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 A confiança humana é profundamente influenciada por fatores emocionais
@@ -284,13 +262,6 @@ defina a função objetivo que um TrustScorer deve maximizar.
 \label{sec:trustscorer}
 \nivelavancado
 
-\paragraph{Calculando a Confiança do seu Agente.}
-Imagine um termômetro que mede o quanto você pode confiar em
-cada ação de um agente. O TrustScorer é esse termômetro:
-ele combina experiências recentes e históricas em um único
-score numérico. Esta seção mostra como essa pontuação é
-calculada e por que o equilíbrio 70/30 é tão eficaz.
-
 O TrustScorer é o coração do Trust Engine. Ele implementa um sistema
 de pesos adaptativos que aprendem com feedback real, combinando
 evidência recente (peso 0.7) com histórico acumulado (peso 0.3)
@@ -299,8 +270,8 @@ empiricamente durante o ciclo evolutivo R23 do ecossistema.
 
 \subsection{Arquitetura do TrustScorer}
 
-A implementação do TrustScorer está no arquivo \\%
-\hspace*{2em}\codigo{skills/system/academic-audit/trust\_engine.py:78-176}.
+A implementação do TrustScorer está no arquivo
+\codigo{skills/system/academic-audit/trust\\_engine.py:78-176}.
 
 \begin{definicao}[Score de confiança]
 O \destaque{score de confiança} $\sigma(a)$ para uma ação $a$ é:
@@ -541,13 +512,6 @@ taxa de sucesso, assumindo distribuição binomial.
 \label{sec:behavioral-gate}
 \nivelavancado
 
-\paragraph{Antes que o Erro Aconteça.}
-Um bom segurança não espera o crime acontecer --- ele previne.
-O Behavioral Gate faz o mesmo com agentes: analisa o score de
-confiança de cada ação \emph{antes} da execução e decide se
-autoriza, alerta ou bloqueia. Nesta seção, você verá como esse
-guardião preventivo opera no \opencodeeco{}.
-
 O Behavioral Gate é o mecanismo de \destaque{segurança preventiva} do
 Trust Engine. Diferentemente de sistemas reativos que detectam falhas
 após ocorrerem, o Behavioral Gate \destaque{intercepta} ações não
@@ -564,7 +528,7 @@ pré-definidos.
 \end{definicao}
 
 A implementação do Behavioral Gate está em
-\codigo{trust\_engine.py:182-274}.
+\codigo{trust\\_engine.py:182-274}.
 
 Os limiares de classificação são:
 \begin{itemize}
@@ -713,10 +677,8 @@ Gate e componentes associados \cite{opencode2026spec038}:
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{8 Critical Tests da SPEC-038 (Behavioral Autonomy)}
 \label{tab:cts-behavioral}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{cll}
 \toprule
 \textbf{CT} & \textbf{Descrição} & \textbf{Status} \\
@@ -731,11 +693,10 @@ BA-007 & NaturalForgetting expira itens por TTL & PASS \\
 BA-008 & Pipeline completo gate $\to$ learn $\to$ recall & PASS \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
-A implementação dos CTs está em \\%
-\hspace*{2em}\codigo{specs/test\_behavioral\_autonomy.py:42-260}.
+A implementação dos CTs está em
+\codigo{specs/test\\_behavioral\\_autonomy.py:42-260}.
 
 \begin{lstlisting}[style=pythonstyle, caption={CTs de validacao do Behavioral Gate (test\_behavioral\_autonomy.py)}]
 def ba_004_gate_blocks() -> CTResult:
@@ -792,14 +753,6 @@ a função de transição depende apenas do score de confiança atual.
 \label{sec:natural-forgetting}
 \nivelphd
 
-\paragraph{A Arte de Esquecer.}
-Você se lembra do que comeu no almoço de segunda-feira passada?
-Provavelmente não --- e isso é bom. Reter tudo sobrecarrega a
-mente. No \opencodeeco{}, o NaturalForgetting replica esse
-mecanismo biológico para que agentes mantenham apenas o que é
-relevante. Esta seção explora o modelo Atkinson-Shiffrin e a
-curva de Ebbinghaus aplicados à memória artificial.
-
 O esquecimento é tão importante quanto a memória. Em sistemas
 cognitivos artificiais, reter toda informação indefinidamente causa
 degradação de desempenho por ruído, custo computacional excessivo e
@@ -845,10 +798,9 @@ ilimitada, duração de horas a anos.
 \subsection{Implementação Computacional}
 
 A implementação do NaturalForgetting está em
-\codigo{trust\_engine.py:280-395}.
+\codigo{trust\\_engine.py:280-395}.
 
 \begin{definicao}[Slot de memória]
-\raggedright
 Um \destaque{slot de memória} $m = (\text{conteúdo}, \text{importância},
 \gamma, t_{\text{criação}}, t_{\text{acesso}}, n_{\text{acessos}},
 \text{tipo})$ é uma tupla que representa um item na memória do agente,
@@ -856,8 +808,8 @@ onde:
 \begin{itemize}
 \item $\text{importância} \in [0,1]$: relevância estimada do item;
 \item $\gamma$: taxa de decaimento;
-\item $\text{tipo} \in \{\text{sensory},\,
-\text{short\_term},\,\text{long\_term}\}$: nível de memória.
+\item $\text{tipo} \in \{\text{sensory}, \text{short\_term},
+\text{long\_term}\}$: nível de memória.
 \end{itemize}
 \end{definicao}
 
@@ -1026,13 +978,6 @@ da frequência de acesso.
 \label{sec:outcome-tracker}
 \nivelintermediario
 
-\paragraph{Aprendendo com Resultados.}
-De nada adianta medir a confiança se não aprendermos com
-os resultados. O OutcomeTracker é o componente que fecha o
-ciclo: cada ação executada gera um registro que realimenta
-o TrustScorer. É o equivalente computacional de ``errar,
-aprender, melhorar''.
-
 O OutcomeTracker é o componente de \destaque{aprendizado contínuo} do
 Trust Engine. Ele registra cada resultado de execução e realimenta o
 TrustScorer, fechando o ciclo de aprendizado \cite{opencode2026spec038}.
@@ -1122,7 +1067,7 @@ Cada outcome registrado inclui metadados completos para auditoria:
 \item \textbf{Timestamp}: data e hora exatas da execução;
 \item \textbf{Scores antes/depois}: permitem traçar a evolução da
 confiança;
-\item \textbf{Delta}: quantifica a melhoria (ou degradação) observada;
+\item \textbfDelta}: quantifica a melhoria (ou degradação) observada;
 \item \textbf{Sucesso/falha}: classificação binária do resultado.
 \end{itemize}
 
@@ -1154,14 +1099,6 @@ recall.
 \label{sec:governanca-ostrom}
 \nivelphd
 
-\paragraph{Governança sem Governante.}
-Como evitar que agentes autônomos se comportem como
-``cada um por si'' e degradem recursos compartilhados?
-A resposta veio de Elinor Ostrom, Prêmio Nobel de Economia:
-8 princípios de design que permitem governança cooperativa
-sem autoridade central. Esta seção aplica esses princípios
-aos agentes do \opencodeeco{}.
-
 A governança de sistemas multiagentes autônomos enfrenta o mesmo
 problema fundamental que a governança de recursos comuns (commons):
 como evitar a tragédia dos comuns quando agentes autônomos compartilham
@@ -1180,7 +1117,7 @@ de sistemas multiagentes \cite{ostrom1990governing, opencode2026spec036}.
 \centering
 \caption{Os 8 Design Principles de Ostrom para governança de agentes}
 \label{fig:ostrom-dp}
-\begin{tikzpicture}[node distance=1.5cm, scale=0.85, every node/.style={scale=0.85},
+\begin{tikzpicture}[node distance=1.5cm,
     dp/.style={rectangle, draw, rounded corners, fill=blue!10,
                minimum width=4cm, minimum height=0.7cm, align=center,
                font=\small}]
@@ -1197,8 +1134,8 @@ de sistemas multiagentes \cite{ostrom1990governing, opencode2026spec036}.
 
 \subsection{Implementação: cooperative\_governance.py}
 
-A implementação dos princípios de Ostrom está em \\%
-\hspace*{2em}\codigo{cooperative\_governance.py:129-320}.
+A implementação dos princípios de Ostrom está em
+\codigo{cooperative\\_governance.py:129-320}.
 
 \begin{lstlisting}[style=pythonstyle, caption={CooperativeGovernance: auditoria Ostrom (cooperative\_governance.py:129-273)}]
 class CooperativeGovernance:
@@ -1417,13 +1354,6 @@ Nash em leilões de Vickrey.
 \label{sec:dialectical-engine}
 \nivelphd
 
-\paragraph{Conflito que Gera Progresso.}
-Na filosofia hegeliana, o conflito entre tese e antítese
-produz uma síntese superior. No \opencodeeco{}, o
-DialecticalEngine aplica essa lógica a conflitos entre
-agentes: divergências não são suprimidas, mas resolvidas
-em soluções mais ricas. Esta seção mostra como.
-
 A dialética hegeliana — tese, antítese e síntese — fornece um
 arcabouço poderoso para resolução de contradições em sistemas
 autônomos. O DialecticalEngine implementa este processo como um motor
@@ -1479,7 +1409,7 @@ O tipo de síntese pode ser:
 \subsection{Motor Dialético: Implementação}
 
 A implementação está em
-\codigo{dialectical\_engine.py:62-215}.
+\codigo{dialectical\\_engine.py:62-215}.
 
 \begin{lstlisting}[style=pythonstyle, caption={DialecticalEngine: sintese dialetica (dialectical\_engine.py:62-143)}]
 class DialecticalEngine:
@@ -1611,15 +1541,7 @@ um ponto fixo que representa a resolução completa da contradição.
 % =============================================================================
 \section{Self-Model N0-N3: Consciência Artificial}
 \label{sec:self-model}
-\label{sec:niveis-autonomia}
 \nivelphd
-
-\paragraph{O Agente que se Conhece.}
-O mais alto nível de autonomia exige autoconhecimento.
-O SelfModel implementa uma arquitetura progressiva de
-consciência artificial, do simples registro de eventos (N0)
-à auto-modificação metacognitiva (N3). É o estágio em que
-o agente não apenas age, mas reflete sobre suas próprias ações.
 
 A auto-representação é o fundamento da metacognição. Um sistema que
 possui um modelo de si mesmo pode monitorar seu próprio comportamento,
@@ -1689,7 +1611,7 @@ pensa sobre seu próprio pensamento e modifica seu código.
 \subsection{Implementação: self\_model.py}
 
 A implementação do SelfModel está em
-\codigo{self\_model.py:180-439}.
+\codigo{self\\_model.py:180-439}.
 
 \begin{lstlisting}[style=pythonstyle, caption={SelfModel: arquitetura N0-N3 (self\_model.py:180-250)}]
 class SelfModel:
@@ -1875,13 +1797,6 @@ informação e integração.
 \label{sec:auditoria}
 \nivelintermediario
 
-\paragraph{Confiança Exigente: Provar e Verificar.}
-Confiança sem verificação é fé --- não engenharia.
-Esta seção apresenta os mecanismos de auditoria do
-\opencodeeco{} que permitem rastrear cada decisão do
-Trust Engine, gerar relatórios auditáveis e garantir que
-o sistema opera com total transparência.
-
 A confiança computacional só é útil se for auditável. O ecossistema
 implementa múltiplos mecanismos de auditoria que garantem
 transparência total das decisões do Trust Engine \cite{opencode2026spec038,
@@ -1921,7 +1836,7 @@ def audit_decisions(engine: TrustEngine) -> list[dict]:
 
 \subsection{AuditInstrumentor: Instrumentação Automática}
 
-O módulo \codigo{audit\_instrumentor.py} (293 linhas) implementa
+O módulo \codigo{audit\\_instrumentor.py} (293 linhas) implementa
 instrumentação automática de pipelines \cite{opencode2026ecosystem}:
 
 \begin{lstlisting}[style=pythonstyle, caption={AuditInstrumentor: auto-instrumentacao (audit\_instrumentor.py:51-112)}]
@@ -1947,13 +1862,13 @@ class AuditInstrumentor:
 
 \subsection{AuditRefinements}
 
-O módulo \codigo{audit\_refinements.py} (542 linhas) implementa
+O módulo \codigo{audit\\_refinements.py} (542 linhas) implementa
 refinamentos adicionais de auditoria, incluindo validação cruzada de
 decisões e detecção de anomalias em trilhas de auditoria.
 
 \begin{exemplo}
 O relatório auditável completo do ecossistema
-(\codigo{RELATORIO\_AUDITAVEL\_FINAL\_v5.4.0.md}) documenta:
+(\codigo{RELATORIO\\_AUDITAVEL\\_FINAL\\_v5.4.0.md}) documenta:
 \begin{itemize}
 \item Todas as decisões do Trust Engine em cada ciclo evolutivo;
 \item Scores de confiança consolidados por tipo de ação;
@@ -1997,13 +1912,6 @@ consultas e analise o relatório gerado.
 \section{Integração Prática}
 \label{sec:integracao-pratica}
 \nivelbasico
-
-\paragraph{Mãos à Obra com o Trust Engine.}
-Teoria sem prática é como partitura sem instrumento.
-Esta seção final reúne todos os componentes do capítulo
-em exemplos executáveis: configurar o Trust Engine,
-interpretar relatórios, ajustar parâmetros e executar
-o pipeline completo de confiança e governança.
 
 Esta seção final materializa todos os conceitos do capítulo em um guia
 prático de uso do Trust Engine no \opencodeeco{}.
@@ -2083,10 +1991,8 @@ parâmetros ajustáveis do Trust Engine.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Parâmetros ajustáveis do Trust Engine}
 \label{tab:parametros-trust-engine}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lll}
 \toprule
 \textbf{Parâmetro} & \textbf{Default} & \textbf{Efeito} \\
@@ -2101,7 +2007,6 @@ short\_term\_ttl & 300s & TTL da memória curto prazo \\
 long\_term\_ttl & 86400s & TTL da memória longo prazo \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{Exercícios Integrados}
@@ -2146,10 +2051,8 @@ adquiridas neste capítulo.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Competências adquiridas no Capítulo 5}
 \label{tab:competencias-cap5}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lll}
 \toprule
 \textbf{Competência} & \textbf{Seção} & \textbf{Aplicação} \\
@@ -2164,7 +2067,6 @@ Auto-representação & 5.8 & SelfModel N0-N3 \\
 Auditoria e transparência & 5.9 & AuditInstrumentor \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 Ao dominar estes conceitos, o leitor está preparado para o
@@ -2194,7 +2096,8 @@ schraw2006metacognitive};
 O leitor é incentivado a consultar as implementações completas no
 repositório do \opencodeeco{} sob
 \codigo{skills/system/academic-audit/}. A suite de testes
- (312 CTs) pode ser executada com \codigo{python specs/test\_behavioral\_autonomy.py}.
+(312 CTs) pode ser executada com \lstinline{python
+specs/test\_behavioral\_autonomy.py}.
 \end{observacao}
 
 % =============================================================================

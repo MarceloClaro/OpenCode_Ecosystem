@@ -6,7 +6,7 @@
 \chapter{Experimentação, Validação Científica e Produção Acadêmica}
 \label{cap:experimentacao-validacao}
 
-\paragraph{Construindo a ponte entre teoria e evidência} A engenharia de ecossistemas cognitivos exige mais do que
+A engenharia de ecossistemas cognitivos exige mais do que
 especificação, implementação e governança. Exige um arcabouço robusto
 de experimentação e validação científica que permita mensurar,
 comparar e certificar a qualidade dos artefatos produzidos. Este
@@ -33,10 +33,8 @@ e a carga horária estimada para estudo.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Conteúdo do Capítulo 7}
 \label{tab:conteudo-capitulo7}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{clcc}
 \toprule
 \textbf{Seção} & \textbf{Tópico} & \textbf{Nível} & \textbf{Estudo} \\
@@ -53,7 +51,6 @@ e a carga horária estimada para estudo.
 7.10 & Integração Prática & Todos & 6h \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 % =============================================================================
@@ -64,7 +61,7 @@ e a carga horária estimada para estudo.
 \label{sec:introducao-experimentacao}
 \nivelzero
 
-\paragraph{Por que a experimentação é o alicerce de todo conhecimento} A experimentação é o motor do conhecimento científico. Desde os
+A experimentação é o motor do conhecimento científico. Desde os
 primeiros protocolos de investigação empírica formulados por Francis
 Bacon no \textit{Novum Organum} (1620), o método científico
 estabeleceu-se como o padrão ouro para distinguir conjecturas
@@ -195,7 +192,7 @@ problema antes da implantação.
 \label{sec:cora-eval}
 \nivelphd
 
-\paragraph{Medindo o que realmente importa} O CORA-Eval é o sistema de benchmark nativo do \opencodeeco{} para
+O CORA-Eval é o sistema de benchmark nativo do \opencodeeco{} para
 avaliação de capacidades em ciências exatas e da Natureza.
 Diferentemente de benchmarks generalistas como MMLU \cite{hendrycks2021measuring}
 ou GSM8K \cite{cobbe2021training}, o CORA-Eval foi projetado
@@ -228,10 +225,8 @@ Básico (3 tarefas), Intermediário (4), Avançado (4) e Pesquisa (4).
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Dimensões e Níveis do CORA-Eval}
 \label{tab:cora-dimensoes}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{llc}
 \toprule
 \textbf{Dimensão} & \textbf{Descrição} & \textbf{15 tarefas} \\
@@ -248,7 +243,6 @@ Metodologia & Delineamento, análise, replicação & V121--V135 \\
 Interdisciplinar & Síntese entre domínios & V136--V150 \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 O espectro Básico $\rightarrow$ Pesquisa representa a progressão
@@ -305,10 +299,8 @@ apresenta os 7 verificadores e seus pesos.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Verificadores CORA e Pesos no CORA-V-Score}
 \label{tab:cora-verificadores}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{clc}
 \toprule
 \textbf{Verificador} & \textbf{Função} & \textbf{Peso} \\
@@ -322,7 +314,6 @@ V6 & Verificador PDE/EDO & 1.2 \\
 V7 & Rastreabilidade Bibliográfica (DOI) & 0.8 \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{Baseline CORA-Score 0.67}
@@ -495,7 +486,7 @@ alternativa, tamanho de efeito esperado e método estatístico.
 \label{sec:aletheia}
 \nivelphd
 
-\paragraph{Quando a matemática se torna juiz} A verificação formal de teoremas é um dos métodos mais rigorosos
+A verificação formal de teoremas é um dos métodos mais rigorosos
 de validação científica. Enquanto testes de unidade verificam
 comportamento observável e benchmarks mensuram desempenho, a
 validação formal prova propriedades matemáticas dos algoritmos
@@ -563,10 +554,8 @@ A Tabela~\ref{tab:aletheia-phases} resume os resultados de cada fase.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Resultados das Fases Aletheia}
 \label{tab:aletheia-phases}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lccc}
 \toprule
 \textbf{Fase} & \textbf{Métrica} & \textbf{Resultado} & \textbf{Observação} \\
@@ -580,7 +569,6 @@ D & Qualidade OpenCode & 8,31/10 & +33\% sobre V4 \\
 E & Tier A final & 10/10 (100\%) & 0\% degradação \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{Integração Aletheia + OpenCode: aletheia-opencode-native}
@@ -736,7 +724,7 @@ insuficiente). Implemente um protótipo em Python.
 \label{sec:maswos}
 \nivelavancado
 
-\paragraph{Escrevendo com um exército de especialistas} O MASWOS (Multi-Agent Scientific Writing Operating System) é o
+O MASWOS (Multi-Agent Scientific Writing Operating System) é o
 pipeline de produção acadêmica do \opencodeeco{}, projetado para
 gerar artigos científicos com qualidade Qualis A1 de forma autônoma.
 Com 49 agentes especializados, 8 estágios de processamento e 91
@@ -1014,9 +1002,9 @@ O pipeline demonstrou melhoria consistente ao longo dos ciclos
 evolutivos:
 
 \begin{itemize}
-\item \destaque{Ciclo 4}: score inicial 86,5 $\to$ score final 92,7
+\item \destaque{Ciclo 4}: score inicial 86,5 → score final 92,7
 (+7,1\%);
-\item \destaque{Ciclo 7}: 28 $\to$ 52 editais curados, cobertura de
+\item \destaque{Ciclo 7}: 28 → 52 editais curados, cobertura de
 todas as 27 UFs brasileiras;
 \item \destaque{Ciclo 15}: 44 agentes especializados + pipeline
 MASWOS v5 + cross-validation engine;
@@ -1095,7 +1083,7 @@ competitivas da abordagem multiagente?
 \label{sec:seeker}
 \nivelavancado
 
-\paragraph{A arte de fazer as perguntas certas} SEEKER é o sistema de pesquisa acadêmica profunda do \opencodeeco{},
+SEEKER é o sistema de pesquisa acadêmica profunda do \opencodeeco{},
 composto por 10 agentes especializados que operam sobre 10+ fontes
 acadêmicas. Com 16.202 linhas Python distribuídas em 78 arquivos,
 o SEEKER implementa um pipeline completo de pesquisa: da exploração
@@ -1299,7 +1287,7 @@ entre agentes sem perder a capacidade de integração.
 \label{sec:mirofish-bettafish}
 \nivelphd
 
-\paragraph{Onde as ideias são postas à prova pelo debate} O par MiroFish/BettaFish constitui o sistema de auditoria acadêmica
+O par MiroFish/BettaFish constitui o sistema de auditoria acadêmica
 do \opencodeeco{}, integrando 11 arquivos especializados que vão do
 debate multiagente (P14) à formatação IMRAD (P18). Inspirado em
 mecanismos de revisão por pares e equilíbrio de Nash, o sistema
@@ -1495,7 +1483,7 @@ com a revisão por pares tradicional. Em que aspectos cada abordagem
 \label{sec:qualis-a1}
 \nivelphd
 
-\paragraph{O selo de excelência acadêmica} O sistema Qualis CAPES é a principal métrica de qualidade de
+O sistema Qualis CAPES é a principal métrica de qualidade de
 periódicos científicos no Brasil. Classifica periódicos em estratos
 de A1 (mais alto) a C (mais baixo), baseado em critérios de
 impacto, visibilidade e qualidade editorial \cite{capes2022qualis}.
@@ -1723,7 +1711,7 @@ AUTO\_SCORE\_QUALIS.py e proponha ajustes que reduzam este viés.
 \label{sec:cross-validation}
 \nivelavancado
 
-\paragraph{Protegendo o conhecimento contra seus próprios vieses} Um dos riscos mais sutis em sistemas de produção acadêmica autônoma
+Um dos riscos mais sutis em sistemas de produção acadêmica autônoma
 é a \destaque{circularidade}: o sistema pode aprender a otimizar
 métricas de qualidade (score Qualis) sem, de fato, produzir
 conhecimento original. O protocolo de validação cruzada do
@@ -1788,10 +1776,8 @@ de impacto:
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Matriz de Afinidade (Afinidades mais altas do ecossistema)}
 \label{tab:matriz-afinidade}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lc}
 \toprule
 \textbf{Par de Componentes} & \textbf{Afinidade} \\
@@ -1804,7 +1790,6 @@ sequential-thinking $\leftrightarrow$ code-reviewer & 0,90 \\
 editais-br $\leftrightarrow$ websearch & 0,90 \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{Exercícios — Nível Avançado}
@@ -1847,7 +1832,7 @@ dados sem hipótese prévia). Implemente um protótipo.
 \label{sec:reprodutibilidade}
 \nivelavancado
 
-\paragraph{A certeza de que tudo pode ser refeito} A reprodutibilidade é um pilar da pesquisa científica. Em sistemas
+A reprodutibilidade é um pilar da pesquisa científica. Em sistemas
 de engenharia cognitiva, onde múltiplos agentes, fontes de dados
 e modelos probabilísticos interagem, garantir que um experimento
 possa ser reproduzido é um desafio técnico e epistemológico
@@ -1936,7 +1921,7 @@ versão, libraries e seeds. Reporte discrepâncias.
 \section{Integração Prática}
 \label{sec:integracao-pratica}
 
-\paragraph{Unindo teoria e prática em um só fluxo} Esta seção final consolida os conceitos do capítulo em roteiros
+Esta seção final consolida os conceitos do capítulo em roteiros
 práticos executáveis. Cada roteiro é acompanhado de comandos
 reais do ecossistema e exercícios de fixação.
 

@@ -6,13 +6,13 @@
     
     {\large\bfseries Marcelo Claro Laranjeira}\par
     
-    \vspace{2cm}
+    \vspace{5cm}
     
-    {\Huge\bfseries\color{blue!60!black} Engenharia de Ecossistemas Cognitivos}\\[0.3cm]
-    {\large Fundamentos, Arquitetura e Experimentação do OpenCode Ecosystem}\\[0.6cm]
+    {\Huge\bfseries\color{blue!60!black} Engenharia de Ecossistemas Cognitivos}\\[0.5cm]
+    {\large Fundamentos, Arquitetura e Experimentação do OpenCode Ecosystem}\\[1cm]
     {\large\itshape Uma Jornada Autodidata do Nível Zero ao PhD}\par
     
-    \vspace{1.5cm}
+    \vspace{3cm}
     
     \hfill
     \begin{minipage}{0.45\textwidth}
@@ -26,7 +26,7 @@
     \end{minipage}
     \par
     
-    \vspace{1.5cm}
+    \vspace{3cm}
     
     \begin{flushright}
     {\small OpenCode Ecosystem Research Initiative}\\[0.1cm]

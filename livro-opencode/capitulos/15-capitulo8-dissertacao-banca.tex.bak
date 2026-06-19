@@ -6,7 +6,7 @@
 \chapter{Dissertação, Produção Científica Qualis A1 e Defesa Perante Banca Acadêmica}
 \label{cap:dissertacao-banca}
 
-\paragraph{Corando a jornada acadêmica} A produção acadêmica de alto nível --- representada por dissertações de mestrado,
+A produção acadêmica de alto nível --- representada por dissertações de mestrado,
 teses de doutorado e artigos em periódicos \qualisA{} --- constitui o ápice da
 validação científica no ecossistema de pesquisa brasileiro. Este capítulo
 apresenta a metodologia completa para a produção, validação e defesa de trabalhos
@@ -20,10 +20,8 @@ A Tabela~\ref{tab:conteudo-capitulo8} apresenta a estrutura completa.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Estrutura do Capítulo 8}
 \label{tab:conteudo-capitulo8}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{clcc}
 \toprule
 \textbf{Seção} & \textbf{Tópico} & \textbf{Nível} & \textbf{Páginas} \\
@@ -40,7 +38,6 @@ A Tabela~\ref{tab:conteudo-capitulo8} apresenta a estrutura completa.
 8.10 & Conclusão e Perspectivas Futuras & \nivelphd & 6 \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 Ao final deste capítulo, o leitor será capaz de:
@@ -63,7 +60,7 @@ Ao final deste capítulo, o leitor será capaz de:
 \label{sec:introducao-producao-academica}
 \nivelzero
 
-\paragraph{Entendendo o que significa produzir ciência com agentes} A produção acadêmica é o processo pelo qual o conhecimento científico é
+A produção acadêmica é o processo pelo qual o conhecimento científico é
 sistematizado, documentado e submetido ao escrutínio da comunidade de
 pesquisadores \cite{popper2005logica}. No contexto brasileiro, a dissertação de
 mestrado e o artigo em periódico \qualisA{} representam os veículos mais
@@ -152,10 +149,12 @@ completo, desde a escolha do tema até a defesa perante a banca.
 
 \begin{figure}[htb]
 \centering
-\begin{tikzpicture}[node distance=1.8cm, scale=0.4, every node/.style={scale=0.4},
+\begin{tikzpicture}[
+    node distance=1.8cm,
     box/.style={draw, rounded corners, minimum width=2.8cm, minimum height=1.2cm, font=\small, align=center},
     arrow/.style={->, thick},
-    label/.style={font=\footnotesize, text=gray!60!black}]
+    label/.style={font=\footnotesize, text=gray!60!black}
+]
 \node[box, fill=blue!10] (tema) {Tema};
 \node[box, fill=green!10, right=of tema] (pesq) {Pesquisa};
 \node[box, fill=orange!10, right=of pesq] (escrita) {Escrita};
@@ -200,7 +199,7 @@ completo, desde a escolha do tema até a defesa perante a banca.
 \label{sec:metodologia-ppgte-ufc}
 \nivelavancado
 
-\paragraph{Os alicerces de uma dissertação sólida} O Programa de Pós-Graduação em Tecnologia Educacional (PPGTE) da Universidade
+O Programa de Pós-Graduação em Tecnologia Educacional (PPGTE) da Universidade
 Federal do Ceará (UFC) estabelece diretrizes específicas para a elaboração de
 dissertações, que servem como referência para este capítulo. A estrutura aqui
 apresentada é adaptável a outros programas, respeitando-se as particularidades
@@ -407,7 +406,7 @@ O PPGTE/UFC estabelece requisitos adicionais para a dissertação:
 \label{sec:protocolo-anonimato}
 \nivelavancado
 
-\paragraph{A arte invisível de proteger a identidade do autor} A avaliação cega (\textit{blind review}) é um dos pilares do rigor científico
+A avaliação cega (\textit{blind review}) é um dos pilares do rigor científico
 na revisão por pares. No contexto de dissertações e artigos acadêmicos, o
 anonimato garante que o mérito do trabalho seja avaliado independentemente da
 identidade do autor \cite{popper2005logica, kuhn1998estrutura}.
@@ -451,9 +450,7 @@ de anonimato correspondentes.
 \centering
 \caption{Identificadores diretos e indiretos e ações de anonimato}
 \label{tab:identificadores}
-\small
-    \resizebox{\textwidth}{!}{
-\begin{tabular}{lp{4.5cm}p{4.5cm}}
+\begin{tabular}{lll}
 \toprule
 \textbf{Tipo} & \textbf{Exemplo} & \textbf{Ação} \\
 \midrule
@@ -466,7 +463,6 @@ Indireto & ``Agradeço a Maria Souza'' & Remover ou generalizar \\
 Indireto & ``como mostramos em (Laranjeira, 2024)'' & Substituir por ``como mostrado em trabalho anterior'' \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{Ferramentas de Detecção e Remoção}
@@ -530,7 +526,7 @@ opencode /reversa validate-anonymity --input=dissertacao_anonima.tex
 \label{sec:simulacao-banca-agent-forum}
 \nivelphd
 
-\paragraph{Simulando o grande dia com múltiplas inteligências} A simulação de banca examinadora é uma das funcionalidades mais avançadas do
+A simulação de banca examinadora é uma das funcionalidades mais avançadas do
 \opencodeeco{}, implementada através do módulo Agent Forum (P14-P18) integrado
 ao pipeline MiroFish/BettaFish \cite{opencode2026ecosystem, opencode2026spec036}.
 Esta seção apresenta a arquitetura, implementação e resultados da simulação.
@@ -627,10 +623,8 @@ organizadas por categoria.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Perguntas simuladas pelo Agent Forum}
 \label{tab:perguntas-banca}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{cp{10cm}}
 \toprule
 \textbf{\#} & \textbf{Pergunta} \\
@@ -653,7 +647,6 @@ organizadas por categoria.
 16 & Quais as implicações éticas de um sistema que evolve autonomamente seu código? \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{Estratégias de Defesa: 6 Estratégias, 8 Configurações}
@@ -712,11 +705,9 @@ ciclos de refinamento.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Evolução da Nota DAP durante o refinamento}
 \label{tab:evolucao-dap}
-    \resizebox{\textwidth}{!}{
-\begin{tabular}{ccccccc}
+\begin{tabular}{cccccc}
 \toprule
 \textbf{Ciclo} & \textbf{C} & \textbf{P} & \textbf{F} & \textbf{A} & \textbf{E} & \textbf{DAP} \\
 \midrule
@@ -727,7 +718,6 @@ ciclos de refinamento.
 5 & 9,0 & 9,0 & 9,0 & 9,0 & 10,0 & 9,00 \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 A evolução de 8,07 para 9,0 demonstra a eficácia do processo iterativo de
@@ -833,7 +823,7 @@ robustas e multifacetadas, características de uma defesa de nível PhD.
 \label{sec:phd-auditor}
 \nivelphd
 
-\paragraph{O rigor estatístico como guardião da verdade científica} O \destaque{PhD Auditor} é o módulo de validação científica de mais alto nível
+O \destaque{PhD Auditor} é o módulo de validação científica de mais alto nível
 do \opencodeeco{}, responsável por aplicar rigor estatístico e formal à
 avaliação da dissertação \cite{opencode2026ecosystem, opencode2026spec036}.
 Ele integra quatro motores especializados que operam de forma coordenada.
@@ -1063,7 +1053,7 @@ A Figura~\ref{fig:fluxo-phd-auditor} ilustra o fluxo completo.
 \label{sec:auto-score-qualis}
 \nivelavancado
 
-\paragraph{Dez critérios que separam o excepcional do mediano} O \destaque{AUTO\_SCORE\_QUALIS} é o sistema automático de pontuação que
+O \destaque{AUTO\_SCORE\_QUALIS} é o sistema automático de pontuação que
 avalia a qualidade da dissertação segundo 10 critérios objetivos, calibrados
 por pesos de revisores simulados \cite{opencode2026ecosystem}. O sistema opera
 iterativamente: escrever $\rightarrow$ avaliar $\rightarrow$ corrigir
@@ -1076,10 +1066,8 @@ com seus pesos e descrições.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Critérios de avaliação do AUTO\_SCORE\_QUALIS}
 \label{tab:criterios-qualis}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{clc}
 \toprule
 \textbf{Critério} & \textbf{Descrição} & \textbf{Peso} \\
@@ -1098,7 +1086,6 @@ com seus pesos e descrições.
 & \textbf{Total} & \textbf{100\%} \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 Cada critério é avaliado em uma escala de 0 a 10, e a pontuação final é
@@ -1165,10 +1152,8 @@ dos ciclos de correção.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Evolução da pontuação AUTO\_SCORE\_QUALIS}
 \label{tab:evolucao-score}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{cccc}
 \toprule
 \textbf{Ciclo} & \textbf{Score} & \textbf{Principais gaps} & \textbf{Ações corretivas} \\
@@ -1184,7 +1169,6 @@ dos ciclos de correção.
 9 & 95 & -- & Convergência alcançada \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 A evolução de 74 para 95 pontos (aumento de 28\%) demonstra a eficácia do
@@ -1220,7 +1204,7 @@ elevando progressivamente a qualidade geral do manuscrito.
 
 \subsection{Arquivo: auto\_score\_qualis.py}
 
-O sistema está implementado no arquivo \codigo{auto\_score\_qualis.py} no
+O sistema está implementado no arquivo \codigo{auto\\_score\\_qualis.py} no
 diretório \codigo{criador-artigo/} do ecossistema. A estrutura principal
 inclui:
 
@@ -1244,7 +1228,7 @@ inclui:
 \end{exercicio}
 
 \begin{exercicio}[Nivel Avançado -- Programação]
-    Modifique o arquivo \codigo{auto\_score\_qualis.py} para adicionar um
+    Modifique o arquivo \codigo{auto\\_score\\_qualis.py} para adicionar um
     novo critério de avaliação (ex: ``Inovação tecnológica''). Recalibre
     os pesos dos revisores e execute o sistema novamente.
 \end{exercicio}
@@ -1257,7 +1241,7 @@ inclui:
 \label{sec:iterative-correction-loop}
 \nivelavancado
 
-\paragraph{O ciclo virtuoso do aperfeiçoamento contínuo} O \destaque{Iterative Correction Loop} é o motor de refinamento contínuo do
+O \destaque{Iterative Correction Loop} é o motor de refinamento contínuo do
 \opencodeeco{}, que combina 5 revisores simulados, 4 orientadores PhD e
 6 motores de correção para elevar a qualidade do manuscrito
 \cite{opencode2026ecosystem, opencode2026maswos}.
@@ -1371,7 +1355,6 @@ A Figura~\ref{fig:ciclo-correcao} ilustra o fluxo completo.
 
 \begin{figure}[htb]
 \centering
-\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
     node distance=1.2cm,
     box/.style={draw, rounded corners, minimum width=2.5cm, minimum height=0.8cm, font=\tiny, align=center},
@@ -1393,8 +1376,7 @@ A Figura~\ref{fig:ciclo-correcao} ilustra o fluxo completo.
 \draw[arrow] (score) -- (fim);
 \draw[arrow] (fim.west) -- ++(-0.5,0) |- (revisores.south);
 \draw[arrow] (fim.south) -- ++(0,-0.5);
-\end{tikzpicture}%
-}
+\end{tikzpicture}
 \caption{Ciclo iterativo de correção}
 \label{fig:ciclo-correcao}
 \end{figure}
@@ -1419,7 +1401,7 @@ A Figura~\ref{fig:ciclo-correcao} ilustra o fluxo completo.
 \label{sec:producao-artigos-qualis}
 \nivelphd
 
-\paragraph{Transformando pesquisa em contribuição reconhecida} A produção de artigos para periódicos \qualisA{} é o coroamento da pesquisa
+A produção de artigos para periódicos \qualisA{} é o coroamento da pesquisa
 acadêmica. Esta seção apresenta o pipeline completo de produção de artigos
 de alto impacto utilizando o \opencodeeco{} \cite{laranjeira2026gartner,
 laranjeira2026cora, laranjeira2026opencode}.
@@ -1475,7 +1457,7 @@ e encontra-se em processo de revisão.
 \subsection{Ensaio Qualis A1 (ensaio\_qualis\_a1.tex)}
 
 O \destaque{Ensaio Qualis A1}, disponível no arquivo
-\codigo{ensaio\_qualis\_a1.tex}, é um artigo de posicionamento que sintetiza
+\codigo{ensaio\\_qualis\\_a1.tex}, é um artigo de posicionamento que sintetiza
 a trajetória de pesquisa do \opencodeeco{}. O ensaio aborda:
 
 \begin{itemize}
@@ -1521,9 +1503,11 @@ O pipeline de produção de artigos \qualisA{} segue o fluxo:
 
 \begin{figure}[htb]
 \centering
-\begin{tikzpicture}[node distance=1.8cm, scale=0.5, every node/.style={scale=0.5},
+\begin{tikzpicture}[
+    node distance=1.8cm,
     box/.style={draw, rounded corners, minimum width=2.5cm, minimum height=0.8cm, font=\small, align=center},
-    arrow/.style={->, thick}]
+    arrow/.style={->, thick}
+]
 \node[box, fill=blue!10] (seeker) {SEEKER\\10 agentes};
 \node[box, fill=green!10, right=of seeker] (maswos) {MASWOS\\49 agentes};
 \node[box, fill=orange!10, right=of maswos] (corr) {Correção\\15+ motores};
@@ -1563,10 +1547,8 @@ submissão.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Cronograma típico de submissão para periódico \qualisA{}}
 \label{tab:estrategia-submissao}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lll}
 \toprule
 \textbf{Etapa} & \textbf{Prazo} & \textbf{Ferramentas} \\
@@ -1580,7 +1562,6 @@ Revisão final & 2 semanas & Iterative Correction Loop \\
 Publicação & Variável & Acompanhamento \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \begin{exercicio}[Nivel PhD -- Pesquisa]
@@ -1603,7 +1584,7 @@ Publicação & Variável & Acompanhamento \\
 \label{sec:roteiro-zero-phd}
 \nivelzero
 
-\paragraph{O mapa do tesouro do aprendiz a pesquisador} Esta seção apresenta um roteiro completo de aprendizado, organizado em marcos
+Esta seção apresenta um roteiro completo de aprendizado, organizado em marcos
 de progressão que guiam o estudante do nível zero (nenhum conhecimento prévio)
 ao nível PhD (capacidade de produzir pesquisa original e defendê-la perante
 banca acadêmica).
@@ -1650,10 +1631,8 @@ associadas.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Marcos de progressão do nível zero ao PhD}
 \label{tab:marcos-progressao}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{p{2cm}p{3cm}p{4cm}p{3cm}}
 \toprule
 \textbf{Nível} & \textbf{Pré-requisitos} & \textbf{Competências adquiridas} & \textbf{Capítulos} \\
@@ -1665,7 +1644,6 @@ Avançado & Intermediário & Arquitetura 3 camadas, MCPs, skills, plugins & 3, 4
 PhD & Avançado & Metacognição, trust, economia, validação, defesa & 6, 7, 8 \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{[Detalhamento] Marcos de Progressão}
@@ -1825,7 +1803,7 @@ Para o pesquisador que completa o nível PhD, as próximas fronteiras incluem:
 \label{sec:conclusao-perspectivas}
 \nivelphd
 
-\paragraph{Fechando ciclos e abrindo novos horizontes} Este capítulo final do livro sintetiza a jornada completa de pesquisa e
+Este capítulo final do livro sintetiza a jornada completa de pesquisa e
 desenvolvimento do \opencodeeco{}, desde sua concepção como uma CLI
 convencional até sua maturidade como um ecossistema cognitivo com 600+
 componentes integrados.
@@ -1837,10 +1815,8 @@ destacando as principais contribuições de cada ciclo.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Resumo dos ciclos evolutivos R1-R23}
 \label{tab:ciclos-resumo}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{clc}
 \toprule
 \textbf{Ciclo} & \textbf{Contribuição principal} & \textbf{Score} \\
@@ -1865,7 +1841,6 @@ R22 & Structural Noise Scanner + N3 Completo (SPEC-037) & 100 \\
 R23 & Trust Engine + Behavioral Autonomy (SPEC-038) & 100 \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 A evolução de R1 (score 85) a R23 (score 100) demonstra o amadurecimento

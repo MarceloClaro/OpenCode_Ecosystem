@@ -5,9 +5,6 @@
 % =============================================================================
 \chapter{Scanner Pipeline e Metacognição: Auto-Observação e Evolução Contínua}
 \label{cap:scanner-metacognicao}
-\label{ch:scanners}
-
-\paragraph{A Jornada da Auto-Observação.} Assim como um organismo vivo desenvolveu sistemas sensoriais para perceber o ambiente, o \opencodeeco{} desenvolveu scanners epistemológicos para perceber a si mesmo. Antes de mergulharmos nos detalhes técnicos, compreenderemos por que a auto-observação é o requisito fundamental para qualquer sistema que aspire a evoluir de forma autônoma e dirigida.
 
 A engenharia de ecossistemas cognitivos artificiais enfrenta um problema
 fundamental: como um sistema pode melhorar a si mesmo sem intervenção humana
@@ -38,10 +35,8 @@ carga horária estimada para estudo.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Conteúdo do Capítulo 4}
 \label{tab:conteudo-capitulo4}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{clcc}
 \toprule
 \textbf{Seção} & \textbf{Tópico} & \textbf{Nível} & \textbf{Estudo} \\
@@ -58,7 +53,6 @@ carga horária estimada para estudo.
 4.10 & Integração e Orquestração Completa & \nivelavancado & 4h \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 O leitor percorrerá uma jornada que parte da simples pergunta ``o que existe?''
@@ -69,8 +63,6 @@ prática, exemplos do \opencodeeco{} e exercícios progressivos.
 \section{Introdução aos Scanners Epistemológicos}
 \label{sec:introducao-scanners}
 \nivelzero
-
-\paragraph{O Olho Interno do Ecossistema.} Imagine um bibliotecário que precisa organizar uma biblioteca que cresce sozinha: sem um inventário completo, ele não sabe quais livros existem, quais estão faltando e quais seções estão superlotadas. No \opencodeeco{}, os scanners epistemológicos são esse inventário vivo, permitindo que o sistema conheça sua própria estrutura de conhecimento para então decidir como evoluí-la.
 
 \begin{definicao}[Scanner Epistemológico]
 Um \destaque{scanner epistemológico} é um módulo computacional que examina
@@ -180,8 +172,6 @@ identificando as entradas e saídas de cada módulo.
 \label{sec:noological-scanner}
 \nivelavancado
 
-\paragraph{O Mapa do Conhecimento Ausente.} Se o Potentiality Scanner revela o que existe, o Noological Scanner pergunta: ``o que não existe e deveria existir?''. Assim como um explorador marca em seu mapa as regiões já visitadas para identificar territórios inexplorados, este scanner do \opencodeeco{} mapeia o espaço epistemológico em dez dimensões, revelando sistematicamente os pontos cegos do ecossistema.
-
 O \emph{Noological Scanner} é o scanner epistemológico fundamental do
 \opencodeeco{}. Seu nome deriva do grego \emph{noos} (mente, intelecto)
 e \emph{logos} (estudo, discurso) --- ele estuda a estrutura do
@@ -224,9 +214,7 @@ respectivas contagens de categorias.
 \centering
 \caption{As 10 dimensões do espaço epistemológico noológico}
 \label{tab:dimensoes-noologicas}
-\small
-    \resizebox{\textwidth}{!}{
-\begin{tabular}{lp{8cm}c}
+\begin{tabular}{llc}
 \toprule
 \textbf{Dimensão} & \textbf{Descrição} & \textbf{Categorias} \\
 \midrule
@@ -244,7 +232,6 @@ Domínios & Campos de aplicação (neurociências, economia, educação, etc.) &
 \textbf{Total} & & \textbf{92} \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{Gap Detection Algorithm}
@@ -315,10 +302,8 @@ A Tabela~\ref{tab:cts-noological} lista os principais CTs.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Principais Casos de Teste do Noological Scanner}
 \label{tab:cts-noological}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{cll}
 \toprule
 \textbf{CT} & \textbf{Descrição} & \textbf{Resultado} \\
@@ -340,7 +325,6 @@ CT-NS-014 & Zonas de conforto epistemológico & PASS \\
 CT-NS-015 a 18 & Casos adicionais de refinamento & PASS \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \begin{figure}[htb]
@@ -435,10 +419,8 @@ fracos, como ilustrado na Tabela~\ref{tab:correlacao-cruzada}.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Exemplo de correlação cruzada entre dimensões}
 \label{tab:correlacao-cruzada}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lcc}
 \toprule
 \textbf{Par} & \textbf{Correlação} & \textbf{Interpretação} \\
@@ -449,7 +431,6 @@ Dados × Domínios & 0.31 & Fraca: independentes \\
 População × Temporalidade & 0.12 & Muito fraca: quase ortogonais \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{Zonas de Conforto Epistemológico}
@@ -490,8 +471,6 @@ existentes. O que sua dimensão revela que as 10 originais não capturam?
 \section{Teleological Reverse Scanner: O Que Deveria Existir (SPEC-029)}
 \label{sec:teleological-scanner}
 \nivelavancado
-
-\paragraph{Das Metas aos Meios.} Se você quer construir uma ponte, precisa saber que materiais e ferramentas são necessários antes de começar. O Teleological Reverse Scanner do \opencodeeco{} faz algo análogo: parte dos objetivos desejados e infere, de trás para frente, quais capacidades epistemológicas são indispensáveis para alcançá-los.
 
 Enquanto o Noological Scanner descreve o estado atual do conhecimento, o
 \emph{Teleological Reverse Scanner} pergunta: ``dados os nossos objetivos,
@@ -571,10 +550,8 @@ ilustra uma matriz hipotética para um ecossistema com três objetivos.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Matriz de lacunas teleológicas hipotética}
 \label{tab:matriz-lacunas}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{llcc}
 \toprule
 \textbf{Objetivo} & \textbf{Categoria Requerida} & \textbf{Presente} & \textbf{Severidade} \\
@@ -587,7 +564,6 @@ Exploratório & Grounded theory & Sim & --- \\
 Exploratório & Estudo de caso & Não & Moderada \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{Exemplo: Detecção de Capacidades Faltantes}
@@ -647,8 +623,6 @@ de cada categoria.
 \label{sec:evolutionary-scanner}
 \nivelphd
 
-\paragraph{O GPS Evolutivo do Ecossistema.} De posse do mapa do que existe e do que deveria existir, surge a pergunta prática: qual o melhor caminho? O Evolutionary Trajectories Scanner do \opencodeeco{} funciona como um sistema de navegação para a evolução do ecossistema, calculando rotas que maximizam o impacto e minimizam custos.
-
 O \emph{Evolutionary Trajectories Scanner} integra os resultados dos
 scanners anteriores e projeta trajetórias evolutivas. Ele responde à
 pergunta: ``qual o melhor caminho para evoluir este ecossistema?''.
@@ -706,10 +680,8 @@ mostra exemplos de analogias.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Analogias polimáticas para lacunas epistemológicas}
 \label{tab:polymathic}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{llc}
 \toprule
 \textbf{Categoria com Gap} & \textbf{Análogo em...} & \textbf{Score} \\
@@ -721,7 +693,6 @@ Teoria dos Jogos Cooperativo & Economia (Ostrom, governança de comuns) & 0.95 \
 Métodos Longitudinais & Epidemiologia (estudos de coorte) & 0.85 \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{M5: Trajectory Mapper}
@@ -844,8 +815,6 @@ linear atual. Compare os roadmaps gerados.
 \section{Scanner Refinement (SPEC-031) e MCSP (SPEC-032)}
 \label{sec:scanner-refinement-mcsp}
 \nivelphd
-
-\paragraph{O Princípio da Navalha Cognitiva.} Na engenharia, toda restrição é uma oportunidade de simplificação. O Scanner Refinement e o MCSP Solver do \opencodeeco{} aplicam o princípio da parcimônia ao desenvolvimento de capacidades: dado um conjunto de objetivos, qual é o menor conjunto de capacidades que os satisfaz?
 
 Os scanners anteriores identificam \emph{o que} precisa ser adquirido. O
 Scanner Refinement e o MCSP (Minimum Capability Set Problem) Solver
@@ -1048,8 +1017,6 @@ uma capacidade que cobre os elementos correspondentes.
 \label{sec:composicao-unitaria}
 \nivelphd
 
-\paragraph{O Lego do Conhecimento.} Saber que uma capacidade é necessária é diferente de saber como construí-la. O Capability Composer do \opencodeeco{} decompõe capacidades abstratas em peças elementares --- conceitos, métodos, ferramentas e bases de conhecimento --- como um manual de instruções que transforma um desejo em uma lista de compras com custos calculados.
-
 Os scanners identificam \emph{o que} falta, e o MCSP determina \emph{quais}
 capacidades mínimas são necessárias. O \emph{Capability Composer} responde a
 uma pergunta ainda mais fundamental: ``como construir cada capacidade a
@@ -1183,8 +1150,6 @@ a composição novamente e analise como as prioridades mudam.
 \label{sec:potentiality-scanner}
 \nivelphd
 
-\paragraph{O Raio-X do Ecossistema.} Antes de diagnosticar uma doença, o médico precisa entender como o corpo saudável funciona. O Potentiality Scanner do \opencodeeco{} realiza o ``exame de rotina'' do ecossistema, extraindo seu DNA estrutural --- o mapeamento completo de componentes, capacidades e suas interconexões que serve de base para todos os scanners subsequentes.
-
 O \emph{Potentiality Scanner} é o módulo mais recente do pipeline (SPEC-043)
 e atua como a primeira camada do Evolutionary Trajectories Scanner
 (M1). Ele extrai o DNA estrutural do ecossistema, mapeando seus componentes
@@ -1211,8 +1176,8 @@ mais capacidades atômicas.
 \item \destaque{Inferência de capacidades por heurística}: para skills
 dinâmicas, o scanner aplica heurísticas de associação de palavras-chave.
 Por exemplo, uma skill cuja descrição contém ``quantum'' ou ``qubit'' é
-mapeada para \codigo{quantum\_computing}; uma skill com ``legal'',
-``contract'' ou ``jurídico'' é mapeada para \codigo{legal\_processing}.
+mapeada para \codigo{quantum\\_computing}; uma skill com ``legal'',
+``contract'' ou ``jurídico'' é mapeada para \codigo{legal\\_processing}.
 \item \destaque{Geração do mapa de capacidades}: a saída é um dicionário
 que associa cada componente a suas capacidades, mais a análise de núcleo
 central, redundâncias e lacunas.
@@ -1287,16 +1252,16 @@ def detect_redundancies(capability_map: dict,
 Da mesma forma, a detecção de lacunas emergentes projeta quais capacidades
 serão necessárias no futuro próximo com base no roadmap evolutivo. O
 scanner mantém uma lista de \emph{target evolving capabilities}
-(capacidades alvo em evolução) como \codigo{autonomous\_self\_repair},
-\codigo{distributed\_consensus} e \codigo{proactive\_alignment}. Por exemplo, se o ``master orchestrator'' e
+(capacidades alvo em evolução) como \codigo{autonomous\\_self\\_repair},
+\codigo{distributed\\_consensus} e \codigo{proactive\\_alignment}. Por exemplo, se o ``master orchestrator'' e
 o ``antigravity bridge'' ambos implementam ``central coordination'', o
 scanner sinaliza a redundância e sugere unificação.
 
 Da mesma forma, a detecção de lacunas emergentes projeta quais capacidades
 serão necessárias no futuro próximo com base no roadmap evolutivo. O
 scanner mantém uma lista de \emph{target evolving capabilities}
-(capacidades alvo em evolução) como \codigo{autonomous\_self\_repair},
-\codigo{distributed\_consensus} e \codigo{proactive\_alignment}.
+(capacidades alvo em evolução) como \codigo{autonomous\\_self\\_repair},
+\codigo{distributed\\_consensus} e \codigo{proactive\\_alignment}.
 
 \subsection{Integração com o Orquestrador /marceloclaro}
 
@@ -1345,8 +1310,6 @@ do Gartner Hype Cycle.
 \label{sec:metacognicao-self-model}
 \nivelphd
 
-\paragraph{O Sistema que Pensa sobre Si Mesmo.} Se os scanners são os olhos do ecossistema, a metacognição é o cérebro que reflete sobre o que esses olhos veem. O \opencodeeco{} implementa uma arquitetura de auto-consciência artificial em quatro níveis (N0 a N3), na qual o sistema não apenas detecta lacunas, mas reflete sobre o próprio processo de detecção e ajusta seus mecanismos de evolução.
-
 Os scanners descritos nas seções anteriores são ferramentas poderosas, mas
 operam em um modo puramente descritivo-prescritivo. A camada metacognitiva
 eleva o ecossistema a um novo patamar: o sistema não apenas escaneia a si
@@ -1384,7 +1347,7 @@ especializados, descritos a seguir.
 
 \subsection{MetacognitiveMonitor: O Orquestrador do Loop}
 
-O \emph{MetacognitiveMonitor} (726 linhas em \codigo{metacognitive\_loop.py})
+O \emph{MetacognitiveMonitor} (726 linhas em \codigo{metacognitive\\_loop.py})
 é o orquestrador central do loop metacognitivo. Ele coordena a execução
 dos outros módulos e mantém o estado global do ciclo. Seu ciclo principal
 opera em quatro fases:
@@ -1423,9 +1386,7 @@ lista os gaps e suas implementações.
 \centering
 \caption{Gaps metacognitivos auto-diagnosticados e implementados}
 \label{tab:gaps-metacognitivos}
-\small
-    \resizebox{\textwidth}{!}{
-\begin{tabular}{lp{6cm}lc}
+\begin{tabular}{lllc}
 \toprule
 \textbf{Gap} & \textbf{Detecção} & \textbf{Módulo} & \textbf{Linhas} \\
 \midrule
@@ -1441,7 +1402,6 @@ SelfModel & 447 \\
 \textbf{Total} & & \textbf{4 módulos} & \textbf{1.757} \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 Este auto-diagnóstico é, ele próprio, uma demonstração do poder do pipeline:
@@ -1451,7 +1411,7 @@ necessários para preenchê-las.
 
 \subsection{Self-Model N0--N3: Quatro Níveis de Auto-Consciência Artificial}
 
-O \emph{SelfModel} (447 linhas em \codigo{self\_model.py}) implementa uma
+O \emph{SelfModel} (447 linhas em \codigo{self\\_model.py}) implementa uma
 arquitetura de auto-representação em quatro níveis, inspirada na Global
 Workspace Theory de Baars \cite{baars1988cognitive, baars2002conscious},
 na Attention Schema Theory de Graziano \cite{graziano2013consciousness,
@@ -1471,7 +1431,7 @@ selecionando focos prioritários.
 mesmo, incluindo estado interno, métricas de confiança e histórico.
 \item[N3 (Metacognitivo):] o sistema reflete sobre seus próprios processos
 cognitivos, identifica padrões e ajusta seu comportamento com base na
-reflexão (implementado via \codigo{metacognitive\_loop.py}).
+reflexão (implementado via \codigo{metacognitive\\_loop.py}).
 \end{description}
 \end{definicao}
 
@@ -1521,10 +1481,8 @@ inicialização do SelfModel até a execução completa do ciclo metacognitivo.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Casos de Teste da camada metacognitiva}
 \label{tab:cts-metacognicao}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{cll}
 \toprule
 \textbf{CT} & \textbf{Descrição} & \textbf{Módulo} \\
@@ -1539,7 +1497,6 @@ CT-MC-007 & Integração com Noological Scanner & MetacognitiveMonitor \\
 CT-MC-008 & Integração com Teleological Scanner & MetacognitiveMonitor \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \begin{exercicio}[Nivel Avançado]
@@ -1554,7 +1511,7 @@ apenas reflete sobre seus processos, mas também modifica sua própria
 arquitetura metacognitiva. Que novos módulos seriam necessários?
 \end{exercicio}
 
-\begin{exercicio}[Nivel PhD]
+\begin{exercicio}[Nivel PhD}
 Conecte o SelfModel à saída do Noological Scanner de modo que, quando o
 scanner detectar um gap na dimensão ``raciocínio.metacognitivo'', o
 SelfModel automaticamente aumente seu nível de atenção para aquele gap.
@@ -1565,15 +1522,13 @@ Teste com um cenário de gap simulado.
 \label{sec:dialectical-governanca}
 \nivelphd
 
-\paragraph{A Síntese que Supera a Contradição.} Na filosofia, o método dialético ensina que toda contradição contém a semente de uma solução superior. No \opencodeeco{}, o DialecticalEngine aplica este princípio computacionalmente, transformando limitações detectadas em oportunidades de evolução, enquanto a CooperativeGovernance --- inspirada nos trabalhos de Elinor Ostrom --- garante que cada passo evolutivo seja eticamente alinhado.
-
 Dois dos quatro gaps auto-diagnosticados --- o dialético e o cooperativo
 --- merecem tratamento aprofundado, pois representam mecanismos
 fundamentais para a evolução autônoma e alinhada do ecossistema.
 
 \subsection{Dialectical Engine: Tese $\rightarrow$ Antítese $\rightarrow$ Síntese}
 
-O \emph{DialecticalEngine} (264 linhas em \codigo{dialectical\_engine.py})
+O \emph{DialecticalEngine} (264 linhas em \codigo{dialectical\\_engine.py})
 implementa uma arquitetura hegeliana adaptada para sistemas computacionais.
 O princípio fundamental é que toda limitação (antítese) contém em si a
 semente de uma solução mais geral (síntese).
@@ -1627,16 +1582,14 @@ síntese = refatoração.
 \subsection{Governança Cooperativa: Os 8 Design Principles de Ostrom}
 
 O \emph{CooperativeGovernance} (320 linhas em
-\codigo{cooperative\_governance.py}) adapta os 8 Design Principles (DPs) de
+\codigo{cooperative\\_governance.py}) adapta os 8 Design Principles (DPs) de
 Elinor Ostrom para governança de recursos comuns ao contexto de goal-setting
 autônomo em sistemas de IA \cite{ostrom1990governing}.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Os 8 Design Principles de Ostrom adaptados para governança de IA}
 \label{tab:ostrom-dp}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{clp{7cm}}
 \toprule
 \textbf{DP} & \textbf{Princípio} & \textbf{Adaptação para IA} \\
@@ -1651,7 +1604,6 @@ DP7 & Autonomia reconhecida & Módulos preservam auto-organização \\
 DP8 & Aninhamento & Governança em múltiplas camadas \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 Cada goal gerado pelo sistema é validado contra os 8 DPs antes da execução.
@@ -1753,8 +1705,6 @@ o melhor de ambos.
 \label{sec:integracao-orquestracao}
 \nivelavancado
 
-\paragraph{Orquestrando a Sinfonia Evolutiva.} Cada scanner isolado é como um instrumento musical: útil, mas limitado. A orquestração completa do pipeline, supervisionada pela camada metacognitiva, transforma sons individuais em uma sinfonia coesa de auto-evolução. Esta seção final mostra como todos os módulos do \opencodeeco{} trabalham em conjunto.
-
 Este capítulo apresentou cada módulo do scanner pipeline e da camada
 metacognitiva de forma isolada. Nesta seção final, integramos todos os
 componentes em um pipeline coeso e mostramos como executá-lo no
@@ -1839,8 +1789,8 @@ Conceito: C (Regular)
 3. Paradigmas.Critico (score: 0.18)
 
 === ZONAS DE CONFORTO ===
-1. raciocinio -> raciocinio.Dialetico (density: 70.0%)
-2. raciocinio -> raciocinio.Sistemico (density: 65.0%)
+1. raciocinio → raciocinio.Dialetico (density: 70.0%)
+2. raciocinio → raciocinio.Sistemico (density: 65.0%)
 
 === RECOMENDACOES ===
 1. [CRITICAL] Adicionar cobertura em Teoria dos Jogos Bayesiana
@@ -1944,26 +1894,7 @@ M1-M5 e gera roadmaps evolutivos priorizados.
 \item A \textbf{metacognição} (SPEC-036) implementa auto-observação em
 4 níveis (N0--N3), com SelfModel, DialecticalEngine e
 CooperativeGovernance.
-\item \textbf{Nível N3.5+ e Autopoiese Digital} (SPEC-043): implementa a \textbf{Barreira Preventiva} e o \textbf{Potentiality Scanner}, avaliando riscos de \emph{memory exhaust} antes da execução e caçando correlações latentes via \emph{Inferência Bayesiana} e \emph{Contraprova de Popper}, executando mutações no próprio ecossistema caso aprovadas com significância estatística rigorosa.
 \end{itemize}
-
-\section{Nível N3.5+: Autonomia Preventiva e o Potentiality Scanner}
-
-Durante a evolução do \opencodeeco{}, diagnosticou-se a necessidade de um estágio intermediário antes do Nível N4 (Arquitetura Mutável Absoluta). O Nível \textbf{N3.5+} foi estabelecido para introduzir uma \destaque{Barreira Preventiva (Safety Barrier)} e o \destaque{Potentiality Scanner (SPEC-043)}.
-
-A inovação do N3.5+ repousa na transição de um ecossistema reativo para um sistema de \textbf{autopoiese digital e ceticismo preditivo}:
-\begin{enumerate}
-\item \textbf{Heurística de Interceptação:} O motor de orquestração (\codigo{/marceloclaro}) detecta anomalias de estresse (como loops infinitos ou payloads excessivos) e aborta a tarefa \emph{antes} de instanciar os agentes, isolando o dano.
-\item \textbf{Matriz Epistemológica (Bayesiana e Popperiana):} O \emph{Potentiality Scanner} vasculha ferramentas e MCPs ociosos para propor integrações latentes. Ao invés de aceitá-las cegamente, ele submete cada hipótese a um funil de validação de 5 pilares:
-  \begin{itemize}
-  \item Validação Lógico-Matemática.
-  \item Falsificacionismo Popperiano (busca por contraprovas).
-  \item Validação Cruzada (K-Fold).
-  \item Significância Estatística Frequentista (p-value $< 0.05$).
-  \item \textbf{Inferência Bayesiana} (Cálculo do \emph{Posterior} $P(H|E) > 0.75$).
-  \end{itemize}
-\item \textbf{Ação Autônoma:} Se, e somente se, a hipótese for chancelada pela matriz, o sistema executa a solução em ambiente de produção sozinho. Na auditoria registrada em 19/06/2026, o scanner aprovou a "Sinergia MCP-Skill" com 89.3\% de confiabilidade Bayesiana e refutou correlações espúrias ativamente, comprovando rigor científico autogerido.
-\end{enumerate}
 
 O ciclo evolutivo completo --- da extração de DNA ao roadmap --- é a
 resposta do \opencodeeco{} à pergunta fundamental: como um sistema pode

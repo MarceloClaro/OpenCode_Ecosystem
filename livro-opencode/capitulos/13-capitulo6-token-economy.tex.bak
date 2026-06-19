@@ -6,8 +6,6 @@
 \chapter{Token Economy e Sustentabilidade Econômica do Ecossistema de Agentes}
 \label{cap:token-economy}
 
-\paragraph{Por que uma economia de tokens?} Imagine um ecossistema onde dezenas de agentes autônomos disputam recursos computacionais sem qualquer regra de alocação. O resultado seria o caos: agentes mais agressivos consumiriam tudo, enquanto agentes colaborativos morreriam de fome. A Token Economy resolve este problema introduzindo incentivos econômicos --- moeda, preços, mercados e auditoria --- que transformam recursos escassos em um sistema sustentável de trocas. Neste capítulo, você aprenderá como o \opencodeeco{} implementa cada peça deste quebra-cabeça econômico.
-
 Agentes autônomos consomem recursos computacionais — tempo de
 processamento, memória, largura de banda, chamadas a APIs externas.
 Em um ecossistema com dezenas ou centenas de agentes operando
@@ -40,10 +38,8 @@ e a carga horária estimada.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Conteúdo do Capítulo 6}
 \label{tab:conteudo-capitulo6}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{clcc}
 \toprule
 \textbf{Seção} & \textbf{Tópico} & \textbf{Nível} & \textbf{Estudo} \\
@@ -60,7 +56,6 @@ e a carga horária estimada.
 6.10 & Integração Prática & \text{Todos} & 4h \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 % =============================================================================
@@ -70,8 +65,6 @@ e a carga horária estimada.
 \section{Introdução à Economia de Tokens em Sistemas de Agentes}
 \label{sec:introducao-token-economy}
 \nivelzero
-
-\paragraph{Moeda, preço e mercado no mundo dos agentes.} Antes de mergulharmos na implementação, precisamos de uma base conceitual. Assim como a economia humana organiza a produção e o consumo de bens escassos, a economia de tokens organiza a alocação de recursos computacionais entre agentes autônomos. Esta seção apresenta os fundamentos --- o que é um token, como funciona um ledger e por que agentes racionais precisam de incentivos econômicos para cooperar em vez de competir destrutivamente.
 
 O que é uma \destaque{Token Economy}? Em termos simples, é um
 sistema de incentivos baseado em fichas digitais (tokens) que
@@ -113,10 +106,8 @@ entre a economia humana e a economia de agentes.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Economia humana vs. economia de agentes}
 \label{tab:economia-humana-agentes}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lll}
 \toprule
 \textbf{Conceito} & \textbf{Economia Humana} & \textbf{Economia de Agentes} \\
@@ -131,7 +122,6 @@ Banco central & Governo & Governança do ecossistema \\
 Auditoria & Órgão regulador & Ledger imutável \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \begin{definicao}[Token]
@@ -190,23 +180,22 @@ ledger e expõe trilhas de auditoria verificáveis.
 As três especificações formam a camada econômica do ecossistema:
 
 \begin{itemize}
-\item \textbf{SPEC-022 --- Token Economy Core}: define o
-ledger frozen dataclass \\%
-\hspace*{4em}(\codigo{TokenTransaction},
+\item \textbf{SPEC-022 --- Token Economy Core}: define o ledger
+frozen dataclass (\codigo{TokenTransaction},
 \codigo{AgentAccount}), o fee market dinâmico, o mecanismo de
-precificação de ações e 8 testes TDD. \\Disponível no repositório: \\%
-\hspace*{2em}\href{https://github.com/marceloclaro/opencode-ecosystem/tree/main/specs/SPEC-022-Token-Economy-Core}{\texttt{github.com/marceloclaro/opencode-ecosystem}}\\%
-\hspace*{4em}\texttt{/tree/main/specs/SPEC-022-Token-Economy-Core}
+precificação de ações e 8 testes de desenvolvimento dirigido por
+testes (TDD). Disponível em:
+\url{https://github.com/marceloclaro/opencode-ecosystem/tree/main/specs/SPEC-022-Token-Economy-Core}
 \item \textbf{SPEC-023 --- Agent Economics}: implementa staking
 com bloqueio de 7 dias, slashing stake-first, tiers
-bronze/silver/gold, allowances diário e semanal, e 6 CTs. \\Disponível no repositório: \\%
-\hspace*{2em}\href{https://github.com/marceloclaro/opencode-ecosystem/tree/main/specs/SPEC-023-Agent-Economics}{\texttt{github.com/marceloclaro/opencode-ecosystem}}\\%
-\hspace*{4em}\texttt{/tree/main/specs/SPEC-023-Agent-Economics}
+bronze/silver/gold, allowances diário e semanal, e 6 CTs.
+Disponível em:
+\url{https://github.com/marceloclaro/opencode-ecosystem/tree/main/specs/SPEC-023-Agent-Economics}
 \item \textbf{SPEC-024 --- Audit Integration}: implementa trilha
 de auditoria SHA-256, integração com Trust Engine, imutabilidade
-e verificabilidade, e 4 CTs. Total de 29/29 CTs. \\Disponível no repositório: \\%
-\hspace*{2em}\href{https://github.com/marceloclaro/opencode-ecosystem/tree/main/specs/SPEC-024-Audit-Integration}{\texttt{github.com/marceloclaro/opencode-ecosystem}}\\%
-\hspace*{4em}\texttt{/tree/main/specs/SPEC-024-Audit-Integration}
+e verificabilidade, e 4 CTs. Total de 29/29 CTs para o conjunto
+SPEC-022+023+024. Disponível em:
+\url{https://github.com/marceloclaro/opencode-ecosystem/tree/main/specs/SPEC-024-Audit-Integration}
 \end{itemize}
 
 \begin{exemplo}
@@ -250,8 +239,6 @@ Cite três semelhanças e três diferenças.
 \section{Token Economy Core (SPEC-022)}
 \label{sec:token-economy-core}
 \nivelintermediario
-
-\paragraph{O coração econômico do ecossistema.} Se a Token Economy fosse um banco, esta seção descreveria o livro-razão, as regras de emissão de moeda e a calculadora de taxas. A SPEC-022 é o módulo central que implementa o \destaque{ledger frozen} --- um registro imutável de todas as transações --- e o \destaque{fee market dinâmico}, que ajusta automaticamente o custo das operações conforme a demanda do sistema. Pense nela como o sistema de compensação de pagamentos do \opencodeeco{}.
 
 A SPEC-022 é a especificação fundamental da Token Economy.
 Ela define o tripé Governança--Economia--Auditoria, o ledger
@@ -661,9 +648,9 @@ A implementação completa da SPEC-022 está nos seguintes arquivos:
 \begin{itemize}
 \item \codigo{specs/SPEC-022-Token-Economy-Core/README.md} —
 especificação completa;
-\item \codigo{skills/system/token-economy/token\_economy.py} —
+\item \codigo{skills/system/token-economy/token\\_economy.py} —
 implementação do motor;
-\item \codigo{specs/tests/test\_token\_economy.py} — 9 CTs;
+\item \codigo{specs/tests/test\\_token\\_economy.py} — 9 CTs;
 \item \codigo{docs/adr/architectu-006.md} — registro ADR.
 \end{itemize}
 
@@ -712,8 +699,6 @@ remetente pode autorizar um débito.
 \label{sec:agent-economics}
 \nivelavancado
 
-\paragraph{Como incentivar agentes a jogar o jogo do ecossistema.} Ter uma moeda não basta; é preciso criar mecanismos que alinhem os interesses individuais dos agentes com o bem-estar coletivo. A SPEC-023 introduz \destaque{staking} (bloqueio voluntário de tokens como garantia de boa conduta), \destaque{slashing} (penalidades por mau comportamento), \destaque{tiers} (classes de agentes com privilégios progressivos) e \destaque{allowances} (limites de gasto diário e semanal). É o equivalente a ter fiança, multas, cartões platinum e limites de crédito no mundo dos agentes.
-
 A SPEC-023 estende a Token Economy Core com mecanismos econômicos
 específicos para agentes: staking, slashing, tiers e allowances.
 Estes mecanismos transformam o ledger passivo em um sistema ativo
@@ -742,7 +727,7 @@ $\text{status} \in \{\text{locked}, \text{releasing}, \text{released}\}$
 \centering
 \caption{Ciclo de staking e slashing}
 \label{fig:staking-slashing}
-\begin{tikzpicture}[node distance=1.5cm, scale=0.55, every node/.style={scale=0.55},
+\begin{tikzpicture}[node distance=2cm, auto,
     proc/.style={rectangle, draw, rounded corners, minimum width=2.8cm,
                  minimum height=0.8cm, align=center},
     arrow/.style={->, thick, >=stealth}]
@@ -918,10 +903,8 @@ oferece benefícios progressivos.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Sistema de tiers da SPEC-023}
 \label{tab:tiers}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lccc}
 \toprule
 \textbf{Atributo} & \textbf{Bronze} & \textbf{Silver} & \textbf{Gold} \\
@@ -934,7 +917,6 @@ Prioridade de execução & Baixa & Média & Alta \\
 Slashing protection & 0\% & 25\% & 50\% \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \begin{lstlisting}[caption={Sistema de tiers da SPEC-023},label={lst:tiers}]
@@ -1084,7 +1066,7 @@ automaticamente promove um agente de bronze para silver quando
 seu stake atinge 500 tokens.
 \end{exercicio}
 
-\begin{exercicio}[Nivel Avançado]
+\begin{exercicio}[Nivel Avançado}
 O sistema atual aplica slashing de 50\% do stake. Proponha e
 implemente um slashing progressivo: 10\% na primeira ofensa,
 25\% na segunda, 50\% na terceira.
@@ -1110,8 +1092,6 @@ racional?
 \section{Audit Integration (SPEC-024)}
 \label{sec:audit-integration}
 \nivelintermediario
-
-\paragraph{Confiando no sistema econômico.} De nada adianta uma economia sofisticada se ninguém consegue verificar se as regras estão sendo cumpridas. A SPEC-024 integra a Token Economy com o Trust Engine do \opencodeeco{}, criando uma trilha de auditoria SHA-256 que torna qualquer tentativa de fraude imediatamente detectável. É o equivalente ao tribunal de contas, à auditoria externa e ao registro público de transações --- tudo automatizado e criptograficamente seguro.
 
 A SPEC-024 integra a Token Economy com o Trust Engine do
 ecossistema, estabelecendo uma trilha de auditoria SHA-256 que
@@ -1140,7 +1120,6 @@ do agente \cite{opencode2026token}.
 \centering
 \caption{Cadeia de hashes SHA-256 do ledger}
 \label{fig:hash-chain}
-\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[node distance=3cm, auto,
     block/.style={rectangle, draw, rounded corners, minimum width=2.5cm,
                   minimum height=1cm, align=center, font=\small},
@@ -1148,7 +1127,7 @@ do agente \cite{opencode2026token}.
                  minimum height=0.7cm, align=center, font=\tiny},
     arrow/.style={->, thick, >=stealth}]
 \node[block, fill=green!20] (g1) {Gênese};
-\node[hash, below=of g1] (h0) {hash=\string"0\string"};
+\node[hash, below=of g1] (h0) {hash="0"};
 \node[block, fill=blue!20, right=of g1, xshift=1cm] (tx1) {TX-001};
 \node[hash, below=of tx1] (h1) {SHA-256(TX-001||h0)};
 \node[block, fill=blue!20, right=of tx1, xshift=1cm] (tx2) {TX-002};
@@ -1160,8 +1139,7 @@ do agente \cite{opencode2026token}.
 \draw[arrow] (h0) -- (h1);
 \draw[arrow] (h1) -- (h2);
 \draw[arrow] (h2) -- (h3);
-\end{tikzpicture}%
-}
+\end{tikzpicture}
 \end{figure}
 
 \subsection{Integração com Trust Engine}
@@ -1321,8 +1299,6 @@ ledger sem ter acesso aos saldos individuais (zero-knowledge).
 \label{sec:taas}
 \nivelphd
 
-\paragraph{Transformando governança em negócio.} Até aqui, a Token Economy foi apresentada como um custo --- algo que o ecossistema precisa para funcionar. Mas e se a própria governança pudesse ser um serviço comercializável? O modelo \destaque{Trust-as-a-Service} (TaaS) faz exatamente isso: empacota a confiança, a auditoria e a economia de tokens como um serviço pelo qual agentes pagam conforme o uso ou via planos mensais. É a transição de custo operacional para modelo de negócio.
-
 A Token Economy estabelece a infraestrutura econômica; o Trust
 Engine (Capítulo~5) estabelece a confiança comportamental. A
 integração de ambos em um modelo \destaque{Trust-as-a-Service}
@@ -1409,10 +1385,8 @@ limite de requisições. Ideal para produção.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Planos TaaS}
 \label{tab:taas-plans}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lccc}
 \toprule
 \textbf{Característica} & \textbf{Free} & \textbf{Pro} & \textbf{Enterprise} \\
@@ -1424,7 +1398,6 @@ Suporte & Comunitário & Prioritário & Dedicado \\
 Preço & Grátis & 5000 tokens/mês & 50000 tokens/mês \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{Modelo de Negócio para Ecossistemas de Agentes}
@@ -1448,7 +1421,7 @@ de recursos.
 \subsection{Monitoramento de Consumo}
 
 O monitoramento de consumo é implementado pelo script
-\codigo{token\_economy\_monitor.py} (220 linhas), que expõe
+\codigo{token\\_economy\\_monitor.py} (220 linhas), que expõe
 métricas em tempo real via API REST \cite{opencode2026token}.
 
 \begin{lstlisting}[caption={Monitor de consumo da Token Economy},
@@ -1582,8 +1555,6 @@ a emissão de novos tokens é função da taxa de participação
 \section{Mecanismos de Mercado}
 \label{sec:mecanismos-mercado}
 \nivelavancado
-
-\paragraph{O livre mercado encontra os agentes.} Com uma moeda (token) e regras econômicas (SPEC-022\,/\,023\,/\,024), o próximo passo natural é deixar que os próprios agentes negociem, precifiquem e aloquem recursos via mecanismos de mercado. Esta seção explora o \destaque{fee market} como um jogo estratégico, \destaque{leilões de capacidade} computacional para momentos de pico de demanda e a \destaque{teoria dos jogos} por trás das decisões racionais dos agentes. É a matemática dos mercados aplicada a software.
 
 A Token Economy estabelece a moeda; os mecanismos de mercado
 estabelecem como essa moeda é precificada, alocada e negociada.
@@ -1793,8 +1764,6 @@ para o valor total do ecossistema?
 \label{sec:governanca-economica}
 \nivelphd
 
-\paragraph{Quem define as regras do jogo?} Em sistemas centralizados, um administrador decide as taxas, as penalidades e as regras. No \opencodeeco{}, a governança é descentralizada: os próprios agentes, ponderados pelo seu stake (interesse financeiro no ecossistema), votam mudanças nas regras econômicas. Esta seção aplica os oito princípios de governança dos comuns de Elinor Ostrom --- Prêmio Nobel de Economia --- à economia de tokens, mostrando como comunidades autônomas podem se autogovernar sem autoridade central.
-
 A governança econômica da Token Economy não é imposta de cima
 para baixo: ela emerge da interação entre agentes, seguindo os
 princípios de governança dos comuns estabelecidos por Elinor
@@ -1811,10 +1780,8 @@ princípios de design se aplicam diretamente à Token Economy:
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Princípios de Ostrom aplicados à Token Economy}
 \label{tab:ostrom-token}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{cp{5cm}p{6cm}}
 \toprule
 \textbf{DP} & \textbf{Princípio} & \textbf{Aplicação na Token Economy} \\
@@ -1829,7 +1796,6 @@ princípios de design se aplicam diretamente à Token Economy:
 8 & Empresas aninhadas & Sub-ecossistemas com governança própria \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{Tomada de Decisão Coletiva sobre Taxas}
@@ -2009,8 +1975,6 @@ principal via pontes de tokens.
 \section{Incentivos e Reputação}
 \label{sec:incentivos-reputacao}
 \nivelavancado
-
-\paragraph{O que move os agentes?} Dinheiro não é o único motivador. Em qualquer sociedade --- humana ou digital --- a reputação importa tanto quanto o saldo bancário. Esta seção mostra como o \opencodeeco{} combina \destaque{trust score} (confiança comportamental), \destaque{token balance} (poder econômico) e \destaque{staking history} (comprometimento de longo prazo) em um sistema de reputação composta que influencia desde a prioridade de execução até o custo das transações.
 
 Sistemas econômicos funcionam porque combinam incentivos
 financeiros com reputação social. Na Token Economy, a reputação
@@ -2223,7 +2187,7 @@ def ciclo_staking_slashing():
     except ValueError as e:
         print(f"Unstake bloqueado: {e}")
 
-    # 3. Alice se comporta mal -> slashing de 50%
+    # 3. Alice se comporta mal → slashing de 50%
     penalty = sm.slash("alice", 0.5)
     print(f"Slashing: -{penalty} tokens")
     print(f"Stake restante: "
@@ -2298,8 +2262,6 @@ Encontre os pontos fixos e analise a estabilidade.
 \section{Auditoria e Transparência Financeira}
 \label{sec:auditoria-financeira}
 \nivelintermediario
-
-\paragraph{Mostre-me os números.} A confiança em um sistema econômico não vem de promessas, mas de dados verificáveis. Esta seção apresenta o \destaque{ledger público}, os \destaque{relatórios financeiros automáticos} (balanço patrimonial, demonstrativo de resultados) e o \destaque{detector de anomalias econômicas} --- ferramentas que permitem a qualquer agente ou observador externo auditar a saúde financeira do ecossistema em tempo real.
 
 A transparência financeira é um requisito fundamental para a
 confiança no ecossistema. Sem auditoria, agentes não podem
@@ -2549,7 +2511,7 @@ class AnomalyDetector:
 
 \subsection{Integração com audit\_instrumentor.py}
 
-O script \codigo{audit\_instrumentor.py} do ecossistema
+O script \codigo{audit\\_instrumentor.py} do ecossistema
 instrumenta automaticamente todas as transações da Token Economy,
 gerando logs de auditoria que alimentam o sistema de
 monitoramento \cite{opencode2026ecosystem}.
@@ -2592,8 +2554,6 @@ assinados digitalmente.
 % =============================================================================
 \section{Integração Prática}
 \label{sec:integracao-pratica}
-
-\paragraph{Colocando tudo para funcionar.} Teoria sem prática é apenas filosofia. Esta seção final consolida todos os conceitos do capítulo em um laboratório prático: você configurará a Token Economy, simulará transações entre agentes, auditará o ledger e analisará a saúde econômica do ecossistema. Ao final, você terá executado cada peça do quebra-cabeça econômico do \opencodeeco{} com suas próprias mãos.
 
 Esta seção consolida todos os conceitos do capítulo em um
 laboratório prático que cobre configuração, simulação, auditoria
@@ -2841,10 +2801,8 @@ adquiridas neste capítulo.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Competências adquiridas no Capítulo 6}
 \label{tab:competencias-cap6}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lll}
 \toprule
 \textbf{Competência} & \textbf{Seção} & \textbf{Aplicação} \\
@@ -2862,7 +2820,6 @@ Reputação composta & 6.8 & Incentivos \\
 Detecção de anomalias & 6.9 & Auditoria \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 Ao dominar estes conceitos, o leitor está preparado para o

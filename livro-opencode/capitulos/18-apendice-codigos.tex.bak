@@ -470,12 +470,13 @@ recorrentes. Abaixo os principais comandos.
 
 \begin{lstlisting}[caption={Comandos Makefile do OpenCode Ecosystem},
                    label={cod:makefile}, style=bashstyle]
-# ============================================================
-# Makefile - OpenCode Ecosystem
-# Comandos: desenvolvimento, testes e compilacao
-# ============================================================
+# =============================================================================
+# Makefile — OpenCode Ecosystem
+# Comandos principais para desenvolvimento, teste e compilacao
+# =============================================================================
 
 # ---- COMPILACAO DO LIVRO ----
+# Compilar livro (xelatex + biber + xelatex + xelatex)
 make livro
 
 # Compilar apenas capitulo especifico

@@ -25,10 +25,8 @@ dissertações. A Tabela~3.1 sumariza a estrutura do capítulo.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Estrutura do Capítulo 3}
 \label{tab:estrutura-capitulo3}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{clcc}
 \toprule
 \textbf{Seção} & \textbf{Tópico} & \textbf{Nível} & \textbf{Páginas} \\
@@ -45,7 +43,6 @@ dissertações. A Tabela~3.1 sumariza a estrutura do capítulo.
 3.10 & Laboratório Prático & \text{Todos} & 4 \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \noindent Ao final deste capítulo, o leitor será capaz de:
@@ -64,8 +61,6 @@ dissertações. A Tabela~3.1 sumariza a estrutura do capítulo.
 \section{Visão Geral do OpenCode Ecosystem}
 \label{sec:visao-geral}
 \nivelzero
-
-\paragraph{Um ecossistema além do código.} Imagine uma cidade inteligente onde cada semáforo, cada via e cada serviço público se comunica e evolui sem intervenção humana direta. O \opencodeeco{} materializa essa visão no domínio da engenharia de software: é um meta-sistema que não apenas escreve código, mas projeta, testa, documenta e aprimora a si mesmo. Esta seção apresenta o mapa desse ecossistema, seus ciclos evolutivos e a filosofia que o sustenta.
 
 O \opencodeeco{} é uma plataforma de engenharia de software assistida por
 agentes inteligentes que integra o ciclo completo de desenvolvimento:
@@ -89,7 +84,6 @@ como ADRs (Architecture Decision Records) \cite{opencode2026ecosystem}.
 \caption{Ciclos evolutivos do OpenCode Ecosystem (R1--R23)}
 \label{tab:ciclos-evolutivos}
 \small
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{cllc}
 \toprule
 \textbf{Ciclo} & \textbf{Foco} & \textbf{Score} & \textbf{Insumo-chave} \\
@@ -111,7 +105,6 @@ R22 & Structural Noise Scanner + N3 & 100 & 312 CTs, N3 completo \\
 R23 & Trust Engine + Behavioral Autonomy & 100 & 312/312 CTs, N3.5 \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 Cada ciclo representa um incremento significativo na capacidade do sistema,
@@ -248,7 +241,7 @@ que orquestra o ecossistema.
 
 \begin{exercicio}
 Instale o \opencodeeco{} seguindo os passos do
-Código~\ref{lst:instalacao}. Execute \codigo{python scripts/validate\_installation.py}
+Código~\ref{lst:instalacao}. Execute \codigo{python scripts/validate\\_installation.py}
 e registre o resultado. (\nivelzero)
 \end{exercicio}
 
@@ -265,8 +258,6 @@ diretórios \codigo{skills/}, \codigo{agents/}, \codigo{plugins/} e
 \section{Arquitetura Três Camadas: MCP $\to$ Skill $\to$ Agent}
 \label{sec:arquitetura-tres-camadas}
 \nivelintermediario
-
-\paragraph{Três camadas, uma orquestração.} Assim como um teatro organiza seus profissionais em palco, bastidores e plateia, o \opencodeeco{} separa suas responsabilidades em três camadas hierárquicas: a infraestrutura (MCPs) provê as ferramentas, o conhecimento (Skills) fornece o saber especializado e a inteligência (Agentes) orquestra a execução. Esta seção detalha cada camada e mostra como o container de injeção de dependência as integra em um fluxo coeso.
 
 A arquitetura do \opencodeeco{} é organizada em três camadas hierárquicas
 que separam responsabilidades e permitem evolução independente de cada
@@ -300,10 +291,8 @@ Tabela~\ref{tab:mcp-categorias}.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Categorias de MCPs no OpenCode Ecosystem}
 \label{tab:mcp-categorias}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lll}
 \toprule
 \textbf{Categoria} & \textbf{MCPs} & \textbf{Função} \\
@@ -316,7 +305,6 @@ Raciocínio & sequential-thinking, memory & Raciocínio estruturado \\
 Infraestrutura & filesystem, github & Acesso ao sistema e repositórios \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 Cada MCP é configurado no arquivo \codigo{opencode.json} com seus
@@ -361,7 +349,7 @@ injetadas no contexto da IA quando ativadas.
 \end{definicao}
 
 As categorias de skills estão detalhadas na Seção~3.6. O mecanismo de
-carregamento é gerenciado pelo módulo \codigo{core/skill\_manager.py}:
+carregamento é gerenciado pelo módulo \codigo{core/skill\\_manager.py}:
 
 \begin{lstlisting}[style=pythonstyle, caption={Mecanismo de carregamento de skills},
                    label={lst:skill-load}]
@@ -554,18 +542,16 @@ O fluxo detalhado é:
 comando e consulta o \codigo{AgentManager} para identificar o agente
 competente;
 \item O \destaque{Agente} selecionado carrega a skill necessária via
-\codigo{SkillManager.load\_skill()};
+\codigo{SkillManager.load\\_skill()};
 \item A \destaque{Skill} invoca um ou mais MCPs para executar operações
 externas;
 \item O resultado percorre o caminho inverso até o usuário.
 \end{enumerate}
 
 \begin{exercicio}
-Identifique no código-fonte os arquivos \\%
-\hspace*{2em}\codigo{core/container.py},
-\codigo{core/orchestrator.py} e \\%
-\hspace*{2em}\codigo{core/agent\_manager.py}. Descreva as
-responsabilidades de cada um. (\nivelbasico)
+Identifique no código-fonte os arquivos \codigo{core/container.py},
+\codigo{core/orchestrator.py} e \codigo{core/agent\\_manager.py}.
+Descreva as responsabilidades de cada um. (\nivelbasico)
 \end{exercicio}
 
 \begin{exercicio}
@@ -581,8 +567,6 @@ ativação. (\nivelintermediario)
 \section{Metodologia SDD+TDD}
 \label{sec:sdd-tdd}
 \nivelintermediario
-
-\paragraph{Especificar antes de construir, testar antes de implementar.} Nenhum engenheiro civil construiria uma ponte sem plantas e sem ensaios de carga. Analogamente, o \opencodeeco{} adota o binômio SDD+TDD como alicerce de todo novo componente: primeiro especifica-se o que se deseja (SDD), depois escrevem-se os testes que validarão o resultado (TDD), e só então implementa-se o código. Esta seção percorre as 13 SPECs formais, as 10 ADRs arquiteturais e as 15 suítes com 312 casos de teste que garantem a qualidade do ecossistema.
 
 O \opencodeeco{} adota a metodologia SDD+TDD como pilar central do
 desenvolvimento. Esta seção detalha ambos os componentes e sua
@@ -622,7 +606,6 @@ ativas.
 \caption{SPECs formais do OpenCode Ecosystem}
 \label{tab:specs}
 \small
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{cllc}
 \toprule
 \textbf{SPEC} & \textbf{Título} & \textbf{CTs} & \textbf{Cobertura} \\
@@ -643,7 +626,6 @@ SPEC-037 & Structural Noise Scanner + N3 & 22 & 100\% \\
 SPEC-038 & Trust Engine \& Behavioral Autonomy & 8 & 100\% \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 Cada SPEC segue um template padronizado com seções obrigatórias:
@@ -752,7 +734,7 @@ markers =
     slow: Testes lentos (> 5s)
 \end{lstlisting}
 
-O script \codigo{run\_all\_cts.py} executa toda a suíte e gera relatórios
+O script \codigo{run\\_all\\_cts.py} executa toda a suíte e gera relatórios
 detalhados:
 
 \begin{lstlisting}[style=pythonstyle, caption={Runner de testes},
@@ -928,7 +910,7 @@ class AutoSummarizer:
 \subsubsection{Etapa 4: Refatoração e Documentação}
 
 A refatoração identifica oportunidades de melhoria: extrair o método
-\codigo{\_call\_llm} para um serviço separado, adicionar cache de
+\codigo{\\_call\\_llm} para um serviço separado, adicionar cache de
 resultados e implementar rate limiting. A ADR correspondente
 (architectu-011) documenta a decisão de separar a camada de LLM em um
 serviço independente para facilitar testes e substituição de modelos.
@@ -958,8 +940,6 @@ múltiplos idiomas). Implemente o teste e o código correspondente.
 \label{sec:event-bus}
 \nivelavancado
 
-\paragraph{O sistema circulatório do ecossistema.} Se os MCPs são os músculos e as Skills são o cérebro, o barramento de eventos e o container de injeção de dependência são o sistema circulatório e nervoso do \opencodeeco{}. O Event Bus permite que componentes troquem mensagens sem se conhecer, enquanto o Container DI gerencia o ciclo de vida e as dependências de cada módulo. Esta seção explora ambos os mecanismos e mostra como eles viabilizam a comunicação assíncrona e o desacoplamento entre centenas de componentes.
-
 O barramento de eventos e o container de injeção de dependência formam
 a espinha dorsal da comunicação entre componentes no \opencodeeco{}.
 Esta seção detalha ambos os mecanismos e sua integração
@@ -980,7 +960,7 @@ consumidores, e consumidores se inscrevem para receber eventos sem
 conhecer os produtores.
 \end{definicao}
 
-A implementação no \opencodeeco{} está em \codigo{core/event\_bus.py}:
+A implementação no \opencodeeco{} está em \codigo{core/event\\_bus.py}:
 
 \begin{lstlisting}[style=pythonstyle, caption={Event Bus assincrono},
                    label={lst:event-bus}]
@@ -1068,10 +1048,8 @@ Tabela~\ref{tab:container-gerenciadores}.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Gerenciadores do Container DI}
 \label{tab:container-gerenciadores}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lll}
 \toprule
 \textbf{Gerenciador} & \textbf{Classe} & \textbf{Função} \\
@@ -1086,7 +1064,6 @@ Cache Service & core/cache.py & Cache centralizado \\
 Config & core/config.py & Configuração centralizada \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{Cache e Configuração Centralizada}
@@ -1197,8 +1174,6 @@ em disco e o recupere na inicialização. (\nivelavancado)
 \label{sec:plugins-comandos}
 \nivelintermediario
 
-\paragraph{Extensibilidade como princípio.} Um bom sistema de software não se limita ao que seus criadores previram — ele oferece pontos de extensão para que a comunidade adicione novas capacidades. O \opencodeeco{} concretiza esse princípio por meio de 15 plugins e 14 comandos slash, além de um menu adaptativo que descobre dinamicamente as funcionalidades disponíveis. Esta seção apresenta o PluginManager, o Discovery Engine e o mecanismo de evolução autônoma Manus Evolve.
-
 O \opencodeeco{} possui um sistema de extensão baseado em plugins e
 comandos slash que permite adicionar novas funcionalidades sem modificar
 o núcleo do ecossistema \cite{pressman2016engenharia,
@@ -1213,8 +1188,8 @@ O ecossistema conta com 15 plugins distribuídos em três categorias:
 \item \textbf{10 plugins npm}: bibliotecas JavaScript para extensão de
 funcionalidades (ex.: \codigo{opencode-plugin-autoevolve},
 \codigo{opencode-plugin-ecosystem-sync});
-\item \textbf{2 plugins .ts locais}: plug-ins TypeScript em \\%
-\hspace*{2em}\codigo{plugins/} (ex.: \codigo{manus-evolve.ts});
+\item \textbf{2 plugins .ts locais}: plug-ins TypeScript no diretório
+\codigo{plugins/} (ex.: \codigo{manus-evolve.ts});
 \item \textbf{3 plugins bridge}: conectores entre o ecossistema e
 ferramentas externas.
 \end{itemize}
@@ -1261,10 +1236,8 @@ específicas do ecossistema, conforme a Tabela~\ref{tab:comandos-slash}.
 
 \begin{table}[htb]
 \centering
-    \small
 \caption{Comandos slash do OpenCode Ecosystem}
 \label{tab:comandos-slash}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{cll}
 \toprule
 \textbf{Comando} & \textbf{Função} & \textbf{MCPs/Plugins acionados} \\
@@ -1285,7 +1258,6 @@ específicas do ecossistema, conforme a Tabela~\ref{tab:comandos-slash}.
 \codigo{/status} & Status do ecossistema & state-manager \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 \subsection{Menu Adaptativo com Discovery Engine}
@@ -1432,7 +1404,7 @@ class ManusEvolve:
 \end{lstlisting}
 
 \begin{exercicio}
-Registre um novo plugin no \codigo{.menu\_registry.json} com um comando
+Registre um novo plugin no \codigo{.menu\\_registry.json} com um comando
 personalizado. Teste a descoberta automática pelo menu adaptativo.
 (\nivelintermediario)
 \end{exercicio}
@@ -1451,8 +1423,6 @@ ação, reflita sobre o resultado e extraia insights. Documente o processo.
 \label{sec:skills-detalhado}
 \nivelavancado
 
-\paragraph{O conhecimento como insumo reutilizável.} Em uma fábrica de software, as skills são equivalentes a receitas culinárias: cada uma contém instruções precisas, ingredientes (MCPs) e um resultado esperado. O \opencodeeco{} reúne 227 skills em 13 categorias, desde predição de estruturas proteicas com AlphaFold até análise de falácias lógicas com o motor Critical. Esta seção detalha as principais categorias — Science, Reasoning, Research, System, Juridical e Agency — com exemplos reais de uso.
-
 O \opencodeeco{} possui 227 skills organizadas em 13 categorias. Esta
 seção detalha as principais categorias, sua implementação e exemplos
 de uso \cite{white2023prompt, wei2022chain, wang2024survey}.
@@ -1469,7 +1439,6 @@ focadas em biologia computacional, química, física e ciência de dados
 \caption{Science Skills do OpenCode Ecosystem}
 \label{tab:science-skills}
 \small
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lll}
 \toprule
 \textbf{Skill} & \textbf{Função} & \textbf{Fontes de Dados} \\
@@ -1489,7 +1458,6 @@ PDB & Estrutura de proteínas & RCSB PDB \\
 STRING & Interações proteína-proteína & STRING DB \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 
 Exemplo de uso da skill \codigo{science/pubmed}:
@@ -1658,8 +1626,8 @@ skills por categoria.
 \centering
 \caption{Distribuição de skills por categoria}
 \label{fig:skill-categories}
-\begin{tikzpicture}[scale=0.85]
-  \draw (0,0) -- (8.5,0);
+\begin{tikzpicture}
+  \draw (0,0) -- (10,0);
   \foreach \name/\count/\color/\y in {
     Science/38/blue/1.5,
     Research/42/green/1.0,
@@ -1669,13 +1637,13 @@ skills por categoria.
     Agency/12/cyan/-1.0,
     Outras/98/gray/-1.5
   } {
-    \pgfmathsetmacro{\width}{\count * 0.07}
+    \pgfmathsetmacro{\width}{\count * 0.08}
     \filldraw[fill=\color!20, draw=\color!50!black]
       (0, \y) rectangle (\width, \y+0.4);
-    \node[font=\footnotesize] at (\width+0.2, \y+0.2) {\name{} (\count)};
+    \node[font=\small] at (\width+0.3, \y+0.2) {\name{} (\count)};
   }
-  \draw[->] (0,-1.7) -- (9,-1.7);
-  \node[font=\footnotesize] at (9, -2.0) {Quantidade de skills};
+  \draw[->] (0,-1.7) -- (10.5,-1.7);
+  \node[font=\small] at (10.5, -2.0) {Quantidade de skills};
 \end{tikzpicture}
 \end{figure}
 
@@ -1703,8 +1671,6 @@ disponíveis para sua região. (\nivelintermediario)
 \label{sec:nexus}
 \nivelphd
 
-\paragraph{A orquestração de múltiplas inteligências.} Coordenar dezenas de agentes inteligentes é como reger uma orquestra sinfônica: cada músico toca seu instrumento, mas todos devem seguir o mesmo maestro e respeitar os mesmos compassos. O módulo Nexus do \opencodeeco{} exerce esse papel de regência, gerenciando 488 arquivos em seis camadas de granularidade (L0 a L6), 120 barreiras de sincronização e 212 tipos de raciocínio. Esta seção revela a arquitetura do Nexus, seus mecanismos de auto-cura e o gerenciamento de contexto entre agentes.
-
 O módulo Nexus é o sistema nervoso central do \opencodeeco{},
 responsável pela orquestração de múltiplos agentes, sincronização de
 estados e coordenação de tarefas complexas
@@ -1731,7 +1697,7 @@ decomposição de tarefas;
 \item \textbf{L6 -- Evolução}: aprendizado e adaptação do sistema.
 \end{itemize}
 
-O meta-orquestrador (\codigo{nexus/scripts/meta\_orchestrator.py})
+O meta-orquestrador (\codigo{nexus/scripts/meta\\_orchestrator.py})
 coordena a execução dos agentes:
 
 \begin{lstlisting}[style=pythonstyle, caption={Meta-orquestrador Nexus},
@@ -1822,19 +1788,6 @@ class MetaOrchestrator:
         await healer.heal(task)
 \end{lstlisting}
 
-\subsection{Multi-Reasoning e o Pool de 128 Agentes (N3.5+)}
-O \codigo{OrchestrationEngine} foi refatorado em sua versão N3.5+ para operar dinamicamente um \emph{Pool} de 128 agentes virtuais. Cada agente é classificado em categorias heurísticas, mas o grande diferencial cognitivo é a injeção do \codigo{MultiReasoningEngine}, que suporta simultaneamente 6 eixos epistemológicos:
-\begin{enumerate}
-\item \textbf{Dedutivo:} Derivação top-down de premissas maiores para conclusões lógicas.
-\item \textbf{Indutivo:} Observação empírica (bottom-up) para identificação de padrões em massa.
-\item \textbf{Abdutivo:} "Inferência para a melhor explicação", usado pelo orquestrador para preencher lacunas e criar hipóteses de causa raiz em falhas.
-\item \textbf{Analógico:} Comparação estrutural de domínios distintos para aplicar soluções de software de outras esferas a problemas não resolvidos.
-\item \textbf{Causal:} Análise preditiva do \emph{por que} e \emph{quais os efeitos} em cadeia.
-\item \textbf{Metacognitivo:} O agente analisa sua própria linha de raciocínio lógico (\emph{Chain of Thought}) antes de emitir a resposta.
-\end{enumerate}
-
-Essa abordagem granular garante o roteamento de tarefas (\emph{Load Balancing}) com taxa de sucesso rastreável e possibilita a auto-cura sistêmica profunda documentada na Tese do Projeto.
-
 \subsection{Sincronização e Barreiras}
 \label{subsec:sync-barriers}
 
@@ -1881,7 +1834,7 @@ class SyncBarrier:
 \subsection{Auto-cura: Self Healer}
 \label{subsec:self-healer}
 
-O módulo \codigo{self\_healer.py} implementa detecção e recuperação
+O módulo \codigo{self\\_healer.py} implementa detecção e recuperação
 autônoma de falhas:
 
 \begin{lstlisting}[style=pythonstyle, caption={Mecanismo de auto-cura},
@@ -2014,8 +1967,6 @@ e registre-o no catálogo do Nexus. (\nivelphd)
 \section{MiroFish/BettaFish: P14--P18}
 \label{sec:mirofish}
 \nivelphd
-
-\paragraph{Da argumentação à auditoria com rigor científico.} Um debate acadêmico não termina na troca de argumentos — ele exige métricas objetivas, concordância entre juízes e correção para múltiplas comparações. O pipeline P14--P18 do \opencodeeco{} implementa esse percurso completo: começa no Agent Forum (debate multiagente com 212+ estratégias de raciocínio) e culmina no PhD Auditor, que aplica equilíbrio de Nash, Kappa de Cohen, correção de Bonferroni e classificação Qualis A1. Esta seção descreve cada módulo do pipeline com exemplos práticos.
 
 O módulo MiroFish/BettaFish implementa o pipeline completo de avaliação
 acadêmica e auditoria, integrando agentes de debate, análise
@@ -2270,8 +2221,6 @@ resultados. (\nivelphd)
 \label{sec:engenharia-software}
 \nivelavancado
 
-\paragraph{Engenharia de software como prática reflexiva.} O \opencodeeco{} não é apenas uma ferramenta — é uma demonstração viva de que a engenharia de software pode ser praticada com o mesmo rigor metodológico da engenharia civil ou mecânica. Esta seção mostra como os quatro pilares do SWEBOK (requisitos, projeto, construção, qualidade) são aplicados no ecossistema, como a política de Git Safety protege o trabalho colaborativo e como os 18 agentes do módulo Reversa realizam engenharia reversa automatizada.
-
 O \opencodeeco{} não é apenas uma plataforma técnica --- é também uma
 materialização dos princípios da engenharia de software como disciplina
 formal \cite{sommerville2011engenharia, pressman2016engenharia,
@@ -2333,7 +2282,7 @@ agentes especializados \cite{fowler2019refactoring}:
 \subsection{Documentação: SPEC\_COVERAGE.md (186/186 = 100\%)}
 \label{subsec:spec-coverage}
 
-O arquivo \codigo{docs/SPEC\_COVERAGE.md} documenta a cobertura de todos
+O arquivo \codigo{docs/SPEC\\_COVERAGE.md} documenta a cobertura de todos
 os 186 componentes do ecossistema, atingindo 100\% de documentação:
 
 \begin{lstlisting}[style=pythonstyle, caption={Cobertura de documentacao},
@@ -2373,13 +2322,13 @@ estilo cyberpunk;
 
 \begin{exercicio}
 Analise um módulo do ecossistema utilizando o agente Reversa
-\codigoquebravel{analisador-estrutural}. Documente os padrões de projeto
+\codigo{analisador-estrutural}. Documente os padrões de projeto
 identificados. (\nivelavancado)
 \end{exercicio}
 
 \begin{exercicio}
 Verifique a cobertura de documentação do ecossistema executando
-\codigo{python scripts/check\_spec\_coverage.py}. (\nivelbasico)
+\codigo{python scripts/check\\_spec\\_coverage.py}. (\nivelbasico)
 \end{exercicio}
 
 % =============================================================================
@@ -2390,8 +2339,6 @@ Verifique a cobertura de documentação do ecossistema executando
 \label{sec:laboratorio}
 \textbf{Todos os níveis}
 
-\paragraph{Colocando a mão no código.} Uma partitura pode ser linda, mas a música só existe quando os instrumentos são tocados. Após percorrer a teoria e a arquitetura do \opencodeeco{}, esta seção convida o leitor a experimentar na prática: instalar o ecossistema, executar comandos, criar uma skill personalizada, rodar a suíte de testes e explorar agentes e MCPs. Os exercícios progressivos — do nível zero ao PhD — consolidam o aprendizado e preparam o leitor para contribuir com o ecossistema.
-
 Esta seção final oferece um roteiro prático para explorar o
 \opencodeeco{} em todos os níveis, do zero ao PhD.
 
@@ -2399,13 +2346,14 @@ Esta seção final oferece um roteiro prático para explorar o
 \label{subsec:lab-instalacao}
 
 \begin{enumerate}
-\item Clone o repositório: \\\hspace*{2em}\codigo{git clone} \\%
-\hspace*{4em}\codigo{https://github.com/marceloclaro/opencode-ecosystem.git};
-\item Instale dependências Python: \\\hspace*{2em}\codigo{pip install -r requirements.txt};
+\item Clone o repositório: \codigo{git clone
+https://github.com/marceloclaro/opencode-ecosystem.git};
+\item Instale dependências Python: \codigo{pip install -r
+requirements.txt};
 \item Instale dependências Node.js: \codigo{npm install};
 \item Copie o arquivo de ambiente: \codigo{cp .env.example .env};
 \item Configure as chaves de API no arquivo \codigo{.env};
-\item Execute a validação: \codigo{python scripts/validate\_installation.py}.
+\item Execute a validação: \codigo{python scripts/validate\\_installation.py}.
 \end{enumerate}
 
 \subsection{Primeiro Comando: /auto}

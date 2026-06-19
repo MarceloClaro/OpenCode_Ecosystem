@@ -5,13 +5,6 @@
 % =============================================================================
 \chapter{Inteligência Artificial e Arquitetura de Agentes Cognitivos}
 \label{cap:inteligencia-artificial-agentes}
-
-\paragraph{O cérebro do ecossistema.} Se o Capítulo~1 forneceu a matemática
---- a ``linguagem'' com a qual descrevemos e analisamos sistemas ---, este
-capítulo apresenta o ``cérebro'': a inteligência artificial e as arquiteturas
-de agentes que dão vida ao \opencodeeco{}. Aqui exploraremos como máquinas
-podem aprender, raciocinar e agir de forma autônoma.
-
 A inteligência artificial (IA) deixou de ser uma promessa futurista para se
 tornar o motor central da transformação digital contemporânea. Dos assistentes
 virtuais aos sistemas de recomendação, dos carros autônomos aos agentes de
@@ -27,10 +20,8 @@ A Tabela~\ref{tab:conteudo-capitulo2} apresenta a estrutura do capítulo com
 os níveis de dificuldade e carga horária estimada.
 \begin{table}[htb]
 \centering
-    \small
 \caption{Conteúdo do Capítulo 2}
 \label{tab:conteudo-capitulo2}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{clcc}
 \toprule
 \textbf{Seção} & \textbf{Tópico} & \textbf{Nível} & \textbf{Estudo} \\
@@ -46,7 +37,6 @@ os níveis de dificuldade e carga horária estimada.
 2.9 & Integração Prática no \opencodeeco{} & \text{Todos} & 6h \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 % =============================================================================
 % SEÇÃO 2.1: FUNDAMENTOS DE INTELIGÊNCIA ARTIFICIAL
@@ -55,13 +45,6 @@ os níveis de dificuldade e carga horária estimada.
 \section{Fundamentos de Inteligência Artificial}
 \label{sec:fundamentos-ia}
 \nivelzero
-
-\paragraph{Como ensinar máquinas a pensar?} O que significa uma máquina ser
-``inteligente''? É executar instruções pré-programadas ou aprender com a
-experiência? Esta seção percorre as origens da IA, desde o Teste de Turing
-até o debate entre abordagens simbólicas e conexionistas --- duas visões que
-o \opencodeeco{} combina em sua arquitetura híbrida.
-
 A inteligência artificial, como campo de estudo formal, nasceu no verão de
 1956, quando um grupo de pesquisadores se reuniu no Dartmouth College para o
 que ficou conhecido como o ``Dartmouth Summer Research Project on Artificial
@@ -109,10 +92,8 @@ emergente das conexões ponderadas entre as unidades
 A Tabela~\ref{tab:simbólica-conexionista} contrasta as duas abordagens.
 \begin{table}[htb]
 \centering
-    \small
 \caption{IA Simbólica versus Conexionista}
 \label{tab:simbólica-conexionista}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lll}
 \toprule
 \textbf{Dimensão} & \textbf{Simbólica} & \textbf{Conexionista} \\
@@ -125,7 +106,6 @@ Interpretabilidade & Alta & Baixa \\
 Exemplo & Sistemas especialistas & Redes neurais profundas \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 O \opencodeeco{} adota uma abordagem \destaque{híbrida}: utiliza
 raciocínio simbólico (lógica, motores formais) combinado com redes neurais
@@ -246,15 +226,6 @@ estudo de caso.
 \section{Aprendizado de Máquina: Fundamentos}
 \label{sec:aprendizado-maquina}
 \nivelbasico
-
-\paragraph{Ensinar é diferente de programar.} Em vez de fornecer regras
-explícitas para cada decisão, o aprendizado de máquina permite que o
-computador descubra padrões a partir de dados. É como ensinar uma criança a
-identificar gatos mostrando-lhe muitas fotos, em vez de descrever
-exaustivamente cada característica felina. No \opencodeeco{}, o aprendizado
-de máquina está presente nos embeddings de skills, no TrustScorer (que
-aprende a calibrar scores) e nos sistemas de recomendação de skills.
-
 O aprendizado de máquina (\textit{machine learning}) é o subcampo da IA que
 confere aos computadores a capacidade de aprender sem serem explicitamente
 programados \cite{bishop2006pattern, hastie2009elements}. Em vez de codificar
@@ -269,10 +240,8 @@ desempenho em $T$, medido por $P$, melhora com a experiência $E$
 A Tabela~\ref{tab:paradigmas-ml} resume os três principais paradigmas.
 \begin{table}[htb]
 \centering
-    \small
 \caption{Paradigmas de Aprendizado de Máquina}
 \label{tab:paradigmas-ml}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lll}
 \toprule
 \textbf{Paradigma} & \textbf{Dados} & \textbf{Objetivo} \\
@@ -282,7 +251,6 @@ Não-supervisionado & $\{x_i\}_{i=1}^n$ & Descobrir estrutura latente \\
 Por reforço & $(s_t, a_t, r_t, s_{t+1})$ & Maximizar recompensa acumulada \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 \subsection{Aprendizado Supervisionado}
 No aprendizado supervisionado, o modelo recebe pares
@@ -525,7 +493,7 @@ Explique a diferença entre underfitting e overfitting. Desenhe (conceitualmente
 como cada um se manifesta em uma curva de aprendizado.
 \end{exercicio}
 \begin{exercicio}[Nivel Intermediário]
-Usando o \texttt{make\_classification} (do \\\hspace*{2em}\texttt{sklearn.datasets}), compare a acurácia
+Usando o \texttt{sklearn.datasets.make\_classification}, compare a acurácia
 de SVM, Random Forest e k-NN em validação cruzada 5-fold. Qual generaliza
 melhor? Por quê?
 \end{exercicio}
@@ -545,15 +513,6 @@ selecionar hiperparâmetros automaticamente.
 \section{Redes Neurais e Deep Learning}
 \label{sec:redes-neurais}
 \nivelintermediario
-
-\paragraph{Inspiração biológica, execução matemática.} Se o aprendizado de
-máquina tradicional usa algoritmos projetados à mão, o \textit{deep learning}
-constrói suas próprias representações --- camada por camada. Cada camada
-extrai características progressivamente mais abstratas: da borda ao olho, do
-olho ao rosto, do rosto à pessoa. No \opencodeeco{}, o deep learning está
-na base dos LLMs que alimentam os agentes, nos modelos de embedding que
-medem similaridade entre skills e nos classificadores do Behavioral Gate.
-
 As redes neurais artificiais são modelos computacionais inspirados na
 estrutura do cérebro biológico. O \destaque{Deep Learning} refere-se a
 redes neurais com múltiplas camadas ocultas, capazes de aprender
@@ -649,10 +608,8 @@ self.params[f"b{i}"] -= 0.01 * db
 A Tabela~\ref{tab:ativacoes} apresenta as principais funções de ativação.
 \begin{table}[htb]
 \centering
-    \small
 \caption{Funções de ativação mais comuns}
 \label{tab:ativacoes}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lll}
 \toprule
 \textbf{Função} & \textbf{Fórmula} & \textbf{Característica} \\
@@ -663,7 +620,6 @@ ReLU & $\text{ReLU}(z) = \max(0, z)$ & Não satura, neurônios mortos \\
 GELU & $\text{GELU}(z) = z\Phi(z)$ & Suave, usada em transformers \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 A função \destaque{ReLU} (\textit{Rectified Linear Unit}) é a mais utilizada
 em redes profundas por mitigar o problema do gradiente evanescente
@@ -686,7 +642,7 @@ características extraídas para a classificação final.
 \centering
 \caption{Arquitetura de uma CNN para classificação de imagens}
 \label{fig:cnn}
-\begin{tikzpicture}[scale=0.55]
+\begin{tikzpicture}[scale=0.7]
 \fill[blue!20] (0, -1) rectangle (3, 2);
 \node at (1.5, 0.5) {\tiny Imagem};
 \node at (1.5, 2.3) {\tiny $32\times32\times3$};
@@ -831,17 +787,6 @@ e classificar padrões de comportamento.
 \section{Transformers e Modelos de Linguagem de Grande Escala}
 \label{sec:transformers-llms}
 \nivelavancado
-
-\paragraph{A revolução da atenção.} Até 2017, redes neurais processavam
-sequências de forma sequencial (uma palavra de cada vez) com LSTMs e GRUs.
-O Transformer mudou tudo: ele processa todas as palavras em paralelo,
-usando um mecanismo de \textbf{atenção} que decide quais partes da entrada
-são relevantes para cada posição da saída. É como ler um livro inteiro de
-uma só vez, em vez de palavra por palavra. No \opencodeeco{}, os 128 agentes
-utilizam LLMs baseados em Transformers (DeepSeek, GPT, Claude) como motor
-de raciocínio, combinados com o mecanismo de atenção para selecionar MCPs e
-skills relevantes em cada contexto.
-
 A publicação do artigo \textit{Attention Is All You Need} por Vaswani et
 al. \cite{vaswani2017attention} em 2017 revolucionou o processamento de
 linguagem natural e, subsequentemente, toda a inteligência artificial.
@@ -1106,17 +1051,6 @@ Behavioral Gate deve permitir a ação?''.
 \section{Engenharia de Prompts e Raciocínio}
 \label{sec:engenharia-prompts}
 \nivelavancado
-
-\paragraph{Programar com linguagem natural.} Se um Transformer é o motor, o
-prompt é o volante. A engenharia de prompts é a arte e a ciência de
-formular instruções para LLMs de modo a obter respostas úteis, precisas e
-seguras. Não se trata de adivinhação: técnicas como \textit{chain-of-thought}
-(``pense passo a passo''), \textit{few-shot} (fornecer exemplos) e
-\textit{role prompting} (atribuir uma persona) têm base teórica e resultados
-mensuráveis. No \opencodeeco{}, cada um dos 128 agentes possui um prompt
-sistêmico projectado para maximizar sua especialidade --- e o Trust Engine
-monitora se os agentes estão seguindo o prompt ou desviando do objetivo.
-
 A engenharia de prompts emergiu como uma disciplina crucial para extrair
 raciocínio de alta qualidade de LLMs. Diferentemente da programação
 tradicional, onde instruções são executadas deterministicamente, prompts
@@ -1267,10 +1201,8 @@ categorias \cite{opencode2026ecosystem}. A Tabela~\ref{tab:raciocinios}
 apresenta as categorias principais.
 \begin{table}[htb]
 \centering
-    \small
 \caption{Categorias de raciocínio do OpenCode Ecosystem}
 \label{tab:raciocinios}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{llr}
 \toprule
 \textbf{Categoria} & \textbf{Exemplos} & \textbf{Qtd.} \\
@@ -1284,7 +1216,6 @@ Inovação & Analógico, reverso, lateral & 8 \\
 Científico & Hipotético-dedutivo, causal, Popper & 12 \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 \begin{lstlisting}[style=pythonstyle]
 # Exemplo: uso de raciocinio logico no OpenCode
@@ -1343,17 +1274,6 @@ que explore múltiplos planos de execução para um pipeline de scanners
 \section{Sistemas Multiagentes}
 \label{sec:sistemas-multiagentes}
 \nivelavancado
-
-\paragraph{Muitas cabeças pensam melhor que uma.} Um único LLM, por mais
-poderoso que seja, tem limitações: contexto finito, viés de confirmação,
-dificuldade com tarefas paralelas. Sistemas multiagentes (MAS) resolvem
-estes problemas dividindo o trabalho entre agentes especializados que
-coordenam, cooperam e até competem entre si. O \opencodeeco{} opera 128
-agentes --- de revisores de código a analisadores de bioinformática --- cada
-um com sua skill, seu prompt e seu escopo. O desafio central de um MAS é a
-\textbf{coordenação}: como garantir que 128 especialistas trabalhem em
-harmonia sem conflitos ou retrabalho?
-
 Enquanto um único agente inteligente resolve problemas limitados, sistemas
 multiagentes (MAS) permitem a resolução de problemas complexos através da
 coordenação, cooperação e competição entre múltiplos agentes
@@ -1511,10 +1431,8 @@ industrial. A Tabela~\ref{tab:agentes-opencode} resume seus componentes
 ativos.
 \begin{table}[htb]
 \centering
-    \small
 \caption{Agentes do OpenCode Ecosystem}
 \label{tab:agentes-opencode}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lrrl}
 \toprule
 \textbf{Família} & \textbf{Qtd.} & \textbf{Função} \\
@@ -1526,7 +1444,6 @@ Reversa & 18 & Engenharia reversa \\
 Ling. Corretor & 1 & Correção PT-BR \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 \subsection{Agentes Especializados}
 \subsubsection*{MASWOS (49 agentes)}
@@ -1573,16 +1490,6 @@ teoria dos jogos cooperativos de Nash. Em que condições o staking de 7 dias
 \section{Motores de Raciocínio Formal}
 \label{sec:motor formal}
 \nivelphd
-
-\paragraph{Quando provas importam mais que palpites.} LLMs são excelentes em
-gerar texto plausível, mas péssimos em garantias --- eles ``acham'' em vez
-de ``provar''. Para decisões críticas (validação de regras do Trust Engine,
-verificação de consistência de specs, otimização de rotas), precisamos de
-motores que entreguem resultados \textbf{comprovadamente corretos}. O
-\opencodeeco{} integra quatro motores de raciocínio formal, cada um com uma
-especialidade: prova de teoremas (Z3), manipulação simbólica (SymPy),
-programação lógica (miniKanren) e detecção de falácias (Critical).
-
 Enquanto LLMs oferecem raciocínio probabilístico e flexível, aplicações
 críticas exigem garantias formais de correção. O \opencodeeco{} integra
 quatro motores de raciocínio formal que complementam a capacidade dos LLMs
@@ -1778,16 +1685,6 @@ arquitetural.
 \section{Agentes Autônomos e Ciclo Percepção-Ação}
 \label{sec:agentes-autonomos}
 \nivelphd
-
-\paragraph{Agentes que se governam.} Um agente autônomo não espera comandos:
-ele percebe o ambiente, decide e age. O ciclo percepção $\to$ raciocínio
-$\to$ ação é o coração de qualquer sistema inteligente. No \opencodeeco{},
-cada um dos 128 agentes segue uma variação deste ciclo: o agente recebe um
-contexto (percepção), consulta seus MCPs e skills (raciocínio), e produz
-saída ou executa uma ação (ação). O Trust Engine (SPEC-038) monitora
-continuamente este ciclo, verificando se as ações estão alinhadas com os
-objetivos e regras definidos.
-
 Agentes autônomos operam sem intervenção humana direta, tomando decisões
 baseadas em suas percepções do ambiente e seus objetivos internos. O ciclo
 percepção-ação é o mecanismo fundamental que governa esse comportamento
@@ -1976,12 +1873,6 @@ agentes no \opencodeeco{}.
 % =============================================================================
 \section{Integração Prática no OpenCode Ecosystem}
 \label{sec:integração-pratica}
-
-\paragraph{Teoria em ação.} Da IA simbólica aos agentes autônomos, cada
-conceito deste capítulo tem uma implementação concreta no \opencodeeco{}.
-Esta seção apresenta exemplos práticos de uso, conectando a teoria à
-linha de comando que você pode executar hoje mesmo para ver agentes em ação.
-
 O \opencodeeco{} materializa todos os conceitos deste capítulo em um
 ecossistema funcional de engenharia de software com agentes cognitivos.
 Esta seção apresenta exemplos práticos de uso.
@@ -2007,10 +1898,8 @@ A Tabela~\ref{tab:comandos-opencode} resume os comandos principais e suas
 funções.
 \begin{table}[htb]
 \centering
-    \small
 \caption{Comandos do OpenCode CLI}
 \label{tab:comandos-opencode}
-    \resizebox{\textwidth}{!}{
 \begin{tabular}{lll}
 \toprule
 \textbf{Comando} & \textbf{Função} & \textbf{MCPs/Skills} \\
@@ -2023,7 +1912,6 @@ funções.
 \texttt{/artigo} & Produção acadêmica & SEEKER, artigo, manus-evolve \\
 \bottomrule
 \end{tabular}
-    }
 \end{table}
 As skills de IA disponíveis (\cite{opencode2026scanner, opencode2026spec036})
 incluem:

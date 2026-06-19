@@ -40,9 +40,7 @@ carga horária estimada para estudo.
 
 \begin{table}[htb]
     \centering
-    \small
     \caption{Conteúdo do Capítulo 1}
-    \resizebox{\textwidth}{!}{
     \label{tab:conteudo-capitulo1}
     \begin{tabular}{clcc}
         \toprule
@@ -60,7 +58,6 @@ carga horária estimada para estudo.
         1.10 & Integração com o \opencodeeco & \text{Todos} & 4h \\
         \bottomrule
     \end{tabular}
-    }
 \end{table}
 
 Recomenda-se ao leitor que, munido do \opencodeeco{} instalado, execute cada
@@ -84,27 +81,11 @@ que raciocinam sobre o mundo.
 
 \subsection{Proposições e Conectivos Lógicos}
 
-\paragraph{Por que isso é importante.} Antes de construirmos sistemas
-inteligentes, precisamos de uma linguagem precisa para descrever o que é
-verdadeiro e o que é falso. No dia a dia, usamos frases como ``se o agente
-detectou uma ameaça, então ele deve mudar para o modo shadow''. A lógica
-matemática dá um tratamento rigoroso a esse tipo de raciocínio, eliminando
-ambiguidades e permitindo que máquinas tomem decisões corretas. Sem essa
-base, o Trust Engine do \opencodeeco{} não poderia garantir que suas regras
-de segurança são consistentes.
-
 \begin{definicao}[Proposição]
     Uma \destaque{proposição} é uma sentença declarativa que pode ser
     classificada como verdadeira ($V$) ou falsa ($F$), mas não ambas
     simultaneamente.
 \end{definicao}
-
-\paragraph{Interpretação intuitiva.} Uma proposição é como uma ``chave
-liga/desliga'' para uma afirmação: ou está em $V$ (verdadeiro) ou em $F$
-(falso). Perguntas (``qual é o score?'') e comandos (``execute o scanner'')
-não são proposições porque não podem ser classificados como verdadeiros ou
-falsos. Esta distinção é crucial: quando programamos um agente, cada condição
-em um \lstinline{if} deve ser uma proposição bem definida.
 
 \begin{exemplo}
     São proposições:
@@ -121,30 +102,13 @@ em um \lstinline{if} deve ser uma proposição bem definida.
     \end{itemize}
 \end{exemplo}
 
-Os conectivos lógicos são os ``operadores'' da lógica, análogos às operações
-aritméticas ($+$, $-$, $\times$) na matemática. Assim como somamos números
-para obter novos números, combinamos proposições com conectivos para obter
-novas proposições, cujo valor-verdade depende dos valores das originais.
-A Tabela~\ref{tab:conectivos} apresenta os cinco conectivos fundamentais.
-
-\paragraph{Analogia prática.} Imagine que você está programando as regras de
-um agente no \opencodeeco{}:
-\begin{itemize}
-    \item ``Se \textbf{o score de confiança é alto} ($p$) \textbf{e}
-          \textbf{a ação não está na lista de risco} ($q$), então o agente
-          executa a ação.'' — aqui usamos conjunção ($p \land q$).
-    \item ``Se \textbf{o agente falhou} ($p$) \textbf{ou} \textbf{o
-          diagnóstico apontou erro crítico} ($q$), então o sistema entra em
-          modo de reparo.'' — aqui usamos disjunção ($p \lor q$).
-\end{itemize}
-Cada conectivo tem uma tabela-verdade que define exatamente quando a
-sentença composta é verdadeira.
+Os conectivos lógicos permitem combinar proposições para formar sentenças
+mais complexas. A Tabela~\ref{tab:conectivos} apresenta os cinco conectivos
+fundamentais.
 
 \begin{table}[htb]
     \centering
-    \small
     \caption{Conectivos lógicos fundamentais}
-    \resizebox{\textwidth}{!}{
     \label{tab:conectivos}
     \begin{tabular}{cccc}
         \toprule
@@ -159,7 +123,6 @@ sentença composta é verdadeira.
         equivalência \\
         \bottomrule
     \end{tabular}
-    }
 \end{table}
 
 \begin{definicao}[Tabela-verdade]
@@ -167,15 +130,6 @@ sentença composta é verdadeira.
     combinações de valores-verdade das proposições componentes e o
     valor-verdade resultante da expressão lógica.
 \end{definicao}
-
-\paragraph{Como construir uma tabela-verdade.} O número de linhas em uma
-tabela-verdade é $2^n$, onde $n$ é o número de proposições. Com 2
-proposições ($p$ e $q$), temos $2^2 = 4$ combinações; com 3 proposições,
-$2^3 = 8$. Para construir uma, liste todas as combinações possíveis de $V$
-e $F$ para as proposições de entrada e, em seguida, calcule o resultado
-passo a passo, aplicando cada conectivo na ordem correta. Este procedimento
-é tão sistemático que pode ser — e é — executado por computadores para
-verificar automaticamente a correção de circuitos lógicos e programas.
 
 A Figura~\ref{fig:tabela-verdade-conectivos} ilustra as tabelas-verdade dos
 conectivos fundamentais, gerada com TikZ.
@@ -256,15 +210,9 @@ def behavioral_gate(action: str, trust_score: float) -> bool:
 
 \subsection{Lógica de Predicados e Quantificadores}
 
-\paragraph{Por que a lógica proposicional não é suficiente.}
-Com apenas proposições e conectivos, só podemos falar sobre verdades
-isoladas: ``o agente é confiável'', ``o scanner falhou''. Mas e se
-precisarmos expressar algo como ``\textbf{todo} agente confiável tem score
-acima de 0.7'' ou ``\textbf{existe} um MCP que atende a todos os agentes''?
-A lógica proposicional não consegue expressar essas generalizações. É aqui
-que a lógica de predicados entra: ela nos permite ``abrir'' uma proposição
-para examinar seus componentes internos \cite{russell2020inteligencia,
-wooldridge2009multiagent}.
+Enquanto a lógica proposicional opera sobre proposições atômicas, a lógica
+de predicados permite decompor proposições em objetos e propriedades
+\cite{russell2020inteligencia, wooldridge2009multiagent}.
 
 \begin{definicao}[Lógica de predicados]
     A \destaque{lógica de predicados} estende a lógica proposicional com:
@@ -290,38 +238,6 @@ wooldridge2009multiagent}.
 \end{exemplo}
 
 \subsection{Métodos de Demonstração}
-
-\paragraph{Por que precisamos provar coisas?} Na engenharia de software
-tradicional, testamos um programa com alguns exemplos e, se funcionarem,
-assumimos que está correto. Mas isso nunca é uma garantia --- um bug pode
-estar escondido em um caso de canto que não testamos. A demonstração
-matemática oferece uma certeza que nenhum teste pode dar: se provamos que um
-algoritmo está correto, sabemos que ele funcionará para \textbf{todas} as
-entradas possíveis. No \opencodeeco{}, demonstrações formais são usadas para
-verificar propriedades críticas do Trust Engine, como a correção do
-Behavioral Gate (SPEC-038). A Tabela~\ref{tab:metodos-demonstracao} resume
-os três métodos principais.
-
-\begin{table}[htb]
-    \centering
-    \small
-    \caption{Métodos de demonstração: quando usar cada um}
-    \resizebox{\textwidth}{!}{
-    \label{tab:metodos-demonstracao}
-    \begin{tabular}{lll}
-        \toprule
-        \textbf{Método} & \textbf{Como funciona} & \textbf{Quando usar} \\
-        \midrule
-        Direta & Assume $p$, conclui $q$ & Quando a hipótese fornece
-        informação suficiente para chegar à conclusão \\
-        Contrapositiva & Assume $\neg q$, conclui $\neg p$ & Quando é mais
-        fácil trabalhar com a negação \\
-        Contradição & Assume $p$ e $\neg q$, deriva contradição & Quando a
-        conclusão é mais fácil de negar \\
-        \bottomrule
-    \end{tabular}
-    }
-\end{table}
 
 \begin{definicao}[Demonstração direta]
     Uma \destaque{demonstração direta} da implicação $p \to q$ assume a
@@ -353,17 +269,6 @@ os três métodos principais.
 
 \subsection{Indução Finita}
 
-\paragraph{Como provar que algo vale para todos os números naturais?}
-Suponha que você queira verificar se uma propriedade $P(n)$ é verdadeira
-para $n = 1, 2, 3, \ldots$ até o infinito. Testar um a um é impossível.
-A indução finita resolve este problema com dois passos apenas: provamos que
-$P(1)$ é verdadeira (caso base) e provamos que, se $P(k)$ é verdadeira,
-então $P(k+1)$ também é (passo indutivo). É como uma fileira de dominós:
-se derrubamos o primeiro (caso base) e cada dominó derruba o seguinte
-(passo indutivo), todos cairão. Este princípio é a base para provar
-correção de algoritmos recursivos e, no \opencodeeco{}, para demonstrar a
-convergência do pipeline de scanners ao longo dos ciclos evolutivos.
-
 \begin{definicao}[Princípio da Indução Finita]
     Seja $P(n)$ uma proposição sobre $n \in \mathbb{N}$. Se:
     \begin{enumerate}
@@ -385,38 +290,12 @@ convergência do pipeline de scanners ao longo dos ciclos evolutivos.
 
 \subsection{Álgebra Booleana}
 
-\paragraph{Das proposições aos circuitos.} A álgebra booleana é a ponte entre
-a lógica abstrata e a computação concreta. Enquanto a lógica proposicional
-nos dá as regras para raciocinar, a álgebra booleana nos dá uma
-\textbf{álgebra} para calcular com valores-verdade. Os valores $V$ e $F$
-são tratados como os números $1$ e $0$, e os conectivos $\land$, $\lor$,
-$\neg$ tornam-se operações algébricas com propriedades familiares como
-comutatividade ($p \land q = q \land p$) e distributividade
-($p \land (q \lor r) = (p \land q) \lor (p \land r)$). Esta álgebra é o que
-permite que processadores executem operações lógicas em hardware e que
-programas de computador avaliem expressões booleanas em microssegundos.
-
 \begin{definicao}[Álgebra booleana]
     Uma \destaque{álgebra booleana} é uma estrutura algébrica
     $(B, \land, \lor, \neg, 0, 1)$ que satisfaz os axiomas: comutatividade,
     associatividade, distributividade, identidade, complementação e
     idempotência.
 \end{definicao}
-
-\paragraph{Interpretação intuitiva dos axiomas.} Cada axioma da álgebra
-booleana corresponde a uma propriedade familiar da lógica:
-\begin{itemize}
-    \item \textbf{Comutatividade}: ``$p$ e $q$'' equivale a ``$q$ e $p$''
-          (a ordem não importa);
-    \item \textbf{Associatividade}: ``$(p$ e $q)$ e $r$'' equivale a
-          ``$p$ e $(q$ e $r)$'' (o agrupamento não importa);
-    \item \textbf{Distributividade}: análoga à propriedade distributiva da
-          multiplicação sobre a adição na aritmética;
-    \item \textbf{Idempotência}: ``$p$ e $p$'' é simplesmente $p$ (repetir
-          não acrescenta informação).
-\end{itemize}
-Estas propriedades são usadas no \opencodeeco{} para simplificar expressões
-de regras, tornando a avaliação do Trust Engine mais rápida e eficiente.
 
 A álgebra booleana é a base matemática dos circuitos lógicos digitais e,
 por extensão, de toda a computação. No \opencodeeco{}, as regras de
@@ -468,27 +347,11 @@ TRUST_PASS = (
 \label{sec:teoria-conjuntos}
 \nivelbasico
 
-\paragraph{O que é um conjunto e por que isso importa.} No ecossistema
-\opencodeeco{}, temos 128 agentes, 227 skills, 46 MCPs, 15 plugins, 14
-comandos. Cada um desses grupos é um \textbf{conjunto}: uma coleção de
-objetos que compartilham uma característica. A teoria dos conjuntos,
-desenvolvida por Georg Cantor no final do século XIX, fornece a linguagem
-matemática para descrever essas coleções e as relações entre elas
-\cite{hastie2009elements, wasserman2004all}. Quando um programador escreve
-    \lstinline|agentes_ativos = {a for a in agentes if a.status == ATIVO}|, ele
-está construindo um conjunto --- mesmo que não perceba. Dominar a teoria dos
-conjuntos é, portanto, dominar a própria linguagem na qual a computação é
-expressa.
+A teoria dos conjuntos, desenvolvida por Georg Cantor no final do século XIX,
+fornece a linguagem fundamental para descrever coleções de objetos e as
+relações entre eles \cite{hastie2009elements, wasserman2004all}.
 
 \subsection{Conjuntos e Operações}
-
-\paragraph{A ideia fundamental.} Um conjunto é definido por seus elementos,
-não pela ordem em que aparecem. $\{1, 2, 3\}$ e $\{3, 1, 2\}$ são o mesmo
-conjunto. O que importa é a \textbf{pertinência}: um elemento pertence ou
-não pertence a um conjunto --- não há meio-termo. Esta dualidade
-(pertence/não pertence) é a mesma da lógica (verdadeiro/falso) que vimos na
-Seção~1.1, e não por acaso: a teoria dos conjuntos e a lógica são duas faces
-da mesma moeda matemática.
 
 \begin{definicao}[Conjunto]
     Um \destaque{conjunto} é uma coleção bem definida de objetos distintos,
@@ -539,18 +402,6 @@ da mesma moeda matemática.
 
 \subsection{Cardinalidade}
 
-\paragraph{Quantos elementos cabem em um conjunto?} A \destaque{cardinalidade}
-responde a esta pergunta. Para conjuntos finitos, como $\mathcal{A}$ (128
-agentes), a resposta é um número natural. Mas e para conjuntos infinitos?
-Intuitivamente, existem infinitos ``maiores'' que outros: há mais números
-reais ($\mathbb{R}$) do que números naturais ($\mathbb{N}$), mesmo que ambos
-sejam infinitos. Esta ideia, introduzida por Cantor, revolucionou a
-matemática e tem implicações profundas na computação: por exemplo, o conjunto
-de todos os programas que um agente pode gerar é enumerável (todo programa é
-uma string finita), mas o conjunto de todas as funções matemáticas possíveis
-não é --- o que significa que existem funções que nenhum computador jamais
-poderá calcular.
-
 \begin{definicao}[Cardinalidade]
     A \destaque{cardinalidade} de um conjunto $A$, denotada $|A|$, é o
     número de elementos em $A$. Conjuntos podem ser:
@@ -572,39 +423,18 @@ poderá calcular.
 
 \subsection{Relações e Funções}
 
-\paragraph{Conectando conjuntos.} Se os conjuntos são os ``substantivos'' da
-matemática, as relações e funções são os ``verbos'' --- elas expressam como
-os elementos de diferentes conjuntos se relacionam. Uma função é um tipo
-especial de relação com uma propriedade fundamental: para cada entrada, há
-\textbf{exatamente uma} saída. É por isso que funções são tão úteis na
-computação: um programa bem escrito é uma função que, dada uma entrada,
-produz sempre a mesma saída (pureza). No \opencodeeco{}, praticamente tudo
-é modelado como função: o TrustScorer recebe um histórico e retorna um score;
-o Behavioral Gate recebe uma ação e retorna uma decisão; o compressor SCE
-recebe um texto e retorna uma versão comprimida.
-
 \begin{definicao}[Relação binária]
     Uma \destaque{relação binária} entre conjuntos $A$ e $B$ é um subconjunto
     $R \subseteq A \times B$. Escrevemos $aRb$ para $(a,b) \in R$.
 \end{definicao}
 
-\paragraph{Exemplo concreto.} A relação de ``ativação'' no \opencodeeco{} é
-uma relação binária entre agentes e MCPs: $R = \{ (a, m) \mid \text{agente }
-a \text{ usa MCP } m \}$. Esta relação não é uma função, porque um agente
-pode usar múltiplos MCPs, e um MCP pode ser usado por múltiplos agentes.
-Já a função \codigo{trust\_score(history) -> float} \textbf{é} uma função:
-para cada histórico, há exatamente um score.
-
 \begin{definicao}[Função]
     Uma \destaque{função} $f: A \to B$ é uma relação binária onde cada
     $a \in A$ está associado a exatamente um $b \in B$. Dizemos que $f$ é:
     \begin{itemize}
-        \item \textbf{Injetora}: $f(a_1) = f(a_2) \to a_1 = a_2$ --- cada
-              valor de saída corresponde a no máximo uma entrada;
-        \item \textbf{Sobrejetora}: $\forall b \in B, \exists a \in A :
-              f(a) = b$ --- todo valor possível de saída é atingido;
-        \item \textbf{Bijetora}: injetora e sobrejetora simultaneamente ---
-              um ``casamento perfeito'' entre entradas e saídas.
+        \item \textbf{Injetora}: $f(a_1) = f(a_2) \to a_1 = a_2$;
+        \item \textbf{Sobrejetora}: $\forall b \in B, \exists a \in A : f(a) = b$;
+        \item \textbf{Bijetora}: injetora e sobrejetora simultaneamente.
     \end{itemize}
 \end{definicao}
 
@@ -650,45 +480,19 @@ def trust_score(history: list[float], outcome: float) -> float:
 \label{sec:algebra-linear}
 \nivelintermediario
 
-\paragraph{A matemática dos dados modernos.} Se a lógica é a linguagem do
-raciocínio e os conjuntos são a linguagem das coleções, a álgebra linear é a
-linguagem dos \textbf{dados}. Cada vez que um LLM como o GPT-4 processa uma
-palavra, ele a converte em um vetor de centenas de números (um
-\textit{embedding}). Cada vez que o Discovery Engine do \opencodeeco{}
-compara duas skills, ele calcula a distância entre vetores. Cada camada de
-uma rede neural é uma transformação linear (multiplicação de matriz) seguida
-de uma não-linearidade. A álgebra linear permeia cada componente de um
-ecossistema cognitivo \cite{strang2016algebra, goodfellow2016deep,
-bishop2006pattern}. Esta seção constrói o vocabulário necessário para
-entender como dados são representados, transformados e comparados em sistemas
-de IA.
+A álgebra linear é a matemática dos dados modernos. De embeddings de palavras
+a transformações em redes neurais profundas, passando pela decomposição de
+matrizes em sistemas de recomendação, a álgebra linear permeia cada
+componente de um ecossistema cognitivo \cite{strang2016algebra,
+goodfellow2016deep, bishop2006pattern}.
 
 \subsection{Vetores e Espaços Vetoriais}
-
-\paragraph{O que é um vetor?} Um vetor é uma \textbf{lista ordenada de
-números}. Pense em uma ficha de cadastro com nome, idade, altura e peso:
-$\vec{p} = (\text{``João''}, 28, 1.75, 72.5)$. Isso é um vetor (embora
-neste livro usemos apenas números reais). No \opencodeeco{}, cada skill é
-representada como um vetor de 768 números que codificam seu ``significado''
-semântico. A ordem importa: a primeira posição pode codificar ``é um
-scanner?'', a segunda ``é um agente?'', a terceira ``tem metacognição?'',
-e assim por diante.
 
 \begin{definicao}[Vetor]
     Um \destaque{vetor} $\vec{v} \in \mathbb{R}^n$ é uma $n$-upla ordenada
     de números reais $\vec{v} = (v_1, v_2, \ldots, v_n)$. Cada $v_i$ é
     chamado \destaque{componente} do vetor.
 \end{definicao}
-
-\paragraph{O espaço onde os vetores vivem.} O conjunto de todos os vetores
-com $n$ componentes, junto com as operações de soma e multiplicação por
-escalar, forma um \textbf{espaço vetorial}. Visualmente, $\mathbb{R}^2$ é um
-plano (como uma folha de papel), $\mathbb{R}^3$ é o espaço tridimensional
-que habitamos, e $\mathbb{R}^{768}$ é um espaço que nossos cérebros não
-conseguem visualizar, mas que a matemática trata com a mesma naturalidade.
-A beleza da álgebra linear é que as mesmas regras valem para qualquer
-dimensão: somar dois vetores é sempre componente a componente, e
-multiplicar por escalar é sempre esticar ou encolher o vetor.
 
 \begin{definicao}[Espaço vetorial]
     Um \destaque{espaço vetorial} sobre $\mathbb{R}$ é um conjunto $V$
@@ -721,16 +525,6 @@ multiplicar por escalar é sempre esticar ou encolher o vetor.
 \end{figure}
 
 \subsection{Matrizes e Operações}
-
-\paragraph{Matrizes como ``tabelas de transformação''.} Se vetores são
-listas ordenadas de números, matrizes são \textbf{tabelas retangulares} de
-números. Mas essa definição, embora correta, não captura o poder do conceito.
-Uma matriz é melhor compreendida como uma \textbf{máquina de transformar
-vetores}: quando multiplicamos uma matriz $A$ por um vetor $\vec{x}$, obtemos
-um novo vetor $\vec{y} = A\vec{x}$. Cada linha da matriz determina uma
-componente da saída como uma combinação das componentes da entrada. É por
-isso que matrizes são onipresentes em IA: cada camada de uma rede neural é
-uma matriz de pesos que transforma o vetor de entrada em um vetor de saída.
 
 \begin{definicao}[Matriz]
     Uma \destaque{matriz} $A$ de ordem $m \times n$ é um arranjo retangular
@@ -783,15 +577,6 @@ print(y.shape)  # (128,)
 
 \subsection{Determinantes e Inversas}
 
-\paragraph{O que o determinante nos diz sobre uma transformação?} Imagine
-que você aplica uma transformação linear (uma matriz) a uma figura no plano.
-O determinante mede \textbf{quanto a área foi esticada ou comprimida}. Se
-$\det(A) = 2$, a área dobra; se $\det(A) = 0.5$, a área encolhe pela metade;
-se $\det(A) = 0$, a figura foi esmagada em uma dimensão menor (perdeu
-informação). É por isso que $\det(A) \neq 0$ é a condição para a matriz ser
-\textbf{invertível}: só podemos ``desfazer'' uma transformação se ela não
-esmagou o espaço.
-
 \begin{definicao}[Determinante]
     O \destaque{determinante} de uma matriz quadrada $A \in \mathbb{R}^{n \times n}$,
     denotado $\det(A)$ ou $|A|$, é um escalar que codifica propriedades
@@ -806,18 +591,6 @@ esmagou o espaço.
 
 \subsection{Autovalores e Autovetores}
 
-\paragraph{Direções especiais de uma transformação.} Quando uma matriz
-multiplica um vetor comum, o resultado geralmente aponta em uma direção
-diferente da original. Mas existem vetores \textbf{especiais} para os quais
-a multiplicação pela matriz apenas \textbf{estica} ou \textbf{encolhe} o
-vetor, sem mudar sua direção. Esses são os autovetores, e o fator de
-esticamento é o autovalor. É como um corredor em uma esteira: ele se move
-(é transformado), mas sempre na mesma direção. Autovalores e autovetores são
-fundamentais para entender a estabilidade de sistemas dinâmicos, a
-convergência de algoritmos iterativos e, no contexto do \opencodeeco{}, a
-análise de componentes principais (PCA) que reduz a dimensionalidade dos
-embeddings.
-
 \begin{definicao}[Autovalor e autovetor]
     Seja $A \in \mathbb{R}^{n \times n}$. Um escalar $\lambda$ é um
     \destaque{autovalor} de $A$ se existe um vetor não-nulo $\vec{v}$,
@@ -825,9 +598,6 @@ embeddings.
     \[
     A\vec{v} = \lambda \vec{v}
     \]
-    Em palavras: quando aplicamos a transformação $A$ ao autovetor
-    $\vec{v}$, o resultado é simplesmente $\vec{v}$ multiplicado por
-    $\lambda$.
 \end{definicao}
 
 \begin{teorema}[Decomposição espectral]
@@ -837,17 +607,6 @@ embeddings.
 \end{teorema}
 
 \subsection{Decomposição SVD e PCA}
-
-\paragraph{Extraindo a estrutura essencial dos dados.} A decomposição em
-valores singulares (SVD) é uma das ferramentas mais poderosas e elegantes da
-álgebra linear. Ela afirma que \textbf{toda} matriz --- não importa seu
-tamanho ou forma --- pode ser decomposta no produto de três matrizes
-especiais, cada uma revelando um aspecto diferente dos dados. Intuitivamente,
-a SVD ``fatora'' os dados em padrões fundamentais: $U$ contém os ``perfis''
-das linhas (ex.: agentes), $V$ contém os ``perfis'' das colunas (ex.:
-características), e $\Sigma$ contém a importância (peso) de cada padrão.
-É como decompor uma sinfonia em notas individuais: cada nota é um padrão,
-e $\Sigma$ diz quais notas são mais importantes.
 
 \begin{definicao}[Decomposição em Valores Singulares (SVD)]
     Toda matriz $A \in \mathbb{R}^{m \times n}$ pode ser decomposta como:
@@ -860,16 +619,9 @@ e $\Sigma$ diz quais notas são mais importantes.
     \cdots \geq \sigma_r > 0$, onde $r = \text{rank}(A)$.
 \end{definicao}
 
-\paragraph{Interpretação geométrica.} A SVD nos diz que \textbf{toda}
-transformação linear pode ser decomposta em três passos: uma rotação
-(ou reflexão) $V^T$, um esticamento/encolhimento ao longo dos eixos
-principais $\Sigma$, e outra rotação $U$. É o ``teorema fundamental da
-álgebra linear'' --- análogo ao Teorema Fundamental da Aritmética
-(fatoração em primos) para números, mas para matrizes.
-
 \begin{exemplo}
     O PCA (Análise de Componentes Principais) utiliza SVD para reduzir a
-    dimensionalidade dos embeddings no módulo \codigo{discovery\_engine} do
+    dimensionalidade dos embeddings no módulo \codigo{discovery\\_engine} do
     \opencodeeco{}:
     \begin{lstlisting}[style=pythonstyle]
 import numpy as np
@@ -930,41 +682,19 @@ print(f"Variancia explicada com 50 componentes: {variancia_explicada:.2%}")
 \label{sec:calculo}
 \nivelintermediario
 
-\paragraph{A matemática da mudança.} Enquanto a álgebra linear lida com
-dados estáticos (vetores e matrizes), o cálculo lida com a \textbf{mudança}
---- como as coisas variam, crescem, decaem e se acumulam ao longo do tempo
-ou de outras variáveis. No contexto de ecossistemas cognitivos, o cálculo é
-essencial para o treinamento de redes neurais via \textit{backpropagation}
-(que calcula gradientes para ajustar pesos), a otimização de funções de
-perda e a análise de convergência de algoritmos
-\cite{goodfellow2016deep, bishop2006pattern}. Se a IA moderna tem um motor,
-esse motor é o cálculo --- mais especificamente, a regra da cadeia aplicada
-milhares de vezes por segundo durante o treinamento.
+O cálculo diferencial e integral é a linguagem matemática da mudança
+contínua. No contexto de ecossistemas cognitivos, o cálculo é essencial para
+o treinamento de redes neurais via \textit{backpropagation}, a otimização de
+funções de perda e a análise de convergência de algoritmos
+\cite{goodfellow2016deep, bishop2006pattern}.
 
 \subsection{Limites e Continuidade}
-
-\paragraph{O conceito fundamental.} Um limite responde à pergunta: ``para
-que valor se aproxima $f(x)$ quando $x$ se aproxima de $a$?'' É a ideia de
-\lstinline{tendência} ou \lstinline{aproximação}, que está no coração de
-toda a ciência. A velocidade instantânea de um carro é o limite da velocidade
-média quando o intervalo de tempo tende a zero. O gradiente de uma rede
-neural é o limite da taxa de variação do erro quando os pesos variam
-infinitesimalmente. Sem o conceito de limite, não haveria cálculo --- e sem
-cálculo, não haveria aprendizado profundo.
 
 \begin{definicao}[Limite de uma função]
     Dizemos que $\lim_{x \to a} f(x) = L$ se para todo $\varepsilon > 0$
     existe $\delta > 0$ tal que $0 < |x - a| < \delta$ implica
     $|f(x) - L| < \varepsilon$ (definição $\varepsilon$-$\delta$).
 \end{definicao}
-
-\paragraph{Interpretação intuitiva da definição $\varepsilon$-$\delta$.}
-A definição formal de limite pode parecer intimidadora à primeira vista, mas
-sua essência é simples: ``podemos tornar $f(x)$ tão próximo de $L$ quanto
-quisermos ($\varepsilon$), desde que tomemos $x$ suficientemente próximo de
-$a$ ($\delta$)''. Pense em um jogo: você me desafia a aproximar $f(x)$ de
-$L$ com uma margem de erro $\varepsilon$, e eu respondo encontrando um
-$\delta$ que garanta isso. Se eu sempre conseguir vencer, o limite existe.
 
 \begin{definicao}[Continuidade]
     Uma função $f$ é \destaque{contínua} em $a$ se:
@@ -975,15 +705,6 @@ $\delta$ que garanta isso. Se eu sempre conseguir vencer, o limite existe.
 
 \subsection{Derivadas e Regra da Cadeia}
 
-\paragraph{Taxa de variação instantânea.} A derivada responde à pergunta:
-``se mudarmos $x$ um pouquinho, quanto $f(x)$ vai mudar?'' É a
-\textbf{taxa de variação instantânea} --- análoga à velocidade instantânea
-de um carro (a taxa de variação da posição no tempo). Geometricamente, é a
-inclinação da reta tangente. Em aprendizado de máquina, a derivada é a
-ferramenta essencial para responder: ``se ajustarmos este peso neural um
-pouquinho, o erro vai aumentar ou diminuir?'' --- e é essa resposta que guia
-todo o treinamento de redes neurais.
-
 \begin{definicao}[Derivada]
     A \destaque{derivada} de $f$ em $x$, denotada $f'(x)$ ou
     $\frac{df}{dx}$, é definida por:
@@ -993,15 +714,6 @@ todo o treinamento de redes neurais.
     Geometricamente, $f'(x)$ é a inclinação da reta tangente ao gráfico de
     $f$ no ponto $(x, f(x))$.
 \end{definicao}
-
-\paragraph{Por que a regra da cadeia é crucial.} Redes neurais são funções
-compostas: a saída de uma camada é a entrada da próxima. Para calcular como
-o erro varia com relação aos pesos da primeira camada (que estão ``lá no
-início'' da computação), precisamos multiplicar as derivadas de cada camada
-intermediária --- esta é a regra da cadeia. Sem ela, o backpropagation
-simplesmente não existiria. O \opencodeeco{} usa backpropagation para
-otimizar o blend 70/30 do TrustScorer (SPEC-038), ajustando os pesos com
-base no erro observado entre o score previsto e o outcome real.
 
 \begin{teorema}[Regra da Cadeia]
     Se $y = f(u)$ e $u = g(x)$, então:
@@ -1049,16 +761,6 @@ base no erro observado entre o score previsto e o outcome real.
 \end{figure}
 
 \subsection{Gradiente, Divergente e Rotacional}
-
-\paragraph{Generalizando a derivada para múltiplas dimensões.} Quando uma
-função tem várias entradas (como uma rede neural com milhares de pesos),
-a derivada deixa de ser um único número e se torna um \textbf{vetor}.
-O gradiente $\nabla f$ é o vetor que contém todas as derivadas parciais de
-$f$ --- uma para cada direção. A propriedade mais importante: o gradiente
-aponta na direção de \textbf{maior crescimento} da função. Consequentemente,
-o negativo do gradiente ($-\nabla f$) aponta na direção de maior
-decaimento --- que é exatamente a direção que usamos no gradiente
-descendente para minimizar o erro.
 
 \begin{definicao}[Gradiente]
     O \destaque{gradiente} de uma função escalar $f: \mathbb{R}^n \to
@@ -1118,14 +820,6 @@ print(f"Alpha otimo: {alpha_otimo:.3f}")
 
 \subsection{Integral Definida e Teorema Fundamental}
 
-\paragraph{Acumulando quantidades contínuas.} Se a derivada mede a taxa de
-variação, a integral mede a \textbf{acumulação}. Imagine que você está
-medindo a velocidade de um carro a cada instante. A integral dessa
-velocidade ao longo do tempo dá a distância total percorrida. No
-\opencodeeco{}, integrais são usadas para computar a área sob a curva (AUC)
-de classificadores, que mede a capacidade do modelo de distinguir entre
-classes positivas e negativas independentemente do limiar de decisão.
-
 \begin{definicao}[Integral definida]
     A \destaque{integral definida} de $f$ de $a$ a $b$ é:
     \[
@@ -1134,14 +828,6 @@ classes positivas e negativas independentemente do limiar de decisão.
     \]
     onde $\Delta x = (b-a)/n$ e $x_i^*$ é um ponto no $i$-ésimo subintervalo.
 \end{definicao}
-
-\paragraph{Interpretação geométrica.} A integral definida é a \textbf{área
-sob a curva} de $f$ entre $a$ e $b$. Aproximamos essa área somando
-retângulos de largura $\Delta x$ e altura $f(x_i^*)$; à medida que os
-retângulos se tornam infinitesimalmente finos ($n \to \infty$), a
-aproximação converge para o valor exato. O Teorema Fundamental do Cálculo
-revela a conexão profunda entre derivada e integral: elas são operações
-inversas, assim como adição e subtração, ou multiplicação e divisão.
 
 \begin{teorema}[Teorema Fundamental do Cálculo]
     Se $F$ é uma primitiva de $f$ (i.e., $F' = f$), então:
@@ -1193,28 +879,13 @@ def auc_score(y_true: np.ndarray, y_pred: np.ndarray) -> float:
 \label{sec:probabilidade}
 \nivelintermediario
 
-\paragraph{Lidando com a incerteza de forma matemática.} Até agora, tudo era
-determinístico: uma proposição é $V$ ou $F$, uma função tem uma saída fixa
-para cada entrada. Mas o mundo real --- e os sistemas de IA --- são
-inerentemente incertos. O Trust Engine não pode ter 100\% de certeza sobre
-uma ação; o CORA-Eval não pode garantir que um resultado não seja devido ao
-acaso. A teoria da probabilidade é o arcabouço matemático que lida com essa
-incerteza de forma rigorosa \cite{wasserman2004all, hastie2009elements,
-russell2020inteligencia}. Dominar probabilidade é essencial para entender
-modelos generativos, inferência bayesiana em agentes, sistemas de
-recomendação e avaliação de confiança no \opencodeeco{}.
+A teoria da probabilidade é o arcabouço matemático para lidar com
+incerteza. Em ecossistemas cognitivos, a probabilidade fundamenta modelos
+generativos, inferência bayesiana em agentes, sistemas de recomendação e
+avaliação de confiança \cite{wasserman2004all, hastie2009elements,
+russell2020inteligencia}.
 
 \subsection{Espaços Amostrais e Axiomas de Kolmogorov}
-
-\paragraph{O palco onde a incerteza acontece.} Tudo em probabilidade começa
-com a definição do \textbf{espaço amostral} $\Omega$: o conjunto de todos os
-resultados possíveis de um experimento aleatório. No Trust Engine, $\Omega =
-\{\text{aprovado}, \text{sombra}, \text{bloqueado}\}$. Sobre esse palco,
-definimos eventos (subconjuntos de $\Omega$) e atribuímos probabilidades
-(números entre 0 e 1) a cada evento. Os três axiomas de Kolmogorov são as
-``regras do jogo'' que qualquer atribuição de probabilidade deve seguir ---
-são tão fundamentais para a probabilidade quanto as leis de Newton para a
-física.
 
 \begin{definicao}[Espaço de probabilidade]
     Um \destaque{espaço de probabilidade} é uma tripla $(\Omega, \mathcal{F},
@@ -1255,35 +926,12 @@ física.
 
 \subsection{Probabilidade Condicional e Teorema de Bayes}
 
-\paragraph{Atualizando crenças com novas evidências.} A probabilidade
-condicional responde à pergunta: ``sabendo que $B$ ocorreu, qual é a chance
-de $A$?'' É a ferramenta matemática para \textbf{atualizar} nossas crenças
-diante de novas informações. O Teorema de Bayes, um dos resultados mais
-importantes de toda a matemática, inverte a condicional: se sabemos
-$P(B \mid A)$, podemos calcular $P(A \mid B)$. É como uma máquina do tempo
-para probabilidades --- usamos o efeito observado ($B$) para inferir sobre
-a causa ($A$). No \opencodeeco{}, o TrustScorer usa Bayes para atualizar a
-confiança em um agente a cada nova interação, combinando a confiança prévia
-(\textit{prior}) com a evidência da interação atual (\textit{likelihood}).
-
 \begin{definicao}[Probabilidade condicional]
     A \destaque{probabilidade condicional} de $A$ dado $B$ é:
     \[
     P(A \mid B) = \frac{P(A \cap B)}{P(B)}, \quad P(B) > 0
     \]
 \end{definicao}
-
-\paragraph{O Teorema de Bayes em linguagem natural.} Em vez de memorizar a
-fórmula, guarde esta intuição:
-\[
-\text{crença atualizada} = \frac{\text{verossimilhança} \times
-\text{crença anterior}}{\text{evidência total}}
-\]
-O prior $\text{---}P(\text{confiável})$ --- é o que sabíamos antes. A
-likelihood --- $P(\text{passa no teste} \mid \text{confiável})$ --- é o
-quão provável é a evidência se a hipótese for verdadeira. A evidência
-$P(\text{passa no teste})$ é a probabilidade total de observar a
-evidência. O resultado é o posterior: nossa confiança revisada.
 
 \begin{teorema}[Teorema de Bayes]
     \[
@@ -1314,29 +962,11 @@ print(f"Confianca posterior: {post:.3f}")  # ~0.894
 
 \subsection{Variáveis Aleatórias}
 
-\paragraph{Dos eventos aos números.} Para fazer contas com probabilidades,
-precisamos transformar resultados abstratos ($\omega \in \Omega$) em números.
-Uma variável aleatória é exatamente isso: uma função que atribui um número a
-cada resultado possível. Por exemplo, se $\Omega = \{\text{aprovado},
-\text{sombra}, \text{bloqueado}\}$, podemos definir $X(\text{aprovado}) = 1$,
-$X(\text{sombra}) = 0.5$, $X(\text{bloqueado}) = 0$. Agora podemos calcular
-médias, variâncias e outras estatísticas --- coisas que não poderíamos fazer
-com os resultados originais.
-
 \begin{definicao}[Variável aleatória]
     Uma \destaque{variável aleatória} $X: \Omega \to \mathbb{R}$ é uma
     função que associa a cada resultado $\omega \in \Omega$ um número real
     $X(\omega)$.
 \end{definicao}
-
-\paragraph{Valor esperado e variância: as ``métricas'' de uma distribuição.}
-O valor esperado $\mathbb{E}[X]$ é a média ponderada dos possíveis valores
-de $X$, onde os pesos são as probabilidades. É o ``centro de massa'' da
-distribuição. A variância $\text{Var}(X)$ mede o quanto os valores se
-espalham em torno da média --- uma variância pequena significa que os valores
-são consistentes; uma variância grande significa que são imprevisíveis. No
-Trust Engine, um agente com baixa variância nos scores é mais previsível e,
-portanto, mais confiável.
 
 \begin{definicao}[Valor esperado]
     O \destaque{valor esperado} (ou média) de $X$ é:
@@ -1359,24 +989,12 @@ portanto, mais confiável.
 
 \subsection{Distribuições de Probabilidade}
 
-\paragraph{Cada tipo de incerteza tem sua distribuição.} Assim como na
-geometria temos diferentes formas (triângulos, círculos, quadrados), na
-probabilidade temos diferentes \textbf{distribuições}, cada uma adequada a
-um tipo de fenômeno. A distribuição Bernoulli modela uma única tentativa
-(``o Behavioral Gate aprovou ou não?''). A Binomial modela o número de
-sucessos em várias tentativas (``quantas das 10 ações foram aprovadas?'').
-A Normal modela fenômenos onde muitos pequenos fatores se somam (como o
-score médio de confiança). Escolher a distribuição correta é o primeiro
-passo para modelar qualquer fenômeno probabilístico.
-
 A Tabela~\ref{tab:distribuicoes} resume as principais distribuições de
 probabilidade utilizadas no \opencodeeco{}.
 
 \begin{table}[htb]
     \centering
-    \small
     \caption{Distribuições de probabilidade no \opencodeeco{}}
-    \resizebox{\textwidth}{!}{
     \label{tab:distribuicoes}
     \begin{tabular}{lcc}
         \toprule
@@ -1396,7 +1014,6 @@ probabilidade utilizadas no \opencodeeco{}.
         Tempo entre falhas do sistema \\
         \bottomrule
     \end{tabular}
-    }
 \end{table}
 
 \begin{teorema}[Lei dos Grandes Números]
@@ -1408,13 +1025,6 @@ probabilidade utilizadas no \opencodeeco{}.
     \]
 \end{teorema}
 
-\paragraph{Interpretação prática da LGN.} A Lei dos Grandes Números nos diz
-que a média amostral se aproxima da média populacional à medida que
-aumentamos o tamanho da amostra. É por isso que um teste com 100 avaliações
-do Trust Engine é mais confiável do que um com apenas 5. É também o
-princípio que justifica os métodos de Monte Carlo usados no \opencodeeco{}
-para estimar métricas de desempenho.
-
 \begin{teorema}[Teorema Central do Limite]
     Seja $X_1, X_2, \ldots, X_n$ uma amostra i.i.d. com média $\mu$ e
     variância $\sigma^2 < \infty$. Então:
@@ -1423,15 +1033,6 @@ para estimar métricas de desempenho.
     \]
     onde $\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$.
 \end{teorema}
-
-\paragraph{O TCL em palavras simples.} O Teorema Central do Limite é um dos
-resultados mais surpreendentes da estatística: \textbf{qualquer} que seja a
-distribuição original dos dados (desde que tenha variância finita), a média
-amostral tende a uma distribuição normal à medida que $n$ cresce. Isto
-significa que, mesmo que os scores individuais do TrustScorer não sigam uma
-normal, a \textbf{média} de 30 ou mais scores será aproximadamente normal.
-É isso que permite o uso de testes paramétricos (como o teste t) no
-CORA-Eval, mesmo sem conhecer a distribuição exata dos dados.
 
 \begin{exemplo}
     O Teorema Central do Limite justifica o uso da distribuição normal para
@@ -1474,16 +1075,11 @@ CORA-Eval, mesmo sem conhecer a distribuição exata dos dados.
 \label{sec:inferencia-estatistica}
 \nivelavancado
 
-\paragraph{Das amostras para a população.} Na seção anterior, aprendemos a
-descrever a incerteza com probabilidades. Mas na prática, nunca temos acesso
-a toda a população --- apenas a uma \textbf{amostra}. Como extrair conclusões
-confiáveis sobre todos os agentes a partir de alguns testes? Como saber se
-uma melhoria no score é real ou fruto do acaso? A inferência estatística
-fornece os métodos para responder a essas perguntas com rigor matemático
-\cite{wasserman2004all, hastie2009elements, box1976science}. No
-\opencodeeco{}, a inferência é crucial para validar experimentos, comparar
-desempenho de agentes e garantir significância estatística nos resultados do
-CORA-Eval.
+A inferência estatística fornece os métodos para extrair conclusões sobre
+populações a partir de amostras. Em engenharia de ecossistemas cognitivos,
+a inferência é crucial para validar experimentos, comparar desempenho de
+agentes e garantir significância estatística nos resultados do CORA-Eval
+\cite{wasserman2004all, hastie2009elements, box1976science}.
 
 \subsection{Estimação Pontual e Intervalar}
 
@@ -1529,16 +1125,6 @@ print(f"IC 95%: [{ic[0]:.3f}, {ic[1]:.3f}]")
 \end{exemplo}
 
 \subsection{Testes de Hipótese}
-
-\paragraph{O tribunal da estatística.} Um teste de hipótese funciona como um
-julgamento. A hipótese nula $H_0$ é a presunção de inocência: ``não há
-diferença'', ``não há melhoria'', ``está tudo igual''. A hipótese alternativa
-$H_1$ é a acusação: ``há uma diferença real''. Coletamos evidências (dados),
-calculamos uma estatística de teste e perguntamos: ``qual a probabilidade de
-observar esses dados se $H_0$ fosse verdadeira?'' Se essa probabilidade (o
-p-valor) for muito pequena (menor que $\alpha$, tipicamente 0.05),
-rejeitamos $H_0$ --- ``a evidência é forte o suficiente para condenar a
-hipótese nula''.
 
 \begin{definicao}[Teste de hipótese]
     Um \destaque{teste de hipótese} é um procedimento para decidir entre
@@ -1618,15 +1204,6 @@ else:
 \end{definicao}
 
 \subsection{Correção de Bonferroni}
-
-\paragraph{O problema das comparações múltiplas.} Quanto mais testes
-realizamos, maior a chance de encontrarmos um falso positivo por acaso.
-Se testamos 10 dimensões do CORA-Eval cada uma com $\alpha = 0.05$, a chance
-de pelo menos um falso positivo é $1 - (0.95)^{10} \approx 40\%$. A correção
-de Bonferroni é a abordagem mais simples e conservadora para resolver este
-problema: dividimos $\alpha$ pelo número de testes. Com 10 testes,
-$\alpha' = 0.05 / 10 = 0.005$, o que significa que exigimos evidências muito
-mais fortes para rejeitar $H_0$ em qualquer dimensão.
 
 \begin{definicao}[Correção de Bonferroni]
     Quando realizamos $m$ testes de hipótese simultaneamente, a
@@ -1711,29 +1288,14 @@ A validação estatística no CORA-Eval segue este protocolo
 \label{sec:teoria-informacao}
 \nivelavancado
 
-\paragraph{Quantificando a informação.} Quanta informação há em uma
-mensagem? Quando o TrustScorer emite um score de 0.72, quanta ``surpresa''
-essa informação carrega? A teoria da informação, fundada por Claude Shannon
-em 1948, responde a estas perguntas com precisão matemática
-\cite{cover2006elements, goodfellow2016deep}. No contexto de ecossistemas
-cognitivos, a teoria da informação é fundamental para funções de perda em
-LLMs (entropia cruzada), compressão de contexto (SPEC-037), sistemas de
-Trust Scoring e avaliação de qualidade de embeddings. O conceito central é
-a \textbf{entropia}: uma medida da incerteza média de uma variável aleatória.
+A teoria da informação, fundada por Claude Shannon em 1948, fornece as
+ferramentas matemáticas para quantificar, armazenar e comunicar informação.
+Em ecossistemas cognitivos, a teoria da informação é fundamental para
+funções de perda em LLMs, compressão de contexto, sistemas de Trust Scoring
+e avaliação de qualidade de embeddings \cite{cover2006elements,
+goodfellow2016deep}.
 
 \subsection{Entropia de Shannon}
-
-\paragraph{O que é entropia?} Imagine uma moeda justa ($p = 0.5$): cada
-lançamento é imprevisível, e cada resultado carrega 1 bit de informação.
-Agora imagine uma moeda viciada que dá cara 99\% das vezes: o resultado é
-quase previsível, e cada lançamento carrega muito pouca informação (0.08
-bits). A entropia quantifica exatamente isso: quanta ``surpresa'' ou
-``incerteza'' existe em uma distribuição. Quanto mais previsível é um
-processo, menor sua entropia. No \opencodeeco{}, a entropia da distribuição
-de scores do TrustScorer indica o quão discriminativas são as decisões ---
-entropia muito baixa significa que todos os agentes recebem scores
-semelhantes (pouca informação); entropia muito alta significa total
-imprevisibilidade.
 
 \begin{definicao}[Entropia]
     A \destaque{entropia} de uma variável aleatória discreta $X$ com
@@ -1787,17 +1349,6 @@ print(f"Entropia: {h:.3f} bits")
 \end{figure}
 
 \subsection{Entropia Cruzada e Divergência KL}
-
-\paragraph{Comparando distribuições.} A entropia nos diz quanta incerteza
-existe em uma distribuição. Mas e quando queremos comparar duas
-distribuições --- por exemplo, a distribuição real dos scores versus a
-distribuição prevista pelo modelo? A entropia cruzada $H(P, Q)$ mede quantos
-bits são necessários, em média, para codificar amostras de $P$ usando um
-código otimizado para $Q$. A divergência KL $D_{\text{KL}}(P \parallel Q)$
-mede o ``custo extra'' de usar $Q$ quando a verdade é $P$. É por isso que
-a entropia cruzada é a função de perda padrão em classificação: minimizar
-$H(P, Q)$ é equivalente a minimizar $D_{\text{KL}}(P \parallel Q)$, ou seja,
-a aproximar a distribuição prevista $Q$ da distribuição real $P$.
 
 \begin{definicao}[Entropia cruzada]
     A \destaque{entropia cruzada} entre duas distribuições $P$ e $Q$ é:
@@ -1936,26 +1487,13 @@ def compress_by_entropy(
 \label{sec:teoria-grafos}
 \nivelavancado
 
-\paragraph{Modelando relações entre objetos.} Os conjuntos (Seção~1.2) nos
-permitem agrupar objetos. As relações e funções nos permitem conectar pares.
-Mas como modelamos sistemas complexos de dependências, como o grafo de 401
-componentes (agentes, skills, MCPs) do \opencodeeco{}? A resposta é a
-\textbf{teoria dos grafos}: a matemática das relações entre objetos
-discretos \cite{barabasi2016network, wooldridge2009multiagent}. Um grafo é
-composto por vértices (os objetos) e arestas (as conexões entre eles). No
-\opencodeeco{}, grafos modelam dependências entre agentes, topologia de
-comunicação entre MCPs, ontologias de conhecimento e a estrutura da rede de
-colaboração entre skills.
+A teoria dos grafos estuda as relações entre objetos discretos. Em um
+ecossistema cognitivo, grafos modelam dependências entre agentes, topologia
+de comunicação entre MCPs, ontologias de conhecimento e a estrutura da rede
+de colaboração entre skills \cite{barabasi2016network,
+wooldridge2009multiagent}.
 
 \subsection{Grafos Direcionados e Não-Direcionados}
-
-\paragraph{Com ou sem direção: duas visões das conexões.} Em um grafo não
-direcionado, as arestas representam conexões simétricas: se $A$ está
-conectado a $B$, então $B$ está conectado a $A$ (como uma amizade no
-Facebook). Em um grafo direcionado (digrafo), as arestas têm orientação:
-$A \to B$ não implica $B \to A$ (como um seguidor no Twitter). O grafo de
-dependências do \opencodeeco{} é direcionado: se o Agent A usa a Skill S,
-a aresta vai de A para S, mas não necessariamente o contrário.
 
 \begin{definicao}[Grafo]
     Um \destaque{grafo} $G = (V, E)$ consiste em um conjunto $V$ de
@@ -2048,28 +1586,7 @@ def pagerank_simples(
     \end{lstlisting}
 \end{exemplo}
 
-\subsection{Centralidade e PageRank}
-
-\paragraph{Quem são os vértices mais importantes?} Em uma rede, nem todos os
-vértices são iguais. Alguns são ``hubs'' altamente conectados; outros são
-periféricos. A centralidade de grau é a métrica mais simples: quantas
-conexões um vértice tem? Mas o PageRank, algoritmo que fundou o Google, vai
-além: um vértice é importante se é conectado por outros vértices importantes.
-Esta definição recursiva captura a ideia de que uma conexão de um MCP central
-vale mais do que uma conexão de um agente periférico.
-
 \subsection{Árvores e DAGs}
-
-\paragraph{Grafos sem ciclos.} Duas estruturas especiais merecem atenção.
-Uma \textbf{árvore} é um grafo conexo sem ciclos --- como uma hierarquia
-organizacional ou uma estrutura de diretórios. Um \textbf{DAG} (grafo
-direcionado acíclico) é um grafo direcionado sem ciclos direcionados ---
-como um pipeline de processamento ou uma rede de dependências. A propriedade
-crucial dos DAGs é que sempre podemos ordenar seus vértices linearmente
-(ordenação topológica) de modo que todas as arestas apontem para frente.
-O pipeline de scanners do \opencodeeco{} (Noológico $\to$ Teleológico $\to$
-Evolutivo $\to$ Refinamento $\to$ MCSP) é um DAG: cada scanner alimenta o
-próximo, e não há ciclos de dependência.
 
 \begin{definicao}[Árvore]
     Uma \destaque{árvore} é um grafo acíclico conexo. Uma \destaque{árvore
@@ -2172,27 +1689,11 @@ próximo, e não há ciclos de dependência.
 \label{sec:complexidade}
 \nivelphd
 
-\paragraph{Problemas fáceis e problemas difíceis.} Alguns problemas são
-essencialmente fáceis: ordenar uma lista de $n$ elementos leva $O(n \log n)$
-operações, independentemente de quem implementa o algoritmo. Outros problemas
-são notoriamente difíceis: o SAT (satisfabilidade booleana) pode exigir tempo
-exponencial $O(2^n)$ no pior caso. A teoria da complexidade computacional
-classifica problemas de acordo com os recursos computacionais necessários para
-resolvê-los \cite{russell2020inteligencia, wooldridge2009multiagent}. Em
-ecossistemas cognitivos, esta classificação é essencial para saber quando
-podemos usar algoritmos exatos (se o problema está em P) e quando precisamos
-recorrer a aproximações e heurísticas (se o problema é NP-difícil), como no
-caso do MCSP (SPEC-033) resolvido por algoritmo guloso.
-
-\paragraph{As classes de complexidade em analogia.}
-Pense em P como problemas que um único agente consegue resolver rapidamente.
-NP são problemas que, mesmo difíceis de resolver, têm soluções que um agente
-pode verificar rapidamente. NP-completo são os problemas mais difíceis dentro
-de NP: se você conseguir resolver um deles rapidamente, consegue resolver
-todos os outros. E EXP são problemas que nem mesmo verificadores rápidos
-conseguem processar. A grande questão em aberto da Ciência da Computação ---
-P vs.\ NP --- pergunta: ``existe um atalho para resolver problemas NP, ou
-alguns problemas são intrinsecamente difíceis?''
+A teoria da complexidade computacional classifica problemas de acordo com
+os recursos computacionais necessários para resolvê-los. Em ecossistemas
+cognitivos, esta classificação é essencial para entender a viabilidade de
+algoritmos de otimização, inferência e planejamento executados pelos agentes
+\cite{russell2020inteligencia, wooldridge2009multiagent}.
 
 \subsection{Classes P, NP, NP-Completo e EXP}
 
@@ -2355,13 +1856,10 @@ print(f"Skills selecionadas: {selecionadas}")
 \label{sec:integracao}
 \nivelbasico
 
-\paragraph{Ver para crer: a matemática em ação.} Ao longo deste capítulo,
-percorremos um arco que vai da lógica mais elementar (proposições como
-``liga/desliga'') até a complexidade computacional (problemas NP-difíceis).
-Mas toda essa matemática não é apenas teoria abstrata --- cada conceito
-tem uma contrapartida executável no código-fonte do \opencodeeco{}. Esta
-seção final materializa todos os conceitos matemáticos estudados, permitindo
-ao leitor verificar experimentalmente as definições e teoremas estudados.
+Esta seção final materializa todos os conceitos matemáticos estudados no
+contexto do \opencodeeco{}. Cada conceito abstrato encontra uma
+contrapartida concreta no código-fonte do ecossistema, permitindo ao leitor
+verificar experimentalmente as definições e teoremas estudados.
 
 \subsection{Como os Conceitos se Materializam}
 
@@ -2370,26 +1868,23 @@ os módulos correspondentes no \opencodeeco{}.
 
 \begin{table}[htb]
     \centering
-    \small
     \caption{Mapeamento conceitos $\to$ módulos do \opencodeeco{}}
-    \resizebox{\textwidth}{!}{
     \label{tab:conceitos-ecossistema}
     \begin{tabular}{lll}
         \toprule
         \textbf{Conceito} & \textbf{Módulo} & \textbf{Arquivo} \\
         \midrule
         Lógica proposicional & Behavioral Gate & SPEC-038 \\
-        Conjuntos & Registry de agentes & \codigo{agent\_registry.py} \\
-        Álgebra linear & Embeddings & \codigo{discovery\_engine.py} \\
-        Cálculo & Otimização de blend & \codigo{trust\_scorer.py} \\
-        Probabilidade & Bayesian update & \codigo{inference\_engine.py} \\
-        Inferência & CORA-Eval & \codigo{cora\_eval\_tracker.py} \\
-        Teoria da Informação & Compressão de contexto & \codigo{sce\_compressor.py} \\
-        Grafos & Dependências & \codigo{dependency\_graph.py} \\
-        Complexidade & MCSP solver & \codigo{mcsp\_solver.py} \\
+        Conjuntos & Registry de agentes & \codigo{agent\\_registry.py} \\
+        Álgebra linear & Embeddings & \codigo{discovery\\_engine.py} \\
+        Cálculo & Otimização de blend & \codigo{trust\\_scorer.py} \\
+        Probabilidade & Bayesian update & \codigo{inference\\_engine.py} \\
+        Inferência & CORA-Eval & \codigo{cora\\_eval\\_tracker.py} \\
+        Teoria da Informação & Compressão de contexto & \codigo{sce\\_compressor.py} \\
+        Grafos & Dependências & \codigo{dependency\\_graph.py} \\
+        Complexidade & MCSP solver & \codigo{mcsp\\_solver.py} \\
         \bottomrule
     \end{tabular}
-    }
 \end{table}
 
 \subsection{O Módulo \codigo{core/container.py} como Inversão de Controle}
@@ -2491,7 +1986,7 @@ def relatorio_auditoria(componentes: list[dict]) -> dict:
 
 \subsection{Exercícios Práticos no \opencodeeco{}}
 
-Os exercícios abaixo requerem o \opencodeeco{} instalado e funcional, que pode ser obtido em \cite{opencode2026ecosystem}.
+Os exercícios abaixo requerem o \opencodeeco{} instalado e funcional.
 Consulte a documentação do ecossistema para instruções de instalação
 \cite{opencode2026ecosystem}.
 
@@ -2502,9 +1997,9 @@ Consulte a documentação do ecossistema para instruções de instalação
 \end{exercicio}
 
 \begin{exercicio}[Nivel Intermediário -- Prático]
-    Utilize o módulo \codigo{discovery\_engine.py} para calcular a
+    Utilize o módulo \codigo{discovery\\_engine.py} para calcular a
     similaridade por cosseno entre duas skills do ecossistema. Identifique
-    as 5 skills mais similares a \codigo{trust\_scorer}.
+    as 5 skills mais similares a \codigo{trust\\_scorer}.
 \end{exercicio}
 
 \begin{exercicio}[Nivel Avançado -- Prático]
@@ -2533,9 +2028,7 @@ capítulo e sua aplicação nos capítulos subsequentes.
 
 \begin{table}[htb]
     \centering
-    \small
     \caption{Competências adquiridas e aplicações futuras}
-    \resizebox{\textwidth}{!}{
     \label{tab:competencias}
     \begin{tabular}{lll}
         \toprule
@@ -2552,7 +2045,6 @@ capítulo e sua aplicação nos capítulos subsequentes.
         Complexidade & Cap. 4, 7 & MCSP, otimização \\
         \bottomrule
     \end{tabular}
-    }
 \end{table}
 
 Ao dominar estes fundamentos, o leitor está preparado para o Capítulo~2,
