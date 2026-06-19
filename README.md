@@ -37,16 +37,19 @@ O **OpenCode Ecosystem** é um hub operacional hiper-autônomo. Ao receber uma m
 
 ### 🧠 [SYS://UNDER_THE_HOOD] ── Para o Público Técnico (Arquitetura & Engenharia)
 
-A versão **v5.1** otimiza o controle de workflows através de WSL2, Windows e ambientes conteinerizados:
+A versão **v5.1 (N3.5+)** otimiza o controle de workflows através de WSL2, Windows e ambientes conteinerizados:
 
-*   💾 **Orquestração Nexus (NMA v6.2):** Motor de sincronização meta-granular responsável pela orquestração atômica de concorrência entre agentes com 120+ travas de segurança.
-*   💾 **125 Agentes Catalogados & 106 Skills Ativas:** Especialistas dinâmicos geridos via container transversal de Injeção de Dependências (DI).
+*   💾 **Orquestração Nexus N3.5+ (NMA v6.2):** Motor de sincronização meta-granular responsável pela orquestração atômica de concorrência entre agentes com 120+ travas de segurança. **[NOVO] Integra a Barreira Preventiva Autônoma que intercepta riscos lógicos e estruturais (ex: memory exhaust) *antes* da execução da tarefa.**
+*   💾 **125 Agentes Catalogados & 106 Skills Ativas:** Especialistas dinâmicos geridos via container transversal de Injeção de Dependências (DI), com Load Balancing orgânico.
 *   💾 **Camada Universal (41 Servidores MCP):** Integrações nativas com SQLite, Web Crawlers, APIs financeiras, Execução Sandbox e pontes completas para o **Antigravity CLI (agy)**.
-*   💾 **Módulo de Pesquisa e IA Avançada:** Simulação nativa de computação quântica (81 arquiteturas testadas) e RAG Multi-Engine Adaptativo.
-*   💾 **Metacognição e Auditoria**: Módulo de auto-observação (N0 a N3.5) que se autodiagnostica, propõe patches e executa correções em tempo de execução. Provas matemáticas e teorias de complexidade (Set Cover) estão compiladas no **Manuscrito de Dissertação de 96 páginas** do projeto.
+*   💾 **Módulo de Pesquisa, IA Avançada e Multi-Raciocínio:** Simulação nativa de computação quântica e um poderoso `MultiReasoningEngine` operando em 6 vias epistemológicas (Dedutiva, Indutiva, Abdutiva, Analógica, Causal e Meta).
+*   💾 **Pipeline Epistemológico e Potentiality Scanner (SPEC-043):** O ecossistema agora caça suas próprias soluções! O Scanner vasculha os agentes atrás de integrações latentes, gerando hipóteses e validando cada uma via: **Matriz Bayesiana de Inferência**, **Falsificacionismo de Popper**, **K-Fold Cross-Validation** e **Significância Estatística (p-values < 0.05)**.
+*   💾 **Metacognição e Auditoria**: Módulo de auto-observação que atingiu o **Nível N3.5+ de Autonomia**. O sistema se autodiagnostica, constrói prova/contraprova matemática, e aplica soluções *em runtime* alterando seu próprio código de forma autópoietica.
 
 Para documentações profundas e manuais de especificação técnica:
-👉 [Documentação Técnica Completa (OPENCODE_ECOSYSTEM.md)](OPENCODE_ECOSYSTEM.md)
+👉 [Auditoria de Autonomia e Rastreabilidade N3.5+ (AUDIT_REPORT_N35.md)](AUDIT_REPORT_N35.md)  
+👉 [Pipeline Epistemológico e Scanners (PIPELINE_EPISTEMOLOGICO.md)](.opencode/PIPELINE_EPISTEMOLOGICO.md)  
+👉 [Documentação Técnica Completa (OPENCODE_ECOSYSTEM.md)](OPENCODE_ECOSYSTEM.md)  
 👉 [Manuscrito de Dissertação Acadêmica (DISSERTACAO_OPENCODE_ECOSYSTEM.pdf)](docs/DISSERTACAO_OPENCODE_ECOSYSTEM.pdf)
 
 ---

@@ -1,0 +1,68 @@
+{
+  "engine": "SROI Social Return on Investment Engine",
+  "version": "1.0.0",
+  "ecosystem": "opencode",
+  "agent": "marceloclaro",
+  "last_updated": "2026-06-19T01:23:00Z",
+  "methodology": {
+    "sroi": {
+      "description": "Social Return on Investment - ISO 26000 aligned",
+      "formula": "SROI = (Social Value Generated) / (Investment Made)",
+      "threshold_positive": 1.0,
+      "threshold_high_impact": 3.0
+    },
+    "theory_of_change": {
+      "inputs": [],
+      "activities": [],
+      "outputs": [],
+      "outcomes": [],
+      "impact": []
+    },
+    "sdgs": {
+      "tracked": [1, 4, 8, 9, 10, 11, 16, 17],
+      "names": {
+        "1": "No Poverty",
+        "4": "Quality Education",
+        "8": "Decent Work and Economic Growth",
+        "9": "Industry Innovation and Infrastructure",
+        "10": "Reduced Inequalities",
+        "11": "Sustainable Cities",
+        "16": "Peace Justice Strong Institutions",
+        "17": "Partnerships for the Goals"
+      }
+    }
+  },
+  "indicators": {
+    "digital_inclusion": {
+      "weight": 0.25,
+      "metrics": ["users_reached", "communities_served", "barriers_removed"]
+    },
+    "knowledge_generation": {
+      "weight": 0.20,
+      "metrics": ["publications", "citations", "open_datasets"]
+    },
+    "economic_empowerment": {
+      "weight": 0.20,
+      "metrics": ["jobs_created", "income_generated", "skills_transferred"]
+    },
+    "governance_transparency": {
+      "weight": 0.15,
+      "metrics": ["open_data_published", "audits_completed", "public_access_improved"]
+    },
+    "environmental_impact": {
+      "weight": 0.10,
+      "metrics": ["carbon_offset", "resources_saved", "circular_economy"]
+    },
+    "social_cohesion": {
+      "weight": 0.10,
+      "metrics": ["collaborations_formed", "communities_engaged", "conflicts_reduced"]
+    }
+  },
+  "deadweight_factors": {
+    "technology_projects": 0.15,
+    "education_projects": 0.10,
+    "social_innovation": 0.20
+  },
+  "attribution_default": 0.70,
+  "displacement_default": 0.05
+}

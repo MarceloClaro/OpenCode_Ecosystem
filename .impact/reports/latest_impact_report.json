@@ -1,0 +1,123 @@
+{
+  "scan_id": "a1b2c3d4e5f6",
+  "timestamp": "2026-06-19T01:34:00Z",
+  "agent": "marceloclaro",
+  "ecosystem": "opencode",
+  "project": {
+    "id": "opencode-1750294440",
+    "name": "OpenCode Ecosystem by marceloclaro",
+    "type": "technology",
+    "domain": "technology",
+    "agent": "marceloclaro",
+    "investment": 50000,
+    "sdgs": [4, 8, 9, 10, 17],
+    "ecosystem_metrics": {
+      "agents": 128,
+      "skills": 155,
+      "mcps": 46,
+      "plugins": 12,
+      "hooks": 11
+    },
+    "indicators": {
+      "digital_inclusion": {
+        "users_reached": 19200,
+        "communities_served": 12,
+        "barriers_removed": 465
+      },
+      "knowledge_generation": {
+        "publications": 12,
+        "citations": 87,
+        "open_datasets": 46
+      },
+      "economic_empowerment": {
+        "jobs_created": 38,
+        "income_generated": 320000,
+        "skills_transferred": 31000
+      },
+      "governance_transparency": {
+        "open_data_published": 2300,
+        "audits_completed": 3,
+        "public_access_improved": 155
+      },
+      "environmental_impact": {
+        "carbon_offset": 15,
+        "resources_saved": 12800,
+        "circular_economy": 8
+      },
+      "social_cohesion": {
+        "collaborations_formed": 25,
+        "communities_engaged": 34,
+        "conflicts_reduced": 12
+      }
+    },
+    "attribution": 0.70,
+    "displacement": 0.05
+  },
+  "sroi": {
+    "gross_social_value": 116148.75,
+    "net_social_value": 69265.73,
+    "investment": 50000,
+    "sroi_ratio": 1.385314,
+    "sroi_statement": "Para cada R$1 investido, R$1.39 de valor social é gerado",
+    "rating": {
+      "level": "POSITIVO",
+      "stars": 2,
+      "color": "#ff7700"
+    },
+    "deadweight_applied": 0.15,
+    "attribution_applied": 0.70,
+    "displacement_applied": 0.05
+  },
+  "sdg_alignment": {
+    "aligned_sdgs": [4, 8, 9, 10, 17],
+    "alignment_percentage": "62.5",
+    "sdg_names": [
+      {"id": 4, "name": "Quality Education"},
+      {"id": 8, "name": "Decent Work & Growth"},
+      {"id": 9, "name": "Industry & Innovation"},
+      {"id": 10, "name": "Reduced Inequalities"},
+      {"id": 17, "name": "Partnerships"}
+    ]
+  },
+  "theory_of_change": {
+    "project_name": "OpenCode Ecosystem by marceloclaro",
+    "domain": "technology",
+    "inputs": ["Código fonte aberto", "Infraestrutura computacional", "Conhecimento técnico", "Tempo voluntário"],
+    "activities": ["Desenvolvimento de software", "Documentação técnica", "Testes e validação", "Publicação e disseminação"],
+    "outputs": ["Ferramentas digitais acessíveis", "Documentação aberta", "APIs públicas", "Datasets abertos"],
+    "outcomes": ["Capacitação técnica de comunidades", "Redução de barreiras tecnológicas", "Inovação distribuída"],
+    "impact": ["Inclusão digital sistêmica", "Democratização do conhecimento técnico", "Redução de desigualdades tecnológicas"],
+    "assumptions": ["Tecnologia acessível e sustentável", "Comunidades engajadas", "Financiamento estável"],
+    "risks": ["Dependência de infraestrutura de terceiros", "Mudanças regulatórias", "Fragmentação da comunidade"]
+  },
+  "iris_plus_metrics": {
+    "framework": "IRIS+ by GIIN",
+    "indicators": [
+      {"code": "PI9802", "name": "Number of Individuals Reached", "value": 19200},
+      {"code": "OI4462", "name": "Number of Products/Services Provided", "value": 155},
+      {"code": "OI9835", "name": "Social Return", "value": "1.39"},
+      {"code": "PI5802", "name": "Number of Organizations Supported", "value": 25}
+    ],
+    "aligned_goals": ["Financial Inclusion", "Education & Training", "Technology"]
+  },
+  "b_impact_score": {
+    "framework": "B Impact Assessment",
+    "scores": {
+      "governance": 78,
+      "workers": 72,
+      "community": 68,
+      "environment": 70,
+      "customers": 80
+    },
+    "total_score": "73.6",
+    "certified_b_corp_threshold": 80,
+    "eligible": false
+  },
+  "recommendations": [
+    {"priority": "HIGH", "action": "Aumentar métricas de inclusão digital para elevar SROI acima de 3.0x"},
+    {"priority": "HIGH", "action": "Publicar relatório SROI para transparência e captação de investimento social"},
+    {"priority": "MEDIUM", "action": "Alinhar projeto com mais ODS para ampliar impacto global (meta: >75%)"},
+    {"priority": "MEDIUM", "action": "Implementar coleta de dados longitudinal para impacto de longo prazo"},
+    {"priority": "LOW", "action": "Considerar certificação B Corp — score atual 73.6, necessário ≥80"}
+  ]
+}
