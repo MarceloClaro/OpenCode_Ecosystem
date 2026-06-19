@@ -11,13 +11,32 @@
 % --- CODIFICAÇÃO E IDIOMA ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{times}
+\usepackage{helvet} % Helvetica (Arial-like) - substitui Times New Roman
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage[brazil]{babel}
 \usepackage{csquotes}
 
 % --- ÍNDICE REMISSIVO ---
 \usepackage{makeidx}
 \makeindex
+
+% --- CONTROLE DE OVERFULL BOXES E HIFENIZAÇÃO ---
+\usepackage{microtype} % Melhor microtipografia e hifenização automática
+\tolerance=2000 % Aumentado para evitar palavras saltando da margem
+\emergencystretch=3em
+\hfuzz=2pt
+\widowpenalty=10000 % Evita viúvas
+\clubpenalty=10000  % Evita órfãs
+\raggedbottom
+\usepackage{seqsplit}
+\usepackage{adjustbox} % Para forçar tabelas e figuras dentro das margens
+
+% Salva o \texttt original antes de redefini-lo
+% (usado por \codigoquebravel para evitar conflito com \seqsplit)
+\let\origtexttt\texttt
+
+% \codigoquebravel usa \origtexttt para evitar conflito com \seqsplit
+\newcommand{\codigoquebravel}[1]{\seqsplit{\origtexttt{#1}}}
 
 % --- MATEMÁTICA ---
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
@@ -74,11 +93,15 @@
     filecolor=magenta,
     urlcolor=cyanaccent,
     citecolor=blueaccent,
+    breaklinks=true,
     pdftitle={Engenharia de Ecossistemas Cognitivos: OpenCode Ecosystem},
     pdfauthor={Marcelo Claro Laranjeira},
     pdfsubject={Engenharia de Software, Inteligência Artificial, Sistemas Autônomos},
     pdfkeywords={OpenCode, metacognição, engenharia de software, IA, multiagentes}
 }
+
+% Quebra de URLs em qualquer ponto para evitar overfulls
+\def\UrlBreaks{\do\:\do\-\do\_\do\/\do\.\do\~\do\?\do\#\do\&\do\%\do\@\do\\}
 
 % --- CÓDIGO FONTE ---
 \usepackage{listings}
@@ -94,6 +117,7 @@
     basicstyle=\ttfamily\small,
     breakatwhitespace=false,
     breaklines=true,
+    postbreak=\mbox{$\hookrightarrow$\space},
     captionpos=b,
     keepspaces=true,
     numbers=left,
@@ -228,6 +252,11 @@
 % --- ELEMENTOS TEXTUAIS ---
 \textual
 
+% PARTE 0 - INTRODUÇÃO
+\part{Introdução}
+
+\include{capitulos/99-prefacio-genese}
+
 % PARTE I - FUNDAMENTOS
 \part{Fundamentos Teóricos e Epistemológicos}
 
@@ -248,8 +277,26 @@
 \include{capitulos/14-capitulo7-experimentacao-validacao}
 \include{capitulos/15-capitulo8-dissertacao-banca}
 
+% PARTE IV - PRÁTICA
+\part{Prática e Laboratório}
+
+\include{capitulos/20-capitulo9-guia-imersao}
+\include{capitulos/21-capitulo10-estudos-caso}
+
+% PARTE V - HORIZONTES
+\part{Horizontes e Reflexões}
+
+\include{capitulos/22-capitulo11-comparacao}
+\include{capitulos/23-capitulo12-futuro}
+
 % --- PÓS-TEXTUAIS ---
 \postextual
+
+% Ajustes para evitar overfulls na bibliografia (ieeetr com titulos em italico)
+\pretolerance=100
+\tolerance=9999
+\emergencystretch=12em
+\rightskip=0pt plus 1em plus 0.5fil
 
 \bibliography{referencias/referencias-abnt}
 
@@ -257,5 +304,7 @@
 \include{capitulos/17-apendice-glossario}
 \include{capitulos/18-apendice-codigos}
 \include{capitulos/19-apendice-indice}
+\include{capitulos/24-apendice-solucoes}
+\include{capitulos/25-apendice-cheatsheet}
 
 \end{document}

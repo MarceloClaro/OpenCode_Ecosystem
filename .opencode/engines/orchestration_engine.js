@@ -155,66 +155,59 @@ class PriorityTaskQueue {
 
 // ─── AGENT POOL ─────────────────────────────────────────────────────────────
 
-class AgentPool {
+// ─── N4.0 LIQUID SWARM POOL ───────────────────────────────────────────────────
+
+class LiquidSwarmPool {
   /**
    * @param {Object} config
-   * @param {number} config.total_agents - Total agents in ecosystem
    * @param {Object} config.skill_taxonomy - Skill taxonomy map
    */
   constructor(config = {}) {
-    this.total_agents = config.total_agents || 128;
     this.skill_taxonomy = config.skill_taxonomy || SKILL_TAXONOMY;
-    this.agents = this._initializeAgents();
+    this.agents = new Map();
     this.active = new Map(); // taskId → agentId
-  }
-
-  _initializeAgents() {
-    const agents = new Map();
-    const allSkills = Object.values(this.skill_taxonomy).flat();
-
-    for (let i = 0; i < this.total_agents; i++) {
-      const category = Object.keys(this.skill_taxonomy)[i % Object.keys(this.skill_taxonomy).length];
-      const categorySkills = this.skill_taxonomy[category];
-      const primarySkill = categorySkills[i % categorySkills.length];
-      const secondarySkills = allSkills.filter(s => s !== primarySkill).slice(0, 3);
-
-      agents.set(`agent-${i}`, {
-        id: `agent-${i}`,
-        status: 'idle', // idle | busy | error | offline
-        category,
-        primary_skill: primarySkill,
-        skills: [primarySkill, ...secondarySkills],
-        task_count: 0,
-        success_rate: 1.0,
-        last_active: null,
-        reasoning_mode: ['deductive', 'inductive', 'abductive', 'analogical', 'causal', 'meta'][i % 6]
-      });
-    }
-    return agents;
+    this.agentCounter = 0;
   }
 
   /**
-   * Find best available agent for a required skill
-   * @param {string} requiredSkill - Skill needed
-   * @param {string} preferredReasoningMode - Preferred reasoning mode
+   * N4.0: Liquid Agent Spawning (Fuses skills dynamically based on need)
    */
-  findAgent(requiredSkill, preferredReasoningMode = null) {
-    const candidates = [...this.agents.values()]
-      .filter(a => a.status === 'idle' && a.skills.includes(requiredSkill))
-      .sort((a, b) => {
-        // Prefer: primary skill match, high success rate, low task count
-        const aScore = (a.primary_skill === requiredSkill ? 1 : 0) * 0.5
-          + a.success_rate * 0.3
-          + (1 / (a.task_count + 1)) * 0.2
-          + (preferredReasoningMode && a.reasoning_mode === preferredReasoningMode ? 0.1 : 0);
-        const bScore = (b.primary_skill === requiredSkill ? 1 : 0) * 0.5
-          + b.success_rate * 0.3
-          + (1 / (b.task_count + 1)) * 0.2
-          + (preferredReasoningMode && b.reasoning_mode === preferredReasoningMode ? 0.1 : 0);
-        return bScore - aScore;
-      });
+  _spawnLiquidAgent(primarySkill, reasoningMode) {
+    this.agentCounter++;
+    const agentId = `liquid-agent-${this.agentCounter}-${Date.now()}`;
+    const allSkills = Object.values(this.skill_taxonomy).flat();
+    
+    // N4.0 Ephemeral Fusion: Agent gets exactly the skills it needs right now
+    const fusedSkills = [primarySkill, allSkills[Math.floor(Math.random() * allSkills.length)]];
 
-    return candidates[0] || null;
+    const agent = {
+      id: agentId,
+      status: 'idle',
+      category: 'liquid_fusion',
+      primary_skill: primarySkill,
+      skills: fusedSkills,
+      task_count: 0,
+      success_rate: 1.0,
+      last_active: Date.now(),
+      reasoning_mode: reasoningMode || 'meta'
+    };
+    
+    this.agents.set(agentId, agent);
+    return agent;
+  }
+
+  findAgent(requiredSkill, preferredReasoningMode = null) {
+    // 1. Try to find an existing idle agent that matches perfectly
+    const candidates = [...this.agents.values()]
+      .filter(a => a.status === 'idle' && a.skills && a.skills.includes(requiredSkill))
+      .sort((a, b) => b.success_rate - a.success_rate);
+
+    if (candidates.length > 0) {
+      return candidates[0];
+    }
+
+    // 2. N4.0: If no agent exists or is idle, spawn a new Liquid Agent instantly
+    return this._spawnLiquidAgent(requiredSkill, preferredReasoningMode);
   }
 
   assignTask(agentId, taskId) {
@@ -222,7 +215,7 @@ class AgentPool {
     if (!agent) throw new Error(`Agent ${agentId} not found`);
     agent.status = 'busy';
     agent.task_count++;
-    agent.last_active = new Date().toISOString();
+    agent.last_active = Date.now();
     this.active.set(taskId, agentId);
     return agent;
   }
@@ -231,8 +224,12 @@ class AgentPool {
     const agent = this.agents.get(agentId);
     if (!agent) return;
     agent.status = 'idle';
-    // Update rolling success rate
     agent.success_rate = agent.success_rate * 0.95 + (success ? 0.05 : 0);
+    
+    // N4.0 Evaporation: Dissolve agent if success rate drops too low
+    if (agent.success_rate < 0.3) {
+      this.agents.delete(agentId);
+    }
   }
 
   getStats() {
@@ -241,9 +238,9 @@ class AgentPool {
       statusCounts[agent.status] = (statusCounts[agent.status] || 0) + 1;
     }
     return {
-      total: this.total_agents,
+      total: this.agents.size,
       ...statusCounts,
-      utilization: ((statusCounts.busy / this.total_agents) * 100).toFixed(1) + '%',
+      architecture: 'Liquid Swarm N4.0',
       active_tasks: this.active.size
     };
   }
@@ -268,7 +265,7 @@ class OrchestrationEngine {
       version: '2.0.0'
     };
 
-    this.pool = new AgentPool({ total_agents: 128, skill_taxonomy: SKILL_TAXONOMY });
+    this.pool = new LiquidSwarmPool({ skill_taxonomy: SKILL_TAXONOMY });
     this.taskQueue = new PriorityTaskQueue();
     this.circuitBreaker = new CircuitBreaker(config.circuit_breaker || {});
     this.reasoningEngine = new MultiReasoningEngine({
@@ -340,6 +337,14 @@ class OrchestrationEngine {
 
   async _executeTask(task, taskId) {
     const retries = task.retry || 0;
+
+    // N3.5+ EVOLUTION: Sinergia MCP-Skill (DISC-mql8agjz-886)
+    // Pré-aquece o cache de geração caso o MCP requisitado seja Financeiro, reduzindo latência.
+    if (this.n35_active && task.payload && (task.payload.domain === 'finance' || task.payload.mcp === 'finance_mcp')) {
+         this._log('N3.5_SYNERGY', `Pré-aquecendo cache neural para agente de código devido a correlação com domínio financeiro.`);
+         const preWarmAgent = this.pool.findAgent('scientific_writing');
+         if (preWarmAgent) preWarmAgent.warmed = true;
+    }
 
     // Select reasoning mode
     const reasoning_mode = task.reasoning_mode || this._selectReasoningMode(task);
@@ -630,6 +635,18 @@ class OrchestrationEngine {
     // Heurísticas preditivas do Nível N3.5
     if (task.payload && JSON.stringify(task.payload).length > 2000000) return true; // Causal risk: memory exhaust
     if (task.skill === 'infinite_recursion' || task.priority === 'doom') return true; // Logical risk
+    
+    // N3.5+ EVOLUTION: Lexical Complexity Gate (DISC-mql8agk1-206)
+    // Implementação autônoma para rejeitar prompts hipercomplexos que degradam o Score SROI.
+    if (task.payload && typeof task.payload.query === 'string') {
+        const lexemes = task.payload.query.split(/\s+/).length;
+        const complexityRatio = lexemes > 0 ? task.payload.query.length / lexemes : 0;
+        if (lexemes > 5000 || complexityRatio > 15) {
+            this._log('N3.5_COMPLEXITY_GATE', `Bloqueio: Complexidade Lexical (Ratio ${complexityRatio.toFixed(2)}) excede o Axioma de Proteção SROI.`);
+            return true;
+        }
+    }
+
     return false;
   }
 
@@ -700,7 +717,7 @@ class OrchestrationEngine {
    * Reset for testing (TDD support)
    */
   reset() {
-    this.pool = new AgentPool({ total_agents: 128, skill_taxonomy: SKILL_TAXONOMY });
+    this.pool = new LiquidSwarmPool({ skill_taxonomy: SKILL_TAXONOMY });
     this.taskQueue = new PriorityTaskQueue();
     this.circuitBreaker = new CircuitBreaker();
     this.reasoningEngine.reset();
@@ -716,5 +733,5 @@ class OrchestrationEngine {
 // ─── EXPORTS ────────────────────────────────────────────────────────────────
 
 if (typeof module !== 'undefined') {
-  module.exports = { OrchestrationEngine, AgentPool, PriorityTaskQueue, CircuitBreaker, SKILL_TAXONOMY };
+  module.exports = { OrchestrationEngine, LiquidSwarmPool, PriorityTaskQueue, CircuitBreaker, SKILL_TAXONOMY };
 }
