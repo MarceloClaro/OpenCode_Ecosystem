@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "minimax-cn-coding-plan/MiniMax-M3",
+  "model": "nvidia/deepseek-ai/deepseek-r1",
   "small_model": "minimax-cn-coding-plan/MiniMax-M2.7",
   "autoupdate": true,
   "compaction": {
@@ -8,7 +8,95 @@
     "prune": true,
     "reserved": 10000
   },
-  // plugins carregados pelo config global (~/.config/opencode/opencode.jsonc)
+  "provider": {
+    "nvidia": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "NVIDIA NIM",
+      "options": {
+        "baseURL": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "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"
+      },
+      "models": {
+        "meta/llama-3.3-70b-instruct": {
+          "name": "meta/llama-3.3-70b-instruct",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          }
+        },
+        "meta/llama-3.1-405b-instruct": {
+          "name": "meta/llama-3.1-405b-instruct",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          }
+        },
+        "nvidia/llama-3.1-nemotron-70b-instruct": {
+          "name": "nvidia/llama-3.1-nemotron-70b-instruct",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          }
+        },
+        "deepseek-ai/deepseek-r1": {
+          "name": "deepseek-ai/deepseek-r1",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          }
+        },
+        "deepseek-ai/deepseek-v3": {
+          "name": "deepseek-ai/deepseek-v3",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          }
+        },
+        "qwen/qwq-32b": {
+          "name": "qwen/qwq-32b",
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          },
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          }
+        },
+        "microsoft/phi-4": {
+          "name": "microsoft/phi-4",
+          "limit": {
+            "context": 16384,
+            "output": 4096
+          },
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          }
+        }
+      }
+    }
+  },
   "mcp": {
     "filesystem": {
       "type": "local",

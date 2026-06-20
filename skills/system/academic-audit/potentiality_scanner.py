@@ -29,6 +29,9 @@ class PotentialityScanner:
         "master_orchestrator": ["central_coordination", "task_delegation", "session_management"],
         "stage_orchestrator": ["pipeline_execution", "stage_sequencing"],
         "trust_engine": ["cognitive_guardrails", "goal_drift_prevention", "realtime_interception"],
+        "social_impact_scanner": ["social_impact_assessment", "sroi_analysis", "theory_of_change",
+                                   "b_impact_assessment", "sdg_tracking", "iris_plus_indicators",
+                                   "iso_26000_compliance", "social_value_measurement"],
         "cooperative_governance": ["governance_enforcement", "conflict_resolution"],
         "dialectical_engine": ["thesis_antithesis_synthesis", "contradiction_analysis"],
         "epistemological_potential": ["potential_estimation", "opportunity_ranking"],
@@ -63,6 +66,20 @@ class PotentialityScanner:
         "server": "mcp_connection",
         "token": "token_optimization",
         "cost": "token_optimization",
+        "sroi": "social_impact_assessment",
+        "iso_26000": "social_impact_assessment",
+        "theory_of_change": "social_impact_assessment",
+        "impact": "social_impact_assessment",
+        "social": "social_impact_assessment",
+        "sdg": "sdg_tracking",
+        "ods": "sdg_tracking",
+        "sustentabilidade": "sdg_tracking",
+        "b_corp": "b_impact_assessment",
+        "iris": "iris_plus_indicators",
+        "giin": "iris_plus_indicators",
+        "deadweight": "social_value_measurement",
+        "attribution": "social_value_measurement",
+        "displacement": "social_value_measurement",
     }
 
     # Lista de capacidades latentes que representam o roadmap futuro do ecossistema
@@ -73,6 +90,9 @@ class PotentialityScanner:
         "cross_paradigm_reasoning",
         "dynamic_dependency_injection",
         "predictive_teleology",
+        "social_impact_automation",
+        "esg_continuous_monitoring",
+        "impact_weighted_accounting",
     ]
 
     def __init__(self, workspace_path: str | Path = None):
