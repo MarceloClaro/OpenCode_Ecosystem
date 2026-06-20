@@ -8,9 +8,7 @@
   <img src="livro-opencode/capa_dark.jpg" alt="OpenCode Ecosystem Architecture" width="100%"/>
 </div>
 
-<div align="center">
-  <img src="livro_gemeos_odontologia/images/capa_dark_odontologia.jpg" alt="Capa Gêmeos Digitais na Odontologia" width="100%"/>
-</div>
+
 
 ```text
  █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀�[...]
