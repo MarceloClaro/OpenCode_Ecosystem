@@ -2,6 +2,10 @@
   <img src="livro-opencode/capa_dark.jpg" alt="OpenCode Ecosystem Architecture" width="100%"/>
 </div>
 
+<div align="center">
+  <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="GEOMAKER" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="“Ofereça-me um café”" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+</div>
+
 ```text
  █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀�[...]
  █  ██████╗ ██████╗ ███████╗███╗   ██╗ ██████╗ ██████╗ ██████╗ ███████╗  v6.0  █
@@ -14,7 +18,6 @@
  █    SYSTEM DIAGNOSTIC: 🟢 NOMINAL | ARCH: N4.0 LIQUID SWARM | EVAPORATION: ON   █
  █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄�[...]
 ```
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="GEOMAKER" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="“Ofereça-me um café”" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
 
 ### ⚡ [SYS://GRID_OVERVIEW] ── O que é o OpenCode Ecosystem?
 
