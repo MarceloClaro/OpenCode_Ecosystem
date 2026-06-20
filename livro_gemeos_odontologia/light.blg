@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d (TeX Live 2025/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: light.aux
+A level-1 auxiliary file: sections/00-capa.aux
+A level-1 auxiliary file: sections/01-folha-rosto.aux
+A level-1 auxiliary file: sections/02-ficha-catalografica.aux
+The style file: abntex2-alf.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: abntex2-options.bib
+Database file #2: referencias.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
++---------------------------------------------------------+
+| Estilo bibliográfico abntex2-alf.bst versão v-1.9.7           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://www.abntex.net.br/                               |
++---------------------------------------------------------+
+You've used 66 entries,
+            6714 wiz_defined-function locations,
+            1450 strings with 16273 characters,
+and the built_in function-call counts, 108577 in all, are:
+= -- 12683
+> -- 2052
+< -- 2943
++ -- 3622
+- -- 617
+* -- 6749
+:= -- 13054
+add.period$ -- 257
+call.type$ -- 66
+change.case$ -- 701
+chr.to.int$ -- 159
+cite$ -- 65
+duplicate$ -- 11174
+empty$ -- 3719
+format.name$ -- 2936
+if$ -- 21699
+int.to.chr$ -- 33
+int.to.str$ -- 0
+missing$ -- 1162
+newline$ -- 389
+num.names$ -- 325
+pop$ -- 1555
+preamble$ -- 1
+purify$ -- 263
+quote$ -- 0
+skip$ -- 11326
+stack$ -- 1
+substring$ -- 4922
+swap$ -- 4318
+text.length$ -- 171
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 528
+width$ -- 0
+write$ -- 1087
