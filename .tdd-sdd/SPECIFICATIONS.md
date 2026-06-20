@@ -579,6 +579,22 @@ RAISES  : INTEGRITY_GATE_BLOCKED if integrity_score < 0.85
           PUBLICATION_FAILED if doi assignment fails
 ```
 
+#### Stage 8: presentation_generation
+
+```
+GIVEN   : Stage 7 has status = "passed"
+INPUTS  : { paper_artifact OBJECT }
+OUTPUTS : { mira_deck_present BOOLEAN, title STRING, theme STRING,
+            slides[] SCHEMA{title STRING, content STRING} }
+VALIDATION_RULES:
+  - mira_deck_present == true
+  - slides.length >= 5
+  - theme is defined and non-empty (e.g. "neon-emerald")
+QUALITY_GATE : mira_deck_present == true AND slides.length >= 5
+RAISES  : MIRA_DECK_MISSING if deck is not generated
+          INSUFFICIENT_SLIDES if slides.length < 5
+```
+
 ---
 
 ## 6. SROIScanner Specification
@@ -815,32 +831,116 @@ SLOs (Service Level Objectives):
 | Version | Date       | Author       | Changes                                          |
 |---------|------------|--------------|--------------------------------------------------|
 | 1.0.0   | 2026-06-18 | OpenCode SDD | Initial formal specification for all components  |
+| 1.1.0   | 2026-06-20 | Antigravity  | Added LPD simulation, ZKP biotelemetry, and MIRA |
+
+---
+
+## 11. Dentistry Simulation, Biotelemetry & Presentation Specifications
+
+### 11.1 LPDModel (Periodontal Ligament Biomechanical Model)
+
+#### 11.1.1 Purpose
+Formally models the non-linear viscoelastic anisotropic behavior of the periodontal ligament (LPD) under orthodontic forces, ensuring physical simulation accuracy.
+
+#### 11.1.2 State Space (Z Schema equivalent)
+- `displacement` : VECTOR3D -- current structural displacement
+- `strain` : TENSOR3D -- internal stress deformation tensor
+- `stress` : TENSOR3D -- applied biomechanical load
+- `viscoelastic_factor` : FLOAT (0.0..1.0) -- decay coefficient over time
+- `anisotropy_directions` : ARRAY of VECTOR3D -- fiber alignment axes
+
+#### 11.1.3 Invariants
+- **LPD-I1**: Applied stress must not exceed the ligament rupture threshold.
+  `FORMALLY: vonMises(stress) < LPD_RUPTURE_LIMIT (4.5 MPa)`
+- **LPD-I2**: Viscoelastic recovery decay must be non-negative.
+  `FORMALLY: viscoelastic_factor >= 0.0`
+- **LPD-I3**: Non-linear deformation must strictly satisfy anisotropic constraint.
+  `FORMALLY: project(strain, anisotropy_direction) <= MAX_FIBER_ELONGATION`
+
+#### 11.1.4 Operations
+
+##### simulatePressure
+- `GIVEN`
+  - `stress_mpa` : FLOAT
+  - `delta_t` : FLOAT > 0
+- `WHEN`
+  - LPDModel.simulatePressure(stress_mpa, delta_t)
+- `THEN`
+  - Updates strain and displacement using non-linear viscoelastic decay equations.
+- `RAISES`
+  - `LPD_RUPTURE` if applied force exceeds 4.5 MPa.
+
+---
+
+### 11.2 ZKPTelemetryVerifier (Zero-Knowledge Proof for Biotelemetry)
+
+#### 11.2.1 Purpose
+Ensures cryptographic validation of patient biotelemetry data from intraoral scanners without exposing raw anatomical telemetry, preventing forensically untraceable tampering.
+
+#### 11.2.2 State Space
+- `proven_metrics` : MAP of (MetricId -> Hash) -- verified telemetry hashes
+- `zkp_keys` : SCHEMA { public_key: String, verification_key: String }
+- `audit_log` : ARRAY of ZkpVerificationRecord
+
+#### 11.2.3 Invariants
+- **ZKP-I1**: Telemetry metrics cannot be modified after proof generation.
+  `FORMALLY: verify(proof, public_inputs) == true`
+- **ZKP-I2**: Verification must be zero-knowledge -- no patient identifier or raw DICOM coordinates must be contained in the proof payload.
+
+#### 11.2.4 Operations
+
+##### generateTelemetryProof
+- `GIVEN`
+  - `raw_telemetry` : OBJECT
+  - `verification_key` : STRING
+- `WHEN`
+  - ZKPTelemetryVerifier.generateTelemetryProof(raw_telemetry, verification_key)
+- `THEN`
+  - Returns a cryptographic proof and public inputs containing hashes.
+- `RAISES`
+  - `TAMPERED_DATA` if checksums do not match or raw data is malformed.
+
+##### verifyTelemetryProof
+- `GIVEN`
+  - `proof` : OBJECT
+  - `public_inputs` : OBJECT
+- `WHEN`
+  - ZKPTelemetryVerifier.verifyTelemetryProof(proof, public_inputs)
+- `THEN`
+  - Returns `true` if proof is valid, logs verification record to audit_log.
+- `RAISES`
+  - `INVALID_PROOF` if cryptographic verification fails.
+
+---
+
+### 11.3 MiraAnimator (MIRA Animation Engine)
+
+#### 11.3.1 Purpose
+Coordinates the biomechanical motion frame sequences and renders/simulates patient intraoral scan changes over time.
+
+#### 11.3.2 State Space
+- `current_frame` : INT >= 0
+- `timeline` : ARRAY of Frame
+- `is_looping` : BOOLEAN
+
+#### 11.3.3 Invariants
+- **MIRA-I1**: Frame transitions must be continuous and within biomechanical limits.
+  `FORMALLY: distance(frame[t].coordinates, frame[t-1].coordinates) <= MAX_DRIFT`
+
+#### 11.3.4 Operations
+
+##### renderFrame
+- `GIVEN`
+  - `frame_index` : INT
+  - `coordinates` : OBJECT
+- `WHEN`
+  - MiraAnimator.renderFrame(frame_index, coordinates)
+- `THEN`
+  - Computes interpolated frame transition.
+- `RAISES`
+  - `COLLISION_DETECTED` if anatomical limits are crossed.
 
 ---
 
 *End of OpenCode Ecosystem Formal Software Design Specification*
-*Total components specified: 4 | Total invariants: 22 | Total operations: 10*
-
-
-## 5. N3.5+ Evolution: Lexical Complexity Gate (SPEC-044)
-**Purpose:** Intercept and block prompts with anomalous lexical complexity to protect SROI and prevent semantic parsing exhaustion.
-**Inputs:** 	ask.payload.query (string)
-**Outputs:** Intercept log and BLOCKED_BY_N3_5_PREVENTIVE_BARRIER error.
-**Pre-conditions:** N3.5+ autonomy is active.
-**Invariants:** Complexity ratio > 15 OR lexemes > 5000 triggers the gate.
-**Status:** Validated via K-Fold and Falsification.
-
-## 6. N3.5+ Evolution: MCP Synergy Pre-warm Cache (SPEC-045)
-**Purpose:** Reduce latency by proactively pre-warming the neural cache of code/writing agents when financial domains are detected.
-**Inputs:** 	ask.payload.domain or 	ask.payload.mcp is 'finance'.
-**Outputs:** Target agent warmed property set to 	rue.
-**Status:** Validated via Abductive Inference (p-value: 0.0323).
-
-
-## 7. N4.0 Singularity: Liquid Swarm Architecture (SPEC-046)
-**Purpose:** Overcome the static pool limitation (128 agents) by dynamically spawning, fusing, and dissolving agents on demand to guarantee limitless scalability and zero idle-processing.
-**Inputs:** indAgent(skill) when pool has no idle matches.
-**Outputs:** Ephemeral liquid-agent-X with dynamically fused skills.
-**Pre-conditions:** Task requires a specific combination of skills.
-**Invariants:** success_rate < 0.3 triggers instantaneous Memory Evaporation (delete agentId).
-**Status:** Validated via N4.0 Meta-Scanner (P(H|E) = 99.9%).
+*Total components specified: 7 | Total invariants: 28 | Total operations: 14*
