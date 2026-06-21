@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://www.buymeacoffee.com/GEOMAKER" target="_blank">
-    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Ofereça-me um café" style="height: 60px !important;width: 217px !important;" >
+    <img src="cafe.jpeg" alt="Ofereça-me um café" style="height: 60px !important;width: 217px !important;" >
   </a>
 </div>
 
