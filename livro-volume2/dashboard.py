@@ -226,11 +226,11 @@ with tab1:
     <!DOCTYPE html>
     <html>
     <head>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
         <style>
-            body {{ margin: 0; overflow: hidden; background-color: #0f172a; border-radius: 8px; font-family: monospace; }}
-            canvas {{ width: 100vw; height: 100vh; display: block; }}
+            html, body {{ margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #0f172a; border-radius: 8px; font-family: monospace; }}
+            canvas {{ width: 100% !important; height: 100% !important; display: block; }}
             #hud {{
                 position: absolute;
                 top: 15px;
@@ -280,13 +280,24 @@ with tab1:
             const scene = new THREE.Scene();
             scene.background = new THREE.Color(0x0f172a);
             
-            const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+            const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
             camera.position.set(0, 5, 12);
             
             const renderer = new THREE.WebGLRenderer({{ antialias: true }});
-            renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.shadowMap.enabled = true;
             document.body.appendChild(renderer.domElement);
+            
+            let width = 0;
+            let height = 0;
+            function resizeCanvas() {{
+                if (window.innerWidth !== width || window.innerHeight !== height) {{
+                    width = window.innerWidth || 800;
+                    height = window.innerHeight || 450;
+                    camera.aspect = width / height;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(width, height);
+                }}
+            }}
             
             const controls = new THREE.OrbitControls(camera, renderer.domElement);
             controls.enableDamping = true;
@@ -500,6 +511,7 @@ with tab1:
             
             function animate() {{
                 requestAnimationFrame(animate);
+                resizeCanvas();
                 time += 0.035;
                 
                 // Força mastigatória oscila
@@ -512,7 +524,7 @@ with tab1:
                 }}
                 
                 // Escalando e calculando valores de telemetria baseados no slider
-                const real_force = (Math.abs(cycle * (applied_force - 5.0) / 2) + 5.0).toFixed(1);
+                const real_force = (Math.abs(cycle * ({applied_force} - 5.0) / 2) + 5.0).toFixed(1);
                 const real_disp = Math.abs(cycle * 55.0 - 55.0).toFixed(1); 
                 const real_stress = (Math.abs(displacement) * 2.2).toFixed(4);
                 const real_strain = (Math.abs(displacement) * 0.40 * 100).toFixed(1);
@@ -586,11 +598,7 @@ with tab1:
                 renderer.render(scene, camera);
             }}
             
-            window.addEventListener("resize", () => {{
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-            }});
+            window.addEventListener("resize", resizeCanvas);
             
             animate();
         </script>
