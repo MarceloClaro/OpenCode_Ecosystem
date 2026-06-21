@@ -1004,5 +1004,62 @@ Adapts the OpenCode Ecosystem OrchestrationEngine to the distributed, compositio
 
 ---
 
+## 13. Anny Integration Specification (Anatomical Face-Body Twin)
+
+### 13.1 AnnyAnatomicalAdapter
+
+#### 13.1.1 Purpose
+Adapts the Anny PyTorch parametric body model (representing shape, pose, and UV texture coordinates) to the OpenCode dentistry digital twin, enabling the placement of intraoral scans inside a fully parameterized facial and cranial model for complete dental-facial aesthetics and biomechanics analysis.
+
+#### 13.1.2 State Space (Z Schema equivalent)
+- `patient_shape` : SCHEMA { age: FLOAT, height_cm: FLOAT, weight_kg: FLOAT, gender: ENUM{male|female} } -- phenotype shape parameters
+- `joints_pose` : MAP of (JointId -> Vector3DRotation) -- joint rotations (e.g. head, jaw/mandible flexion)
+- `uv_coordinates` : ARRAY of VECTOR2D -- normalized texture coordinate mappings
+- `anatomical_mesh_hash` : STRING -- cryptographic hash of the current parameterized mesh geometry
+
+#### 13.1.3 Invariants
+- **ANY-I1**: Demographic phenotype parameters must remain within strictly valid anatomical bounds.
+  `FORMALLY: age in [0.0..120.0] AND height_cm in [30.0..250.0] AND weight_kg in [2.0..250.0]`
+- **ANY-I2**: Mandibular joint rotation angles must not exceed safe biological range of motion.
+  `FORMALLY: joints_pose["temporomandibular_joint"].flexion <= 45.0 degrees` (maximum safe jaw opening angle)
+- **ANY-I3**: Texture coordinates must be mapped within the normalized UV coordinate space.
+  `FORMALLY: 0.0 <= uv.u <= 1.0 AND 0.0 <= uv.v <= 1.0` for all uv in uv_coordinates.
+
+#### 13.1.4 Operations
+
+##### parameterizePatientShape
+- `GIVEN`
+  - `profile` : SCHEMA { age: FLOAT, height_cm: FLOAT, weight_kg: FLOAT, gender: STRING }
+- `WHEN`
+  - AnnyAnatomicalAdapter.parameterizePatientShape(profile)
+- `THEN`
+  - Generates parameterized shape blendshapes and computes the new anatomical_mesh_hash.
+- `RAISES`
+  - `INVALID_DEMOGRAPHICS` if parameters violate ANY-I1.
+
+##### animateAnatomicalPose
+- `GIVEN`
+  - `joint_id` : STRING
+  - `rotation` : Vector3DRotation
+- `WHEN`
+  - AnnyAnatomicalAdapter.animateAnatomicalPose(joint_id, rotation)
+- `THEN`
+  - Updates the joints_pose rotation vector for joint_id and computes the deformed mesh geometry.
+- `RAISES`
+  - `ROM_LIMIT_EXCEEDED` if joint rotation exceeds safe range of motion limits (ANY-I2).
+
+##### mapIntraoralTexture
+- `GIVEN`
+  - `mesh_vertices` : ARRAY of VECTOR3D
+  - `uvs` : ARRAY of VECTOR2D
+- `WHEN`
+  - AnnyAnatomicalAdapter.mapIntraoralTexture(mesh_vertices, uvs)
+- `THEN`
+  - Maps the intraoral scan mesh UVs to the oral cavity region of the parametric body model.
+- `RAISES`
+  - `OUT_OF_BOUNDS_UV` if coordinates violate ANY-I3.
+
+---
+
 *End of OpenCode Ecosystem Formal Software Design Specification*
-*Total components specified: 8 | Total invariants: 31 | Total operations: 17*
+*Total components specified: 9 | Total invariants: 34 | Total operations: 20*
