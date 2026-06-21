@@ -35,28 +35,46 @@ Para clarificar a orquestração cibernética, o fluxo de retroalimentação do 
 \begin{figure}[h!]
     \centering
     \begin{adjustbox}{max width=\textwidth}
-\begin{tikzpicture}[font=\footnotesize, 
-        node distance=2cm and 1.5cm,
-        box/.style={draw=accent, thick, rounded corners, fill=bgalt, text=fg, align=center, minimum width=3cm, minimum height=1.2cm},
-        arrow/.style={->, >=latex, thick, draw=accent}
-    ]
+\begin{tikzpicture}[font=\small,
+    node distance=1.5cm and 2cm,
+    cat/.style={draw=accent, thick, rounded corners, fill=bgalt, text=fg, align=center, minimum width=4cm, minimum height=1cm},
+    tool/.style={draw=accent!50, thin, rounded corners, fill=bg, text=fg, align=center, minimum width=3.5cm, minimum height=0.7cm, font=\footnotesize},
+    arrow/.style={->, >=latex, thick, draw=accent}
+]
+    % Background box for Framework SUS-Twin
+    \node[draw=orangeaccent, thick, dashed, rounded corners, fill=bgalt!20, 
+          minimum width=11cm, minimum height=12.5cm, 
+          label={[text=orangeaccent, font=\bfseries]above:Framework SUS-Twin}]
+          at (2.8,-5.0) {};
+
+    % Camadas do ecossistema
+    \node[cat] (aquisicao) {Camada de Aquisição};
+    \node[cat, below=1.5cm of aquisicao] (segmentacao) {Camada de Segmentação};
+    \node[cat, below=1.5cm of segmentacao] (modelagem) {Camada de Modelagem};
+    \node[cat, below=1.5cm of modelagem] (ia) {Camada de IA e Predição};
+    \node[cat, below=1.5cm of ia] (validacao) {Camada de Validação};
     
-    % Nodes
-    \node[box] (fisico) {1. Mundo Físico\\(Paciente/Sensores)};
-    \node[box, right=of fisico] (comunicacao) {2. Comunicação\\(IoT / FHIR / DICOM)};
-    \node[box, right=of comunicacao] (modelagem) {3. Modelagem 3D\\(FEM / IA)};
-    \node[box, below=of modelagem] (analise) {4. Análise Preditiva\\(Simulações Clínicas)};
-    \node[box, left=of analise] (interface) {5. Interface Humana\\(Decisão Clínica)};
+    % Ferramentas
+    \node[tool, right=1.5cm of aquisicao] (ios) {3Shape/iTero/CBCT};
     
-    % Arrows
-    \draw[arrow] (fisico) -- (comunicacao);
-    \draw[arrow] (comunicacao) -- (modelagem);
-    \draw[arrow] (modelagem) -- (analise);
-    \draw[arrow] (analise) -- (interface);
-    \draw[arrow] (interface) -| node[above, text=fg, near start, xshift=-1.5cm] {Intervenção e Feedback Biomecânico} (fisico);
+    \node[tool, right=1.5cm of segmentacao, yshift=0.4cm] (dseg) {DentalSegmentator};
+    \node[tool, below=0.1cm of dseg] (amas) {AMASSS (3D UNETR)};
     
-    \end{tikzpicture}
+    \node[tool, right=1.5cm of modelagem, yshift=0.4cm] (slicer) {3D Slicer + FSP};
+    \node[tool, below=0.1cm of slicer] (open3d) {Open3D (malhas)};
+    
+    \node[tool, right=1.5cm of ia, yshift=0.4cm] (periomod) {Periomod + CaTGO};
+    \node[tool, below=0.1cm of periomod] (toothX) {ToothXpert (LLaVA)};
+    
+    \node[tool, right=1.5cm of validacao, yshift=0.4cm] (tdd) {TDD (312 testes)};
+    \node[tool, below=0.1cm of tdd] (fhir) {FHIR Brasil + PySUS};
+    
+    \draw[arrow] (aquisicao) -- (segmentacao);
+    \draw[arrow] (segmentacao) -- (modelagem);
+    \draw[arrow] (modelagem) -- (ia);
+    \draw[arrow] (ia) -- (validacao);
+\end{tikzpicture}
 \end{adjustbox}
-    \caption{Ciclo bidirecional cibernético e camadas arquiteturais do Gêmeo Digital Odontológico.}
+    \caption{Cinco camadas do ecossistema SUS-Twin e ferramentas open-source correspondentes.}
     \label{fig:fluxo_dt}
 \end{figure}

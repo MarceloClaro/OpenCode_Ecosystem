@@ -1,0 +1,37 @@
+{
+  "ecosystem": "OpenCode v5.4.0",
+  "module": "livro-volume2",
+  "version": "2.0.0",
+  "description": "Gêmeos Digitais na Odontologia — Framework SUS-Twin",
+  "agents": {
+    "autoevolve": {
+      "discover_paths": ["./_archive"],
+      "install_rules": { "min_stars": 10, "require_skill_md": true },
+      "verify_commands": [
+        "python test_sus_twin_framework.py",
+        "make validate"
+      ]
+    },
+    "seeker": {
+      "research_domains": ["odontologia", "digital_twins", "biomecanica", "sus"],
+      "min_sources": 5,
+      "output_dir": "sections/"
+    },
+    "marceloclaro": {
+      "architecture_role": "supervisor",
+      "pipelines": ["build", "validate", "publish"]
+    }
+  },
+  "specs": {
+    "SPEC-025": { "validator": "test_frontmatter_validator.py", "status": "passed" },
+    "SPEC-026": { "validator": "test_evolve_pipeline.py", "status": "passed" }
+  },
+  "tdd_status": {
+    "total_tests": 11,
+    "passed": 11,
+    "suite_file": "test_sus_twin_framework.py",
+    "last_run": "2026-06-21"
+  },
+  "health_score": 95,
+  "last_evolve_cycle": "R23"
+}

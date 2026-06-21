@@ -1,0 +1,2 @@
+{"type": "session_start", "session_id": "SESSION-20260617-005256-9AF0", "timestamp": "2026-06-17T00:52:56.375128+00:00", "version": "1.0.0", "paradigm": "", "level": 1}
+{"type": "artifact", "session_id": "SESSION-20260617-005256-9AF0", "timestamp": "2026-06-17T00:52:56.409803+00:00", "artifact_type": "paragraph", "artifact_path": "P01", "metadata": {"text_length": 102}}

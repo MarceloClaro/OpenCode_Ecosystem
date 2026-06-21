@@ -1,0 +1,3791 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./dark.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/fleqn.clo)
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk11.clo)) (./context.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/locale/invalid/babel-brazil.te
+x)
+
+Package babel Warning: Name 'brazil' is deprecated.
+(babel)                Use 'brazilian' instead.
+(babel)                Reported on input line 4330.
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/brazilian.ldf))
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def)
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(./template/book/main.tex (./template/generic/main.tex
+(./template/generic/themes.tex
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/pagecolor/pagecolor.sty))
+(./template/generic/geometry.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty)
+(./template/generic/page.tex) (./template/generic/fonts.tex
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty)
+! Undefined control sequence.
+<recently read> \OnehalfSpacing 
+                                
+l.21 \OnehalfSpacing
+                    
+) (./template/generic/titles.tex
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty))
+(./template/generic/math.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(./template/generic/links.tex
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
+(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/hypcap/hypcap.sty
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty))
+
+Package hyperref Warning: Option `backref' has already been used,
+(hyperref)                setting the option has no effect on input line 20.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 20.
+
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 20.
+
+
+Package hyperref Warning: Option `bookmarks' has already been used,
+(hyperref)                setting the option has no effect on input line 20.
+
+) (./template/generic/lists.tex
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty))
+(./template/generic/syntax.tex
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstpatch.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
+==> First Aid for listings.sty no longer applied!
+    Expected:
+        2024/09/23 1.10c (Carsten Heinz)
+    but found:
+        2025/11/14 1.11b (Carsten Heinz)
+    so I'm assuming it got fixed.
+(./template/generic/syntax/solidity.tex)) (./template/generic/headers.tex
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty))
+(./template/generic/boxes.tex
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered
+.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.9.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.9.0'
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.te
+x)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'
+)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.9.0'
+(/usr/share/texlive/texmf-dist/tex/latex/pdfcol/pdfcol.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.9.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.9.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.9.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.9.0'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '6.9.0'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.9.0'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.9.0'
+))) (/usr/share/texlive/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '6.9.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbmagazine.code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '6.9.0'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbvignette.code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '6.9.0'
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfadings.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code
+.tex))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '6.9.0'
+))) (./template/generic/captions.tex
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty)))
+(./template/generic/images.tex) (./template/generic/figures.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryarrows.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
+tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarybackgrounds.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfit.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarymath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfpu.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarymindmap.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytrees.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
+e.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.geometric.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.geometric.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.misc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.misc.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.symbols.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.symbols.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.arrows.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.arrows.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.callouts.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.callouts.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.multipart.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.multipart.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/tikzmark/tikzlibrarytikzmark.code.tex
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)))
+(./template/generic/tables.tex
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)))
+(./template/book/page.tex
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty)))
+(./template/book/titles.tex) (./template/book/cover.tex)
+(./template/book/toc.tex
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titletoc.sty))
+(./template/book/background.tex
+(/usr/share/texlive/texmf-dist/tex/latex/background/background.sty
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/everypage/everypage.sty
+
+Package everypage Warning: Functionality similar to this package has recently
+(everypage)                been implemented in LaTeX. This package is now in
+(everypage)                legacy status.
+(everypage)                Please, don't use it in new documents and packages.
+
+
+Package everypage Warning: You appear to be running a version of LaTeX
+(everypage)                providing the new functionality.
+(everypage)                Doing the best to deliver the original `everypage`
+(everypage)                interface on top of it. Strict equivalence is
+(everypage)                not possible, breakage may occur.
+(everypage)                If truly needed, Use `everypage-1x` to force the
+(everypage)                loading of an older code base.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/afterpage.sty)))
+(./template/book/bibliography.tex
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty)
+Writing index file dark.idx
+)) (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/seqsplit/seqsplit.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
+.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_loader.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfutil-common-lists.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructure.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructureext.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
+x.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
+d.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.te
+x
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.co
+de.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
+fshading.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
+shading.pgfsys-pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.
+tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.t
+ex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.cod
+e.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.
+tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathmorphing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathmorphing.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathreplacing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathreplacing.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.co
+ntourlua.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryplotmarks.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.co
+de.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
+code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryautomata.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarychains.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypatterns.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.cod
+e.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypetri.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryscopes.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshadows.code.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+No file dark.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd)
+Underfull \hbox (badness 5036) in paragraph at lines 209--209
+ [][][][]\T1/phv/b/sc/24.88 (+20) Engenharia de Ecos-sis-te-mas Cog-ni-ti-vos[]
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--209
+ [][][]\T1/phv/m/sc/14.4 (+20) Marcelo Claro La-ran-jeira
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--209
+ []\T1/phv/m/sc/14.4 (+20) 2026[]
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-
+dist/fonts/enc/dvips/base/8r.enc}]
+
+Package hyperref Warning: Option `backref' has already been used,
+(hyperref)                setting the option has no effect on input line 213.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 213.
+
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 213.
+
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 213.
+
+
+Package hyperref Warning: Option `bookmarks' has already been used,
+(hyperref)                setting the option has no effect on input line 213.
+
+(./dark.toc) (./pre-textuais.tex [2] [3] [4]
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd) [5]
+(/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex))
+[6] (./dark.lof) [7] (./dark.lot) [8]
+
+Package hyperref Warning: Option `backref' has already been used,
+(hyperref)                setting the option has no effect on input line 225.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 225.
+
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 225.
+
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 225.
+
+
+Package hyperref Warning: Option `bookmarks' has already been used,
+(hyperref)                setting the option has no effect on input line 225.
+
+(./dark.lol)
+Overfull \hbox (10.95406pt too wide) in paragraph at lines 231--231
+ |[] []\T1/phv/m/n/48 (-20) FUN-DA-MEN-TOS TE-Ó-RI-
+[9]
+Cap\'{\i }tulo 1.
+(../capitulos/08-capitulo1-mat-est.tex [10]
+Cap\'{\i }tulo 2.
+
+Package natbib Warning: Citation `beck2002tdd' on page 11 undefined on input li
+ne 24.
+
+
+Package natbib Warning: Citation `pressman2016engenharia' on page 11 undefined 
+on input line 24.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
+
+LaTeX Warning: Reference `tab:conteudo-capitulo1' on page 11 undefined on input
+ line 38.
+
+[11]
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 12 undefined
+ on input line 77.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd)
+
+LaTeX Warning: Reference `tab:conectivos' on page 12 undefined on input line 10
+6.
+
+
+LaTeX Warning: Reference `fig:tabela-verdade-conectivos' on page 12 undefined o
+n input line 134.
+
+[12]
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 13 undefined
+ on input line 215.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 13 undefine
+d on input line 215.
+
+
+Overfull \hbox (47.04932pt too wide) in paragraph at lines 230--232
+[][]\T1/ptm/b/n/10.95 (-20) Exemplo 2.3. []\T1/ptm/m/n/10.95 (-20) Con-si-dere 
+o pre-di-cado $\OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\O
+T1/cmr/m/n/10.95 ) = []\OML/cmm/m/it/10.95 x[]$ \T1/ptm/m/n/10.95 (-20) e $\OML
+/cmm/m/it/10.95 C\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) 
+= []\OML/cmm/m/it/10.95 x[]$\T1/ptm/m/n/10.95 (-20) .
+[13]
+Overfull \hbox (7.454pt too wide) in paragraph at lines 294--298
+[][]\T1/ptm/b/n/10.95 (-20) Definição 2.8 \T1/ptm/m/n/10.95 (-20) (Ál-ge-bra bo
+-o-le-ana)\T1/ptm/b/n/10.95 (-20) . []\T1/ptm/m/n/10.95 (-20) Uma []\T1/ptm/b/n
+/10.95 (-20) ál-ge-bra bo-o-le-ana[] \T1/ptm/m/n/10.95 (-20) é uma es-tru-tura 
+al-gé-brica $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 B; \OMS/cmsy/m/n/10.95 ^\O
+ML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 _\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10
+.95 :\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m
+/n/10.95 1)$
+[14]
+
+Package natbib Warning: Citation `hastie2009elements' on page 15 undefined on i
+nput line 352.
+
+
+Package natbib Warning: Citation `wasserman2004all' on page 15 undefined on inp
+ut line 352.
+
+[15] (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-euf.cfg)
+
+Package natbib Warning: Citation `strang2016algebra' on page 16 undefined on in
+put line 487.
+
+
+Package natbib Warning: Citation `goodfellow2016deep' on page 16 undefined on i
+nput line 487.
+
+
+Package natbib Warning: Citation `bishop2006pattern' on page 16 undefined on in
+put line 487.
+
+[16]
+
+Package natbib Warning: Citation `devlin2019bert' on page 17 undefined on input
+ line 509.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 17 undefined on
+ input line 509.
+
+
+Package natbib Warning: Citation `goodfellow2016deep' on page 17 undefined on i
+nput line 559.
+
+[17] [18]
+
+Package natbib Warning: Citation `goodfellow2016deep' on page 19 undefined on i
+nput line 689.
+
+
+Package natbib Warning: Citation `bishop2006pattern' on page 19 undefined on in
+put line 689.
+
+[19] [20] [21]
+
+Package natbib Warning: Citation `wasserman2004all' on page 22 undefined on inp
+ut line 886.
+
+
+Package natbib Warning: Citation `hastie2009elements' on page 22 undefined on i
+nput line 886.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 22 undefined
+ on input line 886.
+
+[22]
+
+LaTeX Warning: Reference `tab:distribuicoes' on page 23 undefined on input line
+ 992.
+
+[23]
+
+Package natbib Warning: Citation `laranjeira2026cora' on page 24 undefined on i
+nput line 1042.
+
+
+Package natbib Warning: Citation `wasserman2004all' on page 24 undefined on inp
+ut line 1082.
+
+
+Package natbib Warning: Citation `hastie2009elements' on page 24 undefined on i
+nput line 1082.
+
+
+Package natbib Warning: Citation `box1976science' on page 24 undefined on input
+ line 1082.
+
+
+Overfull \hbox (21.2557pt too wide) in paragraph at lines 1087--1090
+[][]\T1/ptm/b/n/10.95 (-20) Definição 2.35 \T1/ptm/m/n/10.95 (-20) (Es-ti-ma-do
+r)\T1/ptm/b/n/10.95 (-20) . []\T1/ptm/m/n/10.95 (-20) Um []\T1/ptm/b/n/10.95 (-
+20) es-ti-ma-dor[] $[]$ \T1/ptm/m/n/10.95 (-20) do pa-râ-me-tro $\OML/cmm/m/it/
+10.95 ^^R$ \T1/ptm/m/n/10.95 (-20) é uma fun-ção da amos-tra $\OML/cmm/m/it/10.
+95 X[]; X[]; [] ; X[]$\T1/ptm/m/n/10.95 (-20) .
+[24]
+
+Package natbib Warning: Citation `laranjeira2026cora' on page 25 undefined on i
+nput line 1107.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 25 undefined o
+n input line 1157.
+
+[25]
+
+Package natbib Warning: Citation `laranjeira2026cora' on page 26 undefined on i
+nput line 1216.
+
+
+Package natbib Warning: Citation `laranjeira2026cora' on page 26 undefined on i
+nput line 1245.
+
+
+Package natbib Warning: Citation `laranjeira2026opencode' on page 26 undefined 
+on input line 1245.
+
+[26]
+
+Package natbib Warning: Citation `cover2006elements' on page 27 undefined on in
+put line 1296.
+
+
+Package natbib Warning: Citation `goodfellow2016deep' on page 27 undefined on i
+nput line 1296.
+
+[27]
+Missing character: There is no ; in font nullfont!
+
+Package natbib Warning: Citation `brown2020language' on page 28 undefined on in
+put line 1377.
+
+
+Package natbib Warning: Citation `achiam2023gpt4' on page 28 undefined on input
+ line 1377.
+
+[28]
+
+Package natbib Warning: Citation `opencode2026spec036' on page 29 undefined on 
+input line 1425.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 29 undefined o
+n input line 1425.
+
+
+Package natbib Warning: Citation `cover2006elements' on page 29 undefined on in
+put line 1431.
+
+[29]
+
+Package natbib Warning: Citation `barabasi2016network' on page 30 undefined on 
+input line 1494.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 30 undefine
+d on input line 1494.
+
+[30]
+
+Package natbib Warning: Citation `opencode2026scanner' on page 31 undefined on 
+input line 1563.
+
+
+Package natbib Warning: Citation `opencode2026scanner' on page 31 undefined on 
+input line 1604.
+
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (64.20882pt too wide) in paragraph at lines 1663--1666
+[][]\T1/ptm/b/n/10.95 (-20) Exercício 2.27 \T1/ptm/m/n/10.95 (-20) (Ni-vel Bá-s
+ico)\T1/ptm/b/n/10.95 (-20) . []\T1/ptm/m/n/10.95 (-20) Dado o grafo $\OML/cmm/
+m/it/10.95 G \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 V; E\OT1/cmr/m/n/10.95 )
+$ \T1/ptm/m/n/10.95 (-20) com $\OML/cmm/m/it/10.95 V \OT1/cmr/m/n/10.95 = \OMS/
+cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 a; b; c; d\OMS/cmsy/m/n/10.95 g$ \T1/ptm/m/
+n/10.95 (-20) e $\OML/cmm/m/it/10.95 E \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95
+ f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a; b\OT1/cmr/m/n/10.95 )\OML/cmm/m/it
+/10.95 ; \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 b; c\OT1/cmr/m/n/10.95 )\OML/c
+mm/m/it/10.95 ; \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 c; d\OT1/cmr/m/n/10.95 
+)\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 d; a\OT1/cmr/m/n
+/10.95 )\OMS/cmsy/m/n/10.95 g$\T1/ptm/m/n/10.95 (-20) ,
+[31]
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 32 undefined
+ on input line 1696.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 32 undefine
+d on input line 1696.
+
+[32]
+
+Package natbib Warning: Citation `opencode2026scanner' on page 33 undefined on 
+input line 1749.
+
+
+Package natbib Warning: Citation `opencode2026scanner' on page 33 undefined on 
+input line 1796.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 33 undefined on 
+input line 1796.
+
+[33]
+
+LaTeX Warning: Reference `tab:conceitos-ecossistema' on page 34 undefined on in
+put line 1866.
+
+[34] [35]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 36 undefined o
+n input line 1991.
+
+[36]
+
+LaTeX Warning: Reference `tab:competencias' on page 37 undefined on input line 
+2026.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 37 undefined
+ on input line 2058.
+
+
+Package natbib Warning: Citation `strang2016algebra' on page 37 undefined on in
+put line 2060.
+
+
+Package natbib Warning: Citation `goodfellow2016deep' on page 37 undefined on i
+nput line 2062.
+
+
+Package natbib Warning: Citation `wasserman2004all' on page 37 undefined on inp
+ut line 2064.
+
+[37]
+
+Package natbib Warning: Citation `cover2006elements' on page 38 undefined on in
+put line 2066.
+
+
+Package natbib Warning: Citation `barabasi2016network' on page 38 undefined on 
+input line 2068.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 38 undefined
+ on input line 2070.
+
+) [38]
+Cap\'{\i }tulo 3.
+
+Overfull \hbox (11.50246pt too wide) in paragraph at lines 238--238
+|[]\T1/phv/b/n/20.74 (-20) INTELIGÊNCIA AR-TI-FI-CIAL E SIS-TE-MAS MUL-
+(../capitulos/09-capitulo2-ia-agentes.tex [39]
+Cap\'{\i }tulo 4.
+
+Overfull \hbox (2.8074pt too wide) in paragraph at lines 6--6
+|[]\T1/phv/b/n/20.74 (-20) INTELIGÊNCIA AR-TI-FI-CIAL E AR-QUI-TE-TURA
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 40 undefined
+ on input line 12.
+
+
+Package natbib Warning: Citation `lecun2015deep' on page 40 undefined on input 
+line 12.
+
+
+LaTeX Warning: Reference `tab:conteudo-capitulo2' on page 40 undefined on input
+ line 19.
+
+
+Package natbib Warning: Citation `mccarthy1955proposal' on page 40 undefined on
+ input line 51.
+
+
+Package natbib Warning: Citation `turing1950computing' on page 40 undefined on 
+input line 56.
+
+
+Package natbib Warning: Citation `turing1950computing' on page 40 undefined on 
+input line 63.
+
+[40]
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 41 undefined
+ on input line 67.
+
+
+Package natbib Warning: Citation `achiam2023gpt4' on page 41 undefined on input
+ line 71.
+
+
+Package natbib Warning: Citation `bender2021dangers' on page 41 undefined on in
+put line 71.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 41 undefined o
+n input line 76.
+
+
+Package natbib Warning: Citation `newell1976physical' on page 41 undefined on i
+nput line 83.
+
+
+Package natbib Warning: Citation `mcculloch1943logical' on page 41 undefined on
+ input line 90.
+
+
+Package natbib Warning: Citation `rosenblatt1958perceptron' on page 41 undefine
+d on input line 90.
+
+
+LaTeX Warning: Reference `tab:simbÃ³lica-conexionista' on page 41 undefined on 
+input line 92.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 41 undefined o
+n input line 113.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 41 undefined
+ on input line 115.
+
+
+Package natbib Warning: Citation `opencode2026scanner' on page 41 undefined on 
+input line 124.
+
+[41]
+
+Package natbib Warning: Citation `opencode2026manus' on page 42 undefined on in
+put line 130.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 42 undefined
+ on input line 136.
+
+
+Package natbib Warning: Citation `opencode2026seeker' on page 42 undefined on i
+nput line 145.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 42 undefined
+ on input line 147.
+
+[42]
+
+Package natbib Warning: Citation `opencode2026scanner' on page 43 undefined on 
+input line 183.
+
+
+Package natbib Warning: Citation `opencode2026manus' on page 43 undefined on in
+put line 203.
+
+
+Package natbib Warning: Citation `bishop2006pattern' on page 43 undefined on in
+put line 231.
+
+
+Package natbib Warning: Citation `hastie2009elements' on page 43 undefined on i
+nput line 231.
+
+[43]
+
+Package natbib Warning: Citation `mitchell1997machine' on page 44 undefined on 
+input line 237.
+
+
+Package natbib Warning: Citation `hastie2009elements' on page 44 undefined on i
+nput line 237.
+
+
+LaTeX Warning: Reference `tab:paradigmas-ml' on page 44 undefined on input line
+ 240.
+
+
+Package natbib Warning: Citation `hastie2009elements' on page 44 undefined on i
+nput line 259.
+
+
+Package natbib Warning: Citation `bishop2006pattern' on page 44 undefined on in
+put line 267.
+
+[44]
+
+Package natbib Warning: Citation `bishop2006pattern' on page 45 undefined on in
+put line 292.
+
+
+Package natbib Warning: Citation `quinlan1986induction' on page 45 undefined on
+ input line 326.
+
+[45]
+
+Package natbib Warning: Citation `breiman2001random' on page 46 undefined on in
+put line 336.
+
+
+Package natbib Warning: Citation `cortes1995support' on page 46 undefined on in
+put line 362.
+
+
+Package natbib Warning: Citation `fix1989discriminatory' on page 46 undefined o
+n input line 371.
+
+
+Package natbib Warning: Citation `lloyd1982least' on page 46 undefined on input
+ line 378.
+
+[46]
+
+Package natbib Warning: Citation `hastie2009elements' on page 47 undefined on i
+nput line 406.
+
+
+Package natbib Warning: Citation `bishop2006pattern' on page 47 undefined on in
+put line 411.
+
+
+Package natbib Warning: Citation `opencode2026spec038' on page 47 undefined on 
+input line 455.
+
+[47]
+
+Package natbib Warning: Citation `goodfellow2016deep' on page 48 undefined on i
+nput line 520.
+
+
+Package natbib Warning: Citation `lecun2015deep' on page 48 undefined on input 
+line 520.
+
+[48]
+
+Package natbib Warning: Citation `mcculloch1943logical' on page 49 undefined on
+ input line 524.
+
+
+Package natbib Warning: Citation `rosenblatt1958perceptron' on page 49 undefine
+d on input line 532.
+
+
+Package natbib Warning: Citation `rumelhart1986learning' on page 49 undefined o
+n input line 557.
+
+
+Package natbib Warning: Citation `goodfellow2016deep' on page 49 undefined on i
+nput line 567.
+
+[49]
+
+LaTeX Warning: Reference `tab:ativacoes' on page 50 undefined on input line 608
+.
+
+
+Package natbib Warning: Citation `nair2010relu' on page 50 undefined on input l
+ine 626.
+
+
+Package natbib Warning: Citation `hendrycks2016gaussian' on page 50 undefined o
+n input line 628.
+
+
+Package natbib Warning: Citation `lecun1998gradient' on page 50 undefined on in
+put line 631.
+
+
+Package natbib Warning: Citation `krizhevsky2012imagenet' on page 50 undefined 
+on input line 631.
+
+[50]
+Overfull \hbox (3.55878pt too wide) in paragraph at lines 672--673
+ [][] 
+
+Package natbib Warning: Citation `goodfellow2016deep' on page 51 undefined on i
+nput line 676.
+
+
+Package natbib Warning: Citation `hochreiter1997long' on page 51 undefined on i
+nput line 681.
+
+[51]
+
+Package natbib Warning: Citation `srivastava2014dropout' on page 52 undefined o
+n input line 718.
+
+
+Package natbib Warning: Citation `ioffe2015batch' on page 52 undefined on input
+ line 726.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 52 undefined o
+n input line 735.
+
+[52]
+
+Package natbib Warning: Citation `vaswani2017attention' on page 53 undefined on
+ input line 791.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 53 undefined on
+ input line 861.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 53 undefined on
+ input line 867.
+
+[53]
+
+LaTeX Warning: Reference `fig:attention' on page 54 undefined on input line 873
+.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 54 undefined on
+ input line 905.
+
+
+Package natbib Warning: Citation `su2024roformer' on page 54 undefined on input
+ line 913.
+
+
+Package natbib Warning: Citation `ba2016layer' on page 54 undefined on input li
+ne 914.
+
+[54]
+
+Package natbib Warning: Citation `devlin2019bert' on page 55 undefined on input
+ line 924.
+
+
+Package natbib Warning: Citation `radford2018gpt' on page 55 undefined on input
+ line 929.
+
+
+Package natbib Warning: Citation `brown2020language' on page 55 undefined on in
+put line 931.
+
+
+Package natbib Warning: Citation `achiam2023gpt4' on page 55 undefined on input
+ line 933.
+
+
+Package natbib Warning: Citation `touvron2023llama' on page 55 undefined on inp
+ut line 936.
+
+
+Package natbib Warning: Citation `deepseek2024deepseek' on page 55 undefined on
+ input line 941.
+
+[55]
+
+Package natbib Warning: Citation `chung2022scaling' on page 56 undefined on inp
+ut line 951.
+
+
+Package natbib Warning: Citation `ouyang2022training' on page 56 undefined on i
+nput line 953.
+
+
+Package natbib Warning: Citation `wei2022chain' on page 56 undefined on input l
+ine 964.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 56 undefined o
+n input line 985.
+
+[56]
+
+Package natbib Warning: Citation `white2023prompt' on page 57 undefined on inpu
+t line 1058.
+
+
+Package natbib Warning: Citation `brown2020language' on page 57 undefined on in
+put line 1062.
+
+[57]
+
+Package natbib Warning: Citation `brown2020language' on page 58 undefined on in
+put line 1066.
+
+
+Package natbib Warning: Citation `wei2022chain' on page 58 undefined on input l
+ine 1084.
+
+
+Package natbib Warning: Citation `wang2023selfconsistency' on page 58 undefined
+ on input line 1104.
+
+[58]
+
+Package natbib Warning: Citation `yao2023react' on page 59 undefined on input l
+ine 1124.
+
+
+Package natbib Warning: Citation `shinn2023reflexion' on page 59 undefined on i
+nput line 1155.
+
+[59]
+
+Package natbib Warning: Citation `yao2023tree' on page 60 undefined on input li
+ne 1187.
+
+
+Package natbib Warning: Citation `besta2024graph' on page 60 undefined on input
+ line 1195.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 60 undefined o
+n input line 1200.
+
+
+LaTeX Warning: Reference `tab:raciocinios' on page 60 undefined on input line 1
+200.
+
+[60]
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 61 undefine
+d on input line 1280.
+
+
+Package natbib Warning: Citation `weiss2013multiagent' on page 61 undefined on 
+input line 1280.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 61 undefine
+d on input line 1284.
+
+[61]
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 62 undefine
+d on input line 1288.
+
+
+Package natbib Warning: Citation `opencode2026seeker' on page 62 undefined on i
+nput line 1350.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 62 undefine
+d on input line 1356.
+
+[62]
+
+Package natbib Warning: Citation `weiss2013multiagent' on page 63 undefined on 
+input line 1389.
+
+
+Package natbib Warning: Citation `shoham2023multiagent' on page 63 undefined on
+ input line 1389.
+
+
+Package natbib Warning: Citation `shoham2023multiagent' on page 63 undefined on
+ input line 1393.
+
+[63]
+
+Package natbib Warning: Citation `opencode2026maswos' on page 64 undefined on i
+nput line 1398.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 64 undefined on in
+put line 1427.
+
+
+Package natbib Warning: Citation `opencode2026spec038' on page 64 undefined on 
+input line 1427.
+
+
+LaTeX Warning: Reference `tab:agentes-opencode' on page 64 undefined on input l
+ine 1430.
+
+
+Package natbib Warning: Citation `opencode2026maswos' on page 64 undefined on i
+nput line 1453.
+
+[64]
+
+Package natbib Warning: Citation `opencode2026seeker' on page 65 undefined on i
+nput line 1458.
+
+
+Package natbib Warning: Citation `opencode2026reversa' on page 65 undefined on 
+input line 1461.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 65 undefined o
+n input line 1496.
+
+[65]
+
+Package natbib Warning: Citation `demoura2008z3' on page 66 undefined on input 
+line 1501.
+
+
+Package natbib Warning: Citation `demoura2008z3' on page 66 undefined on input 
+line 1505.
+
+[66]
+
+Package natbib Warning: Citation `byrd2012mini' on page 67 undefined on input l
+ine 1583.
+
+
+Package natbib Warning: Citation `broniatowski2019critical' on page 67 undefine
+d on input line 1608.
+
+[67]
+
+Package natbib Warning: Citation `opencode2026spec036' on page 68 undefined on 
+input line 1640.
+
+
+Package natbib Warning: Citation `opencode2026spec037' on page 68 undefined on 
+input line 1640.
+
+[68]
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 69 undefined
+ on input line 1691.
+
+
+Package natbib Warning: Citation `fikes1971strips' on page 69 undefined on inpu
+t line 1724.
+
+
+Package natbib Warning: Citation `mcdermott1998pddl' on page 69 undefined on in
+put line 1729.
+
+[69]
+
+Package natbib Warning: Citation `sutton2018reinforcement' on page 70 undefined
+ on input line 1775.
+
+
+Overfull \hbox (19.21484pt too wide) in paragraph at lines 1770--1776
+[][]\T1/ptm/b/n/10.95 (-20) Definição 4.26 \T1/ptm/m/n/10.95 (-20) (MDP)\T1/ptm
+/b/n/10.95 (-20) . []\T1/ptm/m/n/10.95 (-20) Um \T1/ptm/m/it/10.95 (-20) Pro-ce
+sso de De-ci-são de Mar-kov \T1/ptm/m/n/10.95 (-20) (MDP) é de-fi-nido pela tu-
+pla $\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 S\OML/cmm/m/it/10.95 ; \OMS/cmsy/m
+/n/10.95 A\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 P\OML/cmm/m/it/10.95 ; \OMS
+/cmsy/m/n/10.95 R\OML/cmm/m/it/10.95 ; ^^M\OT1/cmr/m/n/10.95 )$
+
+Package natbib Warning: Citation `mnih2015human' on page 70 undefined on input 
+line 1778.
+
+
+Package natbib Warning: Citation `schulman2017proximal' on page 70 undefined on
+ input line 1783.
+
+[70]
+
+Package natbib Warning: Citation `haarnoja2018soft' on page 71 undefined on inp
+ut line 1789.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 71 undefined on 
+input line 1802.
+
+
+Package natbib Warning: Citation `opencode2026manus' on page 71 undefined on in
+put line 1805.
+
+[71] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty)
+
+LaTeX Warning: Reference `tab:comandos-opencode' on page 72 undefined on input 
+line 1897.
+
+
+Package natbib Warning: Citation `opencode2026scanner' on page 72 undefined on 
+input line 1916.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 72 undefined on 
+input line 1916.
+
+[72]
+Overfull \hbox (16.07825pt too wide) in paragraph at lines 1959--1961
+[][]\T1/ptm/b/n/10.95 (-20) Exercício 4.37 \T1/ptm/m/n/10.95 (-20) (Ni-vel 0)\T
+1/ptm/b/n/10.95 (-20) . []\T1/ptm/m/n/10.95 (-20) Ins-tale o \T1/ptm/m/sc/10.95
+ (-20) Open-Code Ecosys-tem \T1/ptm/m/n/10.95 (-20) e exe-cute \T1/pcr/m/n/10.9
+5 opencode --list-agents\T1/ptm/m/n/10.95 (-20) .
+[73]
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 74 undefined
+ on input line 2007.
+
+
+Package natbib Warning: Citation `hastie2009elements' on page 74 undefined on i
+nput line 2009.
+
+
+Package natbib Warning: Citation `goodfellow2016deep' on page 74 undefined on i
+nput line 2011.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 74 undefined on
+ input line 2013.
+
+
+Package natbib Warning: Citation `brown2020language' on page 74 undefined on in
+put line 2014.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 74 undefine
+d on input line 2015.
+
+
+Package natbib Warning: Citation `white2023prompt' on page 74 undefined on inpu
+t line 2017.
+
+
+Package natbib Warning: Citation `wei2022chain' on page 74 undefined on input l
+ine 2018.
+
+
+Package natbib Warning: Citation `demoura2008z3' on page 74 undefined on input 
+line 2019.
+
+
+Package natbib Warning: Citation `byrd2012mini' on page 74 undefined on input l
+ine 2020.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 74 undefined o
+n input line 2021.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 74 undefined on 
+input line 2022.
+
+
+Package natbib Warning: Citation `opencode2026spec038' on page 74 undefined on 
+input line 2022.
+
+) [74]
+Overfull \hbox (19.31108pt too wide) in paragraph at lines 245--245
+ |[] []\T1/phv/m/n/48 (-20) AR-QUI-TE-TURA E EN-GE-
+
+Overfull \hbox (25.67842pt too wide) in paragraph at lines 245--245
+ \T1/phv/m/n/48 (-20) NHA-RIA DO OPEN-CODE
+[75]
+Cap\'{\i }tulo 5.
+(../capitulos/10-capitulo3-opencode-arquitetura.tex [76]
+Cap\'{\i }tulo 6.
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 77 undefined o
+n input line 17.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 77 undefined o
+n input line 68.
+
+
+Package natbib Warning: Citation `laranjeira2026opencode' on page 77 undefined 
+on input line 68.
+
+[77]
+
+LaTeX Warning: Reference `tab:ciclos-evolutivos' on page 78 undefined on input 
+line 78.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 78 undefined o
+n input line 80.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 78 undefined on 
+input line 112.
+
+
+Package natbib Warning: Citation `sommerville2011engenharia' on page 78 undefin
+ed on input line 126.
+
+
+Package natbib Warning: Citation `pressman2016engenharia' on page 78 undefined 
+on input line 126.
+
+
+Package natbib Warning: Citation `beck2002tdd' on page 78 undefined on input li
+ne 133.
+
+[78]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 79 undefined o
+n input line 141.
+
+
+LaTeX Warning: Reference `fig:componentes-ecossistema' on page 79 undefined on 
+input line 147.
+
+
+Package natbib Warning: Citation `laranjeira2026opencode' on page 79 undefined 
+on input line 206.
+
+
+Package natbib Warning: Citation `wang2024survey' on page 79 undefined on input
+ line 206.
+
+
+Package natbib Warning: Citation `xi2023rise' on page 79 undefined on input lin
+e 206.
+
+[79]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 80 undefined o
+n input line 238.
+
+
+LaTeX Warning: Reference `lst:instalacao' on page 80 undefined on input line 24
+4.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 258.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\to' on input line 258.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 258.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 258.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\to' on input line 258.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 258.
+
+
+Package natbib Warning: Citation `pressman2016engenharia' on page 80 undefined 
+on input line 264.
+
+
+Package natbib Warning: Citation `sommerville2011engenharia' on page 80 undefin
+ed on input line 264.
+
+
+LaTeX Warning: Reference `fig:arquitetura-tres-camadas' on page 80 undefined on
+ input line 265.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 80 undefined
+ on input line 280.
+
+
+Package natbib Warning: Citation `wei2022chain' on page 80 undefined on input l
+ine 280.
+
+
+LaTeX Warning: Reference `tab:mcp-categorias' on page 80 undefined on input lin
+e 290.
+
+[80]
+
+Package natbib Warning: Citation `white2023prompt' on page 81 undefined on inpu
+t line 342.
+
+
+Package natbib Warning: Citation `wei2022chain' on page 81 undefined on input l
+ine 342.
+
+[81 <./ilustracoes/fig-arquitetura.pdf>]
+
+Package natbib Warning: Citation `achiam2023gpt4' on page 82 undefined on input
+ line 402.
+
+
+Package natbib Warning: Citation `brown2020language' on page 82 undefined on in
+put line 402.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 82 undefine
+d on input line 409.
+
+
+Package natbib Warning: Citation `weiss2013multiagent' on page 82 undefined on 
+input line 409.
+
+[82]
+
+Package natbib Warning: Citation `fowler2019refactoring' on page 83 undefined o
+n input line 454.
+
+[83]
+
+Package natbib Warning: Citation `fowler2019refactoring' on page 84 undefined o
+n input line 497.
+
+
+LaTeX Warning: Reference `fig:fluxo-execucao' on page 84 undefined on input lin
+e 503.
+
+
+Overfull \hbox (12.10701pt too wide) in paragraph at lines 541--544
+[]\T1/ptm/m/n/10.95 (-20) O []\T1/ptm/b/n/10.95 (-20) Or-ques-tra-dor[] \T1/ptm
+/m/n/10.95 (-20) (\T1/pcr/m/n/10.95 core/orchestrator.py\T1/ptm/m/n/10.95 (-20)
+ ) ana-lisa o co-mando e con-sulta o \T1/pcr/m/n/10.95 AgentManager
+[84]
+
+Package natbib Warning: Citation `beck2002tdd' on page 85 undefined on input li
+ne 576.
+
+
+Package natbib Warning: Citation `sommerville2011engenharia' on page 85 undefin
+ed on input line 576.
+
+
+Package natbib Warning: Citation `pressman2016engenharia' on page 85 undefined 
+on input line 576.
+
+
+Package natbib Warning: Citation `wiegers1999software' on page 85 undefined on 
+input line 584.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 85 undefined o
+n input line 603.
+
+
+LaTeX Warning: Reference `tab:specs' on page 85 undefined on input line 603.
+
+[85]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 86 undefined o
+n input line 663.
+
+
+Package natbib Warning: Citation `fowler2019refactoring' on page 86 undefined o
+n input line 668.
+
+
+Package natbib Warning: Citation `beck2002tdd' on page 86 undefined on input li
+ne 674.
+
+[86] [87]
+
+LaTeX Warning: Reference `fig:ciclo-sdd-tdd' on page 88 undefined on input line
+ 795.
+
+[88 <./ilustracoes/fig-tdd.pdf>] [89]
+
+Package natbib Warning: Citation `fowler2019refactoring' on page 90 undefined o
+n input line 948.
+
+
+Package natbib Warning: Citation `sommerville2011engenharia' on page 90 undefin
+ed on input line 948.
+
+[90]
+
+Package natbib Warning: Citation `pressman2016engenharia' on page 91 undefined 
+on input line 956.
+
+[91]
+
+LaTeX Warning: Reference `tab:container-gerenciadores' on page 92 undefined on 
+input line 1049.
+
+[92]
+
+LaTeX Warning: Reference `fig:fluxo-comando-slash' on page 93 undefined on inpu
+t line 1137.
+
+[93]
+Overfull \hbox (11.64473pt too wide) in paragraph at lines 1150--1152
+[][]\T1/ptm/b/n/10.95 (-20) Orquestrador[]\T1/ptm/m/n/10.95 (-20) : \T1/pcr/m/n
+/10.95 Orchestrator.parse() \T1/ptm/m/n/10.95 (-20) iden-ti-fica o co-mando e c
+on-sulta o \T1/pcr/m/n/10.95 AgentManager\T1/ptm/m/n/10.95 (-20) ; 
+
+Package natbib Warning: Citation `pressman2016engenharia' on page 94 undefined 
+on input line 1182.
+
+
+Package natbib Warning: Citation `fowler2019refactoring' on page 94 undefined o
+n input line 1182.
+
+
+Overfull \hbox (90.51157pt too wide) in paragraph at lines 1190--1193
+[][]\T1/ptm/b/n/10.95 (-20) 10 plu-gins npm[]\T1/ptm/m/n/10.95 (-20) : bi-bli-o
+-te-cas Ja-vaS-cript para ex-ten-são de fun-ci-o-na-li-da-des (ex.: \T1/pcr/m/n
+/10.95 opencode-plugin-autoevolve\T1/ptm/m/n/10.95 (-20) ,
+[94 <./ilustracoes/fig-mcsp-graph.pdf>]
+
+LaTeX Warning: Reference `tab:comandos-slash' on page 95 undefined on input lin
+e 1237.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 95 undefined o
+n input line 1270.
+
+[95] [96]
+
+Package natbib Warning: Citation `shinn2023reflexion' on page 97 undefined on i
+nput line 1344.
+
+
+Package natbib Warning: Citation `wei2022chain' on page 97 undefined on input l
+ine 1344.
+
+[97]
+
+Package natbib Warning: Citation `white2023prompt' on page 98 undefined on inpu
+t line 1430.
+
+
+Package natbib Warning: Citation `wei2022chain' on page 98 undefined on input l
+ine 1430.
+
+
+Package natbib Warning: Citation `wang2024survey' on page 98 undefined on input
+ line 1430.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 98 undefined o
+n input line 1437.
+
+[98]
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 99 undefined
+ on input line 1492.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 99 undefine
+d on input line 1492.
+
+[99] [100]
+
+LaTeX Warning: Reference `fig:skill-categories' on page 101 undefined on input 
+line 1624.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 101 undefin
+ed on input line 1680.
+
+
+Package natbib Warning: Citation `weiss2013multiagent' on page 101 undefined on
+ input line 1680.
+
+
+Package natbib Warning: Citation `park2023generative' on page 101 undefined on 
+input line 1680.
+
+[101] [102]
+
+Package natbib Warning: Citation `weiss2013multiagent' on page 103 undefined on
+ input line 1799.
+
+[103] [104]
+
+Package natbib Warning: Citation `achiam2023gpt4' on page 105 undefined on inpu
+t line 1922.
+
+
+Package natbib Warning: Citation `brown2020language' on page 105 undefined on i
+nput line 1922.
+
+[105]
+
+Package natbib Warning: Citation `laranjeira2026opencode' on page 106 undefined
+ on input line 1977.
+
+
+Package natbib Warning: Citation `laranjeira2026gartner' on page 106 undefined 
+on input line 1977.
+
+
+Package natbib Warning: Citation `nash1950equilibrium' on page 106 undefined on
+ input line 1977.
+
+
+LaTeX Warning: Reference `fig:p14-p18' on page 106 undefined on input line 1997
+.
+
+
+Package natbib Warning: Citation `park2023generative' on page 106 undefined on 
+input line 2041.
+
+
+Package natbib Warning: Citation `wei2022chain' on page 106 undefined on input 
+line 2041.
+
+[106]
+
+Package natbib Warning: Citation `nash1950equilibrium' on page 107 undefined on
+ input line 2114.
+
+
+Package natbib Warning: Citation `bonferroni1936teoria' on page 107 undefined o
+n input line 2114.
+
+
+Package natbib Warning: Citation `cohen2018estatistica' on page 107 undefined o
+n input line 2114.
+
+[107] [108]
+
+Package natbib Warning: Citation `laranjeira2026opencode' on page 109 undefined
+ on input line 2194.
+
+
+Package natbib Warning: Citation `sommerville2011engenharia' on page 109 undefi
+ned on input line 2229.
+
+
+Package natbib Warning: Citation `pressman2016engenharia' on page 109 undefined
+ on input line 2229.
+
+
+Package natbib Warning: Citation `fowler2019refactoring' on page 109 undefined 
+on input line 2229.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 109 undefined 
+on input line 2254.
+
+[109]
+
+Package natbib Warning: Citation `fowler2019refactoring' on page 110 undefined 
+on input line 2273.
+
+[110] [111] [112]
+Overfull \hbox (27.8258pt too wide) in paragraph at lines 2534--2536
+[][]\T1/ptm/b/n/10.95 (-20) Engenharia de soft-ware[] \T1/ptm/m/n/10.95 (-20) (
+Se-ção 3.9): SWE-BOK, Git Sa-fety, Re-versa (18 agen-tes), SPEC_COVERAGE
+[113]
+Underfull \hbox (badness 10000) in paragraph at lines 2556--2556
+[][]\T1/ptm/m/n/9 (+20) Relatório de co-ber-tura SPEC_COVERAGE.md: [][]$\T1/pcr
+/m/n/9 https : / / github . com / marceloclaro /
+
+Underfull \hbox (badness 10000) in paragraph at lines 2558--2558
+[][]\T1/ptm/m/n/9 (+20) Documentação de en-ge-nha-ria de soft-ware: [][]$\T1/pc
+r/m/n/9 https : / / github . com / marceloclaro /
+) [114]
+Cap\'{\i }tulo 7.
+(../capitulos/11-capitulo4-scanner-metacognicao.tex [115]
+Cap\'{\i }tulo 8.
+
+Overfull \hbox (29.10812pt too wide) in paragraph at lines 6--6
+|[]\T1/phv/b/n/20.74 (-20) SCANNER PI-PE-LINE E ME-TA-COG-NI-ÇÃO: AUTO-
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 116 undefin
+ed on input line 20.
+
+
+Package natbib Warning: Citation `weiss2013multiagent' on page 116 undefined on
+ input line 20.
+
+
+LaTeX Warning: Reference `tab:conteudo-capitulo4' on page 116 undefined on inpu
+t line 33.
+
+[116]
+
+Package natbib Warning: Citation `flavell1976metacognitive' on page 117 undefin
+ed on input line 77.
+
+
+Package natbib Warning: Citation `schraw2006metacognitive' on page 117 undefine
+d on input line 77.
+
+
+Package natbib Warning: Citation `metzinger2020minimal' on page 117 undefined o
+n input line 77.
+
+
+Package natbib Warning: Citation `shoham2023multiagent' on page 117 undefined o
+n input line 80.
+
+
+Package natbib Warning: Citation `xi2023rise' on page 117 undefined on input li
+ne 80.
+
+
+Package natbib Warning: Citation `kuhn1998estrutura' on page 117 undefined on i
+nput line 90.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 117 undefine
+d on input line 97.
+
+
+Package natbib Warning: Citation `christiano2017deep' on page 117 undefined on 
+input line 97.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--110
+[][][]\T1/ptm/m/n/9 (+20) Disponível em: [][]$\T1/pcr/m/n/9 https : / / github 
+. com / anomalyco / opencode / blob / main / specs /
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--114
+[][][]\T1/ptm/m/n/9 (+20) Disponível em: [][]$\T1/pcr/m/n/9 https : / / github 
+. com / anomalyco / opencode / blob / main / specs /
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
+[][][]\T1/ptm/m/n/9 (+20) Disponível em: [][]$\T1/pcr/m/n/9 https : / / github 
+. com / anomalyco / opencode / blob / main / specs /
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
+[][][]\T1/ptm/m/n/9 (+20) Disponível em: [][]$\T1/pcr/m/n/9 https : / / github 
+. com / anomalyco / opencode / blob / main / specs /
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--128
+[][][]\T1/ptm/m/n/9 (+20) Disponível em: [][]$\T1/pcr/m/n/9 https : / / github 
+. com / anomalyco / opencode / blob / main / specs /
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--128
+\T1/pcr/m/n/9 SPEC-[]031-[]SCANNER-[]REFINEMENT . md$[][] \T1/ptm/m/n/9 (+20) e
+ [][]$\T1/pcr/m/n/9 https : / / github . com / anomalyco / opencode / blob /
+[117]
+
+LaTeX Warning: Reference `fig:ciclo-evolutivo-scanners' on page 118 undefined o
+n input line 137.
+
+
+LaTeX Warning: Reference `sec:metacognicao-self-model' on page 118 undefined on
+ input line 153.
+
+[118 <./ilustracoes/fig-scanner.pdf>]
+
+Package natbib Warning: Citation `kuhn1998estrutura' on page 119 undefined on i
+nput line 191.
+
+
+Package natbib Warning: Citation `popper2005logica' on page 119 undefined on in
+put line 192.
+
+
+Package natbib Warning: Citation `feuerstein2002estatistica' on page 119 undefi
+ned on input line 194.
+
+
+Package natbib Warning: Citation `opencode2026spec028' on page 119 undefined on
+ input line 196.
+
+
+Package natbib Warning: Citation `beck2002tdd' on page 119 undefined on input l
+ine 196.
+
+
+LaTeX Warning: Reference `tab:dimensoes-noologicas' on page 119 undefined on in
+put line 210.
+
+[119]
+
+LaTeX Warning: Reference `cod:gap-detection' on page 120 undefined on input lin
+e 257.
+
+
+Underfull \hbox (badness 4303) in paragraph at lines 301--301
+[][][]\T1/ptm/m/n/9 (+20) Suite com-pleta em: [][]$\T1/pcr/m/n/9 https : / / gi
+thub . com / anomalyco / opencode / blob / main / specs / test _
+
+LaTeX Warning: Reference `tab:cts-noological' on page 120 undefined on input li
+ne 302.
+
+[120]
+
+LaTeX Warning: Reference `cod:noological-example' on page 121 undefined on inpu
+t line 367.
+
+[121]
+
+Package natbib Warning: Citation `box1976science' on page 122 undefined on inpu
+t line 417.
+
+
+Package natbib Warning: Citation `kahneman2003perspective' on page 122 undefine
+d on input line 417.
+
+
+LaTeX Warning: Reference `tab:correlacao-cruzada' on page 122 undefined on inpu
+t line 419.
+
+[122]
+
+Package natbib Warning: Citation `cohen2018estatistica' on page 123 undefined o
+n input line 450.
+
+
+Package natbib Warning: Citation `popper2005logica' on page 123 undefined on in
+put line 494.
+
+
+Package natbib Warning: Citation `feuerstein2002estatistica' on page 123 undefi
+ned on input line 494.
+
+[123]
+
+LaTeX Warning: Reference `cod:teleological-mapping' on page 124 undefined on in
+put line 496.
+
+
+LaTeX Warning: Reference `tab:matriz-lacunas' on page 124 undefined on input li
+ne 549.
+
+
+LaTeX Warning: Reference `cod:teleological-example' on page 124 undefined on in
+put line 572.
+
+[124] [125]
+
+LaTeX Warning: Reference `sec:noological-scanner' on page 126 undefined on inpu
+t line 644.
+
+
+LaTeX Warning: Reference `sec:teleological-scanner' on page 126 undefined on in
+put line 646.
+
+
+LaTeX Warning: Reference `fig:pipeline-m1-m5' on page 126 undefined on input li
+ne 656.
+
+
+LaTeX Warning: Reference `sec:potentiality-scanner' on page 126 undefined on in
+put line 668.
+
+[126 <./ilustracoes/fig-scanners-pipeline.pdf>]
+
+LaTeX Warning: Reference `tab:polymathic' on page 127 undefined on input line 6
+79.
+
+
+Package natbib Warning: Citation `barabasi2016network' on page 127 undefined on
+ input line 734.
+
+
+Package natbib Warning: Citation `anderson2001introduction' on page 127 undefin
+ed on input line 739.
+
+[127]
+
+Package natbib Warning: Citation `laranjeira2026opencode' on page 128 undefined
+ on input line 761.
+
+
+LaTeX Warning: Reference `sec:composicao-unitaria' on page 128 undefined on inp
+ut line 772.
+
+[128] [129]
+
+LaTeX Warning: Reference `cod:mcsp-solver' on page 130 undefined on input line 
+885.
+
+
+LaTeX Warning: Reference `sec:composicao-unitaria' on page 130 undefined on inp
+ut line 913.
+
+
+Package natbib Warning: Citation `cormen2009algorithms' on page 130 undefined o
+n input line 934.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 130 undefine
+d on input line 934.
+
+[130]
+
+LaTeX Warning: Reference `cod:mcsp-complexity' on page 131 undefined on input l
+ine 938.
+
+
+Package natbib Warning: Citation `sutton2018reinforcement' on page 131 undefine
+d on input line 985.
+
+
+Package natbib Warning: Citation `shinn2023reflexion' on page 131 undefined on 
+input line 990.
+
+[131]
+
+Package natbib Warning: Citation `opencode2026spec033' on page 132 undefined on
+ input line 1065.
+
+
+Package natbib Warning: Citation `opencode2026spec035' on page 132 undefined on
+ input line 1065.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 132 undefined 
+on input line 1065.
+
+[132]
+
+LaTeX Warning: Reference `cod:capability-composer' on page 133 undefined on inp
+ut line 1078.
+
+[133]
+Overfull \hbox (2.5693pt too wide) in paragraph at lines 1150--1150
+|[]\T1/phv/b/n/12 (-20) POTENTIALITY SCAN-NER: DES-CO-BERTA DE PO-TEN-CI-AIS LA
+-TEN-TES (SPEC-
+
+Overfull \hbox (7.88731pt too wide) in paragraph at lines 1173--1177
+[][]\T1/ptm/b/n/10.95 (-20) Carregamento do re-gis-tro de com-po-nen-tes[]\T1/p
+tm/m/n/10.95 (-20) : o scan-ner lê o ar-quivo \T1/pcr/m/n/10.95 skills_registry
+.json
+
+LaTeX Warning: Reference `cod:potentiality-extract' on page 134 undefined on in
+put line 1187.
+
+[134]
+
+LaTeX Warning: Reference `cod:redundancy-detection' on page 135 undefined on in
+put line 1225.
+
+[135]
+Underfull \hbox (badness 10000) in paragraph at lines 1284--1284
+[][][]\T1/ptm/m/n/9 (+20) Disponível em: [][]$\T1/pcr/m/n/9 https : / / github 
+. com / anomalyco / opencode / blob / main / docs / adr /
+[136]
+
+Package natbib Warning: Citation `flavell1976metacognitive' on page 137 undefin
+ed on input line 1331.
+
+
+Package natbib Warning: Citation `schraw2006metacognitive' on page 137 undefine
+d on input line 1334.
+
+
+LaTeX Warning: Reference `tab:gaps-metacognitivos' on page 137 undefined on inp
+ut line 1383.
+
+
+Package natbib Warning: Citation `baars1988cognitive' on page 137 undefined on 
+input line 1418.
+
+
+Package natbib Warning: Citation `baars2002conscious' on page 137 undefined on 
+input line 1418.
+
+
+Package natbib Warning: Citation `graziano2013consciousness' on page 137 undefi
+ned on input line 1420.
+
+
+Package natbib Warning: Citation `graziano2013social' on page 137 undefined on 
+input line 1420.
+
+
+Package natbib Warning: Citation `tononi2008consciousness' on page 137 undefine
+d on input line 1421.
+
+[137]
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 138 undefine
+d on input line 1428.
+
+
+Package natbib Warning: Citation `miller1956magical' on page 138 undefined on i
+nput line 1430.
+
+
+Overfull \hbox (35.32573pt too wide) in paragraph at lines 1434--1437
+\T1/ptm/m/n/10.95 (-20) e ajusta seu com-por-ta-mento com base na re-fle-xão (i
+m-ple-men-tado via \T1/pcr/m/n/10.95 metacognitive_loop.py\T1/ptm/m/n/10.95 (-2
+0) ). 
+
+LaTeX Warning: Reference `fig:self-model-niveis' on page 138 undefined on input
+ line 1440.
+
+
+LaTeX Warning: Reference `cod:self-model' on page 138 undefined on input line 1
+451.
+
+[138 <./ilustracoes/fig-loop-correcao.pdf>] [139 <./ilustracoes/fig-expansao-5d
+.pdf>]
+
+LaTeX Warning: Reference `cod:dialectical-engine' on page 140 undefined on inpu
+t line 1549.
+
+[140]
+
+Package natbib Warning: Citation `ostrom1990governing' on page 141 undefined on
+ input line 1589.
+
+
+LaTeX Warning: Reference `cod:governanca-ostrom' on page 141 undefined on input
+ line 1612.
+
+[141]
+
+LaTeX Warning: Reference `fig:dialetica-governanca' on page 142 undefined on in
+put line 1646.
+
+[142]
+Overfull \hbox (16.05052pt too wide) in paragraph at lines 1742--1744
+\T1/ptm/m/n/10.95 (-20) No \T1/ptm/m/sc/10.95 (-20) Open-Code Ecosys-tem\T1/ptm
+/m/n/10.95 (-20) , o pi-pe-line é in-vo-cado atra-vés do or-ques-tra-dor cen-tr
+al \T1/pcr/m/n/10.95 /marceloclaro\T1/ptm/m/n/10.95 (-20) .
+[143]
+
+LaTeX Warning: Reference `fig:relatorio-tipico' on page 144 undefined on input 
+line 1766.
+
+[144]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 145 undefined 
+on input line 1909.
+
+
+Package natbib Warning: Citation `laranjeira2026opencode' on page 145 undefined
+ on input line 1909.
+
+[145]
+
+Package natbib Warning: Citation `popper2005logica' on page 146 undefined on in
+put line 1925.
+
+
+Package natbib Warning: Citation `kuhn1998estrutura' on page 146 undefined on i
+nput line 1925.
+
+
+Package natbib Warning: Citation `flavell1976metacognitive' on page 146 undefin
+ed on input line 1927.
+
+
+Package natbib Warning: Citation `schraw2006metacognitive' on page 146 undefine
+d on input line 1927.
+
+
+Package natbib Warning: Citation `metzinger2020minimal' on page 146 undefined o
+n input line 1927.
+
+
+Package natbib Warning: Citation `baars1988cognitive' on page 146 undefined on 
+input line 1929.
+
+
+Package natbib Warning: Citation `graziano2013consciousness' on page 146 undefi
+ned on input line 1929.
+
+
+Package natbib Warning: Citation `ostrom1990governing' on page 146 undefined on
+ input line 1930.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 146 undefine
+d on input line 1931.
+
+
+Package natbib Warning: Citation `opencode2026scanner' on page 146 undefined on
+ input line 1934.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 146 undefined on
+ input line 1934.
+
+
+Package natbib Warning: Citation `opencode2026spec038' on page 146 undefined on
+ input line 1934.
+
+
+Package natbib Warning: Citation `laranjeira2026opencode' on page 146 undefined
+ on input line 1935.
+
+) [146]
+Cap\'{\i }tulo 9.
+(../capitulos/12-capitulo5-trust-governanca.tex [147]
+Cap\'{\i }tulo 10.
+
+Package natbib Warning: Citation `opencode2026spec038' on page 148 undefined on
+ input line 19.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 148 undefined on
+ input line 19.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 148 undefined 
+on input line 24.
+
+
+LaTeX Warning: Reference `tab:conteudo-capitulo5' on page 148 undefined on inpu
+t line 42.
+
+[148]
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 149 undefine
+d on input line 81.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 149 undefin
+ed on input line 81.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 149 undefine
+d on input line 90.
+
+
+Package natbib Warning: Citation `xi2023rise' on page 149 undefined on input li
+ne 90.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 149 undefine
+d on input line 115.
+
+
+Package natbib Warning: Citation `cristiano2017deep' on page 149 undefined on i
+nput line 115.
+
+
+LaTeX Warning: Reference `tab:confianca-humana-computacional' on page 149 undef
+ined on input line 132.
+
+
+Package natbib Warning: Citation `kahneman2003perspective' on page 149 undefine
+d on input line 155.
+
+[149]
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 150 undefin
+ed on input line 164.
+
+
+Package natbib Warning: Citation `weiss2013multiagent' on page 150 undefined on
+ input line 164.
+
+
+Package natbib Warning: Citation `opencode2026spec038' on page 150 undefined on
+ input line 202.
+
+[150]
+
+Package natbib Warning: Citation `opencode2026spec038' on page 151 undefined on
+ input line 268.
+
+[151 <./ilustracoes/fig-tsac.pdf>] [152] [153] [154]
+
+Package natbib Warning: Citation `opencode2026spec038' on page 155 undefined on
+ input line 518.
+
+
+Overfull \hbox (76.64941pt too wide) in paragraph at lines 523--528
+[][]\T1/ptm/b/n/10.95 (-20) Definição 10.7 \T1/ptm/m/n/10.95 (-20) (Beha-vi-o-r
+al Gate)\T1/ptm/b/n/10.95 (-20) . []\T1/ptm/m/n/10.95 (-20) Um []\T1/ptm/b/n/10
+.95 (-20) Beha-vi-o-ral Gate[] \T1/ptm/m/n/10.95 (-20) é uma fun-ção $\OML/cmm/
+m/it/10.95 G \OT1/cmr/m/n/10.95 : \OMS/cmsy/m/n/10.95 A ^^B X ! f[]\OML/cmm/m/i
+t/10.95 ; []; []; []\OMS/cmsy/m/n/10.95 g$
+[155] [156]
+
+Package natbib Warning: Citation `opencode2026spec038' on page 157 undefined on
+ input line 676.
+
+[157] [158]
+
+Package natbib Warning: Citation `atkinson1968human' on page 159 undefined on i
+nput line 761.
+
+[159]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+[160] [161]
+
+Package natbib Warning: Citation `opencode2026spec038' on page 162 undefined on
+ input line 984.
+
+[162]
+
+Package natbib Warning: Citation `ostrom1990governing' on page 163 undefined on
+ input line 1107.
+
+[163]
+
+Package natbib Warning: Citation `ostrom1990governing' on page 164 undefined on
+ input line 1115.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 164 undefined on
+ input line 1115.
+
+[164] [165] [166] [167]
+
+Package natbib Warning: Citation `opencode2026spec036' on page 168 undefined on
+ input line 1363.
+
+[168] [169]
+
+Package natbib Warning: Citation `opencode2026spec036' on page 170 undefined on
+ input line 1496.
+
+
+Package natbib Warning: Citation `metzinger2020minimal' on page 170 undefined o
+n input line 1553.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 170 undefined on
+ input line 1553.
+
+[170] [171] [172] [173]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 174 undefined 
+on input line 1767.
+
+
+Package natbib Warning: Citation `opencode2026spec038' on page 174 undefined on
+ input line 1804.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 174 undefined 
+on input line 1804.
+
+[174]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 175 undefined 
+on input line 1841.
+
+
+Overfull \hbox (75.34889pt too wide) in paragraph at lines 1871--1874
+[][]\T1/ptm/b/n/10.95 (-20) Exemplo 10.8. []\T1/ptm/m/n/10.95 (-20) O re-la-tó-
+rio au-di-tá-vel com-pleto do ecos-sis-tema (\T1/pcr/m/n/10.95 RELATORIO_AUDITA
+VEL_FINAL_v5.4.0.md\T1/ptm/m/n/10.95 (-20) )
+[175] [176]
+
+LaTeX Warning: Reference `tab:parametros-trust-engine' on page 177 undefined on
+ input line 1990.
+
+[177]
+
+LaTeX Warning: Reference `tab:competencias-cap5' on page 178 undefined on input
+ line 2050.
+
+
+Package natbib Warning: Citation `atkinson1968human' on page 178 undefined on i
+nput line 2080.
+
+
+Package natbib Warning: Citation `ostrom1990governing' on page 178 undefined on
+ input line 2082.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 178 undefine
+d on input line 2084.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 178 undefin
+ed on input line 2086.
+
+
+Package natbib Warning: Citation `flavell1976metacognitive' on page 178 undefin
+ed on input line 2089.
+
+
+Package natbib Warning: Citation `schraw2006metacognitive' on page 178 undefine
+d on input line 2089.
+
+
+Package natbib Warning: Citation `kahneman2003perspective' on page 178 undefine
+d on input line 2090.
+
+
+Package natbib Warning: Citation `opencode2026spec038' on page 178 undefined on
+ input line 2091.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 178 undefined on
+ input line 2092.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 178 undefined 
+on input line 2093.
+
+[178]) [179]
+Overfull \hbox (54.07274pt too wide) in paragraph at lines 264--264
+ |[] []\T1/phv/m/n/48 (-20) ECO-NO-MIA, EX-PE-RI-MEN-
+
+Overfull \hbox (17.01941pt too wide) in paragraph at lines 264--264
+ \T1/phv/m/n/48 (-20) TA-ÇÃO E VA-LI-DA-ÇÃO CI-
+[180]
+Cap\'{\i }tulo 11.
+(../capitulos/13-capitulo6-token-economy.tex [181]
+Cap\'{\i }tulo 12.
+
+Package natbib Warning: Citation `opencode2026token' on page 182 undefined on i
+nput line 20.
+
+
+LaTeX Warning: Reference `tab:conteudo-capitulo6' on page 182 undefined on inpu
+t line 36.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 182 undefined on i
+nput line 74.
+
+
+Package natbib Warning: Citation `buterin2014next' on page 182 undefined on inp
+ut line 74.
+
+[182]
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 183 undefine
+d on input line 81.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 183 undefin
+ed on input line 81.
+
+
+Package natbib Warning: Citation `vonneumann1944theory' on page 183 undefined o
+n input line 100.
+
+
+Package natbib Warning: Citation `nash1950equilibrium' on page 183 undefined on
+ input line 100.
+
+
+LaTeX Warning: Reference `tab:economia-humana-agentes' on page 183 undefined on
+ input line 104.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 183 undefined on i
+nput line 131.
+
+[183] [184 <./ilustracoes/fig-token-economy.pdf>]
+
+Package natbib Warning: Citation `opencode2026token' on page 185 undefined on i
+nput line 248.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 185 undefined on i
+nput line 270.
+
+
+Package natbib Warning: Citation `nakamoto2008bitcoin' on page 185 undefined on
+ input line 270.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 185 undefined on i
+nput line 277.
+
+[185] [186]
+
+Package natbib Warning: Citation `opencode2026token' on page 187 undefined on i
+nput line 350.
+
+
+Package natbib Warning: Citation `buterin2014next' on page 187 undefined on inp
+ut line 350.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 187 undefined on i
+nput line 363.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+[187]
+
+Package natbib Warning: Citation `opencode2026token' on page 188 undefined on i
+nput line 420.
+
+
+Overfull \hbox (7.03851pt too wide) in paragraph at lines 427--431
+\T1/ptm/m/n/10.95 (-20) onde $[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/c
+mr/m/n/10.95 )$ \T1/ptm/m/n/10.95 (-20) é o custo ine-rente à ação $\OML/cmm/m/
+it/10.95 x$ \T1/ptm/m/n/10.95 (-20) (re-cur-sos com-pu-ta-ci-o-nais es-pe-ra-do
+s) e $[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )$
+[188]
+
+Package natbib Warning: Citation `opencode2026token' on page 189 undefined on i
+nput line 542.
+
+[189] [190]
+
+Package natbib Warning: Citation `opencode2026token' on page 191 undefined on i
+nput line 631.
+
+[191]
+
+Package natbib Warning: Citation `opencode2026token' on page 192 undefined on i
+nput line 706.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 192 undefined on i
+nput line 714.
+
+
+Package natbib Warning: Citation `buterin2014next' on page 192 undefined on inp
+ut line 714.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 192 undefined on i
+nput line 724.
+
+[192] [193]
+
+Package natbib Warning: Citation `opencode2026token' on page 194 undefined on i
+nput line 885.
+
+[194]
+
+Package natbib Warning: Citation `opencode2026token' on page 195 undefined on i
+nput line 902.
+
+[195]
+
+Package natbib Warning: Citation `opencode2026token' on page 196 undefined on i
+nput line 979.
+
+[196]
+
+Package natbib Warning: Citation `opencode2026token' on page 197 undefined on i
+nput line 1048.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 197 undefined on i
+nput line 1100.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 197 undefined on i
+nput line 1107.
+
+
+Package natbib Warning: Citation `nakamoto2008bitcoin' on page 197 undefined on
+ input line 1107.
+
+[197]
+
+Package natbib Warning: Citation `opencode2026token' on page 198 undefined on i
+nput line 1117.
+
+
+Package natbib Warning: Citation `opencode2026spec038' on page 198 undefined on
+ input line 1152.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 198 undefined on i
+nput line 1152.
+
+[198]
+
+Package natbib Warning: Citation `opencode2026token' on page 199 undefined on i
+nput line 1258.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 199 undefined on i
+nput line 1265.
+
+[199]
+
+Package natbib Warning: Citation `opencode2026token' on page 200 undefined on i
+nput line 1310.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 200 undefined 
+on input line 1310.
+
+
+Package natbib Warning: Citation `opencode2026spec038' on page 200 undefined on
+ input line 1317.
+
+[200]
+
+Package natbib Warning: Citation `opencode2026token' on page 201 undefined on i
+nput line 1380.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 201 undefined 
+on input line 1410.
+
+[201]
+
+Package natbib Warning: Citation `opencode2026token' on page 202 undefined on i
+nput line 1428.
+
+[202]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 203 undefined 
+on input line 1499.
+
+
+Package natbib Warning: Citation `ostrom1990governing' on page 203 undefined on
+ input line 1499.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 203 undefined on i
+nput line 1518.
+
+[203]
+
+Package natbib Warning: Citation `opencode2026token' on page 204 undefined on i
+nput line 1566.
+
+
+Package natbib Warning: Citation `nash1950equilibrium' on page 204 undefined on
+ input line 1566.
+
+
+Package natbib Warning: Citation `vonneumann1944theory' on page 204 undefined o
+n input line 1566.
+
+
+Package natbib Warning: Citation `nash1950equilibrium' on page 204 undefined on
+ input line 1575.
+
+
+Package natbib Warning: Citation `shoham2023multiagent' on page 204 undefined o
+n input line 1575.
+
+
+Package natbib Warning: Citation `nash1950equilibrium' on page 204 undefined on
+ input line 1586.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 204 undefined on i
+nput line 1593.
+
+
+Package natbib Warning: Citation `shoham2023multiagent' on page 204 undefined o
+n input line 1593.
+
+[204] [205]
+
+Package natbib Warning: Citation `opencode2026token' on page 206 undefined on i
+nput line 1675.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 206 undefined on i
+nput line 1684.
+
+
+Package natbib Warning: Citation `nash1950equilibrium' on page 206 undefined on
+ input line 1692.
+
+
+Package natbib Warning: Citation `vonneumann1944theory' on page 206 undefined o
+n input line 1692.
+
+
+Package natbib Warning: Citation `shoham2023multiagent' on page 206 undefined o
+n input line 1692.
+
+
+Package natbib Warning: Citation `nash1950equilibrium' on page 206 undefined on
+ input line 1697.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 206 undefined 
+on input line 1715.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 206 undefin
+ed on input line 1715.
+
+[206]
+
+Package natbib Warning: Citation `ostrom1990governing' on page 207 undefined on
+ input line 1773.
+
+
+Package natbib Warning: Citation `ostrom1990governing' on page 207 undefined on
+ input line 1781.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 207 undefined on i
+nput line 1809.
+
+
+Package natbib Warning: Citation `ostrom1990governing' on page 207 undefined on
+ input line 1809.
+
+[207] [208]
+
+Package natbib Warning: Citation `ostrom1990governing' on page 209 undefined on
+ input line 1905.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 209 undefined on i
+nput line 1905.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 209 undefined on
+ input line 1923.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 209 undefined 
+on input line 1923.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 209 undefined on
+ input line 1938.
+
+
+Package natbib Warning: Citation `ostrom1990governing' on page 209 undefined on
+ input line 1938.
+
+[209]
+
+Package natbib Warning: Citation `opencode2026token' on page 210 undefined on i
+nput line 1986.
+
+
+Package natbib Warning: Citation `opencode2026spec038' on page 210 undefined on
+ input line 1986.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 210 undefined on i
+nput line 1991.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 210 undefined 
+on input line 1991.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 210 undefined on i
+nput line 2008.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 210 undefined 
+on input line 2017.
+
+[210] [211]
+
+Package natbib Warning: Citation `opencode2026token' on page 212 undefined on i
+nput line 2092.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 212 undefine
+d on input line 2154.
+
+
+Package natbib Warning: Citation `opencode2026spec038' on page 212 undefined on
+ input line 2154.
+
+[212]
+
+LaTeX Warning: Reference `lst:ciclo-staking-slashing' on page 213 undefined on 
+input line 2166.
+
+[213]
+
+Package natbib Warning: Citation `opencode2026token' on page 214 undefined on i
+nput line 2273.
+
+
+Package natbib Warning: Citation `opencode2026token' on page 214 undefined on i
+nput line 2280.
+
+
+Package natbib Warning: Citation `nakamoto2008bitcoin' on page 214 undefined on
+ input line 2280.
+
+[214]
+
+Package natbib Warning: Citation `opencode2026token' on page 215 undefined on i
+nput line 2355.
+
+[215] [216]
+
+Package natbib Warning: Citation `opencode2026token' on page 217 undefined on i
+nput line 2434.
+
+[217]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 218 undefined 
+on input line 2520.
+
+[218]
+
+LaTeX Warning: Reference `lst:configuracao' on page 219 undefined on input line
+ 2567.
+
+
+LaTeX Warning: Reference `lst:simulacao' on page 219 undefined on input line 26
+12.
+
+[219]
+
+LaTeX Warning: Reference `lst:auditagem' on page 220 undefined on input line 26
+75.
+
+[220] [221]
+
+LaTeX Warning: Reference `tab:competencias-cap6' on page 222 undefined on input
+ line 2802.
+
+[222]
+
+Package natbib Warning: Citation `opencode2026token' on page 223 undefined on i
+nput line 2837.
+
+
+Package natbib Warning: Citation `opencode2026spec038' on page 223 undefined on
+ input line 2839.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 223 undefined on
+ input line 2841.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 223 undefined 
+on input line 2843.
+
+
+Package natbib Warning: Citation `nash1950equilibrium' on page 223 undefined on
+ input line 2845.
+
+
+Package natbib Warning: Citation `vonneumann1944theory' on page 223 undefined o
+n input line 2845.
+
+
+Package natbib Warning: Citation `ostrom1990governing' on page 223 undefined on
+ input line 2847.
+
+
+Package natbib Warning: Citation `nakamoto2008bitcoin' on page 223 undefined on
+ input line 2849.
+
+
+Package natbib Warning: Citation `buterin2014next' on page 223 undefined on inp
+ut line 2849.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 223 undefin
+ed on input line 2851.
+
+
+Package natbib Warning: Citation `shoham2023multiagent' on page 223 undefined o
+n input line 2851.
+
+
+Package natbib Warning: Citation `laranjeira2026opencode' on page 223 undefined
+ on input line 2853.
+
+
+Package natbib Warning: Citation `laranjeira2026gartner' on page 223 undefined 
+on input line 2855.
+
+
+Package natbib Warning: Citation `gartner2026hype' on page 223 undefined on inp
+ut line 2855.
+
+
+Overfull \hbox (135.11629pt too wide) in paragraph at lines 2859--2865
+\T1/ptm/m/sc/10.95 (-20) Open-Code Ecosys-tem \T1/ptm/m/n/10.95 (-20) sob \T1/p
+cr/m/n/10.95 specs/SPEC-022-Token-Economy-Core/\T1/ptm/m/n/10.95 (-20) , \T1/pc
+r/m/n/10.95 specs/SPEC-023-Agent-Economics/
+) [223]
+Cap\'{\i }tulo 13.
+(../capitulos/14-capitulo7-experimentacao-validacao.tex [224]
+Cap\'{\i }tulo 14.
+
+Overfull \hbox (5.22826pt too wide) in paragraph at lines 6--6
+|[]\T1/phv/b/n/20.74 (-20) EXPERIMENTAÇÃO, VA-LI-DA-ÇÃO CI-EN-TÍ-FICA
+
+Package natbib Warning: Citation `opencode2026spec043' on page 225 undefined on
+ input line 18.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 225 undefined 
+on input line 18.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 225 undefin
+ed on input line 25.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 225 undefine
+d on input line 25.
+
+
+LaTeX Warning: Reference `tab:conteudo-capitulo7' on page 225 undefined on inpu
+t line 31.
+
+
+Package natbib Warning: Citation `bacon1620novum' on page 225 undefined on inpu
+t line 69.
+
+
+Package natbib Warning: Citation `popper2003logica' on page 225 undefined on in
+put line 69.
+
+[225]
+
+Package natbib Warning: Citation `sutton2018reinforcement' on page 226 undefine
+d on input line 80.
+
+
+Package natbib Warning: Citation `gundersen2018reproducibility' on page 226 und
+efined on input line 89.
+
+
+Package natbib Warning: Citation `goodman2016what' on page 226 undefined on inp
+ut line 89.
+
+
+LaTeX Warning: Reference `fig:pipeline-validacao' on page 226 undefined on inpu
+t line 119.
+
+
+Underfull \hbox (badness 1147) in paragraph at lines 150--152
+[][]\T1/ptm/m/n/9 (+20) Benchmark $\OMS/cmsy/m/n/9 !$ \T1/ptm/m/n/9 (+20) Ve-ri
+-fi-ca-ção For-mal $\OMS/cmsy/m/n/9 !$ \T1/ptm/m/n/9 (+20) Pes-quisa $\OMS/cmsy
+/m/n/9 !$ \T1/ptm/m/n/9 (+20) Es-crita $\OMS/cmsy/m/n/9 !$ \T1/ptm/m/n/9 (+20) 
+De- 
+
+Overfull \hbox (2.20427pt too wide) in paragraph at lines 153--154
+ [][] 
+[226]
+
+Package natbib Warning: Citation `hendrycks2021measuring' on page 227 undefined
+ on input line 197.
+
+
+Package natbib Warning: Citation `cobbe2021training' on page 227 undefined on i
+nput line 198.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd) [227]
+
+Package natbib Warning: Citation `auer2002finite' on page 228 undefined on inpu
+t line 267.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 228 undefined 
+on input line 288.
+
+[228]
+
+LaTeX Warning: Reference `tab:cora-verificadores' on page 229 undefined on inpu
+t line 297.
+
+
+LaTeX Warning: Reference `fig:cora-baseline' on page 229 undefined on input lin
+e 334.
+
+
+LaTeX Warning: Reference `lst:cora-tracker' on page 229 undefined on input line
+ 366.
+
+[229] [230]
+
+LaTeX Warning: Reference `tab:cora-verificadores' on page 231 undefined on inpu
+t line 464.
+
+
+Package natbib Warning: Citation `hendrycks2021measuring' on page 231 undefined
+ on input line 469.
+
+
+Package natbib Warning: Citation `avigad2020lean' on page 231 undefined on inpu
+t line 500.
+
+
+Package natbib Warning: Citation `bertot2004interactive' on page 231 undefined 
+on input line 500.
+
+[231]
+
+Package natbib Warning: Citation `goedel1931formal' on page 232 undefined on in
+put line 505.
+
+
+Package natbib Warning: Citation `deMoura2015lean' on page 232 undefined on inp
+ut line 515.
+
+
+Package natbib Warning: Citation `avigad2020lean' on page 232 undefined on inpu
+t line 515.
+
+
+Package natbib Warning: Citation `mathlib2024' on page 232 undefined on input l
+ine 525.
+
+
+Package natbib Warning: Citation `buzzard2023formal' on page 232 undefined on i
+nput line 527.
+
+
+Package natbib Warning: Citation `feng2026towards' on page 232 undefined on inp
+ut line 535.
+
+
+LaTeX Warning: Reference `tab:aletheia-phases' on page 232 undefined on input l
+ine 553.
+
+
+Overfull \hbox (115.03194pt too wide) in paragraph at lines 576--580
+\T1/ptm/m/n/10.95 (-20) A in-te-gra-ção na-tiva en-tre Aletheia e \T1/ptm/m/sc/
+10.95 (-20) Open-Code Ecosys-tem \T1/ptm/m/n/10.95 (-20) materializou-se no mó-
+dulo \T1/pcr/m/n/10.95 aletheia-opencode-native\T1/ptm/m/n/10.95 (-20) ,
+[232]
+
+LaTeX Warning: Reference `lst:aletheia-engine' on page 233 undefined on input l
+ine 591.
+
+[233]
+
+LaTeX Warning: Reference `sec:cora-eval' on page 234 undefined on input line 66
+2.
+
+
+LaTeX Warning: Reference `eq:ucb1' on page 234 undefined on input line 662.
+
+
+Package natbib Warning: Citation `auer2002finite' on page 234 undefined on inpu
+t line 676.
+
+
+LaTeX Warning: Reference `th:ucb1-convergencia' on page 234 undefined on input 
+line 701.
+
+
+Package natbib Warning: Citation `feng2026towards' on page 234 undefined on inp
+ut line 707.
+
+[234]
+
+LaTeX Warning: Reference `sec:seeker' on page 235 undefined on input line 760.
+
+[235]
+
+LaTeX Warning: Reference `sec:cross-validation' on page 236 undefined on input 
+line 795.
+
+
+LaTeX Warning: Reference `sec:cross-validation' on page 236 undefined on input 
+line 801.
+
+
+LaTeX Warning: Reference `lst:correction-loop' on page 236 undefined on input l
+ine 823.
+
+[236]
+
+LaTeX Warning: Reference `lst:auto-score' on page 237 undefined on input line 8
+77.
+
+[237]
+
+LaTeX Warning: Reference `lst:ptbr-corrector' on page 238 undefined on input li
+ne 933.
+
+[238]
+
+LaTeX Warning: Reference `fig:evolucao-score' on page 239 undefined on input li
+ne 1015.
+
+[239] [240]
+
+Package natbib Warning: Citation `arxiv2024' on page 241 undefined on input lin
+e 1130.
+
+
+Package natbib Warning: Citation `priem2022openalex' on page 241 undefined on i
+nput line 1132.
+
+
+Package natbib Warning: Citation `ammar2018semantic' on page 241 undefined on i
+nput line 1134.
+
+
+Package natbib Warning: Citation `PubMed2024' on page 241 undefined on input li
+ne 1136.
+
+
+Package natbib Warning: Citation `knoth2014core' on page 241 undefined on input
+ line 1138.
+
+
+LaTeX Warning: Reference `lst:argument-tree' on page 241 undefined on input lin
+e 1165.
+
+[241]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 242 undefined 
+on input line 1234.
+
+
+Package natbib Warning: Citation `opencode2026spec043' on page 242 undefined on
+ input line 1234.
+
+[242] [243]
+
+LaTeX Warning: Reference `lst:phd-auditor' on page 244 undefined on input line 
+1358.
+
+[244]
+
+Package natbib Warning: Citation `worldbank2024data' on page 245 undefined on i
+nput line 1426.
+
+
+Package natbib Warning: Citation `who2024global' on page 245 undefined on input
+ line 1426.
+
+
+Package natbib Warning: Citation `fao2024food' on page 245 undefined on input l
+ine 1426.
+
+
+Package natbib Warning: Citation `unesco2024science' on page 245 undefined on i
+nput line 1426.
+
+[245]
+
+Package natbib Warning: Citation `capes2022qualis' on page 246 undefined on inp
+ut line 1489.
+
+
+LaTeX Warning: Reference `sec:maswos' on page 246 undefined on input line 1513.
+
+
+
+LaTeX Warning: Reference `fig:qualis-criterios' on page 246 undefined on input 
+line 1542.
+
+
+LaTeX Warning: Reference `sec:maswos' on page 246 undefined on input line 1582.
+
+
+
+Package natbib Warning: Citation `ware2012peer' on page 246 undefined on input 
+line 1585.
+
+[246]
+
+Package natbib Warning: Citation `opencode2026crossval' on page 247 undefined o
+n input line 1589.
+
+
+LaTeX Warning: Reference `lst:crossval' on page 247 undefined on input line 160
+1.
+
+[247]
+Overfull \hbox (68.77324pt too wide) in paragraph at lines 1675--1678
+[][]\T1/ptm/b/n/10.95 (-20) Exercício 14.29. []\T1/ptm/m/n/10.95 (-20) Ana-lise
+ um ar-tigo ci-en-tí-fico real de sua área usando os 10 cri-té-rios do AUTO_SCO
+RE_QUALIS.py.
+[248]
+
+Package natbib Warning: Citation `fanelli2009bias' on page 249 undefined on inp
+ut line 1719.
+
+
+Package natbib Warning: Citation `simonsohn2014pcurve' on page 249 undefined on
+ input line 1719.
+
+
+Package natbib Warning: Citation `denzin2017triangulation' on page 249 undefine
+d on input line 1724.
+
+[249]
+
+LaTeX Warning: Reference `tab:matriz-afinidade' on page 250 undefined on input 
+line 1816.
+
+
+Package natbib Warning: Citation `peng2011reproducible' on page 250 undefined o
+n input line 1839.
+
+
+Package natbib Warning: Citation `buck2018reproducible' on page 250 undefined o
+n input line 1839.
+
+[250]
+Overfull \hbox (53.58643pt too wide) in paragraph at lines 1867--1870
+[][]\T1/ptm/b/n/10.95 (-20) python:3.12[]\T1/ptm/m/n/10.95 (-20) : exe-cu-ção d
+e scripts Python com ver-si-o-na-mento ex-plí-cito de pa-co-tes via \T1/pcr/m/n
+/10.95 requirements.txt
+
+Package natbib Warning: Citation `preston2011semver' on page 251 undefined on i
+nput line 1875.
+
+[251] [252]
+
+LaTeX Warning: Reference `fig:fluxo-validacao' on page 253 undefined on input l
+ine 2040.
+
+[253] [254]
+
+LaTeX Warning: Reference `sec:reprodutibilidade' on page 255 undefined on input
+ line 2157.
+
+) [255]
+Cap\'{\i }tulo 15.
+(../capitulos/15-capitulo8-dissertacao-banca.tex [256]
+Cap\'{\i }tulo 16.
+
+Overfull \hbox (13.80176pt too wide) in paragraph at lines 6--6
+|[]\T1/phv/b/n/20.74 (-20) DISSERTAÇÃO, PRO-DU-ÇÃO CI-EN-TÍ-FICA QUA-
+
+LaTeX Warning: Reference `tab:conteudo-capitulo8' on page 257 undefined on inpu
+t line 19.
+
+
+Overfull \hbox (7.96193pt too wide) in paragraph at lines 25--41
+ [][] 
+
+Package natbib Warning: Citation `popper2005logica' on page 257 undefined on in
+put line 65.
+
+[257]
+
+Package natbib Warning: Citation `abnt2023nbr14724' on page 258 undefined on in
+put line 76.
+
+
+Package natbib Warning: Citation `laranjeira2026opencode' on page 258 undefined
+ on input line 94.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 258 undefined 
+on input line 108.
+
+[258]
+
+Package natbib Warning: Citation `bender2021dangers' on page 259 undefined on i
+nput line 130.
+
+
+Package natbib Warning: Citation `gebru2021datasheets' on page 259 undefined on
+ input line 130.
+
+
+LaTeX Warning: Reference `fig:percurso-academico' on page 259 undefined on inpu
+t line 147.
+
+
+Overfull \hbox (21.71408pt too wide) in paragraph at lines 175--176
+ [][] 
+
+Package natbib Warning: Citation `abnt2023nbr14724' on page 259 undefined on in
+put line 204.
+
+[259]
+
+Package natbib Warning: Citation `abnt2023nbr14724' on page 260 undefined on in
+put line 264.
+
+[260]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 261 undefined 
+on input line 298.
+
+
+LaTeX Warning: Reference `fig:estrutura-dissertacao' on page 261 undefined on i
+nput line 321.
+
+
+Package natbib Warning: Citation `abnt2023nbr14724' on page 261 undefined on in
+put line 363.
+
+[261] [262]
+
+Package natbib Warning: Citation `popper2005logica' on page 263 undefined on in
+put line 410.
+
+
+Package natbib Warning: Citation `kuhn1998estrutura' on page 263 undefined on i
+nput line 410.
+
+
+LaTeX Warning: Reference `tab:identificadores' on page 263 undefined on input l
+ine 444.
+
+[263]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 264 undefined 
+on input line 530.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 264 undefined on
+ input line 530.
+
+[264]
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 265 undefin
+ed on input line 555.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 265 undefined on
+ input line 586.
+
+[265]
+
+LaTeX Warning: Reference `tab:perguntas-banca' on page 266 undefined on input l
+ine 620.
+
+
+Package natbib Warning: Citation `shoham2023multiagent' on page 266 undefined o
+n input line 654.
+
+
+Package natbib Warning: Citation `nash1950equilibrium' on page 266 undefined on
+ input line 654.
+
+[266]
+
+LaTeX Warning: Reference `tab:evolucao-dap' on page 267 undefined on input line
+ 702.
+
+[267]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 268 undefined 
+on input line 729.
+
+
+LaTeX Warning: Reference `fig:raciocinios-defesa' on page 268 undefined on inpu
+t line 745.
+
+
+Overfull \hbox (43.07906pt too wide) in paragraph at lines 778--779
+ [][] 
+[268]
+
+LaTeX Warning: Reference `tab:perguntas-banca' on page 269 undefined on input l
+ine 812.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 269 undefined 
+on input line 827.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 269 undefined on
+ input line 827.
+
+
+Package natbib Warning: Citation `nash1950equilibrium' on page 269 undefined on
+ input line 834.
+
+
+Package natbib Warning: Citation `vonneumann1944theory' on page 269 undefined o
+n input line 834.
+
+
+Package natbib Warning: Citation `nash1950equilibrium' on page 269 undefined on
+ input line 842.
+
+
+Package natbib Warning: Citation `cohen2018estatistica' on page 269 undefined o
+n input line 865.
+
+
+Package natbib Warning: Citation `wasserman2004all' on page 269 undefined on in
+put line 865.
+
+
+Package natbib Warning: Citation `cohen2018estatistica' on page 269 undefined o
+n input line 875.
+
+[269]
+
+Package natbib Warning: Citation `bonferroni1936teoria' on page 270 undefined o
+n input line 903.
+
+
+Package natbib Warning: Citation `bonferroni1936teoria' on page 270 undefined o
+n input line 912.
+
+
+Package natbib Warning: Citation `laranjeira2026opencode' on page 270 undefined
+ on input line 932.
+
+
+Package natbib Warning: Citation `laranjeira2026gartner' on page 270 undefined 
+on input line 932.
+
+[270]
+
+Package natbib Warning: Citation `box1976science' on page 271 undefined on inpu
+t line 958.
+
+
+Package natbib Warning: Citation `sommerville2011engenharia' on page 271 undefi
+ned on input line 976.
+
+
+LaTeX Warning: Reference `fig:fluxo-phd-auditor' on page 271 undefined on input
+ line 1009.
+
+[271]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 272 undefined 
+on input line 1057.
+
+
+LaTeX Warning: Reference `tab:criterios-qualis' on page 272 undefined on input 
+line 1063.
+
+[272]
+
+Package natbib Warning: Citation `hastie2009elements' on page 273 undefined on 
+input line 1104.
+
+[273]
+
+LaTeX Warning: Reference `tab:evolucao-score' on page 274 undefined on input li
+ne 1149.
+
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (29.30592pt too wide) in paragraph at lines 1206--1209
+\T1/ptm/m/n/10.95 (-20) O sis-tema está im-ple-men-tado no ar-quivo \T1/pcr/m/n
+/10.95 auto_score_qualis.py \T1/ptm/m/n/10.95 (-20) no di-re-tó-rio \T1/pcr/m/n
+/10.95 criador-artigo/
+[274]
+Overfull \hbox (11.79216pt too wide) in paragraph at lines 1230--1233
+[][]\T1/ptm/b/n/10.95 (-20) Exercício 16.12 \T1/ptm/m/n/10.95 (-20) (Ni-vel Ava
+n-çado -- Pro-gra-ma-ção)\T1/ptm/b/n/10.95 (-20) . []\T1/ptm/m/n/10.95 (-20) Mo
+-di-fi-que o ar-quivo \T1/pcr/m/n/10.95 auto_score_qualis.py
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 275 undefined 
+on input line 1246.
+
+
+Package natbib Warning: Citation `opencode2026maswos' on page 275 undefined on 
+input line 1246.
+
+[275]
+
+Package natbib Warning: Citation `opencode2026scanner' on page 276 undefined on
+ input line 1294.
+
+[276]
+
+LaTeX Warning: Reference `fig:ciclo-correcao' on page 277 undefined on input li
+ne 1353.
+
+
+Package natbib Warning: Citation `laranjeira2026gartner' on page 277 undefined 
+on input line 1408.
+
+
+Package natbib Warning: Citation `laranjeira2026cora' on page 277 undefined on 
+input line 1408.
+
+
+Package natbib Warning: Citation `laranjeira2026opencode' on page 277 undefined
+ on input line 1408.
+
+[277]
+
+Package natbib Warning: Citation `gartner2026hype' on page 278 undefined on inp
+ut line 1412.
+
+
+Package natbib Warning: Citation `laranjeira2026gartner' on page 278 undefined 
+on input line 1416.
+
+
+Package natbib Warning: Citation `laranjeira2026cora' on page 278 undefined on 
+input line 1443.
+
+
+Package natbib Warning: Citation `laranjeira2026opencode' on page 278 undefined
+ on input line 1474.
+
+[278]
+
+Package natbib Warning: Citation `opencode2026seeker' on page 279 undefined on 
+input line 1493.
+
+
+Package natbib Warning: Citation `opencode2026maswos' on page 279 undefined on 
+input line 1496.
+
+
+LaTeX Warning: Reference `tab:estrategia-submissao' on page 279 undefined on in
+put line 1544.
+
+[279]
+
+LaTeX Warning: Reference `fig:roadmap' on page 280 undefined on input line 1593
+.
+
+
+LaTeX Warning: Reference `tab:marcos-progressao' on page 280 undefined on input
+ line 1627.
+
+
+Underfull \hbox (badness 7047) in paragraph at lines 1637--1637
+[]|[]\T1/ptm/b/n/10.95 (+20) Competências ad-qui-ri-
+
+Underfull \hbox (badness 2197) in paragraph at lines 1639--1639
+[]|\T1/ptm/m/n/10.95 (+20) Lógica, con-jun-tos, fun-
+
+Overfull \hbox (1.50253pt too wide) in paragraph at lines 1641--1641
+[]|\T1/ptm/m/n/10.95 (-20) Intermediário| 
+
+Underfull \hbox (badness 4156) in paragraph at lines 1642--1642
+[]|\T1/ptm/m/n/10.95 (+20) Arquitetura 3 ca-ma-das,
+[280]
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 281 undefine
+d on input line 1653.
+
+
+Package natbib Warning: Citation `cormen2009algorithms' on page 281 undefined o
+n input line 1670.
+
+
+Package natbib Warning: Citation `russell2020inteligencia' on page 281 undefine
+d on input line 1686.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 281 undefin
+ed on input line 1686.
+
+[281]
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 282 undefined 
+on input line 1702.
+
+
+Package natbib Warning: Citation `popper2005logica' on page 282 undefined on in
+put line 1719.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 282 undefined on
+ input line 1719.
+
+[282]
+
+LaTeX Warning: Reference `tab:ciclos-resumo' on page 283 undefined on input lin
+e 1812.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 283 undefined 
+on input line 1847.
+
+[283] [284]
+
+Package natbib Warning: Citation `tononi2008consciousness' on page 285 undefine
+d on input line 1904.
+
+
+Package natbib Warning: Citation `gartner2026hype' on page 285 undefined on inp
+ut line 1927.
+
+[285]
+
+Package natbib Warning: Citation `sommerville2011engenharia' on page 286 undefi
+ned on input line 1988.
+
+
+Package natbib Warning: Citation `sommerville2011engenharia' on page 286 undefi
+ned on input line 1988.
+
+
+Package natbib Warning: Citation `abnt2023nbr14724' on page 286 undefined on in
+put line 1990.
+
+
+Package natbib Warning: Citation `abnt2023nbr6023' on page 286 undefined on inp
+ut line 1990.
+
+
+Package natbib Warning: Citation `abnt2023nbr10520' on page 286 undefined on in
+put line 1990.
+
+
+Package natbib Warning: Citation `wooldridge2009multiagent' on page 286 undefin
+ed on input line 1992.
+
+
+Package natbib Warning: Citation `weiss2013multiagent' on page 286 undefined on
+ input line 1992.
+
+
+Package natbib Warning: Citation `nash1950equilibrium' on page 286 undefined on
+ input line 1992.
+
+
+Package natbib Warning: Citation `wasserman2004all' on page 286 undefined on in
+put line 1994.
+
+
+Package natbib Warning: Citation `cohen2018estatistica' on page 286 undefined o
+n input line 1994.
+
+
+Package natbib Warning: Citation `bonferroni1936teoria' on page 286 undefined o
+n input line 1994.
+
+
+Package natbib Warning: Citation `popper2005logica' on page 286 undefined on in
+put line 1996.
+
+
+Package natbib Warning: Citation `kuhn1998estrutura' on page 286 undefined on i
+nput line 1996.
+
+
+Package natbib Warning: Citation `opencode2026ecosystem' on page 286 undefined 
+on input line 1999.
+
+
+Package natbib Warning: Citation `opencode2026spec036' on page 286 undefined on
+ input line 1999.
+
+
+Package natbib Warning: Citation `opencode2026spec038' on page 286 undefined on
+ input line 1999.
+
+
+Package natbib Warning: Citation `opencode2026maswos' on page 286 undefined on 
+input line 1999.
+
+
+Package natbib Warning: Citation `opencode2026seeker' on page 286 undefined on 
+input line 1999.
+
+
+Package natbib Warning: Citation `opencode2026cora' on page 286 undefined on in
+put line 1999.
+
+
+Package natbib Warning: Citation `laranjeira2026opencode' on page 286 undefined
+ on input line 2002.
+
+
+Package natbib Warning: Citation `laranjeira2026gartner' on page 286 undefined 
+on input line 2002.
+
+
+Package natbib Warning: Citation `laranjeira2026cora' on page 286 undefined on 
+input line 2002.
+
+
+Package natbib Warning: Citation `laranjeira2026trust' on page 286 undefined on
+ input line 2002.
+
+
+Package natbib Warning: Citation `gartner2026hype' on page 286 undefined on inp
+ut line 2004.
+
+
+Package natbib Warning: Citation `bender2021dangers' on page 286 undefined on i
+nput line 2006.
+
+
+Package natbib Warning: Citation `gebru2021datasheets' on page 286 undefined on
+ input line 2006.
+
+
+Overfull \hbox (1.57246pt too wide) in paragraph at lines 2010--2016
+\T1/ptm/m/n/10.95 (-20) dis-po-ní-veis no re-po-si-tó-rio do \T1/ptm/m/sc/10.95
+ (-20) Open-Code Ecosys-tem \T1/ptm/m/n/10.95 (-20) sob o di-re-tó-rio \T1/pcr/
+m/n/10.95 examples/capitulo8/\T1/ptm/m/n/10.95 (-20) .
+) [286] [287]
+Ap\^endice A.
+(../capitulos/16-apendice-exercicios.tex [288]
+Ap\^endice B.
+[289] [290] [291] [292]) [293]
+Ap\^endice C.
+(../capitulos/17-apendice-glossario.tex [294]
+Ap\^endice D.
+[295] [296]
+Overfull \hbox (16.73396pt too wide) in paragraph at lines 247--250
+[]\T1/ptm/m/n/10.95 (-20) Módulo de com-pu-ta-ção quân-tica com 146 ar-qui-vos,
+ in-clu-indo QML para HAM10000
+[297]) [298]
+Ap\^endice E.
+(../capitulos/18-apendice-codigos.tex [299]
+Ap\^endice F.
+[300] [301] [302] [303] [304] [305] [306] [307]) [308]
+Ap\^endice G.
+(../capitulos/19-apendice-indice.tex [309]
+Ap\^endice H.
+No file dark.ind.
+) [310]
+No file dark.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+(./dark.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)</usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/latxfont/lcircle1.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/cour
+ier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on dark.pdf (310 pages, 1868680 bytes).
+Transcript written on dark.log.
