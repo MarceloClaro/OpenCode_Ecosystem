@@ -1,0 +1,11 @@
+[
+  {"patient_cns_blinded": "200000000000003", "force_n": 1.0, "observed_displacement_mm": 0.015, "reference": "Yoshida2001"},
+  {"patient_cns_blinded": "200000000000003", "force_n": 2.5, "observed_displacement_mm": 0.035, "reference": "Yoshida2001"},
+  {"patient_cns_blinded": "200000000000003", "force_n": 5.0, "observed_displacement_mm": 0.060, "reference": "Yoshida2001"},
+  {"patient_cns_blinded": "200000000000003", "force_n": 10.0, "observed_displacement_mm": 0.095, "reference": "Yoshida2001"},
+  {"patient_cns_blinded": "200000000000003", "force_n": 15.0, "observed_displacement_mm": 0.120, "reference": "Toms2002"},
+  {"patient_cns_blinded": "200000000000003", "force_n": 20.0, "observed_displacement_mm": 0.140, "reference": "Toms2002"},
+  {"patient_cns_blinded": "200000000000003", "force_n": 30.0, "observed_displacement_mm": 0.170, "reference": "Toms2002"},
+  {"patient_cns_blinded": "200000000000003", "force_n": 40.0, "observed_displacement_mm": 0.190, "reference": "Toms2002"},
+  {"patient_cns_blinded": "200000000000003", "force_n": 50.0, "observed_displacement_mm": 0.200, "reference": "Toms2002"}
+]

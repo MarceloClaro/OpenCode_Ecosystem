@@ -246,13 +246,31 @@ if __name__ == "__main__":
     print(f"  - Status Clinico: {resultado['status']}")
     print(f"  - Contraprova (Hash ZKP): {resultado['zkp_commitment']}")
 
-    # 4. Validação Cruzada (100 amostras, 5 Folds)
-    print("\nIniciando Validação Cruzada (5-Fold Cross Validation)...")
-    dataset = framework.validator.generate_synthetic_dataset(num_samples=100)
-    avg_rmse, fold_errors = framework.validator.run_validation(dataset)
-    print(f"Score Médio de Erro (RMSE): {avg_rmse:.5f} mm")
-    for idx, err in enumerate(fold_errors):
-        print(f"  - Fold {idx+1} : RMSE = {err:.5f} mm")
+    # 4. Validação Cruzada (100 amostras, 5 Folds ou Dados de Literatura)
+    import os
+    dataset_path = "clinical_validation_dataset.json"
+    if os.path.exists(dataset_path):
+        print(f"\n[Validação Real] Carregando dataset clínico de '{dataset_path}'...")
+        with open(dataset_path, "r") as f:
+            raw_data = json.load(f)
+        clinical_dataset = [
+            {"force": d["force_n"], "real_displacement": d["observed_displacement_mm"]}
+            for d in raw_data
+        ]
+        # Como temos 9 pontos clínicos, executamos K-Fold com k=3
+        validator_clinical = CrossValidator(k_folds=3)
+        avg_rmse, fold_errors = validator_clinical.run_validation(clinical_dataset)
+        print(f"Resultado da Validação Cruzada contra Literatura (Yoshida/Toms):")
+        print(f"  - Escore de Ajuste Médio (RMSE): {avg_rmse:.5f} mm")
+        for idx, err in enumerate(fold_errors):
+            print(f"    * Fold {idx+1} : RMSE = {err:.5f} mm")
+    else:
+        print("\nIniciando Validação Cruzada (5-Fold Cross Validation)...")
+        dataset = framework.validator.generate_synthetic_dataset(num_samples=100)
+        avg_rmse, fold_errors = framework.validator.run_validation(dataset)
+        print(f"Score Médio de Erro (RMSE): {avg_rmse:.5f} mm")
+        for idx, err in enumerate(fold_errors):
+            print(f"  - Fold {idx+1} : RMSE = {err:.5f} mm")
 
     # 5. Validação da Contraprova Criptográfica
     print("\nVerificando Contraprova no painel de auditoria do SUS...")
