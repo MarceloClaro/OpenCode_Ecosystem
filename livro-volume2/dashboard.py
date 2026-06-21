@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import math
 import json
 import hashlib
@@ -208,6 +209,142 @@ with tab1:
         ax.grid(True, linestyle=":", alpha=0.6)
         ax.legend()
         st.pyplot(fig)
+
+    st.markdown("---")
+    st.subheader("👁️ Gêmeo Digital Periodontal 3D Interativo")
+    st.write("Modelo anatômico tridimensional ativo do elemento dentário e do ligamento periodontal (LPD). Rotacione com o mouse, use zoom e observe a deformação e alteração cromática do LPD em tempo real durante o ciclo de carga oclusal.")
+    
+    # HTML/JS Tridimensional com Three.js
+    threejs_html = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+        <style>
+            body { margin: 0; overflow: hidden; background-color: #0f172a; border-radius: 8px; }
+            canvas { width: 100vw; height: 100vh; display: block; }
+        </style>
+    </head>
+    <body>
+        <script>
+            const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x0f172a);
+            
+            const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+            camera.position.set(0, 4, 12);
+            
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.shadowMap.enabled = true;
+            document.body.appendChild(renderer.domElement);
+            
+            const controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+            
+            // Iluminação
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+            scene.add(ambientLight);
+            
+            const dirLight1 = new THREE.DirectionalLight(0xffffff, 0.8);
+            dirLight1.position.set(5, 10, 7);
+            scene.add(dirLight1);
+            
+            const dirLight2 = new THREE.DirectionalLight(0x3b82f6, 0.5);
+            dirLight2.position.set(-5, -5, -5);
+            scene.add(dirLight2);
+            
+            // Elemento Dentário (Grupo)
+            const toothGroup = new THREE.Group();
+            
+            // Coroa
+            const crownGeo = new THREE.CylinderGeometry(1.4, 1.1, 2.2, 32);
+            const crownMat = new THREE.MeshStandardMaterial({
+                color: 0xf8fafc,
+                roughness: 0.15,
+                metalness: 0.05
+            });
+            const crown = new THREE.Mesh(crownGeo, crownMat);
+            crown.position.y = 1.1;
+            toothGroup.add(crown);
+            
+            // Cúspides
+            const cuspGeo = new THREE.SphereGeometry(0.28, 16, 16);
+            const cusps = [
+                [-0.6, 2.2, -0.6], [0.6, 2.2, -0.6],
+                [-0.6, 2.2, 0.6], [0.6, 2.2, 0.6]
+            ];
+            cusps.forEach(pos => {
+                const cusp = new THREE.Mesh(cuspGeo, crownMat);
+                cusp.position.set(pos[0], pos[1], pos[2]);
+                toothGroup.add(cusp);
+            });
+            
+            // Raiz
+            const rootGeo = new THREE.ConeGeometry(1.1, 3.8, 32);
+            const rootMat = new THREE.MeshStandardMaterial({
+                color: 0xe2e8f0,
+                roughness: 0.45
+            });
+            const root = new THREE.Mesh(rootGeo, rootMat);
+            root.position.y = -1.9;
+            root.rotation.x = Math.PI;
+            toothGroup.add(root);
+            
+            scene.add(toothGroup);
+            
+            // Ligamento Periodontal (LPD)
+            const pdlGeo = new THREE.CylinderGeometry(1.25, 0.1, 3.9, 32, 1, true);
+            const pdlMat = new THREE.MeshStandardMaterial({
+                color: 0xf43f5e,
+                transparent: true,
+                opacity: 0.35,
+                wireframe: true,
+                side: THREE.DoubleSide
+            });
+            const pdl = new THREE.Mesh(pdlGeo, pdlMat);
+            pdl.position.y = -1.95;
+            pdl.rotation.x = Math.PI;
+            scene.add(pdl);
+            
+            // Ciclo de Carga e Animação
+            let time = 0;
+            function animate() {
+                requestAnimationFrame(animate);
+                time += 0.04;
+                
+                // Oscilação vertical (deslocamento)
+                const displacement = Math.sin(time) * 0.12 - 0.12; 
+                toothGroup.position.y = displacement;
+                
+                // Stress feedback do LPD
+                const stress = Math.abs(displacement) / 0.24;
+                pdlMat.opacity = 0.3 + stress * 0.55;
+                if (stress > 0.8) {
+                    pdlMat.color.setHex(0xef4444); // Vermelho de estresse
+                } else {
+                    pdlMat.color.setHex(0xf43f5e); // Rosa padrão
+                }
+                
+                toothGroup.rotation.y += 0.003;
+                
+                controls.update();
+                renderer.render(scene, camera);
+            }
+            
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+            
+            animate();
+        </script>
+    </body>
+    </html>
+    """
+    components.html(threejs_html, height=450, scrolling=False)
 
 # ==================== TAB 2: VALIDAÇÃO CRUZADA K-FOLD ====================
 with tab2:
