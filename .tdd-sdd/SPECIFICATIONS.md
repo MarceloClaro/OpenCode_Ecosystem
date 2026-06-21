@@ -942,5 +942,67 @@ Coordinates the biomechanical motion frame sequences and renders/simulates patie
 
 ---
 
+## 12. OpenTwins Integration Specification
+
+### 12.1 OpenTwinsAdapter
+
+#### 12.1.1 Purpose
+Adapts the OpenCode Ecosystem OrchestrationEngine to the distributed, compositional digital twin architecture defined by OpenTwins, enabling seamless state synchronization across Edge, Fog, and Cloud environments.
+
+#### 12.1.2 State Space (Z Schema equivalent)
+- `active_twins` : MAP of (TwinId -> OpenTwinsTwin) -- active compositional twins
+- `edge_state` : MAP of (TwinId -> TwinState) -- local edge state snapshots
+- `cloud_state` : MAP of (TwinId -> TwinState) -- synchronized cloud state snapshots
+- `last_sync_timestamp` : MAP of (TwinId -> Timestamp) -- last sync timestamps
+- `registered_agents` : MAP of (AgentId -> TwinsAgentRole) -- agent role mappings
+
+#### 12.1.3 Invariants
+- **OTW-I1**: Sync latency between local edge state and cloud state must not exceed 500ms.
+  `FORMALLY: timeDiff(NOW(), last_sync_timestamp[twin_id]) <= 500ms` for all synchronized active twins.
+- **OTW-I2**: All messages sent through the adapter must conform to the OpenTwins compositional schema.
+  `FORMALLY: validateCompositionalSchema(message) == true`
+- **OTW-I3**: Any agent registered with OpenTwinsAdapter must exist in the OpenCode skill registry.
+  `FORMALLY: central_skill_registry.contains(agent.skill_id) == true`
+
+#### 12.1.4 Operations
+
+##### registerTwin
+- `GIVEN`
+  - `twin_id` : STRING
+  - `components` : ARRAY of STRING
+- `WHEN`
+  - OpenTwinsAdapter.registerTwin(twin_id, components)
+- `THEN`
+  - Instantiates an entry in active_twins and initialize edge_state and cloud_state.
+- `RAISES`
+  - `DUPLICATE_TWIN` if twin_id is already registered.
+  - `INVALID_COMPONENTS` if components array is empty.
+
+##### syncTwinState
+- `GIVEN`
+  - `twin_id` : STRING
+  - `state_data` : OBJECT
+- `WHEN`
+  - OpenTwinsAdapter.syncTwinState(twin_id, state_data)
+- `THEN`
+  - Updates the local edge_state and pushes changes to cloud_state, updating the last_sync_timestamp.
+- `RAISES`
+  - `TWIN_NOT_FOUND` if twin_id is not registered.
+  - `SYNC_TIMEOUT` if network latency exceeds 500ms.
+
+##### dispatchToTwinsAgent
+- `GIVEN`
+  - `twin_id` : STRING
+  - `task` : OBJECT
+  - `role` : TwinsAgentRole
+- `WHEN`
+  - OpenTwinsAdapter.dispatchToTwinsAgent(twin_id, task, role)
+- `THEN`
+  - Maps the task to an OpenTwins-compatible agent and executes the action.
+- `RAISES`
+  - `UNMAPPED_AGENT_ROLE` if no local agent matches the role requirements.
+
+---
+
 *End of OpenCode Ecosystem Formal Software Design Specification*
-*Total components specified: 7 | Total invariants: 28 | Total operations: 14*
+*Total components specified: 8 | Total invariants: 31 | Total operations: 17*
