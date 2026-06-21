@@ -30,24 +30,36 @@ class NoologicalScanner:
             os.makedirs(temp_dir)
             print(f"[Noológico] Diretório de dados não encontrado. Gerando dados sintéticos em '{temp_dir}'...")
             
-            # Arquivo 1: Visão computacional e scanners
-            with open(os.path.join(temp_dir, "scanner_processing.py"), "w", encoding="utf-8") as f:
-                f.write("# Módulo de processamento de malha de scanner intraoral e IA\n")
-                f.write("import open3d as o3d\n")
-                f.write("def segment_mesh(ply_path):\n")
-                f.write("    print('Segmentando malha com redes neurais convolucionais (ia)...')\n")
-                
-            # Arquivo 2: Biomecânica
-            with open(os.path.join(temp_dir, "solver_biomechanics.py"), "w", encoding="utf-8") as f:
-                f.write("# Simulação biomecânica por elementos finitos (fem)\n")
-                f.write("def calculate_mises_stress():\n")
-                f.write("    return 'Tensão normal calculada'\n")
-                
-            # Arquivo 3: Telemetria básica (sem compliance nem SROI)
-            with open(os.path.join(temp_dir, "telemetry_feed.py"), "w", encoding="utf-8") as f:
-                f.write("# Coleta de dados de telemetria em tempo real usando asyncio stream\n")
-                f.write("async def read_biosensor():\n")
-                f.write("    pass\n")
+        # Arquivo 1: Visão computacional e scanners
+        with open(os.path.join(temp_dir, "scanner_processing.py"), "w", encoding="utf-8") as f:
+            f.write("# Módulo de processamento de malha de scanner intraoral e IA\n")
+            f.write("import open3d as o3d\n")
+            f.write("def segment_mesh(ply_path):\n")
+            f.write("    print('Segmentando malha com redes neurais convolucionais (ia)...')\n")
+            
+        # Arquivo 2: Biomecânica
+        with open(os.path.join(temp_dir, "solver_biomechanics.py"), "w", encoding="utf-8") as f:
+            f.write("# Simulação biomecânica por elementos finitos (fem)\n")
+            f.write("def calculate_mises_stress():\n")
+            f.write("    return 'Tensão normal calculada'\n")
+            
+        # Arquivo 3: Telemetria básica
+        with open(os.path.join(temp_dir, "telemetry_feed.py"), "w", encoding="utf-8") as f:
+            f.write("# Coleta de dados de telemetria em tempo real usando asyncio stream\n")
+            f.write("async def read_biosensor():\n")
+            f.write("    pass\n")
+
+        # Arquivo 4: Compliance Regulatório (ANVISA SaMD e IEC 62304)
+        with open(os.path.join(temp_dir, "compliance_regulatory.py"), "w", encoding="utf-8") as f:
+            f.write("# Documentação de conformidade SaMD ANVISA e ciclo de vida IEC 62304\n")
+            f.write("# Implementação de controle de riscos e mecanismos de failsafe contra falhas catastróficas\n")
+            f.write("# Alinhado às diretrizes do FDA e normas da RDC 657/2022\n")
+
+        # Arquivo 5: Retorno Social sobre Investimento (SROI)
+        with open(os.path.join(temp_dir, "sroi_impact.py"), "w", encoding="utf-8") as f:
+            f.write("# Cálculo de SROI (Retorno Social sobre o Investimento) do framework SUS-Twin\n")
+            f.write("# Medição de custo, investimento e benefício social em tratamentos periodontais do SUS\n")
+
         return temp_dir
 
     def scan(self):

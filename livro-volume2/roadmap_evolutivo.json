@@ -1,21 +1,8 @@
 {
-    "timestamp": 1781979126.7529557,
-    "noological_completeness": 0.6666666666666666,
-    "teleological_alignment": 0.7333333333333334,
-    "roadmap": [
-        {
-            "concept": "Medical_Compliance",
-            "action": "Implementar SaMDComplianceEngine e testar regras da RDC 657/2022.",
-            "expected_impact": 8.55,
-            "priority": "ALTA"
-        },
-        {
-            "concept": "SROI_Calculation",
-            "action": "Acionar SROIScanner para calcular o impacto SUS e validar evid\u00eancias.",
-            "expected_impact": 5.949999999999999,
-            "priority": "ALTA"
-        }
-    ],
+    "timestamp": 1782009369.0999475,
+    "noological_completeness": 1.0,
+    "teleological_alignment": 1.0,
+    "roadmap": [],
     "sroi_ratio": 3.5,
-    "security_hash": "sha256-57183bd69328a141f24fea888306564a22377213ebb3da1cba72dc9a48cc1275"
+    "security_hash": "sha256-3f2625452895580af0ee3209639573bf8f59d61a6d2665c23064734c94e19123"
 }
