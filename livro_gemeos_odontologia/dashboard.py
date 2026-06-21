@@ -111,15 +111,22 @@ st.sidebar.markdown('<div class="sidebar-title">⚙️ Painel de Configuração<
 st.sidebar.markdown("---")
 
 st.sidebar.subheader("Propriedades do Ligamento (LPD)")
-e_0 = st.sidebar.slider("Módulo Elástico Inicial ($E_0$, MPa)", 2.0, 10.0, 4.2, 0.1)
-e_inf = st.sidebar.slider("Módulo Elástico Residual ($E_{\infty}$, MPa)", 0.5, 3.0, 1.2, 0.1)
-tau = st.sidebar.slider("Tempo de Relaxamento ($\tau$, s)", 0.5, 5.0, 1.8, 0.1)
+e_0 = st.sidebar.slider(r"Módulo Elástico Inicial ($E_0$, MPa)", 2.0, 10.0, 4.2, 0.1)
+e_inf = st.sidebar.slider(r"Módulo Elástico Residual ($E_{\infty}$, MPa)", 0.5, 3.0, 1.2, 0.1)
+tau = st.sidebar.slider(r"Tempo de Relaxamento ($\tau$, s)", 0.5, 5.0, 1.8, 0.1)
 
 st.sidebar.subheader("Parâmetros do Caso Clínico")
 cns_input = st.sidebar.text_input("Cartão Nacional de Saúde (CNS)", "200000000000003")
+selected_tooth = st.sidebar.selectbox("Dente Alvo da Simulação", ["Incisivo Central Superior", "Canino Superior", "Primeiro Molar Superior"])
 applied_force = st.sidebar.slider("Força Oclusal Aplicada (N)", 5.0, 100.0, 30.0, 1.0)
-applied_strain = st.sidebar.slider("Deformação Oclusal ($\epsilon$)", 0.01, 0.15, 0.08, 0.01)
+applied_strain = st.sidebar.slider(r"Deformação Oclusal ($\epsilon$)", 0.01, 0.15, 0.08, 0.01)
 stiffness_initial = st.sidebar.slider("Rigidez Alveolar Estimada (N/mm)", 5.0, 30.0, 15.0, 0.5)
+
+selected_tooth_key = "incisor"
+if selected_tooth == "Canino Superior":
+    selected_tooth_key = "canine"
+elif selected_tooth == "Primeiro Molar Superior":
+    selected_tooth_key = "molar"
 
 # --- CARREGAR DATASET ---
 dataset_path = "clinical_validation_dataset.json"
@@ -195,7 +202,7 @@ with tab1:
         """, unsafe_allow_html=True)
         
     with col2:
-        st.subheader("Curva de Relaxamento Temporal de Prony ($\sigma(t)$)")
+        st.subheader(r"Curva de Relaxamento Temporal de Prony ($\sigma(t)$)")
         # Plotar curva
         times = [i * 0.1 for i in range(101)]
         stresses = [solver.calculate_stress(applied_strain, t) for t in times]
@@ -214,17 +221,17 @@ with tab1:
     st.subheader("👁️ Gêmeo Digital Periodontal 3D Interativo")
     st.write("Modelo anatômico tridimensional ativo do elemento dentário e do ligamento periodontal (LPD). Rotacione com o mouse, use zoom e observe a deformação e alteração cromática do LPD em tempo real durante o ciclo de carga oclusal.")
     
-    # HTML/JS Tridimensional com Three.js (WebGL Fibroso Avançado e HUD)
-    threejs_html = """
+    # HTML/JS Tridimensional com Three.js (WebGL Maxilar Completo, Dentes Parabólicos e LPD)
+    threejs_html = f"""
     <!DOCTYPE html>
     <html>
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
         <style>
-            body { margin: 0; overflow: hidden; background-color: #0f172a; border-radius: 8px; font-family: monospace; }
-            canvas { width: 100vw; height: 100vh; display: block; }
-            #hud {
+            body {{ margin: 0; overflow: hidden; background-color: #0f172a; border-radius: 8px; font-family: monospace; }}
+            canvas {{ width: 100vw; height: 100vh; display: block; }}
+            #hud {{
                 position: absolute;
                 top: 15px;
                 right: 15px;
@@ -234,11 +241,11 @@ with tab1:
                 padding: 12px;
                 border-radius: 6px;
                 box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
-                width: 210px;
+                width: 220px;
                 pointer-events: none;
                 font-size: 11px;
-            }
-            .hud-title {
+            }}
+            .hud-title {{
                 font-weight: bold;
                 color: #38bdf8;
                 margin-bottom: 8px;
@@ -246,23 +253,24 @@ with tab1:
                 padding-bottom: 4px;
                 font-size: 12px;
                 text-align: center;
-            }
-            .hud-item {
+            }}
+            .hud-item {{
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 4px;
-            }
-            .hud-item span {
+            }}
+            .hud-item span {{
                 color: #94a3b8;
-            }
-            .hud-item strong {
+            }}
+            .hud-item strong {{
                 color: #38bdf8;
-            }
+            }}
         </style>
     </head>
     <body>
         <div id="hud">
-            <div class="hud-title">🔬 Telemetria em Tempo Real</div>
+            <div class="hud-title">🦷 Telemetria Maxilar LPD</div>
+            <div class="hud-item"><span>Dente Selecionado:</span><strong id="hud_name">Incisivo</strong></div>
             <div class="hud-item"><span>Carga Oclusal:</span><strong id="hud_force">0.0 N</strong></div>
             <div class="hud-item"><span>Deslocamento:</span><strong id="hud_disp">0.0 µm</strong></div>
             <div class="hud-item"><span>Tensão no LPD:</span><strong id="hud_stress">0.000 MPa</strong></div>
@@ -273,9 +281,9 @@ with tab1:
             scene.background = new THREE.Color(0x0f172a);
             
             const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
-            camera.position.set(0, 4, 12);
+            camera.position.set(0, 5, 12);
             
-            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            const renderer = new THREE.WebGLRenderer({{ antialias: true }});
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.shadowMap.enabled = true;
             document.body.appendChild(renderer.domElement);
@@ -285,114 +293,202 @@ with tab1:
             controls.dampingFactor = 0.05;
             
             // Iluminação
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.35);
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
             scene.add(ambientLight);
             
             const dirLight1 = new THREE.DirectionalLight(0xffffff, 0.85);
             dirLight1.position.set(5, 10, 7);
             scene.add(dirLight1);
             
-            const dirLight2 = new THREE.DirectionalLight(0x3b82f6, 0.6);
+            const dirLight2 = new THREE.DirectionalLight(0x3b82f6, 0.5);
             dirLight2.position.set(-5, -5, -5);
             scene.add(dirLight2);
             
-            // Elemento Dentário (Grupo)
-            const toothGroup = new THREE.Group();
+            // Chave do Dente Selecionado vinda do Streamlit
+            const selectedToothKey = "{selected_tooth_key}";
+            let selectedIndex = 6; // Incisivo por padrão (i=6 ou 7)
+            let selectedName = "Incisivo Central";
             
-            // Coroa
-            const crownGeo = new THREE.CylinderGeometry(1.4, 1.15, 2.2, 32);
-            const crownMat = new THREE.MeshStandardMaterial({
-                color: 0xf8fafc,
-                roughness: 0.1,
-                metalness: 0.05
-            });
-            const crown = new THREE.Mesh(crownGeo, crownMat);
-            crown.position.y = 1.1;
-            toothGroup.add(crown);
-            
-            // Cúspides
-            const cuspGeo = new THREE.SphereGeometry(0.28, 16, 16);
-            const cusps = [
-                [-0.6, 2.2, -0.6], [0.6, 2.2, -0.6],
-                [-0.6, 2.2, 0.6], [0.6, 2.2, 0.6]
-            ];
-            cusps.forEach(pos => {
-                const cusp = new THREE.Mesh(cuspGeo, crownMat);
-                cusp.position.set(pos[0], pos[1], pos[2]);
-                toothGroup.add(cusp);
-            });
-            
-            // Raiz
-            const rootGeo = new THREE.ConeGeometry(1.15, 3.8, 32);
-            const rootMat = new THREE.MeshStandardMaterial({
-                color: 0xe2e8f0,
-                roughness: 0.45
-            });
-            const root = new THREE.Mesh(rootGeo, rootMat);
-            root.position.y = -1.9;
-            root.rotation.x = Math.PI;
-            toothGroup.add(root);
-            
-            scene.add(toothGroup);
-            
-            // Alvéolo Ósseo (Socket externo translúcido)
-            const boneSocketGeo = new THREE.CylinderGeometry(1.45, 0.2, 4.0, 32, 1, true);
-            const boneSocketMat = new THREE.MeshBasicMaterial({
-                color: 0x475569,
-                transparent: true,
-                opacity: 0.12,
-                wireframe: true,
-                side: THREE.DoubleSide
-            });
-            const boneSocket = new THREE.Mesh(boneSocketGeo, boneSocketMat);
-            boneSocket.position.y = -2.0;
-            boneSocket.rotation.x = Math.PI;
-            scene.add(boneSocket);
+            if (selectedToothKey === "canine") {{
+                selectedIndex = 4; // Canino (i=4)
+                selectedName = "Canino";
+            }} else if (selectedToothKey === "molar") {{
+                selectedIndex = 1; // Molar (i=1)
+                selectedName = "Molar";
+            }}
+            document.getElementById("hud_name").innerText = selectedName;
 
-            // Geração de 300 Fibras Colágenas do LPD (Microestrutura Periodontal)
+            // 1. Geração do Arco Ósseo da Maxila (Alveolar Process) em formato Parabólico
+            const maxillaGroup = new THREE.Group();
+            
+            const maxillaSegments = 32;
+            const maxillaPoints = [];
+            for (let i = 0; i <= maxillaSegments; i++) {{
+                const theta = -Math.PI/2.5 + i * (2*Math.PI/2.5)/maxillaSegments;
+                const mx = 4.2 * Math.sin(theta);
+                const mz = 5.2 * (1.0 - Math.cos(theta)) - 1.2;
+                maxillaPoints.push(new THREE.Vector3(mx, -0.6, mz));
+            }}
+            
+            // Desenha o osso alveolar como uma curva espessa
+            const maxillaBoneGeo = new THREE.BoxGeometry(0.8, 1.2, 0.8);
+            const maxillaBoneMat = new THREE.MeshStandardMaterial({{
+                color: 0xe2e8f0,
+                roughness: 0.8,
+                metalness: 0.1,
+                transparent: true,
+                opacity: 0.4
+            }});
+            
+            maxillaPoints.forEach(pt => {{
+                const segment = new THREE.Mesh(maxillaBoneGeo, maxillaBoneMat);
+                segment.position.copy(pt);
+                scene.add(segment);
+            }});
+            
+            // 2. Geração dos Dentes ao longo do arco (14 dentes)
+            const teethCount = 14;
+            let activeToothGroup = null;
+            let activeX = 0;
+            let activeZ = 0;
+            
+            // Parâmetros das fibras do ligamento para o dente ativo
             const fiberLines = [];
-            const fiberCount = 300;
+            const fiberCount = 250;
+            let activeToothLocalRootRadius = 1.1;
             
-            for (let i = 0; i < fiberCount; i++) {
-                // Altura da inserção ao longo da raiz (0 a -3.6)
-                const y_root = -3.6 * Math.random();
-                const angle = Math.random() * Math.PI * 2;
+            for (let i = 0; i < teethCount; i++) {{
+                // Ângulo theta correspondente na parábola
+                const theta = -Math.PI/2.5 + i * (2*Math.PI/2.5)/(teethCount - 1);
+                const tx = 4.2 * Math.sin(theta);
+                const tz = 5.2 * (1.0 - Math.cos(theta)) - 1.2;
                 
-                // Raio da raiz nessa altura (perfil cônico da raiz)
-                const r_root = 1.15 * (1.0 + y_root / 3.8);
+                const toothGroup = new THREE.Group();
+                toothGroup.position.set(tx, 0, tz);
+                toothGroup.rotation.y = -theta; // Alinha o dente apontando para fora do arco
                 
-                // Ponto na raiz (coordenadas locais do dente)
-                const px_root = r_root * Math.cos(angle);
-                const pz_root = r_root * Math.sin(angle);
+                // Determina o tipo de dente anatomico e geometria
+                let crownGeo, rootGeo;
+                let crownColor = 0xf8fafc; // Branco marfim
                 
-                // Ponto no osso correspondente (espaço periodontal ~0.25 unidades)
-                const r_bone = r_root + 0.3;
-                const angle_offset = (Math.random() - 0.5) * 0.15; // Orientação oblíqua/crestosa
-                const px_bone = r_bone * Math.cos(angle + angle_offset);
-                const pz_bone = r_bone * Math.sin(angle + angle_offset);
+                if (i === 0 || i === 1 || i === 12 || i === 13) {{
+                    // Molar (Coroa larga e robusta, multi-raízes)
+                    crownGeo = new THREE.BoxGeometry(1.2, 1.4, 1.2);
+                    rootGeo = new THREE.ConeGeometry(0.5, 2.5, 16);
+                }} else if (i === 2 || i === 3 || i === 10 || i === 11) {{
+                    // Pré-molares (Médios)
+                    crownGeo = new THREE.BoxGeometry(0.9, 1.3, 0.9);
+                    rootGeo = new THREE.ConeGeometry(0.45, 2.3, 16);
+                }} else if (i === 4 || i === 9) {{
+                    // Caninos (Pontiagudos, raiz longa)
+                    crownGeo = new THREE.CylinderGeometry(0.45, 0.55, 1.6, 16);
+                    rootGeo = new THREE.ConeGeometry(0.55, 3.2, 16);
+                }} else {{
+                    // Incisivos (Coroa achatada na espessura)
+                    crownGeo = new THREE.BoxGeometry(0.9, 1.6, 0.45);
+                    rootGeo = new THREE.ConeGeometry(0.45, 2.6, 16);
+                }}
                 
-                // As fibras oblíquas são anguladas (y no osso é ligeiramente superior ao y na raiz)
-                const y_bone = y_root + 0.18;
+                const crownMat = new THREE.MeshStandardMaterial({{
+                    color: crownColor,
+                    roughness: i === selectedIndex ? 0.1 : 0.25,
+                    metalness: 0.05
+                }});
+                const crown = new THREE.Mesh(crownGeo, crownMat);
+                crown.position.y = 0.8;
+                toothGroup.add(crown);
                 
-                fiberLines.push({
-                    local_root: new THREE.Vector3(px_root, y_root, pz_root),
-                    bone: new THREE.Vector3(px_bone, y_bone, pz_bone)
-                });
-            }
+                // Detalhe das cúspides para os molares/pré-molares
+                if (i === 0 || i === 1 || i === 12 || i === 13) {{
+                    const rootMat = new THREE.MeshStandardMaterial({{ color: 0xe2e8f0, roughness: 0.6 }});
+                    // Molares possuem 2 ou 3 raízes
+                    const r1 = new THREE.Mesh(rootGeo, rootMat);
+                    r1.position.set(-0.3, -1.25, 0);
+                    r1.rotation.x = Math.PI;
+                    toothGroup.add(r1);
+                    
+                    const r2 = new THREE.Mesh(rootGeo, rootMat);
+                    r2.position.set(0.3, -1.25, 0);
+                    r2.rotation.x = Math.PI;
+                    toothGroup.add(r2);
+                }} else {{
+                    const rootMat = new THREE.MeshStandardMaterial({{ color: 0xe2e8f0, roughness: 0.5 }});
+                    const singleRoot = new THREE.Mesh(rootGeo, rootMat);
+                    singleRoot.position.y = -1.3;
+                    singleRoot.rotation.x = Math.PI;
+                    toothGroup.add(singleRoot);
+                }}
+                
+                scene.add(toothGroup);
+                
+                // Se for o dente selecionado, salvar referências e criar fibras de ligamento periodontal (LPD)
+                if (i === selectedIndex) {{
+                    activeToothGroup = toothGroup;
+                    activeX = tx;
+                    activeZ = tz;
+                    
+                    // Foca a câmera e controles no dente ativo
+                    controls.target.set(tx, -0.4, tz);
+                    camera.position.set(tx * 1.5, 2.5, tz + 4.5);
+                    
+                    // Dimensão da raiz para ancorar as fibras colágenas
+                    let r_max = 0.55; 
+                    let y_len = 2.6;
+                    if (i === 1 || i === 12 || i === 0 || i === 13) {{
+                        r_max = 0.8; // Molares são maiores
+                        y_len = 2.5;
+                    }}
+                    activeToothLocalRootRadius = r_max;
+                    
+                    // Gerar teia de fibras colágenas do LPD ligando o dente selecionado ao osso alveolar
+                    for (let f = 0; f < fiberCount; f++) {{
+                        const y_root = -y_len * Math.random();
+                        const angle = Math.random() * Math.PI * 2;
+                        
+                        // Raio da raiz nessa altura (perfil cônico da raiz)
+                        const r_root = r_max * (1.0 + y_root / (y_len + 0.5));
+                        
+                        // Ponto na raiz (coordenadas locais do dente)
+                        const local_px = r_root * Math.cos(angle);
+                        const local_pz = r_root * Math.sin(angle);
+                        
+                        // Transformar para o espaço global da cena (sem o deslocamento vertical y que é dinâmico)
+                        const global_px = tx + (local_px * Math.cos(-theta) - local_pz * Math.sin(-theta));
+                        const global_pz = tz + (local_px * Math.sin(-theta) + local_pz * Math.cos(-theta));
+                        
+                        // Ponto no alvéolo ósseo correspondente (distância do espaço do ligamento é ~0.15 unidades)
+                        const r_bone = r_root + 0.18;
+                        const angle_offset = (Math.random() - 0.5) * 0.12;
+                        
+                        const bone_local_x = r_bone * Math.cos(angle + angle_offset);
+                        const bone_local_z = r_bone * Math.sin(angle + angle_offset);
+                        
+                        const bone_global_x = tx + (bone_local_x * Math.cos(-theta) - bone_local_z * Math.sin(-theta));
+                        const bone_global_z = tz + (bone_local_x * Math.sin(-theta) + bone_local_z * Math.cos(-theta));
+                        const bone_global_y = y_root + 0.12; // Fibra oblíqua angulada
+                        
+                        fiberLines.push({{
+                            local_root: new THREE.Vector3(local_px, y_root, local_pz),
+                            bone: new THREE.Vector3(bone_global_x, bone_global_y, bone_global_z),
+                            theta: -theta
+                        }});
+                    }}
+                }}
+            }}
             
-            // Estrutura WebGL para as linhas
+            // Criação das linhas de fibras no WebGL
             const linePositions = new Float32Array(fiberCount * 6);
             const lineColors = new Float32Array(fiberCount * 6);
             
             const lineGeo = new THREE.BufferGeometry();
-            lineGeo.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
-            lineGeo.setAttribute('color', new THREE.BufferAttribute(lineColors, 3));
+            lineGeo.setAttribute("position", new THREE.BufferAttribute(linePositions, 3));
+            lineGeo.setAttribute("color", new THREE.BufferAttribute(lineColors, 3));
             
-            const lineMat = new THREE.LineBasicMaterial({
+            const lineMat = new THREE.LineBasicMaterial({{
                 vertexColors: true,
                 transparent: true,
-                opacity: 0.8
-            });
+                opacity: 0.85
+            }});
             
             const fiberSystem = new THREE.LineSegments(lineGeo, lineMat);
             scene.add(fiberSystem);
@@ -402,90 +498,99 @@ with tab1:
             const positions = lineGeo.attributes.position.array;
             const colors = lineGeo.attributes.color.array;
             
-            function animate() {
+            function animate() {{
                 requestAnimationFrame(animate);
                 time += 0.035;
                 
-                // Simulação de mastigação realística
+                // Força mastigatória oscila
                 const cycle = Math.sin(time);
-                // Deslocamento máximo de ~150 micrômetros
-                const displacement = (cycle * 0.08 - 0.08); 
-                toothGroup.position.y = displacement;
+                // Intrusão alveolar nanomilimétrica
+                const displacement = (cycle * 0.06 - 0.06); 
                 
-                // Valores de telemetria escalados para exibição física nanomilimétrica
-                const real_force = (Math.abs(cycle * 22.5) + 7.5).toFixed(1); // 7.5 a 30.0 N
-                const real_disp = Math.abs(cycle * 75.0 - 75.0).toFixed(1);  // 0 a 150 um (nanomilimétrico)
-                const real_stress = (Math.abs(displacement) * 2.0).toFixed(4); // MPa
-                const real_strain = (Math.abs(displacement) * 0.35 * 100).toFixed(1); // %
+                if (activeToothGroup) {{
+                    activeToothGroup.position.y = displacement;
+                }}
+                
+                // Escalando e calculando valores de telemetria baseados no slider
+                const real_force = (Math.abs(cycle * (applied_force - 5.0) / 2) + 5.0).toFixed(1);
+                const real_disp = Math.abs(cycle * 55.0 - 55.0).toFixed(1); 
+                const real_stress = (Math.abs(displacement) * 2.2).toFixed(4);
+                const real_strain = (Math.abs(displacement) * 0.40 * 100).toFixed(1);
                 
                 // Atualizar HUD
-                document.getElementById('hud_force').innerText = real_force + " N";
-                document.getElementById('hud_disp').innerText = real_disp + " µm";
-                document.getElementById('hud_stress').innerText = real_stress + " MPa";
-                document.getElementById('hud_strain').innerText = real_strain + " %";
+                document.getElementById("hud_force").innerText = real_force + " N";
+                document.getElementById("hud_disp").innerText = real_disp + " µm";
+                document.getElementById("hud_stress").innerText = real_stress + " MPa";
+                document.getElementById("hud_strain").innerText = real_strain + " %";
                 
-                // Atualização geométrica das fibras
+                // Atualizar posições e estresse reativo de cada fibra colágena ativa
                 let posIndex = 0;
                 let colIndex = 0;
                 
-                for (let i = 0; i < fiberCount; i++) {
-                    const fiber = fiberLines[i];
+                for (let f = 0; f < fiberCount; f++) {{
+                    const fiber = fiberLines[f];
                     
-                    // Ponto da raiz no espaço global (acompanha o dente)
-                    const gx_root = fiber.local_root.x;
+                    // Transforma ponto local da raiz do dente considerando a rotação e o deslocamento vertical ativo
+                    const cosT = Math.cos(fiber.theta);
+                    const sinT = Math.sin(fiber.theta);
+                    
+                    const gx_root = activeX + (fiber.local_root.x * cosT - fiber.local_root.z * sinT);
                     const gy_root = fiber.local_root.y + displacement;
-                    const gz_root = fiber.local_root.z;
+                    const gz_root = activeZ + (fiber.local_root.x * sinT + fiber.local_root.z * cosT);
                     
-                    // Posição raiz
+                    // Ponto Raiz
                     positions[posIndex++] = gx_root;
                     positions[posIndex++] = gy_root;
                     positions[posIndex++] = gz_root;
                     
-                    // Posição osso (fixo)
+                    // Ponto Osso (fixo)
                     positions[posIndex++] = fiber.bone.x;
                     positions[posIndex++] = fiber.bone.y;
                     positions[posIndex++] = fiber.bone.z;
                     
-                    // Comprimento e deformação individual das fibras
-                    const orig_len = fiber.local_root.distanceTo(fiber.bone);
+                    // Comprimento sob carga vs comprimento inicial
+                    const base_y_root = fiber.local_root.y;
+                    const bx_root = activeX + (fiber.local_root.x * cosT - fiber.local_root.z * sinT);
+                    const bz_root = activeZ + (fiber.local_root.x * sinT + fiber.local_root.z * cosT);
+                    
+                    const orig_len = new THREE.Vector3(bx_root, base_y_root, bz_root).distanceTo(fiber.bone);
                     const curr_len = new THREE.Vector3(gx_root, gy_root, gz_root).distanceTo(fiber.bone);
+                    
                     const fiber_strain = Math.abs(curr_len - orig_len) / orig_len;
                     
-                    // Cromatismo reativo (Rosa claro -> Vermelho sob estresse de tração)
+                    // Cromatismo reativo: fibras esticadas mudam para vermelho
                     let r = 0.95;
                     let g = 0.25;
                     let b = 0.55;
                     
-                    if (fiber_strain > 0.03) {
-                        const factor = Math.min((fiber_strain - 0.03) * 15.0, 1.0);
+                    if (fiber_strain > 0.025) {{
+                        const factor = Math.min((fiber_strain - 0.025) * 18.0, 1.0);
                         r = 0.95 + factor * 0.05;
                         g = 0.25 - factor * 0.25;
                         b = 0.55 - factor * 0.55;
-                    }
+                    }}
                     
-                    // Cores dos vértices da raiz e osso
                     colors[colIndex++] = r;
                     colors[colIndex++] = g;
                     colors[colIndex++] = b;
+                    
                     colors[colIndex++] = r;
                     colors[colIndex++] = g;
                     colors[colIndex++] = b;
-                }
+                }}
                 
                 lineGeo.attributes.position.needsUpdate = true;
                 lineGeo.attributes.color.needsUpdate = true;
                 
-                toothGroup.rotation.y += 0.0018;
-                
                 controls.update();
                 renderer.render(scene, camera);
-            }
+            }}
             
-            window.addEventListener('resize', () => {
+            window.addEventListener("resize", () => {{
                 camera.aspect = window.innerWidth / window.innerHeight;
                 camera.updateProjectionMatrix();
                 renderer.setSize(window.innerWidth, window.innerHeight);
-            });
+            }});
             
             animate();
         </script>
