@@ -214,7 +214,7 @@ with tab1:
     st.subheader("👁️ Gêmeo Digital Periodontal 3D Interativo")
     st.write("Modelo anatômico tridimensional ativo do elemento dentário e do ligamento periodontal (LPD). Rotacione com o mouse, use zoom e observe a deformação e alteração cromática do LPD em tempo real durante o ciclo de carga oclusal.")
     
-    # HTML/JS Tridimensional com Three.js
+    # HTML/JS Tridimensional com Three.js (WebGL Fibroso Avançado e HUD)
     threejs_html = """
     <!DOCTYPE html>
     <html>
@@ -222,11 +222,52 @@ with tab1:
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
         <style>
-            body { margin: 0; overflow: hidden; background-color: #0f172a; border-radius: 8px; }
+            body { margin: 0; overflow: hidden; background-color: #0f172a; border-radius: 8px; font-family: monospace; }
             canvas { width: 100vw; height: 100vh; display: block; }
+            #hud {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                color: #f8fafc;
+                background: rgba(15, 23, 42, 0.85);
+                border: 1px solid #38bdf8;
+                padding: 12px;
+                border-radius: 6px;
+                box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+                width: 210px;
+                pointer-events: none;
+                font-size: 11px;
+            }
+            .hud-title {
+                font-weight: bold;
+                color: #38bdf8;
+                margin-bottom: 8px;
+                border-bottom: 1px solid #1e293b;
+                padding-bottom: 4px;
+                font-size: 12px;
+                text-align: center;
+            }
+            .hud-item {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 4px;
+            }
+            .hud-item span {
+                color: #94a3b8;
+            }
+            .hud-item strong {
+                color: #38bdf8;
+            }
         </style>
     </head>
     <body>
+        <div id="hud">
+            <div class="hud-title">🔬 Telemetria em Tempo Real</div>
+            <div class="hud-item"><span>Carga Oclusal:</span><strong id="hud_force">0.0 N</strong></div>
+            <div class="hud-item"><span>Deslocamento:</span><strong id="hud_disp">0.0 µm</strong></div>
+            <div class="hud-item"><span>Tensão no LPD:</span><strong id="hud_stress">0.000 MPa</strong></div>
+            <div class="hud-item"><span>Deformação Fibra:</span><strong id="hud_strain">0.0 %</strong></div>
+        </div>
         <script>
             const scene = new THREE.Scene();
             scene.background = new THREE.Color(0x0f172a);
@@ -244,14 +285,14 @@ with tab1:
             controls.dampingFactor = 0.05;
             
             // Iluminação
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.35);
             scene.add(ambientLight);
             
-            const dirLight1 = new THREE.DirectionalLight(0xffffff, 0.8);
+            const dirLight1 = new THREE.DirectionalLight(0xffffff, 0.85);
             dirLight1.position.set(5, 10, 7);
             scene.add(dirLight1);
             
-            const dirLight2 = new THREE.DirectionalLight(0x3b82f6, 0.5);
+            const dirLight2 = new THREE.DirectionalLight(0x3b82f6, 0.6);
             dirLight2.position.set(-5, -5, -5);
             scene.add(dirLight2);
             
@@ -259,10 +300,10 @@ with tab1:
             const toothGroup = new THREE.Group();
             
             // Coroa
-            const crownGeo = new THREE.CylinderGeometry(1.4, 1.1, 2.2, 32);
+            const crownGeo = new THREE.CylinderGeometry(1.4, 1.15, 2.2, 32);
             const crownMat = new THREE.MeshStandardMaterial({
                 color: 0xf8fafc,
-                roughness: 0.15,
+                roughness: 0.1,
                 metalness: 0.05
             });
             const crown = new THREE.Mesh(crownGeo, crownMat);
@@ -282,7 +323,7 @@ with tab1:
             });
             
             // Raiz
-            const rootGeo = new THREE.ConeGeometry(1.1, 3.8, 32);
+            const rootGeo = new THREE.ConeGeometry(1.15, 3.8, 32);
             const rootMat = new THREE.MeshStandardMaterial({
                 color: 0xe2e8f0,
                 roughness: 0.45
@@ -294,40 +335,147 @@ with tab1:
             
             scene.add(toothGroup);
             
-            // Ligamento Periodontal (LPD)
-            const pdlGeo = new THREE.CylinderGeometry(1.25, 0.1, 3.9, 32, 1, true);
-            const pdlMat = new THREE.MeshStandardMaterial({
-                color: 0xf43f5e,
+            // Alvéolo Ósseo (Socket externo translúcido)
+            const boneSocketGeo = new THREE.CylinderGeometry(1.45, 0.2, 4.0, 32, 1, true);
+            const boneSocketMat = new THREE.MeshBasicMaterial({
+                color: 0x475569,
                 transparent: true,
-                opacity: 0.35,
+                opacity: 0.12,
                 wireframe: true,
                 side: THREE.DoubleSide
             });
-            const pdl = new THREE.Mesh(pdlGeo, pdlMat);
-            pdl.position.y = -1.95;
-            pdl.rotation.x = Math.PI;
-            scene.add(pdl);
+            const boneSocket = new THREE.Mesh(boneSocketGeo, boneSocketMat);
+            boneSocket.position.y = -2.0;
+            boneSocket.rotation.x = Math.PI;
+            scene.add(boneSocket);
+
+            // Geração de 300 Fibras Colágenas do LPD (Microestrutura Periodontal)
+            const fiberLines = [];
+            const fiberCount = 300;
+            
+            for (let i = 0; i < fiberCount; i++) {
+                // Altura da inserção ao longo da raiz (0 a -3.6)
+                const y_root = -3.6 * Math.random();
+                const angle = Math.random() * Math.PI * 2;
+                
+                // Raio da raiz nessa altura (perfil cônico da raiz)
+                const r_root = 1.15 * (1.0 + y_root / 3.8);
+                
+                // Ponto na raiz (coordenadas locais do dente)
+                const px_root = r_root * Math.cos(angle);
+                const pz_root = r_root * Math.sin(angle);
+                
+                // Ponto no osso correspondente (espaço periodontal ~0.25 unidades)
+                const r_bone = r_root + 0.3;
+                const angle_offset = (Math.random() - 0.5) * 0.15; // Orientação oblíqua/crestosa
+                const px_bone = r_bone * Math.cos(angle + angle_offset);
+                const pz_bone = r_bone * Math.sin(angle + angle_offset);
+                
+                // As fibras oblíquas são anguladas (y no osso é ligeiramente superior ao y na raiz)
+                const y_bone = y_root + 0.18;
+                
+                fiberLines.push({
+                    local_root: new THREE.Vector3(px_root, y_root, pz_root),
+                    bone: new THREE.Vector3(px_bone, y_bone, pz_bone)
+                });
+            }
+            
+            // Estrutura WebGL para as linhas
+            const linePositions = new Float32Array(fiberCount * 6);
+            const lineColors = new Float32Array(fiberCount * 6);
+            
+            const lineGeo = new THREE.BufferGeometry();
+            lineGeo.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
+            lineGeo.setAttribute('color', new THREE.BufferAttribute(lineColors, 3));
+            
+            const lineMat = new THREE.LineBasicMaterial({
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.8
+            });
+            
+            const fiberSystem = new THREE.LineSegments(lineGeo, lineMat);
+            scene.add(fiberSystem);
             
             // Ciclo de Carga e Animação
             let time = 0;
+            const positions = lineGeo.attributes.position.array;
+            const colors = lineGeo.attributes.color.array;
+            
             function animate() {
                 requestAnimationFrame(animate);
-                time += 0.04;
+                time += 0.035;
                 
-                // Oscilação vertical (deslocamento)
-                const displacement = Math.sin(time) * 0.12 - 0.12; 
+                // Simulação de mastigação realística
+                const cycle = Math.sin(time);
+                // Deslocamento máximo de ~150 micrômetros
+                const displacement = (cycle * 0.08 - 0.08); 
                 toothGroup.position.y = displacement;
                 
-                // Stress feedback do LPD
-                const stress = Math.abs(displacement) / 0.24;
-                pdlMat.opacity = 0.3 + stress * 0.55;
-                if (stress > 0.8) {
-                    pdlMat.color.setHex(0xef4444); // Vermelho de estresse
-                } else {
-                    pdlMat.color.setHex(0xf43f5e); // Rosa padrão
+                // Valores de telemetria escalados para exibição física nanomilimétrica
+                const real_force = (Math.abs(cycle * 22.5) + 7.5).toFixed(1); // 7.5 a 30.0 N
+                const real_disp = Math.abs(cycle * 75.0 - 75.0).toFixed(1);  // 0 a 150 um (nanomilimétrico)
+                const real_stress = (Math.abs(displacement) * 2.0).toFixed(4); // MPa
+                const real_strain = (Math.abs(displacement) * 0.35 * 100).toFixed(1); // %
+                
+                // Atualizar HUD
+                document.getElementById('hud_force').innerText = real_force + " N";
+                document.getElementById('hud_disp').innerText = real_disp + " µm";
+                document.getElementById('hud_stress').innerText = real_stress + " MPa";
+                document.getElementById('hud_strain').innerText = real_strain + " %";
+                
+                // Atualização geométrica das fibras
+                let posIndex = 0;
+                let colIndex = 0;
+                
+                for (let i = 0; i < fiberCount; i++) {
+                    const fiber = fiberLines[i];
+                    
+                    // Ponto da raiz no espaço global (acompanha o dente)
+                    const gx_root = fiber.local_root.x;
+                    const gy_root = fiber.local_root.y + displacement;
+                    const gz_root = fiber.local_root.z;
+                    
+                    // Posição raiz
+                    positions[posIndex++] = gx_root;
+                    positions[posIndex++] = gy_root;
+                    positions[posIndex++] = gz_root;
+                    
+                    // Posição osso (fixo)
+                    positions[posIndex++] = fiber.bone.x;
+                    positions[posIndex++] = fiber.bone.y;
+                    positions[posIndex++] = fiber.bone.z;
+                    
+                    // Comprimento e deformação individual das fibras
+                    const orig_len = fiber.local_root.distanceTo(fiber.bone);
+                    const curr_len = new THREE.Vector3(gx_root, gy_root, gz_root).distanceTo(fiber.bone);
+                    const fiber_strain = Math.abs(curr_len - orig_len) / orig_len;
+                    
+                    // Cromatismo reativo (Rosa claro -> Vermelho sob estresse de tração)
+                    let r = 0.95;
+                    let g = 0.25;
+                    let b = 0.55;
+                    
+                    if (fiber_strain > 0.03) {
+                        const factor = Math.min((fiber_strain - 0.03) * 15.0, 1.0);
+                        r = 0.95 + factor * 0.05;
+                        g = 0.25 - factor * 0.25;
+                        b = 0.55 - factor * 0.55;
+                    }
+                    
+                    // Cores dos vértices da raiz e osso
+                    colors[colIndex++] = r;
+                    colors[colIndex++] = g;
+                    colors[colIndex++] = b;
+                    colors[colIndex++] = r;
+                    colors[colIndex++] = g;
+                    colors[colIndex++] = b;
                 }
                 
-                toothGroup.rotation.y += 0.003;
+                lineGeo.attributes.position.needsUpdate = true;
+                lineGeo.attributes.color.needsUpdate = true;
+                
+                toothGroup.rotation.y += 0.0018;
                 
                 controls.update();
                 renderer.render(scene, camera);
