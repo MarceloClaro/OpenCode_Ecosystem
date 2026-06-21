@@ -103,8 +103,8 @@ class CrossValidator:
 
 # --- INTERFACE PRINCIPAL ---
 
-st.markdown('<div class="main-title">🦷 Ecossistema SUS-Twin</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Volume 2: Gêmeos Digitais e Inteligência Artificial na Odontologia Pública</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">🦷 Gêmeos Digitais Periodontais</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Volume 2: Gêmeos Digitais Periodontais e o Framework SUS-Twin</div>', unsafe_allow_html=True)
 
 # --- SIDEBAR: CONFIGURAÇÕES E PARÂMETROS ---
 st.sidebar.markdown('<div class="sidebar-title">⚙️ Painel de Configuração</div>', unsafe_allow_html=True)
@@ -152,7 +152,7 @@ solver = LPDSolver(e_infinity=e_inf, e_0=e_0, tau=tau)
 tab1, tab2, tab3, tab4 = st.tabs([
     "📈 Simulação Biomecânica",
     "🧪 Validação Cruzada K-Fold",
-    "⛓️ Contraprova & Auditoria ZKP",
+    "🔒 Contraprova & Auditoria ZKP",
     "🌐 Arquitetura e Integrações IoT"
 ])
 
