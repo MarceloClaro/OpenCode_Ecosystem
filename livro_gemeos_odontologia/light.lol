@@ -8,3 +8,4 @@
 \contentsline {lstlisting}{\numberline {13.5}{\ignorespaces Saída do Executor de Testes do OpenCode ScientificProductionAgent}}{128}{lstlisting.13.5}%
 \contentsline {lstlisting}{\numberline {13.6}{\ignorespaces Saída do Executor de Testes do OpenCode SROIScanner}}{128}{lstlisting.13.6}%
 \contentsline {lstlisting}{\numberline {13.7}{\ignorespaces Saída do Executor de Testes do SaMD Compliance Engine}}{129}{lstlisting.13.7}%
+\contentsline {lstlisting}{\numberline {14.1}{\ignorespaces Implementação Prática do SUS-Twin Framework (LPD Solver, Cross-Validation e Contraprova ZKP)}}{136}{lstlisting.14.1}%
