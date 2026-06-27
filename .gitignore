@@ -41,3 +41,18 @@ docs.*
 *.zip
 MembrosDoCanal-main*/
 UsersmarceAppDataLocalTemppytest-alt/
+
+# Large generated files (>100MB)
+*.mp3
+*.synctex(busy)
+
+# Playwright test artifacts
+.playwright-mcp/
+
+# Compiled PDFs (source .tex files tracked)
+**/main.pdf
+**/dissertacao.pdf
+**/dissertacao.docx
+
+# External content
+edson laranjeira/
