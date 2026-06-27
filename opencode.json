@@ -1,11 +1,15 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "nvidia/deepseek-ai/deepseek-r1",
-  "small_model": "minimax-cn-coding-plan/MiniMax-M2.7",
+  "small_model": "nvidia/deepseek-ai/deepseek-v3",
+  "default_agent": "marceloclaro",
+  "instructions": [
+    "AGENTS.md"
+  ],
   "autoupdate": true,
   "compaction": {
     "auto": true,
-    "prune": true,
+    "tail_turns": 15,
     "reserved": 10000
   },
   "provider": {
@@ -14,42 +18,9 @@
       "name": "NVIDIA NIM",
       "options": {
         "baseURL": "https://integrate.api.nvidia.com/v1",
-        "apiKey": "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"
+        "apiKey": "{env:NVIDIA_API_KEY}"
       },
       "models": {
-        "meta/llama-3.3-70b-instruct": {
-          "name": "meta/llama-3.3-70b-instruct",
-          "limit": {
-            "context": 131072,
-            "output": 32768
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
-        },
-        "meta/llama-3.1-405b-instruct": {
-          "name": "meta/llama-3.1-405b-instruct",
-          "limit": {
-            "context": 131072,
-            "output": 32768
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
-        },
-        "nvidia/llama-3.1-nemotron-70b-instruct": {
-          "name": "nvidia/llama-3.1-nemotron-70b-instruct",
-          "limit": {
-            "context": 131072,
-            "output": 32768
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
-        },
         "deepseek-ai/deepseek-r1": {
           "name": "deepseek-ai/deepseek-r1",
           "limit": {
@@ -57,8 +28,12 @@
             "output": 32768
           },
           "modalities": {
-            "input": ["text"],
-            "output": ["text"]
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
           }
         },
         "deepseek-ai/deepseek-v3": {
@@ -68,9 +43,178 @@
             "output": 32768
           },
           "modalities": {
-            "input": ["text"],
-            "output": ["text"]
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
           }
+        },
+        "meta/llama-4-maverick-17b-128e-instruct": {
+          "name": "meta/llama-4-maverick-17b-128e-instruct",
+          "limit": {
+            "context": 1048576,
+            "output": 32768
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "description": "Most popular NIM model (22M+ uses). Multimodal text+image."
+        },
+        "meta/llama-3.3-70b-instruct": {
+          "name": "meta/llama-3.3-70b-instruct",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "meta/llama-3.1-405b-instruct": {
+          "name": "meta/llama-3.1-405b-instruct",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "meta/llama-3.2-90b-vision-instruct": {
+          "name": "meta/llama-3.2-90b-vision-instruct",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "description": "Vision-Language model. Image understanding + reasoning."
+        },
+        "meta/llama-3.2-11b-vision-instruct": {
+          "name": "meta/llama-3.2-11b-vision-instruct",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "description": "Lightweight VLM. Image captioning + visual QA."
+        },
+        "nvidia/llama-3.1-nemotron-70b-instruct": {
+          "name": "nvidia/llama-3.1-nemotron-70b-instruct",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
+          "limit": {
+            "context": 1048576,
+            "output": 32768
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "description": "Hybrid Mamba-Transformer MoE. 1M context. Agentic reasoning."
+        },
+        "nvidia/cosmos-reason2-8b": {
+          "name": "nvidia/cosmos-reason2-8b",
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "video"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "description": "Physical AI VLM. Video/image understanding with structured reasoning."
+        },
+        "google/paligemma": {
+          "name": "google/paligemma",
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "description": "Vision-language model. Text + visual input comprehension."
+        },
+        "microsoft/phi-4-multimodal": {
+          "name": "microsoft/phi-4-multimodal",
+          "limit": {
+            "context": 16384,
+            "output": 4096
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "audio"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "description": "Multimodal: image + audio reasoning in compact form."
         },
         "qwen/qwq-32b": {
           "name": "qwen/qwq-32b",
@@ -79,9 +223,61 @@
             "output": 8192
           },
           "modalities": {
-            "input": ["text"],
-            "output": ["text"]
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
           }
+        },
+        "qwen/qwen3-coder-480b": {
+          "name": "qwen/qwen3-coder-480b",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "description": "Purpose-built for agentic coding tasks."
+        },
+        "minimaxai/minimax-m2.7": {
+          "name": "minimaxai/minimax-m2.7",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "description": "230B MoE. Coding, reasoning, office tasks."
+        },
+        "mistralai/mistral-large-3-675b": {
+          "name": "mistralai/mistral-large-3-675b",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "description": "SOTA general purpose. Complex reasoning + professional writing."
         },
         "microsoft/phi-4": {
           "name": "microsoft/phi-4",
@@ -90,8 +286,12 @@
             "output": 4096
           },
           "modalities": {
-            "input": ["text"],
-            "output": ["text"]
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
           }
         }
       }
@@ -106,44 +306,27 @@
         "-y",
         "@modelcontextprotocol/server-filesystem",
         "/mnt/c/Users/marce"
-      ],
-      "tags": [
-        "core",
-        "files"
       ]
     },
     "code-runner": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "mcp-server-code-runner"
-      ],
-      "tags": [
-        "core",
-        "execution"
       ]
     },
     "mcp-python-interpreter": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "mcp-python-interpreter"
-      ],
-      "tags": [
-        "core",
-        "python",
-        "execution"
       ]
     },
     "sqlite": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "mcp-server-sqlite"
-      ],
-      "tags": [
-        "core",
-        "database"
       ]
     },
     "sequential-thinking": {
@@ -152,10 +335,6 @@
       "command": [
         "node",
         "C:/Users/marce/AppData/Roaming/npm/node_modules/@modelcontextprotocol/server-sequential-thinking/dist/index.js"
-      ],
-      "tags": [
-        "core",
-        "reasoning"
       ]
     },
     "websearch": {
@@ -164,10 +343,6 @@
       "command": [
         "mcp-fetch-server",
         "--duckduckgo"
-      ],
-      "tags": [
-        "search",
-        "web"
       ]
     },
     "fetch": {
@@ -175,10 +350,6 @@
       "enabled": true,
       "command": [
         "mcp-fetch-server"
-      ],
-      "tags": [
-        "search",
-        "web"
       ]
     },
     "wikipedia": {
@@ -188,36 +359,20 @@
         "npx",
         "-y",
         "mcp-wikipedia"
-      ],
-      "tags": [
-        "search",
-        "encyclopedia"
       ]
     },
     "context7": {
       "type": "remote",
       "enabled": true,
       "url": "https://mcp.context7.com/mcp",
-      "tags": [
-        "search",
-        "docs"
-      ],
       "headers": {
-        "Authorization": "Bearer ctx7sk-5d74972d-1a99-4aa3-b386-df8db154ecd4"
-      },
-      "environment": {
-        "CONTEXT7_API_KEY": "ctx7sk-5d74972d-1a99-4aa3-b386-df8db154ecd4"
+        "Authorization": "Bearer {env:CTX7_API_KEY}"
       }
     },
     "gh_grep": {
       "type": "remote",
       "enabled": true,
-      "url": "https://mcp.grep.app",
-      "tags": [
-        "search",
-        "github",
-        "code"
-      ]
+      "url": "https://mcp.grep.app"
     },
     "playwright": {
       "type": "local",
@@ -227,10 +382,6 @@
         "-y",
         "@playwright/mcp@latest",
         "--headless"
-      ],
-      "tags": [
-        "browser",
-        "automation"
       ]
     },
     "puppeteer": {
@@ -240,10 +391,6 @@
         "npx",
         "-y",
         "@modelcontextprotocol/server-puppeteer"
-      ],
-      "tags": [
-        "browser",
-        "automation"
       ]
     },
     "chrome-devtools": {
@@ -251,10 +398,6 @@
       "enabled": false,
       "command": [
         "chrome-devtools-mcp"
-      ],
-      "tags": [
-        "browser",
-        "devtools"
       ]
     },
     "desktop-commander": {
@@ -264,10 +407,6 @@
         "npx",
         "-y",
         "@wonderwhy-er/desktop-commander"
-      ],
-      "tags": [
-        "ui",
-        "desktop"
       ]
     },
     "eslint": {
@@ -277,23 +416,13 @@
         "npx",
         "-y",
         "@eslint/mcp"
-      ],
-      "tags": [
-        "code",
-        "quality",
-        "linting"
       ]
     },
     "diff": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "mcp-server-diff-typescript"
-      ],
-      "tags": [
-        "code",
-        "diff",
-        "comparison"
       ]
     },
     "shell-server": {
@@ -303,12 +432,7 @@
         "uvx",
         "mcp-shell-server"
       ],
-      "timeout": 30000,
-      "tags": [
-        "execution",
-        "shell",
-        "sandbox"
-      ]
+      "timeout": 30000
     },
     "run-python": {
       "type": "local",
@@ -317,23 +441,13 @@
         "uvx",
         "mcp-run-python"
       ],
-      "timeout": 30000,
-      "tags": [
-        "execution",
-        "python",
-        "sandbox"
-      ]
+      "timeout": 30000
     },
     "node-sandbox": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "node-code-sandbox-mcp"
-      ],
-      "tags": [
-        "execution",
-        "node",
-        "sandbox"
       ],
       "timeout": 30000
     },
@@ -344,10 +458,6 @@
         "npx",
         "-y",
         "@modelcontextprotocol/server-memory"
-      ],
-      "tags": [
-        "system",
-        "memory"
       ]
     },
     "mcp-server-commands": {
@@ -355,11 +465,6 @@
       "enabled": false,
       "command": [
         "mcp-server-commands"
-      ],
-      "tags": [
-        "system",
-        "devops",
-        "commands"
       ]
     },
     "time": {
@@ -369,10 +474,6 @@
         "npx",
         "-y",
         "@mcpcentral/mcp-time"
-      ],
-      "tags": [
-        "system",
-        "time"
       ]
     },
     "github": {
@@ -385,22 +486,13 @@
       ],
       "environment": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_TOKEN}"
-      },
-      "tags": [
-        "github",
-        "collaboration",
-        "git"
-      ]
+      }
     },
     "pdf": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "pdf-mcp-server"
-      ],
-      "tags": [
-        "pdf",
-        "documents"
       ]
     },
     "biomcp": {
@@ -410,12 +502,7 @@
         "uvx",
         "biomcp"
       ],
-      "timeout": 20000,
-      "tags": [
-        "biology",
-        "science",
-        "bioinformatics"
-      ]
+      "timeout": 20000
     },
     "biothings": {
       "type": "local",
@@ -424,12 +511,7 @@
         "uvx",
         "biothings-mcp"
       ],
-      "timeout": 20000,
-      "tags": [
-        "biology",
-        "science",
-        "biothings"
-      ]
+      "timeout": 20000
     },
     "gget": {
       "type": "local",
@@ -438,12 +520,7 @@
         "uvx",
         "gget-mcp"
       ],
-      "timeout": 20000,
-      "tags": [
-        "biology",
-        "science",
-        "genomics"
-      ]
+      "timeout": 20000
     },
     "opengenes": {
       "type": "local",
@@ -452,12 +529,7 @@
         "uvx",
         "opengenes-mcp"
       ],
-      "timeout": 20000,
-      "tags": [
-        "biology",
-        "science",
-        "genomics"
-      ]
+      "timeout": 20000
     },
     "scihub": {
       "type": "local",
@@ -467,12 +539,7 @@
         "-m",
         "sci_hub_server"
       ],
-      "timeout": 30000,
-      "tags": [
-        "academic",
-        "papers",
-        "science"
-      ]
+      "timeout": 30000
     },
     "latest-science": {
       "type": "local",
@@ -482,13 +549,7 @@
         "-y",
         "@futurelab-studio/latest-science-mcp"
       ],
-      "timeout": 30000,
-      "tags": [
-        "academic",
-        "papers",
-        "science",
-        "search"
-      ]
+      "timeout": 30000
     },
     "research-mcp": {
       "type": "local",
@@ -497,15 +558,7 @@
         "researchmcp",
         "arxiv"
       ],
-      "timeout": 30000,
-      "tags": [
-        "academic",
-        "papers",
-        "science",
-        "semantic-scholar",
-        "arxiv",
-        "pubmed"
-      ]
+      "timeout": 30000
     },
     "sura-papers": {
       "type": "local",
@@ -515,14 +568,7 @@
         "-y",
         "@sura_ai/papers"
       ],
-      "timeout": 30000,
-      "tags": [
-        "academic",
-        "papers",
-        "doi",
-        "crossref",
-        "citation-graph"
-      ]
+      "timeout": 30000
     },
     "arxiv-mcp": {
       "type": "local",
@@ -532,13 +578,7 @@
         "-y",
         "@fre4x/arxiv"
       ],
-      "timeout": 30000,
-      "tags": [
-        "academic",
-        "papers",
-        "arxiv",
-        "preprints"
-      ]
+      "timeout": 30000
     },
     "youtube-transcript": {
       "type": "local",
@@ -547,11 +587,6 @@
         "npx",
         "-y",
         "mcp-server-youtube-transcript"
-      ],
-      "tags": [
-        "academic",
-        "video",
-        "transcript"
       ]
     },
     "mermaid": {
@@ -561,10 +596,6 @@
         "npx",
         "-y",
         "@narasimhaponnada/mermaid-mcp-server"
-      ],
-      "tags": [
-        "visualization",
-        "diagrams"
       ]
     },
     "mem0-mcp": {
@@ -572,11 +603,6 @@
       "enabled": false,
       "command": [
         "mem0-mcp"
-      ],
-      "tags": [
-        "memory",
-        "persistence",
-        "ai"
       ]
     },
     "hacker-news": {
@@ -586,10 +612,6 @@
         "npx",
         "-y",
         "mcp-hacker-news"
-      ],
-      "tags": [
-        "news",
-        "social"
       ]
     },
     "flowzap-mcp": {
@@ -599,10 +621,6 @@
         "npx",
         "-y",
         "flowzap-mcp"
-      ],
-      "tags": [
-        "diagrams",
-        "architecture"
       ]
     },
     "astronomy-oracle": {
@@ -612,10 +630,6 @@
         "npx",
         "-y",
         "astronomy-oracle"
-      ],
-      "tags": [
-        "science",
-        "astronomy"
       ]
     },
     "self-healer": {
@@ -628,15 +642,9 @@
     },
     "decisionnode": {
       "type": "local",
-      "enabled": true,
+      "enabled": false,
       "command": [
         "decide-mcp"
-      ],
-      "tags": [
-        "memory",
-        "decisions",
-        "ai",
-        "ecosystem"
       ]
     },
     "ollama-websearch": {
@@ -648,15 +656,9 @@
         "nexus/ollama_web_search_mcp.py"
       ],
       "environment": {
-        "OLLAMA_API_KEY": "be97a056dd1342078274a4b25b14c152.-a9lnTfnh7GQiqgK-Z2woTj1"
+        "OLLAMA_API_KEY": "{env:OLLAMA_API_KEY}"
       },
-      "timeout": 30000,
-      "tags": [
-        "search",
-        "web",
-        "ollama",
-        "realtime"
-      ]
+      "timeout": 30000
     },
     "maswos-juridico": {
       "type": "local",
@@ -664,11 +666,6 @@
       "command": [
         "python",
         "skills/maswos-v5-nexus/servers/juridico_server.py"
-      ],
-      "tags": [
-        "maswos",
-        "juridico",
-        "legal"
       ]
     },
     "maswos-mcp": {
@@ -677,11 +674,6 @@
       "command": [
         "python",
         "skills/maswos-v5-nexus/servers/maswos_server.py"
-      ],
-      "tags": [
-        "maswos",
-        "orchestration",
-        "agents"
       ]
     },
     "maswos-rag": {
@@ -690,11 +682,6 @@
       "command": [
         "python",
         "skills/maswos-v5-nexus/servers/rag_server.py"
-      ],
-      "tags": [
-        "maswos",
-        "rag",
-        "retrieval"
       ]
     },
     "antigravity-mcp": {
@@ -704,14 +691,7 @@
         "python",
         "nexus/antigravity_mcp_server.py"
       ],
-      "timeout": 60000,
-      "tags": [
-        "antigravity",
-        "bridge",
-        "orchestration",
-        "ai",
-        "external"
-      ]
+      "timeout": 60000
     },
     "cora-verifier": {
       "type": "local",
@@ -720,15 +700,16 @@
         "python",
         "skills/cora-debate/servers/cora_verifier.py"
       ],
-      "timeout": 30000,
-      "tags": [
-        "cora",
-        "verification",
-        "symbolic",
-        "debate",
-        "mathematics",
-        "science"
-      ]
+      "timeout": 30000
+    },
+    "ecosystem-capabilities": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "python",
+        "nexus/ecosystem_capabilities_server.py"
+      ],
+      "timeout": 60000
     }
   },
   "lsp": {
@@ -737,11 +718,19 @@
         "typescript-language-server",
         "--stdio"
       ],
+      "extensions": ["ts", "tsx", "js", "jsx"],
       "initialization": {
         "preferences": {
           "importModuleSpecifierPreference": "relative"
         }
       }
+    },
+    "python": {
+      "command": [
+        "pyright-langserver",
+        "--stdio"
+      ],
+      "extensions": ["py"]
     }
   }
 }

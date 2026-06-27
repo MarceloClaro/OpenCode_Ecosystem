@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-06-27T18:44:54.507Z",
+  "agents": 128,
+  "mcps": {
+    "total": 46,
+    "active": 23
+  },
+  "skills": {
+    "total": 155,
+    "registered": 122
+  },
+  "hooks": 11,
+  "health_score": 96,
+  "cjk_leaks": 0
+}

@@ -1,0 +1,2018 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{BRASIL2018}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=aa43becf0d21463be7540bf3b40bf243}{%
+           family={{Brasil}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Ministério da Educação}%
+      }
+      \strng{namehash}{aa43becf0d21463be7540bf3b40bf243}
+      \strng{fullhash}{aa43becf0d21463be7540bf3b40bf243}
+      \strng{fullhashraw}{aa43becf0d21463be7540bf3b40bf243}
+      \strng{bibnamehash}{aa43becf0d21463be7540bf3b40bf243}
+      \strng{authorbibnamehash}{aa43becf0d21463be7540bf3b40bf243}
+      \strng{authornamehash}{aa43becf0d21463be7540bf3b40bf243}
+      \strng{authorfullhash}{aa43becf0d21463be7540bf3b40bf243}
+      \strng{authorfullhashraw}{aa43becf0d21463be7540bf3b40bf243}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Base Nacional Comum Curricular}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.gov.br/mec/pt-br/escola-em-tempo-integral/arquivos/BNCC_EI_EF_110518_versaofinal.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.gov.br/mec/pt-br/escola-em-tempo-integral/arquivos/BNCC_EI_EF_110518_versaofinal.pdf
+      \endverb
+    \endentry
+    \entry{BACICH2018}{incollection}{}{}
+      \name{author}{2}{}{%
+        {{hash=b1a88c917fa17721c4fc4a2b9ee2a65c}{%
+           family={BACICH},
+           familyi={B\bibinitperiod},
+           given={Lilian},
+           giveni={L\bibinitperiod}}}%
+        {{hash=e03f285dfb70a49a29ec02f702e41f24}{%
+           family={MORAN},
+           familyi={M\bibinitperiod},
+           given={José},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Penso}%
+      }
+      \strng{namehash}{1a3d2db662e293cdc298e3eb416270e4}
+      \strng{fullhash}{1a3d2db662e293cdc298e3eb416270e4}
+      \strng{fullhashraw}{1a3d2db662e293cdc298e3eb416270e4}
+      \strng{bibnamehash}{1a3d2db662e293cdc298e3eb416270e4}
+      \strng{authorbibnamehash}{1a3d2db662e293cdc298e3eb416270e4}
+      \strng{authornamehash}{1a3d2db662e293cdc298e3eb416270e4}
+      \strng{authorfullhash}{1a3d2db662e293cdc298e3eb416270e4}
+      \strng{authorfullhashraw}{1a3d2db662e293cdc298e3eb416270e4}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Metodologias ativas para uma aprendizagem mais profunda: uma abordagem teórico-prática}
+      \field{title}{Metodologias ativas para uma aprendizagem mais profunda}
+      \field{year}{2018}
+      \field{pages}{13\bibrangedash 28}
+      \range{pages}{16}
+      \verb{urlraw}
+      \verb https://pt.scribd.com/document/682349221/Metodologias-Ativas-para-uma-Educac-a-o-Inovadora-Lilian-Bacich-e-Jose-Moran
+      \endverb
+      \verb{url}
+      \verb https://pt.scribd.com/document/682349221/Metodologias-Ativas-para-uma-Educac-a-o-Inovadora-Lilian-Bacich-e-Jose-Moran
+      \endverb
+    \endentry
+    \entry{BONWELL1991}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=a78768da8cac10189dff5955655733b1}{%
+           family={BONWELL},
+           familyi={B\bibinitperiod},
+           given={Charles\bibnamedelima C.},
+           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=c6e274d4996a8e0f285b1882bfc3e1f9}{%
+           family={EISON},
+           familyi={E\bibinitperiod},
+           given={James\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{d0deffb09ea305e7fd540d1cd74eb571}
+      \strng{fullhash}{d0deffb09ea305e7fd540d1cd74eb571}
+      \strng{fullhashraw}{d0deffb09ea305e7fd540d1cd74eb571}
+      \strng{bibnamehash}{d0deffb09ea305e7fd540d1cd74eb571}
+      \strng{authorbibnamehash}{d0deffb09ea305e7fd540d1cd74eb571}
+      \strng{authornamehash}{d0deffb09ea305e7fd540d1cd74eb571}
+      \strng{authorfullhash}{d0deffb09ea305e7fd540d1cd74eb571}
+      \strng{authorfullhashraw}{d0deffb09ea305e7fd540d1cd74eb571}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ASHE-ERIC Higher Education Report}
+      \field{title}{Active learning: Creating excitement in the classroom}
+      \field{volume}{1}
+      \field{year}{1991}
+      \field{pages}{1\bibrangedash 121}
+      \range{pages}{121}
+      \verb{urlraw}
+      \verb http://files.eric.ed.gov/fulltext/ED336049.pdf
+      \endverb
+      \verb{url}
+      \verb http://files.eric.ed.gov/fulltext/ED336049.pdf
+      \endverb
+    \endentry
+    \entry{BARROWS1996}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=0ae765fe1d464b7ad3b626d844beeba1}{%
+           family={BARROWS},
+           familyi={B\bibinitperiod},
+           given={Howard\bibnamedelima S.},
+           giveni={H\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ae765fe1d464b7ad3b626d844beeba1}
+      \strng{fullhash}{0ae765fe1d464b7ad3b626d844beeba1}
+      \strng{fullhashraw}{0ae765fe1d464b7ad3b626d844beeba1}
+      \strng{bibnamehash}{0ae765fe1d464b7ad3b626d844beeba1}
+      \strng{authorbibnamehash}{0ae765fe1d464b7ad3b626d844beeba1}
+      \strng{authornamehash}{0ae765fe1d464b7ad3b626d844beeba1}
+      \strng{authorfullhash}{0ae765fe1d464b7ad3b626d844beeba1}
+      \strng{authorfullhashraw}{0ae765fe1d464b7ad3b626d844beeba1}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{New Directions for Teaching and Learning}
+      \field{title}{Problem-based learning in medicine and beyond: A brief overview}
+      \field{volume}{68}
+      \field{year}{1996}
+      \field{pages}{3\bibrangedash 12}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1002/tl.37219966804
+      \endverb
+    \endentry
+    \entry{BARRON1998}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=aa15f85f22bf645657fbfb7ca5da898d}{%
+           family={BARRON},
+           familyi={B\bibinitperiod},
+           given={Brigid},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{7d56bcf5baf47d94d3052961af6ed357}
+      \strng{fullhash}{7d56bcf5baf47d94d3052961af6ed357}
+      \strng{fullhashraw}{7d56bcf5baf47d94d3052961af6ed357}
+      \strng{bibnamehash}{7d56bcf5baf47d94d3052961af6ed357}
+      \strng{authorbibnamehash}{7d56bcf5baf47d94d3052961af6ed357}
+      \strng{authornamehash}{7d56bcf5baf47d94d3052961af6ed357}
+      \strng{authorfullhash}{7d56bcf5baf47d94d3052961af6ed357}
+      \strng{authorfullhashraw}{7d56bcf5baf47d94d3052961af6ed357}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Learning Sciences}
+      \field{number}{3--4}
+      \field{title}{Doing with understanding: Lessons from research on problem- and project-based learning}
+      \field{volume}{7}
+      \field{year}{1998}
+      \field{pages}{271\bibrangedash 311}
+      \range{pages}{41}
+      \verb{doi}
+      \verb 10.1080/10508406.1998.9672056
+      \endverb
+    \endentry
+    \entry{SCHMIDT1983}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=587aae0ed3c68cdc52a10ec7019ebd0c}{%
+           family={SCHMIDT},
+           familyi={S\bibinitperiod},
+           given={Henk\bibnamedelima G.},
+           giveni={H\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{587aae0ed3c68cdc52a10ec7019ebd0c}
+      \strng{fullhash}{587aae0ed3c68cdc52a10ec7019ebd0c}
+      \strng{fullhashraw}{587aae0ed3c68cdc52a10ec7019ebd0c}
+      \strng{bibnamehash}{587aae0ed3c68cdc52a10ec7019ebd0c}
+      \strng{authorbibnamehash}{587aae0ed3c68cdc52a10ec7019ebd0c}
+      \strng{authornamehash}{587aae0ed3c68cdc52a10ec7019ebd0c}
+      \strng{authorfullhash}{587aae0ed3c68cdc52a10ec7019ebd0c}
+      \strng{authorfullhashraw}{587aae0ed3c68cdc52a10ec7019ebd0c}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Medical Education}
+      \field{number}{1}
+      \field{title}{Problem-based learning: rationale and description}
+      \field{volume}{17}
+      \field{year}{1983}
+      \field{pages}{11\bibrangedash 16}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1111/j.1365-2923.1983.tb01086.x
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1111/j.1365-2923.1983.tb01086.x
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1111/j.1365-2923.1983.tb01086.x
+      \endverb
+    \endentry
+    \entry{THOMAS2000}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=8fa1601bb7b8972aec7cf21d1582030f}{%
+           family={THOMAS},
+           familyi={T\bibinitperiod},
+           given={John\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{8fa1601bb7b8972aec7cf21d1582030f}
+      \strng{fullhash}{8fa1601bb7b8972aec7cf21d1582030f}
+      \strng{fullhashraw}{8fa1601bb7b8972aec7cf21d1582030f}
+      \strng{bibnamehash}{8fa1601bb7b8972aec7cf21d1582030f}
+      \strng{authorbibnamehash}{8fa1601bb7b8972aec7cf21d1582030f}
+      \strng{authornamehash}{8fa1601bb7b8972aec7cf21d1582030f}
+      \strng{authorfullhash}{8fa1601bb7b8972aec7cf21d1582030f}
+      \strng{authorfullhashraw}{8fa1601bb7b8972aec7cf21d1582030f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Autodesk Foundation}
+      \field{title}{A review of research on project-based learning}
+      \field{year}{2000}
+      \verb{urlraw}
+      \verb https://www.pblworks.org/sites/default/files/2019-01/A_Review_of_Research_on_Project_Based_Learning.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.pblworks.org/sites/default/files/2019-01/A_Review_of_Research_on_Project_Based_Learning.pdf
+      \endverb
+    \endentry
+    \entry{MENEZES2020}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=30e03346c68120016c223fa3cc216336}{%
+           family={MENEZES\bibnamedelima FILHO},
+           familyi={M\bibinitperiod\bibinitdelim F\bibinitperiod},
+           given={Naercio},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{367a21cdc49efcb30c0a6096eb2c5955}
+      \strng{fullhash}{367a21cdc49efcb30c0a6096eb2c5955}
+      \strng{fullhashraw}{367a21cdc49efcb30c0a6096eb2c5955}
+      \strng{bibnamehash}{367a21cdc49efcb30c0a6096eb2c5955}
+      \strng{authorbibnamehash}{367a21cdc49efcb30c0a6096eb2c5955}
+      \strng{authornamehash}{367a21cdc49efcb30c0a6096eb2c5955}
+      \strng{authorfullhash}{367a21cdc49efcb30c0a6096eb2c5955}
+      \strng{authorfullhashraw}{367a21cdc49efcb30c0a6096eb2c5955}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Brasileira de Economia}
+      \field{number}{2}
+      \field{title}{O que explica o desempenho do Brasil no PISA 2015?}
+      \field{volume}{74}
+      \field{year}{2020}
+      \field{pages}{167\bibrangedash 196}
+      \range{pages}{30}
+      \verb{doi}
+      \verb 10.5935/0034-7140.20200010
+      \endverb
+      \verb{urlraw}
+      \verb https://periodicos.fgv.br/rbe/article/view/78011
+      \endverb
+      \verb{url}
+      \verb https://periodicos.fgv.br/rbe/article/view/78011
+      \endverb
+    \endentry
+    \entry{BARBOSA2013}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f3684db254eee152f1e870f4ba837e41}{%
+           family={BARBOSA},
+           familyi={B\bibinitperiod},
+           given={Eduardo\bibnamedelima Fernandes},
+           giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=e32a21b9525cbc8b651bd281e5a6d8ef}{%
+           family={MOURA},
+           familyi={M\bibinitperiod},
+           given={D{'a}cio\bibnamedelima Guimarães},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{81c1b5ac277de6f4c7ccb3e5ff3c18fb}
+      \strng{fullhash}{81c1b5ac277de6f4c7ccb3e5ff3c18fb}
+      \strng{fullhashraw}{81c1b5ac277de6f4c7ccb3e5ff3c18fb}
+      \strng{bibnamehash}{81c1b5ac277de6f4c7ccb3e5ff3c18fb}
+      \strng{authorbibnamehash}{81c1b5ac277de6f4c7ccb3e5ff3c18fb}
+      \strng{authornamehash}{81c1b5ac277de6f4c7ccb3e5ff3c18fb}
+      \strng{authorfullhash}{81c1b5ac277de6f4c7ccb3e5ff3c18fb}
+      \strng{authorfullhashraw}{81c1b5ac277de6f4c7ccb3e5ff3c18fb}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Boletim T{'e}cnico do Senac}
+      \field{number}{2}
+      \field{title}{Metodologias ativas de aprendizagem na educação profissional e tecnol{'o}gica}
+      \field{volume}{39}
+      \field{year}{2013}
+      \field{pages}{48\bibrangedash 67}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.26849/bts.v39i2.349
+      \endverb
+      \verb{urlraw}
+      \verb https://www.bts.senac.br/bts/article/view/349
+      \endverb
+      \verb{url}
+      \verb https://www.bts.senac.br/bts/article/view/349
+      \endverb
+    \endentry
+    \entry{SANTOS2024}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=94cf529b7fa92691c3792ab0c629f21f}{%
+           family={SANTOS},
+           familyi={S\bibinitperiod},
+           given={Alessandra\bibnamedelimb Ferreira\bibnamedelima dos},
+           giveni={A\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \strng{namehash}{538b84ed24813c6ee0db894b07ebb45e}
+      \strng{fullhash}{538b84ed24813c6ee0db894b07ebb45e}
+      \strng{fullhashraw}{538b84ed24813c6ee0db894b07ebb45e}
+      \strng{bibnamehash}{538b84ed24813c6ee0db894b07ebb45e}
+      \strng{authorbibnamehash}{538b84ed24813c6ee0db894b07ebb45e}
+      \strng{authornamehash}{538b84ed24813c6ee0db894b07ebb45e}
+      \strng{authorfullhash}{538b84ed24813c6ee0db894b07ebb45e}
+      \strng{authorfullhashraw}{538b84ed24813c6ee0db894b07ebb45e}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista de Ensino, Educação e Ciências Humanas}
+      \field{number}{1}
+      \field{title}{Mapeamento da produção relacionada às metodologias ativas na educação}
+      \field{volume}{25}
+      \field{year}{2024}
+      \field{pages}{51\bibrangedash 59}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.17921/2447-8733.2024v25n1p51-59
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.17921/2447-8733.2024v25n1p51-59
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.17921/2447-8733.2024v25n1p51-59
+      \endverb
+    \endentry
+    \entry{MEZZARI2011}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=64e5cc6057eca50c3ecd044a398e127a}{%
+           family={MEZZARI},
+           familyi={M\bibinitperiod},
+           given={Andr{'e}a},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{64e5cc6057eca50c3ecd044a398e127a}
+      \strng{fullhash}{64e5cc6057eca50c3ecd044a398e127a}
+      \strng{fullhashraw}{64e5cc6057eca50c3ecd044a398e127a}
+      \strng{bibnamehash}{64e5cc6057eca50c3ecd044a398e127a}
+      \strng{authorbibnamehash}{64e5cc6057eca50c3ecd044a398e127a}
+      \strng{authornamehash}{64e5cc6057eca50c3ecd044a398e127a}
+      \strng{authorfullhash}{64e5cc6057eca50c3ecd044a398e127a}
+      \strng{authorfullhashraw}{64e5cc6057eca50c3ecd044a398e127a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Brasileira de Educação M{'e}dica}
+      \field{number}{1}
+      \field{title}{O uso da aprendizagem baseada em problemas (ABP) como reforço ao ensino presencial utilizando o ambiente de aprendizagem Moodle}
+      \field{volume}{35}
+      \field{year}{2011}
+      \field{pages}{114\bibrangedash 121}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1590/S0100-55022011000100015
+      \endverb
+      \verb{urlraw}
+      \verb https://www.scielo.br/j/rbem/a/BLMXqL3Zp8JLmhdRRCn6QCJ/?lang=pt
+      \endverb
+      \verb{url}
+      \verb https://www.scielo.br/j/rbem/a/BLMXqL3Zp8JLmhdRRCn6QCJ/?lang=pt
+      \endverb
+    \endentry
+    \entry{SELWYN2022}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=cb36dae66ce6d4ac29a105a3084c85c7}{%
+           family={SELWYN},
+           familyi={S\bibinitperiod},
+           given={Neil},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{cb36dae66ce6d4ac29a105a3084c85c7}
+      \strng{fullhash}{cb36dae66ce6d4ac29a105a3084c85c7}
+      \strng{fullhashraw}{cb36dae66ce6d4ac29a105a3084c85c7}
+      \strng{bibnamehash}{cb36dae66ce6d4ac29a105a3084c85c7}
+      \strng{authorbibnamehash}{cb36dae66ce6d4ac29a105a3084c85c7}
+      \strng{authornamehash}{cb36dae66ce6d4ac29a105a3084c85c7}
+      \strng{authorfullhash}{cb36dae66ce6d4ac29a105a3084c85c7}
+      \strng{authorfullhashraw}{cb36dae66ce6d4ac29a105a3084c85c7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{journaltitle}{Bloomsbury Publishing}
+      \field{title}{Education and technology: key issues and debates}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://www.bloomsbury.com/uk/education-and-technology-9781350139183/
+      \endverb
+      \verb{url}
+      \verb https://www.bloomsbury.com/uk/education-and-technology-9781350139183/
+      \endverb
+    \endentry
+    \entry{MIRANDA2022}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=b487392ceb28e1c0861581a95df45693}{%
+           family={MIRANDA},
+           familyi={M\bibinitperiod},
+           given={Adriana\bibnamedelimb Tereza\bibnamedelimb da\bibnamedelima Silva},
+           giveni={A\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{d40e166facdbcc86f7a92457bf4cb220}
+      \strng{fullhash}{d40e166facdbcc86f7a92457bf4cb220}
+      \strng{fullhashraw}{d40e166facdbcc86f7a92457bf4cb220}
+      \strng{bibnamehash}{d40e166facdbcc86f7a92457bf4cb220}
+      \strng{authorbibnamehash}{d40e166facdbcc86f7a92457bf4cb220}
+      \strng{authornamehash}{d40e166facdbcc86f7a92457bf4cb220}
+      \strng{authorfullhash}{d40e166facdbcc86f7a92457bf4cb220}
+      \strng{authorfullhashraw}{d40e166facdbcc86f7a92457bf4cb220}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Brazilian Journal of Development}
+      \field{number}{4}
+      \field{title}{Importância do uso das metodologias ativas para a formação docente}
+      \field{volume}{8}
+      \field{year}{2022}
+      \field{pages}{28169\bibrangedash 28182}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.34117/bjdv8n4-353
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.34117/bjdv8n4-353
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.34117/bjdv8n4-353
+      \endverb
+    \endentry
+    \entry{CANTANHEDE2026}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=b6c9c21bf94b6c4a339368e64217edbc}{%
+           family={CANTANHEDE},
+           familyi={C\bibinitperiod},
+           given={Célia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=46263f1f353ab0278cac180480ec7639}{%
+           family={NAVARRO},
+           familyi={N\bibinitperiod},
+           given={Aniela\bibnamedelima Lopes},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=f0ff6f7100a56e79f7a3e4cd2680f6d4}{%
+           family={MORTALE},
+           familyi={M\bibinitperiod},
+           given={Luís\bibnamedelima Alexandre},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{88f928761152def5f46208daaa5f65c1}
+      \strng{fullhash}{88f928761152def5f46208daaa5f65c1}
+      \strng{fullhashraw}{88f928761152def5f46208daaa5f65c1}
+      \strng{bibnamehash}{88f928761152def5f46208daaa5f65c1}
+      \strng{authorbibnamehash}{88f928761152def5f46208daaa5f65c1}
+      \strng{authornamehash}{88f928761152def5f46208daaa5f65c1}
+      \strng{authorfullhash}{88f928761152def5f46208daaa5f65c1}
+      \strng{authorfullhashraw}{88f928761152def5f46208daaa5f65c1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{RECIMA21}
+      \field{number}{4}
+      \field{title}{Gestão pedagógica baseada no ciclo PDCA na formação docente em metodologias ativas}
+      \field{volume}{7}
+      \field{year}{2026}
+      \field{pages}{e747525}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.47820/recima21.v7i4.7525
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.47820/recima21.v7i4.7525
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.47820/recima21.v7i4.7525
+      \endverb
+    \endentry
+    \entry{PORTER1980}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=a0eef79f1d037240e50ca91ee48ee0c3}{%
+           family={PORTER},
+           familyi={P\bibinitperiod},
+           given={Michael\bibnamedelima E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Free Press}%
+      }
+      \strng{namehash}{a0eef79f1d037240e50ca91ee48ee0c3}
+      \strng{fullhash}{a0eef79f1d037240e50ca91ee48ee0c3}
+      \strng{fullhashraw}{a0eef79f1d037240e50ca91ee48ee0c3}
+      \strng{bibnamehash}{a0eef79f1d037240e50ca91ee48ee0c3}
+      \strng{authorbibnamehash}{a0eef79f1d037240e50ca91ee48ee0c3}
+      \strng{authornamehash}{a0eef79f1d037240e50ca91ee48ee0c3}
+      \strng{authorfullhash}{a0eef79f1d037240e50ca91ee48ee0c3}
+      \strng{authorfullhashraw}{a0eef79f1d037240e50ca91ee48ee0c3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-029-25360-1}
+      \field{note}{Republished with a new introduction, 1998}
+      \field{title}{Competitive Strategy: Techniques for Analyzing Industries and Competitors}
+      \field{year}{1980}
+      \field{pages}{xx\bibrangessep 396}
+      \range{pages}{2}
+      \verb{urlraw}
+      \verb https://openlibrary.org/books/OL24655048M/Competitive_Strategy
+      \endverb
+      \verb{url}
+      \verb https://openlibrary.org/books/OL24655048M/Competitive_Strategy
+      \endverb
+    \endentry
+    \entry{GOMES2009}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=ee4f12abe01272ad3e2f877051ab37fb}{%
+           family={GOMES},
+           familyi={G\bibinitperiod},
+           given={Rosa\bibnamedelima Maria},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{4f839f7d33ff1ec8f12e2239e01e5959}
+      \strng{fullhash}{4f839f7d33ff1ec8f12e2239e01e5959}
+      \strng{fullhashraw}{4f839f7d33ff1ec8f12e2239e01e5959}
+      \strng{bibnamehash}{4f839f7d33ff1ec8f12e2239e01e5959}
+      \strng{authorbibnamehash}{4f839f7d33ff1ec8f12e2239e01e5959}
+      \strng{authornamehash}{4f839f7d33ff1ec8f12e2239e01e5959}
+      \strng{authorfullhash}{4f839f7d33ff1ec8f12e2239e01e5959}
+      \strng{authorfullhashraw}{4f839f7d33ff1ec8f12e2239e01e5959}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Brasileira de Educação Médica}
+      \field{number}{3}
+      \field{title}{Aprendizagem baseada em problemas na formação médica e o currículo tradicional de Medicina: uma revisão bibliográfica}
+      \field{volume}{33}
+      \field{year}{2009}
+      \field{pages}{444\bibrangedash 451}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1590/S0100-55022009000300014
+      \endverb
+      \verb{urlraw}
+      \verb https://www.scielo.br/j/rbem/a/Scz3tZ5YprqM7MpH5dFxxzd/?lang=pt
+      \endverb
+      \verb{url}
+      \verb https://www.scielo.br/j/rbem/a/Scz3tZ5YprqM7MpH5dFxxzd/?lang=pt
+      \endverb
+    \endentry
+    \entry{RIBEIRO2023}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=d8dbc55c3af32d5da5d3c11e8d7f8400}{%
+           family={RIBEIRO\bibnamedelima FILHO},
+           familyi={R\bibinitperiod\bibinitdelim F\bibinitperiod},
+           given={Nelson\bibnamedelima Perrotti},
+           giveni={N\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{d8dbc55c3af32d5da5d3c11e8d7f8400}
+      \strng{fullhash}{d8dbc55c3af32d5da5d3c11e8d7f8400}
+      \strng{fullhashraw}{d8dbc55c3af32d5da5d3c11e8d7f8400}
+      \strng{bibnamehash}{d8dbc55c3af32d5da5d3c11e8d7f8400}
+      \strng{authorbibnamehash}{d8dbc55c3af32d5da5d3c11e8d7f8400}
+      \strng{authornamehash}{d8dbc55c3af32d5da5d3c11e8d7f8400}
+      \strng{authorfullhash}{d8dbc55c3af32d5da5d3c11e8d7f8400}
+      \strng{authorfullhashraw}{d8dbc55c3af32d5da5d3c11e8d7f8400}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Studies in Engineering and Exact Sciences}
+      \field{number}{1}
+      \field{title}{Aprendizagem baseada em problemas aplicada em cursos de graduação na {'a}rea de tecnologia da informação}
+      \field{volume}{4}
+      \field{year}{2023}
+      \field{pages}{439\bibrangedash 455}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.54021/seesv4n1-027
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.54021/seesv4n1-027
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.54021/seesv4n1-027
+      \endverb
+    \endentry
+    \entry{FREITAS2024}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=ea50d8c8906b740a8edcf4c06d519581}{%
+           family={FREITAS},
+           familyi={F\bibinitperiod},
+           given={Vinicius\bibnamedelimb da\bibnamedelima Silva},
+           giveni={V\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2c8d3ffaf3cbd140c3cae17664193e8}
+      \strng{fullhash}{a2c8d3ffaf3cbd140c3cae17664193e8}
+      \strng{fullhashraw}{a2c8d3ffaf3cbd140c3cae17664193e8}
+      \strng{bibnamehash}{a2c8d3ffaf3cbd140c3cae17664193e8}
+      \strng{authorbibnamehash}{a2c8d3ffaf3cbd140c3cae17664193e8}
+      \strng{authornamehash}{a2c8d3ffaf3cbd140c3cae17664193e8}
+      \strng{authorfullhash}{a2c8d3ffaf3cbd140c3cae17664193e8}
+      \strng{authorfullhashraw}{a2c8d3ffaf3cbd140c3cae17664193e8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{REI -- Revista de Educação do UNIDEAU}
+      \field{number}{1}
+      \field{title}{Formação docente e as metodologias ativas no ensino superior}
+      \field{volume}{4}
+      \field{year}{2024}
+      \field{pages}{e170}
+      \range{pages}{-1}
+      \verb{urlraw}
+      \verb https://periodicos.ideau.com.br/index.php/rei/article/view/170
+      \endverb
+      \verb{url}
+      \verb https://periodicos.ideau.com.br/index.php/rei/article/view/170
+      \endverb
+    \endentry
+    \entry{CRESWELL2018}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=b8f076f3f98caa9c802a8e5343209148}{%
+           family={CRESWELL},
+           familyi={C\bibinitperiod},
+           given={John\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Porto Alegre}%
+      }
+      \list{publisher}{1}{%
+        {Artmed}%
+      }
+      \strng{namehash}{b8f076f3f98caa9c802a8e5343209148}
+      \strng{fullhash}{b8f076f3f98caa9c802a8e5343209148}
+      \strng{fullhashraw}{b8f076f3f98caa9c802a8e5343209148}
+      \strng{bibnamehash}{b8f076f3f98caa9c802a8e5343209148}
+      \strng{authorbibnamehash}{b8f076f3f98caa9c802a8e5343209148}
+      \strng{authornamehash}{b8f076f3f98caa9c802a8e5343209148}
+      \strng{authorfullhash}{b8f076f3f98caa9c802a8e5343209148}
+      \strng{authorfullhashraw}{b8f076f3f98caa9c802a8e5343209148}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5}
+      \field{title}{Projeto de pesquisa: métodos qualitativo, quantitativo e misto}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://archive.org/details/projetodepesquis0000cres
+      \endverb
+      \verb{url}
+      \verb https://archive.org/details/projetodepesquis0000cres
+      \endverb
+    \endentry
+    \entry{PAIVA2016}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=50236ba447fcb36bce76dd16a22d835f}{%
+           family={PAIVA},
+           familyi={P\bibinitperiod},
+           given={Marlla\bibnamedelimb R{'u}bya\bibnamedelima Ferreira},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=b4b8c28e3bb2b749f438eff783009bb7}{%
+           family={PARENTE},
+           familyi={P\bibinitperiod},
+           given={Jos{'e}\bibnamedelimb Reginaldo\bibnamedelima Feijão},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=508ed26e5082b0795613d18452c46b25}{%
+           family={BRANDÃO},
+           familyi={B\bibinitperiod},
+           given={Israel\bibnamedelima Rocha},
+           giveni={I\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=8b78b2c8475db7fa641706a240303457}{%
+           family={QUEIROZ},
+           familyi={Q\bibinitperiod},
+           given={Ana\bibnamedelimb Helena\bibnamedelima Bomfim},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{6496c479f28f7ac917bb799a76fbbd24}
+      \strng{fullhash}{64e49d5a5f1f0f5278555959712f42ff}
+      \strng{fullhashraw}{64e49d5a5f1f0f5278555959712f42ff}
+      \strng{bibnamehash}{6496c479f28f7ac917bb799a76fbbd24}
+      \strng{authorbibnamehash}{6496c479f28f7ac917bb799a76fbbd24}
+      \strng{authornamehash}{6496c479f28f7ac917bb799a76fbbd24}
+      \strng{authorfullhash}{64e49d5a5f1f0f5278555959712f42ff}
+      \strng{authorfullhashraw}{64e49d5a5f1f0f5278555959712f42ff}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sanare -- Revista de Pol{'ı}ticas P{'u}blicas}
+      \field{number}{2}
+      \field{title}{Metodologias ativas de ensino-aprendizagem: revisão integrativa}
+      \field{volume}{15}
+      \field{year}{2016}
+      \field{pages}{145\bibrangedash 153}
+      \range{pages}{9}
+      \verb{urlraw}
+      \verb https://sanare.emnuvens.com.br/sanare/article/view/1049
+      \endverb
+      \verb{url}
+      \verb https://sanare.emnuvens.com.br/sanare/article/view/1049
+      \endverb
+    \endentry
+    \entry{BARDIN2016}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=cc2838c0d31f45846ebbb252efd7f83a}{%
+           family={BARDIN},
+           familyi={B\bibinitperiod},
+           given={Laurence},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {São Paulo}%
+      }
+      \list{publisher}{1}{%
+        {Edições 70}%
+      }
+      \strng{namehash}{cc2838c0d31f45846ebbb252efd7f83a}
+      \strng{fullhash}{cc2838c0d31f45846ebbb252efd7f83a}
+      \strng{fullhashraw}{cc2838c0d31f45846ebbb252efd7f83a}
+      \strng{bibnamehash}{cc2838c0d31f45846ebbb252efd7f83a}
+      \strng{authorbibnamehash}{cc2838c0d31f45846ebbb252efd7f83a}
+      \strng{authornamehash}{cc2838c0d31f45846ebbb252efd7f83a}
+      \strng{authorfullhash}{cc2838c0d31f45846ebbb252efd7f83a}
+      \strng{authorfullhashraw}{cc2838c0d31f45846ebbb252efd7f83a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4}
+      \field{isbn}{978-9724415062}
+      \field{title}{Análise de conteúdo}
+      \field{year}{2016}
+      \field{pages}{229}
+      \range{pages}{1}
+      \verb{urlraw}
+      \verb https://books.google.com/books/about/An%C3%A1lise_de_Conte%C3%BAdo.html?id=AFpxPgAACAAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.com/books/about/An%C3%A1lise_de_Conte%C3%BAdo.html?id=AFpxPgAACAAJ
+      \endverb
+    \endentry
+    \entry{TEODORO2024}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=eedc8134de21faa40aa4f20b19b45d7f}{%
+           family={TEODORO},
+           familyi={T\bibinitperiod},
+           given={Elisângela\bibnamedelimb de\bibnamedelimb Carvalho\bibnamedelima Santos},
+           giveni={E\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=f91f8d43d255ccd0b391335aeea01bfc}{%
+           family={MARCUSSO},
+           familyi={M\bibinitperiod},
+           given={Marília\bibnamedelima Ferreira},
+           giveni={M\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{76d797834ff1a7cf5db70b6f4313f77e}
+      \strng{fullhash}{76d797834ff1a7cf5db70b6f4313f77e}
+      \strng{fullhashraw}{76d797834ff1a7cf5db70b6f4313f77e}
+      \strng{bibnamehash}{76d797834ff1a7cf5db70b6f4313f77e}
+      \strng{authorbibnamehash}{76d797834ff1a7cf5db70b6f4313f77e}
+      \strng{authornamehash}{76d797834ff1a7cf5db70b6f4313f77e}
+      \strng{authorfullhash}{76d797834ff1a7cf5db70b6f4313f77e}
+      \strng{authorfullhashraw}{76d797834ff1a7cf5db70b6f4313f77e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Eletrônica de Educação}
+      \field{title}{Metodologias ativas na Educação Profissional e Tecnológica}
+      \field{volume}{18}
+      \field{year}{2024}
+      \field{pages}{e5376148\bibrangessep 1\bibrangedash 21}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.14244/reveduc.v18i1.5376
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.14244/reveduc.v18i1.5376
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.14244/reveduc.v18i1.5376
+      \endverb
+    \endentry
+    \entry{OLIVEIRA2023}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=d591b2beeebe0a9c8c4173f17db78827}{%
+           family={OLIVEIRA},
+           familyi={O\bibinitperiod},
+           given={Francisco\bibnamedelima Lindoval},
+           giveni={F\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=d316ad7b97d0edec5961d438d11f93fe}{%
+           family={N{'O}BREGA},
+           familyi={N\bibinitperiod},
+           given={Luciano},
+           giveni={L\bibinitperiod}}}%
+        {{hash=efb6254aceb20543996735a94358330d}{%
+           family={CAVALCANTE},
+           familyi={C\bibinitperiod},
+           given={Marcele\bibnamedelimb Alves\bibnamedelimb dos\bibnamedelima Santos},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{5bd1f097eb35127de9ee71bd4ea2ae23}
+      \strng{fullhash}{5bd1f097eb35127de9ee71bd4ea2ae23}
+      \strng{fullhashraw}{5bd1f097eb35127de9ee71bd4ea2ae23}
+      \strng{bibnamehash}{5bd1f097eb35127de9ee71bd4ea2ae23}
+      \strng{authorbibnamehash}{5bd1f097eb35127de9ee71bd4ea2ae23}
+      \strng{authornamehash}{5bd1f097eb35127de9ee71bd4ea2ae23}
+      \strng{authorfullhash}{5bd1f097eb35127de9ee71bd4ea2ae23}
+      \strng{authorfullhashraw}{5bd1f097eb35127de9ee71bd4ea2ae23}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Educação P{'u}blica}
+      \field{number}{8}
+      \field{title}{O uso das metodologias ativas de aprendizagem na formação do professor: das universidades para a pr{'a}tica nas escolas}
+      \field{volume}{23}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://educacaopublica.cecierj.edu.br/artigos/23/8/o-uso-das-metodologias-ativas-de-aprendizagem-na-formacao-do-professor-das-universidades-para-a-pratica-nas-escolas
+      \endverb
+      \verb{url}
+      \verb https://educacaopublica.cecierj.edu.br/artigos/23/8/o-uso-das-metodologias-ativas-de-aprendizagem-na-formacao-do-professor-das-universidades-para-a-pratica-nas-escolas
+      \endverb
+    \endentry
+    \entry{RIOS2026}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=36c3b57709aebf8efe66202fa3b4bb0f}{%
+           family={RIOS},
+           familyi={R\bibinitperiod},
+           given={Pedro\bibnamedelimb Paulo\bibnamedelima Souza},
+           giveni={P\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{36c3b57709aebf8efe66202fa3b4bb0f}
+      \strng{fullhash}{36c3b57709aebf8efe66202fa3b4bb0f}
+      \strng{fullhashraw}{36c3b57709aebf8efe66202fa3b4bb0f}
+      \strng{bibnamehash}{36c3b57709aebf8efe66202fa3b4bb0f}
+      \strng{authorbibnamehash}{36c3b57709aebf8efe66202fa3b4bb0f}
+      \strng{authornamehash}{36c3b57709aebf8efe66202fa3b4bb0f}
+      \strng{authorfullhash}{36c3b57709aebf8efe66202fa3b4bb0f}
+      \strng{authorfullhashraw}{36c3b57709aebf8efe66202fa3b4bb0f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Pr{'a}xis Educacional}
+      \field{number}{53}
+      \field{title}{Did{'a}tica e metodologias ativas na formação docente: reflexões acerca do fazer pedag{'o}gico}
+      \field{volume}{22}
+      \field{year}{2026}
+      \field{pages}{e17193}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.22481/praxisedu.v22i53.17193
+      \endverb
+      \verb{urlraw}
+      \verb https://periodicos2.uesb.br/index.php/praxis/article/view/17193
+      \endverb
+      \verb{url}
+      \verb https://periodicos2.uesb.br/index.php/praxis/article/view/17193
+      \endverb
+    \endentry
+    \entry{MACHADO2025}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=9737c02d0828e7eebec26fed8989a735}{%
+           family={GERVASIO},
+           familyi={G\bibinitperiod},
+           given={Cirlene\bibnamedelimb Ferreira\bibnamedelima Neri},
+           giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=adb1c1c9948a1b346f825840ea76fca6}{%
+           family={MEYER},
+           familyi={M\bibinitperiod},
+           given={Marcel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8a3c57759e7e14fd9c398314861f4525}{%
+           family={SILVA},
+           familyi={S\bibinitperiod},
+           given={Katia\bibnamedelimb Cristina\bibnamedelima da},
+           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=4315eb77ebb61cbe9414c5a406c37d6f}{%
+           family={SOUZA},
+           familyi={S\bibinitperiod},
+           given={Ana\bibnamedelimb Maria\bibnamedelimb Reis\bibnamedelima de},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=2b5da64a28da55206cce6f2d7542b766}{%
+           family={SOUZA},
+           familyi={S\bibinitperiod},
+           given={Michele\bibnamedelimb Ronsane\bibnamedelimb Fanezzi\bibnamedelima de},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \strng{namehash}{6d2805f31a2a598b9343246ea1fa01ba}
+      \strng{fullhash}{a0243ac2a52f3b51e6ee8974843f5565}
+      \strng{fullhashraw}{a0243ac2a52f3b51e6ee8974843f5565}
+      \strng{bibnamehash}{6d2805f31a2a598b9343246ea1fa01ba}
+      \strng{authorbibnamehash}{6d2805f31a2a598b9343246ea1fa01ba}
+      \strng{authornamehash}{6d2805f31a2a598b9343246ea1fa01ba}
+      \strng{authorfullhash}{a0243ac2a52f3b51e6ee8974843f5565}
+      \strng{authorfullhashraw}{a0243ac2a52f3b51e6ee8974843f5565}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{RCMOS -- Revista Científica Multidisciplinar O Saber}
+      \field{number}{2}
+      \field{title}{Formação do professor e as metodologias ativas}
+      \field{volume}{2}
+      \field{year}{2025}
+      \field{pages}{1\bibrangedash 10}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.51473/rcmos.v2i2.25
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.51473/rcmos.v2i2.25
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.51473/rcmos.v2i2.25
+      \endverb
+    \endentry
+    \entry{MACIEL2018}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=95c21e2ac32cf3fcdb62e9c615c494e1}{%
+           family={MACIEL},
+           familyi={M\bibinitperiod},
+           given={Cilene\bibnamedelimb Maria\bibnamedelimb Lima\bibnamedelima Antunes},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=2cf84a0156136d7aa60a42d693e960f1}{%
+           family={RONDON},
+           familyi={R\bibinitperiod},
+           given={Gislei\bibnamedelimb Amorim\bibnamedelimb de\bibnamedelima Souza},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=a244bbb278cfa78b734b9560a39ebe13}{%
+           family={FERNANDES},
+           familyi={F\bibinitperiod},
+           given={Cleonice\bibnamedelima Terezinha},
+           giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{9011b2b0c922b67f7a370e71d2d88c6c}
+      \strng{fullhash}{9011b2b0c922b67f7a370e71d2d88c6c}
+      \strng{fullhashraw}{9011b2b0c922b67f7a370e71d2d88c6c}
+      \strng{bibnamehash}{9011b2b0c922b67f7a370e71d2d88c6c}
+      \strng{authorbibnamehash}{9011b2b0c922b67f7a370e71d2d88c6c}
+      \strng{authornamehash}{9011b2b0c922b67f7a370e71d2d88c6c}
+      \strng{authorfullhash}{9011b2b0c922b67f7a370e71d2d88c6c}
+      \strng{authorfullhashraw}{9011b2b0c922b67f7a370e71d2d88c6c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista de Ensino, Educação e Ciências Humanas}
+      \field{number}{2}
+      \field{title}{A implantação da aprendizagem baseada em problemas -- PBL, no curso de graduação em Medicina da Universidade do Estado do Mato Grosso sob a perspectiva dos estudantes}
+      \field{volume}{19}
+      \field{year}{2018}
+      \field{pages}{195\bibrangedash 201}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.17921/2447-8733.2018v19n2p195-201
+      \endverb
+      \verb{urlraw}
+      \verb https://revistaensinoeeducacao.pgsscogna.com.br/ensino/article/view/6060
+      \endverb
+      \verb{url}
+      \verb https://revistaensinoeeducacao.pgsscogna.com.br/ensino/article/view/6060
+      \endverb
+    \endentry
+    \entry{VALENTE2018}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{hash=e580b37923de88d06fa2cf87f06c912a}{%
+           family={VALENTE},
+           familyi={V\bibinitperiod},
+           given={Ana},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Penso}%
+      }
+      \strng{namehash}{e580b37923de88d06fa2cf87f06c912a}
+      \strng{fullhash}{e580b37923de88d06fa2cf87f06c912a}
+      \strng{fullhashraw}{e580b37923de88d06fa2cf87f06c912a}
+      \strng{bibnamehash}{e580b37923de88d06fa2cf87f06c912a}
+      \strng{authorbibnamehash}{e580b37923de88d06fa2cf87f06c912a}
+      \strng{authornamehash}{e580b37923de88d06fa2cf87f06c912a}
+      \strng{authorfullhash}{e580b37923de88d06fa2cf87f06c912a}
+      \strng{authorfullhashraw}{e580b37923de88d06fa2cf87f06c912a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Metodologias ativas para uma aprendizagem mais profunda}
+      \field{title}{Metodologias ativas para uma educação inovadora}
+      \field{year}{2018}
+      \field{pages}{29\bibrangedash 45}
+      \range{pages}{17}
+      \verb{urlraw}
+      \verb https://pt.scribd.com/document/682349221/Metodologias-Ativas-para-uma-Educac-a-o-Inovadora-Lilian-Bacich-e-Jose-Moran
+      \endverb
+      \verb{url}
+      \verb https://pt.scribd.com/document/682349221/Metodologias-Ativas-para-uma-Educac-a-o-Inovadora-Lilian-Bacich-e-Jose-Moran
+      \endverb
+    \endentry
+    \entry{AUSUBEL2000}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=cae12be06a5833dfe65c0111e7fbbab9}{%
+           family={AUSUBEL},
+           familyi={A\bibinitperiod},
+           given={David\bibnamedelima P.},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Lisboa}%
+      }
+      \list{publisher}{1}{%
+        {Platano}%
+      }
+      \strng{namehash}{cae12be06a5833dfe65c0111e7fbbab9}
+      \strng{fullhash}{cae12be06a5833dfe65c0111e7fbbab9}
+      \strng{fullhashraw}{cae12be06a5833dfe65c0111e7fbbab9}
+      \strng{bibnamehash}{cae12be06a5833dfe65c0111e7fbbab9}
+      \strng{authorbibnamehash}{cae12be06a5833dfe65c0111e7fbbab9}
+      \strng{authornamehash}{cae12be06a5833dfe65c0111e7fbbab9}
+      \strng{authorfullhash}{cae12be06a5833dfe65c0111e7fbbab9}
+      \strng{authorfullhashraw}{cae12be06a5833dfe65c0111e7fbbab9}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Aquisição e retenção de conhecimentos: uma perspectiva cognitiva}
+      \field{year}{2000}
+      \verb{urlraw}
+      \verb https://www.mackenzie.br/fileadmin/ARQUIVOS/Public/1-mackenzie/universidade/pro-reitoria/graduacao-assuntos-acad/forum/X_Forum/livroAusubel.2000_Aquisicao_e_retencao_de_conhecimentos.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.mackenzie.br/fileadmin/ARQUIVOS/Public/1-mackenzie/universidade/pro-reitoria/graduacao-assuntos-acad/forum/X_Forum/livroAusubel.2000_Aquisicao_e_retencao_de_conhecimentos.pdf
+      \endverb
+    \endentry
+    \entry{SOARES2021}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=10cdddaa9f82ae7e392a892c96c20393}{%
+           family={SOARES},
+           familyi={S\bibinitperiod},
+           given={Renato\bibnamedelima Gomes},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=cacdc5e91920fac0aef5ff1a0a5f97ed}{%
+           family={CORRÊA},
+           familyi={C\bibinitperiod},
+           given={Sandro\bibnamedelimb Lu{'ı}s\bibnamedelima Pereira},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=2afcee88e52067c155c087d478285c88}{%
+           family={FOLMER},
+           familyi={F\bibinitperiod},
+           given={Valter},
+           giveni={V\bibinitperiod}}}%
+        {{hash=195dc5a1d0b9062e787e5396f53f3489}{%
+           family={COPETTI},
+           familyi={C\bibinitperiod},
+           given={Jaqueline},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{efedc4ead43c6a441420efcf4f567e06}
+      \strng{fullhash}{6101e730b5e4f148860c2c94e651b9e4}
+      \strng{fullhashraw}{6101e730b5e4f148860c2c94e651b9e4}
+      \strng{bibnamehash}{efedc4ead43c6a441420efcf4f567e06}
+      \strng{authorbibnamehash}{efedc4ead43c6a441420efcf4f567e06}
+      \strng{authornamehash}{efedc4ead43c6a441420efcf4f567e06}
+      \strng{authorfullhash}{6101e730b5e4f148860c2c94e651b9e4}
+      \strng{authorfullhashraw}{6101e730b5e4f148860c2c94e651b9e4}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Acta Scientiarum. Education}
+      \field{number}{1}
+      \field{title}{A problematização como ferramenta de formação de professores sobre metodologias ativas}
+      \field{volume}{44}
+      \field{year}{2021}
+      \field{pages}{e52168}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.4025/actascieduc.v44i1.52168
+      \endverb
+      \verb{urlraw}
+      \verb https://periodicos.uem.br/ojs/index.php/ActaSciEduc/article/view/52168
+      \endverb
+      \verb{url}
+      \verb https://periodicos.uem.br/ojs/index.php/ActaSciEduc/article/view/52168
+      \endverb
+    \endentry
+    \entry{BLACK1998}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=42fe18479e7d217b289fabe13557137f}{%
+           family={BLACK},
+           familyi={B\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=71de3dca28c051103012dc3f716ecdfd}{%
+           family={WILIAM},
+           familyi={W\bibinitperiod},
+           given={Dylan},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{2dabdb9dc6ce1d879141cec541740b46}
+      \strng{fullhash}{2dabdb9dc6ce1d879141cec541740b46}
+      \strng{fullhashraw}{2dabdb9dc6ce1d879141cec541740b46}
+      \strng{bibnamehash}{2dabdb9dc6ce1d879141cec541740b46}
+      \strng{authorbibnamehash}{2dabdb9dc6ce1d879141cec541740b46}
+      \strng{authornamehash}{2dabdb9dc6ce1d879141cec541740b46}
+      \strng{authorfullhash}{2dabdb9dc6ce1d879141cec541740b46}
+      \strng{authorfullhashraw}{2dabdb9dc6ce1d879141cec541740b46}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Assessment in Education: Principles, Policy \& Practice}
+      \field{number}{1}
+      \field{title}{Assessment and classroom learning}
+      \field{volume}{5}
+      \field{year}{1998}
+      \field{pages}{7\bibrangedash 74}
+      \range{pages}{68}
+      \verb{doi}
+      \verb 10.1080/0969595980050102
+      \endverb
+    \endentry
+    \entry{LIBANEO2006}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=cb166130a808491b8deedaac60abdcff}{%
+           family={LIBANEO},
+           familyi={L\bibinitperiod},
+           given={José\bibnamedelima Carlos},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {São Paulo}%
+      }
+      \list{publisher}{1}{%
+        {Cortez}%
+      }
+      \strng{namehash}{cb166130a808491b8deedaac60abdcff}
+      \strng{fullhash}{cb166130a808491b8deedaac60abdcff}
+      \strng{fullhashraw}{cb166130a808491b8deedaac60abdcff}
+      \strng{bibnamehash}{cb166130a808491b8deedaac60abdcff}
+      \strng{authorbibnamehash}{cb166130a808491b8deedaac60abdcff}
+      \strng{authornamehash}{cb166130a808491b8deedaac60abdcff}
+      \strng{authorfullhash}{cb166130a808491b8deedaac60abdcff}
+      \strng{authorfullhashraw}{cb166130a808491b8deedaac60abdcff}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{20}
+      \field{title}{Didática}
+      \field{year}{2006}
+      \verb{urlraw}
+      \verb https://books.google.com/books/about/Did%C3%A1tica.html?id=q3MzDwAAQBAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.com/books/about/Did%C3%A1tica.html?id=q3MzDwAAQBAJ
+      \endverb
+    \endentry
+    \entry{COSTA2020}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=1efd67a69cb4c07f685525b64738800b}{%
+           family={COSTA},
+           familyi={C\bibinitperiod},
+           given={Yara\bibnamedelimb Yumi\bibnamedelima Keiko},
+           giveni={Y\bibinitperiod\bibinitdelim Y\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Curitiba}%
+      }
+      \list{publisher}{1}{%
+        {Contentus}%
+      }
+      \strng{namehash}{1efd67a69cb4c07f685525b64738800b}
+      \strng{fullhash}{1efd67a69cb4c07f685525b64738800b}
+      \strng{fullhashraw}{1efd67a69cb4c07f685525b64738800b}
+      \strng{bibnamehash}{1efd67a69cb4c07f685525b64738800b}
+      \strng{authorbibnamehash}{1efd67a69cb4c07f685525b64738800b}
+      \strng{authornamehash}{1efd67a69cb4c07f685525b64738800b}
+      \strng{authorfullhash}{1efd67a69cb4c07f685525b64738800b}
+      \strng{authorfullhashraw}{1efd67a69cb4c07f685525b64738800b}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Aprendizagem baseada em projetos}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.bvirtual.com.br/NossoAcervo/Publicacao/186372
+      \endverb
+      \verb{url}
+      \verb https://www.bvirtual.com.br/NossoAcervo/Publicacao/186372
+      \endverb
+    \endentry
+    \entry{SANTOS2019}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=4055d5263be45c3b7af888175a073841}{%
+           family={SANTOS},
+           familyi={S\bibinitperiod},
+           given={Ana\bibnamedelimb Paula\bibnamedelimb de\bibnamedelima Sousa},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{ecbaa43ebb55aec2cca6e1528f08cf36}
+      \strng{fullhash}{ecbaa43ebb55aec2cca6e1528f08cf36}
+      \strng{fullhashraw}{ecbaa43ebb55aec2cca6e1528f08cf36}
+      \strng{bibnamehash}{ecbaa43ebb55aec2cca6e1528f08cf36}
+      \strng{authorbibnamehash}{ecbaa43ebb55aec2cca6e1528f08cf36}
+      \strng{authornamehash}{ecbaa43ebb55aec2cca6e1528f08cf36}
+      \strng{authorfullhash}{ecbaa43ebb55aec2cca6e1528f08cf36}
+      \strng{authorfullhashraw}{ecbaa43ebb55aec2cca6e1528f08cf36}
+      \field{extraname}{2}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Principia}
+      \field{number}{44}
+      \field{title}{Uso de projetos em salas de aula dos Institutos Federais}
+      \field{volume}{1}
+      \field{year}{2019}
+      \field{pages}{113\bibrangedash 121}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.18265/1517-03062015v1n44p113-121
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.18265/1517-03062015v1n44p113-121
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.18265/1517-03062015v1n44p113-121
+      \endverb
+    \endentry
+    \entry{RIBEIRO2025}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=1e3dadb24a76820f11d132118dc601bd}{%
+           family={RIBEIRO\bibnamedelima JÚNIOR},
+           familyi={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Marcos\bibnamedelimb dos\bibnamedelima Santos},
+           giveni={M\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=e7c6816d3e67e3f918ff8561364ba7cf}{%
+           family={LEITE},
+           familyi={L\bibinitperiod},
+           given={Bruno\bibnamedelima Santos},
+           giveni={B\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{577ff32319d95f20c08805aa7e54cc6a}
+      \strng{fullhash}{577ff32319d95f20c08805aa7e54cc6a}
+      \strng{fullhashraw}{577ff32319d95f20c08805aa7e54cc6a}
+      \strng{bibnamehash}{577ff32319d95f20c08805aa7e54cc6a}
+      \strng{authorbibnamehash}{577ff32319d95f20c08805aa7e54cc6a}
+      \strng{authornamehash}{577ff32319d95f20c08805aa7e54cc6a}
+      \strng{authorfullhash}{577ff32319d95f20c08805aa7e54cc6a}
+      \strng{authorfullhashraw}{577ff32319d95f20c08805aa7e54cc6a}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Eletrônica Pesquiseduca}
+      \field{number}{44}
+      \field{title}{A presença das metodologias ativas nas áreas do conhecimento do CNPq}
+      \field{volume}{17}
+      \field{year}{2025}
+      \field{pages}{97\bibrangedash 113}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.58422/repesq.2025.e1751
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.58422/repesq.2025.e1751
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.58422/repesq.2025.e1751
+      \endverb
+    \endentry
+    \entry{MOLTOEGEA2013}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=73a82100dc456678965ebab53cc224a1}{%
+           family={MOLTÓ\bibnamedelima EGEA},
+           familyi={M\bibinitperiod\bibinitdelim E\bibinitperiod},
+           given={Oscar},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{73a82100dc456678965ebab53cc224a1}
+      \strng{fullhash}{73a82100dc456678965ebab53cc224a1}
+      \strng{fullhashraw}{73a82100dc456678965ebab53cc224a1}
+      \strng{bibnamehash}{73a82100dc456678965ebab53cc224a1}
+      \strng{authorbibnamehash}{73a82100dc456678965ebab53cc224a1}
+      \strng{authornamehash}{73a82100dc456678965ebab53cc224a1}
+      \strng{authorfullhash}{73a82100dc456678965ebab53cc224a1}
+      \strng{authorfullhashraw}{73a82100dc456678965ebab53cc224a1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Technology, Pedagogy and Education}
+      \field{note}{23 citações}
+      \field{number}{3}
+      \field{title}{Neoliberalism, education and the integration of ICT in schools: a critical reading}
+      \field{volume}{22}
+      \field{year}{2013}
+      \field{pages}{295\bibrangedash 310}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1080/1475939x.2013.810168
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/1475939x.2013.810168
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/1475939x.2013.810168
+      \endverb
+    \endentry
+    \entry{ALMEIDA2024}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=d18764ed2319cc45e9b88cab79291675}{%
+           family={ALMEIDA},
+           familyi={A\bibinitperiod},
+           given={Wellington\bibnamedelimb Augusto\bibnamedelimb Oliveira\bibnamedelima de},
+           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim O\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f3c4c66b9a0c679372e28104d419626}
+      \strng{fullhash}{1f3c4c66b9a0c679372e28104d419626}
+      \strng{fullhashraw}{1f3c4c66b9a0c679372e28104d419626}
+      \strng{bibnamehash}{1f3c4c66b9a0c679372e28104d419626}
+      \strng{authorbibnamehash}{1f3c4c66b9a0c679372e28104d419626}
+      \strng{authornamehash}{1f3c4c66b9a0c679372e28104d419626}
+      \strng{authorfullhash}{1f3c4c66b9a0c679372e28104d419626}
+      \strng{authorfullhashraw}{1f3c4c66b9a0c679372e28104d419626}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Caderno Pedagógico}
+      \field{number}{9}
+      \field{title}{A utilização de tecnologias educacionais na aprendizagem baseada em problemas: uma revisão integrativa}
+      \field{volume}{21}
+      \field{year}{2024}
+      \field{pages}{e8096}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.54033/cadpedv21n9-232
+      \endverb
+    \endentry
+    \entry{GOMEZ2026}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=271ba3a09b10f67355b29afccf09d998}{%
+           family={GÓMEZ\bibnamedelima MUÑIZ},
+           familyi={G\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Magdiel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c6f85bea0c53ecdb5de3ae9b3b41b058}{%
+           family={RAMÍREZ\bibnamedelima ACEVES},
+           familyi={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Frida},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{d9de8f4d5a861f6fa540b4d641414280}
+      \strng{fullhash}{d9de8f4d5a861f6fa540b4d641414280}
+      \strng{fullhashraw}{d9de8f4d5a861f6fa540b4d641414280}
+      \strng{bibnamehash}{d9de8f4d5a861f6fa540b4d641414280}
+      \strng{authorbibnamehash}{d9de8f4d5a861f6fa540b4d641414280}
+      \strng{authornamehash}{d9de8f4d5a861f6fa540b4d641414280}
+      \strng{authorfullhash}{d9de8f4d5a861f6fa540b4d641414280}
+      \strng{authorfullhashraw}{d9de8f4d5a861f6fa540b4d641414280}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Trayectorias Humanas Trascontinentales}
+      \field{number}{1}
+      \field{title}{Educación, subjetividades y tecnologías digitales en {Byung Chul Han}: desafíos de una sociedad del rendimiento}
+      \field{volume}{6}
+      \field{year}{2026}
+      \verb{doi}
+      \verb 10.25965/trahs.7845
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.25965/trahs.7845
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.25965/trahs.7845
+      \endverb
+    \endentry
+    \entry{GUSMAO2022}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=58fd902e574cd213fc09ef72e9711361}{%
+           family={GUSMÃO},
+           familyi={G\bibinitperiod},
+           given={F{'a}bio\bibnamedelimb Alexandre\bibnamedelima Ferreira},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{58fd902e574cd213fc09ef72e9711361}
+      \strng{fullhash}{58fd902e574cd213fc09ef72e9711361}
+      \strng{fullhashraw}{58fd902e574cd213fc09ef72e9711361}
+      \strng{bibnamehash}{58fd902e574cd213fc09ef72e9711361}
+      \strng{authorbibnamehash}{58fd902e574cd213fc09ef72e9711361}
+      \strng{authornamehash}{58fd902e574cd213fc09ef72e9711361}
+      \strng{authorfullhash}{58fd902e574cd213fc09ef72e9711361}
+      \strng{authorfullhashraw}{58fd902e574cd213fc09ef72e9711361}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Educação}
+      \field{number}{1}
+      \field{title}{Desigualdade educacional no ensino m{'e}dio brasileiro}
+      \field{volume}{47}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 29}
+      \range{pages}{29}
+      \verb{doi}
+      \verb 10.5902/1984644464040
+      \endverb
+      \verb{urlraw}
+      \verb https://periodicos.ufsm.br/reveducacao/article/view/64040
+      \endverb
+      \verb{url}
+      \verb https://periodicos.ufsm.br/reveducacao/article/view/64040
+      \endverb
+    \endentry
+    \entry{SILVA2023}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=33b6e0ff34c012829bcf7c9f5c38fd03}{%
+           family={SILVA},
+           familyi={S\bibinitperiod},
+           given={Lorena\bibnamedelima Garces},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{fbb1001ed41c84d896615ffbce5ecd7c}
+      \strng{fullhash}{fbb1001ed41c84d896615ffbce5ecd7c}
+      \strng{fullhashraw}{fbb1001ed41c84d896615ffbce5ecd7c}
+      \strng{bibnamehash}{fbb1001ed41c84d896615ffbce5ecd7c}
+      \strng{authorbibnamehash}{fbb1001ed41c84d896615ffbce5ecd7c}
+      \strng{authornamehash}{fbb1001ed41c84d896615ffbce5ecd7c}
+      \strng{authorfullhash}{fbb1001ed41c84d896615ffbce5ecd7c}
+      \strng{authorfullhashraw}{fbb1001ed41c84d896615ffbce5ecd7c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Dialogia}
+      \field{number}{45}
+      \field{title}{Aprendizagem baseada em projetos no ensino de Ciências}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.5585/45.2023.24026
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.5585/45.2023.24026
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.5585/45.2023.24026
+      \endverb
+    \endentry
+    \entry{DEGRAAFF2007}{incollection}{}{}
+      \name{author}{2}{}{%
+        {{hash=d0ca325f9db01e837324f6991c4d97fa}{%
+           family={DE\bibnamedelima GRAAFF},
+           familyi={D\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Erik},
+           giveni={E\bibinitperiod}}}%
+        {{hash=2863dab1d8bde6b7a9a9cf73d668e6e3}{%
+           family={KOLMOS},
+           familyi={K\bibinitperiod},
+           given={Anette},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Sense Publishers}%
+      }
+      \strng{namehash}{53dd6bd7ea47df494c2d3ea260e20b56}
+      \strng{fullhash}{53dd6bd7ea47df494c2d3ea260e20b56}
+      \strng{fullhashraw}{53dd6bd7ea47df494c2d3ea260e20b56}
+      \strng{bibnamehash}{53dd6bd7ea47df494c2d3ea260e20b56}
+      \strng{authorbibnamehash}{53dd6bd7ea47df494c2d3ea260e20b56}
+      \strng{authornamehash}{53dd6bd7ea47df494c2d3ea260e20b56}
+      \strng{authorfullhash}{53dd6bd7ea47df494c2d3ea260e20b56}
+      \strng{authorfullhashraw}{53dd6bd7ea47df494c2d3ea260e20b56}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Management of Change: Implementation of Problem-Based and Project-Based Learning in Engineering}
+      \field{note}{51 citações}
+      \field{title}{History of Problem-Based and Project-Based Learning}
+      \field{year}{2007}
+      \field{pages}{8\bibrangedash 18}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1163/9789087900922_002
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1163/9789087900922_002
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1163/9789087900922_002
+      \endverb
+    \endentry
+    \entry{MELO2024}{incollection}{}{}
+      \name{author}{3}{}{%
+        {{hash=4ab24b8399b6cf5600b0aa8d01859ba2}{%
+           family={MELO},
+           familyi={M\bibinitperiod},
+           given={Lúcia\bibnamedelimb Regina\bibnamedelima Soares},
+           giveni={L\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=410030c418acd95eaa86b8f1a651b106}{%
+           family={SIMPLICIO},
+           familyi={S\bibinitperiod},
+           given={Sérgio\bibnamedelimb Ricardo\bibnamedelimb da\bibnamedelima Costa},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=72e3e1d3df369d28f5b8dbd63db30a43}{%
+           family={MELO},
+           familyi={M\bibinitperiod},
+           given={Rita\bibnamedelimb Célia\bibnamedelimb Lopes\bibnamedelima Alves},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Edições IBPEX}%
+      }
+      \strng{namehash}{e2b19ed00521ba44802e21c3cbe7ae35}
+      \strng{fullhash}{e2b19ed00521ba44802e21c3cbe7ae35}
+      \strng{fullhashraw}{e2b19ed00521ba44802e21c3cbe7ae35}
+      \strng{bibnamehash}{e2b19ed00521ba44802e21c3cbe7ae35}
+      \strng{authorbibnamehash}{e2b19ed00521ba44802e21c3cbe7ae35}
+      \strng{authornamehash}{e2b19ed00521ba44802e21c3cbe7ae35}
+      \strng{authorfullhash}{e2b19ed00521ba44802e21c3cbe7ae35}
+      \strng{authorfullhashraw}{e2b19ed00521ba44802e21c3cbe7ae35}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Educação: reflexões e experiências -- Volume 7}
+      \field{title}{Metodologias ativas: aprendizagem baseada em projetos e aprendizagem baseada em problemas}
+      \field{year}{2024}
+      \field{pages}{1\bibrangedash 15}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.36229/978-65-5866-464-2.cap.23
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.36229/978-65-5866-464-2.cap.23
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.36229/978-65-5866-464-2.cap.23
+      \endverb
+    \endentry
+    \entry{CALLEGARIO2025}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=1ece82a6e36c1981f89723783197ab0b}{%
+           family={CALLEGARIO\bibnamedelima ZACCHI},
+           familyi={C\bibinitperiod\bibinitdelim Z\bibinitperiod},
+           given={Raquel},
+           giveni={R\bibinitperiod}}}%
+        {{hash=115815d047ae13c4a108e3bf62e2089e}{%
+           family={TEIXEIRA\bibnamedelimb DE\bibnamedelima MENEZES},
+           familyi={T\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=3407f27273807f1a12cdcb2c01217b60}{%
+           family={GOMES\bibnamedelima NEY},
+           familyi={G\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Marlon},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{772872f823159273677eff73b2413117}
+      \strng{fullhash}{772872f823159273677eff73b2413117}
+      \strng{fullhashraw}{772872f823159273677eff73b2413117}
+      \strng{bibnamehash}{772872f823159273677eff73b2413117}
+      \strng{authorbibnamehash}{772872f823159273677eff73b2413117}
+      \strng{authornamehash}{772872f823159273677eff73b2413117}
+      \strng{authorfullhash}{772872f823159273677eff73b2413117}
+      \strng{authorfullhashraw}{772872f823159273677eff73b2413117}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Latitude}
+      \field{number}{2}
+      \field{title}{Desigualdades sociais e desempenho escolar no Brasil: o que revelam os microdados do ENEM 2021?}
+      \field{volume}{18}
+      \field{year}{2025}
+      \field{pages}{33\bibrangedash 59}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.28998/lte.2024.n.2.17872
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.28998/lte.2024.n.2.17872
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.28998/lte.2024.n.2.17872
+      \endverb
+    \endentry
+    \entry{VEIGA2014}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=776424a9bc1c418c42bdb678515ae390}{%
+           family={VEIGA},
+           familyi={V\bibinitperiod},
+           given={Ilma\bibnamedelimb Passos\bibnamedelima Alencastro},
+           giveni={I\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Campinas}%
+      }
+      \list{publisher}{1}{%
+        {Papirus}%
+      }
+      \strng{namehash}{776424a9bc1c418c42bdb678515ae390}
+      \strng{fullhash}{776424a9bc1c418c42bdb678515ae390}
+      \strng{fullhashraw}{776424a9bc1c418c42bdb678515ae390}
+      \strng{bibnamehash}{776424a9bc1c418c42bdb678515ae390}
+      \strng{authorbibnamehash}{776424a9bc1c418c42bdb678515ae390}
+      \strng{authornamehash}{776424a9bc1c418c42bdb678515ae390}
+      \strng{authorfullhash}{776424a9bc1c418c42bdb678515ae390}
+      \strng{authorfullhashraw}{776424a9bc1c418c42bdb678515ae390}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Educação básica no Brasil: conceitos e práticas}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb https://www.worldcat.org/title/educacao-basica-no-brasil-conceitos-e-praticas/oclc/883601054
+      \endverb
+      \verb{url}
+      \verb https://www.worldcat.org/title/educacao-basica-no-brasil-conceitos-e-praticas/oclc/883601054
+      \endverb
+    \endentry
+    \entry{OECD2023}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=ce4714e983c3eacee170f892783eba77}{%
+           family={{Organização para a Cooperação e Desenvolvimento Econômicos}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{ce4714e983c3eacee170f892783eba77}
+      \strng{fullhash}{ce4714e983c3eacee170f892783eba77}
+      \strng{fullhashraw}{ce4714e983c3eacee170f892783eba77}
+      \strng{bibnamehash}{ce4714e983c3eacee170f892783eba77}
+      \strng{authorbibnamehash}{ce4714e983c3eacee170f892783eba77}
+      \strng{authornamehash}{ce4714e983c3eacee170f892783eba77}
+      \strng{authorfullhash}{ce4714e983c3eacee170f892783eba77}
+      \strng{authorfullhashraw}{ce4714e983c3eacee170f892783eba77}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{OECD Publishing}
+      \field{title}{PISA 2022 Results}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.oecd.org/pisa/
+      \endverb
+      \verb{url}
+      \verb https://www.oecd.org/pisa/
+      \endverb
+    \endentry
+    \entry{MORAN2018}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{hash=e03f285dfb70a49a29ec02f702e41f24}{%
+           family={MORAN},
+           familyi={M\bibinitperiod},
+           given={José},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Porto Alegre}%
+      }
+      \list{publisher}{1}{%
+        {Penso}%
+      }
+      \strng{namehash}{e03f285dfb70a49a29ec02f702e41f24}
+      \strng{fullhash}{e03f285dfb70a49a29ec02f702e41f24}
+      \strng{fullhashraw}{e03f285dfb70a49a29ec02f702e41f24}
+      \strng{bibnamehash}{e03f285dfb70a49a29ec02f702e41f24}
+      \strng{authorbibnamehash}{e03f285dfb70a49a29ec02f702e41f24}
+      \strng{authornamehash}{e03f285dfb70a49a29ec02f702e41f24}
+      \strng{authorfullhash}{e03f285dfb70a49a29ec02f702e41f24}
+      \strng{authorfullhashraw}{e03f285dfb70a49a29ec02f702e41f24}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Metodologias ativas para uma educação inovadora: uma abordagem teórico-prática}
+      \field{title}{Metodologias ativas para uma aprendizagem profunda}
+      \field{year}{2018}
+      \field{pages}{11\bibrangedash 26}
+      \range{pages}{16}
+      \verb{urlraw}
+      \verb https://moran.eca.usp.br/wp-content/uploads/2013/12/metodologias_moran1.pdf
+      \endverb
+      \verb{url}
+      \verb https://moran.eca.usp.br/wp-content/uploads/2013/12/metodologias_moran1.pdf
+      \endverb
+    \endentry
+    \entry{SOARES2013}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=547cbedb316ff5dc837a0c7d5b8447dc}{%
+           family={SOARES},
+           familyi={S\bibinitperiod},
+           given={Jos{'e}\bibnamedelima Francisco},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=f336a8bf18f4174cda333c8a312d7147}{%
+           family={XAVIER},
+           familyi={X\bibinitperiod},
+           given={Fl{'a}via\bibnamedelima Pereira},
+           giveni={F\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{8871e3aa8cc97592bfa722f0915f6180}
+      \strng{fullhash}{8871e3aa8cc97592bfa722f0915f6180}
+      \strng{fullhashraw}{8871e3aa8cc97592bfa722f0915f6180}
+      \strng{bibnamehash}{8871e3aa8cc97592bfa722f0915f6180}
+      \strng{authorbibnamehash}{8871e3aa8cc97592bfa722f0915f6180}
+      \strng{authornamehash}{8871e3aa8cc97592bfa722f0915f6180}
+      \strng{authorfullhash}{8871e3aa8cc97592bfa722f0915f6180}
+      \strng{authorfullhashraw}{8871e3aa8cc97592bfa722f0915f6180}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Educação \& Sociedade}
+      \field{number}{124}
+      \field{title}{Pressupostos educacionais e estat{'i}sticos do Ideb}
+      \field{volume}{34}
+      \field{year}{2013}
+      \field{pages}{903\bibrangedash 923}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1590/S0101-73302013000300013
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1590/S0101-73302013000300013
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1590/S0101-73302013000300013
+      \endverb
+    \endentry
+    \entry{SOUZA2022}{incollection}{}{}
+      \name{author}{2}{}{%
+        {{hash=f2372ca1edea3ee12a63b85b5f4224fd}{%
+           family={SOUZA},
+           familyi={S\bibinitperiod},
+           given={Raquel\bibnamedelima Aparecida},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=93ae658850042bc80c44fdf7d6aa5141}{%
+           family={BITTENCOURT},
+           familyi={B\bibinitperiod},
+           given={Dênia\bibnamedelimb Falcão\bibnamedelima de},
+           giveni={D\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Editora UniSaber}%
+      }
+      \strng{namehash}{448e85d24bd0d99a821914f831640037}
+      \strng{fullhash}{448e85d24bd0d99a821914f831640037}
+      \strng{fullhashraw}{448e85d24bd0d99a821914f831640037}
+      \strng{bibnamehash}{448e85d24bd0d99a821914f831640037}
+      \strng{authorbibnamehash}{448e85d24bd0d99a821914f831640037}
+      \strng{authornamehash}{448e85d24bd0d99a821914f831640037}
+      \strng{authorfullhash}{448e85d24bd0d99a821914f831640037}
+      \strng{authorfullhashraw}{448e85d24bd0d99a821914f831640037}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Formação de professores e profissão docente no Brasil: aspectos históricos, tendências e inovações}
+      \field{title}{Metodologias ativas com tecnologias digitais no apoio ao trabalho docente: lições para formação de professores}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 20}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.51859/amplla.fpp1068-10
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.51859/amplla.fpp1068-10
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.51859/amplla.fpp1068-10
+      \endverb
+    \endentry
+    \entry{SOUSA2025}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=d6bf852867db9c6d6411f429e9162fe6}{%
+           family={SOUSA},
+           familyi={S\bibinitperiod},
+           given={I.\bibnamedelimi B.\bibnamedelimi de},
+           giveni={I\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=86250b94bca783f2483c57e2705b9cc7}{%
+           family={VIERO},
+           familyi={V\bibinitperiod},
+           given={A.\bibnamedelimi S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=76e3f7b51fc40b58a00f89dbc1dd49a5}{%
+           family={EMERICK},
+           familyi={E\bibinitperiod},
+           given={L.\bibnamedelimi B.\bibnamedelimi B.\bibnamedelimi R.},
+           giveni={L\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{a865d0efc706a0ba70a64ce407aab487}
+      \strng{fullhash}{a865d0efc706a0ba70a64ce407aab487}
+      \strng{fullhashraw}{a865d0efc706a0ba70a64ce407aab487}
+      \strng{bibnamehash}{a865d0efc706a0ba70a64ce407aab487}
+      \strng{authorbibnamehash}{a865d0efc706a0ba70a64ce407aab487}
+      \strng{authornamehash}{a865d0efc706a0ba70a64ce407aab487}
+      \strng{authorfullhash}{a865d0efc706a0ba70a64ce407aab487}
+      \strng{authorfullhashraw}{a865d0efc706a0ba70a64ce407aab487}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific Electronic Archives}
+      \field{number}{3}
+      \field{title}{Evidências científicas sobre metodologias ativas no ensino superior}
+      \field{volume}{18}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.36560/18320252057
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.36560/18320252057
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.36560/18320252057
+      \endverb
+    \endentry
+    \entry{PAULUS2023}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=c3ce7024693eac4687ff8c0cae3a91c9}{%
+           family={Paulus},
+           familyi={P\bibinitperiod},
+           given={Trena\bibnamedelima M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=a4b20b9758188d5f40732e171465e224}{%
+           family={Lester},
+           familyi={L\bibinitperiod},
+           given={Jessica\bibnamedelima N.},
+           giveni={J\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e415420f2f166305aba28605352b47b}
+      \strng{fullhash}{5e415420f2f166305aba28605352b47b}
+      \strng{fullhashraw}{5e415420f2f166305aba28605352b47b}
+      \strng{bibnamehash}{5e415420f2f166305aba28605352b47b}
+      \strng{authorbibnamehash}{5e415420f2f166305aba28605352b47b}
+      \strng{authornamehash}{5e415420f2f166305aba28605352b47b}
+      \strng{authorfullhash}{5e415420f2f166305aba28605352b47b}
+      \strng{authorfullhashraw}{5e415420f2f166305aba28605352b47b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Human Resource Development Review}
+      \field{number}{1}
+      \field{title}{Using Qualitative Data Analysis Software to Support Digital Research Workflows}
+      \field{volume}{22}
+      \field{year}{2023}
+      \field{pages}{139\bibrangedash 148}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1177/15344843221138381
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1177/15344843221138381
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1177/15344843221138381
+      \endverb
+    \endentry
+    \entry{DAHAL2026}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=e32605e8497cea31c114d72f4759a032}{%
+           family={Dahal},
+           familyi={D\bibinitperiod},
+           given={Nischal},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{e32605e8497cea31c114d72f4759a032}
+      \strng{fullhash}{e32605e8497cea31c114d72f4759a032}
+      \strng{fullhashraw}{e32605e8497cea31c114d72f4759a032}
+      \strng{bibnamehash}{e32605e8497cea31c114d72f4759a032}
+      \strng{authorbibnamehash}{e32605e8497cea31c114d72f4759a032}
+      \strng{authornamehash}{e32605e8497cea31c114d72f4759a032}
+      \strng{authorfullhash}{e32605e8497cea31c114d72f4759a032}
+      \strng{authorfullhashraw}{e32605e8497cea31c114d72f4759a032}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers in Research Metrics and Analytics}
+      \field{title}{Qualitative data analysis: reflections, procedures, and some points for consideration}
+      \field{volume}{11}
+      \field{year}{2026}
+      \field{pages}{1669578}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/frma.2025.1669578
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/articles/10.3389/frma.2025.1669578/full
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/articles/10.3389/frma.2025.1669578/full
+      \endverb
+    \endentry
+    \entry{KABIR2025}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=c2a9a4f97e8d86a28b7106fa679940ff}{%
+           family={Kabir},
+           familyi={K\bibinitperiod},
+           given={Safa\bibnamedelimb M.\bibnamedelimi A.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a76deb40ecf4116788dd3009dac76a58}
+      \strng{fullhash}{a76deb40ecf4116788dd3009dac76a58}
+      \strng{fullhashraw}{a76deb40ecf4116788dd3009dac76a58}
+      \strng{bibnamehash}{a76deb40ecf4116788dd3009dac76a58}
+      \strng{authorbibnamehash}{a76deb40ecf4116788dd3009dac76a58}
+      \strng{authornamehash}{a76deb40ecf4116788dd3009dac76a58}
+      \strng{authorfullhash}{a76deb40ecf4116788dd3009dac76a58}
+      \strng{authorfullhashraw}{a76deb40ecf4116788dd3009dac76a58}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Qualitative Methods}
+      \field{title}{Exploring the Use of AI in Qualitative Data Analysis: Comparing Manual Processing with Avidnote for Theme Generation}
+      \field{volume}{24}
+      \field{year}{2025}
+      \field{pages}{1\bibrangedash 15}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1177/16094069251336810
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1177/16094069251336810
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1177/16094069251336810
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -8,6 +8,8 @@ Uso:
   python seeker_bridge.py from-seeker <seeker_artifacts_dir> --level 2
   python seeker_bridge.py from-editais <edital_id> --level 2
   python seeker_bridge.py list-seeker-runs
+  python seeker_bridge.py validate-apa <arquivo.md>
+  python seeker_bridge.py apa-report <arquivo.md>
 """
 
 import json
@@ -19,6 +21,13 @@ from typing import Optional
 CRIADOR_DIR = Path(__file__).resolve().parent
 SEEKER_DIR = CRIADOR_DIR.parent / "basis-research"
 OUTPUT_DIR = CRIADOR_DIR / "output"
+
+# Importa módulo APA se disponível
+try:
+    from apa_integration import APAIntegration
+    APA_AVAILABLE = True
+except ImportError:
+    APA_AVAILABLE = False
 
 
 class SeekerBridge:
@@ -175,6 +184,150 @@ def cmd_from_editais(edital_id: str, level: int = 2):
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
+# ─── APA Integration Commands ─────────────────────────────────────
+
+def cmd_validate_apa(file_path: str):
+    """Valida um arquivo quanto às normas APA."""
+    if not APA_AVAILABLE:
+        print("ERRO: Modulo apa_integration nao encontrado.")
+        print("Certifique-se de que o arquivo apa_integration.py esta no diretorio.")
+        return
+    
+    apa = APAIntegration()
+    result = apa.validate_document(file_path)
+    
+    print(f"\n{'='*60}")
+    print(f"VALIDACAO APA - {file_path}")
+    print(f"{'='*60}")
+    print(f"Pontuacao: {result.score:.1f}/100")
+    print(f"Status: {'CONFORME' if result.is_compliant else 'NAO CONFORME'}")
+    print(f"Secoes encontradas: {len(result.sections_found)}/{len(apa.pf_sections)}")
+    print(f"Citacoes: {result.citations_count}")
+    print(f"Referencias: {result.references_count}")
+    
+    if result.issues:
+        print(f"\nProblemas ({len(result.issues)}):")
+        for issue in result.issues:
+            print(f"  - {issue}")
+    
+    if result.warnings:
+        print(f"\nAlertas ({len(result.warnings)}):")
+        for warning in result.warnings:
+            print(f"  - {warning}")
+    
+    print(f"{'='*60}\n")
+
+
+def cmd_apa_report(file_path: str):
+    """Gera relatorio completo de conformidade APA."""
+    if not APA_AVAILABLE:
+        print("ERRO: Modulo apa_integration nao encontrado.")
+        return
+    
+    apa = APAIntegration()
+    result = apa.validate_document(file_path)
+    report = apa.generate_apa_report(result)
+    print(report)
+
+
+def cmd_validate_citations(file_path: str):
+    """Valida apenas as citacoes de um arquivo."""
+    if not APA_AVAILABLE:
+        print("ERRO: Modulo apa_integration nao encontrado.")
+        return
+    
+    apa = APAIntegration()
+    content = Path(file_path).read_text(encoding='utf-8')
+    result = apa.validate_citations_in_text(content)
+    
+    print(f"\nValidacao de Citacoes - {file_path}")
+    print(f"Total: {result['summary']['total']}")
+    print(f"Validas: {result['summary']['valid']}")
+    print(f"Invalidas: {result['summary']['invalid']}")
+    print(f"Conformidade: {result['summary']['compliance_rate']:.1f}%")
+
+
+def cmd_validate_references(file_path: str):
+    """Valida a secao de referencias de um arquivo."""
+    if not APA_AVAILABLE:
+        print("ERRO: Modulo apa_integration nao encontrado.")
+        return
+    
+    apa = APAIntegration()
+    content = Path(file_path).read_text(encoding='utf-8')
+    result = apa._validate_references(content)
+    
+    print(f"\nValidacao de Referencias - {file_path}")
+    print(f"Total: {result['total']}")
+    print(f"Validas: {result['valid']}")
+    print(f"Conformidade: {result['compliance_rate']:.1f}%")
+
+
+def cmd_format_citation():
+    """Formata uma citacao APA interativamente."""
+    if not APA_AVAILABLE:
+        print("ERRO: Modulo apa_integration nao encontrado.")
+        return
+    
+    apa = APAIntegration()
+    
+    print("\nFormatacao de Citacao APA")
+    print("-" * 40)
+    
+    citation_type = input("Tipo (narrative/parenthetical): ").strip() or "parenthetical"
+    authors_input = input("Autores (separados por virgula): ").strip()
+    authors = [a.strip() for a in authors_input.split(",")] if authors_input else ["Autor"]
+    year = input("Ano: ").strip() or str(datetime.now().year)
+    title = input("Titulo (opcional): ").strip()
+    page = input("Pagina (opcional): ").strip()
+    
+    result = apa.format_citation(citation_type, authors, year, title, page)
+    print(f"\nCitacao formatada:\n  {result}")
+
+
+def cmd_format_reference():
+    """Formata uma referencia APA interativamente."""
+    if not APA_AVAILABLE:
+        print("ERRO: Modulo apa_integration nao encontrado.")
+        return
+    
+    apa = APAIntegration()
+    
+    print("\nFormatacao de Referencia APA")
+    print("-" * 40)
+    print("Tipos: book, article, website, chapter, thesis")
+    
+    ref_type = input("Tipo: ").strip() or "book"
+    authors_input = input("Autores (separados por virgula): ").strip()
+    authors = [a.strip() for a in authors_input.split(",")] if authors_input else ["Autor"]
+    year = input("Ano: ").strip() or str(datetime.now().year)
+    title = input("Titulo: ").strip() or "Titulo nao informado"
+    
+    kwargs = {'authors': authors, 'year': year, 'title': title}
+    
+    if ref_type == "book":
+        kwargs['publisher'] = input("Editora: ").strip() or "Editora nao informada"
+    elif ref_type == "article":
+        kwargs['journal'] = input("Periodico: ").strip() or "Periodico nao informado"
+        kwargs['volume'] = input("Volume: ").strip()
+        kwargs['issue'] = input("Numero: ").strip()
+        kwargs['pages'] = input("Paginas: ").strip()
+        kwargs['doi'] = input("DOI: ").strip()
+    elif ref_type == "website":
+        kwargs['url'] = input("URL: ").strip()
+    elif ref_type == "chapter":
+        kwargs['book_title'] = input("Titulo do livro: ").strip()
+        kwargs['editors'] = [input("Editor(es): ").strip() or "Editor"]
+        kwargs['pages'] = input("Paginas: ").strip()
+        kwargs['publisher'] = input("Editora: ").strip()
+    elif ref_type == "thesis":
+        kwargs['institution'] = input("Instituicao: ").strip()
+        kwargs['thesis_type'] = input("Tipo (Tese/Dissertacao): ").strip() or "Tese"
+    
+    result = apa.format_reference(ref_type, **kwargs)
+    print(f"\nReferencia formatada:\n  {result}")
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
@@ -201,9 +354,48 @@ def main():
     elif cmd == "list-seeker-runs":
         cmd_list_seeker_runs()
 
+    elif cmd == "validate-apa":
+        if len(sys.argv) < 3:
+            print("Usage: seeker_bridge.py validate-apa <arquivo.md>")
+            return
+        cmd_validate_apa(sys.argv[2])
+
+    elif cmd == "apa-report":
+        if len(sys.argv) < 3:
+            print("Usage: seeker_bridge.py apa-report <arquivo.md>")
+            return
+        cmd_apa_report(sys.argv[2])
+
+    elif cmd == "validate-citations":
+        if len(sys.argv) < 3:
+            print("Usage: seeker_bridge.py validate-citations <arquivo.md>")
+            return
+        cmd_validate_citations(sys.argv[2])
+
+    elif cmd == "validate-references":
+        if len(sys.argv) < 3:
+            print("Usage: seeker_bridge.py validate-references <arquivo.md>")
+            return
+        cmd_validate_references(sys.argv[2])
+
+    elif cmd == "format-citation":
+        cmd_format_citation()
+
+    elif cmd == "format-reference":
+        cmd_format_reference()
+
     else:
         print(f"Unknown command: {cmd}")
-        print("Available: from-seeker, from-editais, list-seeker-runs")
+        print("Available commands:")
+        print("  from-seeker         - Execute pipeline from SEEKER outputs")
+        print("  from-editais        - Execute pipeline from edital")
+        print("  list-seeker-runs    - List available SEEKER runs")
+        print("  validate-apa        - Validate document APA compliance")
+        print("  apa-report          - Generate full APA compliance report")
+        print("  validate-citations  - Validate citations only")
+        print("  validate-references - Validate references only")
+        print("  format-citation     - Format a citation interactively")
+        print("  format-reference    - Format a reference interactively")
 
 
 if __name__ == "__main__":

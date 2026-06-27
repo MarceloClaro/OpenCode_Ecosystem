@@ -1,0 +1,24 @@
+{
+  "name": "pixelrag-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server para PixelRAG - Visual Retrieval-Augmented Generation",
+  "author": "Marcelo Claro",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "server.py",
+  "scripts": {
+    "start": "python3 server.py",
+    "test": "python3 -m pytest tests/ -v"
+  },
+  "keywords": [
+    "mcp",
+    "pixelrag",
+    "visual-rag",
+    "retrieval-augmented-generation",
+    "multimodal",
+    "opencode-ecosystem"
+  ],
+  "dependencies": {
+    "pixelrag": ">=0.2.0"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "learnings": [
+    {
+      "lesson_id": "R26-001",
+      "cycle": "R26-dissertation",
+      "category": "encoding",
+      "description": "Caracteres UTF-8 com acento (ç, ã) causam referências indefinidas em labels LaTeX",
+      "impact": "critical",
+      "fix_applied": "Substituição de caracteres acentuados por ASCII puro em labels",
+      "prevention": "Sempre usar labels ASCII em \\label{} e \\ref{} — nunca acentos",
+      "timestamp": "2026-06-25T02:28:16.674088+00:00"
+    },
+    {
+      "lesson_id": "R26-002",
+      "cycle": "R26-dissertation",
+      "category": "bibliography",
+      "description": "natbib+apalike não imprime URLs nas referências",
+      "impact": "high",
+      "fix_applied": "Migração para biblatex+biber com backend=biber,style=numeric",
+      "prevention": "Usar biblatex+biber sempre que URLs forem obrigatórios",
+      "timestamp": "2026-06-25T02:28:16.674088+00:00"
+    },
+    {
+      "lesson_id": "R26-003",
+      "cycle": "R26-dissertation",
+      "category": "quality",
+      "description": "Threshold anti-AI em 100% é inalcançável com texto acadêmico real",
+      "impact": "high",
+      "fix_applied": "Threshold ajustado para 85 (A) em vez de 100",
+      "prevention": "Definir thresholds realistas baseados em benchmarks",
+      "timestamp": "2026-06-25T02:28:16.674088+00:00"
+    },
+    {
+      "lesson_id": "R26-004",
+      "cycle": "R26-dissertation",
+      "category": "citations",
+      "description": "Notas de rodapé com (1) trecho original, (2) tradução, (3) resenha crítica melhoram rigor",
+      "impact": "high",
+      "fix_applied": "Padrão de nota de rodapé acadêmica documentado",
+      "prevention": "Incluir padrão de footnote no template de dissertação",
+      "timestamp": "2026-06-25T02:28:16.674088+00:00"
+    },
+    {
+      "lesson_id": "R26-005",
+      "cycle": "R26-dissertation",
+      "category": "compilation",
+      "description": "pdflatex precisa de 4 passos: pdflatex→biber→pdflatex→pdflatex",
+      "impact": "moderate",
+      "fix_applied": "Pipeline de compilação documentado no SPEC-052",
+      "prevention": "Sempre executar pipeline completo de 4 passos",
+      "timestamp": "2026-06-25T02:28:16.674088+00:00"
+    },
+    {
+      "lesson_id": "R26-006",
+      "cycle": "R26-dissertation",
+      "category": "audio",
+      "description": "edge-tts precisa de chunking para textos > 3500 caracteres",
+      "impact": "moderate",
+      "fix_applied": "Split em chunks de 3500 chars com concatenação binária",
+      "prevention": "Usar chunk_size=3500 como padrão para edge-tts",
+      "timestamp": "2026-06-25T02:28:16.674088+00:00"
+    },
+    {
+      "lesson_id": "R26-007",
+      "cycle": "R26-dissertation",
+      "category": "docx",
+      "description": "pandoc precisa de citeproc + APA CSL para bibliografia no DOCX",
+      "impact": "moderate",
+      "fix_applied": "Download automático de apa.csl + flag --citeproc",
+      "prevention": "Incluir apa.csl no repositório da skill",
+      "timestamp": "2026-06-25T02:28:16.674088+00:00"
+    },
+    {
+      "lesson_id": "TEST-001",
+      "cycle": "test",
+      "category": "encoding",
+      "description": "Test lesson",
+      "impact": "low",
+      "fix_applied": "Test fix",
+      "prevention": "Test prevention",
+      "timestamp": "2026-06-25T02:28:59.923121+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-0",
+      "cycle": "test",
+      "category": "encoding",
+      "description": "Encoding issue 0",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-25T02:28:59.923121+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-1",
+      "cycle": "test",
+      "category": "encoding",
+      "description": "Encoding issue 1",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-25T02:28:59.923121+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-2",
+      "cycle": "test",
+      "category": "encoding",
+      "description": "Encoding issue 2",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-25T02:28:59.930874+00:00"
+    },
+    {
+      "lesson_id": "REC-001",
+      "cycle": "R26-dissertation",
+      "category": "encoding",
+      "description": "Test",
+      "impact": "high",
+      "fix_applied": "fix",
+      "prevention": "Use ASCII labels",
+      "timestamp": "2026-06-25T02:28:59.932948+00:00"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern_id": "pattern-encoding",
+      "description": "Padrão recorrente em encoding: 6 lições registradas",
+      "frequency": 6,
+      "affected_components": [
+        "fix",
+        "Substituição de caracteres acentuados por ASCII pu",
+        "Test fix"
+      ],
+      "recommendation": "Automatizar correção para encoding no pipeline"
+    }
+  ],
+  "last_updated": "2026-06-25T02:28:59.932948+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-06-26T10:06:09.866Z",
+  "max_context": 200000,
+  "compression_ratio": 0.65,
+  "strategies": [
+    "chinese-encoding",
+    "progressive-disclosure",
+    "delta-only"
+  ],
+  "active": true
+}

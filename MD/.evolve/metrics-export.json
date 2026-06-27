@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-06-27T18:39:51.430Z",
+  "version": "4.2.3",
+  "components": {
+    "agents": 128,
+    "mcps": 46,
+    "skills": 155,
+    "plugins": 12,
+    "hooks": 11
+  },
+  "health": {
+    "score": 96,
+    "cjk_leaks": 0,
+    "tests_passing": 17
+  }
+}

@@ -1,89 +1,82 @@
----
-name: academic-audit
-description: "Auditoria Academica Caixa Branca com rastreamento minucioso. Registra todas as interacoes com o ecossistema OpenCode, fornecendo rastreabilidade de cada afirmacao, evidencia e decisao. Compativel com protocolo TSAC (87 palavras banidas), padroes Qualis A1 e paradigmas epistemologicos multiplos."
-version: "1.0.0"
-category: system
-tags: [audit, logging, tsac, qualis-a1, traceability]
-status: active
----
-# academic-audit: Auditoria Acadêmica Caixa Branca com Rastreamento Minucioso
-
-**Status**: v1.0.0 | **Categoria**: system | **Tipo**: Auditoria + Logging
+# Scanner Epistemológico Cognitivo (SPEC-053/054/055)
 
 ## Descrição
+Três scanners complementares que estendem o pipeline de análise epistemológica:
+- **SPEC-053 Cognitive Diversity Scanner**: Detecta câmaras de eco e homogeneidade cognitiva
+- **SPEC-054 Epistemic Topology Mapper**: Projeta e mapeia o espaço de conhecimento em 2D
+- **SPEC-055 Rupture Potential Index**: Calcula potencial de ruptura assimétrico (RPI)
 
-Sistema completo de auditoria acadêmica caixa branca que registra **todas** as interações do pesquisador com o ecossistema OpenCode, fornecendo rastreabilidade minuciosa de cada afirmação → evidência → decisão. Compatível com protocolo TSAC (87 palavras banidas), padrões Qualis A1 e paradigmas epistemológicos múltiplos.
+## Como usar
 
-## Componentes
-
-| Módulo | Arquivo | Função |
-|--------|---------|--------|
-| **InteractionLogger** | `interaction_logger.py` | Logging caixa branca de todas as interações (JSONL imutável) |
-| **AcademicAuditTrail** | `academic_audit_trail.py` | Trilha de auditoria: parágrafo → evidência → fonte |
-| **TokenEconomyMonitor** | `token_economy_monitor.py` | Monitor de consumo de tokens por nível (1/2/3) |
-
-## Uso Rápido
-
+### Cognitive Diversity Scanner
 ```python
-from interaction_logger import get_logger
-from academic_audit_trail import AcademicAuditTrail
-from token_economy_monitor import TokenEconomyMonitor
+from cognitive_diversity_scanner import CognitiveDiversityScanner, ArtifactProfile
 
-# Iniciar sessão
-logger = get_logger()
-logger.set_paradigm("Pragmatista (mista)")
-logger.set_level(2)  # Standard Paper
-
-# Trilha de auditoria
-trail = AcademicAuditTrail()
-trail.set_paradigm("Pragmatista (mista)")
-
-# Registrar parágrafo + evidência
-trail.record_paragraph("P12", "A IA generativa tem transformado...")
-trail.record_evidence("P12", "10.1038/s41524-017-0032-0", 
-    claim="IA generativa na ciência dos materiais",
-    source_type="doi", confidence=0.95)
-
-# Verificar TSAC
-trail.run_tsac_check("P12")
-
-# Gerar relatório
-report = trail.generate_audit_report(format="markdown")
-trail.save()
-
-# Monitor de tokens
-monitor = TokenEconomyMonitor(level=2)
-monitor.record_usage("INT-0001", estimated_input=500, estimated_output=200)
-print(monitor.get_efficiency_report())
-
-# Fechar sessão
-logger.close_session()
+cds = CognitiveDiversityScanner()
+cds.register_artifact(ArtifactProfile(
+    artifact_id="artigo_001",
+    text_preview="Estudo sobre TCC para ansiedade",
+    coverage_vector={"paradigmas": 0.8, "metodos": 0.6, "teorias": 0.4},
+))
+result = cds.compute_homogeneity_index()
+print(f"HI: {result['global_hi']}, Eco: {result['is_echo_chamber']}")
 ```
 
-## Estratégias de Economia de Tokens (3 Níveis)
+### Epistemic Topology Mapper
+```python
+from epistemic_topology_mapper import EpistemicTopologyMapper, TopologicalPoint
 
-| Nível | Nome | Agentes | Orçamento/Sessão | Economia |
-|:-----:|------|:------:|:----------------:|:--------:|
-| 1 | Magnum/Tese/Qualis A1 | 43 | 500K tokens | Nenhuma (rigor máximo) |
-| 2 | Standard Paper/Q1-Q2 | 20 | 200K tokens | Exigida |
-| 3 | Short Communication | 10 | 50K tokens | Máxima |
+etm = EpistemicTopologyMapper()
+etm.add_point(TopologicalPoint("artigo_A", [0.8, 0.6, 0.4]))
+etm.project(dimensions=2)
+islands = etm.detect_islands()
+holes = etm.detect_holes()
+bridges = etm.compute_bridge_potential()
+```
 
-## Protocolo TSAC
+### Rupture Potential Index
+```python
+from rupture_potential_index import RupturePotentialIndex, ResearchOpportunity
 
-Lista de 87 palavras banidas detectadas automaticamente. Exemplos: "crucial", "essencialmente", "notavelmente", "fundamentalmente", "intrinsecamente".
+rpi = RupturePotentialIndex()
+rpi.register_opportunity(ResearchOpportunity(
+    opportunity_id="OP-001",
+    label="Novo paradigma em saude digital",
+    epistemic_distance=0.8, fertility=0.7,
+    risk_reward=0.6, cost_opportunity=0.3, eps_score=65.0,
+))
+result = rpi.compute("OP-001")
+print(f"RPI: {result['rpi_score']}, Quadrante: {result['quadrant']}")
+```
 
-## Rastreabilidade
+### Pipeline Integrado
+```python
+from scanner_integration import ScannerIntegration
 
-Cada interação gera um registro JSONL imutável com:
-- `session_id` único
-- `interaction_id` sequencial
-- Hash SHA-256 para integridade
-- Timestamp UTC-3
-- Roteamento completo (domínio, fonte, confiança)
-- Decisões do pipeline
+integrator = ScannerIntegration()
+report = integrator.scan_pipeline_output(
+    pipeline="artigo",
+    audit_trail=audit_trail,
+    output_dir="pesquisas/meu_estudo/",
+    domain="psicologia",
+)
+# report agora inclui:
+# - cognitive_diversity (SPEC-053)
+# - epistemic_topology (SPEC-054)
+# - rupture_potential (SPEC-055)
+```
+
+## CTs
+- Cognitive Diversity Scanner: 14/14
+- Epistemic Topology Mapper: 14/14
+- Rupture Potential Index: 14/14
+
+## Dependências
+- Python 3.11+
+- `scanner_integration.py` (para pipeline completo)
+- `potentiality_estimator_v2.py` (para integração RPI)
 
 ## Arquivos
-
-- `interaction_logger.py` — Logger caixa branca (append-only JSONL)
-- `academic_audit_trail.py` — Trilha de auditoria acadêmica
-- `token_economy_monitor.py` — Monitor de economia de tokens
+- `cognitive_diversity_scanner.py` (457 linhas)
+- `epistemic_topology_mapper.py` (675 linhas)
+- `rupture_potential_index.py` (359 linhas)

@@ -7,7 +7,7 @@
 
 ---
 
-# OPENCODE 统一生态系统 v5.4.0 (R23: Trust Engine + N3.5 Completo)
+# OPENCODE 统一生态系统 v5.6.0 (R26: Marcelo Claro Orchestration TDD)
 
 ## 环境
 - Windows 11, Node.js v25, Bun 1.3, OpenCode CLI 1.14
@@ -53,11 +53,11 @@
 | 智能体 | 128 | 核心56+创作49+SEEKER12+Reversa18+语言校正器1 |
 | 插件 | 15 | 10npm+2本地(.ts)+3 bridge |
 | 命令 | 14 | 斜杠命令 |
-| Módulos Python | 22 | Scanner Pipeline (8.937 linhas) + Metacognição + TrustEngine |
-| Suites TDD | 15 | 312 CTs (312/312 PASS — 100%) |
-| SPECs | 13 | SPEC-025 a SPEC-038 |
+| Módulos Python | 24 | Scanner Pipeline (8.937 linhas) + Metacognição + TrustEngine + PotentialityEstimatorV2 + EcosystemCapabilitiesServer |
+| Suites TDD | 18 | 356 CTs (356/356 PASS — 100%) |
+| SPECs | 15 | SPEC-025 a SPEC-047 |
 | ADRs | 10 | architectu-001 a architectu-010 |
-| Ciclos Evolutivos | 23 | R1(85) → R23(100) |
+| Ciclos Evolutivos | 26 | R1(85) → R26(100) |
 | LSP | 1 | TypeScript |
 | 量子 | 146 | 引用/脚本/输出/模板 |
 | Nexus | 488 | 多智能体/同步屏障/推理类型 |
@@ -132,6 +132,9 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | 21 | Metacognição + Self-Evolution (SPEC-036) | 100 | Scanner auto-diagnosticou 4 gaps críticos (metacognitivo, dialético, cooperativo, neurobiológico) e os implementou: MetacognitiveMonitor + DialecticalEngine + CooperativeGovernance(Ostrom DP1-DP8) + SelfModel(N0-N3); 8 CTs; 282/282 total; 19 módulos Python (7.573 linhas) |
 | 22 | Structural Noise Scanner + N3 Completo (SPEC-037) | 100 | SNS: compressão estrutural com preservação funcional (5 submódulos). SCE: compressor de grandes textos (CR, CPS, FLI, DG). N2+N3 Upgrades: forecasting, source introspection, self/other boundary, auto-monitor, root cause causal (Granger+Bayes). 22 CTs; N3 4/4 completo. |
 | 23 | Trust Engine + Behavioral Autonomy (SPEC-038) | 100 | TrustScorer (blend 70/30, shadow mode, rollback), BehavioralGate (safe/moderate/risky/blocked), NaturalForgetting (Atkinson-Shiffrin), OutcomeTracker. 8 CTs; 312/312 total; N3.5 (N3 completo + gate preventivo). |
+| 24 | Potentiality Estimator v2.0 — Epistemic Opportunity Ranker (SPEC-045) | 100 | EPS v2 com 6 dimensoes (CDI+TF+GTV+TA+CI+SI). Consolida 5 scanners (Noologico+Teleologico+Evolutivo+Potentiality+SocialImpact). Validacao de viabilidade (DNA match). Roadmap de pesquisa com 3 rotas. 12 CTs; 324/324 total. Skill SWL global disponivel. |
+| 25 | Antigravity CLI Integration (SPEC-046) | 100 | MCP server (13 ferramentas: 6 scanners + 3 reasoning + 4 metadados) + Skill Antigravity + Registration script. Integração bidirecional OpenCode ↔ Antigravity CLI (agy.exe). Compatível com AntiBridge existente. 12 CTs; 336/336 total. |
+| 26 | Marcelo Claro Orchestration TDD (SPEC-047) | 100 | Avaliação TDD/SDD completa do agente marceloclaro: 20 CTs validando configuração, 5 Pilares, cadeia de delegação, TrustEngine, LaTeX directive, rastreabilidade, Token Economy, Potentiality Scanner, persona. 18 suites; 356/356 total. |
 
 ## 快速命令
 
@@ -211,6 +214,7 @@ SEEKER(研究) → 文章创建器(49智能体, 8阶段)
 | ADRs Gartner Gaps | 3 ADRs | architectu-003 (SPEC-019), architectu-004 (SPEC-020), architectu-005 (SPEC-021) |
 | Federação Bidirecional | Fix | SPEC-019: federate_with() deve ser bidirecional para propagar políticas |
 | Filtro de Descoberta | Fix | SPEC-021: filtro textual deve usar inglês técnico (case-sensitive) |
+| TDD Agent Orchestration (R26) | 1× | 20 CTs validando marceloclaro: config, 5 pilares, delegação, TrustEngine, LaTeX, rastreabilidade, persona; regex fix para YAML quoted keys e acentos |
 
 ## 工程学科文档 (v5.1.0 — Engenharia de Software com Agentes Inteligentes)
 

@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-06-27T18:39:51.196Z",
+  "overall_score": 96,
+  "status": "healthy",
+  "checks": [
+    {
+      "component": "MCPs",
+      "status": "active",
+      "score": 98
+    },
+    {
+      "component": "Agentes",
+      "status": "active",
+      "score": 97
+    },
+    {
+      "component": "Skills",
+      "status": "active",
+      "score": 98
+    },
+    {
+      "component": "Plugins",
+      "status": "active",
+      "score": 99
+    },
+    {
+      "component": "Hooks",
+      "status": "active",
+      "score": 97
+    },
+    {
+      "component": "Auditoria",
+      "status": "active",
+      "score": 96
+    },
+    {
+      "component": "CJK",
+      "status": "clean",
+      "score": 100
+    },
+    {
+      "component": "Testes",
+      "status": "passing",
+      "score": 100
+    }
+  ],
+  "recommendations": [
+    "Habilitar MCPs inativos (23 disponiveis)",
+    "Integrar 33 skills pendentes ao registry",
+    "Adicionar cobertura de testes aos hooks"
+  ]
+}

@@ -157,6 +157,25 @@ def executar_potentiality_scanner():
     print("\nRelatório gerado em: pesquisas/dna_estrutural_report.md")
     os.system("cat /mnt/c/Users/marce/Documents/OpenCode_Ecosystem/pesquisas/dna_estrutural_report.md")
 
+def executar_potentiality_estimator_v2():
+    print("\nExecutando Scanner Epistemológico v2 (SPEC-045)...")
+    script = (
+        "import sys; sys.path.insert(0, '/mnt/c/Users/marce/Documents/OpenCode_Ecosystem/skills/system/academic-audit'); "
+        "from potentiality_estimator_v2 import PotentialityEstimatorV2; "
+        "est = PotentialityEstimatorV2(); "
+        "result = est.scan(); "
+        "est.save_report(result, '/mnt/c/Users/marce/Documents/OpenCode_Ecosystem/pesquisas/epistemic_opportunities_v2.md'); "
+        "est.save_json(result, '/mnt/c/Users/marce/Documents/OpenCode_Ecosystem/pesquisas/epistemic_opportunities_v2.json'); "
+        "print(f'Oportunidades: {result[\"summary\"][\"total_opportunities\"]}'); "
+        "print(f'Discovery: {result[\"summary\"][\"discovery\"]}'); "
+        "print(f'Promising: {result[\"summary\"][\"promising\"]}'); "
+        "print(f'Viaveis: {result[\"summary\"][\"feasibility\"][\"viable\"]}')"
+    )
+    os.system(f'python3 -c "{script}"')
+    print("\nRelatórios gerados em:")
+    print("  - pesquisas/epistemic_opportunities_v2.md")
+    print("  - pesquisas/epistemic_opportunities_v2.json")
+
 
 class MenuEngine:
     """Motor de menu adaptativo com auto-descoberta do ecossistema."""
@@ -354,6 +373,9 @@ class MenuEngine:
         node.add("potentiality_scan", "Potentiality Scanner (Módulo 1: Structural DNA Extractor)",
                  "Mapeia o DNA de capacidades, redundâncias e lacunas do ecossistema",
                  action=executar_potentiality_scanner)
+        node.add("potentiality_v2", "Scanner Epistemológico v2 (SPEC-045: EPS v2 — 6 dimensões)",
+                 "Estimador de potencial epistemico com viabilidade, roadmap e 5 scanners integrados",
+                 action=executar_potentiality_estimator_v2)
 
         node.add("status", "Status do Ecossistema", "150 skills, 46 MCPs, 226 TDD, 162 SDD", tags=["status", "saude"])
         node.add("evolve", "Evoluir Ecossistema", "AutoEvolve: PLAN → ACT → REFLECT → EXTRACT → EVOLVE", tags=["evolucao"])

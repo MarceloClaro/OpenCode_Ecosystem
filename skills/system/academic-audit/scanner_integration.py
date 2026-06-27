@@ -31,6 +31,10 @@ sys.path.insert(0, str(BASE / "skills" / "system" / "reasoning-orchestrator"))
 
 from noological_scanner import NoologicalScanner
 from epistemological_potential import EpistemologicalPotentialEstimator
+from potentiality_estimator_v2 import PotentialityEstimatorV2
+from cognitive_diversity_scanner import CognitiveDiversityScanner, ArtifactProfile
+from epistemic_topology_mapper import EpistemicTopologyMapper, TopologicalPoint
+from rupture_potential_index import RupturePotentialIndex, ResearchOpportunity
 
 
 class ScannerIntegration:
@@ -46,9 +50,15 @@ class ScannerIntegration:
         )
     """
 
-    def __init__(self):
+    def __init__(self, use_v2: bool = True):
         self.scanner = NoologicalScanner()
-        self.estimator = EpistemologicalPotentialEstimator()
+        self.estimator_v1 = EpistemologicalPotentialEstimator()
+        self.estimator_v2 = PotentialityEstimatorV2() if use_v2 else None
+        self.use_v2 = use_v2
+        # SPEC-053/054/055 — Novos scanners epistêmicos
+        self.cds = CognitiveDiversityScanner()
+        self.etm = EpistemicTopologyMapper()
+        self.rpi = RupturePotentialIndex()
 
     def scan_pipeline_output(
         self,
@@ -76,9 +86,21 @@ class ScannerIntegration:
         scan_results = self.scanner.scan(audit_trail, research_domain=domain)
         self.scanner.save_report(scanner_dir / "cobertura_epistemologica.md")
 
-        # 2. EPS v3.0 — Oportunidades de Pesquisa
-        opportunities = self.estimator.estimate(scan_results)
-        self.estimator.save_report(opportunities, scanner_dir / "oportunidades_pesquisa.md")
+        # 2. EPS — Oportunidades de Pesquisa (v2 se disponivel, senao v1)
+        if self.use_v2 and self.estimator_v2 is not None:
+            eps_result = self.estimator_v2.scan(
+                noological_results=scan_results,
+                teleological_results=getattr(self, '_teleological_cache', {}),
+                evolutionary_results=getattr(self, '_evolutionary_cache', {}),
+                dna_results=getattr(self, '_dna_cache', {}),
+                social_impact_results=getattr(self, '_social_cache', {}),
+            )
+            opportunities = eps_result["opportunities"]
+            self.estimator_v2.save_report(eps_result, scanner_dir / "oportunidades_pesquisa_v2.md")
+            self.estimator_v2.save_json(eps_result, scanner_dir / "scanner_data_v2.json")
+        else:
+            opportunities = self.estimator_v1.estimate(scan_results)
+            self.estimator_v1.save_report(opportunities, scanner_dir / "oportunidades_pesquisa.md")
 
         # 3. JSON estruturado
         import json
@@ -126,6 +148,21 @@ class ScannerIntegration:
         except ImportError:
             pass
 
+        # ═══ NOVO: SPEC-053/054/055 — Análise Cognitiva Avançada ═══
+        diversity_analysis = self._run_diversity_analysis(scan_results, domain)
+        topology_analysis = self._run_topology_analysis(scan_results)
+        rupture_analysis = self._run_rupture_analysis(eps_data, diversity_analysis)
+
+        # Salvar relatórios adicionais
+        self._save_diversity_report(diversity_analysis, scanner_dir)
+        self._save_topology_report(topology_analysis, scanner_dir)
+        self._save_rupture_report(rupture_analysis, scanner_dir)
+
+        # Enriquecer eps_data com as novas análises
+        eps_data["cognitive_diversity"] = diversity_analysis
+        eps_data["epistemic_topology"] = topology_analysis
+        eps_data["rupture_potential"] = rupture_analysis
+
         return eps_data
 
 
@@ -158,6 +195,216 @@ def auto_scan(pipeline_name: str = "", domain: str = ""):
             return result
         return wrapper
     return decorator
+
+
+    # ═══════════════════════════════════════════════════════════════════
+    # MÉTODOS DOS NOVOS SCANNERS (SPEC-053/054/055)
+    # ═══════════════════════════════════════════════════════════════════
+
+    def _run_diversity_analysis(
+        self, scan_results: dict[str, Any], domain: str
+    ) -> dict[str, Any]:
+        """
+        SPEC-053: Analisa diversidade cognitiva dos artefatos.
+
+        Cria perfis a partir das dimensões escaneadas e calcula
+        o Índice de Homogeneidade (HI).
+        """
+        self.cds.clear()
+
+        # Criar artefatos a partir das dimensões do scan
+        dims = scan_results.get("dimensions", {})
+        for dim_key, dim_data in dims.items():
+            density = dim_data.get("density", 0.0) if isinstance(dim_data, dict) else 0.0
+            profile = ArtifactProfile(
+                artifact_id=f"dim_{dim_key}",
+                text_preview=f"Artefato inferido da dimensao {dim_key} (domain={domain})",
+                coverage_vector={dim_key: density},
+            )
+            self.cds.register_artifact(profile)
+
+        result = self.cds.compute_homogeneity_index()
+        return result
+
+    def _run_topology_analysis(
+        self, scan_results: dict[str, Any]
+    ) -> dict[str, Any]:
+        """
+        SPEC-054: Mapeia topologia do espaço de conhecimento.
+
+        Projeta dimensões epistemológicas em 2D e detecta
+        ilhas, buracos e pontes.
+        """
+        self.etm.clear()
+
+        dims = scan_results.get("dimensions", {})
+        dim_names = sorted(dims.keys())
+
+        # Construir vetor N-dimensional a partir das densidades
+        for dim_key in dim_names:
+            dim_data = dims[dim_key]
+            density = dim_data.get("density", 0.0) if isinstance(dim_data, dict) else 0.0
+
+            # Vetor de coordenadas: [densidade, cobertura, 1-densidade]
+            coverage = dim_data.get("coverage", density) if isinstance(dim_data, dict) else density
+            vec = [density, coverage, 1.0 - density]
+            pt = TopologicalPoint(
+                point_id=f"dim_{dim_key}",
+                coordinates=vec,
+                label=dim_key,
+            )
+            self.etm.add_point(pt)
+
+        if self.etm.point_count() < 2:
+            return {"error": "Pontos insuficientes para analise topologica",
+                    "n_points": self.etm.point_count()}
+
+        projection = self.etm.project(dimensions=2)
+        islands = self.etm.detect_islands()
+        holes = self.etm.detect_holes()
+        bridges = self.etm.compute_bridge_potential()
+
+        return {
+            "projection": projection,
+            "islands": islands,
+            "holes": holes,
+            "bridges": bridges,
+            "n_points": self.etm.point_count(),
+        }
+
+    def _run_rupture_analysis(
+        self, eps_data: dict[str, Any], diversity: dict[str, Any]
+    ) -> dict[str, Any]:
+        """
+        SPEC-055: Calcula Índice de Potencial de Ruptura (RPI).
+
+        Combina EPS das oportunidades com métricas de diversidade
+        para gerar portfólio balanceado.
+        """
+        self.rpi.clear()
+
+        opportunities = eps_data.get("opportunities", [])
+
+        for i, opp_data in enumerate(opportunities[:20]):
+            # Estimar DE, FT, RR, CO a partir dos dados disponiveis
+            de = min(1.0, opp_data.get("cross_domain_impact", 5) / 10.0)
+            ft = min(1.0, opp_data.get("theoretical_fertility", 5) / 10.0)
+            rr = min(1.0, (opp_data.get("game_theoretic_value", 5) +
+                          opp_data.get("cascade_impact", 3)) / 20.0)
+            co = min(1.0, 1.0 - (opp_data.get("teleological_alignment", 5) / 10.0))
+            eps = opp_data.get("eps", 50.0)
+
+            opp = ResearchOpportunity(
+                opportunity_id=f"opp_{i}_{opp_data.get('dimension', '?')}",
+                label=f"{opp_data.get('dimension', '?')}: {opp_data.get('category', '?')}",
+                epistemic_distance=de,
+                fertility=ft,
+                risk_reward=rr,
+                cost_opportunity=co,
+                eps_score=eps,
+            )
+            self.rpi.register_opportunity(opp)
+
+        portfolio = self.rpi.compute_portfolio()
+        return portfolio
+
+    def _save_diversity_report(
+        self, result: dict[str, Any], output_dir: Path
+    ) -> None:
+        """Salva relatório de diversidade cognitiva."""
+        path = output_dir / "diversidade_cognitiva.md"
+        hi = result.get("global_hi", "N/A")
+        classification = result.get("classification", "unknown")
+        is_echo = result.get("is_echo_chamber", False)
+
+        lines = [
+            "# Relatório de Diversidade Cognitiva (SPEC-053)",
+            "",
+            f"**Índice de Homogeneidade (HI):** {hi}",
+            f"**Classificação:** {classification}",
+            f"**Câmara de Eco:** {'SIM' if is_echo else 'NÃO'}",
+            f"**Artefatos Analisados:** {result.get('n_artifacts', 0)}",
+            "",
+            "## Recomendações",
+        ]
+        for rec in result.get("recommendations", []):
+            lines.append(f"- {rec}")
+
+        lines.append(f"\n_Relatório gerado automaticamente pelo ScannerIntegration_")
+        path.write_text("\n".join(lines), encoding="utf-8")
+
+    def _save_topology_report(
+        self, result: dict[str, Any], output_dir: Path
+    ) -> None:
+        """Salva relatório de topologia epistemológica."""
+        path = output_dir / "topologia_epistemologica.md"
+        lines = [
+            "# Relatório de Topologia Epistemológica (SPEC-054)",
+            "",
+            f"**Pontos Mapeados:** {result.get('n_points', 0)}",
+            f"**Ilhas Detectadas:** {len(result.get('islands', []))}",
+            f"**Buracos Detectados:** {len(result.get('holes', []))}",
+            f"**Pontes Identificadas:** {len(result.get('bridges', []))}",
+            "",
+        ]
+
+        islands = result.get("islands", [])
+        if islands:
+            lines.append("## Ilhas Epistemológicas")
+            for ilha in islands[:5]:
+                lines.append(f"- {ilha.get('island_id')}: {ilha.get('size', 0)} pontos, "
+                           f"II={ilha.get('isolation_index', 0):.3f}")
+
+        holes = result.get("holes", [])
+        if holes:
+            lines.append("\n## Buracos Epistemológicos")
+            for buraco in holes[:5]:
+                lines.append(f"- {buraco.get('hole_id')}: BE={buraco.get('be_score', 0):.3f}, "
+                           f"gap={buraco.get('gap', 0):.3f}")
+
+        bridges = result.get("bridges", [])
+        if bridges:
+            lines.append("\n## Pontes Potenciais")
+            for ponte in bridges[:5]:
+                lines.append(f"- {ponte.get('point_id')}: PP={ponte.get('pp_score', 0):.3f}")
+
+        lines.append(f"\n_Relatório gerado automaticamente pelo ScannerIntegration_")
+        path.write_text("\n".join(lines), encoding="utf-8")
+
+    def _save_rupture_report(
+        self, result: dict[str, Any], output_dir: Path
+    ) -> None:
+        """Salva relatório de potencial de ruptura."""
+        path = output_dir / "potencial_ruptura.md"
+
+        if "error" in result:
+            path.write_text(f"# Relatório de Potencial de Ruptura (SPEC-055)\n\nErro: {result['error']}",
+                          encoding="utf-8")
+            return
+
+        lines = [
+            "# Relatório de Potencial de Ruptura (SPEC-055)",
+            "",
+            f"**Oportunidades Analisadas:** {result.get('n_opportunities', 0)}",
+            "",
+            "## Distribuição por Quadrante",
+        ]
+        for q, count in result.get("quadrant_distribution", {}).items():
+            lines.append(f"- {q}: {count}")
+
+        lines.append("\n## Estratégia de Portfólio")
+        strategy = result.get("portfolio_strategy", "")
+        lines.append(strategy)
+
+        opps = result.get("opportunities", [])
+        if opps:
+            lines.append("\n## Top 5 Oportunidades por RPI")
+            for opp in opps[:5]:
+                lines.append(f"- {opp.get('label', '?')}: RPI={opp.get('rpi_score', 0):.1f}, "
+                           f"Quadrante={opp.get('quadrant', '?')}")
+
+        lines.append(f"\n_Relatório gerado automaticamente pelo ScannerIntegration_")
+        path.write_text("\n".join(lines), encoding="utf-8")
 
 
 # ── Quick test ──

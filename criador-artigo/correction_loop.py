@@ -140,8 +140,117 @@ def load_config(manuscript_dir: Path) -> Dict[str, Any]:
         "word_replacements": WORD_REPLACEMENTS,
         "min_dois": 55,
         "min_tables": 5,
-        "min_correlations": 7
+        "min_correlations": 7,
+        "apa_style": True  # Habilita verificações APA por padrão
     }
+
+
+# ============================================================================
+# APA COMPLIANCE CHECKER
+# ============================================================================
+
+def check_apa_compliance(text: str, fmt: str) -> Dict[str, Any]:
+    """
+    Verifica conformidade básica com normas APA 7ª edição.
+    Retorna métricas de conformidade APA.
+    """
+    results = {
+        "apa_score": 0,
+        "apa_issues": [],
+        "apa_suggestions": [],
+        "citation_format": "unknown",
+        "reference_format": "unknown"
+    }
+    
+    # Verifica formato de citações
+    citation_patterns = {
+        "apa_narrative": r'[A-ZÀ-Ú][a-zà-ú]+(?:\s(?:&|e|et\sal\.)\s[A-ZÀ-Ú][a-zà-ú]+)*\s\(\d{4}[a-z]?\)',
+        "apa_parenthetical": r'\([A-ZÀ-Ú][a-zà-ú]+(?:\s(?:&|e|et\sal\.)\s[A-ZÀ-Ú][a-zà-ú]+)*,\s\d{4}[a-z]?\)',
+        "numeric": r'\[\d+\]'
+    }
+    
+    apa_citations = len(re.findall(citation_patterns["apa_narrative"], text)) + \
+                   len(re.findall(citation_patterns["apa_parenthetical"], text))
+    numeric_citations = len(re.findall(citation_patterns["numeric"], text))
+    
+    if numeric_citations > 0 and apa_citations == 0:
+        results["citation_format"] = "numeric"
+        results["apa_issues"].append(f"Citações numéricas detectadas ({numeric_citations}) - não é formato APA")
+        results["apa_suggestions"].append("Use formato APA: (Autor, Ano) ou Autor (Ano)")
+    elif apa_citations > 0:
+        results["citation_format"] = "apa"
+        results["apa_score"] += 15
+    else:
+        results["citation_format"] = "none"
+        results["apa_suggestions"].append("Adicionar citações no formato APA")
+    
+    # Verifica seção de referências
+    ref_patterns = [
+        r'#+\s*(Referências|References|Bibliografia)',
+        r'\\bibliography\{',
+        r'\\printbibliography'
+    ]
+    
+    has_references = any(re.search(p, text, re.IGNORECASE) for p in ref_patterns)
+    if has_references:
+        results["apa_score"] += 10
+        results["reference_format"] = "present"
+    else:
+        results["reference_format"] = "missing"
+        results["apa_issues"].append("Seção de Referências não encontrada")
+    
+    # Verifica formato de referências (padrão APA)
+    reference_pattern = r'^[A-ZÀ-Ú][a-zà-ú]+,\s[A-ZÀ-Ú]\.\s(?:[A-ZÀ-Ú]\.\s)?\(\d{4}[a-z]?\)\.\s.+'
+    refs_section = re.search(r'#+\s*(Referências|References|Bibliografia)\s*\n(.*?)(?=\n#|\Z)', text, re.DOTALL | re.IGNORECASE)
+    
+    if refs_section:
+        refs_content = refs_section.group(2)
+        references = [line.strip() for line in refs_content.split('\n') if line.strip() and not line.strip().startswith('#')]
+        
+        valid_refs = sum(1 for ref in references if re.match(reference_pattern, ref))
+        if references:
+            compliance_rate = (valid_refs / len(references)) * 100
+            results["apa_score"] += min(15, compliance_rate * 0.15)
+            
+            if compliance_rate < 80:
+                results["apa_issues"].append(f"Referências fora do formato APA: {100-compliance_rate:.0f}%")
+                results["apa_suggestions"].append("Use formato: Autor, A. A. (Ano). Título. Fonte.")
+    
+    # Verifica formatação de página (básico)
+    if fmt == "latex":
+        if "\\documentclass" in text and "a4paper" in text.lower():
+            results["apa_score"] += 5
+        if "times" in text.lower() or "mathptmx" in text.lower():
+            results["apa_score"] += 5
+    else:
+        # Markdown - verifica indicações de formatação
+        if re.search(r'^#+\s', text, re.MULTILINE):
+            results["apa_score"] += 5
+    
+    # Normaliza pontuação
+    results["apa_score"] = min(50, results["apa_score"])
+    
+    return results
+
+
+def integrate_apa_checks(board_result: Dict[str, Any], apa_results: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Integra resultados de verificação APA com resultado da banca.
+    """
+    # Adiciona métricas APA ao resultado
+    board_result["metrics"]["apa_score"] = apa_results["apa_score"]
+    board_result["metrics"]["apa_issues"] = len(apa_results["apa_issues"])
+    board_result["metrics"]["citation_format"] = apa_results["citation_format"]
+    
+    # Ajusta score baseado na conformidade APA
+    apa_bonus = apa_results["apa_score"] * 0.1  # Máximo 5 pontos extras
+    board_result["score"] = min(100, board_result["score"] + apa_bonus)
+    
+    # Adiciona feedback APA
+    for issue in apa_results["apa_issues"]:
+        board_result["feedback"].append(f"[APA] {issue}")
+    
+    return board_result
 
 # ============================================================================
 # METRICS EXTRACTION ENGINE
@@ -907,18 +1016,12 @@ def run_board(manuscript_dir: Path, config: Dict[str, Any]) -> Dict[str, Any]:
     for r in reviews:
         all_feedback.extend(r["feedback"])
 
-    if score_100 >= 95:
-        decision = "APROVADO"
-    elif score_100 >= 85:
-        decision = "APROVADO_COM_RESSALVAS"
-    elif score_100 >= 70:
-        decision = "REVISAR_E_REENVIAR"
-    else:
-        decision = "REJEITADO"
-
-    return {
+    # Resultado da banca
+    board_result = {
         "score": score_100,
-        "decision": decision,
+        "decision": "APROVADO" if score_100 >= 95 else 
+                   "APROVADO_COM_RESSALVAS" if score_100 >= 85 else 
+                   "REVISAR_E_REENVIAR" if score_100 >= 70 else "REJEITADO",
         "reviews": reviews,
         "feedback": all_feedback,
         "metrics": {
@@ -935,6 +1038,13 @@ def run_board(manuscript_dir: Path, config: Dict[str, Any]) -> Dict[str, Any]:
         },
         "timestamp": datetime.now().isoformat(),
     }
+    
+    # Integra verificações APA se habilitado
+    if config.get("apa_style", True):
+        apa_results = check_apa_compliance(text, fmt)
+        board_result = integrate_apa_checks(board_result, apa_results)
+    
+    return board_result
 
 def run_advisors(text: str, board_result: Dict[str, Any], fmt: str) -> Dict[str, Any]:
     advisors = [

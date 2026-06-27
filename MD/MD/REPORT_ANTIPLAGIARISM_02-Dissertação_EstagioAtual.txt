@@ -1,0 +1,16 @@
+=== Anti-Plagiarism Scanner v1.0 ===
+Arquivo: C:\Users\marce\Documents\OpenCode_Ecosystem\MD\MD\02-Disserta��o_EstagioAtual.md
+
+SCORE: 78.0/100 (Grade: B)
+
+Detalhes:
+  - repeated_phrases: 90/100
+  - paragraph_similarity: 90/100
+  - direct_quotes: 90/100
+  - attribution: 30/100
+
+Alertas:
+  [!] Padr�es de atribui��o inadequados
+
+Sugestoes:
+  -> Melhorar contextualiza��o das cita��es

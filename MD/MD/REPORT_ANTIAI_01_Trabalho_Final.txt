@@ -1,0 +1,13 @@
+=== Anti-AI Scanner v1.0 ===
+Arquivo: C:\Users\marce\Documents\OpenCode_Ecosystem\MD\MD\01_Trabalho_Final.md
+
+SCORE: 95.5/100 (Grade: A)
+
+Detalhes:
+  - sentence_uniformity: 100/100
+  - connectives: 100/100
+  - voice: 100/100
+  - examples: 100/100
+  - paragraph_variation: 70/100
+
+

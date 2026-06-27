@@ -1,0 +1,18 @@
+=== Anti-Plagiarism Scanner v1.0 ===
+Arquivo: C:\Users\marce\Documents\OpenCode_Ecosystem\MD\MD\01_Trabalho_Final.md
+
+SCORE: 50.0/100 (Grade: C)
+
+Detalhes:
+  - repeated_phrases: 50/100
+  - paragraph_similarity: 90/100
+  - direct_quotes: 10/100
+  - attribution: 30/100
+
+Alertas:
+  [!] Uso excessivo de cita��es diretas
+  [!] Padr�es de atribui��o inadequados
+
+Sugestoes:
+  -> Substituir cita��es diretas por par�frases com atribui��o
+  -> Melhorar contextualiza��o das cita��es
