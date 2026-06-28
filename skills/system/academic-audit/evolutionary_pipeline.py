@@ -33,6 +33,9 @@ class SequencingStep:
     predecessors: list[str]
     successors: list[str]
     can_run_in_parallel_with: list[str]
+    cost: float = 0.0
+    analogy_principle: str = ""
+    analogy_domain: str = ""
 
 
 @dataclass
@@ -499,7 +502,7 @@ class EvolutionaryScannerPipeline:
 
         # M3.8: Sequenciamento Evolutivo (Camada 1 — Proposta de Melhoria)
         sequencer = EvolutionarySequencer()
-        sequencing_res = sequencer.sequence(tel_gaps, dep_graph)
+        sequencing_res = sequencer.sequence(tel_gaps, dep_graph, capability_units, analogies)
 
         return EvolutionaryRoadmap(
             noological_coverage=nool_scan["overall_density"],
@@ -581,26 +584,40 @@ class EvolutionaryScannerPipeline:
                 "",
                 "---",
                 "",
-                "## Sequenciamento Evolutivo (Camada 1 — Ordem Lógica)",
+                "## Sequenciamento Evolutivo (Camada 1 — Planejamento de Obra Epistêmica)",
                 "",
-                f"**Total de Fases**: {roadmap.sequencing.total_phases}",
+                f"O sequenciamento evolutivo distribuiu as capacidades em **{roadmap.sequencing.total_phases} fases lógicas** de desenvolvimento contínuo e paralelizável:",
                 "",
             ])
-            for step in roadmap.sequencing.timeline:
-                lines.append(f"- {step}")
             
-            lines.extend([
-                "",
-                "### Dependências Detalhadas (Predecessoras e Sucessoras)",
-                "",
-            ])
+            # Agrupar steps por fase
+            steps_by_phase: dict[int, list[SequencingStep]] = {}
             for step in roadmap.sequencing.steps:
-                pred_str = ", ".join([f"`{p}`" for p in step.predecessors]) if step.predecessors else "Nenhuma"
-                succ_str = ", ".join([f"`{s}`" for s in step.successors]) if step.successors else "Nenhum"
-                lines.append(f"- **{step.category}** `[{step.domain}]` (Fase {step.phase}):")
-                lines.append(f"  - _Predecessoras_: {pred_str}")
-                lines.append(f"  - _Sucessoras_: {succ_str}")
-            lines.append("")
+                steps_by_phase.setdefault(step.phase, []).append(step)
+                
+            for phase in sorted(steps_by_phase.keys()):
+                phase_title = f"### 📅 Fase {phase} — "
+                if phase == 1:
+                    phase_title += "Capacidades de Partida (Paralelizável)"
+                else:
+                    phase_title += f"Capacidades Dependentes (Requer Fase {phase - 1})"
+                
+                lines.extend([
+                    phase_title,
+                    "",
+                ])
+                for step in steps_by_phase[phase]:
+                    cost_pct = f"{step.cost * 100:.0f}%"
+                    info = f"- 🛠️ **{step.category}** `[{step.domain}]` — _Esforço Construtivo: {cost_pct}_"
+                    if step.analogy_principle:
+                        info += f" | 🔮 _Analogia Polimática ({step.analogy_domain})_: {step.analogy_principle}"
+                    lines.append(info)
+                    
+                    if step.predecessors:
+                        lines.append(f"  - _Predecessoras_: " + ", ".join([f"`{p}`" for p in step.predecessors]))
+                    if step.successors:
+                        lines.append(f"  - _Sucessoras_: " + ", ".join([f"`{s}`" for s in step.successors]))
+                lines.append("")
         
         return "\n".join(lines)
 
@@ -611,7 +628,17 @@ class EvolutionarySequencer:
     baseado em níveis de ordenação topológica (BFS por camadas).
     """
 
-    def sequence(self, gaps: list[Any], dep_graph: dict[str, Any]) -> EvolutionarySequencing:
+    def sequence(self, gaps: list[Any], dep_graph: dict[str, Any],
+                 capability_units: dict[str, Any] = None,
+                 analogies: list[Any] = None) -> EvolutionarySequencing:
+        
+        # Build mappings for easy lookup
+        unit_map = capability_units or {}
+        analogy_map = {}
+        if analogies:
+            for a in analogies:
+                analogy_map[a.gap_category] = a
+                
         # 1. Mapear chaves de gap para verificação rápida
         gap_keys = {f"{g.dim_key}.{g.category}" for g in gaps}
         
@@ -627,16 +654,26 @@ class EvolutionarySequencer:
             predecessors_map[key] = []
             successors_map[key] = []
 
-        # Usar as dependências do dep_graph (regras de requires)
+        # Usar as dependências do dep_graph (regras de requires e provides)
         for key in gap_keys:
             node = dep_graph.get(key)
             if node:
+                # 1. requires: req deve vir antes de key (req -> key)
                 for req in node.requires:
                     if req in gap_keys:
-                        adj[req].append(key)
-                        in_degree[key] += 1
-                        predecessors_map[key].append(req)
-                        successors_map[req].append(key)
+                        if key not in adj[req]:
+                            adj[req].append(key)
+                            in_degree[key] += 1
+                            predecessors_map[key].append(req)
+                            successors_map[req].append(key)
+                # 2. provides: key deve vir antes de prov (key -> prov)
+                for prov in node.provides:
+                    if prov in gap_keys:
+                        if prov not in adj[key]:
+                            adj[key].append(prov)
+                            in_degree[prov] += 1
+                            predecessors_map[prov].append(key)
+                            successors_map[key].append(prov)
 
         # 3. BFS por camadas (Level-order / Kahn's algorithm adaptado) para definir fases
         queue = [k for k, deg in in_degree.items() if deg == 0]
@@ -685,13 +722,28 @@ class EvolutionarySequencer:
                     break
             parallel = [n for n in phases[current_phase] if n != key]
             
+            # Obter custo e analogia
+            cost = 0.0
+            if key in unit_map:
+                cost = unit_map[key].construction_cost
+            
+            analogy_principle = ""
+            analogy_domain = ""
+            if key in analogy_map:
+                a = analogy_map[key]
+                analogy_principle = a.transferable_principle
+                analogy_domain = a.external_domain
+            
             steps.append(SequencingStep(
                 category=cat,
                 domain=dim,
                 phase=current_phase,
                 predecessors=predecessors_map[key],
                 successors=successors_map[key],
-                can_run_in_parallel_with=parallel
+                can_run_in_parallel_with=parallel,
+                cost=cost,
+                analogy_principle=analogy_principle,
+                analogy_domain=analogy_domain
             ))
 
         # 5. Gerar cronograma formatado como timeline

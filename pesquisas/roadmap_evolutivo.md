@@ -78,44 +78,27 @@
 
 ---
 
-## Sequenciamento Evolutivo (Camada 1 — Ordem Lógica)
+## Sequenciamento Evolutivo (Camada 1 — Planejamento de Obra Epistêmica)
 
-**Total de Fases**: 1
+O sequenciamento evolutivo distribuiu as capacidades em **2 fases lógicas** de desenvolvimento contínuo e paralelizável:
 
-- Fase 1 (Paralelizável): Construir `dominios.Neurociências`, `paradigmas.Pós-estruturalista`, `dominios.Inteligência Artificial / Tecnologia`, `dominios.Sociologia`, `raciocinio.Sistêmico`, `metodos.Revisão sistemática`, `teoria_jogos.Bayesiano`, `teoria_jogos.Cooperativo`, `populacao.Diversidade de gênero`, `niveis_analise.Sistêmico/político`, `teoria_jogos.Evolutivo`
+### 📅 Fase 1 — Capacidades de Partida (Paralelizável)
 
-### Dependências Detalhadas (Predecessoras e Sucessoras)
+- 🛠️ **Inteligência Artificial / Tecnologia** `[dominios]` — _Esforço Construtivo: 0%_
+- 🛠️ **Evolutivo** `[teoria_jogos]` — _Esforço Construtivo: 8%_ | 🔮 _Analogia Polimática (Ecologia)_: Ciclos de adaptação mútua em ecossistemas
+- 🛠️ **Diversidade de gênero** `[populacao]` — _Esforço Construtivo: 0%_
+- 🛠️ **Bayesiano** `[teoria_jogos]` — _Esforço Construtivo: 8%_
+- 🛠️ **Revisão sistemática** `[metodos]` — _Esforço Construtivo: 8%_ | 🔮 _Analogia Polimática (Engenharia de Software)_: Protocolos Kitchenham para revisões em engenharia de software
+- 🛠️ **Sociologia** `[dominios]` — _Esforço Construtivo: 0%_
+- 🛠️ **Sistêmico** `[raciocinio]` — _Esforço Construtivo: 0%_ | 🔮 _Analogia Polimática (Ecologia)_: Interdependência e equilíbrio dinâmico em ecossistemas
+  - _Sucessoras_: `niveis_analise.Sistêmico/político`, `dominios.Neurociências`
+- 🛠️ **Pós-estruturalista** `[paradigmas]` — _Esforço Construtivo: 0%_ | 🔮 _Analogia Polimática (Arquitetura)_: Formas que desafiam a estabilidade estrutural
+- 🛠️ **Cooperativo** `[teoria_jogos]` — _Esforço Construtivo: 8%_ | 🔮 _Analogia Polimática (Biologia)_: Hamilton — cooperação emerge de parentesco genético
+  - _Sucessoras_: `niveis_analise.Sistêmico/político`
 
-- **Neurociências** `[dominios]` (Fase 1):
-  - _Predecessoras_: Nenhuma
-  - _Sucessoras_: Nenhum
-- **Pós-estruturalista** `[paradigmas]` (Fase 1):
-  - _Predecessoras_: Nenhuma
-  - _Sucessoras_: Nenhum
-- **Inteligência Artificial / Tecnologia** `[dominios]` (Fase 1):
-  - _Predecessoras_: Nenhuma
-  - _Sucessoras_: Nenhum
-- **Sociologia** `[dominios]` (Fase 1):
-  - _Predecessoras_: Nenhuma
-  - _Sucessoras_: Nenhum
-- **Sistêmico** `[raciocinio]` (Fase 1):
-  - _Predecessoras_: Nenhuma
-  - _Sucessoras_: Nenhum
-- **Revisão sistemática** `[metodos]` (Fase 1):
-  - _Predecessoras_: Nenhuma
-  - _Sucessoras_: Nenhum
-- **Bayesiano** `[teoria_jogos]` (Fase 1):
-  - _Predecessoras_: Nenhuma
-  - _Sucessoras_: Nenhum
-- **Cooperativo** `[teoria_jogos]` (Fase 1):
-  - _Predecessoras_: Nenhuma
-  - _Sucessoras_: Nenhum
-- **Diversidade de gênero** `[populacao]` (Fase 1):
-  - _Predecessoras_: Nenhuma
-  - _Sucessoras_: Nenhum
-- **Sistêmico/político** `[niveis_analise]` (Fase 1):
-  - _Predecessoras_: Nenhuma
-  - _Sucessoras_: Nenhum
-- **Evolutivo** `[teoria_jogos]` (Fase 1):
-  - _Predecessoras_: Nenhuma
-  - _Sucessoras_: Nenhum
+### 📅 Fase 2 — Capacidades Dependentes (Requer Fase 1)
+
+- 🛠️ **Neurociências** `[dominios]` — _Esforço Construtivo: 0%_
+  - _Predecessoras_: `raciocinio.Sistêmico`
+- 🛠️ **Sistêmico/político** `[niveis_analise]` — _Esforço Construtivo: 0%_ | 🔮 _Analogia Polimática (Ecologia)_: Sistemas socioecológicos e resiliência (Ostrom)
+  - _Predecessoras_: `raciocinio.Sistêmico`, `teoria_jogos.Cooperativo`
