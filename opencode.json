@@ -706,7 +706,7 @@
       "type": "local",
       "enabled": true,
       "command": [
-        "python",
+        "python3",
         "nexus/ecosystem_capabilities_server.py"
       ],
       "timeout": 60000

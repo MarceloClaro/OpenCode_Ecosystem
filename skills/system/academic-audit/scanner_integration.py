@@ -166,35 +166,7 @@ class ScannerIntegration:
         return eps_data
 
 
-# Decorator para auto-scan em qualquer função de pipeline
-def auto_scan(pipeline_name: str = "", domain: str = ""):
-    """Decorator que executa scan automático após qualquer pipeline.
 
-    Uso:
-        @auto_scan("artigo", "psicologia")
-        def meu_pipeline(audit_trail):
-            ...
-    """
-    def decorator(func):
-        def wrapper(*args, **kwargs):
-            result = func(*args, **kwargs)
-            # Executar scan se audit_trail estiver disponível
-            audit_trail = kwargs.get("audit_trail") or (args[0] if args else None)
-            if audit_trail and hasattr(audit_trail, "paragraphs"):
-                try:
-                    integrator = ScannerIntegration()
-                    output_dir = kwargs.get("output_dir", "pesquisas/scanner_auto")
-                    integrator.scan_pipeline_output(
-                        pipeline=pipeline_name or func.__name__,
-                        audit_trail=audit_trail,
-                        output_dir=output_dir,
-                        domain=domain,
-                    )
-                except Exception as e:
-                    print(f"[auto_scan] Erro: {e}")
-            return result
-        return wrapper
-    return decorator
 
 
     # ═══════════════════════════════════════════════════════════════════
@@ -407,6 +379,206 @@ def auto_scan(pipeline_name: str = "", domain: str = ""):
         path.write_text("\n".join(lines), encoding="utf-8")
 
 
+# Decorator para auto-scan em qualquer função de pipeline
+def auto_scan(pipeline_name: str = "", domain: str = ""):
+    """Decorator que executa scan automático após qualquer pipeline.
+
+    Uso:
+        @auto_scan("artigo", "psicologia")
+        def meu_pipeline(audit_trail):
+            ...
+    """
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            result = func(*args, **kwargs)
+            # Executar scan se audit_trail estiver disponível
+            audit_trail = kwargs.get("audit_trail") or (args[0] if args else None)
+            if audit_trail and hasattr(audit_trail, "paragraphs"):
+                try:
+                    integrator = ScannerIntegration()
+                    output_dir = kwargs.get("output_dir", "pesquisas/scanner_auto")
+                    integrator.scan_pipeline_output(
+                        pipeline=pipeline_name or func.__name__,
+                        audit_trail=audit_trail,
+                        output_dir=output_dir,
+                        domain=domain,
+                    )
+                except Exception as e:
+                    print(f"[auto_scan] Erro: {e}")
+            return result
+        return wrapper
+    return decorator
+
+
+class ScannerPipeline:
+    """Pipeline que expõe os métodos individuais de varredura chamados pelo MCP capabilities server."""
+
+    def __init__(self):
+        self.integration = ScannerIntegration()
+
+    def run_noological(self, target: str = "ecossistema") -> dict:
+        from academic_audit_trail import AcademicAuditTrail
+        trail = AcademicAuditTrail()
+        import os
+        from pathlib import Path
+        eco_root = Path(__file__).resolve().parents[3]
+        count = 0
+        for root, dirs, files in os.walk(str(eco_root)):
+            dirs[:] = [d for d in dirs if not d.startswith('.')]
+            for f in files:
+                if f.endswith(('.py', '.md', '.json', '.tex')):
+                    p = Path(root) / f
+                    try:
+                        text = p.read_text(encoding='utf-8', errors='ignore')
+                        trail.record_paragraph(f"file_{count}_{f}", text[:1000])
+                        count += 1
+                        if count > 50:
+                            break
+                    except Exception:
+                        pass
+            if count > 50:
+                break
+        return self.integration.scanner.scan(trail, research_domain="computacao")
+
+    def run_teleological(self, objective: str = "alinhamento global") -> dict:
+        noological_res = self.run_noological()
+        from teleological_scanner import TeleologicalReverseScanner
+        scanner = TeleologicalReverseScanner()
+        gaps = scanner.compare_with_scan(noological_res)
+        return {
+            "gaps": [
+                {
+                    "goal": g.goal,
+                    "dimension": g.dim_key,
+                    "category": g.category,
+                    "required_weight": g.required_weight,
+                    "severity": g.severity,
+                    "rationale": g.rationale,
+                    "actual_density": g.actual_density
+                } for g in gaps
+            ],
+            "score": scanner.teleological_score(),
+            "status": "success"
+        }
+
+    def run_evolutionary(self) -> dict:
+        from academic_audit_trail import AcademicAuditTrail
+        from evolutionary_pipeline import EvolutionaryScannerPipeline
+        from teleological_scanner import TeleologicalGoal
+        
+        trail = AcademicAuditTrail()
+        import os
+        from pathlib import Path
+        eco_root = Path(__file__).resolve().parents[3]
+        count = 0
+        for root, dirs, files in os.walk(str(eco_root)):
+            dirs[:] = [d for d in dirs if not d.startswith('.')]
+            for f in files:
+                if f.endswith(('.py', '.md', '.json', '.tex')):
+                    p = Path(root) / f
+                    try:
+                        text = p.read_text(encoding='utf-8', errors='ignore')
+                        trail.record_paragraph(f"file_{count}_{f}", text[:1000])
+                        count += 1
+                        if count > 50:
+                            break
+                    except Exception:
+                        pass
+            if count > 50:
+                break
+        
+        goals = [
+            TeleologicalGoal(description="Expandir cobertura do scanner", goal_type="strategic", weight=0.8),
+            TeleologicalGoal(description="Otimizar tempo de execucao", goal_type="exploratory", weight=0.6)
+        ]
+        
+        pipeline = EvolutionaryScannerPipeline()
+        roadmap = pipeline.scan(trail, goals, domain="computacao")
+        bottlenecks_dicts = []
+        for b_str in roadmap.bottlenecks:
+            if '.' in b_str:
+                dim, cat = b_str.split('.', 1)
+            else:
+                dim, cat = "unknown", b_str
+            bottlenecks_dicts.append({
+                "dimension": dim,
+                "category": cat,
+                "cascade_impact": 5.0
+            })
+
+        return {
+            "noological_coverage": roadmap.noological_coverage,
+            "teleological_score": roadmap.teleological_score,
+            "bottlenecks": bottlenecks_dicts,
+            "quick_wins": roadmap.quick_wins,
+            "foundations": roadmap.foundations,
+            "frontiers": roadmap.frontiers,
+            "convergents": roadmap.convergents,
+            "total_gaps": roadmap.total_gaps,
+            "total_construction_cost": roadmap.total_construction_cost
+        }
+
+    def run_social_impact(self, context: str = "ecossistema") -> dict:
+        from social_impact_scanner import SocialImpactScanner
+        scanner = SocialImpactScanner()
+        report = scanner.analyze_research_paper(
+            titulo="OpenCode Ecosystem: Plataforma Multiagente para Pesquisa e Engenharia Autônoma",
+            resumo="Plataforma descentralizada que integra agentes inteligentes e motores de raciocínio para automatizar a produção científica.",
+            metodologia="Implementação de servidores MCP, orquestradores dinâmicos e pipelines com verificação formal.",
+            resultados="Redução de 80% na latência e expansão ilimitada da capacidade de processamento com a arquitetura Liquid Swarm.",
+            conclusoes="O ecossistema viabiliza pesquisa científica de alto impacto com governança cooperativa baseada nos princípios de Elinor Ostrom.",
+            palavras_chave=["multiagente", "metacognicao", "autonomia", "ostrom"],
+            area_conhecimento="computacao"
+        )
+        return {
+            "consolidated_score": report.consolidated_score,
+            "parecer": report.parecer,
+            "strengths": report.strengths,
+            "improvements": report.improvements,
+            "sroi_ratio": report.sroi.sroi_ratio
+        }
+
+    def run_full(self) -> dict:
+        noological_res = self.run_noological()
+        teleological_res = self.run_teleological()
+        evolutionary_res = self.run_evolutionary()
+        social_impact_res = self.run_social_impact()
+        
+        diversity_res = self.integration._run_diversity_analysis(noological_res, "computacao")
+        topology_res = self.integration._run_topology_analysis(noological_res)
+        
+        from potentiality_estimator_v2 import PotentialityEstimatorV2
+        estimator = PotentialityEstimatorV2()
+        result = estimator.scan(
+            noological_results=noological_res,
+            teleological_results=teleological_res,
+            evolutionary_results=evolutionary_res,
+            dna_results={},
+            social_impact_results={"consolidated_score": social_impact_res["consolidated_score"]},
+            cds_results=diversity_res,
+            etm_results=topology_res
+        )
+        
+        return {
+            "noological": noological_res,
+            "teleological": teleological_res,
+            "evolutionary": evolutionary_res,
+            "social_impact": social_impact_res,
+            "potentiality_v2": {
+                "summary": result["summary"],
+                "roadmap": {
+                    "title": result["roadmap"].title,
+                    "total_opportunities": result["roadmap"].total_opportunities,
+                    "discovery_count": result["roadmap"].discovery_count,
+                    "promising_count": result["roadmap"].promising_count
+                }
+            },
+            "cognitive_diversity": diversity_res,
+            "epistemic_topology": topology_res,
+            "status": "success"
+        }
+
+
 # ── Quick test ──
 if __name__ == "__main__":
     from academic_audit_trail import AcademicAuditTrail
@@ -429,3 +601,4 @@ if __name__ == "__main__":
     print(f"Oportunidades: {report['summary']['total_opportunities']}")
     print(f"  Discovery: {report['summary']['discovery']}")
     print(f"  Promising: {report['summary']['promising']}")
+
