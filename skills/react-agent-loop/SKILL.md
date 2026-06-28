@@ -70,13 +70,20 @@ from skills.provider_factory.scripts.provider_factory import ProviderFactory
 
 llm = ProviderFactory.from_env("LLM_")
 tools = ToolRegistry()
-tools.register(FileWriterTool())
-tools.register(BashTool())
+tools.register(FileWriterTool(base_dir="workspace"))
+
+# Registre BashTool apenas para entradas confiaveis e com allowlist explicita.
+# tools.register(BashTool(allowed_commands={"ls", "pwd"}, base_dir="workspace"))
 
 loop = AgentLoop(llm_client=llm, tool_registry=tools, max_iterations=5)
 answer = loop.run("Liste os arquivos .py no diretorio atual")
 print(answer)
 ```
+
+`FileWriterTool` rejeita caminhos absolutos, path traversal e sobrescrita por
+padrao. `BashTool` nao permite nenhum comando por padrao; integracoes devem
+fornecer uma allowlist minima de comandos e manter o `base_dir` restrito ao
+workspace da tarefa.
 
 ## Ficheiros
 - `scripts/agent_loop.py` — implementacao completa (260 linhas)
