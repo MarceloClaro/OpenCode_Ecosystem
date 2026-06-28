@@ -25,6 +25,27 @@ from typing import Any
 # ═══════════════════════════════════════════════════════════════════════════
 
 @dataclass
+class SequencingStep:
+    """Passo no sequenciamento lógico de construção de capacidades."""
+    category: str
+    domain: str
+    phase: int
+    predecessors: list[str]
+    successors: list[str]
+    can_run_in_parallel_with: list[str]
+
+
+@dataclass
+class EvolutionarySequencing:
+    """Resultado do sequenciamento evolutivo de capacidades."""
+    total_phases: int
+    logical_sequence: list[str]
+    phases: dict[int, list[str]]
+    steps: list[SequencingStep]
+    timeline: list[str]
+
+
+@dataclass
 class PolymathicAnalogy:
     """Solução análoga encontrada em domínio externo."""
     gap_category: str         # categoria com gap
@@ -73,6 +94,7 @@ class EvolutionaryRoadmap:
     convergents: int
     capability_units: list[Any] = field(default_factory=list)  # SPEC-033: CapabilityUnit[]
     total_construction_cost: float = 0.0  # SPEC-033
+    sequencing: EvolutionarySequencing | None = None
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -475,6 +497,10 @@ class EvolutionaryScannerPipeline:
         frontiers = sum(1 for s in scenarios if s.scenario_type == "frontier")
         convergents = sum(1 for s in scenarios if s.scenario_type == "convergent")
 
+        # M3.8: Sequenciamento Evolutivo (Camada 1 — Proposta de Melhoria)
+        sequencer = EvolutionarySequencer()
+        sequencing_res = sequencer.sequence(tel_gaps, dep_graph)
+
         return EvolutionaryRoadmap(
             noological_coverage=nool_scan["overall_density"],
             teleological_score=self.teleological.teleological_score(),
@@ -489,6 +515,7 @@ class EvolutionaryScannerPipeline:
             convergents=convergents,
             capability_units=list(capability_units.values()),  # SPEC-033
             total_construction_cost=total_cost,  # SPEC-033
+            sequencing=sequencing_res,
         )
 
     def generate_report(self, roadmap: EvolutionaryRoadmap) -> str:
@@ -549,4 +576,134 @@ class EvolutionaryScannerPipeline:
                            f"prioridade: {step.priority_score}, impacto: {step.cascade_impact}")
             lines.append("")
         
+        if roadmap.sequencing:
+            lines.extend([
+                "",
+                "---",
+                "",
+                "## Sequenciamento Evolutivo (Camada 1 — Ordem Lógica)",
+                "",
+                f"**Total de Fases**: {roadmap.sequencing.total_phases}",
+                "",
+            ])
+            for step in roadmap.sequencing.timeline:
+                lines.append(f"- {step}")
+            
+            lines.extend([
+                "",
+                "### Dependências Detalhadas (Predecessoras e Sucessoras)",
+                "",
+            ])
+            for step in roadmap.sequencing.steps:
+                pred_str = ", ".join([f"`{p}`" for p in step.predecessors]) if step.predecessors else "Nenhuma"
+                succ_str = ", ".join([f"`{s}`" for s in step.successors]) if step.successors else "Nenhum"
+                lines.append(f"- **{step.category}** `[{step.domain}]` (Fase {step.phase}):")
+                lines.append(f"  - _Predecessoras_: {pred_str}")
+                lines.append(f"  - _Sucessoras_: {succ_str}")
+            lines.append("")
+        
         return "\n".join(lines)
+
+
+class EvolutionarySequencer:
+    """Implementa a Camada 1: Sequenciamento Evolutivo.
+    Analisa as dependências entre as capacidades futuras e gera um cronograma lógico
+    baseado em níveis de ordenação topológica (BFS por camadas).
+    """
+
+    def sequence(self, gaps: list[Any], dep_graph: dict[str, Any]) -> EvolutionarySequencing:
+        # 1. Mapear chaves de gap para verificação rápida
+        gap_keys = {f"{g.dim_key}.{g.category}" for g in gaps}
+        
+        # 2. Construir subgrafo direcionado apenas com os gaps
+        adj: dict[str, list[str]] = {} # u -> [v] (u habilita v)
+        in_degree: dict[str, int] = {} # v -> num_prereqs
+        predecessors_map: dict[str, list[str]] = {}
+        successors_map: dict[str, list[str]] = {}
+
+        for key in gap_keys:
+            adj[key] = []
+            in_degree[key] = 0
+            predecessors_map[key] = []
+            successors_map[key] = []
+
+        # Usar as dependências do dep_graph (regras de requires)
+        for key in gap_keys:
+            node = dep_graph.get(key)
+            if node:
+                for req in node.requires:
+                    if req in gap_keys:
+                        adj[req].append(key)
+                        in_degree[key] += 1
+                        predecessors_map[key].append(req)
+                        successors_map[req].append(key)
+
+        # 3. BFS por camadas (Level-order / Kahn's algorithm adaptado) para definir fases
+        queue = [k for k, deg in in_degree.items() if deg == 0]
+        phases: dict[int, list[str]] = {}
+        logical_seq = []
+        phase_num = 1
+        
+        temp_in_degree = dict(in_degree)
+        
+        while queue:
+            current_phase_nodes = list(queue)
+            phases[phase_num] = current_phase_nodes
+            logical_seq.extend(current_phase_nodes)
+            
+            next_queue = []
+            for u in current_phase_nodes:
+                for v in adj[u]:
+                    temp_in_degree[v] -= 1
+                    if temp_in_degree[v] == 0:
+                        next_queue.append(v)
+            queue = next_queue
+            phase_num += 1
+
+        total_phases = phase_num - 1
+
+        # Tratar ciclos ou nós não alcançados (colocar na última fase para segurança)
+        unreached = gap_keys - set(logical_seq)
+        if unreached:
+            if total_phases == 0:
+                total_phases = 1
+                phases[total_phases] = []
+            phases[total_phases].extend(list(unreached))
+            logical_seq.extend(list(unreached))
+
+        # 4. Criar passos detalhados (SequencingStep)
+        steps = []
+        for key in logical_seq:
+            parts = key.split('.', 1)
+            dim = parts[0]
+            cat = parts[1] if len(parts) > 1 else key
+            
+            current_phase = 1
+            for p, nodes in phases.items():
+                if key in nodes:
+                    current_phase = p
+                    break
+            parallel = [n for n in phases[current_phase] if n != key]
+            
+            steps.append(SequencingStep(
+                category=cat,
+                domain=dim,
+                phase=current_phase,
+                predecessors=predecessors_map[key],
+                successors=successors_map[key],
+                can_run_in_parallel_with=parallel
+            ))
+
+        # 5. Gerar cronograma formatado como timeline
+        timeline = []
+        for phase, nodes in phases.items():
+            nodes_str = ", ".join([f"`{n}`" for n in nodes])
+            timeline.append(f"Fase {phase} (Paralelizável): Construir {nodes_str}")
+
+        return EvolutionarySequencing(
+            total_phases=total_phases,
+            logical_sequence=logical_seq,
+            phases=phases,
+            steps=steps,
+            timeline=timeline
+        )

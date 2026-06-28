@@ -74,3 +74,48 @@
 3. 🏗️ **Revisão sistemática** `[metodos]` — prioridade: 0.6, impacto: 0
 4. ⚡ **Neurociências** `[dominios]` — prioridade: 1.0, impacto: 1.7
 5. ⚡ **Inteligência Artificial / Tecnologia** `[dominios]` — prioridade: 0.88, impacto: 1.3
+
+
+---
+
+## Sequenciamento Evolutivo (Camada 1 — Ordem Lógica)
+
+**Total de Fases**: 1
+
+- Fase 1 (Paralelizável): Construir `dominios.Neurociências`, `paradigmas.Pós-estruturalista`, `dominios.Inteligência Artificial / Tecnologia`, `dominios.Sociologia`, `raciocinio.Sistêmico`, `metodos.Revisão sistemática`, `teoria_jogos.Bayesiano`, `teoria_jogos.Cooperativo`, `populacao.Diversidade de gênero`, `niveis_analise.Sistêmico/político`, `teoria_jogos.Evolutivo`
+
+### Dependências Detalhadas (Predecessoras e Sucessoras)
+
+- **Neurociências** `[dominios]` (Fase 1):
+  - _Predecessoras_: Nenhuma
+  - _Sucessoras_: Nenhum
+- **Pós-estruturalista** `[paradigmas]` (Fase 1):
+  - _Predecessoras_: Nenhuma
+  - _Sucessoras_: Nenhum
+- **Inteligência Artificial / Tecnologia** `[dominios]` (Fase 1):
+  - _Predecessoras_: Nenhuma
+  - _Sucessoras_: Nenhum
+- **Sociologia** `[dominios]` (Fase 1):
+  - _Predecessoras_: Nenhuma
+  - _Sucessoras_: Nenhum
+- **Sistêmico** `[raciocinio]` (Fase 1):
+  - _Predecessoras_: Nenhuma
+  - _Sucessoras_: Nenhum
+- **Revisão sistemática** `[metodos]` (Fase 1):
+  - _Predecessoras_: Nenhuma
+  - _Sucessoras_: Nenhum
+- **Bayesiano** `[teoria_jogos]` (Fase 1):
+  - _Predecessoras_: Nenhuma
+  - _Sucessoras_: Nenhum
+- **Cooperativo** `[teoria_jogos]` (Fase 1):
+  - _Predecessoras_: Nenhuma
+  - _Sucessoras_: Nenhum
+- **Diversidade de gênero** `[populacao]` (Fase 1):
+  - _Predecessoras_: Nenhuma
+  - _Sucessoras_: Nenhum
+- **Sistêmico/político** `[niveis_analise]` (Fase 1):
+  - _Predecessoras_: Nenhuma
+  - _Sucessoras_: Nenhum
+- **Evolutivo** `[teoria_jogos]` (Fase 1):
+  - _Predecessoras_: Nenhuma
+  - _Sucessoras_: Nenhum
