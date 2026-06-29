@@ -56,3 +56,36 @@ UsersmarceAppDataLocalTemppytest-alt/
 
 # External content
 edson laranjeira/
+
+# Build scripts (bat/ps1)
+*.bat
+*.ps1
+
+# Temporários de geração massiva
+*_200_laudas.py
+gerador_*.py
+expansao_*.py
+expandir_*.py
+extrair_*.py
+fix_*.py
+clean_*.py
+pipeline_refinamento_*.py
+scanner_completo_*.py
+simulacao_banca.py
+
+# Relatórios e diretórios de refinamento
+relatorios_refinamento/
+Relatorio_de_Auditoria_*.md
+mediscope_assessment_report.md
+
+# Dissertações temporárias
+dissertacao-infancia*/
+dissertacao-polinomia*/
+dissertacao-*/
+
+# Evolve audit logs (individual sessions)
+.evolve/audit-logs/*.jsonl
+
+# Temp pytest artifacts
+UsersmarceAppDataLocalTemppytest-alt/
+Usersmarce*/

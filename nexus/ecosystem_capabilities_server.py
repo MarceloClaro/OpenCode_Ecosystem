@@ -163,7 +163,7 @@ def run_potentiality_estimator_v2() -> dict:
         sys.path.insert(0, str(MODULES_DIR))
         from potentiality_estimator_v2 import PotentialityEstimatorV2
         estimator = PotentialityEstimatorV2()
-        result = estimator.estimate()
+        result = estimator.scan()
         return {
             "scanner": "potentiality_v2",
             "status": "executado",
@@ -296,6 +296,92 @@ def run_critical_analysis(argument: str) -> dict:
 # ============================================================
 # Scanners Cognitivos (SPEC-053, SPEC-054, SPEC-055)
 # ============================================================
+
+def run_oqs_uncertainty_scan(text: str) -> dict:
+    """Executa o UncertaintyScanner (SPEC-056) e retorna incertezas."""
+    try:
+        sys.path.insert(0, str(MODULES_DIR))
+        from uncertainty_scanner import UncertaintyScanner
+        scanner = UncertaintyScanner()
+        result = scanner.scan(text)
+        return {
+            "scanner": "oqs_uncertainty",
+            "status": "executado",
+            "spec": "SPEC-056",
+            "resultado": {
+                "object_of_analysis": result.problem.object_of_analysis,
+                "initial_scope": result.problem.initial_scope,
+                "word_count": result.problem.word_count,
+                "has_hypothesis": result.problem.has_hypothesis,
+                "uncertainties": [
+                    {
+                        "category": u.category,
+                        "description": u.description,
+                        "severity": u.severity,
+                    }
+                    for u in result.uncertainties
+                ],
+                "noisy_elements": [
+                    {
+                        "type": n.type,
+                        "rationale": n.removal_rationale,
+                    }
+                    for n in result.noisy_elements
+                ],
+                "critical_points": result.critical_points,
+                "ambiguity_zones": result.ambiguity_zones,
+            },
+            "total_uncertainties": len(result.uncertainties),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "scanner": "oqs_uncertainty",
+            "status": "erro",
+            "spec": "SPEC-056",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_oqs_question_analyze(problem: str, candidates: list[str]) -> dict:
+    """Executa o QuestionVectorizer (SPEC-056) e retorna pergunta otima."""
+    try:
+        sys.path.insert(0, str(MODULES_DIR))
+        from question_vectorizer import QuestionVectorizer
+        qv = QuestionVectorizer()
+        result = qv.analyze(problem, candidates)
+        return {
+            "scanner": "oqs_question",
+            "status": "executado",
+            "spec": "SPEC-056",
+            "resultado": {
+                "problem": result.problem[:200] if result.problem else "",
+                "total_candidates": len(result.candidate_questions),
+                "optimal_question": {
+                    "question": result.optimal_question.question if result.optimal_question else None,
+                    "type": result.optimal_question.type.value if result.optimal_question else None,
+                    "convergence_score": round(result.optimal_question.convergence_score, 2) if result.optimal_question else None,
+                    "URS": round(result.optimal_question.uncertainty_reduction, 2) if result.optimal_question else None,
+                    "SVS": round(result.optimal_question.structural_value, 2) if result.optimal_question else None,
+                    "DRI": round(result.optimal_question.dispersion_risk_index, 2) if result.optimal_question else None,
+                    "CCI": round(result.optimal_question.cognitive_cost_index, 2) if result.optimal_question else None,
+                    "rationale": result.optimal_question.rationale if result.optimal_question else None,
+                } if result.optimal_question else None,
+                "discarded": result.discarded,
+                "answer_direction_passed": result.answer_direction_test.get("passed", False),
+            },
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "scanner": "oqs_question",
+            "status": "erro",
+            "spec": "SPEC-056",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
 
 def run_cognitive_diversity_scanner(target: str = "ecossistema") -> dict:
     """Executa o Cognitive Diversity Scanner (SPEC-053) para detectar câmaras de eco."""
@@ -567,6 +653,40 @@ class EcosystemCapabilitiesMCPServer:
                     "required": [],
                 },
             },
+            # === OQS — OPTIMAL QUESTION SCANNER (SPEC-056) ===
+            {
+                "name": "eco_run_oqs_uncertainty_scan",
+                "description": "(SPEC-056) Escaneia incertezas de um problema usando o UncertaintyScanner. Retorna categorias de incerteza, ruído estrutural e texto filtrado.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "text": {
+                            "type": "string",
+                            "description": "Texto do problema a ser analisado",
+                        }
+                    },
+                    "required": ["text"],
+                },
+            },
+            {
+                "name": "eco_run_oqs_question_analyze",
+                "description": "(SPEC-056) Analisa perguntas candidatas e seleciona a pergunta ótima usando QuestionVectorizer + Convergence Score (CS = URS + SVS - DRI - CCI).",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "problem": {
+                            "type": "string",
+                            "description": "Descrição do problema ou contexto",
+                        },
+                        "candidates": {
+                            "type": "array",
+                            "items": {"type": "string"},
+                            "description": "Lista de perguntas candidatas",
+                        },
+                    },
+                    "required": ["problem", "candidates"],
+                },
+            },
             # === SCANNERS COGNITIVOS (SPEC-053/054/055) ===
             {
                 "name": "eco_run_cognitive_diversity",
@@ -710,6 +830,8 @@ class EcosystemCapabilitiesMCPServer:
             "eco_z3_verify": lambda a: run_z3_verification(a.get("formula", "")),
             "eco_sympy_analyze": lambda a: run_sympy_analysis(a.get("expression", "")),
             "eco_critical_analyze": lambda a: run_critical_analysis(a.get("argument", "")),
+            "eco_run_oqs_uncertainty_scan": lambda a: run_oqs_uncertainty_scan(a.get("text", "")),
+            "eco_run_oqs_question_analyze": lambda a: run_oqs_question_analyze(a.get("problem", ""), a.get("candidates", [])),
             "eco_list_skills": lambda a: list_ecosystem_skills(),
             "eco_list_agents": lambda a: list_ecosystem_agents(),
             "eco_list_mcps": lambda a: list_ecosystem_mcps(),
