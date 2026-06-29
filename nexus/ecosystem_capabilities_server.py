@@ -163,7 +163,35 @@ def run_potentiality_estimator_v2() -> dict:
         sys.path.insert(0, str(MODULES_DIR))
         from potentiality_estimator_v2 import PotentialityEstimatorV2
         estimator = PotentialityEstimatorV2()
-        result = estimator.scan()
+
+        # Obter resultados reais dos outros scanners para popular a análise de potencialidade
+        noo = run_noological_scanner("ecossistema")
+        noological_res = noo.get("resultado", {}) if noo.get("status") == "executado" else {}
+
+        tel = run_teleological_scanner("alinhamento global")
+        teleological_res = tel.get("resultado", {}) if tel.get("status") == "executado" else {}
+
+        evo = run_evolutionary_scanner()
+        evolutionary_res = evo.get("resultado", {}) if evo.get("status") == "executado" else {}
+
+        soc = run_social_impact_scanner("ecossistema")
+        social_impact_res = soc.get("resultado", {}) if soc.get("status") == "executado" else {}
+
+        div = run_cognitive_diversity_scanner("ecossistema")
+        cds_res = div.get("resultado", {}) if div.get("status") == "executado" else div
+
+        top = run_epistemic_topology_mapper("ecossistema")
+        etm_res = top.get("resultado", {}) if top.get("status") == "executado" else top
+
+        result = estimator.scan(
+            noological_results=noological_res,
+            teleological_results=teleological_res,
+            evolutionary_results=evolutionary_res,
+            dna_results={},
+            social_impact_results={"consolidated_score": social_impact_res.get("consolidated_score", 0.0) if isinstance(social_impact_res, dict) else 0.0},
+            cds_results=cds_res,
+            etm_results=etm_res
+        )
         return {
             "scanner": "potentiality_v2",
             "status": "executado",
@@ -173,6 +201,369 @@ def run_potentiality_estimator_v2() -> dict:
     except Exception as e:
         return {
             "scanner": "potentiality_v2",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_active_inference_step(observations: Optional[dict] = None) -> dict:
+    """Executa um passo de inferência ativa e planejamento evolutivo (Fase A)."""
+    try:
+        sys.path.insert(0, str(ECOSYSTEM_ROOT / "nexus" / "scripts"))
+        from active_inference_controller import ActiveInferenceController
+        controller = ActiveInferenceController(state_dir=STATE_DIR)
+
+        # Se observações não forem passadas, obtemos dados dinâmicos dos outros scanners
+        if not observations:
+            noo = run_noological_scanner("ecossistema")
+            noo_val = noo.get("resultado", {}).get("coverage_pct", 85.0) / 100.0 if noo.get("status") == "executado" else 0.85
+
+            tel = run_teleological_scanner("alinhamento global")
+            tel_val = tel.get("resultado", {}).get("score", 80.0) / 100.0 if tel.get("status") == "executado" else 0.80
+
+            # Para system_health, usamos a taxa de sucesso de testes ou um valor padrão estável
+            health_val = 1.00
+
+            # Para latência normalizada
+            latency_val = 0.85
+
+            # Para SROI
+            soc = run_social_impact_scanner("ecossistema")
+            sroi_val = soc.get("resultado", {}).get("sroi_ratio", 2.55) / 3.0 if soc.get("status") == "executado" else 0.75
+
+            observations = {
+                "noological_coverage": noo_val,
+                "teleological_alignment": tel_val,
+                "system_health": health_val,
+                "normalized_latency": latency_val,
+                "sroi_efficiency": sroi_val
+            }
+
+        result = controller.step(observations)
+        return {
+            "module": "active_inference",
+            "status": "executado",
+            "resultado": result,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "module": "active_inference",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_active_inference_status() -> dict:
+    """Retorna o status atual dos priors e VFE da inferência ativa (Fase A)."""
+    try:
+        sys.path.insert(0, str(ECOSYSTEM_ROOT / "nexus" / "scripts"))
+        from active_inference_controller import ActiveInferenceController
+        controller = ActiveInferenceController(state_dir=STATE_DIR)
+        return {
+            "module": "active_inference",
+            "status": "executado",
+            "priors": {name: {"target": p.target_value, "tolerance": p.tolerance, "precision": p.precision} for name, p in controller.priors.items()},
+            "history_length": len(controller.history),
+            "last_step": controller.history[-1] if controller.history else None,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "module": "active_inference",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_self_evolution_cycle(target_component: str = "academic-audit") -> dict:
+    """Inicia um ciclo completo de auto-evolução dinâmica Plan-Act-Reflect-Evolve."""
+    try:
+        sys.path.insert(0, str(ECOSYSTEM_ROOT / "nexus" / "scripts"))
+        from active_inference_controller import ActiveInferenceController, PolicyProposal
+        controller = ActiveInferenceController(state_dir=STATE_DIR)
+
+        policy = PolicyProposal(
+            policy_id=f"force_evolve_{target_component}",
+            action_type="evolve_skill",
+            target_component=target_component,
+            expected_free_energy=0.1
+        )
+
+        obs = {
+            "noological_coverage": 0.60,
+            "teleological_alignment": 0.50,
+            "system_health": 0.90,
+            "normalized_latency": 0.70,
+            "sroi_efficiency": 0.60
+        }
+
+        outcome = controller.execute_policy(policy, obs)
+        return {
+            "module": "self_evolution",
+            "status": "executado",
+            "outcome": outcome,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "module": "self_evolution",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_game_theory_solve(game_name: str, params: Optional[dict] = None) -> dict:
+    """Resolve um dos 10 jogos clássicos da Teoria dos Jogos (Fase B)."""
+    try:
+        sys.path.insert(0, str(ECOSYSTEM_ROOT / "nexus" / "scripts"))
+        from game_theory_models import GameTheorySolver
+        result = GameTheorySolver.solve_game(game_name, params)
+        return {
+            "module": "game_theory",
+            "status": "executado",
+            "resultado": result,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "module": "game_theory",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_game_theory_to_rlt(game_name: str, params: Optional[dict] = None) -> dict:
+    """Converte a resolução de um jogo em uma árvore lógica ARCHE RLT (Fase B)."""
+    try:
+        sys.path.insert(0, str(ECOSYSTEM_ROOT / "nexus" / "scripts"))
+        from game_theory_models import convert_game_to_rlt
+        result = convert_game_to_rlt(game_name, params)
+        return {
+            "module": "game_theory",
+            "status": "executado",
+            "rlt_node": result,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "module": "game_theory",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_game_theory_to_rumi(game_name: str, params: Optional[dict] = None) -> dict:
+    """Mapeia dinâmicas de payoffs em hipóteses causais RUMI (Fase B)."""
+    try:
+        sys.path.insert(0, str(ECOSYSTEM_ROOT / "nexus" / "scripts"))
+        from game_theory_models import convert_game_to_rumi_hypotheses
+        result = convert_game_to_rumi_hypotheses(game_name, params)
+        return {
+            "module": "game_theory",
+            "status": "executado",
+            "hypotheses": result,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "module": "game_theory",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+dashboard_process = None
+
+def run_dashboard_start(porta: int = 8081) -> dict:
+    """Inicia o servidor HTTP do dashboard em background (Fase C)."""
+    global dashboard_process
+    try:
+        import socket
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(0.5)
+        try:
+            s.connect(("127.0.0.1", porta))
+            s.close()
+            return {
+                "module": "dashboard",
+                "status": "já ativo",
+                "url": f"http://localhost:{porta}",
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+            }
+        except OSError:
+            pass
+
+        import subprocess
+        cmd = [sys.executable, str(ECOSYSTEM_ROOT / "nexus" / "dashboard_server.py"), "--porta", str(porta)]
+        dashboard_process = subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            cwd=str(ECOSYSTEM_ROOT)
+        )
+        
+        time.sleep(0.5)
+        if dashboard_process.poll() is not None:
+            stdout, stderr = dashboard_process.communicate()
+            return {
+                "module": "dashboard",
+                "status": "erro",
+                "erro": f"Processo terminou imediatamente com código {dashboard_process.returncode}",
+                "stderr": stderr.decode("utf-8", errors="ignore")
+            }
+
+        return {
+            "module": "dashboard",
+            "status": "iniciado",
+            "url": f"http://localhost:{porta}",
+            "pid": dashboard_process.pid,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "module": "dashboard",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_dashboard_stop(porta: int = 8081) -> dict:
+    """Para o servidor HTTP do dashboard ativo (Fase C)."""
+    global dashboard_process
+    try:
+        stopped = False
+        if dashboard_process is not None:
+            dashboard_process.terminate()
+            dashboard_process.wait(timeout=3)
+            dashboard_process = None
+            stopped = True
+
+        import subprocess
+        try:
+            if sys.platform == "win32":
+                out = subprocess.check_output(f"netstat -ano | findstr :{porta}", shell=True, text=True)
+                for line in out.strip().splitlines():
+                    parts = line.strip().split()
+                    if len(parts) >= 5 and parts[1].endswith(f":{porta}"):
+                        pid = parts[-1]
+                        subprocess.run(f"taskkill /PID {pid} /F", shell=True)
+                        stopped = True
+            else:
+                subprocess.run(f"fuser -k {porta}/tcp", shell=True)
+                stopped = True
+        except Exception:
+            pass
+
+        return {
+            "module": "dashboard",
+            "status": "parado" if stopped else "não estava rodando",
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "module": "dashboard",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_dashboard_status(porta: int = 8081) -> dict:
+    """Retorna se o servidor do dashboard está ativo (Fase C)."""
+    try:
+        import socket
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(0.5)
+        try:
+            s.connect(("127.0.0.1", porta))
+            s.close()
+            active = True
+        except OSError:
+            active = False
+
+        return {
+            "module": "dashboard",
+            "ativo": active,
+            "url": f"http://localhost:{porta}" if active else None,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "module": "dashboard",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_metacognitive_search(problem: str, difficulty: str = "medium") -> dict:
+    """Executa busca metacognitiva com orçamento de profundidade adaptativo (SPEC-062)."""
+    try:
+        sys.path.insert(0, str(ECOSYSTEM_ROOT / "nexus" / "scripts"))
+        from metacognitive_search import solve_with_metacognitive_search
+        result = solve_with_metacognitive_search(problem, difficulty)
+        return {
+            "module": "metacognitive_search",
+            "status": "executado",
+            "resultado": result,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "module": "metacognitive_search",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_asde_experiment(scientific_problem: str, domain: str = "cognicao") -> dict:
+    """Executa um experimento cognitivo completo integrado no ASDE (Fase E)."""
+    try:
+        sys.path.insert(0, str(ECOSYSTEM_ROOT / "nexus" / "scripts"))
+        from asde_experiment_runner import ASDECognitiveExperimentRunner
+        runner = ASDECognitiveExperimentRunner()
+        result = runner.run_experiment(scientific_problem, domain)
+        return {
+            "module": "asde_experiment",
+            "status": "executado",
+            "resultado": result,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "module": "asde_experiment",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_asde_get_latest_experiment() -> dict:
+    """Retorna os resultados do último experimento cognitivo integrado concluído no ASDE (Fase E)."""
+    try:
+        sys.path.insert(0, str(ECOSYSTEM_ROOT / "nexus" / "scripts"))
+        from asde_experiment_runner import ASDECognitiveExperimentRunner
+        runner = ASDECognitiveExperimentRunner()
+        result = runner.get_latest_results()
+        return {
+            "module": "asde_experiment",
+            "status": "executado" if result else "nenhum experimento encontrado",
+            "resultado": result,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "module": "asde_experiment",
             "status": "erro",
             "erro": str(e),
             "traceback": traceback.format_exc(),
@@ -877,6 +1268,190 @@ class EcosystemCapabilitiesMCPServer:
                 },
             },
             {
+                "name": "eco_active_inference_step",
+                "description": "Executa um passo de inferência ativa (Fase A) calculando a energia livre e selecionando uma política corretiva.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "observations": {
+                            "type": "object",
+                            "description": "Dicionário de métricas reais (ex: system_health, noological_coverage, normalized_latency)"
+                        }
+                    },
+                    "required": [],
+                },
+            },
+            {
+                "name": "eco_active_inference_status",
+                "description": "Retorna o status atual do controlador de inferência ativa (priors cognitivos, histórico de VFE).",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                },
+            },
+            {
+                "name": "eco_run_self_evolution_cycle",
+                "description": "Inicia um ciclo completo de auto-evolução dinâmica Plan-Act-Reflect-Evolve sobre um componente.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "target_component": {
+                            "type": "string",
+                            "default": "academic-audit",
+                            "description": "Componente alvo para o ciclo de auto-evolução"
+                        }
+                    },
+                    "required": [],
+                },
+            },
+            {
+                "name": "eco_game_theory_solve",
+                "description": "Resolve qualquer um dos 10 jogos clássicos da Teoria dos Jogos com parâmetros personalizados.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "game_name": {
+                            "type": "string",
+                            "description": "Nome do jogo (ex: 'prisoners_dilemma', 'battle_of_sexes', 'stag_hunt', 'chicken', 'matching_pennies', 'cournot', 'stackelberg', 'centipede', 'ultimatum', 'public_goods')"
+                        },
+                        "params": {
+                            "type": "object",
+                            "description": "Dicionário de parâmetros de payoffs ou de jogo"
+                        }
+                    },
+                    "required": ["game_name"],
+                },
+            },
+            {
+                "name": "eco_game_theory_to_rlt",
+                "description": "Converte a resolução de um jogo estratégico em uma árvore de inferência lógica ARCHE RLT.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "game_name": {
+                            "type": "string",
+                            "description": "Nome do jogo"
+                        },
+                        "params": {
+                            "type": "object",
+                            "description": "Dicionário de parâmetros de payoffs"
+                        }
+                    },
+                    "required": ["game_name"],
+                },
+            },
+            {
+                "name": "eco_game_theory_to_rumi",
+                "description": "Mapeia as dinâmicas de incentivos de um jogo em hipóteses causais RUMI.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "game_name": {
+                            "type": "string",
+                            "description": "Nome do jogo"
+                        },
+                        "params": {
+                            "type": "object",
+                            "description": "Dicionário de parâmetros"
+                        }
+                    },
+                    "required": ["game_name"],
+                },
+            },
+            {
+                "name": "eco_dashboard_start",
+                "description": "Inicializa o servidor HTTP do dashboard do ecossistema em segundo plano.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "porta": {
+                            "type": "integer",
+                            "default": 8081,
+                            "description": "Porta TCP para o servidor HTTP"
+                        }
+                    },
+                    "required": [],
+                },
+            },
+            {
+                "name": "eco_dashboard_stop",
+                "description": "Para o servidor HTTP do dashboard ativo.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "porta": {
+                            "type": "integer",
+                            "default": 8081,
+                            "description": "Porta do servidor HTTP a ser parado"
+                        }
+                    },
+                    "required": [],
+                },
+            },
+            {
+                "name": "eco_dashboard_status",
+                "description": "Retorna o status atual do servidor HTTP do dashboard do ecossistema.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "porta": {
+                            "type": "integer",
+                            "default": 8081,
+                            "description": "Porta do servidor a ser verificado"
+                        }
+                    },
+                    "required": [],
+                },
+            },
+            {
+                "name": "eco_metacognitive_search",
+                "description": "Executa busca metacognitiva guiada por process verifier com orçamento de profundidade adaptativo.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "problem": {
+                            "type": "string",
+                            "description": "Problema científico ou matemático a ser raciocinado"
+                        },
+                        "difficulty": {
+                            "type": "string",
+                            "default": "medium",
+                            "description": "Dificuldade do problema ('easy', 'medium')"
+                        }
+                    },
+                    "required": ["problem"],
+                },
+            },
+            {
+                "name": "eco_run_asde_experiment",
+                "description": "Executa um experimento cognitivo completo integrado no ASDE com Teoria dos Jogos e FEP.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "scientific_problem": {
+                            "type": "string",
+                            "description": "O problema científico a ser simulado e descoberto"
+                        },
+                        "domain": {
+                            "type": "string",
+                            "default": "cognicao",
+                            "description": "Domínio da pesquisa científica ('cognicao', 'neurociencia', 'aprendizado', 'psicologia', 'educacao', 'computacao')"
+                        }
+                    },
+                    "required": ["scientific_problem"],
+                },
+            },
+            {
+                "name": "eco_get_latest_experiment_results",
+                "description": "Retorna os resultados detalhados do último experimento cognitivo concluído pelo ASDE.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                },
+            },
+            {
                 "name": "eco_run_social_impact",
                 "description": "Executa o Social Impact Scanner (SPEC-044) para análise de impacto social e ESG.",
                 "inputSchema": {
@@ -1209,6 +1784,16 @@ class EcosystemCapabilitiesMCPServer:
             "eco_run_teleological_scanner": lambda a: run_teleological_scanner(a.get("objective", "alinhamento global")),
             "eco_run_evolutionary_scanner": lambda a: run_evolutionary_scanner(),
             "eco_run_potentiality_v2": lambda a: run_potentiality_estimator_v2(),
+            "eco_active_inference_step": lambda a: run_active_inference_step(a.get("observations")),
+            "eco_active_inference_status": lambda a: run_active_inference_status(),
+            "eco_run_self_evolution_cycle": lambda a: run_self_evolution_cycle(a.get("target_component", "academic-audit")),
+            "eco_game_theory_solve": lambda a: run_game_theory_solve(a.get("game_name"), a.get("params")),
+            "eco_game_theory_to_rlt": lambda a: run_game_theory_to_rlt(a.get("game_name"), a.get("params")),
+            "eco_game_theory_to_rumi": lambda a: run_game_theory_to_rumi(a.get("game_name"), a.get("params")),
+            "eco_dashboard_start": lambda a: run_dashboard_start(a.get("porta", 8081)),
+            "eco_dashboard_stop": lambda a: run_dashboard_stop(a.get("porta", 8081)),
+            "eco_dashboard_status": lambda a: run_dashboard_status(a.get("porta", 8081)),
+            "eco_metacognitive_search": lambda a: run_metacognitive_search(a.get("problem"), a.get("difficulty", "medium")),
             "eco_run_social_impact": lambda a: run_social_impact_scanner(a.get("context", "ecossistema")),
             "eco_run_full_pipeline": lambda a: run_full_pipeline(),
             "eco_run_cognitive_diversity": lambda a: run_cognitive_diversity_scanner(a.get("target", "ecossistema")),
@@ -1233,6 +1818,9 @@ class EcosystemCapabilitiesMCPServer:
                 a.get("problem", ""), a.get("domain", "general")),
             "eco_run_asde_get_report": lambda a: run_asde_get_report(a.get("idea_index", 0)),
             "eco_run_asde_ontology_status": lambda a: run_asde_ontology_status(),
+            "eco_run_asde_experiment": lambda a: run_asde_experiment(
+                a.get("scientific_problem"), a.get("domain", "cognicao")),
+            "eco_get_latest_experiment_results": lambda a: run_asde_get_latest_experiment(),
             "eco_list_skills": lambda a: list_ecosystem_skills(),
             "eco_list_agents": lambda a: list_ecosystem_agents(),
             "eco_list_mcps": lambda a: list_ecosystem_mcps(),
