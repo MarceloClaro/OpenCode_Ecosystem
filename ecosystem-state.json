@@ -138,8 +138,29 @@
       "bionicbutterfly13/sakshi (Witness Pattern)",
       "subhansh-dev/rumi (Causal Discovery, 21 fases)"
     ],
+    "commitado_em": "bbf824f",
+    "data": "2026-06-29"
+  },
+  "r29_asde": {
+    "status": "completo",
+    "ciclo": "R29",
+    "spec": "SPEC-058-ASDE",
+    "nome": "Autonomous Scientific Discovery Engine",
+    "modulos": [
+      "nexus/scripts/asde_engine.py: IdeaGenerator + OntologyGraph + MultiAgentCritic + ExperimentPlanner + ResultSynthesizer"
+    ],
+    "inspiracoes": [
+      "InternAgent (Shanghai AI Lab, 1.332★) — Pipeline fechado de descoberta cientifica",
+      "SciAgents (MIT) — Grafo ontologico + critica multi-agente"
+    ],
+    "pipeline": "Problema → IdeaGenerator → MultiAgentCritic → ExperimentPlanner → ResultSynthesizer → Relatorio IMRaD",
+    "test_suite": "test_asde.py: 15/15 PASS",
+    "mcp_tools": [
+      "eco_run_asde_pipeline",
+      "eco_run_asde_get_report",
+      "eco_run_asde_ontology_status"
+    ],
     "commitado_em": "pending",
-    "data": "2026-06-29",
-    "proximo": "Push livro-volume2 ao GitHub (Step C)"
+    "data": "2026-06-29"
   }
 }

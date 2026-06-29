@@ -549,6 +549,87 @@ def run_rumi_analyze_claim(cause: str, effect: str, mechanism: str = "", confide
         }
 
 
+# ============================================================
+# R29 — ASDE: Autonomous Scientific Discovery Engine
+# ============================================================
+
+def run_asde_pipeline(problem: str, domain: str = "general") -> dict:
+    """Executa pipeline completo ASDE de descoberta científica."""
+    try:
+        sys.path.insert(0, str(MODULES_DIR))
+        from asde_engine import ASDEEngine
+        engine = ASDEEngine()
+        result = engine.run_pipeline(problem, domain)
+        return {
+            "scanner": "asde_pipeline",
+            "status": "executado",
+            "spec": "SPEC-058",
+            "total_ideas": result["total_ideas"],
+            "pipeline_steps": result["pipeline"],
+            "best_idea": result["best_idea"],
+            "ideas": result["ideas"],
+            "ontology": result["ontology"],
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "scanner": "asde_pipeline",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_asde_get_report(idea_index: int = 0) -> dict:
+    """Retorna relatório IMRaD de uma ideia gerada pelo ASDE."""
+    try:
+        sys.path.insert(0, str(MODULES_DIR))
+        from asde_engine import ASDEEngine
+        engine = ASDEEngine()
+        # Executa pipeline com problema padrão se não houver sessão anterior
+        engine.run_pipeline("Explorar a relacao entre polimatia e resiliencia cognitiva")
+        report = engine.get_report(idea_index)
+        return {
+            "scanner": "asde_report",
+            "status": "executado",
+            "spec": "SPEC-058",
+            "idea_index": idea_index,
+            "report": report,
+            "has_report": report is not None,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "scanner": "asde_report",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_asde_ontology_status() -> dict:
+    """Retorna status do grafo ontológico do ASDE."""
+    try:
+        sys.path.insert(0, str(MODULES_DIR))
+        from asde_engine import ASDEEngine
+        engine = ASDEEngine()
+        status = engine.get_ontology_status()
+        return {
+            "scanner": "asde_ontology",
+            "status": "executado",
+            "spec": "SPEC-058",
+            "ontology": status,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "scanner": "asde_ontology",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
 def run_cognitive_diversity_scanner(target: str = "ecossistema") -> dict:
     """Executa o Cognitive Diversity Scanner (SPEC-053) para detectar câmaras de eco."""
     try:
@@ -949,6 +1030,50 @@ class EcosystemCapabilitiesMCPServer:
                     "required": ["cause", "effect"],
                 },
             },
+            # === R29 — ASDE (SPEC-058) ===
+            {
+                "name": "eco_run_asde_pipeline",
+                "description": "(SPEC-058 R29) Executa pipeline completo ASDE de descoberta cientifica: problema -> ideias -> critica -> plano -> relatorio IMRaD. Integra OQS+RUMI+ARCHE+OPUS.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "problem": {
+                            "type": "string",
+                            "description": "Problema de pesquisa em texto livre",
+                        },
+                        "domain": {
+                            "type": "string",
+                            "default": "general",
+                            "description": "Dominio cientifico (educacao, cognicao, saude, etc.)",
+                        },
+                    },
+                    "required": ["problem"],
+                },
+            },
+            {
+                "name": "eco_run_asde_get_report",
+                "description": "(SPEC-058 R29) Retorna o relatorio IMRaD completo de uma ideia gerada pelo ASDE.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "idea_index": {
+                            "type": "integer",
+                            "default": 0,
+                            "description": "Indice da ideia (0 = melhor)",
+                        }
+                    },
+                    "required": [],
+                },
+            },
+            {
+                "name": "eco_run_asde_ontology_status",
+                "description": "(SPEC-058 R29) Retorna o status do grafo ontologico cientifico do ASDE.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                },
+            },
             # === SCANNERS COGNITIVOS (SPEC-053/054/055) ===
             {
                 "name": "eco_run_cognitive_diversity",
@@ -1103,6 +1228,11 @@ class EcosystemCapabilitiesMCPServer:
             "eco_run_rumi_analyze_claim": lambda a: run_rumi_analyze_claim(
                 a.get("cause", ""), a.get("effect", ""),
                 a.get("mechanism", ""), a.get("confidence", 0.7)),
+            # R29 — ASDE (SPEC-058)
+            "eco_run_asde_pipeline": lambda a: run_asde_pipeline(
+                a.get("problem", ""), a.get("domain", "general")),
+            "eco_run_asde_get_report": lambda a: run_asde_get_report(a.get("idea_index", 0)),
+            "eco_run_asde_ontology_status": lambda a: run_asde_ontology_status(),
             "eco_list_skills": lambda a: list_ecosystem_skills(),
             "eco_list_agents": lambda a: list_ecosystem_agents(),
             "eco_list_mcps": lambda a: list_ecosystem_mcps(),
