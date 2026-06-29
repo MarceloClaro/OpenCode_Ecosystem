@@ -11,5 +11,99 @@
     "24-apendice-solucoes",
     "25-apendice-cheatsheet"
   ],
-  "total_new_lines": 6412
+  "total_new_lines": 6412,
+  "dissertacao_polinomia": {
+    "title": "A Polimatia e a Evolução da Civilização",
+    "status": "compilado",
+    "pages": 41,
+    "pdf_size_kb": 397,
+    "referencias": 19,
+    "template": "abntex2",
+    "compiled_at": "2026-06-28T21:23",
+    "cjk_contamination": false,
+    "ptbr_issues": 19,
+    "is_clean": true
+  },
+  "dissertacao_infancia": {
+    "title": "Polimatia na Primeira Infância",
+    "status": "compilado",
+    "pages": 37,
+    "pdf_size_kb": 322,
+    "referencias": 19,
+    "template": "abntex2",
+    "compiled_at": "2026-06-28T21:23",
+    "cjk_contamination": false,
+    "ptbr_issues": 9,
+    "is_clean": true
+  },
+  "pipeline_academico": {
+    "status": "completo",
+    "fases_executadas": [
+      "SEEKER (pesquisa profunda)",
+      "Criação de estrutura LaTeX ABNT",
+      "Geração de referências com DOIs",
+      "Compilação pdfLaTeX + BibTeX",
+      "Validação APA",
+      "Corretor PT-BR (CJK detection)",
+      "Relatório de auditoria"
+    ],
+    "total_pages_geradas": 78,
+    "total_referencias_curadas": 38,
+    "eps_score": 87
+  },
+  "vitacoria_regia": {
+    "dissertacao_polinomia": {
+      "pages": 33,
+      "pdf_size_kb": 331,
+      "compiled_at": "2026-06-28T21:45"
+    },
+    "dissertacao_infancia": {
+      "pages": 30,
+      "pdf_size_kb": 281,
+      "compiled_at": "2026-06-28T21:45"
+    },
+    "total_pages": 63
+  },
+  "maswos_refinement": {
+    "status": "completo",
+    "agentes_executados": ["A44", "A45", "A12", "A13"],
+    "score_qualis_polinomia": 84.0,
+    "score_qualis_infancia": 84.0,
+    "classificacao": "A1",
+    "a45_polinomia": "critico (nivel debate 4/4)",
+    "a45_infancia": "descritivo (nivel debate 3/4)"
+  },
+  "banca_simulation": {
+    "status": "completo",
+    "examinadores": [
+      "Profa. Dra. Ana Lúcia (Epistemologia)",
+      "Prof. Dr. Carlos Mendes (Neurociência)",
+      "Prof. Dr. Ricardo Tavares (Políticas Educacionais)"
+    ],
+    "resultado_polinomia": "APROVADO COM DISTINÇÃO",
+    "nota_polinomia": 9.13,
+    "resultado_infancia": "APROVADO COM DISTINÇÃO",
+    "nota_infancia": 9.13
+  },
+  "r27_oqs": {
+    "status": "completo",
+    "ciclo": "R27",
+    "spec": "SPEC-056-OQS",
+    "nome": "Optimal Question Scanner",
+    "modulos": [
+      "uncertainty_scanner.py (263 linhas, 5 categorias)",
+      "question_vectorizer.py (392 linhas, Qv 6D, CS metric)",
+      "SPEC-056-OQS.md (SDD: 9 etapas, 5 metricas)",
+      "test_oqs.py (12 CTs TDD)"
+    ],
+    "test_cts": "12/12 PASS (0.81s)",
+    "mcp_tools": [
+      "eco_run_oqs_uncertainty_scan",
+      "eco_run_oqs_question_analyze"
+    ],
+    "bugfix": "PotentialityEstimatorV2: .estimate() -> .scan()",
+    "commitado_em": "17480a2",
+    "data": "2026-06-29",
+    "proximo": "R28 — ARCHE RLT + OPUS + Witness + RUMI"
+  }
 }
