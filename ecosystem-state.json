@@ -105,5 +105,41 @@
     "commitado_em": "17480a2",
     "data": "2026-06-29",
     "proximo": "R28 — ARCHE RLT + OPUS + Witness + RUMI"
+  },
+  "r28_arche_opus_witness_rumi": {
+    "status": "completo",
+    "ciclo": "R28",
+    "nome": "ARCHE RLT + OPUS + Witness Pattern + RUMI Causal Discovery",
+    "modulos": [
+      "skills/system/reasoning-orchestrator/arche_rlt.py (ARCHE Reasoning Logic Tree, 6 tipos Peirce)",
+      "nexus/scripts/opus_orchestration.py (OPUS 4-Phase Contract, AAB)",
+      "nexus/scripts/witness_pattern.py (Witness Observer + TrustEngine Bridge)",
+      "nexus/scripts/rumi_causal_discovery.py (RUMI Pipeline: geracao, teste, torneio, adversario)"
+    ],
+    "specs": ["SPEC-057-ARCHE-RLT.md"],
+    "test_suites": {
+      "test_arche_rlt.py": "15/15 PASS",
+      "test_opus.py": "12/12 PASS",
+      "test_witness.py": "12/12 PASS",
+      "test_rumi.py": "12/12 PASS"
+    },
+    "test_cts_total": "51/51 PASS (R28) + 12/12 (R27) = 63/63",
+    "mcp_tools": [
+      "eco_run_arche_rlt_analyze",
+      "eco_run_arche_rlt_map_types",
+      "eco_run_opus_pipeline",
+      "eco_run_witness_observe",
+      "eco_run_rumi_discover",
+      "eco_run_rumi_analyze_claim"
+    ],
+    "github_repos_inspiradores": [
+      "Linsonng/ARCHEBenchmark (6 tipos inferencia + RLT)",
+      "Rynaro/OPUS (4-Phase + AAB)",
+      "bionicbutterfly13/sakshi (Witness Pattern)",
+      "subhansh-dev/rumi (Causal Discovery, 21 fases)"
+    ],
+    "commitado_em": "pending",
+    "data": "2026-06-29",
+    "proximo": "Push livro-volume2 ao GitHub (Step C)"
   }
 }

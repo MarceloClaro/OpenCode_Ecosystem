@@ -383,6 +383,172 @@ def run_oqs_question_analyze(problem: str, candidates: list[str]) -> dict:
         }
 
 
+# ============================================================
+# R28 — ARCHE RLT, OPUS, Witness Pattern, RUMI
+# ============================================================
+
+def run_arche_rlt_analyze(steps: list) -> dict:
+    """Analisa cadeia de raciocinio com ARCHE Reasoning Logic Tree."""
+    try:
+        rlt_dir = ECOSYSTEM_ROOT / "skills" / "system" / "reasoning-orchestrator"
+        sys.path.insert(0, str(rlt_dir))
+        from arche_rlt import ARCHEEngine
+        engine = ARCHEEngine()
+        result = engine.analyze_reasoning_chain(steps)
+        return {
+            "scanner": "arche_rlt",
+            "status": "executado",
+            "spec": "SPEC-057",
+            "total_nodes": result["total_nodes"],
+            "depth": result["depth"],
+            "root_confidence": result["root_confidence"],
+            "inference_types_used": result["validation"]["inference_types_used"],
+            "is_valid": result["validation"]["is_valid"],
+            "coherence_gaps": result["validation"]["coherence_gaps"],
+            "rlt": result["rlt"],
+            "mermaid": result["mermaid"],
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "scanner": "arche_rlt",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_arche_rlt_map_types() -> dict:
+    """Mapeia todos os tipos de raciocinio para os 6 tipos de Peirce."""
+    try:
+        rlt_dir = ECOSYSTEM_ROOT / "skills" / "system" / "reasoning-orchestrator"
+        sys.path.insert(0, str(rlt_dir))
+        from arche_rlt import ARCHEEngine
+        engine = ARCHEEngine()
+        result = engine.map_all_reasoning_types()
+        return {
+            "scanner": "arche_rlt_map",
+            "status": "executado",
+            "spec": "SPEC-057",
+            "total_types_mapped": result["total_types_mapped"],
+            "by_peirce_type": result["by_peirce_type"],
+            "peirce_types": result["peirce_types"],
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "scanner": "arche_rlt_map",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_opus_pipeline(mission: str) -> dict:
+    """Executa pipeline OPUS 4-Phase."""
+    try:
+        sys.path.insert(0, str(MODULES_DIR))
+        from opus_orchestration import opus_execute_pipeline
+        result = opus_execute_pipeline(mission)
+        return {
+            "scanner": "opus",
+            "status": "executado",
+            "mission": mission,
+            "contract_id": result["report"]["contract_id"],
+            "status_ciclo": result["report"]["status"],
+            "phases_executed": result["report"]["phases_executed"],
+            "total_decisions": result["report"]["total_decisions"],
+            "total_steps": result["report"]["total_steps"],
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "scanner": "opus",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_witness_observe(action: dict, context: dict = None) -> dict:
+    """Observa uma acao com Witness Pattern."""
+    try:
+        sys.path.insert(0, str(MODULES_DIR))
+        from witness_pattern import WitnessObserver, TrustEngineBridge
+        witness = WitnessObserver()
+        bridge = TrustEngineBridge(witness)
+        result = bridge.observe_and_decide(action, context or {})
+        return {
+            "scanner": "witness",
+            "status": "executado",
+            "risk": result["signal"]["risk"],
+            "severity": result["signal"]["severity"],
+            "decision": result["decision"]["decision"],
+            "reason": result["decision"]["reason"],
+            "signal_id": result["signal"]["id"],
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "scanner": "witness",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_rumi_discover(variables: list) -> dict:
+    """Executa pipeline RUMI de descoberta causal."""
+    try:
+        sys.path.insert(0, str(MODULES_DIR))
+        from rumi_causal_discovery import RUMIEngine
+        engine = RUMIEngine()
+        result = engine.discover(variables, top_k=3)
+        return {
+            "scanner": "rumi_discovery",
+            "status": "executado",
+            "total_hypotheses": result["total_hypotheses_generated"],
+            "confirmed": result["confirmed"],
+            "refuted": result["refuted"],
+            "adversarial_pass_rate": result["adversarial_pass_rate"],
+            "top_hypotheses": result["top_hypotheses"],
+            "causal_graph": result["causal_graph"],
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "scanner": "rumi_discovery",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+def run_rumi_analyze_claim(cause: str, effect: str, mechanism: str = "", confidence: float = 0.7) -> dict:
+    """Analisa uma reivindicacao causal especifica."""
+    try:
+        sys.path.insert(0, str(MODULES_DIR))
+        from rumi_causal_discovery import RUMIEngine
+        engine = RUMIEngine()
+        result = engine.analyze_causal_claim(cause, effect, mechanism, confidence)
+        return {
+            "scanner": "rumi_claim",
+            "status": "executado",
+            "hypothesis": result["hypothesis"],
+            "status_hipotese": result["status"],
+            "passed_adversarial": result["passed_adversarial"],
+            "recommendation": result["recommendation"],
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "scanner": "rumi_claim",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
 def run_cognitive_diversity_scanner(target: str = "ecossistema") -> dict:
     """Executa o Cognitive Diversity Scanner (SPEC-053) para detectar câmaras de eco."""
     try:
@@ -687,6 +853,102 @@ class EcosystemCapabilitiesMCPServer:
                     "required": ["problem", "candidates"],
                 },
             },
+            # === R28 — ARCHE RLT (SPEC-057) ===
+            {
+                "name": "eco_run_arche_rlt_analyze",
+                "description": "(SPEC-057 R28) Analisa cadeia de raciocinio com ARCHE Reasoning Logic Tree. Mapeia tipos para 6 inferencias de Peirce e constroi arvore logica.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "steps": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "premise": {"type": "string", "description": "Premissa do passo"},
+                                    "conclusion": {"type": "string", "description": "Conclusao do passo"},
+                                    "inference_type": {"type": "string", "description": "Tipo de inferencia (opcional)"},
+                                }
+                            },
+                            "description": "Lista de passos de raciocinio",
+                        }
+                    },
+                    "required": ["steps"],
+                },
+            },
+            {
+                "name": "eco_run_arche_rlt_map_types",
+                "description": "(SPEC-057 R28) Mapeia todos os tipos de raciocinio do ecossistema para os 6 tipos de inferencia de Peirce.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                },
+            },
+            # === R28 — OPUS 4-PHASE ORCHESTRATION ===
+            {
+                "name": "eco_run_opus_pipeline",
+                "description": "(R28) Executa pipeline OPUS 4-Phase (Open->Plan->Unfold->Seal) com Action Authorization Boundary.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "mission": {
+                            "type": "string",
+                            "description": "Descricao da missao a ser orquestrada",
+                        }
+                    },
+                    "required": ["mission"],
+                },
+            },
+            # === R28 — WITNESS PATTERN ===
+            {
+                "name": "eco_run_witness_observe",
+                "description": "(R28) Observa uma acao com Witness Pattern e retorna classificacao de risco. Integra com TrustEngine para decisoes.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "action": {
+                            "type": "object",
+                            "description": "Acao a ser observada (name, type)",
+                        },
+                        "context": {
+                            "type": "object",
+                            "description": "Contexto adicional (goal_drift_score, phase, etc.)",
+                        },
+                    },
+                    "required": ["action"],
+                },
+            },
+            # === R28 — RUMI CAUSAL DISCOVERY ===
+            {
+                "name": "eco_run_rumi_discover",
+                "description": "(R28) Executa pipeline RUMI de descoberta causal: gera hipoteses -> testa -> torneio -> revisao adversarial -> grafo causal.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "variables": {
+                            "type": "array",
+                            "items": {"type": "string"},
+                            "description": "Lista de variaveis observadas",
+                        }
+                    },
+                    "required": ["variables"],
+                },
+            },
+            {
+                "name": "eco_run_rumi_analyze_claim",
+                "description": "(R28) Analisa uma reivindicacao causal especifica com revisao adversarial.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "cause": {"type": "string", "description": "Variavel causal"},
+                        "effect": {"type": "string", "description": "Variavel efeito"},
+                        "mechanism": {"type": "string", "description": "Mecanismo causal proposto"},
+                        "confidence": {"type": "number", "description": "Confianca inicial (0-1)"},
+                    },
+                    "required": ["cause", "effect"],
+                },
+            },
             # === SCANNERS COGNITIVOS (SPEC-053/054/055) ===
             {
                 "name": "eco_run_cognitive_diversity",
@@ -832,6 +1094,15 @@ class EcosystemCapabilitiesMCPServer:
             "eco_critical_analyze": lambda a: run_critical_analysis(a.get("argument", "")),
             "eco_run_oqs_uncertainty_scan": lambda a: run_oqs_uncertainty_scan(a.get("text", "")),
             "eco_run_oqs_question_analyze": lambda a: run_oqs_question_analyze(a.get("problem", ""), a.get("candidates", [])),
+            # R28 — ARCHE RLT, OPUS, Witness, RUMI
+            "eco_run_arche_rlt_analyze": lambda a: run_arche_rlt_analyze(a.get("steps", [])),
+            "eco_run_arche_rlt_map_types": lambda a: run_arche_rlt_map_types(),
+            "eco_run_opus_pipeline": lambda a: run_opus_pipeline(a.get("mission", "")),
+            "eco_run_witness_observe": lambda a: run_witness_observe(a.get("action", {}), a.get("context")),
+            "eco_run_rumi_discover": lambda a: run_rumi_discover(a.get("variables", [])),
+            "eco_run_rumi_analyze_claim": lambda a: run_rumi_analyze_claim(
+                a.get("cause", ""), a.get("effect", ""),
+                a.get("mechanism", ""), a.get("confidence", 0.7)),
             "eco_list_skills": lambda a: list_ecosystem_skills(),
             "eco_list_agents": lambda a: list_ecosystem_agents(),
             "eco_list_mcps": lambda a: list_ecosystem_mcps(),
