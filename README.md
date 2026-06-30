@@ -106,6 +106,35 @@ graph TD
   end
 ```
 
+#### 📖 Legenda Explicativa da Arquitetura Cognitiva
+
+Para compreender como a mente coletiva do OpenCode Ecosystem processa uma missão, analise a função de cada componente do mapa:
+
+1.  **Camada de Percepção & Formulação (OQS - Optimal Query System)**:
+    *   `Problema Científico Bruto`: A missão inicial ou hipótese vaga inserida pelo usuário (ex: "/marceloclaro investigar se o sono afeta o córtex pré-frontal").
+    *   `UncertaintyScanner`: Varre o enunciado em busca de termos ambíguos, contradições semânticas ou lacunas de informação (*gaps* de conhecimento).
+    *   `QuestionVectorizer`: Converte o problema em um espaço vetorial para encontrar a formulação ideal.
+    *   `Pergunta Ótima Normalizada`: O enunciado reformulado matematicamente para maximizar a precisão da resposta.
+
+2.  **Camada de Raciocínio & Causalidade (RLT & RUMI)**:
+    *   `ARCHE Reasoning Logic Tree`: Constrói a estrutura da árvore de busca lógica.
+    *   `6 Vias Epistêmicas (Peirce)`: Expande o raciocínio em seis categorias fundamentais: *Dedutiva* (lógica formal), *Indutiva* (padrões empíricos), *Abdutiva* (melhor explicação hipotética), *Analógica* (comparações válidas), *Causal* (causa-efeito) e *Meta* (raciocínio sobre o próprio raciocínio).
+    *   `RUMI Causal Discovery`: Filtra e isola relações causais legítimas, eliminando variáveis de confusão ou correlações espúrias.
+    *   `Hipóteses Adversariais Geradas`: Proposições lógicas robustas testadas ativamente contra contra-exemplos.
+
+3.  **Camada de Ação & Controle Metacognitivo (AIC & MSE)**:
+    *   `Active Inference Controller (AIC)`: Módulo baseado no Princípio da Energia Livre (FEP) de Karl Friston. Ele avalia se as ações do ecossistema estão alinhadas com seus objetivos operacionais.
+    *   `Karl Friston FEP (VFE Minimização)`: Calcula a Energia Livre Variacional (VFE) das observações contra os *priors* cognitivos (alinhamento, coerência e saúde). O sistema sempre seleciona a política de ação que minimiza a VFE (ou seja, minimiza a surpresa e a inconsistência lógica).
+    *   `Metacognitive Search Engine (MSE)`: Motor de busca guiado (Tree Search) que explora caminhos alternativos de raciocínio.
+    *   `Busca em Árvore (DFS)`: Executa busca em profundidade (Depth-First Search) baseada em pilhas para encontrar a melhor cadeia de passos lógicos.
+    *   `Process Verifiers`: Validadores em tempo real. Eles analisam se o passo atual de pensamento faz sentido. Se detectarem uma *contradição lógica* ou um *loop de ideias* (medido via índice de similaridade Jaccard em relação aos passos anteriores), acionam uma penalização.
+    *   `Backtracking & Recalibração`: Se o score do caminho cai abaixo de `0.6` ou um loop é detectado, a ramificação é podada e o motor realiza o backtrack para explorar rotas lógicas alternativas.
+
+4.  **Camada de Síntese & Entrega**:
+    *   `ResultSynthesizer`: Consolida o caminho de raciocínio ótimo comprovado.
+    *   `Relatório IMRaD Científico A1`: Gera o artefato final estruturado (Introdução, Metodologia, Resultados e Discussão) com score equivalente a publicações do Qualis A1.
+    *   `Observability Dashboard`: Publica e visualiza os dados operacionais, de VFE e os logs lógicos do experimento em tempo real.
+
 ---
 
 ### 🛡️ [SYS://TECHNICAL_ADVANTAGES] ── Vantagens Técnicas Exclusivas
