@@ -180,8 +180,8 @@ def test_ct052_02_find_executable_fallback():
 # ═══════════════════════════════════════════════════════════════════════════
 
 @pytest.mark.skipif(
-    not shutil.which("pdflatex"),
-    reason="pdflatex not installed"
+    not shutil.which("pdflatex") or not shutil.which("biber"),
+    reason="pdflatex or biber not installed"
 )
 def test_ct052_03_compile_success(sample_tex):
     """CT-052.03: compile succeeds with valid .tex file."""

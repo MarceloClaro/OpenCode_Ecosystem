@@ -68,12 +68,16 @@ def test_ct_ml03_pattern_detection():
     learner = MetacognitiveLearner()
     initial_patterns = len(learner.patterns)
 
+    # Use unique category to avoid conflito com lessons pre-existentes
+    import uuid
+    unique_cat = f"test_pattern_{uuid.uuid4().hex[:8]}"
+
     for i in range(3):
         learner.record_lesson(LessonLearned(
             lesson_id=f"PATTERN-{i}",
             cycle="test",
-            category="encoding",
-            description=f"Encoding issue {i}",
+            category=unique_cat,
+            description=f"Test pattern issue {i}",
             impact="low",
             fix_applied="fix",
             prevention="prevent"
