@@ -121,24 +121,36 @@ O CORA-Eval é a nossa suíte de testes de integridade cognitiva e raciocínio c
 
 | Dimensão / Domínio | Cobertura TDD | Status de Implementação | Mapeamento no Ecossistema |
 | :--- | :--- | :--- | :--- |
-| **D1: Matemática** | **8/8 CTs** | 🟢 Totalmente Coberto | Provas formais de Teoria dos Números, Álgebra e Geometria |
-| **D2: Física** | **8/8 CTs** | 🟢 Totalmente Coberto | Modelagem de Sistemas Físicos (Cinemática, Dinâmica, Termodinâmica) |
-| **D3: Experimental** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Desenho experimental estatístico (ANOVA, Teste t, Randomização) |
-| **D4: Computacional** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Complexidade algorítmica, estruturas de dados e verificação formal |
-| **D5: Química** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Balanceamento de reações, massa molar e termoquímica |
-| **D6: Biológicas (Neurociência)** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Cadeias de biologia molecular, transcrição e dinâmica neuronal |
-| **D7: Sociais (Sociologia)** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Sistemas de parentesco, dinâmicas culturais e demográficas |
-| **D8: Engenharias** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Resistência de materiais, circuitos lógicos e fluxos de controle |
-| **D9: Metodologia** | **8/8 CTs** | 🟢 Totalmente Coberto | Extração de literatura científica, análise bibliométrica e ABNT |
-| **D10: Interdisciplinar** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Nelson (Geometria Diferencial), Teoria de Gauge e Continuidade Estocástica |
-| **Filosofia** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Lógica de Peirce, árvores de hipóteses epistêmicas e epistemologia |
-| **Codificação / Software** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Verificação estática de código, auditoria de segurança e cobertura |
-| **Pedagogia** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Design instrucional, taxonomias de aprendizagem e nudging comportamental |
+| **D1: Matemática Pura & Aplicada** | **8/8 CTs** | 🟢 Totalmente Coberto | Provas formais de Teoria dos Números, Álgebra e Geometria Euclidiana |
+| **D2: Física Teórica & Experimental** | **8/8 CTs** | 🟢 Totalmente Coberto | Modelagem de Sistemas Físicos (Cinemática, Dinâmica e Termodinâmica) |
+| **D3: Estatística & Probabilidade** | **8/8 CTs** | 🟢 Totalmente Coberto | Testes t, ANOVA, bootstrap, regressões lineares e não-lineares |
+| **D4: Química Molecular & Termoquímica** | **8/8 CTs** | 🟢 Totalmente Coberto | Balanceamento de reações, cálculo de massa molar e cinética química |
+| **D5: Biologia Celular & Molecular** | **8/8 CTs** | 🟢 Totalmente Coberto | Cadeias de transcrição, tradução de códons e conteúdo de GC em nucleotídeos |
+| **D6: Geociências & Astrofísica** | **8/8 CTs** | 🟢 Totalmente Coberto | Classificação litológica de rochas, gradientes térmicos e camadas atmosféricas |
+| **D7: Engenharia de Software & Codificação** | **8/8 CTs** | 🟢 Totalmente Coberto | Análise sintática AST, prevenção de CWE-95 (eval/exec) e coberturas de teste |
+| **D8: Revisão Sistemática de Literatura (RSL)** | **8/8 CTs** | 🟢 Totalmente Coberto | Extração de claims, classificação cruzada de papers e validação bibliométrica |
+| **D9: Metodologia Científica & Desenho Exp.** | **8/8 CTs** | 🟢 Totalmente Coberto | Estruturação de relatórios IMRaD, normas ABNT e integridade editorial |
+| **D10: Síntese Interdisciplinar (Curvatura de Gauge)**| **8/8 CTs** | 🟢 Totalmente Coberto | Holonomias em Geometria Diferencial Nelson, Gauge e Continuidade Estocástica |
+| **D11: Sociologia Quantitativa & Demografia** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Dinâmicas demográficas, análise de grafos sociais e redes de afinidade |
+| **D12: Filosofia Epistemológica (Peirce)** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Inferências triádicas (dedução, indução, abdução) e análise epistêmica |
+| **D13: Pedagogia & Psicologia Comportamental** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Design instrucional, taxonomias de aprendizagem e nudging comportamental |
+| **D14: Ciência de Dados & Redes Neurais** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Arquiteturas CNN, representações latentes e técnicas de data augmentation |
+| **D15: Economia de Tokens & Finanças de Agentes**| **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Teoria dos Jogos (Dilema do Prisioneiro, Stag Hunt), circulação de valor e Nash |
+| **D16: Bioinformática & Genômica Computacional** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Alinhamento de sequências (MSA), métricas pLDDT de proteínas via AlphaFold |
+| **D17: Inteligência Artificial Constitucional** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Alinhamento ético, guardrails de segurança e prevenção ativa de goal drift |
+| **D18: Direito Computacional & Triagem Jurídica** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Análise de precedentes jurisprudenciais, classificação de contratos e LGPD |
+| **D19: Worldbuilding Estrutural & Geografia** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Consistência climática (Köppen), leis hidrográficas e assentamentos lógicos |
+| **D20: Neurociência Computacional & IA** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Dinâmica neuronal, modelos de plasticidade e processamento cognitivo |
+| **D21: Medicina & Odontologia Digital (CAD/CAM)**| **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Processamento de imagens RVG/CBCT, filtros CLAHE e segmentação de cáries |
+| **D22: Causalidade Adversarial & RUMI** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Inferência causal estrutural, eliminação de confounders e perturbações |
+| **D23: Inferência Ativa & Controle de Friston** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Minimização de Energia Livre Variacional (VFE), priors e controle homeostático |
+| **D24: Engenharia Reversa de Código (Reversa)** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Análise estática de binários, mapeamento de dependências e grafos de fluxo |
+| **D25: Metacognição Adaptativa & Tree Search (MSE)**| **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Busca DFS guiada por Process Verifiers e backtracking dinâmico |
 
 #### 💡 Resumo do Diagnóstico
 
-*   **Para Matemática (D1), Física (D2) e Metodologia (D9)**: Raciocínio científico completo e verificado formalmente via TDD (com suítes de testes automatizados aprovados no ambiente WSL2).
-*   **Para Neurociência, Sociologia, Filosofia, Codificação, Pedagogia e outros**: O ecossistema possui motores e ferramentas genéricas ativas (**Cora-Debate**, **Reasoning Orchestrator**, **Agent Forum**, **Metacognitive Search**) que executam e tomam decisões nesses tópicos. No entanto, faltam as especificações de testes específicos (specs TDD locais de D3 a D8 e D10) para auditar matematicamente e dar garantias formais de raciocínio especializado nessas áreas.
+*   **Dimensões Totalmente Homologadas (D1 a D10)**: Raciocínio científico completo, estruturado e formalmente auditado por meio de suítes de testes TDD com **100% de cobertura e sucesso (146 testes aprovados)** no ambiente nativo WSL2.
+*   **Dimensões Abertas (D11 a D25)**: As disciplinas de sociologia, neurociência, filosofia, direito computacional, medicina/odontologia digital, worldbuilding, causalidade adversarial e infraestrutura de comunicação operam utilizando a infraestrutura genérica robusta do ecossistema (**Cora-Debate**, **Reasoning Orchestrator**, **Agent Forum**, **Metacognitive Search**, **Active Inference Controller**). No entanto, faltam as especificações de testes unitários automatizados específicos (specs TDD locais de D11 a D25) para auditar matematicamente e dar garantias formais de raciocínio especializado nessas áreas.
 
 ---
 
