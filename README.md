@@ -45,12 +45,15 @@ O **OpenCode Ecosystem** é o ápice da engenharia metacognitiva. Ao receber uma
 
 ### 🧠 [SYS://UNDER_THE_HOOD] ── Para o Público Técnico (Arquitetura & Engenharia)
 
-A versão **v6.0 (N4.0 Liquid Swarm)** revolucionou o limite arquitetural de workflows através de WSL2, Windows e ambientes conteinerizados:
+A versão **v7.0 (Active Inference & Cognitive Engines)** revolucionou o limite arquitetural de workflows através de WSL2, Windows e ambientes conteinerizados:
 
-*   💾 **Liquid Swarm Architecture (N4.0):** Quebramos a barreira do *pool* estático. Agentes não são mais pré-catalogados; eles são sintetizados em *runtime* e evaporam após a execução, gar[...]
+*   💾 **Liquid Swarm Architecture (N4.0):** Quebramos a barreira do *pool* estático. Agentes não são mais pré-catalogados; eles são sintetizados em *runtime* e evaporam após a execução.
+*   💾 **Active Inference Controller (Fase A - SPEC-059):** Primeiro controlador cognitivo baseado no FEP (Free Energy Principle) de Karl Friston que calcula a Energia Livre Variacional (VFE) das ações para minimizar surpresa e ruídos.
+*   💾 **Modelos de Teoria dos Jogos (Fase B - SPEC-060):** Resolvedores nativos de Dilema do Prisioneiro, Caça ao Cervo e Bens Públicos para tomada de decisão estratégica entre agentes.
+*   💾 **Metacognitive Search Engine (Fase D - SPEC-062):** Algoritmo de busca em árvore guiado por Process Verifiers que detecta loops cognitivos e contradições, acionando backtracks adaptativos.
+*   💾 **ASDE Cognitive Experiments (Fase E - SPEC-063):** Pipeline de descoberta científica autônoma integrado com modelos estratégicos e de decisão de utilidade, atualizando dinamicamente o **Observability Dashboard (Fase C)**.
 *   💾 **Camada Universal (46 Servidores MCP):** Integrações nativas com SQLite, Web Crawlers, APIs financeiras, Execução Sandbox e pontes completas para o **Antigravity CLI (agy)**.
 *   💾 **Módulo de Pesquisa e Multi-Raciocínio:** `MultiReasoningEngine` operando em 6 vias epistemológicas (Dedutiva, Indutiva, Abdutiva, Analógica, Causal e Meta) governado por TDD.
-*   💾 **Pipeline Epistemológico e Potentiality Scanner:** O ecossistema roda algoritmos de grafos (Noological Scanner) para detectar gaps no próprio código, criando novas *skills* autonomame[...]
 
 Para documentações profundas e manuais de especificação técnica, acesse nosso livro de quase 500 páginas (gerado e auditado iterativamente pelo próprio ecossistema):
 👉 [Livro Oficial (Código Fonte LaTeX)](livro-opencode)  

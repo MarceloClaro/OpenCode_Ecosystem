@@ -43,7 +43,14 @@
 - [ ] T4.3. Publicar produto educacional
 - [ ] T4.4. Defender publicamente
 
+## FASE 5 — Integração de Motores Cognitivos (Ciclo R30)
+- [x] T5.1. Implementar Controlador de Inferência Ativa baseada no FEP/VFE (Fase A - SPEC-059)
+- [x] T5.2. Implementar Modelos de Teoria dos Jogos (Dilemas Sociais, Caça ao Cervo) (Fase B - SPEC-060)
+- [x] T5.3. Implementar Painel Unificado de Observabilidade (Fase C)
+- [x] T5.4. Implementar Busca Metacognitiva com Process Verifiers (Fase D - SPEC-062)
+- [x] T5.5. Orquestrar Experimentos Científicos Integrados no ASDE (Fase E - SPEC-063)
+
 ## Prioridades imediatas (próximas 72h)
+🔴 T5.1 → T5.2 → T5.3 → T5.4 → T5.5 (Concluído & Implantado)
 🔴 T0.4 → T0.5 → T0.6 (anteprojeto em PDF ABNT anônimo)
 🔴 T0.7 → T0.8 (Lattes + Ficha de Produção)
-🔴 T0.9 → T0.10 → T0.11 → T0.12 (documentação + inscrição)
