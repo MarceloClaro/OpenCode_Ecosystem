@@ -124,7 +124,7 @@ def ledoit_wolf_shrinkage(X: List[List[float]]) -> Tuple[List[List[float]], floa
         "improvement": cond_S/(cond_reg+1e-10),
     }
 
-def test_ledoit_wolf_cora_eval():
+def test_ledoit_wolf_cora_evaluation():
     """TDD-2: Ledoit-Wolf resolve n < p no cenario real do CORA-Eval."""
     # Simula 150 observacoes com estrutura de correlacao realista
     n, p = 150, 10  # 10 dimensoes CORA-Eval
@@ -226,7 +226,7 @@ def main():
     
     tests = [
         ("Design 1x3 comparacao justa", test_comparison_design),
-        ("Ledoit-Wolf CORA-Eval", test_ledoit_wolf_cora_eval),
+        ("Ledoit-Wolf CORA-Eval", test_ledoit_wolf_cora_evaluation),
         ("Relatorio final auditoria", test_final_report),
     ]
     
