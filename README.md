@@ -55,6 +55,37 @@ A versão **v7.0 (Active Inference & Cognitive Engines)** revolucionou o limite 
 *   💾 **Camada Universal (46 Servidores MCP):** Integrações nativas com SQLite, Web Crawlers, APIs financeiras, Execução Sandbox e pontes completas para o **Antigravity CLI (agy)**.
 *   💾 **Módulo de Pesquisa e Multi-Raciocínio:** `MultiReasoningEngine` operando em 6 vias epistemológicas (Dedutiva, Indutiva, Abdutiva, Analógica, Causal e Meta) governado por TDD.
 
+```mermaid
+graph TD
+  subgraph Clientes["Interface & Clientes"]
+    UI1[OpenCode CLI]
+    UI2[Antigravity IDE / agy]
+    UI3[Observability Dashboard]
+  end
+
+  subgraph Roteador["Roteamento & Protocolo (MCP)"]
+    MCP[EcosystemCapabilitiesMCPServer]
+    UI1 & UI2 --> MCP
+  end
+
+  subgraph Orquestracao["Camada de Execução Líquida (Liquid Swarm)"]
+    MCP --> ORCH[MetaOrchestrator]
+    ORCH --> |Instancia| AG[Liquid Agents]
+    AG --> |Evapora| DEST[Destruição Automática se Métrica < 0.3]
+  end
+
+  subgraph Raciocinio["Motores de Raciocínio (Cognition)"]
+    AG --> AIC[Active Inference / FEP]
+    AG --> MSE[Metacognitive Search / DFS]
+    AG --> GT[Game Theory Solver]
+  end
+
+  subgraph Infraestrutura["Infraestrutura Nativa"]
+    AIC & MSE & GT --> OS[Windows / WSL2 Sandbox]
+    OS --> LOCAL[Modelos Locais: Ollama / Llama3]
+  end
+```
+
 ---
 
 ### 📊 [SYS://EVOLUTION_MATRIX] ── Matriz de Evolução (Raciocínio & Metacognição)
@@ -157,6 +188,30 @@ graph TD
 *   🔍 **Transparência Científica Total (Rastreabilidade Epistemológica):**
     *   *O problema:* É impossível saber como a maioria das IAs chegou a uma determinada conclusão (a famosa "caixa preta").
     *   *A nossa solução:* No OpenCode Ecosystem, não há segredos. Cada palavra escrita no relatório científico vem acompanhada de sua árvore de raciocínio lógico (ARCHE), do teste de causa e efeito (RUMI) e das métricas de consistência mental (VFE). Você pode clicar no dashboard e auditar toda a linha do pensamento, passo a passo, como um juiz revisando um processo.
+
+```mermaid
+graph LR
+  subgraph Tecnologias["Tecnologia OpenCode"]
+    T1[Process Verifiers]
+    T2[Depth Search MSE]
+    T3[Equilíbrios de Nash]
+    T4[AIC / VFE Logs]
+  end
+
+  subgraph Vantagens["Vantagem Técnica"]
+    T1 --> ADV1[Zero Alucinação / Drift]
+    T2 --> ADV2[Token Budget -70%]
+    T3 --> ADV3[Alinhamento Estratégico]
+    T4 --> ADV4[Traceability Total]
+  end
+
+  subgraph Impactos["Impacto Operacional"]
+    ADV1 --> IMP1[Segurança Legal & Governança]
+    ADV2 --> IMP2[Redução de Custo de Tokens]
+    ADV3 --> IMP3[Coordenação Robusta Multiagente]
+    ADV4 --> IMP4[Conformidade & Auditoria Fácil]
+  end
+```
 
 Para documentações profundas e manuais de especificação técnica, acesse nosso livro de quase 500 páginas (gerado e auditado iterativamente pelo próprio ecossistema):
 👉 [Livro Oficial (Código Fonte LaTeX)](livro-opencode)  
