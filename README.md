@@ -108,11 +108,12 @@ graph TD
 
 #### 📖 Legenda Explicativa da Arquitetura Cognitiva
 
-1.  **Camada de Percepção & Formulação (OQS - Optimal Query System)**:
-    *   `Problema Científico Bruto`: A missão inicial ou hipótese vaga inserida pelo usuário (ex: "investigar se o sono afeta o córtex pré-frontal").
-    *   `UncertaintyScanner`: Varre o enunciado em busca de termos ambíguos ou lacunas de informação.
-    *   `QuestionVectorizer`: Converte o problema em um espaço vetorial para encontrar a formulação ideal.
-    *   `Pergunta Ótima Normalizada`: O enunciado reformulado matematicamente para maximizar a precisão da resposta.
+1.  **Camada de Percepção & Formulação (OQS - Optimal Query System) — *O Tradutor & Filtro de Entrada***:
+    *   `Problema Científico Bruto`: A missão inicial ou hipótese vaga inserida pelo usuário. *Para o leigo:* É a pergunta que você digita no terminal sem se preocupar com termos técnicos (ex: "descobrir se dormir mal atrapalha a memória"). É o ponto de partida cru e informal.
+    *   `UncertaintyScanner`: Varre o enunciado em busca de termos ambíguos ou lacunas de informação. *Para o leigo:* Funciona como um "detector de fofoca ou imprecisão". Ele analisa o que você digitou e identifica palavras vagas ou confusas (como "dormir mal" ou "atrapalhar"), alertando a IA de que é preciso definir exatamente o que essas palavras significam (ex: quantas horas de sono? que tipo de memória?).
+    *   `QuestionVectorizer`: Converte o problema em um espaço vetorial para encontrar a formulação ideal. *Para o leigo:* É a "máquina de tradução matemática". Ele pega o seu texto em português e o transforma em números e coordenadas geográficas de conceitos para que a IA possa cruzá-lo com milhares de teorias científicas mapeadas no seu banco de dados.
+    *   `Pergunta Ótima Normalizada`: O enunciado reformulado matematicamente para maximizar a precisão da resposta. *Para o leigo:* É a versão ultra-profissional e precisa da sua pergunta inicial. A IA reescreve a sua dúvida no formato ideal que um cientista de Oxford usaria em uma pesquisa, garantindo que o resto do sistema comece a trabalhar na direção correta e sem desvios.
+
 
 
 2.  **Camada de Raciocínio & Causalidade (RLT & RUMI) — *O Motor de Pensamento & Investigação***:
