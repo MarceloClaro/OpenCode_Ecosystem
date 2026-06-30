@@ -211,30 +211,38 @@ O comando de controle supremo `/marceloclaro` unifica a orquestração do ecossi
 
 ### 🎪 [SYS://PITCH_DEMO] ── Guia de Demonstração para Eventos de Startups
 
-Guia prático para validação expressa do **OpenCode Ecosystem** em estandes ou hackathons.
+Guia prático para validação expressa do **OpenCode Ecosystem** em estandes, bancas de investidores ou hackathons.
 
-#### 1. Instalação Relâmpago
+#### 1. Instalação Relâmpago (OpenCode + Antigravity)
 ```bash
-# Clone limpo do repositório oficial
+# 1. Clone o repositório oficial
 git clone https://github.com/MarceloClaro/OpenCode_Ecosystem.git
 cd OpenCode_Ecosystem
 
-# Instale os pacotes npm/bun
+# 2. Instale as dependências
 bun install
 
-# Instale o OpenCode CLI globalmente
+# 3. Registre o OpenCode CLI globalmente
 npm install -g opencode-ai
+
+# 4. Acople ao Antigravity CLI (agy) do Google DeepMind (se instalado)
+# O instalador do ecossistema registra automaticamente o servidor MCP de capacidades:
+opencode register-mcp --server-name opencode-capabilities
 ```
 
-#### 2. Roteiro de Impacto de Demonstração (Os 3 Pilares do "Wow")
+#### 2. Roteiro de Impacto de Demonstração (Os 4 Pilares do "Wow")
 *   🎮 **Pilar 1: Engenharia de Extremo Rigor (Liquid Swarm)**
     *   *Ação*: Mostre o motor de orquestração instanciando agentes sob demanda (`_spawnLiquidAgent`) e destruindo-os por incompetência se a métrica ficar abaixo de 0.3.
     *   *Narrativa*: *"Nossa agência não tem agentes ociosos. Eles nascem para codar e evaporam em seguida. É escalabilidade infinita matematicamente testada."*
 *   🎮 **Pilar 2: Prevenção de Goal Drift e Hallucinations (Segurança)**
     *   *Ação*: Demonstre o **SPEC-038 TrustEngine** interceptando comandos instáveis em menos de 15ms.
+    *   *Narrativa*: *"IAs comuns mentem quando estão confusas. O OpenCode possui uma barreira metacognitiva em tempo de execução que monitora desvios lógicos e corrige as decisões na hora."*
 *   🎮 **Pilar 3: A Tese Acadêmica de 500 Páginas**
     *   *Ação*: Abra o diretório `livro-opencode` e recompile os PDFs via LaTeX.
-    *   *Narrativa*: *"A documentação dessa arquitetura não é um Readme padrão; é um livro completo, tipograficamente irretocável em ABNT, com dualidade de temas e revisão cega de pares simula[...]
+    *   *Narrativa*: *"A documentação dessa arquitetura não é um Readme padrão; é um livro completo, tipograficamente irretocável em ABNT, com dualidade de temas e revisão cega de pares simulada."*
+*   🎮 **Pilar 4: Sincronia Bilateral Suprema (OpenCode ↔ Antigravity)**
+    *   *Ação*: Execute o comando de controle supremo `/marceloclaro` na CLI do Antigravity (`agy /marceloclaro "resolver dilema de Nash"`) e assista ao painel gráfico do dashboard se atualizar na hora com o raciocínio metacognitivo (MSE) e as decisões de Inferência Ativa.
+    *   *Narrativa*: *"Não criamos apenas mais um app de IA. Nós expomos as capacidades do ecossistema diretamente ao assistente agentico do Google DeepMind (Antigravity) usando protocolo MCP, gerando um super-computador cognitivo local."*
 
 ---
 
