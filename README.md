@@ -142,11 +142,27 @@ Valide o pulso dos agentes executando a suíte de testes no terminal WSL:
 ```
 
 **4. Invocando o Controle Supremo (/marceloclaro)**
-Abra o OpenCode CLI e acione o orquestrador supremo:
-```bash
-opencode
-/marceloclaro [sua missão ou comando]
-```
+
+O comando de controle supremo `/marceloclaro` unifica a orquestração do ecossistema e pode ser acionado em múltiplos ambientes:
+
+*   🌐 **No OpenCode CLI**:
+    Acesse a interface de comandos nativa do ecossistema para iniciar a orquestração autônoma e gerenciar o ciclo de vida dos agentes:
+    ```bash
+    opencode
+    /marceloclaro [sua missão ou comando complexo]
+    ```
+    *Isso inicializa o orquestrador líquido, carrega dinamicamente as skills requeridas de `.evolve/` e monitora o progresso.*
+
+*   🪐 **No Antigravity CLI (agy) & Antigravity IDE**:
+    Integre as capacidades do OpenCode diretamente com o assistente do Google DeepMind. O Antigravity se conecta ao ecossistema através de MCP (Model Context Protocol), expondo as 46 ferramentas locais e os motores metacognitivos:
+    ```bash
+    # Via CLI do Antigravity
+    agy /marceloclaro "[sua missão de descoberta ou auditoria]"
+    
+    # Ou digite diretamente no chat/console do Antigravity IDE:
+    /marceloclaro [comando]
+    ```
+    *Essa chamada aciona a ponte `antigravity-integration` exposta no servidor de capacidades, conectando os motores lógicos (ARCHE RLT, RUMI, FEP e MSE) diretamente no loop de pensamento do Antigravity.*
 
 ---
 
