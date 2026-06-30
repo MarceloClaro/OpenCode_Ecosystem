@@ -108,41 +108,54 @@ graph TD
 
 #### 📖 Legenda Explicativa da Arquitetura Cognitiva
 
-Para compreender como a mente coletiva do OpenCode Ecosystem processa uma missão, analise a função de cada componente do mapa:
-
 1.  **Camada de Percepção & Formulação (OQS - Optimal Query System)**:
-    *   `Problema Científico Bruto`: A missão inicial ou hipótese vaga inserida pelo usuário (ex: "/marceloclaro investigar se o sono afeta o córtex pré-frontal").
-    *   `UncertaintyScanner`: Varre o enunciado em busca de termos ambíguos, contradições semânticas ou lacunas de informação (*gaps* de conhecimento).
+    *   `Problema Científico Bruto`: A missão inicial ou hipótese vaga inserida pelo usuário (ex: "investigar se o sono afeta o córtex pré-frontal").
+    *   `UncertaintyScanner`: Varre o enunciado em busca de termos ambíguos ou lacunas de informação.
     *   `QuestionVectorizer`: Converte o problema em um espaço vetorial para encontrar a formulação ideal.
     *   `Pergunta Ótima Normalizada`: O enunciado reformulado matematicamente para maximizar a precisão da resposta.
 
-2.  **Camada de Raciocínio & Causalidade (RLT & RUMI)**:
-    *   `ARCHE Reasoning Logic Tree`: Constrói a estrutura da árvore de busca lógica.
-    *   `6 Vias Epistêmicas (Peirce)`: Expande o raciocínio em seis categorias fundamentais: *Dedutiva* (lógica formal), *Indutiva* (padrões empíricos), *Abdutiva* (melhor explicação hipotética), *Analógica* (comparações válidas), *Causal* (causa-efeito) e *Meta* (raciocínio sobre o próprio raciocínio).
-    *   `RUMI Causal Discovery`: Filtra e isola relações causais legítimas, eliminando variáveis de confusão ou correlações espúrias.
-    *   `Hipóteses Adversariais Geradas`: Proposições lógicas robustas testadas ativamente contra contra-exemplos.
 
-3.  **Camada de Ação & Controle Metacognitivo (AIC & MSE)**:
-    *   `Active Inference Controller (AIC)`: Módulo baseado no Princípio da Energia Livre (FEP) de Karl Friston. Ele avalia se as ações do ecossistema estão alinhadas com seus objetivos operacionais.
-    *   `Karl Friston FEP (VFE Minimização)`: Calcula a Energia Livre Variacional (VFE) das observações contra os *priors* cognitivos (alinhamento, coerência e saúde). O sistema sempre seleciona a política de ação que minimiza a VFE (ou seja, minimiza a surpresa e a inconsistência lógica).
-    *   `Metacognitive Search Engine (MSE)`: Motor de busca guiado (Tree Search) que explora caminhos alternativos de raciocínio.
-    *   `Busca em Árvore (DFS)`: Executa busca em profundidade (Depth-First Search) baseada em pilhas para encontrar a melhor cadeia de passos lógicos.
-    *   `Process Verifiers`: Validadores em tempo real. Eles analisam se o passo atual de pensamento faz sentido. Se detectarem uma *contradição lógica* ou um *loop de ideias* (medido via índice de similaridade Jaccard em relação aos passos anteriores), acionam uma penalização.
-    *   `Backtracking & Recalibração`: Se o score do caminho cai abaixo de `0.6` ou um loop é detectado, a ramificação é podada e o motor realiza o backtrack para explorar rotas lógicas alternativas.
+2.  **Camada de Raciocínio & Causalidade (RLT & RUMI) — *O Motor de Pensamento & Investigação***:
+    *   `ARCHE Reasoning Logic Tree`: Constrói a estrutura da árvore de busca lógica. *Para o leigo:* Imagine estruturar um problema complexo como um mapa mental gigante com várias ramificações. O ARCHE cria esse mapa mental organizando os caminhos que a IA deve investigar para não se perder em pensamentos aleatórios.
+    *   `6 Vias Epistêmicas (Peirce)`: Expande o raciocínio em seis categorias fundamentais. *Para o leigo:* É como um detetive de elite analisando um mistério sob seis ângulos diferentes:
+        1.  *Dedutivo*: Seguir as regras rígidas da lógica (se A=B e B=C, então A=C).
+        2.  *Indutivo*: Procurar padrões nos dados reais (observar que o sol sempre nasce no leste para prever o amanhã).
+        3.  *Abdutivo*: Formular o melhor "palpite" inicial baseado nas pistas disponíveis.
+        4.  *Analógico*: Comparar o problema atual com problemas parecidos já resolvidos no passado.
+        5.  *Causal*: Encontrar a raiz física que provocou o evento.
+        6.  *Meta*: Fazer a IA pensar sobre o seu próprio método de investigação e corrigir falhas de postura.
+    *   `RUMI Causal Discovery`: Filtra e isola relações causais legítimas, eliminando variáveis de confusão ou correlações espúrias. *Para o leigo:* Evita o erro de achar que "sorvete causa afogamentos" só porque ambos aumentam no verão (o verdadeiro causador comum é o calor). O RUMI atua como o "fiscal de causa e efeito", garantindo que a IA não confunda correlações casuais com fatos científicos reais.
+    *   `Hipóteses Adversariais Geradas`: Proposições lógicas robustas testadas ativamente contra contra-exemplos. *Para o leigo:* São teorias blindadas que já passaram por um "tribunal" interno de robôs críticos. Uma ideia só é aceita se sobreviver aos ataques de agentes adversários que tentam provar que ela está errada.
 
-4.  **Camada de Síntese & Entrega**:
-    *   `ResultSynthesizer`: Consolida o caminho de raciocínio ótimo comprovado.
-    *   `Relatório IMRaD Científico A1`: Gera o artefato final estruturado (Introdução, Metodologia, Resultados e Discussão) com score equivalente a publicações do Qualis A1.
-    *   `Observability Dashboard`: Publica e visualiza os dados operacionais, de VFE e os logs lógicos do experimento em tempo real.
+3.  **Camada de Ação & Controle Metacognitivo (AIC & MSE) — *O Autocontrolador & Tomador de Decisões***:
+    *   `Active Inference Controller (AIC)`: Módulo baseado no Princípio da Energia Livre (FEP) de Karl Friston. *Para o leigo:* Funciona como o "sistema nervoso central" do ecossistema. Ele monitora a saúde, a pressa e a coerência do sistema e decide qual a melhor ação a tomar para manter tudo em equilíbrio.
+    *   `Karl Friston FEP (VFE Minimização)`: Calcula a Energia Livre Variacional (VFE) das observações contra os *priors* cognitivos. *Para o leigo:* Baseia-se no Princípio da Energia Livre do neurocientista Karl Friston. O cérebro humano odeia a incerteza e a surpresa (ambas causam estresse cognitivo). A IA faz o mesmo: ela calcula o seu nível de "estresse/dissonância lógica" (VFE) e escolhe sempre o caminho que traz mais certeza, coerência e estabilidade para o ecossistema.
+    *   `Metacognitive Search Engine (MSE)`: Motor de busca guiado (Tree Search) que explora caminhos alternativos de raciocínio. *Para o leigo:* É o navegador que guia a IA pela árvore de pensamentos. Em vez de dar uma resposta direta e apressada, ele analisa múltiplos caminhos e escolhe o mais seguro e lógico.
+    *   `Busca em Árvore (DFS)`: Executa busca em profundidade (Depth-First Search) baseada em pilhas para encontrar a melhor cadeia de passos lógicos. *Para o leigo:* Imagine que a IA está resolvendo um labirinto desenhando com um lápis. O DFS faz a IA seguir por um caminho até o final. Se encontrar uma parede, ela para, apaga o trecho final e tenta a próxima bifurcação disponível.
+    *   `Process Verifiers`: Validadores em tempo real. *Para o leigo:* São copilotos que vigiam a escrita da IA a cada frase. Se a IA começar a entrar em contradição (falar uma coisa e depois o oposto) ou ficar presa em um loop (repetir a mesma ideia com palavras diferentes, medido pela similaridade Jaccard em relação aos passos anteriores), os Verifiers aplicam uma "multa" no score daquele pensamento.
+    *   `Backtracking & Recalibração`: Se o score do caminho cai abaixo de `0.6` ou um loop é detectado, a ramificação é podada e o motor realiza o backtrack. *Para o leigo:* É o ato de dar um passo para trás. Se o copiloto (Process Verifier) avisa que o caminho de pensamento está ficando confuso ou circular, a IA corta esse galho de ideias na hora, volta para a última decisão coerente e recomeça a pensar por outro rumo.
+
+4.  **Camada de Síntese & Entrega — *O Escritor & Apresentador de Resultados***:
+    *   `ResultSynthesizer`: Consolida o caminho de raciocínio ótimo comprovado. *Para o leigo:* Pega o rascunho de ideias limpas que passaram por todos os filtros e junta tudo em uma linha de raciocínio lógica contínua e sem furos.
+    *   `Relatório IMRaD Científico A1`: Gera o artefato final estruturado com score equivalente a publicações do Qualis A1. *Para o leigo:* Transforma as conclusões da IA em um artigo científico de nível internacional (seguindo o formato padrão: Introdução, Metodologia, Resultados e Discussão). O texto gerado tem rigor acadêmico suficiente para ser publicado em revistas científicas de alto impacto (Qualis A1).
+    *   `Observability Dashboard`: Publica e visualiza os dados em tempo real. *Para o leigo:* É um painel gráfico (uma página web) onde você pode ver em tempo real gráficos da saúde do ecossistema, os níveis de "estresse lógico" (VFE) e ler a transcrição exata dos pensamentos da IA.
 
 ---
 
-### 🛡️ [SYS://TECHNICAL_ADVANTAGES] ── Vantagens Técnicas Exclusivas
+### 🛡️ [SYS://TECHNICAL_ADVANTAGES] ── Vantagens Técnicas Exclusivas (Para Todos Compreenderem)
 
-*   🧠 **Prevenção Ativa de Alucinações (Zero Goal Drift):** A combinação do *TrustEngine* do Witness Pattern com os *Process Verifiers* do MSE valida cada passo intermediário de raciocínio. Se uma contradição ou repetição for detectada, o sistema aborta o ramo de pensamento imediatamente e faz backtracking, garantindo 100% de coerência lógica.
-*   ⚡ **Eficiência de Computação e Token Budget (Test-Time Compute):** Ao invés de usar janelas de contexto gigantes para buscas cegas, o MSE ajusta a profundidade da árvore conforme a complexidade do problema (`easy` vs `medium`), economizando até 70% de tokens em problemas simples.
-*   🤝 **Resolução Estratégica via Teoria dos Jogos:** O ecossistema não assume cooperação cega entre agentes simulados. Ele modela interações usando Caça ao Cervo (Stag Hunt) ou Dilema do Prisioneiro, resolvendo equilíbrios de Nash para prever riscos de deserção antes de executar tarefas complexas.
-*   🔍 **Traceability Epistemológica Completa:** Cada ideia científica gerada é acompanhada por sua árvore de raciocínio ARCHE, hipóteses causais RUMI confirmadas adversariamente, e logs de VFE (Energia Livre Variacional), tudo auditável em tempo real no dashboard.
+*   🧠 **Prevenção Ativa de Alucinações (Chega de Mentiras da IA):**
+    *   *O problema:* IAs tradicionais costumam inventar dados falsos (alucinações) com muita confiança quando não sabem algo.
+    *   *A nossa solução:* Com a união do *TrustEngine* e dos *Process Verifiers*, cada micro-passo de raciocínio da IA é auditado em milissegundos. Se ela tentar desviar do objetivo ou repetir conceitos sem avançar na lógica, o sistema cancela a ação e força a IA a voltar atrás (*backtracking*), garantindo que ela só entregue fatos 100% testados e coerentes.
+*   ⚡ **Economia Absurda de Computação (Raciocínio Inteligente com Baixo Custo):**
+    *   *O problema:* Fazer uma IA ler e processar milhares de páginas para problemas simples custa caro e consome muita energia.
+    *   *A nossa solução:* O MSE (Metacognitive Search Engine) ajusta o "tamanho do cérebro" que vai usar de acordo com a dificuldade do problema (nível fácil vs médio). Se o problema for simples, ela resolve com poucos passos, gerando uma economia de até **70% de tokens** (o combustível das IAs), poupando tempo e poder de processamento.
+*   🤝 **Negociações Estratégicas entre Robôs (Teoria dos Jogos):**
+    *   *O problema:* IAs trabalhando juntas em sistemas multiagentes tradicionais podem sabotar o trabalho uma da outra por falta de alinhamento de metas.
+    *   *A nossa solução:* O ecossistema roda teorias matemáticas de decisão (como *Stag Hunt* e *Dilema do Prisioneiro*). Antes de começar uma tarefa complexa, os agentes avaliam se vale mais a pena cooperar ou agir sozinhos, calculando equilíbrios matemáticos para garantir que ninguém deserte no meio da missão.
+*   🔍 **Transparência Científica Total (Rastreabilidade Epistemológica):**
+    *   *O problema:* É impossível saber como a maioria das IAs chegou a uma determinada conclusão (a famosa "caixa preta").
+    *   *A nossa solução:* No OpenCode Ecosystem, não há segredos. Cada palavra escrita no relatório científico vem acompanhada de sua árvore de raciocínio lógico (ARCHE), do teste de causa e efeito (RUMI) e das métricas de consistência mental (VFE). Você pode clicar no dashboard e auditar toda a linha do pensamento, passo a passo, como um juiz revisando um processo.
 
 Para documentações profundas e manuais de especificação técnica, acesse nosso livro de quase 500 páginas (gerado e auditado iterativamente pelo próprio ecossistema):
 👉 [Livro Oficial (Código Fonte LaTeX)](livro-opencode)  
