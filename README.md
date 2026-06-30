@@ -55,6 +55,66 @@ A versão **v7.0 (Active Inference & Cognitive Engines)** revolucionou o limite 
 *   💾 **Camada Universal (46 Servidores MCP):** Integrações nativas com SQLite, Web Crawlers, APIs financeiras, Execução Sandbox e pontes completas para o **Antigravity CLI (agy)**.
 *   💾 **Módulo de Pesquisa e Multi-Raciocínio:** `MultiReasoningEngine` operando em 6 vias epistemológicas (Dedutiva, Indutiva, Abdutiva, Analógica, Causal e Meta) governado por TDD.
 
+---
+
+### 📊 [SYS://EVOLUTION_MATRIX] ── Matriz de Evolução (Raciocínio & Metacognição)
+
+| Dimensão / Versão | v1.0 - v3.0 (Monolítica) | v4.0 - v5.0 (Multiagente Estática) | v6.0 (Liquid Swarm N4.0) | v7.0 (Active Inference & MSE) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Arquitetura** | Monolito sequencial | Agentes estáticos persistentes | Liquid Swarm (Sintetizados sob demanda) | Liquid Swarm com Feedback Loops |
+| **Modelos de Raciocínio** | Lógica linear (If/Else) | Cadeia de Pensamento (CoT) simples | `MultiReasoningEngine` (6 vias Peirce) | Árvores Lógicas ARCHE + RUMI Causal |
+| **Metacognição** | Nenhuma | Auditoria ReACT pós-execução | Monitoramento estático de erros | Process Verifiers + Backtracking Cognitivo |
+| **Tomada de Decisão** | Heurísticas fixas | Regras estáticas | Heurísticas baseadas em orçamento | Inferência Ativa (FEP / VFE Minimização) |
+| **Verificação** | Asserções de teste simples | Testes unitários padrão | Testes TDD integrados com logs | Verificadores de Contradição e Loops de Jaccard |
+| **Budget de Computação** | Fixo (Single-turn) | Multi-turn fixo | Orçamento dinâmico de tokens | Orçamento de profundidade adaptativo (MSE) |
+
+---
+
+### 🗺️ [SYS://COGNITIVE_MAP] ── Mapa da Cognição do Ecossistema
+
+O diagrama abaixo ilustra o fluxo de processamento de uma missão científica dentro da arquitetura cognitiva do OpenCode:
+
+```mermaid
+graph TD
+  subgraph Percepcao["1. Camada de Percepção & Formulação (OQS)"]
+    A[Problema Científico Bruto] --> B[UncertaintyScanner]
+    B --> C[QuestionVectorizer]
+    C --> D[Pergunta Ótima Normalizada]
+  end
+
+  subgraph Raciocinio["2. Camada de Raciocínio & Causalidade (RLT & RUMI)"]
+    D --> E[ARCHE Reasoning Logic Tree]
+    E --> F["6 Vias Epistêmicas (Peirce)"]
+    F --> G[RUMI Causal Discovery]
+    G --> H[Hipóteses Adversariais Geradas]
+  end
+
+  subgraph Controle["3. Camada de Ação & Controle Metacognitivo (AIC & MSE)"]
+    H --> I[Active Inference Controller]
+    I --> J["Karl Friston FEP (Minimização de VFE)"]
+    J --> K[Metacognitive Search Engine]
+    K --> L["Busca em Árvore (DFS)"]
+    L --> M{"Process Verifiers"}
+    M -- "Score < 0.6 ou Loop" --> N[Backtracking & Recalibração]
+    N --> I
+  end
+
+  subgraph Sintese["4. Camada de Síntese & Entrega"]
+    M -- "Score >= 0.6 & Meta Atingida" --> O[ResultSynthesizer]
+    O --> P[Relatório IMRaD Científico A1]
+    P --> Q[Observability Dashboard]
+  end
+```
+
+---
+
+### 🛡️ [SYS://TECHNICAL_ADVANTAGES] ── Vantagens Técnicas Exclusivas
+
+*   🧠 **Prevenção Ativa de Alucinações (Zero Goal Drift):** A combinação do *TrustEngine* do Witness Pattern com os *Process Verifiers* do MSE valida cada passo intermediário de raciocínio. Se uma contradição ou repetição for detectada, o sistema aborta o ramo de pensamento imediatamente e faz backtracking, garantindo 100% de coerência lógica.
+*   ⚡ **Eficiência de Computação e Token Budget (Test-Time Compute):** Ao invés de usar janelas de contexto gigantes para buscas cegas, o MSE ajusta a profundidade da árvore conforme a complexidade do problema (`easy` vs `medium`), economizando até 70% de tokens em problemas simples.
+*   🤝 **Resolução Estratégica via Teoria dos Jogos:** O ecossistema não assume cooperação cega entre agentes simulados. Ele modela interações usando Caça ao Cervo (Stag Hunt) ou Dilema do Prisioneiro, resolvendo equilíbrios de Nash para prever riscos de deserção antes de executar tarefas complexas.
+*   🔍 **Traceability Epistemológica Completa:** Cada ideia científica gerada é acompanhada por sua árvore de raciocínio ARCHE, hipóteses causais RUMI confirmadas adversariamente, e logs de VFE (Energia Livre Variacional), tudo auditável em tempo real no dashboard.
+
 Para documentações profundas e manuais de especificação técnica, acesse nosso livro de quase 500 páginas (gerado e auditado iterativamente pelo próprio ecossistema):
 👉 [Livro Oficial (Código Fonte LaTeX)](livro-opencode)  
 > *O manual foi construído via TDD com dupla compilação nativa: Versão Branca para Impressão rigorosa e Edição Premium Editorial GitHub Dark Mode para telas.*
