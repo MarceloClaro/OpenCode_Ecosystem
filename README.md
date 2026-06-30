@@ -86,6 +86,15 @@ graph TD
   end
 ```
 
+##### 📖 Guia de Leitura do Mapa de Arquitetura Técnica
+
+Para entender a estrutura do sistema (como as peças se encaixam fisicamente):
+*   **Interface & Clientes (Onde o usuário atua)**: Representa as portas de entrada. O usuário pode interagir via terminal do próprio ecossistema (**OpenCode CLI**), via IDE de desenvolvimento do Google DeepMind (**Antigravity IDE**) ou monitorar as engrenagens de forma visual e colorida pelo navegador (**Observability Dashboard**).
+*   **Roteamento & Protocolo MCP (O Tradutor Universal)**: O servidor de capacidades padroniza todas as mensagens. Graças ao protocolo MCP (Model Context Protocol), o Antigravity e o OpenCode conversam na mesma linguagem, permitindo que a IA acione qualquer uma das 46 ferramentas locais sem atritos.
+*   **Camada de Execução Líquida (A Foz do Liquid Swarm)**: O cérebro orquestrador cria agentes temporários sob demanda a partir de regras gravadas na pasta de "skills". Se um agente falha ou não é mais útil (métrica de utilidade menor que 0.3), ele é destruído imediatamente para economizar recursos e memória.
+*   **Motores de Raciocínio (A Inteligência)**: Módulos internos onde as decisões são tomadas (Minimização de Energia Livre no AIC, Busca guiada em árvore no MSE e soluções estratégicas de Teoria dos Jogos no GT Solver).
+*   **Infraestrutura Nativa (A Base Segura)**: Toda a execução ocorre localmente dentro de contêineres e sandboxes protegidos no Windows/WSL2, consumindo modelos locais (como Llama3 via Ollama) para garantir custo zero de API e privacidade absoluta dos dados.
+
 ---
 
 ### 📊 [SYS://EVOLUTION_MATRIX] ── Matriz de Evolução (Raciocínio & Metacognição)
@@ -212,6 +221,16 @@ graph LR
     ADV4 --> IMP4[Conformidade & Auditoria Fácil]
   end
 ```
+
+##### 📖 Guia de Leitura do Mapa de Impacto das Vantagens Técnicas
+
+Para entender como a tecnologia avançada resolve problemas práticos de negócios:
+*   **Process Verifiers (Verificadores de Processo)** $\rightarrow$ **Zero Alucinação** $\rightarrow$ **Segurança Legal**: A IA é vigiada a cada frase escrita. Se ela tentar inventar dados ou mentir (*alucinação*), os verificadores barram e reiniciam o pensamento. Isso garante que os relatórios gerados tenham validade jurídica e conformidade regulatória.
+*   **Depth Search MSE (Busca Inteligente)** $\rightarrow$ **Economia de Token (-70%)** $\rightarrow$ **Redução de Custo**: Em vez de carregar livros inteiros no contexto para perguntas simples, a IA calcula a profundidade necessária. Economiza-se até 70% de poder computacional, barateando a operação.
+*   **Equilíbrios de Nash (Teoria dos Jogos)** $\rightarrow$ **Alinhamento Estratégico** $\rightarrow$ **Coordenação Multiagente**: Antes de iniciar uma ação complexa, os agentes robôs calculam matrizes de recompensa. Isso garante que nenhum agente tome atitudes egoístas que prejudiquem a meta global da simulação.
+*   **AIC / VFE Logs (Registros de Dissonância)** $\rightarrow$ **Traceability Total** $\rightarrow$ **Auditoria Fácil**: Cada decisão é gravada com seu nível de "dissonância/energia livre". Isso cria um histórico transparente onde auditorias externas podem verificar exatamente o porquê de cada ação tomada pelo sistema.
+
+---
 
 Para documentações profundas e manuais de especificação técnica, acesse nosso livro de quase 500 páginas (gerado e auditado iterativamente pelo próprio ecossistema):
 👉 [Livro Oficial (Código Fonte LaTeX)](livro-opencode)  
