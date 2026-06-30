@@ -56,32 +56,39 @@ A versão **v7.0 (Active Inference & Cognitive Engines)** revolucionou o limite 
 ```mermaid
 graph TD
   subgraph Clientes["Interface & Clientes"]
-    UI1[OpenCode CLI]
-    UI2[Antigravity IDE / agy]
-    UI3[Observability Dashboard]
+    UI1["OpenCode CLI"]
+    UI2["Antigravity IDE / agy"]
+    UI3["Observability Dashboard"]
   end
 
   subgraph Roteador["Roteamento & Protocolo (MCP)"]
-    MCP[EcosystemCapabilitiesMCPServer]
-    UI1 & UI2 --> MCP
+    MCP["EcosystemCapabilitiesMCPServer"]
   end
 
+  UI1 --> MCP
+  UI2 --> MCP
+
   subgraph Orquestracao["Camada de Execução Líquida (Liquid Swarm)"]
-    MCP --> ORCH[MetaOrchestrator]
-    ORCH --> |Instancia| AG[Liquid Agents]
-    AG --> |Evapora| DEST[Destruição Automática se Métrica < 0.3]
+    MCP --> ORCH["MetaOrchestrator"]
+    ORCH --> |Instancia| AG["Liquid Agents"]
+    AG --> |Evapora| DEST["Destruição Automática se Métrica menor que 0.3"]
   end
 
   subgraph Raciocinio["Motores de Raciocínio (Cognition)"]
-    AG --> AIC[Active Inference / FEP]
-    AG --> MSE[Metacognitive Search / DFS]
-    AG --> GT[Game Theory Solver]
+    AG --> AIC["Active Inference / FEP"]
+    AG --> MSE["Metacognitive Search / DFS"]
+    AG --> GT["Game Theory Solver"]
   end
 
   subgraph Infraestrutura["Infraestrutura Nativa"]
-    AIC & MSE & GT --> OS[Windows / WSL2 Sandbox]
-    OS --> LOCAL[Modelos Locais: Ollama / Llama3]
+    OS["Windows / WSL2 Sandbox"]
+    LOCAL["Modelos Locais: Ollama / Llama3"]
   end
+
+  AIC --> OS
+  MSE --> OS
+  GT --> OS
+  OS --> LOCAL
 ```
 
 ##### 📖 Guia de Leitura do Mapa de Arquitetura Técnica
@@ -115,32 +122,32 @@ O diagrama abaixo ilustra o fluxo de processamento de uma missão científica de
 ```mermaid
 graph TD
   subgraph Percepcao["1. Camada de Percepção & Formulação (OQS)"]
-    A[Problema Científico Bruto] --> B[UncertaintyScanner]
-    B --> C[QuestionVectorizer]
-    C --> D[Pergunta Ótima Normalizada]
+    A["Problema Científico Bruto"] --> B["UncertaintyScanner"]
+    B --> C["QuestionVectorizer"]
+    C --> D["Pergunta Ótima Normalizada"]
   end
 
   subgraph Raciocinio["2. Camada de Raciocínio & Causalidade (RLT & RUMI)"]
-    D --> E[ARCHE Reasoning Logic Tree]
+    D --> E["ARCHE Reasoning Logic Tree"]
     E --> F["6 Vias Epistêmicas (Peirce)"]
-    F --> G[RUMI Causal Discovery]
-    G --> H[Hipóteses Adversariais Geradas]
+    F --> G["RUMI Causal Discovery"]
+    G --> H["Hipóteses Adversariais Geradas"]
   end
 
   subgraph Controle["3. Camada de Ação & Controle Metacognitivo (AIC & MSE)"]
-    H --> I[Active Inference Controller]
+    H --> I["Active Inference Controller"]
     I --> J["Karl Friston FEP (Minimização de VFE)"]
-    J --> K[Metacognitive Search Engine]
+    J --> K["Metacognitive Search Engine"]
     K --> L["Busca em Árvore (DFS)"]
     L --> M{"Process Verifiers"}
-    M -- "Score < 0.6 ou Loop" --> N[Backtracking & Recalibração]
+    M -- "Score menor que 0.6 ou Loop" --> N["Backtracking & Recalibração"]
     N --> I
   end
 
   subgraph Sintese["4. Camada de Síntese & Entrega"]
-    M -- "Score >= 0.6 & Meta Atingida" --> O[ResultSynthesizer]
-    O --> P[Relatório IMRaD Científico A1]
-    P --> Q[Observability Dashboard]
+    M -- "Score maior ou igual a 0.6 e Meta Atingida" --> O["ResultSynthesizer"]
+    O --> P["Relatório IMRaD Científico A1"]
+    P --> Q["Observability Dashboard"]
   end
 ```
 
@@ -199,24 +206,24 @@ graph TD
 ```mermaid
 graph LR
   subgraph Tecnologias["Tecnologia OpenCode"]
-    T1[Process Verifiers]
-    T2[Depth Search MSE]
-    T3[Equilíbrios de Nash]
-    T4[AIC / VFE Logs]
+    T1["Process Verifiers"]
+    T2["Depth Search MSE"]
+    T3["Equilíbrios de Nash"]
+    T4["AIC / VFE Logs"]
   end
 
   subgraph Vantagens["Vantagem Técnica"]
-    T1 --> ADV1[Zero Alucinação / Drift]
-    T2 --> ADV2[Token Budget -70%]
-    T3 --> ADV3[Alinhamento Estratégico]
-    T4 --> ADV4[Traceability Total]
+    T1 --> ADV1["Zero Alucinação / Drift"]
+    T2 --> ADV2["Token Budget -70%"]
+    T3 --> ADV3["Alinhamento Estratégico"]
+    T4 --> ADV4["Traceability Total"]
   end
 
   subgraph Impactos["Impacto Operacional"]
-    ADV1 --> IMP1[Segurança Legal & Governança]
-    ADV2 --> IMP2[Redução de Custo de Tokens]
-    ADV3 --> IMP3[Coordenação Robusta Multiagente]
-    ADV4 --> IMP4[Conformidade & Auditoria Fácil]
+    ADV1 --> IMP1["Segurança Legal & Governança"]
+    ADV2 --> IMP2["Redução de Custo de Tokens"]
+    ADV3 --> IMP3["Coordenação Robusta Multiagente"]
+    ADV4 --> IMP4["Conformidade & Auditoria Fácil"]
   end
 ```
 
@@ -327,7 +334,7 @@ graph TD
 
   subgraph Acoes["Ação na Apresentação"]
     P1 --> A1["Mostrar criação/destruição de agentes"]
-    P2 --> A2["Forçar erro e ver interceptação < 15ms"]
+    P2 --> A2["Forçar erro e ver interceptação menor que 15ms"]
     P3 --> A3["Recompilar PDFs LaTeX (Dark/Light)"]
     P4 --> A4["Rodar agy /marceloclaro no terminal"]
   end
