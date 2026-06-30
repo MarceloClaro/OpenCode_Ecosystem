@@ -146,12 +146,12 @@ O CORA-Eval é a nossa suíte de testes de integridade cognitiva e raciocínio c
 | **D23: Inferência Ativa & Controle de Friston** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Minimização de Energia Livre Variacional (VFE), priors e controle homeostático |
 | **D24: Engenharia Reversa de Código (Reversa)** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Análise estática de binários, mapeamento de dependências e grafos de fluxo |
 | **D25: Metacognição Adaptativa & Tree Search (MSE)**| **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Busca DFS guiada por Process Verifiers e backtracking dinâmico |
-| **D26: Computação Quântica & Mecânica Quântica** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Circuitos de qubits (Qiskit, Cirq, PennyLane, TFQ), portas lógicas quânticas e dinâmica de estados |
+| **D26: Computação Quântica & Mecânica Quântica** | **8/8 CTs** | 🟢 Totalmente Coberto | Circuitos de qubits (Qiskit, Cirq, PennyLane, TFQ), portas lógicas quânticas e dinâmica de estados |
 
 #### 💡 Resumo do Diagnóstico
 
-*   **Dimensões Totalmente Homologadas (D1 a D10)**: Raciocínio científico completo, estruturado e formalmente auditado por meio de suítes de testes TDD com **100% de cobertura e sucesso (146 testes aprovados)** no ambiente nativo WSL2.
-*   **Dimensões Abertas (D11 a D26)**: As disciplinas de sociologia, neurociência, filosofia, direito computacional, medicina/odontologia digital, worldbuilding, causalidade adversarial, computação quântica (incluindo frameworks Qiskit, Cirq, PennyLane e TensorFlow Quantum) e infraestrutura de comunicação operam utilizando a infraestrutura genérica robusta do ecossistema (**Cora-Debate**, **Reasoning Orchestrator**, **Agent Forum**, **Metacognitive Search**, **Active Inference Controller**). No entanto, faltam as especificações de testes unitários automatizados específicos (specs TDD locais de D11 a D26) para auditar matematicamente e dar garantias formais de raciocínio especializado nessas áreas.
+*   **Dimensões Totalmente Homologadas (D1 a D10 & D26)**: Raciocínio científico completo, estruturado e formalmente auditado por meio de suítes de testes TDD com **100% de cobertura e sucesso (154 testes aprovados)** no ambiente nativo WSL2.
+*   **Dimensões Abertas (D11 a D25)**: As disciplinas de sociologia, neurociência, filosofia, direito computacional, medicina/odontologia digital, worldbuilding, causalidade adversarial e infraestrutura de comunicação operam utilizando a infraestrutura genérica robusta do ecossistema (**Cora-Debate**, **Reasoning Orchestrator**, **Agent Forum**, **Metacognitive Search**, **Active Inference Controller**). No entanto, faltam as especificações de testes unitários automatizados específicos (specs TDD locais de D11 a D25) para auditar matematicamente e dar garantias formais de raciocínio especializado nessas áreas.
 
 ---
 
