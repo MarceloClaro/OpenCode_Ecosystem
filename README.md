@@ -318,6 +318,38 @@ opencode register-mcp --server-name opencode-capabilities
     *   *Ação*: Execute o comando de controle supremo `/marceloclaro` na CLI do Antigravity (`agy /marceloclaro "resolver dilema de Nash"`) e assista ao painel gráfico do dashboard se atualizar na hora com o raciocínio metacognitivo (MSE) e as decisões de Inferência Ativa.
     *   *Narrativa*: *"Não criamos apenas mais um app de IA. Nós expomos as capacidades do ecossistema diretamente ao assistente agentico do Google DeepMind (Antigravity) usando protocolo MCP, gerando um super-computador cognitivo local."*
 
+```mermaid
+graph TD
+  subgraph Pilares["Os 4 Pilares do Wow"]
+    P1["Pilar 1: Liquid Swarm (Evolução)"]
+    P2["Pilar 2: TrustEngine (Segurança)"]
+    P3["Pilar 3: Livro de 500 Páginas (Rigor)"]
+    P4["Pilar 4: Antigravity MCP (Sincronia)"]
+  end
+
+  subgraph Acoes["Ação na Apresentação"]
+    P1 --> A1["Mostrar criação/destruição de agentes"]
+    P2 --> A2["Forçar erro e ver interceptação < 15ms"]
+    P3 --> A3["Recompilar PDFs LaTeX (Dark/Light)"]
+    P4 --> A4["Rodar agy /marceloclaro no terminal"]
+  end
+
+  subgraph Narrativas["Narrativa de Alto Impacto"]
+    A1 --> N1["'Agentes nascem, entregam e evaporam'"]
+    A2 --> N2["'Autocorreção de mentiras em tempo real'"]
+    A3 --> N3["'Documentação com selo acadêmico Qualis A1'"]
+    A4 --> N4["'Super-cérebro local e unificado de IA'"]
+  end
+```
+
+##### 📖 Guia de Leitura do Roteiro de Demonstração (Pilares do Wow)
+
+Para o apresentador ou investidor entender a lógica de demonstração rápida:
+*   **Pilar 1: Liquid Swarm (A Evolução da Mão de Obra)**: Mostra que não gastamos recursos mantendo processos de IA abertos de forma estática. Eles são criados apenas para o trabalho específico e morrem assim que terminam (ou se demonstrarem ineficiência). *Analogia:* Trabalhadores freelancers contratados em segundos para uma tarefa cirúrgica que vão embora assim que entregam o serviço.
+*   **Pilar 2: TrustEngine (A Barreira do Erro)**: Mostra que a IA não pode inventar respostas loucas. Ao forçar uma ação arriscada, o validador entra em cena e aborta a execução em milissegundos. *Analogia:* Um corretor ortográfico que arranca a caneta da mão do escritor caso ele tente escrever uma palavra inexistente.
+*   **Pilar 3: Livro de 500 Páginas (O Rigor)**: Diferencia este ecossistema de projetos comuns. Em vez de tutoriais simples, possuímos um livro científico completo gerado pelo próprio ecossistema. *Analogia:* Ter a planta e o manual de engenharia física de uma fábrica inteira em vez de um folheto explicativo simples.
+*   **Pilar 4: Antigravity MCP (A Conexão Suprema)**: Demonstra a harmonia entre o OpenCode e o Antigravity CLI do Google DeepMind. O investidor vê o terminal acionando as capacidades locais com visualização visual em tempo real. *Analogia:* Unir duas grandes redes neurais locais para trabalharem juntas em um único raciocínio unificado.
+
 ---
 
 > `"O software tradicional exige que você digite comandos. O OpenCode Ecosystem cria as soluções e evaporiza suas dependências quando conclui."`
