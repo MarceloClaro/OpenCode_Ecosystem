@@ -115,6 +115,33 @@ Para entender a estrutura do sistema (como as peças se encaixam fisicamente):
 
 ---
 
+### 🧪 [SYS://CORA_EVAL_DIAGNOSTICS] ── Cobertura do Framework de Avaliação CORA-Eval
+
+O CORA-Eval é a nossa suíte de testes de integridade cognitiva e raciocínio científico profundo. Ele avalia o desempenho dos agentes em múltiplos domínios através de testes TDD rigorosos.
+
+| Dimensão / Domínio | Cobertura TDD | Status de Implementação | Mapeamento no Ecossistema |
+| :--- | :--- | :--- | :--- |
+| **D1: Matemática** | **8/8 CTs** | 🟢 Totalmente Coberto | Provas formais de Teoria dos Números, Álgebra e Geometria |
+| **D2: Física** | **8/8 CTs** | 🟢 Totalmente Coberto | Modelagem de Sistemas Físicos (Cinemática, Dinâmica, Termodinâmica) |
+| **D3: Experimental** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Desenho experimental estatístico (ANOVA, Teste t, Randomização) |
+| **D4: Computacional** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Complexidade algorítmica, estruturas de dados e verificação formal |
+| **D5: Química** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Balanceamento de reações, massa molar e termoquímica |
+| **D6: Biológicas (Neurociência)** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Cadeias de biologia molecular, transcrição e dinâmica neuronal |
+| **D7: Sociais (Sociologia)** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Sistemas de parentesco, dinâmicas culturais e demográficas |
+| **D8: Engenharias** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Resistência de materiais, circuitos lógicos e fluxos de controle |
+| **D9: Metodologia** | **8/8 CTs** | 🟢 Totalmente Coberto | Extração de literatura científica, análise bibliométrica e ABNT |
+| **D10: Interdisciplinar** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Nelson (Geometria Diferencial), Teoria de Gauge e Continuidade Estocástica |
+| **Filosofia** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Lógica de Peirce, árvores de hipóteses epistêmicas e epistemologia |
+| **Codificação / Software** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Verificação estática de código, auditoria de segurança e cobertura |
+| **Pedagogia** | **0/8 CTs** | 🟡 Parcial (Mecanismos Genéricos) | Design instrucional, taxonomias de aprendizagem e nudging comportamental |
+
+#### 💡 Resumo do Diagnóstico
+
+*   **Para Matemática (D1), Física (D2) e Metodologia (D9)**: Raciocínio científico completo e verificado formalmente via TDD (com suítes de testes automatizados aprovados no ambiente WSL2).
+*   **Para Neurociência, Sociologia, Filosofia, Codificação, Pedagogia e outros**: O ecossistema possui motores e ferramentas genéricas ativas (**Cora-Debate**, **Reasoning Orchestrator**, **Agent Forum**, **Metacognitive Search**) que executam e tomam decisões nesses tópicos. No entanto, faltam as especificações de testes específicos (specs TDD locais de D3 a D8 e D10) para auditar matematicamente e dar garantias formais de raciocínio especializado nessas áreas.
+
+---
+
 ### 🗺️ [SYS://COGNITIVE_MAP] ── Mapa da Cognição do Ecossistema
 
 O diagrama abaixo ilustra o fluxo de processamento de uma missão científica dentro da arquitetura cognitiva do OpenCode:
