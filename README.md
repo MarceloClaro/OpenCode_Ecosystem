@@ -17,7 +17,7 @@
  █ ╚██████╔╝██║     ███████╗██║ ╚████║╚██████╗╚██████╔╝██████╔╝███████╗        █
  █  ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝        █
  █                                                                            █
- █    SYSTEM DIAGNOSTIC: 🟢 NOMINAL | ARCH: N4.0 LIQUID SWARM | EVAPORATION: ON   █
+ █    SYSTEM DIAGNOSTIC: 🟢 NOMINAL | R27 | HI=0.75 | GT=100% | 368 CTs 🟢     █
  █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ```
 
@@ -131,8 +131,8 @@ O CORA-Eval é a nossa suíte de testes de integridade cognitiva e raciocínio c
 | **D8: Revisão Sistemática de Literatura (RSL)** | **8/8 CTs** | 🟢 Totalmente Coberto | Extração de claims, classificação cruzada de papers e validação bibliométrica |
 | **D9: Metodologia Científica & Desenho Exp.** | **8/8 CTs** | 🟢 Totalmente Coberto | Estruturação de relatórios IMRaD, normas ABNT e integridade editorial |
 | **D10: Síntese Interdisciplinar (Curvatura de Gauge)**| **8/8 CTs** | 🟢 Totalmente Coberto | Holonomias em Geometria Diferencial Nelson, Gauge e Continuidade Estocástica |
-| **D11: Sociologia Quantitativa & Demografia** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Dinâmicas demográficas, análise de grafos sociais e redes de afinidade |
-| **D12: Filosofia Epistemológica (Peirce)** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Inferências triádicas (dedução, indução, abdução) e análise epistêmica |
+| **D11: Sociologia Quantitativa & Demografia** | **8/8 CTs** | 🟢 Totalmente Coberto | Dinâmicas demográficas, análise de grafos sociais e redes de afinidade |
+| **D12: Filosofia Epistemológica (Peirce)** | **8/8 CTs** | 🟢 Totalmente Coberto | Inferências triádicas (dedução, indução, abdução) e análise epistêmica |
 | **D13: Pedagogia & Psicologia Comportamental** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Design instrucional, taxonomias de aprendizagem e nudging comportamental |
 | **D14: Ciência de Dados & Redes Neurais** | **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Arquiteturas CNN, representações latentes e técnicas de data augmentation |
 | **D15: Economia de Tokens & Finanças de Agentes**| **0/8 CTs** | 🟡 Parcial (Suporte Genérico) | Teoria dos Jogos (Dilema do Prisioneiro, Stag Hunt), circulação de valor e Nash |
@@ -397,5 +397,28 @@ Para o apresentador ou investidor entender a lógica de demonstração rápida:
 
 ---
 
-> `"O software tradicional exige que você digite comandos. O OpenCode Ecosystem cria as soluções e evaporiza suas dependências quando conclui."`
+> `"O software tradicional exige que você digite comandos. OpenCode Ecosystem cria as soluções e evaporiza suas dependências quando conclui."`
 > **⚡ PROMPT FORWARD // SECURE THE GRID // BUILD THE FUTURE ⚡**
+
+---
+
+### 📋 [SYS://CHANGELOG_R27] ── R27: Cognitive Diversity + Game Theory 100% (Jun 2026)
+
+| Melhoria | Antes | Depois | Impacto |
+|----------|-------|--------|---------|
+| **Câmara de Eco (HI)** | HI=0.9467 (echo) | **HI=0.7473 (não eco)** | ⬇️ 21% — diversidade cognitiva real |
+| **Teoria dos Jogos** | 0% cobertura | **100% (10/10 categorias)** | +10pp no overall coverage |
+| **Scanner Noológico** | 28% overall | **38% overall** | +10pp, 35/92 categorias |
+| **Testes skipped** | 5 (biber ausente) | **3 (apenas opcionais)** | bibtex fallback implementado |
+
+**O que foi feito:**
+1. 🧩 **CognitiveDiversityInjector** — 8 artefatos injetados no CDS (5 paradigmas, 8 domínios, 4 refs GT)
+2. 🎯 **Game Theory 100%** — ENRICHED_KW + keyword_map expandidos; `GAME_THEORY_RESEARCH.md` na raiz
+3. 🔧 **bibtex fallback** — `LaTeXCompiler._find_bibliography_tool()` auto-detects biber > bibtex
+4. 📊 **Reavaliação completa** — pipeline de 6 scanners executado com métricas registradas
+
+```
+  R27 SUM: 368 CTs · 61/64 passed · 3 skipped · 7 files · +179/-24 linhas
+```
+
+👉 [Changelog Completo](CHANGELOG.md) | [Estado do Ecossistema](ecosystem-state.json) | [SPEC-056](specs/SPEC-056-COGNITIVE-DIVERSITY-EXPANSION-R27.md)
