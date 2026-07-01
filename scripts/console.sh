@@ -73,6 +73,7 @@ exibir_menu() {
     echo -e " [11] Sincronizar e Backup com GitHub (Git Push)"
     echo -e " [12] Visualizar Documentação Técnica (SDD / Manual)"
     echo -e " [13] Abrir Diretório de Projetos no Explorer"
+    echo -e " [14] Colar texto no OpenCode (bypass raw mode)"
     echo ""
     echo -e " Controle de Áudio (TTS):"
     echo -e "   [p] Pausar       [r] Retomar       [c] Cancelar       [t] Repetir"
@@ -244,6 +245,31 @@ while true; do
             echo -e "${YELLOW}>> Abrindo pasta de projetos no Windows...${NC}"
             explorer.exe "$(wslpath -w "$PROJECTS_DIR")" >/dev/null 2>&1
             sleep 1
+            ;;
+        14)
+            echo ""
+            echo -e "${YELLOW}>> Colar texto no OpenCode (bypass raw mode)${NC}"
+            echo ""
+            echo "Escolha o modo de colagem:"
+            echo "  [a] Colar da area de transferencia (Windows Clipboard)"
+            echo "  [b] Modo interativo (digitar/colar com Ctrl+D)"
+            echo "  [c] Voltar ao menu"
+            echo -n "Opção: "
+            read -r op_paste
+            case $op_paste in
+                a|A)
+                    bash "$SCRIPTS_DIR/opencode-paste.sh"
+                    ;;
+                b|B)
+                    bash "$SCRIPTS_DIR/opencode-paste.sh -i"
+                    ;;
+                *)
+                    echo ""
+                    ;;
+            esac
+            echo ""
+            echo -n "Pressione [Enter] para continuar..."
+            read -r
             ;;
         p|P)
             echo "PAUSE" > "$CMD_FILE"
