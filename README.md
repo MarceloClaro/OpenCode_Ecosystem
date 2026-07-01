@@ -124,6 +124,190 @@ Integração nativa com arXiv, PubMed, OpenAlex, EuropePMC, bioRxiv, CORE + moto
 
 ---
 
+### 🏗️ [SYS://FULL_ARCHITECTURE_MAP] ── Mapa da Arquitetura Completa do Ecossistema
+
+Abaixo, o diagrama completo da arquitetura do OpenCode Ecosystem, organizado em **9 camadas** que abrangem desde a interface com o usuário até a infraestrutura de execução local:
+
+```mermaid
+flowchart TD
+  subgraph Interface["① CAMADA DE INTERFACE — Entrada do Usuário"]
+    CLI["OpenCode CLI<br/>/marceloclaro"]
+    AGY["Antigravity CLI (agy)<br/>Antigravity IDE"]
+    DASH["Observability Dashboard<br/>HTTP :8081"]
+  end
+
+  subgraph MCP["② CAMADA MCP — 46 Servidores de Protocolo"]
+    MCP_SEARCH["🔍 Busca<br/>websearch, arxiv,<br/>scihub, gh_grep"]
+    MCP_BROWSER["🌐 Navegação<br/>playwright, chrome-devtools"]
+    MCP_CODE["💻 Código<br/>code-runner, eslint, diff"]
+    MCP_DATA["📊 Dados<br/>sqlite, fetch, pdf, time"]
+    MCP_REASON["🧠 Raciocínio<br/>sequential-thinking, memory"]
+    MCP_INFRA["⚙️ Infraestrutura<br/>filesystem, github"]
+  end
+
+  subgraph Orquestracao["③ CAMADA DE ORQUESTRAÇÃO — Controle Central"]
+    MARCELO["/marceloclaro<br/>Arquiteto Supremo"]
+    MASTER["MasterOrchestrator<br/>Pipeline Local"]
+    STAGE["StageOrchestrator<br/>Estágios TDD/SDD"]
+    ANTIGRAVITY_ORCH["AntigravityOrchestrator<br/>Navegação/Geração"]
+    LIQUID["Liquid Swarm N4.0<br/>Agentes sob demanda"]
+  end
+
+  subgraph Agentes["④ CAMADA DE AGENTES — 128 Inteligências"]
+    AG_CORE["🧩 Core (56)<br/>coder, reviewer, debugger,<br/>architect, test-engineer..."]
+    AG_ACADEMIC["📚 Acadêmicos (49)<br/>MASWOS v5.0<br/>00-editor a 44-correção"]
+    AG_SEEKER["🔬 SEEKER (12)<br/>searcher, grounder,<br/>extractor, mapper..."]
+    AG_REVERSA["🔧 Reversa (11)<br/>architect, archaeologist,<br/>detective, synthesis..."]
+  end
+
+  subgraph Skills["⑤ CAMADA DE SKILLS — 227 Capacidades"]
+    SK_SYSTEM["⚙️ System (12)"]
+    SK_SCIENCE["🧬 Science (38)<br/>AlphaFold, PubMed,<br/>ChEMBL, UniProt..."]
+    SK_REASONING["🧠 Reasoning (4)<br/>Z3, SymPy, Kanren, Critical"]
+    SK_RESEARCH["📖 Research (18)<br/>SEEKER, editais-br..."]
+    SK_JURIDICO["⚖️ Jurídico (7)<br/>contratos, jurisprudência..."]
+  end
+
+  subgraph Scanners["⑥ CAMADA DE SCANNERS — Diagnóstico & Prospecção"]
+    SCN_NOO["Scanner Noológico<br/>Lacunas epistêmicas"]
+    SCN_TELEO["Scanner Teleológico<br/>Alinhamento estratégico"]
+    SCN_EVO["Scanner Evolutivo<br/>Maturidade evolutiva"]
+    SCN_POT["Potentiality Estimator v2<br/>6 dimensões epistêmicas"]
+    SCN_SOCIAL["Social Impact Scanner<br/>ESG & Impacto social"]
+    SCN_DIVERSITY["Cognitive Diversity Scanner<br/>HI / Câmaras de eco"]
+  end
+
+  subgraph Motores["⑦ CAMADA DE MOTORES — Cognição & Evolução"]
+    M_AIC["Active Inference Controller<br/>FEP / VFE Minimização<br/>SPEC-059"]
+    M_GT["Game Theory Solver<br/>10 modelos clássicos<br/>SPEC-060"]
+    M_MSE["Metacognitive Search Engine<br/>DFS + Process Verifiers<br/>SPEC-062"]
+    M_ASDE["ASDE Pipeline<br/>Descoberta Científica<br/>SPEC-063"]
+    M_EVOLVE["Manus Evolve<br/>PLAN→ACT→REFLECT→EXTRACT→EVOLVE"]
+    M_RUMI["RUMI Causal Discovery<br/>Hipóteses causais<br/>SPEC-058"]
+    M_OQS["OQS Optimal Query<br/>Pergunta Ótima<br/>SPEC-056"]
+  end
+
+  subgraph Pipeline["⑧ CAMADA DE PIPELINE — Produção Acadêmica"]
+    P_SEEKER["SEEKER<br/>Pesquisa em 10+ fontes"]
+    P_MASWOS["MASWOS v5.0<br/>49 agentes especializados"]
+    P_REVIEW["Revisão Cega<br/>5 revisores simulados"]
+    P_CORRECTION["Correção Iterativa<br/>6 motores + CJK detector"]
+    P_LATEX["Exportação LaTeX/PDF<br/>Qualis A1 95-100/100"]
+  end
+
+  subgraph Seguranca["⑨ CAMADA DE SEGURANÇA & TESTES"]
+    S_TRUST["TrustEngine N3.5<br/>TrustScorer + BehavioralGate"]
+    S_GUARD["Preventive Cognitive Guardrails<br/>SPEC-038"]
+    S_TDD["18 Suítes TDD<br/>356 CTs · 100% pass"]
+    S_FORGET["NaturalForgetting<br/>Atkinson-Shiffrin"]
+  end
+
+  subgraph Infra["⑩ CAMADA DE INFRAESTRUTURA"]
+    INFRA_WSL["WSL2 / Windows 11"]
+    INFRA_OLLAMA["Ollama (porta 11434)<br/>Modelos locais"]
+    INFRA_BUN["Bun 1.3 · Node.js 25"]
+    INFRA_STORAGE["SQLite · Filesystem<br/>ecosystem-state.json"]
+  end
+
+  %% Conexões entre camadas
+  CLI --> MCP_SEARCH
+  CLI --> MCP_CODE
+  AGY --> MCP_BROWSER
+  AGY --> MCP_DATA
+  DASH --> MCP_INFRA
+
+  MCP_SEARCH --> MARCELO
+  MCP_CODE --> MARCELO
+  MCP_REASON --> MASTER
+
+  MARCELO --> MASTER
+  MARCELO --> STAGE
+  MARCELO --> ANTIGRAVITY_ORCH
+  MARCELO --> LIQUID
+
+  MASTER --> AG_CORE
+  STAGE --> AG_ACADEMIC
+  ANTIGRAVITY_ORCH --> AG_REVERSA
+  LIQUID --> AG_SEEKER
+
+  AG_CORE --> SK_SYSTEM
+  AG_CORE --> SK_REASONING
+  AG_ACADEMIC --> SK_RESEARCH
+  AG_SEEKER --> SK_SCIENCE
+  AG_REVERSA --> SK_JURIDICO
+
+  SK_SCIENCE --> SCN_NOO
+  SK_REASONING --> SCN_TELEO
+  SK_RESEARCH --> SCN_EVO
+  SK_SYSTEM --> SCN_POT
+
+  SCN_NOO --> M_AIC
+  SCN_TELEO --> M_GT
+  SCN_EVO --> M_MSE
+  SCN_POT --> M_ASDE
+  SCN_SOCIAL --> M_RUMI
+  SCN_DIVERSITY --> M_OQS
+
+  M_AIC --> P_SEEKER
+  M_GT --> P_SEEKER
+  M_MSE --> P_MASWOS
+  M_ASDE --> P_REVIEW
+  M_EVOLVE --> P_CORRECTION
+  M_RUMI --> P_LATEX
+
+  P_LATEX --> S_TRUST
+  P_LATEX --> S_TDD
+  S_GUARD --> S_TRUST
+
+  S_TRUST --> INFRA_WSL
+  S_TDD --> INFRA_WSL
+  INFRA_WSL --> INFRA_OLLAMA
+  INFRA_WSL --> INFRA_BUN
+  INFRA_WSL --> INFRA_STORAGE
+
+  %% Estilo visual
+  classDef interface fill:#1a1a2e,stroke:#e94560,stroke-width:2px,color:#fff
+  classDef mcp fill:#16213e,stroke:#0f3460,stroke-width:2px,color:#a8d8ea
+  classDef orchest fill:#0f3460,stroke:#e94560,stroke-width:2px,color:#fff
+  classDef agentes fill:#533483,stroke:#e94560,stroke-width:2px,color:#fff
+  classDef skills fill:#2d6a4f,stroke:#95d5b2,stroke-width:2px,color:#fff
+  classDef scanners fill:#e07a5f,stroke:#f4a261,stroke-width:2px,color:#fff
+  classDef motores fill:#264653,stroke:#2a9d8f,stroke-width:2px,color:#fff
+  classDef pipeline fill:#6b705c,stroke:#a5a58d,stroke-width:2px,color:#fff
+  classDef seguranca fill:#9b2226,stroke:#e63946,stroke-width:2px,color:#fff
+  classDef infra fill:#1d3557,stroke:#457b9d,stroke-width:2px,color:#fff
+
+  class CLI,AGY,DASH interface
+  class MCP_SEARCH,MCP_BROWSER,MCP_CODE,MCP_DATA,MCP_REASON,MCP_INFRA mcp
+  class MARCELO,MASTER,STAGE,ANTIGRAVITY_ORCH,LIQUID orchest
+  class AG_CORE,AG_ACADEMIC,AG_SEEKER,AG_REVERSA agentes
+  class SK_SYSTEM,SK_SCIENCE,SK_REASONING,SK_RESEARCH,SK_JURIDICO skills
+  class SCN_NOO,SCN_TELEO,SCN_EVO,SCN_POT,SCN_SOCIAL,SCN_DIVERSITY scanners
+  class M_AIC,M_GT,M_MSE,M_ASDE,M_EVOLVE,M_RUMI,M_OQS motores
+  class P_SEEKER,P_MASWOS,P_REVIEW,P_CORRECTION,P_LATEX pipeline
+  class S_TRUST,S_GUARD,S_TDD,S_FORGET seguranca
+  class INFRA_WSL,INFRA_OLLAMA,INFRA_BUN,INFRA_STORAGE infra
+```
+
+#### 📖 Guia de Leitura do Mapa da Arquitetura Completa
+
+| Camada | Nome | Função | Componentes |
+|--------|------|--------|-------------|
+| **①** | Interface | Portas de entrada do usuário | OpenCode CLI, Antigravity CLI/IDE, Dashboard |
+| **②** | MCP | 46 servidores de protocolo e ferramentas | Search, Browser, Code, Data, Reasoning, Infrastructure |
+| **③** | Orquestração | Controle central e delegação | `/marceloclaro`, Master, Stage, Antigravity, Liquid Swarm |
+| **④** | Agentes | 128 inteligências especializadas | Core (56), Acadêmicos (49), SEEKER (12), Reversa (11) |
+| **⑤** | Skills | 227 capacidades em 13 categorias | System, Science, Reasoning, Research, Jurídico |
+| **⑥** | Scanners | 6 motores de diagnóstico | Noológico, Teleológico, Evolutivo, Potentiality, Social, Diversity |
+| **⑦** | Motores | Cognição, evolução e descoberta | AIC, Game Theory, MSE, ASDE, Manus Evolve, RUMI, OQS |
+| **⑧** | Pipeline | Produção acadêmica Qualis A1 | SEEKER → MASWOS → Revisão → Correção → LaTeX/PDF |
+| **⑨** | Segurança | Trust, testes e governança | TrustEngine N3.5, Guardrails, TDD, NaturalForgetting |
+| **⑩** | Infraestrutura | Base de execução local | WSL2, Ollama, Bun/Node.js, SQLite |
+
+> **Fluxo principal:** O usuário entra via Interface (①) → comandos passam pelos MCPs (②) → o Orquestrador Supremo (③) delega para Agentes (④) que carregam Skills (⑤) → Scanners (⑥) diagnosticam o estado → Motores Cognitivos (⑦) processam → Pipeline Acadêmico (⑧) produz o artefato → Tudo é validado por Segurança & Testes (⑨) sobre a Infraestrutura local (⑩).
+
+---
+
 ### 🌐 [SYS://BUSINESS_LAYER] ── Para Startups e Investidores (O Valor do Negócio)
 
 *   ⚡ **Execução Híbrida Inteligente:** Operação offline local (via **Ollama CLI**) e transição fluida para a nuvem de ponta (context window massivo de até 1M de tokens), pulverizando custos[...]
