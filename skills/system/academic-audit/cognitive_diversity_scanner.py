@@ -445,6 +445,57 @@ class CognitiveDiversityScanner:
 
         return sum(scores) / len(scores)
 
+    # ─── Integração com CognitiveDiversityInjector ─────────────────────
+
+    def register_from_injector(self) -> int:
+        """
+        Carrega artefatos do CognitiveDiversityInjector (SPEC-056 R27).
+
+        Importa o injector, gera os 8 artefatos de diversidade com
+        paradigmas alternativos e os converte para ArtifactProfile.
+
+        Returns:
+            int: número de artefatos registrados pelo injector
+        """
+        try:
+            from cognitive_diversity_injector import inject_diversity_artifacts
+
+            artifacts = inject_diversity_artifacts()
+            count = 0
+            for art in artifacts:
+                # Converte vetor 10D para dict nomeado
+                dim_names = [
+                    "paradigmas", "metodos", "teorias", "raciocinio",
+                    "teoria_jogos", "niveis_analise", "temporalidade",
+                    "populacao", "dados", "dominios",
+                ]
+                coverage_dict = {}
+                for i, val in enumerate(art.coverage_vector):
+                    if i < len(dim_names):
+                        coverage_dict[dim_names[i]] = val
+
+                profile = ArtifactProfile(
+                    artifact_id=art.artifact_id,
+                    text_preview=f"[INJECTOR] {art.title}: {art.description[:100]}",
+                    coverage_vector=coverage_dict,
+                    metadata={
+                        "paradigm": art.paradigm,
+                        "method": art.method,
+                        "theory": art.theory,
+                        "reasoning_types": art.reasoning_types,
+                        "game_theory": art.game_theory,
+                        "domain": art.domain,
+                        "level_of_analysis": art.level_of_analysis,
+                    },
+                )
+                self.register_artifact(profile)
+                count += 1
+            return count
+        except ImportError:
+            return 0
+        except Exception:
+            return 0
+
     # ─── Export ───────────────────────────────────────────────────────────
 
     def to_json(self, indent: int = 2) -> str:

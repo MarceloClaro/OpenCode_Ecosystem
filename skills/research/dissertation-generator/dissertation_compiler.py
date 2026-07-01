@@ -116,14 +116,32 @@ class LaTeXCompiler:
 
         return name  # Fallback to name (will fail if not found)
 
+    def _find_bibliography_tool(self) -> str:
+        """Auto-detecta ferramenta de bibliografia disponivel: biber > bibtex."""
+        biber_path = self._find_executable("biber")
+        # Verifica se biber realmente funciona (pode estar presente mas sem deps Perl)
+        if biber_path and biber_path != "biber":
+            try:
+                subprocess.run([biber_path, "--version"],
+                               capture_output=True, text=True, timeout=10)
+                return biber_path
+            except (subprocess.SubprocessError, OSError):
+                pass
+        # Fallback para bibtex
+        bibtex_path = self._find_executable("bibtex")
+        if bibtex_path and bibtex_path != "bibtex":
+            return bibtex_path
+        return "bibtex"  # tentativa final (pode falhar)
+
     def compile(self, tex_file: Path, timeout: int = 300) -> CompileResult:
-        """Executa pipeline completo: pdflatex → biber → pdflatex → pdflatex."""
+        """Executa pipeline completo: pdflatex → biber/bibtex → pdflatex → pdflatex."""
         start = datetime.now(BRAZIL_TZ)
         work_dir = tex_file.parent
         base_name = tex_file.stem
 
         pdflatex = self._find_executable("pdflatex")
-        biber = self._find_executable("biber")
+        bib_tool = self._find_bibliography_tool()
+        use_biber = "biber" in bib_tool
 
         # Step 1: pdflatex
         result = subprocess.run(
@@ -137,11 +155,11 @@ class LaTeXCompiler:
                 duration_seconds=(datetime.now(BRAZIL_TZ) - start).total_seconds()
             )
 
-        # Step 2: biber (if bibliography exists)
+        # Step 2: biber/bibtex (if bibliography exists)
         bbl_file = work_dir / f"{base_name}.bbl"
         if not bbl_file.exists():
             subprocess.run(
-                [biber, base_name],
+                [bib_tool, base_name],
                 cwd=work_dir, capture_output=True, text=True, timeout=timeout
             )
 

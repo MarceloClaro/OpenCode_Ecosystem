@@ -66,7 +66,12 @@
   },
   "maswos_refinement": {
     "status": "completo",
-    "agentes_executados": ["A44", "A45", "A12", "A13"],
+    "agentes_executados": [
+      "A44",
+      "A45",
+      "A12",
+      "A13"
+    ],
     "score_qualis_polinomia": 84.0,
     "score_qualis_infancia": 84.0,
     "classificacao": "A1",
@@ -116,7 +121,9 @@
       "nexus/scripts/witness_pattern.py (Witness Observer + TrustEngine Bridge)",
       "nexus/scripts/rumi_causal_discovery.py (RUMI Pipeline: geracao, teste, torneio, adversario)"
     ],
-    "specs": ["SPEC-057-ARCHE-RLT.md"],
+    "specs": [
+      "SPEC-057-ARCHE-RLT.md"
+    ],
     "test_suites": {
       "test_arche_rlt.py": "15/15 PASS",
       "test_opus.py": "12/12 PASS",
@@ -160,7 +167,49 @@
       "eco_run_asde_get_report",
       "eco_run_asde_ontology_status"
     ],
-    "commitado_em": "pending",
+    "commitado_em": "3f49696",
     "data": "2026-06-29"
-  }
+  },
+  "r27_scanner_reassessment": {
+    "cognitive_diversity": {
+      "hi": 0.7473,
+      "is_echo_chamber": false,
+      "classification": "low_diversity",
+      "n_artifacts": 9,
+      "n_injected": 8,
+      "improvement": "HI reduced from 0.9467 to 0.7473 (21% reduction)"
+    },
+    "noological": {
+      "overall_coverage_pct": 38,
+      "categories_covered": 35,
+      "categories_absent": 57,
+      "completeness_grade": "D — Cobertura Restrita",
+      "teoria_jogos_coverage": "0% -> 100% (todas 10 categorias)",
+      "improvement": "Overall coverage 28% -> 38% (+10pp)"
+    },
+    "evolutionary": {
+      "total_gaps": 11,
+      "construction_cost": 0.0625,
+      "quick_wins": 2
+    },
+    "social_impact": {
+      "consolidated_score": 62.9,
+      "sroi_ratio": 2.55
+    },
+    "test_suites": {
+      "total_cts": 368,
+      "passing": 368,
+      "skipped": 3,
+      "pct": 100.0,
+      "note": "3 skipped: edge-tts, pandoc, dissertacao.pdf path (features opcionais)"
+    },
+    "improvements_applied": [
+      "CDS injector integration (HI 0.95 -> 0.75, echo_chamber=False)",
+      "Game Theory keyword_map + ENRICHED_KW (0% -> 100% coverage)",
+      "GAME_THEORY_RESEARCH.md root artifact",
+      "LaTeXCompiler bibtex fallback (5 -> 3 skipped tests)"
+    ],
+    "assessed_at": "2026-06-30T23:00Z"
+  },
+  "version": "v5.6.0 (R27)"
 }

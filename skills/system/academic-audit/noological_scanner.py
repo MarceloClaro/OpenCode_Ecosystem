@@ -153,7 +153,7 @@ EPISTEMOLOGICAL_DIMENSIONS: dict[str, KnowledgeDimension] = {
 # ═══ ENRICHED KEYWORDS (v2.0) ═══
 ENRICHED_KW: dict[str, dict[str, list[str]]] = {
     "paradigmas": {"positivista":["positiv","quantitativ","experimental","hipotese","mensur","objetiv"],"interpretativista":["interpretativ","qualitativ","fenomenolog","compreens","subjetiv"],"fenomenológico":["fenomenolog","vivencia","experiencia vivida","sentido","heidegger","merleau"],"construtivista":["construtiv","construcion","significado","vygotsk","piaget"]},
-    "teoria_jogos": {"equilíbrio de nash":["nash","equilibrio","estrategia dominante","nao-cooperativo"],"dilema do prisioneiro":["prisioneiro","dilema","cooperacao","traicao","payoff"],"tit-for-tat":["tit for tat","olho por olho","reciproc","axelrod"],"evolutivo":["evolutivo","selecao natural","smith","price","ess"],"bayesiano":["bayesiano","harsanyi","informacao incompleta","crenca"],"cooperativo":["cooperativo","shapley","coalizao","contribuicao marginal"]},
+    "teoria_jogos": {"soma zero":["soma zero","zero-sum","jogo de soma zero"],"equilíbrio de nash":["nash","equilibrio","estrategia dominante","nao-cooperativo","pne","equilibrio de nash"],"dilema do prisioneiro":["prisioneiro","dilema","cooperacao","traicao","payoff","prisoner"],"tit-for-tat":["tit for tat","olho por olho","reciproc","axelrod","retaliacao"],"stackelberg":["stackelberg","lider","seguidor","liderança","lideranca"],"barganha":["barganha","negociacao","negocia","nash bargaining","threat point"],"sinalização":["sinalizac","sinalizacao","signaling","sinal","screening"],"evolutivo":["evolutivo","selecao natural","smith","price","ess","evolutivamente estavel"],"bayesiano":["bayesiano","harsanyi","informacao incompleta","crenca","tipo"],"cooperativo":["cooperativo","shapley","coalizao","contribuicao marginal","nucleolo"]},
 }
 
 class NoologicalScanner:
@@ -438,6 +438,18 @@ class NoologicalScanner:
                 "saúde pública": ["saude publica", "sus", "promocao saude", "prevenc"],
                 "educação": ["educac", "ensino", "aprendizag", "escolar"],
                 "ia tecnologia": ["inteligencia artificial", "machine learning", "deep learning", "ia", "chatbot"],
+            },
+            "teoria_jogos": {
+                "equilíbrio de nash": ["nash", "equilibrio de nash", "pne", "estrategia dominante"],
+                "dilema do prisioneiro": ["prisioneiro", "dilema do prisioneiro", "cooperacao", "payoff"],
+                "soma zero": ["soma zero", "zero-sum", "jogo de soma zero"],
+                "tit-for-tat": ["tit for tat", "reciprocidade", "olho por olho"],
+                "stackelberg": ["stackelberg", "lider", "seguidor"],
+                "barganha": ["barganha", "negociacao", "bargaining"],
+                "sinalização": ["sinalizac", "signaling", "screening"],
+                "evolutivo": ["evolutivamente estavel", "ess", "selecao natural", "evolutiv"],
+                "bayesiano": ["bayesiano", "harsanyi", "informacao incompleta"],
+                "cooperativo": ["cooperativo", "shapley", "coalizao", "nucleolo"],
             },
         }
 

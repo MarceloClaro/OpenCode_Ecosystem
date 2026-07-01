@@ -14,6 +14,7 @@ Autor: OpenCode Ecosystem (2026) — R27: TDD
 """
 
 import os
+import subprocess
 import sys
 import shutil
 import tempfile
@@ -74,17 +75,26 @@ Conclusao final.
 
 @pytest.fixture
 def sample_tex_with_bib(temp_dir):
-    """Create .tex file with bibliography."""
-    tex_content = r"""
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage[brazil]{babel}
-\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
-\addbibresource{referencias.bib}
-\begin{document}
-Introducao com citacao \cite{TEST2024}.
-\printbibliography
-\end{document}
+    """Create .tex file with bibliography (auto-detects backend)."""
+    # Detecta backend disponivel (biber > bibtex)
+    has_biber = shutil.which("biber") is not None
+    if has_biber:
+        try:
+            subprocess.run(["biber", "--version"], capture_output=True, text=True, timeout=10)
+        except (subprocess.SubprocessError, OSError):
+            has_biber = False
+    backend = "biber" if has_biber else "bibtex"
+
+    tex_content = f"""
+\\documentclass{{article}}
+\\usepackage[utf8]{{inputenc}}
+\\usepackage[brazil]{{babel}}
+\\usepackage[backend={backend},style=numeric,sorting=none]{{biblatex}}
+\\addbibresource{{referencias.bib}}
+\\begin{{document}}
+Introducao com citacao \\cite{{TEST2024}}.
+\\printbibliography
+\\end{{document}}
 """
     tex_file = temp_dir / "test_with_bib.tex"
     tex_file.write_text(tex_content, encoding="utf-8")
@@ -180,8 +190,8 @@ def test_ct052_02_find_executable_fallback():
 # ═══════════════════════════════════════════════════════════════════════════
 
 @pytest.mark.skipif(
-    not shutil.which("pdflatex") or not shutil.which("biber"),
-    reason="pdflatex or biber not installed"
+    not shutil.which("pdflatex") or not (shutil.which("biber") or shutil.which("bibtex")),
+    reason="pdflatex or bibliography tool (biber/bibtex) not installed"
 )
 def test_ct052_03_compile_success(sample_tex):
     """CT-052.03: compile succeeds with valid .tex file."""

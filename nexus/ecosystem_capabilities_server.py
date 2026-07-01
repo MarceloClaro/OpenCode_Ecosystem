@@ -1028,12 +1028,18 @@ def run_cognitive_diversity_scanner(target: str = "ecossistema") -> dict:
         from cognitive_diversity_scanner import CognitiveDiversityScanner, ArtifactProfile
 
         cds = CognitiveDiversityScanner()
-        # Registra artefatos de exemplo do ecossistema
+
+        # ── Registra artefatos do ecossistema (SPEC-056 R27) ──
+        # 1. Artefato base do ecossistema
         cds.register_artifact(ArtifactProfile(
             artifact_id="ecossistema_global",
             text_preview=target,
             coverage_vector={"paradigmas": 0.7, "metodos": 0.6, "teorias": 0.5},
         ))
+
+        # 2. Artefatos de diversidade cognitiva do injector (R27)
+        n_injected = cds.register_from_injector()
+
         result = cds.compute_homogeneity_index()
         return {
             "scanner": "cognitive_diversity",
@@ -1042,6 +1048,10 @@ def run_cognitive_diversity_scanner(target: str = "ecossistema") -> dict:
             "homogeneity_index": result.get("global_hi"),
             "is_echo_chamber": result.get("is_echo_chamber"),
             "interpretation": result.get("interpretation"),
+            "n_artifacts": result.get("n_artifacts"),
+            "n_injected_artifacts": n_injected,
+            "n_clusters": result.get("n_clusters"),
+            "recommendations": result.get("recommendations", []),
             "timestamp": datetime.now(timezone.utc).isoformat(),
         }
     except Exception as e:
