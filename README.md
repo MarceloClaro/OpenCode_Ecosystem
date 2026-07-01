@@ -428,36 +428,31 @@ Para o apresentador ou investidor entender a lógica de demonstração rápida:
 #### 🗺️ Mapa 1: Pipeline de Diversidade Cognitiva (R27)
 
 ```mermaid
-graph TD
-  subgraph Fonte["CognitiveDiversityInjector (8 artefatos)"]
-    A1["Positivista (RCT, Nash)"]
-    A2["Interpretativista (Fenomenografia)"]
-    A3["Construtivista (ACD, Stackelberg)"]
-    A4["Neurobiológico (fMRI)"]
-    A5["Game Theory (Nash, Tit-for-Tat)"]
-    A6["Socioeconômico (Prisioneiro)"]
-    A7["Clínico (Longitudinal)"]
-    A8["Etnográfico (Digital)"]
-  end
+flowchart TD
+    subgraph Injector["CognitiveDiversityInjector"]
+        direction LR
+        A1["Positivista<br/>(RCT, Nash)"]
+        A2["Interpretativista<br/>(Fenomenografia)"]
+        A3["Construtivista<br/>(ACD, Stackelberg)"]
+        A4["Neurobiológico<br/>(fMRI)"]
+        A5["Game Theory<br/>(Nash, Tit-for-Tat)"]
+        A6["Socioeconômico<br/>(Prisioneiro)"]
+        A7["Clínico<br/>(Longitudinal)"]
+        A8["Etnográfico<br/>(Digital)"]
+    end
 
-  subgraph Scanners["Camada de Scanners Epistêmicos"]
-    CDS["CognitiveDiversityScanner (SPEC-053)"]
-    NOO["NoologicalScanner (SPEC-028/029)"]
-    TOPO["EpistemicTopologyMapper (SPEC-054)"]
-  end
+    CDS("CognitiveDiversityScanner<br/>SPEC-053")
 
-  subgraph Metricas["Métricas Pós-Injeção"]
-    HI["HI: 0.9467 → 0.7473 (-21%)"]
-    ECO["echo_chamber: True → False"]
-    CLUST["9 artefatos, 1 cluster"]
-  end
+    subgraph Resultados["Resultados"]
+        HI["HI: 0.9467 &rarr; 0.7473"]
+        ECO["echo_chamber: True &rarr; False"]
+        CLUST["9 artefatos, 1 cluster"]
+    end
 
-  Fonte -->|register_from_injector()| CDS
-  CDS -->|compute_homogeneity_index| HI
-  CDS -->|is_echo_chamber| ECO
-  CDS -->|n_artifacts,n_clusters| CLUST
-  CDS -->|coverage| NOO
-  NOO -->|categorias| TOPO
+    Injector -->|register_from_injector| CDS
+    CDS -->|compute_homogeneity_index| HI
+    CDS -->|is_echo_chamber| ECO
+    CDS -->|n_artifacts + n_clusters| CLUST
 ```
 
 ##### 📖 Legenda do Mapa 1: Pipeline de Diversidade Cognitiva
