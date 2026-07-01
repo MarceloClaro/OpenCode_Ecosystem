@@ -26,9 +26,101 @@
 > [!IMPORTANT]
 > **ACCESS GRANTED:** A primeira agência de Inteligência Artificial Multiagente autônoma operando sob a arquitetura **Liquid Swarm N4.0**, de forma local, descentralizada e auditável.
 
-Imagine ter uma empresa de tecnologia inteira, um laboratório de P&D de vanguarda e uma banca de doutores cientistas executando **localmente, em sandboxes isoladas e com custo zero** diretamente no s[...] 
+Imagine ter uma empresa de tecnologia inteira, um laboratório de P&D de vanguarda e uma banca de doutores cientistas executando **localmente, em sandboxes isoladas e com custo zero** diretamente no seu terminal. Isso é o **OpenCode Ecosystem**.
 
-O **OpenCode Ecosystem** é o ápice da engenharia metacognitiva. Ao receber uma missão complexa, o sistema não aciona uma lista estática de agentes. Graças ao protocolo **Liquid Swarm (N4.0)**, e[...]
+---
+
+### 🧬 O que é o OpenCode Ecosystem?
+
+O **OpenCode Ecosystem** é um **sistema operacional cognitivo de código aberto** — uma plataforma orquestrada de engenharia de software com **128 agentes de inteligência artificial** que integra mais de **600 componentes** em uma arquitetura unificada e **auto-evolutiva**.
+
+Não é apenas um CLI, nem apenas um conjunto de agentes. É um **metassistema vivo** que combina:
+
+| Camada | O que é | Em números |
+|--------|---------|------------|
+| **MCPs** | Servidores de contexto e ferramentas | **46** servidores (websearch, arxiv, code-runner, playwright...) |
+| **Skills** | Capacidades especializadas | **227** skills em 13 categorias (science, jurídico, reasoning...) |
+| **Agentes** | Inteligências especializadas | **128** agentes (56 core + 49 acadêmicos + 12 SEEKER + 11 Reversa) |
+| **Scanners** | Motores de diagnóstico e prospecção | **6** scanners (Noológico, Teleológico, Evolutivo, Potencialidade...) |
+| **Motores de Raciocínio** | Motores formais e críticos | **4** motores (Z3, SymPy, Kanren, Critical) |
+| **Testes TDD** | Validação contínua | **356/356** testes passando (100%), **18** suítes |
+| **Pipeline Acadêmico** | Produção de conhecimento Qualis A1 | SEEKER → 49 agentes → revisão cega → correção → LaTeX/PDF |
+
+---
+
+### ⚙️ O que ele FAZ?
+
+Em termos práticos, o OpenCode Ecosystem é capaz de:
+
+**1. 🧠 Orquestração Multiagente Avançada**
+128 agentes colaboram em cadeias de delegação coordenadas pelo agente `/marceloclaro`, que centraliza decisões e distribui missões para suborquestradores especializados.
+
+**2. 📝 Produção Acadêmica Qualis A1**
+Pipeline completo que transforma uma pergunta de pesquisa em artigo formatado: busca em 10+ fontes acadêmicas (arXiv, PubMed, OpenAlex) → escrita colaborativa com 49 agentes → revisão cega simulada → correção textual → exportação LaTeX/PDF.
+
+**3. 🔧 Engenharia de Software com TDD + SDD**
+Toda funcionalidade nasce de uma **Especificação (SDD)** e é validada por **Testes (TDD)** — 356 testes de unidade, 15 SPECs documentadas, 10 ADRs arquiteturais.
+
+**4. 🔄 Autoevolução (Manus Evolve)**
+O sistema analisa seus próprios padrões de sucesso e gera novas skills automaticamente. Ciclo: **PLAN → ACT → REFLECT → EXTRACT → EVOLVE**. A cada ciclo, o ecossistema fica mais capaz.
+
+**5. 🛡️ Metacognição e Trust Engine**
+Monitoramento comportamental em tempo real: detecta desvios de objetivo (goal drift), aplica barreiras preventivas, e opera no **Nível 3.5 de consciência operacional** (N3 completo + barreira preventiva).
+
+**6. 🔬 Pesquisa Científica Multifonte**
+Integração nativa com arXiv, PubMed, OpenAlex, EuropePMC, bioRxiv, CORE + motores de descoberta causal (RUMI), pergunta ótima (OQS), e lógica abdutiva (ARCHE RLT).
+
+**7. 🎲 Teoria dos Jogos Aplicada**
+10 modelos clássicos (Dilema do Prisioneiro, Stag Hunt, Chicken, Ultimato, Cournot, Stackelberg...) resolvidos nativamente e mapeados para inferência causal.
+
+---
+
+### 🌱 Potencial para INICIANTES
+
+| Aspecto | Benefício |
+|---------|-----------|
+| **Curva de aprendizado** | Ambiente seguro com SDD+TDD — você aprende **especificando e testando** antes de codificar |
+| **Automação de tarefas** | Comandos como `/artigo`, `/plan`, `/evolve`, `/quantum` encapsulam complexidade |
+| **Mentoria embutida** | 128 agentes especializados que você pode consultar e que explicam cada passo |
+| **Código real, documentado** | 8.937+ linhas de Python, 15 suítes de teste, SPECs claras — **material didático vivo** |
+| **Do zero ao artigo** | Em poucos comandos, produza um artigo acadêmico formatado com referências reais |
+| **Custo zero** | Tudo roda localmente via Ollama — sem API, sem nuvem, sem assinatura |
+
+> *O OpenCode Ecosystem é o melhor professor de engenharia de software que existe: ele **exige** que você especifique antes de implementar, e **valida** cada linha que você escreve.*
+
+---
+
+### 🎓 Potencial para DEVS PhD e PESQUISADORES
+
+| Dimensão | Potencial |
+|----------|-----------|
+| **Pipeline Qualis A1** | Produção de artigos com revisão cega simulada, 10 critérios de qualidade, formatação IMRaD |
+| **Descoberta Científica (ASDE)** | Geração automática de hipóteses, experimentos cognitivos e relatórios IMRaD completos |
+| **Teoria dos Jogos Aplicada** | 10 modelos clássicos mapeados para lógica causal e tomada de decisão estratégica |
+| **Validação Formal** | Z3 para provas lógicas, SymPy para matemática simbólica, Kanren para lógica relacional |
+| **Análise Crítica** | Detecção de **15 falácias lógicas + vieses cognitivos** em argumentos |
+| **Potencialidade Epistêmica** | Scanners que identificam quais capacidades o sistema **pode desenvolver** — prospecção de pesquisa |
+| **Auditoria PhD** | 18 métricas (Nash, Cohen, Bonferroni, Qualis, Sensibilidade) aplicadas a qualquer produção |
+| **Autoevolução** | O sistema se auto-diagnostica, auto-corrige e auto-evolui — um laboratório de metacognição vivo |
+
+---
+
+### 📊 Estado Atual (R27 — Julho/2026)
+
+```
+📊 600+ componentes integrados
+✅ 368/368 testes (61/64 passando, 3 skipped opcionais)
+📚 18 suítes TDD · 15 SPECs ativas · 10 ADRs documentadas
+🧠 128 agentes · 227 skills · 46 MCPs · 4 motores de raciocínio
+🏆 27 ciclos evolutivos (R1=85 → R27=100)
+🔬 Pipeline Qualis A1 validado com produção real
+🧬 Autoevolução ativa: Manus Evolve gera novas skills automaticamente
+🛡️ Trust Engine N3.5: monitoramento comportamental preventivo
+🧩 Cognitive Diversity: HI=0.75 (não-eco) — diversidade cognitiva real
+🎲 Game Theory: 100% de cobertura (10/10 categorias)
+```
+
+> `"O software tradicional exige que você digite comandos. O OpenCode Ecosystem cria as soluções e evaporiza suas dependências quando conclui."`
 
 ---
 
