@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenCode Ecosystem - Architecture Viewer</title>
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --card: #111827;
+    --border: #1f2937;
+    --text: #e5e7eb;
+    --accent: #3b82f6;
+    --green: #10b981;
+    --orange: #f59e0b;
+    --red: #ef4444;
+    --purple: #8b5cf6;
+    --pink: #ec4899;
+    --cyber: #06ffd2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .container { max-width: 1400px; margin: 0 auto; }
+
+  header {
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--purple), var(--cyber));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+
+  header .badge {
+    display: inline-block;
+    background: var(--green);
+    color: #000;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .stat-card .number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .stat-card .label {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-top: 4px;
+  }
+
+  .layer-grid {
+    display: grid;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .layer-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+  .layer-card:hover { transform: translateY(-2px); }
+
+  .layer-header {
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+  }
+
+  .layer-header .layer-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .layer-header h2 {
+    font-size: 1.1rem;
+    flex: 1;
+  }
+
+  .layer-header .count {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    background: rgba(255,255,255,0.05);
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+
+  .layer-content {
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .component {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+
+  .component .name { font-weight: 600; color: var(--accent); }
+  .component .desc { font-size: 0.8rem; color: #9ca3af; margin-top: 4px; }
+
+  /* Layer colors */
+  .c1 .layer-num { background: #ef4444; color: #fff; }
+  .c2 .layer-num { background: #3b82f6; color: #fff; }
+  .c3 .layer-num { background: #8b5cf6; color: #fff; }
+  .c4 .layer-num { background: #10b981; color: #000; }
+  .c5 .layer-num { background: #f59e0b; color: #000; }
+  .c6 .layer-num { background: #ec4899; color: #fff; }
+  .c7 .layer-num { background: #06ffd2; color: #000; }
+  .c8 .layer-num { background: #6366f1; color: #fff; }
+  .c9 .layer-num { background: #dc2626; color: #fff; }
+  .c10 .layer-num { background: #1e40af; color: #fff; }
+
+  .flow-diagram {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .flow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0;
+  }
+
+  .flow-node {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .flow-arrow { color: var(--cyber); font-size: 1.2rem; }
+
+  .flow-label {
+    width: 100%;
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin: 12px 0 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: #6b7280;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+
+  a { color: var(--cyber); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>OpenCode Ecosystem</h1>
+    <p>Arquitetura v7.0 — Sistema Operacional Cognitivo Multiagente</p>
+    <div style="margin-top: 12px;">
+      <span class="badge">27 Ciclos Evolutivos</span>
+      <span class="badge" style="background:var(--purple);color:#fff;margin-left:8px;">368 CTs TDD 100%</span>
+      <span class="badge" style="background:var(--orange);margin-left:8px;">600+ Componentes</span>
+    </div>
+  </header>
+
+  <div class="stats-grid">
+    <div class="stat-card"><div class="number">128</div><div class="label">Agentes</div></div>
+    <div class="stat-card"><div class="number">227</div><div class="label">Skills</div></div>
+    <div class="stat-card"><div class="number">46</div><div class="label">MCPs</div></div>
+    <div class="stat-card"><div class="number">15</div><div class="label">SPECs</div></div>
+    <div class="stat-card"><div class="number">10</div><div class="label">ADR's</div></div>
+    <div class="stat-card"><div class="number">38%</div><div class="label">Cobertura Epistemica</div></div>
+  </div>
+
+  <div class="flow-diagram">
+    <div class="flow-label">Fluxo Principal de Processamento</div>
+    <div class="flow-row">
+      <span class="flow-node" style="border-color:#ef4444;">1 Usuario</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#3b82f6;">2 MCPs (46)</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#8b5cf6;">3 Orquestracao</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#10b981;">4 Agentes (128)</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#f59e0b;">5 Skills (227)</span>
+    </div>
+    <div class="flow-row">
+      <span class="flow-arrow">↓</span>
+      <span class="flow-node" style="border-color:#ec4899;">6 Scanners</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#06ffd2;">7 Motores Cognitivos</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#6366f1;">8 Pipeline Academico</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#dc2626;">9 TrustEngine N3.5</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#1e40af;">10 Infraestrutura</span>
+    </div>
+  </div>
+
+  <div class="flow-diagram">
+    <div class="flow-label">Loop de Autoevolucao (Manus Evolve)</div>
+    <div class="flow-row">
+      <span class="flow-node" style="border-color:#06ffd2;">ManusEvolve</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#8b5cf6;">LiquidSwarm</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#10b981;">Agentes</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#f59e0b;">Skills</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#ec4899;">Scanners</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#06ffd2;">Motores</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#6366f1;">Pipeline</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#dc2626;">Security</span>
+      <span class="flow-arrow">→</span>
+      <span class="flow-node" style="border-color:#1e40af;">Infra</span>
+    </div>
+  </div>
+
+  <div class="layer-grid">
+    <!-- Layer 1 -->
+    <div class="layer-card c1">
+      <div class="layer-header">
+        <div class="layer-num">1</div>
+        <h2>Interface — Portas de Entrada do Usuario</h2>
+        <span class="count">3 componentes</span>
+      </div>
+      <div class="layer-content">
+        <div class="component"><div class="name">OpenCode CLI</div><div class="desc">Interface de comandos nativa (/marceloclaro)</div></div>
+        <div class="component"><div class="name">Antigravity CLI (agy)</div><div class="desc">Integracao com assistente Google DeepMind</div></div>
+        <div class="component"><div class="name">Observability Dashboard</div><div class="desc">Painel grafico HTTP na porta :8081</div></div>
+      </div>
+    </div>
+
+    <!-- Layer 2 -->
+    <div class="layer-card c2">
+      <div class="layer-header">
+        <div class="layer-num">2</div>
+        <h2>MCP — 46 Servidores de Protocolo</h2>
+        <span class="count">7 categorias</span>
+      </div>
+      <div class="layer-content">
+        <div class="component"><div class="name">Search</div><div class="desc">websearch, arxiv, gh_grep, scihub</div></div>
+        <div class="component"><div class="name">Code</div><div class="desc">code-runner, eslint, diff</div></div>
+        <div class="component"><div class="name">Browser</div><div class="desc">playwright, chrome-devtools</div></div>
+        <div class="component"><div class="name">Data</div><div class="desc">sqlite, fetch, pdf, time</div></div>
+        <div class="component"><div class="name">Reasoning</div><div class="desc">sequential-thinking, memory</div></div>
+        <div class="component"><div class="name">Science</div><div class="desc">latest-science, biothings, research-mcp</div></div>
+        <div class="component"><div class="name">Infrastructure</div><div class="desc">filesystem, github, decisionnode</div></div>
+      </div>
+    </div>
+
+    <!-- Layer 3 -->
+    <div class="layer-card c3">
+      <div class="layer-header">
+        <div class="layer-num">3</div>
+        <h2>Orquestracao — Controle Central N4.0</h2>
+        <span class="count">5 orquestradores</span>
+      </div>
+      <div class="layer-content">
+        <div class="component"><div class="name">/marceloclaro</div><div class="desc">Arquiteto Supremo, Orquestrador Central</div></div>
+        <div class="component"><div class="name">MasterOrchestrator</div><div class="desc">Pipeline local e delegacao</div></div>
+        <div class="component"><div class="name">StageOrchestrator</div><div class="desc">Estagios TDD/SDD</div></div>
+        <div class="component"><div class="name">AntigravityOrchestrator</div><div class="desc">Navegacao e geracao externa</div></div>
+        <div class="component"><div class="name">LiquidSwarm N4.0</div><div class="desc">Agentes sob demanda com evaporacao</div></div>
+      </div>
+    </div>
+
+    <!-- Layer 4 -->
+    <div class="layer-card c4">
+      <div class="layer-header">
+        <div class="layer-num">4</div>
+        <h2>Agentes — 128 Inteligencias Especializadas</h2>
+        <span class="count">4 categorias</span>
+      </div>
+      <div class="layer-content">
+        <div class="component"><div class="name">Core (56)</div><div class="desc">coder, reviewer, debugger, architect, test-engineer</div></div>
+        <div class="component"><div class="name">Academicos (49)</div><div class="desc">MASWOS v5.0 — 00-editor a 44-correcao</div></div>
+        <div class="component"><div class="name">SEEKER (12)</div><div class="desc">searcher, grounder, extractor, mapper</div></div>
+        <div class="component"><div class="name">Reversa (11)</div><div class="desc">detective, synthesis, archaeologist, architect</div></div>
+      </div>
+    </div>
+
+    <!-- Layer 5 -->
+    <div class="layer-card c5">
+      <div class="layer-header">
+        <div class="layer-num">5</div>
+        <h2>Skills — 227 Capacidades em 13 Categorias</h2>
+        <span class="count">13 categorias</span>
+      </div>
+      <div class="layer-content">
+        <div class="component"><div class="name">System (12)</div><div class="desc">Infraestrutura core do ecossistema</div></div>
+        <div class="component"><div class="name">Science (38)</div><div class="desc">AlphaFold, PubMed, ChEMBL, UniProt, ClinVar</div></div>
+        <div class="component"><div class="name">Reasoning (4)</div><div class="desc">Z3, SymPy, Kanren, Critical (15 falacias)</div></div>
+        <div class="component"><div class="name">Research (18)</div><div class="desc">SEEKER, editais-br, academic audit</div></div>
+        <div class="component"><div class="name">Juridico (7)</div><div class="desc">Contratos, jurisprudencia, triagem</div></div>
+        <div class="component"><div class="name">Agency (8)</div><div class="desc">Orchestrator, MCP Builder, compliance</div></div>
+      </div>
+    </div>
+
+    <!-- Layer 6 -->
+    <div class="layer-card c6">
+      <div class="layer-header">
+        <div class="layer-num">6</div>
+        <h2>Scanners — 6 Motores de Diagnostico</h2>
+        <span class="count">6 scanners</span>
+      </div>
+      <div class="layer-content">
+        <div class="component"><div class="name">Noological</div><div class="desc">Lacunas epistemicas (38% coverage)</div></div>
+        <div class="component"><div class="name">Teleological</div><div class="desc">Alinhamento estrategico (100%)</div></div>
+        <div class="component"><div class="name">Evolutionary</div><div class="desc">Maturidade evolutiva e gargalos</div></div>
+        <div class="component"><div class="name">Potentiality Estimator v2</div><div class="desc">6 dimensoes, 58 oportunidades</div></div>
+        <div class="component"><div class="name">Social Impact</div><div class="desc">ESG, SROI 2.55:1, B Impact 81/200</div></div>
+        <div class="component"><div class="name">Cognitive Diversity</div><div class="desc">HI, camaras de eco, clusters</div></div>
+      </div>
+    </div>
+
+    <!-- Layer 7 -->
+    <div class="layer-card c7">
+      <div class="layer-header">
+        <div class="layer-num">7</div>
+        <h2>Motores Cognitivos — Raciocinio e Evolucao</h2>
+        <span class="count">7+ motores</span>
+      </div>
+      <div class="layer-content">
+        <div class="component"><div class="name">AIC - Active Inference</div><div class="desc">FEP/VFE Minimization (SPEC-059)</div></div>
+        <div class="component"><div class="name">Game Theory Solver</div><div class="desc">10 modelos (Nash, Prisoner, Stag, Chicken)</div></div>
+        <div class="component"><div class="name">Metacognitive Search</div><div class="desc">DFS + Process Verifiers (SPEC-062)</div></div>
+        <div class="component"><div class="name">ASDE Pipeline</div><div class="desc">Descoberta cientifica autonoma (SPEC-063)</div></div>
+        <div class="component"><div class="name">Manus Evolve</div><div class="desc">PLAN-ACT-REFLECT-EXTRACT-EVOLVE</div></div>
+        <div class="component"><div class="name">RUMI Causal</div><div class="desc">Descoberta causal adversarial (SPEC-058)</div></div>
+        <div class="component"><div class="name">OQS</div><div class="desc">Optimal Query System (SPEC-056)</div></div>
+      </div>
+    </div>
+
+    <!-- Layer 8 -->
+    <div class="layer-card c8">
+      <div class="layer-header">
+        <div class="layer-num">8</div>
+        <h2>Pipeline Academico — Producao Qualis A1</h2>
+        <span class="count">5 estagios</span>
+      </div>
+      <div class="layer-content">
+        <div class="component"><div class="name">SEEKER</div><div class="desc">Pesquisa multifonte (arXiv, PubMed, OpenAlex)</div></div>
+        <div class="component"><div class="name">49 Agentes MASWOS</div><div class="desc">Escrita colaborativa especializada</div></div>
+        <div class="component"><div class="name">Blind Peer Review</div><div class="desc">5 revisores simulados, 10 criterios</div></div>
+        <div class="component"><div class="name">Correcao Iterativa</div><div class="desc">6 motores + CJK Detector + PT-BR</div></div>
+        <div class="component"><div class="name">Exportacao LaTeX/PDF</div><div class="desc">IMRaD formatado, Qualis A1 95-100/100</div></div>
+      </div>
+    </div>
+
+    <!-- Layer 9 -->
+    <div class="layer-card c9">
+      <div class="layer-header">
+        <div class="layer-num">9</div>
+        <h2>Seguranca e Testes — TrustEngine N3.5</h2>
+        <span class="count">5 sistemas</span>
+      </div>
+      <div class="layer-content">
+        <div class="component"><div class="name">TrustScorer</div><div class="desc">Blend 70/30, shadow mode, rollback</div></div>
+        <div class="component"><div class="name">BehavioralGate</div><div class="desc">Safe/Moderate/Risky/Blocked (15ms)</div></div>
+        <div class="component"><div class="name">NaturalForgetting</div><div class="desc">Atkinson-Shiffrin memory management</div></div>
+        <div class="component"><div class="name">18 TDD Suites</div><div class="desc">368 CTs, 100% pass, GREEN status</div></div>
+        <div class="component"><div class="name">Guardrails</div><div class="desc">Preventive Cognitive, Goal Drift prevention</div></div>
+      </div>
+    </div>
+
+    <!-- Layer 10 -->
+    <div class="layer-card c10">
+      <div class="layer-header">
+        <div class="layer-num">10</div>
+        <h2>Infraestrutura — Base de Execucao Local</h2>
+        <span class="count">5 componentes</span>
+      </div>
+      <div class="layer-content">
+        <div class="component"><div class="name">WSL2 / Windows 11</div><div class="desc">Sandbox Linux nativo isolado</div></div>
+        <div class="component"><div class="name">Ollama Server</div><div class="desc">Modelos locais na porta 11434</div></div>
+        <div class="component"><div class="name">Bun 1.3 / Node.js 25</div><div class="desc">Runtime de execucao</div></div>
+        <div class="component"><div class="name">SQLite + Filesystem</div><div class="desc">Persistencia e ecosystem-state.json</div></div>
+        <div class="component"><div class="name">Nexus Multiagent v6.2</div><div class="desc">488 arquivos, metagranular 6 camadas</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-diagram">
+    <div class="flow-label">Ecossistema em Numeros — Julho 2026</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:16px;">
+      <div><strong style="color:var(--accent);">R27</strong><br><span style="font-size:0.8rem;color:#9ca3af;">Ciclo Evolutivo Atual</span></div>
+      <div><strong style="color:var(--green);">100%</strong><br><span style="font-size:0.8rem;color:#9ca3af;">Game Theory Coverage</span></div>
+      <div><strong style="color:var(--orange);">38%</strong><br><span style="font-size:0.8rem;color:#9ca3af;">Noological Coverage</span></div>
+      <div><strong style="color:var(--purple);">HI 0.75</strong><br><span style="font-size:0.8rem;color:#9ca3af;">Cognitive Diversity Index</span></div>
+      <div><strong style="color:var(--cyber);">N3.5</strong><br><span style="font-size:0.8rem;color:#9ca3af;">Consciencia Operacional</span></div>
+      <div><strong style="color:var(--pink);">89.52%</strong><br><span style="font-size:0.8rem;color:#9ca3af;">Quantum ML (HAM10000)</span></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>OpenCode Ecosystem v7.0 — <a href="https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=architecture">Mapa Interativo FlowZap</a></p>
+    <p style="margin-top:4px;">github.com/MarceloClaro/OpenCode_Ecosystem</p>
+  </footer>
+</div>
+</body>
+</html>
