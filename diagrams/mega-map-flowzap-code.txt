@@ -1,0 +1,181 @@
+# =============================================================================
+# MEGA MAPA DA ARQUITETURA DO OPENCODE ECOSYSTEM v7.0
+# FlowZap Code - 69 nos, 74 arestas, 10 camadas arquiteturais
+# Gerado por /marceloclaro em Julho/2026
+# URL Interativa: https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e
+# =============================================================================
+
+interface { # 1. INTERFACE LAYER - User Entry Points
+  n1: circle label:"OpenCode CLI /marceloclaro"
+  n2: circle label:"Antigravity CLI (agy)"
+  n3: circle label:"Observability Dashboard :8081"
+  n4: taskbox owner:"User" description:"CLI Commands" system:"OpenCode"
+  n5: taskbox owner:"User" description:"IDE Chat" system:"Antigravity"
+  n6: taskbox owner:"Admin" description:"Metrics View" system:"Dashboard"
+  n1.handle(right) -> n4.handle(left)
+  n2.handle(right) -> n5.handle(left)
+  n3.handle(right) -> n6.handle(left)
+  n4.handle(right) -> mcp_server.n7.handle(left) [label="MCP Protocol"]
+  n5.handle(right) -> mcp_server.n7.handle(left) [label="MCP Protocol"]
+  n6.handle(right) -> mcp_server.n7.handle(left) [label="HTTP API"]
+}
+
+mcp_server { # 2. MCP LAYER - 46 Protocol Servers
+  n7: rectangle label:"MCP Router (EcosystemCapabilitiesServer)"
+  n8: rectangle label:"Search: websearch arxiv gh_grep"
+  n9: rectangle label:"Code: code-runner eslint diff"
+  n10: rectangle label:"Browser: playwright puppeteer"
+  n11: rectangle label:"Data: sqlite fetch pdf time"
+  n12: rectangle label:"Reasoning: sequential-thinking memory"
+  n13: rectangle label:"Science: latest-science biothings"
+  n14: rectangle label:"Infra: filesystem github decisionnode"
+  n7.handle(right) -> n8.handle(left)
+  n7.handle(bottom) -> n9.handle(top) [label="23 active"]
+  n7.handle(bottom) -> n10.handle(top) [label="46 total MCPs"]
+  n7.handle(bottom) -> n11.handle(top)
+  n7.handle(bottom) -> n12.handle(top)
+  n7.handle(bottom) -> n13.handle(top)
+  n7.handle(bottom) -> n14.handle(top)
+  n8.handle(right) -> orchestration.n15.handle(left) [label="Request Routing"]
+}
+
+orchestration { # 3. ORCHESTRATION LAYER - Central Control
+  n15: circle label:"/marceloclaro (Supreme Architect)"
+  n16: taskbox owner:"Marcelo" description:"Delegation to Sub-orchestrators" system:"N4.0"
+  n17: rectangle label:"MasterOrchestrator (Local Pipeline)"
+  n18: rectangle label:"StageOrchestrator (TDD/SDD Stages)"
+  n19: rectangle label:"AntigravityOrchestrator (Ext Navigation)"
+  n20: rectangle label:"LiquidSwarm N4.0 (On-demand Agents)"
+  n15.handle(right) -> n16.handle(left)
+  n16.handle(bottom) -> n17.handle(top) [label="delegate"]
+  n16.handle(bottom) -> n18.handle(top) [label="delegate"]
+  n16.handle(bottom) -> n19.handle(top) [label="delegate"]
+  n16.handle(bottom) -> n20.handle(top) [label="spawn"]
+  n17.handle(right) -> agents.n21.handle(left) [label="assign"]
+  n18.handle(right) -> agents.n21.handle(left) [label="assign"]
+  n19.handle(right) -> agents.n21.handle(left) [label="assign"]
+  n20.handle(right) -> agents.n21.handle(left) [label="liquid spawn"]
+}
+
+agents { # 4. AGENTS LAYER - 128 Intelligences
+  n21: diamond label:"Agent Router (128 Total)"
+  n22: taskbox owner:"System" description:"56 Core Agents" system:"TDD/SDD"
+  n23: taskbox owner:"System" description:"49 Academic (MASWOS v5)" system:"Qualis A1"
+  n24: taskbox owner:"System" description:"12 SEEKER Research" system:"10+ Sources"
+  n25: taskbox owner:"System" description:"11 Reversa Eng. Reversa" system:"Graph/Swarm"
+  n26: rectangle label:"coder reviewer debugger architect"
+  n27: rectangle label:"00-editor to 44-correcao textual"
+  n28: rectangle label:"searcher grounder extractor mapper"
+  n29: rectangle label:"detective synthesis archaeologist"
+  n21.handle(right) -> n22.handle(left)
+  n21.handle(bottom) -> n23.handle(top)
+  n21.handle(bottom) -> n24.handle(top)
+  n21.handle(bottom) -> n25.handle(top)
+  n22.handle(bottom) -> n26.handle(top)
+  n23.handle(bottom) -> n27.handle(top)
+  n24.handle(bottom) -> n28.handle(top)
+  n25.handle(bottom) -> n29.handle(top)
+  n26.handle(right) -> skills.n30.handle(left) [label="load"]
+  n27.handle(right) -> skills.n30.handle(left) [label="load"]
+  n28.handle(right) -> skills.n30.handle(left) [label="load"]
+  n29.handle(right) -> skills.n30.handle(left) [label="load"]
+}
+
+skills { # 5. SKILLS LAYER - 227 Capabilities 13 Categories
+  n30: diamond label:"Skills Router (227 Total 13 Cat)"
+  n31: rectangle label:"System (12) - Core Infrastructure"
+  n32: rectangle label:"Science (38) - AlphaFold PubMed ChEMBL UniProt"
+  n33: rectangle label:"Reasoning (4) - Z3 SymPy Kanren Critical"
+  n34: rectangle label:"Research (18) - SEEKER editais-br"
+  n35: rectangle label:"Juridico (7) - Contratos Jurisprudencia"
+  n36: rectangle label:"Agency (8) - Orchestrator MCP Builder"
+  n30.handle(right) -> n31.handle(left)
+  n30.handle(bottom) -> n32.handle(top)
+  n30.handle(bottom) -> n33.handle(top)
+  n30.handle(bottom) -> n34.handle(top)
+  n30.handle(bottom) -> n35.handle(top)
+  n30.handle(bottom) -> n36.handle(top)
+  n32.handle(right) -> scanners.n37.handle(left) [label="Scan"]
+}
+
+scanners { # 6. SCANNERS LAYER - Diagnostic Prospection
+  n37: rectangle label:"Scanner Pipeline (6 Engines)"
+  n38: taskbox owner:"System" description:"Noological - Epistemic Gaps" system:"SPEC-028"
+  n39: taskbox owner:"System" description:"Teleological - Strategic Alignment" system:"SPEC-029"
+  n40: taskbox owner:"System" description:"Evolutionary - Maturity Assessment" system:"SPEC-030"
+  n41: taskbox owner:"System" description:"Potentiality Estimator v2 - 6 Dim" system:"SPEC-045"
+  n42: taskbox owner:"System" description:"Social Impact - ESG Analysis" system:"SPEC-044"
+  n43: taskbox owner:"System" description:"Cognitive Diversity - HI Echo" system:"SPEC-053"
+  n37.handle(right) -> n38.handle(left)
+  n37.handle(bottom) -> n39.handle(top)
+  n37.handle(bottom) -> n40.handle(top)
+  n37.handle(bottom) -> n41.handle(top)
+  n37.handle(bottom) -> n42.handle(top)
+  n37.handle(bottom) -> n43.handle(top)
+  n41.handle(right) -> engines.n44.handle(left) [label="Trigger"]
+}
+
+engines { # 7. COGNITIVE ENGINES LAYER - Reasoning Evolution
+  n44: rectangle label:"Cognitive Engines (7+ Motors)"
+  n45: taskbox owner:"System" description:"AIC - Active Inference FEP/VFE" system:"SPEC-059"
+  n46: taskbox owner:"System" description:"Game Theory Solver (10 Models)" system:"SPEC-060"
+  n47: taskbox owner:"System" description:"Metacognitive Search (DFS)" system:"SPEC-062"
+  n48: taskbox owner:"System" description:"ASDE - Scientific Discovery" system:"SPEC-063"
+  n49: taskbox owner:"System" description:"Manus Evolve - Auto Evolution" system:"Plan-Act-Reflect"
+  n50: taskbox owner:"System" description:"RUMI - Causal Discovery" system:"SPEC-058"
+  n51: taskbox owner:"System" description:"OQS - Optimal Query System" system:"SPEC-056"
+  n44.handle(right) -> n45.handle(left)
+  n44.handle(bottom) -> n46.handle(top)
+  n44.handle(bottom) -> n47.handle(top)
+  n44.handle(bottom) -> n48.handle(top)
+  n44.handle(bottom) -> n49.handle(top)
+  n44.handle(bottom) -> n50.handle(top)
+  n44.handle(bottom) -> n51.handle(top)
+  n48.handle(right) -> pipeline.n52.handle(left) [label="Produce"]
+}
+
+pipeline { # 8. ACADEMIC PIPELINE LAYER - Qualis A1
+  n52: rectangle label:"Academic Pipeline (MASWOS v5)"
+  n53: taskbox owner:"System" description:"SEEKER - Multisource Research" system:"arXiv PubMed"
+  n54: taskbox owner:"System" description:"49 Specialist Agents Writing" system:"MASWOS v5.0"
+  n55: taskbox owner:"System" description:"Blind Peer Review (5 Simulated)" system:"Qualis A1"
+  n56: taskbox owner:"System" description:"Iterative Correction (6 Engines)" system:"CJK Detector"
+  n57: taskbox owner:"System" description:"LaTeX/PDF Export (IMRaD)" system:"A1 95-100"
+  n52.handle(right) -> n53.handle(left)
+  n53.handle(right) -> n54.handle(left)
+  n54.handle(right) -> n55.handle(left)
+  n55.handle(right) -> n56.handle(left)
+  n56.handle(right) -> n57.handle(left)
+  n57.handle(right) -> security.n58.handle(left) [label="Validate"]
+}
+
+security { # 9. SECURITY TESTING LAYER - Trust Governance
+  n58: rectangle label:"Security Testing (TrustEngine N3.5)"
+  n59: taskbox owner:"System" description:"TrustScorer (70-30 Blend)" system:"SPEC-038"
+  n60: taskbox owner:"System" description:"BehavioralGate (Safe/Moderate/Risky/Blocked)" system:"15ms"
+  n61: taskbox owner:"System" description:"NaturalForgetting (Atkinson-Shiffrin)" system:"Memory"
+  n62: taskbox owner:"System" description:"18 TDD Suites (368 CTs 100%)" system:"GREEN"
+  n63: taskbox owner:"System" description:"Preventive Cognitive Guardrails" system:"Goal Drift"
+  n58.handle(right) -> n59.handle(left)
+  n58.handle(bottom) -> n60.handle(top)
+  n58.handle(bottom) -> n61.handle(top)
+  n58.handle(bottom) -> n62.handle(top)
+  n58.handle(bottom) -> n63.handle(top)
+  n62.handle(right) -> infra.n64.handle(left) [label="Deploy On"]
+}
+
+infra { # 10. INFRASTRUCTURE LAYER - Local Execution
+  n64: rectangle label:"Local Infrastructure (WSL2 Windows)"
+  n65: taskbox owner:"System" description:"Ollama Server (port 11434)" system:"Local LLMs"
+  n66: taskbox owner:"System" description:"Bun 1.3 Node.js 25" system:"Runtime"
+  n67: taskbox owner:"System" description:"SQLite Filesystem State" system:"Persistence"
+  n68: taskbox owner:"System" description:"Nexus Multiagent (488 files)" system:"v6.2"
+  n69: taskbox owner:"System" description:"Quantum Nexus (146 refs)" system:"QML 89.52%"
+  n64.handle(right) -> n65.handle(left)
+  n64.handle(bottom) -> n66.handle(top)
+  n64.handle(bottom) -> n67.handle(top)
+  n64.handle(bottom) -> n68.handle(top)
+  n64.handle(bottom) -> n69.handle(top)
+
+  loop [auto-evolution cycle] n49 n20 n21 n30 n37 n44 n52 n58 n64
+}

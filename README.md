@@ -308,6 +308,53 @@ flowchart TD
 
 ---
 
+### 🌟 [SYS://MEGA_MAP_INTERACTIVE] ── MEGA MAPA INTERATIVO DA ARQUITETURA (FlowZap)
+
+> **🧭 Diagrama Navegável:** Abaixo, o mapa completo do ecossistema em formato interativo. Clique, arraste e explore cada uma das **10 camadas arquiteturais** com 69 nós conectados por 74 arestas.
+
+| **🌐 Diagrama Interativo FlowZap** |
+|:--|
+| [![OpenCode Ecosystem Architecture](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=architecture)](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=architecture) |
+| **👉 [ABRIR MAPA INTERATIVO](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=architecture)** — Arraste, clique nos nós, explore as conexões |
+
+#### 📊 Sumário Visual das 10 Camadas
+
+| Camada | Nome | Nós | Função Principal |
+|:------:|:----|:---:|:-----------------|
+| **①** | **Interface** — Portas de Entrada | 6 | OpenCode CLI, Antigravity CLI/IDE, Dashboard :8081 |
+| **②** | **MCP** — 46 Servidores de Protocolo | 8 | Search, Code, Browser, Data, Reasoning, Science, Infra |
+| **③** | **Orquestração** — Controle Central N4.0 | 6 | `/marceloclaro`, Master, Stage, Antigravity, LiquidSwarm |
+| **④** | **Agentes** — 128 Inteligências | 9 | Core(56), Acadêmicos(49), SEEKER(12), Reversa(11) |
+| **⑤** | **Skills** — 227 Capacidades | 7 | System, Science, Reasoning, Research, Jurídico, Agency |
+| **⑥** | **Scanners** — 6 Motores de Diagnóstico | 7 | Noológico, Teleológico, Evolutivo, Potentiality, Social, Diversity |
+| **⑦** | **Motores Cognitivos** — 7+ Motores | 8 | AIC, Game Theory, MSE, ASDE, Manus Evolve, RUMI, OQS |
+| **⑧** | **Pipeline Acadêmico** — Qualis A1 | 6 | SEEKER → 49 Agentes → Revisão Cega → Correção → LaTeX/PDF |
+| **⑨** | **Segurança & Testes** — Trust N3.5 | 6 | TrustScorer, BehavioralGate, TDD 100%, Guardrails |
+| **⑩** | **Infraestrutura** — Execução Local | 6 | Ollama, Bun/Node, SQLite, Nexus, Quantum |
+
+```
+FLUXO PRINCIPAL:
+Usuário → Interface(①) → MCPs(②) → /marceloclaro(③) → Agentes(④) → Skills(⑤)
+  → Scanners(⑥) → Motores Cognitivos(⑦) → Pipeline Acadêmico(⑧)
+  → TrustEngine N3.5(⑨) → Infraestrutura Local(⑩)
+
+LOOP DE AUTOFVOLUÇÃO:
+ManusEvolve → LiquidSwarm → Agentes → Skills → Scanners → Motores → Pipeline → Security → Infra
+```
+
+#### 🔗 Links do Mapa
+
+| Recurso | URL |
+|:--------|:----|
+| 🎮 **FlowZap Interativo** (Arraste e Explore) | [Abrir Mapa](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=architecture) |
+| 📐 **Visão Workflow** | [Abrir como Workflow](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=workflow) |
+| 🔄 **Visão Sequência** | [Abrir como Sequência](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=sequence) |
+| 📋 **Código Fonte do Diagrama** | [flowzap-code.txt](diagrams/mega-map-flowzap-code.txt) |
+
+> O mapa acima foi gerado com **FlowZap Code** e representa fielmente a arquitetura v7.0 do OpenCode Ecosystem, com 600+ componentes integrados, 368 testes TDD passando e 27 ciclos evolutivos de maturação.
+
+---
+
 ### 🌐 [SYS://BUSINESS_LAYER] ── Para Startups e Investidores (O Valor do Negócio)
 
 *   ⚡ **Execução Híbrida Inteligente:** Operação offline local (via **Ollama CLI**) e transição fluida para a nuvem de ponta (context window massivo de até 1M de tokens), pulverizando custos[...]
