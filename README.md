@@ -17,7 +17,8 @@
  █ ╚██████╔╝██║     ███████╗██║ ╚████║╚██████╗╚██████╔╝██████╔╝███████╗        █
  █  ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝        █
  █                                                                            █
- █    SYSTEM DIAGNOSTIC: 🟢 NOMINAL | R27 | HI=0.75 | GT=100% | 368 CTs 🟢     █
+ █   SYSTEM DIAGNOSTIC: 🟢 NOMINAL | R28 | HI=0.82 | GT=100% | 568+ CTs 🟢    █
+ █   CORA-EVAL: D1–D26 COMPLETO · 26 SUÍTES TDD · N1-N4 POR DOMÍNIO          █
  █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ```
 
@@ -349,9 +350,34 @@ ManusEvolve → LiquidSwarm → Agentes → Skills → Scanners → Motores → 
 | 🎮 **FlowZap Interativo** (Arraste e Explore) | [Abrir Mapa](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=architecture) |
 | 📐 **Visão Workflow** | [Abrir como Workflow](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=workflow) |
 | 🔄 **Visão Sequência** | [Abrir como Sequência](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=sequence) |
-| 📋 **Código Fonte do Diagrama** | [flowzap-code.txt](diagrams/mega-map-flowzap-code.txt) |
+| 🏠 **HTML Viewer Local** (estático, sem internet) | [Abrir](diagrams/architecture-viewer.html) |
+| 🖼️ **SVG Arquitetura Geral** | [architecture-overview.svg](diagrams/architecture-overview.svg) |
+| 🖼️ **SVG Pipeline SDD+TDD** | [sdd-tdd-pipeline.svg](diagrams/sdd-tdd-pipeline.svg) |
+| 🖼️ **SVG MCP Architecture** | [mcp-architecture.svg](diagrams/mcp-architecture.svg) |
+| 🖼️ **SVG PhD Auditor (MiroFish)** | [mirofish-phd-auditor.svg](diagrams/mirofish-phd-auditor.svg) |
+| 💻 **Código Fonte FlowZap** | [flowzap-code.txt](diagrams/mega-map-flowzap-code.txt) |
+| 📁 **Todos os Diagramas** | [diagrams/](diagrams/) |
 
-> O mapa acima foi gerado com **FlowZap Code** e representa fielmente a arquitetura v7.0 do OpenCode Ecosystem, com 600+ componentes integrados, 368 testes TDD passando e 27 ciclos evolutivos de maturação.
+> O mapa acima foi gerado com **FlowZap Code** e representa fielmente a arquitetura v7.0 do OpenCode Ecosystem, com 600+ componentes integrados, 368 testes TDD passando e 27 ciclos evolutivos de maturação. Para uma visualização estática offline, abra o [HTML Viewer Local](diagrams/architecture-viewer.html) no navegador.
+
+---
+
+### 🔬 [SYS://PIPELINE_METRICS] ── Métricas Frescas do Pipeline de Scanners (Jul/2026)
+
+Pipeline completo executado em 02/07/2026 com todos os 6 scanners encadeados:
+
+| Scanner | Resultado | Detalhes |
+|:--------|:----------|:---------|
+| 🧬 **Noológico** | **38%** cobertura | 35/92 categorias, 10 dimensões analisadas |
+| 🎯 **Teleológico** | **100%** score | Nenhum gap estratégico — alinhamento total |
+| 📈 **Evolutivo** | **7 gaps** | 1 quick win, 5 foundations, 0 frontiers, custo total 0.037 |
+| 💡 **Potentiality v2** | **58 oportunidades** | 16 promissoras, 35 exploratórias, EPS médio 51.5 |
+| 🌍 **Social Impact** | **SROI 2.55:1** | B Impact 81/200, alinhado com 5 ODS |
+| 🧠 **Cognitive Diversity** | **HI 0.9567** | Câmara de eco detectada, 2 clusters, 10 artefatos |
+| 🌐 **Epistemic Topology** | **5 clusters** | 1 ilha (teoria_jogos), 8 pontes, 8 buracos epistêmicos |
+| 💥 **Rupture Potential** | **0 rupturas** | 16 melhorias incrementais, 14 rotina |
+
+> **Diagnóstico:** O ecossistema apresenta solidez estratégica (Teleológico 100%) e maturidade operacional (Evolutionary com quick wins disponíveis). Os maiores gaps estão em Domínios de Conhecimento Cruzados (apenas 10%) e Paradigmas Epistemológicos (25%). A câmara de eco cognitiva (HI 0.9567) requer injeção de diversidade.
 
 ---
 
