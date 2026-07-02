@@ -309,29 +309,220 @@ flowchart TD
 
 ---
 
-### 🌟 [SYS://MEGA_MAP_INTERACTIVE] ── MEGA MAPA INTERATIVO DA ARQUITETURA (FlowZap)
+### 🌟 [SYS://MEGA_MAP_MERMAID] ── MEGA MAPA COMPLETO DA ARQUITETURA (Mermaid)
 
-> **🧭 Diagrama Navegável:** Abaixo, o mapa completo do ecossistema em formato interativo. Clique, arraste e explore cada uma das **10 camadas arquiteturais** com 69 nós conectados por 74 arestas.
+> **🧭 Diagrama Completo:** Abaixo, o mapa da arquitetura do ecossistema em Mermaid, com **10 camadas**, **60+ componentes** e **70+ conexões**. Renderiza nativamente no GitHub — sem necessidade de plugins.
 
-| **🌐 Diagrama Interativo FlowZap** |
-|:--|
-| [![OpenCode Ecosystem Architecture](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=architecture)](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=architecture) |
-| **👉 [ABRIR MAPA INTERATIVO](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=architecture)** — Arraste, clique nos nós, explore as conexões |
+```mermaid
+flowchart TD
+  subgraph Interface["① CAMADA DE INTERFACE — Portas de Entrada do Usuário"]
+    I1["OpenCode CLI<br/>/marceloclaro"]
+    I2["Antigravity CLI (agy)<br/>Antigravity IDE"]
+    I3["Observability Dashboard<br/>HTTP :8081"]
+    I4["Menu Adaptativo<br/>menu.py"]
+  end
 
-#### 📊 Sumário Visual das 10 Camadas
+  subgraph MCP["② CAMADA MCP — 46 Servidores de Protocolo"]
+    M1["MCP Router<br/>EcosystemCapabilitiesServer"]
+    M2["🔍 Busca<br/>websearch, arxiv,<br/>gh_grep, scihub"]
+    M3["💻 Código<br/>code-runner,<br/>eslint, diff"]
+    M4["🌐 Navegação<br/>playwright,<br/>chrome-devtools"]
+    M5["📊 Dados<br/>sqlite, fetch,<br/>pdf, time"]
+    M6["🧠 Raciocínio<br/>sequential-thinking,<br/>memory"]
+    M7["🔬 Ciência<br/>latest-science,<br/>biothings, arxiv-mcp"]
+    M8["⚙️ Infraestrutura<br/>filesystem, github,<br/>decisionnode"]
+  end
 
-| Camada | Nome | Nós | Função Principal |
-|:------:|:----|:---:|:-----------------|
-| **①** | **Interface** — Portas de Entrada | 6 | OpenCode CLI, Antigravity CLI/IDE, Dashboard :8081 |
-| **②** | **MCP** — 46 Servidores de Protocolo | 8 | Search, Code, Browser, Data, Reasoning, Science, Infra |
-| **③** | **Orquestração** — Controle Central N4.0 | 6 | `/marceloclaro`, Master, Stage, Antigravity, LiquidSwarm |
-| **④** | **Agentes** — 128 Inteligências | 9 | Core(56), Acadêmicos(49), SEEKER(12), Reversa(11) |
-| **⑤** | **Skills** — 227 Capacidades | 7 | System, Science, Reasoning, Research, Jurídico, Agency |
-| **⑥** | **Scanners** — 6 Motores de Diagnóstico | 7 | Noológico, Teleológico, Evolutivo, Potentiality, Social, Diversity |
-| **⑦** | **Motores Cognitivos** — 7+ Motores | 8 | AIC, Game Theory, MSE, ASDE, Manus Evolve, RUMI, OQS |
-| **⑧** | **Pipeline Acadêmico** — Qualis A1 | 6 | SEEKER → 49 Agentes → Revisão Cega → Correção → LaTeX/PDF |
-| **⑨** | **Segurança & Testes** — Trust N3.5 | 6 | TrustScorer, BehavioralGate, TDD 100%, Guardrails |
-| **⑩** | **Infraestrutura** — Execução Local | 6 | Ollama, Bun/Node, SQLite, Nexus, Quantum |
+  subgraph Orquestracao["③ CAMADA DE ORQUESTRAÇÃO — Controle Central N4.0"]
+    O1["/marceloclaro<br/>Arquiteto Supremo"]
+    O2["MasterOrchestrator<br/>Pipeline Local TDD/SDD"]
+    O3["StageOrchestrator<br/>Estágios de Especificação"]
+    O4["AntigravityOrchestrator<br/>Navegação/Geração Ext."]
+    O5["LiquidSwarm N4.0<br/>Agentes sob demanda<br/>com evaporação < 0.3"]
+  end
+
+  subgraph Agentes["④ CAMADA DE AGENTES — 128 Inteligências"]
+    A1["🧩 Core (56)<br/>coder, reviewer,<br/>debugger, architect,<br/>test-engineer..."]
+    A2["📚 Acadêmicos (49)<br/>MASWOS v5.0<br/>00-editor a<br/>44-correção textual"]
+    A3["🔬 SEEKER (12)<br/>searcher, grounder,<br/>extractor, mapper,<br/>validator..."]
+    A4["🔧 Reversa (11)<br/>detective, synthesis,<br/>archaeologist,<br/>architect, writer..."]
+  end
+
+  subgraph Skills["⑤ CAMADA DE SKILLS — 227 Capacidades (13 Cat.)"]
+    S1["⚙️ System (12)<br/>Core Infrastructure"]
+    S2["🧬 Science (38)<br/>AlphaFold, PubMed,<br/>ChEMBL, UniProt,<br/>ClinVar, FoldSeek..."]
+    S3["🧠 Reasoning (4)<br/>Z3, SymPy,<br/>Kanren, Critical"]
+    S4["📖 Research (18)<br/>SEEKER, editais-br,<br/>academic-audit..."]
+    S5["⚖️ Jurídico (7)<br/>contratos, peças,<br/>jurisprudência..."]
+    S6["🤖 Agency (8)<br/>orchestrator, mcp-builder,<br/>compliance..."]
+  end
+
+  subgraph Scanners["⑥ CAMADA DE SCANNERS — 6 Motores de Diagnóstico"]
+    SC1["Scanner Noológico<br/>Lacunas Epistêmicas<br/>38% coverage"]
+    SC2["Scanner Teleológico<br/>Alinhamento Estratégico<br/>100% score"]
+    SC3["Scanner Evolutivo<br/>Maturidade Evolutiva<br/>7 gaps detectados"]
+    SC4["Potentiality Estimator v2<br/>6 Dimensões Epistêmicas<br/>58 oportunidades"]
+    SC5["Social Impact Scanner<br/>ESG / SROI 2.55:1<br/>B Impact 81/200"]
+    SC6["Cognitive Diversity<br/>HI / Câmaras de Eco<br/>SPEC-053"]
+    SC7["Epistemic Topology<br/>5 clusters, 8 pontes<br/>SPEC-054"]
+  end
+
+  subgraph Motores["⑦ CAMADA DE MOTORES COGNITIVOS — Raciocínio & Evolução"]
+    E1["Active Inference (AIC)<br/>FEP / VFE Minimização<br/>SPEC-059"]
+    E2["Game Theory Solver<br/>10 Modelos Clássicos<br/>Nash, Prisioneiro...<br/>SPEC-060"]
+    E3["Metacognitive Search<br/>DFS + Process Verifiers<br/>Backtracking < 0.6<br/>SPEC-062"]
+    E4["ASDE Pipeline<br/>Descoberta Científica<br/>Relatórios IMRaD<br/>SPEC-063"]
+    E5["Manus Evolve<br/>PLAN → ACT → REFLECT<br/>→ EXTRACT → EVOLVE"]
+    E6["RUMI Causal Discovery<br/>Hipóteses Adversariais<br/>Grafo Causal<br/>SPEC-058"]
+    E7["OQS Optimal Query<br/>Pergunta Ótima<br/>Uncertainty Scanner<br/>SPEC-056"]
+    E8["ARCHE RLT<br/>Árvore Lógica<br/>6 Inferências Peirce<br/>SPEC-057"]
+  end
+
+  subgraph Pipeline["⑧ CAMADA DE PIPELINE ACADÊMICO — Qualis A1"]
+    P1["SEEKER<br/>Pesquisa em 10+ Fontes<br/>arXiv, PubMed, OpenAlex"]
+    P2["MASWOS v5.0<br/>49 Agentes Escrita<br/>Especializada"]
+    P3["Revisão Cega<br/>5 Revisores Simulados<br/>10 Critérios Qualis"]
+    P4["Correção Iterativa<br/>6 Motores + CJK<br/>Detector + PT-BR"]
+    P5["Exportação LaTeX/PDF<br/>IMRaD Formatado<br/>Qualis A1 95-100/100"]
+  end
+
+  subgraph Seguranca["⑨ CAMADA DE SEGURANÇA & TESTES — Trust N3.5"]
+    T1["TrustScorer<br/>Blend 70/30<br/>Shadow Mode<br/>Rollback"]
+    T2["BehavioralGate<br/>Safe / Moderate<br/>Risky / Blocked<br/>15ms Intercept"]
+    T3["NaturalForgetting<br/>Atkinson-Shiffrin<br/>Memória Curto/Longo<br/>Prazo"]
+    T4["18 Suítes TDD<br/>368 CTs · 100% Pass<br/>GREEN Status"]
+    T5["Preventive Cognitive<br/>Guardrails<br/>Goal Drift Prevention"]
+  end
+
+  subgraph Infra["⑩ CAMADA DE INFRAESTRUTURA — Execução Local"]
+    R1["WSL2 / Windows 11<br/>Sandbox Linux Nativo"]
+    R2["Ollama Server<br/>Porta 11434<br/>Modelos Locais"]
+    R3["Bun 1.3 · Node.js 25<br/>Runtime de Execução"]
+    R4["SQLite + Filesystem<br/>ecosystem-state.json<br/>Persistência"]
+    R5["Nexus Multiagente v6.2<br/>488 Arquivos<br/>6 Camadas de Orquestração"]
+    R6["Quantum Nexus<br/>146 Referências<br/>QML HAM10000 89.52%"]
+  end
+
+  %% CONEXÕES ENTRE CAMADAS
+  I1 --> M1
+  I2 --> M1
+  I3 --> M1
+  I4 --> M1
+
+  M1 --> M2
+  M1 --> M3
+  M1 --> M4
+  M1 --> M5
+  M1 --> M6
+  M1 --> M7
+  M1 --> M8
+
+  M2 --> O1
+  M3 --> O1
+  M4 --> O1
+  M5 --> O1
+  M6 --> O2
+  M7 --> O4
+  M8 --> O3
+
+  O1 --> O2
+  O1 --> O3
+  O1 --> O4
+  O1 --> O5
+
+  O2 --> A1
+  O2 --> A2
+  O3 --> A2
+  O4 --> A4
+  O5 --> A3
+
+  A1 --> S1
+  A1 --> S3
+  A2 --> S4
+  A3 --> S2
+  A4 --> S5
+  A1 --> S6
+
+  S2 --> SC1
+  S3 --> SC2
+  S4 --> SC3
+  S1 --> SC4
+  S2 --> SC5
+  S3 --> SC6
+  S6 --> SC7
+
+  SC1 --> E1
+  SC2 --> E2
+  SC3 --> E3
+  SC4 --> E4
+  SC5 --> E6
+  SC6 --> E7
+  SC7 --> E8
+
+  E1 --> P1
+  E2 --> P1
+  E3 --> P2
+  E4 --> P3
+  E5 --> P4
+  E6 --> P5
+  E7 --> P1
+
+  P5 --> T1
+  P5 --> T4
+
+  T1 --> T2
+  T2 --> T3
+  T4 --> T5
+
+  T5 --> R1
+  T4 --> R1
+  R1 --> R2
+  R1 --> R3
+  R1 --> R4
+  R1 --> R5
+  R1 --> R6
+
+  %% Loop de Autoevolução
+  E5 ==> O5
+
+  %% Estilo Visual Cyberpunk
+  classDef interface fill:#1a1a2e,stroke:#e94560,stroke-width:2px,color:#fff
+  classDef mcp fill:#16213e,stroke:#0f3460,stroke-width:2px,color:#a8d8ea
+  classDef orchest fill:#0f3460,stroke:#e94560,stroke-width:2px,color:#fff
+  classDef agentes fill:#533483,stroke:#e94560,stroke-width:2px,color:#fff
+  classDef skills fill:#2d6a4f,stroke:#95d5b2,stroke-width:2px,color:#fff
+  classDef scanners fill:#e07a5f,stroke:#f4a261,stroke-width:2px,color:#fff
+  classDef motores fill:#264653,stroke:#2a9d8f,stroke-width:2px,color:#fff
+  classDef pipeline fill:#6b705c,stroke:#a5a58d,stroke-width:2px,color:#fff
+  classDef seguranca fill:#9b2226,stroke:#e63946,stroke-width:2px,color:#fff
+  classDef infra fill:#1d3557,stroke:#457b9d,stroke-width:2px,color:#fff
+
+  class I1,I2,I3,I4 interface
+  class M1,M2,M3,M4,M5,M6,M7,M8 mcp
+  class O1,O2,O3,O4,O5 orchest
+  class A1,A2,A3,A4 agentes
+  class S1,S2,S3,S4,S5,S6 skills
+  class SC1,SC2,SC3,SC4,SC5,SC6,SC7 scanners
+  class E1,E2,E3,E4,E5,E6,E7,E8 motores
+  class P1,P2,P3,P4,P5 pipeline
+  class T1,T2,T3,T4,T5 seguranca
+  class R1,R2,R3,R4,R5,R6 infra
+```
+
+#### 📊 Sumário das 10 Camadas
+
+| Camada | Nome | Componentes | Função Principal |
+|:------:|:-----|:-----------:|:-----------------|
+| **①** | **Interface** | 4 | CLI, Antigravity CLI/IDE, Dashboard :8081, Menu Adaptativo |
+| **②** | **MCP** | 8 (46 total) | Search, Code, Browser, Data, Reasoning, Science, Infra + Router |
+| **③** | **Orquestração** | 5 | `/marceloclaro`, Master, Stage, Antigravity, LiquidSwarm N4.0 |
+| **④** | **Agentes** | 4 (128 total) | Core(56), Acadêmicos(49), SEEKER(12), Reversa(11) |
+| **⑤** | **Skills** | 6 (227 total) | System, Science(38), Reasoning(4), Research(18), Jurídico, Agency |
+| **⑥** | **Scanners** | 7 (6 motores) | Noológico, Teleológico, Evolutivo, Potentiality, Social, Diversity, Topology |
+| **⑦** | **Motores Cognitivos** | 8 | AIC, Game Theory, MSE, ASDE, Manus Evolve, RUMI, OQS, ARCHE RLT |
+| **⑧** | **Pipeline Acadêmico** | 5 | SEEKER → 49 Agentes → Revisão Cega → Correção → LaTeX/PDF |
+| **⑨** | **Segurança & Testes** | 5 | TrustScorer, BehavioralGate, NaturalForgetting, TDD 100%, Guardrails |
+| **⑩** | **Infraestrutura** | 6 | WSL2, Ollama, Bun/Node, SQLite, Nexus v6.2, Quantum |
 
 ```
 FLUXO PRINCIPAL:
@@ -340,25 +531,23 @@ Usuário → Interface(①) → MCPs(②) → /marceloclaro(③) → Agentes(④
   → TrustEngine N3.5(⑨) → Infraestrutura Local(⑩)
 
 LOOP DE AUTOFVOLUÇÃO:
-ManusEvolve → LiquidSwarm → Agentes → Skills → Scanners → Motores → Pipeline → Security → Infra
+ManusEvolve(⑦) ⇒ LiquidSwarm(③) → Agentes(④) → Skills(⑤) → Scanners(⑥)
+  → Motores(⑦) → Pipeline(⑧) → Segurança(⑨) → Infra(⑩)
 ```
 
-#### 🔗 Links do Mapa
+#### 🔗 Links para Visualizações da Arquitetura
 
-| Recurso | URL |
-|:--------|:----|
-| 🎮 **FlowZap Interativo** (Arraste e Explore) | [Abrir Mapa](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=architecture) |
-| 📐 **Visão Workflow** | [Abrir como Workflow](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=workflow) |
-| 🔄 **Visão Sequência** | [Abrir como Sequência](https://flowzap.xyz/playground/b387170b-ff77-49df-a0ff-5920c8543a3e?view=sequence) |
-| 🏠 **HTML Viewer Local** (estático, sem internet) | [Abrir](diagrams/architecture-viewer.html) |
-| 🖼️ **SVG Arquitetura Geral** | [architecture-overview.svg](diagrams/architecture-overview.svg) |
-| 🖼️ **SVG Pipeline SDD+TDD** | [sdd-tdd-pipeline.svg](diagrams/sdd-tdd-pipeline.svg) |
-| 🖼️ **SVG MCP Architecture** | [mcp-architecture.svg](diagrams/mcp-architecture.svg) |
-| 🖼️ **SVG PhD Auditor (MiroFish)** | [mirofish-phd-auditor.svg](diagrams/mirofish-phd-auditor.svg) |
-| 💻 **Código Fonte FlowZap** | [flowzap-code.txt](diagrams/mega-map-flowzap-code.txt) |
-| 📁 **Todos os Diagramas** | [diagrams/](diagrams/) |
+| Recurso | Descrição | Link |
+|:--------|:----------|:----:|
+| 🖼️ **HTML Viewer Local** | Visualização estática offline | [Abrir](diagrams/architecture-viewer.html) |
+| 🖼️ **SVG Arquitetura Geral** | Diagrama SVG da visão geral | [Abrir](diagrams/architecture-overview.svg) |
+| 🖼️ **SVG Pipeline SDD+TDD** | Pipeline de especificação e testes | [Abrir](diagrams/sdd-tdd-pipeline.svg) |
+| 🖼️ **SVG MCP Architecture** | Arquitetura dos servidores MCP | [Abrir](diagrams/mcp-architecture.svg) |
+| 🖼️ **SVG PhD Auditor (MiroFish)** | Pipeline de auditoria acadêmica | [Abrir](diagrams/mirofish-phd-auditor.svg) |
+| 💻 **Código Mermaid Fonte** | Código fonte deste diagrama | [Ver](#mega-mapa-completo-da-arquitetura-mermaid) |
+| 📁 **Todos os Diagramas** | Diretório completo de assets | [diagrams/](diagrams/) |
 
-> O mapa acima foi gerado com **FlowZap Code** e representa fielmente a arquitetura v7.0 do OpenCode Ecosystem, com 600+ componentes integrados, 368 testes TDD passando e 27 ciclos evolutivos de maturação. Para uma visualização estática offline, abra o [HTML Viewer Local](diagrams/architecture-viewer.html) no navegador.
+> O diagrama acima foi gerado em **Mermaid puro** e renderiza nativamente no GitHub. Representa a arquitetura v7.0 do OpenCode Ecosystem com **600+ componentes integrados**, **368 testes TDD (100%)**, **128 agentes**, **227 skills**, **46 MCPs** e **27 ciclos evolutivos**.
 
 ---
 
