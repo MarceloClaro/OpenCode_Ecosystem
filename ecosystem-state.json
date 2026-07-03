@@ -211,5 +211,44 @@
     ],
     "assessed_at": "2026-06-30T23:00Z"
   },
-  "version": "v5.6.0 (R27)"
+  "r30_paradigm_expansion": {
+    "status": "completo",
+    "ciclo": "R30",
+    "nome": "Expansao Paradigmatica + Registro Ecossistemico",
+    "data": "2026-07-02",
+    "specs_criadas": [
+      "SPEC-068-PARADIGMA-POSITIVISTA.md",
+      "SPEC-069-PARADIGMA-INTERPRETATIVISTA.md"
+    ],
+    "skills_registradas": [
+      "skills/research/paradigma-positivista/SKILL.md",
+      "skills/research/paradigma-interpretativista/SKILL.md",
+      "skills/research/revisao-sistematica/SKILL.md",
+      "skills/research/analise-qualitativa/SKILL.md",
+      "skills/research/neurociencias-dominio/SKILL.md",
+      "skills/research/metodos-mistos/SKILL.md"
+    ],
+    "cognitive_diversity": {
+      "artefatos_injector": 25,
+      "hi_alvo": "< 0.50",
+      "novos_artefatos_r30": 3
+    },
+    "corpus_noologico": "corpus_noologico_referencia.txt (65+ keywords, 10 dimensoes)",
+    "test_suite": {
+      "test_r30_paradigmas.py": "8/8 CTs"
+    },
+    "commitado_em": "HEAD~0",
+    "proximo": "R31 — Metodos restantes + Oportunidades VIAveis"
+  },
+  "skills_registry": {
+    "research": [
+      "skills/research/revisao-sistematica/SKILL.md",
+      "skills/research/analise-qualitativa/SKILL.md",
+      "skills/research/metodos-mistos/SKILL.md",
+      "skills/research/neurociencias-dominio/SKILL.md",
+      "skills/research/paradigma-positivista/SKILL.md",
+      "skills/research/paradigma-interpretativista/SKILL.md"
+    ]
+  },
+  "version": "v5.7.0 (R30)"
 }

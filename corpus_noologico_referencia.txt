@@ -1,0 +1,57 @@
+# Corpus de Referência para Scanner Noológico — R30
+# Inclui keywords para todas as novas categorias implementadas
+
+## Paradigmas Epistemológicos
+paradigma positivista falseabilidade hipotético-dedutivo empirismo replicabilidade
+paradigma interpretativista fenomenológico hermenêutica subjetividade compreensão
+paradigma pragmatista utilidade prática métodos mistos triangulação resolução de problemas
+paradigma construtivista construção social realidade múltipla perspectivismo
+paradigma pós-estruturalista desconstrução poder discurso diferença alteridade
+paradigma fenomenológico intencionalidade consciência experiência vivida epoché
+
+## Métodos de Investigação
+método misto sequencial convergente triangulação QUAN qual integração
+revisão sistemática PRISMA PICOS meta-análise síntese de evidências
+pesquisa qualitativa fenomenológica grounded theory estudo de caso etnografia
+pesquisa-ação participante intervenção transformação social
+método quantitativo experimental correlacional descritivo modelo
+
+## Tipos de Dados e Evidências
+dados neurobiológicos fMRI EEG neuroimagem conectividade funcional
+dados qualitativos entrevistas narrativas observação participante grupos focais
+dados observacionais registro sistemático comportamento naturalístico
+dados epidemiológicos coorte caso-controle prevalência incidência
+dados comparativos cross-cultural transcultural diferenças culturais
+
+## Domínios de Conhecimento Cruzados
+Neurociências cérebro neural cognitivo fMRI EEG neuroplasticidade
+Psicologia clínica psicopatologia terapia avaliação psicológica
+Sociologia estrutura social estratificação mobilidade instituições
+Antropologia cultura etnografia ritual parentesco simbolismo
+Economia comportamental nudge heurística viés decisão incerteza
+Filosofia da mente consciência qualia intencionalidade dualismo
+Psicofarmacologia fármacos neurotransmissores psicotrópicos medicação
+Educação aprendizagem pedagogia currículo avaliação educacional
+Inteligência Artificial machine learning redes neurais algoritmos agentes
+
+## Níveis de Análise
+nível individual intrapsíquico personalidade cognição emoção processamento
+nível interpessoal relacional dyade interação apego comunicação
+nível neurobiológico circuitos neurais sistemas neurotransmissores genética
+nível evolutivo filogenético seleção natural adaptação ancestral
+nível cultural antropológico práticas rituais valores normas cosmovisão
+
+## População e Contexto
+adultos jovens meia-idade terceira idade envelhecimento
+adolescentes juventude puberdade identidade peer group
+gênero feminino masculino diversidade de gênero identidade de gênero
+contexto clínico hospitalar ambulatorial saúde mental reabilitação
+cross-cultural comparação entre culturas estudos transculturais
+
+## Referenciais Teóricos
+teoria psicanalítica inconsciente defesa transferência pulsão
+teoria humanista autorrealização significado autenticidade potencial
+teoria sistêmica família homeostase circularidade rede complexidade
+teoria neurobiológica circuitos neurotransmissores plasticidade desenvolvimento
+teoria social crítica poder ideologia emancipação transformação
+teoria fenomenológico-existencial ser-no-mundo angústia autenticidade liberdade
