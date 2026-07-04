@@ -17,8 +17,8 @@
  █ ╚██████╔╝██║     ███████╗██║ ╚████║╚██████╗╚██████╔╝██████╔╝███████╗        █
  █  ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝        █
  █                                                                            █
- █   SYSTEM DIAGNOSTIC: 🟢 NOMINAL | R28 | HI=0.82 | GT=100% | 568+ CTs 🟢    █
- █   CORA-EVAL: D1–D26 COMPLETO · 26 SUÍTES TDD · N1-N4 POR DOMÍNIO          █
+ █   SYSTEM DIAGNOSTIC: 🟢 NOMINAL | R39 | HI=0.7473 | GT=100% | 420 CTs 🟢   █
+ █   CORA-EVAL: D1–D26 COMPLETO · 84 SPECs · R1=85 → R39=100                █
  █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ```
 
@@ -106,19 +106,21 @@ Integração nativa com arXiv, PubMed, OpenAlex, EuropePMC, bioRxiv, CORE + moto
 
 ---
 
-### 📊 Estado Atual (R27 — Julho/2026)
+### 📊 Estado Atual (R39 — Julho/2026)
 
 ```
-📊 600+ componentes integrados
-✅ 368/368 testes (61/64 passando, 3 skipped opcionais)
-📚 18 suítes TDD · 15 SPECs ativas · 10 ADRs documentadas
+📊 600+ componentes integrados · 260k+ linhas de código
+✅ 420/420 testes (100%) · 18 suítes TDD · 84 SPECs · 10 ADRs
 🧠 128 agentes · 227 skills · 46 MCPs · 4 motores de raciocínio
-🏆 27 ciclos evolutivos (R1=85 → R27=100)
+🏆 39 ciclos evolutivos (R1=85 → R39=100)
 🔬 Pipeline Qualis A1 validado com produção real
 🧬 Autoevolução ativa: Manus Evolve gera novas skills automaticamente
-🛡️ Trust Engine N3.5: monitoramento comportamental preventivo
-🧩 Cognitive Diversity: HI=0.75 (não-eco) — diversidade cognitiva real
+🛡️ Trust Engine N3.5: monitoramento comportamental preventivo (SPEC-038)
+🧠 Self-Repair: Auto-diagnóstico e reparo autônomo (SPEC-083)
+🧩 Cognitive Diversity: HI=0.7473 (não-eco) — diversidade cognitiva real
 🎲 Game Theory: 100% de cobertura (10/10 categorias)
+🔬 16 scanners cognitivos · 4 motores (Z3, SymPy, Kanren, Critical)
+🌐 Mapa arquitetural completo: 10 camadas, 60+ componentes, 70+ conexões
 ```
 
 > `"O software tradicional exige que você digite comandos. O OpenCode Ecosystem cria as soluções e evaporiza suas dependências quando conclui."`
@@ -544,10 +546,12 @@ ManusEvolve(⑦) ⇒ LiquidSwarm(③) → Agentes(④) → Skills(⑤) → Scann
 | 🖼️ **SVG Pipeline SDD+TDD** | Pipeline de especificação e testes | [Abrir](diagrams/sdd-tdd-pipeline.svg) |
 | 🖼️ **SVG MCP Architecture** | Arquitetura dos servidores MCP | [Abrir](diagrams/mcp-architecture.svg) |
 | 🖼️ **SVG PhD Auditor (MiroFish)** | Pipeline de auditoria acadêmica | [Abrir](diagrams/mirofish-phd-auditor.svg) |
+| 📜 **Relatório Completo da Arquitetura** | 10 seções, 260k LOC, 6 gaps, 8 potenciais | [Abrir](diagrams/architecture_complete_report.md) |
+| 💻 **Diagrama Mermaid (10 camadas)** | Mapa completo L0-L9 dark theme | [Abrir](diagrams/architecture_ecosystem.mmd) |
 | 💻 **Código Mermaid Fonte** | Código fonte deste diagrama | [Ver](#mega-mapa-completo-da-arquitetura-mermaid) |
 | 📁 **Todos os Diagramas** | Diretório completo de assets | [diagrams/](diagrams/) |
 
-> O diagrama acima foi gerado em **Mermaid puro** e renderiza nativamente no GitHub. Representa a arquitetura v7.0 do OpenCode Ecosystem com **600+ componentes integrados**, **368 testes TDD (100%)**, **128 agentes**, **227 skills**, **46 MCPs** e **27 ciclos evolutivos**.
+> O diagrama acima foi gerado em **Mermaid puro** e renderiza nativamente no GitHub. Representa a arquitetura v6.6.0 do OpenCode Ecosystem com **600+ componentes integrados**, **420 testes TDD (100%)**, **128 agentes**, **227 skills**, **46 MCPs**, **84 SPECs** e **39 ciclos evolutivos** (R1=85 → R39=100).
 
 ---
 
@@ -581,7 +585,7 @@ Pipeline completo executado em 02/07/2026 com todos os 6 scanners encadeados:
 
 ### 🧠 [SYS://UNDER_THE_HOOD] ── Para o Público Técnico (Arquitetura & Engenharia)
 
-A versão **v7.0 (Active Inference & Cognitive Engines)** revolucionou o limite arquitetural de workflows através de WSL2, Windows e ambientes conteinerizados:
+A versão **v6.6.0 (Self-Repair & Mapa Arquitetural)** consolidou o limite arquitetural de workflows através de WSL2, Windows e ambientes conteinerizados com auto-reparo autônomo e mapeamento completo do ecossistema:
 
 *   💾 **Liquid Swarm Architecture (N4.0):** Quebramos a barreira do *pool* estático. Agentes não são mais pré-catalogados; eles são sintetizados em *runtime* e evaporam após a execução.
 *   💾 **Active Inference Controller (Fase A - SPEC-059):** Primeiro controlador cognitivo baseado no FEP (Free Energy Principle) de Karl Friston que calcula a Energia Livre Variacional (VFE) das ações para minimizar surpresa e ruídos.
@@ -940,26 +944,30 @@ Para o apresentador ou investidor entender a lógica de demonstração rápida:
 
 ---
 
-### 📋 [SYS://CHANGELOG_R27] ── R27: Cognitive Diversity + Game Theory 100% (Jun 2026)
+### 📋 [SYS://CHANGELOG_R39] ── R39: Autonomous Self-Repair + Mapa Arquitetural (Jul 2026)
 
 | Melhoria | Antes | Depois | Impacto |
 |----------|-------|--------|---------|
-| **Câmara de Eco (HI)** | HI=0.9467 (echo) | **HI=0.7473 (não eco)** | ⬇️ 21% — diversidade cognitiva real |
-| **Teoria dos Jogos** | 0% cobertura | **100% (10/10 categorias)** | +10pp no overall coverage |
-| **Scanner Noológico** | 28% overall | **38% overall** | +10pp, 35/92 categorias |
-| **Testes skipped** | 5 (biber ausente) | **3 (apenas opcionais)** | bibtex fallback implementado |
+| **Self-Repair (R39)** | Sem reparo autônomo | **HealthMonitor + RepairEngine** | 14 CTs, SHA-256 chain integrity |
+| **Mapa Arquitetural** | Diagrama solto | **Relatório 10 camadas + Mermaid** | 260k LOC mapeados, 6 gaps |
+| **CTs totais** | 368 CTs | **420 CTs** | +52 CTs (R38+R39) |
+| **SPECs** | 77 SPECs | **84 SPECs** | +7 SPECs (059-064, 080-083) |
+| **Cross-Paradigm (R38)** | 4 motores isolados | **6 modos integrados** | 20 CTs, síntese multi-paradigma |
+| **CI/CD** | Sem validação automatizada | **GitHub Actions 5 gates** | ci_validate.py integrado |
+| **MCP Tools** | 34 ferramentas | **41 ferramentas** | eco_self_repair + eco_* novas |
 
-**O que foi feito:**
-1. 🧩 **CognitiveDiversityInjector** — 8 artefatos injetados no CDS (5 paradigmas, 8 domínios, 4 refs GT)
-2. 🎯 **Game Theory 100%** — ENRICHED_KW + keyword_map expandidos; `GAME_THEORY_RESEARCH.md` na raiz
-3. 🔧 **bibtex fallback** — `LaTeXCompiler._find_bibliography_tool()` auto-detects biber > bibtex
-4. 📊 **Reavaliação completa** — pipeline de 6 scanners executado com métricas registradas
+**O que foi feito (R38-R39):**
+1. 🔧 **Autonomous Self-Repair (SPEC-083)** — 5 componentes: HealthMonitor (8 módulos monitorados), RepairEngine (3 estratégias: reload/deps/fallback), RepairLogger (SHA-256 chain), RepairNotifier (ecosystem-state update), SelfRepairOrchestrator (pipeline 14 CTs)
+2. 🔄 **Cross-Paradigm Reasoning (SPEC-082)** — 6 modos de raciocínio (auto/formal/symbolic/logic/critical/research) + CrossParadigmSynthesizer com detecção de contradições + SystemSelfDiagnostic (20 CTs)
+3. 🌐 **Mapa Arquitetural Completo** — `architecture_complete_report.md` (10 seções, 260k LOC) + `architecture_ecosystem.mmd` (diagrama Mermaid 10 camadas dark theme)
+4. ⚙️ **CI/CD Pipeline** — GitHub Actions com 5 gates + `ci_validate.py` integrado
+5. 📄 **7 novas SPECs** — Active Inference, Game Theory, Dashboard, CORA-Eval, Capability Registration, Research Skills Framework, Cross-Paradigm, Self-Repair
 
 ```
-  R27 SUM: 368 CTs · 61/64 passed · 3 skipped · 7 files · +179/-24 linhas
+  R38+R39 SUM: 420 CTs · 100% pass · 40 arquivos · +8622/-742 linhas · ecosystem v6.6.0
 ```
 
-👉 [Changelog Completo](CHANGELOG.md) | [Estado do Ecossistema](ecosystem-state.json) | [SPEC-056](specs/SPEC-056-COGNITIVE-DIVERSITY-EXPANSION-R27.md)
+👉 [Changelog Completo](CHANGELOG.md) | [Estado do Ecossistema](ecosystem-state.json) | [SPEC-083](specs/SPEC-083-AUTONOMOUS-SELF-REPAIR.md) | [Mapa Arquitetural](diagrams/architecture_complete_report.md)
 
 ---
 
