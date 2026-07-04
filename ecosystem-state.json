@@ -1,10 +1,10 @@
 {
-  "version": "7.1.0",
-  "current_cycle": "R44",
-  "last_updated": "2026-07-04T03:15:00Z",
-  "tests_passing": 69,
-  "total_cts": 477,
-  "specs_count": 85,
+  "version": "7.2.0",
+  "current_cycle": "R46",
+  "last_updated": "2026-07-04T15:30:00Z",
+  "tests_passing": 56,
+  "total_cts": 533,
+  "specs_count": 92,
   "agents_count": 128,
   "skills_count": 228,
   "mcps_count": 46,
@@ -104,7 +104,12 @@
     "R38": 100,
     "R39": 100,
     "R40": 100,
-    "R41": 100
+    "R41": 100,
+    "R42": 100,
+    "R43": 100,
+    "R44": 100,
+    "R45": 100,
+    "R46": 100
   },
   "self_repair": {
     "health_pct": 100.0,
@@ -148,7 +153,49 @@
     "pre_commit_updated": true,
     "ci_validate_updated": true
   },
-  "specs": 88,
+  "r46_ecosystem_refinement": {
+    "status": "100",
+    "cts": 56,
+    "spec090_canonical_entrypoint": {
+      "entrypoint": "python -m ecosystem",
+      "commands": 10,
+      "adapters": 2,
+      "adaptive_menu": true
+    },
+    "spec091_contract_registry": {
+      "interfaces": 9,
+      "registered_contracts": 4,
+      "contracts_verified": true
+    },
+    "spec092_state_schema": {
+      "schemas_registered": 3,
+      "version": "1.0.0",
+      "migration_support": true,
+      "audit_trail": true
+    },
+    "spec093_dependency_graph": {
+      "analyzer": "AST-based",
+      "duplicates_found": 0,
+      "circular_deps": 0,
+      "layer_violations": 0
+    },
+    "contracts": [
+      "IStateManager",
+      "IEventBus",
+      "ICache",
+      "ITaskQueue",
+      "IAgent",
+      "IPlugin",
+      "IScanner",
+      "IPipeline",
+      "IAdapter"
+    ],
+    "platform_fixes": [
+      "datetime.UTC -> datetime.timezone.utc (Python 3.14)",
+      "relative_to ValueError handling (tmp_path)"
+    ]
+  },
+  "specs": 92,
   "r43_active_mcp_discovery": {
     "status": "100",
     "cts": 16,
