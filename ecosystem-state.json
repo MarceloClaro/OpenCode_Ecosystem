@@ -1,7 +1,7 @@
 {
-  "version": "6.6.0",
-  "current_cycle": "R39",
-  "last_updated": "2026-07-03T23:16:59Z",
+  "version": "6.7.0",
+  "current_cycle": "R40",
+  "last_updated": "2026-07-04T02:30:00Z",
   "tests_passing": 420,
   "total_cts": 420,
   "specs_count": 84,
@@ -37,7 +37,10 @@
         "critical"
       ],
       "self_repair": true,
-      "paradigm_bridge": true
+      "paradigm_bridge": true,
+      "z3_online": true,
+      "sympy_online": true,
+      "all_engines_online": true
     }
   },
   "skills": {
@@ -99,11 +102,25 @@
     "R36": 100,
     "R37": 100,
     "R38": 100,
-    "R39": 100
+    "R39": 100,
+    "R40": 100
   },
   "self_repair": {
     "health_pct": 100.0,
     "unhealthy_engines": 0,
-    "last_update": "2026-07-03T23:16:59Z"
+    "last_update": "2026-07-04T02:30:00Z",
+    "total_engines": 8,
+    "all_online": true
+  },
+  "r40_infrastructure": {
+    "z3_installed": true,
+    "sympy_installed": true,
+    "evolution_loop_consolidated": true,
+    "canonical_file": "nexus/evolution_loop.py",
+    "re_exports": [
+      "nexus/nexus_evolution_loop.py",
+      "nexus/scripts/evolution_loop.py"
+    ],
+    "skills_skills_path_fixed": "already_resolved"
   }
 }

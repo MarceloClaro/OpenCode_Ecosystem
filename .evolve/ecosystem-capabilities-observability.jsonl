@@ -1,2 +1,50 @@
 {"timestamp": "2026-06-22T23:46:56.890475+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_status", "args_summary": {}, "success": true, "latency_ms": 159}
 {"timestamp": "2026-06-22T23:50:01.987535+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_status", "args_summary": {}, "success": true, "latency_ms": 147}
+{"timestamp": "2026-06-29T08:32:15.374429+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_status", "args_summary": {}, "success": true, "latency_ms": 221}
+{"timestamp": "2026-06-29T08:32:15.400981+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_potentiality_v2", "args_summary": {}, "success": false, "latency_ms": 23}
+{"timestamp": "2026-06-29T08:32:22.863451+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_noological_scanner", "args_summary": {"target": "ecossistema_openCode_OQS"}, "success": true, "latency_ms": 2322}
+{"timestamp": "2026-06-29T08:32:24.822389+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_evolutionary_scanner", "args_summary": {}, "success": true, "latency_ms": 1954}
+{"timestamp": "2026-06-29T14:24:31.968780+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_status", "args_summary": {}, "success": true, "latency_ms": 346}
+{"timestamp": "2026-06-29T14:25:02.149658+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_potentiality_v2", "args_summary": {}, "success": false, "latency_ms": 21}
+{"timestamp": "2026-06-29T14:25:04.473235+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_noological_scanner", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 2122}
+{"timestamp": "2026-06-30T19:53:10.367721+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_status", "args_summary": {}, "success": true, "latency_ms": 13686}
+{"timestamp": "2026-06-30T19:53:10.409937+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_list_agents", "args_summary": {}, "success": true, "latency_ms": 26}
+{"timestamp": "2026-06-30T19:53:10.452962+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_list_mcps", "args_summary": {}, "success": true, "latency_ms": 18}
+{"timestamp": "2026-06-30T19:53:23.618332+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_list_skills", "args_summary": {}, "success": true, "latency_ms": 13152}
+{"timestamp": "2026-06-30T19:55:02.912070+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_full_pipeline", "args_summary": {}, "success": true, "latency_ms": 7617}
+{"timestamp": "2026-06-30T19:56:24.269361+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_rupture_potential", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 0}
+{"timestamp": "2026-06-30T19:56:24.884013+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_metacognitive_search", "args_summary": {"problem": "Evaluate the epistemic maturity and strategic positioning of the OpenCode Ecosystem as a multi-agent", "difficulty": "medium"}, "success": true, "latency_ms": 72}
+{"timestamp": "2026-06-30T21:29:27.068070+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_full_pipeline", "args_summary": {}, "success": true, "latency_ms": 8164}
+{"timestamp": "2026-06-30T21:29:27.095063+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_cognitive_diversity", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 0}
+{"timestamp": "2026-06-30T21:29:27.109646+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_epistemic_topology", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 1}
+{"timestamp": "2026-06-30T22:44:38.714421+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_cognitive_diversity", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 12}
+{"timestamp": "2026-06-30T22:46:54.865554+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_full_pipeline", "args_summary": {}, "success": true, "latency_ms": 10874}
+{"timestamp": "2026-07-02T18:18:17.104317+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_status", "args_summary": {}, "success": true, "latency_ms": 11377}
+{"timestamp": "2026-07-02T18:18:30.446167+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_full_pipeline", "args_summary": {}, "success": true, "latency_ms": 13329}
+{"timestamp": "2026-07-02T22:38:52.929800+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_noological_scanner", "args_summary": {"target": "ecossistema completo OpenCode"}, "success": true, "latency_ms": 1748}
+{"timestamp": "2026-07-02T22:38:58.241576+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_potentiality_v2", "args_summary": {}, "success": true, "latency_ms": 5291}
+{"timestamp": "2026-07-02T22:38:58.256771+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_cognitive_diversity", "args_summary": {"target": "ecossistema completo OpenCode"}, "success": true, "latency_ms": 2}
+{"timestamp": "2026-07-02T22:38:58.269852+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_epistemic_topology", "args_summary": {"target": "ecossistema completo OpenCode"}, "success": true, "latency_ms": 1}
+{"timestamp": "2026-07-02T22:40:06.369220+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_rupture_potential", "args_summary": {"target": "ecossistema completo OpenCode"}, "success": true, "latency_ms": 3}
+{"timestamp": "2026-07-02T23:18:51.806653+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_cognitive_diversity", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 234}
+{"timestamp": "2026-07-02T23:24:55.869792+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_cognitive_diversity", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 2}
+{"timestamp": "2026-07-02T23:40:52.765983+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_full_pipeline", "args_summary": {}, "success": true, "latency_ms": 4085}
+{"timestamp": "2026-07-02T23:44:46.094243+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_potentiality_v2", "args_summary": {}, "success": true, "latency_ms": 4818}
+{"timestamp": "2026-07-03T00:44:24.484216+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_noological_scanner", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 2156}
+{"timestamp": "2026-07-03T00:44:24.584994+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_cognitive_diversity", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 85}
+{"timestamp": "2026-07-03T00:46:28.491723+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_full_pipeline", "args_summary": {}, "success": true, "latency_ms": 4180}
+{"timestamp": "2026-07-03T00:46:32.540592+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_potentiality_v2", "args_summary": {}, "success": true, "latency_ms": 4040}
+{"timestamp": "2026-07-03T01:33:27.665094+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_noological_scanner", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 1749}
+{"timestamp": "2026-07-03T01:33:29.128749+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_evolutionary_scanner", "args_summary": {}, "success": true, "latency_ms": 1453}
+{"timestamp": "2026-07-03T01:34:23.401210+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_potentiality_v2", "args_summary": {}, "success": true, "latency_ms": 4928}
+{"timestamp": "2026-07-03T01:34:23.419550+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_cognitive_diversity", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 8}
+{"timestamp": "2026-07-03T01:34:24.832156+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_teleological_scanner", "args_summary": {"objective": "cobertura epistemologica completa"}, "success": true, "latency_ms": 1404}
+{"timestamp": "2026-07-03T02:34:51.120142+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_full_pipeline", "args_summary": {}, "success": true, "latency_ms": 3110}
+{"timestamp": "2026-07-03T03:03:20.481469+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_noological_scanner", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 1377}
+{"timestamp": "2026-07-03T03:04:06.873291+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_cognitive_diversity", "args_summary": {}, "success": true, "latency_ms": 10}
+{"timestamp": "2026-07-03T03:04:08.127571+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_evolutionary_scanner", "args_summary": {}, "success": true, "latency_ms": 1124}
+{"timestamp": "2026-07-03T03:04:56.271326+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_potentiality_v2", "args_summary": {}, "success": true, "latency_ms": 3790}
+{"timestamp": "2026-07-03T03:04:56.284453+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_epistemic_topology", "args_summary": {}, "success": true, "latency_ms": 0}
+{"timestamp": "2026-07-03T03:12:29.596451+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_full_pipeline", "args_summary": {}, "success": true, "latency_ms": 3821}
+{"timestamp": "2026-07-03T03:32:12.726606+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_potentiality_v2", "args_summary": {}, "success": true, "latency_ms": 3300}
+{"timestamp": "2026-07-03T09:34:26.676536+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_full_pipeline", "args_summary": {}, "success": true, "latency_ms": 3969}
