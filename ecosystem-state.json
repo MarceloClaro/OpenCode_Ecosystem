@@ -1,254 +1,109 @@
 {
-  "last_book_update": "2026-06-18",
-  "dark_pdf_pages": 494,
-  "livro_pdf_pages": 489,
-  "new_chapters": [
-    "99-prefacio-genese",
-    "20-capitulo9-guia-imersao",
-    "21-capitulo10-estudos-caso",
-    "22-capitulo11-comparacao",
-    "23-capitulo12-futuro",
-    "24-apendice-solucoes",
-    "25-apendice-cheatsheet"
-  ],
-  "total_new_lines": 6412,
-  "dissertacao_polinomia": {
-    "title": "A Polimatia e a Evolução da Civilização",
-    "status": "compilado",
-    "pages": 41,
-    "pdf_size_kb": 397,
-    "referencias": 19,
-    "template": "abntex2",
-    "compiled_at": "2026-06-28T21:23",
-    "cjk_contamination": false,
-    "ptbr_issues": 19,
-    "is_clean": true
-  },
-  "dissertacao_infancia": {
-    "title": "Polimatia na Primeira Infância",
-    "status": "compilado",
-    "pages": 37,
-    "pdf_size_kb": 322,
-    "referencias": 19,
-    "template": "abntex2",
-    "compiled_at": "2026-06-28T21:23",
-    "cjk_contamination": false,
-    "ptbr_issues": 9,
-    "is_clean": true
-  },
-  "pipeline_academico": {
-    "status": "completo",
-    "fases_executadas": [
-      "SEEKER (pesquisa profunda)",
-      "Criação de estrutura LaTeX ABNT",
-      "Geração de referências com DOIs",
-      "Compilação pdfLaTeX + BibTeX",
-      "Validação APA",
-      "Corretor PT-BR (CJK detection)",
-      "Relatório de auditoria"
-    ],
-    "total_pages_geradas": 78,
-    "total_referencias_curadas": 38,
-    "eps_score": 87
-  },
-  "vitacoria_regia": {
-    "dissertacao_polinomia": {
-      "pages": 33,
-      "pdf_size_kb": 331,
-      "compiled_at": "2026-06-28T21:45"
-    },
-    "dissertacao_infancia": {
-      "pages": 30,
-      "pdf_size_kb": 281,
-      "compiled_at": "2026-06-28T21:45"
-    },
-    "total_pages": 63
-  },
-  "maswos_refinement": {
-    "status": "completo",
-    "agentes_executados": [
-      "A44",
-      "A45",
-      "A12",
-      "A13"
-    ],
-    "score_qualis_polinomia": 84.0,
-    "score_qualis_infancia": 84.0,
-    "classificacao": "A1",
-    "a45_polinomia": "critico (nivel debate 4/4)",
-    "a45_infancia": "descritivo (nivel debate 3/4)"
-  },
-  "banca_simulation": {
-    "status": "completo",
-    "examinadores": [
-      "Profa. Dra. Ana Lúcia (Epistemologia)",
-      "Prof. Dr. Carlos Mendes (Neurociência)",
-      "Prof. Dr. Ricardo Tavares (Políticas Educacionais)"
-    ],
-    "resultado_polinomia": "APROVADO COM DISTINÇÃO",
-    "nota_polinomia": 9.13,
-    "resultado_infancia": "APROVADO COM DISTINÇÃO",
-    "nota_infancia": 9.13
-  },
-  "r27_oqs": {
-    "status": "completo",
-    "ciclo": "R27",
-    "spec": "SPEC-056-OQS",
-    "nome": "Optimal Question Scanner",
-    "modulos": [
-      "uncertainty_scanner.py (263 linhas, 5 categorias)",
-      "question_vectorizer.py (392 linhas, Qv 6D, CS metric)",
-      "SPEC-056-OQS.md (SDD: 9 etapas, 5 metricas)",
-      "test_oqs.py (12 CTs TDD)"
-    ],
-    "test_cts": "12/12 PASS (0.81s)",
-    "mcp_tools": [
-      "eco_run_oqs_uncertainty_scan",
-      "eco_run_oqs_question_analyze"
-    ],
-    "bugfix": "PotentialityEstimatorV2: .estimate() -> .scan()",
-    "commitado_em": "17480a2",
-    "data": "2026-06-29",
-    "proximo": "R28 — ARCHE RLT + OPUS + Witness + RUMI"
-  },
-  "r28_arche_opus_witness_rumi": {
-    "status": "completo",
-    "ciclo": "R28",
-    "nome": "ARCHE RLT + OPUS + Witness Pattern + RUMI Causal Discovery",
-    "modulos": [
-      "skills/system/reasoning-orchestrator/arche_rlt.py (ARCHE Reasoning Logic Tree, 6 tipos Peirce)",
-      "nexus/scripts/opus_orchestration.py (OPUS 4-Phase Contract, AAB)",
-      "nexus/scripts/witness_pattern.py (Witness Observer + TrustEngine Bridge)",
-      "nexus/scripts/rumi_causal_discovery.py (RUMI Pipeline: geracao, teste, torneio, adversario)"
-    ],
-    "specs": [
-      "SPEC-057-ARCHE-RLT.md"
-    ],
-    "test_suites": {
-      "test_arche_rlt.py": "15/15 PASS",
-      "test_opus.py": "12/12 PASS",
-      "test_witness.py": "12/12 PASS",
-      "test_rumi.py": "12/12 PASS"
-    },
-    "test_cts_total": "51/51 PASS (R28) + 12/12 (R27) = 63/63",
-    "mcp_tools": [
-      "eco_run_arche_rlt_analyze",
-      "eco_run_arche_rlt_map_types",
-      "eco_run_opus_pipeline",
-      "eco_run_witness_observe",
-      "eco_run_rumi_discover",
-      "eco_run_rumi_analyze_claim"
-    ],
-    "github_repos_inspiradores": [
-      "Linsonng/ARCHEBenchmark (6 tipos inferencia + RLT)",
-      "Rynaro/OPUS (4-Phase + AAB)",
-      "bionicbutterfly13/sakshi (Witness Pattern)",
-      "subhansh-dev/rumi (Causal Discovery, 21 fases)"
-    ],
-    "commitado_em": "bbf824f",
-    "data": "2026-06-29"
-  },
-  "r29_asde": {
-    "status": "completo",
-    "ciclo": "R29",
-    "spec": "SPEC-058-ASDE",
-    "nome": "Autonomous Scientific Discovery Engine",
-    "modulos": [
-      "nexus/scripts/asde_engine.py: IdeaGenerator + OntologyGraph + MultiAgentCritic + ExperimentPlanner + ResultSynthesizer"
-    ],
-    "inspiracoes": [
-      "InternAgent (Shanghai AI Lab, 1.332★) — Pipeline fechado de descoberta cientifica",
-      "SciAgents (MIT) — Grafo ontologico + critica multi-agente"
-    ],
-    "pipeline": "Problema → IdeaGenerator → MultiAgentCritic → ExperimentPlanner → ResultSynthesizer → Relatorio IMRaD",
-    "test_suite": "test_asde.py: 15/15 PASS",
-    "mcp_tools": [
-      "eco_run_asde_pipeline",
-      "eco_run_asde_get_report",
-      "eco_run_asde_ontology_status"
-    ],
-    "commitado_em": "3f49696",
-    "data": "2026-06-29"
-  },
-  "r27_scanner_reassessment": {
+  "version": "6.6.0",
+  "current_cycle": "R39",
+  "last_updated": "2026-07-03T23:16:59Z",
+  "tests_passing": 420,
+  "total_cts": 420,
+  "specs_count": 84,
+  "agents_count": 128,
+  "skills_count": 228,
+  "mcps_count": 46,
+  "plugins_count": 15,
+  "scanners": {
+    "noological_coverage": 100.0,
+    "noological_categories": "92/92",
     "cognitive_diversity": {
-      "hi": 0.7473,
+      "homogeneity_index": 0.6124,
       "is_echo_chamber": false,
-      "classification": "low_diversity",
-      "n_artifacts": 9,
-      "n_injected": 8,
-      "improvement": "HI reduced from 0.9467 to 0.7473 (21% reduction)"
+      "artifacts_count": 166,
+      "silhouette_score": 0.0788,
+      "clusters": 10,
+      "largest_cluster_size": 32
     },
-    "noological": {
-      "overall_coverage_pct": 38,
-      "categories_covered": 35,
-      "categories_absent": 57,
-      "completeness_grade": "D — Cobertura Restrita",
-      "teoria_jogos_coverage": "0% -> 100% (todas 10 categorias)",
-      "improvement": "Overall coverage 28% -> 38% (+10pp)"
-    },
-    "evolutionary": {
-      "total_gaps": 11,
-      "construction_cost": 0.0625,
-      "quick_wins": 2
-    },
-    "social_impact": {
-      "consolidated_score": 62.9,
-      "sroi_ratio": 2.55
-    },
-    "test_suites": {
-      "total_cts": 368,
-      "passing": 368,
-      "skipped": 3,
-      "pct": 100.0,
-      "note": "3 skipped: edge-tts, pandoc, dissertacao.pdf path (features opcionais)"
-    },
-    "improvements_applied": [
-      "CDS injector integration (HI 0.95 -> 0.75, echo_chamber=False)",
-      "Game Theory keyword_map + ENRICHED_KW (0% -> 100% coverage)",
-      "GAME_THEORY_RESEARCH.md root artifact",
-      "LaTeXCompiler bibtex fallback (5 -> 3 skipped tests)"
-    ],
-    "assessed_at": "2026-06-30T23:00Z"
+    "potentiality_v2_viable": 58,
+    "cross_paradigm": {
+      "orchestrator_modes": [
+        "auto",
+        "formal",
+        "symbolic",
+        "logic",
+        "critical",
+        "all"
+      ],
+      "engines_integrated": [
+        "z3",
+        "sympy",
+        "kanren",
+        "critical"
+      ],
+      "self_repair": true,
+      "paradigm_bridge": true
+    }
   },
-  "r30_paradigm_expansion": {
-    "status": "completo",
-    "ciclo": "R30",
-    "nome": "Expansao Paradigmatica + Registro Ecossistemico",
-    "data": "2026-07-02",
-    "specs_criadas": [
-      "SPEC-068-PARADIGMA-POSITIVISTA.md",
-      "SPEC-069-PARADIGMA-INTERPRETATIVISTA.md"
-    ],
-    "skills_registradas": [
-      "skills/research/paradigma-positivista/SKILL.md",
-      "skills/research/paradigma-interpretativista/SKILL.md",
-      "skills/research/revisao-sistematica/SKILL.md",
-      "skills/research/analise-qualitativa/SKILL.md",
-      "skills/research/neurociencias-dominio/SKILL.md",
-      "skills/research/metodos-mistos/SKILL.md"
-    ],
-    "cognitive_diversity": {
-      "artefatos_injector": 25,
-      "hi_alvo": "< 0.50",
-      "novos_artefatos_r30": 3
-    },
-    "corpus_noologico": "corpus_noologico_referencia.txt (65+ keywords, 10 dimensoes)",
-    "test_suite": {
-      "test_r30_paradigmas.py": "8/8 CTs"
-    },
-    "commitado_em": "HEAD~0",
-    "proximo": "R31 — Metodos restantes + Oportunidades VIAveis"
-  },
-  "skills_registry": {
-    "research": [
-      "skills/research/revisao-sistematica/SKILL.md",
-      "skills/research/analise-qualitativa/SKILL.md",
-      "skills/research/metodos-mistos/SKILL.md",
-      "skills/research/neurociencias-dominio/SKILL.md",
-      "skills/research/paradigma-positivista/SKILL.md",
-      "skills/research/paradigma-interpretativista/SKILL.md"
+  "skills": {
+    "research_count": 5,
+    "research_modules": [
+      "game_theory",
+      "temporal_population",
+      "theoretical_empirical",
+      "logical_multiscale"
     ]
   },
-  "version": "v5.7.0 (R30)"
+  "capability_registration": {
+    "registered_capabilities": 83,
+    "viable_opportunities": 58,
+    "evolving_capabilities": 28,
+    "unimplemented_evolving": 8
+  },
+  "ci_cd": {
+    "github_actions": true,
+    "workflow": ".github/workflows/ecosystem-ci.yml",
+    "validation_script": "tests/ci_validate.py"
+  },
+  "history": {
+    "R1": 85,
+    "R2": 90,
+    "R3": 92,
+    "R4": 95,
+    "R5": 98,
+    "R6": 92,
+    "R7": 94,
+    "R8": 94,
+    "R9": 96,
+    "R10": 96,
+    "R11": 97,
+    "R12": 98,
+    "R13": 96,
+    "R14": 97,
+    "R15": 98,
+    "R16": 98,
+    "R17": 99,
+    "R18": 99,
+    "R19": 99,
+    "R20": 100,
+    "R21": 100,
+    "R22": 100,
+    "R23": 100,
+    "R24": 100,
+    "R25": 100,
+    "R26": 100,
+    "R27": 100,
+    "R28": 100,
+    "R29": 100,
+    "R30": 100,
+    "R31": 100,
+    "R32": 100,
+    "R33": 100,
+    "R34": 100,
+    "R35": 100,
+    "R36": 100,
+    "R37": 100,
+    "R38": 100,
+    "R39": 100
+  },
+  "self_repair": {
+    "health_pct": 100.0,
+    "unhealthy_engines": 0,
+    "last_update": "2026-07-03T23:16:59Z"
+  }
 }

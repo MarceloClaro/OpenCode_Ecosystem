@@ -153,6 +153,27 @@ class PotentialityEstimatorV2:
         "social_impact": 0.10,
     }
 
+    def estimate(
+        self,
+        noological_results: dict[str, Any] | None = None,
+        teleological_results: dict[str, Any] | None = None,
+        evolutionary_results: dict[str, Any] | None = None,
+        dna_results: dict[str, Any] | None = None,
+        social_impact_results: dict[str, Any] | None = None,
+        cds_results: dict[str, Any] | None = None,
+        etm_results: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
+        """Alias para scan() para manter compatibilidade com a API legada (v1)."""
+        return self.scan(
+            noological_results=noological_results,
+            teleological_results=teleological_results,
+            evolutionary_results=evolutionary_results,
+            dna_results=dna_results,
+            social_impact_results=social_impact_results,
+            cds_results=cds_results,
+            etm_results=etm_results
+        )
+
     def scan(
         self,
         noological_results: dict[str, Any] | None = None,
@@ -470,13 +491,22 @@ class PotentialityEstimatorV2:
         """F3: Valida viabilidade estrutural."""
         cap_map = dna_results.get("capability_map", {})
 
+        # Construir set de todas as capabilities presentes (cap_map tem skills como keys,
+        # capabilities como values — precisamos verificar nos values, não nas keys)
+        present_capabilities: set[str] = set()
+        for caps_list in cap_map.values():
+            if isinstance(caps_list, list):
+                present_capabilities.update(caps_list)
+            elif isinstance(caps_list, str):
+                present_capabilities.add(caps_list)
+
         # Verificar se capacidades relacionadas existem
         present = []
         missing = []
 
         related_caps = self._get_related_capabilities(opp.dimension)
         for cap in related_caps:
-            if cap in cap_map:
+            if cap in present_capabilities:
                 present.append(cap)
             else:
                 missing.append(cap)

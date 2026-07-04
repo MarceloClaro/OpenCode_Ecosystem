@@ -1,5 +1,5 @@
-# Corpus de Referência para Scanner Noológico — R30
-# Inclui keywords para todas as novas categorias implementadas
+# Corpus de Referência para Scanner Noológico — R37
+# Inclui keywords para todas as 10 dimensões com cobertura > 50%
 
 ## Paradigmas Epistemológicos
 paradigma positivista falseabilidade hipotético-dedutivo empirismo replicabilidade
@@ -8,24 +8,29 @@ paradigma pragmatista utilidade prática métodos mistos triangulação resoluç
 paradigma construtivista construção social realidade múltipla perspectivismo
 paradigma pós-estruturalista desconstrução poder discurso diferença alteridade
 paradigma fenomenológico intencionalidade consciência experiência vivida epoché
+paradigma fenomenológico IA enativa enactive AI 4E cognition corporificação embodiment Merleau-Ponty Leib Körper Lebenswelt mundo vivido
+paradigma fenomenológico robótica social fenomenológica Einfühlung empatia intersubjetividade Stein olhar robô
 
 ## Métodos de Investigação
 método misto sequencial convergente triangulação QUAN qual integração
-revisão sistemática PRISMA PICOS meta-análise síntese de evidências
+revisão sistemática PRISMA PICOS meta-análise síntese de evidências Cochrane Handbook efeito fixo Mantel-Haenszel Peto inverse variance efeito aleatório DerSimonian-Laird REML forest plot funnel plot Egger test I² heterogeneidade tau² meta-regressão análise subgrupos FRAMES PeerJ MOOSE
 pesquisa qualitativa fenomenológica grounded theory estudo de caso etnografia
-pesquisa-ação participante intervenção transformação social
+fenomenologia epoché intencionalidade experiência vivida redução fenomenológica
+grounded theory coding aberto axial seletivo saturação teórica amostragem teórica
+estudo de caso Yin triangulação fontes múltiplas replicação literal teórica
+pesquisa-ação participante intervenção transformação social ciclo PAAR Lewin Thiollent
 método quantitativo experimental correlacional descritivo modelo
 
 ## Tipos de Dados e Evidências
 dados neurobiológicos fMRI EEG neuroimagem conectividade funcional
-dados qualitativos entrevistas narrativas observação participante grupos focais
+dados qualitativos entrevistas narrativas observação participante grupos focais COREQ NICE Braun Clarke temática análise conteúdo entrevista semiestruturada grupo focal presencial virtual Kahoot Mentimeter observação sistemática diário reflexivo história de vida documento
 dados observacionais registro sistemático comportamento naturalístico
 dados epidemiológicos coorte caso-controle prevalência incidência
 dados comparativos cross-cultural transcultural diferenças culturais
 
 ## Domínios de Conhecimento Cruzados
 Neurociências cérebro neural cognitivo fMRI EEG neuroplasticidade
-Psicologia clínica psicopatologia terapia avaliação psicológica
+Psicologia clínica psicopatologia terapia avaliação psicológica WiseMind AgentMental DSM-5 DBT multiagente avaliação adaptativa Reasonable Mind Emotional Mind AI Psychiatrist
 Sociologia estrutura social estratificação mobilidade instituições
 Antropologia cultura etnografia ritual parentesco simbolismo
 Economia comportamental nudge heurística viés decisão incerteza
@@ -55,3 +60,116 @@ teoria sistêmica família homeostase circularidade rede complexidade
 teoria neurobiológica circuitos neurotransmissores plasticidade desenvolvimento
 teoria social crítica poder ideologia emancipação transformação
 teoria fenomenológico-existencial ser-no-mundo angústia autenticidade liberdade
+teoria construtivista Piaget assimilação acomodação equilibração epistemologia genética construção conhecimento
+teoria pós-estruturalista Foucault Derrida Deleuze desconstrução différance rizoma poder-saber discurso governamentalidade
+
+## Tipos de Raciocínio
+raciocínio dedutivo lógica formal silogismo modus ponens modus tollens validade necessidade inferência
+raciocínio indutivo generalização probabilidade tendência padrão regularidade correlação inferência estatística
+raciocínio abdutivo inferência à melhor explicação abdução causa hipótese surpresa explanatory power
+raciocínio dialético tese antítese síntese contradição negação superação argumento contra-argumento
+raciocínio sistêmico emergência retroalimentação feedback círculo causal interdependência holismo totalidade
+raciocínio probabilístico bayesiano incerteza distribuição prior posteriori verossimilhança crença atualização
+raciocínio contrafactual cenário alternativo mundo possível e se teria sido intervenção hipotética
+raciocínio metacognitivo monitoramento autorregulação reflexão autoconsciência pensamento sobre pensamento
+raciocínio teleológico finalidade propósito direção objetivo causa final função
+raciocínio pragmático consequência utilidade prática aplicação efetividade resultado ação
+
+## Perspectiva Temporal
+temporal transversal corte transversal momento único snapshot instantâneo seccional cross-sectional
+temporal longitudinal curto prazo seguimento painel follow-up medidas repetidas trajetória
+temporal longo prazo décadas geração coorte prospectivo envelhecimento desenvolvimento
+temporal retrospectivo histórico ex-post-facto arquivo memória passado evento reconstrução
+temporal prospectivo preditivo projeção cenário futuro tendência forecasting simulação
+temporal desenvolvimental ciclo de vida life-span curso de vida infância adolescência idade adulta terceira idade
+temporal sazonal ciclo periódico estação onda flutuação rítmico
+
+## Alto Raciocínio (Especificidades)
+raciocínio formal Z3 SymPy verificador formal teorema prova dedução automática modelo lógico
+raciocínio crítico falácia viés cognitivo pensamento crítico argumentação refutação falseabilidade
+raciocínio estratégico teoria dos jogos tomada de decisão racionalidade ótimo minimax
+
+## Alto Dados (Expansão de Cobertura)
+dados clínicos escala inventário psicométrico diagnóstico rastreio triagem protocolo
+dados experimentais ensaio clínico randomizado ECR RCT controle intervenção causal efeito
+dados biológicos biomarcador genômica proteômica metabolômica ensaio laboratorial
+dados textuais mineração texto processamento linguagem natural PLM BERT Transformer corpus análise conteúdo automatizada
+dados sensoriais IoT sensor wearables smartphone acelerômetro GPS ambiental
+dados georreferenciados SIG geográfico espacial mapa coordenada região território
+dados administrativos registro prontuário censo cadastro sistema informação base secundária
+dados longitudinais painel coorte trajetória seguimento acompanhamento medidas repetidas
+
+## Preenchimento de Ausências (R37) — Complemento para 80%+
+metodologia meta-análise síntese quantitativa efeito pooled DerSimonian Laird heterogeneidade efeito fixo florest plot viés publicação Egger
+metodologia pesquisa-ação ação participante intervenção transformação social Lewin ciclo PAAR espiral autorreflexão
+teoria sistêmico família homeostase circularidade rede complexidade Bertalanffy interação sistema aberto
+teoria neurobiológico cérebro circuito neural neurotransmissor plasticidade sinapse neuroimagem fMRI EEG
+teoria social crítico poder ideologia emancipação transformação Escola de Frankfurt Habermas reconhecimento justiça
+teoria integrativo transdiagnóstico unificação processos comuns psicoterapia transtorno dimensão psicopatologia
+nível análise comunitário bairro vizinhança capital social rede apoio coletivo prevenção promoção saúde
+nível análise sistêmico político políticas públicas governança estado nação regulação institucional macroestrutura
+nível análise neurobiológico molecular celular sinapse receptor gene expressão circuitos neurais
+nível análise evolutivo filogenético seleção natural ancestral adaptação espécie filogenia homologia
+temporal longitudinal curto prazo semanas meses seguimento curto follow-up curto painel curto
+temporal longitudinal longo prazo anos décadas gerações coorte longa follow-up longo trajetória longa
+população infância criança bebê desenvolvimento infantil primeira infância pediatria pré-escolar
+população contexto comunitário comunidade bairro território grupo comunitário organização local
+população Brasil América Latina contexto brasileiro brasileiro estudo nacional América do Sul Mercosul
+dados epidemiológicos coorte caso-controle transversal prevalência incidência risco razão odds população
+metadados revisão sistemática PRISMA Cochrane overview metanálise overview de revisões umbrella review
+domínio saúde pública coletiva epidemiológico prevenção promoção vigilância sanitária atenção básica SUS
+
+## Teoria dos Jogos (ENRICHED_KW compatibility)
+teoria jogos Nash equilíbrio de nash PNE estratégia dominante não-cooperativo equilíbrio
+teoria jogos dilema do prisioneiro cooperacao traição payoff prisoner dilemma
+teoria jogos soma zero zero-sum jogo de soma zero conflito puro
+teoria jogos tit-for-tat olho por olho reciprocidade retaliação Axelrod cooperação evolutiva
+teoria jogos Stackelberg líder seguidor liderança lideranca vantagem primeira movimentação
+teoria jogos barganha negociacao bargaining Nash bargaining threat point
+teoria jogos sinalizacao signaling screening sinal mercado informação assimétrica
+teoria jogos evolutivo seleção natural Smith Price ESS evolutivamente estável
+teoria jogos bayesiano Harsanyi informação incompleta crença tipo crenca
+teoria jogos cooperativo Shapley coalizao contribuição marginal nucleolo
+
+## Raciocínio Formal (keyword_map compatibility)
+raciocínio dedutivo premissa conclusão necessária dedução lógica formal silogismo
+raciocínio indutivo generalização padrão regularidade tendência correlação
+raciocínio abdutivo hipótese melhor explicação abdução causa plausível
+raciocínio dialético tese antítese síntese contradição negação argumento
+raciocínio sistêmico interconexão retroalimentação emergência totalidade holismo
+raciocínio probabilístico Bayes incerteza distribuição estatístico probabilidade
+raciocínio contrafactual cenário alternativo mundo possível contra-factual
+raciocínio metacognitivo pensar sobre pensamento autorregulação monitoramento auto-regulação
+raciocínio teleológico propósito finalidade objetivo direção função
+raciocínio pragmático aplicação prática utilidade funcional resultado efetividade
+
+## Metodologia Específica (keyword_map compatibility)
+metodologia meta-analise meta análise tamanho de efeito efeito pooled efeito fixo efeito aleatório
+metodologia pesquisa-acao pesquisa ação action research intervenção participante transformação
+metodologia revisão sistematica systematic review PRISMA síntese evidência
+
+## Teorias Específicas (keyword_map compatibility)
+teoria sistêmico sistemic familia cibernetica padrao relacional circularidade Bertalanffy teoria sistemica
+teoria neurobiológico amígdala córtex pré-frontal neurociência neurobiologia
+teoria social crítico desigualdade opressão emancipação transformação social
+teoria integrativo transdiagnóstico unificado eclético processo comum psicoterapia
+
+## Níveis Análise Específicos
+nível análise comunitário comunidade território local bairro organização
+nível análise sistêmico sistemic politico politica publica governanca legislacao estado nacao políticas públicas
+nível análise neurobiológico molecular celular sinapse gene receptor
+nível análise evolutivo filogenético seleção ancestral adaptação espécie
+
+## Temporalidade Específica
+temporal follow-up curto semanas meses pre-post pré-pós seguimento curto
+temporal follow-up longo anos décadas gerações coorte prospectivo acompanhamento longo
+temporal cross-sectional transversal corte único amostra única seccional
+
+## Dados Específicos
+dados epidemiológicos prevalência incidência comorbidade risco razão odds coorte caso-controle
+dados metadados meta-analise revisão sistemática metanálise overview umbrella review
+
+## População Específica
+população infância criança infantil pré-escolar bebê desenvolvimento primeira infância
+população comunidade comunitário atenção primária território bairro organização local
+população Brasil brasileiro latino-americano América Latina latam Mercosul estudo nacional

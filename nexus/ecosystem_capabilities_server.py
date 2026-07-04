@@ -161,6 +161,12 @@ def run_potentiality_estimator_v2() -> dict:
     """Executa o Potentiality Estimator v2 e retorna resultados."""
     try:
         sys.path.insert(0, str(MODULES_DIR))
+        # Hot-reload: força recarga do módulo para refletir mudanças
+        import importlib
+        importlib.invalidate_caches()
+        for mod_name in list(sys.modules.keys()):
+            if 'potentiality_estimator_v2' in mod_name:
+                del sys.modules[mod_name]
         from potentiality_estimator_v2 import PotentialityEstimatorV2
         estimator = PotentialityEstimatorV2()
 
@@ -183,11 +189,25 @@ def run_potentiality_estimator_v2() -> dict:
         top = run_epistemic_topology_mapper("ecossistema")
         etm_res = top.get("resultado", {}) if top.get("status") == "executado" else top
 
+        # Executar scanner de DNA para alimentar feasibility check
+        try:
+            sys.path.insert(0, str(MODULES_DIR))
+            import importlib
+            importlib.invalidate_caches()
+            for mod_name in list(sys.modules.keys()):
+                if 'potentiality_scanner' in mod_name:
+                    del sys.modules[mod_name]
+            from potentiality_scanner import PotentialityScanner
+            dna_scanner = PotentialityScanner()
+            dna_results = dna_scanner.extract_dna()
+        except Exception:
+            dna_results = {}
+
         result = estimator.scan(
             noological_results=noological_res,
             teleological_results=teleological_res,
             evolutionary_results=evolutionary_res,
-            dna_results={},
+            dna_results=dna_results,
             social_impact_results={"consolidated_score": social_impact_res.get("consolidated_score", 0.0) if isinstance(social_impact_res, dict) else 0.0},
             cds_results=cds_res,
             etm_results=etm_res
@@ -682,6 +702,233 @@ def run_critical_analysis(argument: str) -> dict:
             "erro": str(e),
             "traceback": traceback.format_exc(),
         }
+
+
+def run_cross_paradigm_reasoning(problem: str, mode: str = "auto",
+                                  context: Optional[dict] = None) -> dict:
+    """Executa o Cross-Paradigm Reasoning Engine (SPEC-082, R38).
+
+    Integra 4 motores (Z3, SymPy, Kanren, Critical) com 4 research
+    skills (game_theory, temporal_population, theoretical_empirical,
+    logical_multiscale) para resolver problemas multi-paradigma.
+
+    Args:
+        problem: O problema a ser resolvido
+        mode: Modo de raciocínio (auto, formal, symbolic, logic,
+              critical, research, all)
+        context: Contexto adicional com facts, operation, params
+
+    Returns:
+        Dict com resultados sintetizados, confiança e reparos
+    """
+    try:
+        cpr_path = str(Path(__file__).parent.parent /
+                       "skills/research/cross-paradigm-reasoning")
+        if cpr_path not in sys.path:
+            sys.path.insert(0, cpr_path)
+        import importlib
+        importlib.invalidate_caches()
+        from cross_paradigm_reasoning import (
+            ReasoningOrchestrator, ReasoningMode, SystemSelfDiagnostic,
+        )
+
+        mode_map = {
+            "auto": ReasoningMode.AUTO,
+            "formal": ReasoningMode.FORMAL,
+            "symbolic": ReasoningMode.SYMBOLIC,
+            "logic": ReasoningMode.LOGIC,
+            "critical": ReasoningMode.CRITICAL,
+            "research": ReasoningMode.RESEARCH,
+            "all": ReasoningMode.ALL,
+        }
+
+        orch = ReasoningOrchestrator()
+        resolved_mode = mode_map.get(mode, ReasoningMode.AUTO)
+        result = orch.solve(problem, resolved_mode, context or {})
+
+        # Auto-diagnóstico
+        diag = SystemSelfDiagnostic()
+
+        return {
+            "engine": "cross_paradigm",
+            "status": "executado",
+            "mode": mode,
+            "synthesized_output": result.synthesized_output,
+            "overall_confidence": result.overall_confidence,
+            "engines_used": [r.engine for r in result.engine_results],
+            "contradictions": [
+                {"type": c["type"], "severity": c.get("severity", "low")}
+                for c in result.contradictions
+            ],
+            "repairs_applied": len(result.repairs_applied),
+            "engine_diagnostics": diag.diagnostic(),
+            "time_ms": round(result.time_ms, 2),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+        }
+    except Exception as e:
+        return {
+            "engine": "cross_paradigm",
+            "status": "erro",
+            "erro": str(e),
+            "traceback": traceback.format_exc(),
+        }
+
+
+# ============================================================
+# Autonomous Self-Repair (SPEC-083 / R39)
+# ============================================================
+
+def run_self_repair(action: str = "heartbeat", engine: str = "",
+                    ecosystem_state_path: str = "") -> dict:
+    """Executa acoes do Autonomous Self-Repair System (SPEC-083).
+    
+    Args:
+        action: heartbeat | pipeline | check_engine | reload | fallback | log | verify_chain
+        engine: Nome do engine/skill (z3, sympy, kanren, critical, game_theory, etc.)
+        ecosystem_state_path: Caminho opcional para ecosystem-state.json
+    
+    Returns:
+        dict com resultado da acao
+    """
+    try:
+        sys.path.insert(0, str(MODULES_DIR / "research" / "cross-paradigm-reasoning"))
+        from autonomous_self_repair import (
+            HealthMonitor, RepairEngine, RepairLogger,
+            RepairNotifier, SelfRepairOrchestrator,
+        )
+    except Exception:
+        # Fallback: tenta path relativo ao cenario
+        try:
+            from autonomous_self_repair import (
+                HealthMonitor, RepairEngine, RepairLogger,
+                RepairNotifier, SelfRepairOrchestrator,
+            )
+        except Exception as e:
+            return {"engine": "self_repair", "status": "erro",
+                    "erro": f"Import failed: {e}"}
+        sys.path.pop(0)
+
+    t0 = time.time()
+
+    if action == "heartbeat":
+        hm = HealthMonitor()
+        hb = hm.heartbeat()
+        return {
+            "engine": "self_repair",
+            "status": "executado",
+            "action": "heartbeat",
+            "resultado": hb,
+            "time_ms": round((time.time() - t0) * 1000, 2),
+        }
+
+    elif action == "pipeline":
+        orch = SelfRepairOrchestrator()
+        result = orch.run_pipeline(
+            ecosystem_state_path if ecosystem_state_path else None
+        )
+        return {
+            "engine": "self_repair",
+            "status": "executado",
+            "action": "pipeline",
+            "resultado": result,
+            "time_ms": round((time.time() - t0) * 1000, 2),
+        }
+
+    elif action == "check_engine":
+        if not engine:
+            return {"engine": "self_repair", "status": "erro",
+                    "action": "check_engine", "erro": "Parametro 'engine' obrigatorio"}
+        hm = HealthMonitor()
+        # Tenta como engine primeiro, depois como research skill
+        from autonomous_self_repair import ENGINES, RESEARCH_SKILLS
+        if engine in ENGINES:
+            hc = hm.check_engine(engine)
+        elif engine in RESEARCH_SKILLS:
+            hc = hm.check_research_skill(engine)
+        else:
+            return {"engine": "self_repair", "status": "erro",
+                    "action": "check_engine",
+                    "erro": f"Engine/skill desconhecido: {engine}"}
+        return {
+            "engine": "self_repair",
+            "status": "executado",
+            "action": "check_engine",
+            "check": {
+                "engine": hc.engine,
+                "available": hc.available,
+                "response_time_ms": hc.response_time_ms,
+                "version": hc.version,
+                "last_error": hc.last_error,
+            },
+            "time_ms": round((time.time() - t0) * 1000, 2),
+        }
+
+    elif action == "reload":
+        if not engine:
+            return {"engine": "self_repair", "status": "erro",
+                    "action": "reload", "erro": "Parametro 'engine' obrigatorio"}
+        hm = HealthMonitor()
+        re = RepairEngine(hm)
+        record = re.reload_module(engine)
+        return {
+            "engine": "self_repair",
+            "status": "executado",
+            "action": "reload",
+            "resultado": {
+                "engine": record.engine,
+                "diagnosis": record.diagnosis,
+                "result": record.result,
+                "detail": record.detail,
+                "duration_ms": record.duration_ms,
+            },
+            "time_ms": round((time.time() - t0) * 1000, 2),
+        }
+
+    elif action == "fallback":
+        if not engine:
+            return {"engine": "self_repair", "status": "erro",
+                    "action": "fallback", "erro": "Parametro 'engine' obrigatorio"}
+        hm = HealthMonitor()
+        re = RepairEngine(hm)
+        record = re.fallback(engine)
+        return {
+            "engine": "self_repair",
+            "status": "executado",
+            "action": "fallback",
+            "resultado": {
+                "engine": record.engine,
+                "diagnosis": record.diagnosis,
+                "result": record.result,
+                "detail": record.detail,
+                "duration_ms": record.duration_ms,
+            },
+            "time_ms": round((time.time() - t0) * 1000, 2),
+        }
+
+    elif action == "log":
+        logger = RepairLogger()
+        return {
+            "engine": "self_repair",
+            "status": "executado",
+            "action": "log",
+            "entries": logger.get_log(),
+            "chain_valid": logger.verify_chain(),
+            "time_ms": round((time.time() - t0) * 1000, 2),
+        }
+
+    elif action == "verify_chain":
+        logger = RepairLogger()
+        return {
+            "engine": "self_repair",
+            "status": "executado",
+            "action": "verify_chain",
+            "chain_valid": logger.verify_chain(),
+            "time_ms": round((time.time() - t0) * 1000, 2),
+        }
+
+    else:
+        return {"engine": "self_repair", "status": "erro",
+                "action": action, "erro": f"Action desconhecida: {action}"}
 
 
 # ============================================================
@@ -1748,6 +1995,54 @@ class EcosystemCapabilitiesMCPServer:
                     "required": ["argument"],
                 },
             },
+            {
+                "name": "eco_cross_paradigm",
+                "description": "(SPEC-082) Cross-Paradigm Reasoning Engine — integra Z3, SymPy, Kanren, Critical + 4 research skills para resolver problemas multi-paradigma.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "problem": {
+                            "type": "string",
+                            "description": "Problema a ser resolvido com raciocínio multi-paradigma",
+                        },
+                        "mode": {
+                            "type": "string",
+                            "enum": ["auto", "formal", "symbolic", "logic", "critical", "research", "all"],
+                            "description": "Modo de raciocínio (default: auto)",
+                            "default": "auto",
+                        },
+                        "context": {
+                            "type": "object",
+                            "description": "Contexto adicional (facts, operation, params para research skills)",
+                        },
+                    },
+                    "required": ["problem"],
+                },
+            },
+            {
+                "name": "eco_self_repair",
+                "description": "(SPEC-083) Autonomous Self-Repair System — monitora saude dos 4 motores (Z3, SymPy, Kanren, Critical) + 4 research skills, executa pipeline de reparo (reload/deps/fallback) e atualiza audit trail SHA-256.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "action": {
+                            "type": "string",
+                            "enum": ["heartbeat", "pipeline", "check_engine", "reload", "fallback", "log", "verify_chain"],
+                            "description": "Acao a executar no sistema de auto-reparo (default: heartbeat)",
+                            "default": "heartbeat",
+                        },
+                        "engine": {
+                            "type": "string",
+                            "description": "Nome do engine/skill para checagem individual (z3, sympy, kanren, critical, game_theory, etc.)",
+                        },
+                        "ecosystem_state_path": {
+                            "type": "string",
+                            "description": "Caminho para ecosystem-state.json (usado em pipeline)",
+                        },
+                    },
+                    "required": [],
+                },
+            },
             # === METADADOS DO ECOSSISTEMA ===
             {
                 "name": "eco_list_skills",
@@ -1812,6 +2107,13 @@ class EcosystemCapabilitiesMCPServer:
             "eco_z3_verify": lambda a: run_z3_verification(a.get("formula", "")),
             "eco_sympy_analyze": lambda a: run_sympy_analysis(a.get("expression", "")),
             "eco_critical_analyze": lambda a: run_critical_analysis(a.get("argument", "")),
+            "eco_cross_paradigm": lambda a: run_cross_paradigm_reasoning(
+                a.get("problem", ""), a.get("mode", "auto"), a.get("context")),
+            # R39 — Autonomous Self-Repair
+            "eco_self_repair": lambda a: run_self_repair(
+                a.get("action", "heartbeat"),
+                a.get("engine", ""),
+                a.get("ecosystem_state_path", "")),
             "eco_run_oqs_uncertainty_scan": lambda a: run_oqs_uncertainty_scan(a.get("text", "")),
             "eco_run_oqs_question_analyze": lambda a: run_oqs_question_analyze(a.get("problem", ""), a.get("candidates", [])),
             # R28 — ARCHE RLT, OPUS, Witness, RUMI

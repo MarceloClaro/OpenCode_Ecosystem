@@ -3,9 +3,9 @@
   "timestamp": "2026-06-07T19:38:02.721001+00:00",
   "workspace": "C:\\Users\\marce\\.config\\opencode",
   "summary": {
-    "total_skills": 128,
+    "total_skills": 148,
     "oversize_count": 23,
-    "healthy_count": 104,
+    "healthy_count": 108,
     "total_bytes": 698001,
     "categories": {
       "dotclaude-edicao-cirurgica": {
@@ -1917,6 +1917,275 @@
       "oversize_by": 0,
       "md5": "30709cf879b20419eaebfe53abb5e446",
       "last_checked": "2026-06-07T19:36:45.020420+00:00"
+    },
+    {
+      "name": "revisao-sistematica",
+      "path": "skills\\research\\revisao-sistematica\\SKILL.md",
+      "category": "research",
+      "bytes": 1177,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": false,
+      "oversize_by": 0,
+      "md5": "2f65cd364b5ad292f21598c1f6b03c99",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "analise-qualitativa",
+      "path": "skills\\research\\analise-qualitativa\\SKILL.md",
+      "category": "research",
+      "bytes": 1091,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": false,
+      "oversize_by": 0,
+      "md5": "fc1382c1cc9bb1501f0c39094b94cd47",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "metodos-mistos",
+      "path": "skills\\research\\metodos-mistos\\SKILL.md",
+      "category": "research",
+      "bytes": 966,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": false,
+      "oversize_by": 0,
+      "md5": "4d3645ddb240cb50fe759a9da0338cde",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "neurociencias-dominio",
+      "path": "skills\\research\\neurociencias-dominio\\SKILL.md",
+      "category": "research",
+      "bytes": 1046,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": false,
+      "oversize_by": 0,
+      "md5": "56e471bf2c2e84e4af9b711a57baea25",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "paradigma-positivista",
+      "path": "skills\\research\\paradigma-positivista\\SKILL.md",
+      "category": "research",
+      "bytes": 890,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": false,
+      "oversize_by": 0,
+      "md5": "a7413c7147c53420d74e96b233e2eed7",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "paradigma-interpretativista",
+      "path": "skills\\research\\paradigma-interpretativista\\SKILL.md",
+      "category": "research",
+      "bytes": 887,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": false,
+      "oversize_by": 0,
+      "md5": "019e1e0be400ffd04c43b1a716f027be",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "analise-fenomenologica",
+      "path": "skills\\research\\analise-fenomenologica\\SKILL.md",
+      "category": "research",
+      "bytes": 1764,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": false,
+      "oversize_by": 0,
+      "md5": "316d3a114c8150ad169bcfc6a5283022",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "grounded-theory",
+      "path": "skills\\research\\grounded-theory\\SKILL.md",
+      "category": "research",
+      "bytes": 1485,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": false,
+      "oversize_by": 0,
+      "md5": "8777a380453a03e6f275aac7e08af4f5",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "estudo-de-caso",
+      "path": "skills\\research\\estudo-de-caso\\SKILL.md",
+      "category": "research",
+      "bytes": 1851,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": false,
+      "oversize_by": 0,
+      "md5": "349369bc01729c98a2c2690993df405a",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "pesquisa-acao",
+      "path": "skills\\research\\pesquisa-acao\\SKILL.md",
+      "category": "research",
+      "bytes": 1747,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": false,
+      "oversize_by": 0,
+      "md5": "858a470d17b7ecf3e57bc3c4aa5950c8",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "construtivista",
+      "path": "skills\\research\\construtivista\\SKILL.md",
+      "category": "research",
+      "bytes": 6024,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": true,
+      "oversize_by": 1928,
+      "md5": "1c411ed11c3c8e7ce21eded14e170449",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "pos-estruturalista",
+      "path": "skills\\research\\pos-estruturalista\\SKILL.md",
+      "category": "research",
+      "bytes": 8522,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": true,
+      "oversize_by": 4426,
+      "md5": "e60daa379248053442cd31bfa913a4da",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "fenomenologico-paradigma",
+      "path": "skills\\research\\fenomenologico-paradigma\\SKILL.md",
+      "category": "research",
+      "bytes": 12235,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": true,
+      "oversize_by": 8139,
+      "md5": "02cac50c478a60c07b500a26c713e424",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "psicologia-clinica",
+      "path": "skills\\research\\psicologia-clinica\\SKILL.md",
+      "category": "research",
+      "bytes": 6512,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": true,
+      "oversize_by": 2416,
+      "md5": "66663a3ba29e1f7ee034a08696bb6d99",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "dados-qualitativos",
+      "path": "skills\\research\\dados-qualitativos\\SKILL.md",
+      "category": "research",
+      "bytes": 6274,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": true,
+      "oversize_by": 2178,
+      "md5": "7a4c1b97ba5f9267512e922f20e8152e",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "meta-analise",
+      "path": "skills\\research\\meta-analise\\SKILL.md",
+      "category": "research",
+      "bytes": 5440,
+      "has_frontmatter": true,
+      "has_name": true,
+      "has_description": true,
+      "cjk_count": 0,
+      "is_oversize": true,
+      "oversize_by": 1344,
+      "md5": "0da0ede7beaaa0b587a99e1011928699",
+      "last_checked": "2026-07-03T03:15:00"
+    },
+    {
+      "name": "jogos-estrategia-nash-equilibrio",
+      "path": "skills/research/game-theory/SKILL.md",
+      "status": "active"
+    },
+    {
+      "name": "temporal-longitudinal-prospectivo-amostra-populacao-contexto-clinico",
+      "path": "skills/research/temporal-population/SKILL.md",
+      "status": "active"
+    },
+    {
+      "name": "teoria-empirico-validacao-fundamentacao-epistemico",
+      "path": "skills/research/theoretical-empirical/SKILL.md",
+      "status": "active"
+    },
+    {
+      "name": "logical-raciocinio-inferencia-nivel-escala-multi-inter",
+      "path": "skills/research/logical-multiscale/SKILL.md",
+      "status": "active"
+    },
+    {
+      "name": "cross-paradigm-reasoning",
+      "path": "skills/research/cross-paradigm-reasoning/cross_paradigm_reasoning.py",
+      "description": "Cross-Paradigm Reasoning Engine (SPEC-082) + Autonomous Self-Repair (SPEC-083) — R38-R39",
+      "category": "research",
+      "type": "engine",
+      "capabilities": [
+        "cross_paradigm_reasoning",
+        "reasoning_orchestration",
+        "autonomous_self_repair",
+        "paradigm_bridge"
+      ],
+      "dependencies": [
+        "skills/reasoning/formal-verification/scripts/z3_engine.py",
+        "skills/reasoning/symbolic-math/scripts/sympy_engine.py",
+        "skills/reasoning/logic-programming/scripts/kanren_engine.py",
+        "skills/reasoning/critical-reasoning/scripts/critical_engine.py",
+        "skills/research/cross-paradigm-reasoning/autonomous_self_repair.py"
+      ],
+      "tests": [
+        "tests/test_r38_cross_paradigm.py",
+        "tests/test_r39_self_repair.py"
+      ],
+      "spec": "SPEC-082, SPEC-083"
     }
   ]
 }

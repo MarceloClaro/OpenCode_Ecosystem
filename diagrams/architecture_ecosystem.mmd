@@ -1,0 +1,247 @@
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#0d1117',
+      'primaryTextColor': '#c9d1d9',
+      'primaryBorderColor': '#30363d',
+      'lineColor': '#58a6ff',
+      'secondaryColor': '#161b22',
+      'tertiaryColor': '#21262d',
+      'clusterBkg': '#0d1117',
+      'clusterBorder': '#30363d',
+      'nodeBorder': '#58a6ff',
+      'nodeTextColor': '#c9d1d9',
+      'edgeLabelBackground': '#161b22',
+      'edgeLabelColor': '#8b949e',
+      'labelBackground': '#161b22',
+      'titleColor': '#58a6ff'
+    }
+  }
+}%%
+
+graph TB
+  subgraph L0["Camada 0: Interface do Usuário"]
+    USER((Usuário))
+    MARCE["/marceloclaro
+    Orquestrador Supremo"]
+    USER -->|comando| MARCE
+  end
+
+  subgraph L1["Camada 1: Nexus Core (33.408 lines)"]
+    META["MetaOrchestrator
+    L0-L6 Meta-granular"]
+    EVOL["Evolution Loop
+    Plan → Act → Reflect → Evolve"]
+    HEAL["Self Healer
+    Auto-reparo de componentes"]
+    SYNC["Sync Orchestrator
+    Sincronizacao cross-sistema"]
+    DASH["Dashboard
+    HTTP Server port 8081"]
+
+    META --> EVOL
+    EVOL --> HEAL
+    HEAL --> SYNC
+    SYNC --> DASH
+  end
+
+  subgraph L2["Camada 2: MCP Server (41 tools + 46 MCPs)"]
+    MCPSRV["Ecosystem Capabilities Server
+    41 MCP Tools Registradas"]
+    MCPSRV --> SC1["eco_run_noological_scanner"]
+    MCPSRV --> SC2["eco_run_cross_paradigm"]
+    MCPSRV --> SC3["eco_self_repair (7 acoes)"]
+    MCPSRV --> SC4["eco_run_asde_pipeline"]
+    MCPSRV --> SC5["eco_run_oqs_uncertainty_scan"]
+    MCPSRV --> SC6["eco_game_theory_solve"]
+    MCPSRV --> SC7["eco_z3_verify / eco_sympy_analyze"]
+  end
+
+  subgraph L3["Camada 3: Scanners Cognitivos (22.084 lines, 16 scanners)"]
+    NOOL["NoologicalScanner
+    92 categorias · 100% coverage"]
+    TELE["TeleologicalScanner
+    12 CTs"]
+    EVOSCAN["EvolutionaryScanner
+    16 CTs"]
+    PEV2["PotentialityEstimatorV2
+    6 dimensoes · 58 oportunidades"]
+    COGDIV["CognitiveDiversityScanner
+    HI=0.6124 · 166 artefatos"]
+    EPTM["EpistemicTopologyMapper
+    Espaco 2D"]
+    RPI["RupturePotentialIndex
+    Potencial de ruptura"]
+    SNS["StructuralNoiseScanner
+    Compressao funcional"]
+    MCSP["MinimumCapabilitySolver
+    14 CTs"]
+    TRUST["TrustEngine
+    8 CTs"]
+    OQS["OptimalQuestionScanner
+    10 CTs"]
+    SOCIMP["SocialImpactScanner
+    ESG"]
+    METACOG["MetacognitiveMonitor
+    8 CTs"]
+    COOPG["CooperativeGovernance
+    Ostrom DP1-DP8"]
+    DIAL["DialecticalEngine
+    Raciocinio dialetico"]
+    SMOD["SelfModel N0-N3
+    6 CTs"]
+
+    NOOL --> TELE
+    TELE --> COOSCAN
+    COOSCAN --> COGDIV
+    COGDIV --> EPTM
+    EPTM --> RPI
+    RPI --> PEV2
+
+    NOOL -.->|integrado| MCSP
+    MCSP --> TRUST
+    TRUST --> OQS
+    OQS --> SOCIMP
+    SOCIMP --> METACOG
+    METACOG --> DIAL
+    DIAL --> SMOD
+  end
+
+  subgraph L4["Camada 4: Motores de Raciocinio (4 engines)"]
+    Z3["Z3 SMT Solver
+    Prova Formal · conf=0.90"]
+    SYM["SymPy
+    Matematica Simbolica · conf=0.85"]
+    KAN["miniKanren
+    Programacao Logica · conf=0.80"]
+    CRIT["Critical Reasoning
+    Falencias e Vieses · conf=0.75"]
+
+    Z3 -.->|fallback| SYM
+    SYM -.->|fallback| Z3
+    KAN -.->|fallback| CRIT
+    CRIT -.->|fallback| KAN
+  end
+
+  subgraph L5["Camada 5: Research Skills R35-R37 (4 skills)"]
+    GT["Game Theory
+    NashEquilibrium · PayoffMatrix"]
+    TP["Temporal Population
+    TimeSeries · Longitudinal · SampleSize"]
+    TE["Theoretical Empirical
+    Epistemological · EffectSize · Reliability"]
+    LM["Logical Multiscale
+    InferenceEngine · MultiScale · Argumentation"]
+
+    GT --> TP
+    TP --> TE
+    TE --> LM
+  end
+
+  subgraph L6["Camada 6: Cross-Paradigm (R38) + Self-Repair (R39)"]
+    CPR["CrossParadigmReasoning
+    6 modos: auto|formal|symbolic|logic|critical|research|all"]
+    CPS["CrossParadigmSynthesizer
+    Combinacao com deteccao de contradicoes"]
+    PBR["ParadigmBridge
+    Formal↔Symbolic · Logic↔Critical"]
+    SSD["SystemSelfDiagnostic
+    14 CTs base + 6 research = 20 CTs"]
+
+    HM["HealthMonitor
+    8 modulos monitorados"]
+    RE["RepairEngine
+    reload → deps → fallback"]
+    RL["RepairLogger
+    SHA-256 chain integrity"]
+    RN["RepairNotifier
+    ecosystem-state update"]
+    SRO["SelfRepairOrchestrator
+    Pipeline: 14 CTs"]
+
+    CPR --> CPS
+    CPS --> PBR
+    PBR --> SSD
+
+    SSD -.->|saude engine| HM
+    HM -->|"falha detectada"| RE
+    RE -->|"registro"| RL
+    RL -->|"notificacao"| RN
+    RN -->|"atualiza"| SRO
+  end
+
+  subgraph L7["Camada 7: Pipelines Academicos"]
+    SEEKER["SEEKER Research
+    10 agentes · 10+ fontes academicas"]
+    MASWOS["MASWOS Pipeline
+    49 agentes · 8 estagios · Qualis A1"]
+    QUANTUM["Quantum Nexus PhD
+    146 arquivos · QML HAM10000 (89.52%)"]
+
+    SEEKER -->|evidencias| MASWOS
+    MASWOS -.->|benchmark| QUANTUM
+  end
+
+  subgraph L8["Camada 8: Governanca e Economia"]
+    TOKEN["Token Economy Core
+    SPEC-022 · Ledger frozen · Fee market"]
+    AGEC["Agent Economics
+    SPEC-023 · Staking 7d · Tiers"]
+    AUDIT["Audit Integration
+    SPEC-024 · SHA-256 trail"]
+    COOPG2["Cooperative Governance
+    Ostrom 8 Principios"]
+  end
+
+  subgraph L9["Camada 9: Estado do Ecossistema"]
+    ESTADO["ecosystem-state.json v6.6.0"]
+    REGS["skills_registry.json
+    149 skills registradas"]
+    SPECS["84 SPECs · 8 ADRs"]
+    CTS["420 CTs passando
+    100% R20→R39"]
+  end
+
+  MARCE -->|delega| META
+  META -->|expoe| MCPSRV
+  MCPSRV -->|aciona| SC1
+  MCPSRV -->|aciona| SC2
+  MCPSRV -->|aciona| SC3
+  MCPSRV -->|"aciona (8)"| COOSCAN
+  SYNC -->|sincroniza| ESTADO
+
+  SC2 -->|integra| Z3
+  SC2 -->|integra| SMY
+  SC2 -->|integra| KAN
+  SC2 -->|integra| CRT
+  SC2 -->|integra| GT
+  SC2 -->|integra| TP
+  SC2 -->|integra| TE
+  SC2 -->|integra| LM
+
+  SC3 -->|monitora| Z3
+  SC3 -->|monitora| SMY
+  SC3 -->|monitora| KAN
+  SC3 -->|monitora| CRT
+  SC3 -->|monitora| GT
+  SC3 -->|monitora| TP
+  SC3 -->|monitora| TE
+  SC3 -->|monitora| LM
+
+  PEV2 -->|"58 oportunidades"| ESTADO
+  TRUST -->|"contensao 15ms"| MARCE
+  COOPG -->|governanca| TOKEN
+
+  ESTADO -->|atualiza| REG
+  REG -->|audita| SPECS
+  SPECS -->|valida| CTS
+
+  style USER fill:#1f6feb,stroke:#58a6ff,color:#fff
+  style MARCE fill:#d29922,stroke:#d29922,color:#0d1117
+  style CPR fill:#3fb950,stroke:#3fb950,color:#0d1117
+  style SRO fill:#3fb950,stroke:#3fb950,color:#0d1117
+  style HM fill:#58a6ff,stroke:#58a6ff,color:#0d1117
+  style ESTADO fill:#bc8cff,stroke:#bc8cff,color:#0d1117
+  style CTS fill:#bc8cff,stroke:#bc8cff,color:#0d1117
+  style COOSCAN fill:#21262d,stroke:#8b949e,color:#c9d1d9

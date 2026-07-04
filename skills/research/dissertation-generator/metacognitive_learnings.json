@@ -119,20 +119,316 @@
       "fix_applied": "fix",
       "prevention": "Use ASCII labels",
       "timestamp": "2026-06-25T02:28:59.932948+00:00"
+    },
+    {
+      "lesson_id": "TEST-001",
+      "cycle": "test",
+      "category": "encoding",
+      "description": "Test lesson",
+      "impact": "low",
+      "fix_applied": "Test fix",
+      "prevention": "Test prevention",
+      "timestamp": "2026-06-30T20:08:58.155165+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-0",
+      "cycle": "test",
+      "category": "encoding",
+      "description": "Encoding issue 0",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T20:08:58.189505+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-1",
+      "cycle": "test",
+      "category": "encoding",
+      "description": "Encoding issue 1",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T20:08:58.200520+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-2",
+      "cycle": "test",
+      "category": "encoding",
+      "description": "Encoding issue 2",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T20:08:58.216423+00:00"
+    },
+    {
+      "lesson_id": "REC-001",
+      "cycle": "R26-dissertation",
+      "category": "encoding",
+      "description": "Test",
+      "impact": "high",
+      "fix_applied": "fix",
+      "prevention": "Use ASCII labels",
+      "timestamp": "2026-06-30T20:08:58.294877+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-0",
+      "cycle": "test",
+      "category": "encoding",
+      "description": "Encoding issue 0",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T20:25:58.406070+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-1",
+      "cycle": "test",
+      "category": "encoding",
+      "description": "Encoding issue 1",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T20:25:58.424921+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-2",
+      "cycle": "test",
+      "category": "encoding",
+      "description": "Encoding issue 2",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T20:25:58.447344+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-0",
+      "cycle": "test",
+      "category": "test_pattern_30897b45",
+      "description": "Test pattern issue 0",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T21:05:57.844535+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-1",
+      "cycle": "test",
+      "category": "test_pattern_30897b45",
+      "description": "Test pattern issue 1",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T21:05:57.872083+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-2",
+      "cycle": "test",
+      "category": "test_pattern_30897b45",
+      "description": "Test pattern issue 2",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T21:05:57.899382+00:00"
+    },
+    {
+      "lesson_id": "TEST-001",
+      "cycle": "test",
+      "category": "encoding",
+      "description": "Test lesson",
+      "impact": "low",
+      "fix_applied": "Test fix",
+      "prevention": "Test prevention",
+      "timestamp": "2026-06-30T21:11:54.713065+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-0",
+      "cycle": "test",
+      "category": "test_pattern_fbf00f54",
+      "description": "Test pattern issue 0",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T21:11:54.746918+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-1",
+      "cycle": "test",
+      "category": "test_pattern_fbf00f54",
+      "description": "Test pattern issue 1",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T21:11:54.755831+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-2",
+      "cycle": "test",
+      "category": "test_pattern_fbf00f54",
+      "description": "Test pattern issue 2",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T21:11:54.765225+00:00"
+    },
+    {
+      "lesson_id": "REC-001",
+      "cycle": "R26-dissertation",
+      "category": "encoding",
+      "description": "Test",
+      "impact": "high",
+      "fix_applied": "fix",
+      "prevention": "Use ASCII labels",
+      "timestamp": "2026-06-30T21:11:54.801625+00:00"
+    },
+    {
+      "lesson_id": "TEST-001",
+      "cycle": "test",
+      "category": "encoding",
+      "description": "Test lesson",
+      "impact": "low",
+      "fix_applied": "Test fix",
+      "prevention": "Test prevention",
+      "timestamp": "2026-06-30T21:20:06.880441+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-0",
+      "cycle": "test",
+      "category": "test_pattern_43614628",
+      "description": "Test pattern issue 0",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T21:20:06.914401+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-1",
+      "cycle": "test",
+      "category": "test_pattern_43614628",
+      "description": "Test pattern issue 1",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T21:20:06.923002+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-2",
+      "cycle": "test",
+      "category": "test_pattern_43614628",
+      "description": "Test pattern issue 2",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-06-30T21:20:06.933806+00:00"
+    },
+    {
+      "lesson_id": "REC-001",
+      "cycle": "R26-dissertation",
+      "category": "encoding",
+      "description": "Test",
+      "impact": "high",
+      "fix_applied": "fix",
+      "prevention": "Use ASCII labels",
+      "timestamp": "2026-06-30T21:20:06.960915+00:00"
+    },
+    {
+      "lesson_id": "TEST-001",
+      "cycle": "test",
+      "category": "encoding",
+      "description": "Test lesson",
+      "impact": "low",
+      "fix_applied": "Test fix",
+      "prevention": "Test prevention",
+      "timestamp": "2026-07-01T01:06:50.647039+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-0",
+      "cycle": "test",
+      "category": "test_pattern_c9113df6",
+      "description": "Test pattern issue 0",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-07-01T01:06:50.680218+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-1",
+      "cycle": "test",
+      "category": "test_pattern_c9113df6",
+      "description": "Test pattern issue 1",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-07-01T01:06:50.688808+00:00"
+    },
+    {
+      "lesson_id": "PATTERN-2",
+      "cycle": "test",
+      "category": "test_pattern_c9113df6",
+      "description": "Test pattern issue 2",
+      "impact": "low",
+      "fix_applied": "fix",
+      "prevention": "prevent",
+      "timestamp": "2026-07-01T01:06:50.703938+00:00"
+    },
+    {
+      "lesson_id": "REC-001",
+      "cycle": "R26-dissertation",
+      "category": "encoding",
+      "description": "Test",
+      "impact": "high",
+      "fix_applied": "fix",
+      "prevention": "Use ASCII labels",
+      "timestamp": "2026-07-01T01:06:50.746558+00:00"
     }
   ],
   "patterns": [
     {
       "pattern_id": "pattern-encoding",
-      "description": "Padrão recorrente em encoding: 6 lições registradas",
-      "frequency": 6,
+      "description": "Padrão recorrente em encoding: 20 lições registradas",
+      "frequency": 20,
       "affected_components": [
+        "Test fix",
         "fix",
-        "Substituição de caracteres acentuados por ASCII pu",
-        "Test fix"
+        "Substituição de caracteres acentuados por ASCII pu"
       ],
       "recommendation": "Automatizar correção para encoding no pipeline"
+    },
+    {
+      "pattern_id": "pattern-test_pattern_30897b45",
+      "description": "Padrão recorrente em test_pattern_30897b45: 3 lições registradas",
+      "frequency": 3,
+      "affected_components": [
+        "fix"
+      ],
+      "recommendation": "Automatizar correção para test_pattern_30897b45 no pipeline"
+    },
+    {
+      "pattern_id": "pattern-test_pattern_fbf00f54",
+      "description": "Padrão recorrente em test_pattern_fbf00f54: 3 lições registradas",
+      "frequency": 3,
+      "affected_components": [
+        "fix"
+      ],
+      "recommendation": "Automatizar correção para test_pattern_fbf00f54 no pipeline"
+    },
+    {
+      "pattern_id": "pattern-test_pattern_43614628",
+      "description": "Padrão recorrente em test_pattern_43614628: 3 lições registradas",
+      "frequency": 3,
+      "affected_components": [
+        "fix"
+      ],
+      "recommendation": "Automatizar correção para test_pattern_43614628 no pipeline"
+    },
+    {
+      "pattern_id": "pattern-test_pattern_c9113df6",
+      "description": "Padrão recorrente em test_pattern_c9113df6: 3 lições registradas",
+      "frequency": 3,
+      "affected_components": [
+        "fix"
+      ],
+      "recommendation": "Automatizar correção para test_pattern_c9113df6 no pipeline"
     }
   ],
-  "last_updated": "2026-06-25T02:28:59.932948+00:00"
+  "last_updated": "2026-07-01T01:06:50.746716+00:00"
 }
