@@ -1,0 +1,95 @@
+name: CORA-Eval Nightly — D1-D26 + R31-R42
+
+on:
+  schedule:
+    # Todos os dias as 03:00 UTC = 00:00 BRT
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  nightly-matrix:
+    name: "CORA-Eval Nightly (D1-D26, R31-R42)"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install pytest scikit-learn numpy pyyaml
+
+      - name: CORA-Eval D1-D12 (Core Science)
+        run: |
+          pytest tests/test_d1_matematica.py \
+                 tests/test_d2_fisica.py \
+                 tests/test_d3_estatistica.py \
+                 tests/test_d4_quimica.py \
+                 tests/test_d5_biologia.py \
+                 tests/test_d6_geociencias.py \
+                 tests/test_d7_codigo.py \
+                 tests/test_d8_literatura.py \
+                 tests/test_d9_metodologia.py \
+                 tests/test_d10_interdisciplinar.py \
+                 tests/test_d11_sociologia.py \
+                 tests/test_d12_mecatronica.py \
+                 -v --tb=short
+
+      - name: CORA-Eval D13-D20 (Applied Science)
+        run: |
+          pytest tests/test_d13_pedagogia.py \
+                 tests/test_d14_data_science.py \
+                 tests/test_d15_economia_tokens.py \
+                 tests/test_d16_bioinformatica.py \
+                 tests/test_d17_ia_constitucional.py \
+                 tests/test_d18_direito_computacional.py \
+                 tests/test_d19_worldbuilding.py \
+                 tests/test_d20_neurociencia.py \
+                 -v --tb=short
+
+      - name: CORA-Eval D21-D26 (Advanced Domains)
+        run: |
+          pytest tests/test_d21_medicina_digital.py \
+                 tests/test_d22_causalidade.py \
+                 tests/test_d23_inferencia_ativa.py \
+                 tests/test_d24_engenharia_reversa.py \
+                 tests/test_d25_metacognicao.py \
+                 tests/test_d26_quantica.py \
+                 -v --tb=short
+
+      - name: Ecosystem R31-R42 Cycle Tests
+        run: |
+          pytest tests/test_r31_metodos.py \
+                 tests/test_r32_paradigmas.py \
+                 tests/test_r33_paradigma_fenomenologico.py \
+                 tests/test_r34_dominio_psicologia_clinica.py \
+                 tests/test_r35_research_skills.py \
+                 tests/test_r36_r37.py \
+                 tests/test_r38_neurociencias.py \
+                 tests/test_r39_self_repair.py \
+                 tests/test_r40_infrastructure.py \
+                 tests/test_r41_health_background.py \
+                 tests/test_r42_cicd_pipeline.py \
+                 -v --tb=short
+
+      - name: CI Validation
+        run: python tests/ci_validate.py
+
+      - name: Record nightly stats
+        run: |
+          echo "## CORA-Eval Nightly $(date -u +%Y-%m-%d)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Suite | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| D1-D26 (261 CTs) | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "| R31-R42 (100+ CTs) | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "| CI Validation | ✅ |" >> $GITHUB_STEP_SUMMARY

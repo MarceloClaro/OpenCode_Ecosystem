@@ -1,8 +1,8 @@
 {
-  "version": "6.8.0",
-  "current_cycle": "R41",
+  "version": "6.9.0",
+  "current_cycle": "R42",
   "last_updated": "2026-07-04T03:15:00Z",
-  "tests_passing": 443,
+  "tests_passing": 49,
   "total_cts": 443,
   "specs_count": 85,
   "agents_count": 128,
@@ -137,5 +137,16 @@
     "history_retention": 1000,
     "background_thread": "threading.Timer",
     "fallback_on_import_error": true
-  }
+  },
+  "r42_cicd_pipeline": {
+    "status": "100",
+    "cts": 12,
+    "workflows": [
+      "ecosystem-ci.yml",
+      "cora-eval-nightly.yml"
+    ],
+    "pre_commit_updated": true,
+    "ci_validate_updated": true
+  },
+  "specs": 86
 }

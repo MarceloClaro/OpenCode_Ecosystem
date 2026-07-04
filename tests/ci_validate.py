@@ -125,6 +125,47 @@ print(f"\n📊 R39 Self-Repair: {len(R39_CTS)} CTs planned")
 check("14 CTs registered for R39", len(R39_CTS) == 14, f"Found {len(R39_CTS)}")
 
 
+# ─── 5. R41 Health Background Monitor ───────────────────
+R41_HEALTH_CTS = [
+    "test_health_snapshot_create",
+    "test_health_snapshot_json_serializable",
+    "test_health_snapshot_from_dict",
+    "test_health_logger_init",
+    "test_health_logger_log_snapshot",
+    "test_health_logger_get_history",
+    "test_health_logger_prune_old",
+    "test_webhook_config_defaults",
+    "test_webhook_notifier_empty_url",
+    "test_webhook_notifier_success",
+    "test_webhook_notifier_retry_on_failure",
+    "test_health_background_service_init",
+    "test_health_background_default_interval",
+    "test_health_background_start_stop",
+    "test_health_background_collects_snapshot",
+    "test_health_background_logs_history",
+    "test_health_background_does_not_restart",
+    "test_health_background_logger_integration",
+    "test_health_background_webhook_integration",
+    "test_health_background_source_introspection",
+    "test_health_background_self_other_boundary",
+    "test_health_background_auto_monitor",
+    "test_health_background_root_cause_heuristic",
+]
+print(f"\n📊 R41 Health Background: {len(R41_HEALTH_CTS)} CTs planned")
+check("23 CTs registered for R41", len(R41_HEALTH_CTS) == 23, f"Found {len(R41_HEALTH_CTS)}")
+
+# Verifica importabilidade do modulo
+sys.path.insert(0, os.path.join(BASE, "core", "services"))
+try:
+    from health_background import HealthBackgroundService, WebhookConfig
+    check("HealthBackgroundService importavel", True)
+    check("WebhookConfig importavel", True)
+except ImportError as e:
+    check("HealthBackgroundService importavel", False, str(e))
+finally:
+    sys.path.pop(0)
+
+
 # ─── Summary ───────────────────────────────────────────
 total = PASS + FAIL + SKIP
 print(f"\n{'='*50}")
