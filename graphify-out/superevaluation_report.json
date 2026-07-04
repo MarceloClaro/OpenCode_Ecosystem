@@ -1,0 +1,46 @@
+{
+  "benchmark": "Superhuman IMO Bench + Aletheia",
+  "date": "2026-07-04 16:42:56",
+  "data_source": "MarceloClaro/superhuman (fork Google DeepMind)",
+  "scores": {
+    "QUALIDADE_RAZ": {
+      "score": 87.5,
+      "tested": 10,
+      "total_available": 400,
+      "math_domains_covered": "3/8",
+      "reasoning_specs": 10,
+      "note": "Avaliação estrutural (cobertura de comunidade + SPECs)"
+    },
+    "COBERTURA_GRAFO": {
+      "score": 85.1,
+      "nodes": 7099,
+      "edges": 11904,
+      "communities": 376,
+      "avg_size": 18.9,
+      "density": 0.000472,
+      "cohesion_pct": 84.9,
+      "connectivity_pct": 25.4
+    },
+    "INTEGRIDADE_REGISTRY": {
+      "score": 84.8,
+      "entries": 376,
+      "fill_rate_pct": 67.3,
+      "semantic_pct": 100.0,
+      "unique_domains": 22,
+      "connections_count": 275
+    },
+    "ALINHAMENTO_ALETHEIA": {
+      "score": 70,
+      "feedback_nodes": 168,
+      "verification_nodes": 1915,
+      "verify_edges": 0,
+      "has_feedback": true,
+      "has_verification": true
+    }
+  },
+  "composite_score": 83.3,
+  "classification": "AVANÇADO 🥇 — Qualidade superior",
+  "total_cts": 537,
+  "community_cts": 9,
+  "community_cts_status": "9/9 PASS"
+}

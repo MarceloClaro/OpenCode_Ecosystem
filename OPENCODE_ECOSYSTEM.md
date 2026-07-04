@@ -1173,7 +1173,42 @@ O ciclo **Monitorar → Detectar → Diagnosticar → Reparar → Verificar** op
 
 ---
 
-> **OpenCode Ecosystem v4.6** — 125 agentes · 40 MCPs · 104 skills · 11 Container DI services · ~114.000 linhas Python
->
-> Documentação gerada pelo Reversa Framework v1.2.22 em 2026-05-21.
-> Repositório: `C:\Users\marce\.config\opencode` | Modelo: `opencode/deepseek-v4-pro`
+## 🌐 Graphify Community Map v1.0
+
+> Mapa de conhecimento do ecossistema: **7.099 nós, 11.904 arestas, 376 comunidades**
+> gerado pelo Graphify a partir de 245 arquivos Python. Use `graphify query` para navegar.
+
+### Top 10 Comunidades
+
+| ID | Nome Semântico | Nós | SPECs | Agentes |
+|----|----------------|:---:|-------|---------|
+| C0 | Integração Nexus: ReasoningCategory | 106 | - | - |
+| C1 | Raciocínio e Lógica: AutonomyLevel | 95 | - | - |
+| C2 | Conhecimento e Grafos: RelationType | 92 | - | - |
+| C3 | Ecossistema e Scanners: Any | 85 | - | - |
+| C4 | Algoritmos Sociais: OutcomeRecord | 70 | - | - |
+| C5 | Sincronização e Orquestração: SyncComponent | 69 | - | - |
+| C6 | Economia de Tokens: InsufficientBalanceError | 65 | - | - |
+| C7 | Domain Shift e Auditoria: Documento | 65 | - | - |
+| C8 | Docling e PDF: OutcomeRecord | 64 | - | - |
+| C9 | Trust e Witness Pattern: WitnessValidator | 59 | - | - |
+
+### Registry Completo
+
+Consulte `graphify-out/COMMUNITY_REGISTRY.md` para todas as 376 comunidades.
+
+### Fluxo de Navegação
+
+```
+graphify query "<comunidade|domínio|raciocínio>"
+graphify explain "<nome da comunidade>"
+graphify path "<comunidade A>" "<comunidade B>"
+```
+
+### Métricas
+
+- **Nós**: 7.099
+- **Arestas**: 11.904
+- **Comunidades**: 376
+- **Nomeadas**: 376
+- **Top 10 cobre**: 770 nós (10.8%)
