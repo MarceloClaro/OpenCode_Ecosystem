@@ -1,0 +1,13 @@
+{
+  "dimension": "dominios",
+  "category": "Artifact_dominios_2",
+  "artifact_type": "reference",
+  "content": "Bulk injection dominios #2",
+  "source_scanner": "integration",
+  "eps_score": 65.0,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "8b3847af-1410-4eae-9348-86e7a2b36a7e",
+  "injected_at": "2026-07-04T12:57:01.933118+00:00",
+  "ttl_days": 365
+}

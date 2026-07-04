@@ -1,0 +1,13 @@
+{
+  "dimension": "dominios",
+  "category": "Psicofarmacologia",
+  "artifact_type": "reference",
+  "content": "Artifact for Psicofarmacologia",
+  "source_scanner": "noological",
+  "eps_score": 57.8,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "03ebc3ee-35a7-4e22-9c78-c2ce75d64d09",
+  "injected_at": "2026-07-04T12:51:14.233905+00:00",
+  "ttl_days": 365
+}

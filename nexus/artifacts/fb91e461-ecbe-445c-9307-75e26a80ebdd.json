@@ -1,0 +1,13 @@
+{
+  "dimension": "paradigmas",
+  "category": "Artifact_paradigmas_0",
+  "artifact_type": "reference",
+  "content": "Bulk injection paradigmas #0",
+  "source_scanner": "integration",
+  "eps_score": 55.0,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "fb91e461-ecbe-445c-9307-75e26a80ebdd",
+  "injected_at": "2026-07-04T12:57:01.955327+00:00",
+  "ttl_days": 365
+}

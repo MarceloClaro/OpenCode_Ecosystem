@@ -1,0 +1,13 @@
+{
+  "dimension": "metodos",
+  "category": "Misto sequencial",
+  "artifact_type": "method",
+  "content": "Artifact for Misto sequencial",
+  "source_scanner": "noological",
+  "eps_score": 57.8,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "4ea7b4ea-cec6-4204-a68d-02a7f9980ace",
+  "injected_at": "2026-07-04T12:51:14.282923+00:00",
+  "ttl_days": 365
+}

@@ -1,0 +1,13 @@
+{
+  "dimension": "raciocinio",
+  "category": "Artifact_raciocinio_0",
+  "artifact_type": "reference",
+  "content": "Bulk injection raciocinio #0",
+  "source_scanner": "integration",
+  "eps_score": 55.0,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "144bec56-c2ef-4fe5-859b-58bba8baca17",
+  "injected_at": "2026-07-04T12:57:01.975371+00:00",
+  "ttl_days": 365
+}

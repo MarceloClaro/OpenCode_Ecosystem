@@ -1,0 +1,13 @@
+{
+  "dimension": "dominios",
+  "category": "Inteligência Artificial / Tecnologia",
+  "artifact_type": "reference",
+  "content": "Artifact for Inteligência Artificial / Tecnologia",
+  "source_scanner": "noological",
+  "eps_score": 57.8,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "c420f2fd-bfc4-46f0-9d20-e993846341f2",
+  "injected_at": "2026-07-04T12:51:14.257608+00:00",
+  "ttl_days": 365
+}

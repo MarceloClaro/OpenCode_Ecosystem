@@ -1,0 +1,13 @@
+{
+  "dimension": "populacao",
+  "category": "CT17_populacao_2_561592",
+  "artifact_type": "reference",
+  "content": "CT17 bulk injection populacao #2 [561592]",
+  "source_scanner": "integration",
+  "eps_score": 65.0,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "537a657d-7010-4305-b835-01cb81fca498",
+  "injected_at": "2026-07-04T13:03:47.840524+00:00",
+  "ttl_days": 365
+}

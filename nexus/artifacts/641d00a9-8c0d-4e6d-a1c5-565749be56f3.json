@@ -1,0 +1,13 @@
+{
+  "dimension": "dominios",
+  "category": "Psicologia clínica",
+  "artifact_type": "reference",
+  "content": "Integracao psicologia clinica com agentes cognitivos",
+  "source_scanner": "noological",
+  "eps_score": 62.8,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "641d00a9-8c0d-4e6d-a1c5-565749be56f3",
+  "injected_at": "2026-07-04T12:51:16.217127+00:00",
+  "ttl_days": 365
+}

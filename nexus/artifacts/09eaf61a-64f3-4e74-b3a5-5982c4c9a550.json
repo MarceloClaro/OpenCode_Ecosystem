@@ -1,0 +1,13 @@
+{
+  "dimension": "dominios",
+  "category": "BridgeFix_skills+mcps+specs",
+  "artifact_type": "reference",
+  "content": "Strengthening bridge skills+mcps+specs",
+  "source_scanner": "topology",
+  "eps_score": 55.0,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "09eaf61a-64f3-4e74-b3a5-5982c4c9a550",
+  "injected_at": "2026-07-04T12:51:16.786154+00:00",
+  "ttl_days": 365
+}

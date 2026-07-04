@@ -1,0 +1,13 @@
+{
+  "dimension": "raciocinio",
+  "category": "Dialético",
+  "artifact_type": "reasoning_pattern",
+  "content": "Raciocinio dialetico para debates multiagente",
+  "source_scanner": "noological",
+  "eps_score": 54.0,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "2e03c4fe-3f0a-435f-9432-0f702e9970e5",
+  "injected_at": "2026-07-04T12:51:14.765319+00:00",
+  "ttl_days": 365
+}

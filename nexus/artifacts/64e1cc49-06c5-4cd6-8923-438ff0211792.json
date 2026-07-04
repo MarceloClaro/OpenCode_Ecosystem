@@ -1,0 +1,13 @@
+{
+  "dimension": "dominios",
+  "category": "Neurociências",
+  "artifact_type": "reasoning_pattern",
+  "content": "Neurociencias aplicadas a agentes cognitivos",
+  "source_scanner": "noological",
+  "eps_score": 62.8,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "64e1cc49-06c5-4cd6-8923-438ff0211792",
+  "injected_at": "2026-07-04T12:51:14.126287+00:00",
+  "ttl_days": 365
+}

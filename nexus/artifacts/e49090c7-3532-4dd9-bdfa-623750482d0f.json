@@ -1,0 +1,13 @@
+{
+  "dimension": "teorias",
+  "category": "CT17_teorias_0_561592",
+  "artifact_type": "reference",
+  "content": "CT17 bulk injection teorias #0 [561592]",
+  "source_scanner": "integration",
+  "eps_score": 55.0,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "e49090c7-3532-4dd9-bdfa-623750482d0f",
+  "injected_at": "2026-07-04T13:03:47.848816+00:00",
+  "ttl_days": 365
+}

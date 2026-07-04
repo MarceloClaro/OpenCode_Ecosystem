@@ -1,0 +1,13 @@
+{
+  "dimension": "metodos",
+  "category": "Artifact_metodos_0",
+  "artifact_type": "reference",
+  "content": "Bulk injection metodos #0",
+  "source_scanner": "integration",
+  "eps_score": 55.0,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "085cc8fb-73ad-4b67-9b95-7dff54e11e9c",
+  "injected_at": "2026-07-04T12:57:01.939432+00:00",
+  "ttl_days": 365
+}

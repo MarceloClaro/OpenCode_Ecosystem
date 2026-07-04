@@ -1,0 +1,13 @@
+{
+  "dimension": "dominios",
+  "category": "Sociologia",
+  "artifact_type": "reference",
+  "content": "Artifact for Sociologia",
+  "source_scanner": "noological",
+  "eps_score": 57.8,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "5a86399c-3226-4b49-8cd9-4e9baa37dd22",
+  "injected_at": "2026-07-04T12:51:14.167140+00:00",
+  "ttl_days": 365
+}

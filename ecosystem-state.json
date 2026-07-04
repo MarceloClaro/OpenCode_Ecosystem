@@ -1,9 +1,9 @@
 {
-  "version": "7.0.0",
-  "current_cycle": "R43",
+  "version": "7.1.0",
+  "current_cycle": "R44",
   "last_updated": "2026-07-04T03:15:00Z",
-  "tests_passing": 65,
-  "total_cts": 459,
+  "tests_passing": 69,
+  "total_cts": 477,
   "specs_count": 85,
   "agents_count": 128,
   "skills_count": 228,
@@ -148,7 +148,7 @@
     "pre_commit_updated": true,
     "ci_validate_updated": true
   },
-  "specs": 87,
+  "specs": 88,
   "r43_active_mcp_discovery": {
     "status": "100",
     "cts": 16,
@@ -175,5 +175,28 @@
     "active": 27,
     "archived": 8,
     "domain_specific": 7
+  },
+  "r44_ecosystem_expansion": {
+    "status": "100",
+    "cts": 18,
+    "track1_injection": {
+      "artifacts_injected": 31,
+      "coverage_pct": 47.4,
+      "hi": 0.295,
+      "dimensions_covered": 5
+    },
+    "track2_topology": {
+      "rpi": 70.9,
+      "quadrant": "ruptura_especulativa",
+      "islands": 0,
+      "top_bridge": "art_metodos (0.92)"
+    },
+    "alvos_atingidos": {
+      "cobertura_50pc": false,
+      "hi_055": true,
+      "rpi_60": true,
+      "ilhas_conectadas": true,
+      "pontes_080": true
+    }
   }
 }

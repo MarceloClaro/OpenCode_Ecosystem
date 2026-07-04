@@ -1,0 +1,13 @@
+{
+  "dimension": "dominios",
+  "category": "Economia comportamental",
+  "artifact_type": "reference",
+  "content": "Artifact for Economia comportamental",
+  "source_scanner": "noological",
+  "eps_score": 57.8,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "11038f8b-b3de-4cbb-b6fa-540fb105d8c7",
+  "injected_at": "2026-07-04T12:51:14.213315+00:00",
+  "ttl_days": 365
+}

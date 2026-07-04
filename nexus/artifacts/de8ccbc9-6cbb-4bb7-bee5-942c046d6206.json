@@ -1,0 +1,13 @@
+{
+  "dimension": "temporalidade",
+  "category": "CT17_temporalidade_0_561592",
+  "artifact_type": "reference",
+  "content": "CT17 bulk injection temporalidade #0 [561592]",
+  "source_scanner": "integration",
+  "eps_score": 55.0,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "de8ccbc9-6cbb-4bb7-bee5-942c046d6206",
+  "injected_at": "2026-07-04T13:03:47.804863+00:00",
+  "ttl_days": 365
+}

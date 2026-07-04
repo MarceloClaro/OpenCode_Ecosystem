@@ -1,0 +1,13 @@
+{
+  "dimension": "dados",
+  "category": "Artifact_dados_2",
+  "artifact_type": "reference",
+  "content": "Bulk injection dados #2",
+  "source_scanner": "integration",
+  "eps_score": 65.0,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "a7992728-295d-44c1-bf19-9f4e6e5419dd",
+  "injected_at": "2026-07-04T12:57:02.029308+00:00",
+  "ttl_days": 365
+}

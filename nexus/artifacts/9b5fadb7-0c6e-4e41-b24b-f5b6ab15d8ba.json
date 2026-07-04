@@ -1,0 +1,13 @@
+{
+  "dimension": "niveis_analise",
+  "category": "CT17_niveis_analise_0_745d6f",
+  "artifact_type": "reference",
+  "content": "CT17 bulk injection niveis_analise #0 [745d6f]",
+  "source_scanner": "integration",
+  "eps_score": 55.0,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "9b5fadb7-0c6e-4e41-b24b-f5b6ab15d8ba",
+  "injected_at": "2026-07-04T13:05:06.364873+00:00",
+  "ttl_days": 365
+}

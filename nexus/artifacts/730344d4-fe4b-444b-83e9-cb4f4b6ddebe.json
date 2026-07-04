@@ -1,0 +1,13 @@
+{
+  "dimension": "paradigmas",
+  "category": "Positivista",
+  "artifact_type": "paradigm",
+  "content": "Paradigma positivista para analise de agentes",
+  "source_scanner": "noological",
+  "eps_score": 64.6,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "730344d4-fe4b-444b-83e9-cb4f4b6ddebe",
+  "injected_at": "2026-07-04T12:51:14.404483+00:00",
+  "ttl_days": 365
+}

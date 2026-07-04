@@ -1,0 +1,13 @@
+{
+  "dimension": "dominios",
+  "category": "Antropologia",
+  "artifact_type": "reference",
+  "content": "Artifact for Antropologia",
+  "source_scanner": "noological",
+  "eps_score": 57.8,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "addb7c81-3b4c-4dbf-8a9a-b1ce9bcd2f88",
+  "injected_at": "2026-07-04T12:51:14.175863+00:00",
+  "ttl_days": 365
+}

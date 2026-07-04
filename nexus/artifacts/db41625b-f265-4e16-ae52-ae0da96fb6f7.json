@@ -1,0 +1,13 @@
+{
+  "dimension": "dominios",
+  "category": "Filosofia da mente",
+  "artifact_type": "reference",
+  "content": "Artifact for Filosofia da mente",
+  "source_scanner": "noological",
+  "eps_score": 57.8,
+  "cross_domain_impact": 5.0,
+  "theoretical_fertility": 5.0,
+  "artifact_id": "db41625b-f265-4e16-ae52-ae0da96fb6f7",
+  "injected_at": "2026-07-04T12:51:14.223699+00:00",
+  "ttl_days": 365
+}
