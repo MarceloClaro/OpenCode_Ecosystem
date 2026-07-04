@@ -1,10 +1,10 @@
 {
-  "version": "6.7.0",
-  "current_cycle": "R40",
-  "last_updated": "2026-07-04T02:30:00Z",
-  "tests_passing": 420,
-  "total_cts": 420,
-  "specs_count": 84,
+  "version": "6.8.0",
+  "current_cycle": "R41",
+  "last_updated": "2026-07-04T03:15:00Z",
+  "tests_passing": 443,
+  "total_cts": 443,
+  "specs_count": 85,
   "agents_count": 128,
   "skills_count": 228,
   "mcps_count": 46,
@@ -103,7 +103,8 @@
     "R37": 100,
     "R38": 100,
     "R39": 100,
-    "R40": 100
+    "R40": 100,
+    "R41": 100
   },
   "self_repair": {
     "health_pct": 100.0,
@@ -122,5 +123,19 @@
       "nexus/scripts/evolution_loop.py"
     ],
     "skills_skills_path_fixed": "already_resolved"
+  },
+  "r41_health_monitor": {
+    "enabled": true,
+    "interval_minutes": 5,
+    "health_pct": 100.0,
+    "unhealthy_engines": [],
+    "trend": "stable",
+    "webhooks_configured": 0,
+    "total_checks": 0,
+    "alerts_sent": 0,
+    "spec": "SPEC-084",
+    "history_retention": 1000,
+    "background_thread": "threading.Timer",
+    "fallback_on_import_error": true
   }
 }
