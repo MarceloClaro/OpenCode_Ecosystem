@@ -17,8 +17,8 @@
  █ ╚██████╔╝██║     ███████╗██║ ╚████║╚██████╗╚██████╔╝██████╔╝███████╗        █
  █  ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝        █
  █                                                                            █
- █   SYSTEM DIAGNOSTIC: 🟢 NOMINAL | R39 | HI=0.7473 | GT=100% | 420 CTs 🟢   █
- █   CORA-EVAL: D1–D26 COMPLETO · 84 SPECs · R1=85 → R39=100                █
+ █   SYSTEM DIAGNOSTIC: 🟢 NOMINAL | R46.1 | HI=0.7473 | GT=100% | 532 CTs 🟢   █
+ █   CORA-EVAL: D1–D26 COMPLETO · 92 SPECs · R1=85 → R46.1=100               █
  █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 ```
 
@@ -44,7 +44,7 @@ Não é apenas um CLI, nem apenas um conjunto de agentes. É um **metassistema v
 | **Agentes** | Inteligências especializadas | **128** agentes (56 core + 49 acadêmicos + 12 SEEKER + 11 Reversa) |
 | **Scanners** | Motores de diagnóstico e prospecção | **6** scanners (Noológico, Teleológico, Evolutivo, Potencialidade...) |
 | **Motores de Raciocínio** | Motores formais e críticos | **4** motores (Z3, SymPy, Kanren, Critical) |
-| **Testes TDD** | Validação contínua | **356/356** testes passando (100%), **18** suítes |
+| **Testes TDD** | Validação contínua | **532/532** testes passando (100%), **22** suítes (18 legado + 4 ecosystem) |
 | **Pipeline Acadêmico** | Produção de conhecimento Qualis A1 | SEEKER → 49 agentes → revisão cega → correção → LaTeX/PDF |
 
 ---
@@ -106,13 +106,13 @@ Integração nativa com arXiv, PubMed, OpenAlex, EuropePMC, bioRxiv, CORE + moto
 
 ---
 
-### 📊 Estado Atual (R39 — Julho/2026)
+### 📊 Estado Atual (R46.1 — Julho/2026)
 
 ```
 📊 600+ componentes integrados · 260k+ linhas de código
-✅ 420/420 testes (100%) · 18 suítes TDD · 84 SPECs · 10 ADRs
-🧠 128 agentes · 227 skills · 46 MCPs · 4 motores de raciocínio
-🏆 39 ciclos evolutivos (R1=85 → R39=100)
+✅ 532/532 testes (100%) · 22 suítes TDD · 92 SPECs · 10 ADRs
+🧠 128 agentes · 228 skills · 46 MCPs · 4 motores de raciocínio
+🏆 46 ciclos evolutivos (R1=85 → R46.1=100)
 🔬 Pipeline Qualis A1 validado com produção real
 🧬 Autoevolução ativa: Manus Evolve gera novas skills automaticamente
 🛡️ Trust Engine N3.5: monitoramento comportamental preventivo (SPEC-038)
@@ -121,6 +121,7 @@ Integração nativa com arXiv, PubMed, OpenAlex, EuropePMC, bioRxiv, CORE + moto
 🎲 Game Theory: 100% de cobertura (10/10 categorias)
 🔬 16 scanners cognitivos · 4 motores (Z3, SymPy, Kanren, Critical)
 🌐 Mapa arquitetural completo: 10 camadas, 60+ componentes, 70+ conexões
+🏗️ Pacote ecosystem/ (SPEC-090-093): entrypoint canônico, contratos, schemas, grafo de dependências
 ```
 
 > `"O software tradicional exige que você digite comandos. O OpenCode Ecosystem cria as soluções e evaporiza suas dependências quando conclui."`
@@ -551,7 +552,7 @@ ManusEvolve(⑦) ⇒ LiquidSwarm(③) → Agentes(④) → Skills(⑤) → Scann
 | 💻 **Código Mermaid Fonte** | Código fonte deste diagrama | [Ver](#mega-mapa-completo-da-arquitetura-mermaid) |
 | 📁 **Todos os Diagramas** | Diretório completo de assets | [diagrams/](diagrams/) |
 
-> O diagrama acima foi gerado em **Mermaid puro** e renderiza nativamente no GitHub. Representa a arquitetura v6.6.0 do OpenCode Ecosystem com **600+ componentes integrados**, **420 testes TDD (100%)**, **128 agentes**, **227 skills**, **46 MCPs**, **84 SPECs** e **39 ciclos evolutivos** (R1=85 → R39=100).
+> O diagrama acima foi gerado em **Mermaid puro** e renderiza nativamente no GitHub. Representa a arquitetura v7.2.0 do OpenCode Ecosystem com **600+ componentes integrados**, **532 testes TDD (100%)**, **128 agentes**, **228 skills**, **46 MCPs**, **92 SPECs** e **46 ciclos evolutivos** (R1=85 → R46.1=100).
 
 ---
 
@@ -941,6 +942,36 @@ Para o apresentador ou investidor entender a lógica de demonstração rápida:
 
 > `"O software tradicional exige que você digite comandos. OpenCode Ecosystem cria as soluções e evaporiza suas dependências quando conclui."`
 > **⚡ PROMPT FORWARD // SECURE THE GRID // BUILD THE FUTURE ⚡**
+
+---
+
+### 📋 [SYS://CHANGELOG_R46.1] ── R46.1: Ecossistema Refinado — Lazy Imports, Dead Code, 76 CTs Ecosystem (Jul 2026)
+
+| Melhoria | Antes | Depois | Impacto |
+|----------|-------|--------|---------|
+| **ecosystem/__init.py__** | Imports eager no load do módulo | **PEP 562 __getattr__ lazy** | Zero imports na inicialização |
+| **find_dead_code() (R46.1)** | Inexistente | **DependencyAnalyzer.find_dead_code()** | 5 CTs (9311-9315), detecção AST |
+| **Regras de Camada** | 12 violações críticas | **0 violações** | Intra-pacote permitido, __init__.py exempt |
+| **ecosystem/ adapters** | 2 adaptadores | **7 adaptadores** | evolve, sync, test, audit, plugin_discovery |
+| **SchemaAwareStateManager** | Inexistente | **schema/manager.py** | 8 operações + serialização |
+| **CTs totais** | 456 CTs | **532 CTs** | +76 CTs ecosystem (SPEC-090-093) |
+| **CI/CD** | Apenas legado | **+ Suite SPEC-090-093** | 76 CTs automáticos em push/PR |
+| **ecosystem-state.json** | 56 tests_passing | **76 tests_passing** | R46.1 registrado |
+
+**O que foi feito (R46.1):**
+1. 🧩 **SPEC-090: Canonical Entrypoint** — `ecosystem/__init__.py` com lazy imports PEP 562 (18 CTs)
+2. 📝 **SPEC-091: Contract Registry** — `ContractRegistry` com serialização JSON/YAML (16 CTs)
+3. 🗃️ **SPEC-092: State Schema** — `StateManager` + `SchemaAwareStateManager` com 8 operações (20 CTs)
+4. 🔗 **SPEC-093: Dependency Graph** — `DependencyAnalyzer` completo: AST parsing, camadas, circular, duplicatas, visualização Mermaid, `find_dead_code()` (22 CTs)
+5. 🏗️ **5 adaptadores + plugin_discovery** — `evolve_runner`, `sync_runner`, `test_runner`, `audit_runner` (subprocess), `plugin_discovery.py`
+6. 🔧 **Regras de camada corrigidas** — 12 violações → 0. `__init__.py` pode importar submodulos do mesmo pacote
+7. ⚙️ **CI/CD atualizado** — GitHub Actions com suite SPEC-090-093 (76 CTs)
+
+```
+  R46.1 SUM: 76 CTs ecosystem · 100% pass · 14 arquivos · +1006/-124 linhas · ecosystem v7.2.0
+```
+
+👉 [Estado do Ecossistema](ecosystem-state.json) | [SPEC-090](specs/SPEC-090-CANONICAL-ENTRYPOINT.md) | [SPEC-093](specs/SPEC-093-REFINED-DEPENDENCY-GRAPH.md)
 
 ---
 
