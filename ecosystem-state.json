@@ -1,9 +1,9 @@
 {
   "version": "7.2.0",
-  "current_cycle": "R46",
-  "last_updated": "2026-07-04T15:30:00Z",
-  "tests_passing": 56,
-  "total_cts": 533,
+  "current_cycle": "R46.1",
+  "last_updated": "2026-07-04T16:30:00Z",
+  "tests_passing": 76,
+  "total_cts": 76,
   "specs_count": 92,
   "agents_count": 128,
   "skills_count": 228,
@@ -245,5 +245,6 @@
       "ilhas_conectadas": true,
       "pontes_080": true
     }
-  }
+  },
+  "integrity_sha256": "2fbb7f3953e10b27"
 }

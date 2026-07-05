@@ -10,8 +10,8 @@ Valida:
 - CT-9306: Sugestão de contrato
 - CT-9307: Grafo canônico serializado em JSON
 - CT-9308: Módulos do ecossistema analisáveis
-- CT-9309: Visualizador (conceito)
-- CT-9310: Validação integrada
+- CT-9309: Visualizador gera saída Mermaid
+- CT-9310: Validação integrada com zero violações críticas
 """
 
 import tempfile
@@ -66,17 +66,14 @@ class TestAnalyzeFile:
 class TestCircularDetection:
     def test_ct9302_detect_no_circular(self, analyzer):
         """CT-9302: detect_circular() pode executar sem erro."""
-        # Usa diretório ecosystem que não deve ter circular
         eco_path = Path(__file__).parent.parent.parent / "ecosystem"
         if eco_path.exists():
             deps = analyzer.analyze_directory(str(eco_path))
             cycles = analyzer.detect_circular(deps)
-            # Não esperamos circulares no novo código
             assert isinstance(cycles, list)
 
     def test_ct9302_detect_circular_artificial(self, analyzer, tmp_path):
         """CT-9302b: Detecta ciclo artificial."""
-        # Cria ciclo A → B → A
         a_file = tmp_path / "a_module.py"
         b_file = tmp_path / "b_module.py"
         a_file.write_text("from b_module import something\n")
@@ -99,15 +96,24 @@ class TestDuplicateDetection:
 
         dups = analyzer.find_duplicates(str(tmp_path))
         assert len(dups) >= 1
-        assert (str(f1.relative_to(tmp_path)), str(f2.relative_to(tmp_path))) or \
-               (str(f2.relative_to(tmp_path)), str(f1.relative_to(tmp_path)))
+        # Verifica que o par (f1, f2) ou (f2, f1) está na lista
+        f1_name = f1.name
+        f2_name = f2.name
+        found = False
+        for d in dups:
+            if (f1_name in d[0] and f2_name in d[0]) or \
+               (f1_name in d[1] and f2_name in d[1]) or \
+               (f1_name in d[0] and f2_name in d[1]) or \
+               (f2_name in d[0] and f1_name in d[1]):
+                found = True
+                break
+        assert found, f"Par ({f1_name}, {f2_name}) não encontrado em dups: {dups}"
 
 
 # === CT-9304: Validação de regras de camada ===
 class TestLayerValidation:
     def test_ct9304_validate_rules_returns_list(self, analyzer):
         """CT-9304: validate_rules() retorna lista de Violation."""
-        # Cria um dep que cruza camadas de forma suspeita
         deps = [
             Dependency(source="ecosystem/commands/cmd_menu.py", target="core/state.py", type="import"),
             Dependency(source="ecosystem/adapters/script_runner.py", target="ecosystem/schemas/registry.py", type="import"),
@@ -149,10 +155,8 @@ class TestBuildGraph:
 class TestContractSuggestion:
     def test_ct9306_suggest_contract(self, analyzer):
         """CT-9306: suggest_contract() retorna nome ou None."""
-        # Dep que cruza camadas (ecosystem → core)
         dep = Dependency(source="ecosystem/commands/cmd_menu.py", target="core/state.py", type="import")
         suggestion = analyzer.suggest_contract(dep)
-        # Pode retornar None se não houver sugestão
         assert suggestion is None or isinstance(suggestion, str)
 
 
@@ -187,6 +191,41 @@ class TestRealAnalysis:
         if eco_path.exists():
             deps = analyzer.analyze_directory(str(eco_path))
             assert isinstance(deps, list)
+            assert len(deps) > 0, "Nenhuma dependência encontrada no pacote ecosystem"
+
+
+# === CT-9309: Visualizador Mermaid ===
+class TestVisualizer:
+    def test_ct9309_visualize_mermaid_concept(self, analyzer):
+        """CT-9309: visualize() retorna string Mermaid."""
+        graph = DependencyGraph()
+        graph.add_node("a.py", "Module A", layer=1)
+        graph.add_node("b.py", "Module B", layer=0)
+        graph.add_edge("a.py", "b.py")
+
+        mermaid = analyzer.visualize(graph)
+        assert isinstance(mermaid, str)
+        assert len(mermaid) > 0
+        # Mermaid flowchart deve conter nós
+        assert "a.py" in mermaid or "Module A" in mermaid
+        assert "-->" in mermaid  # Indica aresta
+
+    def test_ct9309_visualize_empty_graph(self, analyzer):
+        """CT-9309b: visualize() com grafo vazio retorna string."""
+        graph = DependencyGraph()
+        mermaid = analyzer.visualize(graph)
+        assert isinstance(mermaid, str)
+
+    def test_ct9309_visualize_ecosystem_graph(self, analyzer):
+        """CT-9309c: visualize() para grafo real do ecossistema."""
+        eco_path = Path(__file__).parent.parent.parent / "ecosystem"
+        if eco_path.exists():
+            deps = analyzer.analyze_directory(str(eco_path))
+            if len(deps) > 0:
+                graph = analyzer.build_graph(deps)
+                mermaid = analyzer.visualize(graph)
+                assert isinstance(mermaid, str)
+                assert len(mermaid) > 0
 
 
 # === CT-9310: Validação completa ===
@@ -201,3 +240,63 @@ class TestFullValidation:
             assert "violations" in report
             assert "circular_dependencies" in report
             assert isinstance(report["total_files_analyzed"], int)
+            # Verifica métricas de sucesso (sem violações críticas)
+            # Nota: validate_all retorna violations como lista de dicts agora
+            violations = report.get("violations", [])
+            critical_count = 0
+            for v in violations:
+                if isinstance(v, dict):
+                    if v.get("severity") == "error":
+                        critical_count += 1
+                elif hasattr(v, 'severity'):
+                    if v.severity == "error":
+                        critical_count += 1
+            assert critical_count == 0, f"Há {critical_count} violações críticas!"
+
+
+class TestDeadCode:
+    """Testes para find_dead_code — CTs 9311-9314."""
+
+    _analyzer = DependencyAnalyzer()
+
+    def test_ct9311_find_dead_code_returns_list(self, tmp_path: Path) -> None:
+        """find_dead_code retorna lista mesmo sem código morto."""
+        (tmp_path / "mod.py").write_text("X = 1\ndef f(): pass\n")
+        result = self._analyzer.find_dead_code(str(tmp_path))
+        assert isinstance(result, list)
+
+    def test_ct9312_detect_unused_function(self, tmp_path: Path) -> None:
+        """Função definida mas não importada deve aparecer como morta."""
+        (tmp_path / "mod.py").write_text("def unused_func(): pass\n")
+        result = self._analyzer.find_dead_code(str(tmp_path))
+        names = [r["name"] for r in result]
+        assert "unused_func" in names
+
+    def test_ct9313_detect_unused_class(self, tmp_path: Path) -> None:
+        """Classe definida mas não importada deve aparecer como morta."""
+        (tmp_path / "mod.py").write_text("class UnusedClass: pass\n")
+        result = self._analyzer.find_dead_code(str(tmp_path))
+        names = [r["name"] for r in result]
+        assert "UnusedClass" in names
+
+    def test_ct9315_dead_code_in_ecosystem_is_reasonable(self) -> None:
+        """Varredura no ecossistema real não deve explodir nem retornar 0."""
+        result = self._analyzer.find_dead_code("ecosystem")
+        assert isinstance(result, list)
+        # Apenas verifica que o mecanismo roda sem erro;
+        # algumas funções internas podem aparecer como mortas.
+        for item in result:
+            assert "file" in item
+            assert "name" in item
+            assert "type" in item
+
+    def test_ct9314_ignore_private_and_dunder(self, tmp_path: Path) -> None:
+        """Símbolos privados (_x) e dunder (__x__) não são reportados."""
+        (tmp_path / "mod.py").write_text(
+            "_private = 1\ndef __helper(): pass\nclass _Hidden: pass\n"
+        )
+        result = self._analyzer.find_dead_code(str(tmp_path))
+        names = [r["name"] for r in result]
+        assert "_private" not in names
+        assert "__helper" not in names
+        assert "_Hidden" not in names

@@ -11,7 +11,7 @@ Valida:
 - CT-9107: IAdapter definido
 - CT-9108: snapshot() serializa
 - CT-9109: export_graph() gera dependências
-- CT-9110: Teste de contrato para IStateManager
+- CT-9110: Teste de contrato — implementação inválida é rejeitada
 """
 
 import pytest
@@ -202,20 +202,34 @@ class TestExportGraph:
         assert len(graph["nodes"]) >= 4  # 2 contratos + 3 implementações
 
 
-# === CT-9110: Teste de contrato estrutural ===
-class TestContractTesting:
-    def test_ct9110_all_interfaces_importable(self):
-        """CT-9110: Todas as interfaces são importáveis."""
-        from ecosystem.contracts.interfaces import (
-            IStateManager, IEventBus, ICache, ITaskQueue,
-            IAgent, IPlugin, IScanner, IPipeline, IAdapter,
-        )
-        assert IStateManager is not None
-        assert IEventBus is not None
-        assert ICache is not None
-        assert ITaskQueue is not None
-        assert IAgent is not None
-        assert IPlugin is not None
-        assert IScanner is not None
-        assert IPipeline is not None
-        assert IAdapter is not None
+# === CT-9110: Teste de contrato — implementação inválida é rejeitada ===
+class TestContractAdherence:
+    def test_ct9110_incomplete_implementation_raises_typeerror(self):
+        """CT-9110: Implementação parcial de IStateManager levanta TypeError."""
+        # Cria implementação que omite métodos obrigatórios
+        class IncompleteStateManager(IStateManager):
+            def get(self, key: str) -> str:
+                return "mock"
+            # Omite: set, delete, keys, exists, close
+
+        with pytest.raises(TypeError):
+            IncompleteStateManager()
+
+    def test_ct9110_complete_implementation_instantiates(self):
+        """CT-9110b: Implementação completa de IStateManager instancia."""
+        class CompleteStateManager(IStateManager):
+            def get(self, key: str) -> str:
+                return "mock"
+            def set(self, key: str, value: str) -> None:
+                pass
+            def delete(self, key: str) -> bool:
+                return True
+            def keys(self) -> list[str]:
+                return []
+            def exists(self, key: str) -> bool:
+                return True
+            def close(self) -> None:
+                pass
+
+        obj = CompleteStateManager()
+        assert isinstance(obj, IStateManager)

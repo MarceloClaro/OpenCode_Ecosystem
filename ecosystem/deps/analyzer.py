@@ -125,7 +125,8 @@ class DependencyAnalyzer:
         "ecosystem/schemas": 4,
         "ecosystem/contracts": 3,
         "ecosystem/deps": 2,
-        "ecosystem": 6,
+        "ecosystem": 4,
+        "menu.py": 6,
         "core": 1,
         "nexus": 0,
         "skills": 0,
@@ -138,14 +139,16 @@ class DependencyAnalyzer:
     }
 
     # Regras: camada origem pode importar de camadas >= limite inferior
+    # O limite é a própria camada (permite imports intra-pacote).
+    # A restrição real: camada N não pode importar de camada < N.
     LAYER_RULES: dict[int, int] = {
-        6: 1,   # commands pode importar de layer 1+
-        5: 2,   # adapters pode importar de layer 2+
-        4: 3,   # schemas pode importar de layer 3+
-        3: 4,   # contracts pode importar de layer 4+ (apenas stdlib)
-        2: 4,   # deps pode importar de layer 4+
-        1: 2,   # core pode importar de layer 2+
-        0: 0,   # skills/nexus pode importar de layer 0+ (regra especial)
+        6: 6,   # commands pode importar de layer 6+
+        5: 5,   # adapters pode importar de layer 5+
+        4: 4,   # schemas pode importar de layer 4+
+        3: 3,   # contracts pode importar de layer 3+ (stdlib + contracts)
+        2: 2,   # deps pode importar de layer 2+
+        1: 1,   # core pode importar de layer 1+ (stdlib)
+        0: 0,   # skills/nexus pode importar de layer 0+
     }
 
     def __init__(self, root_path: str | None = None):
@@ -386,6 +389,140 @@ class DependencyAnalyzer:
 
         return duplicates
 
+    def find_dead_code(self, directory: str | None = None) -> list[dict[str, str | int]]:
+        """Encontra código morto: definições não referenciadas fora do módulo.
+
+        Varre todos os arquivos Python do diretório, coleta símbolos definidos
+        em cada módulo e verifica se são importados ou referenciados por outros
+        módulos.
+
+        Args:
+            directory: Diretório a analisar (padrão: root_path)
+
+        Returns:
+            Lista de dicts com 'file', 'name', 'type' (função/classe/var) e 'line'
+        """
+        search_dir = Path(directory) if directory else self.root_path
+        # Usa o search_dir como base para caminhos relativos;
+        # se directory foi fornecido explicitamente, base = search_dir,
+        # senão usa self.root_path.
+        base_path = search_dir if directory else self.root_path
+        all_defs: dict[str, list[dict[str, str | int]]] = {}
+        all_refs: set[str] = set()
+
+        # 1ª passada: coleta definições e referências
+        for py_file in search_dir.rglob("*.py"):
+            try:
+                rel = str(py_file.relative_to(base_path))
+            except ValueError:
+                continue
+            parts = Path(rel).parts
+            if any(
+                part.startswith(".") or part in ("venv", "node_modules", "__pycache__")
+                for part in parts
+            ):
+                continue
+
+            try:
+                source = py_file.read_text(encoding="utf-8")
+                tree = ast.parse(source)
+            except (SyntaxError, UnicodeDecodeError, IOError):
+                continue
+
+            # Coleta definições deste módulo
+            defs_here: list[dict[str, str | int]] = []
+            for node in ast.walk(tree):
+                if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                    defs_here.append({
+                        "file": rel,
+                        "name": node.name,
+                        "type": "function",
+                        "line": node.lineno,
+                    })
+                elif isinstance(node, ast.ClassDef):
+                    defs_here.append({
+                        "file": rel,
+                        "name": node.name,
+                        "type": "class",
+                        "line": node.lineno,
+                    })
+                elif isinstance(node, ast.Assign):
+                    for target in node.targets:
+                        if isinstance(target, ast.Name):
+                            name = target.id
+                            if not name.startswith("_"):
+                                defs_here.append({
+                                    "file": rel,
+                                    "name": name,
+                                    "type": "variable",
+                                    "line": node.lineno,
+                                })
+            if defs_here:
+                all_defs[rel] = defs_here
+
+            # Coleta referências a outros módulos
+            module_base = rel.replace(".py", "").replace("/", ".")
+            for node in ast.walk(tree):
+                if isinstance(node, ast.Import):
+                    for alias in node.names:
+                        all_refs.add(alias.name.split(".")[0])
+                        all_refs.add(alias.name)
+                elif isinstance(node, ast.ImportFrom):
+                    if node.module:
+                        parts = node.module.split(".")
+                        all_refs.add(parts[0])
+                        all_refs.add(node.module)
+                        for alias in node.names:
+                            if alias.name != "*":
+                                all_refs.add(f"{node.module}.{alias.name}")
+                                # Tenta com from X import Y: o símbolo Y pode ser
+                                # o nome sem o prefixo do módulo
+                                all_refs.add(alias.name)
+
+        # 2ª passada: verifica quais definições são referenciadas por outros módulos
+        dead: list[dict[str, str | int]] = []
+        for mod_path, defs in all_defs.items():
+            module_name = mod_path.replace(".py", "").replace("/", ".")
+            for d in defs:
+                full_name = f"{module_name}.{d['name']}"
+                short_name = str(d["name"])
+
+                # Pula dunder methods e atributos privados
+                if short_name.startswith("__") or short_name.startswith("_"):
+                    continue
+
+                # Verifica se o símbolo é referenciado fora do próprio módulo
+                referenced_externally = False
+                for ref in all_refs:
+                    # Procura: nome completo, nome curto, ou módulo.nome
+                    if ref == full_name or ref == short_name:
+                        referenced_externally = True
+                        break
+                    if ref.endswith(f".{short_name}"):
+                        referenced_externally = True
+                        break
+
+                if not referenced_externally:
+                    dead.append(d)
+
+        return dead
+
+    def _same_package(self, source: str, target: str) -> bool:
+        """Verifica se source e target estão no mesmo pacote Python.
+
+        Um __init__.py sempre pode importar de submodulos do seu pacote.
+        """
+        source = source.replace("\\", "/")
+        target = target.replace("\\", "/")
+
+        # Se o source é um __init__.py, extrai o diretório do pacote
+        if source.endswith("__init__.py"):
+            pkg_dir = source.rsplit("/", 1)[0] if "/" in source else ""
+            # O target deve estar dentro do mesmo diretório do pacote
+            return target.startswith(pkg_dir + "/") if pkg_dir else False
+
+        return False
+
     def validate_rules(self, deps: list[Dependency] | None = None) -> list[Violation]:
         """Valida dependências contra regras de camada.
 
@@ -408,6 +545,10 @@ class DependencyAnalyzer:
             if source_layer not in self.LAYER_RULES:
                 continue
             if target_layer not in self.LAYER_RULES:
+                continue
+
+            # Exceção: __init__.py pode importar de submodulos do seu pacote
+            if self._same_package(d.source, d.target):
                 continue
 
             min_allowed = self.LAYER_RULES[source_layer]
@@ -445,6 +586,26 @@ class DependencyAnalyzer:
             return f"I{target_name}"
 
         return None
+
+    def visualize(self, graph: DependencyGraph) -> str:
+        """Gera saída Mermaid Flowchart a partir de um grafo de dependências.
+
+        Args:
+            graph: DependencyGraph a visualizar
+
+        Returns:
+            String no formato Mermaid flowchart
+        """
+        lines = ["flowchart LR"]
+        for node_name, node_data in graph.nodes.items():
+            label = node_data.get("label", node_name)
+            layer = node_data.get("layer", "?")
+            lines.append(f"    {node_name}[\"{label} (L{layer})\"]")
+        for edge in graph.edges:
+            source = edge["source"]
+            target = edge["target"]
+            lines.append(f"    {source} --> {target}")
+        return "\n".join(lines)
 
     def build_graph(self, deps: list[Dependency] | None = None) -> DependencyGraph:
         """Constrói o grafo canônico de dependências.

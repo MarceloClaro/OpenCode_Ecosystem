@@ -149,14 +149,115 @@ class TestMigration:
         assert migrated["version"] == "7.2.0"
 
 
-# === CT-9205: SchemaAwareStateManager seria implementado ===
+# === CT-9205: SchemaAwareStateManager.set() valida na escrita ===
 class TestSchemaAwareManager:
-    def test_ct9205_schema_aware_concept(self, populated_registry):
-        """CT-9205: SchemaRegistry pode ser usado por state manager."""
-        # Testa que o registry pode validar na escrita (conceito)
+    def test_ct9205_schema_aware_set_validates(self, populated_registry):
+        """CT-9205: SchemaAwareStateManager.set() valida dados contra schema."""
+        from ecosystem.schemas.manager import SchemaAwareStateManager
+        from ecosystem.schemas.registry import SchemaValidationError
+
+        # Mock de backend dict
+        class DictBackend:
+            def __init__(self):
+                self._data: dict[str, str] = {}
+            def get(self, key: str) -> str | None:
+                return self._data.get(key)
+            def set(self, key: str, value: str) -> None:
+                self._data[key] = value
+            def delete(self, key: str) -> bool:
+                return self._data.pop(key, None) is not None
+            def keys(self) -> list[str]:
+                return list(self._data.keys())
+            def exists(self, key: str) -> bool:
+                return key in self._data
+            def close(self) -> None:
+                self._data.clear()
+
+        backend = DictBackend()
+        manager = SchemaAwareStateManager(backend, populated_registry, default_schema="ecosystem_state")
+
+        # Dados válidos passam
+        manager.set("test_key", {
+            "version": "7.2.0",
+            "current_cycle": "R46",
+            "last_updated": "2026-07-04T20:00:00Z",
+            "tests_passing": 420,
+            "total_cts": 420,
+        })
+        assert backend.exists("test_key")
+
+        # Dados inválidos são rejeitados
+        with pytest.raises(SchemaValidationError):
+            manager.set("invalid_key", {"foo": "bar"})
+
+    def test_ct9205_registry_usable_by_manager(self, populated_registry):
+        """CT-9205b: SchemaRegistry pode ser consumido pelo manager."""
         schema = populated_registry.get("ecosystem_state")
         assert schema.name == "ecosystem_state"
         assert str(schema.version) == "1.0.0"
+
+
+# === CT-9206: SchemaAwareStateManager.get() migra na leitura ===
+class TestSchemaAwareGet:
+    def test_ct9206_schema_aware_get_migrates(self, populated_registry):
+        """CT-9206: SchemaAwareStateManager.get() corrige dados corrompidos."""
+        from ecosystem.schemas.manager import SchemaAwareStateManager
+
+        class DictBackend:
+            def __init__(self):
+                self._data: dict[str, str] = {}
+            def get(self, key: str) -> str | None:
+                return self._data.get(key)
+            def set(self, key: str, value: str) -> None:
+                self._data[key] = value
+            def delete(self, key: str) -> bool:
+                return self._data.pop(key, None) is not None
+            def keys(self) -> list[str]:
+                return list(self._data.keys())
+            def exists(self, key: str) -> bool:
+                return key in self._data
+            def close(self) -> None:
+                self._data.clear()
+
+        backend = DictBackend()
+        manager = SchemaAwareStateManager(backend, populated_registry, default_schema="ecosystem_state")
+
+        # Dados sem campo obrigatório last_updated
+        import json
+        backend.set("corrupted", json.dumps({
+            "version": "1.0",
+            "current_cycle": "R46",
+            # last_updated ausente
+        }))
+
+        # get() deve migrar/adicionar campo faltante
+        result = manager.get("corrupted")
+        assert result is not None
+        assert "last_updated" in result  # Campo adicionado pela migração
+
+    def test_ct9206_get_returns_none_for_missing(self, populated_registry):
+        """CT-9206b: get() retorna None para chave inexistente."""
+        from ecosystem.schemas.manager import SchemaAwareStateManager
+
+        class DictBackend:
+            def __init__(self):
+                self._data: dict[str, str] = {}
+            def get(self, key: str) -> str | None:
+                return self._data.get(key)
+            def set(self, key: str, value: str) -> None:
+                self._data[key] = value
+            def delete(self, key: str) -> bool:
+                return self._data.pop(key, None) is not None
+            def keys(self) -> list[str]:
+                return list(self._data.keys())
+            def exists(self, key: str) -> bool:
+                return key in self._data
+            def close(self) -> None:
+                self._data.clear()
+
+        backend = DictBackend()
+        manager = SchemaAwareStateManager(backend, populated_registry, default_schema="ecosystem_state")
+        assert manager.get("chave_inexistente") is None
 
 
 # === CT-9207: Versionamento semântico ===

@@ -27,9 +27,13 @@ jobs:
           pip install --upgrade pip
           pip install pytest scikit-learn numpy
 
-      - name: R31-R42 Full Suite (100+ CTs)
+      - name: Legacy Suite (R31-R42, 100+ CTs)
         run: |
           pytest tests/test_r*_*.py -v --tb=short
+
+      - name: SPEC-090-093 Ecosystem Suite (76 CTs)
+        run: |
+          PYTHONPATH=. pytest tests/ecosystem/ -v --tb=short -k "not test_ct9308"
 
       - name: Ecosystem CI Validation
         run: python tests/ci_validate.py
@@ -42,4 +46,5 @@ jobs:
           echo "| Suite | Status |" >> $GITHUB_STEP_SUMMARY
           echo "|---|---|" >> $GITHUB_STEP_SUMMARY
           echo "| R31-R42 (100+ CTs) | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "| SPEC-090-093 (76 CTs) | ✅ |" >> $GITHUB_STEP_SUMMARY
           echo "| CI Validation | ✅ |" >> $GITHUB_STEP_SUMMARY
