@@ -48,3 +48,13 @@
 {"timestamp": "2026-07-03T03:12:29.596451+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_full_pipeline", "args_summary": {}, "success": true, "latency_ms": 3821}
 {"timestamp": "2026-07-03T03:32:12.726606+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_potentiality_v2", "args_summary": {}, "success": true, "latency_ms": 3300}
 {"timestamp": "2026-07-03T09:34:26.676536+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_full_pipeline", "args_summary": {}, "success": true, "latency_ms": 3969}
+{"timestamp": "2026-07-04T09:39:36.664064+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_list_mcps", "args_summary": {}, "success": true, "latency_ms": 90}
+{"timestamp": "2026-07-04T09:39:44.091962+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_status", "args_summary": {}, "success": true, "latency_ms": 7382}
+{"timestamp": "2026-07-04T11:54:03.399848+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_cognitive_diversity", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 670}
+{"timestamp": "2026-07-04T11:54:58.359490+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_noological_scanner", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 1644}
+{"timestamp": "2026-07-04T11:54:59.563396+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_teleological_scanner", "args_summary": {"objective": "alinhamento global"}, "success": true, "latency_ms": 1197}
+{"timestamp": "2026-07-04T11:55:00.900569+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_evolutionary_scanner", "args_summary": {}, "success": true, "latency_ms": 1331}
+{"timestamp": "2026-07-04T12:42:28.874838+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_epistemic_topology", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 1}
+{"timestamp": "2026-07-04T12:42:29.038964+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_rupture_potential", "args_summary": {"target": "ecossistema"}, "success": true, "latency_ms": 0}
+{"timestamp": "2026-07-04T12:42:33.011774+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_run_potentiality_v2", "args_summary": {}, "success": true, "latency_ms": 3866}
+{"timestamp": "2026-07-04T20:49:33.978127+00:00", "server": "ecosystem-capabilities-mcp", "tool": "eco_status", "args_summary": {}, "success": true, "latency_ms": 10154}

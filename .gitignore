@@ -89,3 +89,30 @@ dissertacao-*/
 # Temp pytest artifacts
 UsersmarceAppDataLocalTemppytest-alt/
 Usersmarce*/
+
+# Session offloads (nexus agent context)
+nexus/context_offload/
+
+# Cache directories
+cache/
+
+# Temporary databases
+*.db
+!ecosystem-state.json
+
+# Windows / filesystem artifacts
+$null
+
+# Temp conversion files
+converted.md
+teste-paste.md
+
+# External content directories
+PERGUNTAS/
+PPP*/
+
+# Temp image artifacts
+message-msg_*.png
+opencode_logo.ico
+"AUTOR MARCELO CLARO (1).png"
+"diagrams/OpenCode Ecosystem MCP-*.png"

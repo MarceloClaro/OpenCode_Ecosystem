@@ -130,7 +130,7 @@ Integração nativa com arXiv, PubMed, OpenAlex, EuropePMC, bioRxiv, CORE + moto
 
 ### 🏗️ [SYS://FULL_ARCHITECTURE_MAP] ── Mapa da Arquitetura Completa do Ecossistema
 
-Abaixo, o diagrama completo da arquitetura do OpenCode Ecosystem, organizado em **9 camadas** que abrangem desde a interface com o usuário até a infraestrutura de execução local:
+Abaixo, o diagrama completo da arquitetura do OpenCode Ecosystem, organizado em **11 camadas** que abrangem desde a interface com o usuário até a infraestrutura de execução local:
 
 ```mermaid
 flowchart TD
@@ -164,7 +164,15 @@ flowchart TD
     AG_REVERSA["🔧 Reversa (11)<br/>architect, archaeologist,<br/>detective, synthesis..."]
   end
 
-  subgraph Skills["⑤ CAMADA DE SKILLS — 227 Capacidades"]
+  subgraph Ecosystem["⑤ CAMADA DE SERVIÇOS DE PLATAFORMA — ecosystem/"]
+    ECO_ENTRY["SPEC-090: Entrypoint<br/>__init__.py lazy (PEP 562)"]
+    ECO_CONTRACT["SPEC-091: Contract Registry<br/>ContractRegistry + serialização"]
+    ECO_STATE["SPEC-092: State Schema<br/>StateManager + SchemaAware"]
+    ECO_DEPS["SPEC-093: Dependency Graph<br/>Analyzer + dead_code + camadas"]
+    ECO_ADAPTERS["7 adaptadores<br/>evolve/sync/test/audit/plugin"]
+  end
+
+  subgraph Skills["⑥ CAMADA DE SKILLS — 228 Capacidades"]
     SK_SYSTEM["⚙️ System (12)"]
     SK_SCIENCE["🧬 Science (38)<br/>AlphaFold, PubMed,<br/>ChEMBL, UniProt..."]
     SK_REASONING["🧠 Reasoning (4)<br/>Z3, SymPy, Kanren, Critical"]
@@ -172,7 +180,7 @@ flowchart TD
     SK_JURIDICO["⚖️ Jurídico (7)<br/>contratos, jurisprudência..."]
   end
 
-  subgraph Scanners["⑥ CAMADA DE SCANNERS — Diagnóstico & Prospecção"]
+  subgraph Scanners["⑦ CAMADA DE SCANNERS — Diagnóstico & Prospecção"]
     SCN_NOO["Scanner Noológico<br/>Lacunas epistêmicas"]
     SCN_TELEO["Scanner Teleológico<br/>Alinhamento estratégico"]
     SCN_EVO["Scanner Evolutivo<br/>Maturidade evolutiva"]
@@ -181,7 +189,7 @@ flowchart TD
     SCN_DIVERSITY["Cognitive Diversity Scanner<br/>HI / Câmaras de eco"]
   end
 
-  subgraph Motores["⑦ CAMADA DE MOTORES — Cognição & Evolução"]
+  subgraph Motores["⑧ CAMADA DE MOTORES — Cognição & Evolução"]
     M_AIC["Active Inference Controller<br/>FEP / VFE Minimização<br/>SPEC-059"]
     M_GT["Game Theory Solver<br/>10 modelos clássicos<br/>SPEC-060"]
     M_MSE["Metacognitive Search Engine<br/>DFS + Process Verifiers<br/>SPEC-062"]
@@ -191,7 +199,7 @@ flowchart TD
     M_OQS["OQS Optimal Query<br/>Pergunta Ótima<br/>SPEC-056"]
   end
 
-  subgraph Pipeline["⑧ CAMADA DE PIPELINE — Produção Acadêmica"]
+  subgraph Pipeline["⑨ CAMADA DE PIPELINE — Produção Acadêmica"]
     P_SEEKER["SEEKER<br/>Pesquisa em 10+ fontes"]
     P_MASWOS["MASWOS v5.0<br/>49 agentes especializados"]
     P_REVIEW["Revisão Cega<br/>5 revisores simulados"]
@@ -199,14 +207,14 @@ flowchart TD
     P_LATEX["Exportação LaTeX/PDF<br/>Qualis A1 95-100/100"]
   end
 
-  subgraph Seguranca["⑨ CAMADA DE SEGURANÇA & TESTES"]
+  subgraph Seguranca["⑩ CAMADA DE SEGURANÇA & TESTES"]
     S_TRUST["TrustEngine N3.5<br/>TrustScorer + BehavioralGate"]
     S_GUARD["Preventive Cognitive Guardrails<br/>SPEC-038"]
-    S_TDD["18 Suítes TDD<br/>356 CTs · 100% pass"]
+    S_TDD["22 Suítes TDD<br/>532 CTs · 100% pass"]
     S_FORGET["NaturalForgetting<br/>Atkinson-Shiffrin"]
   end
 
-  subgraph Infra["⑩ CAMADA DE INFRAESTRUTURA"]
+  subgraph Infra["⑪ CAMADA DE INFRAESTRUTURA"]
     INFRA_WSL["WSL2 / Windows 11"]
     INFRA_OLLAMA["Ollama (porta 11434)<br/>Modelos locais"]
     INFRA_BUN["Bun 1.3 · Node.js 25"]
@@ -234,9 +242,14 @@ flowchart TD
   ANTIGRAVITY_ORCH --> AG_REVERSA
   LIQUID --> AG_SEEKER
 
-  AG_CORE --> SK_SYSTEM
-  AG_CORE --> SK_REASONING
-  AG_ACADEMIC --> SK_RESEARCH
+  AG_CORE --> ECO_ENTRY
+  AG_CORE --> ECO_CONTRACT
+  AG_ACADEMIC --> ECO_STATE
+  AG_REVERSA --> ECO_DEPS
+
+  ECO_CONTRACT --> SK_SYSTEM
+  ECO_DEPS --> SK_REASONING
+  ECO_STATE --> SK_RESEARCH
   AG_SEEKER --> SK_SCIENCE
   AG_REVERSA --> SK_JURIDICO
 
