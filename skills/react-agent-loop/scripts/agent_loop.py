@@ -21,14 +21,31 @@ from __future__ import annotations
 import json
 import time
 import logging
+import shlex
+import subprocess
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Protocol
 
 logger = logging.getLogger(__name__)
 
 DEFAULT_MAX_ITERATIONS = 5
 DEFAULT_TOOL_TIMEOUT_S = 60
+
+
+def _resolve_relative_path(base_dir: Path, raw_path: str, label: str) -> Path:
+    path = Path(raw_path)
+    if path.is_absolute():
+        raise ValueError(f"{label} deve ser relativo ao diretorio base")
+
+    resolved = (base_dir / path).resolve()
+    try:
+        resolved.relative_to(base_dir)
+    except ValueError as exc:
+        raise ValueError(f"{label} fora do diretorio base") from exc
+
+    return resolved
 
 
 @dataclass
@@ -112,11 +129,26 @@ class ToolRegistry:
         tool = self._tools.get(call.name)
         if tool is None:
             return ToolResult.failure(f"Tool desconhecida: {call.name}")
+        validation_error = self._validate_arguments(tool, call.arguments)
+        if validation_error:
+            return ToolResult.failure(validation_error)
         try:
             return tool.execute(**call.arguments)
         except Exception as exc:
             logger.exception("Tool '%s' lancou excecao", call.name)
             return ToolResult.failure(str(exc))
+
+    def _validate_arguments(self, tool: BaseTool, arguments: Any) -> str | None:
+        if not isinstance(arguments, dict):
+            return f"Argumentos invalidos para tool '{tool.name}': objeto esperado"
+
+        required = tool.parameters_schema.get("required", [])
+        for name in required:
+            value = arguments.get(name)
+            if value is None or (isinstance(value, str) and not value.strip()):
+                return f"Argumento obrigatorio ausente para tool '{tool.name}': {name}"
+
+        return None
 
     def get_system_prompt_addendum(self) -> str:
         if not self._tools:
@@ -262,13 +294,17 @@ class AgentLoop:
 class FileWriterTool(BaseTool):
     """Tool de exemplo: escreve arquivo no filesystem."""
 
+    def __init__(self, base_dir: str | Path = "workspace", overwrite: bool = False) -> None:
+        self._base_dir = Path(base_dir).resolve()
+        self._overwrite = overwrite
+
     @property
     def name(self) -> str:
         return "write_file"
 
     @property
     def description(self) -> str:
-        return "Cria ou sobrescreve um arquivo com o conteudo especificado"
+        return "Cria um arquivo dentro do diretorio base configurado"
 
     @property
     def parameters_schema(self) -> dict[str, Any]:
@@ -283,8 +319,10 @@ class FileWriterTool(BaseTool):
 
     def execute(self, path: str = "", content: str = "", **_: Any) -> ToolResult:
         try:
-            from pathlib import Path
-            p = Path(path)
+            p = _resolve_relative_path(self._base_dir, path, "Caminho do arquivo")
+            if p.exists() and not self._overwrite:
+                return ToolResult.failure(f"Arquivo '{path}' ja existe")
+
             p.parent.mkdir(parents=True, exist_ok=True)
             p.write_text(content, encoding="utf-8")
             return ToolResult(output=f"Arquivo '{path}' criado com sucesso ({len(content)} bytes)")
@@ -295,13 +333,21 @@ class FileWriterTool(BaseTool):
 class BashTool(BaseTool):
     """Tool de exemplo: executa comando shell."""
 
+    def __init__(
+        self,
+        allowed_commands: set[str] | None = None,
+        base_dir: str | Path = ".",
+    ) -> None:
+        self._allowed_commands = allowed_commands or set()
+        self._base_dir = Path(base_dir).resolve()
+
     @property
     def name(self) -> str:
         return "bash"
 
     @property
     def description(self) -> str:
-        return "Executa um comando shell e retorna a saida"
+        return "Executa um comando permitido sem shell e retorna a saida"
 
     @property
     def parameters_schema(self) -> dict[str, Any]:
@@ -315,18 +361,33 @@ class BashTool(BaseTool):
         }
 
     def execute(self, command: str = "", workdir: str = "", **_: Any) -> ToolResult:
-        import subprocess
         try:
+            argv = shlex.split(command)
+            if not argv:
+                return ToolResult.failure("Comando vazio")
+
+            executable = argv[0]
+            if executable not in self._allowed_commands:
+                return ToolResult.failure(f"Comando nao permitido: {executable}")
+
+            cwd = self._base_dir
+            if workdir:
+                cwd = _resolve_relative_path(self._base_dir, workdir, "Diretorio de trabalho")
+            if not cwd.is_dir():
+                return ToolResult.failure(f"Diretorio de trabalho invalido: {workdir or self._base_dir}")
+
             result = subprocess.run(
-                command,
-                shell=True,
+                argv,
+                shell=False,
                 capture_output=True,
                 text=True,
                 timeout=DEFAULT_TOOL_TIMEOUT_S,
-                cwd=workdir or None,
+                cwd=cwd,
             )
             output = result.stdout.strip() or result.stderr.strip()
-            return ToolResult(output=output, success=result.returncode == 0)
+            if result.returncode != 0:
+                return ToolResult(output=output, success=False, error=output)
+            return ToolResult(output=output)
         except subprocess.TimeoutExpired:
             return ToolResult.failure(f"Comando excedeu timeout de {DEFAULT_TOOL_TIMEOUT_S}s")
         except Exception as exc:

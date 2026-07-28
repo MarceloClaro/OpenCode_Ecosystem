@@ -103,6 +103,52 @@ class TestAgentLoop:
         assert result_unknown.success is False
         assert "desconhecida" in result_unknown.error.lower() or "Tool desconhecida" in result_unknown.error
 
+    def test_execute_tool_validates_required_arguments(self):
+        tools = ToolRegistry()
+        tools.register(EchoTool())
+
+        result = tools.execute(ToolCall(name="echo", arguments={}))
+        assert result.success is False
+        assert "obrigatorio" in result.error.lower()
+
+    def test_file_writer_stays_inside_base_dir(self, tmp_path):
+        tool = FileWriterTool(base_dir=tmp_path)
+
+        result = tool.execute(path="notes/result.txt", content="ok")
+        assert result.success is True
+        assert (tmp_path / "notes" / "result.txt").read_text(encoding="utf-8") == "ok"
+
+        traversal = tool.execute(path="../outside.txt", content="bad")
+        assert traversal.success is False
+        assert "diretorio base" in traversal.error
+
+        absolute = tool.execute(path=str(tmp_path.parent / "outside.txt"), content="bad")
+        assert absolute.success is False
+        assert "relativo" in absolute.error
+
+    def test_file_writer_rejects_overwrite_by_default(self, tmp_path):
+        tool = FileWriterTool(base_dir=tmp_path)
+        target = tmp_path / "existing.txt"
+        target.write_text("original", encoding="utf-8")
+
+        result = tool.execute(path="existing.txt", content="new")
+        assert result.success is False
+        assert target.read_text(encoding="utf-8") == "original"
+
+    def test_bash_tool_denies_commands_by_default(self):
+        result = BashTool().execute(command="echo hello")
+
+        assert result.success is False
+        assert "nao permitido" in result.error
+
+    def test_bash_tool_runs_allowlisted_command_without_shell(self, tmp_path):
+        tool = BashTool(allowed_commands={"echo"}, base_dir=tmp_path)
+
+        result = tool.execute(command="echo hello")
+
+        assert result.success is True
+        assert result.output == "hello"
+
     def test_max_iterations(self):
         tool_responses = []
         for i in range(6):
